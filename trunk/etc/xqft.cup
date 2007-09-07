@@ -1,0 +1,84 @@
+/**
+ * Copyright (c) 2007 Andreas Ravnestad, Mads Nyborg, 
+ *                    Norwegian University of Science and Technology (NTNU),
+ *                    Fast Search & Transfer
+ *                   
+ *                    Abbr. 'copyright holders'.
+ *
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in the
+ *       documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the <organization> nor the
+ *       names of its contributors may be used to endorse or promote products
+ *       derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY ITS COPYRIGHT HOLDERS ``AS IS'' AND ANY
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL copyright holder BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+/* CUP specification for an XQuery parser with fulltext extensions */
+/* TODO: This is just a temporary specification as of yet */
+package no.ntnu.xqft.parse;
+
+/* Imports */
+import java_cup.runtime.*;
+import java.util.*;
+import no.ntnu.xqft.lex.*;
+
+/* Terminals (tokens returned by the scanner). */
+terminal String PLUS, MINUS, DQUOTE, CHARACTER;
+terminal String WORD, NUMBER, DECIMAL;
+
+/* Non-terminals */
+non terminal empty, plus, minus;
+non terminal Node query;
+non terminal Node word;
+non terminal Node word_list;
+non terminal Node term, phrase;
+non terminal Node term_list;
+
+/* Grammar (standard BNF) */
+query 		::= empty {: RESULT = null; :}
+				| term_list:tl {: RESULT = tl; :}
+				;
+
+term_list	::= term_list:tl term:t {: tl.getChildren().add(t); RESULT = tl; :} 
+				| term:t {: RESULT = new Node(t); :} 
+				;
+
+term 		::= plus word:w 	{: w.setRequired(true); RESULT = w; :}
+				| minus word:w 	{: w.setExcluded(true); RESULT = w; :}
+				| word:w 		{: RESULT = w; :}
+				| phrase:p 		{: p.setPhraseBranch(true); RESULT = p; :}
+				;
+
+phrase		::= DQUOTE word_list:wl DQUOTE {: RESULT = wl; :};
+
+word_list	::= word:w {: RESULT = w; :} 
+				| word_list:wl word:w {: wl.getChildren().add(w); RESULT = wl; :}
+				;
+
+word 		::= WORD:w			{: RESULT = new Node(w, wright); :} 
+				| NUMBER:n		{: RESULT = new Node(n, nright); :}
+				| DECIMAL:d 	{: RESULT = new Node(d, dright); :}
+				| CHARACTER:c 	{: RESULT = new Node(c, cright); :}
+				;
+
+plus 		::= PLUS;
+minus 		::= MINUS;
+
+empty		::=  ;
