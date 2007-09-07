@@ -1,0 +1,9 @@
+#summary Project sub tasks
+#labels Phase-Requirements
+
+= Project sub tasks =
+ * Create a lexer for the XQuery 1.0 FT specification using JFlex
+ * Create a parser for the XQuery 1.0 FT specification using CUP
+ * Build a intermediate representation (IR)
+ * Transform IR into query algebrae
+
