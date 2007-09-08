@@ -1,7 +1,8 @@
 # Makefile for generating lexer and parser (requires gnu binutils and, obviously, make)
 
 lexers:
-	jflex -d src/no/ntnu/xqft/lex etc/xqft.lex
+	java -jar lib\JFlex.jar -d src/no/ntnu/xqft/lex etc/xqft.lex
+	
 
 parsers:
 	java -jar lib/java-cup-11a.jar -parser XQFTParser -symbols XQFTSymbols etc/xqft.cup
