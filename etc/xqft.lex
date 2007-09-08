@@ -2,8 +2,6 @@
  * Copyright (c) 2007 Andreas Ravnestad, Mads Nyborg, 
  *                    Norwegian University of Science and Technology (NTNU),
  *                    Fast Search & Transfer
- *                   
- *                    Abbr. 'copyright holders'.
  *
  * All rights reserved.
  *
