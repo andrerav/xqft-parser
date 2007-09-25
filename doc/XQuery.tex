@@ -14,11 +14,13 @@ This strongly resembles a reference to a file or folder on a standard Unix file 
 
 \subsection{FLWOR}
 FLWOR is an integral part of XQuery, and can be compared to the select-from-where in SQL by a loose analogy. The abbreviation FLWOR means:
-For - imperative for-loop for iterating over tuples
-Let - assignment of tuples to variables
-Where - conditional filtering of tuples
-Order by - ordering of the resulting tuples
-Return - not to be mistaken with return statements from imperative languages. Returning in this context is more similar to yielding known from functional programming. The return statement is executed once for every iteration
+\begin{itemize}
+\item For - imperative for-loop for iterating over tuples
+\item Let - assignment of tuples to variables
+\item Where - conditional filtering of tuples
+\item Order by - ordering of the resulting tuples
+\item Return - not to be mistaken with return statements from imperative languages. Returning in this context is more similar to yielding known from functional programming. The return statement is executed once for every iteration
+\end{itemize}
 This example from [STYL00] illustrates the usage of FLWOR, and compares it to its SQL counterpart:
 /* FLWOR example */
 for \$v in \$doc//video
@@ -27,3 +29,11 @@ return \$v/title
 
 /* Corresponding SQL example */
 SELECT v.title FROM video v WHERE v.year = 1999
+
+\subsection{Full text extensions}
+The Xquery 1.0  and Xpath 2.0 specifications have been extended with full text capabilities (see [W3C02]), which enables the use of stemming, thesaurus, and similar tools for full-text queries. Specifically, the full-text extensions extend Xquery 1.0 and Xpath 2.0 in the following ways:
+\begin{itemize}
+\item A new and essential expression, FTContainsExpr, as well as new operators such as FTOr and FTAnd
+\item The addition of score variables to FLWOR expressions, for keeping track of search result scores, also known as rank, as seen in most modern search engines
+\item Static context declarations for full-text match options to the query prologue
+\end{itemize}
