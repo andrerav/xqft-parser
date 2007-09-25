@@ -3,3 +3,34 @@
 \subsection{General}
 \subsection{Implementations with full-text extensions}
 \subsubsection{Quark / TexQuery}
+\begin{figure}[!h]
+  \centering
+    \includegraphics[width=0.5\textwidth]{img/quark_architecture.png}
+  \caption{Quark architecture}
+\end{figure}
+Quark is an experimental full-text search engine capable of indexing and querying XML documents, and it uses the TexQuery query language (see below). Quark was developed as a research project at Cornell University by Jayavel Shanmugasundaram and his associates.
+\begin{figure}[!h]
+  \centering
+    \includegraphics[width=1\textwidth]{img/texquery_architecture.png}
+  \caption{TexQuery architecture}
+\end{figure}
+TexQuery is a query language extending upon Xquery with added full-text search capabilities. These extensions do not necessarily conform to the W3C recommendation, however TexQuery is an early precursor to the current W3C recommendation (see [TEXQ00]), in whose development Shanmugasundaram actively participates.
+
+\subsubsection{Galatex}
+\begin{figure}[!h]
+  \centering
+    \includegraphics[width=1\textwidth]{img/galatex_architecture.png}
+  \caption{Galatex architecture}
+\end{figure}
+GalaTex is a complete implementation of the Xquery 1.0 and Xpath 2.0 specifications with full-text extensions. GalaTex is an extension of Galax, which is a generic Xquery engine. The XQFT query is parsed and converted to an equivalent Xquery query which is passed to the Galax query engine. The GalaTex source code is not immediately availble, but can be obtained by contacting Emiran Curtmola at the University of California, San Diego, or Sihem Amer-Yahia, AT \& T Research Labs. 
+TODO: wait for email about src
+Implementations sans full-text extensions
+
+\subsubsection{Pathfinder}
+\begin{figure}[!h]
+  \centering
+    \includegraphics[width=0.5\textwidth]{img/pathfinder_architecture.png}
+  \caption{Pathfinder architecture / development stack}
+\end{figure}
+The Pathfinder project is an XQuery parser running on top of relational database systems, namely MonetDB. The goal of the Pathfinder project is to investigate how relational database technology can be utilized to create a scalable and efficient XQuery implementation. However, the Pathfinder project has, at the current time of writing, no support for full text extensions.
+A future version of Pathfinder is planned to be capable of emitting SQL code generated from the XQuery parse tree. This illustrates the Pathfinder systems capabilities of interoperating with relational database systems.
