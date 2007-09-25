@@ -1,0 +1,2 @@
+report:
+	pdflatex Hoved.tex
