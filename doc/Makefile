@@ -1,2 +1,5 @@
 report:
-	pdflatex Hoved.tex
+	pdflatex Hoved
+	bibtex Hoved
+	pdflatex Hoved
+	pdflatex Hoved
