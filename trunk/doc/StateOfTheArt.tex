@@ -14,7 +14,7 @@ Quark is an experimental full-text search engine capable of indexing and queryin
     \includegraphics[width=1\textwidth]{img/texquery_architecture.png}
   \caption{TexQuery architecture}
 \end{figure}
-TexQuery is a query language extending upon Xquery with added full-text search capabilities. These extensions do not necessarily conform to the W3C recommendation, however TexQuery is an early precursor to the current W3C recommendation (see [TEXQ00]), in whose development Shanmugasundaram actively participates.
+TexQuery is a query language extending upon Xquery with added full-text search capabilities. These extensions do not necessarily conform to the W3C recommendation, however TexQuery is an early precursor to the current W3C recommendation \cite{TEXQ00}, in whose development Shanmugasundaram actively participates.
 
 \subsubsection{Galatex}
 \begin{figure}[!h]
@@ -32,5 +32,9 @@ Implementations sans full-text extensions
     \includegraphics[width=0.5\textwidth]{img/pathfinder_architecture.png}
   \caption{Pathfinder architecture / development stack}
 \end{figure}
-The Pathfinder project is an XQuery parser running on top of relational database systems, namely MonetDB. The goal of the Pathfinder project is to investigate how relational database technology can be utilized to create a scalable and efficient XQuery implementation. However, the Pathfinder project has, at the current time of writing, no support for full text extensions.
-A future version of Pathfinder is planned to be capable of emitting SQL code generated from the XQuery parse tree. This illustrates the Pathfinder systems capabilities of interoperating with relational database systems.
+The Pathfinder project is an XQuery parser running on top of relational database systems, namely MonetDB. The goal of the Pathfinder project is to investigate how relational database technology can be utilized to create a scalable and efficient XQuery implementation. However, the Pathfinder project has, at the current time of writing, no support for full text extensions. A future version of Pathfinder is planned to be capable of emitting SQL code generated from the XQuery parse tree. This illustrates the Pathfinder systems capabilities of interoperating with relational database systems.
+
+Pathfinder is written in C, and the XQuery parser is a generated using standard Flex and Bison compiler generator tools.
+
+\subsubsection{SaXon}
+SaXon is an open source XSLT and XQuery processor. It is being actively developed by Michael Kay, and is licensed under the Mozilla Public License (MPL). SaXon conforms to the XSLT 2.0, XQuery 1.0 and XPath 2.0 recommendations by the W3C as of 23rd of january, 2007.
