@@ -42,14 +42,257 @@ terminal String PLUS, MINUS, DQUOTE, CHARACTER;
 terminal String WORD, NUMBER, DECIMAL;
 
 /* Non-terminals */
-non terminal empty, plus, minus;
-non terminal Node query;
-non terminal Node word;
-non terminal Node word_list;
-non terminal Node term, phrase;
-non terminal Node term_list;
+non terminal empty, plus, minus, UNION_EXPRESSION;
+
+
+[1]   	Module	   ::=   	VersionDecl? (LibraryModule | MainModule)
+[2]   	VersionDecl	   ::=   	"xquery" "version" StringLiteral ("encoding" StringLiteral)? Separator
+[3]   	MainModule	   ::=   	Prolog QueryBody
+[4]   	LibraryModule	   ::=   	ModuleDecl Prolog
+[5]   	ModuleDecl	   ::=   	"module" "namespace" NCName "=" URILiteral Separator
+[6]   	Prolog	   ::=   	((DefaultNamespaceDecl | Setter | NamespaceDecl | Import) Separator)* ((VarDecl | FunctionDecl | OptionDecl | FTOptionDecl) Separator)*
+[7]   	Setter	   ::=   	BoundarySpaceDecl | DefaultCollationDecl | BaseURIDecl | ConstructionDecl | OrderingModeDecl | EmptyOrderDecl | CopyNamespacesDecl
+[8]   	Import	   ::=   	SchemaImport | ModuleImport
+[9]   	Separator	   ::=   	";"
+[10]   	NamespaceDecl	   ::=   	"declare" "namespace" NCName "=" URILiteral
+[11]   	BoundarySpaceDecl	   ::=   	"declare" "boundary-space" ("preserve" | "strip")
+[12]   	DefaultNamespaceDecl	   ::=   	"declare" "default" ("element" | "function") "namespace" URILiteral
+[13]   	OptionDecl	   ::=   	"declare" "option" QName StringLiteral
+[14]   	FTOptionDecl	   ::=   	"declare" "ft-option" FTMatchOptions
+[15]   	OrderingModeDecl	   ::=   	"declare" "ordering" ("ordered" | "unordered")
+[16]   	EmptyOrderDecl	   ::=   	"declare" "default" "order" "empty" ("greatest" | "least")
+[17]   	CopyNamespacesDecl	   ::=   	"declare" "copy-namespaces" PreserveMode "," InheritMode
+[18]   	PreserveMode	   ::=   	"preserve" | "no-preserve"
+[19]   	InheritMode	   ::=   	"inherit" | "no-inherit"
+[20]   	DefaultCollationDecl	   ::=   	"declare" "default" "collation" URILiteral
+[21]   	BaseURIDecl	   ::=   	"declare" "base-uri" URILiteral
+[22]   	SchemaImport	   ::=   	"import" "schema" SchemaPrefix? URILiteral ("at" URILiteral ("," URILiteral)*)?
+[23]   	SchemaPrefix	   ::=   	("namespace" NCName "=") | ("default" "element" "namespace")
+[24]   	ModuleImport	   ::=   	"import" "module" ("namespace" NCName "=")? URILiteral ("at" URILiteral ("," URILiteral)*)?
+[25]   	VarDecl	   ::=   	"declare" "variable" "$" QName TypeDeclaration? ((":=" ExprSingle) | "external")
+[26]   	ConstructionDecl	   ::=   	"declare" "construction" ("strip" | "preserve")
+[27]   	FunctionDecl	   ::=   	"declare" "function" QName "(" ParamList? ")" ("as" SequenceType)? (EnclosedExpr | "external")
+[28]   	ParamList	   ::=   	Param ("," Param)*
+[29]   	Param	   ::=   	"$" QName TypeDeclaration?
+[30]   	EnclosedExpr	   ::=   	"{" Expr "}"
+[31]   	QueryBody	   ::=   	Expr
+[32]   	Expr	   ::=   	ExprSingle ("," ExprSingle)*
+[33]   	ExprSingle	   ::=   	FLWORExpr
+| QuantifiedExpr
+| TypeswitchExpr
+| IfExpr
+| OrExpr
+[34]   	FLWORExpr	   ::=   	(ForClause | LetClause)+ WhereClause? OrderByClause? "return" ExprSingle
+[35]   	ForClause	   ::=   	"for" "$" VarName TypeDeclaration? PositionalVar? FTScoreVar? "in" ExprSingle ("," "$" VarName TypeDeclaration? PositionalVar? FTScoreVar? "in" ExprSingle)*
+[36]   	PositionalVar	   ::=   	"at" "$" VarName
+[37]   	FTScoreVar	   ::=   	"score" "$" VarName
+[38]   	LetClause	   ::=   	(("let" "$" VarName TypeDeclaration?) | ("let" "score" "$" VarName)) ":=" ExprSingle ("," (("$" VarName TypeDeclaration?) | FTScoreVar) ":=" ExprSingle)*
+[39]   	WhereClause	   ::=   	"where" ExprSingle
+[40]   	OrderByClause	   ::=   	(("order" "by") | ("stable" "order" "by")) OrderSpecList
+[41]   	OrderSpecList	   ::=   	OrderSpec ("," OrderSpec)*
+[42]   	OrderSpec	   ::=   	ExprSingle OrderModifier
+[43]   	OrderModifier	   ::=   	("ascending" | "descending")? ("empty" ("greatest" | "least"))? ("collation" URILiteral)?
+[44]   	QuantifiedExpr	   ::=   	("some" | "every") "$" VarName TypeDeclaration? "in" ExprSingle ("," "$" VarName TypeDeclaration? "in" ExprSingle)* "satisfies" ExprSingle
+[45]   	TypeswitchExpr	   ::=   	"typeswitch" "(" Expr ")" CaseClause+ "default" ("$" VarName)? "return" ExprSingle
+[46]   	CaseClause	   ::=   	"case" ("$" VarName "as")? SequenceType "return" ExprSingle
+[47]   	IfExpr	   ::=   	"if" "(" Expr ")" "then" ExprSingle "else" ExprSingle
+[48]   	OrExpr	   ::=   	AndExpr ( "or" AndExpr )*
+[49]   	AndExpr	   ::=   	ComparisonExpr ( "and" ComparisonExpr )*
+[50]   	ComparisonExpr	   ::=   	FTContainsExpr ( (ValueComp
+| GeneralComp
+| NodeComp) FTContainsExpr )?
+[51]   	FTContainsExpr	   ::=   	RangeExpr ( "ftcontains" FTSelection FTIgnoreOption? )?
+[52]   	RangeExpr	   ::=   	AdditiveExpr ( "to" AdditiveExpr )?
+[53]   	AdditiveExpr	   ::=   	MultiplicativeExpr ( ("+" | "-") MultiplicativeExpr )*
+[54]   	MultiplicativeExpr	   ::=   	UnionExpr ( ("*" | "div" | "idiv" | "mod") UnionExpr )*
+[55]   	UnionExpr	   ::=   	IntersectExceptExpr ( ("union" | "|") IntersectExceptExpr )*
+[56]   	IntersectExceptExpr	   ::=   	InstanceofExpr ( ("intersect" | "except") InstanceofExpr )*
+[57]   	InstanceofExpr	   ::=   	TreatExpr ( "instance" "of" SequenceType )?
+[58]   	TreatExpr	   ::=   	CastableExpr ( "treat" "as" SequenceType )?
+[59]   	CastableExpr	   ::=   	CastExpr ( "castable" "as" SingleType )?
+[60]   	CastExpr	   ::=   	UnaryExpr ( "cast" "as" SingleType )?
+[61]   	UnaryExpr	   ::=   	("-" | "+")* ValueExpr
+[62]   	ValueExpr	   ::=   	ValidateExpr | PathExpr | ExtensionExpr
+[63]   	GeneralComp	   ::=   	"=" | "!=" | "<" | "<=" | ">" | ">="
+[64]   	ValueComp	   ::=   	"eq" | "ne" | "lt" | "le" | "gt" | "ge"
+[65]   	NodeComp	   ::=   	"is" | "<<" | ">>"
+[66]   	ValidateExpr	   ::=   	"validate" ValidationMode? "{" Expr "}"
+[67]   	ValidationMode	   ::=   	"lax" | "strict"
+[68]   	ExtensionExpr	   ::=   	Pragma+ "{" Expr? "}"
+[69]   	Pragma	   ::=   	"(#" S? QName (S PragmaContents)? "#)"	/* ws: explicit */
+[70]   	PragmaContents	   ::=   	(Char* - (Char* '#)' Char*))
+[71]   	PathExpr	   ::=   	("/" RelativePathExpr?)
+| ("//" RelativePathExpr)
+| RelativePathExpr	/* xgc: leading-lone-slashXQ */
+[72]   	RelativePathExpr	   ::=   	StepExpr (("/" | "//") StepExpr)*
+[73]   	StepExpr	   ::=   	FilterExpr | AxisStep
+[74]   	AxisStep	   ::=   	(ReverseStep | ForwardStep) PredicateList
+[75]   	ForwardStep	   ::=   	(ForwardAxis NodeTest) | AbbrevForwardStep
+[76]   	ForwardAxis	   ::=   	("child" "::")
+| ("descendant" "::")
+| ("attribute" "::")
+| ("self" "::")
+| ("descendant-or-self" "::")
+| ("following-sibling" "::")
+| ("following" "::")
+[77]   	AbbrevForwardStep	   ::=   	"@"? NodeTest
+[78]   	ReverseStep	   ::=   	(ReverseAxis NodeTest) | AbbrevReverseStep
+[79]   	ReverseAxis	   ::=   	("parent" "::")
+| ("ancestor" "::")
+| ("preceding-sibling" "::")
+| ("preceding" "::")
+| ("ancestor-or-self" "::")
+[80]   	AbbrevReverseStep	   ::=   	".."
+[81]   	NodeTest	   ::=   	KindTest | NameTest
+[82]   	NameTest	   ::=   	QName | Wildcard
+[83]   	Wildcard	   ::=   	"*"
+| (NCName ":" "*")
+| ("*" ":" NCName)	/* ws: explicitXQ */
+[84]   	FilterExpr	   ::=   	PrimaryExpr PredicateList
+[85]   	PredicateList	   ::=   	Predicate*
+[86]   	Predicate	   ::=   	"[" Expr "]"
+[87]   	PrimaryExpr	   ::=   	Literal | VarRef | ParenthesizedExpr | ContextItemExpr | FunctionCall | OrderedExpr | UnorderedExpr | Constructor
+[88]   	Literal	   ::=   	NumericLiteral | StringLiteral
+[89]   	NumericLiteral	   ::=   	IntegerLiteral | DecimalLiteral | DoubleLiteral
+[90]   	VarRef	   ::=   	"$" VarName
+[91]   	VarName	   ::=   	QName
+[92]   	ParenthesizedExpr	   ::=   	"(" Expr? ")"
+[93]   	ContextItemExpr	   ::=   	"."
+[94]   	OrderedExpr	   ::=   	"ordered" "{" Expr "}"
+[95]   	UnorderedExpr	   ::=   	"unordered" "{" Expr "}"
+[96]   	FunctionCall	   ::=   	QName "(" (ExprSingle ("," ExprSingle)*)? ")"	/* xgc: reserved-function-namesXQ */
+				/* gn: parensXQ */
+[97]   	Constructor	   ::=   	DirectConstructor
+| ComputedConstructor
+[98]   	DirectConstructor	   ::=   	DirElemConstructor
+| DirCommentConstructor
+| DirPIConstructor
+[99]   	DirElemConstructor	   ::=   	"<" QName DirAttributeList ("/>" | (">" DirElemContent* "</" QName S? ">"))	/* ws: explicitXQ */
+[100]   	DirAttributeList	   ::=   	(S (QName S? "=" S? DirAttributeValue)?)*	/* ws: explicitXQ */
+[101]   	DirAttributeValue	   ::=   	('"' (EscapeQuot | QuotAttrValueContent)* '"')
+| ("'" (EscapeApos | AposAttrValueContent)* "'")	/* ws: explicitXQ */
+[102]   	QuotAttrValueContent	   ::=   	QuotAttrContentChar
+| CommonContent
+[103]   	AposAttrValueContent	   ::=   	AposAttrContentChar
+| CommonContent
+[104]   	DirElemContent	   ::=   	DirectConstructor
+| CDataSection
+| CommonContent
+| ElementContentChar
+[105]   	CommonContent	   ::=   	PredefinedEntityRef | CharRef | "{{" | "}}" | EnclosedExpr
+[106]   	DirCommentConstructor	   ::=   	"<!--" DirCommentContents "-->"	/* ws: explicitXQ */
+[107]   	DirCommentContents	   ::=   	((Char - '-') | ('-' (Char - '-')))*	/* ws: explicitXQ */
+[108]   	DirPIConstructor	   ::=   	"<?" PITarget (S DirPIContents)? "?>"	/* ws: explicitXQ */
+[109]   	DirPIContents	   ::=   	(Char* - (Char* '?>' Char*))	/* ws: explicitXQ */
+[110]   	CDataSection	   ::=   	"<![CDATA[" CDataSectionContents "]]>"	/* ws: explicitXQ */
+[111]   	CDataSectionContents	   ::=   	(Char* - (Char* ']]>' Char*))	/* ws: explicitXQ */
+[112]   	ComputedConstructor	   ::=   	CompDocConstructor
+| CompElemConstructor
+| CompAttrConstructor
+| CompTextConstructor
+| CompCommentConstructor
+| CompPIConstructor
+[113]   	CompDocConstructor	   ::=   	"document" "{" Expr "}"
+[114]   	CompElemConstructor	   ::=   	"element" (QName | ("{" Expr "}")) "{" ContentExpr? "}"
+[115]   	ContentExpr	   ::=   	Expr
+[116]   	CompAttrConstructor	   ::=   	"attribute" (QName | ("{" Expr "}")) "{" Expr? "}"
+[117]   	CompTextConstructor	   ::=   	"text" "{" Expr "}"
+[118]   	CompCommentConstructor	   ::=   	"comment" "{" Expr "}"
+[119]   	CompPIConstructor	   ::=   	"processing-instruction" (NCName | ("{" Expr "}")) "{" Expr? "}"
+[120]   	SingleType	   ::=   	AtomicType "?"?
+[121]   	TypeDeclaration	   ::=   	"as" SequenceType
+[122]   	SequenceType	   ::=   	("empty-sequence" "(" ")")
+| (ItemType OccurrenceIndicator?)
+[123]   	OccurrenceIndicator	   ::=   	"?" | "*" | "+"	/* xgc: occurrence-indicatorsXQ */
+[124]   	ItemType	   ::=   	KindTest | ("item" "(" ")") | AtomicType
+[125]   	AtomicType	   ::=   	QName
+[126]   	KindTest	   ::=   	DocumentTest
+| ElementTest
+| AttributeTest
+| SchemaElementTest
+| SchemaAttributeTest
+| PITest
+| CommentTest
+| TextTest
+| AnyKindTest
+[127]   	AnyKindTest	   ::=   	"node" "(" ")"
+[128]   	DocumentTest	   ::=   	"document-node" "(" (ElementTest | SchemaElementTest)? ")"
+[129]   	TextTest	   ::=   	"text" "(" ")"
+[130]   	CommentTest	   ::=   	"comment" "(" ")"
+[131]   	PITest	   ::=   	"processing-instruction" "(" (NCName | StringLiteral)? ")"
+[132]   	AttributeTest	   ::=   	"attribute" "(" (AttribNameOrWildcard ("," TypeName)?)? ")"
+[133]   	AttribNameOrWildcard	   ::=   	AttributeName | "*"
+[134]   	SchemaAttributeTest	   ::=   	"schema-attribute" "(" AttributeDeclaration ")"
+[135]   	AttributeDeclaration	   ::=   	AttributeName
+[136]   	ElementTest	   ::=   	"element" "(" (ElementNameOrWildcard ("," TypeName "?"?)?)? ")"
+ElementNameOrWildcard	   ::=   	ElementName | "*"
+SchemaElementTest	   ::=   	"schema-element" "(" ElementDeclaration ")"
+ElementDeclaration	   ::=   	ElementName
+AttributeName	   ::=   	QName
+ElementName	   ::=   	QName
+TypeName	   ::=   	QName
+URILiteral	   ::=   	StringLiteral
+FTSelection	   ::=   	FTOr FTPosFilter* ("weight" RangeExpr)?
+FTOr	   ::=   	FTAnd ( "ftor" FTAnd )*
+FTAnd	   ::=   	FTMildNot ( "ftand" FTMildNot )*
+FTMildNot	   ::=   	FTUnaryNot ( "not" "in" FTUnaryNot )*
+FTUnaryNot	   ::=   	("ftnot")? FTPrimaryWithOptions
+FTPrimaryWithOptions	   ::=   	FTPrimary FTMatchOptions?
+FTPrimary	   ::=   	(FTWords FTTimes?) | ("(" FTSelection ")") | FTExtensionSelection
+FTWords	   ::=   	FTWordsValue FTAnyallOption?
+FTWordsValue	   ::=   	Literal | ("{" Expr "}")
+FTExtensionSelection	   ::=   	Pragma+ "{" FTSelection? "}"
+FTAnyallOption	   ::=   	("any" "word"?) | ("all" "words"?) | "phrase"
+FTTimes	   ::=   	"occurs" FTRange "times"
+FTRange	   ::=   	("exactly" AdditiveExpr)
+| ("at" "least" AdditiveExpr)
+| ("at" "most" AdditiveExpr)
+| ("from" AdditiveExpr "to" AdditiveExpr)
+FTPosFilter	   ::=   	FTOrder | FTWindow | FTDistance | FTScope | FTContent
+FTOrder	   ::=   	"ordered"
+FTWindow	   ::=   	"window" AdditiveExpr FTUnit
+FTDistance	   ::=   	"distance" FTRange FTUnit
+FTUnit	   ::=   	"words" | "sentences" | "paragraphs"
+FTScope	   ::=   	("same" | "different") FTBigUnit
+FTBigUnit	   ::=   	"sentence" | "paragraph"
+FTContent	   ::=   	("at" "start") | ("at" "end") | ("entire" "content")
+FTMatchOptions	   ::=   	FTMatchOption+	/* xgc: multiple-match-options */
+FTMatchOption	   ::=   	FTLanguageOption
+| FTWildCardOption
+| FTThesaurusOption
+| FTStemOption
+| FTCaseOption
+| FTDiacriticsOption
+| FTStopwordOption
+| FTExtensionOption
+FTCaseOption	   ::=   	("case" "insensitive")
+| ("case" "sensitive")
+| "lowercase"
+| "uppercase"
+FTDiacriticsOption	   ::=   	("diacritics" "insensitive")
+| ("diacritics" "sensitive")
+FTStemOption	   ::=   	("with" "stemming") | ("without" "stemming")
+FTThesaurusOption	   ::=   	("with" "thesaurus" (FTThesaurusID | "default"))
+| ("with" "thesaurus" "(" (FTThesaurusID | "default") ("," FTThesaurusID)* ")")
+| ("without" "thesaurus")
+FTThesaurusID	   ::=   	"at" URILiteral ("relationship" StringLiteral)? (FTRange "levels")?
+FTStopwordOption	   ::=   	("with" "stop" "words" FTRefOrList FTInclExclStringLiteral*)
+| ("without" "stop" "words")
+| ("with" "default" "stop" "words" FTInclExclStringLiteral*)
+FTRefOrList	   ::=   	("at" URILiteral)
+| ("(" StringLiteral ("," StringLiteral)* ")")
+FTInclExclStringLiteral	   ::=   	("union" | "except") FTRefOrList
+FTLanguageOption	   ::=   	"language" StringLiteral
+FTWildCardOption	   ::=   	("with" "wildcards") | ("without" "wildcards")
+FTExtensionOption	   ::=   	"option" QName StringLiteral
+FTIgnoreOption	   ::=   	"without" "content" UnionExpr:ue {: 
+									Node tmp = new Node(); tmp.getChildren().add(ue); 
+									tmp.setType(UNION_EXPRESSION); RESULT = tmp; 
+								:}
+
 
 /* Grammar (standard BNF) */
+/*
 query 		::= empty {: RESULT = null; :}
 				| term_list:tl {: RESULT = tl; :}
 				;
@@ -80,3 +323,4 @@ plus 		::= PLUS;
 minus 		::= MINUS;
 
 empty		::=  ;
+*/
