@@ -1,3 +1,177 @@
 %Relasjonsalgebra
 \section{Relational Algebra}
-texkt... sjekk a babhabha ~\cite{gordonRussel} and the willyman for he is made of ~\cite{newYorkDB} and a lot of ~\cite{TDT4225} will you be ~\cite{sudarshan} or maybe ~\cite{makeDiv}
+The relational model for database management was introduced for the first time by Edgar Frank Coddin 1974 (\cite{TDT4225}). It was based on relational algebra which is an offshoot of first-order logic. Several terms are used when talking about relational algebra (\cite{gordonRussel, newYorkDB, sudarshan}):
+\begin{itemize}
+\item Set: A mathematical definition for a collection of objects which contains no duplicates
+\item Domain: A \textit{set} of atomic values
+\item Attribute: A real world role played by a named \textit{domain}
+\item Tuple: A collection of \textit{attributes} which describe some real world entity
+\item Relation: A \textit{set} of \textit{tuples}
+\item Degree: The number of \textit{attributes} a \textit{relation} contains. Sometimes called arity.
+\item Cardinality: The number of \textit{tuples} in a \textit{relation}
+\item Union compatible: Two relations R and S are union compatible if and only if they have the same \textit{degree} and the \textit{domains} of the corresponding \textit{attributes} are the same.
+\end{itemize}
+\subsection{Primary Operators}
+The primary operators is a set of operators which constitutes the base of an algebra. Other operators can be defined in terms of the primary ones. If one of the primary operators is excluded, the algebra will loose some of it's expressiveness. The primitive operators of Codd's algebra are: selection, projection, union, difference, cross product and rename (later added for the sake of the named relational algebra).
+\subsubsection{Selection}
+Selection is a unary operator, and is used to obtain a subset of the tuples of a relation that satisfy a select condition. The resulting relation may have fewer tuples but it will have the same degree as the original relation. It is sometimes called restriction to avoid confusion with SELECT in SQL. The operator is often symbolized by \emph{s}igma: 
+\begin{equation*}
+\sigma_{C}(R)
+\end{equation*}
+Where $R$ is a relation and $C$ is the select condition: a truth value or an expression yielding a truth value. The expression can be made up of any combination of the logical operators \begin{math}\{ \wedge, \vee, \neg\}\end{math}. Figure \ref{fig:select} shows an example of a select operation.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{lcr}
+		\begin{tabular}{|c|c|} \hline
+			\multicolumn{2}{|c|}{\textbf{R}} \\ \hline
+			\textbf{Letter} & \textbf{Number} \\ \hline
+			A & 1 \\ \hline
+			A & 3 \\ \hline
+			A & 6 \\ \hline
+			B & 7 \\ \hline
+		\end{tabular}  &
+		\begin{math} \sigma _{Letter='A' \wedge Number > 2}(R) = \end{math}
+		\begin{tabular}{|c|c|} \hline
+			\multicolumn{2}{|c|}{} \\ \hline
+			\textbf{Letter} & \textbf{Number} \\ \hline
+			A & 3 \\ \hline
+			A & 6 \\ \hline
+		\end{tabular} 
+
+\end{tabular}
+\caption{Example showing the selection operator}
+\label{fig:select}
+\end{figure}
+
+\subsubsection{Projection}
+Projection is also a unary operator, and is used to obtain a subset of the attributes of a relation. The resulting relation will have an equal or lower degree than the original relation. In the case of duplicates being produced as a result of omitting some attributes, the resulting relation will have fewer tuples than the original. \emph{P}i is often used to symbolize the operation:
+\begin{equation*}
+\pi _{attr}(R)
+\end{equation*}
+Where $R$ is a relation and $attr$ is the set of attributes to be returned from $R$. Figure \ref{fig:project} shows an example of a projection.
+\begin{figure}[h]
+\centering
+\begin{tabular}{lcr}
+	\begin{tabular}{|c|c|c|} \hline
+	\multicolumn{3}{|c|}{\textbf{R}} \\ \hline
+	\textbf{Let} & \textbf{Num} & \textbf{Sym} \\ \hline
+	A & 1 & \% \\ \hline
+	B & 1 & \% \\ \hline
+	C & 3 & \# \\ \hline
+	\end{tabular} &
+	\begin{math} \pi _{Num, Sym} (R) = \end{math}
+	\begin{tabular}{|c|c|} \hline
+	\multicolumn{2}{|c|}{} \\ \hline
+	\textbf{Num} & \textbf{Sym} \\ \hline
+	1 & \% \\ \hline
+	3 & \# \\ \hline
+	\end{tabular}
+\end{tabular}	
+\caption{Exaple showing the projection operator}
+\label{fig:project}
+\end{figure}
+
+\subsubsection{Union and Difference}
+Union and difference are two binary operators analogous with union and difference operators in set theory. The relational algebra version of the operators requires that the relations involved are union compatible. 
+
+The union of two relations returns a relation which includes all the tuples that are in either or both of the original relations. As the result is also a relation, any potential duplicates will be removed. The operation is commutative, and the returned relation will have the same degree as the two relations involved. A union between two relations are often symbolized thus:
+\begin{equation*}
+R \cup S
+\end{equation*}
+Where $R$ and $S$ are relations.
+
+The difference of two relations R and S is a relation that contains all the tuples that are in R but not in S. The returned relation will, as was the case with union, have the same degree as the two relations involved. A difference between relations $R$ and $S$ is written like this:
+\begin{equation*}
+R - S 
+\end{equation*}
+
+\subsubsection{Cross Product}
+The cross product operator is sometimes referred to as the cartesian product operator. As with union and difference, it also stems from set theory. The operator is used to combine all tuples in one relation with all the tuples from another. The returned relation will have a degree equal the sum of the degrees of each of the original relations, and a cardinality equal the product of the cardinalities. The operator is commutative and written as a cross:
+\begin{equation*}
+R \times S = S \times R
+\end{equation*}
+Where $R$ and $S$ are relations. Figure \ref{fig:crossproduct} shows an example of a cross product.
+\begin{figure}[h]
+\begin{tabular}{ccccc}
+	\begin{tabular}{|c|} \hline
+	\textbf{R} \\ \hline
+	\textbf{Let} \\ \hline
+	A \\ \hline
+	B \\ \hline
+	\end{tabular}
+	&
+	\begin{math} \times \end{math}
+	&
+	\begin{tabular}{|c|c|} \hline
+	\multicolumn{2}{|c|}{\textbf{S}} \\ \hline
+	\textbf{Num} & \textbf{Let} \\ \hline
+	1 & C \\ \hline
+	2 & A \\ \hline
+	\end{tabular}
+	&
+	\begin{math} = \end{math}
+	&
+	\begin{tabular}{|c|c|c|} \hline
+	\multicolumn{3}{|c|}{} \\ \hline
+	\textbf{R.Let} & \textbf{S.Num} & \textbf{S.Let} \\ \hline
+	A & 1 & C \\ \hline
+	A & 2 & C \\ \hline
+	B & 1 & C \\ \hline
+	B & 2 & A \\ \hline
+	\end{tabular}
+\end{tabular}
+\centering
+\caption{An example of cross product.}
+\label{fig:crossproduct}
+\end{figure}
+\subsubsection{Rename}
+Rename is a unary operator used to rename a relation and/or a subset of its attributes. The resulting relation will be equal to the original one in all aspects except maybe some of its name properties. The Greek letter \emph{r}ho is often used to mark the presence of the rename operator:
+\begin{equation*}
+\rho _{S}(R)
+\end{equation*}
+Where $R$ is the relation being renamed, and $S$ is a relational scheme. $S$ is on the form $T _{(a _{1},...a _{n})}$ for a n-degree relation, where $T$ is the new relation name and $a _{1},...a _{n}$ is the new names for relation $R$'s attributes from $1$ to $n$. The degree of the scheme must be the same as the degree of the relation being operated on.
+\subsection{Derived Operators}
+None of the six primary operators can be expressed as a combination of any of the others. In contrast, some useful operators can be derived using one or more of the primary ones. Most notably among these are intersection and join.
+\subsubsection{Intersection}
+Intersection is the fourth mentioned operator that stems from set theory. It is a binary operator, and the resulting relation will contain the set of tuples that are in both of the relations operated on. It can be expressed with the help of the difference operator, and hence require that the input relations are union compatible:
+\begin{equation*}
+R \cup S = R-(R-S)
+\end{equation*}
+\subsubsection{Joins}
+Joins are a group of operators that all are derived from the primary operators with the cross product as a base. Among the operators in this group is natural join, theta-join, equi-join, anti-join, semi-join, outer joins and division. Some of these will be presented in this section.
+\paragraph{Natural Join.}
+Natural join is a binary operator that returns a relation consisting of all combinations of tuples in input relations that are equal on their common attribute names. The result relation will have a degree equal to the sum of the degrees of the two original relations subtracted the number of common attributes. It is possible to express natural join as a combination of cross product, projection and selection:
+\begin{equation*}
+R \bowtie S = \pi_{a_{1},..., a_{n},R.b_{1},...,R.b_{n},c_{1},...,c_{n}}( \sigma _{R.b_{1}=S.b_{1} \wedge ... \wedge R.b_{n}=S.b_{n}}(R \times S))
+\end{equation*}
+Where $R$ and $S$ are relations, $b_{1},..,b_{n}$ are the common attributes, $a_{1},..,a_{m}$ are the attributes unique to $R$ and $c_{1},...,c_{k}$ are the attributes unique to $S$. A rename operator can lastly be used to remove the prefix of the common attributes.
+\paragraph{Equi-join and Theta-join.}
+Theta-join returns a relation which is a combination of all the tuples in the two input relations that satisfy a condition $C$. $C$ is in the form $a \theta b$, where $a$ is a attribute name from one relation, $b$ is an attribute from the other and $ \theta $ is a binary operator in the set $ \{ <, \leq , =, \geq , >  \} $. An equi-join is a theta-join where the binary operator in the condition is the equality operator. Theta-join can be expressed as a combination of select and cross product:
+\begin{equation*}
+R \bowtie _{a \theta b}S = \sigma _{a \theta b}(R \times S)
+\end{equation*}
+\paragraph{Division.}
+Division in relational algebra can be described as the inverse operator of cross product, in the same way division and multiplication are inverse in natural numbers calculus -- i.e. they are not inverse if the division gives a residue:
+\begin{equation*}
+(R \times S) \div R = S ~~and~~ (R \times S) \div S = R
+\end{equation*}
+The resulting relation after a division contains the attribute values of the divisor relation that are associated with every member of the dividend relation (\cite{makeDiv}). The operation may be better explained as a combination of cross product, projection and difference:
+\begin{equation*}
+R \div S = \pi _{a_{1},...,a_{n}}(R) - \pi _{a_{1},...,a_{n}}((\pi _{a_{1},...,a_{n}}(R) \times S) - R)
+\end{equation*}
+Where $R$ and $S$ are relations and $a_{1},...,a_{n}$ are the attributes unique to $R$.
+\paragraph{Semi-join.}
+Semi-join is a binary operation which returns a relation with the attributes of the first relation, and all the tuples in this same relation for which there is a tuple in the second relation that is equal on their common attributes. Semi-join can be described with the projection and natural-join operators:
+\begin{equation*}
+R \ltimes S = \pi _{a_{1},...,a_{n}}(R \bowtie S)
+\end{equation*}
+Where $R$ and $S$ are relations, and $a_{1},...,a_{n}$ are the attributes unique to $R$.
+\paragraph{Anti-join.}
+The anti-join operator is very similar to the semi-join operator (and is also sometimes referred to as the anti-semi-join), except that it returns all the tuples in the first relation for which there is not a tuple in the other relation on their common attributes. It can be described with help of semi-join and difference:
+\begin{equation*}
+R \rhd S = R - R \ltimes S
+\end{equation*}
+Where $R$ and $S$ are relations.
+\paragraph{Outer Joins.}
+The outer joins works in many ways as the natural join, except the resulting relation will include some extra tuples based on one or both of the input relations. The right outer join $( \times =)$ will return a relation with all the tuples from a natural join between the first (left) and the second (right) relation, but also the tuples from the right relation that did not match any tuples from the left one on their common attributes. These extra tuples will have the value NULL in the result relation for all attributes that were unique to the left one. The left outer join $(= \times)$ is analogous with the right version, the only difference is that the extra tuples will be based on the left input relation. The result relation of a full outer join $(= \times =)$ will have extra tuples based the ones that did not find a match in both input relatio
