@@ -5,7 +5,7 @@ lexers:
 	
 
 parsers:
-	java -jar lib/java-cup-11a.jar -parser XQFTParser -symbols XQFTSymbols etc/xqft.cup
+	java -jar lib/java-cup-11a.jar -parser XQFTParser -symbols XQFTSymbols etc/xqft.y
 	mv XQFTParser.java src/no/ntnu/xqft/parse
 	mv XQFTSymbols.java src/no/ntnu/xqft/parse
 
