@@ -1,13 +1,70 @@
-grammar xqft;
+lexer grammar xqft;
 
-@header {
-	package no.ntnu.xqft.parse;
+@parser::header {
+	//package no.ntnu.xqft.parse;
+	//import no.ntnu.xqft.lex.*;
+}
+@lexer::header {
+	//package no.ntnu.xqft.lex;
+	//import no.ntnu.xqft.parse.*;
 }
 
 @members {
 	
 }
+/* Lexer */
+/* See http://www.w3.org/TR/xquery-full-text/#grammar-terminals */
+IntegerLiteral      : Digits;
+DecimalLiteral      : ('.' Digits) | (Digits '.' ('0'..'9')*);
+DoubleLiteral       : (('.' Digits) | (Digits ('.' ('0'..'9')*)?)) ('e'|'E') ('+'|'-')? Digits;
+StringLiteral	    : ('"' (PredefinedEntityRef | CharRef | EscapeQuot | ~('"'|'&'))* '"') | ('\'' (PredefinedEntityRef | CharRef | EscapeApos | ~('\''|'&'))* '\'');
+PredefinedEntityRef : '&' ('lt' | 'gt' | 'amp' | 'quot' | 'apos') ';';
+EscapeQuot          : '""';
+EscapeApos          : '\'''\'';
+ElementContentChar	: Char ~ ('{'|'}'|'<'|'&');
+QuotAttrContentChar	: Char ~ ('"'|'{'|'}'|'<'|'&');
+AposAttrContentChar	: Char ~ ('\''|'{'|'}'|'<'|'&');
+Comment             :'(:' (CommentContents | Comment)* ':)';
 
+NameChar            : Letter | Digit | '.' | '-' | '_' | ':' | CombiningChar | Extender;
+Name                : (Letter | '_' | ':') (NameChar)*;
+Names               : Name ('\u0020' Name)*;
+Nmtoken             : (NameChar)+;
+Nmtokens            : Nmtoken (#x20 Nmtoken)*;
+
+/* See: http://www.w3.org/TR/REC-xml/#NT-PITarget */
+PI                  : '<?' PITarget (S (Char* ~ (Char* '?>' Char*)))? '?>';
+PITarget            : Name ~ (('X' | 'x') ('M' | 'm') ('L' | 'l'));
+
+/* See: http://www.w3.org/TR/REC-xml/#NT-CharRef */
+CharRef             : '&#' ('0'..'9')+ ';' | '&#x' ('0'..'9'|'a'..'f'|'A'..'F')+ ';';
+			
+/* See: http://www.w3.org/TR/REC-xml-names/#NT-QName */
+QName               : PrefixedName | UnprefixedName;
+PrefixedName        : Prefix ':' LocalPart ;
+UnprefixedName      : LocalPart ;
+Prefix              : NCName;
+LocalPart           : NCName;
+
+/* See: http://www.w3.org/TR/REC-xml-names/#NT-NCName */
+NCName              : NCNameStartChar NCNameChar*;
+NCNameChar          : NameChar ~ ':';
+NCNameStartChar     : Letter | '_';
+
+/* See: http://www.w3.org/TR/REC-xml/#NT-S */
+S                   : ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
+
+/* See: http://www.w3.org/TR/xquery-full-text/#prod-xquery-Char */
+Char                : '\u0009' | '\u000A' | '\u000D' | ('\u0020'..'\uD7FF') | ('\uE000'..'\uFFFD'); /* Dropped temporarily | [\u10000-\u10FFFF] */
+
+/* See http://www.w3.org/TR/xquery-full-text/#prod-xquery-Digits */
+Digits              : ('0'..'9')+;
+CommentContents     : (Char+ ~ (Char* ('(:' | ':)') Char*));
+
+
+
+
+/* Parser */
 Module                      : VersionDecl? (LibraryModule | MainModule);
 
 VersionDecl                 : 'xquery' 'version' StringLiteral (('encoding' StringLiteral)|) Separator;
