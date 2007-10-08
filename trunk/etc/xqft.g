@@ -1,9 +1,12 @@
 lexer grammar xqft;
 
-@parser::header {
+options { 
+    k = 1;
+}
+//@parser::header {
 	//package no.ntnu.xqft.parse;
 	//import no.ntnu.xqft.lex.*;
-}
+//}
 @lexer::header {
 	//package no.ntnu.xqft.lex;
 	//import no.ntnu.xqft.parse.*;
