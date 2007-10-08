@@ -95,10 +95,10 @@ NCNameChar          = NameChar - ':'
 NCNameStartChar     = Letter | '_'
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-S */
-S                   = (\x20 | \x9 | \xD | \xA)+
+S                   = (\x0020 | \x0009 | \x000D | \x000A)+
 
 /* See: http://www.w3.org/TR/xquery-full-text/#prod-xquery-Char */
-Char                = \x9 | \xA | \xD | [\u0020-\uD7FF] | [\uE000-\uFFFD] | [\u10000-\u10FFFF]
+Char                = \x0009 | \x000A | \x000D | [\u0020-\uD7FF] | [\uE000-\uFFFD] | [\u10000-\u10FFFF]
 
 /* See http://www.w3.org/TR/xquery-full-text/#prod-xquery-Digits */
 Digits              = [0-9]+

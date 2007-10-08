@@ -1,13 +1,14 @@
 # Makefile for generating lexer and parser (requires gnu binutils and, obviously, make)
 
-lexers:
+lexer:
 	java -jar lib/JFlex.jar -d src/no/ntnu/xqft/lex etc/xqft.lex
 	
 
-parsers:
-	java -jar lib/java-cup-11a.jar -parser XQFTParser -symbols XQFTSymbols etc/xqft.y
-	mv XQFTParser.java src/no/ntnu/xqft/parse
-	mv XQFTSymbols.java src/no/ntnu/xqft/parse
+parser:
+	java -cp lib/antlr.jar;lib/stringtemplate.jar;lib/antlr2.jar org.antlr.Tool etc/xqft.g
+#	java -jar lib/java-cup-11a.jar -parser XQFTParser -symbols XQFTSymbols etc/xqft.y
+#	mv XQFTParser.java src/no/ntnu/xqft/parse
+#	mv XQFTSymbols.java src/no/ntnu/xqft/parse
 
 ant:
 	ant
@@ -15,7 +16,7 @@ ant:
 jar:
 	jar cvfm xqft-ntnu.jar ./etc/default-manifest *
 
-all: lexers parsers ant jar
+all: parser ant jar
 
 test:
 	java -cp bin/:lib/java-cup-11a.jar no.ntnu.xqft.test.XQFTParserTest
