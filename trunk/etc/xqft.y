@@ -42,13 +42,20 @@ terminal String PLUS, MINUS, DQUOTE, CHARACTER;
 terminal String WORD, NUMBER, DECIMAL;
 
 /* Non-terminals */
-non terminal Module, VersionDecl, MainModule, LibraryModule, ModuleDecl, Prolog, Setter;
+non terminal Module, VersionDecl, VersionDeclOpt, MainModule, LibraryModule, ModuleDecl, Prolog, Setter;
 
 
 /* EBNF */
-Module                      ::= VersionDecl? (LibraryModule | MainModule);
 
-VersionDecl                 ::= "xquery" "version" StringLiteral (("encoding" StringLiteral)|) Separator;
+// Module                      ::= VersionDecl? (LibraryModule | MainModule);               /*Original */
+Module                      ::= VersionDeclOpt LibraryModule | VersionDeclOpt MainModule;   /* New */
+VersionDeclOpt              ::= VersionDecl | ;                                             /* New */
+
+
+// VersionDecl                 ::= "xquery" "version" StringLiteral (("encoding" StringLiteral)|) Separator; /* Original */
+VersionDecl                 ::= "xquery" "version" StringLiteral VersionDeclEncoding Separator; /* New */
+VersionDeclEncoding         ::= "encoding" StringLiteral |;                                     /* New */
+
 
 MainModule                  ::= Prolog QueryBody;
 
@@ -56,7 +63,14 @@ LibraryModule               ::= ModuleDecl Prolog;
 
 ModuleDecl                  ::= "module" "namespace" NCName "=" URILiteral Separator;
 
-Prolog                      ::= ((DefaultNamespaceDecl | Setter | NamespaceDecl | Import) Separator)* ((VarDecl | FunctionDecl | OptionDecl | FTOptionDecl) Separator)*;
+//Prolog                      ::= ((DefaultNamespaceDecl | Setter | NamespaceDecl | Import) Separator)* ((VarDecl | FunctionDecl | OptionDecl | FTOptionDecl) Separator)*; /* Original */
+Prolog                      ::= NamespaceDeclList VarDeclList | NamespaceDeclList | VarDeclList | ;
+
+NamespaceDeclList           ::= NamespaceDeclList NamespaceDeclListItem Separator | NamespaceDeclListItem;
+NamespaceDeclListItem       ::= DefaultNamespaceDecl | Setter | NamespaceDecl | Import;
+
+VarDeclList                 ::= VarDeclList VarDeclListItem Separator | VarDeclListItem;
+VarDeclListItem             ::= VarDecl | FunctionDecl | OptionDecl | FTOptionDecl;
 
 Setter                      ::= BoundarySpaceDecl | DefaultCollationDecl | BaseURIDecl | ConstructionDecl | OrderingModeDecl | EmptyOrderDecl | CopyNamespacesDecl;
 
