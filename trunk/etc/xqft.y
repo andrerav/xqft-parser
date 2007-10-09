@@ -455,23 +455,60 @@ FTDiacriticsOption          ::= ("diacritics" "insensitive")
 
 FTStemOptioN                ::= ("with" "stemming") | ("without" "stemming");
 
+/*
 FTThesaurusOption	        ::= ("with" "thesaurus" (FTThesaurusID | "default"))
                                 | ("with" "thesaurus" "(" (FTThesaurusID | "default") ("," FTThesaurusID)* ")")
                                 | ("without" "thesaurus");
+*/
+FTThesaurusOption	        ::= "with" "thesaurus" "default"
+				| "with" "thesaurus" FTThesaurusID 
+                                | ("with" "thesaurus" "(" (FTThesaurusID | "default") ("," FTThesaurusID)* ")")
+                                | ("without" "thesaurus");
 
+
+/*
 FTThesaurusID               ::= "at" URILiteral ("relationship" StringLiteral)? (FTRange "levels")?;
-
+*/
+FTThesaurusID               ::= "at" URILiteral 
+				|"at" URILiteral "relationship" StringLiteral
+				|"at" URILiteral FTRange "levels"
+				|"at" URILiteral "relationship" StringLiteral FTRange "levels";
+/*
 FTStopwordOption            ::= ("with" "stop" "words" FTRefOrList FTInclExclStringLiteral*)
                                 | ("without" "stop" "words")
                                 | ("with" "default" "stop" "words" FTInclExclStringLiteral*);
+*/
+FTStopwordOption            ::= "with" "stop" "words" FTRefOrList FTIncExclStringLiteral_l
+				| "with" "stop" "words" FTRefOrList 
+                                | "without" "stop" "words"
+				| "with" "default" "stop" "words" 
+                                | "with" "default" "stop" "words" FTIncExclStringLiteral_l;
+/* new */
+FTIncExclStringLiteral_l    ::= FTIncExclStringLiteral_l FTInclExclStringLiteral
+				| FTInclExclStringLiteral;
 
+/*
 FTRefOrList                 ::= ("at" URILiteral)
                                 | ("(" StringLiteral ("," StringLiteral)* ")");
+*/
 
-FTInclExclStringLiteral     ::= ("union" | "except") FTRefOrList;
+FTRefOrList                 ::= "at" URILiteral
+				| "(" StringLiteral_l ")";
+/* new */
+StringLiteral_l		    ::= StringLiteral_l "," StringLiteral  
+				| StringLiteral;
+
+/* divided in two, compared to (a |b ) c */
+FTInclExclStringLiteral     ::= "union" FTRefOrList
+				|"except" FTRefOrList;
+
 FTLanguageOption            ::= "language" StringLiteral;
-FTWildCardOption            ::= ("with" "wildcards") | ("without" "wildcards");
+
+/* parantesis removed */
+FTWildCardOption            ::= "with" "wildcards" | "without" "wildcards";
+
 FTExtensionOption           ::= "option" QName StringLiteral;
+
 FTIgnoreOption              ::= "without" "content" UnionExpr;
 
 

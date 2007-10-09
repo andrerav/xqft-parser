@@ -39,12 +39,12 @@ Nmtoken             : (NameChar)+;
 Nmtokens            : Nmtoken ('\u0020' Nmtoken)*;
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-PITarget */
-PI                  : '<?' PITarget (S (Char* ~ (Char* '?>' Char*)))? '?>';
+PI                  : '<?' PITarget (S (Char* ~('?>' Char*)))? '?>';
 
 //PITarget            : Name ~ (('X' | 'x') ('M' | 'm') ('L' | 'l'));
 
 // ************************************************ New ********************************************************
-PITarget            : ~(~(Name) | (('X' | 'x') ('M' | 'm') ('L' | 'l')));
+PITarget            : (~(('X' | 'x') ('M' | 'm') ('L' | 'l')))=> Name;
 // ************************************************ weN ********************************************************
 /* See: http://www.w3.org/TR/REC-xml/#NT-CharRef */
 CharRef             : '&#' ('0'..'9')+ ';' | '&#x' ('0'..'9'|'a'..'f'|'A'..'F')+ ';';
@@ -80,4 +80,4 @@ Char				  : CleanChar |'\''|'{'|'}'|'<'|'&'|'"';
 
 /* See http://www.w3.org/TR/xquery-full-text/#prod-xquery-Digits */
 Digits              : ('0'..'9')+;
-CommentContents     : (Char+ ~ (Char* ('(:' | ':)') Char*));
+CommentContents     : (Char+ ~( '(:' | ':)' Char*));
