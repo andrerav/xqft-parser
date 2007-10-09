@@ -1,4 +1,4 @@
-lexer grammar xqft;
+grammar xqft;
 
 options { 
     k = 1;

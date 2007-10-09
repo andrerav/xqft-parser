@@ -5,7 +5,7 @@ lexer:
 	
 
 parser:
-	java -cp lib/antlr.jar;lib/stringtemplate.jar;lib/antlr2.jar org.antlr.Tool etc/xqft.g
+	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool etc/xqft.g
 #	java -jar lib/java-cup-11a.jar -parser XQFTParser -symbols XQFTSymbols etc/xqft.y
 #	mv XQFTParser.java src/no/ntnu/xqft/parse
 #	mv XQFTSymbols.java src/no/ntnu/xqft/parse
