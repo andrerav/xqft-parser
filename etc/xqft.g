@@ -1,9 +1,9 @@
 grammar xqft;
 
 options { 
-    k = 1;
-    output=AST;
-    ASTLabelType=Object;
+    //k = 1;
+    //output=AST;
+    //ASTLabelType=Object;
 }
 //@parser::header {
 	//package no.ntnu.xqft.parse;
