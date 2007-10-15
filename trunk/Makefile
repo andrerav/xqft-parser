@@ -27,6 +27,11 @@ PITargetTest:
 	javac -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar test/PITarget/*.java
 	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar:test/PITarget PITargetGrParser test/PITarget/fail.txt
 
+ContentCharsTest:
+	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool -Xgrtree test/ContentChars/ContentCharsGr.g
+	javac -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar test/ContentChars/*.java
+	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar:test/ContentChars ContentCharsGrParser test/ContentChars/fail.txt
+
 CDataSection:
 	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool test/CDataSectionContents/CData.g
 DirComment:
