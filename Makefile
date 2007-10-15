@@ -3,12 +3,11 @@
 lexer:
 	java -jar lib/JFlex.jar -d src/no/ntnu/xqft/lex etc/xqft.lex
 	
+simplecalc:
+	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool -o src etc/SimpleCalc.g
 
 parser:
 	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool etc/xqft.g
-#	java -jar lib/java-cup-11a.jar -parser XQFTParser -symbols XQFTSymbols etc/xqft.y
-#	mv XQFTParser.java src/no/ntnu/xqft/parse
-#	mv XQFTSymbols.java src/no/ntnu/xqft/parse
 
 ant:
 	ant
@@ -20,6 +19,11 @@ all: parser ant jar
 
 test:
 	java -cp bin/:lib/java-cup-11a.jar no.ntnu.xqft.test.XQFTParserTest
+
+tests: PITargetTest
+
+PITargetTest:
+	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool test/PITarget/PITargetGrammar.g
 
 clean:
 	find .|grep ~$$|xargs rm -v
