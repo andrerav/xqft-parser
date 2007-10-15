@@ -60,8 +60,9 @@ Nmtokens            : Nmtoken ('\u0020' Nmtoken)*;
 /* Original:
 PI                  : '<?' PITarget (S (Char* ~ (Char* '?>' Char*)))? '?>';
 PITarget            : Name ~ (('X' | 'x') ('M' | 'm') ('L' | 'l'));
+ZeroOrMoreChar
 */
-PI                  : '<?' PITarget (S (Char* ~ (Char* '?>' Char*)))? '?>';
+PI                  : '<?' PITarget (S (zoom=ZeroOrMoreChar))? '?>' {!$zoom.getText().contains("?>")}?;
 PITarget            : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-CharRef */
@@ -76,7 +77,8 @@ LocalPart           : NCName;
 
 /* See: http://www.w3.org/TR/REC-xml-names/#NT-NCName */
 NCName              : NCNameStartChar NCNameChar*;
-NCNameChar          : NameChar ~ ':';
+/*NCNameChar          : NameChar ~ ':';*/
+NCNameChar          : nc=NameChar {!$nc.getText().equals(":")}?;
 NCNameStartChar     : Letter | '_';
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-S */
