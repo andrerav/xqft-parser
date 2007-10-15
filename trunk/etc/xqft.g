@@ -96,6 +96,7 @@ CommentContents     : (Char+ ~ (Char* ('(:' | ':)') Char*));
 //-------------------------------------------- New ---------------------------------------------------------------
 ZeroOrMoreChar		    : Char*;
 OneOrMoreChar		    : Char+;
+CharNotMinus		    : m=CHAR{ !$m.equals("-") }?;
 //-------------------------------------------- weN ---------------------------------------------------------------
 
 Module                      : VersionDecl? (LibraryModule | MainModule);
@@ -338,7 +339,13 @@ CommonContent               : PredefinedEntityRef | CharRef | '{{' | '}}' | Encl
 
 DirCommentConstructor       : '<!--' DirCommentContents '-->'; /* ws: explicitXQ */
 
+/*
 DirCommentContents          : ((Char ~ '-') | ('-' (Char ~ '-')))*; /* ws: explicitXQ */
+*/
+//--------------------------------------- New ------------------------------------------------
+DirCommentContents             :  ;
+
+//--------------------------------------- weN ------------------------------------------------
 
 DirPIConstructor            : '<?' PITarget (S DirPIContents)? '?>'; /* ws: explicitXQ */
 
