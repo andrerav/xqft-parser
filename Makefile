@@ -25,6 +25,11 @@ tests: PITargetTest
 PITargetTest:
 	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool test/PITarget/PITargetGrammar.g
 
+CDataSection:
+	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool test/CDataSectionContents/CData.g
+DirComment:
+	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool test/DirCommentContents/DirComment.g
+
 clean:
 	find .|grep ~$$|xargs rm -v
 	ant clean
