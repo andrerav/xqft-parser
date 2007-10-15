@@ -241,8 +241,12 @@ ValidationMode              : 'lax' | 'strict';
 ExtensionExpr               : Pragma+ '{' Expr? '}';
 
 Pragma                      : '(#' S? QName (S PragmaContents)? '#)'; /* ws: explicit */
-
+/*
 PragmaContents              : (Char* ~ (Char* '#)' Char*));
+*/
+//--------------------------------------- New ------------------------------------------------
+PragmaContents        : m=ZeroOrMoreChar{ !$m.getText().contains("#") }?  ;
+//--------------------------------------- weN ------------------------------------------------
 
 PathExpr                    :   	('/' RelativePathExpr?)
                                 | ('//' RelativePathExpr)
@@ -344,7 +348,6 @@ DirCommentContents          : ((Char ~ '-') | ('-' (Char ~ '-')))*; /* ws: expli
 */
 //--------------------------------------- New ------------------------------------------------
 DirCommentContents             : (charNotMinus | ('-' charNotMinus))*; /* ws: explicitXQ */ ;
-
 //--------------------------------------- weN ------------------------------------------------
 
 DirPIConstructor            : '<?' PITarget (S DirPIContents)? '?>'; /* ws: explicitXQ */
