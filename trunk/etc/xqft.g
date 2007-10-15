@@ -79,6 +79,11 @@ CommentContents     : (Char+ ~ (Char* ('(:' | ':)') Char*));
 
 
 /* Parser */
+//-------------------------------------------- New ---------------------------------------------------------------
+ZeroOrMoreChar		    : Char*;
+OneOrMoreChar		    : Char+;
+//-------------------------------------------- weN ---------------------------------------------------------------
+
 Module                      : VersionDecl? (LibraryModule | MainModule);
 
 VersionDecl                 : 'xquery' 'version' StringLiteral (('encoding' StringLiteral)|) Separator;
@@ -323,11 +328,22 @@ DirCommentContents          : ((Char ~ '-') | ('-' (Char ~ '-')))*; /* ws: expli
 
 DirPIConstructor            : '<?' PITarget (S DirPIContents)? '?>'; /* ws: explicitXQ */
 
+/*
 DirPIContents               : (Char* ~ (Char* '?>' Char*)); /* ws: explicitXQ */
+*/
+//--------------------------------------- New ------------------------------------------------
+DirPIContents               : m=ZeroOrMoreChar{ !$m.getText().contains("?>") }?  ;
+//--------------------------------------- weN ------------------------------------------------
 
 CDataSection                : '<![CDATA[' CDataSectionContents ']]>'; /* ws: explicitXQ */
 
+
+/*
 CDataSectionContents        : (Char* ~ (Char* ']]>' Char*)); /* ws: explicitXQ */
+*/
+//--------------------------------------- New ------------------------------------------------
+CDataSectionContents        : m=ZeroOrMoreChar{ !$m.getText().contains("]]>") }?  ;
+//--------------------------------------- weN ------------------------------------------------
 
 ComputedConstructor         : CompDocConstructor
                                 | CompElemConstructor
