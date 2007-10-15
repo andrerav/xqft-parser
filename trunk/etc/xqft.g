@@ -1,7 +1,7 @@
 grammar xqft;
 
 options { 
-    k = 1;
+    k = 3;
     //output=AST;
     //ASTLabelType=Object;
 }
@@ -119,21 +119,21 @@ mainModule                  : prolog queryBody;
 
 libraryModule               : moduleDecl prolog;
 
-moduleDecl                  : 'module' 'namespace' NCName '=' URILiteral Separator;
+moduleDecl                  : 'module' 'namespace' NCName '=' uriLiteral Separator;
 
 prolog                      : ((defaultNamespaceDecl | setter | namespaceDecl | import) Separator)* ((varDecl | functionDecl | optionDecl | ftOptionDecl) Separator)*;
 
-setter                      : boundarySpaceDecl | DefaultCollationDecl | BaseURIDecl | ConstructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl;
+setter                      : boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl;
 
-import                      : SchemaImport | ModuleImport;
+import                      : schemaImport | moduleImport;
 
 Separator                   : ';';
 
-namespaceDecl               : 'declare' 'namespace' NCName '=' URILiteral;
+namespaceDecl               : 'declare' 'namespace' NCName '=' uriLiteral;
 
 boundarySpaceDecl           : 'declare' 'boundary-space' ('preserve' | 'strip');
 
-defaultNamespaceDecl        : 'declare' 'default' ('element' | 'function') 'namespace' URILiteral;
+defaultNamespaceDecl        : 'declare' 'default' ('element' | 'function') 'namespace' uriLiteral;
 
 optionDecl                  : 'declare' 'option' QName StringLiteral;
 
@@ -149,23 +149,23 @@ preserveMode                : 'preserve' | 'no-preserve';
 
 inheritMode                 : 'inherit' | 'no-inherit';
 
-DefaultCollationDecl        : 'declare' 'default' 'collation' URILiteral;
+defaultCollationDecl        : 'declare' 'default' 'collation' uriLiteral;
 
-BaseURIDecl                 : 'declare' 'base-uri' URILiteral;
+baseURIDecl                 : 'declare' 'base-uri' uriLiteral;
 
-SchemaImport                : 'import' 'schema' SchemaPrefix? URILiteral ('at' URILiteral (',' URILiteral)*)?;
+schemaImport                : 'import' 'schema' SchemaPrefix? uriLiteral ('at' uriLiteral (',' uriLiteral)*)?;
 
 SchemaPrefix                : ('namespace' NCName '=') | ('default' 'element' 'namespace');
 
-ModuleImport                : 'import' 'module' ('namespace' NCName '=')? URILiteral ('at' URILiteral (',' URILiteral)*)?;
+moduleImport                : 'import' 'module' ('namespace' NCName '=')? uriLiteral ('at' uriLiteral (',' uriLiteral)*)?;
 
 varDecl                     : 'declare' 'variable' '$' QName typeDeclaration? ((':=' exprSingle) | 'external');
 
-ConstructionDecl            : 'declare' 'construction' ('strip' | 'preserve');
+constructionDecl            : 'declare' 'construction' ('strip' | 'preserve');
 
-functionDecl                : 'declare' 'function' QName '(' ParamList? ')' ('as' sequenceType)? (enclosedExpr | 'external');
+functionDecl                : 'declare' 'function' QName '(' paramList? ')' ('as' sequenceType)? (enclosedExpr | 'external');
 
-ParamList                   : param (',' param)*;
+paramList                   : param (',' param)*;
 
 param                       : '$' QName typeDeclaration?;
 
@@ -183,9 +183,9 @@ exprSingle                  : fLWORExpr
 
 fLWORExpr                   : (forClause | letClause)+ whereClause? orderByClause? 'return' exprSingle;
 
-forClause                   : 'for' '$' VarName typeDeclaration? PositionalVar? ftScoreVar? 'in' exprSingle (',' '$' VarName typeDeclaration? PositionalVar? ftScoreVar? 'in' exprSingle)*;
+forClause                   : 'for' '$' VarName typeDeclaration? positionalVar? ftScoreVar? 'in' exprSingle (',' '$' VarName typeDeclaration? positionalVar? ftScoreVar? 'in' exprSingle)*;
 
-PositionalVar               : 'at' '$' VarName;
+positionalVar               : 'at' '$' VarName;
 
 ftScoreVar                  : 'score' '$' VarName;
 
@@ -199,7 +199,7 @@ orderSpecList               : orderSpec (',' orderSpec)*;
 
 orderSpec                   : exprSingle orderModifier;
 
-orderModifier               : ('ascending' | 'descending')? ('empty' ('greatest' | 'least'))? ('collation' URILiteral)?;
+orderModifier               : ('ascending' | 'descending')? ('empty' ('greatest' | 'least'))? ('collation' uriLiteral)?;
 quantifiedExpr              : ('some' | 'every') '$' VarName typeDeclaration? 'in' exprSingle (',' '$' VarName typeDeclaration? 'in' exprSingle)* 'satisfies' exprSingle;
 
 typeswitchExpr              : 'typeswitch' '(' expr ')' caseClause+ 'default' ('$' VarName)? 'return' exprSingle;
@@ -292,9 +292,9 @@ ReverseAxis                 : ('parent' '::')
 
 AbbrevReverseStep           : '..';
 
-nodeTest                    : kindTest | NameTest;
+nodeTest                    : kindTest | nameTest;
 
-NameTest                    : QName | Wildcard;
+nameTest                    : QName | Wildcard;
 
 Wildcard                    : '*'
                                 | (NCName ':' '*')
@@ -457,7 +457,7 @@ ElementName                 : QName;
 
 TypeName                    : QName;
 
-URILiteral                  : StringLiteral;
+uriLiteral                  : StringLiteral;
 
 ftSelection                 : ftOr ftPosFilter* ('weight' rangeExpr)?;
 
@@ -507,40 +507,40 @@ FTContent                   : ('at' 'start') | ('at' 'end') | ('entire' 'content
 
 ftMatchOptions              : ftMatchOption+;     /* xgc: multiple-match-options */
 
-ftMatchOption               : FTLanguageOption
-                                | FTWildCardOption
+ftMatchOption               : ftLanguageOption
+                                | ftWildCardOption
                                 | ftThesaurusOption
-                                | FTStemOption
-                                | FTCaseOption
-                                | FTDiacriticsOption
-                                | FTStopwordOption
-                                | FTExtensionOption;
+                                | ftStemOption
+                                | ftCaseOption
+                                | ftDiacriticsOption
+                                | ftStopwordOption
+                                | ftExtensionOption;
 
-FTCaseOption                : ('case' 'insensitive')
+ftCaseOption                : ('case' 'insensitive')
                                 | ('case' 'sensitive')
                                 | 'lowercase'
                                 | 'uppercase';
 
-FTDiacriticsOption          : ('diacritics' 'insensitive')
+ftDiacriticsOption          : ('diacritics' 'insensitive')
                                 | ('diacritics' 'sensitive');
 
-FTStemOption                : ('with' 'stemming') | ('without' 'stemming');
+ftStemOption                : ('with' 'stemming') | ('without' 'stemming');
 
 ftThesaurusOption	        : ('with' 'thesaurus' (ftThesaurusID | 'default'))
                                 | ('with' 'thesaurus' '(' (ftThesaurusID | 'default') (',' ftThesaurusID)* ')')
                                 | ('without' 'thesaurus');
 
-ftThesaurusID               : 'at' URILiteral ('relationship' StringLiteral)? (ftRange 'levels')?;
+ftThesaurusID               : 'at' uriLiteral ('relationship' StringLiteral)? (ftRange 'levels')?;
 
-FTStopwordOption            : ('with' 'stop' 'words' FTRefOrList FTInclExclStringLiteral*)
+ftStopwordOption            : ('with' 'stop' 'words' ftRefOrList ftInclExclStringLiteral*)
                                 | ('without' 'stop' 'words')
-                                | ('with' 'default' 'stop' 'words' FTInclExclStringLiteral*);
+                                | ('with' 'default' 'stop' 'words' ftInclExclStringLiteral*);
 
-FTRefOrList                 : ('at' URILiteral)
+ftRefOrList                 : ('at' uriLiteral)
                                 | ('(' StringLiteral (',' StringLiteral)* ')');
 
-FTInclExclStringLiteral     : ('union' | 'except') FTRefOrList;
-FTLanguageOption            : 'language' StringLiteral;
-FTWildCardOption            : ('with' 'wildcards') | ('without' 'wildcards');
-FTExtensionOption           : 'option' QName StringLiteral;
+ftInclExclStringLiteral     : ('union' | 'except') ftRefOrList;
+ftLanguageOption            : 'language' StringLiteral;
+ftWildCardOption            : ('with' 'wildcards') | ('without' 'wildcards');
+ftExtensionOption           : 'option' QName StringLiteral;
 ftIgnoreOption              : 'without' 'content' unionExpr;
