@@ -111,43 +111,43 @@ OneOrMoreChar		    : Char+;
 fragment charNotMinus		    : m=Char{ !$m.equals("-") }?;  //NB small first letter
 //-------------------------------------------- weN ---------------------------------------------------------------
 
-module                      : VersionDecl? (libraryModule | mainModule);
+module                      : versionDecl? (libraryModule | mainModule);
 
-VersionDecl                 : 'xquery' 'version' StringLiteral (('encoding' StringLiteral)|) Separator;
+versionDecl                 : 'xquery' 'version' StringLiteral (('encoding' StringLiteral)|) Separator;
 
 mainModule                  : prolog queryBody;
 
-libraryModule               : ModuleDecl prolog;
+libraryModule               : moduleDecl prolog;
 
-ModuleDecl                  : 'module' 'namespace' NCName '=' URILiteral Separator;
+moduleDecl                  : 'module' 'namespace' NCName '=' URILiteral Separator;
 
-prolog                      : ((DefaultNamespaceDecl | Setter | NamespaceDecl | Import) Separator)* ((varDecl | functionDecl | OptionDecl | ftOptionDecl) Separator)*;
+prolog                      : ((defaultNamespaceDecl | setter | namespaceDecl | import) Separator)* ((varDecl | functionDecl | optionDecl | ftOptionDecl) Separator)*;
 
-Setter                      : BoundarySpaceDecl | DefaultCollationDecl | BaseURIDecl | ConstructionDecl | OrderingModeDecl | EmptyOrderDecl | CopyNamespacesDecl;
+setter                      : boundarySpaceDecl | DefaultCollationDecl | BaseURIDecl | ConstructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl;
 
-Import                      : SchemaImport | ModuleImport;
+import                      : SchemaImport | ModuleImport;
 
 Separator                   : ';';
 
-NamespaceDecl               : 'declare' 'namespace' NCName '=' URILiteral;
+namespaceDecl               : 'declare' 'namespace' NCName '=' URILiteral;
 
-BoundarySpaceDecl           : 'declare' 'boundary-space' ('preserve' | 'strip');
+boundarySpaceDecl           : 'declare' 'boundary-space' ('preserve' | 'strip');
 
-DefaultNamespaceDecl        : 'declare' 'default' ('element' | 'function') 'namespace' URILiteral;
+defaultNamespaceDecl        : 'declare' 'default' ('element' | 'function') 'namespace' URILiteral;
 
-OptionDecl                  : 'declare' 'option' QName StringLiteral;
+optionDecl                  : 'declare' 'option' QName StringLiteral;
 
 ftOptionDecl                : 'declare' 'ft-option' ftMatchOptions;
 
-OrderingModeDecl            : 'declare' 'ordering' ('ordered' | 'unordered');
+orderingModeDecl            : 'declare' 'ordering' ('ordered' | 'unordered');
 
-EmptyOrderDecl              : 'declare' 'default' 'order' 'empty' ('greatest' | 'least');
+emptyOrderDecl              : 'declare' 'default' 'order' 'empty' ('greatest' | 'least');
 
-CopyNamespacesDecl          : 'declare' 'copy-namespaces' PreserveMode ',' InheritMode;
+copyNamespacesDecl          : 'declare' 'copy-namespaces' preserveMode ',' inheritMode;
 
-PreserveMode                : 'preserve' | 'no-preserve';
+preserveMode                : 'preserve' | 'no-preserve';
 
-InheritMode                 : 'inherit' | 'no-inherit';
+inheritMode                 : 'inherit' | 'no-inherit';
 
 DefaultCollationDecl        : 'declare' 'default' 'collation' URILiteral;
 
@@ -159,15 +159,15 @@ SchemaPrefix                : ('namespace' NCName '=') | ('default' 'element' 'n
 
 ModuleImport                : 'import' 'module' ('namespace' NCName '=')? URILiteral ('at' URILiteral (',' URILiteral)*)?;
 
-varDecl                     : 'declare' 'variable' '$' QName TypeDeclaration? ((':=' exprSingle) | 'external');
+varDecl                     : 'declare' 'variable' '$' QName typeDeclaration? ((':=' exprSingle) | 'external');
 
 ConstructionDecl            : 'declare' 'construction' ('strip' | 'preserve');
 
-functionDecl                : 'declare' 'function' QName '(' ParamList? ')' ('as' SequenceType)? (enclosedExpr | 'external');
+functionDecl                : 'declare' 'function' QName '(' ParamList? ')' ('as' sequenceType)? (enclosedExpr | 'external');
 
-ParamList                   : Param (',' Param)*;
+ParamList                   : param (',' param)*;
 
-Param                       : '$' QName TypeDeclaration?;
+param                       : '$' QName typeDeclaration?;
 
 enclosedExpr                : '{' expr '}';
 
@@ -183,13 +183,13 @@ exprSingle                  : fLWORExpr
 
 fLWORExpr                   : (forClause | letClause)+ whereClause? orderByClause? 'return' exprSingle;
 
-forClause                   : 'for' '$' VarName TypeDeclaration? PositionalVar? FTScoreVar? 'in' exprSingle (',' '$' VarName TypeDeclaration? PositionalVar? FTScoreVar? 'in' exprSingle)*;
+forClause                   : 'for' '$' VarName typeDeclaration? PositionalVar? ftScoreVar? 'in' exprSingle (',' '$' VarName typeDeclaration? PositionalVar? ftScoreVar? 'in' exprSingle)*;
 
 PositionalVar               : 'at' '$' VarName;
 
-FTScoreVar                  : 'score' '$' VarName;
+ftScoreVar                  : 'score' '$' VarName;
 
-letClause                   : (('let' '$' VarName TypeDeclaration?) | ('let' 'score' '$' VarName)) ':=' exprSingle (',' (('$' VarName TypeDeclaration?) | FTScoreVar) ':=' exprSingle)*;
+letClause                   : (('let' '$' VarName typeDeclaration?) | ('let' 'score' '$' VarName)) ':=' exprSingle (',' (('$' VarName typeDeclaration?) | ftScoreVar) ':=' exprSingle)*;
 
 whereClause                 : 'where' exprSingle;
 
@@ -197,14 +197,14 @@ orderByClause               : (('order' 'by') | ('stable' 'order' 'by')) orderSp
 
 orderSpecList               : orderSpec (',' orderSpec)*;
 
-orderSpec                   : exprSingle OrderModifier;
+orderSpec                   : exprSingle orderModifier;
 
-OrderModifier               : ('ascending' | 'descending')? ('empty' ('greatest' | 'least'))? ('collation' URILiteral)?;
-quantifiedExpr              : ('some' | 'every') '$' VarName TypeDeclaration? 'in' exprSingle (',' '$' VarName TypeDeclaration? 'in' exprSingle)* 'satisfies' exprSingle;
+orderModifier               : ('ascending' | 'descending')? ('empty' ('greatest' | 'least'))? ('collation' URILiteral)?;
+quantifiedExpr              : ('some' | 'every') '$' VarName typeDeclaration? 'in' exprSingle (',' '$' VarName typeDeclaration? 'in' exprSingle)* 'satisfies' exprSingle;
 
 typeswitchExpr              : 'typeswitch' '(' expr ')' caseClause+ 'default' ('$' VarName)? 'return' exprSingle;
 
-caseClause                  : 'case' ('$' VarName 'as')? SequenceType 'return' exprSingle;
+caseClause                  : 'case' ('$' VarName 'as')? sequenceType 'return' exprSingle;
 
 ifExpr                      : 'if' '(' expr ')' 'then' exprSingle 'else' exprSingle;
 
@@ -228,13 +228,13 @@ unionExpr                   : intersectExceptExpr ( ('union' | '|') intersectExc
 
 intersectExceptExpr         : instanceofExpr ( ('intersect' | 'except') instanceofExpr )*;
 
-instanceofExpr              : treatExpr ( 'instance' 'of' SequenceType )?;
+instanceofExpr              : treatExpr ( 'instance' 'of' sequenceType )?;
 
-treatExpr                   : castableExpr ( 'treat' 'as' SequenceType )?;
+treatExpr                   : castableExpr ( 'treat' 'as' sequenceType )?;
 
-castableExpr                : castExpr ( 'castable' 'as' SingleType )?;
+castableExpr                : castExpr ( 'castable' 'as' singleType )?;
 
-castExpr                    : unaryExpr ( 'cast' 'as' SingleType )?;
+castExpr                    : unaryExpr ( 'cast' 'as' singleType )?;
 
 unaryExpr                   : ('-' | '+')* valueExpr;
 
@@ -250,9 +250,9 @@ validateExpr                : 'validate' ValidationMode? '{' expr '}';
 
 ValidationMode              : 'lax' | 'strict';
 
-extensionExpr               : Pragma+ '{' expr? '}';
+extensionExpr               : pragma+ '{' expr? '}';
 
-Pragma                      : '(#' S? QName (S PragmaContents)? '#)'; /* ws: explicit */
+pragma                      : '(#' S? QName (S PragmaContents)? '#)'; /* ws: explicit */
 
 //PragmaContents              : (Char* ~ (Char* '#)' Char*));
 
@@ -268,9 +268,9 @@ relativePathExpr            : stepExpr (('/' | '//') stepExpr)*;
 
 stepExpr                    : filterExpr | axisStep;
 
-axisStep                    : (ReverseStep | ForwardStep) predicateList;
+axisStep                    : (reverseStep | forwardStep) predicateList;
 
-ForwardStep                 : (ForwardAxis NodeTest) | AbbrevForwardStep;
+forwardStep                 : (ForwardAxis nodeTest) | abbrevForwardStep;
 
 ForwardAxis                 : ('child' '::')
                                 | ('descendant' '::')
@@ -280,9 +280,9 @@ ForwardAxis                 : ('child' '::')
                                 | ('following-sibling' '::')
                                 | ('following' '::');
 
-AbbrevForwardStep           : '@'? NodeTest;
+abbrevForwardStep           : '@'? nodeTest;
 
-ReverseStep                 : (ReverseAxis NodeTest) | AbbrevReverseStep;
+reverseStep                 : (ReverseAxis nodeTest) | AbbrevReverseStep;
 
 ReverseAxis                 : ('parent' '::')
                                 | ('ancestor' '::')
@@ -292,7 +292,7 @@ ReverseAxis                 : ('parent' '::')
 
 AbbrevReverseStep           : '..';
 
-NodeTest                    : KindTest | NameTest;
+nodeTest                    : kindTest | NameTest;
 
 NameTest                    : QName | Wildcard;
 
@@ -306,13 +306,13 @@ predicateList               : predicate*;
 
 predicate                   : '[' expr ']';
 
-primaryExpr                 : Literal | VarRef | parenthesizedExpr | ContextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor;
+primaryExpr                 : literal | varRef | parenthesizedExpr | ContextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor;
 
-Literal                     : NumericLiteral | StringLiteral;
+literal                     : numericLiteral | StringLiteral;
 
-NumericLiteral              : IntegerLiteral | DecimalLiteral | DoubleLiteral;
+numericLiteral              : IntegerLiteral | DecimalLiteral | DoubleLiteral;
 
-VarRef                      : '$' VarName;
+varRef                      : '$' VarName;
 
 VarName                     : QName;
 
@@ -332,7 +332,7 @@ constructor                 : directConstructor
 
 directConstructor           : dirElemConstructor
                                 | dirCommentConstructor
-                                | DirPIConstructor;
+                                | dirPIConstructor;
 
 dirElemConstructor          : '<' QName dirAttributeList ('/>' | ('>' dirElemContent* '</' QName S? '>')); /* ws: explicitXQ */
 dirAttributeList            : (S (QName S? '=' S? dirAttributeValue)?)*; /* ws: explicitXQ */
@@ -347,7 +347,7 @@ aposAttrValueContent        : AposAttrContentChar
                                 | commonContent;
 
 dirElemContent              : directConstructor
-                                | CDataSection
+                                | cDataSection
                                 | commonContent
                                 | ElementContentChar;
 
@@ -362,7 +362,7 @@ dirCommentConstructor       : '<!--' dirCommentContents '-->'; /* ws: explicitXQ
 dirCommentContents             : (charNotMinus | ('-' charNotMinus))*; /* ws: explicitXQ */ 
 //--------------------------------------- weN ------------------------------------------------
 
-DirPIConstructor            : '<?' PITarget (S DirPIContents)? '?>'; /* ws: explicitXQ */
+dirPIConstructor            : '<?' PITarget (S DirPIContents)? '?>'; /* ws: explicitXQ */
 
 
 //DirPIContents               : (Char* ~ (Char* '?>' Char*)); /* ws: explicitXQ */
@@ -371,14 +371,14 @@ DirPIConstructor            : '<?' PITarget (S DirPIContents)? '?>'; /* ws: expl
 DirPIContents               : m=ZeroOrMoreChar{ !$m.getText().contains("?>") }?  ;
 //--------------------------------------- weN ------------------------------------------------
 
-CDataSection                : '<![CDATA[' CDataSectionContents ']]>'; /* ws: explicitXQ */
+cDataSection                : '<![CDATA[' cDataSectionContents ']]>'; /* ws: explicitXQ */
 
 
 
-//CDataSectionContents        : (Char* ~ (Char* ']]>' Char*)); /* ws: explicitXQ */
+//cDataSectionContents        : (Char* ~ (Char* ']]>' Char*)); /* ws: explicitXQ */
 
 //--------------------------------------- New ------------------------------------------------
-CDataSectionContents        : m=ZeroOrMoreChar{ !$m.getText().contains("]]>") }?  ;
+cDataSectionContents        : m=ZeroOrMoreChar{ !$m.getText().contains("]]>") }?  ;
 //--------------------------------------- weN ------------------------------------------------
 
 computedConstructor         : compDocConstructor
@@ -402,52 +402,52 @@ compCommentConstructor      : 'comment' '{' expr '}';
 
 compPIConstructor           : 'processing-instruction' (NCName | ('{' expr '}')) '{' expr? '}';
 
-SingleType                  : AtomicType '?'?;
+singleType                  : AtomicType '?'?;
 
-TypeDeclaration             : 'as' SequenceType;
+typeDeclaration             : 'as' sequenceType;
 
-SequenceType                : ('empty-sequence' '(' ')')
-                                | (ItemType OccurrenceIndicator?);
+sequenceType                : ('empty-sequence' '(' ')')
+                                | (itemType OccurrenceIndicator?);
 
 OccurrenceIndicator         : '?' | '*' | '+'; /* xgc: occurrence-indicatorsXQ */
 
-ItemType                    : KindTest | ('item' '(' ')') | AtomicType;
+itemType                    : kindTest | ('item' '(' ')') | AtomicType;
 
 AtomicType                  : QName;
 
-KindTest                    : DocumentTest
-                                | ElementTest
-                                | AttributeTest
-                                | SchemaElementTest
-                                | SchemaAttributeTest
-                                | PITest
-                                | CommentTest
-                                | TextTest
-                                | AnyKindTest;
+kindTest                    : documentTest
+                                | elementTest
+                                | attributeTest
+                                | schemaElementTest
+                                | schemaAttributeTest
+                                | piTest
+                                | commentTest
+                                | textTest
+                                | anyKindTest;
 
-AnyKindTest                 : 'node' '(' ')';
+anyKindTest                 : 'node' '(' ')';
 
-DocumentTest                : 'document-node' '(' (ElementTest | SchemaElementTest)? ')';
+documentTest                : 'document-node' '(' (elementTest | schemaElementTest)? ')';
 
-TextTest                    : 'text' '(' ')';
+textTest                    : 'text' '(' ')';
 
-CommentTest                 : 'comment' '(' ')';
+commentTest                 : 'comment' '(' ')';
 
-PITest                      : 'processing-instruction' '(' (NCName | StringLiteral)? ')';
+piTest                      : 'processing-instruction' '(' (NCName | StringLiteral)? ')';
 
-AttributeTest               : 'attribute' '(' (AttribNameOrWildcard (',' TypeName)?)? ')';
+attributeTest               : 'attribute' '(' (AttribNameOrWildcard (',' TypeName)?)? ')';
 
 AttribNameOrWildcard        : AttributeName | '*';
 
-SchemaAttributeTest         : 'schema-attribute' '(' AttributeDeclaration ')';
+schemaAttributeTest         : 'schema-attribute' '(' attributeDeclaration ')';
 
-AttributeDeclaration        : AttributeName;
+attributeDeclaration        : AttributeName;
 
-ElementTest                 : 'element' '(' (ElementNameOrWildcard (',' TypeName '?'?)?)? ')';
+elementTest                 : 'element' '(' (ElementNameOrWildcard (',' TypeName '?'?)?)? ')';
 
 ElementNameOrWildcard       : ElementName | '*';
 
-SchemaElementTest           : 'schema-element' '(' ElementDeclaration ')';
+schemaElementTest           : 'schema-element' '(' ElementDeclaration ')';
 
 ElementDeclaration          : ElementName;
 
@@ -473,13 +473,13 @@ ftPrimaryWithOptions        : ftPrimary ftMatchOptions?;
 
 ftPrimary                   : (ftWords ftTimes?) | ('(' ftSelection ')') | ftExtensionSelection;
 
-ftWords                     : ftWordsValue FTAnyallOption?;
+ftWords                     : ftWordsValue ftAnyallOption?;
 
-ftWordsValue                : Literal | ('{' expr '}');
+ftWordsValue                : literal | ('{' expr '}');
 
-ftExtensionSelection        : Pragma+ '{' ftSelection? '}';
+ftExtensionSelection        : pragma+ '{' ftSelection? '}';
 
-FTAnyallOption              : ('any' 'word'?) | ('all' 'words'?) | 'phrase';
+ftAnyallOption              : ('any' 'word'?) | ('all' 'words'?) | 'phrase';
 
 ftTimes                     : 'occurs' ftRange 'times';
 
