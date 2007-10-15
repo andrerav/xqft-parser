@@ -1,10 +1,10 @@
 grammar xqft;
 
-//options { 
-    //k = 1;
+options { 
+    k = 1;
     //output=AST;
     //ASTLabelType=Object;
-//}
+}
 //@parser::header {
 	//package no.ntnu.xqft.parse;
 	//import no.ntnu.xqft.lex.*;
@@ -111,17 +111,17 @@ OneOrMoreChar		    : Char+;
 fragment charNotMinus		    : m=Char{ !$m.equals("-") }?;  //NB small first letter
 //-------------------------------------------- weN ---------------------------------------------------------------
 
-Module                      : VersionDecl? (LibraryModule | MainModule);
+module                      : VersionDecl? (libraryModule | mainModule);
 
 VersionDecl                 : 'xquery' 'version' StringLiteral (('encoding' StringLiteral)|) Separator;
 
-MainModule                  : Prolog QueryBody;
+mainModule                  : prolog queryBody;
 
-LibraryModule               : ModuleDecl Prolog;
+libraryModule               : ModuleDecl prolog;
 
 ModuleDecl                  : 'module' 'namespace' NCName '=' URILiteral Separator;
 
-Prolog                      : ((DefaultNamespaceDecl | Setter | NamespaceDecl | Import) Separator)* ((VarDecl | FunctionDecl | OptionDecl | FTOptionDecl) Separator)*;
+prolog                      : ((DefaultNamespaceDecl | Setter | NamespaceDecl | Import) Separator)* ((varDecl | functionDecl | OptionDecl | ftOptionDecl) Separator)*;
 
 Setter                      : BoundarySpaceDecl | DefaultCollationDecl | BaseURIDecl | ConstructionDecl | OrderingModeDecl | EmptyOrderDecl | CopyNamespacesDecl;
 
@@ -137,7 +137,7 @@ DefaultNamespaceDecl        : 'declare' 'default' ('element' | 'function') 'name
 
 OptionDecl                  : 'declare' 'option' QName StringLiteral;
 
-FTOptionDecl                : 'declare' 'ft-option' FTMatchOptions;
+ftOptionDecl                : 'declare' 'ft-option' ftMatchOptions;
 
 OrderingModeDecl            : 'declare' 'ordering' ('ordered' | 'unordered');
 
@@ -159,66 +159,66 @@ SchemaPrefix                : ('namespace' NCName '=') | ('default' 'element' 'n
 
 ModuleImport                : 'import' 'module' ('namespace' NCName '=')? URILiteral ('at' URILiteral (',' URILiteral)*)?;
 
-VarDecl                     : 'declare' 'variable' '$' QName TypeDeclaration? ((':=' ExprSingle) | 'external');
+varDecl                     : 'declare' 'variable' '$' QName TypeDeclaration? ((':=' exprSingle) | 'external');
 
 ConstructionDecl            : 'declare' 'construction' ('strip' | 'preserve');
 
-FunctionDecl                : 'declare' 'function' QName '(' ParamList? ')' ('as' SequenceType)? (EnclosedExpr | 'external');
+functionDecl                : 'declare' 'function' QName '(' ParamList? ')' ('as' SequenceType)? (enclosedExpr | 'external');
 
 ParamList                   : Param (',' Param)*;
 
 Param                       : '$' QName TypeDeclaration?;
 
-EnclosedExpr                : '{' Expr '}';
+enclosedExpr                : '{' expr '}';
 
-QueryBody                   : Expr;
+queryBody                   : expr;
 
-Expr                        : ExprSingle (',' ExprSingle)*;
+expr                        : exprSingle (',' exprSingle)*;
 
-ExprSingle                  : FLWORExpr
-                                | QuantifiedExpr
-                                | TypeswitchExpr
-                                | IfExpr
-                                | OrExpr;
+exprSingle                  : fLWORExpr
+                                | quantifiedExpr
+                                | typeswitchExpr
+                                | ifExpr
+                                | orExpr;
 
-FLWORExpr                   : (ForClause | LetClause)+ WhereClause? OrderByClause? 'return' ExprSingle;
+fLWORExpr                   : (forClause | letClause)+ whereClause? orderByClause? 'return' exprSingle;
 
-ForClause                   : 'for' '$' VarName TypeDeclaration? PositionalVar? FTScoreVar? 'in' ExprSingle (',' '$' VarName TypeDeclaration? PositionalVar? FTScoreVar? 'in' ExprSingle)*;
+forClause                   : 'for' '$' VarName TypeDeclaration? PositionalVar? FTScoreVar? 'in' exprSingle (',' '$' VarName TypeDeclaration? PositionalVar? FTScoreVar? 'in' exprSingle)*;
 
 PositionalVar               : 'at' '$' VarName;
 
 FTScoreVar                  : 'score' '$' VarName;
 
-LetClause                   : (('let' '$' VarName TypeDeclaration?) | ('let' 'score' '$' VarName)) ':=' ExprSingle (',' (('$' VarName TypeDeclaration?) | FTScoreVar) ':=' ExprSingle)*;
+letClause                   : (('let' '$' VarName TypeDeclaration?) | ('let' 'score' '$' VarName)) ':=' exprSingle (',' (('$' VarName TypeDeclaration?) | FTScoreVar) ':=' exprSingle)*;
 
-WhereClause                 : 'where' ExprSingle;
+whereClause                 : 'where' exprSingle;
 
-OrderByClause               : (('order' 'by') | ('stable' 'order' 'by')) OrderSpecList;
+orderByClause               : (('order' 'by') | ('stable' 'order' 'by')) orderSpecList;
 
-OrderSpecList               : OrderSpec (',' OrderSpec)*;
+orderSpecList               : orderSpec (',' orderSpec)*;
 
-OrderSpec                   : ExprSingle OrderModifier;
+orderSpec                   : exprSingle OrderModifier;
 
 OrderModifier               : ('ascending' | 'descending')? ('empty' ('greatest' | 'least'))? ('collation' URILiteral)?;
-QuantifiedExpr              : ('some' | 'every') '$' VarName TypeDeclaration? 'in' ExprSingle (',' '$' VarName TypeDeclaration? 'in' ExprSingle)* 'satisfies' ExprSingle;
+quantifiedExpr              : ('some' | 'every') '$' VarName TypeDeclaration? 'in' exprSingle (',' '$' VarName TypeDeclaration? 'in' exprSingle)* 'satisfies' exprSingle;
 
-TypeswitchExpr              : 'typeswitch' '(' Expr ')' CaseClause+ 'default' ('$' VarName)? 'return' ExprSingle;
+typeswitchExpr              : 'typeswitch' '(' expr ')' caseClause+ 'default' ('$' VarName)? 'return' exprSingle;
 
-CaseClause                  : 'case' ('$' VarName 'as')? SequenceType 'return' ExprSingle;
+caseClause                  : 'case' ('$' VarName 'as')? SequenceType 'return' exprSingle;
 
-IfExpr                      : 'if' '(' Expr ')' 'then' ExprSingle 'else' ExprSingle;
+ifExpr                      : 'if' '(' expr ')' 'then' exprSingle 'else' exprSingle;
 
-OrExpr                      : AndExpr ( 'or' AndExpr )*;
+orExpr                      : andExpr ( 'or' andExpr )*;
 
-AndExpr                     : ComparisonExpr ( 'and' ComparisonExpr )*;
+andExpr                     : comparisonExpr ( 'and' comparisonExpr )*;
 
-ComparisonExpr              : ftContainsExpr ( (ValueComp
+comparisonExpr              : ftContainsExpr ( (ValueComp
                                 | GeneralComp
                                 | NodeComp) ftContainsExpr )?;
 
-ftContainsExpr              : RangeExpr ( 'ftcontains' FTSelection ftIgnoreOption? )?;
+ftContainsExpr              : rangeExpr ( 'ftcontains' ftSelection ftIgnoreOption? )?;
 
-RangeExpr                   : additiveExpr ( 'to' additiveExpr )?;
+rangeExpr                   : additiveExpr ( 'to' additiveExpr )?;
 
 additiveExpr                : multiplicativeExpr ( ('+' | '-') multiplicativeExpr )*;
 
@@ -238,7 +238,7 @@ castExpr                    : unaryExpr ( 'cast' 'as' SingleType )?;
 
 unaryExpr                   : ('-' | '+')* valueExpr;
 
-valueExpr                   : ValidateExpr | pathExpr | ExtensionExpr;
+valueExpr                   : validateExpr | pathExpr | extensionExpr;
 
 GeneralComp                 : '=' | '!=' | '<' | '<=' | '>' | '>=';
 
@@ -246,11 +246,11 @@ ValueComp                   : 'eq' | 'ne' | 'lt' | 'le' | 'gt' | 'ge';
 
 NodeComp                    : 'is' | '<<' | '>>';
 
-ValidateExpr                : 'validate' ValidationMode? '{' Expr '}';
+validateExpr                : 'validate' ValidationMode? '{' expr '}';
 
 ValidationMode              : 'lax' | 'strict';
 
-ExtensionExpr               : Pragma+ '{' Expr? '}';
+extensionExpr               : Pragma+ '{' expr? '}';
 
 Pragma                      : '(#' S? QName (S PragmaContents)? '#)'; /* ws: explicit */
 
@@ -266,9 +266,9 @@ pathExpr                    :   	('/' relativePathExpr?)
 
 relativePathExpr            : stepExpr (('/' | '//') stepExpr)*;
 
-stepExpr                    : filterExpr | AxisStep;
+stepExpr                    : filterExpr | axisStep;
 
-AxisStep                    : (ReverseStep | ForwardStep) PredicateList;
+axisStep                    : (ReverseStep | ForwardStep) predicateList;
 
 ForwardStep                 : (ForwardAxis NodeTest) | AbbrevForwardStep;
 
@@ -300,13 +300,13 @@ Wildcard                    : '*'
                                 | (NCName ':' '*')
                                 | ('*' ':' NCName); /* ws: explicitXQ */
 
-filterExpr                  : primaryExpr PredicateList;
+filterExpr                  : primaryExpr predicateList;
 
-PredicateList               : Predicate*;
+predicateList               : predicate*;
 
-Predicate                   : '[' Expr ']';
+predicate                   : '[' expr ']';
 
-primaryExpr                 : Literal | VarRef | ParenthesizedExpr | ContextItemExpr | FunctionCall | OrderedExpr | UnorderedExpr | constructor;
+primaryExpr                 : Literal | VarRef | parenthesizedExpr | ContextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor;
 
 Literal                     : NumericLiteral | StringLiteral;
 
@@ -316,42 +316,42 @@ VarRef                      : '$' VarName;
 
 VarName                     : QName;
 
-ParenthesizedExpr           : '(' Expr? ')';
+parenthesizedExpr           : '(' expr? ')';
 
 ContextItemExpr             : '.';
 
-OrderedExpr                 : 'ordered' '{' Expr '}';
+orderedExpr                 : 'ordered' '{' expr '}';
 
-UnorderedExpr               : 'unordered' '{' Expr '}';
+unorderedExpr               : 'unordered' '{' expr '}';
 
-FunctionCall                : QName '(' (ExprSingle (',' ExprSingle)*)? ')'; /* xgc: reserved-function-namesXQ */
+functionCall                : QName '(' (exprSingle (',' exprSingle)*)? ')'; /* xgc: reserved-function-namesXQ */
                                                                                 /* gn: parensXQ */
 
 constructor                 : directConstructor
-                                | ComputedConstructor;
+                                | computedConstructor;
 
 directConstructor           : dirElemConstructor
                                 | dirCommentConstructor
                                 | DirPIConstructor;
 
-dirElemConstructor          : '<' QName DirAttributeList ('/>' | ('>' dirElemContent* '</' QName S? '>')); /* ws: explicitXQ */
-DirAttributeList            : (S (QName S? '=' S? DirAttributeValue)?)*; /* ws: explicitXQ */
+dirElemConstructor          : '<' QName dirAttributeList ('/>' | ('>' dirElemContent* '</' QName S? '>')); /* ws: explicitXQ */
+dirAttributeList            : (S (QName S? '=' S? dirAttributeValue)?)*; /* ws: explicitXQ */
 
-DirAttributeValue           : ('"' (EscapeQuot | QuotAttrValueContent)* '"')
-                                | ('\'' (EscapeApos | AposAttrValueContent)* '\''); /* ws: explicitXQ */
+dirAttributeValue           : ('"' (EscapeQuot | quotAttrValueContent)* '"')
+                                | ('\'' (EscapeApos | aposAttrValueContent)* '\''); /* ws: explicitXQ */
 
-QuotAttrValueContent	    : QuotAttrContentChar
-                                | CommonContent;
+quotAttrValueContent	    : QuotAttrContentChar
+                                | commonContent;
 
-AposAttrValueContent        : AposAttrContentChar
-                                | CommonContent;
+aposAttrValueContent        : AposAttrContentChar
+                                | commonContent;
 
 dirElemContent              : directConstructor
                                 | CDataSection
-                                | CommonContent
+                                | commonContent
                                 | ElementContentChar;
 
-CommonContent               : PredefinedEntityRef | CharRef | '{{' | '}}' | EnclosedExpr;
+commonContent               : PredefinedEntityRef | CharRef | '{{' | '}}' | enclosedExpr;
 
 dirCommentConstructor       : '<!--' dirCommentContents '-->'; /* ws: explicitXQ */
 
@@ -381,26 +381,26 @@ CDataSection                : '<![CDATA[' CDataSectionContents ']]>'; /* ws: exp
 CDataSectionContents        : m=ZeroOrMoreChar{ !$m.getText().contains("]]>") }?  ;
 //--------------------------------------- weN ------------------------------------------------
 
-ComputedConstructor         : CompDocConstructor
-                                | CompElemConstructor
-                                | CompAttrConstructor
-                                | CompTextConstructor
-                                | CompCommentConstructor
-                                | CompPIConstructor;
+computedConstructor         : compDocConstructor
+                                | compElemConstructor
+                                | compAttrConstructor
+                                | compTextConstructor
+                                | compCommentConstructor
+                                | compPIConstructor;
 
-CompDocConstructor          : 'document' '{' Expr '}';
+compDocConstructor          : 'document' '{' expr '}';
 
-CompElemConstructor         : 'element' (QName | ('{' Expr '}')) '{' ContentExpr? '}';
+compElemConstructor         : 'element' (QName | ('{' expr '}')) '{' contentExpr? '}';
 
-ContentExpr                 : Expr;
+contentExpr                 : expr;
 
-CompAttrConstructor         : 'attribute' (QName | ('{' Expr '}')) '{' Expr? '}';
+compAttrConstructor         : 'attribute' (QName | ('{' expr '}')) '{' expr? '}';
 
-CompTextConstructor         : 'text' '{' Expr '}';
+compTextConstructor         : 'text' '{' expr '}';
 
-CompCommentConstructor      : 'comment' '{' Expr '}';
+compCommentConstructor      : 'comment' '{' expr '}';
 
-CompPIConstructor           : 'processing-instruction' (NCName | ('{' Expr '}')) '{' Expr? '}';
+compPIConstructor           : 'processing-instruction' (NCName | ('{' expr '}')) '{' expr? '}';
 
 SingleType                  : AtomicType '?'?;
 
@@ -459,43 +459,43 @@ TypeName                    : QName;
 
 URILiteral                  : StringLiteral;
 
-FTSelection                 : FTOr FTPosFilter* ('weight' RangeExpr)?;
+ftSelection                 : ftOr ftPosFilter* ('weight' rangeExpr)?;
 
-FTOr                        : FTAnd ( 'ftor' FTAnd )*;
+ftOr                        : ftAnd ( 'ftor' ftAnd )*;
 
-FTAnd                       : FTMildNot ( 'ftand' FTMildNot )*;
+ftAnd                       : ftMildNot ( 'ftand' ftMildNot )*;
 
-FTMildNot                   : FTUnaryNot ( 'not' 'in' FTUnaryNot )*;
+ftMildNot                   : ftUnaryNot ( 'not' 'in' ftUnaryNot )*;
 
-FTUnaryNot                  : ('ftnot')? FTPrimaryWithOptions;
+ftUnaryNot                  : ('ftnot')? ftPrimaryWithOptions;
 
-FTPrimaryWithOptions        : FTPrimary FTMatchOptions?;
+ftPrimaryWithOptions        : ftPrimary ftMatchOptions?;
 
-FTPrimary                   : (FTWords FTTimes?) | ('(' FTSelection ')') | FTExtensionSelection;
+ftPrimary                   : (ftWords ftTimes?) | ('(' ftSelection ')') | ftExtensionSelection;
 
-FTWords                     : FTWordsValue FTAnyallOption?;
+ftWords                     : ftWordsValue FTAnyallOption?;
 
-FTWordsValue                : Literal | ('{' Expr '}');
+ftWordsValue                : Literal | ('{' expr '}');
 
-FTExtensionSelection        : Pragma+ '{' FTSelection? '}';
+ftExtensionSelection        : Pragma+ '{' ftSelection? '}';
 
 FTAnyallOption              : ('any' 'word'?) | ('all' 'words'?) | 'phrase';
 
-FTTimes                     : 'occurs' FTRange 'times';
+ftTimes                     : 'occurs' ftRange 'times';
 
 
-FTRange                     : ('exactly' additiveExpr)
+ftRange                     : ('exactly' additiveExpr)
                                 | ('at' 'least' additiveExpr)
                                 | ('at' 'most' additiveExpr)
                                 | ('from' additiveExpr 'to' additiveExpr);
 
-FTPosFilter                 : FTOrder | FTWindow | FTDistance | FTScope | FTContent;
+ftPosFilter                 : FTOrder | ftWindow | ftDistance | FTScope | FTContent;
 
 FTOrder                     : 'ordered';
 
-FTWindow                    : 'window' additiveExpr FTUnit;
+ftWindow                    : 'window' additiveExpr FTUnit;
 
-FTDistance                  : 'distance' FTRange FTUnit;
+ftDistance                  : 'distance' ftRange FTUnit;
 
 FTUnit                      : 'words' | 'sentences' | 'paragraphs';
 
@@ -505,11 +505,11 @@ FTBigUnit                   : 'sentence' | 'paragraph';
 
 FTContent                   : ('at' 'start') | ('at' 'end') | ('entire' 'content');
 
-FTMatchOptions              : FTMatchOption+;     /* xgc: multiple-match-options */
+ftMatchOptions              : ftMatchOption+;     /* xgc: multiple-match-options */
 
-FTMatchOption               : FTLanguageOption
+ftMatchOption               : FTLanguageOption
                                 | FTWildCardOption
-                                | FTThesaurusOption
+                                | ftThesaurusOption
                                 | FTStemOption
                                 | FTCaseOption
                                 | FTDiacriticsOption
@@ -526,11 +526,11 @@ FTDiacriticsOption          : ('diacritics' 'insensitive')
 
 FTStemOption                : ('with' 'stemming') | ('without' 'stemming');
 
-FTThesaurusOption	        : ('with' 'thesaurus' (FTThesaurusID | 'default'))
-                                | ('with' 'thesaurus' '(' (FTThesaurusID | 'default') (',' FTThesaurusID)* ')')
+ftThesaurusOption	        : ('with' 'thesaurus' (ftThesaurusID | 'default'))
+                                | ('with' 'thesaurus' '(' (ftThesaurusID | 'default') (',' ftThesaurusID)* ')')
                                 | ('without' 'thesaurus');
 
-FTThesaurusID               : 'at' URILiteral ('relationship' StringLiteral)? (FTRange 'levels')?;
+ftThesaurusID               : 'at' URILiteral ('relationship' StringLiteral)? (ftRange 'levels')?;
 
 FTStopwordOption            : ('with' 'stop' 'words' FTRefOrList FTInclExclStringLiteral*)
                                 | ('without' 'stop' 'words')
