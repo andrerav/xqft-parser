@@ -96,7 +96,7 @@ CommentContents     : (Char+ ~ (Char* ('(:' | ':)') Char*));
 //-------------------------------------------- New ---------------------------------------------------------------
 ZeroOrMoreChar		    : Char*;
 OneOrMoreChar		    : Char+;
-CharNotMinus		    : m=CHAR{ !$m.equals("-") }?;
+charNotMinus		    : m=CHAR{ !$m.equals("-") }?;  //NB small first letter
 //-------------------------------------------- weN ---------------------------------------------------------------
 
 Module                      : VersionDecl? (LibraryModule | MainModule);
@@ -343,7 +343,7 @@ DirCommentConstructor       : '<!--' DirCommentContents '-->'; /* ws: explicitXQ
 DirCommentContents          : ((Char ~ '-') | ('-' (Char ~ '-')))*; /* ws: explicitXQ */
 */
 //--------------------------------------- New ------------------------------------------------
-DirCommentContents             :  ;
+DirCommentContents             : (charNotMinus | ('-' charNotMinus))*; /* ws: explicitXQ */ ;
 
 //--------------------------------------- weN ------------------------------------------------
 
