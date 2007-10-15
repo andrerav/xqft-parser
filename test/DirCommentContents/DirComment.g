@@ -1,12 +1,37 @@
 grammar DirComment;
 options {
-k=1;
+k=2;
+
+}
+
+
+@header{
+package nren;
+}
+@lexer::header{
+package nren;
+}
+
+@lexer::members
+{
+
+public boolean sjekk(String s)
+{
+	System.out.println("sjekker " + s);
+	if(s.equals("-")){
+	System.out.println("er lik -");
+	return false;
+	}
+	System.out.println("er ikke lik");
+	return true;
+}
+
 
 }
 
 INT: ('0'..'9')+;
 CHAR   : '\u0009' | '\u000A' | '\u000D' | ('\u0020'..'\uD7FF') | ('\uE000'..'\uFFFD'); /* Dropped temporarily | [\u10000-\u10FFFF] */
 
-//uttrykk	:((Char ~ '-') | ('-' (Char ~ '-')))*;  ;
+//uttrykk	:((Char - '-') | ('-' (Char - '-')))*;  ;
 uttrykk		:	(('-' (CharIkkeMinus)| (CharIkkeMinus)))*;
-fragment CharIkkeMinus	:	m=CHAR{ !$m.getText().contains("-") }?  ;
+fragment CharIkkeMinus	:m=CHAR{ sjekk($m.getText()) }?;
