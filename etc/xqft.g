@@ -1,22 +1,22 @@
 grammar xqft;
 
-options { 
+//options { 
     //k = 1;
     //output=AST;
     //ASTLabelType=Object;
-}
+//}
 //@parser::header {
 	//package no.ntnu.xqft.parse;
 	//import no.ntnu.xqft.lex.*;
 //}
-@lexer::header {
+//@lexer::header {
 	//package no.ntnu.xqft.lex;
 	//import no.ntnu.xqft.parse.*;
-}
+//}
 
-@members {
+//@members {
 	
-}
+//}
 /* Lexer */
 /* See http://www.w3.org/TR/REC-xml/#CharClasses */
 Letter              : BaseChar | Ideographic ;
@@ -31,13 +31,23 @@ Extender            : '\u00B7' | '\u02D0' | '\u02D1' | '\u0387' | '\u0640' | '\u
 IntegerLiteral      : Digits;
 DecimalLiteral      : ('.' Digits) | (Digits '.' ('0'..'9')*);
 DoubleLiteral       : (('.' Digits) | (Digits ('.' ('0'..'9')*)?)) ('e'|'E') ('+'|'-')? Digits;
+
+/* StringLiteral       : ('"' (PredefinedEntityRef | CharRef | EscapeQuot | [^"&])* '"') | ("'" (PredefinedEntityRef | CharRef | EscapeApos | [^'&])* "'") */
 StringLiteral	    : ('"' (PredefinedEntityRef | CharRef | EscapeQuot | ~('"'|'&'))* '"') | ('\'' (PredefinedEntityRef | CharRef | EscapeApos | ~('\''|'&'))* '\'');
 PredefinedEntityRef : '&' ('lt' | 'gt' | 'amp' | 'quot' | 'apos') ';';
 EscapeQuot          : '""';
 EscapeApos          : '\'''\'';
+
+/* Original:
 ElementContentChar	: Char ~ ('{'|'}'|'<'|'&');
 QuotAttrContentChar	: Char ~ ('"'|'{'|'}'|'<'|'&');
 AposAttrContentChar	: Char ~ ('\''|'{'|'}'|'<'|'&');
+*/
+ElementContentChar	: c=Char {(!$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
+QuotAttrContentChar	: c=Char {(!$c.getText().equals("\"") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
+AposAttrContentChar	: c=Char {(!$.getText()c.equals("'") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
+
+
 Comment             :'(:' (CommentContents | Comment)* ':)';
 
 NameChar            : Letter | Digit | '.' | '-' | '_' | ':' | CombiningChar | Extender;
@@ -47,8 +57,12 @@ Nmtoken             : (NameChar)+;
 Nmtokens            : Nmtoken ('\u0020' Nmtoken)*;
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-PITarget */
+/* Original:
 PI                  : '<?' PITarget (S (Char* ~ (Char* '?>' Char*)))? '?>';
 PITarget            : Name ~ (('X' | 'x') ('M' | 'm') ('L' | 'l'));
+*/
+PI                  : '<?' PITarget (S (Char* ~ (Char* '?>' Char*)))? '?>';
+PITarget            : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-CharRef */
 CharRef             : '&#' ('0'..'9')+ ';' | '&#x' ('0'..'9'|'a'..'f'|'A'..'F')+ ';';
