@@ -95,9 +95,9 @@ Char                : '\u0009' | '\u000A' | '\u000D' | ('\u0020'..'\uD7FF') | ('
 
 /* See http://www.w3.org/TR/xquery-full-text/#prod-xquery-Digits */
 Digits              : ('0'..'9')+;
-/*
-CommentContents     : (Char+ ~ (Char* ('(:' | ':)') Char*));
-*/
+
+//CommentContents     : (Char+ ~ (Char* ('(:' | ':)') Char*));
+
 //-------------------------------------------- New ---------------------------------------------------------------
 CommentContents	    : m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equals(":)") ))}?;
 //-------------------------------------------- weN ---------------------------------------------------------------
@@ -253,9 +253,9 @@ ValidationMode              : 'lax' | 'strict';
 ExtensionExpr               : Pragma+ '{' Expr? '}';
 
 Pragma                      : '(#' S? QName (S PragmaContents)? '#)'; /* ws: explicit */
-/*
-PragmaContents              : (Char* ~ (Char* '#)' Char*));
-*/
+
+//PragmaContents              : (Char* ~ (Char* '#)' Char*));
+
 //--------------------------------------- New ------------------------------------------------
 PragmaContents        : m=ZeroOrMoreChar{ !$m.getText().contains("#") }?  ;
 //--------------------------------------- weN ------------------------------------------------
@@ -355,18 +355,18 @@ CommonContent               : PredefinedEntityRef | CharRef | '{{' | '}}' | Encl
 
 DirCommentConstructor       : '<!--' DirCommentContents '-->'; /* ws: explicitXQ */
 
-/*
-DirCommentContents          : ((Char ~ '-') | ('-' (Char ~ '-')))*; /* ws: explicitXQ */
-*/
+
+//DirCommentContents          : ((Char ~ '-') | ('-' (Char ~ '-')))*; /* ws: explicitXQ */
+
 //--------------------------------------- New ------------------------------------------------
 DirCommentContents             : (charNotMinus | ('-' charNotMinus))*; /* ws: explicitXQ */ ;
 //--------------------------------------- weN ------------------------------------------------
 
 DirPIConstructor            : '<?' PITarget (S DirPIContents)? '?>'; /* ws: explicitXQ */
 
-/*
-DirPIContents               : (Char* ~ (Char* '?>' Char*)); /* ws: explicitXQ */
-*/
+
+//DirPIContents               : (Char* ~ (Char* '?>' Char*)); /* ws: explicitXQ */
+
 //--------------------------------------- New ------------------------------------------------
 DirPIContents               : m=ZeroOrMoreChar{ !$m.getText().contains("?>") }?  ;
 //--------------------------------------- weN ------------------------------------------------
@@ -374,9 +374,9 @@ DirPIContents               : m=ZeroOrMoreChar{ !$m.getText().contains("?>") }? 
 CDataSection                : '<![CDATA[' CDataSectionContents ']]>'; /* ws: explicitXQ */
 
 
-/*
-CDataSectionContents        : (Char* ~ (Char* ']]>' Char*)); /* ws: explicitXQ */
-*/
+
+//CDataSectionContents        : (Char* ~ (Char* ']]>' Char*)); /* ws: explicitXQ */
+
 //--------------------------------------- New ------------------------------------------------
 CDataSectionContents        : m=ZeroOrMoreChar{ !$m.getText().contains("]]>") }?  ;
 //--------------------------------------- weN ------------------------------------------------
