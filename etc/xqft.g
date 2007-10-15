@@ -108,7 +108,7 @@ CommentContents	    : m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equals(":)") 
 //-------------------------------------------- New ---------------------------------------------------------------
 ZeroOrMoreChar		    : Char*;
 OneOrMoreChar		    : Char+;
-charNotMinus		    : m=CHAR{ !$m.equals("-") }?;  //NB small first letter
+fragment charNotMinus		    : m=Char{ !$m.equals("-") }?;  //NB small first letter
 //-------------------------------------------- weN ---------------------------------------------------------------
 
 Module                      : VersionDecl? (LibraryModule | MainModule);
@@ -212,33 +212,33 @@ OrExpr                      : AndExpr ( 'or' AndExpr )*;
 
 AndExpr                     : ComparisonExpr ( 'and' ComparisonExpr )*;
 
-ComparisonExpr              : FTContainsExpr ( (ValueComp
+ComparisonExpr              : ftContainsExpr ( (ValueComp
                                 | GeneralComp
-                                | NodeComp) FTContainsExpr )?;
+                                | NodeComp) ftContainsExpr )?;
 
-FTContainsExpr              : RangeExpr ( 'ftcontains' FTSelection FTIgnoreOption? )?;
+ftContainsExpr              : RangeExpr ( 'ftcontains' FTSelection ftIgnoreOption? )?;
 
-RangeExpr                   : AdditiveExpr ( 'to' AdditiveExpr )?;
+RangeExpr                   : additiveExpr ( 'to' additiveExpr )?;
 
-AdditiveExpr                : MultiplicativeExpr ( ('+' | '-') MultiplicativeExpr )*;
+additiveExpr                : multiplicativeExpr ( ('+' | '-') multiplicativeExpr )*;
 
-MultiplicativeExpr          : UnionExpr ( ('*' | 'div' | 'idiv' | 'mod') UnionExpr )*;
+multiplicativeExpr          : unionExpr ( ('*' | 'div' | 'idiv' | 'mod') unionExpr )*;
 
-UnionExpr                   : IntersectExceptExpr ( ('union' | '|') IntersectExceptExpr )*;
+unionExpr                   : intersectExceptExpr ( ('union' | '|') intersectExceptExpr )*;
 
-IntersectExceptExpr         : InstanceofExpr ( ('intersect' | 'except') InstanceofExpr )*;
+intersectExceptExpr         : instanceofExpr ( ('intersect' | 'except') instanceofExpr )*;
 
-InstanceofExpr              : TreatExpr ( 'instance' 'of' SequenceType )?;
+instanceofExpr              : treatExpr ( 'instance' 'of' SequenceType )?;
 
-TreatExpr                   : CastableExpr ( 'treat' 'as' SequenceType )?;
+treatExpr                   : castableExpr ( 'treat' 'as' SequenceType )?;
 
-CastableExpr                : CastExpr ( 'castable' 'as' SingleType )?;
+castableExpr                : castExpr ( 'castable' 'as' SingleType )?;
 
-CastExpr                    : UnaryExpr ( 'cast' 'as' SingleType )?;
+castExpr                    : unaryExpr ( 'cast' 'as' SingleType )?;
 
-UnaryExpr                   : ('-' | '+')* ValueExpr;
+unaryExpr                   : ('-' | '+')* valueExpr;
 
-ValueExpr                   : ValidateExpr | PathExpr | ExtensionExpr;
+valueExpr                   : ValidateExpr | pathExpr | ExtensionExpr;
 
 GeneralComp                 : '=' | '!=' | '<' | '<=' | '>' | '>=';
 
@@ -260,13 +260,13 @@ Pragma                      : '(#' S? QName (S PragmaContents)? '#)'; /* ws: exp
 PragmaContents        : m=ZeroOrMoreChar{ !$m.getText().contains("#") }?  ;
 //--------------------------------------- weN ------------------------------------------------
 
-PathExpr                    :   	('/' RelativePathExpr?)
-                                | ('//' RelativePathExpr)
-                                | RelativePathExpr;	/* xgc: leading-lone-slashXQ */
+pathExpr                    :   	('/' relativePathExpr?)
+                                | ('//' relativePathExpr)
+                                | relativePathExpr;	/* xgc: leading-lone-slashXQ */
 
-RelativePathExpr            : StepExpr (('/' | '//') StepExpr)*;
+relativePathExpr            : stepExpr (('/' | '//') stepExpr)*;
 
-StepExpr                    : FilterExpr | AxisStep;
+stepExpr                    : filterExpr | AxisStep;
 
 AxisStep                    : (ReverseStep | ForwardStep) PredicateList;
 
@@ -300,13 +300,13 @@ Wildcard                    : '*'
                                 | (NCName ':' '*')
                                 | ('*' ':' NCName); /* ws: explicitXQ */
 
-FilterExpr                  : PrimaryExpr PredicateList;
+filterExpr                  : primaryExpr PredicateList;
 
 PredicateList               : Predicate*;
 
 Predicate                   : '[' Expr ']';
 
-PrimaryExpr                 : Literal | VarRef | ParenthesizedExpr | ContextItemExpr | FunctionCall | OrderedExpr | UnorderedExpr | Constructor;
+primaryExpr                 : Literal | VarRef | ParenthesizedExpr | ContextItemExpr | FunctionCall | OrderedExpr | UnorderedExpr | constructor;
 
 Literal                     : NumericLiteral | StringLiteral;
 
@@ -327,14 +327,14 @@ UnorderedExpr               : 'unordered' '{' Expr '}';
 FunctionCall                : QName '(' (ExprSingle (',' ExprSingle)*)? ')'; /* xgc: reserved-function-namesXQ */
                                                                                 /* gn: parensXQ */
 
-Constructor                 : DirectConstructor
+constructor                 : directConstructor
                                 | ComputedConstructor;
 
-DirectConstructor           : DirElemConstructor
-                                | DirCommentConstructor
+directConstructor           : dirElemConstructor
+                                | dirCommentConstructor
                                 | DirPIConstructor;
 
-DirElemConstructor          : '<' QName DirAttributeList ('/>' | ('>' DirElemContent* '</' QName S? '>')); /* ws: explicitXQ */
+dirElemConstructor          : '<' QName DirAttributeList ('/>' | ('>' dirElemContent* '</' QName S? '>')); /* ws: explicitXQ */
 DirAttributeList            : (S (QName S? '=' S? DirAttributeValue)?)*; /* ws: explicitXQ */
 
 DirAttributeValue           : ('"' (EscapeQuot | QuotAttrValueContent)* '"')
@@ -346,20 +346,20 @@ QuotAttrValueContent	    : QuotAttrContentChar
 AposAttrValueContent        : AposAttrContentChar
                                 | CommonContent;
 
-DirElemContent              : DirectConstructor
+dirElemContent              : directConstructor
                                 | CDataSection
                                 | CommonContent
                                 | ElementContentChar;
 
 CommonContent               : PredefinedEntityRef | CharRef | '{{' | '}}' | EnclosedExpr;
 
-DirCommentConstructor       : '<!--' DirCommentContents '-->'; /* ws: explicitXQ */
+dirCommentConstructor       : '<!--' dirCommentContents '-->'; /* ws: explicitXQ */
 
 
-//DirCommentContents          : ((Char ~ '-') | ('-' (Char ~ '-')))*; /* ws: explicitXQ */
+//dirCommentContents          : ((Char ~ '-') | ('-' (Char ~ '-')))*; /* ws: explicitXQ */
 
 //--------------------------------------- New ------------------------------------------------
-DirCommentContents             : (charNotMinus | ('-' charNotMinus))*; /* ws: explicitXQ */ ;
+dirCommentContents             : (charNotMinus | ('-' charNotMinus))*; /* ws: explicitXQ */ 
 //--------------------------------------- weN ------------------------------------------------
 
 DirPIConstructor            : '<?' PITarget (S DirPIContents)? '?>'; /* ws: explicitXQ */
@@ -484,16 +484,16 @@ FTAnyallOption              : ('any' 'word'?) | ('all' 'words'?) | 'phrase';
 FTTimes                     : 'occurs' FTRange 'times';
 
 
-FTRange                     : ('exactly' AdditiveExpr)
-                                | ('at' 'least' AdditiveExpr)
-                                | ('at' 'most' AdditiveExpr)
-                                | ('from' AdditiveExpr 'to' AdditiveExpr);
+FTRange                     : ('exactly' additiveExpr)
+                                | ('at' 'least' additiveExpr)
+                                | ('at' 'most' additiveExpr)
+                                | ('from' additiveExpr 'to' additiveExpr);
 
 FTPosFilter                 : FTOrder | FTWindow | FTDistance | FTScope | FTContent;
 
 FTOrder                     : 'ordered';
 
-FTWindow                    : 'window' AdditiveExpr FTUnit;
+FTWindow                    : 'window' additiveExpr FTUnit;
 
 FTDistance                  : 'distance' FTRange FTUnit;
 
@@ -543,4 +543,4 @@ FTInclExclStringLiteral     : ('union' | 'except') FTRefOrList;
 FTLanguageOption            : 'language' StringLiteral;
 FTWildCardOption            : ('with' 'wildcards') | ('without' 'wildcards');
 FTExtensionOption           : 'option' QName StringLiteral;
-FTIgnoreOption              : 'without' 'content' UnionExpr;
+ftIgnoreOption              : 'without' 'content' unionExpr;
