@@ -43,9 +43,11 @@ ElementContentChar	: Char ~ ('{'|'}'|'<'|'&');
 QuotAttrContentChar	: Char ~ ('"'|'{'|'}'|'<'|'&');
 AposAttrContentChar	: Char ~ ('\''|'{'|'}'|'<'|'&');
 */
+//--------------------------------------- New ------------------------------------------------
 ElementContentChar	: c=Char {(!$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
 QuotAttrContentChar	: c=Char {(!$c.getText().equals("\"") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
 AposAttrContentChar	: c=Char {(!$.getText()c.equals("'") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
+//--------------------------------------- weN ------------------------------------------------
 
 
 Comment             :'(:' (CommentContents | Comment)* ':)';
@@ -62,8 +64,10 @@ PI                  : '<?' PITarget (S (Char* ~ (Char* '?>' Char*)))? '?>';
 PITarget            : Name ~ (('X' | 'x') ('M' | 'm') ('L' | 'l'));
 ZeroOrMoreChar
 */
+//--------------------------------------- New ------------------------------------------------
 PI                  : '<?' PITarget (S (zoom=ZeroOrMoreChar))? '?>' {!$zoom.getText().contains("?>")}?;
 PITarget            : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
+//--------------------------------------- weN ------------------------------------------------
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-CharRef */
 CharRef             : '&#' ('0'..'9')+ ';' | '&#x' ('0'..'9'|'a'..'f'|'A'..'F')+ ';';
@@ -78,7 +82,9 @@ LocalPart           : NCName;
 /* See: http://www.w3.org/TR/REC-xml-names/#NT-NCName */
 NCName              : NCNameStartChar NCNameChar*;
 /*NCNameChar          : NameChar ~ ':';*/
+//--------------------------------------- New ------------------------------------------------
 NCNameChar          : nc=NameChar {!$nc.getText().equals(":")}?;
+//--------------------------------------- weN ------------------------------------------------
 NCNameStartChar     : Letter | '_';
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-S */
