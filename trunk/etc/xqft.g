@@ -50,7 +50,7 @@ AposAttrContentChar	: c=Char {(!$.getText()c.equals("'") && !$c.getText().equals
 //--------------------------------------- weN ------------------------------------------------
 
 
-Comment             :'(:' (CommentContents | Comment)* ':)';
+comment             :'(:' (commentContents | comment)* ':)';
 
 NameChar            : Letter | Digit | '.' | '-' | '_' | ':' | CombiningChar | Extender;
 Name                : (Letter | '_' | ':') (NameChar)*;
@@ -99,7 +99,7 @@ Digits              : ('0'..'9')+;
 //CommentContents     : (Char+ ~ (Char* ('(:' | ':)') Char*));
 
 //-------------------------------------------- New ---------------------------------------------------------------
-CommentContents	    : m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equals(":)") ))}?;
+commentContents	    : m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equals(":)") ))}?;
 //-------------------------------------------- weN ---------------------------------------------------------------
 
 
