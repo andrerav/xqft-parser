@@ -1,10 +1,10 @@
 grammar xqft;
 
-options { 
-    k = 1;
+//options { 
+    //k = 1;
     //output=AST;
     //ASTLabelType=Object;
-}
+//}
 //@parser::header {
 	//package no.ntnu.xqft.parse;
 	//import no.ntnu.xqft.lex.*;
@@ -46,7 +46,7 @@ AposAttrContentChar	: Char ~ ('\''|'{'|'}'|'<'|'&');
 //--------------------------------------- New ------------------------------------------------
 ElementContentChar	: c=Char {(!$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
 QuotAttrContentChar	: c=Char {(!$c.getText().equals("\"") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
-AposAttrContentChar	: c=Char {(!$.getText()c.equals("'") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
+AposAttrContentChar	: c=Char {(!$c.getText().equals("'") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
 //--------------------------------------- weN ------------------------------------------------
 
 
@@ -65,27 +65,29 @@ PITarget            : Name ~ (('X' | 'x') ('M' | 'm') ('L' | 'l'));
 ZeroOrMoreChar
 */
 //--------------------------------------- New ------------------------------------------------
-PI                  : '<?' PITarget (S (zoom=ZeroOrMoreChar))? '?>' {!$zoom.getText().contains("?>")}?;
-PITarget            : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
+/* Redundant
+pi                  : '<?' PITarget (S (zoom=ZeroOrMoreChar))? '?>' {!$zoom.getText().contains("?>")}?;
+*/
+piTarget            : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
 //--------------------------------------- weN ------------------------------------------------
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-CharRef */
 CharRef             : '&#' ('0'..'9')+ ';' | '&#x' ('0'..'9'|'a'..'f'|'A'..'F')+ ';';
 			
 /* See: http://www.w3.org/TR/REC-xml-names/#NT-qName */
-qName               : PrefixedName | UnprefixedName;
-PrefixedName        : Prefix ':' LocalPart ;
-UnprefixedName      : LocalPart ;
-Prefix              : NCName;
-LocalPart           : NCName;
+qName               : prefixedName | unprefixedName;
+prefixedName        : prefix ':' localPart ;
+unprefixedName      : localPart ;
+prefix              : ncName;
+localPart           : ncName;
 
 /* See: http://www.w3.org/TR/REC-xml-names/#NT-NCName */
-NCName              : NCNameStartChar NCNameChar*;
+ncName              : ncNameStartChar ncNameChar*;
 /*NCNameChar          : NameChar ~ ':';*/
 //--------------------------------------- New ------------------------------------------------
-NCNameChar          : nc=NameChar {!$nc.getText().equals(":")}?;
+ncNameChar          : nc=NameChar {!$nc.getText().equals(":")}?;
 //--------------------------------------- weN ------------------------------------------------
-NCNameStartChar     : Letter | '_';
+ncNameStartChar     : Letter | '_';
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-S */
 S                   : ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
@@ -119,17 +121,18 @@ mainModule                  : prolog queryBody;
 
 libraryModule               : moduleDecl prolog;
 
-moduleDecl                  : 'module' 'namespace' NCName '=' uriLiteral Separator;
+moduleDecl                  : 'module' 'namespace' ncName '=' uriLiteral Separator;
 
-prolog                      : ((defaultNamespaceDecl | setter | namespaceDecl | import) Separator)* ((varDecl | functionDecl | optionDecl | ftOptionDecl) Separator)*;
+prolog                      : ((defaultNamespaceDecl | setter | namespaceDecl | importStmt) Separator)* ((varDecl | functionDecl | optionDecl | ftOptionDecl) Separator)*;
 
 setter                      : boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl;
 
-import                      : schemaImport | moduleImport;
+/* Using 'import' as name for this production caused error when compiling the parser */
+importStmt                  : schemaImport | moduleImport;
 
 Separator                   : ';';
 
-namespaceDecl               : 'declare' 'namespace' NCName '=' uriLiteral;
+namespaceDecl               : 'declare' 'namespace' ncName '=' uriLiteral;
 
 boundarySpaceDecl           : 'declare' 'boundary-space' ('preserve' | 'strip');
 
@@ -153,11 +156,11 @@ defaultCollationDecl        : 'declare' 'default' 'collation' uriLiteral;
 
 baseURIDecl                 : 'declare' 'base-uri' uriLiteral;
 
-schemaImport                : 'import' 'schema' SchemaPrefix? uriLiteral ('at' uriLiteral (',' uriLiteral)*)?;
+schemaImport                : 'import' 'schema' schemaPrefix? uriLiteral ('at' uriLiteral (',' uriLiteral)*)?;
 
-SchemaPrefix                : ('namespace' NCName '=') | ('default' 'element' 'namespace');
+schemaPrefix                : ('namespace' ncName '=') | ('default' 'element' 'namespace');
 
-moduleImport                : 'import' 'module' ('namespace' NCName '=')? uriLiteral ('at' uriLiteral (',' uriLiteral)*)?;
+moduleImport                : 'import' 'module' ('namespace' ncName '=')? uriLiteral ('at' uriLiteral (',' uriLiteral)*)?;
 
 varDecl                     : 'declare' 'variable' '$' qName typeDeclaration? ((':=' exprSingle) | 'external');
 
@@ -252,12 +255,12 @@ ValidationMode              : 'lax' | 'strict';
 
 extensionExpr               : pragma+ '{' expr? '}';
 
-pragma                      : '(#' S? qName (S PragmaContents)? '#)'; /* ws: explicit */
+pragma                      : '(#' S? qName (S pragmaContents)? '#)'; /* ws: explicit */
 
 //PragmaContents              : (Char* ~ (Char* '#)' Char*));
 
 //--------------------------------------- New ------------------------------------------------
-PragmaContents        : m=ZeroOrMoreChar{ !$m.getText().contains("#") }?  ;
+pragmaContents        : m=ZeroOrMoreChar{ !$m.getText().contains("#") }?  ;
 //--------------------------------------- weN ------------------------------------------------
 
 pathExpr                    :   	('/' relativePathExpr?)
@@ -294,11 +297,11 @@ AbbrevReverseStep           : '..';
 
 nodeTest                    : kindTest | nameTest;
 
-nameTest                    : qName | Wildcard;
+nameTest                    : qName | wildcard;
 
-Wildcard                    : '*'
-                                | (NCName ':' '*')
-                                | ('*' ':' NCName); /* ws: explicitXQ */
+wildcard                    : '*'
+                                | (ncName ':' '*')
+                                | ('*' ':' ncName); /* ws: explicitXQ */
 
 filterExpr                  : primaryExpr predicateList;
 
@@ -362,13 +365,13 @@ dirCommentConstructor       : '<!--' dirCommentContents '-->'; /* ws: explicitXQ
 dirCommentContents             : (charNotMinus | ('-' charNotMinus))*; /* ws: explicitXQ */ 
 //--------------------------------------- weN ------------------------------------------------
 
-dirPIConstructor            : '<?' PITarget (S DirPIContents)? '?>'; /* ws: explicitXQ */
+dirPIConstructor            : '<?' piTarget (S dirPIContents)? '?>'; /* ws: explicitXQ */
 
 
 //DirPIContents               : (Char* ~ (Char* '?>' Char*)); /* ws: explicitXQ */
 
 //--------------------------------------- New ------------------------------------------------
-DirPIContents               : m=ZeroOrMoreChar{ !$m.getText().contains("?>") }?  ;
+dirPIContents               : m=ZeroOrMoreChar{ !$m.getText().contains("?>") }?  ;
 //--------------------------------------- weN ------------------------------------------------
 
 cDataSection                : '<![CDATA[' cDataSectionContents ']]>'; /* ws: explicitXQ */
@@ -400,7 +403,7 @@ compTextConstructor         : 'text' '{' expr '}';
 
 compCommentConstructor      : 'comment' '{' expr '}';
 
-compPIConstructor           : 'processing-instruction' (NCName | ('{' expr '}')) '{' expr? '}';
+compPIConstructor           : 'processing-instruction' (ncName | ('{' expr '}')) '{' expr? '}';
 
 singleType                  : atomicType '?'?;
 
@@ -433,7 +436,7 @@ textTest                    : 'text' '(' ')';
 
 commentTest                 : 'comment' '(' ')';
 
-piTest                      : 'processing-instruction' '(' (NCName | StringLiteral)? ')';
+piTest                      : 'processing-instruction' '(' (ncName | StringLiteral)? ')';
 
 attributeTest               : 'attribute' '(' (attribNameOrWildcard (',' typeName)?)? ')';
 
