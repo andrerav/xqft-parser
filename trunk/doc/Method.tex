@@ -2,9 +2,9 @@
 \section{Method}
 \subsection{Parser construction}
 Writing a parser from scratch was ruled out early for being too time consuming.
-Instead we decided to use tools for compiler and parser construction to generate
-a parser from the XQuery 1.0 and XPath 2.0 grammar specifications developed by
-the W3C.
+Instead it was decided to use tools for compiler and parser construction to
+generate a parser from the XQuery 1.0 and XPath 2.0 grammar specifications
+developed by the W3C.
 
 \subsection{Evaluated alternatives}
 \subsubsection{JFlex/CUP}
@@ -28,7 +28,8 @@ Additionally, Antlr accepts a grammar specification syntactically very close to
 the EBNF used by the W3C. This is the parser generater chosen for our project,
 based on the criteria outlined in this section.
 
-\subsection{Unicode limitations}
+\subsection{Limitations in Antlr}
+\subsubsection{Unicode}
 It is important to note, however, that Antlr has limited support for unicode.
 In this project this implies that our parser will not accept unicode characters
 in the range from and above 0x10000. This will exclude the supplementary
@@ -42,3 +43,49 @@ As a remedy for this situation it is possible to couple an external lexer with
 Antlr which will accept unicode characters in the above mentioned character
 ranges. For the sake of simplicity this has not been further investigated nor
 implemented in this project.
+
+\subsection{Rewriting the grammar for Antlr syntax conformity}
+\subsubsection{Lexer vs. parser syntax}
+The Antlr parser generator can generate parsers and lexers from a single grammar
+file. The distinction between terminals and non-terminals is simply a matter of
+convention, where terminals are assumed to start with uppercase letters, and
+non-terminals are assumed to start with lowercase letters.
+
+In the grammar specified by the W3C, all the productions (terminals and
+non-terminals) all start with uppercase letters. Initially this caused some
+confusion, because this grammar naturally generated a very big lexer and a very
+small and non-functional parser.
+
+This was mitigated by converting non-terminal productions to start with
+lowercase letters.
+
+\subsubsection{Rewriting the W3C 'dash' operator}
+In their specification, the W3c uses a dash operator, which has the following
+semantic meaning in a grammar (from \cite{w3c03}, section 6):
+\begin{quote}
+A - B: matches any string that matches A but does not match B.
+\end{quote}
+This operator is not supported in Antlr, so it was necessary to rewrite
+these productions using \emph{semantic predicates} where necessary. Thankfully,
+in the original specification, the usage of the dash operator was rather sparse
+and only used in trivial productions.
+
+An example of rewriting the dash operator using semantic predicates:
+\begin{verbatim}
+// Original production
+piTarget : Name - (('X' | 'x') ('M' | 'm') ('L' | 'l'));
+
+// Rewritten production using a semantic predicate
+piTarget : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
+\end{verbatim}
+The original production can be interpreted as ``piTarget can be a Name, but not
+`XML', regardless of character casing''. The syntactic predicate will imitate
+this behaviour using the method equalsIgnoreCase(). As can be seen from this
+example, a semantic predicate is simply any kind of boolean Java expression.
+This is a flexible solution, because the boolean expression can be wrapped in a
+method with boolean return type, which for example then can be placed inside a
+@members { } clause in the grammar file, or even as a static method in an
+external class. This makes it possible to add complex grammar logic without
+disturbing grammar brevity, if necessary.
+
+\subsubsection{Grammar LL(1) conformity}
