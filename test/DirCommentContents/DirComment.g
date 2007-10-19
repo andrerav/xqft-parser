@@ -26,4 +26,4 @@ CHAR   : '\u0009' | '\u000A' | '\u000D' | ('\u0020'..'\uD7FF') | ('\uE000'..'\uF
 
 //uttrykk	:(('-' (Char - '-')) | (Char - '-'))*;  ;
 uttrykk		:(('-' (CharIkkeMinus)| (CharIkkeMinus)))*;
-CharIkkeMinus	: CHAR;//{ !$CHAR.text.equals("-") }?;
+CharIkkeMinus	: m=CHAR { !$m.getText.equals("-") }?;
