@@ -109,9 +109,9 @@ Digits              : ('0'..'9')+;
 
 /* Parser */
 //-------------------------------------------- New ---------------------------------------------------------------
-ZeroOrMoreChar		    : Char*;
-OneOrMoreChar		    : Char+;
-fragment charNotMinus		    : m=Char{ !$m.equals("-") }?;  //NB small first letter
+fragment ZeroOrMoreChar		    : Char*;
+fragment OneOrMoreChar		    : Char+;
+fragment charNotMinus	: m=Char{ !$m.equals("-") }?;  //NB small first letter
 //-------------------------------------------- weN ---------------------------------------------------------------
 
 module                      : versionDecl? (libraryModule | mainModule);
@@ -302,9 +302,9 @@ nameTest                    : qName | wildcard;
 
 
 /* added syntactic predicate */
-wildcard                    : ('*' ':' ncName) => '*' ':' ncName
+wildcard                    : ('*' ':' NCName) => '*' ':' NCName
 								|'*'
-                                | (ncName ':' '*'); /* ws: explicitXQ */
+                                | (NCName ':' '*'); /* ws: explicitXQ */
 
 
 filterExpr                  : primaryExpr predicateList;
