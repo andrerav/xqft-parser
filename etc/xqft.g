@@ -78,16 +78,16 @@ CharRef             : '&#' ('0'..'9')+ ';' | '&#x' ('0'..'9'|'a'..'f'|'A'..'F')+
 qName               : prefixedName | unprefixedName;
 prefixedName        : prefix ':' localPart ;
 unprefixedName      : localPart ;
-prefix              : ncName;
-localPart           : ncName;
+prefix              : NCName;
+localPart           : NCName;
 
 /* See: http://www.w3.org/TR/REC-xml-names/#NT-NCName */
-ncName              : ncNameStartChar ncNameChar*;
+NCName              : NCNameStartChar NCNameChar*;
 /*NCNameChar          : NameChar ~ ':';*/
 //--------------------------------------- New ------------------------------------------------
-ncNameChar          : nc=NameChar {!$nc.getText().equals(":")}?;
+NCNameChar          : nc=NameChar {!$nc.getText().equals(":")}?;
 //--------------------------------------- weN ------------------------------------------------
-ncNameStartChar     : Letter | '_';
+NCNameStartChar     : Letter | '_';
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-S */
 S                   : ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
@@ -121,7 +121,7 @@ mainModule                  : prolog queryBody;
 
 libraryModule               : moduleDecl prolog;
 
-moduleDecl                  : 'module' 'namespace' ncName '=' uriLiteral Separator;
+moduleDecl                  : 'module' 'namespace' NCName '=' uriLiteral Separator;
 
 prolog                      : ((defaultNamespaceDecl | setter | namespaceDecl | importStmt) Separator)* ((varDecl | functionDecl | optionDecl | ftOptionDecl) Separator)*;
 
@@ -132,7 +132,7 @@ importStmt                  : schemaImport | moduleImport;
 
 Separator                   : ';';
 
-namespaceDecl               : 'declare' 'namespace' ncName '=' uriLiteral;
+namespaceDecl               : 'declare' 'namespace' NCName '=' uriLiteral;
 
 boundarySpaceDecl           : 'declare' 'boundary-space' ('preserve' | 'strip');
 
@@ -158,9 +158,9 @@ baseURIDecl                 : 'declare' 'base-uri' uriLiteral;
 
 schemaImport                : 'import' 'schema' schemaPrefix? uriLiteral ('at' uriLiteral (',' uriLiteral)*)?;
 
-schemaPrefix                : ('namespace' ncName '=') | ('default' 'element' 'namespace');
+schemaPrefix                : ('namespace' NCName '=') | ('default' 'element' 'namespace');
 
-moduleImport                : 'import' 'module' ('namespace' ncName '=')? uriLiteral ('at' uriLiteral (',' uriLiteral)*)?;
+moduleImport                : 'import' 'module' ('namespace' NCName '=')? uriLiteral ('at' uriLiteral (',' uriLiteral)*)?;
 
 varDecl                     : 'declare' 'variable' '$' qName typeDeclaration? ((':=' exprSingle) | 'external');
 
@@ -300,8 +300,8 @@ nodeTest                    : kindTest | nameTest;
 nameTest                    : qName | wildcard;
 
 wildcard                    : '*'
-                                | (ncName ':' '*')
-                                | ('*' ':' ncName); /* ws: explicitXQ */
+                                | (NCName ':' '*')
+                                | ('*' ':' NCName); /* ws: explicitXQ */
 
 filterExpr                  : primaryExpr predicateList;
 
@@ -403,7 +403,7 @@ compTextConstructor         : 'text' '{' expr '}';
 
 compCommentConstructor      : 'comment' '{' expr '}';
 
-compPIConstructor           : 'processing-instruction' (ncName | ('{' expr '}')) '{' expr? '}';
+compPIConstructor           : 'processing-instruction' (NCName | ('{' expr '}')) '{' expr? '}';
 
 singleType                  : atomicType '?'?;
 
@@ -436,7 +436,7 @@ textTest                    : 'text' '(' ')';
 
 commentTest                 : 'comment' '(' ')';
 
-piTest                      : 'processing-instruction' '(' (ncName | StringLiteral)? ')';
+piTest                      : 'processing-instruction' '(' (NCName | StringLiteral)? ')';
 
 attributeTest               : 'attribute' '(' (attribNameOrWildcard (',' typeName)?)? ')';
 
