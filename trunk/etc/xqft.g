@@ -10,6 +10,8 @@ grammar xqft;
 tokens{
 PIPESi = '|';
 BIGGERTHANSi = '>';
+BIGGERTHANOREQUALSi = '>=';
+LESSTHANOREQUALSi = '<=';
 ASCENDING = 'ascending';
 IDIV = 'idiv';
 WHERE = 'where';
@@ -17,7 +19,8 @@ PHRASE = 'phrase';
 CONTENT = 'content';
 VERSION = 'version';
 LEFTBRACESi = '{';
-EQUALSi '=';
+EQUALSi = '=';
+NOTEQUALSi = '!=';
 STOP = 'stop';
 TYPESWITCH = 'typeswitch';
 ANY = 'any';
@@ -54,19 +57,20 @@ FTOPTION = 'ft-option';
 SATISFIES = 'satisfies';
 WORD = 'word';
 COLONSi = ':';
+SEMICOLONSi = ';';
 SINGLEQUOTE = '\'';
 UNDERSCORE = '_';
 EMPTY = 'empty';
 MOST = 'most';
 CASE = 'case';
-PROCESSINGINSTRUCTION = 'processing-instruction';
+PROCESSING_INSTRUCTION = 'processing-instruction';
 IMPORT = 'import';
 MINUSSi = '-';
 RIGHTSELFTERMINATOR = '/>';
 DOCUMENT = 'document';
 LEFTCDATA = '<![CDATA[';
 VALIDATE = 'validate';
-EMPTYSEQUENCE = 'empty-sequence';
+EMPTY_SEQUENCE = 'empty-sequence';
 INSENSITIVE = 'insensitive';
 NOPRESERVE = 'no-preserve';
 THEN = 'then';
@@ -76,7 +80,7 @@ WINDOW = 'window';
 SCORE = 'score';
 LANGUAGE = 'language';
 OPTION = 'option';
-STEMMING = 'stemming;
+STEMMING = 'stemming';
 RIGHTBRACKETSi = ']';
 GREATEST = 'greatest';
 LEVELS = 'levels';
@@ -154,7 +158,43 @@ STRIP = 'strip';
 LOWERCASE = 'lowercase';
 IN = 'in';
 SCHEMAELEMENT = 'schema-element';
-LEFTENDTAG = '</'=140
+LEFTENDTAG = '</';
+STEMMING = 'stemming';
+EQ = 'eq';
+NE = 'ne';
+LT = 'lt';
+LE = 'le';
+GT = 'gt';
+GE = 'ge';
+IS = 'is';
+NODEBEFORESi = '<<';
+NODEAFTERSi = '>>';
+LAX = 'lax';
+STRICT = 'strict';
+CHILD = 'child';
+DOUBLECOLON = '::';
+DESCENDANT = 'descendant';
+SELF = 'self';
+DESCENDANT_OR_SELF = 'descendant-or-self';
+FOLLOWING_SIBLING = 'following-sibling';
+FOLLOWING = 'following';
+PARENT = 'parent';
+ANCESTOR = 'ancestor';
+PRECEDING_SIBLING = 'preceding-sibling';
+PRECEDING = 'preceding';
+ANCESTOR_OR_SELF = 'ancestor-or-self';
+DOT = '.';
+DOTDOT = '..';
+WORDS = 'words';
+SENTENCES = 'sentences';
+PARAGRAPHS = 'paragraphs';
+SENTENCE = 'sentence';
+PARAGRAPH = 'paragraph';
+SAME = 'same';
+DIFFERENT = 'different';
+START = 'start';
+END = 'end';
+ENTIRE = 'entire';
 }
 
 //@parser::header {
@@ -181,14 +221,14 @@ fragment Extender            : '\u00B7' | '\u02D0' | '\u02D1' | '\u0387' | '\u06
 
 /* See http://www.w3.org/TR/xquery-full-text/#grammar-terminals */
 IntegerLiteral      : Digits;
-DecimalLiteral      : ('.' Digits) | (Digits '.' ('0'..'9')*);
-DoubleLiteral       : (('.' Digits) | (Digits ('.' ('0'..'9')*)?)) ('e'|'E') ('+'|'-')? Digits;
+DecimalLiteral      : (DOT Digits) | (Digits DOT ('0'..'9')*);
+DoubleLiteral       : ((DOT Digits) | (Digits (DOT ('0'..'9')*)?)) ('e'|'E') (PLUSSi|MINUSSi)? Digits;
 
 /* StringLiteral       : ('"' (PredefinedEntityRef | CharRef | EscapeQuot | [^"&])* '"') | ("'" (PredefinedEntityRef | CharRef | EscapeApos | [^'&])* "'") */
-StringLiteral	    : ('"' (PredefinedEntityRef | CharRef | EscapeQuot | ~('"'|'&'))* '"') | ('\'' (PredefinedEntityRef | CharRef | EscapeApos | ~('\''|'&'))* '\'');
-PredefinedEntityRef : '&' ('lt' | 'gt' | 'amp' | 'quot' | 'apos') ';';
+StringLiteral	    : ('"' (PredefinedEntityRef | CharRef | EscapeQuot | ~(DOUBLEQUOTESi|'&'))* DOUBLEQUOTESi) | (SINGLEQUOTE (PredefinedEntityRef | CharRef | EscapeApos | ~(SINGLEQUOTE|'&'))* SINGLEQUOTE);
+PredefinedEntityRef : '&' ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
 EscapeQuot          : '""';
-EscapeApos          : '\'''\'';
+EscapeApos          : '\'\'';
 
 /* Original:
 ElementContentChar	: Char ~ ('{'|'}'|'<'|'&');
@@ -213,8 +253,8 @@ CommentContents	    : m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equals(":)") 
 
 
 
-NameChar            : Letter | Digit | '.' | '-' | '_' | ':' | CombiningChar | Extender;
-Name                : (Letter | '_' | ':') (NameChar)*;
+NameChar            : Letter | Digit | DOT | MINUSSi | '_' | COLONSi | CombiningChar | Extender;
+Name                : (Letter | '_' | COLONSi) (NameChar)*;
 Names               : Name ('\u0020' Name)*;
 Nmtoken             : (NameChar)+;
 Nmtokens            : Nmtoken ('\u0020' Nmtoken)*;
@@ -233,11 +273,11 @@ piTarget            : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
 //--------------------------------------- weN ------------------------------------------------
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-CharRef */
-CharRef             : '&#' ('0'..'9')+ ';' | '&#x' ('0'..'9'|'a'..'f'|'A'..'F')+ ';';
+CharRef             : '&#' ('0'..'9')+ SEMICOLONSi | '&#x' ('0'..'9'|'a'..'f'|'A'..'F')+ SEMICOLONSi;
 			
 /* See: http://www.w3.org/TR/REC-xml-names/#NT-qName */
 qName               : prefixedName | unprefixedName;
-prefixedName        : prefix ':' localPart ;
+prefixedName        : prefix COLONSi localPart ;
 unprefixedName      : localPart ;
 prefix              : NCName;
 localPart           : NCName;
@@ -283,7 +323,7 @@ setter                      : boundarySpaceDecl | defaultCollationDecl | baseURI
 /* Using 'import' as name for this production caused error when compiling the parser */
 importStmt                  : schemaImport | moduleImport;
 
-Separator                   : ';';
+Separator                   : SEMICOLONSi;
 
 namespaceDecl               : DECLARE NAMESPACE NCName EQUALSi uriLiteral;
 
@@ -291,37 +331,37 @@ boundarySpaceDecl           : DECLARE BOUNDARYSPACE (PRESERVE | STRIP);
 
 defaultNamespaceDecl        : DECLARE DEFAULT (ELEMENT | FUNCTION) NAMESPACE uriLiteral;
 
-optionDecl                  : DECLARE 'option' qName StringLiteral;
+optionDecl                  : DECLARE OPTION qName StringLiteral;
 
-ftOptionDecl                : DECLARE 'ft-option' ftMatchOptions;
+ftOptionDecl                : DECLARE FTOPTION ftMatchOptions;
 
-orderingModeDecl            : DECLARE 'ordering' (ORDERED | UNORDERED);
+orderingModeDecl            : DECLARE ORDERING (ORDERED | UNORDERED);
 
-emptyOrderDecl              : DECLARE DEFAULT ORDER 'empty' ('greatest' | LEAST);
+emptyOrderDecl              : DECLARE DEFAULT ORDER EMPTY (GREATEST | LEAST);
 
-copyNamespacesDecl          : DECLARE 'copy-namespaces' preserveMode ',' inheritMode;
+copyNamespacesDecl          : DECLARE COPYNAMESPACES preserveMode COMMASi inheritMode;
 
-preserveMode                : PRESERVE | 'no-preserve';
+preserveMode                : PRESERVE | NOPRESERVE;
 
-inheritMode                 : 'inherit' | NOINHERIT;
+inheritMode                 : INHERIT | NOINHERIT;
 
 defaultCollationDecl        : DECLARE DEFAULT COLLATION uriLiteral;
 
 baseURIDecl                 : DECLARE BASEURI uriLiteral;
 
-schemaImport                : 'import' SCHEMA schemaPrefix? uriLiteral (AT uriLiteral (',' uriLiteral)*)?;
+schemaImport                : IMPORT SCHEMA schemaPrefix? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
 
 schemaPrefix                : (NAMESPACE NCName EQUALSi) | (DEFAULT ELEMENT NAMESPACE);
 
-moduleImport                : 'import' MODULE (NAMESPACE NCName EQUALSi)? uriLiteral (AT uriLiteral (',' uriLiteral)*)?;
+moduleImport                : IMPORT MODULE (NAMESPACE NCName EQUALSi)? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
 
 varDecl                     : DECLARE VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNMENTOPERATOR exprSingle) | EXTERNAL);
 
-constructionDecl            : DECLARE 'construction' (STRIP | PRESERVE);
+constructionDecl            : DECLARE CONSTRUCTION (STRIP | PRESERVE);
 
 functionDecl                : DECLARE FUNCTION qName LEFTPARENTHESISSi paramList? RIGHTPARENTHESISSi (AS sequenceType)? (enclosedExpr | EXTERNAL);
 
-paramList                   : param (',' param)*;
+paramList                   : param (COMMASi param)*;
 
 param                       : DOLLARSi qName typeDeclaration?;
 
@@ -329,7 +369,7 @@ enclosedExpr                : LEFTBRACESi expr RIGHTBRACESi;
 
 queryBody                   : expr;
 
-expr                        : exprSingle (',' exprSingle)*;
+expr                        : exprSingle (COMMASi exprSingle)*;
 
 exprSingle                  : fLWORExpr
                                 | quantifiedExpr
@@ -339,30 +379,30 @@ exprSingle                  : fLWORExpr
 
 fLWORExpr                   : (forClause | letClause)+ whereClause? orderByClause? RETURN exprSingle;
 
-forClause                   : 'for' DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle (',' DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle)*;
+forClause                   : FOR DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle (COMMASi DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle)*;
 
 positionalVar               : AT DOLLARSi varName;
 
-ftScoreVar                  : 'score' DOLLARSi varName;
+ftScoreVar                  : SCORE DOLLARSi varName;
 
-letClause                   : (('let' DOLLARSi varName typeDeclaration?) | ('let' 'score' DOLLARSi varName)) ASSIGNMENTOPERATOR exprSingle (',' ((DOLLARSi varName typeDeclaration?) | ftScoreVar) ASSIGNMENTOPERATOR exprSingle)*;
+letClause                   : ((LET DOLLARSi varName typeDeclaration?) | (LET SCORE DOLLARSi varName)) ASSIGNMENTOPERATOR exprSingle (COMMASi ((DOLLARSi varName typeDeclaration?) | ftScoreVar) ASSIGNMENTOPERATOR exprSingle)*;
 
 whereClause                 : WHERE exprSingle;
 
 orderByClause               : ((ORDER BY) | (STABLE ORDER BY)) orderSpecList;
 
-orderSpecList               : orderSpec (',' orderSpec)*;
+orderSpecList               : orderSpec (COMMASi orderSpec)*;
 
 orderSpec                   : exprSingle orderModifier;
 
-orderModifier               : (ASCENDING | DESCENDING)? ('empty' ('greatest' | LEAST))? (COLLATION uriLiteral)?;
-quantifiedExpr              : (SOME | 'every') DOLLARSi varName typeDeclaration? IN exprSingle (',' DOLLARSi varName typeDeclaration? IN exprSingle)* 'satisfies' exprSingle;
+orderModifier               : (ASCENDING | DESCENDING)? (EMPTY (GREATEST | LEAST))? (COLLATION uriLiteral)?;
+quantifiedExpr              : (SOME | EVERY) DOLLARSi varName typeDeclaration? IN exprSingle (COMMASi DOLLARSi varName typeDeclaration? IN exprSingle)* SATISFIES exprSingle;
 
 typeswitchExpr              : TYPESWITCH LEFTPARENTHESISSi expr RIGHTPARENTHESISSi caseClause+ DEFAULT (DOLLARSi varName)? RETURN exprSingle;
 
-caseClause                  : 'case' (DOLLARSi varName AS)? sequenceType RETURN exprSingle;
+caseClause                  : CASE (DOLLARSi varName AS)? sequenceType RETURN exprSingle;
 
-ifExpr                      : IF LEFTPARENTHESISSi expr RIGHTPARENTHESISSi 'then' exprSingle ELSE exprSingle;
+ifExpr                      : IF LEFTPARENTHESISSi expr RIGHTPARENTHESISSi THEN exprSingle ELSE exprSingle;
 
 orExpr                      : andExpr ( OR andExpr )*;
 
@@ -374,41 +414,41 @@ comparisonExpr              : ftContainsExpr ( (ValueComp
 
 ftContainsExpr              : rangeExpr ( FTCONTAINS ftSelection ftIgnoreOption? )?;
 
-rangeExpr                   : additiveExpr ( 'to' additiveExpr )?;
+rangeExpr                   : additiveExpr ( TO additiveExpr )?;
 
-additiveExpr                : multiplicativeExpr ( ('+' | '-') multiplicativeExpr )*;
+additiveExpr                : multiplicativeExpr ( (PLUSSi | MINUSSi) multiplicativeExpr )*;
 
-multiplicativeExpr          : unionExpr ( (STARSi | 'div' | IDIV | MOD) unionExpr )*;
+multiplicativeExpr          : unionExpr ( (STARSi | DIV | IDIV | MOD) unionExpr )*;
 
 unionExpr                   : intersectExceptExpr ( (UNION | PIPESi) intersectExceptExpr )*;
 
-intersectExceptExpr         : instanceofExpr ( (INTERSECT | 'except') instanceofExpr )*;
+intersectExceptExpr         : instanceofExpr ( (INTERSECT | EXCEPT) instanceofExpr )*;
 
-instanceofExpr              : treatExpr ( 'instance' OF sequenceType )?;
+instanceofExpr              : treatExpr ( INSTANCE OF sequenceType )?;
 
-treatExpr                   : castableExpr ( 'treat' AS sequenceType )?;
+treatExpr                   : castableExpr ( TREAT AS sequenceType )?;
 
-castableExpr                : castExpr ( 'castable' AS singleType )?;
+castableExpr                : castExpr ( CASTABLE AS singleType )?;
 
 castExpr                    : unaryExpr ( CAST AS singleType )?;
 
-unaryExpr                   : ('-' | '+')* valueExpr;
+unaryExpr                   : (MINUSSi | PLUSSi)* valueExpr;
 
 valueExpr                   : validateExpr | pathExpr | extensionExpr;
 
-GeneralComp                 : EQUALSi | '!=' | LESSTHANSi | '<=' | BIGGERTHANSi | '>=';
+GeneralComp                 : EQUALSi | NOTEQUALSi | LESSTHANSi | LESSTHANOREQUALSi | BIGGERTHANSi | BIGGERTHANOREQUALSi;
 
-ValueComp                   : 'eq' | 'ne' | 'lt' | 'le' | 'gt' | 'ge';
+ValueComp                   : EQ | NE | LT | LE | GT | GE;
 
-NodeComp                    : 'is' | '<<' | '>>';
+NodeComp                    : IS | NODEBEFORESi | NODEAFTERSi;
 
-validateExpr                : 'validate' ValidationMode? LEFTBRACESi expr RIGHTBRACESi;
+validateExpr                : VALIDATE ValidationMode? LEFTBRACESi expr RIGHTBRACESi;
 
-ValidationMode              : 'lax' | 'strict';
+ValidationMode              : LAX | STRICT;
 
 extensionExpr               : pragma+ LEFTBRACESi expr? RIGHTBRACESi;
 
-pragma                      : LEFTPRAGMA S? qName (S pragmaContents)? '#)'; /* ws: explicit */
+pragma                      : LEFTPRAGMA S? qName (S pragmaContents)? RIGHTPRAGMA; /* ws: explicit */
 
 //PragmaContents              : (Char* ~ (Char* '#)' Char*));
 
@@ -416,11 +456,11 @@ pragma                      : LEFTPRAGMA S? qName (S pragmaContents)? '#)'; /* w
 pragmaContents        : m=ZeroOrMoreChar{ !$m.getText().contains("#") }?  ;
 //--------------------------------------- weN ------------------------------------------------
 /* added syntactic predicate */
-pathExpr			        :   (DOUBLESLASH relativePathExpr)=> DOUBLESLASH relativePathExpr 
-						        |    ('/' relativePathExpr?)
+pathExpr                    : (DOUBLESLASH relativePathExpr)/*=> DOUBLESLASH relativePathExpr */
+								| (SLASH relativePathExpr?)/*=> SLASH relativePathExpr?*/
                                 | relativePathExpr;	/* xgc: leading-lone-slashXQ */
 
-relativePathExpr            : stepExpr (('/' | DOUBLESLASH) stepExpr)*;
+relativePathExpr            : stepExpr ((SLASH | DOUBLESLASH) stepExpr)*;
 
 stepExpr                    : filterExpr | axisStep;
 
@@ -428,25 +468,28 @@ axisStep                    : (reverseStep | forwardStep) predicateList;
 
 forwardStep                 : (forwardAxis nodeTest) | abbrevForwardStep;
 
-forwardAxis                 : ('child' '::')
-                                | ('descendant' '::')
-                                | (ATTRIBUTE '::')
-                                | ('self' '::')
-                                | ('descendant-or-self' '::')
-                                | ('following-sibling' '::')
-                                | ('following' '::');
+
+
+forwardAxis                 : (CHILD DOUBLECOLON)
+                                | (DESCENDANT DOUBLECOLON)
+                                | (ATTRIBUTE DOUBLECOLON)
+                                | (SELF DOUBLECOLON)
+                                | (DESCENDANT_OR_SELF DOUBLECOLON)
+                                | (FOLLOWING_SIBLING DOUBLECOLON)
+                                | (FOLLOWING DOUBLECOLON);
 
 abbrevForwardStep           : ATSi? nodeTest;
 
 reverseStep                 : (reverseAxis nodeTest) | AbbrevReverseStep;
 
-reverseAxis                 : ('parent' '::')
-                                | ('ancestor' '::')
-                                | ('preceding-sibling' '::')
-                                | ('preceding' '::')
-                                | ('ancestor-or-self' '::');
 
-AbbrevReverseStep           : '..';
+reverseAxis                 : (PARENT DOUBLECOLON)
+                                | (ANCESTOR DOUBLECOLON)
+                                | (PRECEDING_SIBLING DOUBLECOLON)
+                                | (PRECEDING DOUBLECOLON)
+                                | (ANCESTOR_OR_SELF DOUBLECOLON);
+
+AbbrevReverseStep           : DOTDOT;
 
 nodeTest                    : kindTest | nameTest;
 
@@ -454,16 +497,16 @@ nameTest                    : qName | wildcard;
 
 
 /* added syntactic predicate */
-wildcard                    : (STARSi ':' NCName) => STARSi ':' NCName
+wildcard                    : (STARSi COLONSi NCName) => STARSi COLONSi NCName
 								|STARSi
-                                | (NCName ':' STARSi); /* ws: explicitXQ */
+                                | (NCName COLONSi STARSi); /* ws: explicitXQ */
 
 
 filterExpr                  : primaryExpr predicateList;
 
 predicateList               : predicate*;
 
-predicate                   : LEFTBRACKETSi expr ']';
+predicate                   : LEFTBRACKETSi expr RIGHTBRACKETSi;
 
 primaryExpr                 : literal | varRef | parenthesizedExpr | ContextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor;
 
@@ -477,13 +520,13 @@ varName                     : qName;
 
 parenthesizedExpr           : LEFTPARENTHESISSi expr? RIGHTPARENTHESISSi;
 
-ContextItemExpr             : '.';
+ContextItemExpr             : DOT;
 
 orderedExpr                 : ORDERED LEFTBRACESi expr RIGHTBRACESi;
 
 unorderedExpr               : UNORDERED LEFTBRACESi expr RIGHTBRACESi;
 
-functionCall                : qName LEFTPARENTHESISSi (exprSingle (',' exprSingle)*)? RIGHTPARENTHESISSi; /* xgc: reserved-function-namesXQ */
+functionCall                : qName LEFTPARENTHESISSi (exprSingle (COMMASi exprSingle)*)? RIGHTPARENTHESISSi; /* xgc: reserved-function-namesXQ */
                                                                                 /* gn: parensXQ */
 
 constructor                 : directConstructor
@@ -493,11 +536,11 @@ directConstructor           : dirElemConstructor
                                 | dirCommentConstructor
                                 | dirPIConstructor;
 
-dirElemConstructor          : LESSTHANSi qName dirAttributeList ('/>' | (BIGGERTHANSi dirElemContent* LEFTENDTAG qName S? BIGGERTHANSi)); /* ws: explicitXQ */
+dirElemConstructor          : LESSTHANSi qName dirAttributeList (RIGHTSELFTERMINATOR | (BIGGERTHANSi dirElemContent* LEFTENDTAG qName S? BIGGERTHANSi)); /* ws: explicitXQ */
 dirAttributeList            : (S (qName S? EQUALSi S? dirAttributeValue)?)*; /* ws: explicitXQ */
 
-dirAttributeValue           : ('"' (EscapeQuot | quotAttrValueContent)* '"')
-                                | ('\'' (EscapeApos | aposAttrValueContent)* '\''); /* ws: explicitXQ */
+dirAttributeValue           : (DOUBLEQUOTESi (EscapeQuot | quotAttrValueContent)* DOUBLEQUOTESi)
+                                | (SINGLEQUOTE (EscapeApos | aposAttrValueContent)* SINGLEQUOTE); /* ws: explicitXQ */
 
 quotAttrValueContent	    : QuotAttrContentChar
                                 | commonContent;
@@ -518,10 +561,10 @@ dirCommentConstructor       : LEFTXMLCOMMENT dirCommentContents RIGHTXMLCOMMENT;
 //dirCommentContents          : ((Char ~ '-') | ('-' (Char ~ '-')))*; /* ws: explicitXQ */
 
 //--------------------------------------- New ------------------------------------------------
-dirCommentContents             : (charNotMinus | ('-' charNotMinus))*; /* ws: explicitXQ */ 
+dirCommentContents             : (charNotMinus | (MINUSSi charNotMinus))*; /* ws: explicitXQ */ 
 //--------------------------------------- weN ------------------------------------------------
 
-dirPIConstructor            : LEFTPITARGET piTarget (S dirPIContents)? '?>'; /* ws: explicitXQ */
+dirPIConstructor            : LEFTPITARGET piTarget (S dirPIContents)? RIGHTPITARGET; /* ws: explicitXQ */
 
 
 //DirPIContents               : (Char* ~ (Char* '?>' Char*)); /* ws: explicitXQ */
@@ -530,7 +573,7 @@ dirPIConstructor            : LEFTPITARGET piTarget (S dirPIContents)? '?>'; /* 
 dirPIContents               : m=ZeroOrMoreChar{ !$m.getText().contains("?>") }?  ;
 //--------------------------------------- weN ------------------------------------------------
 
-cDataSection                : '<![CDATA[' cDataSectionContents RIGHTCDATA; /* ws: explicitXQ */
+cDataSection                : LEFTCDATA cDataSectionContents RIGHTCDATA; /* ws: explicitXQ */
 
 
 
@@ -547,7 +590,7 @@ computedConstructor         : compDocConstructor
                                 | compCommentConstructor
                                 | compPIConstructor;
 
-compDocConstructor          : 'document' LEFTBRACESi expr RIGHTBRACESi;
+compDocConstructor          : DOCUMENT LEFTBRACESi expr RIGHTBRACESi;
 
 compElemConstructor         : ELEMENT (qName | (LEFTBRACESi expr RIGHTBRACESi)) LEFTBRACESi contentExpr? RIGHTBRACESi;
 
@@ -559,18 +602,18 @@ compTextConstructor         : TEXT LEFTBRACESi expr RIGHTBRACESi;
 
 compCommentConstructor      : COMMENT LEFTBRACESi expr RIGHTBRACESi;
 
-compPIConstructor           : 'processing-instruction' (NCName | (LEFTBRACESi expr RIGHTBRACESi)) LEFTBRACESi expr? RIGHTBRACESi;
+compPIConstructor           : PROCESSING_INSTRUCTION (NCName | (LEFTBRACESi expr RIGHTBRACESi)) LEFTBRACESi expr? RIGHTBRACESi;
 
 singleType                  : atomicType QUESTIONMARKSi?;
 
 typeDeclaration             : AS sequenceType;
 
-sequenceType                : ('empty-sequence' LEFTPARENTHESISSi RIGHTPARENTHESISSi)
+sequenceType                : (EMPTY_SEQUENCE LEFTPARENTHESISSi RIGHTPARENTHESISSi)
                                 | (itemType OccurrenceIndicator?);
 
-OccurrenceIndicator         : QUESTIONMARKSi | STARSi | '+'; /* xgc: occurrence-indicatorsXQ */
+OccurrenceIndicator         : QUESTIONMARKSi | STARSi | PLUSSi; /* xgc: occurrence-indicatorsXQ */
 
-itemType                    : kindTest | ('item' LEFTPARENTHESISSi RIGHTPARENTHESISSi) | atomicType;
+itemType                    : kindTest | (ITEM LEFTPARENTHESISSi RIGHTPARENTHESISSi) | atomicType;
 
 atomicType                  : qName;
 
@@ -592,9 +635,9 @@ textTest                    : TEXT LEFTPARENTHESISSi RIGHTPARENTHESISSi;
 
 commentTest                 : COMMENT LEFTPARENTHESISSi RIGHTPARENTHESISSi;
 
-piTest                      : 'processing-instruction' LEFTPARENTHESISSi (NCName | StringLiteral)? RIGHTPARENTHESISSi;
+piTest                      : PROCESSING_INSTRUCTION LEFTPARENTHESISSi (NCName | StringLiteral)? RIGHTPARENTHESISSi;
 
-attributeTest               : ATTRIBUTE LEFTPARENTHESISSi (attribNameOrWildcard (',' typeName)?)? RIGHTPARENTHESISSi;
+attributeTest               : ATTRIBUTE LEFTPARENTHESISSi (attribNameOrWildcard (COMMASi typeName)?)? RIGHTPARENTHESISSi;
 
 attribNameOrWildcard        : attributeName | STARSi;
 
@@ -602,7 +645,7 @@ schemaAttributeTest         : SCHEMAATTRIBUTE LEFTPARENTHESISSi attributeDeclara
 
 attributeDeclaration        : attributeName;
 
-elementTest                 : ELEMENT LEFTPARENTHESISSi (elementNameOrWildcard (',' typeName QUESTIONMARKSi?)?)? RIGHTPARENTHESISSi;
+elementTest                 : ELEMENT LEFTPARENTHESISSi (elementNameOrWildcard (COMMASi typeName QUESTIONMARKSi?)?)? RIGHTPARENTHESISSi;
 
 elementNameOrWildcard       : elementName | STARSi;
 
@@ -618,15 +661,15 @@ typeName                    : qName;
 
 uriLiteral                  : StringLiteral;
 
-ftSelection                 : ftOr ftPosFilter* ('weight' rangeExpr)?;
+ftSelection                 : ftOr ftPosFilter* (WEIGHT rangeExpr)?;
 
 ftOr                        : ftAnd ( FTOR ftAnd )*;
 
-ftAnd                       : ftMildNot ( 'ftand' ftMildNot )*;
+ftAnd                       : ftMildNot ( FTAND ftMildNot )*;
 
 ftMildNot                   : ftUnaryNot ( NOT IN ftUnaryNot )*;
 
-ftUnaryNot                  : ('ftnot')? ftPrimaryWithOptions;
+ftUnaryNot                  : (FTNOT)? ftPrimaryWithOptions;
 
 ftPrimaryWithOptions        : ftPrimary ftMatchOptions?;
 
@@ -638,31 +681,37 @@ ftWordsValue                : literal | (LEFTBRACESi expr RIGHTBRACESi);
 
 ftExtensionSelection        : pragma+ LEFTBRACESi ftSelection? RIGHTBRACESi;
 
-ftAnyallOption              : (ANY 'word'?) | ('all' 'words'?) | PHRASE;
+ftAnyallOption              : (ANY WORD?) | (ALL WORDS?) | PHRASE;
 
 ftTimes                     : OCCURS ftRange TIMES;
 
 
 ftRange                     : (EXACTLY additiveExpr)
                                 | (AT LEAST additiveExpr)
-                                | (AT 'most' additiveExpr)
-                                | (FROM additiveExpr 'to' additiveExpr);
+                                | (AT MOST additiveExpr)
+                                | (FROM additiveExpr TO additiveExpr);
 
 ftPosFilter                 : FTOrder | ftWindow | ftDistance | FTScope | FTContent;
 
 FTOrder                     : ORDERED;
 
-ftWindow                    : 'window' additiveExpr FTUnit;
+ftWindow                    : WINDOW additiveExpr FTUnit;
 
 ftDistance                  : DISTANCE ftRange FTUnit;
 
-FTUnit                      : 'words' | 'sentences' | 'paragraphs';
 
-FTScope                     : ('same' | 'different') FTBigUnit;
 
-FTBigUnit                   : 'sentence' | 'paragraph';
+FTUnit                      : WORDS | SENTENCES | PARAGRAPHS;
 
-FTContent                   : (AT 'start') | (AT 'end') | ('entire' CONTENT);
+
+
+FTScope                     : (SAME | DIFFERENT) FTBigUnit;
+
+FTBigUnit                   : SENTENCE | PARAGRAPH;
+
+
+
+FTContent                   : (AT START) | (AT END) | (ENTIRE CONTENT);
 
 ftMatchOptions              : ftMatchOption+;     /* xgc: multiple-match-options */
 
@@ -675,31 +724,31 @@ ftMatchOption               : ftLanguageOption
                                 | ftStopwordOption
                                 | ftExtensionOption;
 
-ftCaseOption                : ('case' 'insensitive')
-                                | ('case' 'sensitive')
+ftCaseOption                : (CASE INSENSITIVE)
+                                | (CASE SENSITIVE)
                                 | LOWERCASE
-                                | 'uppercase';
+                                | UPPERCASE;
 
-ftDiacriticsOption          : (DIACRITICS 'insensitive')
-                                | (DIACRITICS 'sensitive');
+ftDiacriticsOption          : (DIACRITICS INSENSITIVE)
+                                | (DIACRITICS SENSITIVE);
 
-ftStemOption                : (WITH 'stemming') | (WITHOUT 'stemming');
+ftStemOption                : (WITH STEMMING) | (WITHOUT STEMMING);
 
 ftThesaurusOption	        : (WITH THESAURUS (ftThesaurusID | DEFAULT))
-                                | (WITH THESAURUS LEFTPARENTHESISSi (ftThesaurusID | DEFAULT) (',' ftThesaurusID)* RIGHTPARENTHESISSi)
+                                | (WITH THESAURUS LEFTPARENTHESISSi (ftThesaurusID | DEFAULT) (COMMASi ftThesaurusID)* RIGHTPARENTHESISSi)
                                 | (WITHOUT THESAURUS);
 
-ftThesaurusID               : AT uriLiteral (RELATIONSHIP StringLiteral)? (ftRange 'levels')?;
+ftThesaurusID               : AT uriLiteral (RELATIONSHIP StringLiteral)? (ftRange LEVELS)?;
 
-ftStopwordOption            : (WITH STOP 'words' ftRefOrList ftInclExclStringLiteral*)
-                                | (WITHOUT STOP 'words')
-                                | (WITH DEFAULT STOP 'words' ftInclExclStringLiteral*);
+ftStopwordOption            : (WITH STOP WORDS ftRefOrList ftInclExclStringLiteral*)
+                                | (WITHOUT STOP WORDS)
+                                | (WITH DEFAULT STOP WORDS ftInclExclStringLiteral*);
 
 ftRefOrList                 : (AT uriLiteral)
-                                | (LEFTPARENTHESISSi StringLiteral (',' StringLiteral)* RIGHTPARENTHESISSi);
+                                | (LEFTPARENTHESISSi StringLiteral (COMMASi StringLiteral)* RIGHTPARENTHESISSi);
 
-ftInclExclStringLiteral     : (UNION | 'except') ftRefOrList;
-ftLanguageOption            : 'language' StringLiteral;
+ftInclExclStringLiteral     : (UNION | EXCEPT) ftRefOrList;
+ftLanguageOption            : LANGUAGE StringLiteral;
 ftWildCardOption            : (WITH WILDCARDS) | (WITHOUT WILDCARDS);
-ftExtensionOption           : 'option' qName StringLiteral;
+ftExtensionOption           : OPTION qName StringLiteral;
 ftIgnoreOption              : WITHOUT CONTENT unionExpr;
