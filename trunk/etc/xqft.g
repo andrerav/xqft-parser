@@ -253,7 +253,7 @@ fragment CommentContents	    : m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equa
 
 
 
-NameChar            : Letter | Digit | DOT | MINUSSi | UNDERSCORE | COLONSi | CombiningChar | Extender;
+fragment NameChar            : Letter | Digit | DOT | MINUSSi | UNDERSCORE | COLONSi | CombiningChar | Extender;
 Name                : (Letter | UNDERSCORE | COLONSi) (NameChar)*;
 Names               : Name ('\u0020' Name)*;
 Nmtoken             : (NameChar)+;
