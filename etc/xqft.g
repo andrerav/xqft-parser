@@ -230,16 +230,29 @@ PredefinedEntityRef : '&' ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
 EscapeQuot          : '""';
 EscapeApos          : '\'\'';
 
+//--------------------------------------- New ------------------------------------------------
 /* Original:
 ElementContentChar	: Char ~ ('{'|'}'|'<'|'&');
 QuotAttrContentChar	: Char ~ ('"'|'{'|'}'|'<'|'&');
 AposAttrContentChar	: Char ~ ('\''|'{'|'}'|'<'|'&');
 */
-//--------------------------------------- New ------------------------------------------------
-fragment ElementContentChar	: c=Char {(!$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
-fragment QuotAttrContentChar	: c=Char {(!$c.getText().equals("\"") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
-fragment AposAttrContentChar	: c=Char {(!$c.getText().equals("'") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
+//fragment ElementContentChar	: c=Char {(!$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
+//fragment QuotAttrContentChar	: c=Char {(!$c.getText().equals("\"") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
+//fragment AposAttrContentChar	: c=Char {(!$c.getText().equals("'") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
+
+fragment CleanChar		: ~('\u0001'..'\u0008' | '\u000B' | '\u000C' | '\u000E'..'\u001F' | '\uD800'..'\uDFFF' 
+						| '\uFFFE' | '\uFFFF' | '{' | '}' | '<' | '&' | '"' | '\'' | '-' );
+fragment Char			: CleanChar | '{' | '}' | '<' | '&' | '"' | '\'' | '-' ;
+
+fragment ElementContentChar		: CleanChar | '"' | '\'' | '-';
+fragment QuotAttrContentChar	: CleanChar | '\'' | '-' ;
+fragment AposAttrContentChar	: CleanChar | '"' | '-' ;
 //--------------------------------------- weN ------------------------------------------------
+
+// See new Char -^
+/* See: http://www.w3.org/TR/xquery-full-text/#prod-xquery-Char */
+//fragment Char                : '\u0009' | '\u000A' | '\u000D' | ('\u0020'..'\uD7FF') | ('\uE000'..'\uFFFD'); /* Dropped temporarily | [\u10000-\u10FFFF] */
+
 
 
 Comment             :'(:' (CommentCheck)* ':)' {$channel=HIDDEN;};
@@ -301,9 +314,6 @@ fragment NCNameStartChar     : Letter | UNDERSCORE;
 /* See: http://www.w3.org/TR/REC-xml/#NT-S */
 S                   : ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
 
-/* See: http://www.w3.org/TR/xquery-full-text/#prod-xquery-Char */
-fragment Char                : '\u0009' | '\u000A' | '\u000D' | ('\u0020'..'\uD7FF') | ('\uE000'..'\uFFFD'); /* Dropped temporarily | [\u10000-\u10FFFF] */
-
 /* See http://www.w3.org/TR/xquery-full-text/#prod-xquery-Digits */
 fragment Digits              : ('0'..'9')+;
 
@@ -311,7 +321,7 @@ fragment Digits              : ('0'..'9')+;
 //-------------------------------------------- New ---------------------------------------------------------------
 fragment ZeroOrMoreChar		    : Char*;
 fragment OneOrMoreChar		    : Char+;
-fragment charNotMinus	: m=Char{ !$m.equals("-") }?;  //NB small first letter
+fragment CharNotMinus			: CleanChar | '{' | '}' | '<' | '&' | '"' | '\'';
 //-------------------------------------------- weN ---------------------------------------------------------------
 
 module                      : versionDecl? (libraryModule | mainModule);
