@@ -308,22 +308,22 @@ fragment charNotMinus	: m=Char{ !$m.equals("-") }?;  //NB small first letter
 
 module                      : versionDecl? (libraryModule | mainModule);
 
-versionDecl                 : XQUERY VERSION StringLiteral ((ENCODING StringLiteral)|) Separator;
+versionDecl                 : XQUERY VERSION StringLiteral ((ENCODING StringLiteral)|) separator;
 
 mainModule                  : prolog queryBody;
 
 libraryModule               : moduleDecl prolog;
 
-moduleDecl                  : MODULE NAMESPACE NCName EQUALSi uriLiteral Separator;
+moduleDecl                  : MODULE NAMESPACE NCName EQUALSi uriLiteral separator;
 
-prolog                      : ((defaultNamespaceDecl | setter | namespaceDecl | importStmt) Separator)* ((varDecl | functionDecl | optionDecl | ftOptionDecl) Separator)*;
+prolog                      : ((defaultNamespaceDecl | setter | namespaceDecl | importStmt) separator)* ((varDecl | functionDecl | optionDecl | ftOptionDecl) separator)*;
 
 setter                      : boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl;
 
 /* Using 'import' as name for this production caused error when compiling the parser */
 importStmt                  : schemaImport | moduleImport;
 
-Separator                   : SEMICOLONSi;
+separator                   : SEMICOLONSi;
 
 namespaceDecl               : DECLARE NAMESPACE NCName EQUALSi uriLiteral;
 
@@ -409,7 +409,7 @@ orExpr                      : andExpr ( OR andExpr )*;
 
 andExpr                     : comparisonExpr ( AND comparisonExpr )*;
 
-comparisonExpr              : ftContainsExpr ( (ValueComp | GeneralComp | NodeComp) ftContainsExpr )?;
+comparisonExpr              : ftContainsExpr ( (valueComp | generalComp | nodeComp) ftContainsExpr )?;
 
 ftContainsExpr              : rangeExpr ( FTCONTAINS ftSelection ftIgnoreOption? )?;
 
@@ -435,15 +435,15 @@ unaryExpr                   : (MINUSSi | PLUSSi)* valueExpr;
 
 valueExpr                   : validateExpr | pathExpr | extensionExpr;
 
-GeneralComp                 : EQUALSi | NOTEQUALSi | LESSTHANSi | LESSTHANOREQUALSi | BIGGERTHANSi | BIGGERTHANOREQUALSi;
+generalComp                 : EQUALSi | NOTEQUALSi | LESSTHANSi | LESSTHANOREQUALSi | BIGGERTHANSi | BIGGERTHANOREQUALSi;
 
-ValueComp                   : EQ | NE | LT | LE | GT | GE;
+valueComp                   : EQ | NE | LT | LE | GT | GE;
 
-NodeComp                    : IS | NODEBEFORESi | NODEAFTERSi;
+nodeComp                    : IS | NODEBEFORESi | NODEAFTERSi;
 
-validateExpr                : VALIDATE ValidationMode? LEFTBRACESi expr RIGHTBRACESi;
+validateExpr                : VALIDATE validationMode? LEFTBRACESi expr RIGHTBRACESi;
 
-ValidationMode              : LAX | STRICT;
+validationMode              : LAX | STRICT;
 
 extensionExpr               : pragma+ LEFTBRACESi expr? RIGHTBRACESi;
 
@@ -485,7 +485,7 @@ forwardAxis                 : (CHILD | DESCENDANT | ATTRIBUTE | SELF |
 */
 abbrevForwardStep           : ATSi? nodeTest;
 
-reverseStep                 : (reverseAxis nodeTest) | AbbrevReverseStep;
+reverseStep                 : (reverseAxis nodeTest) | abbrevReverseStep;
 
 reverseAxis                 : (PARENT | ANCESTOR | PRECEDING_SIBLING 
 								| PRECEDING | ANCESTOR_OR_SELF) 
@@ -498,7 +498,7 @@ reverseAxis                 : (PARENT DOUBLECOLON)
                                 | (PRECEDING DOUBLECOLON)
                                 | (ANCESTOR_OR_SELF DOUBLECOLON);
 */
-AbbrevReverseStep           : DOTDOT;
+abbrevReverseStep           : DOTDOT;
 
 nodeTest                    : kindTest | nameTest;
 
@@ -517,7 +517,7 @@ predicateList               : predicate*;
 
 predicate                   : LEFTBRACKETSi expr RIGHTBRACKETSi;
 
-primaryExpr                 : literal | varRef | parenthesizedExpr | ContextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor;
+primaryExpr                 : literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor;
 
 literal                     : numericLiteral | StringLiteral;
 
@@ -529,7 +529,7 @@ varName                     : qName;
 
 parenthesizedExpr           : LEFTPARENTHESISSi expr? RIGHTPARENTHESISSi;
 
-ContextItemExpr             : DOT;
+contextItemExpr             : DOT;
 
 orderedExpr                 : ORDERED LEFTBRACESi expr RIGHTBRACESi;
 
@@ -619,9 +619,9 @@ singleType                  : atomicType QUESTIONMARKSi?;
 typeDeclaration             : AS sequenceType;
 
 sequenceType                : (EMPTY_SEQUENCE LEFTPARENTHESISSi RIGHTPARENTHESISSi)
-                                | (itemType OccurrenceIndicator?);
+                                | (itemType occurrenceIndicator?);
 
-OccurrenceIndicator         : QUESTIONMARKSi | STARSi | PLUSSi; /* xgc: occurrence-indicatorsXQ */
+occurrenceIndicator         : QUESTIONMARKSi | STARSi | PLUSSi; /* xgc: occurrence-indicatorsXQ */
 
 itemType                    : kindTest | (ITEM LEFTPARENTHESISSi RIGHTPARENTHESISSi) | atomicType;
 
@@ -701,27 +701,21 @@ ftRange                     : (EXACTLY additiveExpr)
                                 | (AT MOST additiveExpr)
                                 | (FROM additiveExpr TO additiveExpr);
 
-ftPosFilter                 : FTOrder | ftWindow | ftDistance | FTScope | FTContent;
+ftPosFilter                 : ftOrder | ftWindow | ftDistance | ftScope | ftContent;
 
-FTOrder                     : ORDERED;
+ftOrder                     : ORDERED;
 
-ftWindow                    : WINDOW additiveExpr FTUnit;
+ftWindow                    : WINDOW additiveExpr ftUnit;
 
-ftDistance                  : DISTANCE ftRange FTUnit;
+ftDistance                  : DISTANCE ftRange ftUnit;
 
+ftUnit                      : WORDS | SENTENCES | PARAGRAPHS;
 
+ftScope                     : (SAME | DIFFERENT) ftBigUnit;
 
-FTUnit                      : WORDS | SENTENCES | PARAGRAPHS;
+ftBigUnit                   : SENTENCE | PARAGRAPH;
 
-
-
-FTScope                     : (SAME | DIFFERENT) FTBigUnit;
-
-FTBigUnit                   : SENTENCE | PARAGRAPH;
-
-
-
-FTContent                   : (AT START) | (AT END) | (ENTIRE CONTENT);
+ftContent                   : (AT START) | (AT END) | (ENTIRE CONTENT);
 
 ftMatchOptions              : ftMatchOption+;     /* xgc: multiple-match-options */
 
