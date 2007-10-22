@@ -243,12 +243,12 @@ fragment AposAttrContentChar	: c=Char {(!$c.getText().equals("'") && !$c.getText
 
 
 Comment             :'(:' (CommentCheck)* ':)' {$channel=HIDDEN;};
-CommentCheck 		: (Comment)=> Comment
+fragment CommentCheck: (Comment)=> Comment
 					| CommentContents;
 //CommentContents     : (Char+ ~ (Char* ('(:' | ':)') Char*));
 
 //-------------------------------------------- New ---------------------------------------------------------------
-CommentContents	    : m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equals(":)") ))}?;
+fragment CommentContents	    : m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equals(":)") ))}?;
 //-------------------------------------------- weN ---------------------------------------------------------------
 
 
