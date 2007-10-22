@@ -254,16 +254,15 @@ fragment CommentContents	    : m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equa
 
 
 fragment NameChar            : Letter | Digit | DOT | MINUSSi | UNDERSCORE | COLONSi | CombiningChar | Extender;
-Name                : (Letter | UNDERSCORE | COLONSi) (NameChar)*;
+fragment Name                : (Letter | UNDERSCORE | COLONSi) (NameChar)*;
 Names               : Name ('\u0020' Name)*;
-Nmtoken             : (NameChar)+;
+fragment Nmtoken             : (NameChar)+;
 Nmtokens            : Nmtoken ('\u0020' Nmtoken)*;
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-PITarget */
 /* Original:
 PI                  : LEFTPITARGET PITarget (S (Char* ~ (Char* '?>' Char*)))? '?>';
 PITarget            : Name ~ (('X' | 'x') ('M' | 'm') ('L' | 'l'));
-ZeroOrMoreChar
 */
 //--------------------------------------- New ------------------------------------------------
 /* Redundant
@@ -275,29 +274,38 @@ piTarget            : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
 /* See: http://www.w3.org/TR/REC-xml/#NT-CharRef */
 CharRef             : '&#' ('0'..'9')+ SEMICOLONSi | '&#x' ('0'..'9'|'a'..'f'|'A'..'F')+ SEMICOLONSi;
 			
-/* See: http://www.w3.org/TR/REC-xml-names/#NT-qName */
-qName               : prefixedName | unprefixedName;
-prefixedName        : prefix COLONSi localPart ;
-unprefixedName      : localPart ;
-prefix              : NCName;
-localPart           : NCName;
-
+/* See: http://www.w3.org/TR/REC-xml-names/#NT-QName */
+//--------------------------------------- New ------------------------------------------------
+/*
+QName               		 : PrefixedName | UnprefixedName;
+fragment PrefixedName        : Prefix COLONSi LocalPart ;
+fragment UnprefixedName      : LocalPart ;
+fragment Prefix              : NCName;
+fragment LocalPart           : NCName;
+*/
+// Made it a bit simpler, and also internetANTLR stuff I belive
+QName						 : (NCName COLONSi)? NCName;
+//--------------------------------------- weN ------------------------------------------------
 /* See: http://www.w3.org/TR/REC-xml-names/#NT-NCName */
 NCName              : NCNameStartChar NCNameChar*;
-/*NCNameChar          : NameChar ~ ':';*/
+
 //--------------------------------------- New ------------------------------------------------
-NCNameChar          : nc=NameChar {!$nc.getText().equals(":")}?;
+/*Original= NCNameChar          : NameChar ~ ':';*/
+/*fragment NCNameChar          : nc=NameChar {!$nc.getText().equals(":")}?; */
+
+//moved NameChar definition down here, and removed COLONSi
+fragment NCNameChar					   : Letter | Digit | DOT | MINUSSi | UNDERSCORE | CombiningChar | Extender;
 //--------------------------------------- weN ------------------------------------------------
-NCNameStartChar     : Letter | UNDERSCORE;
+fragment NCNameStartChar     : Letter | UNDERSCORE;
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-S */
 S                   : ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
 
 /* See: http://www.w3.org/TR/xquery-full-text/#prod-xquery-Char */
-Char                : '\u0009' | '\u000A' | '\u000D' | ('\u0020'..'\uD7FF') | ('\uE000'..'\uFFFD'); /* Dropped temporarily | [\u10000-\u10FFFF] */
+fragment Char                : '\u0009' | '\u000A' | '\u000D' | ('\u0020'..'\uD7FF') | ('\uE000'..'\uFFFD'); /* Dropped temporarily | [\u10000-\u10FFFF] */
 
 /* See http://www.w3.org/TR/xquery-full-text/#prod-xquery-Digits */
-Digits              : ('0'..'9')+;
+fragment Digits              : ('0'..'9')+;
 
 /* Parser */
 //-------------------------------------------- New ---------------------------------------------------------------
@@ -331,7 +339,7 @@ boundarySpaceDecl           : DECLARE BOUNDARYSPACE (PRESERVE | STRIP);
 
 defaultNamespaceDecl        : DECLARE DEFAULT (ELEMENT | FUNCTION) NAMESPACE uriLiteral;
 
-optionDecl                  : DECLARE OPTION qName StringLiteral;
+optionDecl                  : DECLARE OPTION QName StringLiteral;
 
 ftOptionDecl                : DECLARE FTOPTION ftMatchOptions;
 
@@ -355,15 +363,15 @@ schemaPrefix                : (NAMESPACE NCName EQUALSi) | (DEFAULT ELEMENT NAME
 
 moduleImport                : IMPORT MODULE (NAMESPACE NCName EQUALSi)? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
 
-varDecl                     : DECLARE VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNMENTOPERATOR exprSingle) | EXTERNAL);
+varDecl                     : DECLARE VARIABLE DOLLARSi QName typeDeclaration? ((ASSIGNMENTOPERATOR exprSingle) | EXTERNAL);
 
 constructionDecl            : DECLARE CONSTRUCTION (STRIP | PRESERVE);
 
-functionDecl                : DECLARE FUNCTION qName LEFTPARENTHESISSi paramList? RIGHTPARENTHESISSi (AS sequenceType)? (enclosedExpr | EXTERNAL);
+functionDecl                : DECLARE FUNCTION QName LEFTPARENTHESISSi paramList? RIGHTPARENTHESISSi (AS sequenceType)? (enclosedExpr | EXTERNAL);
 
 paramList                   : param (COMMASi param)*;
 
-param                       : DOLLARSi qName typeDeclaration?;
+param                       : DOLLARSi QName typeDeclaration?;
 
 enclosedExpr                : LEFTBRACESi expr RIGHTBRACESi;
 
@@ -447,7 +455,7 @@ validationMode              : LAX | STRICT;
 
 extensionExpr               : pragma+ LEFTBRACESi expr? RIGHTBRACESi;
 
-pragma                      : LEFTPRAGMA S? qName (S pragmaContents)? RIGHTPRAGMA; /* ws: explicit */
+pragma                      : LEFTPRAGMA S? QName (S pragmaContents)? RIGHTPRAGMA; /* ws: explicit */
 
 //PragmaContents              : (Char* ~ (Char* '#)' Char*));
 
@@ -502,7 +510,7 @@ abbrevReverseStep           : DOTDOT;
 
 nodeTest                    : kindTest | nameTest;
 
-nameTest                    : qName | wildcard;
+nameTest                    : QName | wildcard;
 
 
 /* added syntactic predicate */
@@ -525,7 +533,7 @@ numericLiteral              : IntegerLiteral | DecimalLiteral | DoubleLiteral;
 
 varRef                      : DOLLARSi varName;
 
-varName                     : qName;
+varName                     : QName;
 
 parenthesizedExpr           : LEFTPARENTHESISSi expr? RIGHTPARENTHESISSi;
 
@@ -535,7 +543,7 @@ orderedExpr                 : ORDERED LEFTBRACESi expr RIGHTBRACESi;
 
 unorderedExpr               : UNORDERED LEFTBRACESi expr RIGHTBRACESi;
 
-functionCall                : qName LEFTPARENTHESISSi (exprSingle (COMMASi exprSingle)*)? RIGHTPARENTHESISSi; /* xgc: reserved-function-namesXQ */
+functionCall                : QName LEFTPARENTHESISSi (exprSingle (COMMASi exprSingle)*)? RIGHTPARENTHESISSi; /* xgc: reserved-function-namesXQ */
                                                                                 /* gn: parensXQ */
 
 constructor                 : directConstructor
@@ -545,9 +553,9 @@ directConstructor           : dirElemConstructor
                                 | dirCommentConstructor
                                 | dirPIConstructor;
 
-dirElemConstructor          : LESSTHANSi qName dirAttributeList (RIGHTSELFTERMINATOR | (BIGGERTHANSi dirElemContent* LEFTENDTAG qName S? BIGGERTHANSi)); /* ws: explicitXQ */
+dirElemConstructor          : LESSTHANSi QName dirAttributeList (RIGHTSELFTERMINATOR | (BIGGERTHANSi dirElemContent* LEFTENDTAG QName S? BIGGERTHANSi)); /* ws: explicitXQ */
 
-dirAttributeList            : (S (qName S? EQUALSi S? dirAttributeValue)?)*; /* ws: explicitXQ */
+dirAttributeList            : (S (QName S? EQUALSi S? dirAttributeValue)?)*; /* ws: explicitXQ */
 
 dirAttributeValue           : (DOUBLEQUOTESi (EscapeQuot | quotAttrValueContent)* DOUBLEQUOTESi)
                                 | (SINGLEQUOTE (EscapeApos | aposAttrValueContent)* SINGLEQUOTE); /* ws: explicitXQ */
@@ -602,11 +610,11 @@ computedConstructor         : compDocConstructor
 
 compDocConstructor          : DOCUMENT LEFTBRACESi expr RIGHTBRACESi;
 
-compElemConstructor         : ELEMENT (qName | (LEFTBRACESi expr RIGHTBRACESi)) LEFTBRACESi contentExpr? RIGHTBRACESi;
+compElemConstructor         : ELEMENT (QName | (LEFTBRACESi expr RIGHTBRACESi)) LEFTBRACESi contentExpr? RIGHTBRACESi;
 
 contentExpr                 : expr;
 
-compAttrConstructor         : ATTRIBUTE (qName | (LEFTBRACESi expr RIGHTBRACESi)) LEFTBRACESi expr? RIGHTBRACESi;
+compAttrConstructor         : ATTRIBUTE (QName | (LEFTBRACESi expr RIGHTBRACESi)) LEFTBRACESi expr? RIGHTBRACESi;
 
 compTextConstructor         : TEXT LEFTBRACESi expr RIGHTBRACESi;
 
@@ -625,7 +633,7 @@ occurrenceIndicator         : QUESTIONMARKSi | STARSi | PLUSSi; /* xgc: occurren
 
 itemType                    : kindTest | (ITEM LEFTPARENTHESISSi RIGHTPARENTHESISSi) | atomicType;
 
-atomicType                  : qName;
+atomicType                  : QName;
 
 kindTest                    : documentTest
                                 | elementTest
@@ -663,11 +671,11 @@ schemaElementTest           : SCHEMAELEMENT LEFTPARENTHESISSi elementDeclaration
 
 elementDeclaration          : elementName;
 
-attributeName               : qName;
+attributeName               : QName;
 
-elementName                 : qName;
+elementName                 : QName;
 
-typeName                    : qName;
+typeName                    : QName;
 
 uriLiteral                  : StringLiteral;
 
@@ -754,5 +762,5 @@ ftRefOrList                 : (AT uriLiteral)
 ftInclExclStringLiteral     : (UNION | EXCEPT) ftRefOrList;
 ftLanguageOption            : LANGUAGE StringLiteral;
 ftWildCardOption            : (WITH WILDCARDS) | (WITHOUT WILDCARDS);
-ftExtensionOption           : OPTION qName StringLiteral;
+ftExtensionOption           : OPTION QName StringLiteral;
 ftIgnoreOption              : WITHOUT CONTENT unionExpr;
