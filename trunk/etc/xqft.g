@@ -456,9 +456,11 @@ pragma                      : LEFTPRAGMA S? qName (S pragmaContents)? RIGHTPRAGM
 pragmaContents        : m=ZeroOrMoreChar{ !$m.getText().contains("#") }?  ;
 //--------------------------------------- weN ------------------------------------------------
 /* added syntactic predicate */
-pathExpr                    : (DOUBLESLASH relativePathExpr)/*=> DOUBLESLASH relativePathExpr */
-								| (SLASH relativePathExpr?)/*=> SLASH relativePathExpr?*/
-                                | relativePathExpr;	/* xgc: leading-lone-slashXQ */
+pathExpr                    : (DOUBLESLASH relativePathExpr)=> DOUBLESLASH relativePathExpr 
+								| (SLASH? relativePathExpr);
+							/*	| (SLASH relativePathExpr?)
+                                | relativePathExpr;	*/
+                                /* xgc: leading-lone-slashXQ */
 
 relativePathExpr            : stepExpr ((SLASH | DOUBLESLASH) stepExpr)*;
 
