@@ -241,7 +241,7 @@ fragment QuotAttrContentChar	: c=Char {(!$c.getText().equals("\"") && !$c.getTex
 fragment AposAttrContentChar	: c=Char {(!$c.getText().equals("'") && !$c.getText().equals("{") && !$c.getText().equals("}") && !$c.getText().equals("<") && !$c.getText().equals("&")) }?;
 //--------------------------------------- weN ------------------------------------------------
 
-//TODO: should not this one be sent to the hidden channel?
+
 Comment             :'(:' (CommentCheck)* ':)' {$channel=HIDDEN;};
 CommentCheck 		: (Comment)=> Comment
 					| CommentContents;
@@ -253,8 +253,8 @@ CommentContents	    : m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equals(":)") 
 
 
 
-NameChar            : Letter | Digit | DOT | MINUSSi | '_' | COLONSi | CombiningChar | Extender;
-Name                : (Letter | '_' | COLONSi) (NameChar)*;
+NameChar            : Letter | Digit | DOT | MINUSSi | UNDERSCORE | COLONSi | CombiningChar | Extender;
+Name                : (Letter | UNDERSCORE | COLONSi) (NameChar)*;
 Names               : Name ('\u0020' Name)*;
 Nmtoken             : (NameChar)+;
 Nmtokens            : Nmtoken ('\u0020' Nmtoken)*;
@@ -288,7 +288,7 @@ NCName              : NCNameStartChar NCNameChar*;
 //--------------------------------------- New ------------------------------------------------
 NCNameChar          : nc=NameChar {!$nc.getText().equals(":")}?;
 //--------------------------------------- weN ------------------------------------------------
-NCNameStartChar     : Letter | '_';
+NCNameStartChar     : Letter | UNDERSCORE;
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-S */
 S                   : ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
@@ -396,6 +396,7 @@ orderSpecList               : orderSpec (COMMASi orderSpec)*;
 orderSpec                   : exprSingle orderModifier;
 
 orderModifier               : (ASCENDING | DESCENDING)? (EMPTY (GREATEST | LEAST))? (COLLATION uriLiteral)?;
+
 quantifiedExpr              : (SOME | EVERY) DOLLARSi varName typeDeclaration? IN exprSingle (COMMASi DOLLARSi varName typeDeclaration? IN exprSingle)* SATISFIES exprSingle;
 
 typeswitchExpr              : TYPESWITCH LEFTPARENTHESISSi expr RIGHTPARENTHESISSi caseClause+ DEFAULT (DOLLARSi varName)? RETURN exprSingle;
@@ -408,9 +409,7 @@ orExpr                      : andExpr ( OR andExpr )*;
 
 andExpr                     : comparisonExpr ( AND comparisonExpr )*;
 
-comparisonExpr              : ftContainsExpr ( (ValueComp
-                                | GeneralComp
-                                | NodeComp) ftContainsExpr )?;
+comparisonExpr              : ftContainsExpr ( (ValueComp | GeneralComp | NodeComp) ftContainsExpr )?;
 
 ftContainsExpr              : rangeExpr ( FTCONTAINS ftSelection ftIgnoreOption? )?;
 
@@ -471,26 +470,34 @@ axisStep                    : (reverseStep | forwardStep) predicateList;
 forwardStep                 : (forwardAxis nodeTest) | abbrevForwardStep;
 
 
+forwardAxis                 : (CHILD | DESCENDANT | ATTRIBUTE | SELF | 
+							  DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING) 
+							  DOUBLECOLON;
 
-forwardAxis                 : (CHILD DOUBLECOLON)
+
+/*forwardAxis                 : (CHILD DOUBLECOLON)
                                 | (DESCENDANT DOUBLECOLON)
                                 | (ATTRIBUTE DOUBLECOLON)
                                 | (SELF DOUBLECOLON)
                                 | (DESCENDANT_OR_SELF DOUBLECOLON)
                                 | (FOLLOWING_SIBLING DOUBLECOLON)
                                 | (FOLLOWING DOUBLECOLON);
-
+*/
 abbrevForwardStep           : ATSi? nodeTest;
 
 reverseStep                 : (reverseAxis nodeTest) | AbbrevReverseStep;
 
+reverseAxis                 : (PARENT | ANCESTOR | PRECEDING_SIBLING 
+								| PRECEDING | ANCESTOR_OR_SELF) 
+								DOUBLECOLON;
 
+/*
 reverseAxis                 : (PARENT DOUBLECOLON)
                                 | (ANCESTOR DOUBLECOLON)
                                 | (PRECEDING_SIBLING DOUBLECOLON)
                                 | (PRECEDING DOUBLECOLON)
                                 | (ANCESTOR_OR_SELF DOUBLECOLON);
-
+*/
 AbbrevReverseStep           : DOTDOT;
 
 nodeTest                    : kindTest | nameTest;
@@ -539,6 +546,7 @@ directConstructor           : dirElemConstructor
                                 | dirPIConstructor;
 
 dirElemConstructor          : LESSTHANSi qName dirAttributeList (RIGHTSELFTERMINATOR | (BIGGERTHANSi dirElemContent* LEFTENDTAG qName S? BIGGERTHANSi)); /* ws: explicitXQ */
+
 dirAttributeList            : (S (qName S? EQUALSi S? dirAttributeValue)?)*; /* ws: explicitXQ */
 
 dirAttributeValue           : (DOUBLEQUOTESi (EscapeQuot | quotAttrValueContent)* DOUBLEQUOTESi)
