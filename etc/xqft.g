@@ -226,9 +226,9 @@ DoubleLiteral       : ((DOT Digits) | (Digits (DOT ('0'..'9')*)?)) ('e'|'E') (PL
 
 /* StringLiteral       : ('"' (PredefinedEntityRef | CharRef | EscapeQuot | [^"&])* '"') | ("'" (PredefinedEntityRef | CharRef | EscapeApos | [^'&])* "'") */
 StringLiteral	    : ('"' (PredefinedEntityRef | CharRef | EscapeQuot | ~(DOUBLEQUOTESi|'&'))* DOUBLEQUOTESi) | (SINGLEQUOTE (PredefinedEntityRef | CharRef | EscapeApos | ~(SINGLEQUOTE|'&'))* SINGLEQUOTE);
-PredefinedEntityRef : '&' ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
-EscapeQuot          : '""';
-EscapeApos          : '\'\'';
+fragment PredefinedEntityRef : '&' ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
+fragment EscapeQuot          : '""';
+fragment EscapeApos          : '\'\'';
 
 //--------------------------------------- New ------------------------------------------------
 /* Original:
@@ -268,9 +268,12 @@ fragment CommentContents	    : m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equa
 
 fragment NameChar            : Letter | Digit | DOT | MINUSSi | UNDERSCORE | COLONSi | CombiningChar | Extender;
 fragment Name                : (Letter | UNDERSCORE | COLONSi) (NameChar)*;
+
+/* garabage?
 Names               : Name ('\u0020' Name)*;
 fragment Nmtoken             : (NameChar)+;
 Nmtokens            : Nmtoken ('\u0020' Nmtoken)*;
+*/
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-PITarget */
 /* Original:
@@ -297,10 +300,10 @@ fragment Prefix              : NCName;
 fragment LocalPart           : NCName;
 */
 // Made it a bit simpler, and also internetANTLR stuff I belive
-QName						 : (NCName COLONSi)? NCName;
+fragment QName						 : (NCName COLONSi)? NCName;
 //--------------------------------------- weN ------------------------------------------------
 /* See: http://www.w3.org/TR/REC-xml-names/#NT-NCName */
-NCName              : NCNameStartChar NCNameChar*;
+fragment NCName              : NCNameStartChar NCNameChar*;
 
 //--------------------------------------- New ------------------------------------------------
 /*Original= NCNameChar          : NameChar ~ ':';*/
@@ -472,12 +475,11 @@ pragma                      : LEFTPRAGMA S? QName (S pragmaContents)? RIGHTPRAGM
 //--------------------------------------- New ------------------------------------------------
 pragmaContents        : m=ZeroOrMoreChar{ !$m.getText().contains("#") }?  ;
 //--------------------------------------- weN ------------------------------------------------
-/* added syntactic predicate */
+/* added syntactic predicates */
 pathExpr                    : (DOUBLESLASH relativePathExpr)=> DOUBLESLASH relativePathExpr 
-								| (SLASH? relativePathExpr);
-							/*	| (SLASH relativePathExpr?)
-                                | relativePathExpr;	*/
-                                /* xgc: leading-lone-slashXQ */
+								| (SLASH relativePathExpr) => SLASH relativePathExpr
+								| SLASH
+								| relativePathExpr;
 
 relativePathExpr            : stepExpr ((SLASH | DOUBLESLASH) stepExpr)*;
 
@@ -589,7 +591,7 @@ dirCommentConstructor       : LEFTXMLCOMMENT dirCommentContents RIGHTXMLCOMMENT;
 //dirCommentContents          : ((Char ~ '-') | ('-' (Char ~ '-')))*; /* ws: explicitXQ */
 
 //--------------------------------------- New ------------------------------------------------
-dirCommentContents             : (charNotMinus | (MINUSSi charNotMinus))*; /* ws: explicitXQ */ 
+dirCommentContents             : (CharNotMinus | (MINUSSi CharNotMinus))*; /* ws: explicitXQ */ 
 //--------------------------------------- weN ------------------------------------------------
 
 dirPIConstructor            : LEFTPITARGET piTarget (S dirPIContents)? RIGHTPITARGET; /* ws: explicitXQ */
@@ -636,12 +638,18 @@ singleType                  : atomicType QUESTIONMARKSi?;
 
 typeDeclaration             : AS sequenceType;
 
-sequenceType                : (EMPTY_SEQUENCE LEFTPARENTHESISSi RIGHTPARENTHESISSi)
-                                | (itemType occurrenceIndicator?);
-
+//-------------------------------------------- New --------------------------------------------------------------
+/*
+sequenceType                : (EMPTY_SEQUENCE LEFTPARENTHESISSi RIGHTPARENTHESISSi) | itemType occurrenceIndicator?;
+*/
+sequenceType                : (itemType occurrenceIndicator) => itemType occurrenceIndicator
+							| itemType
+							|(EMPTY_SEQUENCE LEFTPARENTHESISSi RIGHTPARENTHESISSi);
+//-------------------------------------------- weN --------------------------------------------------------------
 occurrenceIndicator         : QUESTIONMARKSi | STARSi | PLUSSi; /* xgc: occurrence-indicatorsXQ */
 
-itemType                    : kindTest | (ITEM LEFTPARENTHESISSi RIGHTPARENTHESISSi) | atomicType;
+// moved occurrenceIndicator from sequenceType
+itemType                    : (kindTest | (ITEM LEFTPARENTHESISSi RIGHTPARENTHESISSi) | atomicType);
 
 atomicType                  : QName;
 
