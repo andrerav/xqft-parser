@@ -1,3 +1,4 @@
+<<<<<<< .mine
 grammar XQFT;
 
 //options { 
@@ -7,205 +8,204 @@ grammar XQFT;
 //}
 /*Si-suffix indicates that its a sign
 */
-
-
-tokens {
-    PIPESi = '|';
-    BIGGERTHANSi = '>';
-    BIGGERTHANOREQUALSi = '>=';
-    LESSTHANOREQUALSi = '<=';
-    ASCENDING = 'ascending';
-    IDIV = 'idiv';
-    WHERE = 'where';
-    PHRASE = 'phrase';
-    CONTENT = 'content';
-    VERSION = 'version';
-    LEFTBRACESi = '{';
-    EQUALSi = '=';
-    NOTEQUALSi = '!=';
-    STOP = 'stop';
-    TYPESWITCH = 'typeswitch';
-    ANY = 'any';
-    BOUNDARYSPACE = 'boundary-space';
-    DOLLARSi = '$';
-    XQUERY = 'xquery';
-    CAST = 'cast';
-    DISTANCE = 'distance';
-    LEFTPRAGMA = '(#';
-    ORDERED = 'ordered';
-    DOCUMENTNODE = 'document-node';
-    ELSE = 'else';
-    LESSTHANSi = '<';
-    TREAT = 'treat';
-    UPPERCASE = 'uppercase';
-    ALL = 'all';
-    WORD = 'words';
-    RIGHTPRAGMA = '#)';
-    INHERIT = 'inherit';
-    SLASH = '/';
-    ORDERING = 'ordering';
-    RIGHTPITARGET = '?>';
-    EVERY = 'every';
-    CASTABLE = 'castable';
-    ITEM = 'item';
-    FOR = 'for';
-    INSTANCE = 'instance';
-    DOUBLEQUOTESi = '"';
-    EXCEPT = 'except';
-    TO = 'to';
-    CONSTRUCTION = 'construction';
-    WEIGHT = 'weight';
-    FTOPTION = 'ft-option';
-    SATISFIES = 'satisfies';
-    WORD = 'word';
-    COLONSi = ':';
-    SEMICOLONSi = ';';
-    SINGLEQUOTE = '\'';
-    UNDERSCORE = '_';
-    EMPTY = 'empty';
-    MOST = 'most';
-    CASE = 'case';
-    PROCESSING_INSTRUCTION = 'processing-instruction';
-    IMPORT = 'import';
-    MINUSSi = '-';
-    RIGHTSELFTERMINATOR = '/>';
-    DOCUMENT = 'document';
-    LEFTCDATA = '<![CDATA[';
-    VALIDATE = 'validate';
-    EMPTY_SEQUENCE = 'empty-sequence';
-    INSENSITIVE = 'insensitive';
-    NOPRESERVE = 'no-preserve';
-    THEN = 'then';
-    COMMASi = ',';
-    LET = 'let';
-    WINDOW = 'window';
-    SCORE = 'score';
-    LANGUAGE = 'language';
-    OPTION = 'option';
-    STEMMING = 'stemming';
-    RIGHTBRACKETSi = ']';
-    GREATEST = 'greatest';
-    LEVELS = 'levels';
-    SENSITIVE = 'sensitive';
-    FTNOT = 'ftnot';
-    DIV = 'div';
-    PLUSSi = '+';
-    FTAND = 'ftand';
-    AT = 'at';
-    SCHEMAATTRIBUTE = 'schema-attribute';
-    ORDER ='order';
-    OF = 'of';
-    UNION = 'union';
-    FROM = 'from';
-    COLLATION = 'collation';
-    DOUBLERIGHTBRACES = '}}';
-    VARIABLE = 'variable';
-    OR = 'or';
-    FTOR = 'ftor';
-    DOUBLESLASH = '//';
-    LEAST = 'least';
-    IF = 'if';
-    BASEURI = 'base-uri';
-    DESCENDING = 'descending';
-    STARSi = '*';
-    NAMESPACE = 'namespace';
-    AS = 'as';
-    LEFTXMLCOMMENT = '<!--';
-    BY = 'by';
-    TEXT = 'text';
-    STABLE = 'stable';
-    LEFTBRACKETSi = '[';
-    UNORDERED = 'unordered';
-    RIGHTCDATA = ']]>';
-    EXACTLY = 'exactly';
-    WITH = 'with';
-    LEFTPITARGET = '<?';
-    WITHOUT = 'without';
-    DIACRITICS = 'diacritics';
-    EXTERNAL = 'external';
-    RIGHTPARENTHESISSi = ')';
-    RIGHTXMLCOMMENT = '-->';
-    MODULE = 'module';
-    RETURN = 'return';
-    COMMENT = 'comment';
-    DEFAULT = 'default';
-    OCCURS = 'occurs';
-    ENCODING = 'encoding';
-    DOUBLELEFTBRACES = '{{';
-    SCHEMA = 'schema';
-    ELEMENT = 'element';
-    LEFTPARENTHESISSi = '(';
-    COPYNAMESPACES = 'copy-namespaces';
-    WILDCARDS = 'wildcards';
-    DECLARE = 'declare';
-    AND = 'and';
-    PRESERVE = 'preserve';
-    NOINHERIT = 'no-inherit';
-    NOT = 'not';
-    INTERSECT = 'intersect';
-    FUNCTION = 'function';
-    ATSi = '@';
-    TIMES = 'times';
-    ATTRIBUTE = 'attribute';
-    ASSIGNMENTOPERATOR = ':=';
-    FTCONTAINS = 'ftcontains';
-    RELATIONSHIP = 'relationship';
-    THESAURUS = 'thesaurus';
-    MOD = 'mod';
-    RIGHTBRACESi = '}';
-    NODE = 'node';
-    SOME = 'some';
-    QUESTIONMARKSi = '?';
-    STRIP = 'strip';
-    LOWERCASE = 'lowercase';
-    IN = 'in';
-    SCHEMAELEMENT = 'schema-element';
-    LEFTENDTAG = '</';
-    STEMMING = 'stemming';
-    EQ = 'eq';
-    NE = 'ne';
-    LT = 'lt';
-    LE = 'le';
-    GT = 'gt';
-    GE = 'ge';
-    IS = 'is';
-    NODEBEFORESi = '<<';
-    NODEAFTERSi = '>>';
-    LAX = 'lax';
-    STRICT = 'strict';
-    CHILD = 'child';
-    DOUBLECOLON = '::';
-    DESCENDANT = 'descendant';
-    SELF = 'self';
-    DESCENDANT_OR_SELF = 'descendant-or-self';
-    FOLLOWING_SIBLING = 'following-sibling';
-    FOLLOWING = 'following';
-    PARENT = 'parent';
-    ANCESTOR = 'ancestor';
-    PRECEDING_SIBLING = 'preceding-sibling';
-    PRECEDING = 'preceding';
-    ANCESTOR_OR_SELF = 'ancestor-or-self';
-    DOT = '.';
-    DOTDOT = '..';
-    WORDS = 'words';
-    SENTENCES = 'sentences';
-    PARAGRAPHS = 'paragraphs';
-    SENTENCE = 'sentence';
-    PARAGRAPH = 'paragraph';
-    SAME = 'same';
-    DIFFERENT = 'different';
-    START = 'start';
-    END = 'end';
-    ENTIRE = 'entire';
+tokens{
+PIPESi = '|';
+BIGGERTHANSi = '>';
+BIGGERTHANOREQUALSi = '>=';
+LESSTHANOREQUALSi = '<=';
+ASCENDING = 'ascending';
+IDIV = 'idiv';
+WHERE = 'where';
+PHRASE = 'phrase';
+CONTENT = 'content';
+VERSION = 'version';
+LEFTBRACESi = '{';
+EQUALSi = '=';
+NOTEQUALSi = '!=';
+STOP = 'stop';
+TYPESWITCH = 'typeswitch';
+ANY = 'any';
+BOUNDARYSPACE = 'boundary-space';
+DOLLARSi = '$';
+XQUERY = 'xquery';
+CAST = 'cast';
+DISTANCE = 'distance';
+LEFTPRAGMA = '(#';
+ORDERED = 'ordered';
+DOCUMENTNODE = 'document-node';
+ELSE = 'else';
+LESSTHANSi = '<';
+TREAT = 'treat';
+UPPERCASE = 'uppercase';
+ALL = 'all';
+WORD = 'words';
+RIGHTPRAGMA = '#)';
+INHERIT = 'inherit';
+SLASH = '/';
+ORDERING = 'ordering';
+RIGHTPITARGET = '?>';
+EVERY = 'every';
+CASTABLE = 'castable';
+ITEM = 'item';
+FOR = 'for';
+INSTANCE = 'instance';
+DOUBLEQUOTESi = '"';
+EXCEPT = 'except';
+TO = 'to';
+CONSTRUCTION = 'construction';
+WEIGHT = 'weight';
+FTOPTION = 'ft-option';
+SATISFIES = 'satisfies';
+WORD = 'word';
+COLONSi = ':';
+SEMICOLONSi = ';';
+SINGLEQUOTE = '\'';
+UNDERSCORE = '_';
+EMPTY = 'empty';
+MOST = 'most';
+CASE = 'case';
+PROCESSING_INSTRUCTION = 'processing-instruction';
+IMPORT = 'import';
+MINUSSi = '-';
+RIGHTSELFTERMINATOR = '/>';
+DOCUMENT = 'document';
+LEFTCDATA = '<![CDATA[';
+VALIDATE = 'validate';
+EMPTY_SEQUENCE = 'empty-sequence';
+INSENSITIVE = 'insensitive';
+NOPRESERVE = 'no-preserve';
+THEN = 'then';
+COMMASi = ',';
+LET = 'let';
+WINDOW = 'window';
+SCORE = 'score';
+LANGUAGE = 'language';
+OPTION = 'option';
+STEMMING = 'stemming';
+RIGHTBRACKETSi = ']';
+GREATEST = 'greatest';
+LEVELS = 'levels';
+SENSITIVE = 'sensitive';
+FTNOT = 'ftnot';
+DIV = 'div';
+PLUSSi = '+';
+FTAND = 'ftand';
+AT = 'at';
+SCHEMAATTRIBUTE = 'schema-attribute';
+ORDER ='order';
+OF = 'of';
+UNION = 'union';
+FROM = 'from';
+COLLATION = 'collation';
+DOUBLERIGHTBRACES = '}}';
+VARIABLE = 'variable';
+OR = 'or';
+FTOR = 'ftor';
+DOUBLESLASH = '//';
+LEAST = 'least';
+IF = 'if';
+BASEURI = 'base-uri';
+DESCENDING = 'descending';
+STARSi = '*';
+NAMESPACE = 'namespace';
+AS = 'as';
+LEFTXMLCOMMENT = '<!--';
+BY = 'by';
+TEXT = 'text';
+STABLE = 'stable';
+LEFTBRACKETSi = '[';
+UNORDERED = 'unordered';
+RIGHTCDATA = ']]>';
+EXACTLY = 'exactly';
+WITH = 'with';
+LEFTPITARGET = '<?';
+WITHOUT = 'without';
+DIACRITICS = 'diacritics';
+EXTERNAL = 'external';
+RIGHTPARENTHESISSi = ')';
+RIGHTXMLCOMMENT = '-->';
+MODULE = 'module';
+RETURN = 'return';
+COMMENT = 'comment';
+DEFAULT = 'default';
+OCCURS = 'occurs';
+ENCODING = 'encoding';
+DOUBLELEFTBRACES = '{{';
+SCHEMA = 'schema';
+ELEMENT = 'element';
+LEFTPARENTHESISSi = '(';
+COPYNAMESPACES = 'copy-namespaces';
+WILDCARDS = 'wildcards';
+DECLARE = 'declare';
+AND = 'and';
+PRESERVE = 'preserve';
+NOINHERIT = 'no-inherit';
+NOT = 'not';
+INTERSECT = 'intersect';
+FUNCTION = 'function';
+ATSi = '@';
+TIMES = 'times';
+ATTRIBUTE = 'attribute';
+ASSIGNMENTOPERATOR = ':=';
+FTCONTAINS = 'ftcontains';
+RELATIONSHIP = 'relationship';
+THESAURUS = 'thesaurus';
+MOD = 'mod';
+RIGHTBRACESi = '}';
+NODE = 'node';
+SOME = 'some';
+QUESTIONMARKSi = '?';
+STRIP = 'strip';
+LOWERCASE = 'lowercase';
+IN = 'in';
+SCHEMAELEMENT = 'schema-element';
+LEFTENDTAG = '</';
+STEMMING = 'stemming';
+EQ = 'eq';
+NE = 'ne';
+LT = 'lt';
+LE = 'le';
+GT = 'gt';
+GE = 'ge';
+IS = 'is';
+NODEBEFORESi = '<<';
+NODEAFTERSi = '>>';
+LAX = 'lax';
+STRICT = 'strict';
+CHILD = 'child';
+DOUBLECOLON = '::';
+DESCENDANT = 'descendant';
+SELF = 'self';
+DESCENDANT_OR_SELF = 'descendant-or-self';
+FOLLOWING_SIBLING = 'following-sibling';
+FOLLOWING = 'following';
+PARENT = 'parent';
+ANCESTOR = 'ancestor';
+PRECEDING_SIBLING = 'preceding-sibling';
+PRECEDING = 'preceding';
+ANCESTOR_OR_SELF = 'ancestor-or-self';
+DOT = '.';
+DOTDOT = '..';
+WORDS = 'words';
+SENTENCES = 'sentences';
+PARAGRAPHS = 'paragraphs';
+SENTENCE = 'sentence';
+PARAGRAPH = 'paragraph';
+SAME = 'same';
+DIFFERENT = 'different';
+START = 'start';
+END = 'end';
+ENTIRE = 'entire';
 }
 
 //@parser::header {
 	//package no.ntnu.xqft.parse;
 	//import no.ntnu.xqft.lex.*;
 //}
-
-@lexer::header {package no.ntnu.xqft.parse;}
-@parser::header {package no.ntnu.xqft.parse;}
+//@lexer::header {
+	//package no.ntnu.xqft.lex;
+	//import no.ntnu.xqft.parse.*;
+//}
 
 //@members {
 	
@@ -301,10 +301,10 @@ fragment Prefix              : NCName;
 fragment LocalPart           : NCName;
 */
 // Made it a bit simpler, and also internetANTLR stuff I belive
-fragment QName						 : (NCName COLONSi)? NCName;
+qName						 : (NCName COLONSi)? NCName;
 //--------------------------------------- weN ------------------------------------------------
 /* See: http://www.w3.org/TR/REC-xml-names/#NT-NCName */
-fragment NCName              : NCNameStartChar NCNameChar*;
+NCName              : NCNameStartChar NCNameChar*;
 
 //--------------------------------------- New ------------------------------------------------
 /*Original= NCNameChar          : NameChar ~ ':';*/
@@ -316,7 +316,7 @@ fragment NCNameChar					   : Letter | Digit | DOT | MINUSSi | UNDERSCORE | Combi
 fragment NCNameStartChar     : Letter | UNDERSCORE;
 
 /* See: http://www.w3.org/TR/REC-xml/#NT-S */
-S                   : ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
+S                   : ('\u0020' | '\u0009' | '\u000D' | '\u000A')+{$channel=HIDDEN;};
 
 /* See http://www.w3.org/TR/xquery-full-text/#prod-xquery-Digits */
 fragment Digits              : ('0'..'9')+;
@@ -353,7 +353,7 @@ boundarySpaceDecl           : DECLARE BOUNDARYSPACE (PRESERVE | STRIP);
 
 defaultNamespaceDecl        : DECLARE DEFAULT (ELEMENT | FUNCTION) NAMESPACE uriLiteral;
 
-optionDecl                  : DECLARE OPTION QName StringLiteral;
+optionDecl                  : DECLARE OPTION qName StringLiteral;
 
 ftOptionDecl                : DECLARE FTOPTION ftMatchOptions;
 
@@ -377,15 +377,15 @@ schemaPrefix                : (NAMESPACE NCName EQUALSi) | (DEFAULT ELEMENT NAME
 
 moduleImport                : IMPORT MODULE (NAMESPACE NCName EQUALSi)? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
 
-varDecl                     : DECLARE VARIABLE DOLLARSi QName typeDeclaration? ((ASSIGNMENTOPERATOR exprSingle) | EXTERNAL);
+varDecl                     : DECLARE VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNMENTOPERATOR exprSingle) | EXTERNAL);
 
 constructionDecl            : DECLARE CONSTRUCTION (STRIP | PRESERVE);
 
-functionDecl                : DECLARE FUNCTION QName LEFTPARENTHESISSi paramList? RIGHTPARENTHESISSi (AS sequenceType)? (enclosedExpr | EXTERNAL);
+functionDecl                : DECLARE FUNCTION qName LEFTPARENTHESISSi paramList? RIGHTPARENTHESISSi (AS sequenceType)? (enclosedExpr | EXTERNAL);
 
 paramList                   : param (COMMASi param)*;
 
-param                       : DOLLARSi QName typeDeclaration?;
+param                       : DOLLARSi qName typeDeclaration?;
 
 enclosedExpr                : LEFTBRACESi expr RIGHTBRACESi;
 
@@ -469,7 +469,7 @@ validationMode              : LAX | STRICT;
 
 extensionExpr               : pragma+ LEFTBRACESi expr? RIGHTBRACESi;
 
-pragma                      : LEFTPRAGMA S? QName (S pragmaContents)? RIGHTPRAGMA; /* ws: explicit */
+pragma                      : LEFTPRAGMA S? qName (S pragmaContents)? RIGHTPRAGMA; /* ws: explicit */
 
 //PragmaContents              : (Char* ~ (Char* '#)' Char*));
 
@@ -523,7 +523,7 @@ abbrevReverseStep           : DOTDOT;
 
 nodeTest                    : kindTest | nameTest;
 
-nameTest                    : QName | wildcard;
+nameTest                    : qName | wildcard;
 
 
 /* added syntactic predicate */
@@ -546,7 +546,7 @@ numericLiteral              : IntegerLiteral | DecimalLiteral | DoubleLiteral;
 
 varRef                      : DOLLARSi varName;
 
-varName                     : QName;
+varName                     : qName;
 
 parenthesizedExpr           : LEFTPARENTHESISSi expr? RIGHTPARENTHESISSi;
 
@@ -556,7 +556,7 @@ orderedExpr                 : ORDERED LEFTBRACESi expr RIGHTBRACESi;
 
 unorderedExpr               : UNORDERED LEFTBRACESi expr RIGHTBRACESi;
 
-functionCall                : QName LEFTPARENTHESISSi (exprSingle (COMMASi exprSingle)*)? RIGHTPARENTHESISSi; /* xgc: reserved-function-namesXQ */
+functionCall                : qName LEFTPARENTHESISSi (exprSingle (COMMASi exprSingle)*)? RIGHTPARENTHESISSi; /* xgc: reserved-function-namesXQ */
                                                                                 /* gn: parensXQ */
 
 constructor                 : directConstructor
@@ -566,9 +566,9 @@ directConstructor           : dirElemConstructor
                                 | dirCommentConstructor
                                 | dirPIConstructor;
 
-dirElemConstructor          : LESSTHANSi QName dirAttributeList (RIGHTSELFTERMINATOR | (BIGGERTHANSi dirElemContent* LEFTENDTAG QName S? BIGGERTHANSi)); /* ws: explicitXQ */
+dirElemConstructor          : LESSTHANSi qName dirAttributeList (RIGHTSELFTERMINATOR | (BIGGERTHANSi dirElemContent* LEFTENDTAG qName S? BIGGERTHANSi)); /* ws: explicitXQ */
 
-dirAttributeList            : (S (QName S? EQUALSi S? dirAttributeValue)?)*; /* ws: explicitXQ */
+dirAttributeList            : (S (qName S? EQUALSi S? dirAttributeValue)?)*; /* ws: explicitXQ */
 
 dirAttributeValue           : (DOUBLEQUOTESi (EscapeQuot | quotAttrValueContent)* DOUBLEQUOTESi)
                                 | (SINGLEQUOTE (EscapeApos | aposAttrValueContent)* SINGLEQUOTE); /* ws: explicitXQ */
@@ -623,11 +623,11 @@ computedConstructor         : compDocConstructor
 
 compDocConstructor          : DOCUMENT LEFTBRACESi expr RIGHTBRACESi;
 
-compElemConstructor         : ELEMENT (QName | (LEFTBRACESi expr RIGHTBRACESi)) LEFTBRACESi contentExpr? RIGHTBRACESi;
+compElemConstructor         : ELEMENT (qName | (LEFTBRACESi expr RIGHTBRACESi)) LEFTBRACESi contentExpr? RIGHTBRACESi;
 
 contentExpr                 : expr;
 
-compAttrConstructor         : ATTRIBUTE (QName | (LEFTBRACESi expr RIGHTBRACESi)) LEFTBRACESi expr? RIGHTBRACESi;
+compAttrConstructor         : ATTRIBUTE (qName | (LEFTBRACESi expr RIGHTBRACESi)) LEFTBRACESi expr? RIGHTBRACESi;
 
 compTextConstructor         : TEXT LEFTBRACESi expr RIGHTBRACESi;
 
@@ -652,7 +652,7 @@ occurrenceIndicator         : QUESTIONMARKSi | STARSi | PLUSSi; /* xgc: occurren
 // moved occurrenceIndicator from sequenceType
 itemType                    : (kindTest | (ITEM LEFTPARENTHESISSi RIGHTPARENTHESISSi) | atomicType);
 
-atomicType                  : QName;
+atomicType                  : qName;
 
 kindTest                    : documentTest
                                 | elementTest
@@ -690,11 +690,11 @@ schemaElementTest           : SCHEMAELEMENT LEFTPARENTHESISSi elementDeclaration
 
 elementDeclaration          : elementName;
 
-attributeName               : QName;
+attributeName               : qName;
 
-elementName                 : QName;
+elementName                 : qName;
 
-typeName                    : QName;
+typeName                    : qName;
 
 uriLiteral                  : StringLiteral;
 
@@ -781,5 +781,5 @@ ftRefOrList                 : (AT uriLiteral)
 ftInclExclStringLiteral     : (UNION | EXCEPT) ftRefOrList;
 ftLanguageOption            : LANGUAGE StringLiteral;
 ftWildCardOption            : (WITH WILDCARDS) | (WITHOUT WILDCARDS);
-ftExtensionOption           : OPTION QName StringLiteral;
+ftExtensionOption           : OPTION qName StringLiteral;
 ftIgnoreOption              : WITHOUT CONTENT unionExpr;
