@@ -1,4 +1,7 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2007-10-23 14:15:23
+// $ANTLR 3.0.1 etc/XQFT.g 2007-10-23 14:24:38
+
+	package no.ntnu.xqft.parse;
+
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -238,8 +241,8 @@ public class XQFTLexer extends Lexer {
     public final void mPIPESi() throws RecognitionException {
         try {
             int _type = PIPESi;
-            // etc/XQFT.g:3:8: ( '|' )
-            // etc/XQFT.g:3:10: '|'
+            // etc/XQFT.g:6:8: ( '|' )
+            // etc/XQFT.g:6:10: '|'
             {
             match('|'); if (failed) return ;
 
@@ -256,8 +259,8 @@ public class XQFTLexer extends Lexer {
     public final void mBIGGERTHANSi() throws RecognitionException {
         try {
             int _type = BIGGERTHANSi;
-            // etc/XQFT.g:4:14: ( '>' )
-            // etc/XQFT.g:4:16: '>'
+            // etc/XQFT.g:7:14: ( '>' )
+            // etc/XQFT.g:7:16: '>'
             {
             match('>'); if (failed) return ;
 
@@ -274,8 +277,8 @@ public class XQFTLexer extends Lexer {
     public final void mBIGGERTHANOREQUALSi() throws RecognitionException {
         try {
             int _type = BIGGERTHANOREQUALSi;
-            // etc/XQFT.g:5:21: ( '>=' )
-            // etc/XQFT.g:5:23: '>='
+            // etc/XQFT.g:8:21: ( '>=' )
+            // etc/XQFT.g:8:23: '>='
             {
             match(">="); if (failed) return ;
 
@@ -293,8 +296,8 @@ public class XQFTLexer extends Lexer {
     public final void mLESSTHANOREQUALSi() throws RecognitionException {
         try {
             int _type = LESSTHANOREQUALSi;
-            // etc/XQFT.g:6:19: ( '<=' )
-            // etc/XQFT.g:6:21: '<='
+            // etc/XQFT.g:9:19: ( '<=' )
+            // etc/XQFT.g:9:21: '<='
             {
             match("<="); if (failed) return ;
 
@@ -312,8 +315,8 @@ public class XQFTLexer extends Lexer {
     public final void mASCENDING() throws RecognitionException {
         try {
             int _type = ASCENDING;
-            // etc/XQFT.g:7:11: ( 'ascending' )
-            // etc/XQFT.g:7:13: 'ascending'
+            // etc/XQFT.g:10:11: ( 'ascending' )
+            // etc/XQFT.g:10:13: 'ascending'
             {
             match("ascending"); if (failed) return ;
 
@@ -331,8 +334,8 @@ public class XQFTLexer extends Lexer {
     public final void mIDIV() throws RecognitionException {
         try {
             int _type = IDIV;
-            // etc/XQFT.g:8:6: ( 'idiv' )
-            // etc/XQFT.g:8:8: 'idiv'
+            // etc/XQFT.g:11:6: ( 'idiv' )
+            // etc/XQFT.g:11:8: 'idiv'
             {
             match("idiv"); if (failed) return ;
 
@@ -350,8 +353,8 @@ public class XQFTLexer extends Lexer {
     public final void mWHERE() throws RecognitionException {
         try {
             int _type = WHERE;
-            // etc/XQFT.g:9:7: ( 'where' )
-            // etc/XQFT.g:9:9: 'where'
+            // etc/XQFT.g:12:7: ( 'where' )
+            // etc/XQFT.g:12:9: 'where'
             {
             match("where"); if (failed) return ;
 
@@ -369,8 +372,8 @@ public class XQFTLexer extends Lexer {
     public final void mPHRASE() throws RecognitionException {
         try {
             int _type = PHRASE;
-            // etc/XQFT.g:10:8: ( 'phrase' )
-            // etc/XQFT.g:10:10: 'phrase'
+            // etc/XQFT.g:13:8: ( 'phrase' )
+            // etc/XQFT.g:13:10: 'phrase'
             {
             match("phrase"); if (failed) return ;
 
@@ -388,8 +391,8 @@ public class XQFTLexer extends Lexer {
     public final void mCONTENT() throws RecognitionException {
         try {
             int _type = CONTENT;
-            // etc/XQFT.g:11:9: ( 'content' )
-            // etc/XQFT.g:11:11: 'content'
+            // etc/XQFT.g:14:9: ( 'content' )
+            // etc/XQFT.g:14:11: 'content'
             {
             match("content"); if (failed) return ;
 
@@ -407,8 +410,8 @@ public class XQFTLexer extends Lexer {
     public final void mVERSION() throws RecognitionException {
         try {
             int _type = VERSION;
-            // etc/XQFT.g:12:9: ( 'version' )
-            // etc/XQFT.g:12:11: 'version'
+            // etc/XQFT.g:15:9: ( 'version' )
+            // etc/XQFT.g:15:11: 'version'
             {
             match("version"); if (failed) return ;
 
@@ -426,8 +429,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTBRACESi() throws RecognitionException {
         try {
             int _type = LEFTBRACESi;
-            // etc/XQFT.g:13:13: ( '{' )
-            // etc/XQFT.g:13:15: '{'
+            // etc/XQFT.g:16:13: ( '{' )
+            // etc/XQFT.g:16:15: '{'
             {
             match('{'); if (failed) return ;
 
@@ -444,8 +447,8 @@ public class XQFTLexer extends Lexer {
     public final void mEQUALSi() throws RecognitionException {
         try {
             int _type = EQUALSi;
-            // etc/XQFT.g:14:9: ( '=' )
-            // etc/XQFT.g:14:11: '='
+            // etc/XQFT.g:17:9: ( '=' )
+            // etc/XQFT.g:17:11: '='
             {
             match('='); if (failed) return ;
 
@@ -462,8 +465,8 @@ public class XQFTLexer extends Lexer {
     public final void mNOTEQUALSi() throws RecognitionException {
         try {
             int _type = NOTEQUALSi;
-            // etc/XQFT.g:15:12: ( '!=' )
-            // etc/XQFT.g:15:14: '!='
+            // etc/XQFT.g:18:12: ( '!=' )
+            // etc/XQFT.g:18:14: '!='
             {
             match("!="); if (failed) return ;
 
@@ -481,8 +484,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTOP() throws RecognitionException {
         try {
             int _type = STOP;
-            // etc/XQFT.g:16:6: ( 'stop' )
-            // etc/XQFT.g:16:8: 'stop'
+            // etc/XQFT.g:19:6: ( 'stop' )
+            // etc/XQFT.g:19:8: 'stop'
             {
             match("stop"); if (failed) return ;
 
@@ -500,8 +503,8 @@ public class XQFTLexer extends Lexer {
     public final void mTYPESWITCH() throws RecognitionException {
         try {
             int _type = TYPESWITCH;
-            // etc/XQFT.g:17:12: ( 'typeswitch' )
-            // etc/XQFT.g:17:14: 'typeswitch'
+            // etc/XQFT.g:20:12: ( 'typeswitch' )
+            // etc/XQFT.g:20:14: 'typeswitch'
             {
             match("typeswitch"); if (failed) return ;
 
@@ -519,8 +522,8 @@ public class XQFTLexer extends Lexer {
     public final void mANY() throws RecognitionException {
         try {
             int _type = ANY;
-            // etc/XQFT.g:18:5: ( 'any' )
-            // etc/XQFT.g:18:7: 'any'
+            // etc/XQFT.g:21:5: ( 'any' )
+            // etc/XQFT.g:21:7: 'any'
             {
             match("any"); if (failed) return ;
 
@@ -538,8 +541,8 @@ public class XQFTLexer extends Lexer {
     public final void mBOUNDARYSPACE() throws RecognitionException {
         try {
             int _type = BOUNDARYSPACE;
-            // etc/XQFT.g:19:15: ( 'boundary-space' )
-            // etc/XQFT.g:19:17: 'boundary-space'
+            // etc/XQFT.g:22:15: ( 'boundary-space' )
+            // etc/XQFT.g:22:17: 'boundary-space'
             {
             match("boundary-space"); if (failed) return ;
 
@@ -557,8 +560,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOLLARSi() throws RecognitionException {
         try {
             int _type = DOLLARSi;
-            // etc/XQFT.g:20:10: ( '$' )
-            // etc/XQFT.g:20:12: '$'
+            // etc/XQFT.g:23:10: ( '$' )
+            // etc/XQFT.g:23:12: '$'
             {
             match('$'); if (failed) return ;
 
@@ -575,8 +578,8 @@ public class XQFTLexer extends Lexer {
     public final void mXQUERY() throws RecognitionException {
         try {
             int _type = XQUERY;
-            // etc/XQFT.g:21:8: ( 'xquery' )
-            // etc/XQFT.g:21:10: 'xquery'
+            // etc/XQFT.g:24:8: ( 'xquery' )
+            // etc/XQFT.g:24:10: 'xquery'
             {
             match("xquery"); if (failed) return ;
 
@@ -594,8 +597,8 @@ public class XQFTLexer extends Lexer {
     public final void mCAST() throws RecognitionException {
         try {
             int _type = CAST;
-            // etc/XQFT.g:22:6: ( 'cast' )
-            // etc/XQFT.g:22:8: 'cast'
+            // etc/XQFT.g:25:6: ( 'cast' )
+            // etc/XQFT.g:25:8: 'cast'
             {
             match("cast"); if (failed) return ;
 
@@ -613,8 +616,8 @@ public class XQFTLexer extends Lexer {
     public final void mDISTANCE() throws RecognitionException {
         try {
             int _type = DISTANCE;
-            // etc/XQFT.g:23:10: ( 'distance' )
-            // etc/XQFT.g:23:12: 'distance'
+            // etc/XQFT.g:26:10: ( 'distance' )
+            // etc/XQFT.g:26:12: 'distance'
             {
             match("distance"); if (failed) return ;
 
@@ -632,8 +635,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTPRAGMA() throws RecognitionException {
         try {
             int _type = LEFTPRAGMA;
-            // etc/XQFT.g:24:12: ( '(#' )
-            // etc/XQFT.g:24:14: '(#'
+            // etc/XQFT.g:27:12: ( '(#' )
+            // etc/XQFT.g:27:14: '(#'
             {
             match("(#"); if (failed) return ;
 
@@ -651,8 +654,8 @@ public class XQFTLexer extends Lexer {
     public final void mORDERED() throws RecognitionException {
         try {
             int _type = ORDERED;
-            // etc/XQFT.g:25:9: ( 'ordered' )
-            // etc/XQFT.g:25:11: 'ordered'
+            // etc/XQFT.g:28:9: ( 'ordered' )
+            // etc/XQFT.g:28:11: 'ordered'
             {
             match("ordered"); if (failed) return ;
 
@@ -670,8 +673,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOCUMENTNODE() throws RecognitionException {
         try {
             int _type = DOCUMENTNODE;
-            // etc/XQFT.g:26:14: ( 'document-node' )
-            // etc/XQFT.g:26:16: 'document-node'
+            // etc/XQFT.g:29:14: ( 'document-node' )
+            // etc/XQFT.g:29:16: 'document-node'
             {
             match("document-node"); if (failed) return ;
 
@@ -689,8 +692,8 @@ public class XQFTLexer extends Lexer {
     public final void mELSE() throws RecognitionException {
         try {
             int _type = ELSE;
-            // etc/XQFT.g:27:6: ( 'else' )
-            // etc/XQFT.g:27:8: 'else'
+            // etc/XQFT.g:30:6: ( 'else' )
+            // etc/XQFT.g:30:8: 'else'
             {
             match("else"); if (failed) return ;
 
@@ -708,8 +711,8 @@ public class XQFTLexer extends Lexer {
     public final void mLESSTHANSi() throws RecognitionException {
         try {
             int _type = LESSTHANSi;
-            // etc/XQFT.g:28:12: ( '<' )
-            // etc/XQFT.g:28:14: '<'
+            // etc/XQFT.g:31:12: ( '<' )
+            // etc/XQFT.g:31:14: '<'
             {
             match('<'); if (failed) return ;
 
@@ -726,8 +729,8 @@ public class XQFTLexer extends Lexer {
     public final void mTREAT() throws RecognitionException {
         try {
             int _type = TREAT;
-            // etc/XQFT.g:29:7: ( 'treat' )
-            // etc/XQFT.g:29:9: 'treat'
+            // etc/XQFT.g:32:7: ( 'treat' )
+            // etc/XQFT.g:32:9: 'treat'
             {
             match("treat"); if (failed) return ;
 
@@ -745,8 +748,8 @@ public class XQFTLexer extends Lexer {
     public final void mUPPERCASE() throws RecognitionException {
         try {
             int _type = UPPERCASE;
-            // etc/XQFT.g:30:11: ( 'uppercase' )
-            // etc/XQFT.g:30:13: 'uppercase'
+            // etc/XQFT.g:33:11: ( 'uppercase' )
+            // etc/XQFT.g:33:13: 'uppercase'
             {
             match("uppercase"); if (failed) return ;
 
@@ -764,8 +767,8 @@ public class XQFTLexer extends Lexer {
     public final void mALL() throws RecognitionException {
         try {
             int _type = ALL;
-            // etc/XQFT.g:31:5: ( 'all' )
-            // etc/XQFT.g:31:7: 'all'
+            // etc/XQFT.g:34:5: ( 'all' )
+            // etc/XQFT.g:34:7: 'all'
             {
             match("all"); if (failed) return ;
 
@@ -783,8 +786,8 @@ public class XQFTLexer extends Lexer {
     public final void mWORD() throws RecognitionException {
         try {
             int _type = WORD;
-            // etc/XQFT.g:32:6: ( 'word' )
-            // etc/XQFT.g:32:8: 'word'
+            // etc/XQFT.g:35:6: ( 'word' )
+            // etc/XQFT.g:35:8: 'word'
             {
             match("word"); if (failed) return ;
 
@@ -802,8 +805,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTPRAGMA() throws RecognitionException {
         try {
             int _type = RIGHTPRAGMA;
-            // etc/XQFT.g:33:13: ( '#)' )
-            // etc/XQFT.g:33:15: '#)'
+            // etc/XQFT.g:36:13: ( '#)' )
+            // etc/XQFT.g:36:15: '#)'
             {
             match("#)"); if (failed) return ;
 
@@ -821,8 +824,8 @@ public class XQFTLexer extends Lexer {
     public final void mINHERIT() throws RecognitionException {
         try {
             int _type = INHERIT;
-            // etc/XQFT.g:34:9: ( 'inherit' )
-            // etc/XQFT.g:34:11: 'inherit'
+            // etc/XQFT.g:37:9: ( 'inherit' )
+            // etc/XQFT.g:37:11: 'inherit'
             {
             match("inherit"); if (failed) return ;
 
@@ -840,8 +843,8 @@ public class XQFTLexer extends Lexer {
     public final void mSLASH() throws RecognitionException {
         try {
             int _type = SLASH;
-            // etc/XQFT.g:35:7: ( '/' )
-            // etc/XQFT.g:35:9: '/'
+            // etc/XQFT.g:38:7: ( '/' )
+            // etc/XQFT.g:38:9: '/'
             {
             match('/'); if (failed) return ;
 
@@ -858,8 +861,8 @@ public class XQFTLexer extends Lexer {
     public final void mORDERING() throws RecognitionException {
         try {
             int _type = ORDERING;
-            // etc/XQFT.g:36:10: ( 'ordering' )
-            // etc/XQFT.g:36:12: 'ordering'
+            // etc/XQFT.g:39:10: ( 'ordering' )
+            // etc/XQFT.g:39:12: 'ordering'
             {
             match("ordering"); if (failed) return ;
 
@@ -877,8 +880,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTPITARGET() throws RecognitionException {
         try {
             int _type = RIGHTPITARGET;
-            // etc/XQFT.g:37:15: ( '?>' )
-            // etc/XQFT.g:37:17: '?>'
+            // etc/XQFT.g:40:15: ( '?>' )
+            // etc/XQFT.g:40:17: '?>'
             {
             match("?>"); if (failed) return ;
 
@@ -896,8 +899,8 @@ public class XQFTLexer extends Lexer {
     public final void mEVERY() throws RecognitionException {
         try {
             int _type = EVERY;
-            // etc/XQFT.g:38:7: ( 'every' )
-            // etc/XQFT.g:38:9: 'every'
+            // etc/XQFT.g:41:7: ( 'every' )
+            // etc/XQFT.g:41:9: 'every'
             {
             match("every"); if (failed) return ;
 
@@ -915,8 +918,8 @@ public class XQFTLexer extends Lexer {
     public final void mCASTABLE() throws RecognitionException {
         try {
             int _type = CASTABLE;
-            // etc/XQFT.g:39:10: ( 'castable' )
-            // etc/XQFT.g:39:12: 'castable'
+            // etc/XQFT.g:42:10: ( 'castable' )
+            // etc/XQFT.g:42:12: 'castable'
             {
             match("castable"); if (failed) return ;
 
@@ -934,8 +937,8 @@ public class XQFTLexer extends Lexer {
     public final void mITEM() throws RecognitionException {
         try {
             int _type = ITEM;
-            // etc/XQFT.g:40:6: ( 'item' )
-            // etc/XQFT.g:40:8: 'item'
+            // etc/XQFT.g:43:6: ( 'item' )
+            // etc/XQFT.g:43:8: 'item'
             {
             match("item"); if (failed) return ;
 
@@ -953,8 +956,8 @@ public class XQFTLexer extends Lexer {
     public final void mFOR() throws RecognitionException {
         try {
             int _type = FOR;
-            // etc/XQFT.g:41:5: ( 'for' )
-            // etc/XQFT.g:41:7: 'for'
+            // etc/XQFT.g:44:5: ( 'for' )
+            // etc/XQFT.g:44:7: 'for'
             {
             match("for"); if (failed) return ;
 
@@ -972,8 +975,8 @@ public class XQFTLexer extends Lexer {
     public final void mINSTANCE() throws RecognitionException {
         try {
             int _type = INSTANCE;
-            // etc/XQFT.g:42:10: ( 'instance' )
-            // etc/XQFT.g:42:12: 'instance'
+            // etc/XQFT.g:45:10: ( 'instance' )
+            // etc/XQFT.g:45:12: 'instance'
             {
             match("instance"); if (failed) return ;
 
@@ -991,8 +994,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOUBLEQUOTESi() throws RecognitionException {
         try {
             int _type = DOUBLEQUOTESi;
-            // etc/XQFT.g:43:15: ( '\"' )
-            // etc/XQFT.g:43:17: '\"'
+            // etc/XQFT.g:46:15: ( '\"' )
+            // etc/XQFT.g:46:17: '\"'
             {
             match('\"'); if (failed) return ;
 
@@ -1009,8 +1012,8 @@ public class XQFTLexer extends Lexer {
     public final void mEXCEPT() throws RecognitionException {
         try {
             int _type = EXCEPT;
-            // etc/XQFT.g:44:8: ( 'except' )
-            // etc/XQFT.g:44:10: 'except'
+            // etc/XQFT.g:47:8: ( 'except' )
+            // etc/XQFT.g:47:10: 'except'
             {
             match("except"); if (failed) return ;
 
@@ -1028,8 +1031,8 @@ public class XQFTLexer extends Lexer {
     public final void mTO() throws RecognitionException {
         try {
             int _type = TO;
-            // etc/XQFT.g:45:4: ( 'to' )
-            // etc/XQFT.g:45:6: 'to'
+            // etc/XQFT.g:48:4: ( 'to' )
+            // etc/XQFT.g:48:6: 'to'
             {
             match("to"); if (failed) return ;
 
@@ -1047,8 +1050,8 @@ public class XQFTLexer extends Lexer {
     public final void mCONSTRUCTION() throws RecognitionException {
         try {
             int _type = CONSTRUCTION;
-            // etc/XQFT.g:46:14: ( 'construction' )
-            // etc/XQFT.g:46:16: 'construction'
+            // etc/XQFT.g:49:14: ( 'construction' )
+            // etc/XQFT.g:49:16: 'construction'
             {
             match("construction"); if (failed) return ;
 
@@ -1066,8 +1069,8 @@ public class XQFTLexer extends Lexer {
     public final void mWEIGHT() throws RecognitionException {
         try {
             int _type = WEIGHT;
-            // etc/XQFT.g:47:8: ( 'weight' )
-            // etc/XQFT.g:47:10: 'weight'
+            // etc/XQFT.g:50:8: ( 'weight' )
+            // etc/XQFT.g:50:10: 'weight'
             {
             match("weight"); if (failed) return ;
 
@@ -1085,8 +1088,8 @@ public class XQFTLexer extends Lexer {
     public final void mFTOPTION() throws RecognitionException {
         try {
             int _type = FTOPTION;
-            // etc/XQFT.g:48:10: ( 'ft-option' )
-            // etc/XQFT.g:48:12: 'ft-option'
+            // etc/XQFT.g:51:10: ( 'ft-option' )
+            // etc/XQFT.g:51:12: 'ft-option'
             {
             match("ft-option"); if (failed) return ;
 
@@ -1104,8 +1107,8 @@ public class XQFTLexer extends Lexer {
     public final void mSATISFIES() throws RecognitionException {
         try {
             int _type = SATISFIES;
-            // etc/XQFT.g:49:11: ( 'satisfies' )
-            // etc/XQFT.g:49:13: 'satisfies'
+            // etc/XQFT.g:52:11: ( 'satisfies' )
+            // etc/XQFT.g:52:13: 'satisfies'
             {
             match("satisfies"); if (failed) return ;
 
@@ -1123,8 +1126,8 @@ public class XQFTLexer extends Lexer {
     public final void mCOLONSi() throws RecognitionException {
         try {
             int _type = COLONSi;
-            // etc/XQFT.g:50:9: ( ':' )
-            // etc/XQFT.g:50:11: ':'
+            // etc/XQFT.g:53:9: ( ':' )
+            // etc/XQFT.g:53:11: ':'
             {
             match(':'); if (failed) return ;
 
@@ -1141,8 +1144,8 @@ public class XQFTLexer extends Lexer {
     public final void mSEMICOLONSi() throws RecognitionException {
         try {
             int _type = SEMICOLONSi;
-            // etc/XQFT.g:51:13: ( ';' )
-            // etc/XQFT.g:51:15: ';'
+            // etc/XQFT.g:54:13: ( ';' )
+            // etc/XQFT.g:54:15: ';'
             {
             match(';'); if (failed) return ;
 
@@ -1159,8 +1162,8 @@ public class XQFTLexer extends Lexer {
     public final void mSINGLEQUOTE() throws RecognitionException {
         try {
             int _type = SINGLEQUOTE;
-            // etc/XQFT.g:52:13: ( '\\'' )
-            // etc/XQFT.g:52:15: '\\''
+            // etc/XQFT.g:55:13: ( '\\'' )
+            // etc/XQFT.g:55:15: '\\''
             {
             match('\''); if (failed) return ;
 
@@ -1177,8 +1180,8 @@ public class XQFTLexer extends Lexer {
     public final void mUNDERSCORE() throws RecognitionException {
         try {
             int _type = UNDERSCORE;
-            // etc/XQFT.g:53:12: ( '_' )
-            // etc/XQFT.g:53:14: '_'
+            // etc/XQFT.g:56:12: ( '_' )
+            // etc/XQFT.g:56:14: '_'
             {
             match('_'); if (failed) return ;
 
@@ -1195,8 +1198,8 @@ public class XQFTLexer extends Lexer {
     public final void mEMPTY() throws RecognitionException {
         try {
             int _type = EMPTY;
-            // etc/XQFT.g:54:7: ( 'empty' )
-            // etc/XQFT.g:54:9: 'empty'
+            // etc/XQFT.g:57:7: ( 'empty' )
+            // etc/XQFT.g:57:9: 'empty'
             {
             match("empty"); if (failed) return ;
 
@@ -1214,8 +1217,8 @@ public class XQFTLexer extends Lexer {
     public final void mMOST() throws RecognitionException {
         try {
             int _type = MOST;
-            // etc/XQFT.g:55:6: ( 'most' )
-            // etc/XQFT.g:55:8: 'most'
+            // etc/XQFT.g:58:6: ( 'most' )
+            // etc/XQFT.g:58:8: 'most'
             {
             match("most"); if (failed) return ;
 
@@ -1233,8 +1236,8 @@ public class XQFTLexer extends Lexer {
     public final void mCASE() throws RecognitionException {
         try {
             int _type = CASE;
-            // etc/XQFT.g:56:6: ( 'case' )
-            // etc/XQFT.g:56:8: 'case'
+            // etc/XQFT.g:59:6: ( 'case' )
+            // etc/XQFT.g:59:8: 'case'
             {
             match("case"); if (failed) return ;
 
@@ -1252,8 +1255,8 @@ public class XQFTLexer extends Lexer {
     public final void mPROCESSING_INSTRUCTION() throws RecognitionException {
         try {
             int _type = PROCESSING_INSTRUCTION;
-            // etc/XQFT.g:57:24: ( 'processing-instruction' )
-            // etc/XQFT.g:57:26: 'processing-instruction'
+            // etc/XQFT.g:60:24: ( 'processing-instruction' )
+            // etc/XQFT.g:60:26: 'processing-instruction'
             {
             match("processing-instruction"); if (failed) return ;
 
@@ -1271,8 +1274,8 @@ public class XQFTLexer extends Lexer {
     public final void mIMPORT() throws RecognitionException {
         try {
             int _type = IMPORT;
-            // etc/XQFT.g:58:8: ( 'import' )
-            // etc/XQFT.g:58:10: 'import'
+            // etc/XQFT.g:61:8: ( 'import' )
+            // etc/XQFT.g:61:10: 'import'
             {
             match("import"); if (failed) return ;
 
@@ -1290,8 +1293,8 @@ public class XQFTLexer extends Lexer {
     public final void mMINUSSi() throws RecognitionException {
         try {
             int _type = MINUSSi;
-            // etc/XQFT.g:59:9: ( '-' )
-            // etc/XQFT.g:59:11: '-'
+            // etc/XQFT.g:62:9: ( '-' )
+            // etc/XQFT.g:62:11: '-'
             {
             match('-'); if (failed) return ;
 
@@ -1308,8 +1311,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTSELFTERMINATOR() throws RecognitionException {
         try {
             int _type = RIGHTSELFTERMINATOR;
-            // etc/XQFT.g:60:21: ( '/>' )
-            // etc/XQFT.g:60:23: '/>'
+            // etc/XQFT.g:63:21: ( '/>' )
+            // etc/XQFT.g:63:23: '/>'
             {
             match("/>"); if (failed) return ;
 
@@ -1327,8 +1330,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOCUMENT() throws RecognitionException {
         try {
             int _type = DOCUMENT;
-            // etc/XQFT.g:61:10: ( 'document' )
-            // etc/XQFT.g:61:12: 'document'
+            // etc/XQFT.g:64:10: ( 'document' )
+            // etc/XQFT.g:64:12: 'document'
             {
             match("document"); if (failed) return ;
 
@@ -1346,8 +1349,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTCDATA() throws RecognitionException {
         try {
             int _type = LEFTCDATA;
-            // etc/XQFT.g:62:11: ( '<![CDATA[' )
-            // etc/XQFT.g:62:13: '<![CDATA['
+            // etc/XQFT.g:65:11: ( '<![CDATA[' )
+            // etc/XQFT.g:65:13: '<![CDATA['
             {
             match("<![CDATA["); if (failed) return ;
 
@@ -1365,8 +1368,8 @@ public class XQFTLexer extends Lexer {
     public final void mVALIDATE() throws RecognitionException {
         try {
             int _type = VALIDATE;
-            // etc/XQFT.g:63:10: ( 'validate' )
-            // etc/XQFT.g:63:12: 'validate'
+            // etc/XQFT.g:66:10: ( 'validate' )
+            // etc/XQFT.g:66:12: 'validate'
             {
             match("validate"); if (failed) return ;
 
@@ -1384,8 +1387,8 @@ public class XQFTLexer extends Lexer {
     public final void mEMPTY_SEQUENCE() throws RecognitionException {
         try {
             int _type = EMPTY_SEQUENCE;
-            // etc/XQFT.g:64:16: ( 'empty-sequence' )
-            // etc/XQFT.g:64:18: 'empty-sequence'
+            // etc/XQFT.g:67:16: ( 'empty-sequence' )
+            // etc/XQFT.g:67:18: 'empty-sequence'
             {
             match("empty-sequence"); if (failed) return ;
 
@@ -1403,8 +1406,8 @@ public class XQFTLexer extends Lexer {
     public final void mINSENSITIVE() throws RecognitionException {
         try {
             int _type = INSENSITIVE;
-            // etc/XQFT.g:65:13: ( 'insensitive' )
-            // etc/XQFT.g:65:15: 'insensitive'
+            // etc/XQFT.g:68:13: ( 'insensitive' )
+            // etc/XQFT.g:68:15: 'insensitive'
             {
             match("insensitive"); if (failed) return ;
 
@@ -1422,8 +1425,8 @@ public class XQFTLexer extends Lexer {
     public final void mNOPRESERVE() throws RecognitionException {
         try {
             int _type = NOPRESERVE;
-            // etc/XQFT.g:66:12: ( 'no-preserve' )
-            // etc/XQFT.g:66:14: 'no-preserve'
+            // etc/XQFT.g:69:12: ( 'no-preserve' )
+            // etc/XQFT.g:69:14: 'no-preserve'
             {
             match("no-preserve"); if (failed) return ;
 
@@ -1441,8 +1444,8 @@ public class XQFTLexer extends Lexer {
     public final void mTHEN() throws RecognitionException {
         try {
             int _type = THEN;
-            // etc/XQFT.g:67:6: ( 'then' )
-            // etc/XQFT.g:67:8: 'then'
+            // etc/XQFT.g:70:6: ( 'then' )
+            // etc/XQFT.g:70:8: 'then'
             {
             match("then"); if (failed) return ;
 
@@ -1460,8 +1463,8 @@ public class XQFTLexer extends Lexer {
     public final void mCOMMASi() throws RecognitionException {
         try {
             int _type = COMMASi;
-            // etc/XQFT.g:68:9: ( ',' )
-            // etc/XQFT.g:68:11: ','
+            // etc/XQFT.g:71:9: ( ',' )
+            // etc/XQFT.g:71:11: ','
             {
             match(','); if (failed) return ;
 
@@ -1478,8 +1481,8 @@ public class XQFTLexer extends Lexer {
     public final void mLET() throws RecognitionException {
         try {
             int _type = LET;
-            // etc/XQFT.g:69:5: ( 'let' )
-            // etc/XQFT.g:69:7: 'let'
+            // etc/XQFT.g:72:5: ( 'let' )
+            // etc/XQFT.g:72:7: 'let'
             {
             match("let"); if (failed) return ;
 
@@ -1497,8 +1500,8 @@ public class XQFTLexer extends Lexer {
     public final void mWINDOW() throws RecognitionException {
         try {
             int _type = WINDOW;
-            // etc/XQFT.g:70:8: ( 'window' )
-            // etc/XQFT.g:70:10: 'window'
+            // etc/XQFT.g:73:8: ( 'window' )
+            // etc/XQFT.g:73:10: 'window'
             {
             match("window"); if (failed) return ;
 
@@ -1516,8 +1519,8 @@ public class XQFTLexer extends Lexer {
     public final void mSCORE() throws RecognitionException {
         try {
             int _type = SCORE;
-            // etc/XQFT.g:71:7: ( 'score' )
-            // etc/XQFT.g:71:9: 'score'
+            // etc/XQFT.g:74:7: ( 'score' )
+            // etc/XQFT.g:74:9: 'score'
             {
             match("score"); if (failed) return ;
 
@@ -1535,8 +1538,8 @@ public class XQFTLexer extends Lexer {
     public final void mLANGUAGE() throws RecognitionException {
         try {
             int _type = LANGUAGE;
-            // etc/XQFT.g:72:10: ( 'language' )
-            // etc/XQFT.g:72:12: 'language'
+            // etc/XQFT.g:75:10: ( 'language' )
+            // etc/XQFT.g:75:12: 'language'
             {
             match("language"); if (failed) return ;
 
@@ -1554,8 +1557,8 @@ public class XQFTLexer extends Lexer {
     public final void mOPTION() throws RecognitionException {
         try {
             int _type = OPTION;
-            // etc/XQFT.g:73:8: ( 'option' )
-            // etc/XQFT.g:73:10: 'option'
+            // etc/XQFT.g:76:8: ( 'option' )
+            // etc/XQFT.g:76:10: 'option'
             {
             match("option"); if (failed) return ;
 
@@ -1573,8 +1576,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTEMMING() throws RecognitionException {
         try {
             int _type = STEMMING;
-            // etc/XQFT.g:74:10: ( 'stemming' )
-            // etc/XQFT.g:74:12: 'stemming'
+            // etc/XQFT.g:77:10: ( 'stemming' )
+            // etc/XQFT.g:77:12: 'stemming'
             {
             match("stemming"); if (failed) return ;
 
@@ -1592,8 +1595,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTBRACKETSi() throws RecognitionException {
         try {
             int _type = RIGHTBRACKETSi;
-            // etc/XQFT.g:75:16: ( ']' )
-            // etc/XQFT.g:75:18: ']'
+            // etc/XQFT.g:78:16: ( ']' )
+            // etc/XQFT.g:78:18: ']'
             {
             match(']'); if (failed) return ;
 
@@ -1610,8 +1613,8 @@ public class XQFTLexer extends Lexer {
     public final void mGREATEST() throws RecognitionException {
         try {
             int _type = GREATEST;
-            // etc/XQFT.g:76:10: ( 'greatest' )
-            // etc/XQFT.g:76:12: 'greatest'
+            // etc/XQFT.g:79:10: ( 'greatest' )
+            // etc/XQFT.g:79:12: 'greatest'
             {
             match("greatest"); if (failed) return ;
 
@@ -1629,8 +1632,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEVELS() throws RecognitionException {
         try {
             int _type = LEVELS;
-            // etc/XQFT.g:77:8: ( 'levels' )
-            // etc/XQFT.g:77:10: 'levels'
+            // etc/XQFT.g:80:8: ( 'levels' )
+            // etc/XQFT.g:80:10: 'levels'
             {
             match("levels"); if (failed) return ;
 
@@ -1648,8 +1651,8 @@ public class XQFTLexer extends Lexer {
     public final void mSENSITIVE() throws RecognitionException {
         try {
             int _type = SENSITIVE;
-            // etc/XQFT.g:78:11: ( 'sensitive' )
-            // etc/XQFT.g:78:13: 'sensitive'
+            // etc/XQFT.g:81:11: ( 'sensitive' )
+            // etc/XQFT.g:81:13: 'sensitive'
             {
             match("sensitive"); if (failed) return ;
 
@@ -1667,8 +1670,8 @@ public class XQFTLexer extends Lexer {
     public final void mFTNOT() throws RecognitionException {
         try {
             int _type = FTNOT;
-            // etc/XQFT.g:79:7: ( 'ftnot' )
-            // etc/XQFT.g:79:9: 'ftnot'
+            // etc/XQFT.g:82:7: ( 'ftnot' )
+            // etc/XQFT.g:82:9: 'ftnot'
             {
             match("ftnot"); if (failed) return ;
 
@@ -1686,8 +1689,8 @@ public class XQFTLexer extends Lexer {
     public final void mDIV() throws RecognitionException {
         try {
             int _type = DIV;
-            // etc/XQFT.g:80:5: ( 'div' )
-            // etc/XQFT.g:80:7: 'div'
+            // etc/XQFT.g:83:5: ( 'div' )
+            // etc/XQFT.g:83:7: 'div'
             {
             match("div"); if (failed) return ;
 
@@ -1705,8 +1708,8 @@ public class XQFTLexer extends Lexer {
     public final void mPLUSSi() throws RecognitionException {
         try {
             int _type = PLUSSi;
-            // etc/XQFT.g:81:8: ( '+' )
-            // etc/XQFT.g:81:10: '+'
+            // etc/XQFT.g:84:8: ( '+' )
+            // etc/XQFT.g:84:10: '+'
             {
             match('+'); if (failed) return ;
 
@@ -1723,8 +1726,8 @@ public class XQFTLexer extends Lexer {
     public final void mFTAND() throws RecognitionException {
         try {
             int _type = FTAND;
-            // etc/XQFT.g:82:7: ( 'ftand' )
-            // etc/XQFT.g:82:9: 'ftand'
+            // etc/XQFT.g:85:7: ( 'ftand' )
+            // etc/XQFT.g:85:9: 'ftand'
             {
             match("ftand"); if (failed) return ;
 
@@ -1742,8 +1745,8 @@ public class XQFTLexer extends Lexer {
     public final void mAT() throws RecognitionException {
         try {
             int _type = AT;
-            // etc/XQFT.g:83:4: ( 'at' )
-            // etc/XQFT.g:83:6: 'at'
+            // etc/XQFT.g:86:4: ( 'at' )
+            // etc/XQFT.g:86:6: 'at'
             {
             match("at"); if (failed) return ;
 
@@ -1761,8 +1764,8 @@ public class XQFTLexer extends Lexer {
     public final void mSCHEMAATTRIBUTE() throws RecognitionException {
         try {
             int _type = SCHEMAATTRIBUTE;
-            // etc/XQFT.g:84:17: ( 'schema-attribute' )
-            // etc/XQFT.g:84:19: 'schema-attribute'
+            // etc/XQFT.g:87:17: ( 'schema-attribute' )
+            // etc/XQFT.g:87:19: 'schema-attribute'
             {
             match("schema-attribute"); if (failed) return ;
 
@@ -1780,8 +1783,8 @@ public class XQFTLexer extends Lexer {
     public final void mORDER() throws RecognitionException {
         try {
             int _type = ORDER;
-            // etc/XQFT.g:85:7: ( 'order' )
-            // etc/XQFT.g:85:9: 'order'
+            // etc/XQFT.g:88:7: ( 'order' )
+            // etc/XQFT.g:88:9: 'order'
             {
             match("order"); if (failed) return ;
 
@@ -1799,8 +1802,8 @@ public class XQFTLexer extends Lexer {
     public final void mOF() throws RecognitionException {
         try {
             int _type = OF;
-            // etc/XQFT.g:86:4: ( 'of' )
-            // etc/XQFT.g:86:6: 'of'
+            // etc/XQFT.g:89:4: ( 'of' )
+            // etc/XQFT.g:89:6: 'of'
             {
             match("of"); if (failed) return ;
 
@@ -1818,8 +1821,8 @@ public class XQFTLexer extends Lexer {
     public final void mUNION() throws RecognitionException {
         try {
             int _type = UNION;
-            // etc/XQFT.g:87:7: ( 'union' )
-            // etc/XQFT.g:87:9: 'union'
+            // etc/XQFT.g:90:7: ( 'union' )
+            // etc/XQFT.g:90:9: 'union'
             {
             match("union"); if (failed) return ;
 
@@ -1837,8 +1840,8 @@ public class XQFTLexer extends Lexer {
     public final void mFROM() throws RecognitionException {
         try {
             int _type = FROM;
-            // etc/XQFT.g:88:6: ( 'from' )
-            // etc/XQFT.g:88:8: 'from'
+            // etc/XQFT.g:91:6: ( 'from' )
+            // etc/XQFT.g:91:8: 'from'
             {
             match("from"); if (failed) return ;
 
@@ -1856,8 +1859,8 @@ public class XQFTLexer extends Lexer {
     public final void mCOLLATION() throws RecognitionException {
         try {
             int _type = COLLATION;
-            // etc/XQFT.g:89:11: ( 'collation' )
-            // etc/XQFT.g:89:13: 'collation'
+            // etc/XQFT.g:92:11: ( 'collation' )
+            // etc/XQFT.g:92:13: 'collation'
             {
             match("collation"); if (failed) return ;
 
@@ -1875,8 +1878,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOUBLERIGHTBRACES() throws RecognitionException {
         try {
             int _type = DOUBLERIGHTBRACES;
-            // etc/XQFT.g:90:19: ( '}}' )
-            // etc/XQFT.g:90:21: '}}'
+            // etc/XQFT.g:93:19: ( '}}' )
+            // etc/XQFT.g:93:21: '}}'
             {
             match("}}"); if (failed) return ;
 
@@ -1894,8 +1897,8 @@ public class XQFTLexer extends Lexer {
     public final void mVARIABLE() throws RecognitionException {
         try {
             int _type = VARIABLE;
-            // etc/XQFT.g:91:10: ( 'variable' )
-            // etc/XQFT.g:91:12: 'variable'
+            // etc/XQFT.g:94:10: ( 'variable' )
+            // etc/XQFT.g:94:12: 'variable'
             {
             match("variable"); if (failed) return ;
 
@@ -1913,8 +1916,8 @@ public class XQFTLexer extends Lexer {
     public final void mOR() throws RecognitionException {
         try {
             int _type = OR;
-            // etc/XQFT.g:92:4: ( 'or' )
-            // etc/XQFT.g:92:6: 'or'
+            // etc/XQFT.g:95:4: ( 'or' )
+            // etc/XQFT.g:95:6: 'or'
             {
             match("or"); if (failed) return ;
 
@@ -1932,8 +1935,8 @@ public class XQFTLexer extends Lexer {
     public final void mFTOR() throws RecognitionException {
         try {
             int _type = FTOR;
-            // etc/XQFT.g:93:6: ( 'ftor' )
-            // etc/XQFT.g:93:8: 'ftor'
+            // etc/XQFT.g:96:6: ( 'ftor' )
+            // etc/XQFT.g:96:8: 'ftor'
             {
             match("ftor"); if (failed) return ;
 
@@ -1951,8 +1954,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOUBLESLASH() throws RecognitionException {
         try {
             int _type = DOUBLESLASH;
-            // etc/XQFT.g:94:13: ( '//' )
-            // etc/XQFT.g:94:15: '//'
+            // etc/XQFT.g:97:13: ( '//' )
+            // etc/XQFT.g:97:15: '//'
             {
             match("//"); if (failed) return ;
 
@@ -1970,8 +1973,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEAST() throws RecognitionException {
         try {
             int _type = LEAST;
-            // etc/XQFT.g:95:7: ( 'least' )
-            // etc/XQFT.g:95:9: 'least'
+            // etc/XQFT.g:98:7: ( 'least' )
+            // etc/XQFT.g:98:9: 'least'
             {
             match("least"); if (failed) return ;
 
@@ -1989,8 +1992,8 @@ public class XQFTLexer extends Lexer {
     public final void mIF() throws RecognitionException {
         try {
             int _type = IF;
-            // etc/XQFT.g:96:4: ( 'if' )
-            // etc/XQFT.g:96:6: 'if'
+            // etc/XQFT.g:99:4: ( 'if' )
+            // etc/XQFT.g:99:6: 'if'
             {
             match("if"); if (failed) return ;
 
@@ -2008,8 +2011,8 @@ public class XQFTLexer extends Lexer {
     public final void mBASEURI() throws RecognitionException {
         try {
             int _type = BASEURI;
-            // etc/XQFT.g:97:9: ( 'base-uri' )
-            // etc/XQFT.g:97:11: 'base-uri'
+            // etc/XQFT.g:100:9: ( 'base-uri' )
+            // etc/XQFT.g:100:11: 'base-uri'
             {
             match("base-uri"); if (failed) return ;
 
@@ -2027,8 +2030,8 @@ public class XQFTLexer extends Lexer {
     public final void mDESCENDING() throws RecognitionException {
         try {
             int _type = DESCENDING;
-            // etc/XQFT.g:98:12: ( 'descending' )
-            // etc/XQFT.g:98:14: 'descending'
+            // etc/XQFT.g:101:12: ( 'descending' )
+            // etc/XQFT.g:101:14: 'descending'
             {
             match("descending"); if (failed) return ;
 
@@ -2046,8 +2049,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTARSi() throws RecognitionException {
         try {
             int _type = STARSi;
-            // etc/XQFT.g:99:8: ( '*' )
-            // etc/XQFT.g:99:10: '*'
+            // etc/XQFT.g:102:8: ( '*' )
+            // etc/XQFT.g:102:10: '*'
             {
             match('*'); if (failed) return ;
 
@@ -2064,8 +2067,8 @@ public class XQFTLexer extends Lexer {
     public final void mNAMESPACE() throws RecognitionException {
         try {
             int _type = NAMESPACE;
-            // etc/XQFT.g:100:11: ( 'namespace' )
-            // etc/XQFT.g:100:13: 'namespace'
+            // etc/XQFT.g:103:11: ( 'namespace' )
+            // etc/XQFT.g:103:13: 'namespace'
             {
             match("namespace"); if (failed) return ;
 
@@ -2083,8 +2086,8 @@ public class XQFTLexer extends Lexer {
     public final void mAS() throws RecognitionException {
         try {
             int _type = AS;
-            // etc/XQFT.g:101:4: ( 'as' )
-            // etc/XQFT.g:101:6: 'as'
+            // etc/XQFT.g:104:4: ( 'as' )
+            // etc/XQFT.g:104:6: 'as'
             {
             match("as"); if (failed) return ;
 
@@ -2102,8 +2105,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTXMLCOMMENT() throws RecognitionException {
         try {
             int _type = LEFTXMLCOMMENT;
-            // etc/XQFT.g:102:16: ( '<!--' )
-            // etc/XQFT.g:102:18: '<!--'
+            // etc/XQFT.g:105:16: ( '<!--' )
+            // etc/XQFT.g:105:18: '<!--'
             {
             match("<!--"); if (failed) return ;
 
@@ -2121,8 +2124,8 @@ public class XQFTLexer extends Lexer {
     public final void mBY() throws RecognitionException {
         try {
             int _type = BY;
-            // etc/XQFT.g:103:4: ( 'by' )
-            // etc/XQFT.g:103:6: 'by'
+            // etc/XQFT.g:106:4: ( 'by' )
+            // etc/XQFT.g:106:6: 'by'
             {
             match("by"); if (failed) return ;
 
@@ -2140,8 +2143,8 @@ public class XQFTLexer extends Lexer {
     public final void mTEXT() throws RecognitionException {
         try {
             int _type = TEXT;
-            // etc/XQFT.g:104:6: ( 'text' )
-            // etc/XQFT.g:104:8: 'text'
+            // etc/XQFT.g:107:6: ( 'text' )
+            // etc/XQFT.g:107:8: 'text'
             {
             match("text"); if (failed) return ;
 
@@ -2159,8 +2162,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTABLE() throws RecognitionException {
         try {
             int _type = STABLE;
-            // etc/XQFT.g:105:8: ( 'stable' )
-            // etc/XQFT.g:105:10: 'stable'
+            // etc/XQFT.g:108:8: ( 'stable' )
+            // etc/XQFT.g:108:10: 'stable'
             {
             match("stable"); if (failed) return ;
 
@@ -2178,8 +2181,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTBRACKETSi() throws RecognitionException {
         try {
             int _type = LEFTBRACKETSi;
-            // etc/XQFT.g:106:15: ( '[' )
-            // etc/XQFT.g:106:17: '['
+            // etc/XQFT.g:109:15: ( '[' )
+            // etc/XQFT.g:109:17: '['
             {
             match('['); if (failed) return ;
 
@@ -2196,8 +2199,8 @@ public class XQFTLexer extends Lexer {
     public final void mUNORDERED() throws RecognitionException {
         try {
             int _type = UNORDERED;
-            // etc/XQFT.g:107:11: ( 'unordered' )
-            // etc/XQFT.g:107:13: 'unordered'
+            // etc/XQFT.g:110:11: ( 'unordered' )
+            // etc/XQFT.g:110:13: 'unordered'
             {
             match("unordered"); if (failed) return ;
 
@@ -2215,8 +2218,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTCDATA() throws RecognitionException {
         try {
             int _type = RIGHTCDATA;
-            // etc/XQFT.g:108:12: ( ']]>' )
-            // etc/XQFT.g:108:14: ']]>'
+            // etc/XQFT.g:111:12: ( ']]>' )
+            // etc/XQFT.g:111:14: ']]>'
             {
             match("]]>"); if (failed) return ;
 
@@ -2234,8 +2237,8 @@ public class XQFTLexer extends Lexer {
     public final void mEXACTLY() throws RecognitionException {
         try {
             int _type = EXACTLY;
-            // etc/XQFT.g:109:9: ( 'exactly' )
-            // etc/XQFT.g:109:11: 'exactly'
+            // etc/XQFT.g:112:9: ( 'exactly' )
+            // etc/XQFT.g:112:11: 'exactly'
             {
             match("exactly"); if (failed) return ;
 
@@ -2253,8 +2256,8 @@ public class XQFTLexer extends Lexer {
     public final void mWITH() throws RecognitionException {
         try {
             int _type = WITH;
-            // etc/XQFT.g:110:6: ( 'with' )
-            // etc/XQFT.g:110:8: 'with'
+            // etc/XQFT.g:113:6: ( 'with' )
+            // etc/XQFT.g:113:8: 'with'
             {
             match("with"); if (failed) return ;
 
@@ -2272,8 +2275,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTPITARGET() throws RecognitionException {
         try {
             int _type = LEFTPITARGET;
-            // etc/XQFT.g:111:14: ( '<?' )
-            // etc/XQFT.g:111:16: '<?'
+            // etc/XQFT.g:114:14: ( '<?' )
+            // etc/XQFT.g:114:16: '<?'
             {
             match("<?"); if (failed) return ;
 
@@ -2291,8 +2294,8 @@ public class XQFTLexer extends Lexer {
     public final void mWITHOUT() throws RecognitionException {
         try {
             int _type = WITHOUT;
-            // etc/XQFT.g:112:9: ( 'without' )
-            // etc/XQFT.g:112:11: 'without'
+            // etc/XQFT.g:115:9: ( 'without' )
+            // etc/XQFT.g:115:11: 'without'
             {
             match("without"); if (failed) return ;
 
@@ -2310,8 +2313,8 @@ public class XQFTLexer extends Lexer {
     public final void mDIACRITICS() throws RecognitionException {
         try {
             int _type = DIACRITICS;
-            // etc/XQFT.g:113:12: ( 'diacritics' )
-            // etc/XQFT.g:113:14: 'diacritics'
+            // etc/XQFT.g:116:12: ( 'diacritics' )
+            // etc/XQFT.g:116:14: 'diacritics'
             {
             match("diacritics"); if (failed) return ;
 
@@ -2329,8 +2332,8 @@ public class XQFTLexer extends Lexer {
     public final void mEXTERNAL() throws RecognitionException {
         try {
             int _type = EXTERNAL;
-            // etc/XQFT.g:114:10: ( 'external' )
-            // etc/XQFT.g:114:12: 'external'
+            // etc/XQFT.g:117:10: ( 'external' )
+            // etc/XQFT.g:117:12: 'external'
             {
             match("external"); if (failed) return ;
 
@@ -2348,8 +2351,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTPARENTHESISSi() throws RecognitionException {
         try {
             int _type = RIGHTPARENTHESISSi;
-            // etc/XQFT.g:115:20: ( ')' )
-            // etc/XQFT.g:115:22: ')'
+            // etc/XQFT.g:118:20: ( ')' )
+            // etc/XQFT.g:118:22: ')'
             {
             match(')'); if (failed) return ;
 
@@ -2366,8 +2369,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTXMLCOMMENT() throws RecognitionException {
         try {
             int _type = RIGHTXMLCOMMENT;
-            // etc/XQFT.g:116:17: ( '-->' )
-            // etc/XQFT.g:116:19: '-->'
+            // etc/XQFT.g:119:17: ( '-->' )
+            // etc/XQFT.g:119:19: '-->'
             {
             match("-->"); if (failed) return ;
 
@@ -2385,8 +2388,8 @@ public class XQFTLexer extends Lexer {
     public final void mMODULE() throws RecognitionException {
         try {
             int _type = MODULE;
-            // etc/XQFT.g:117:8: ( 'module' )
-            // etc/XQFT.g:117:10: 'module'
+            // etc/XQFT.g:120:8: ( 'module' )
+            // etc/XQFT.g:120:10: 'module'
             {
             match("module"); if (failed) return ;
 
@@ -2404,8 +2407,8 @@ public class XQFTLexer extends Lexer {
     public final void mRETURN() throws RecognitionException {
         try {
             int _type = RETURN;
-            // etc/XQFT.g:118:8: ( 'return' )
-            // etc/XQFT.g:118:10: 'return'
+            // etc/XQFT.g:121:8: ( 'return' )
+            // etc/XQFT.g:121:10: 'return'
             {
             match("return"); if (failed) return ;
 
@@ -2423,8 +2426,8 @@ public class XQFTLexer extends Lexer {
     public final void mCOMMENT() throws RecognitionException {
         try {
             int _type = COMMENT;
-            // etc/XQFT.g:119:9: ( 'comment' )
-            // etc/XQFT.g:119:11: 'comment'
+            // etc/XQFT.g:122:9: ( 'comment' )
+            // etc/XQFT.g:122:11: 'comment'
             {
             match("comment"); if (failed) return ;
 
@@ -2442,8 +2445,8 @@ public class XQFTLexer extends Lexer {
     public final void mDEFAULT() throws RecognitionException {
         try {
             int _type = DEFAULT;
-            // etc/XQFT.g:120:9: ( 'default' )
-            // etc/XQFT.g:120:11: 'default'
+            // etc/XQFT.g:123:9: ( 'default' )
+            // etc/XQFT.g:123:11: 'default'
             {
             match("default"); if (failed) return ;
 
@@ -2461,8 +2464,8 @@ public class XQFTLexer extends Lexer {
     public final void mOCCURS() throws RecognitionException {
         try {
             int _type = OCCURS;
-            // etc/XQFT.g:121:8: ( 'occurs' )
-            // etc/XQFT.g:121:10: 'occurs'
+            // etc/XQFT.g:124:8: ( 'occurs' )
+            // etc/XQFT.g:124:10: 'occurs'
             {
             match("occurs"); if (failed) return ;
 
@@ -2480,8 +2483,8 @@ public class XQFTLexer extends Lexer {
     public final void mENCODING() throws RecognitionException {
         try {
             int _type = ENCODING;
-            // etc/XQFT.g:122:10: ( 'encoding' )
-            // etc/XQFT.g:122:12: 'encoding'
+            // etc/XQFT.g:125:10: ( 'encoding' )
+            // etc/XQFT.g:125:12: 'encoding'
             {
             match("encoding"); if (failed) return ;
 
@@ -2499,8 +2502,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOUBLELEFTBRACES() throws RecognitionException {
         try {
             int _type = DOUBLELEFTBRACES;
-            // etc/XQFT.g:123:18: ( '{{' )
-            // etc/XQFT.g:123:20: '{{'
+            // etc/XQFT.g:126:18: ( '{{' )
+            // etc/XQFT.g:126:20: '{{'
             {
             match("{{"); if (failed) return ;
 
@@ -2518,8 +2521,8 @@ public class XQFTLexer extends Lexer {
     public final void mSCHEMA() throws RecognitionException {
         try {
             int _type = SCHEMA;
-            // etc/XQFT.g:124:8: ( 'schema' )
-            // etc/XQFT.g:124:10: 'schema'
+            // etc/XQFT.g:127:8: ( 'schema' )
+            // etc/XQFT.g:127:10: 'schema'
             {
             match("schema"); if (failed) return ;
 
@@ -2537,8 +2540,8 @@ public class XQFTLexer extends Lexer {
     public final void mELEMENT() throws RecognitionException {
         try {
             int _type = ELEMENT;
-            // etc/XQFT.g:125:9: ( 'element' )
-            // etc/XQFT.g:125:11: 'element'
+            // etc/XQFT.g:128:9: ( 'element' )
+            // etc/XQFT.g:128:11: 'element'
             {
             match("element"); if (failed) return ;
 
@@ -2556,8 +2559,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTPARENTHESISSi() throws RecognitionException {
         try {
             int _type = LEFTPARENTHESISSi;
-            // etc/XQFT.g:126:19: ( '(' )
-            // etc/XQFT.g:126:21: '('
+            // etc/XQFT.g:129:19: ( '(' )
+            // etc/XQFT.g:129:21: '('
             {
             match('('); if (failed) return ;
 
@@ -2574,8 +2577,8 @@ public class XQFTLexer extends Lexer {
     public final void mCOPYNAMESPACES() throws RecognitionException {
         try {
             int _type = COPYNAMESPACES;
-            // etc/XQFT.g:127:16: ( 'copy-namespaces' )
-            // etc/XQFT.g:127:18: 'copy-namespaces'
+            // etc/XQFT.g:130:16: ( 'copy-namespaces' )
+            // etc/XQFT.g:130:18: 'copy-namespaces'
             {
             match("copy-namespaces"); if (failed) return ;
 
@@ -2593,8 +2596,8 @@ public class XQFTLexer extends Lexer {
     public final void mWILDCARDS() throws RecognitionException {
         try {
             int _type = WILDCARDS;
-            // etc/XQFT.g:128:11: ( 'wildcards' )
-            // etc/XQFT.g:128:13: 'wildcards'
+            // etc/XQFT.g:131:11: ( 'wildcards' )
+            // etc/XQFT.g:131:13: 'wildcards'
             {
             match("wildcards"); if (failed) return ;
 
@@ -2612,8 +2615,8 @@ public class XQFTLexer extends Lexer {
     public final void mDECLARE() throws RecognitionException {
         try {
             int _type = DECLARE;
-            // etc/XQFT.g:129:9: ( 'declare' )
-            // etc/XQFT.g:129:11: 'declare'
+            // etc/XQFT.g:132:9: ( 'declare' )
+            // etc/XQFT.g:132:11: 'declare'
             {
             match("declare"); if (failed) return ;
 
@@ -2631,8 +2634,8 @@ public class XQFTLexer extends Lexer {
     public final void mAND() throws RecognitionException {
         try {
             int _type = AND;
-            // etc/XQFT.g:130:5: ( 'and' )
-            // etc/XQFT.g:130:7: 'and'
+            // etc/XQFT.g:133:5: ( 'and' )
+            // etc/XQFT.g:133:7: 'and'
             {
             match("and"); if (failed) return ;
 
@@ -2650,8 +2653,8 @@ public class XQFTLexer extends Lexer {
     public final void mPRESERVE() throws RecognitionException {
         try {
             int _type = PRESERVE;
-            // etc/XQFT.g:131:10: ( 'preserve' )
-            // etc/XQFT.g:131:12: 'preserve'
+            // etc/XQFT.g:134:10: ( 'preserve' )
+            // etc/XQFT.g:134:12: 'preserve'
             {
             match("preserve"); if (failed) return ;
 
@@ -2669,8 +2672,8 @@ public class XQFTLexer extends Lexer {
     public final void mNOINHERIT() throws RecognitionException {
         try {
             int _type = NOINHERIT;
-            // etc/XQFT.g:132:11: ( 'no-inherit' )
-            // etc/XQFT.g:132:13: 'no-inherit'
+            // etc/XQFT.g:135:11: ( 'no-inherit' )
+            // etc/XQFT.g:135:13: 'no-inherit'
             {
             match("no-inherit"); if (failed) return ;
 
@@ -2688,8 +2691,8 @@ public class XQFTLexer extends Lexer {
     public final void mNOT() throws RecognitionException {
         try {
             int _type = NOT;
-            // etc/XQFT.g:133:5: ( 'not' )
-            // etc/XQFT.g:133:7: 'not'
+            // etc/XQFT.g:136:5: ( 'not' )
+            // etc/XQFT.g:136:7: 'not'
             {
             match("not"); if (failed) return ;
 
@@ -2707,8 +2710,8 @@ public class XQFTLexer extends Lexer {
     public final void mINTERSECT() throws RecognitionException {
         try {
             int _type = INTERSECT;
-            // etc/XQFT.g:134:11: ( 'intersect' )
-            // etc/XQFT.g:134:13: 'intersect'
+            // etc/XQFT.g:137:11: ( 'intersect' )
+            // etc/XQFT.g:137:13: 'intersect'
             {
             match("intersect"); if (failed) return ;
 
@@ -2726,8 +2729,8 @@ public class XQFTLexer extends Lexer {
     public final void mFUNCTION() throws RecognitionException {
         try {
             int _type = FUNCTION;
-            // etc/XQFT.g:135:10: ( 'function' )
-            // etc/XQFT.g:135:12: 'function'
+            // etc/XQFT.g:138:10: ( 'function' )
+            // etc/XQFT.g:138:12: 'function'
             {
             match("function"); if (failed) return ;
 
@@ -2745,8 +2748,8 @@ public class XQFTLexer extends Lexer {
     public final void mATSi() throws RecognitionException {
         try {
             int _type = ATSi;
-            // etc/XQFT.g:136:6: ( '@' )
-            // etc/XQFT.g:136:8: '@'
+            // etc/XQFT.g:139:6: ( '@' )
+            // etc/XQFT.g:139:8: '@'
             {
             match('@'); if (failed) return ;
 
@@ -2763,8 +2766,8 @@ public class XQFTLexer extends Lexer {
     public final void mTIMES() throws RecognitionException {
         try {
             int _type = TIMES;
-            // etc/XQFT.g:137:7: ( 'times' )
-            // etc/XQFT.g:137:9: 'times'
+            // etc/XQFT.g:140:7: ( 'times' )
+            // etc/XQFT.g:140:9: 'times'
             {
             match("times"); if (failed) return ;
 
@@ -2782,8 +2785,8 @@ public class XQFTLexer extends Lexer {
     public final void mATTRIBUTE() throws RecognitionException {
         try {
             int _type = ATTRIBUTE;
-            // etc/XQFT.g:138:11: ( 'attribute' )
-            // etc/XQFT.g:138:13: 'attribute'
+            // etc/XQFT.g:141:11: ( 'attribute' )
+            // etc/XQFT.g:141:13: 'attribute'
             {
             match("attribute"); if (failed) return ;
 
@@ -2801,8 +2804,8 @@ public class XQFTLexer extends Lexer {
     public final void mASSIGNMENTOPERATOR() throws RecognitionException {
         try {
             int _type = ASSIGNMENTOPERATOR;
-            // etc/XQFT.g:139:20: ( ':=' )
-            // etc/XQFT.g:139:22: ':='
+            // etc/XQFT.g:142:20: ( ':=' )
+            // etc/XQFT.g:142:22: ':='
             {
             match(":="); if (failed) return ;
 
@@ -2820,8 +2823,8 @@ public class XQFTLexer extends Lexer {
     public final void mFTCONTAINS() throws RecognitionException {
         try {
             int _type = FTCONTAINS;
-            // etc/XQFT.g:140:12: ( 'ftcontains' )
-            // etc/XQFT.g:140:14: 'ftcontains'
+            // etc/XQFT.g:143:12: ( 'ftcontains' )
+            // etc/XQFT.g:143:14: 'ftcontains'
             {
             match("ftcontains"); if (failed) return ;
 
@@ -2839,8 +2842,8 @@ public class XQFTLexer extends Lexer {
     public final void mRELATIONSHIP() throws RecognitionException {
         try {
             int _type = RELATIONSHIP;
-            // etc/XQFT.g:141:14: ( 'relationship' )
-            // etc/XQFT.g:141:16: 'relationship'
+            // etc/XQFT.g:144:14: ( 'relationship' )
+            // etc/XQFT.g:144:16: 'relationship'
             {
             match("relationship"); if (failed) return ;
 
@@ -2858,8 +2861,8 @@ public class XQFTLexer extends Lexer {
     public final void mTHESAURUS() throws RecognitionException {
         try {
             int _type = THESAURUS;
-            // etc/XQFT.g:142:11: ( 'thesaurus' )
-            // etc/XQFT.g:142:13: 'thesaurus'
+            // etc/XQFT.g:145:11: ( 'thesaurus' )
+            // etc/XQFT.g:145:13: 'thesaurus'
             {
             match("thesaurus"); if (failed) return ;
 
@@ -2877,8 +2880,8 @@ public class XQFTLexer extends Lexer {
     public final void mMOD() throws RecognitionException {
         try {
             int _type = MOD;
-            // etc/XQFT.g:143:5: ( 'mod' )
-            // etc/XQFT.g:143:7: 'mod'
+            // etc/XQFT.g:146:5: ( 'mod' )
+            // etc/XQFT.g:146:7: 'mod'
             {
             match("mod"); if (failed) return ;
 
@@ -2896,8 +2899,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTBRACESi() throws RecognitionException {
         try {
             int _type = RIGHTBRACESi;
-            // etc/XQFT.g:144:14: ( '}' )
-            // etc/XQFT.g:144:16: '}'
+            // etc/XQFT.g:147:14: ( '}' )
+            // etc/XQFT.g:147:16: '}'
             {
             match('}'); if (failed) return ;
 
@@ -2914,8 +2917,8 @@ public class XQFTLexer extends Lexer {
     public final void mNODE() throws RecognitionException {
         try {
             int _type = NODE;
-            // etc/XQFT.g:145:6: ( 'node' )
-            // etc/XQFT.g:145:8: 'node'
+            // etc/XQFT.g:148:6: ( 'node' )
+            // etc/XQFT.g:148:8: 'node'
             {
             match("node"); if (failed) return ;
 
@@ -2933,8 +2936,8 @@ public class XQFTLexer extends Lexer {
     public final void mSOME() throws RecognitionException {
         try {
             int _type = SOME;
-            // etc/XQFT.g:146:6: ( 'some' )
-            // etc/XQFT.g:146:8: 'some'
+            // etc/XQFT.g:149:6: ( 'some' )
+            // etc/XQFT.g:149:8: 'some'
             {
             match("some"); if (failed) return ;
 
@@ -2952,8 +2955,8 @@ public class XQFTLexer extends Lexer {
     public final void mQUESTIONMARKSi() throws RecognitionException {
         try {
             int _type = QUESTIONMARKSi;
-            // etc/XQFT.g:147:16: ( '?' )
-            // etc/XQFT.g:147:18: '?'
+            // etc/XQFT.g:150:16: ( '?' )
+            // etc/XQFT.g:150:18: '?'
             {
             match('?'); if (failed) return ;
 
@@ -2970,8 +2973,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTRIP() throws RecognitionException {
         try {
             int _type = STRIP;
-            // etc/XQFT.g:148:7: ( 'strip' )
-            // etc/XQFT.g:148:9: 'strip'
+            // etc/XQFT.g:151:7: ( 'strip' )
+            // etc/XQFT.g:151:9: 'strip'
             {
             match("strip"); if (failed) return ;
 
@@ -2989,8 +2992,8 @@ public class XQFTLexer extends Lexer {
     public final void mLOWERCASE() throws RecognitionException {
         try {
             int _type = LOWERCASE;
-            // etc/XQFT.g:149:11: ( 'lowercase' )
-            // etc/XQFT.g:149:13: 'lowercase'
+            // etc/XQFT.g:152:11: ( 'lowercase' )
+            // etc/XQFT.g:152:13: 'lowercase'
             {
             match("lowercase"); if (failed) return ;
 
@@ -3008,8 +3011,8 @@ public class XQFTLexer extends Lexer {
     public final void mIN() throws RecognitionException {
         try {
             int _type = IN;
-            // etc/XQFT.g:150:4: ( 'in' )
-            // etc/XQFT.g:150:6: 'in'
+            // etc/XQFT.g:153:4: ( 'in' )
+            // etc/XQFT.g:153:6: 'in'
             {
             match("in"); if (failed) return ;
 
@@ -3027,8 +3030,8 @@ public class XQFTLexer extends Lexer {
     public final void mSCHEMAELEMENT() throws RecognitionException {
         try {
             int _type = SCHEMAELEMENT;
-            // etc/XQFT.g:151:15: ( 'schema-element' )
-            // etc/XQFT.g:151:17: 'schema-element'
+            // etc/XQFT.g:154:15: ( 'schema-element' )
+            // etc/XQFT.g:154:17: 'schema-element'
             {
             match("schema-element"); if (failed) return ;
 
@@ -3046,8 +3049,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTENDTAG() throws RecognitionException {
         try {
             int _type = LEFTENDTAG;
-            // etc/XQFT.g:152:12: ( '</' )
-            // etc/XQFT.g:152:14: '</'
+            // etc/XQFT.g:155:12: ( '</' )
+            // etc/XQFT.g:155:14: '</'
             {
             match("</"); if (failed) return ;
 
@@ -3065,8 +3068,8 @@ public class XQFTLexer extends Lexer {
     public final void mEQ() throws RecognitionException {
         try {
             int _type = EQ;
-            // etc/XQFT.g:153:4: ( 'eq' )
-            // etc/XQFT.g:153:6: 'eq'
+            // etc/XQFT.g:156:4: ( 'eq' )
+            // etc/XQFT.g:156:6: 'eq'
             {
             match("eq"); if (failed) return ;
 
@@ -3084,8 +3087,8 @@ public class XQFTLexer extends Lexer {
     public final void mNE() throws RecognitionException {
         try {
             int _type = NE;
-            // etc/XQFT.g:154:4: ( 'ne' )
-            // etc/XQFT.g:154:6: 'ne'
+            // etc/XQFT.g:157:4: ( 'ne' )
+            // etc/XQFT.g:157:6: 'ne'
             {
             match("ne"); if (failed) return ;
 
@@ -3103,8 +3106,8 @@ public class XQFTLexer extends Lexer {
     public final void mLT() throws RecognitionException {
         try {
             int _type = LT;
-            // etc/XQFT.g:155:4: ( 'lt' )
-            // etc/XQFT.g:155:6: 'lt'
+            // etc/XQFT.g:158:4: ( 'lt' )
+            // etc/XQFT.g:158:6: 'lt'
             {
             match("lt"); if (failed) return ;
 
@@ -3122,8 +3125,8 @@ public class XQFTLexer extends Lexer {
     public final void mLE() throws RecognitionException {
         try {
             int _type = LE;
-            // etc/XQFT.g:156:4: ( 'le' )
-            // etc/XQFT.g:156:6: 'le'
+            // etc/XQFT.g:159:4: ( 'le' )
+            // etc/XQFT.g:159:6: 'le'
             {
             match("le"); if (failed) return ;
 
@@ -3141,8 +3144,8 @@ public class XQFTLexer extends Lexer {
     public final void mGT() throws RecognitionException {
         try {
             int _type = GT;
-            // etc/XQFT.g:157:4: ( 'gt' )
-            // etc/XQFT.g:157:6: 'gt'
+            // etc/XQFT.g:160:4: ( 'gt' )
+            // etc/XQFT.g:160:6: 'gt'
             {
             match("gt"); if (failed) return ;
 
@@ -3160,8 +3163,8 @@ public class XQFTLexer extends Lexer {
     public final void mGE() throws RecognitionException {
         try {
             int _type = GE;
-            // etc/XQFT.g:158:4: ( 'ge' )
-            // etc/XQFT.g:158:6: 'ge'
+            // etc/XQFT.g:161:4: ( 'ge' )
+            // etc/XQFT.g:161:6: 'ge'
             {
             match("ge"); if (failed) return ;
 
@@ -3179,8 +3182,8 @@ public class XQFTLexer extends Lexer {
     public final void mIS() throws RecognitionException {
         try {
             int _type = IS;
-            // etc/XQFT.g:159:4: ( 'is' )
-            // etc/XQFT.g:159:6: 'is'
+            // etc/XQFT.g:162:4: ( 'is' )
+            // etc/XQFT.g:162:6: 'is'
             {
             match("is"); if (failed) return ;
 
@@ -3198,8 +3201,8 @@ public class XQFTLexer extends Lexer {
     public final void mNODEBEFORESi() throws RecognitionException {
         try {
             int _type = NODEBEFORESi;
-            // etc/XQFT.g:160:14: ( '<<' )
-            // etc/XQFT.g:160:16: '<<'
+            // etc/XQFT.g:163:14: ( '<<' )
+            // etc/XQFT.g:163:16: '<<'
             {
             match("<<"); if (failed) return ;
 
@@ -3217,8 +3220,8 @@ public class XQFTLexer extends Lexer {
     public final void mNODEAFTERSi() throws RecognitionException {
         try {
             int _type = NODEAFTERSi;
-            // etc/XQFT.g:161:13: ( '>>' )
-            // etc/XQFT.g:161:15: '>>'
+            // etc/XQFT.g:164:13: ( '>>' )
+            // etc/XQFT.g:164:15: '>>'
             {
             match(">>"); if (failed) return ;
 
@@ -3236,8 +3239,8 @@ public class XQFTLexer extends Lexer {
     public final void mLAX() throws RecognitionException {
         try {
             int _type = LAX;
-            // etc/XQFT.g:162:5: ( 'lax' )
-            // etc/XQFT.g:162:7: 'lax'
+            // etc/XQFT.g:165:5: ( 'lax' )
+            // etc/XQFT.g:165:7: 'lax'
             {
             match("lax"); if (failed) return ;
 
@@ -3255,8 +3258,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTRICT() throws RecognitionException {
         try {
             int _type = STRICT;
-            // etc/XQFT.g:163:8: ( 'strict' )
-            // etc/XQFT.g:163:10: 'strict'
+            // etc/XQFT.g:166:8: ( 'strict' )
+            // etc/XQFT.g:166:10: 'strict'
             {
             match("strict"); if (failed) return ;
 
@@ -3274,8 +3277,8 @@ public class XQFTLexer extends Lexer {
     public final void mCHILD() throws RecognitionException {
         try {
             int _type = CHILD;
-            // etc/XQFT.g:164:7: ( 'child' )
-            // etc/XQFT.g:164:9: 'child'
+            // etc/XQFT.g:167:7: ( 'child' )
+            // etc/XQFT.g:167:9: 'child'
             {
             match("child"); if (failed) return ;
 
@@ -3293,8 +3296,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOUBLECOLON() throws RecognitionException {
         try {
             int _type = DOUBLECOLON;
-            // etc/XQFT.g:165:13: ( '::' )
-            // etc/XQFT.g:165:15: '::'
+            // etc/XQFT.g:168:13: ( '::' )
+            // etc/XQFT.g:168:15: '::'
             {
             match("::"); if (failed) return ;
 
@@ -3312,8 +3315,8 @@ public class XQFTLexer extends Lexer {
     public final void mDESCENDANT() throws RecognitionException {
         try {
             int _type = DESCENDANT;
-            // etc/XQFT.g:166:12: ( 'descendant' )
-            // etc/XQFT.g:166:14: 'descendant'
+            // etc/XQFT.g:169:12: ( 'descendant' )
+            // etc/XQFT.g:169:14: 'descendant'
             {
             match("descendant"); if (failed) return ;
 
@@ -3331,8 +3334,8 @@ public class XQFTLexer extends Lexer {
     public final void mSELF() throws RecognitionException {
         try {
             int _type = SELF;
-            // etc/XQFT.g:167:6: ( 'self' )
-            // etc/XQFT.g:167:8: 'self'
+            // etc/XQFT.g:170:6: ( 'self' )
+            // etc/XQFT.g:170:8: 'self'
             {
             match("self"); if (failed) return ;
 
@@ -3350,8 +3353,8 @@ public class XQFTLexer extends Lexer {
     public final void mDESCENDANT_OR_SELF() throws RecognitionException {
         try {
             int _type = DESCENDANT_OR_SELF;
-            // etc/XQFT.g:168:20: ( 'descendant-or-self' )
-            // etc/XQFT.g:168:22: 'descendant-or-self'
+            // etc/XQFT.g:171:20: ( 'descendant-or-self' )
+            // etc/XQFT.g:171:22: 'descendant-or-self'
             {
             match("descendant-or-self"); if (failed) return ;
 
@@ -3369,8 +3372,8 @@ public class XQFTLexer extends Lexer {
     public final void mFOLLOWING_SIBLING() throws RecognitionException {
         try {
             int _type = FOLLOWING_SIBLING;
-            // etc/XQFT.g:169:19: ( 'following-sibling' )
-            // etc/XQFT.g:169:21: 'following-sibling'
+            // etc/XQFT.g:172:19: ( 'following-sibling' )
+            // etc/XQFT.g:172:21: 'following-sibling'
             {
             match("following-sibling"); if (failed) return ;
 
@@ -3388,8 +3391,8 @@ public class XQFTLexer extends Lexer {
     public final void mFOLLOWING() throws RecognitionException {
         try {
             int _type = FOLLOWING;
-            // etc/XQFT.g:170:11: ( 'following' )
-            // etc/XQFT.g:170:13: 'following'
+            // etc/XQFT.g:173:11: ( 'following' )
+            // etc/XQFT.g:173:13: 'following'
             {
             match("following"); if (failed) return ;
 
@@ -3407,8 +3410,8 @@ public class XQFTLexer extends Lexer {
     public final void mPARENT() throws RecognitionException {
         try {
             int _type = PARENT;
-            // etc/XQFT.g:171:8: ( 'parent' )
-            // etc/XQFT.g:171:10: 'parent'
+            // etc/XQFT.g:174:8: ( 'parent' )
+            // etc/XQFT.g:174:10: 'parent'
             {
             match("parent"); if (failed) return ;
 
@@ -3426,8 +3429,8 @@ public class XQFTLexer extends Lexer {
     public final void mANCESTOR() throws RecognitionException {
         try {
             int _type = ANCESTOR;
-            // etc/XQFT.g:172:10: ( 'ancestor' )
-            // etc/XQFT.g:172:12: 'ancestor'
+            // etc/XQFT.g:175:10: ( 'ancestor' )
+            // etc/XQFT.g:175:12: 'ancestor'
             {
             match("ancestor"); if (failed) return ;
 
@@ -3445,8 +3448,8 @@ public class XQFTLexer extends Lexer {
     public final void mPRECEDING_SIBLING() throws RecognitionException {
         try {
             int _type = PRECEDING_SIBLING;
-            // etc/XQFT.g:173:19: ( 'preceding-sibling' )
-            // etc/XQFT.g:173:21: 'preceding-sibling'
+            // etc/XQFT.g:176:19: ( 'preceding-sibling' )
+            // etc/XQFT.g:176:21: 'preceding-sibling'
             {
             match("preceding-sibling"); if (failed) return ;
 
@@ -3464,8 +3467,8 @@ public class XQFTLexer extends Lexer {
     public final void mPRECEDING() throws RecognitionException {
         try {
             int _type = PRECEDING;
-            // etc/XQFT.g:174:11: ( 'preceding' )
-            // etc/XQFT.g:174:13: 'preceding'
+            // etc/XQFT.g:177:11: ( 'preceding' )
+            // etc/XQFT.g:177:13: 'preceding'
             {
             match("preceding"); if (failed) return ;
 
@@ -3483,8 +3486,8 @@ public class XQFTLexer extends Lexer {
     public final void mANCESTOR_OR_SELF() throws RecognitionException {
         try {
             int _type = ANCESTOR_OR_SELF;
-            // etc/XQFT.g:175:18: ( 'ancestor-or-self' )
-            // etc/XQFT.g:175:20: 'ancestor-or-self'
+            // etc/XQFT.g:178:18: ( 'ancestor-or-self' )
+            // etc/XQFT.g:178:20: 'ancestor-or-self'
             {
             match("ancestor-or-self"); if (failed) return ;
 
@@ -3502,8 +3505,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOT() throws RecognitionException {
         try {
             int _type = DOT;
-            // etc/XQFT.g:176:5: ( '.' )
-            // etc/XQFT.g:176:7: '.'
+            // etc/XQFT.g:179:5: ( '.' )
+            // etc/XQFT.g:179:7: '.'
             {
             match('.'); if (failed) return ;
 
@@ -3520,8 +3523,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOTDOT() throws RecognitionException {
         try {
             int _type = DOTDOT;
-            // etc/XQFT.g:177:8: ( '..' )
-            // etc/XQFT.g:177:10: '..'
+            // etc/XQFT.g:180:8: ( '..' )
+            // etc/XQFT.g:180:10: '..'
             {
             match(".."); if (failed) return ;
 
@@ -3539,8 +3542,8 @@ public class XQFTLexer extends Lexer {
     public final void mWORDS() throws RecognitionException {
         try {
             int _type = WORDS;
-            // etc/XQFT.g:178:7: ( 'words' )
-            // etc/XQFT.g:178:9: 'words'
+            // etc/XQFT.g:181:7: ( 'words' )
+            // etc/XQFT.g:181:9: 'words'
             {
             match("words"); if (failed) return ;
 
@@ -3558,8 +3561,8 @@ public class XQFTLexer extends Lexer {
     public final void mSENTENCES() throws RecognitionException {
         try {
             int _type = SENTENCES;
-            // etc/XQFT.g:179:11: ( 'sentences' )
-            // etc/XQFT.g:179:13: 'sentences'
+            // etc/XQFT.g:182:11: ( 'sentences' )
+            // etc/XQFT.g:182:13: 'sentences'
             {
             match("sentences"); if (failed) return ;
 
@@ -3577,8 +3580,8 @@ public class XQFTLexer extends Lexer {
     public final void mPARAGRAPHS() throws RecognitionException {
         try {
             int _type = PARAGRAPHS;
-            // etc/XQFT.g:180:12: ( 'paragraphs' )
-            // etc/XQFT.g:180:14: 'paragraphs'
+            // etc/XQFT.g:183:12: ( 'paragraphs' )
+            // etc/XQFT.g:183:14: 'paragraphs'
             {
             match("paragraphs"); if (failed) return ;
 
@@ -3596,8 +3599,8 @@ public class XQFTLexer extends Lexer {
     public final void mSENTENCE() throws RecognitionException {
         try {
             int _type = SENTENCE;
-            // etc/XQFT.g:181:10: ( 'sentence' )
-            // etc/XQFT.g:181:12: 'sentence'
+            // etc/XQFT.g:184:10: ( 'sentence' )
+            // etc/XQFT.g:184:12: 'sentence'
             {
             match("sentence"); if (failed) return ;
 
@@ -3615,8 +3618,8 @@ public class XQFTLexer extends Lexer {
     public final void mPARAGRAPH() throws RecognitionException {
         try {
             int _type = PARAGRAPH;
-            // etc/XQFT.g:182:11: ( 'paragraph' )
-            // etc/XQFT.g:182:13: 'paragraph'
+            // etc/XQFT.g:185:11: ( 'paragraph' )
+            // etc/XQFT.g:185:13: 'paragraph'
             {
             match("paragraph"); if (failed) return ;
 
@@ -3634,8 +3637,8 @@ public class XQFTLexer extends Lexer {
     public final void mSAME() throws RecognitionException {
         try {
             int _type = SAME;
-            // etc/XQFT.g:183:6: ( 'same' )
-            // etc/XQFT.g:183:8: 'same'
+            // etc/XQFT.g:186:6: ( 'same' )
+            // etc/XQFT.g:186:8: 'same'
             {
             match("same"); if (failed) return ;
 
@@ -3653,8 +3656,8 @@ public class XQFTLexer extends Lexer {
     public final void mDIFFERENT() throws RecognitionException {
         try {
             int _type = DIFFERENT;
-            // etc/XQFT.g:184:11: ( 'different' )
-            // etc/XQFT.g:184:13: 'different'
+            // etc/XQFT.g:187:11: ( 'different' )
+            // etc/XQFT.g:187:13: 'different'
             {
             match("different"); if (failed) return ;
 
@@ -3672,8 +3675,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTART() throws RecognitionException {
         try {
             int _type = START;
-            // etc/XQFT.g:185:7: ( 'start' )
-            // etc/XQFT.g:185:9: 'start'
+            // etc/XQFT.g:188:7: ( 'start' )
+            // etc/XQFT.g:188:9: 'start'
             {
             match("start"); if (failed) return ;
 
@@ -3691,8 +3694,8 @@ public class XQFTLexer extends Lexer {
     public final void mEND() throws RecognitionException {
         try {
             int _type = END;
-            // etc/XQFT.g:186:5: ( 'end' )
-            // etc/XQFT.g:186:7: 'end'
+            // etc/XQFT.g:189:5: ( 'end' )
+            // etc/XQFT.g:189:7: 'end'
             {
             match("end"); if (failed) return ;
 
@@ -3710,8 +3713,8 @@ public class XQFTLexer extends Lexer {
     public final void mENTIRE() throws RecognitionException {
         try {
             int _type = ENTIRE;
-            // etc/XQFT.g:187:8: ( 'entire' )
-            // etc/XQFT.g:187:10: 'entire'
+            // etc/XQFT.g:190:8: ( 'entire' )
+            // etc/XQFT.g:190:10: 'entire'
             {
             match("entire"); if (failed) return ;
 
@@ -3728,7 +3731,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Letter
     public final void mLetter() throws RecognitionException {
         try {
-            // etc/XQFT.g:214:30: ( BaseChar | Ideographic )
+            // etc/XQFT.g:219:30: ( BaseChar | Ideographic )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -3754,7 +3757,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start BaseChar
     public final void mBaseChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:215:30: ( '\\u0041' .. '\\u005A' | '\\u0061' .. '\\u007A' | '\\u00C0' .. '\\u00D6' | '\\u00D8' .. '\\u00F6' | '\\u00F8' .. '\\u00FF' | '\\u0100' .. '\\u0131' | '\\u0134' .. '\\u013E' | '\\u0141' .. '\\u0148' | '\\u014A' .. '\\u017E' | '\\u0180' .. '\\u01C3' | '\\u01CD' .. '\\u01F0' | '\\u01F4' .. '\\u01F5' | '\\u01FA' .. '\\u0217' | '\\u0250' .. '\\u02A8' | '\\u02BB' .. '\\u02C1' | '\\u0386' | '\\u0388' .. '\\u038A' | '\\u038C' | '\\u038E' .. '\\u03A1' | '\\u03A3' .. '\\u03CE' | '\\u03D0' .. '\\u03D6' | '\\u03DA' | '\\u03DC' | '\\u03DE' | '\\u03E0' | '\\u03E2' .. '\\u03F3' | '\\u0401' .. '\\u040C' | '\\u040E' .. '\\u044F' | '\\u0451' .. '\\u045C' | '\\u045E' .. '\\u0481' | '\\u0490' .. '\\u04C4' | '\\u04C7' .. '\\u04C8' | '\\u04CB' .. '\\u04CC' | '\\u04D0' .. '\\u04EB' | '\\u04EE' .. '\\u04F5' | '\\u04F8' .. '\\u04F9' | '\\u0531' .. '\\u0556' | '\\u0559' | '\\u0561' .. '\\u0586' | '\\u05D0' .. '\\u05EA' | '\\u05F0' .. '\\u05F2' | '\\u0621' .. '\\u063A' | '\\u0641' .. '\\u064A' | '\\u0671' .. '\\u06B7' | '\\u06BA' .. '\\u06BE' | '\\u06C0' .. '\\u06CE' | '\\u06D0' .. '\\u06D3' | '\\u06D5' | '\\u06E5' .. '\\u06E6' | '\\u0905' .. '\\u0939' | '\\u093D' | '\\u0958' .. '\\u0961' | '\\u0985' .. '\\u098C' | '\\u098F' .. '\\u0990' | '\\u0993' .. '\\u09A8' | '\\u09AA' .. '\\u09B0' | '\\u09B2' | '\\u09B6' .. '\\u09B9' | '\\u09DC' .. '\\u09DD' | '\\u09DF' .. '\\u09E1' | '\\u09F0' .. '\\u09F1' | '\\u0A05' .. '\\u0A0A' | '\\u0A0F' .. '\\u0A10' | '\\u0A13' .. '\\u0A28' | '\\u0A2A' .. '\\u0A30' | '\\u0A32' .. '\\u0A33' | '\\u0A35' .. '\\u0A36' | '\\u0A38' .. '\\u0A39' | '\\u0A59' .. '\\u0A5C' | '\\u0A5E' | '\\u0A72' .. '\\u0A74' | '\\u0A85' .. '\\u0A8B' | '\\u0A8D' | '\\u0A8F' .. '\\u0A91' | '\\u0A93' .. '\\u0AA8' | '\\u0AAA' .. '\\u0AB0' | '\\u0AB2' .. '\\u0AB3' | '\\u0AB5' .. '\\u0AB9' | '\\u0ABD' | '\\u0AE0' | '\\u0B05' .. '\\u0B0C' | '\\u0B0F' .. '\\u0B10' | '\\u0B13' .. '\\u0B28' | '\\u0B2A' .. '\\u0B30' | '\\u0B32' .. '\\u0B33' | '\\u0B36' .. '\\u0B39' | '\\u0B3D' | '\\u0B5C' .. '\\u0B5D' | '\\u0B5F' .. '\\u0B61' | '\\u0B85' .. '\\u0B8A' | '\\u0B8E' .. '\\u0B90' | '\\u0B92' .. '\\u0B95' | '\\u0B99' .. '\\u0B9A' | '\\u0B9C' | '\\u0B9E' .. '\\u0B9F' | '\\u0BA3' .. '\\u0BA4' | '\\u0BA8' .. '\\u0BAA' | '\\u0BAE' .. '\\u0BB5' | '\\u0BB7' .. '\\u0BB9' | '\\u0C05' .. '\\u0C0C' | '\\u0C0E' .. '\\u0C10' | '\\u0C12' .. '\\u0C28' | '\\u0C2A' .. '\\u0C33' | '\\u0C35' .. '\\u0C39' | '\\u0C60' .. '\\u0C61' | '\\u0C85' .. '\\u0C8C' | '\\u0C8E' .. '\\u0C90' | '\\u0C92' .. '\\u0CA8' | '\\u0CAA' .. '\\u0CB3' | '\\u0CB5' .. '\\u0CB9' | '\\u0CDE' | '\\u0CE0' .. '\\u0CE1' | '\\u0D05' .. '\\u0D0C' | '\\u0D0E' .. '\\u0D10' | '\\u0D12' .. '\\u0D28' | '\\u0D2A' .. '\\u0D39' | '\\u0D60' .. '\\u0D61' | '\\u0E01' .. '\\u0E2E' | '\\u0E30' | '\\u0E32' .. '\\u0E33' | '\\u0E40' .. '\\u0E45' | '\\u0E81' .. '\\u0E82' | '\\u0E84' | '\\u0E87' .. '\\u0E88' | '\\u0E8A' | '\\u0E8D' | '\\u0E94' .. '\\u0E97' | '\\u0E99' .. '\\u0E9F' | '\\u0EA1' .. '\\u0EA3' | '\\u0EA5' | '\\u0EA7' | '\\u0EAA' .. '\\u0EAB' | '\\u0EAD' .. '\\u0EAE' | '\\u0EB0' | '\\u0EB2' .. '\\u0EB3' | '\\u0EBD' | '\\u0EC0' .. '\\u0EC4' | '\\u0F40' .. '\\u0F47' | '\\u0F49' .. '\\u0F69' | '\\u10A0' .. '\\u10C5' | '\\u10D0' .. '\\u10F6' | '\\u1100' | '\\u1102' .. '\\u1103' | '\\u1105' .. '\\u1107' | '\\u1109' | '\\u110B' .. '\\u110C' | '\\u110E' .. '\\u1112' | '\\u113C' | '\\u113E' | '\\u1140' | '\\u114C' | '\\u114E' | '\\u1150' | '\\u1154' .. '\\u1155' | '\\u1159' | '\\u115F' .. '\\u1161' | '\\u1163' | '\\u1165' | '\\u1167' | '\\u1169' | '\\u116D' .. '\\u116E' | '\\u1172' .. '\\u1173' | '\\u1175' | '\\u119E' | '\\u11A8' | '\\u11AB' | '\\u11AE' .. '\\u11AF' | '\\u11B7' .. '\\u11B8' | '\\u11BA' | '\\u11BC' .. '\\u11C2' | '\\u11EB' | '\\u11F0' | '\\u11F9' | '\\u1E00' .. '\\u1E9B' | '\\u1EA0' .. '\\u1EF9' | '\\u1F00' .. '\\u1F15' | '\\u1F18' .. '\\u1F1D' | '\\u1F20' .. '\\u1F45' | '\\u1F48' .. '\\u1F4D' | '\\u1F50' .. '\\u1F57' | '\\u1F59' | '\\u1F5B' | '\\u1F5D' | '\\u1F5F' .. '\\u1F7D' | '\\u1F80' .. '\\u1FB4' | '\\u1FB6' .. '\\u1FBC' | '\\u1FBE' | '\\u1FC2' .. '\\u1FC4' | '\\u1FC6' .. '\\u1FCC' | '\\u1FD0' .. '\\u1FD3' | '\\u1FD6' .. '\\u1FDB' | '\\u1FE0' .. '\\u1FEC' | '\\u1FF2' .. '\\u1FF4' | '\\u1FF6' .. '\\u1FFC' | '\\u2126' | '\\u212A' .. '\\u212B' | '\\u212E' | '\\u2180' .. '\\u2182' | '\\u3041' .. '\\u3094' | '\\u30A1' .. '\\u30FA' | '\\u3105' .. '\\u312C' | '\\uAC00' .. '\\uD7A3' )
+            // etc/XQFT.g:220:30: ( '\\u0041' .. '\\u005A' | '\\u0061' .. '\\u007A' | '\\u00C0' .. '\\u00D6' | '\\u00D8' .. '\\u00F6' | '\\u00F8' .. '\\u00FF' | '\\u0100' .. '\\u0131' | '\\u0134' .. '\\u013E' | '\\u0141' .. '\\u0148' | '\\u014A' .. '\\u017E' | '\\u0180' .. '\\u01C3' | '\\u01CD' .. '\\u01F0' | '\\u01F4' .. '\\u01F5' | '\\u01FA' .. '\\u0217' | '\\u0250' .. '\\u02A8' | '\\u02BB' .. '\\u02C1' | '\\u0386' | '\\u0388' .. '\\u038A' | '\\u038C' | '\\u038E' .. '\\u03A1' | '\\u03A3' .. '\\u03CE' | '\\u03D0' .. '\\u03D6' | '\\u03DA' | '\\u03DC' | '\\u03DE' | '\\u03E0' | '\\u03E2' .. '\\u03F3' | '\\u0401' .. '\\u040C' | '\\u040E' .. '\\u044F' | '\\u0451' .. '\\u045C' | '\\u045E' .. '\\u0481' | '\\u0490' .. '\\u04C4' | '\\u04C7' .. '\\u04C8' | '\\u04CB' .. '\\u04CC' | '\\u04D0' .. '\\u04EB' | '\\u04EE' .. '\\u04F5' | '\\u04F8' .. '\\u04F9' | '\\u0531' .. '\\u0556' | '\\u0559' | '\\u0561' .. '\\u0586' | '\\u05D0' .. '\\u05EA' | '\\u05F0' .. '\\u05F2' | '\\u0621' .. '\\u063A' | '\\u0641' .. '\\u064A' | '\\u0671' .. '\\u06B7' | '\\u06BA' .. '\\u06BE' | '\\u06C0' .. '\\u06CE' | '\\u06D0' .. '\\u06D3' | '\\u06D5' | '\\u06E5' .. '\\u06E6' | '\\u0905' .. '\\u0939' | '\\u093D' | '\\u0958' .. '\\u0961' | '\\u0985' .. '\\u098C' | '\\u098F' .. '\\u0990' | '\\u0993' .. '\\u09A8' | '\\u09AA' .. '\\u09B0' | '\\u09B2' | '\\u09B6' .. '\\u09B9' | '\\u09DC' .. '\\u09DD' | '\\u09DF' .. '\\u09E1' | '\\u09F0' .. '\\u09F1' | '\\u0A05' .. '\\u0A0A' | '\\u0A0F' .. '\\u0A10' | '\\u0A13' .. '\\u0A28' | '\\u0A2A' .. '\\u0A30' | '\\u0A32' .. '\\u0A33' | '\\u0A35' .. '\\u0A36' | '\\u0A38' .. '\\u0A39' | '\\u0A59' .. '\\u0A5C' | '\\u0A5E' | '\\u0A72' .. '\\u0A74' | '\\u0A85' .. '\\u0A8B' | '\\u0A8D' | '\\u0A8F' .. '\\u0A91' | '\\u0A93' .. '\\u0AA8' | '\\u0AAA' .. '\\u0AB0' | '\\u0AB2' .. '\\u0AB3' | '\\u0AB5' .. '\\u0AB9' | '\\u0ABD' | '\\u0AE0' | '\\u0B05' .. '\\u0B0C' | '\\u0B0F' .. '\\u0B10' | '\\u0B13' .. '\\u0B28' | '\\u0B2A' .. '\\u0B30' | '\\u0B32' .. '\\u0B33' | '\\u0B36' .. '\\u0B39' | '\\u0B3D' | '\\u0B5C' .. '\\u0B5D' | '\\u0B5F' .. '\\u0B61' | '\\u0B85' .. '\\u0B8A' | '\\u0B8E' .. '\\u0B90' | '\\u0B92' .. '\\u0B95' | '\\u0B99' .. '\\u0B9A' | '\\u0B9C' | '\\u0B9E' .. '\\u0B9F' | '\\u0BA3' .. '\\u0BA4' | '\\u0BA8' .. '\\u0BAA' | '\\u0BAE' .. '\\u0BB5' | '\\u0BB7' .. '\\u0BB9' | '\\u0C05' .. '\\u0C0C' | '\\u0C0E' .. '\\u0C10' | '\\u0C12' .. '\\u0C28' | '\\u0C2A' .. '\\u0C33' | '\\u0C35' .. '\\u0C39' | '\\u0C60' .. '\\u0C61' | '\\u0C85' .. '\\u0C8C' | '\\u0C8E' .. '\\u0C90' | '\\u0C92' .. '\\u0CA8' | '\\u0CAA' .. '\\u0CB3' | '\\u0CB5' .. '\\u0CB9' | '\\u0CDE' | '\\u0CE0' .. '\\u0CE1' | '\\u0D05' .. '\\u0D0C' | '\\u0D0E' .. '\\u0D10' | '\\u0D12' .. '\\u0D28' | '\\u0D2A' .. '\\u0D39' | '\\u0D60' .. '\\u0D61' | '\\u0E01' .. '\\u0E2E' | '\\u0E30' | '\\u0E32' .. '\\u0E33' | '\\u0E40' .. '\\u0E45' | '\\u0E81' .. '\\u0E82' | '\\u0E84' | '\\u0E87' .. '\\u0E88' | '\\u0E8A' | '\\u0E8D' | '\\u0E94' .. '\\u0E97' | '\\u0E99' .. '\\u0E9F' | '\\u0EA1' .. '\\u0EA3' | '\\u0EA5' | '\\u0EA7' | '\\u0EAA' .. '\\u0EAB' | '\\u0EAD' .. '\\u0EAE' | '\\u0EB0' | '\\u0EB2' .. '\\u0EB3' | '\\u0EBD' | '\\u0EC0' .. '\\u0EC4' | '\\u0F40' .. '\\u0F47' | '\\u0F49' .. '\\u0F69' | '\\u10A0' .. '\\u10C5' | '\\u10D0' .. '\\u10F6' | '\\u1100' | '\\u1102' .. '\\u1103' | '\\u1105' .. '\\u1107' | '\\u1109' | '\\u110B' .. '\\u110C' | '\\u110E' .. '\\u1112' | '\\u113C' | '\\u113E' | '\\u1140' | '\\u114C' | '\\u114E' | '\\u1150' | '\\u1154' .. '\\u1155' | '\\u1159' | '\\u115F' .. '\\u1161' | '\\u1163' | '\\u1165' | '\\u1167' | '\\u1169' | '\\u116D' .. '\\u116E' | '\\u1172' .. '\\u1173' | '\\u1175' | '\\u119E' | '\\u11A8' | '\\u11AB' | '\\u11AE' .. '\\u11AF' | '\\u11B7' .. '\\u11B8' | '\\u11BA' | '\\u11BC' .. '\\u11C2' | '\\u11EB' | '\\u11F0' | '\\u11F9' | '\\u1E00' .. '\\u1E9B' | '\\u1EA0' .. '\\u1EF9' | '\\u1F00' .. '\\u1F15' | '\\u1F18' .. '\\u1F1D' | '\\u1F20' .. '\\u1F45' | '\\u1F48' .. '\\u1F4D' | '\\u1F50' .. '\\u1F57' | '\\u1F59' | '\\u1F5B' | '\\u1F5D' | '\\u1F5F' .. '\\u1F7D' | '\\u1F80' .. '\\u1FB4' | '\\u1FB6' .. '\\u1FBC' | '\\u1FBE' | '\\u1FC2' .. '\\u1FC4' | '\\u1FC6' .. '\\u1FCC' | '\\u1FD0' .. '\\u1FD3' | '\\u1FD6' .. '\\u1FDB' | '\\u1FE0' .. '\\u1FEC' | '\\u1FF2' .. '\\u1FF4' | '\\u1FF6' .. '\\u1FFC' | '\\u2126' | '\\u212A' .. '\\u212B' | '\\u212E' | '\\u2180' .. '\\u2182' | '\\u3041' .. '\\u3094' | '\\u30A1' .. '\\u30FA' | '\\u3105' .. '\\u312C' | '\\uAC00' .. '\\uD7A3' )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -3780,7 +3783,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Ideographic
     public final void mIdeographic() throws RecognitionException {
         try {
-            // etc/XQFT.g:217:30: ( '\\u4E00' .. '\\u9FA5' | '\\u3007' | '\\u3021' .. '\\u3029' )
+            // etc/XQFT.g:222:30: ( '\\u4E00' .. '\\u9FA5' | '\\u3007' | '\\u3021' .. '\\u3029' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5') ) {
@@ -3806,7 +3809,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CombiningChar
     public final void mCombiningChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:218:30: ( '\\u0300' .. '\\u0345' | '\\u0360' .. '\\u0361' | '\\u0483' .. '\\u0486' | '\\u0591' .. '\\u05A1' | '\\u05A3' .. '\\u05B9' | '\\u05BB' .. '\\u05BD' | '\\u05BF' | '\\u05C1' .. '\\u05C2' | '\\u05C4' | '\\u064B' .. '\\u0652' | '\\u0670' | '\\u06D6' .. '\\u06DC' | '\\u06DD' .. '\\u06DF' | '\\u06E0' .. '\\u06E4' | '\\u06E7' .. '\\u06E8' | '\\u06EA' .. '\\u06ED' | '\\u0901' .. '\\u0903' | '\\u093C' | '\\u093E' .. '\\u094C' | '\\u094D' | '\\u0951' .. '\\u0954' | '\\u0962' .. '\\u0963' | '\\u0981' .. '\\u0983' | '\\u09BC' | '\\u09BE' | '\\u09BF' | '\\u09C0' .. '\\u09C4' | '\\u09C7' .. '\\u09C8' | '\\u09CB' .. '\\u09CD' | '\\u09D7' | '\\u09E2' .. '\\u09E3' | '\\u0A02' | '\\u0A3C' | '\\u0A3E' | '\\u0A3F' | '\\u0A40' .. '\\u0A42' | '\\u0A47' .. '\\u0A48' | '\\u0A4B' .. '\\u0A4D' | '\\u0A70' .. '\\u0A71' | '\\u0A81' .. '\\u0A83' | '\\u0ABC' | '\\u0ABE' .. '\\u0AC5' | '\\u0AC7' .. '\\u0AC9' | '\\u0ACB' .. '\\u0ACD' | '\\u0B01' .. '\\u0B03' | '\\u0B3C' | '\\u0B3E' .. '\\u0B43' | '\\u0B47' .. '\\u0B48' | '\\u0B4B' .. '\\u0B4D' | '\\u0B56' .. '\\u0B57' | '\\u0B82' .. '\\u0B83' | '\\u0BBE' .. '\\u0BC2' | '\\u0BC6' .. '\\u0BC8' | '\\u0BCA' .. '\\u0BCD' | '\\u0BD7' | '\\u0C01' .. '\\u0C03' | '\\u0C3E' .. '\\u0C44' | '\\u0C46' .. '\\u0C48' | '\\u0C4A' .. '\\u0C4D' | '\\u0C55' .. '\\u0C56' | '\\u0C82' .. '\\u0C83' | '\\u0CBE' .. '\\u0CC4' | '\\u0CC6' .. '\\u0CC8' | '\\u0CCA' .. '\\u0CCD' | '\\u0CD5' .. '\\u0CD6' | '\\u0D02' .. '\\u0D03' | '\\u0D3E' .. '\\u0D43' | '\\u0D46' .. '\\u0D48' | '\\u0D4A' .. '\\u0D4D' | '\\u0D57' | '\\u0E31' | '\\u0E34' .. '\\u0E3A' | '\\u0E47' .. '\\u0E4E' | '\\u0EB1' | '\\u0EB4' .. '\\u0EB9' | '\\u0EBB' .. '\\u0EBC' | '\\u0EC8' .. '\\u0ECD' | '\\u0F18' .. '\\u0F19' | '\\u0F35' | '\\u0F37' | '\\u0F39' | '\\u0F3E' | '\\u0F3F' | '\\u0F71' .. '\\u0F84' | '\\u0F86' .. '\\u0F8B' | '\\u0F90' .. '\\u0F95' | '\\u0F97' | '\\u0F99' .. '\\u0FAD' | '\\u0FB1' .. '\\u0FB7' | '\\u0FB9' | '\\u20D0' .. '\\u20DC' | '\\u20E1' | '\\u302A' .. '\\u302F' | '\\u3099' | '\\u309A' )
+            // etc/XQFT.g:223:30: ( '\\u0300' .. '\\u0345' | '\\u0360' .. '\\u0361' | '\\u0483' .. '\\u0486' | '\\u0591' .. '\\u05A1' | '\\u05A3' .. '\\u05B9' | '\\u05BB' .. '\\u05BD' | '\\u05BF' | '\\u05C1' .. '\\u05C2' | '\\u05C4' | '\\u064B' .. '\\u0652' | '\\u0670' | '\\u06D6' .. '\\u06DC' | '\\u06DD' .. '\\u06DF' | '\\u06E0' .. '\\u06E4' | '\\u06E7' .. '\\u06E8' | '\\u06EA' .. '\\u06ED' | '\\u0901' .. '\\u0903' | '\\u093C' | '\\u093E' .. '\\u094C' | '\\u094D' | '\\u0951' .. '\\u0954' | '\\u0962' .. '\\u0963' | '\\u0981' .. '\\u0983' | '\\u09BC' | '\\u09BE' | '\\u09BF' | '\\u09C0' .. '\\u09C4' | '\\u09C7' .. '\\u09C8' | '\\u09CB' .. '\\u09CD' | '\\u09D7' | '\\u09E2' .. '\\u09E3' | '\\u0A02' | '\\u0A3C' | '\\u0A3E' | '\\u0A3F' | '\\u0A40' .. '\\u0A42' | '\\u0A47' .. '\\u0A48' | '\\u0A4B' .. '\\u0A4D' | '\\u0A70' .. '\\u0A71' | '\\u0A81' .. '\\u0A83' | '\\u0ABC' | '\\u0ABE' .. '\\u0AC5' | '\\u0AC7' .. '\\u0AC9' | '\\u0ACB' .. '\\u0ACD' | '\\u0B01' .. '\\u0B03' | '\\u0B3C' | '\\u0B3E' .. '\\u0B43' | '\\u0B47' .. '\\u0B48' | '\\u0B4B' .. '\\u0B4D' | '\\u0B56' .. '\\u0B57' | '\\u0B82' .. '\\u0B83' | '\\u0BBE' .. '\\u0BC2' | '\\u0BC6' .. '\\u0BC8' | '\\u0BCA' .. '\\u0BCD' | '\\u0BD7' | '\\u0C01' .. '\\u0C03' | '\\u0C3E' .. '\\u0C44' | '\\u0C46' .. '\\u0C48' | '\\u0C4A' .. '\\u0C4D' | '\\u0C55' .. '\\u0C56' | '\\u0C82' .. '\\u0C83' | '\\u0CBE' .. '\\u0CC4' | '\\u0CC6' .. '\\u0CC8' | '\\u0CCA' .. '\\u0CCD' | '\\u0CD5' .. '\\u0CD6' | '\\u0D02' .. '\\u0D03' | '\\u0D3E' .. '\\u0D43' | '\\u0D46' .. '\\u0D48' | '\\u0D4A' .. '\\u0D4D' | '\\u0D57' | '\\u0E31' | '\\u0E34' .. '\\u0E3A' | '\\u0E47' .. '\\u0E4E' | '\\u0EB1' | '\\u0EB4' .. '\\u0EB9' | '\\u0EBB' .. '\\u0EBC' | '\\u0EC8' .. '\\u0ECD' | '\\u0F18' .. '\\u0F19' | '\\u0F35' | '\\u0F37' | '\\u0F39' | '\\u0F3E' | '\\u0F3F' | '\\u0F71' .. '\\u0F84' | '\\u0F86' .. '\\u0F8B' | '\\u0F90' .. '\\u0F95' | '\\u0F97' | '\\u0F99' .. '\\u0FAD' | '\\u0FB1' .. '\\u0FB7' | '\\u0FB9' | '\\u20D0' .. '\\u20DC' | '\\u20E1' | '\\u302A' .. '\\u302F' | '\\u3099' | '\\u309A' )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u064B' && input.LA(1)<='\u0652')||input.LA(1)=='\u0670'||(input.LA(1)>='\u06D6' && input.LA(1)<='\u06E4')||(input.LA(1)>='\u06E7' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||input.LA(1)=='\u093C'||(input.LA(1)>='\u093E' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0962' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09E2' && input.LA(1)<='\u09E3')||input.LA(1)=='\u0A02'||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A70' && input.LA(1)<='\u0A71')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||input.LA(1)=='\u0ABC'||(input.LA(1)>='\u0ABE' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||input.LA(1)=='\u0B3C'||(input.LA(1)>='\u0B3E' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||input.LA(1)=='\u0E31'||(input.LA(1)>='\u0E34' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E47' && input.LA(1)<='\u0E4E')||input.LA(1)=='\u0EB1'||(input.LA(1)>='\u0EB4' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBC')||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F3F')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||(input.LA(1)>='\u302A' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A') ) {
@@ -3832,7 +3835,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Digit
     public final void mDigit() throws RecognitionException {
         try {
-            // etc/XQFT.g:219:30: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06F0' .. '\\u06F9' | '\\u0966' .. '\\u096F' | '\\u09E6' .. '\\u09EF' | '\\u0A66' .. '\\u0A6F' | '\\u0AE6' .. '\\u0AEF' | '\\u0B66' .. '\\u0B6F' | '\\u0BE7' .. '\\u0BEF' | '\\u0C66' .. '\\u0C6F' | '\\u0CE6' .. '\\u0CEF' | '\\u0D66' .. '\\u0D6F' | '\\u0E50' .. '\\u0E59' | '\\u0ED0' .. '\\u0ED9' | '\\u0F20' .. '\\u0F29' )
+            // etc/XQFT.g:224:30: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06F0' .. '\\u06F9' | '\\u0966' .. '\\u096F' | '\\u09E6' .. '\\u09EF' | '\\u0A66' .. '\\u0A6F' | '\\u0AE6' .. '\\u0AEF' | '\\u0B66' .. '\\u0B6F' | '\\u0BE7' .. '\\u0BEF' | '\\u0C66' .. '\\u0C6F' | '\\u0CE6' .. '\\u0CEF' | '\\u0D66' .. '\\u0D6F' | '\\u0E50' .. '\\u0E59' | '\\u0ED0' .. '\\u0ED9' | '\\u0F20' .. '\\u0F29' )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09EF')||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A6F')||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29') ) {
@@ -3858,7 +3861,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Extender
     public final void mExtender() throws RecognitionException {
         try {
-            // etc/XQFT.g:220:30: ( '\\u00B7' | '\\u02D0' | '\\u02D1' | '\\u0387' | '\\u0640' | '\\u0E46' | '\\u0EC6' | '\\u3005' | '\\u3031' .. '\\u3035' | '\\u309D' .. '\\u309E' | '\\u30FC' .. '\\u30FE' )
+            // etc/XQFT.g:225:30: ( '\\u00B7' | '\\u02D0' | '\\u02D1' | '\\u0387' | '\\u0640' | '\\u0E46' | '\\u0EC6' | '\\u3005' | '\\u3031' .. '\\u3035' | '\\u309D' .. '\\u309E' | '\\u30FC' .. '\\u30FE' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u00B7'||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||input.LA(1)=='\u0387'||input.LA(1)=='\u0640'||input.LA(1)=='\u0E46'||input.LA(1)=='\u0EC6'||input.LA(1)=='\u3005'||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE') ) {
@@ -3885,8 +3888,8 @@ public class XQFTLexer extends Lexer {
     public final void mIntegerLiteral() throws RecognitionException {
         try {
             int _type = IntegerLiteral;
-            // etc/XQFT.g:223:21: ( Digits )
-            // etc/XQFT.g:223:23: Digits
+            // etc/XQFT.g:228:21: ( Digits )
+            // etc/XQFT.g:228:23: Digits
             {
             mDigits(); if (failed) return ;
 
@@ -3903,7 +3906,7 @@ public class XQFTLexer extends Lexer {
     public final void mDecimalLiteral() throws RecognitionException {
         try {
             int _type = DecimalLiteral;
-            // etc/XQFT.g:224:21: ( ( DOT Digits ) | ( Digits DOT ( '0' .. '9' )* ) )
+            // etc/XQFT.g:229:21: ( ( DOT Digits ) | ( Digits DOT ( '0' .. '9' )* ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -3916,16 +3919,16 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("224:1: DecimalLiteral : ( ( DOT Digits ) | ( Digits DOT ( '0' .. '9' )* ) );", 2, 0, input);
+                    new NoViableAltException("229:1: DecimalLiteral : ( ( DOT Digits ) | ( Digits DOT ( '0' .. '9' )* ) );", 2, 0, input);
 
                 throw nvae;
             }
             switch (alt2) {
                 case 1 :
-                    // etc/XQFT.g:224:23: ( DOT Digits )
+                    // etc/XQFT.g:229:23: ( DOT Digits )
                     {
-                    // etc/XQFT.g:224:23: ( DOT Digits )
-                    // etc/XQFT.g:224:24: DOT Digits
+                    // etc/XQFT.g:229:23: ( DOT Digits )
+                    // etc/XQFT.g:229:24: DOT Digits
                     {
                     mDOT(); if (failed) return ;
                     mDigits(); if (failed) return ;
@@ -3936,14 +3939,14 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:224:38: ( Digits DOT ( '0' .. '9' )* )
+                    // etc/XQFT.g:229:38: ( Digits DOT ( '0' .. '9' )* )
                     {
-                    // etc/XQFT.g:224:38: ( Digits DOT ( '0' .. '9' )* )
-                    // etc/XQFT.g:224:39: Digits DOT ( '0' .. '9' )*
+                    // etc/XQFT.g:229:38: ( Digits DOT ( '0' .. '9' )* )
+                    // etc/XQFT.g:229:39: Digits DOT ( '0' .. '9' )*
                     {
                     mDigits(); if (failed) return ;
                     mDOT(); if (failed) return ;
-                    // etc/XQFT.g:224:50: ( '0' .. '9' )*
+                    // etc/XQFT.g:229:50: ( '0' .. '9' )*
                     loop1:
                     do {
                         int alt1=2;
@@ -3956,7 +3959,7 @@ public class XQFTLexer extends Lexer {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // etc/XQFT.g:224:51: '0' .. '9'
+                    	    // etc/XQFT.g:229:51: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); if (failed) return ;
 
@@ -3987,10 +3990,10 @@ public class XQFTLexer extends Lexer {
     public final void mDoubleLiteral() throws RecognitionException {
         try {
             int _type = DoubleLiteral;
-            // etc/XQFT.g:225:21: ( ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits )
-            // etc/XQFT.g:225:23: ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits
+            // etc/XQFT.g:230:21: ( ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits )
+            // etc/XQFT.g:230:23: ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits
             {
-            // etc/XQFT.g:225:23: ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) )
+            // etc/XQFT.g:230:23: ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -4003,16 +4006,16 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("225:23: ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) )", 5, 0, input);
+                    new NoViableAltException("230:23: ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) )", 5, 0, input);
 
                 throw nvae;
             }
             switch (alt5) {
                 case 1 :
-                    // etc/XQFT.g:225:24: ( DOT Digits )
+                    // etc/XQFT.g:230:24: ( DOT Digits )
                     {
-                    // etc/XQFT.g:225:24: ( DOT Digits )
-                    // etc/XQFT.g:225:25: DOT Digits
+                    // etc/XQFT.g:230:24: ( DOT Digits )
+                    // etc/XQFT.g:230:25: DOT Digits
                     {
                     mDOT(); if (failed) return ;
                     mDigits(); if (failed) return ;
@@ -4023,13 +4026,13 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:225:39: ( Digits ( DOT ( '0' .. '9' )* )? )
+                    // etc/XQFT.g:230:39: ( Digits ( DOT ( '0' .. '9' )* )? )
                     {
-                    // etc/XQFT.g:225:39: ( Digits ( DOT ( '0' .. '9' )* )? )
-                    // etc/XQFT.g:225:40: Digits ( DOT ( '0' .. '9' )* )?
+                    // etc/XQFT.g:230:39: ( Digits ( DOT ( '0' .. '9' )* )? )
+                    // etc/XQFT.g:230:40: Digits ( DOT ( '0' .. '9' )* )?
                     {
                     mDigits(); if (failed) return ;
-                    // etc/XQFT.g:225:47: ( DOT ( '0' .. '9' )* )?
+                    // etc/XQFT.g:230:47: ( DOT ( '0' .. '9' )* )?
                     int alt4=2;
                     int LA4_0 = input.LA(1);
 
@@ -4038,10 +4041,10 @@ public class XQFTLexer extends Lexer {
                     }
                     switch (alt4) {
                         case 1 :
-                            // etc/XQFT.g:225:48: DOT ( '0' .. '9' )*
+                            // etc/XQFT.g:230:48: DOT ( '0' .. '9' )*
                             {
                             mDOT(); if (failed) return ;
-                            // etc/XQFT.g:225:52: ( '0' .. '9' )*
+                            // etc/XQFT.g:230:52: ( '0' .. '9' )*
                             loop3:
                             do {
                                 int alt3=2;
@@ -4054,7 +4057,7 @@ public class XQFTLexer extends Lexer {
 
                                 switch (alt3) {
                             	case 1 :
-                            	    // etc/XQFT.g:225:53: '0' .. '9'
+                            	    // etc/XQFT.g:230:53: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); if (failed) return ;
 
@@ -4092,7 +4095,7 @@ public class XQFTLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // etc/XQFT.g:225:78: ( PLUSSi | MINUSSi )?
+            // etc/XQFT.g:230:78: ( PLUSSi | MINUSSi )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -4135,7 +4138,7 @@ public class XQFTLexer extends Lexer {
     public final void mStringLiteral() throws RecognitionException {
         try {
             int _type = StringLiteral;
-            // etc/XQFT.g:228:19: ( ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi ) | ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE ) )
+            // etc/XQFT.g:233:19: ( ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi ) | ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -4148,19 +4151,19 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("228:1: StringLiteral : ( ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi ) | ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE ) );", 9, 0, input);
+                    new NoViableAltException("233:1: StringLiteral : ( ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi ) | ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE ) );", 9, 0, input);
 
                 throw nvae;
             }
             switch (alt9) {
                 case 1 :
-                    // etc/XQFT.g:228:21: ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi )
+                    // etc/XQFT.g:233:21: ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi )
                     {
-                    // etc/XQFT.g:228:21: ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi )
-                    // etc/XQFT.g:228:22: '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi
+                    // etc/XQFT.g:233:21: ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi )
+                    // etc/XQFT.g:233:22: '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi
                     {
                     match('\"'); if (failed) return ;
-                    // etc/XQFT.g:228:26: ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )*
+                    // etc/XQFT.g:233:26: ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )*
                     loop7:
                     do {
                         int alt7=5;
@@ -4194,28 +4197,28 @@ public class XQFTLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // etc/XQFT.g:228:27: PredefinedEntityRef
+                    	    // etc/XQFT.g:233:27: PredefinedEntityRef
                     	    {
                     	    mPredefinedEntityRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // etc/XQFT.g:228:49: CharRef
+                    	    // etc/XQFT.g:233:49: CharRef
                     	    {
                     	    mCharRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 3 :
-                    	    // etc/XQFT.g:228:59: EscapeQuot
+                    	    // etc/XQFT.g:233:59: EscapeQuot
                     	    {
                     	    mEscapeQuot(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 4 :
-                    	    // etc/XQFT.g:228:72: ~ ( DOUBLEQUOTESi | '&' )
+                    	    // etc/XQFT.g:233:72: ~ ( DOUBLEQUOTESi | '&' )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -4245,13 +4248,13 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:228:112: ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE )
+                    // etc/XQFT.g:233:112: ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE )
                     {
-                    // etc/XQFT.g:228:112: ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE )
-                    // etc/XQFT.g:228:113: SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE
+                    // etc/XQFT.g:233:112: ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE )
+                    // etc/XQFT.g:233:113: SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE
                     {
                     mSINGLEQUOTE(); if (failed) return ;
-                    // etc/XQFT.g:228:125: ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )*
+                    // etc/XQFT.g:233:125: ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )*
                     loop8:
                     do {
                         int alt8=5;
@@ -4285,28 +4288,28 @@ public class XQFTLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // etc/XQFT.g:228:126: PredefinedEntityRef
+                    	    // etc/XQFT.g:233:126: PredefinedEntityRef
                     	    {
                     	    mPredefinedEntityRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // etc/XQFT.g:228:148: CharRef
+                    	    // etc/XQFT.g:233:148: CharRef
                     	    {
                     	    mCharRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 3 :
-                    	    // etc/XQFT.g:228:158: EscapeApos
+                    	    // etc/XQFT.g:233:158: EscapeApos
                     	    {
                     	    mEscapeApos(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 4 :
-                    	    // etc/XQFT.g:228:171: ~ ( SINGLEQUOTE | '&' )
+                    	    // etc/XQFT.g:233:171: ~ ( SINGLEQUOTE | '&' )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -4347,11 +4350,11 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PredefinedEntityRef
     public final void mPredefinedEntityRef() throws RecognitionException {
         try {
-            // etc/XQFT.g:229:30: ( '&' ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi )
-            // etc/XQFT.g:229:32: '&' ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi
+            // etc/XQFT.g:234:30: ( '&' ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi )
+            // etc/XQFT.g:234:32: '&' ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi
             {
             match('&'); if (failed) return ;
-            // etc/XQFT.g:229:36: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )
+            // etc/XQFT.g:234:36: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )
             int alt10=5;
             switch ( input.LA(1) ) {
             case 'l':
@@ -4377,7 +4380,7 @@ public class XQFTLexer extends Lexer {
                 else {
                     if (backtracking>0) {failed=true; return ;}
                     NoViableAltException nvae =
-                        new NoViableAltException("229:36: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 10, 3, input);
+                        new NoViableAltException("234:36: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 10, 3, input);
 
                     throw nvae;
                 }
@@ -4391,14 +4394,14 @@ public class XQFTLexer extends Lexer {
             default:
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("229:36: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 10, 0, input);
+                    new NoViableAltException("234:36: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 10, 0, input);
 
                 throw nvae;
             }
 
             switch (alt10) {
                 case 1 :
-                    // etc/XQFT.g:229:37: 'lt'
+                    // etc/XQFT.g:234:37: 'lt'
                     {
                     match("lt"); if (failed) return ;
 
@@ -4406,7 +4409,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:229:44: 'gt'
+                    // etc/XQFT.g:234:44: 'gt'
                     {
                     match("gt"); if (failed) return ;
 
@@ -4414,7 +4417,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:229:51: 'amp'
+                    // etc/XQFT.g:234:51: 'amp'
                     {
                     match("amp"); if (failed) return ;
 
@@ -4422,7 +4425,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:229:59: 'quot'
+                    // etc/XQFT.g:234:59: 'quot'
                     {
                     match("quot"); if (failed) return ;
 
@@ -4430,7 +4433,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // etc/XQFT.g:229:68: 'apos'
+                    // etc/XQFT.g:234:68: 'apos'
                     {
                     match("apos"); if (failed) return ;
 
@@ -4453,8 +4456,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start EscapeQuot
     public final void mEscapeQuot() throws RecognitionException {
         try {
-            // etc/XQFT.g:230:30: ( '\"\"' )
-            // etc/XQFT.g:230:32: '\"\"'
+            // etc/XQFT.g:235:30: ( '\"\"' )
+            // etc/XQFT.g:235:32: '\"\"'
             {
             match("\"\""); if (failed) return ;
 
@@ -4470,8 +4473,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start EscapeApos
     public final void mEscapeApos() throws RecognitionException {
         try {
-            // etc/XQFT.g:231:30: ( '\\'\\'' )
-            // etc/XQFT.g:231:32: '\\'\\''
+            // etc/XQFT.g:236:30: ( '\\'\\'' )
+            // etc/XQFT.g:236:32: '\\'\\''
             {
             match("\'\'"); if (failed) return ;
 
@@ -4487,8 +4490,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CleanChar
     public final void mCleanChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:243:21: (~ ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' | '\\uFFFE' | '\\uFFFF' | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' ) )
-            // etc/XQFT.g:243:23: ~ ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' | '\\uFFFE' | '\\uFFFF' | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' )
+            // etc/XQFT.g:248:21: (~ ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' | '\\uFFFE' | '\\uFFFF' | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' ) )
+            // etc/XQFT.g:248:23: ~ ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' | '\\uFFFE' | '\\uFFFF' | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' )
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
                 input.consume();
@@ -4513,7 +4516,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Char
     public final void mChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:245:17: ( CleanChar | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' )
+            // etc/XQFT.g:250:17: ( CleanChar | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
@@ -4539,7 +4542,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ElementContentChar
     public final void mElementContentChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:247:30: ( CleanChar | '\"' | '\\'' | '-' )
+            // etc/XQFT.g:252:30: ( CleanChar | '\"' | '\\'' | '-' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
@@ -4565,7 +4568,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start QuotAttrContentChar
     public final void mQuotAttrContentChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:248:30: ( CleanChar | '\\'' | '-' )
+            // etc/XQFT.g:253:30: ( CleanChar | '\\'' | '-' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
@@ -4591,7 +4594,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start AposAttrContentChar
     public final void mAposAttrContentChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:249:30: ( CleanChar | '\"' | '-' )
+            // etc/XQFT.g:254:30: ( CleanChar | '\"' | '-' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
@@ -4618,12 +4621,12 @@ public class XQFTLexer extends Lexer {
     public final void mComment() throws RecognitionException {
         try {
             int _type = Comment;
-            // etc/XQFT.g:258:21: ( '(:' ( CommentCheck )* ':)' )
-            // etc/XQFT.g:258:22: '(:' ( CommentCheck )* ':)'
+            // etc/XQFT.g:263:21: ( '(:' ( CommentCheck )* ':)' )
+            // etc/XQFT.g:263:22: '(:' ( CommentCheck )* ':)'
             {
             match("(:"); if (failed) return ;
 
-            // etc/XQFT.g:258:27: ( CommentCheck )*
+            // etc/XQFT.g:263:27: ( CommentCheck )*
             loop11:
             do {
                 int alt11=2;
@@ -4654,7 +4657,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // etc/XQFT.g:258:28: CommentCheck
+            	    // etc/XQFT.g:263:28: CommentCheck
             	    {
             	    mCommentCheck(); if (failed) return ;
 
@@ -4684,7 +4687,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CommentCheck
     public final void mCommentCheck() throws RecognitionException {
         try {
-            // etc/XQFT.g:259:22: ( ( Comment )=> Comment | CommentContents )
+            // etc/XQFT.g:264:22: ( ( Comment )=> Comment | CommentContents )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -4703,7 +4706,7 @@ public class XQFTLexer extends Lexer {
                     else {
                         if (backtracking>0) {failed=true; return ;}
                         NoViableAltException nvae =
-                            new NoViableAltException("259:10: fragment CommentCheck : ( ( Comment )=> Comment | CommentContents );", 12, 3, input);
+                            new NoViableAltException("264:10: fragment CommentCheck : ( ( Comment )=> Comment | CommentContents );", 12, 3, input);
 
                         throw nvae;
                     }
@@ -4717,20 +4720,20 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("259:10: fragment CommentCheck : ( ( Comment )=> Comment | CommentContents );", 12, 0, input);
+                    new NoViableAltException("264:10: fragment CommentCheck : ( ( Comment )=> Comment | CommentContents );", 12, 0, input);
 
                 throw nvae;
             }
             switch (alt12) {
                 case 1 :
-                    // etc/XQFT.g:259:24: ( Comment )=> Comment
+                    // etc/XQFT.g:264:24: ( Comment )=> Comment
                     {
                     mComment(); if (failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:260:8: CommentContents
+                    // etc/XQFT.g:265:8: CommentContents
                     {
                     mCommentContents(); if (failed) return ;
 
@@ -4749,12 +4752,12 @@ public class XQFTLexer extends Lexer {
         try {
             Token m=null;
 
-            // etc/XQFT.g:264:30: (m= OneOrMoreChar {...}?)
-            // etc/XQFT.g:264:32: m= OneOrMoreChar {...}?
+            // etc/XQFT.g:269:30: (m= OneOrMoreChar {...}?)
+            // etc/XQFT.g:269:32: m= OneOrMoreChar {...}?
             {
-            int mStart3885 = getCharIndex();
+            int mStart3890 = getCharIndex();
             mOneOrMoreChar(); if (failed) return ;
-            m = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, mStart3885, getCharIndex()-1);
+            m = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, mStart3890, getCharIndex()-1);
             if ( !(((!m.equals("(:")) && (!m.equals(":)") ))) ) {
                 if (backtracking>0) {failed=true; return ;}
                 throw new FailedPredicateException(input, "CommentContents", "((!$m.equals(\"(:\")) && (!$m.equals(\":)\") ))");
@@ -4771,7 +4774,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NameChar
     public final void mNameChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:269:30: ( Letter | Digit | DOT | MINUSSi | UNDERSCORE | COLONSi | CombiningChar | Extender )
+            // etc/XQFT.g:274:30: ( Letter | Digit | DOT | MINUSSi | UNDERSCORE | COLONSi | CombiningChar | Extender )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<=':')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u00B7'||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||(input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0386' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0640' && input.LA(1)<='\u0652')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u0670' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||(input.LA(1)>='\u06D5' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||(input.LA(1)>='\u093C' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0958' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E3')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09F1')||input.LA(1)=='\u0A02'||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||(input.LA(1)>='\u0ABC' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||(input.LA(1)>='\u0B3C' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||(input.LA(1)>='\u0E30' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E4E')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||(input.LA(1)>='\u0EB0' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBD')||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||input.LA(1)=='\u0EC6'||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3005'||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -4797,8 +4800,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Name
     public final void mName() throws RecognitionException {
         try {
-            // etc/XQFT.g:270:30: ( ( Letter | UNDERSCORE | COLONSi ) ( NameChar )* )
-            // etc/XQFT.g:270:32: ( Letter | UNDERSCORE | COLONSi ) ( NameChar )*
+            // etc/XQFT.g:275:30: ( ( Letter | UNDERSCORE | COLONSi ) ( NameChar )* )
+            // etc/XQFT.g:275:32: ( Letter | UNDERSCORE | COLONSi ) ( NameChar )*
             {
             if ( input.LA(1)==':'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
                 input.consume();
@@ -4811,7 +4814,7 @@ public class XQFTLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // etc/XQFT.g:270:64: ( NameChar )*
+            // etc/XQFT.g:275:64: ( NameChar )*
             loop13:
             do {
                 int alt13=2;
@@ -4824,7 +4827,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // etc/XQFT.g:270:65: NameChar
+            	    // etc/XQFT.g:275:65: NameChar
             	    {
             	    mNameChar(); if (failed) return ;
 
@@ -4849,7 +4852,7 @@ public class XQFTLexer extends Lexer {
     public final void mCharRef() throws RecognitionException {
         try {
             int _type = CharRef;
-            // etc/XQFT.g:291:21: ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi )
+            // etc/XQFT.g:296:21: ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -4868,7 +4871,7 @@ public class XQFTLexer extends Lexer {
                     else {
                         if (backtracking>0) {failed=true; return ;}
                         NoViableAltException nvae =
-                            new NoViableAltException("291:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 2, input);
+                            new NoViableAltException("296:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 2, input);
 
                         throw nvae;
                     }
@@ -4876,7 +4879,7 @@ public class XQFTLexer extends Lexer {
                 else {
                     if (backtracking>0) {failed=true; return ;}
                     NoViableAltException nvae =
-                        new NoViableAltException("291:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 1, input);
+                        new NoViableAltException("296:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 1, input);
 
                     throw nvae;
                 }
@@ -4884,17 +4887,17 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("291:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 0, input);
+                    new NoViableAltException("296:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 0, input);
 
                 throw nvae;
             }
             switch (alt16) {
                 case 1 :
-                    // etc/XQFT.g:291:23: '&#' ( '0' .. '9' )+ SEMICOLONSi
+                    // etc/XQFT.g:296:23: '&#' ( '0' .. '9' )+ SEMICOLONSi
                     {
                     match("&#"); if (failed) return ;
 
-                    // etc/XQFT.g:291:28: ( '0' .. '9' )+
+                    // etc/XQFT.g:296:28: ( '0' .. '9' )+
                     int cnt14=0;
                     loop14:
                     do {
@@ -4908,7 +4911,7 @@ public class XQFTLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // etc/XQFT.g:291:29: '0' .. '9'
+                    	    // etc/XQFT.g:296:29: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); if (failed) return ;
 
@@ -4930,11 +4933,11 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:291:54: '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi
+                    // etc/XQFT.g:296:54: '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi
                     {
                     match("&#x"); if (failed) return ;
 
-                    // etc/XQFT.g:291:60: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+                    // etc/XQFT.g:296:60: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
                     int cnt15=0;
                     loop15:
                     do {
@@ -4991,15 +4994,15 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start QName
     public final void mQName() throws RecognitionException {
         try {
-            // etc/XQFT.g:303:22: ( ( NCName COLONSi )? NCName )
-            // etc/XQFT.g:303:24: ( NCName COLONSi )? NCName
+            // etc/XQFT.g:308:22: ( ( NCName COLONSi )? NCName )
+            // etc/XQFT.g:308:24: ( NCName COLONSi )? NCName
             {
-            // etc/XQFT.g:303:24: ( NCName COLONSi )?
+            // etc/XQFT.g:308:24: ( NCName COLONSi )?
             int alt17=2;
             alt17 = dfa17.predict(input);
             switch (alt17) {
                 case 1 :
-                    // etc/XQFT.g:303:25: NCName COLONSi
+                    // etc/XQFT.g:308:25: NCName COLONSi
                     {
                     mNCName(); if (failed) return ;
                     mCOLONSi(); if (failed) return ;
@@ -5022,11 +5025,11 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NCName
     public final void mNCName() throws RecognitionException {
         try {
-            // etc/XQFT.g:306:30: ( NCNameStartChar ( NCNameChar )* )
-            // etc/XQFT.g:306:32: NCNameStartChar ( NCNameChar )*
+            // etc/XQFT.g:311:30: ( NCNameStartChar ( NCNameChar )* )
+            // etc/XQFT.g:311:32: NCNameStartChar ( NCNameChar )*
             {
             mNCNameStartChar(); if (failed) return ;
-            // etc/XQFT.g:306:48: ( NCNameChar )*
+            // etc/XQFT.g:311:48: ( NCNameChar )*
             loop18:
             do {
                 int alt18=2;
@@ -5039,7 +5042,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt18) {
             	case 1 :
-            	    // etc/XQFT.g:306:48: NCNameChar
+            	    // etc/XQFT.g:311:48: NCNameChar
             	    {
             	    mNCNameChar(); if (failed) return ;
 
@@ -5063,7 +5066,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NCNameChar
     public final void mNCNameChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:313:28: ( Letter | Digit | DOT | MINUSSi | UNDERSCORE | CombiningChar | Extender )
+            // etc/XQFT.g:318:28: ( Letter | Digit | DOT | MINUSSi | UNDERSCORE | CombiningChar | Extender )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u00B7'||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||(input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0386' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0640' && input.LA(1)<='\u0652')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u0670' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||(input.LA(1)>='\u06D5' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||(input.LA(1)>='\u093C' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0958' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E3')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09F1')||input.LA(1)=='\u0A02'||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||(input.LA(1)>='\u0ABC' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||(input.LA(1)>='\u0B3C' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||(input.LA(1)>='\u0E30' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E4E')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||(input.LA(1)>='\u0EB0' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBD')||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||input.LA(1)=='\u0EC6'||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3005'||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -5089,7 +5092,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NCNameStartChar
     public final void mNCNameStartChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:315:30: ( Letter | UNDERSCORE )
+            // etc/XQFT.g:320:30: ( Letter | UNDERSCORE )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -5116,10 +5119,10 @@ public class XQFTLexer extends Lexer {
     public final void mS() throws RecognitionException {
         try {
             int _type = S;
-            // etc/XQFT.g:318:21: ( ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+ )
-            // etc/XQFT.g:318:23: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
+            // etc/XQFT.g:323:21: ( ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+ )
+            // etc/XQFT.g:323:23: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
             {
-            // etc/XQFT.g:318:23: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
+            // etc/XQFT.g:323:23: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
             int cnt19=0;
             loop19:
             do {
@@ -5173,10 +5176,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Digits
     public final void mDigits() throws RecognitionException {
         try {
-            // etc/XQFT.g:321:30: ( ( '0' .. '9' )+ )
-            // etc/XQFT.g:321:32: ( '0' .. '9' )+
+            // etc/XQFT.g:326:30: ( ( '0' .. '9' )+ )
+            // etc/XQFT.g:326:32: ( '0' .. '9' )+
             {
-            // etc/XQFT.g:321:32: ( '0' .. '9' )+
+            // etc/XQFT.g:326:32: ( '0' .. '9' )+
             int cnt20=0;
             loop20:
             do {
@@ -5190,7 +5193,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt20) {
             	case 1 :
-            	    // etc/XQFT.g:321:33: '0' .. '9'
+            	    // etc/XQFT.g:326:33: '0' .. '9'
             	    {
             	    matchRange('0','9'); if (failed) return ;
 
@@ -5219,10 +5222,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ZeroOrMoreChar
     public final void mZeroOrMoreChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:325:30: ( ( Char )* )
-            // etc/XQFT.g:325:32: ( Char )*
+            // etc/XQFT.g:330:30: ( ( Char )* )
+            // etc/XQFT.g:330:32: ( Char )*
             {
-            // etc/XQFT.g:325:32: ( Char )*
+            // etc/XQFT.g:330:32: ( Char )*
             loop21:
             do {
                 int alt21=2;
@@ -5235,7 +5238,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt21) {
             	case 1 :
-            	    // etc/XQFT.g:325:32: Char
+            	    // etc/XQFT.g:330:32: Char
             	    {
             	    mChar(); if (failed) return ;
 
@@ -5259,10 +5262,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start OneOrMoreChar
     public final void mOneOrMoreChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:326:29: ( ( Char )+ )
-            // etc/XQFT.g:326:31: ( Char )+
+            // etc/XQFT.g:331:29: ( ( Char )+ )
+            // etc/XQFT.g:331:31: ( Char )+
             {
-            // etc/XQFT.g:326:31: ( Char )+
+            // etc/XQFT.g:331:31: ( Char )+
             int cnt22=0;
             loop22:
             do {
@@ -5276,7 +5279,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt22) {
             	case 1 :
-            	    // etc/XQFT.g:326:31: Char
+            	    // etc/XQFT.g:331:31: Char
             	    {
             	    mChar(); if (failed) return ;
 
@@ -5305,7 +5308,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CharNotMinus
     public final void mCharNotMinus() throws RecognitionException {
         try {
-            // etc/XQFT.g:327:25: ( CleanChar | '{' | '}' | '<' | '&' | '\"' | '\\'' )
+            // etc/XQFT.g:332:25: ( CleanChar | '{' | '}' | '<' | '&' | '\"' | '\\'' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
@@ -6684,8 +6687,8 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred1
     public final void synpred1_fragment() throws RecognitionException {   
-        // etc/XQFT.g:259:24: ( Comment )
-        // etc/XQFT.g:259:25: Comment
+        // etc/XQFT.g:264:24: ( Comment )
+        // etc/XQFT.g:264:25: Comment
         {
         mComment(); if (failed) return ;
 
@@ -6921,7 +6924,7 @@ public class XQFTLexer extends Lexer {
             this.transition = DFA17_transition;
         }
         public String getDescription() {
-            return "303:24: ( NCName COLONSi )?";
+            return "308:24: ( NCName COLONSi )?";
         }
     }
     static final String DFA23_eotS =
