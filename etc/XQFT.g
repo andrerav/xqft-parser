@@ -1,4 +1,3 @@
-<<<<<<< .mine
 grammar XQFT;
 
 //options { 
