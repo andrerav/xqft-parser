@@ -1,7 +1,7 @@
 grammar XQFT;
 
 //options { 
-    //k = 1;
+//    k = 3;
     //output=AST;
     //ASTLabelType=Object;
 //}
