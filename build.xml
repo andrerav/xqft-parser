@@ -27,7 +27,7 @@
 
    <target name="compile" depends="parser"
           description="compile the parser">
-        <!-- Compile the java code from ${src} into ${build} -->
+        <!-- Compile the java code from ${src} into ${bin} -->
         <javac srcdir="${src}" destdir="${bin}" >
             <classpath>
                 <pathelement path="${classpath}"/>
