@@ -1,10 +1,11 @@
 grammar XQFT;
 
-//options { 
+options { 
+filter=true;
 //    k = 3;
     //output=AST;
     //ASTLabelType=Object;
-//}
+}
 /*Si-suffix indicates that its a sign
 */
 tokens{
