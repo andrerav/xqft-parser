@@ -204,12 +204,8 @@ tokens {
 	//import no.ntnu.xqft.lex.*;
 //}
 
-@lexer::header {
-	package no.ntnu.xqft.parse;
-}
-@parser::header {
-	package no.ntnu.xqft.parse;
-}
+@lexer::header {package no.ntnu.xqft.parse;}
+@parser::header {package no.ntnu.xqft.parse;}
 
 //@members {
 	
