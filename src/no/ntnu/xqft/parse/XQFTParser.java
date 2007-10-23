@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2007-10-23 14:24:36
+// $ANTLR 3.0.1 etc/XQFT.g 2007-10-23 14:27:46
 
 	package no.ntnu.xqft.parse;
 
