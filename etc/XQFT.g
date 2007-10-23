@@ -1,4 +1,4 @@
-grammar xqft;
+grammar XQFT;
 
 //options { 
     //k = 1;
