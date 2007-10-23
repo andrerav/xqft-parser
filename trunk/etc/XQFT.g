@@ -198,14 +198,12 @@ END = 'end';
 ENTIRE = 'entire';
 }
 
-//@parser::header {
-	//package no.ntnu.xqft.parse;
-	//import no.ntnu.xqft.lex.*;
-//}
-//@lexer::header {
-	//package no.ntnu.xqft.lex;
-	//import no.ntnu.xqft.parse.*;
-//}
+@parser::header {
+    package no.ntnu.xqft.parse;
+}
+@lexer::header {
+    package no.ntnu.xqft.parse;
+}
 
 //@members {
 	
