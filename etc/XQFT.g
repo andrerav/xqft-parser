@@ -49,7 +49,7 @@ CASTABLE = 'castable';
 ITEM = 'item';
 FOR = 'for';
 INSTANCE = 'instance';
-DOUBLEQUOTESi = '"';
+//DOUBLEQUOTESi = '"';
 EXCEPT = 'except';
 TO = 'to';
 CONSTRUCTION = 'construction';
@@ -224,11 +224,13 @@ DecimalLiteral      : (DOT Digits) | (Digits DOT ('0'..'9')*);
 DoubleLiteral       : ((DOT Digits) | (Digits (DOT ('0'..'9')*)?)) ('e'|'E') (PLUSSi|MINUSSi)? Digits;
 
 /* StringLiteral       : ('"' (PredefinedEntityRef | CharRef | EscapeQuot | [^"&])* '"') | ("'" (PredefinedEntityRef | CharRef | EscapeApos | [^'&])* "'") */
-StringLiteral	    : ('"' (PredefinedEntityRef | CharRef | EscapeQuot | ~(DOUBLEQUOTESi|'&'))* DOUBLEQUOTESi) | (SINGLEQUOTE (PredefinedEntityRef | CharRef | EscapeApos | ~(SINGLEQUOTE|'&'))* SINGLEQUOTE);
+StringLiteral	    : (DOUBLEQUOTESi (PredefinedEntityRef | CharRef | EscapeQuot | ~(DOUBLEQUOTESi|'&'))* DOUBLEQUOTESi) | (SINGLEQUOTE (PredefinedEntityRef | CharRef | EscapeApos | ~(SINGLEQUOTE|'&'))* SINGLEQUOTE);
 fragment PredefinedEntityRef : '&' ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
 fragment EscapeQuot          : '""';
 fragment EscapeApos          : '\'\'';
-
+//---------------------------------------- TESTE HER I STEDET -----------------------
+DOUBLEQUOTESi : '"';
+//---------------------------------------- TESTE HER I STEDET -----------------------
 //--------------------------------------- New ------------------------------------------------
 /* Original:
 ElementContentChar	: Char ~ ('{'|'}'|'<'|'&');
