@@ -330,7 +330,7 @@ fragment CharNotMinus			: CleanChar | '{' | '}' | '<' | '&' | '"' | '\'';
 
 module                      : versionDecl? (libraryModule | mainModule);
 
-versionDecl                 : XQUERY VERSION StringLiteral ((ENCODING StringLiteral)|) separator;
+versionDecl                 : XQUERY VERSION StringLiteral (ENCODING StringLiteral)? separator;
 
 mainModule                  : prolog queryBody;
 
