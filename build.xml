@@ -63,6 +63,12 @@
       <test name="no.ntnu.xqft.test.XQFTParserTest"/>
     </junit>
   </target>
+	
+  <target name="gunit" depends="init"
+	        description="Run gUnit tests">
+    <exec command="java -cp ./bin:lib/gunit.jar:lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.gunit.Interp test/XQFT.gu" dir="./" />
+  </target>	
+	
   <target name="clean"
           description="clean up" >
     <!-- Delete the ${build} and ${dist} directory trees -->

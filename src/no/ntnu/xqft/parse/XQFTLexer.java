@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2007-10-24 14:40:33
+// $ANTLR 3.0.1 etc/XQFT.g 2007-11-02 13:17:23
 
     package no.ntnu.xqft.parse;
 
@@ -10,225 +10,225 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 public class XQFTLexer extends Lexer {
-    public static final int FUNCTION=136;
-    public static final int BIGGERTHANSi=5;
-    public static final int BIGGERTHANOREQUALSi=6;
-    public static final int MOD=144;
-    public static final int NOT=134;
-    public static final int EXCEPT=45;
-    public static final int EOF=-1;
-    public static final int LEFTPRAGMA=25;
-    public static final int BaseChar=189;
-    public static final int Ideographic=190;
-    public static final int DISTANCE=24;
-    public static final int IMPORT=59;
-    public static final int ASSIGNMENTOPERATOR=140;
-    public static final int SENTENCE=182;
-    public static final int PRECEDING=175;
-    public static final int WORDS=179;
-    public static final int RETURN=119;
-    public static final int ELEMENT=126;
-    public static final int COPYNAMESPACES=128;
-    public static final int DOLLARSi=21;
-    public static final int EQ=154;
-    public static final int DIACRITICS=114;
-    public static final int CHILD=165;
-    public static final int GE=159;
-    public static final int STRICT=164;
-    public static final int PRESERVE=132;
-    public static final int LESSTHANSi=29;
+    public static final int RIGHTPARENTHESISSi=115;
+    public static final int RIGHTCDATA=108;
+    public static final int END=186;
     public static final int CommentContents=211;
-    public static final int ELSE=28;
-    public static final int TYPESWITCH=18;
-    public static final int UNDERSCORE=54;
-    public static final int STOP=17;
-    public static final int CONTENT=12;
-    public static final int S=218;
-    public static final int FTOR=94;
-    public static final int LEFTXMLCOMMENT=103;
-    public static final int EMPTY=55;
-    public static final int MINUSSi=60;
-    public static final int INTERSECT=135;
-    public static final int FTAND=83;
-    public static final int LANGUAGE=73;
-    public static final int LOWERCASE=150;
-    public static final int INSENSITIVE=66;
-    public static final int GT=158;
-    public static final int CharNotMinus=220;
-    public static final int END=187;
-    public static final int DoubleLiteral=198;
-    public static final int OPTION=74;
-    public static final int CharRef=200;
-    public static final int Extender=194;
-    public static final int RIGHTPARENTHESISSi=116;
-    public static final int OCCURS=122;
-    public static final int THESAURUS=143;
-    public static final int VERSION=13;
-    public static final int SATISFIES=50;
-    public static final int IDIV=9;
-    public static final int DOUBLELEFTBRACES=124;
-    public static final int ASCENDING=8;
-    public static final int AT=84;
-    public static final int AS=102;
-    public static final int EMPTY_SEQUENCE=65;
-    public static final int PARENT=172;
-    public static final int RIGHTCDATA=109;
-    public static final int CONSTRUCTION=47;
-    public static final int SLASH=36;
-    public static final int ATSi=137;
-    public static final int THEN=68;
-    public static final int DOCUMENT=62;
-    public static final int COLLATION=90;
-    public static final int SINGLEQUOTE=53;
-    public static final int ANCESTOR=173;
-    public static final int RIGHTSELFTERMINATOR=61;
-    public static final int CleanChar=204;
-    public static final int CASTABLE=40;
-    public static final int MOST=56;
-    public static final int NODEBEFORESi=161;
-    public static final int BY=104;
-    public static final int NCNameChar=217;
-    public static final int ITEM=41;
-    public static final int TO=46;
-    public static final int LEFTCDATA=63;
-    public static final int INHERIT=35;
-    public static final int ANCESTOR_OR_SELF=176;
-    public static final int DOUBLEQUOTESi=44;
-    public static final int STEMMING=75;
-    public static final int EscapeApos=202;
-    public static final int TEXT=105;
-    public static final int MODULE=118;
-    public static final int FTNOT=80;
-    public static final int Tokens=221;
-    public static final int ORDERED=26;
-    public static final int SAME=184;
-    public static final int UNION=88;
-    public static final int StringLiteral=203;
-    public static final int FOLLOWING_SIBLING=170;
-    public static final int RIGHTBRACKETSi=76;
-    public static final int SCHEMA=125;
-    public static final int COLONSi=51;
-    public static final int ENTIRE=188;
-    public static final int VALIDATE=64;
+    public static final int NOINHERIT=132;
     public static final int INSTANCE=43;
-    public static final int WILDCARDS=129;
-    public static final int NOINHERIT=133;
-    public static final int DECLARE=130;
-    public static final int START=186;
-    public static final int IntegerLiteral=196;
-    public static final int DIV=81;
-    public static final int CombiningChar=192;
-    public static final int RIGHTPITARGET=38;
-    public static final int DESCENDING=99;
-    public static final int SELF=168;
-    public static final int RIGHTBRACESi=145;
-    public static final int CAST=23;
-    public static final int SENTENCES=180;
-    public static final int EXTERNAL=115;
-    public static final int LT=156;
-    public static final int RIGHTPRAGMA=34;
-    public static final int CASE=57;
-    public static final int EQUALSi=15;
-    public static final int ENCODING=123;
-    public static final int PLUSSi=82;
-    public static final int DIFFERENT=185;
-    public static final int SCHEMAATTRIBUTE=85;
-    public static final int SEMICOLONSi=52;
-    public static final int WORD=33;
-    public static final int UPPERCASE=31;
-    public static final int Comment=210;
-    public static final int Char=205;
-    public static final int Digits=195;
-    public static final int LEFTBRACKETSi=107;
-    public static final int QuotAttrContentChar=207;
-    public static final int FTOPTION=49;
-    public static final int COMMENT=120;
-    public static final int NE=155;
-    public static final int BOUNDARYSPACE=20;
-    public static final int NODE=146;
-    public static final int ZeroOrMoreChar=219;
-    public static final int AposAttrContentChar=208;
-    public static final int GREATEST=77;
-    public static final int WITHOUT=113;
-    public static final int EVERY=39;
-    public static final int SENSITIVE=79;
-    public static final int PROCESSING_INSTRUCTION=58;
-    public static final int WEIGHT=48;
-    public static final int OF=87;
-    public static final int NODEAFTERSi=162;
-    public static final int RELATIONSHIP=142;
-    public static final int NAMESPACE=101;
-    public static final int VARIABLE=92;
-    public static final int LESSTHANOREQUALSi=7;
-    public static final int DESCENDANT_OR_SELF=169;
-    public static final int NOPRESERVE=67;
-    public static final int DOUBLERIGHTBRACES=91;
-    public static final int LEFTENDTAG=153;
-    public static final int OR=93;
-    public static final int NOTEQUALSi=16;
-    public static final int STARSi=100;
-    public static final int EscapeQuot=201;
-    public static final int FROM=89;
-    public static final int PRECEDING_SIBLING=174;
-    public static final int CommentCheck=209;
-    public static final int Letter=191;
-    public static final int NCName=215;
-    public static final int DOUBLESLASH=95;
-    public static final int WHERE=10;
-    public static final int LEFTPITARGET=112;
-    public static final int LAX=163;
-    public static final int ORDER=86;
-    public static final int ATTRIBUTE=139;
-    public static final int QUESTIONMARKSi=148;
-    public static final int FOR=42;
-    public static final int DOTDOT=178;
-    public static final int AND=131;
-    public static final int FOLLOWING=171;
-    public static final int FTCONTAINS=141;
-    public static final int IF=97;
-    public static final int SCHEMAELEMENT=152;
-    public static final int IN=151;
-    public static final int PARAGRAPH=183;
-    public static final int IS=160;
-    public static final int SOME=147;
-    public static final int ALL=32;
-    public static final int STRIP=149;
-    public static final int DOT=177;
-    public static final int STABLE=106;
+    public static final int CONTENT=12;
+    public static final int LAX=162;
+    public static final int STOP=17;
     public static final int PIPESi=4;
-    public static final int WITH=111;
-    public static final int NCNameStartChar=216;
-    public static final int DOUBLECOLON=166;
-    public static final int XQUERY=22;
-    public static final int EXACTLY=110;
-    public static final int DEFAULT=121;
-    public static final int DESCENDANT=167;
-    public static final int NameChar=213;
-    public static final int COMMASi=69;
-    public static final int RIGHTXMLCOMMENT=117;
-    public static final int Digit=193;
-    public static final int DecimalLiteral=197;
-    public static final int BASEURI=98;
-    public static final int UNORDERED=108;
-    public static final int PHRASE=11;
-    public static final int LEFTPARENTHESISSi=127;
+    public static final int IMPORT=58;
+    public static final int DOT=176;
+    public static final int AposAttrContentChar=208;
+    public static final int CASTABLE=40;
+    public static final int ORDER=85;
+    public static final int Letter=190;
+    public static final int DIACRITICS=113;
+    public static final int RIGHTSELFTERMINATOR=60;
+    public static final int TYPESWITCH=18;
+    public static final int MODULE=117;
+    public static final int VERSION=13;
+    public static final int LEFTXMLCOMMENT=102;
+    public static final int Ideographic=189;
+    public static final int QUESTIONMARKSi=147;
+    public static final int EXACTLY=109;
+    public static final int FTNOT=79;
+    public static final int EQUALSi=15;
+    public static final int DECLARE=129;
     public static final int ElementContentChar=206;
+    public static final int OCCURS=121;
+    public static final int UNION=87;
+    public static final int LEFTPITARGET=111;
+    public static final int STRIP=148;
+    public static final int NameChar=213;
+    public static final int PLUSSi=81;
+    public static final int BIGGERTHANOREQUALSi=6;
+    public static final int QuotAttrContentChar=207;
+    public static final int SAME=183;
+    public static final int FTCONTAINS=140;
+    public static final int DESCENDING=98;
+    public static final int FTOPTION=48;
+    public static final int ANCESTOR_OR_SELF=175;
+    public static final int RELATIONSHIP=141;
     public static final int ANY=19;
-    public static final int SCORE=72;
-    public static final int ORDERING=37;
-    public static final int PredefinedEntityRef=199;
-    public static final int DOCUMENTNODE=27;
-    public static final int Name=214;
-    public static final int LEAST=96;
-    public static final int WINDOW=71;
+    public static final int GE=158;
+    public static final int CommentCheck=209;
+    public static final int WORD=33;
+    public static final int ELSE=28;
+    public static final int SCHEMAATTRIBUTE=84;
+    public static final int DOUBLECOLON=165;
+    public static final int SENSITIVE=78;
+    public static final int SELF=167;
     public static final int LEFTBRACESi=14;
-    public static final int PARAGRAPHS=181;
-    public static final int TIMES=138;
-    public static final int LEVELS=78;
-    public static final int LE=157;
-    public static final int TREAT=30;
-    public static final int LET=70;
+    public static final int DISTANCE=24;
+    public static final int LEFTENDTAG=152;
+    public static final int LEFTBRACKETSi=106;
+    public static final int NODEBEFORESi=160;
+    public static final int TEXT=104;
+    public static final int DOTDOT=177;
+    public static final int PARENT=171;
+    public static final int CombiningChar=191;
+    public static final int BIGGERTHANSi=5;
+    public static final int NCName=215;
+    public static final int FTOR=93;
+    public static final int SCORE=71;
+    public static final int UNDERSCORE=53;
+    public static final int LEFTPARENTHESISSi=126;
+    public static final int EXTERNAL=114;
+    public static final int EMPTY_SEQUENCE=64;
+    public static final int Digit=192;
+    public static final int DOUBLERIGHTBRACES=90;
+    public static final int DOLLARSi=21;
+    public static final int CAST=23;
+    public static final int MOD=143;
+    public static final int EXCEPT=44;
+    public static final int OR=92;
+    public static final int NOPRESERVE=66;
+    public static final int S=218;
+    public static final int SCHEMAELEMENT=151;
+    public static final int BY=103;
+    public static final int LESSTHANSi=29;
+    public static final int COLONSi=50;
+    public static final int WEIGHT=47;
+    public static final int PRECEDING_SIBLING=173;
+    public static final int UPPERCASE=31;
+    public static final int RIGHTPITARGET=38;
+    public static final int SINGLEQUOTE=52;
+    public static final int SEMICOLONSi=51;
+    public static final int LESSTHANOREQUALSi=7;
+    public static final int FROM=88;
+    public static final int STEMMING=74;
+    public static final int TIMES=137;
+    public static final int EMPTY=54;
+    public static final int ASCENDING=8;
+    public static final int CleanChar=204;
+    public static final int IntegerLiteral=195;
+    public static final int SENTENCES=179;
+    public static final int NE=154;
+    public static final int COMMENT=119;
+    public static final int BASEURI=97;
+    public static final int MINUSSi=59;
+    public static final int NCNameChar=217;
+    public static final int ENTIRE=187;
+    public static final int WITH=110;
+    public static final int IN=150;
+    public static final int ASSIGNMENTOPERATOR=139;
+    public static final int SOME=146;
+    public static final int MOST=55;
     public static final int OneOrMoreChar=212;
+    public static final int RETURN=118;
+    public static final int LET=69;
+    public static final int IF=96;
+    public static final int Extender=193;
+    public static final int NODE=145;
+    public static final int FOR=42;
+    public static final int Tokens=221;
+    public static final int DEFAULT=120;
+    public static final int PRESERVE=131;
+    public static final int DOUBLESLASH=94;
+    public static final int LEVELS=77;
+    public static final int COMMASi=68;
+    public static final int DOUBLELEFTBRACES=123;
+    public static final int ATTRIBUTE=138;
+    public static final int CHILD=164;
+    public static final int Digits=194;
+    public static final int NOT=133;
+    public static final int OPTION=73;
+    public static final int ELEMENT=125;
+    public static final int Comment=210;
+    public static final int INSENSITIVE=65;
+    public static final int DOCUMENT=61;
+    public static final int AS=101;
+    public static final int ENCODING=122;
+    public static final int BOUNDARYSPACE=20;
+    public static final int TREAT=30;
+    public static final int COPYNAMESPACES=127;
+    public static final int NAMESPACE=100;
+    public static final int THEN=67;
+    public static final int LEAST=95;
+    public static final int WORDS=178;
+    public static final int ZeroOrMoreChar=219;
+    public static final int PARAGRAPHS=180;
+    public static final int NCNameStartChar=216;
+    public static final int TO=45;
+    public static final int AND=130;
+    public static final int FUNCTION=135;
+    public static final int CharNotMinus=220;
+    public static final int LANGUAGE=72;
+    public static final int LOWERCASE=149;
+    public static final int LE=156;
+    public static final int SCHEMA=124;
+    public static final int CONSTRUCTION=46;
+    public static final int STARSi=99;
+    public static final int WILDCARDS=128;
+    public static final int DIFFERENT=184;
+    public static final int AT=83;
+    public static final int INTERSECT=134;
+    public static final int GREATEST=76;
+    public static final int BaseChar=188;
+    public static final int Char=205;
+    public static final int EQ=153;
+    public static final int LEFTCDATA=62;
+    public static final int LT=155;
+    public static final int OF=86;
+    public static final int WINDOW=70;
+    public static final int Name=214;
+    public static final int FOLLOWING=170;
+    public static final int CASE=56;
+    public static final int DESCENDANT_OR_SELF=168;
+    public static final int THESAURUS=142;
+    public static final int DecimalLiteral=196;
+    public static final int FTAND=82;
+    public static final int DIV=80;
+    public static final int PARAGRAPH=182;
+    public static final int ALL=32;
+    public static final int WHERE=10;
+    public static final int WITHOUT=112;
+    public static final int EVERY=39;
+    public static final int XQUERY=22;
+    public static final int DOUBLEQUOTESi=198;
+    public static final int IDIV=9;
+    public static final int SATISFIES=49;
+    public static final int ATSi=136;
+    public static final int DESCENDANT=166;
+    public static final int STRICT=163;
+    public static final int RIGHTPRAGMA=34;
+    public static final int FOLLOWING_SIBLING=169;
+    public static final int EscapeApos=202;
+    public static final int STABLE=105;
+    public static final int START=185;
+    public static final int DoubleLiteral=197;
+    public static final int VALIDATE=63;
+    public static final int EscapeQuot=201;
+    public static final int PRECEDING=174;
+    public static final int ORDERING=37;
+    public static final int UNORDERED=107;
+    public static final int PredefinedEntityRef=199;
+    public static final int LEFTPRAGMA=25;
+    public static final int SENTENCE=181;
+    public static final int INHERIT=35;
+    public static final int SLASH=36;
+    public static final int IS=159;
+    public static final int GT=157;
+    public static final int PHRASE=11;
+    public static final int StringLiteral=203;
+    public static final int DOCUMENTNODE=27;
+    public static final int RIGHTBRACESi=144;
+    public static final int ITEM=41;
+    public static final int ORDERED=26;
+    public static final int NOTEQUALSi=16;
+    public static final int PROCESSING_INSTRUCTION=57;
+    public static final int NODEAFTERSi=161;
+    public static final int COLLATION=89;
+    public static final int CharRef=200;
+    public static final int ANCESTOR=172;
+    public static final int VARIABLE=91;
+    public static final int EOF=-1;
+    public static final int RIGHTXMLCOMMENT=116;
+    public static final int RIGHTBRACKETSi=75;
     public XQFTLexer() {;} 
     public XQFTLexer(CharStream input) {
         super(input);
@@ -1034,30 +1034,12 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end INSTANCE
 
-    // $ANTLR start DOUBLEQUOTESi
-    public final void mDOUBLEQUOTESi() throws RecognitionException {
-        try {
-            int _type = DOUBLEQUOTESi;
-            // etc/XQFT.g:50:15: ( '\"' )
-            // etc/XQFT.g:50:17: '\"'
-            {
-            match('\"'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DOUBLEQUOTESi
-
     // $ANTLR start EXCEPT
     public final void mEXCEPT() throws RecognitionException {
         try {
             int _type = EXCEPT;
-            // etc/XQFT.g:51:8: ( 'except' )
-            // etc/XQFT.g:51:10: 'except'
+            // etc/XQFT.g:50:8: ( 'except' )
+            // etc/XQFT.g:50:10: 'except'
             {
             match("except"); if (failed) return ;
 
@@ -1075,8 +1057,8 @@ public class XQFTLexer extends Lexer {
     public final void mTO() throws RecognitionException {
         try {
             int _type = TO;
-            // etc/XQFT.g:52:4: ( 'to' )
-            // etc/XQFT.g:52:6: 'to'
+            // etc/XQFT.g:51:4: ( 'to' )
+            // etc/XQFT.g:51:6: 'to'
             {
             match("to"); if (failed) return ;
 
@@ -1094,8 +1076,8 @@ public class XQFTLexer extends Lexer {
     public final void mCONSTRUCTION() throws RecognitionException {
         try {
             int _type = CONSTRUCTION;
-            // etc/XQFT.g:53:14: ( 'construction' )
-            // etc/XQFT.g:53:16: 'construction'
+            // etc/XQFT.g:52:14: ( 'construction' )
+            // etc/XQFT.g:52:16: 'construction'
             {
             match("construction"); if (failed) return ;
 
@@ -1113,8 +1095,8 @@ public class XQFTLexer extends Lexer {
     public final void mWEIGHT() throws RecognitionException {
         try {
             int _type = WEIGHT;
-            // etc/XQFT.g:54:8: ( 'weight' )
-            // etc/XQFT.g:54:10: 'weight'
+            // etc/XQFT.g:53:8: ( 'weight' )
+            // etc/XQFT.g:53:10: 'weight'
             {
             match("weight"); if (failed) return ;
 
@@ -1132,8 +1114,8 @@ public class XQFTLexer extends Lexer {
     public final void mFTOPTION() throws RecognitionException {
         try {
             int _type = FTOPTION;
-            // etc/XQFT.g:55:10: ( 'ft-option' )
-            // etc/XQFT.g:55:12: 'ft-option'
+            // etc/XQFT.g:54:10: ( 'ft-option' )
+            // etc/XQFT.g:54:12: 'ft-option'
             {
             match("ft-option"); if (failed) return ;
 
@@ -1151,8 +1133,8 @@ public class XQFTLexer extends Lexer {
     public final void mSATISFIES() throws RecognitionException {
         try {
             int _type = SATISFIES;
-            // etc/XQFT.g:56:11: ( 'satisfies' )
-            // etc/XQFT.g:56:13: 'satisfies'
+            // etc/XQFT.g:55:11: ( 'satisfies' )
+            // etc/XQFT.g:55:13: 'satisfies'
             {
             match("satisfies"); if (failed) return ;
 
@@ -1170,8 +1152,8 @@ public class XQFTLexer extends Lexer {
     public final void mCOLONSi() throws RecognitionException {
         try {
             int _type = COLONSi;
-            // etc/XQFT.g:57:9: ( ':' )
-            // etc/XQFT.g:57:11: ':'
+            // etc/XQFT.g:56:9: ( ':' )
+            // etc/XQFT.g:56:11: ':'
             {
             match(':'); if (failed) return ;
 
@@ -1188,8 +1170,8 @@ public class XQFTLexer extends Lexer {
     public final void mSEMICOLONSi() throws RecognitionException {
         try {
             int _type = SEMICOLONSi;
-            // etc/XQFT.g:58:13: ( ';' )
-            // etc/XQFT.g:58:15: ';'
+            // etc/XQFT.g:57:13: ( ';' )
+            // etc/XQFT.g:57:15: ';'
             {
             match(';'); if (failed) return ;
 
@@ -1206,8 +1188,8 @@ public class XQFTLexer extends Lexer {
     public final void mSINGLEQUOTE() throws RecognitionException {
         try {
             int _type = SINGLEQUOTE;
-            // etc/XQFT.g:59:13: ( '\\'' )
-            // etc/XQFT.g:59:15: '\\''
+            // etc/XQFT.g:58:13: ( '\\'' )
+            // etc/XQFT.g:58:15: '\\''
             {
             match('\''); if (failed) return ;
 
@@ -1224,8 +1206,8 @@ public class XQFTLexer extends Lexer {
     public final void mUNDERSCORE() throws RecognitionException {
         try {
             int _type = UNDERSCORE;
-            // etc/XQFT.g:60:12: ( '_' )
-            // etc/XQFT.g:60:14: '_'
+            // etc/XQFT.g:59:12: ( '_' )
+            // etc/XQFT.g:59:14: '_'
             {
             match('_'); if (failed) return ;
 
@@ -1242,8 +1224,8 @@ public class XQFTLexer extends Lexer {
     public final void mEMPTY() throws RecognitionException {
         try {
             int _type = EMPTY;
-            // etc/XQFT.g:61:7: ( 'empty' )
-            // etc/XQFT.g:61:9: 'empty'
+            // etc/XQFT.g:60:7: ( 'empty' )
+            // etc/XQFT.g:60:9: 'empty'
             {
             match("empty"); if (failed) return ;
 
@@ -1261,8 +1243,8 @@ public class XQFTLexer extends Lexer {
     public final void mMOST() throws RecognitionException {
         try {
             int _type = MOST;
-            // etc/XQFT.g:62:6: ( 'most' )
-            // etc/XQFT.g:62:8: 'most'
+            // etc/XQFT.g:61:6: ( 'most' )
+            // etc/XQFT.g:61:8: 'most'
             {
             match("most"); if (failed) return ;
 
@@ -1280,8 +1262,8 @@ public class XQFTLexer extends Lexer {
     public final void mCASE() throws RecognitionException {
         try {
             int _type = CASE;
-            // etc/XQFT.g:63:6: ( 'case' )
-            // etc/XQFT.g:63:8: 'case'
+            // etc/XQFT.g:62:6: ( 'case' )
+            // etc/XQFT.g:62:8: 'case'
             {
             match("case"); if (failed) return ;
 
@@ -1299,8 +1281,8 @@ public class XQFTLexer extends Lexer {
     public final void mPROCESSING_INSTRUCTION() throws RecognitionException {
         try {
             int _type = PROCESSING_INSTRUCTION;
-            // etc/XQFT.g:64:24: ( 'processing-instruction' )
-            // etc/XQFT.g:64:26: 'processing-instruction'
+            // etc/XQFT.g:63:24: ( 'processing-instruction' )
+            // etc/XQFT.g:63:26: 'processing-instruction'
             {
             match("processing-instruction"); if (failed) return ;
 
@@ -1318,8 +1300,8 @@ public class XQFTLexer extends Lexer {
     public final void mIMPORT() throws RecognitionException {
         try {
             int _type = IMPORT;
-            // etc/XQFT.g:65:8: ( 'import' )
-            // etc/XQFT.g:65:10: 'import'
+            // etc/XQFT.g:64:8: ( 'import' )
+            // etc/XQFT.g:64:10: 'import'
             {
             match("import"); if (failed) return ;
 
@@ -1337,8 +1319,8 @@ public class XQFTLexer extends Lexer {
     public final void mMINUSSi() throws RecognitionException {
         try {
             int _type = MINUSSi;
-            // etc/XQFT.g:66:9: ( '-' )
-            // etc/XQFT.g:66:11: '-'
+            // etc/XQFT.g:65:9: ( '-' )
+            // etc/XQFT.g:65:11: '-'
             {
             match('-'); if (failed) return ;
 
@@ -1355,8 +1337,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTSELFTERMINATOR() throws RecognitionException {
         try {
             int _type = RIGHTSELFTERMINATOR;
-            // etc/XQFT.g:67:21: ( '/>' )
-            // etc/XQFT.g:67:23: '/>'
+            // etc/XQFT.g:66:21: ( '/>' )
+            // etc/XQFT.g:66:23: '/>'
             {
             match("/>"); if (failed) return ;
 
@@ -1374,8 +1356,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOCUMENT() throws RecognitionException {
         try {
             int _type = DOCUMENT;
-            // etc/XQFT.g:68:10: ( 'document' )
-            // etc/XQFT.g:68:12: 'document'
+            // etc/XQFT.g:67:10: ( 'document' )
+            // etc/XQFT.g:67:12: 'document'
             {
             match("document"); if (failed) return ;
 
@@ -1393,8 +1375,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTCDATA() throws RecognitionException {
         try {
             int _type = LEFTCDATA;
-            // etc/XQFT.g:69:11: ( '<![CDATA[' )
-            // etc/XQFT.g:69:13: '<![CDATA['
+            // etc/XQFT.g:68:11: ( '<![CDATA[' )
+            // etc/XQFT.g:68:13: '<![CDATA['
             {
             match("<![CDATA["); if (failed) return ;
 
@@ -1412,8 +1394,8 @@ public class XQFTLexer extends Lexer {
     public final void mVALIDATE() throws RecognitionException {
         try {
             int _type = VALIDATE;
-            // etc/XQFT.g:70:10: ( 'validate' )
-            // etc/XQFT.g:70:12: 'validate'
+            // etc/XQFT.g:69:10: ( 'validate' )
+            // etc/XQFT.g:69:12: 'validate'
             {
             match("validate"); if (failed) return ;
 
@@ -1431,8 +1413,8 @@ public class XQFTLexer extends Lexer {
     public final void mEMPTY_SEQUENCE() throws RecognitionException {
         try {
             int _type = EMPTY_SEQUENCE;
-            // etc/XQFT.g:71:16: ( 'empty-sequence' )
-            // etc/XQFT.g:71:18: 'empty-sequence'
+            // etc/XQFT.g:70:16: ( 'empty-sequence' )
+            // etc/XQFT.g:70:18: 'empty-sequence'
             {
             match("empty-sequence"); if (failed) return ;
 
@@ -1450,8 +1432,8 @@ public class XQFTLexer extends Lexer {
     public final void mINSENSITIVE() throws RecognitionException {
         try {
             int _type = INSENSITIVE;
-            // etc/XQFT.g:72:13: ( 'insensitive' )
-            // etc/XQFT.g:72:15: 'insensitive'
+            // etc/XQFT.g:71:13: ( 'insensitive' )
+            // etc/XQFT.g:71:15: 'insensitive'
             {
             match("insensitive"); if (failed) return ;
 
@@ -1469,8 +1451,8 @@ public class XQFTLexer extends Lexer {
     public final void mNOPRESERVE() throws RecognitionException {
         try {
             int _type = NOPRESERVE;
-            // etc/XQFT.g:73:12: ( 'no-preserve' )
-            // etc/XQFT.g:73:14: 'no-preserve'
+            // etc/XQFT.g:72:12: ( 'no-preserve' )
+            // etc/XQFT.g:72:14: 'no-preserve'
             {
             match("no-preserve"); if (failed) return ;
 
@@ -1488,8 +1470,8 @@ public class XQFTLexer extends Lexer {
     public final void mTHEN() throws RecognitionException {
         try {
             int _type = THEN;
-            // etc/XQFT.g:74:6: ( 'then' )
-            // etc/XQFT.g:74:8: 'then'
+            // etc/XQFT.g:73:6: ( 'then' )
+            // etc/XQFT.g:73:8: 'then'
             {
             match("then"); if (failed) return ;
 
@@ -1507,8 +1489,8 @@ public class XQFTLexer extends Lexer {
     public final void mCOMMASi() throws RecognitionException {
         try {
             int _type = COMMASi;
-            // etc/XQFT.g:75:9: ( ',' )
-            // etc/XQFT.g:75:11: ','
+            // etc/XQFT.g:74:9: ( ',' )
+            // etc/XQFT.g:74:11: ','
             {
             match(','); if (failed) return ;
 
@@ -1525,8 +1507,8 @@ public class XQFTLexer extends Lexer {
     public final void mLET() throws RecognitionException {
         try {
             int _type = LET;
-            // etc/XQFT.g:76:5: ( 'let' )
-            // etc/XQFT.g:76:7: 'let'
+            // etc/XQFT.g:75:5: ( 'let' )
+            // etc/XQFT.g:75:7: 'let'
             {
             match("let"); if (failed) return ;
 
@@ -1544,8 +1526,8 @@ public class XQFTLexer extends Lexer {
     public final void mWINDOW() throws RecognitionException {
         try {
             int _type = WINDOW;
-            // etc/XQFT.g:77:8: ( 'window' )
-            // etc/XQFT.g:77:10: 'window'
+            // etc/XQFT.g:76:8: ( 'window' )
+            // etc/XQFT.g:76:10: 'window'
             {
             match("window"); if (failed) return ;
 
@@ -1563,8 +1545,8 @@ public class XQFTLexer extends Lexer {
     public final void mSCORE() throws RecognitionException {
         try {
             int _type = SCORE;
-            // etc/XQFT.g:78:7: ( 'score' )
-            // etc/XQFT.g:78:9: 'score'
+            // etc/XQFT.g:77:7: ( 'score' )
+            // etc/XQFT.g:77:9: 'score'
             {
             match("score"); if (failed) return ;
 
@@ -1582,8 +1564,8 @@ public class XQFTLexer extends Lexer {
     public final void mLANGUAGE() throws RecognitionException {
         try {
             int _type = LANGUAGE;
-            // etc/XQFT.g:79:10: ( 'language' )
-            // etc/XQFT.g:79:12: 'language'
+            // etc/XQFT.g:78:10: ( 'language' )
+            // etc/XQFT.g:78:12: 'language'
             {
             match("language"); if (failed) return ;
 
@@ -1601,8 +1583,8 @@ public class XQFTLexer extends Lexer {
     public final void mOPTION() throws RecognitionException {
         try {
             int _type = OPTION;
-            // etc/XQFT.g:80:8: ( 'option' )
-            // etc/XQFT.g:80:10: 'option'
+            // etc/XQFT.g:79:8: ( 'option' )
+            // etc/XQFT.g:79:10: 'option'
             {
             match("option"); if (failed) return ;
 
@@ -1620,8 +1602,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTEMMING() throws RecognitionException {
         try {
             int _type = STEMMING;
-            // etc/XQFT.g:81:10: ( 'stemming' )
-            // etc/XQFT.g:81:12: 'stemming'
+            // etc/XQFT.g:80:10: ( 'stemming' )
+            // etc/XQFT.g:80:12: 'stemming'
             {
             match("stemming"); if (failed) return ;
 
@@ -1639,8 +1621,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTBRACKETSi() throws RecognitionException {
         try {
             int _type = RIGHTBRACKETSi;
-            // etc/XQFT.g:82:16: ( ']' )
-            // etc/XQFT.g:82:18: ']'
+            // etc/XQFT.g:81:16: ( ']' )
+            // etc/XQFT.g:81:18: ']'
             {
             match(']'); if (failed) return ;
 
@@ -1657,8 +1639,8 @@ public class XQFTLexer extends Lexer {
     public final void mGREATEST() throws RecognitionException {
         try {
             int _type = GREATEST;
-            // etc/XQFT.g:83:10: ( 'greatest' )
-            // etc/XQFT.g:83:12: 'greatest'
+            // etc/XQFT.g:82:10: ( 'greatest' )
+            // etc/XQFT.g:82:12: 'greatest'
             {
             match("greatest"); if (failed) return ;
 
@@ -1676,8 +1658,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEVELS() throws RecognitionException {
         try {
             int _type = LEVELS;
-            // etc/XQFT.g:84:8: ( 'levels' )
-            // etc/XQFT.g:84:10: 'levels'
+            // etc/XQFT.g:83:8: ( 'levels' )
+            // etc/XQFT.g:83:10: 'levels'
             {
             match("levels"); if (failed) return ;
 
@@ -1695,8 +1677,8 @@ public class XQFTLexer extends Lexer {
     public final void mSENSITIVE() throws RecognitionException {
         try {
             int _type = SENSITIVE;
-            // etc/XQFT.g:85:11: ( 'sensitive' )
-            // etc/XQFT.g:85:13: 'sensitive'
+            // etc/XQFT.g:84:11: ( 'sensitive' )
+            // etc/XQFT.g:84:13: 'sensitive'
             {
             match("sensitive"); if (failed) return ;
 
@@ -1714,8 +1696,8 @@ public class XQFTLexer extends Lexer {
     public final void mFTNOT() throws RecognitionException {
         try {
             int _type = FTNOT;
-            // etc/XQFT.g:86:7: ( 'ftnot' )
-            // etc/XQFT.g:86:9: 'ftnot'
+            // etc/XQFT.g:85:7: ( 'ftnot' )
+            // etc/XQFT.g:85:9: 'ftnot'
             {
             match("ftnot"); if (failed) return ;
 
@@ -1733,8 +1715,8 @@ public class XQFTLexer extends Lexer {
     public final void mDIV() throws RecognitionException {
         try {
             int _type = DIV;
-            // etc/XQFT.g:87:5: ( 'div' )
-            // etc/XQFT.g:87:7: 'div'
+            // etc/XQFT.g:86:5: ( 'div' )
+            // etc/XQFT.g:86:7: 'div'
             {
             match("div"); if (failed) return ;
 
@@ -1752,8 +1734,8 @@ public class XQFTLexer extends Lexer {
     public final void mPLUSSi() throws RecognitionException {
         try {
             int _type = PLUSSi;
-            // etc/XQFT.g:88:8: ( '+' )
-            // etc/XQFT.g:88:10: '+'
+            // etc/XQFT.g:87:8: ( '+' )
+            // etc/XQFT.g:87:10: '+'
             {
             match('+'); if (failed) return ;
 
@@ -1770,8 +1752,8 @@ public class XQFTLexer extends Lexer {
     public final void mFTAND() throws RecognitionException {
         try {
             int _type = FTAND;
-            // etc/XQFT.g:89:7: ( 'ftand' )
-            // etc/XQFT.g:89:9: 'ftand'
+            // etc/XQFT.g:88:7: ( 'ftand' )
+            // etc/XQFT.g:88:9: 'ftand'
             {
             match("ftand"); if (failed) return ;
 
@@ -1789,8 +1771,8 @@ public class XQFTLexer extends Lexer {
     public final void mAT() throws RecognitionException {
         try {
             int _type = AT;
-            // etc/XQFT.g:90:4: ( 'at' )
-            // etc/XQFT.g:90:6: 'at'
+            // etc/XQFT.g:89:4: ( 'at' )
+            // etc/XQFT.g:89:6: 'at'
             {
             match("at"); if (failed) return ;
 
@@ -1808,8 +1790,8 @@ public class XQFTLexer extends Lexer {
     public final void mSCHEMAATTRIBUTE() throws RecognitionException {
         try {
             int _type = SCHEMAATTRIBUTE;
-            // etc/XQFT.g:91:17: ( 'schema-attribute' )
-            // etc/XQFT.g:91:19: 'schema-attribute'
+            // etc/XQFT.g:90:17: ( 'schema-attribute' )
+            // etc/XQFT.g:90:19: 'schema-attribute'
             {
             match("schema-attribute"); if (failed) return ;
 
@@ -1827,8 +1809,8 @@ public class XQFTLexer extends Lexer {
     public final void mORDER() throws RecognitionException {
         try {
             int _type = ORDER;
-            // etc/XQFT.g:92:7: ( 'order' )
-            // etc/XQFT.g:92:9: 'order'
+            // etc/XQFT.g:91:7: ( 'order' )
+            // etc/XQFT.g:91:9: 'order'
             {
             match("order"); if (failed) return ;
 
@@ -1846,8 +1828,8 @@ public class XQFTLexer extends Lexer {
     public final void mOF() throws RecognitionException {
         try {
             int _type = OF;
-            // etc/XQFT.g:93:4: ( 'of' )
-            // etc/XQFT.g:93:6: 'of'
+            // etc/XQFT.g:92:4: ( 'of' )
+            // etc/XQFT.g:92:6: 'of'
             {
             match("of"); if (failed) return ;
 
@@ -1865,8 +1847,8 @@ public class XQFTLexer extends Lexer {
     public final void mUNION() throws RecognitionException {
         try {
             int _type = UNION;
-            // etc/XQFT.g:94:7: ( 'union' )
-            // etc/XQFT.g:94:9: 'union'
+            // etc/XQFT.g:93:7: ( 'union' )
+            // etc/XQFT.g:93:9: 'union'
             {
             match("union"); if (failed) return ;
 
@@ -1884,8 +1866,8 @@ public class XQFTLexer extends Lexer {
     public final void mFROM() throws RecognitionException {
         try {
             int _type = FROM;
-            // etc/XQFT.g:95:6: ( 'from' )
-            // etc/XQFT.g:95:8: 'from'
+            // etc/XQFT.g:94:6: ( 'from' )
+            // etc/XQFT.g:94:8: 'from'
             {
             match("from"); if (failed) return ;
 
@@ -1903,8 +1885,8 @@ public class XQFTLexer extends Lexer {
     public final void mCOLLATION() throws RecognitionException {
         try {
             int _type = COLLATION;
-            // etc/XQFT.g:96:11: ( 'collation' )
-            // etc/XQFT.g:96:13: 'collation'
+            // etc/XQFT.g:95:11: ( 'collation' )
+            // etc/XQFT.g:95:13: 'collation'
             {
             match("collation"); if (failed) return ;
 
@@ -1922,8 +1904,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOUBLERIGHTBRACES() throws RecognitionException {
         try {
             int _type = DOUBLERIGHTBRACES;
-            // etc/XQFT.g:97:19: ( '}}' )
-            // etc/XQFT.g:97:21: '}}'
+            // etc/XQFT.g:96:19: ( '}}' )
+            // etc/XQFT.g:96:21: '}}'
             {
             match("}}"); if (failed) return ;
 
@@ -1941,8 +1923,8 @@ public class XQFTLexer extends Lexer {
     public final void mVARIABLE() throws RecognitionException {
         try {
             int _type = VARIABLE;
-            // etc/XQFT.g:98:10: ( 'variable' )
-            // etc/XQFT.g:98:12: 'variable'
+            // etc/XQFT.g:97:10: ( 'variable' )
+            // etc/XQFT.g:97:12: 'variable'
             {
             match("variable"); if (failed) return ;
 
@@ -1960,8 +1942,8 @@ public class XQFTLexer extends Lexer {
     public final void mOR() throws RecognitionException {
         try {
             int _type = OR;
-            // etc/XQFT.g:99:4: ( 'or' )
-            // etc/XQFT.g:99:6: 'or'
+            // etc/XQFT.g:98:4: ( 'or' )
+            // etc/XQFT.g:98:6: 'or'
             {
             match("or"); if (failed) return ;
 
@@ -1979,8 +1961,8 @@ public class XQFTLexer extends Lexer {
     public final void mFTOR() throws RecognitionException {
         try {
             int _type = FTOR;
-            // etc/XQFT.g:100:6: ( 'ftor' )
-            // etc/XQFT.g:100:8: 'ftor'
+            // etc/XQFT.g:99:6: ( 'ftor' )
+            // etc/XQFT.g:99:8: 'ftor'
             {
             match("ftor"); if (failed) return ;
 
@@ -1998,8 +1980,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOUBLESLASH() throws RecognitionException {
         try {
             int _type = DOUBLESLASH;
-            // etc/XQFT.g:101:13: ( '//' )
-            // etc/XQFT.g:101:15: '//'
+            // etc/XQFT.g:100:13: ( '//' )
+            // etc/XQFT.g:100:15: '//'
             {
             match("//"); if (failed) return ;
 
@@ -2017,8 +1999,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEAST() throws RecognitionException {
         try {
             int _type = LEAST;
-            // etc/XQFT.g:102:7: ( 'least' )
-            // etc/XQFT.g:102:9: 'least'
+            // etc/XQFT.g:101:7: ( 'least' )
+            // etc/XQFT.g:101:9: 'least'
             {
             match("least"); if (failed) return ;
 
@@ -2036,8 +2018,8 @@ public class XQFTLexer extends Lexer {
     public final void mIF() throws RecognitionException {
         try {
             int _type = IF;
-            // etc/XQFT.g:103:4: ( 'if' )
-            // etc/XQFT.g:103:6: 'if'
+            // etc/XQFT.g:102:4: ( 'if' )
+            // etc/XQFT.g:102:6: 'if'
             {
             match("if"); if (failed) return ;
 
@@ -2055,8 +2037,8 @@ public class XQFTLexer extends Lexer {
     public final void mBASEURI() throws RecognitionException {
         try {
             int _type = BASEURI;
-            // etc/XQFT.g:104:9: ( 'base-uri' )
-            // etc/XQFT.g:104:11: 'base-uri'
+            // etc/XQFT.g:103:9: ( 'base-uri' )
+            // etc/XQFT.g:103:11: 'base-uri'
             {
             match("base-uri"); if (failed) return ;
 
@@ -2074,8 +2056,8 @@ public class XQFTLexer extends Lexer {
     public final void mDESCENDING() throws RecognitionException {
         try {
             int _type = DESCENDING;
-            // etc/XQFT.g:105:12: ( 'descending' )
-            // etc/XQFT.g:105:14: 'descending'
+            // etc/XQFT.g:104:12: ( 'descending' )
+            // etc/XQFT.g:104:14: 'descending'
             {
             match("descending"); if (failed) return ;
 
@@ -2093,8 +2075,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTARSi() throws RecognitionException {
         try {
             int _type = STARSi;
-            // etc/XQFT.g:106:8: ( '*' )
-            // etc/XQFT.g:106:10: '*'
+            // etc/XQFT.g:105:8: ( '*' )
+            // etc/XQFT.g:105:10: '*'
             {
             match('*'); if (failed) return ;
 
@@ -2111,8 +2093,8 @@ public class XQFTLexer extends Lexer {
     public final void mNAMESPACE() throws RecognitionException {
         try {
             int _type = NAMESPACE;
-            // etc/XQFT.g:107:11: ( 'namespace' )
-            // etc/XQFT.g:107:13: 'namespace'
+            // etc/XQFT.g:106:11: ( 'namespace' )
+            // etc/XQFT.g:106:13: 'namespace'
             {
             match("namespace"); if (failed) return ;
 
@@ -2130,8 +2112,8 @@ public class XQFTLexer extends Lexer {
     public final void mAS() throws RecognitionException {
         try {
             int _type = AS;
-            // etc/XQFT.g:108:4: ( 'as' )
-            // etc/XQFT.g:108:6: 'as'
+            // etc/XQFT.g:107:4: ( 'as' )
+            // etc/XQFT.g:107:6: 'as'
             {
             match("as"); if (failed) return ;
 
@@ -2149,8 +2131,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTXMLCOMMENT() throws RecognitionException {
         try {
             int _type = LEFTXMLCOMMENT;
-            // etc/XQFT.g:109:16: ( '<!--' )
-            // etc/XQFT.g:109:18: '<!--'
+            // etc/XQFT.g:108:16: ( '<!--' )
+            // etc/XQFT.g:108:18: '<!--'
             {
             match("<!--"); if (failed) return ;
 
@@ -2168,8 +2150,8 @@ public class XQFTLexer extends Lexer {
     public final void mBY() throws RecognitionException {
         try {
             int _type = BY;
-            // etc/XQFT.g:110:4: ( 'by' )
-            // etc/XQFT.g:110:6: 'by'
+            // etc/XQFT.g:109:4: ( 'by' )
+            // etc/XQFT.g:109:6: 'by'
             {
             match("by"); if (failed) return ;
 
@@ -2187,8 +2169,8 @@ public class XQFTLexer extends Lexer {
     public final void mTEXT() throws RecognitionException {
         try {
             int _type = TEXT;
-            // etc/XQFT.g:111:6: ( 'text' )
-            // etc/XQFT.g:111:8: 'text'
+            // etc/XQFT.g:110:6: ( 'text' )
+            // etc/XQFT.g:110:8: 'text'
             {
             match("text"); if (failed) return ;
 
@@ -2206,8 +2188,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTABLE() throws RecognitionException {
         try {
             int _type = STABLE;
-            // etc/XQFT.g:112:8: ( 'stable' )
-            // etc/XQFT.g:112:10: 'stable'
+            // etc/XQFT.g:111:8: ( 'stable' )
+            // etc/XQFT.g:111:10: 'stable'
             {
             match("stable"); if (failed) return ;
 
@@ -2225,8 +2207,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTBRACKETSi() throws RecognitionException {
         try {
             int _type = LEFTBRACKETSi;
-            // etc/XQFT.g:113:15: ( '[' )
-            // etc/XQFT.g:113:17: '['
+            // etc/XQFT.g:112:15: ( '[' )
+            // etc/XQFT.g:112:17: '['
             {
             match('['); if (failed) return ;
 
@@ -2243,8 +2225,8 @@ public class XQFTLexer extends Lexer {
     public final void mUNORDERED() throws RecognitionException {
         try {
             int _type = UNORDERED;
-            // etc/XQFT.g:114:11: ( 'unordered' )
-            // etc/XQFT.g:114:13: 'unordered'
+            // etc/XQFT.g:113:11: ( 'unordered' )
+            // etc/XQFT.g:113:13: 'unordered'
             {
             match("unordered"); if (failed) return ;
 
@@ -2262,8 +2244,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTCDATA() throws RecognitionException {
         try {
             int _type = RIGHTCDATA;
-            // etc/XQFT.g:115:12: ( ']]>' )
-            // etc/XQFT.g:115:14: ']]>'
+            // etc/XQFT.g:114:12: ( ']]>' )
+            // etc/XQFT.g:114:14: ']]>'
             {
             match("]]>"); if (failed) return ;
 
@@ -2281,8 +2263,8 @@ public class XQFTLexer extends Lexer {
     public final void mEXACTLY() throws RecognitionException {
         try {
             int _type = EXACTLY;
-            // etc/XQFT.g:116:9: ( 'exactly' )
-            // etc/XQFT.g:116:11: 'exactly'
+            // etc/XQFT.g:115:9: ( 'exactly' )
+            // etc/XQFT.g:115:11: 'exactly'
             {
             match("exactly"); if (failed) return ;
 
@@ -2300,8 +2282,8 @@ public class XQFTLexer extends Lexer {
     public final void mWITH() throws RecognitionException {
         try {
             int _type = WITH;
-            // etc/XQFT.g:117:6: ( 'with' )
-            // etc/XQFT.g:117:8: 'with'
+            // etc/XQFT.g:116:6: ( 'with' )
+            // etc/XQFT.g:116:8: 'with'
             {
             match("with"); if (failed) return ;
 
@@ -2319,8 +2301,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTPITARGET() throws RecognitionException {
         try {
             int _type = LEFTPITARGET;
-            // etc/XQFT.g:118:14: ( '<?' )
-            // etc/XQFT.g:118:16: '<?'
+            // etc/XQFT.g:117:14: ( '<?' )
+            // etc/XQFT.g:117:16: '<?'
             {
             match("<?"); if (failed) return ;
 
@@ -2338,8 +2320,8 @@ public class XQFTLexer extends Lexer {
     public final void mWITHOUT() throws RecognitionException {
         try {
             int _type = WITHOUT;
-            // etc/XQFT.g:119:9: ( 'without' )
-            // etc/XQFT.g:119:11: 'without'
+            // etc/XQFT.g:118:9: ( 'without' )
+            // etc/XQFT.g:118:11: 'without'
             {
             match("without"); if (failed) return ;
 
@@ -2357,8 +2339,8 @@ public class XQFTLexer extends Lexer {
     public final void mDIACRITICS() throws RecognitionException {
         try {
             int _type = DIACRITICS;
-            // etc/XQFT.g:120:12: ( 'diacritics' )
-            // etc/XQFT.g:120:14: 'diacritics'
+            // etc/XQFT.g:119:12: ( 'diacritics' )
+            // etc/XQFT.g:119:14: 'diacritics'
             {
             match("diacritics"); if (failed) return ;
 
@@ -2376,8 +2358,8 @@ public class XQFTLexer extends Lexer {
     public final void mEXTERNAL() throws RecognitionException {
         try {
             int _type = EXTERNAL;
-            // etc/XQFT.g:121:10: ( 'external' )
-            // etc/XQFT.g:121:12: 'external'
+            // etc/XQFT.g:120:10: ( 'external' )
+            // etc/XQFT.g:120:12: 'external'
             {
             match("external"); if (failed) return ;
 
@@ -2395,8 +2377,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTPARENTHESISSi() throws RecognitionException {
         try {
             int _type = RIGHTPARENTHESISSi;
-            // etc/XQFT.g:122:20: ( ')' )
-            // etc/XQFT.g:122:22: ')'
+            // etc/XQFT.g:121:20: ( ')' )
+            // etc/XQFT.g:121:22: ')'
             {
             match(')'); if (failed) return ;
 
@@ -2413,8 +2395,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTXMLCOMMENT() throws RecognitionException {
         try {
             int _type = RIGHTXMLCOMMENT;
-            // etc/XQFT.g:123:17: ( '-->' )
-            // etc/XQFT.g:123:19: '-->'
+            // etc/XQFT.g:122:17: ( '-->' )
+            // etc/XQFT.g:122:19: '-->'
             {
             match("-->"); if (failed) return ;
 
@@ -2432,8 +2414,8 @@ public class XQFTLexer extends Lexer {
     public final void mMODULE() throws RecognitionException {
         try {
             int _type = MODULE;
-            // etc/XQFT.g:124:8: ( 'module' )
-            // etc/XQFT.g:124:10: 'module'
+            // etc/XQFT.g:123:8: ( 'module' )
+            // etc/XQFT.g:123:10: 'module'
             {
             match("module"); if (failed) return ;
 
@@ -2451,8 +2433,8 @@ public class XQFTLexer extends Lexer {
     public final void mRETURN() throws RecognitionException {
         try {
             int _type = RETURN;
-            // etc/XQFT.g:125:8: ( 'return' )
-            // etc/XQFT.g:125:10: 'return'
+            // etc/XQFT.g:124:8: ( 'return' )
+            // etc/XQFT.g:124:10: 'return'
             {
             match("return"); if (failed) return ;
 
@@ -2470,8 +2452,8 @@ public class XQFTLexer extends Lexer {
     public final void mCOMMENT() throws RecognitionException {
         try {
             int _type = COMMENT;
-            // etc/XQFT.g:126:9: ( 'comment' )
-            // etc/XQFT.g:126:11: 'comment'
+            // etc/XQFT.g:125:9: ( 'comment' )
+            // etc/XQFT.g:125:11: 'comment'
             {
             match("comment"); if (failed) return ;
 
@@ -2489,8 +2471,8 @@ public class XQFTLexer extends Lexer {
     public final void mDEFAULT() throws RecognitionException {
         try {
             int _type = DEFAULT;
-            // etc/XQFT.g:127:9: ( 'default' )
-            // etc/XQFT.g:127:11: 'default'
+            // etc/XQFT.g:126:9: ( 'default' )
+            // etc/XQFT.g:126:11: 'default'
             {
             match("default"); if (failed) return ;
 
@@ -2508,8 +2490,8 @@ public class XQFTLexer extends Lexer {
     public final void mOCCURS() throws RecognitionException {
         try {
             int _type = OCCURS;
-            // etc/XQFT.g:128:8: ( 'occurs' )
-            // etc/XQFT.g:128:10: 'occurs'
+            // etc/XQFT.g:127:8: ( 'occurs' )
+            // etc/XQFT.g:127:10: 'occurs'
             {
             match("occurs"); if (failed) return ;
 
@@ -2527,8 +2509,8 @@ public class XQFTLexer extends Lexer {
     public final void mENCODING() throws RecognitionException {
         try {
             int _type = ENCODING;
-            // etc/XQFT.g:129:10: ( 'encoding' )
-            // etc/XQFT.g:129:12: 'encoding'
+            // etc/XQFT.g:128:10: ( 'encoding' )
+            // etc/XQFT.g:128:12: 'encoding'
             {
             match("encoding"); if (failed) return ;
 
@@ -2546,8 +2528,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOUBLELEFTBRACES() throws RecognitionException {
         try {
             int _type = DOUBLELEFTBRACES;
-            // etc/XQFT.g:130:18: ( '{{' )
-            // etc/XQFT.g:130:20: '{{'
+            // etc/XQFT.g:129:18: ( '{{' )
+            // etc/XQFT.g:129:20: '{{'
             {
             match("{{"); if (failed) return ;
 
@@ -2565,8 +2547,8 @@ public class XQFTLexer extends Lexer {
     public final void mSCHEMA() throws RecognitionException {
         try {
             int _type = SCHEMA;
-            // etc/XQFT.g:131:8: ( 'schema' )
-            // etc/XQFT.g:131:10: 'schema'
+            // etc/XQFT.g:130:8: ( 'schema' )
+            // etc/XQFT.g:130:10: 'schema'
             {
             match("schema"); if (failed) return ;
 
@@ -2584,8 +2566,8 @@ public class XQFTLexer extends Lexer {
     public final void mELEMENT() throws RecognitionException {
         try {
             int _type = ELEMENT;
-            // etc/XQFT.g:132:9: ( 'element' )
-            // etc/XQFT.g:132:11: 'element'
+            // etc/XQFT.g:131:9: ( 'element' )
+            // etc/XQFT.g:131:11: 'element'
             {
             match("element"); if (failed) return ;
 
@@ -2603,8 +2585,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTPARENTHESISSi() throws RecognitionException {
         try {
             int _type = LEFTPARENTHESISSi;
-            // etc/XQFT.g:133:19: ( '(' )
-            // etc/XQFT.g:133:21: '('
+            // etc/XQFT.g:132:19: ( '(' )
+            // etc/XQFT.g:132:21: '('
             {
             match('('); if (failed) return ;
 
@@ -2621,8 +2603,8 @@ public class XQFTLexer extends Lexer {
     public final void mCOPYNAMESPACES() throws RecognitionException {
         try {
             int _type = COPYNAMESPACES;
-            // etc/XQFT.g:134:16: ( 'copy-namespaces' )
-            // etc/XQFT.g:134:18: 'copy-namespaces'
+            // etc/XQFT.g:133:16: ( 'copy-namespaces' )
+            // etc/XQFT.g:133:18: 'copy-namespaces'
             {
             match("copy-namespaces"); if (failed) return ;
 
@@ -2640,8 +2622,8 @@ public class XQFTLexer extends Lexer {
     public final void mWILDCARDS() throws RecognitionException {
         try {
             int _type = WILDCARDS;
-            // etc/XQFT.g:135:11: ( 'wildcards' )
-            // etc/XQFT.g:135:13: 'wildcards'
+            // etc/XQFT.g:134:11: ( 'wildcards' )
+            // etc/XQFT.g:134:13: 'wildcards'
             {
             match("wildcards"); if (failed) return ;
 
@@ -2659,8 +2641,8 @@ public class XQFTLexer extends Lexer {
     public final void mDECLARE() throws RecognitionException {
         try {
             int _type = DECLARE;
-            // etc/XQFT.g:136:9: ( 'declare' )
-            // etc/XQFT.g:136:11: 'declare'
+            // etc/XQFT.g:135:9: ( 'declare' )
+            // etc/XQFT.g:135:11: 'declare'
             {
             match("declare"); if (failed) return ;
 
@@ -2678,8 +2660,8 @@ public class XQFTLexer extends Lexer {
     public final void mAND() throws RecognitionException {
         try {
             int _type = AND;
-            // etc/XQFT.g:137:5: ( 'and' )
-            // etc/XQFT.g:137:7: 'and'
+            // etc/XQFT.g:136:5: ( 'and' )
+            // etc/XQFT.g:136:7: 'and'
             {
             match("and"); if (failed) return ;
 
@@ -2697,8 +2679,8 @@ public class XQFTLexer extends Lexer {
     public final void mPRESERVE() throws RecognitionException {
         try {
             int _type = PRESERVE;
-            // etc/XQFT.g:138:10: ( 'preserve' )
-            // etc/XQFT.g:138:12: 'preserve'
+            // etc/XQFT.g:137:10: ( 'preserve' )
+            // etc/XQFT.g:137:12: 'preserve'
             {
             match("preserve"); if (failed) return ;
 
@@ -2716,8 +2698,8 @@ public class XQFTLexer extends Lexer {
     public final void mNOINHERIT() throws RecognitionException {
         try {
             int _type = NOINHERIT;
-            // etc/XQFT.g:139:11: ( 'no-inherit' )
-            // etc/XQFT.g:139:13: 'no-inherit'
+            // etc/XQFT.g:138:11: ( 'no-inherit' )
+            // etc/XQFT.g:138:13: 'no-inherit'
             {
             match("no-inherit"); if (failed) return ;
 
@@ -2735,8 +2717,8 @@ public class XQFTLexer extends Lexer {
     public final void mNOT() throws RecognitionException {
         try {
             int _type = NOT;
-            // etc/XQFT.g:140:5: ( 'not' )
-            // etc/XQFT.g:140:7: 'not'
+            // etc/XQFT.g:139:5: ( 'not' )
+            // etc/XQFT.g:139:7: 'not'
             {
             match("not"); if (failed) return ;
 
@@ -2754,8 +2736,8 @@ public class XQFTLexer extends Lexer {
     public final void mINTERSECT() throws RecognitionException {
         try {
             int _type = INTERSECT;
-            // etc/XQFT.g:141:11: ( 'intersect' )
-            // etc/XQFT.g:141:13: 'intersect'
+            // etc/XQFT.g:140:11: ( 'intersect' )
+            // etc/XQFT.g:140:13: 'intersect'
             {
             match("intersect"); if (failed) return ;
 
@@ -2773,8 +2755,8 @@ public class XQFTLexer extends Lexer {
     public final void mFUNCTION() throws RecognitionException {
         try {
             int _type = FUNCTION;
-            // etc/XQFT.g:142:10: ( 'function' )
-            // etc/XQFT.g:142:12: 'function'
+            // etc/XQFT.g:141:10: ( 'function' )
+            // etc/XQFT.g:141:12: 'function'
             {
             match("function"); if (failed) return ;
 
@@ -2792,8 +2774,8 @@ public class XQFTLexer extends Lexer {
     public final void mATSi() throws RecognitionException {
         try {
             int _type = ATSi;
-            // etc/XQFT.g:143:6: ( '@' )
-            // etc/XQFT.g:143:8: '@'
+            // etc/XQFT.g:142:6: ( '@' )
+            // etc/XQFT.g:142:8: '@'
             {
             match('@'); if (failed) return ;
 
@@ -2810,8 +2792,8 @@ public class XQFTLexer extends Lexer {
     public final void mTIMES() throws RecognitionException {
         try {
             int _type = TIMES;
-            // etc/XQFT.g:144:7: ( 'times' )
-            // etc/XQFT.g:144:9: 'times'
+            // etc/XQFT.g:143:7: ( 'times' )
+            // etc/XQFT.g:143:9: 'times'
             {
             match("times"); if (failed) return ;
 
@@ -2829,8 +2811,8 @@ public class XQFTLexer extends Lexer {
     public final void mATTRIBUTE() throws RecognitionException {
         try {
             int _type = ATTRIBUTE;
-            // etc/XQFT.g:145:11: ( 'attribute' )
-            // etc/XQFT.g:145:13: 'attribute'
+            // etc/XQFT.g:144:11: ( 'attribute' )
+            // etc/XQFT.g:144:13: 'attribute'
             {
             match("attribute"); if (failed) return ;
 
@@ -2848,8 +2830,8 @@ public class XQFTLexer extends Lexer {
     public final void mASSIGNMENTOPERATOR() throws RecognitionException {
         try {
             int _type = ASSIGNMENTOPERATOR;
-            // etc/XQFT.g:146:20: ( ':=' )
-            // etc/XQFT.g:146:22: ':='
+            // etc/XQFT.g:145:20: ( ':=' )
+            // etc/XQFT.g:145:22: ':='
             {
             match(":="); if (failed) return ;
 
@@ -2867,8 +2849,8 @@ public class XQFTLexer extends Lexer {
     public final void mFTCONTAINS() throws RecognitionException {
         try {
             int _type = FTCONTAINS;
-            // etc/XQFT.g:147:12: ( 'ftcontains' )
-            // etc/XQFT.g:147:14: 'ftcontains'
+            // etc/XQFT.g:146:12: ( 'ftcontains' )
+            // etc/XQFT.g:146:14: 'ftcontains'
             {
             match("ftcontains"); if (failed) return ;
 
@@ -2886,8 +2868,8 @@ public class XQFTLexer extends Lexer {
     public final void mRELATIONSHIP() throws RecognitionException {
         try {
             int _type = RELATIONSHIP;
-            // etc/XQFT.g:148:14: ( 'relationship' )
-            // etc/XQFT.g:148:16: 'relationship'
+            // etc/XQFT.g:147:14: ( 'relationship' )
+            // etc/XQFT.g:147:16: 'relationship'
             {
             match("relationship"); if (failed) return ;
 
@@ -2905,8 +2887,8 @@ public class XQFTLexer extends Lexer {
     public final void mTHESAURUS() throws RecognitionException {
         try {
             int _type = THESAURUS;
-            // etc/XQFT.g:149:11: ( 'thesaurus' )
-            // etc/XQFT.g:149:13: 'thesaurus'
+            // etc/XQFT.g:148:11: ( 'thesaurus' )
+            // etc/XQFT.g:148:13: 'thesaurus'
             {
             match("thesaurus"); if (failed) return ;
 
@@ -2924,8 +2906,8 @@ public class XQFTLexer extends Lexer {
     public final void mMOD() throws RecognitionException {
         try {
             int _type = MOD;
-            // etc/XQFT.g:150:5: ( 'mod' )
-            // etc/XQFT.g:150:7: 'mod'
+            // etc/XQFT.g:149:5: ( 'mod' )
+            // etc/XQFT.g:149:7: 'mod'
             {
             match("mod"); if (failed) return ;
 
@@ -2943,8 +2925,8 @@ public class XQFTLexer extends Lexer {
     public final void mRIGHTBRACESi() throws RecognitionException {
         try {
             int _type = RIGHTBRACESi;
-            // etc/XQFT.g:151:14: ( '}' )
-            // etc/XQFT.g:151:16: '}'
+            // etc/XQFT.g:150:14: ( '}' )
+            // etc/XQFT.g:150:16: '}'
             {
             match('}'); if (failed) return ;
 
@@ -2961,8 +2943,8 @@ public class XQFTLexer extends Lexer {
     public final void mNODE() throws RecognitionException {
         try {
             int _type = NODE;
-            // etc/XQFT.g:152:6: ( 'node' )
-            // etc/XQFT.g:152:8: 'node'
+            // etc/XQFT.g:151:6: ( 'node' )
+            // etc/XQFT.g:151:8: 'node'
             {
             match("node"); if (failed) return ;
 
@@ -2980,8 +2962,8 @@ public class XQFTLexer extends Lexer {
     public final void mSOME() throws RecognitionException {
         try {
             int _type = SOME;
-            // etc/XQFT.g:153:6: ( 'some' )
-            // etc/XQFT.g:153:8: 'some'
+            // etc/XQFT.g:152:6: ( 'some' )
+            // etc/XQFT.g:152:8: 'some'
             {
             match("some"); if (failed) return ;
 
@@ -2999,8 +2981,8 @@ public class XQFTLexer extends Lexer {
     public final void mQUESTIONMARKSi() throws RecognitionException {
         try {
             int _type = QUESTIONMARKSi;
-            // etc/XQFT.g:154:16: ( '?' )
-            // etc/XQFT.g:154:18: '?'
+            // etc/XQFT.g:153:16: ( '?' )
+            // etc/XQFT.g:153:18: '?'
             {
             match('?'); if (failed) return ;
 
@@ -3017,8 +2999,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTRIP() throws RecognitionException {
         try {
             int _type = STRIP;
-            // etc/XQFT.g:155:7: ( 'strip' )
-            // etc/XQFT.g:155:9: 'strip'
+            // etc/XQFT.g:154:7: ( 'strip' )
+            // etc/XQFT.g:154:9: 'strip'
             {
             match("strip"); if (failed) return ;
 
@@ -3036,8 +3018,8 @@ public class XQFTLexer extends Lexer {
     public final void mLOWERCASE() throws RecognitionException {
         try {
             int _type = LOWERCASE;
-            // etc/XQFT.g:156:11: ( 'lowercase' )
-            // etc/XQFT.g:156:13: 'lowercase'
+            // etc/XQFT.g:155:11: ( 'lowercase' )
+            // etc/XQFT.g:155:13: 'lowercase'
             {
             match("lowercase"); if (failed) return ;
 
@@ -3055,8 +3037,8 @@ public class XQFTLexer extends Lexer {
     public final void mIN() throws RecognitionException {
         try {
             int _type = IN;
-            // etc/XQFT.g:157:4: ( 'in' )
-            // etc/XQFT.g:157:6: 'in'
+            // etc/XQFT.g:156:4: ( 'in' )
+            // etc/XQFT.g:156:6: 'in'
             {
             match("in"); if (failed) return ;
 
@@ -3074,8 +3056,8 @@ public class XQFTLexer extends Lexer {
     public final void mSCHEMAELEMENT() throws RecognitionException {
         try {
             int _type = SCHEMAELEMENT;
-            // etc/XQFT.g:158:15: ( 'schema-element' )
-            // etc/XQFT.g:158:17: 'schema-element'
+            // etc/XQFT.g:157:15: ( 'schema-element' )
+            // etc/XQFT.g:157:17: 'schema-element'
             {
             match("schema-element"); if (failed) return ;
 
@@ -3093,8 +3075,8 @@ public class XQFTLexer extends Lexer {
     public final void mLEFTENDTAG() throws RecognitionException {
         try {
             int _type = LEFTENDTAG;
-            // etc/XQFT.g:159:12: ( '</' )
-            // etc/XQFT.g:159:14: '</'
+            // etc/XQFT.g:158:12: ( '</' )
+            // etc/XQFT.g:158:14: '</'
             {
             match("</"); if (failed) return ;
 
@@ -3112,8 +3094,8 @@ public class XQFTLexer extends Lexer {
     public final void mEQ() throws RecognitionException {
         try {
             int _type = EQ;
-            // etc/XQFT.g:160:4: ( 'eq' )
-            // etc/XQFT.g:160:6: 'eq'
+            // etc/XQFT.g:159:4: ( 'eq' )
+            // etc/XQFT.g:159:6: 'eq'
             {
             match("eq"); if (failed) return ;
 
@@ -3131,8 +3113,8 @@ public class XQFTLexer extends Lexer {
     public final void mNE() throws RecognitionException {
         try {
             int _type = NE;
-            // etc/XQFT.g:161:4: ( 'ne' )
-            // etc/XQFT.g:161:6: 'ne'
+            // etc/XQFT.g:160:4: ( 'ne' )
+            // etc/XQFT.g:160:6: 'ne'
             {
             match("ne"); if (failed) return ;
 
@@ -3150,8 +3132,8 @@ public class XQFTLexer extends Lexer {
     public final void mLT() throws RecognitionException {
         try {
             int _type = LT;
-            // etc/XQFT.g:162:4: ( 'lt' )
-            // etc/XQFT.g:162:6: 'lt'
+            // etc/XQFT.g:161:4: ( 'lt' )
+            // etc/XQFT.g:161:6: 'lt'
             {
             match("lt"); if (failed) return ;
 
@@ -3169,8 +3151,8 @@ public class XQFTLexer extends Lexer {
     public final void mLE() throws RecognitionException {
         try {
             int _type = LE;
-            // etc/XQFT.g:163:4: ( 'le' )
-            // etc/XQFT.g:163:6: 'le'
+            // etc/XQFT.g:162:4: ( 'le' )
+            // etc/XQFT.g:162:6: 'le'
             {
             match("le"); if (failed) return ;
 
@@ -3188,8 +3170,8 @@ public class XQFTLexer extends Lexer {
     public final void mGT() throws RecognitionException {
         try {
             int _type = GT;
-            // etc/XQFT.g:164:4: ( 'gt' )
-            // etc/XQFT.g:164:6: 'gt'
+            // etc/XQFT.g:163:4: ( 'gt' )
+            // etc/XQFT.g:163:6: 'gt'
             {
             match("gt"); if (failed) return ;
 
@@ -3207,8 +3189,8 @@ public class XQFTLexer extends Lexer {
     public final void mGE() throws RecognitionException {
         try {
             int _type = GE;
-            // etc/XQFT.g:165:4: ( 'ge' )
-            // etc/XQFT.g:165:6: 'ge'
+            // etc/XQFT.g:164:4: ( 'ge' )
+            // etc/XQFT.g:164:6: 'ge'
             {
             match("ge"); if (failed) return ;
 
@@ -3226,8 +3208,8 @@ public class XQFTLexer extends Lexer {
     public final void mIS() throws RecognitionException {
         try {
             int _type = IS;
-            // etc/XQFT.g:166:4: ( 'is' )
-            // etc/XQFT.g:166:6: 'is'
+            // etc/XQFT.g:165:4: ( 'is' )
+            // etc/XQFT.g:165:6: 'is'
             {
             match("is"); if (failed) return ;
 
@@ -3245,8 +3227,8 @@ public class XQFTLexer extends Lexer {
     public final void mNODEBEFORESi() throws RecognitionException {
         try {
             int _type = NODEBEFORESi;
-            // etc/XQFT.g:167:14: ( '<<' )
-            // etc/XQFT.g:167:16: '<<'
+            // etc/XQFT.g:166:14: ( '<<' )
+            // etc/XQFT.g:166:16: '<<'
             {
             match("<<"); if (failed) return ;
 
@@ -3264,8 +3246,8 @@ public class XQFTLexer extends Lexer {
     public final void mNODEAFTERSi() throws RecognitionException {
         try {
             int _type = NODEAFTERSi;
-            // etc/XQFT.g:168:13: ( '>>' )
-            // etc/XQFT.g:168:15: '>>'
+            // etc/XQFT.g:167:13: ( '>>' )
+            // etc/XQFT.g:167:15: '>>'
             {
             match(">>"); if (failed) return ;
 
@@ -3283,8 +3265,8 @@ public class XQFTLexer extends Lexer {
     public final void mLAX() throws RecognitionException {
         try {
             int _type = LAX;
-            // etc/XQFT.g:169:5: ( 'lax' )
-            // etc/XQFT.g:169:7: 'lax'
+            // etc/XQFT.g:168:5: ( 'lax' )
+            // etc/XQFT.g:168:7: 'lax'
             {
             match("lax"); if (failed) return ;
 
@@ -3302,8 +3284,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTRICT() throws RecognitionException {
         try {
             int _type = STRICT;
-            // etc/XQFT.g:170:8: ( 'strict' )
-            // etc/XQFT.g:170:10: 'strict'
+            // etc/XQFT.g:169:8: ( 'strict' )
+            // etc/XQFT.g:169:10: 'strict'
             {
             match("strict"); if (failed) return ;
 
@@ -3321,8 +3303,8 @@ public class XQFTLexer extends Lexer {
     public final void mCHILD() throws RecognitionException {
         try {
             int _type = CHILD;
-            // etc/XQFT.g:171:7: ( 'child' )
-            // etc/XQFT.g:171:9: 'child'
+            // etc/XQFT.g:170:7: ( 'child' )
+            // etc/XQFT.g:170:9: 'child'
             {
             match("child"); if (failed) return ;
 
@@ -3340,8 +3322,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOUBLECOLON() throws RecognitionException {
         try {
             int _type = DOUBLECOLON;
-            // etc/XQFT.g:172:13: ( '::' )
-            // etc/XQFT.g:172:15: '::'
+            // etc/XQFT.g:171:13: ( '::' )
+            // etc/XQFT.g:171:15: '::'
             {
             match("::"); if (failed) return ;
 
@@ -3359,8 +3341,8 @@ public class XQFTLexer extends Lexer {
     public final void mDESCENDANT() throws RecognitionException {
         try {
             int _type = DESCENDANT;
-            // etc/XQFT.g:173:12: ( 'descendant' )
-            // etc/XQFT.g:173:14: 'descendant'
+            // etc/XQFT.g:172:12: ( 'descendant' )
+            // etc/XQFT.g:172:14: 'descendant'
             {
             match("descendant"); if (failed) return ;
 
@@ -3378,8 +3360,8 @@ public class XQFTLexer extends Lexer {
     public final void mSELF() throws RecognitionException {
         try {
             int _type = SELF;
-            // etc/XQFT.g:174:6: ( 'self' )
-            // etc/XQFT.g:174:8: 'self'
+            // etc/XQFT.g:173:6: ( 'self' )
+            // etc/XQFT.g:173:8: 'self'
             {
             match("self"); if (failed) return ;
 
@@ -3397,8 +3379,8 @@ public class XQFTLexer extends Lexer {
     public final void mDESCENDANT_OR_SELF() throws RecognitionException {
         try {
             int _type = DESCENDANT_OR_SELF;
-            // etc/XQFT.g:175:20: ( 'descendant-or-self' )
-            // etc/XQFT.g:175:22: 'descendant-or-self'
+            // etc/XQFT.g:174:20: ( 'descendant-or-self' )
+            // etc/XQFT.g:174:22: 'descendant-or-self'
             {
             match("descendant-or-self"); if (failed) return ;
 
@@ -3416,8 +3398,8 @@ public class XQFTLexer extends Lexer {
     public final void mFOLLOWING_SIBLING() throws RecognitionException {
         try {
             int _type = FOLLOWING_SIBLING;
-            // etc/XQFT.g:176:19: ( 'following-sibling' )
-            // etc/XQFT.g:176:21: 'following-sibling'
+            // etc/XQFT.g:175:19: ( 'following-sibling' )
+            // etc/XQFT.g:175:21: 'following-sibling'
             {
             match("following-sibling"); if (failed) return ;
 
@@ -3435,8 +3417,8 @@ public class XQFTLexer extends Lexer {
     public final void mFOLLOWING() throws RecognitionException {
         try {
             int _type = FOLLOWING;
-            // etc/XQFT.g:177:11: ( 'following' )
-            // etc/XQFT.g:177:13: 'following'
+            // etc/XQFT.g:176:11: ( 'following' )
+            // etc/XQFT.g:176:13: 'following'
             {
             match("following"); if (failed) return ;
 
@@ -3454,8 +3436,8 @@ public class XQFTLexer extends Lexer {
     public final void mPARENT() throws RecognitionException {
         try {
             int _type = PARENT;
-            // etc/XQFT.g:178:8: ( 'parent' )
-            // etc/XQFT.g:178:10: 'parent'
+            // etc/XQFT.g:177:8: ( 'parent' )
+            // etc/XQFT.g:177:10: 'parent'
             {
             match("parent"); if (failed) return ;
 
@@ -3473,8 +3455,8 @@ public class XQFTLexer extends Lexer {
     public final void mANCESTOR() throws RecognitionException {
         try {
             int _type = ANCESTOR;
-            // etc/XQFT.g:179:10: ( 'ancestor' )
-            // etc/XQFT.g:179:12: 'ancestor'
+            // etc/XQFT.g:178:10: ( 'ancestor' )
+            // etc/XQFT.g:178:12: 'ancestor'
             {
             match("ancestor"); if (failed) return ;
 
@@ -3492,8 +3474,8 @@ public class XQFTLexer extends Lexer {
     public final void mPRECEDING_SIBLING() throws RecognitionException {
         try {
             int _type = PRECEDING_SIBLING;
-            // etc/XQFT.g:180:19: ( 'preceding-sibling' )
-            // etc/XQFT.g:180:21: 'preceding-sibling'
+            // etc/XQFT.g:179:19: ( 'preceding-sibling' )
+            // etc/XQFT.g:179:21: 'preceding-sibling'
             {
             match("preceding-sibling"); if (failed) return ;
 
@@ -3511,8 +3493,8 @@ public class XQFTLexer extends Lexer {
     public final void mPRECEDING() throws RecognitionException {
         try {
             int _type = PRECEDING;
-            // etc/XQFT.g:181:11: ( 'preceding' )
-            // etc/XQFT.g:181:13: 'preceding'
+            // etc/XQFT.g:180:11: ( 'preceding' )
+            // etc/XQFT.g:180:13: 'preceding'
             {
             match("preceding"); if (failed) return ;
 
@@ -3530,8 +3512,8 @@ public class XQFTLexer extends Lexer {
     public final void mANCESTOR_OR_SELF() throws RecognitionException {
         try {
             int _type = ANCESTOR_OR_SELF;
-            // etc/XQFT.g:182:18: ( 'ancestor-or-self' )
-            // etc/XQFT.g:182:20: 'ancestor-or-self'
+            // etc/XQFT.g:181:18: ( 'ancestor-or-self' )
+            // etc/XQFT.g:181:20: 'ancestor-or-self'
             {
             match("ancestor-or-self"); if (failed) return ;
 
@@ -3549,8 +3531,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOT() throws RecognitionException {
         try {
             int _type = DOT;
-            // etc/XQFT.g:183:5: ( '.' )
-            // etc/XQFT.g:183:7: '.'
+            // etc/XQFT.g:182:5: ( '.' )
+            // etc/XQFT.g:182:7: '.'
             {
             match('.'); if (failed) return ;
 
@@ -3567,8 +3549,8 @@ public class XQFTLexer extends Lexer {
     public final void mDOTDOT() throws RecognitionException {
         try {
             int _type = DOTDOT;
-            // etc/XQFT.g:184:8: ( '..' )
-            // etc/XQFT.g:184:10: '..'
+            // etc/XQFT.g:183:8: ( '..' )
+            // etc/XQFT.g:183:10: '..'
             {
             match(".."); if (failed) return ;
 
@@ -3586,8 +3568,8 @@ public class XQFTLexer extends Lexer {
     public final void mWORDS() throws RecognitionException {
         try {
             int _type = WORDS;
-            // etc/XQFT.g:185:7: ( 'words' )
-            // etc/XQFT.g:185:9: 'words'
+            // etc/XQFT.g:184:7: ( 'words' )
+            // etc/XQFT.g:184:9: 'words'
             {
             match("words"); if (failed) return ;
 
@@ -3605,8 +3587,8 @@ public class XQFTLexer extends Lexer {
     public final void mSENTENCES() throws RecognitionException {
         try {
             int _type = SENTENCES;
-            // etc/XQFT.g:186:11: ( 'sentences' )
-            // etc/XQFT.g:186:13: 'sentences'
+            // etc/XQFT.g:185:11: ( 'sentences' )
+            // etc/XQFT.g:185:13: 'sentences'
             {
             match("sentences"); if (failed) return ;
 
@@ -3624,8 +3606,8 @@ public class XQFTLexer extends Lexer {
     public final void mPARAGRAPHS() throws RecognitionException {
         try {
             int _type = PARAGRAPHS;
-            // etc/XQFT.g:187:12: ( 'paragraphs' )
-            // etc/XQFT.g:187:14: 'paragraphs'
+            // etc/XQFT.g:186:12: ( 'paragraphs' )
+            // etc/XQFT.g:186:14: 'paragraphs'
             {
             match("paragraphs"); if (failed) return ;
 
@@ -3643,8 +3625,8 @@ public class XQFTLexer extends Lexer {
     public final void mSENTENCE() throws RecognitionException {
         try {
             int _type = SENTENCE;
-            // etc/XQFT.g:188:10: ( 'sentence' )
-            // etc/XQFT.g:188:12: 'sentence'
+            // etc/XQFT.g:187:10: ( 'sentence' )
+            // etc/XQFT.g:187:12: 'sentence'
             {
             match("sentence"); if (failed) return ;
 
@@ -3662,8 +3644,8 @@ public class XQFTLexer extends Lexer {
     public final void mPARAGRAPH() throws RecognitionException {
         try {
             int _type = PARAGRAPH;
-            // etc/XQFT.g:189:11: ( 'paragraph' )
-            // etc/XQFT.g:189:13: 'paragraph'
+            // etc/XQFT.g:188:11: ( 'paragraph' )
+            // etc/XQFT.g:188:13: 'paragraph'
             {
             match("paragraph"); if (failed) return ;
 
@@ -3681,8 +3663,8 @@ public class XQFTLexer extends Lexer {
     public final void mSAME() throws RecognitionException {
         try {
             int _type = SAME;
-            // etc/XQFT.g:190:6: ( 'same' )
-            // etc/XQFT.g:190:8: 'same'
+            // etc/XQFT.g:189:6: ( 'same' )
+            // etc/XQFT.g:189:8: 'same'
             {
             match("same"); if (failed) return ;
 
@@ -3700,8 +3682,8 @@ public class XQFTLexer extends Lexer {
     public final void mDIFFERENT() throws RecognitionException {
         try {
             int _type = DIFFERENT;
-            // etc/XQFT.g:191:11: ( 'different' )
-            // etc/XQFT.g:191:13: 'different'
+            // etc/XQFT.g:190:11: ( 'different' )
+            // etc/XQFT.g:190:13: 'different'
             {
             match("different"); if (failed) return ;
 
@@ -3719,8 +3701,8 @@ public class XQFTLexer extends Lexer {
     public final void mSTART() throws RecognitionException {
         try {
             int _type = START;
-            // etc/XQFT.g:192:7: ( 'start' )
-            // etc/XQFT.g:192:9: 'start'
+            // etc/XQFT.g:191:7: ( 'start' )
+            // etc/XQFT.g:191:9: 'start'
             {
             match("start"); if (failed) return ;
 
@@ -3738,8 +3720,8 @@ public class XQFTLexer extends Lexer {
     public final void mEND() throws RecognitionException {
         try {
             int _type = END;
-            // etc/XQFT.g:193:5: ( 'end' )
-            // etc/XQFT.g:193:7: 'end'
+            // etc/XQFT.g:192:5: ( 'end' )
+            // etc/XQFT.g:192:7: 'end'
             {
             match("end"); if (failed) return ;
 
@@ -3757,8 +3739,8 @@ public class XQFTLexer extends Lexer {
     public final void mENTIRE() throws RecognitionException {
         try {
             int _type = ENTIRE;
-            // etc/XQFT.g:194:8: ( 'entire' )
-            // etc/XQFT.g:194:10: 'entire'
+            // etc/XQFT.g:193:8: ( 'entire' )
+            // etc/XQFT.g:193:10: 'entire'
             {
             match("entire"); if (failed) return ;
 
@@ -4182,7 +4164,7 @@ public class XQFTLexer extends Lexer {
     public final void mStringLiteral() throws RecognitionException {
         try {
             int _type = StringLiteral;
-            // etc/XQFT.g:227:19: ( ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi ) | ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE ) )
+            // etc/XQFT.g:227:19: ( ( DOUBLEQUOTESi ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi ) | ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -4195,19 +4177,19 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("227:1: StringLiteral : ( ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi ) | ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE ) );", 9, 0, input);
+                    new NoViableAltException("227:1: StringLiteral : ( ( DOUBLEQUOTESi ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi ) | ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE ) );", 9, 0, input);
 
                 throw nvae;
             }
             switch (alt9) {
                 case 1 :
-                    // etc/XQFT.g:227:21: ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi )
+                    // etc/XQFT.g:227:21: ( DOUBLEQUOTESi ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi )
                     {
-                    // etc/XQFT.g:227:21: ( '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi )
-                    // etc/XQFT.g:227:22: '\"' ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi
+                    // etc/XQFT.g:227:21: ( DOUBLEQUOTESi ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi )
+                    // etc/XQFT.g:227:22: DOUBLEQUOTESi ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi
                     {
-                    match('\"'); if (failed) return ;
-                    // etc/XQFT.g:227:26: ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )*
+                    mDOUBLEQUOTESi(); if (failed) return ;
+                    // etc/XQFT.g:227:36: ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )*
                     loop7:
                     do {
                         int alt7=5;
@@ -4241,28 +4223,28 @@ public class XQFTLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // etc/XQFT.g:227:27: PredefinedEntityRef
+                    	    // etc/XQFT.g:227:37: PredefinedEntityRef
                     	    {
                     	    mPredefinedEntityRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // etc/XQFT.g:227:49: CharRef
+                    	    // etc/XQFT.g:227:59: CharRef
                     	    {
                     	    mCharRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 3 :
-                    	    // etc/XQFT.g:227:59: EscapeQuot
+                    	    // etc/XQFT.g:227:69: EscapeQuot
                     	    {
                     	    mEscapeQuot(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 4 :
-                    	    // etc/XQFT.g:227:72: ~ ( DOUBLEQUOTESi | '&' )
+                    	    // etc/XQFT.g:227:82: ~ ( DOUBLEQUOTESi | '&' )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -4292,13 +4274,13 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:227:112: ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE )
+                    // etc/XQFT.g:227:122: ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE )
                     {
-                    // etc/XQFT.g:227:112: ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE )
-                    // etc/XQFT.g:227:113: SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE
+                    // etc/XQFT.g:227:122: ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE )
+                    // etc/XQFT.g:227:123: SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE
                     {
                     mSINGLEQUOTE(); if (failed) return ;
-                    // etc/XQFT.g:227:125: ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )*
+                    // etc/XQFT.g:227:135: ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )*
                     loop8:
                     do {
                         int alt8=5;
@@ -4332,28 +4314,28 @@ public class XQFTLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // etc/XQFT.g:227:126: PredefinedEntityRef
+                    	    // etc/XQFT.g:227:136: PredefinedEntityRef
                     	    {
                     	    mPredefinedEntityRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // etc/XQFT.g:227:148: CharRef
+                    	    // etc/XQFT.g:227:158: CharRef
                     	    {
                     	    mCharRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 3 :
-                    	    // etc/XQFT.g:227:158: EscapeApos
+                    	    // etc/XQFT.g:227:168: EscapeApos
                     	    {
                     	    mEscapeApos(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 4 :
-                    	    // etc/XQFT.g:227:171: ~ ( SINGLEQUOTE | '&' )
+                    	    // etc/XQFT.g:227:181: ~ ( SINGLEQUOTE | '&' )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -4531,11 +4513,29 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end EscapeApos
 
+    // $ANTLR start DOUBLEQUOTESi
+    public final void mDOUBLEQUOTESi() throws RecognitionException {
+        try {
+            int _type = DOUBLEQUOTESi;
+            // etc/XQFT.g:232:15: ( '\"' )
+            // etc/XQFT.g:232:17: '\"'
+            {
+            match('\"'); if (failed) return ;
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DOUBLEQUOTESi
+
     // $ANTLR start CleanChar
     public final void mCleanChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:242:21: (~ ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' | '\\uFFFE' | '\\uFFFF' | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' ) )
-            // etc/XQFT.g:242:23: ~ ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' | '\\uFFFE' | '\\uFFFF' | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' )
+            // etc/XQFT.g:244:21: (~ ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' | '\\uFFFE' | '\\uFFFF' | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' ) )
+            // etc/XQFT.g:244:23: ~ ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' | '\\uFFFE' | '\\uFFFF' | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' )
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
                 input.consume();
@@ -4560,7 +4560,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Char
     public final void mChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:244:17: ( CleanChar | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' )
+            // etc/XQFT.g:246:17: ( CleanChar | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
@@ -4586,7 +4586,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ElementContentChar
     public final void mElementContentChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:246:30: ( CleanChar | '\"' | '\\'' | '-' )
+            // etc/XQFT.g:248:30: ( CleanChar | '\"' | '\\'' | '-' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
@@ -4612,7 +4612,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start QuotAttrContentChar
     public final void mQuotAttrContentChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:247:30: ( CleanChar | '\\'' | '-' )
+            // etc/XQFT.g:249:30: ( CleanChar | '\\'' | '-' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
@@ -4638,7 +4638,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start AposAttrContentChar
     public final void mAposAttrContentChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:248:30: ( CleanChar | '\"' | '-' )
+            // etc/XQFT.g:250:30: ( CleanChar | '\"' | '-' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
@@ -4665,12 +4665,12 @@ public class XQFTLexer extends Lexer {
     public final void mComment() throws RecognitionException {
         try {
             int _type = Comment;
-            // etc/XQFT.g:257:21: ( '(:' ( CommentCheck )* ':)' )
-            // etc/XQFT.g:257:22: '(:' ( CommentCheck )* ':)'
+            // etc/XQFT.g:259:21: ( '(:' ( CommentCheck )* ':)' )
+            // etc/XQFT.g:259:22: '(:' ( CommentCheck )* ':)'
             {
             match("(:"); if (failed) return ;
 
-            // etc/XQFT.g:257:27: ( CommentCheck )*
+            // etc/XQFT.g:259:27: ( CommentCheck )*
             loop11:
             do {
                 int alt11=2;
@@ -4701,7 +4701,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // etc/XQFT.g:257:28: CommentCheck
+            	    // etc/XQFT.g:259:28: CommentCheck
             	    {
             	    mCommentCheck(); if (failed) return ;
 
@@ -4731,7 +4731,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CommentCheck
     public final void mCommentCheck() throws RecognitionException {
         try {
-            // etc/XQFT.g:258:22: ( ( Comment )=> Comment | CommentContents )
+            // etc/XQFT.g:260:22: ( ( Comment )=> Comment | CommentContents )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -4750,7 +4750,7 @@ public class XQFTLexer extends Lexer {
                     else {
                         if (backtracking>0) {failed=true; return ;}
                         NoViableAltException nvae =
-                            new NoViableAltException("258:10: fragment CommentCheck : ( ( Comment )=> Comment | CommentContents );", 12, 3, input);
+                            new NoViableAltException("260:10: fragment CommentCheck : ( ( Comment )=> Comment | CommentContents );", 12, 3, input);
 
                         throw nvae;
                     }
@@ -4764,20 +4764,20 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("258:10: fragment CommentCheck : ( ( Comment )=> Comment | CommentContents );", 12, 0, input);
+                    new NoViableAltException("260:10: fragment CommentCheck : ( ( Comment )=> Comment | CommentContents );", 12, 0, input);
 
                 throw nvae;
             }
             switch (alt12) {
                 case 1 :
-                    // etc/XQFT.g:258:24: ( Comment )=> Comment
+                    // etc/XQFT.g:260:24: ( Comment )=> Comment
                     {
                     mComment(); if (failed) return ;
 
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:259:8: CommentContents
+                    // etc/XQFT.g:261:8: CommentContents
                     {
                     mCommentContents(); if (failed) return ;
 
@@ -4796,12 +4796,12 @@ public class XQFTLexer extends Lexer {
         try {
             Token m=null;
 
-            // etc/XQFT.g:263:30: (m= OneOrMoreChar {...}?)
-            // etc/XQFT.g:263:32: m= OneOrMoreChar {...}?
+            // etc/XQFT.g:265:30: (m= OneOrMoreChar {...}?)
+            // etc/XQFT.g:265:32: m= OneOrMoreChar {...}?
             {
-            int mStart3902 = getCharIndex();
+            int mStart3903 = getCharIndex();
             mOneOrMoreChar(); if (failed) return ;
-            m = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, mStart3902, getCharIndex()-1);
+            m = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, mStart3903, getCharIndex()-1);
             if ( !(((!m.equals("(:")) && (!m.equals(":)") ))) ) {
                 if (backtracking>0) {failed=true; return ;}
                 throw new FailedPredicateException(input, "CommentContents", "((!$m.equals(\"(:\")) && (!$m.equals(\":)\") ))");
@@ -4818,7 +4818,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NameChar
     public final void mNameChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:268:30: ( Letter | Digit | DOT | MINUSSi | UNDERSCORE | COLONSi | CombiningChar | Extender )
+            // etc/XQFT.g:270:30: ( Letter | Digit | DOT | MINUSSi | UNDERSCORE | COLONSi | CombiningChar | Extender )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<=':')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u00B7'||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||(input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0386' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0640' && input.LA(1)<='\u0652')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u0670' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||(input.LA(1)>='\u06D5' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||(input.LA(1)>='\u093C' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0958' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E3')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09F1')||input.LA(1)=='\u0A02'||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||(input.LA(1)>='\u0ABC' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||(input.LA(1)>='\u0B3C' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||(input.LA(1)>='\u0E30' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E4E')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||(input.LA(1)>='\u0EB0' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBD')||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||input.LA(1)=='\u0EC6'||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3005'||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -4844,8 +4844,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Name
     public final void mName() throws RecognitionException {
         try {
-            // etc/XQFT.g:269:30: ( ( Letter | UNDERSCORE | COLONSi ) ( NameChar )* )
-            // etc/XQFT.g:269:32: ( Letter | UNDERSCORE | COLONSi ) ( NameChar )*
+            // etc/XQFT.g:271:30: ( ( Letter | UNDERSCORE | COLONSi ) ( NameChar )* )
+            // etc/XQFT.g:271:32: ( Letter | UNDERSCORE | COLONSi ) ( NameChar )*
             {
             if ( input.LA(1)==':'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
                 input.consume();
@@ -4858,7 +4858,7 @@ public class XQFTLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // etc/XQFT.g:269:64: ( NameChar )*
+            // etc/XQFT.g:271:64: ( NameChar )*
             loop13:
             do {
                 int alt13=2;
@@ -4871,7 +4871,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // etc/XQFT.g:269:65: NameChar
+            	    // etc/XQFT.g:271:65: NameChar
             	    {
             	    mNameChar(); if (failed) return ;
 
@@ -4896,7 +4896,7 @@ public class XQFTLexer extends Lexer {
     public final void mCharRef() throws RecognitionException {
         try {
             int _type = CharRef;
-            // etc/XQFT.g:290:21: ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi )
+            // etc/XQFT.g:292:21: ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -4915,7 +4915,7 @@ public class XQFTLexer extends Lexer {
                     else {
                         if (backtracking>0) {failed=true; return ;}
                         NoViableAltException nvae =
-                            new NoViableAltException("290:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 2, input);
+                            new NoViableAltException("292:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 2, input);
 
                         throw nvae;
                     }
@@ -4923,7 +4923,7 @@ public class XQFTLexer extends Lexer {
                 else {
                     if (backtracking>0) {failed=true; return ;}
                     NoViableAltException nvae =
-                        new NoViableAltException("290:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 1, input);
+                        new NoViableAltException("292:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 1, input);
 
                     throw nvae;
                 }
@@ -4931,17 +4931,17 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("290:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 0, input);
+                    new NoViableAltException("292:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 0, input);
 
                 throw nvae;
             }
             switch (alt16) {
                 case 1 :
-                    // etc/XQFT.g:290:23: '&#' ( '0' .. '9' )+ SEMICOLONSi
+                    // etc/XQFT.g:292:23: '&#' ( '0' .. '9' )+ SEMICOLONSi
                     {
                     match("&#"); if (failed) return ;
 
-                    // etc/XQFT.g:290:28: ( '0' .. '9' )+
+                    // etc/XQFT.g:292:28: ( '0' .. '9' )+
                     int cnt14=0;
                     loop14:
                     do {
@@ -4955,7 +4955,7 @@ public class XQFTLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // etc/XQFT.g:290:29: '0' .. '9'
+                    	    // etc/XQFT.g:292:29: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); if (failed) return ;
 
@@ -4977,11 +4977,11 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:290:54: '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi
+                    // etc/XQFT.g:292:54: '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi
                     {
                     match("&#x"); if (failed) return ;
 
-                    // etc/XQFT.g:290:60: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+                    // etc/XQFT.g:292:60: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
                     int cnt15=0;
                     loop15:
                     do {
@@ -5039,11 +5039,11 @@ public class XQFTLexer extends Lexer {
     public final void mNCName() throws RecognitionException {
         try {
             int _type = NCName;
-            // etc/XQFT.g:305:21: ( NCNameStartChar ( NCNameChar )* )
-            // etc/XQFT.g:305:23: NCNameStartChar ( NCNameChar )*
+            // etc/XQFT.g:307:21: ( NCNameStartChar ( NCNameChar )* )
+            // etc/XQFT.g:307:23: NCNameStartChar ( NCNameChar )*
             {
             mNCNameStartChar(); if (failed) return ;
-            // etc/XQFT.g:305:39: ( NCNameChar )*
+            // etc/XQFT.g:307:39: ( NCNameChar )*
             loop17:
             do {
                 int alt17=2;
@@ -5056,7 +5056,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // etc/XQFT.g:305:39: NCNameChar
+            	    // etc/XQFT.g:307:39: NCNameChar
             	    {
             	    mNCNameChar(); if (failed) return ;
 
@@ -5081,7 +5081,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NCNameChar
     public final void mNCNameChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:312:28: ( Letter | Digit | DOT | MINUSSi | UNDERSCORE | CombiningChar | Extender )
+            // etc/XQFT.g:314:28: ( Letter | Digit | DOT | MINUSSi | UNDERSCORE | CombiningChar | Extender )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u00B7'||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||(input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0386' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0640' && input.LA(1)<='\u0652')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u0670' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||(input.LA(1)>='\u06D5' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||(input.LA(1)>='\u093C' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0958' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E3')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09F1')||input.LA(1)=='\u0A02'||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||(input.LA(1)>='\u0ABC' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||(input.LA(1)>='\u0B3C' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||(input.LA(1)>='\u0E30' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E4E')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||(input.LA(1)>='\u0EB0' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBD')||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||input.LA(1)=='\u0EC6'||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3005'||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -5107,7 +5107,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NCNameStartChar
     public final void mNCNameStartChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:314:30: ( Letter | UNDERSCORE )
+            // etc/XQFT.g:316:30: ( Letter | UNDERSCORE )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -5134,10 +5134,10 @@ public class XQFTLexer extends Lexer {
     public final void mS() throws RecognitionException {
         try {
             int _type = S;
-            // etc/XQFT.g:317:21: ( ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+ )
-            // etc/XQFT.g:317:23: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
+            // etc/XQFT.g:319:21: ( ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+ )
+            // etc/XQFT.g:319:23: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
             {
-            // etc/XQFT.g:317:23: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
+            // etc/XQFT.g:319:23: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
             int cnt18=0;
             loop18:
             do {
@@ -5194,10 +5194,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Digits
     public final void mDigits() throws RecognitionException {
         try {
-            // etc/XQFT.g:320:30: ( ( '0' .. '9' )+ )
-            // etc/XQFT.g:320:32: ( '0' .. '9' )+
+            // etc/XQFT.g:322:30: ( ( '0' .. '9' )+ )
+            // etc/XQFT.g:322:32: ( '0' .. '9' )+
             {
-            // etc/XQFT.g:320:32: ( '0' .. '9' )+
+            // etc/XQFT.g:322:32: ( '0' .. '9' )+
             int cnt19=0;
             loop19:
             do {
@@ -5211,7 +5211,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt19) {
             	case 1 :
-            	    // etc/XQFT.g:320:33: '0' .. '9'
+            	    // etc/XQFT.g:322:33: '0' .. '9'
             	    {
             	    matchRange('0','9'); if (failed) return ;
 
@@ -5240,10 +5240,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ZeroOrMoreChar
     public final void mZeroOrMoreChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:324:30: ( ( Char )* )
-            // etc/XQFT.g:324:32: ( Char )*
+            // etc/XQFT.g:326:30: ( ( Char )* )
+            // etc/XQFT.g:326:32: ( Char )*
             {
-            // etc/XQFT.g:324:32: ( Char )*
+            // etc/XQFT.g:326:32: ( Char )*
             loop20:
             do {
                 int alt20=2;
@@ -5256,7 +5256,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt20) {
             	case 1 :
-            	    // etc/XQFT.g:324:32: Char
+            	    // etc/XQFT.g:326:32: Char
             	    {
             	    mChar(); if (failed) return ;
 
@@ -5280,10 +5280,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start OneOrMoreChar
     public final void mOneOrMoreChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:325:29: ( ( Char )+ )
-            // etc/XQFT.g:325:31: ( Char )+
+            // etc/XQFT.g:327:29: ( ( Char )+ )
+            // etc/XQFT.g:327:31: ( Char )+
             {
-            // etc/XQFT.g:325:31: ( Char )+
+            // etc/XQFT.g:327:31: ( Char )+
             int cnt21=0;
             loop21:
             do {
@@ -5297,7 +5297,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt21) {
             	case 1 :
-            	    // etc/XQFT.g:325:31: Char
+            	    // etc/XQFT.g:327:31: Char
             	    {
             	    mChar(); if (failed) return ;
 
@@ -5326,7 +5326,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CharNotMinus
     public final void mCharNotMinus() throws RecognitionException {
         try {
-            // etc/XQFT.g:326:25: ( CleanChar | '{' | '}' | '<' | '&' | '\"' | '\\'' )
+            // etc/XQFT.g:328:25: ( CleanChar | '{' | '}' | '<' | '&' | '\"' | '\\'' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
@@ -5350,7 +5350,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR end CharNotMinus
 
     public void mTokens() throws RecognitionException {
-        // etc/XQFT.g:1:39: ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S )
+        // etc/XQFT.g:1:39: ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S )
         int alt22=193;
         int LA22_0 = input.LA(1);
 
@@ -5366,13 +5366,13 @@ public class XQFTLexer extends Lexer {
             else if ( (synpred4()) ) {
                 alt22=3;
             }
-            else if ( (synpred160()) ) {
-                alt22=159;
+            else if ( (synpred159()) ) {
+                alt22=158;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 2, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 2, input);
 
                 throw nvae;
             }
@@ -5386,25 +5386,25 @@ public class XQFTLexer extends Lexer {
             else if ( (synpred27()) ) {
                 alt22=26;
             }
-            else if ( (synpred61()) ) {
-                alt22=60;
+            else if ( (synpred60()) ) {
+                alt22=59;
             }
-            else if ( (synpred101()) ) {
-                alt22=100;
+            else if ( (synpred100()) ) {
+                alt22=99;
             }
-            else if ( (synpred110()) ) {
-                alt22=109;
+            else if ( (synpred109()) ) {
+                alt22=108;
             }
-            else if ( (synpred151()) ) {
-                alt22=150;
+            else if ( (synpred150()) ) {
+                alt22=149;
             }
-            else if ( (synpred159()) ) {
-                alt22=158;
+            else if ( (synpred158()) ) {
+                alt22=157;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 3, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 3, input);
 
                 throw nvae;
             }
@@ -5421,23 +5421,23 @@ public class XQFTLexer extends Lexer {
             else if ( (synpred30()) ) {
                 alt22=29;
             }
-            else if ( (synpred82()) ) {
-                alt22=81;
+            else if ( (synpred81()) ) {
+                alt22=80;
             }
-            else if ( (synpred100()) ) {
-                alt22=99;
+            else if ( (synpred99()) ) {
+                alt22=98;
             }
-            else if ( (synpred129()) ) {
-                alt22=128;
+            else if ( (synpred128()) ) {
+                alt22=127;
             }
-            else if ( (synpred137()) ) {
-                alt22=136;
+            else if ( (synpred136()) ) {
+                alt22=135;
             }
-            else if ( (synpred171()) ) {
-                alt22=170;
+            else if ( (synpred170()) ) {
+                alt22=169;
             }
-            else if ( (synpred174()) ) {
-                alt22=173;
+            else if ( (synpred173()) ) {
+                alt22=172;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5445,7 +5445,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 4, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 4, input);
 
                 throw nvae;
             }
@@ -5465,23 +5465,23 @@ public class XQFTLexer extends Lexer {
             else if ( (synpred41()) ) {
                 alt22=40;
             }
-            else if ( (synpred57()) ) {
-                alt22=56;
+            else if ( (synpred56()) ) {
+                alt22=55;
             }
-            else if ( (synpred64()) ) {
-                alt22=63;
+            else if ( (synpred63()) ) {
+                alt22=62;
             }
-            else if ( (synpred95()) ) {
-                alt22=94;
+            else if ( (synpred94()) ) {
+                alt22=93;
             }
-            else if ( (synpred133()) ) {
-                alt22=132;
+            else if ( (synpred132()) ) {
+                alt22=131;
             }
-            else if ( (synpred149()) ) {
-                alt22=148;
+            else if ( (synpred148()) ) {
+                alt22=147;
             }
-            else if ( (synpred158()) ) {
-                alt22=157;
+            else if ( (synpred157()) ) {
+                alt22=156;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5489,7 +5489,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 5, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 5, input);
 
                 throw nvae;
             }
@@ -5503,23 +5503,23 @@ public class XQFTLexer extends Lexer {
             else if ( (synpred31()) ) {
                 alt22=30;
             }
-            else if ( (synpred46()) ) {
-                alt22=45;
+            else if ( (synpred45()) ) {
+                alt22=44;
             }
-            else if ( (synpred69()) ) {
-                alt22=68;
+            else if ( (synpred68()) ) {
+                alt22=67;
             }
-            else if ( (synpred109()) ) {
-                alt22=108;
+            else if ( (synpred108()) ) {
+                alt22=107;
             }
-            else if ( (synpred111()) ) {
-                alt22=110;
+            else if ( (synpred110()) ) {
+                alt22=109;
             }
-            else if ( (synpred127()) ) {
-                alt22=126;
+            else if ( (synpred126()) ) {
+                alt22=125;
             }
-            else if ( (synpred177()) ) {
-                alt22=176;
+            else if ( (synpred176()) ) {
+                alt22=175;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5527,7 +5527,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 6, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 6, input);
 
                 throw nvae;
             }
@@ -5538,26 +5538,26 @@ public class XQFTLexer extends Lexer {
             if ( (synpred9()) ) {
                 alt22=8;
             }
-            else if ( (synpred56()) ) {
-                alt22=55;
+            else if ( (synpred55()) ) {
+                alt22=54;
             }
-            else if ( (synpred130()) ) {
-                alt22=129;
+            else if ( (synpred129()) ) {
+                alt22=128;
             }
-            else if ( (synpred170()) ) {
-                alt22=169;
+            else if ( (synpred169()) ) {
+                alt22=168;
+            }
+            else if ( (synpred171()) ) {
+                alt22=170;
             }
             else if ( (synpred172()) ) {
                 alt22=171;
             }
-            else if ( (synpred173()) ) {
-                alt22=172;
+            else if ( (synpred178()) ) {
+                alt22=177;
             }
-            else if ( (synpred179()) ) {
-                alt22=178;
-            }
-            else if ( (synpred181()) ) {
-                alt22=180;
+            else if ( (synpred180()) ) {
+                alt22=179;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5565,7 +5565,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 7, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 7, input);
 
                 throw nvae;
             }
@@ -5582,23 +5582,23 @@ public class XQFTLexer extends Lexer {
             else if ( (synpred38()) ) {
                 alt22=37;
             }
-            else if ( (synpred45()) ) {
-                alt22=44;
+            else if ( (synpred44()) ) {
+                alt22=43;
             }
-            else if ( (synpred55()) ) {
-                alt22=54;
+            else if ( (synpred54()) ) {
+                alt22=53;
             }
-            else if ( (synpred88()) ) {
-                alt22=87;
+            else if ( (synpred87()) ) {
+                alt22=86;
             }
-            else if ( (synpred118()) ) {
-                alt22=117;
+            else if ( (synpred117()) ) {
+                alt22=116;
             }
-            else if ( (synpred126()) ) {
-                alt22=125;
+            else if ( (synpred125()) ) {
+                alt22=124;
             }
-            else if ( (synpred163()) ) {
-                alt22=162;
+            else if ( (synpred162()) ) {
+                alt22=161;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5606,7 +5606,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 8, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 8, input);
 
                 throw nvae;
             }
@@ -5617,11 +5617,11 @@ public class XQFTLexer extends Lexer {
             if ( (synpred11()) ) {
                 alt22=10;
             }
-            else if ( (synpred62()) ) {
-                alt22=61;
+            else if ( (synpred61()) ) {
+                alt22=60;
             }
-            else if ( (synpred90()) ) {
-                alt22=89;
+            else if ( (synpred89()) ) {
+                alt22=88;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5629,7 +5629,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 9, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 9, input);
 
                 throw nvae;
             }
@@ -5640,13 +5640,13 @@ public class XQFTLexer extends Lexer {
             if ( (synpred12()) ) {
                 alt22=11;
             }
-            else if ( (synpred122()) ) {
-                alt22=121;
+            else if ( (synpred121()) ) {
+                alt22=120;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 10, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 10, input);
 
                 throw nvae;
             }
@@ -5663,53 +5663,53 @@ public class XQFTLexer extends Lexer {
             if ( (synpred15()) ) {
                 alt22=14;
             }
-            else if ( (synpred48()) ) {
-                alt22=47;
+            else if ( (synpred47()) ) {
+                alt22=46;
             }
-            else if ( (synpred70()) ) {
-                alt22=69;
+            else if ( (synpred69()) ) {
+                alt22=68;
             }
-            else if ( (synpred73()) ) {
-                alt22=72;
+            else if ( (synpred72()) ) {
+                alt22=71;
             }
-            else if ( (synpred77()) ) {
-                alt22=76;
+            else if ( (synpred76()) ) {
+                alt22=75;
             }
-            else if ( (synpred83()) ) {
-                alt22=82;
+            else if ( (synpred82()) ) {
+                alt22=81;
             }
-            else if ( (synpred104()) ) {
-                alt22=103;
+            else if ( (synpred103()) ) {
+                alt22=102;
             }
-            else if ( (synpred123()) ) {
-                alt22=122;
+            else if ( (synpred122()) ) {
+                alt22=121;
             }
-            else if ( (synpred145()) ) {
-                alt22=144;
+            else if ( (synpred144()) ) {
+                alt22=143;
             }
-            else if ( (synpred147()) ) {
-                alt22=146;
+            else if ( (synpred146()) ) {
+                alt22=145;
             }
-            else if ( (synpred150()) ) {
-                alt22=149;
+            else if ( (synpred149()) ) {
+                alt22=148;
             }
-            else if ( (synpred162()) ) {
-                alt22=161;
+            else if ( (synpred161()) ) {
+                alt22=160;
             }
-            else if ( (synpred166()) ) {
-                alt22=165;
+            else if ( (synpred165()) ) {
+                alt22=164;
             }
-            else if ( (synpred178()) ) {
-                alt22=177;
+            else if ( (synpred177()) ) {
+                alt22=176;
             }
-            else if ( (synpred180()) ) {
-                alt22=179;
+            else if ( (synpred179()) ) {
+                alt22=178;
             }
-            else if ( (synpred182()) ) {
-                alt22=181;
+            else if ( (synpred181()) ) {
+                alt22=180;
             }
-            else if ( (synpred184()) ) {
-                alt22=183;
+            else if ( (synpred183()) ) {
+                alt22=182;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5717,7 +5717,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 13, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 13, input);
 
                 throw nvae;
             }
@@ -5731,20 +5731,20 @@ public class XQFTLexer extends Lexer {
             else if ( (synpred28()) ) {
                 alt22=27;
             }
-            else if ( (synpred44()) ) {
-                alt22=43;
+            else if ( (synpred43()) ) {
+                alt22=42;
             }
-            else if ( (synpred66()) ) {
-                alt22=65;
+            else if ( (synpred65()) ) {
+                alt22=64;
             }
-            else if ( (synpred103()) ) {
-                alt22=102;
+            else if ( (synpred102()) ) {
+                alt22=101;
             }
-            else if ( (synpred136()) ) {
-                alt22=135;
+            else if ( (synpred135()) ) {
+                alt22=134;
             }
-            else if ( (synpred141()) ) {
-                alt22=140;
+            else if ( (synpred140()) ) {
+                alt22=139;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5752,7 +5752,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 14, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 14, input);
 
                 throw nvae;
             }
@@ -5763,11 +5763,11 @@ public class XQFTLexer extends Lexer {
             if ( (synpred18()) ) {
                 alt22=17;
             }
-            else if ( (synpred96()) ) {
-                alt22=95;
+            else if ( (synpred95()) ) {
+                alt22=94;
             }
-            else if ( (synpred102()) ) {
-                alt22=101;
+            else if ( (synpred101()) ) {
+                alt22=100;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5775,7 +5775,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 15, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 15, input);
 
                 throw nvae;
             }
@@ -5795,7 +5795,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 17, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 17, input);
 
                 throw nvae;
             }
@@ -5809,32 +5809,32 @@ public class XQFTLexer extends Lexer {
             else if ( (synpred25()) ) {
                 alt22=24;
             }
-            else if ( (synpred60()) ) {
-                alt22=59;
+            else if ( (synpred59()) ) {
+                alt22=58;
             }
-            else if ( (synpred79()) ) {
-                alt22=78;
+            else if ( (synpred78()) ) {
+                alt22=77;
             }
-            else if ( (synpred97()) ) {
-                alt22=96;
+            else if ( (synpred96()) ) {
+                alt22=95;
             }
-            else if ( (synpred112()) ) {
-                alt22=111;
+            else if ( (synpred111()) ) {
+                alt22=110;
             }
-            else if ( (synpred119()) ) {
-                alt22=118;
+            else if ( (synpred118()) ) {
+                alt22=117;
             }
-            else if ( (synpred128()) ) {
-                alt22=127;
+            else if ( (synpred127()) ) {
+                alt22=126;
             }
-            else if ( (synpred165()) ) {
-                alt22=164;
+            else if ( (synpred164()) ) {
+                alt22=163;
             }
-            else if ( (synpred167()) ) {
-                alt22=166;
+            else if ( (synpred166()) ) {
+                alt22=165;
             }
-            else if ( (synpred183()) ) {
-                alt22=182;
+            else if ( (synpred182()) ) {
+                alt22=181;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5842,7 +5842,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 18, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 18, input);
 
                 throw nvae;
             }
@@ -5853,8 +5853,8 @@ public class XQFTLexer extends Lexer {
             if ( (synpred23()) ) {
                 alt22=22;
             }
-            else if ( (synpred125()) ) {
-                alt22=124;
+            else if ( (synpred124()) ) {
+                alt22=123;
             }
             else if ( (synpred191()) ) {
                 alt22=190;
@@ -5862,7 +5862,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 19, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 19, input);
 
                 throw nvae;
             }
@@ -5876,20 +5876,20 @@ public class XQFTLexer extends Lexer {
             else if ( (synpred35()) ) {
                 alt22=34;
             }
-            else if ( (synpred72()) ) {
-                alt22=71;
+            else if ( (synpred71()) ) {
+                alt22=70;
+            }
+            else if ( (synpred83()) ) {
+                alt22=82;
             }
             else if ( (synpred84()) ) {
                 alt22=83;
             }
-            else if ( (synpred85()) ) {
-                alt22=84;
+            else if ( (synpred90()) ) {
+                alt22=89;
             }
-            else if ( (synpred91()) ) {
-                alt22=90;
-            }
-            else if ( (synpred120()) ) {
-                alt22=119;
+            else if ( (synpred119()) ) {
+                alt22=118;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5897,7 +5897,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 20, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 20, input);
 
                 throw nvae;
             }
@@ -5911,35 +5911,35 @@ public class XQFTLexer extends Lexer {
             else if ( (synpred37()) ) {
                 alt22=36;
             }
-            else if ( (synpred43()) ) {
-                alt22=42;
+            else if ( (synpred42()) ) {
+                alt22=41;
             }
-            else if ( (synpred53()) ) {
-                alt22=52;
+            else if ( (synpred52()) ) {
+                alt22=51;
             }
-            else if ( (synpred63()) ) {
-                alt22=62;
+            else if ( (synpred62()) ) {
+                alt22=61;
             }
-            else if ( (synpred108()) ) {
-                alt22=107;
+            else if ( (synpred107()) ) {
+                alt22=106;
             }
-            else if ( (synpred113()) ) {
-                alt22=112;
+            else if ( (synpred112()) ) {
+                alt22=111;
             }
-            else if ( (synpred121()) ) {
-                alt22=120;
+            else if ( (synpred120()) ) {
+                alt22=119;
             }
-            else if ( (synpred124()) ) {
-                alt22=123;
+            else if ( (synpred123()) ) {
+                alt22=122;
             }
-            else if ( (synpred152()) ) {
-                alt22=151;
+            else if ( (synpred151()) ) {
+                alt22=150;
+            }
+            else if ( (synpred184()) ) {
+                alt22=183;
             }
             else if ( (synpred185()) ) {
                 alt22=184;
-            }
-            else if ( (synpred186()) ) {
-                alt22=185;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5947,7 +5947,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 21, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 21, input);
 
                 throw nvae;
             }
@@ -5958,11 +5958,11 @@ public class XQFTLexer extends Lexer {
             if ( (synpred29()) ) {
                 alt22=28;
             }
-            else if ( (synpred86()) ) {
-                alt22=85;
+            else if ( (synpred85()) ) {
+                alt22=84;
             }
-            else if ( (synpred106()) ) {
-                alt22=105;
+            else if ( (synpred105()) ) {
+                alt22=104;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -5970,7 +5970,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 22, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 22, input);
 
                 throw nvae;
             }
@@ -5984,16 +5984,16 @@ public class XQFTLexer extends Lexer {
             if ( (synpred34()) ) {
                 alt22=33;
             }
-            else if ( (synpred59()) ) {
-                alt22=58;
+            else if ( (synpred58()) ) {
+                alt22=57;
             }
-            else if ( (synpred93()) ) {
-                alt22=92;
+            else if ( (synpred92()) ) {
+                alt22=91;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 24, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 24, input);
 
                 throw nvae;
             }
@@ -6004,13 +6004,13 @@ public class XQFTLexer extends Lexer {
             if ( (synpred36()) ) {
                 alt22=35;
             }
-            else if ( (synpred146()) ) {
-                alt22=145;
+            else if ( (synpred145()) ) {
+                alt22=144;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 25, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 25, input);
 
                 throw nvae;
             }
@@ -6021,32 +6021,32 @@ public class XQFTLexer extends Lexer {
             if ( (synpred40()) ) {
                 alt22=39;
             }
-            else if ( (synpred47()) ) {
-                alt22=46;
+            else if ( (synpred46()) ) {
+                alt22=45;
             }
-            else if ( (synpred78()) ) {
-                alt22=77;
+            else if ( (synpred77()) ) {
+                alt22=76;
             }
-            else if ( (synpred81()) ) {
-                alt22=80;
+            else if ( (synpred80()) ) {
+                alt22=79;
             }
-            else if ( (synpred87()) ) {
-                alt22=86;
+            else if ( (synpred86()) ) {
+                alt22=85;
             }
-            else if ( (synpred92()) ) {
-                alt22=91;
+            else if ( (synpred91()) ) {
+                alt22=90;
             }
-            else if ( (synpred134()) ) {
-                alt22=133;
+            else if ( (synpred133()) ) {
+                alt22=132;
             }
-            else if ( (synpred139()) ) {
-                alt22=138;
+            else if ( (synpred138()) ) {
+                alt22=137;
+            }
+            else if ( (synpred167()) ) {
+                alt22=166;
             }
             else if ( (synpred168()) ) {
                 alt22=167;
-            }
-            else if ( (synpred169()) ) {
-                alt22=168;
             }
             else if ( (synpred193()) ) {
                 alt22=192;
@@ -6054,56 +6054,321 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 26, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='\"') ) {
-            int LA22_27 = input.LA(2);
-
-            if ( (synpred42()) ) {
-                alt22=41;
-            }
-            else if ( (synpred190()) ) {
-                alt22=189;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 27, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 26, input);
 
                 throw nvae;
             }
         }
         else if ( (LA22_0==':') ) {
-            int LA22_28 = input.LA(2);
+            int LA22_27 = input.LA(2);
 
-            if ( (synpred49()) ) {
-                alt22=48;
+            if ( (synpred48()) ) {
+                alt22=47;
             }
-            else if ( (synpred138()) ) {
-                alt22=137;
+            else if ( (synpred137()) ) {
+                alt22=136;
             }
-            else if ( (synpred164()) ) {
-                alt22=163;
+            else if ( (synpred163()) ) {
+                alt22=162;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 28, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 27, input);
 
                 throw nvae;
             }
         }
         else if ( (LA22_0==';') ) {
-            alt22=49;
+            alt22=48;
         }
         else if ( (LA22_0=='\'') ) {
+            int LA22_29 = input.LA(2);
+
+            if ( (synpred50()) ) {
+                alt22=49;
+            }
+            else if ( (synpred189()) ) {
+                alt22=188;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 29, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA22_0=='_') ) {
             int LA22_30 = input.LA(2);
 
             if ( (synpred51()) ) {
                 alt22=50;
+            }
+            else if ( (synpred193()) ) {
+                alt22=192;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 30, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA22_0=='m') ) {
+            int LA22_31 = input.LA(2);
+
+            if ( (synpred53()) ) {
+                alt22=52;
+            }
+            else if ( (synpred115()) ) {
+                alt22=114;
+            }
+            else if ( (synpred141()) ) {
+                alt22=140;
+            }
+            else if ( (synpred193()) ) {
+                alt22=192;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 31, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA22_0=='-') ) {
+            int LA22_32 = input.LA(2);
+
+            if ( (synpred57()) ) {
+                alt22=56;
+            }
+            else if ( (synpred114()) ) {
+                alt22=113;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 32, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA22_0=='n') ) {
+            int LA22_33 = input.LA(2);
+
+            if ( (synpred64()) ) {
+                alt22=63;
+            }
+            else if ( (synpred98()) ) {
+                alt22=97;
+            }
+            else if ( (synpred130()) ) {
+                alt22=129;
+            }
+            else if ( (synpred131()) ) {
+                alt22=130;
+            }
+            else if ( (synpred143()) ) {
+                alt22=142;
+            }
+            else if ( (synpred152()) ) {
+                alt22=151;
+            }
+            else if ( (synpred193()) ) {
+                alt22=192;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 33, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA22_0==',') ) {
+            alt22=65;
+        }
+        else if ( (LA22_0=='l') ) {
+            int LA22_35 = input.LA(2);
+
+            if ( (synpred67()) ) {
+                alt22=66;
+            }
+            else if ( (synpred70()) ) {
+                alt22=69;
+            }
+            else if ( (synpred75()) ) {
+                alt22=74;
+            }
+            else if ( (synpred93()) ) {
+                alt22=92;
+            }
+            else if ( (synpred147()) ) {
+                alt22=146;
+            }
+            else if ( (synpred153()) ) {
+                alt22=152;
+            }
+            else if ( (synpred154()) ) {
+                alt22=153;
+            }
+            else if ( (synpred160()) ) {
+                alt22=159;
+            }
+            else if ( (synpred193()) ) {
+                alt22=192;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 35, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA22_0==']') ) {
+            int LA22_36 = input.LA(2);
+
+            if ( (synpred73()) ) {
+                alt22=72;
+            }
+            else if ( (synpred106()) ) {
+                alt22=105;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 36, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA22_0=='g') ) {
+            int LA22_37 = input.LA(2);
+
+            if ( (synpred74()) ) {
+                alt22=73;
+            }
+            else if ( (synpred155()) ) {
+                alt22=154;
+            }
+            else if ( (synpred156()) ) {
+                alt22=155;
+            }
+            else if ( (synpred193()) ) {
+                alt22=192;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 37, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA22_0=='+') ) {
+            alt22=78;
+        }
+        else if ( (LA22_0=='}') ) {
+            int LA22_39 = input.LA(2);
+
+            if ( (synpred88()) ) {
+                alt22=87;
+            }
+            else if ( (synpred142()) ) {
+                alt22=141;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 39, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA22_0=='*') ) {
+            alt22=96;
+        }
+        else if ( (LA22_0=='[') ) {
+            alt22=103;
+        }
+        else if ( (LA22_0==')') ) {
+            alt22=112;
+        }
+        else if ( (LA22_0=='r') ) {
+            int LA22_43 = input.LA(2);
+
+            if ( (synpred116()) ) {
+                alt22=115;
+            }
+            else if ( (synpred139()) ) {
+                alt22=138;
+            }
+            else if ( (synpred193()) ) {
+                alt22=192;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 43, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA22_0=='@') ) {
+            alt22=133;
+        }
+        else if ( (LA22_0=='.') ) {
+            int LA22_45 = input.LA(2);
+
+            if ( (synpred174()) ) {
+                alt22=173;
+            }
+            else if ( (synpred175()) ) {
+                alt22=174;
+            }
+            else if ( (synpred187()) ) {
+                alt22=186;
+            }
+            else if ( (synpred188()) ) {
+                alt22=187;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 45, input);
+
+                throw nvae;
+            }
+        }
+        else if ( ((LA22_0>='0' && LA22_0<='9')) ) {
+            int LA22_46 = input.LA(2);
+
+            if ( (synpred186()) ) {
+                alt22=185;
+            }
+            else if ( (synpred187()) ) {
+                alt22=186;
+            }
+            else if ( (synpred188()) ) {
+                alt22=187;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 46, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA22_0=='\"') ) {
+            int LA22_47 = input.LA(2);
+
+            if ( (synpred189()) ) {
+                alt22=188;
             }
             else if ( (synpred190()) ) {
                 alt22=189;
@@ -6111,272 +6376,7 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 30, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='_') ) {
-            int LA22_31 = input.LA(2);
-
-            if ( (synpred52()) ) {
-                alt22=51;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 31, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='m') ) {
-            int LA22_32 = input.LA(2);
-
-            if ( (synpred54()) ) {
-                alt22=53;
-            }
-            else if ( (synpred116()) ) {
-                alt22=115;
-            }
-            else if ( (synpred142()) ) {
-                alt22=141;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 32, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='-') ) {
-            int LA22_33 = input.LA(2);
-
-            if ( (synpred58()) ) {
-                alt22=57;
-            }
-            else if ( (synpred115()) ) {
-                alt22=114;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 33, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='n') ) {
-            int LA22_34 = input.LA(2);
-
-            if ( (synpred65()) ) {
-                alt22=64;
-            }
-            else if ( (synpred99()) ) {
-                alt22=98;
-            }
-            else if ( (synpred131()) ) {
-                alt22=130;
-            }
-            else if ( (synpred132()) ) {
-                alt22=131;
-            }
-            else if ( (synpred144()) ) {
-                alt22=143;
-            }
-            else if ( (synpred153()) ) {
-                alt22=152;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 34, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0==',') ) {
-            alt22=66;
-        }
-        else if ( (LA22_0=='l') ) {
-            int LA22_36 = input.LA(2);
-
-            if ( (synpred68()) ) {
-                alt22=67;
-            }
-            else if ( (synpred71()) ) {
-                alt22=70;
-            }
-            else if ( (synpred76()) ) {
-                alt22=75;
-            }
-            else if ( (synpred94()) ) {
-                alt22=93;
-            }
-            else if ( (synpred148()) ) {
-                alt22=147;
-            }
-            else if ( (synpred154()) ) {
-                alt22=153;
-            }
-            else if ( (synpred155()) ) {
-                alt22=154;
-            }
-            else if ( (synpred161()) ) {
-                alt22=160;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 36, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0==']') ) {
-            int LA22_37 = input.LA(2);
-
-            if ( (synpred74()) ) {
-                alt22=73;
-            }
-            else if ( (synpred107()) ) {
-                alt22=106;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 37, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='g') ) {
-            int LA22_38 = input.LA(2);
-
-            if ( (synpred75()) ) {
-                alt22=74;
-            }
-            else if ( (synpred156()) ) {
-                alt22=155;
-            }
-            else if ( (synpred157()) ) {
-                alt22=156;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 38, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='+') ) {
-            alt22=79;
-        }
-        else if ( (LA22_0=='}') ) {
-            int LA22_40 = input.LA(2);
-
-            if ( (synpred89()) ) {
-                alt22=88;
-            }
-            else if ( (synpred143()) ) {
-                alt22=142;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 40, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='*') ) {
-            alt22=97;
-        }
-        else if ( (LA22_0=='[') ) {
-            alt22=104;
-        }
-        else if ( (LA22_0==')') ) {
-            alt22=113;
-        }
-        else if ( (LA22_0=='r') ) {
-            int LA22_44 = input.LA(2);
-
-            if ( (synpred117()) ) {
-                alt22=116;
-            }
-            else if ( (synpred140()) ) {
-                alt22=139;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 44, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='@') ) {
-            alt22=134;
-        }
-        else if ( (LA22_0=='.') ) {
-            int LA22_46 = input.LA(2);
-
-            if ( (synpred175()) ) {
-                alt22=174;
-            }
-            else if ( (synpred176()) ) {
-                alt22=175;
-            }
-            else if ( (synpred188()) ) {
-                alt22=187;
-            }
-            else if ( (synpred189()) ) {
-                alt22=188;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 46, input);
-
-                throw nvae;
-            }
-        }
-        else if ( ((LA22_0>='0' && LA22_0<='9')) ) {
-            int LA22_47 = input.LA(2);
-
-            if ( (synpred187()) ) {
-                alt22=186;
-            }
-            else if ( (synpred188()) ) {
-                alt22=187;
-            }
-            else if ( (synpred189()) ) {
-                alt22=188;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 47, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 47, input);
 
                 throw nvae;
             }
@@ -6393,7 +6393,7 @@ public class XQFTLexer extends Lexer {
         else {
             if (backtracking>0) {failed=true; return ;}
             NoViableAltException nvae =
-                new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | DOUBLEQUOTESi | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | Comment | CharRef | NCName | S );", 22, 0, input);
+                new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 0, input);
 
             throw nvae;
         }
@@ -6679,1045 +6679,1045 @@ public class XQFTLexer extends Lexer {
                 }
                 break;
             case 41 :
-                // etc/XQFT.g:1:393: DOUBLEQUOTESi
-                {
-                mDOUBLEQUOTESi(); if (failed) return ;
-
-                }
-                break;
-            case 42 :
-                // etc/XQFT.g:1:407: EXCEPT
+                // etc/XQFT.g:1:393: EXCEPT
                 {
                 mEXCEPT(); if (failed) return ;
 
                 }
                 break;
-            case 43 :
-                // etc/XQFT.g:1:414: TO
+            case 42 :
+                // etc/XQFT.g:1:400: TO
                 {
                 mTO(); if (failed) return ;
 
                 }
                 break;
-            case 44 :
-                // etc/XQFT.g:1:417: CONSTRUCTION
+            case 43 :
+                // etc/XQFT.g:1:403: CONSTRUCTION
                 {
                 mCONSTRUCTION(); if (failed) return ;
 
                 }
                 break;
-            case 45 :
-                // etc/XQFT.g:1:430: WEIGHT
+            case 44 :
+                // etc/XQFT.g:1:416: WEIGHT
                 {
                 mWEIGHT(); if (failed) return ;
 
                 }
                 break;
-            case 46 :
-                // etc/XQFT.g:1:437: FTOPTION
+            case 45 :
+                // etc/XQFT.g:1:423: FTOPTION
                 {
                 mFTOPTION(); if (failed) return ;
 
                 }
                 break;
-            case 47 :
-                // etc/XQFT.g:1:446: SATISFIES
+            case 46 :
+                // etc/XQFT.g:1:432: SATISFIES
                 {
                 mSATISFIES(); if (failed) return ;
 
                 }
                 break;
-            case 48 :
-                // etc/XQFT.g:1:456: COLONSi
+            case 47 :
+                // etc/XQFT.g:1:442: COLONSi
                 {
                 mCOLONSi(); if (failed) return ;
 
                 }
                 break;
-            case 49 :
-                // etc/XQFT.g:1:464: SEMICOLONSi
+            case 48 :
+                // etc/XQFT.g:1:450: SEMICOLONSi
                 {
                 mSEMICOLONSi(); if (failed) return ;
 
                 }
                 break;
-            case 50 :
-                // etc/XQFT.g:1:476: SINGLEQUOTE
+            case 49 :
+                // etc/XQFT.g:1:462: SINGLEQUOTE
                 {
                 mSINGLEQUOTE(); if (failed) return ;
 
                 }
                 break;
-            case 51 :
-                // etc/XQFT.g:1:488: UNDERSCORE
+            case 50 :
+                // etc/XQFT.g:1:474: UNDERSCORE
                 {
                 mUNDERSCORE(); if (failed) return ;
 
                 }
                 break;
-            case 52 :
-                // etc/XQFT.g:1:499: EMPTY
+            case 51 :
+                // etc/XQFT.g:1:485: EMPTY
                 {
                 mEMPTY(); if (failed) return ;
 
                 }
                 break;
-            case 53 :
-                // etc/XQFT.g:1:505: MOST
+            case 52 :
+                // etc/XQFT.g:1:491: MOST
                 {
                 mMOST(); if (failed) return ;
 
                 }
                 break;
-            case 54 :
-                // etc/XQFT.g:1:510: CASE
+            case 53 :
+                // etc/XQFT.g:1:496: CASE
                 {
                 mCASE(); if (failed) return ;
 
                 }
                 break;
-            case 55 :
-                // etc/XQFT.g:1:515: PROCESSING_INSTRUCTION
+            case 54 :
+                // etc/XQFT.g:1:501: PROCESSING_INSTRUCTION
                 {
                 mPROCESSING_INSTRUCTION(); if (failed) return ;
 
                 }
                 break;
-            case 56 :
-                // etc/XQFT.g:1:538: IMPORT
+            case 55 :
+                // etc/XQFT.g:1:524: IMPORT
                 {
                 mIMPORT(); if (failed) return ;
 
                 }
                 break;
-            case 57 :
-                // etc/XQFT.g:1:545: MINUSSi
+            case 56 :
+                // etc/XQFT.g:1:531: MINUSSi
                 {
                 mMINUSSi(); if (failed) return ;
 
                 }
                 break;
-            case 58 :
-                // etc/XQFT.g:1:553: RIGHTSELFTERMINATOR
+            case 57 :
+                // etc/XQFT.g:1:539: RIGHTSELFTERMINATOR
                 {
                 mRIGHTSELFTERMINATOR(); if (failed) return ;
 
                 }
                 break;
-            case 59 :
-                // etc/XQFT.g:1:573: DOCUMENT
+            case 58 :
+                // etc/XQFT.g:1:559: DOCUMENT
                 {
                 mDOCUMENT(); if (failed) return ;
 
                 }
                 break;
-            case 60 :
-                // etc/XQFT.g:1:582: LEFTCDATA
+            case 59 :
+                // etc/XQFT.g:1:568: LEFTCDATA
                 {
                 mLEFTCDATA(); if (failed) return ;
 
                 }
                 break;
-            case 61 :
-                // etc/XQFT.g:1:592: VALIDATE
+            case 60 :
+                // etc/XQFT.g:1:578: VALIDATE
                 {
                 mVALIDATE(); if (failed) return ;
 
                 }
                 break;
-            case 62 :
-                // etc/XQFT.g:1:601: EMPTY_SEQUENCE
+            case 61 :
+                // etc/XQFT.g:1:587: EMPTY_SEQUENCE
                 {
                 mEMPTY_SEQUENCE(); if (failed) return ;
 
                 }
                 break;
-            case 63 :
-                // etc/XQFT.g:1:616: INSENSITIVE
+            case 62 :
+                // etc/XQFT.g:1:602: INSENSITIVE
                 {
                 mINSENSITIVE(); if (failed) return ;
 
                 }
                 break;
-            case 64 :
-                // etc/XQFT.g:1:628: NOPRESERVE
+            case 63 :
+                // etc/XQFT.g:1:614: NOPRESERVE
                 {
                 mNOPRESERVE(); if (failed) return ;
 
                 }
                 break;
-            case 65 :
-                // etc/XQFT.g:1:639: THEN
+            case 64 :
+                // etc/XQFT.g:1:625: THEN
                 {
                 mTHEN(); if (failed) return ;
 
                 }
                 break;
-            case 66 :
-                // etc/XQFT.g:1:644: COMMASi
+            case 65 :
+                // etc/XQFT.g:1:630: COMMASi
                 {
                 mCOMMASi(); if (failed) return ;
 
                 }
                 break;
-            case 67 :
-                // etc/XQFT.g:1:652: LET
+            case 66 :
+                // etc/XQFT.g:1:638: LET
                 {
                 mLET(); if (failed) return ;
 
                 }
                 break;
-            case 68 :
-                // etc/XQFT.g:1:656: WINDOW
+            case 67 :
+                // etc/XQFT.g:1:642: WINDOW
                 {
                 mWINDOW(); if (failed) return ;
 
                 }
                 break;
-            case 69 :
-                // etc/XQFT.g:1:663: SCORE
+            case 68 :
+                // etc/XQFT.g:1:649: SCORE
                 {
                 mSCORE(); if (failed) return ;
 
                 }
                 break;
-            case 70 :
-                // etc/XQFT.g:1:669: LANGUAGE
+            case 69 :
+                // etc/XQFT.g:1:655: LANGUAGE
                 {
                 mLANGUAGE(); if (failed) return ;
 
                 }
                 break;
-            case 71 :
-                // etc/XQFT.g:1:678: OPTION
+            case 70 :
+                // etc/XQFT.g:1:664: OPTION
                 {
                 mOPTION(); if (failed) return ;
 
                 }
                 break;
-            case 72 :
-                // etc/XQFT.g:1:685: STEMMING
+            case 71 :
+                // etc/XQFT.g:1:671: STEMMING
                 {
                 mSTEMMING(); if (failed) return ;
 
                 }
                 break;
-            case 73 :
-                // etc/XQFT.g:1:694: RIGHTBRACKETSi
+            case 72 :
+                // etc/XQFT.g:1:680: RIGHTBRACKETSi
                 {
                 mRIGHTBRACKETSi(); if (failed) return ;
 
                 }
                 break;
-            case 74 :
-                // etc/XQFT.g:1:709: GREATEST
+            case 73 :
+                // etc/XQFT.g:1:695: GREATEST
                 {
                 mGREATEST(); if (failed) return ;
 
                 }
                 break;
-            case 75 :
-                // etc/XQFT.g:1:718: LEVELS
+            case 74 :
+                // etc/XQFT.g:1:704: LEVELS
                 {
                 mLEVELS(); if (failed) return ;
 
                 }
                 break;
-            case 76 :
-                // etc/XQFT.g:1:725: SENSITIVE
+            case 75 :
+                // etc/XQFT.g:1:711: SENSITIVE
                 {
                 mSENSITIVE(); if (failed) return ;
 
                 }
                 break;
-            case 77 :
-                // etc/XQFT.g:1:735: FTNOT
+            case 76 :
+                // etc/XQFT.g:1:721: FTNOT
                 {
                 mFTNOT(); if (failed) return ;
 
                 }
                 break;
-            case 78 :
-                // etc/XQFT.g:1:741: DIV
+            case 77 :
+                // etc/XQFT.g:1:727: DIV
                 {
                 mDIV(); if (failed) return ;
 
                 }
                 break;
-            case 79 :
-                // etc/XQFT.g:1:745: PLUSSi
+            case 78 :
+                // etc/XQFT.g:1:731: PLUSSi
                 {
                 mPLUSSi(); if (failed) return ;
 
                 }
                 break;
-            case 80 :
-                // etc/XQFT.g:1:752: FTAND
+            case 79 :
+                // etc/XQFT.g:1:738: FTAND
                 {
                 mFTAND(); if (failed) return ;
 
                 }
                 break;
-            case 81 :
-                // etc/XQFT.g:1:758: AT
+            case 80 :
+                // etc/XQFT.g:1:744: AT
                 {
                 mAT(); if (failed) return ;
 
                 }
                 break;
-            case 82 :
-                // etc/XQFT.g:1:761: SCHEMAATTRIBUTE
+            case 81 :
+                // etc/XQFT.g:1:747: SCHEMAATTRIBUTE
                 {
                 mSCHEMAATTRIBUTE(); if (failed) return ;
 
                 }
                 break;
-            case 83 :
-                // etc/XQFT.g:1:777: ORDER
+            case 82 :
+                // etc/XQFT.g:1:763: ORDER
                 {
                 mORDER(); if (failed) return ;
 
                 }
                 break;
-            case 84 :
-                // etc/XQFT.g:1:783: OF
+            case 83 :
+                // etc/XQFT.g:1:769: OF
                 {
                 mOF(); if (failed) return ;
 
                 }
                 break;
-            case 85 :
-                // etc/XQFT.g:1:786: UNION
+            case 84 :
+                // etc/XQFT.g:1:772: UNION
                 {
                 mUNION(); if (failed) return ;
 
                 }
                 break;
-            case 86 :
-                // etc/XQFT.g:1:792: FROM
+            case 85 :
+                // etc/XQFT.g:1:778: FROM
                 {
                 mFROM(); if (failed) return ;
 
                 }
                 break;
-            case 87 :
-                // etc/XQFT.g:1:797: COLLATION
+            case 86 :
+                // etc/XQFT.g:1:783: COLLATION
                 {
                 mCOLLATION(); if (failed) return ;
 
                 }
                 break;
-            case 88 :
-                // etc/XQFT.g:1:807: DOUBLERIGHTBRACES
+            case 87 :
+                // etc/XQFT.g:1:793: DOUBLERIGHTBRACES
                 {
                 mDOUBLERIGHTBRACES(); if (failed) return ;
 
                 }
                 break;
-            case 89 :
-                // etc/XQFT.g:1:825: VARIABLE
+            case 88 :
+                // etc/XQFT.g:1:811: VARIABLE
                 {
                 mVARIABLE(); if (failed) return ;
 
                 }
                 break;
-            case 90 :
-                // etc/XQFT.g:1:834: OR
+            case 89 :
+                // etc/XQFT.g:1:820: OR
                 {
                 mOR(); if (failed) return ;
 
                 }
                 break;
-            case 91 :
-                // etc/XQFT.g:1:837: FTOR
+            case 90 :
+                // etc/XQFT.g:1:823: FTOR
                 {
                 mFTOR(); if (failed) return ;
 
                 }
                 break;
-            case 92 :
-                // etc/XQFT.g:1:842: DOUBLESLASH
+            case 91 :
+                // etc/XQFT.g:1:828: DOUBLESLASH
                 {
                 mDOUBLESLASH(); if (failed) return ;
 
                 }
                 break;
-            case 93 :
-                // etc/XQFT.g:1:854: LEAST
+            case 92 :
+                // etc/XQFT.g:1:840: LEAST
                 {
                 mLEAST(); if (failed) return ;
 
                 }
                 break;
-            case 94 :
-                // etc/XQFT.g:1:860: IF
+            case 93 :
+                // etc/XQFT.g:1:846: IF
                 {
                 mIF(); if (failed) return ;
 
                 }
                 break;
-            case 95 :
-                // etc/XQFT.g:1:863: BASEURI
+            case 94 :
+                // etc/XQFT.g:1:849: BASEURI
                 {
                 mBASEURI(); if (failed) return ;
 
                 }
                 break;
-            case 96 :
-                // etc/XQFT.g:1:871: DESCENDING
+            case 95 :
+                // etc/XQFT.g:1:857: DESCENDING
                 {
                 mDESCENDING(); if (failed) return ;
 
                 }
                 break;
-            case 97 :
-                // etc/XQFT.g:1:882: STARSi
+            case 96 :
+                // etc/XQFT.g:1:868: STARSi
                 {
                 mSTARSi(); if (failed) return ;
 
                 }
                 break;
-            case 98 :
-                // etc/XQFT.g:1:889: NAMESPACE
+            case 97 :
+                // etc/XQFT.g:1:875: NAMESPACE
                 {
                 mNAMESPACE(); if (failed) return ;
 
                 }
                 break;
-            case 99 :
-                // etc/XQFT.g:1:899: AS
+            case 98 :
+                // etc/XQFT.g:1:885: AS
                 {
                 mAS(); if (failed) return ;
 
                 }
                 break;
-            case 100 :
-                // etc/XQFT.g:1:902: LEFTXMLCOMMENT
+            case 99 :
+                // etc/XQFT.g:1:888: LEFTXMLCOMMENT
                 {
                 mLEFTXMLCOMMENT(); if (failed) return ;
 
                 }
                 break;
-            case 101 :
-                // etc/XQFT.g:1:917: BY
+            case 100 :
+                // etc/XQFT.g:1:903: BY
                 {
                 mBY(); if (failed) return ;
 
                 }
                 break;
-            case 102 :
-                // etc/XQFT.g:1:920: TEXT
+            case 101 :
+                // etc/XQFT.g:1:906: TEXT
                 {
                 mTEXT(); if (failed) return ;
 
                 }
                 break;
-            case 103 :
-                // etc/XQFT.g:1:925: STABLE
+            case 102 :
+                // etc/XQFT.g:1:911: STABLE
                 {
                 mSTABLE(); if (failed) return ;
 
                 }
                 break;
-            case 104 :
-                // etc/XQFT.g:1:932: LEFTBRACKETSi
+            case 103 :
+                // etc/XQFT.g:1:918: LEFTBRACKETSi
                 {
                 mLEFTBRACKETSi(); if (failed) return ;
 
                 }
                 break;
-            case 105 :
-                // etc/XQFT.g:1:946: UNORDERED
+            case 104 :
+                // etc/XQFT.g:1:932: UNORDERED
                 {
                 mUNORDERED(); if (failed) return ;
 
                 }
                 break;
-            case 106 :
-                // etc/XQFT.g:1:956: RIGHTCDATA
+            case 105 :
+                // etc/XQFT.g:1:942: RIGHTCDATA
                 {
                 mRIGHTCDATA(); if (failed) return ;
 
                 }
                 break;
-            case 107 :
-                // etc/XQFT.g:1:967: EXACTLY
+            case 106 :
+                // etc/XQFT.g:1:953: EXACTLY
                 {
                 mEXACTLY(); if (failed) return ;
 
                 }
                 break;
-            case 108 :
-                // etc/XQFT.g:1:975: WITH
+            case 107 :
+                // etc/XQFT.g:1:961: WITH
                 {
                 mWITH(); if (failed) return ;
 
                 }
                 break;
-            case 109 :
-                // etc/XQFT.g:1:980: LEFTPITARGET
+            case 108 :
+                // etc/XQFT.g:1:966: LEFTPITARGET
                 {
                 mLEFTPITARGET(); if (failed) return ;
 
                 }
                 break;
-            case 110 :
-                // etc/XQFT.g:1:993: WITHOUT
+            case 109 :
+                // etc/XQFT.g:1:979: WITHOUT
                 {
                 mWITHOUT(); if (failed) return ;
 
                 }
                 break;
-            case 111 :
-                // etc/XQFT.g:1:1001: DIACRITICS
+            case 110 :
+                // etc/XQFT.g:1:987: DIACRITICS
                 {
                 mDIACRITICS(); if (failed) return ;
 
                 }
                 break;
-            case 112 :
-                // etc/XQFT.g:1:1012: EXTERNAL
+            case 111 :
+                // etc/XQFT.g:1:998: EXTERNAL
                 {
                 mEXTERNAL(); if (failed) return ;
 
                 }
                 break;
-            case 113 :
-                // etc/XQFT.g:1:1021: RIGHTPARENTHESISSi
+            case 112 :
+                // etc/XQFT.g:1:1007: RIGHTPARENTHESISSi
                 {
                 mRIGHTPARENTHESISSi(); if (failed) return ;
 
                 }
                 break;
-            case 114 :
-                // etc/XQFT.g:1:1040: RIGHTXMLCOMMENT
+            case 113 :
+                // etc/XQFT.g:1:1026: RIGHTXMLCOMMENT
                 {
                 mRIGHTXMLCOMMENT(); if (failed) return ;
 
                 }
                 break;
-            case 115 :
-                // etc/XQFT.g:1:1056: MODULE
+            case 114 :
+                // etc/XQFT.g:1:1042: MODULE
                 {
                 mMODULE(); if (failed) return ;
 
                 }
                 break;
-            case 116 :
-                // etc/XQFT.g:1:1063: RETURN
+            case 115 :
+                // etc/XQFT.g:1:1049: RETURN
                 {
                 mRETURN(); if (failed) return ;
 
                 }
                 break;
-            case 117 :
-                // etc/XQFT.g:1:1070: COMMENT
+            case 116 :
+                // etc/XQFT.g:1:1056: COMMENT
                 {
                 mCOMMENT(); if (failed) return ;
 
                 }
                 break;
-            case 118 :
-                // etc/XQFT.g:1:1078: DEFAULT
+            case 117 :
+                // etc/XQFT.g:1:1064: DEFAULT
                 {
                 mDEFAULT(); if (failed) return ;
 
                 }
                 break;
-            case 119 :
-                // etc/XQFT.g:1:1086: OCCURS
+            case 118 :
+                // etc/XQFT.g:1:1072: OCCURS
                 {
                 mOCCURS(); if (failed) return ;
 
                 }
                 break;
-            case 120 :
-                // etc/XQFT.g:1:1093: ENCODING
+            case 119 :
+                // etc/XQFT.g:1:1079: ENCODING
                 {
                 mENCODING(); if (failed) return ;
 
                 }
                 break;
-            case 121 :
-                // etc/XQFT.g:1:1102: DOUBLELEFTBRACES
+            case 120 :
+                // etc/XQFT.g:1:1088: DOUBLELEFTBRACES
                 {
                 mDOUBLELEFTBRACES(); if (failed) return ;
 
                 }
                 break;
-            case 122 :
-                // etc/XQFT.g:1:1119: SCHEMA
+            case 121 :
+                // etc/XQFT.g:1:1105: SCHEMA
                 {
                 mSCHEMA(); if (failed) return ;
 
                 }
                 break;
-            case 123 :
-                // etc/XQFT.g:1:1126: ELEMENT
+            case 122 :
+                // etc/XQFT.g:1:1112: ELEMENT
                 {
                 mELEMENT(); if (failed) return ;
 
                 }
                 break;
-            case 124 :
-                // etc/XQFT.g:1:1134: LEFTPARENTHESISSi
+            case 123 :
+                // etc/XQFT.g:1:1120: LEFTPARENTHESISSi
                 {
                 mLEFTPARENTHESISSi(); if (failed) return ;
 
                 }
                 break;
-            case 125 :
-                // etc/XQFT.g:1:1152: COPYNAMESPACES
+            case 124 :
+                // etc/XQFT.g:1:1138: COPYNAMESPACES
                 {
                 mCOPYNAMESPACES(); if (failed) return ;
 
                 }
                 break;
-            case 126 :
-                // etc/XQFT.g:1:1167: WILDCARDS
+            case 125 :
+                // etc/XQFT.g:1:1153: WILDCARDS
                 {
                 mWILDCARDS(); if (failed) return ;
 
                 }
                 break;
-            case 127 :
-                // etc/XQFT.g:1:1177: DECLARE
+            case 126 :
+                // etc/XQFT.g:1:1163: DECLARE
                 {
                 mDECLARE(); if (failed) return ;
 
                 }
                 break;
-            case 128 :
-                // etc/XQFT.g:1:1185: AND
+            case 127 :
+                // etc/XQFT.g:1:1171: AND
                 {
                 mAND(); if (failed) return ;
 
                 }
                 break;
-            case 129 :
-                // etc/XQFT.g:1:1189: PRESERVE
+            case 128 :
+                // etc/XQFT.g:1:1175: PRESERVE
                 {
                 mPRESERVE(); if (failed) return ;
 
                 }
                 break;
-            case 130 :
-                // etc/XQFT.g:1:1198: NOINHERIT
+            case 129 :
+                // etc/XQFT.g:1:1184: NOINHERIT
                 {
                 mNOINHERIT(); if (failed) return ;
 
                 }
                 break;
-            case 131 :
-                // etc/XQFT.g:1:1208: NOT
+            case 130 :
+                // etc/XQFT.g:1:1194: NOT
                 {
                 mNOT(); if (failed) return ;
 
                 }
                 break;
-            case 132 :
-                // etc/XQFT.g:1:1212: INTERSECT
+            case 131 :
+                // etc/XQFT.g:1:1198: INTERSECT
                 {
                 mINTERSECT(); if (failed) return ;
 
                 }
                 break;
-            case 133 :
-                // etc/XQFT.g:1:1222: FUNCTION
+            case 132 :
+                // etc/XQFT.g:1:1208: FUNCTION
                 {
                 mFUNCTION(); if (failed) return ;
 
                 }
                 break;
-            case 134 :
-                // etc/XQFT.g:1:1231: ATSi
+            case 133 :
+                // etc/XQFT.g:1:1217: ATSi
                 {
                 mATSi(); if (failed) return ;
 
                 }
                 break;
-            case 135 :
-                // etc/XQFT.g:1:1236: TIMES
+            case 134 :
+                // etc/XQFT.g:1:1222: TIMES
                 {
                 mTIMES(); if (failed) return ;
 
                 }
                 break;
-            case 136 :
-                // etc/XQFT.g:1:1242: ATTRIBUTE
+            case 135 :
+                // etc/XQFT.g:1:1228: ATTRIBUTE
                 {
                 mATTRIBUTE(); if (failed) return ;
 
                 }
                 break;
-            case 137 :
-                // etc/XQFT.g:1:1252: ASSIGNMENTOPERATOR
+            case 136 :
+                // etc/XQFT.g:1:1238: ASSIGNMENTOPERATOR
                 {
                 mASSIGNMENTOPERATOR(); if (failed) return ;
 
                 }
                 break;
-            case 138 :
-                // etc/XQFT.g:1:1271: FTCONTAINS
+            case 137 :
+                // etc/XQFT.g:1:1257: FTCONTAINS
                 {
                 mFTCONTAINS(); if (failed) return ;
 
                 }
                 break;
-            case 139 :
-                // etc/XQFT.g:1:1282: RELATIONSHIP
+            case 138 :
+                // etc/XQFT.g:1:1268: RELATIONSHIP
                 {
                 mRELATIONSHIP(); if (failed) return ;
 
                 }
                 break;
-            case 140 :
-                // etc/XQFT.g:1:1295: THESAURUS
+            case 139 :
+                // etc/XQFT.g:1:1281: THESAURUS
                 {
                 mTHESAURUS(); if (failed) return ;
 
                 }
                 break;
-            case 141 :
-                // etc/XQFT.g:1:1305: MOD
+            case 140 :
+                // etc/XQFT.g:1:1291: MOD
                 {
                 mMOD(); if (failed) return ;
 
                 }
                 break;
-            case 142 :
-                // etc/XQFT.g:1:1309: RIGHTBRACESi
+            case 141 :
+                // etc/XQFT.g:1:1295: RIGHTBRACESi
                 {
                 mRIGHTBRACESi(); if (failed) return ;
 
                 }
                 break;
-            case 143 :
-                // etc/XQFT.g:1:1322: NODE
+            case 142 :
+                // etc/XQFT.g:1:1308: NODE
                 {
                 mNODE(); if (failed) return ;
 
                 }
                 break;
-            case 144 :
-                // etc/XQFT.g:1:1327: SOME
+            case 143 :
+                // etc/XQFT.g:1:1313: SOME
                 {
                 mSOME(); if (failed) return ;
 
                 }
                 break;
-            case 145 :
-                // etc/XQFT.g:1:1332: QUESTIONMARKSi
+            case 144 :
+                // etc/XQFT.g:1:1318: QUESTIONMARKSi
                 {
                 mQUESTIONMARKSi(); if (failed) return ;
 
                 }
                 break;
-            case 146 :
-                // etc/XQFT.g:1:1347: STRIP
+            case 145 :
+                // etc/XQFT.g:1:1333: STRIP
                 {
                 mSTRIP(); if (failed) return ;
 
                 }
                 break;
-            case 147 :
-                // etc/XQFT.g:1:1353: LOWERCASE
+            case 146 :
+                // etc/XQFT.g:1:1339: LOWERCASE
                 {
                 mLOWERCASE(); if (failed) return ;
 
                 }
                 break;
-            case 148 :
-                // etc/XQFT.g:1:1363: IN
+            case 147 :
+                // etc/XQFT.g:1:1349: IN
                 {
                 mIN(); if (failed) return ;
 
                 }
                 break;
-            case 149 :
-                // etc/XQFT.g:1:1366: SCHEMAELEMENT
+            case 148 :
+                // etc/XQFT.g:1:1352: SCHEMAELEMENT
                 {
                 mSCHEMAELEMENT(); if (failed) return ;
 
                 }
                 break;
-            case 150 :
-                // etc/XQFT.g:1:1380: LEFTENDTAG
+            case 149 :
+                // etc/XQFT.g:1:1366: LEFTENDTAG
                 {
                 mLEFTENDTAG(); if (failed) return ;
 
                 }
                 break;
-            case 151 :
-                // etc/XQFT.g:1:1391: EQ
+            case 150 :
+                // etc/XQFT.g:1:1377: EQ
                 {
                 mEQ(); if (failed) return ;
 
                 }
                 break;
-            case 152 :
-                // etc/XQFT.g:1:1394: NE
+            case 151 :
+                // etc/XQFT.g:1:1380: NE
                 {
                 mNE(); if (failed) return ;
 
                 }
                 break;
-            case 153 :
-                // etc/XQFT.g:1:1397: LT
+            case 152 :
+                // etc/XQFT.g:1:1383: LT
                 {
                 mLT(); if (failed) return ;
 
                 }
                 break;
-            case 154 :
-                // etc/XQFT.g:1:1400: LE
+            case 153 :
+                // etc/XQFT.g:1:1386: LE
                 {
                 mLE(); if (failed) return ;
 
                 }
                 break;
-            case 155 :
-                // etc/XQFT.g:1:1403: GT
+            case 154 :
+                // etc/XQFT.g:1:1389: GT
                 {
                 mGT(); if (failed) return ;
 
                 }
                 break;
-            case 156 :
-                // etc/XQFT.g:1:1406: GE
+            case 155 :
+                // etc/XQFT.g:1:1392: GE
                 {
                 mGE(); if (failed) return ;
 
                 }
                 break;
-            case 157 :
-                // etc/XQFT.g:1:1409: IS
+            case 156 :
+                // etc/XQFT.g:1:1395: IS
                 {
                 mIS(); if (failed) return ;
 
                 }
                 break;
-            case 158 :
-                // etc/XQFT.g:1:1412: NODEBEFORESi
+            case 157 :
+                // etc/XQFT.g:1:1398: NODEBEFORESi
                 {
                 mNODEBEFORESi(); if (failed) return ;
 
                 }
                 break;
-            case 159 :
-                // etc/XQFT.g:1:1425: NODEAFTERSi
+            case 158 :
+                // etc/XQFT.g:1:1411: NODEAFTERSi
                 {
                 mNODEAFTERSi(); if (failed) return ;
 
                 }
                 break;
-            case 160 :
-                // etc/XQFT.g:1:1437: LAX
+            case 159 :
+                // etc/XQFT.g:1:1423: LAX
                 {
                 mLAX(); if (failed) return ;
 
                 }
                 break;
-            case 161 :
-                // etc/XQFT.g:1:1441: STRICT
+            case 160 :
+                // etc/XQFT.g:1:1427: STRICT
                 {
                 mSTRICT(); if (failed) return ;
 
                 }
                 break;
-            case 162 :
-                // etc/XQFT.g:1:1448: CHILD
+            case 161 :
+                // etc/XQFT.g:1:1434: CHILD
                 {
                 mCHILD(); if (failed) return ;
 
                 }
                 break;
-            case 163 :
-                // etc/XQFT.g:1:1454: DOUBLECOLON
+            case 162 :
+                // etc/XQFT.g:1:1440: DOUBLECOLON
                 {
                 mDOUBLECOLON(); if (failed) return ;
 
                 }
                 break;
-            case 164 :
-                // etc/XQFT.g:1:1466: DESCENDANT
+            case 163 :
+                // etc/XQFT.g:1:1452: DESCENDANT
                 {
                 mDESCENDANT(); if (failed) return ;
 
                 }
                 break;
-            case 165 :
-                // etc/XQFT.g:1:1477: SELF
+            case 164 :
+                // etc/XQFT.g:1:1463: SELF
                 {
                 mSELF(); if (failed) return ;
 
                 }
                 break;
-            case 166 :
-                // etc/XQFT.g:1:1482: DESCENDANT_OR_SELF
+            case 165 :
+                // etc/XQFT.g:1:1468: DESCENDANT_OR_SELF
                 {
                 mDESCENDANT_OR_SELF(); if (failed) return ;
 
                 }
                 break;
-            case 167 :
-                // etc/XQFT.g:1:1501: FOLLOWING_SIBLING
+            case 166 :
+                // etc/XQFT.g:1:1487: FOLLOWING_SIBLING
                 {
                 mFOLLOWING_SIBLING(); if (failed) return ;
 
                 }
                 break;
-            case 168 :
-                // etc/XQFT.g:1:1519: FOLLOWING
+            case 167 :
+                // etc/XQFT.g:1:1505: FOLLOWING
                 {
                 mFOLLOWING(); if (failed) return ;
 
                 }
                 break;
-            case 169 :
-                // etc/XQFT.g:1:1529: PARENT
+            case 168 :
+                // etc/XQFT.g:1:1515: PARENT
                 {
                 mPARENT(); if (failed) return ;
 
                 }
                 break;
-            case 170 :
-                // etc/XQFT.g:1:1536: ANCESTOR
+            case 169 :
+                // etc/XQFT.g:1:1522: ANCESTOR
                 {
                 mANCESTOR(); if (failed) return ;
 
                 }
                 break;
-            case 171 :
-                // etc/XQFT.g:1:1545: PRECEDING_SIBLING
+            case 170 :
+                // etc/XQFT.g:1:1531: PRECEDING_SIBLING
                 {
                 mPRECEDING_SIBLING(); if (failed) return ;
 
                 }
                 break;
-            case 172 :
-                // etc/XQFT.g:1:1563: PRECEDING
+            case 171 :
+                // etc/XQFT.g:1:1549: PRECEDING
                 {
                 mPRECEDING(); if (failed) return ;
 
                 }
                 break;
-            case 173 :
-                // etc/XQFT.g:1:1573: ANCESTOR_OR_SELF
+            case 172 :
+                // etc/XQFT.g:1:1559: ANCESTOR_OR_SELF
                 {
                 mANCESTOR_OR_SELF(); if (failed) return ;
 
                 }
                 break;
-            case 174 :
-                // etc/XQFT.g:1:1590: DOT
+            case 173 :
+                // etc/XQFT.g:1:1576: DOT
                 {
                 mDOT(); if (failed) return ;
 
                 }
                 break;
-            case 175 :
-                // etc/XQFT.g:1:1594: DOTDOT
+            case 174 :
+                // etc/XQFT.g:1:1580: DOTDOT
                 {
                 mDOTDOT(); if (failed) return ;
 
                 }
                 break;
-            case 176 :
-                // etc/XQFT.g:1:1601: WORDS
+            case 175 :
+                // etc/XQFT.g:1:1587: WORDS
                 {
                 mWORDS(); if (failed) return ;
 
                 }
                 break;
-            case 177 :
-                // etc/XQFT.g:1:1607: SENTENCES
+            case 176 :
+                // etc/XQFT.g:1:1593: SENTENCES
                 {
                 mSENTENCES(); if (failed) return ;
 
                 }
                 break;
-            case 178 :
-                // etc/XQFT.g:1:1617: PARAGRAPHS
+            case 177 :
+                // etc/XQFT.g:1:1603: PARAGRAPHS
                 {
                 mPARAGRAPHS(); if (failed) return ;
 
                 }
                 break;
-            case 179 :
-                // etc/XQFT.g:1:1628: SENTENCE
+            case 178 :
+                // etc/XQFT.g:1:1614: SENTENCE
                 {
                 mSENTENCE(); if (failed) return ;
 
                 }
                 break;
-            case 180 :
-                // etc/XQFT.g:1:1637: PARAGRAPH
+            case 179 :
+                // etc/XQFT.g:1:1623: PARAGRAPH
                 {
                 mPARAGRAPH(); if (failed) return ;
 
                 }
                 break;
-            case 181 :
-                // etc/XQFT.g:1:1647: SAME
+            case 180 :
+                // etc/XQFT.g:1:1633: SAME
                 {
                 mSAME(); if (failed) return ;
 
                 }
                 break;
-            case 182 :
-                // etc/XQFT.g:1:1652: DIFFERENT
+            case 181 :
+                // etc/XQFT.g:1:1638: DIFFERENT
                 {
                 mDIFFERENT(); if (failed) return ;
 
                 }
                 break;
-            case 183 :
-                // etc/XQFT.g:1:1662: START
+            case 182 :
+                // etc/XQFT.g:1:1648: START
                 {
                 mSTART(); if (failed) return ;
 
                 }
                 break;
-            case 184 :
-                // etc/XQFT.g:1:1668: END
+            case 183 :
+                // etc/XQFT.g:1:1654: END
                 {
                 mEND(); if (failed) return ;
 
                 }
                 break;
-            case 185 :
-                // etc/XQFT.g:1:1672: ENTIRE
+            case 184 :
+                // etc/XQFT.g:1:1658: ENTIRE
                 {
                 mENTIRE(); if (failed) return ;
 
                 }
                 break;
-            case 186 :
-                // etc/XQFT.g:1:1679: IntegerLiteral
+            case 185 :
+                // etc/XQFT.g:1:1665: IntegerLiteral
                 {
                 mIntegerLiteral(); if (failed) return ;
 
                 }
                 break;
-            case 187 :
-                // etc/XQFT.g:1:1694: DecimalLiteral
+            case 186 :
+                // etc/XQFT.g:1:1680: DecimalLiteral
                 {
                 mDecimalLiteral(); if (failed) return ;
 
                 }
                 break;
-            case 188 :
-                // etc/XQFT.g:1:1709: DoubleLiteral
+            case 187 :
+                // etc/XQFT.g:1:1695: DoubleLiteral
                 {
                 mDoubleLiteral(); if (failed) return ;
 
                 }
                 break;
-            case 189 :
-                // etc/XQFT.g:1:1723: StringLiteral
+            case 188 :
+                // etc/XQFT.g:1:1709: StringLiteral
                 {
                 mStringLiteral(); if (failed) return ;
+
+                }
+                break;
+            case 189 :
+                // etc/XQFT.g:1:1723: DOUBLEQUOTESi
+                {
+                mDOUBLEQUOTESi(); if (failed) return ;
 
                 }
                 break;
@@ -7756,8 +7756,8 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred1
     public final void synpred1_fragment() throws RecognitionException {   
-        // etc/XQFT.g:258:24: ( Comment )
-        // etc/XQFT.g:258:25: Comment
+        // etc/XQFT.g:260:24: ( Comment )
+        // etc/XQFT.g:260:25: Comment
         {
         mComment(); if (failed) return ;
 
@@ -8152,10 +8152,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred42
     public final void synpred42_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:393: ( DOUBLEQUOTESi )
-        // etc/XQFT.g:1:393: DOUBLEQUOTESi
+        // etc/XQFT.g:1:393: ( EXCEPT )
+        // etc/XQFT.g:1:393: EXCEPT
         {
-        mDOUBLEQUOTESi(); if (failed) return ;
+        mEXCEPT(); if (failed) return ;
 
         }
     }
@@ -8163,10 +8163,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred43
     public final void synpred43_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:407: ( EXCEPT )
-        // etc/XQFT.g:1:407: EXCEPT
+        // etc/XQFT.g:1:400: ( TO )
+        // etc/XQFT.g:1:400: TO
         {
-        mEXCEPT(); if (failed) return ;
+        mTO(); if (failed) return ;
 
         }
     }
@@ -8174,10 +8174,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred44
     public final void synpred44_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:414: ( TO )
-        // etc/XQFT.g:1:414: TO
+        // etc/XQFT.g:1:403: ( CONSTRUCTION )
+        // etc/XQFT.g:1:403: CONSTRUCTION
         {
-        mTO(); if (failed) return ;
+        mCONSTRUCTION(); if (failed) return ;
 
         }
     }
@@ -8185,10 +8185,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred45
     public final void synpred45_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:417: ( CONSTRUCTION )
-        // etc/XQFT.g:1:417: CONSTRUCTION
+        // etc/XQFT.g:1:416: ( WEIGHT )
+        // etc/XQFT.g:1:416: WEIGHT
         {
-        mCONSTRUCTION(); if (failed) return ;
+        mWEIGHT(); if (failed) return ;
 
         }
     }
@@ -8196,10 +8196,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred46
     public final void synpred46_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:430: ( WEIGHT )
-        // etc/XQFT.g:1:430: WEIGHT
+        // etc/XQFT.g:1:423: ( FTOPTION )
+        // etc/XQFT.g:1:423: FTOPTION
         {
-        mWEIGHT(); if (failed) return ;
+        mFTOPTION(); if (failed) return ;
 
         }
     }
@@ -8207,10 +8207,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred47
     public final void synpred47_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:437: ( FTOPTION )
-        // etc/XQFT.g:1:437: FTOPTION
+        // etc/XQFT.g:1:432: ( SATISFIES )
+        // etc/XQFT.g:1:432: SATISFIES
         {
-        mFTOPTION(); if (failed) return ;
+        mSATISFIES(); if (failed) return ;
 
         }
     }
@@ -8218,32 +8218,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred48
     public final void synpred48_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:446: ( SATISFIES )
-        // etc/XQFT.g:1:446: SATISFIES
-        {
-        mSATISFIES(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred48
-
-    // $ANTLR start synpred49
-    public final void synpred49_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:456: ( COLONSi )
-        // etc/XQFT.g:1:456: COLONSi
+        // etc/XQFT.g:1:442: ( COLONSi )
+        // etc/XQFT.g:1:442: COLONSi
         {
         mCOLONSi(); if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred49
+    // $ANTLR end synpred48
+
+    // $ANTLR start synpred50
+    public final void synpred50_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:462: ( SINGLEQUOTE )
+        // etc/XQFT.g:1:462: SINGLEQUOTE
+        {
+        mSINGLEQUOTE(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred50
 
     // $ANTLR start synpred51
     public final void synpred51_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:476: ( SINGLEQUOTE )
-        // etc/XQFT.g:1:476: SINGLEQUOTE
+        // etc/XQFT.g:1:474: ( UNDERSCORE )
+        // etc/XQFT.g:1:474: UNDERSCORE
         {
-        mSINGLEQUOTE(); if (failed) return ;
+        mUNDERSCORE(); if (failed) return ;
 
         }
     }
@@ -8251,10 +8251,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred52
     public final void synpred52_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:488: ( UNDERSCORE )
-        // etc/XQFT.g:1:488: UNDERSCORE
+        // etc/XQFT.g:1:485: ( EMPTY )
+        // etc/XQFT.g:1:485: EMPTY
         {
-        mUNDERSCORE(); if (failed) return ;
+        mEMPTY(); if (failed) return ;
 
         }
     }
@@ -8262,10 +8262,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred53
     public final void synpred53_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:499: ( EMPTY )
-        // etc/XQFT.g:1:499: EMPTY
+        // etc/XQFT.g:1:491: ( MOST )
+        // etc/XQFT.g:1:491: MOST
         {
-        mEMPTY(); if (failed) return ;
+        mMOST(); if (failed) return ;
 
         }
     }
@@ -8273,10 +8273,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred54
     public final void synpred54_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:505: ( MOST )
-        // etc/XQFT.g:1:505: MOST
+        // etc/XQFT.g:1:496: ( CASE )
+        // etc/XQFT.g:1:496: CASE
         {
-        mMOST(); if (failed) return ;
+        mCASE(); if (failed) return ;
 
         }
     }
@@ -8284,10 +8284,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred55
     public final void synpred55_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:510: ( CASE )
-        // etc/XQFT.g:1:510: CASE
+        // etc/XQFT.g:1:501: ( PROCESSING_INSTRUCTION )
+        // etc/XQFT.g:1:501: PROCESSING_INSTRUCTION
         {
-        mCASE(); if (failed) return ;
+        mPROCESSING_INSTRUCTION(); if (failed) return ;
 
         }
     }
@@ -8295,10 +8295,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred56
     public final void synpred56_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:515: ( PROCESSING_INSTRUCTION )
-        // etc/XQFT.g:1:515: PROCESSING_INSTRUCTION
+        // etc/XQFT.g:1:524: ( IMPORT )
+        // etc/XQFT.g:1:524: IMPORT
         {
-        mPROCESSING_INSTRUCTION(); if (failed) return ;
+        mIMPORT(); if (failed) return ;
 
         }
     }
@@ -8306,10 +8306,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred57
     public final void synpred57_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:538: ( IMPORT )
-        // etc/XQFT.g:1:538: IMPORT
+        // etc/XQFT.g:1:531: ( MINUSSi )
+        // etc/XQFT.g:1:531: MINUSSi
         {
-        mIMPORT(); if (failed) return ;
+        mMINUSSi(); if (failed) return ;
 
         }
     }
@@ -8317,10 +8317,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred58
     public final void synpred58_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:545: ( MINUSSi )
-        // etc/XQFT.g:1:545: MINUSSi
+        // etc/XQFT.g:1:539: ( RIGHTSELFTERMINATOR )
+        // etc/XQFT.g:1:539: RIGHTSELFTERMINATOR
         {
-        mMINUSSi(); if (failed) return ;
+        mRIGHTSELFTERMINATOR(); if (failed) return ;
 
         }
     }
@@ -8328,10 +8328,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred59
     public final void synpred59_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:553: ( RIGHTSELFTERMINATOR )
-        // etc/XQFT.g:1:553: RIGHTSELFTERMINATOR
+        // etc/XQFT.g:1:559: ( DOCUMENT )
+        // etc/XQFT.g:1:559: DOCUMENT
         {
-        mRIGHTSELFTERMINATOR(); if (failed) return ;
+        mDOCUMENT(); if (failed) return ;
 
         }
     }
@@ -8339,10 +8339,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred60
     public final void synpred60_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:573: ( DOCUMENT )
-        // etc/XQFT.g:1:573: DOCUMENT
+        // etc/XQFT.g:1:568: ( LEFTCDATA )
+        // etc/XQFT.g:1:568: LEFTCDATA
         {
-        mDOCUMENT(); if (failed) return ;
+        mLEFTCDATA(); if (failed) return ;
 
         }
     }
@@ -8350,10 +8350,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred61
     public final void synpred61_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:582: ( LEFTCDATA )
-        // etc/XQFT.g:1:582: LEFTCDATA
+        // etc/XQFT.g:1:578: ( VALIDATE )
+        // etc/XQFT.g:1:578: VALIDATE
         {
-        mLEFTCDATA(); if (failed) return ;
+        mVALIDATE(); if (failed) return ;
 
         }
     }
@@ -8361,10 +8361,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred62
     public final void synpred62_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:592: ( VALIDATE )
-        // etc/XQFT.g:1:592: VALIDATE
+        // etc/XQFT.g:1:587: ( EMPTY_SEQUENCE )
+        // etc/XQFT.g:1:587: EMPTY_SEQUENCE
         {
-        mVALIDATE(); if (failed) return ;
+        mEMPTY_SEQUENCE(); if (failed) return ;
 
         }
     }
@@ -8372,10 +8372,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred63
     public final void synpred63_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:601: ( EMPTY_SEQUENCE )
-        // etc/XQFT.g:1:601: EMPTY_SEQUENCE
+        // etc/XQFT.g:1:602: ( INSENSITIVE )
+        // etc/XQFT.g:1:602: INSENSITIVE
         {
-        mEMPTY_SEQUENCE(); if (failed) return ;
+        mINSENSITIVE(); if (failed) return ;
 
         }
     }
@@ -8383,10 +8383,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred64
     public final void synpred64_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:616: ( INSENSITIVE )
-        // etc/XQFT.g:1:616: INSENSITIVE
+        // etc/XQFT.g:1:614: ( NOPRESERVE )
+        // etc/XQFT.g:1:614: NOPRESERVE
         {
-        mINSENSITIVE(); if (failed) return ;
+        mNOPRESERVE(); if (failed) return ;
 
         }
     }
@@ -8394,32 +8394,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred65
     public final void synpred65_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:628: ( NOPRESERVE )
-        // etc/XQFT.g:1:628: NOPRESERVE
-        {
-        mNOPRESERVE(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred65
-
-    // $ANTLR start synpred66
-    public final void synpred66_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:639: ( THEN )
-        // etc/XQFT.g:1:639: THEN
+        // etc/XQFT.g:1:625: ( THEN )
+        // etc/XQFT.g:1:625: THEN
         {
         mTHEN(); if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred66
+    // $ANTLR end synpred65
+
+    // $ANTLR start synpred67
+    public final void synpred67_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:638: ( LET )
+        // etc/XQFT.g:1:638: LET
+        {
+        mLET(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred67
 
     // $ANTLR start synpred68
     public final void synpred68_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:652: ( LET )
-        // etc/XQFT.g:1:652: LET
+        // etc/XQFT.g:1:642: ( WINDOW )
+        // etc/XQFT.g:1:642: WINDOW
         {
-        mLET(); if (failed) return ;
+        mWINDOW(); if (failed) return ;
 
         }
     }
@@ -8427,10 +8427,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred69
     public final void synpred69_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:656: ( WINDOW )
-        // etc/XQFT.g:1:656: WINDOW
+        // etc/XQFT.g:1:649: ( SCORE )
+        // etc/XQFT.g:1:649: SCORE
         {
-        mWINDOW(); if (failed) return ;
+        mSCORE(); if (failed) return ;
 
         }
     }
@@ -8438,10 +8438,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred70
     public final void synpred70_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:663: ( SCORE )
-        // etc/XQFT.g:1:663: SCORE
+        // etc/XQFT.g:1:655: ( LANGUAGE )
+        // etc/XQFT.g:1:655: LANGUAGE
         {
-        mSCORE(); if (failed) return ;
+        mLANGUAGE(); if (failed) return ;
 
         }
     }
@@ -8449,10 +8449,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred71
     public final void synpred71_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:669: ( LANGUAGE )
-        // etc/XQFT.g:1:669: LANGUAGE
+        // etc/XQFT.g:1:664: ( OPTION )
+        // etc/XQFT.g:1:664: OPTION
         {
-        mLANGUAGE(); if (failed) return ;
+        mOPTION(); if (failed) return ;
 
         }
     }
@@ -8460,10 +8460,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred72
     public final void synpred72_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:678: ( OPTION )
-        // etc/XQFT.g:1:678: OPTION
+        // etc/XQFT.g:1:671: ( STEMMING )
+        // etc/XQFT.g:1:671: STEMMING
         {
-        mOPTION(); if (failed) return ;
+        mSTEMMING(); if (failed) return ;
 
         }
     }
@@ -8471,10 +8471,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred73
     public final void synpred73_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:685: ( STEMMING )
-        // etc/XQFT.g:1:685: STEMMING
+        // etc/XQFT.g:1:680: ( RIGHTBRACKETSi )
+        // etc/XQFT.g:1:680: RIGHTBRACKETSi
         {
-        mSTEMMING(); if (failed) return ;
+        mRIGHTBRACKETSi(); if (failed) return ;
 
         }
     }
@@ -8482,10 +8482,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred74
     public final void synpred74_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:694: ( RIGHTBRACKETSi )
-        // etc/XQFT.g:1:694: RIGHTBRACKETSi
+        // etc/XQFT.g:1:695: ( GREATEST )
+        // etc/XQFT.g:1:695: GREATEST
         {
-        mRIGHTBRACKETSi(); if (failed) return ;
+        mGREATEST(); if (failed) return ;
 
         }
     }
@@ -8493,10 +8493,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred75
     public final void synpred75_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:709: ( GREATEST )
-        // etc/XQFT.g:1:709: GREATEST
+        // etc/XQFT.g:1:704: ( LEVELS )
+        // etc/XQFT.g:1:704: LEVELS
         {
-        mGREATEST(); if (failed) return ;
+        mLEVELS(); if (failed) return ;
 
         }
     }
@@ -8504,10 +8504,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred76
     public final void synpred76_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:718: ( LEVELS )
-        // etc/XQFT.g:1:718: LEVELS
+        // etc/XQFT.g:1:711: ( SENSITIVE )
+        // etc/XQFT.g:1:711: SENSITIVE
         {
-        mLEVELS(); if (failed) return ;
+        mSENSITIVE(); if (failed) return ;
 
         }
     }
@@ -8515,10 +8515,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred77
     public final void synpred77_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:725: ( SENSITIVE )
-        // etc/XQFT.g:1:725: SENSITIVE
+        // etc/XQFT.g:1:721: ( FTNOT )
+        // etc/XQFT.g:1:721: FTNOT
         {
-        mSENSITIVE(); if (failed) return ;
+        mFTNOT(); if (failed) return ;
 
         }
     }
@@ -8526,32 +8526,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred78
     public final void synpred78_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:735: ( FTNOT )
-        // etc/XQFT.g:1:735: FTNOT
-        {
-        mFTNOT(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred78
-
-    // $ANTLR start synpred79
-    public final void synpred79_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:741: ( DIV )
-        // etc/XQFT.g:1:741: DIV
+        // etc/XQFT.g:1:727: ( DIV )
+        // etc/XQFT.g:1:727: DIV
         {
         mDIV(); if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred79
+    // $ANTLR end synpred78
+
+    // $ANTLR start synpred80
+    public final void synpred80_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:738: ( FTAND )
+        // etc/XQFT.g:1:738: FTAND
+        {
+        mFTAND(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred80
 
     // $ANTLR start synpred81
     public final void synpred81_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:752: ( FTAND )
-        // etc/XQFT.g:1:752: FTAND
+        // etc/XQFT.g:1:744: ( AT )
+        // etc/XQFT.g:1:744: AT
         {
-        mFTAND(); if (failed) return ;
+        mAT(); if (failed) return ;
 
         }
     }
@@ -8559,10 +8559,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred82
     public final void synpred82_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:758: ( AT )
-        // etc/XQFT.g:1:758: AT
+        // etc/XQFT.g:1:747: ( SCHEMAATTRIBUTE )
+        // etc/XQFT.g:1:747: SCHEMAATTRIBUTE
         {
-        mAT(); if (failed) return ;
+        mSCHEMAATTRIBUTE(); if (failed) return ;
 
         }
     }
@@ -8570,10 +8570,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred83
     public final void synpred83_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:761: ( SCHEMAATTRIBUTE )
-        // etc/XQFT.g:1:761: SCHEMAATTRIBUTE
+        // etc/XQFT.g:1:763: ( ORDER )
+        // etc/XQFT.g:1:763: ORDER
         {
-        mSCHEMAATTRIBUTE(); if (failed) return ;
+        mORDER(); if (failed) return ;
 
         }
     }
@@ -8581,10 +8581,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred84
     public final void synpred84_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:777: ( ORDER )
-        // etc/XQFT.g:1:777: ORDER
+        // etc/XQFT.g:1:769: ( OF )
+        // etc/XQFT.g:1:769: OF
         {
-        mORDER(); if (failed) return ;
+        mOF(); if (failed) return ;
 
         }
     }
@@ -8592,10 +8592,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred85
     public final void synpred85_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:783: ( OF )
-        // etc/XQFT.g:1:783: OF
+        // etc/XQFT.g:1:772: ( UNION )
+        // etc/XQFT.g:1:772: UNION
         {
-        mOF(); if (failed) return ;
+        mUNION(); if (failed) return ;
 
         }
     }
@@ -8603,10 +8603,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred86
     public final void synpred86_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:786: ( UNION )
-        // etc/XQFT.g:1:786: UNION
+        // etc/XQFT.g:1:778: ( FROM )
+        // etc/XQFT.g:1:778: FROM
         {
-        mUNION(); if (failed) return ;
+        mFROM(); if (failed) return ;
 
         }
     }
@@ -8614,10 +8614,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred87
     public final void synpred87_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:792: ( FROM )
-        // etc/XQFT.g:1:792: FROM
+        // etc/XQFT.g:1:783: ( COLLATION )
+        // etc/XQFT.g:1:783: COLLATION
         {
-        mFROM(); if (failed) return ;
+        mCOLLATION(); if (failed) return ;
 
         }
     }
@@ -8625,10 +8625,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred88
     public final void synpred88_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:797: ( COLLATION )
-        // etc/XQFT.g:1:797: COLLATION
+        // etc/XQFT.g:1:793: ( DOUBLERIGHTBRACES )
+        // etc/XQFT.g:1:793: DOUBLERIGHTBRACES
         {
-        mCOLLATION(); if (failed) return ;
+        mDOUBLERIGHTBRACES(); if (failed) return ;
 
         }
     }
@@ -8636,10 +8636,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred89
     public final void synpred89_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:807: ( DOUBLERIGHTBRACES )
-        // etc/XQFT.g:1:807: DOUBLERIGHTBRACES
+        // etc/XQFT.g:1:811: ( VARIABLE )
+        // etc/XQFT.g:1:811: VARIABLE
         {
-        mDOUBLERIGHTBRACES(); if (failed) return ;
+        mVARIABLE(); if (failed) return ;
 
         }
     }
@@ -8647,10 +8647,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred90
     public final void synpred90_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:825: ( VARIABLE )
-        // etc/XQFT.g:1:825: VARIABLE
+        // etc/XQFT.g:1:820: ( OR )
+        // etc/XQFT.g:1:820: OR
         {
-        mVARIABLE(); if (failed) return ;
+        mOR(); if (failed) return ;
 
         }
     }
@@ -8658,10 +8658,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred91
     public final void synpred91_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:834: ( OR )
-        // etc/XQFT.g:1:834: OR
+        // etc/XQFT.g:1:823: ( FTOR )
+        // etc/XQFT.g:1:823: FTOR
         {
-        mOR(); if (failed) return ;
+        mFTOR(); if (failed) return ;
 
         }
     }
@@ -8669,10 +8669,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred92
     public final void synpred92_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:837: ( FTOR )
-        // etc/XQFT.g:1:837: FTOR
+        // etc/XQFT.g:1:828: ( DOUBLESLASH )
+        // etc/XQFT.g:1:828: DOUBLESLASH
         {
-        mFTOR(); if (failed) return ;
+        mDOUBLESLASH(); if (failed) return ;
 
         }
     }
@@ -8680,10 +8680,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred93
     public final void synpred93_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:842: ( DOUBLESLASH )
-        // etc/XQFT.g:1:842: DOUBLESLASH
+        // etc/XQFT.g:1:840: ( LEAST )
+        // etc/XQFT.g:1:840: LEAST
         {
-        mDOUBLESLASH(); if (failed) return ;
+        mLEAST(); if (failed) return ;
 
         }
     }
@@ -8691,10 +8691,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred94
     public final void synpred94_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:854: ( LEAST )
-        // etc/XQFT.g:1:854: LEAST
+        // etc/XQFT.g:1:846: ( IF )
+        // etc/XQFT.g:1:846: IF
         {
-        mLEAST(); if (failed) return ;
+        mIF(); if (failed) return ;
 
         }
     }
@@ -8702,10 +8702,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred95
     public final void synpred95_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:860: ( IF )
-        // etc/XQFT.g:1:860: IF
+        // etc/XQFT.g:1:849: ( BASEURI )
+        // etc/XQFT.g:1:849: BASEURI
         {
-        mIF(); if (failed) return ;
+        mBASEURI(); if (failed) return ;
 
         }
     }
@@ -8713,32 +8713,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred96
     public final void synpred96_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:863: ( BASEURI )
-        // etc/XQFT.g:1:863: BASEURI
-        {
-        mBASEURI(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred96
-
-    // $ANTLR start synpred97
-    public final void synpred97_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:871: ( DESCENDING )
-        // etc/XQFT.g:1:871: DESCENDING
+        // etc/XQFT.g:1:857: ( DESCENDING )
+        // etc/XQFT.g:1:857: DESCENDING
         {
         mDESCENDING(); if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred97
+    // $ANTLR end synpred96
+
+    // $ANTLR start synpred98
+    public final void synpred98_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:875: ( NAMESPACE )
+        // etc/XQFT.g:1:875: NAMESPACE
+        {
+        mNAMESPACE(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred98
 
     // $ANTLR start synpred99
     public final void synpred99_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:889: ( NAMESPACE )
-        // etc/XQFT.g:1:889: NAMESPACE
+        // etc/XQFT.g:1:885: ( AS )
+        // etc/XQFT.g:1:885: AS
         {
-        mNAMESPACE(); if (failed) return ;
+        mAS(); if (failed) return ;
 
         }
     }
@@ -8746,10 +8746,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred100
     public final void synpred100_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:899: ( AS )
-        // etc/XQFT.g:1:899: AS
+        // etc/XQFT.g:1:888: ( LEFTXMLCOMMENT )
+        // etc/XQFT.g:1:888: LEFTXMLCOMMENT
         {
-        mAS(); if (failed) return ;
+        mLEFTXMLCOMMENT(); if (failed) return ;
 
         }
     }
@@ -8757,10 +8757,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred101
     public final void synpred101_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:902: ( LEFTXMLCOMMENT )
-        // etc/XQFT.g:1:902: LEFTXMLCOMMENT
+        // etc/XQFT.g:1:903: ( BY )
+        // etc/XQFT.g:1:903: BY
         {
-        mLEFTXMLCOMMENT(); if (failed) return ;
+        mBY(); if (failed) return ;
 
         }
     }
@@ -8768,10 +8768,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred102
     public final void synpred102_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:917: ( BY )
-        // etc/XQFT.g:1:917: BY
+        // etc/XQFT.g:1:906: ( TEXT )
+        // etc/XQFT.g:1:906: TEXT
         {
-        mBY(); if (failed) return ;
+        mTEXT(); if (failed) return ;
 
         }
     }
@@ -8779,32 +8779,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred103
     public final void synpred103_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:920: ( TEXT )
-        // etc/XQFT.g:1:920: TEXT
-        {
-        mTEXT(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred103
-
-    // $ANTLR start synpred104
-    public final void synpred104_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:925: ( STABLE )
-        // etc/XQFT.g:1:925: STABLE
+        // etc/XQFT.g:1:911: ( STABLE )
+        // etc/XQFT.g:1:911: STABLE
         {
         mSTABLE(); if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred104
+    // $ANTLR end synpred103
+
+    // $ANTLR start synpred105
+    public final void synpred105_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:932: ( UNORDERED )
+        // etc/XQFT.g:1:932: UNORDERED
+        {
+        mUNORDERED(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred105
 
     // $ANTLR start synpred106
     public final void synpred106_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:946: ( UNORDERED )
-        // etc/XQFT.g:1:946: UNORDERED
+        // etc/XQFT.g:1:942: ( RIGHTCDATA )
+        // etc/XQFT.g:1:942: RIGHTCDATA
         {
-        mUNORDERED(); if (failed) return ;
+        mRIGHTCDATA(); if (failed) return ;
 
         }
     }
@@ -8812,10 +8812,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred107
     public final void synpred107_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:956: ( RIGHTCDATA )
-        // etc/XQFT.g:1:956: RIGHTCDATA
+        // etc/XQFT.g:1:953: ( EXACTLY )
+        // etc/XQFT.g:1:953: EXACTLY
         {
-        mRIGHTCDATA(); if (failed) return ;
+        mEXACTLY(); if (failed) return ;
 
         }
     }
@@ -8823,10 +8823,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred108
     public final void synpred108_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:967: ( EXACTLY )
-        // etc/XQFT.g:1:967: EXACTLY
+        // etc/XQFT.g:1:961: ( WITH )
+        // etc/XQFT.g:1:961: WITH
         {
-        mEXACTLY(); if (failed) return ;
+        mWITH(); if (failed) return ;
 
         }
     }
@@ -8834,10 +8834,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred109
     public final void synpred109_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:975: ( WITH )
-        // etc/XQFT.g:1:975: WITH
+        // etc/XQFT.g:1:966: ( LEFTPITARGET )
+        // etc/XQFT.g:1:966: LEFTPITARGET
         {
-        mWITH(); if (failed) return ;
+        mLEFTPITARGET(); if (failed) return ;
 
         }
     }
@@ -8845,10 +8845,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred110
     public final void synpred110_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:980: ( LEFTPITARGET )
-        // etc/XQFT.g:1:980: LEFTPITARGET
+        // etc/XQFT.g:1:979: ( WITHOUT )
+        // etc/XQFT.g:1:979: WITHOUT
         {
-        mLEFTPITARGET(); if (failed) return ;
+        mWITHOUT(); if (failed) return ;
 
         }
     }
@@ -8856,10 +8856,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred111
     public final void synpred111_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:993: ( WITHOUT )
-        // etc/XQFT.g:1:993: WITHOUT
+        // etc/XQFT.g:1:987: ( DIACRITICS )
+        // etc/XQFT.g:1:987: DIACRITICS
         {
-        mWITHOUT(); if (failed) return ;
+        mDIACRITICS(); if (failed) return ;
 
         }
     }
@@ -8867,32 +8867,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred112
     public final void synpred112_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1001: ( DIACRITICS )
-        // etc/XQFT.g:1:1001: DIACRITICS
-        {
-        mDIACRITICS(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred112
-
-    // $ANTLR start synpred113
-    public final void synpred113_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1012: ( EXTERNAL )
-        // etc/XQFT.g:1:1012: EXTERNAL
+        // etc/XQFT.g:1:998: ( EXTERNAL )
+        // etc/XQFT.g:1:998: EXTERNAL
         {
         mEXTERNAL(); if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred113
+    // $ANTLR end synpred112
+
+    // $ANTLR start synpred114
+    public final void synpred114_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:1026: ( RIGHTXMLCOMMENT )
+        // etc/XQFT.g:1:1026: RIGHTXMLCOMMENT
+        {
+        mRIGHTXMLCOMMENT(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred114
 
     // $ANTLR start synpred115
     public final void synpred115_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1040: ( RIGHTXMLCOMMENT )
-        // etc/XQFT.g:1:1040: RIGHTXMLCOMMENT
+        // etc/XQFT.g:1:1042: ( MODULE )
+        // etc/XQFT.g:1:1042: MODULE
         {
-        mRIGHTXMLCOMMENT(); if (failed) return ;
+        mMODULE(); if (failed) return ;
 
         }
     }
@@ -8900,10 +8900,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred116
     public final void synpred116_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1056: ( MODULE )
-        // etc/XQFT.g:1:1056: MODULE
+        // etc/XQFT.g:1:1049: ( RETURN )
+        // etc/XQFT.g:1:1049: RETURN
         {
-        mMODULE(); if (failed) return ;
+        mRETURN(); if (failed) return ;
 
         }
     }
@@ -8911,10 +8911,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred117
     public final void synpred117_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1063: ( RETURN )
-        // etc/XQFT.g:1:1063: RETURN
+        // etc/XQFT.g:1:1056: ( COMMENT )
+        // etc/XQFT.g:1:1056: COMMENT
         {
-        mRETURN(); if (failed) return ;
+        mCOMMENT(); if (failed) return ;
 
         }
     }
@@ -8922,10 +8922,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred118
     public final void synpred118_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1070: ( COMMENT )
-        // etc/XQFT.g:1:1070: COMMENT
+        // etc/XQFT.g:1:1064: ( DEFAULT )
+        // etc/XQFT.g:1:1064: DEFAULT
         {
-        mCOMMENT(); if (failed) return ;
+        mDEFAULT(); if (failed) return ;
 
         }
     }
@@ -8933,10 +8933,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred119
     public final void synpred119_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1078: ( DEFAULT )
-        // etc/XQFT.g:1:1078: DEFAULT
+        // etc/XQFT.g:1:1072: ( OCCURS )
+        // etc/XQFT.g:1:1072: OCCURS
         {
-        mDEFAULT(); if (failed) return ;
+        mOCCURS(); if (failed) return ;
 
         }
     }
@@ -8944,10 +8944,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred120
     public final void synpred120_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1086: ( OCCURS )
-        // etc/XQFT.g:1:1086: OCCURS
+        // etc/XQFT.g:1:1079: ( ENCODING )
+        // etc/XQFT.g:1:1079: ENCODING
         {
-        mOCCURS(); if (failed) return ;
+        mENCODING(); if (failed) return ;
 
         }
     }
@@ -8955,10 +8955,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred121
     public final void synpred121_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1093: ( ENCODING )
-        // etc/XQFT.g:1:1093: ENCODING
+        // etc/XQFT.g:1:1088: ( DOUBLELEFTBRACES )
+        // etc/XQFT.g:1:1088: DOUBLELEFTBRACES
         {
-        mENCODING(); if (failed) return ;
+        mDOUBLELEFTBRACES(); if (failed) return ;
 
         }
     }
@@ -8966,10 +8966,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred122
     public final void synpred122_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1102: ( DOUBLELEFTBRACES )
-        // etc/XQFT.g:1:1102: DOUBLELEFTBRACES
+        // etc/XQFT.g:1:1105: ( SCHEMA )
+        // etc/XQFT.g:1:1105: SCHEMA
         {
-        mDOUBLELEFTBRACES(); if (failed) return ;
+        mSCHEMA(); if (failed) return ;
 
         }
     }
@@ -8977,10 +8977,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred123
     public final void synpred123_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1119: ( SCHEMA )
-        // etc/XQFT.g:1:1119: SCHEMA
+        // etc/XQFT.g:1:1112: ( ELEMENT )
+        // etc/XQFT.g:1:1112: ELEMENT
         {
-        mSCHEMA(); if (failed) return ;
+        mELEMENT(); if (failed) return ;
 
         }
     }
@@ -8988,10 +8988,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred124
     public final void synpred124_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1126: ( ELEMENT )
-        // etc/XQFT.g:1:1126: ELEMENT
+        // etc/XQFT.g:1:1120: ( LEFTPARENTHESISSi )
+        // etc/XQFT.g:1:1120: LEFTPARENTHESISSi
         {
-        mELEMENT(); if (failed) return ;
+        mLEFTPARENTHESISSi(); if (failed) return ;
 
         }
     }
@@ -8999,10 +8999,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred125
     public final void synpred125_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1134: ( LEFTPARENTHESISSi )
-        // etc/XQFT.g:1:1134: LEFTPARENTHESISSi
+        // etc/XQFT.g:1:1138: ( COPYNAMESPACES )
+        // etc/XQFT.g:1:1138: COPYNAMESPACES
         {
-        mLEFTPARENTHESISSi(); if (failed) return ;
+        mCOPYNAMESPACES(); if (failed) return ;
 
         }
     }
@@ -9010,10 +9010,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred126
     public final void synpred126_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1152: ( COPYNAMESPACES )
-        // etc/XQFT.g:1:1152: COPYNAMESPACES
+        // etc/XQFT.g:1:1153: ( WILDCARDS )
+        // etc/XQFT.g:1:1153: WILDCARDS
         {
-        mCOPYNAMESPACES(); if (failed) return ;
+        mWILDCARDS(); if (failed) return ;
 
         }
     }
@@ -9021,10 +9021,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred127
     public final void synpred127_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1167: ( WILDCARDS )
-        // etc/XQFT.g:1:1167: WILDCARDS
+        // etc/XQFT.g:1:1163: ( DECLARE )
+        // etc/XQFT.g:1:1163: DECLARE
         {
-        mWILDCARDS(); if (failed) return ;
+        mDECLARE(); if (failed) return ;
 
         }
     }
@@ -9032,10 +9032,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred128
     public final void synpred128_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1177: ( DECLARE )
-        // etc/XQFT.g:1:1177: DECLARE
+        // etc/XQFT.g:1:1171: ( AND )
+        // etc/XQFT.g:1:1171: AND
         {
-        mDECLARE(); if (failed) return ;
+        mAND(); if (failed) return ;
 
         }
     }
@@ -9043,10 +9043,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred129
     public final void synpred129_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1185: ( AND )
-        // etc/XQFT.g:1:1185: AND
+        // etc/XQFT.g:1:1175: ( PRESERVE )
+        // etc/XQFT.g:1:1175: PRESERVE
         {
-        mAND(); if (failed) return ;
+        mPRESERVE(); if (failed) return ;
 
         }
     }
@@ -9054,10 +9054,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred130
     public final void synpred130_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1189: ( PRESERVE )
-        // etc/XQFT.g:1:1189: PRESERVE
+        // etc/XQFT.g:1:1184: ( NOINHERIT )
+        // etc/XQFT.g:1:1184: NOINHERIT
         {
-        mPRESERVE(); if (failed) return ;
+        mNOINHERIT(); if (failed) return ;
 
         }
     }
@@ -9065,10 +9065,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred131
     public final void synpred131_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1198: ( NOINHERIT )
-        // etc/XQFT.g:1:1198: NOINHERIT
+        // etc/XQFT.g:1:1194: ( NOT )
+        // etc/XQFT.g:1:1194: NOT
         {
-        mNOINHERIT(); if (failed) return ;
+        mNOT(); if (failed) return ;
 
         }
     }
@@ -9076,10 +9076,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred132
     public final void synpred132_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1208: ( NOT )
-        // etc/XQFT.g:1:1208: NOT
+        // etc/XQFT.g:1:1198: ( INTERSECT )
+        // etc/XQFT.g:1:1198: INTERSECT
         {
-        mNOT(); if (failed) return ;
+        mINTERSECT(); if (failed) return ;
 
         }
     }
@@ -9087,32 +9087,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred133
     public final void synpred133_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1212: ( INTERSECT )
-        // etc/XQFT.g:1:1212: INTERSECT
-        {
-        mINTERSECT(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred133
-
-    // $ANTLR start synpred134
-    public final void synpred134_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1222: ( FUNCTION )
-        // etc/XQFT.g:1:1222: FUNCTION
+        // etc/XQFT.g:1:1208: ( FUNCTION )
+        // etc/XQFT.g:1:1208: FUNCTION
         {
         mFUNCTION(); if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred134
+    // $ANTLR end synpred133
+
+    // $ANTLR start synpred135
+    public final void synpred135_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:1222: ( TIMES )
+        // etc/XQFT.g:1:1222: TIMES
+        {
+        mTIMES(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred135
 
     // $ANTLR start synpred136
     public final void synpred136_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1236: ( TIMES )
-        // etc/XQFT.g:1:1236: TIMES
+        // etc/XQFT.g:1:1228: ( ATTRIBUTE )
+        // etc/XQFT.g:1:1228: ATTRIBUTE
         {
-        mTIMES(); if (failed) return ;
+        mATTRIBUTE(); if (failed) return ;
 
         }
     }
@@ -9120,10 +9120,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred137
     public final void synpred137_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1242: ( ATTRIBUTE )
-        // etc/XQFT.g:1:1242: ATTRIBUTE
+        // etc/XQFT.g:1:1238: ( ASSIGNMENTOPERATOR )
+        // etc/XQFT.g:1:1238: ASSIGNMENTOPERATOR
         {
-        mATTRIBUTE(); if (failed) return ;
+        mASSIGNMENTOPERATOR(); if (failed) return ;
 
         }
     }
@@ -9131,10 +9131,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred138
     public final void synpred138_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1252: ( ASSIGNMENTOPERATOR )
-        // etc/XQFT.g:1:1252: ASSIGNMENTOPERATOR
+        // etc/XQFT.g:1:1257: ( FTCONTAINS )
+        // etc/XQFT.g:1:1257: FTCONTAINS
         {
-        mASSIGNMENTOPERATOR(); if (failed) return ;
+        mFTCONTAINS(); if (failed) return ;
 
         }
     }
@@ -9142,10 +9142,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred139
     public final void synpred139_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1271: ( FTCONTAINS )
-        // etc/XQFT.g:1:1271: FTCONTAINS
+        // etc/XQFT.g:1:1268: ( RELATIONSHIP )
+        // etc/XQFT.g:1:1268: RELATIONSHIP
         {
-        mFTCONTAINS(); if (failed) return ;
+        mRELATIONSHIP(); if (failed) return ;
 
         }
     }
@@ -9153,10 +9153,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred140
     public final void synpred140_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1282: ( RELATIONSHIP )
-        // etc/XQFT.g:1:1282: RELATIONSHIP
+        // etc/XQFT.g:1:1281: ( THESAURUS )
+        // etc/XQFT.g:1:1281: THESAURUS
         {
-        mRELATIONSHIP(); if (failed) return ;
+        mTHESAURUS(); if (failed) return ;
 
         }
     }
@@ -9164,10 +9164,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred141
     public final void synpred141_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1295: ( THESAURUS )
-        // etc/XQFT.g:1:1295: THESAURUS
+        // etc/XQFT.g:1:1291: ( MOD )
+        // etc/XQFT.g:1:1291: MOD
         {
-        mTHESAURUS(); if (failed) return ;
+        mMOD(); if (failed) return ;
 
         }
     }
@@ -9175,10 +9175,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred142
     public final void synpred142_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1305: ( MOD )
-        // etc/XQFT.g:1:1305: MOD
+        // etc/XQFT.g:1:1295: ( RIGHTBRACESi )
+        // etc/XQFT.g:1:1295: RIGHTBRACESi
         {
-        mMOD(); if (failed) return ;
+        mRIGHTBRACESi(); if (failed) return ;
 
         }
     }
@@ -9186,10 +9186,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred143
     public final void synpred143_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1309: ( RIGHTBRACESi )
-        // etc/XQFT.g:1:1309: RIGHTBRACESi
+        // etc/XQFT.g:1:1308: ( NODE )
+        // etc/XQFT.g:1:1308: NODE
         {
-        mRIGHTBRACESi(); if (failed) return ;
+        mNODE(); if (failed) return ;
 
         }
     }
@@ -9197,10 +9197,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred144
     public final void synpred144_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1322: ( NODE )
-        // etc/XQFT.g:1:1322: NODE
+        // etc/XQFT.g:1:1313: ( SOME )
+        // etc/XQFT.g:1:1313: SOME
         {
-        mNODE(); if (failed) return ;
+        mSOME(); if (failed) return ;
 
         }
     }
@@ -9208,10 +9208,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred145
     public final void synpred145_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1327: ( SOME )
-        // etc/XQFT.g:1:1327: SOME
+        // etc/XQFT.g:1:1318: ( QUESTIONMARKSi )
+        // etc/XQFT.g:1:1318: QUESTIONMARKSi
         {
-        mSOME(); if (failed) return ;
+        mQUESTIONMARKSi(); if (failed) return ;
 
         }
     }
@@ -9219,10 +9219,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred146
     public final void synpred146_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1332: ( QUESTIONMARKSi )
-        // etc/XQFT.g:1:1332: QUESTIONMARKSi
+        // etc/XQFT.g:1:1333: ( STRIP )
+        // etc/XQFT.g:1:1333: STRIP
         {
-        mQUESTIONMARKSi(); if (failed) return ;
+        mSTRIP(); if (failed) return ;
 
         }
     }
@@ -9230,10 +9230,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred147
     public final void synpred147_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1347: ( STRIP )
-        // etc/XQFT.g:1:1347: STRIP
+        // etc/XQFT.g:1:1339: ( LOWERCASE )
+        // etc/XQFT.g:1:1339: LOWERCASE
         {
-        mSTRIP(); if (failed) return ;
+        mLOWERCASE(); if (failed) return ;
 
         }
     }
@@ -9241,10 +9241,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred148
     public final void synpred148_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1353: ( LOWERCASE )
-        // etc/XQFT.g:1:1353: LOWERCASE
+        // etc/XQFT.g:1:1349: ( IN )
+        // etc/XQFT.g:1:1349: IN
         {
-        mLOWERCASE(); if (failed) return ;
+        mIN(); if (failed) return ;
 
         }
     }
@@ -9252,10 +9252,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred149
     public final void synpred149_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1363: ( IN )
-        // etc/XQFT.g:1:1363: IN
+        // etc/XQFT.g:1:1352: ( SCHEMAELEMENT )
+        // etc/XQFT.g:1:1352: SCHEMAELEMENT
         {
-        mIN(); if (failed) return ;
+        mSCHEMAELEMENT(); if (failed) return ;
 
         }
     }
@@ -9263,10 +9263,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred150
     public final void synpred150_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1366: ( SCHEMAELEMENT )
-        // etc/XQFT.g:1:1366: SCHEMAELEMENT
+        // etc/XQFT.g:1:1366: ( LEFTENDTAG )
+        // etc/XQFT.g:1:1366: LEFTENDTAG
         {
-        mSCHEMAELEMENT(); if (failed) return ;
+        mLEFTENDTAG(); if (failed) return ;
 
         }
     }
@@ -9274,10 +9274,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred151
     public final void synpred151_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1380: ( LEFTENDTAG )
-        // etc/XQFT.g:1:1380: LEFTENDTAG
+        // etc/XQFT.g:1:1377: ( EQ )
+        // etc/XQFT.g:1:1377: EQ
         {
-        mLEFTENDTAG(); if (failed) return ;
+        mEQ(); if (failed) return ;
 
         }
     }
@@ -9285,10 +9285,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred152
     public final void synpred152_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1391: ( EQ )
-        // etc/XQFT.g:1:1391: EQ
+        // etc/XQFT.g:1:1380: ( NE )
+        // etc/XQFT.g:1:1380: NE
         {
-        mEQ(); if (failed) return ;
+        mNE(); if (failed) return ;
 
         }
     }
@@ -9296,10 +9296,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred153
     public final void synpred153_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1394: ( NE )
-        // etc/XQFT.g:1:1394: NE
+        // etc/XQFT.g:1:1383: ( LT )
+        // etc/XQFT.g:1:1383: LT
         {
-        mNE(); if (failed) return ;
+        mLT(); if (failed) return ;
 
         }
     }
@@ -9307,10 +9307,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred154
     public final void synpred154_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1397: ( LT )
-        // etc/XQFT.g:1:1397: LT
+        // etc/XQFT.g:1:1386: ( LE )
+        // etc/XQFT.g:1:1386: LE
         {
-        mLT(); if (failed) return ;
+        mLE(); if (failed) return ;
 
         }
     }
@@ -9318,10 +9318,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred155
     public final void synpred155_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1400: ( LE )
-        // etc/XQFT.g:1:1400: LE
+        // etc/XQFT.g:1:1389: ( GT )
+        // etc/XQFT.g:1:1389: GT
         {
-        mLE(); if (failed) return ;
+        mGT(); if (failed) return ;
 
         }
     }
@@ -9329,10 +9329,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred156
     public final void synpred156_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1403: ( GT )
-        // etc/XQFT.g:1:1403: GT
+        // etc/XQFT.g:1:1392: ( GE )
+        // etc/XQFT.g:1:1392: GE
         {
-        mGT(); if (failed) return ;
+        mGE(); if (failed) return ;
 
         }
     }
@@ -9340,10 +9340,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred157
     public final void synpred157_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1406: ( GE )
-        // etc/XQFT.g:1:1406: GE
+        // etc/XQFT.g:1:1395: ( IS )
+        // etc/XQFT.g:1:1395: IS
         {
-        mGE(); if (failed) return ;
+        mIS(); if (failed) return ;
 
         }
     }
@@ -9351,10 +9351,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred158
     public final void synpred158_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1409: ( IS )
-        // etc/XQFT.g:1:1409: IS
+        // etc/XQFT.g:1:1398: ( NODEBEFORESi )
+        // etc/XQFT.g:1:1398: NODEBEFORESi
         {
-        mIS(); if (failed) return ;
+        mNODEBEFORESi(); if (failed) return ;
 
         }
     }
@@ -9362,10 +9362,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred159
     public final void synpred159_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1412: ( NODEBEFORESi )
-        // etc/XQFT.g:1:1412: NODEBEFORESi
+        // etc/XQFT.g:1:1411: ( NODEAFTERSi )
+        // etc/XQFT.g:1:1411: NODEAFTERSi
         {
-        mNODEBEFORESi(); if (failed) return ;
+        mNODEAFTERSi(); if (failed) return ;
 
         }
     }
@@ -9373,10 +9373,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred160
     public final void synpred160_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1425: ( NODEAFTERSi )
-        // etc/XQFT.g:1:1425: NODEAFTERSi
+        // etc/XQFT.g:1:1423: ( LAX )
+        // etc/XQFT.g:1:1423: LAX
         {
-        mNODEAFTERSi(); if (failed) return ;
+        mLAX(); if (failed) return ;
 
         }
     }
@@ -9384,10 +9384,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred161
     public final void synpred161_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1437: ( LAX )
-        // etc/XQFT.g:1:1437: LAX
+        // etc/XQFT.g:1:1427: ( STRICT )
+        // etc/XQFT.g:1:1427: STRICT
         {
-        mLAX(); if (failed) return ;
+        mSTRICT(); if (failed) return ;
 
         }
     }
@@ -9395,10 +9395,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred162
     public final void synpred162_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1441: ( STRICT )
-        // etc/XQFT.g:1:1441: STRICT
+        // etc/XQFT.g:1:1434: ( CHILD )
+        // etc/XQFT.g:1:1434: CHILD
         {
-        mSTRICT(); if (failed) return ;
+        mCHILD(); if (failed) return ;
 
         }
     }
@@ -9406,10 +9406,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred163
     public final void synpred163_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1448: ( CHILD )
-        // etc/XQFT.g:1:1448: CHILD
+        // etc/XQFT.g:1:1440: ( DOUBLECOLON )
+        // etc/XQFT.g:1:1440: DOUBLECOLON
         {
-        mCHILD(); if (failed) return ;
+        mDOUBLECOLON(); if (failed) return ;
 
         }
     }
@@ -9417,10 +9417,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred164
     public final void synpred164_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1454: ( DOUBLECOLON )
-        // etc/XQFT.g:1:1454: DOUBLECOLON
+        // etc/XQFT.g:1:1452: ( DESCENDANT )
+        // etc/XQFT.g:1:1452: DESCENDANT
         {
-        mDOUBLECOLON(); if (failed) return ;
+        mDESCENDANT(); if (failed) return ;
 
         }
     }
@@ -9428,10 +9428,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred165
     public final void synpred165_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1466: ( DESCENDANT )
-        // etc/XQFT.g:1:1466: DESCENDANT
+        // etc/XQFT.g:1:1463: ( SELF )
+        // etc/XQFT.g:1:1463: SELF
         {
-        mDESCENDANT(); if (failed) return ;
+        mSELF(); if (failed) return ;
 
         }
     }
@@ -9439,10 +9439,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred166
     public final void synpred166_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1477: ( SELF )
-        // etc/XQFT.g:1:1477: SELF
+        // etc/XQFT.g:1:1468: ( DESCENDANT_OR_SELF )
+        // etc/XQFT.g:1:1468: DESCENDANT_OR_SELF
         {
-        mSELF(); if (failed) return ;
+        mDESCENDANT_OR_SELF(); if (failed) return ;
 
         }
     }
@@ -9450,10 +9450,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred167
     public final void synpred167_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1482: ( DESCENDANT_OR_SELF )
-        // etc/XQFT.g:1:1482: DESCENDANT_OR_SELF
+        // etc/XQFT.g:1:1487: ( FOLLOWING_SIBLING )
+        // etc/XQFT.g:1:1487: FOLLOWING_SIBLING
         {
-        mDESCENDANT_OR_SELF(); if (failed) return ;
+        mFOLLOWING_SIBLING(); if (failed) return ;
 
         }
     }
@@ -9461,10 +9461,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred168
     public final void synpred168_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1501: ( FOLLOWING_SIBLING )
-        // etc/XQFT.g:1:1501: FOLLOWING_SIBLING
+        // etc/XQFT.g:1:1505: ( FOLLOWING )
+        // etc/XQFT.g:1:1505: FOLLOWING
         {
-        mFOLLOWING_SIBLING(); if (failed) return ;
+        mFOLLOWING(); if (failed) return ;
 
         }
     }
@@ -9472,10 +9472,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred169
     public final void synpred169_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1519: ( FOLLOWING )
-        // etc/XQFT.g:1:1519: FOLLOWING
+        // etc/XQFT.g:1:1515: ( PARENT )
+        // etc/XQFT.g:1:1515: PARENT
         {
-        mFOLLOWING(); if (failed) return ;
+        mPARENT(); if (failed) return ;
 
         }
     }
@@ -9483,10 +9483,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred170
     public final void synpred170_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1529: ( PARENT )
-        // etc/XQFT.g:1:1529: PARENT
+        // etc/XQFT.g:1:1522: ( ANCESTOR )
+        // etc/XQFT.g:1:1522: ANCESTOR
         {
-        mPARENT(); if (failed) return ;
+        mANCESTOR(); if (failed) return ;
 
         }
     }
@@ -9494,10 +9494,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred171
     public final void synpred171_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1536: ( ANCESTOR )
-        // etc/XQFT.g:1:1536: ANCESTOR
+        // etc/XQFT.g:1:1531: ( PRECEDING_SIBLING )
+        // etc/XQFT.g:1:1531: PRECEDING_SIBLING
         {
-        mANCESTOR(); if (failed) return ;
+        mPRECEDING_SIBLING(); if (failed) return ;
 
         }
     }
@@ -9505,10 +9505,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred172
     public final void synpred172_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1545: ( PRECEDING_SIBLING )
-        // etc/XQFT.g:1:1545: PRECEDING_SIBLING
+        // etc/XQFT.g:1:1549: ( PRECEDING )
+        // etc/XQFT.g:1:1549: PRECEDING
         {
-        mPRECEDING_SIBLING(); if (failed) return ;
+        mPRECEDING(); if (failed) return ;
 
         }
     }
@@ -9516,10 +9516,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred173
     public final void synpred173_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1563: ( PRECEDING )
-        // etc/XQFT.g:1:1563: PRECEDING
+        // etc/XQFT.g:1:1559: ( ANCESTOR_OR_SELF )
+        // etc/XQFT.g:1:1559: ANCESTOR_OR_SELF
         {
-        mPRECEDING(); if (failed) return ;
+        mANCESTOR_OR_SELF(); if (failed) return ;
 
         }
     }
@@ -9527,10 +9527,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred174
     public final void synpred174_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1573: ( ANCESTOR_OR_SELF )
-        // etc/XQFT.g:1:1573: ANCESTOR_OR_SELF
+        // etc/XQFT.g:1:1576: ( DOT )
+        // etc/XQFT.g:1:1576: DOT
         {
-        mANCESTOR_OR_SELF(); if (failed) return ;
+        mDOT(); if (failed) return ;
 
         }
     }
@@ -9538,10 +9538,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred175
     public final void synpred175_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1590: ( DOT )
-        // etc/XQFT.g:1:1590: DOT
+        // etc/XQFT.g:1:1580: ( DOTDOT )
+        // etc/XQFT.g:1:1580: DOTDOT
         {
-        mDOT(); if (failed) return ;
+        mDOTDOT(); if (failed) return ;
 
         }
     }
@@ -9549,10 +9549,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred176
     public final void synpred176_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1594: ( DOTDOT )
-        // etc/XQFT.g:1:1594: DOTDOT
+        // etc/XQFT.g:1:1587: ( WORDS )
+        // etc/XQFT.g:1:1587: WORDS
         {
-        mDOTDOT(); if (failed) return ;
+        mWORDS(); if (failed) return ;
 
         }
     }
@@ -9560,10 +9560,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred177
     public final void synpred177_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1601: ( WORDS )
-        // etc/XQFT.g:1:1601: WORDS
+        // etc/XQFT.g:1:1593: ( SENTENCES )
+        // etc/XQFT.g:1:1593: SENTENCES
         {
-        mWORDS(); if (failed) return ;
+        mSENTENCES(); if (failed) return ;
 
         }
     }
@@ -9571,10 +9571,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred178
     public final void synpred178_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1607: ( SENTENCES )
-        // etc/XQFT.g:1:1607: SENTENCES
+        // etc/XQFT.g:1:1603: ( PARAGRAPHS )
+        // etc/XQFT.g:1:1603: PARAGRAPHS
         {
-        mSENTENCES(); if (failed) return ;
+        mPARAGRAPHS(); if (failed) return ;
 
         }
     }
@@ -9582,10 +9582,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred179
     public final void synpred179_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1617: ( PARAGRAPHS )
-        // etc/XQFT.g:1:1617: PARAGRAPHS
+        // etc/XQFT.g:1:1614: ( SENTENCE )
+        // etc/XQFT.g:1:1614: SENTENCE
         {
-        mPARAGRAPHS(); if (failed) return ;
+        mSENTENCE(); if (failed) return ;
 
         }
     }
@@ -9593,10 +9593,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred180
     public final void synpred180_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1628: ( SENTENCE )
-        // etc/XQFT.g:1:1628: SENTENCE
+        // etc/XQFT.g:1:1623: ( PARAGRAPH )
+        // etc/XQFT.g:1:1623: PARAGRAPH
         {
-        mSENTENCE(); if (failed) return ;
+        mPARAGRAPH(); if (failed) return ;
 
         }
     }
@@ -9604,10 +9604,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred181
     public final void synpred181_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1637: ( PARAGRAPH )
-        // etc/XQFT.g:1:1637: PARAGRAPH
+        // etc/XQFT.g:1:1633: ( SAME )
+        // etc/XQFT.g:1:1633: SAME
         {
-        mPARAGRAPH(); if (failed) return ;
+        mSAME(); if (failed) return ;
 
         }
     }
@@ -9615,10 +9615,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred182
     public final void synpred182_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1647: ( SAME )
-        // etc/XQFT.g:1:1647: SAME
+        // etc/XQFT.g:1:1638: ( DIFFERENT )
+        // etc/XQFT.g:1:1638: DIFFERENT
         {
-        mSAME(); if (failed) return ;
+        mDIFFERENT(); if (failed) return ;
 
         }
     }
@@ -9626,10 +9626,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred183
     public final void synpred183_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1652: ( DIFFERENT )
-        // etc/XQFT.g:1:1652: DIFFERENT
+        // etc/XQFT.g:1:1648: ( START )
+        // etc/XQFT.g:1:1648: START
         {
-        mDIFFERENT(); if (failed) return ;
+        mSTART(); if (failed) return ;
 
         }
     }
@@ -9637,10 +9637,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred184
     public final void synpred184_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1662: ( START )
-        // etc/XQFT.g:1:1662: START
+        // etc/XQFT.g:1:1654: ( END )
+        // etc/XQFT.g:1:1654: END
         {
-        mSTART(); if (failed) return ;
+        mEND(); if (failed) return ;
 
         }
     }
@@ -9648,10 +9648,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred185
     public final void synpred185_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1668: ( END )
-        // etc/XQFT.g:1:1668: END
+        // etc/XQFT.g:1:1658: ( ENTIRE )
+        // etc/XQFT.g:1:1658: ENTIRE
         {
-        mEND(); if (failed) return ;
+        mENTIRE(); if (failed) return ;
 
         }
     }
@@ -9659,10 +9659,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred186
     public final void synpred186_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1672: ( ENTIRE )
-        // etc/XQFT.g:1:1672: ENTIRE
+        // etc/XQFT.g:1:1665: ( IntegerLiteral )
+        // etc/XQFT.g:1:1665: IntegerLiteral
         {
-        mENTIRE(); if (failed) return ;
+        mIntegerLiteral(); if (failed) return ;
 
         }
     }
@@ -9670,10 +9670,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred187
     public final void synpred187_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1679: ( IntegerLiteral )
-        // etc/XQFT.g:1:1679: IntegerLiteral
+        // etc/XQFT.g:1:1680: ( DecimalLiteral )
+        // etc/XQFT.g:1:1680: DecimalLiteral
         {
-        mIntegerLiteral(); if (failed) return ;
+        mDecimalLiteral(); if (failed) return ;
 
         }
     }
@@ -9681,10 +9681,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred188
     public final void synpred188_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1694: ( DecimalLiteral )
-        // etc/XQFT.g:1:1694: DecimalLiteral
+        // etc/XQFT.g:1:1695: ( DoubleLiteral )
+        // etc/XQFT.g:1:1695: DoubleLiteral
         {
-        mDecimalLiteral(); if (failed) return ;
+        mDoubleLiteral(); if (failed) return ;
 
         }
     }
@@ -9692,10 +9692,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred189
     public final void synpred189_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1709: ( DoubleLiteral )
-        // etc/XQFT.g:1:1709: DoubleLiteral
+        // etc/XQFT.g:1:1709: ( StringLiteral )
+        // etc/XQFT.g:1:1709: StringLiteral
         {
-        mDoubleLiteral(); if (failed) return ;
+        mStringLiteral(); if (failed) return ;
 
         }
     }
@@ -9703,10 +9703,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred190
     public final void synpred190_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1723: ( StringLiteral )
-        // etc/XQFT.g:1:1723: StringLiteral
+        // etc/XQFT.g:1:1723: ( DOUBLEQUOTESi )
+        // etc/XQFT.g:1:1723: DOUBLEQUOTESi
         {
-        mStringLiteral(); if (failed) return ;
+        mDOUBLEQUOTESi(); if (failed) return ;
 
         }
     }
@@ -9734,2083 +9734,11 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end synpred193
 
-    public final boolean synpred44() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred44_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred43() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred43_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred46() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred46_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred45() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred45_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred48() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred48_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred47() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred47_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred49() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred49_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred40() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred40_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred42() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred42_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred41() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred41_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred165() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred165_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred164() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred164_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred163() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred163_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred162() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred162_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred161() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred161_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred160() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred160_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred169() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred169_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred168() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred168_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred167() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred167_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred166() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred166_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred35() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred35_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred34() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred34_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred33() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred33_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred39() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred39_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred38() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred38_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred37() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred37_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred36() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred36_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred31() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred31_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred30() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred30_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred152() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred152_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred151() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred151_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred154() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred154_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred153() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred153_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred150() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred150_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred159() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred159_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred156() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred156_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred155() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred155_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred158() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred158_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred157() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred157_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred69() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred69_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred66() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred66_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred65() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred65_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred68() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred68_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred101() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred101_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred62() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred62_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred61() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred61_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred100() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred100_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred64() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred64_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred103() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred103_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred63() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred63_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred102() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred102_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred190() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred190_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred104() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred104_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred107() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred107_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred60() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred60_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
     public final boolean synpred106() {
         backtracking++;
         int start = input.mark();
         try {
             synpred106_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred108() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred108_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred183() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred183_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred109() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred109_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred182() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred182_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred181() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred181_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred180() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred180_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred187() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred187_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred186() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred186_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred185() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred185_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred184() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred184_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred189() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred189_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred188() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred188_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred59() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred59_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred58() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred58_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred57() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred57_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred56() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred56_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred55() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred55_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred54() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred54_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred53() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred53_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred5() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred5_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred52() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred52_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred6() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred6_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred51() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred51_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred7() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred7_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred8() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred8_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred1() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred1_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred3() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred3_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred4() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred4_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred170() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred170_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred172() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred172_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred171() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred171_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred174() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred174_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred173() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred173_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred9() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred9_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred176() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred176_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred175() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred175_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred178() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred178_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred177() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred177_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred179() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred179_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred126() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred126_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred127() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred127_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred81() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred81_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred128() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred128_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred129() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred129_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred82() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred82_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred122() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred122_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred83() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred83_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred84() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred84_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred123() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred123_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred124() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred124_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred85() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred85_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred86() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred86_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred125() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred125_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred87() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred87_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred88() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred88_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred89() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred89_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred120() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred120_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred121() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred121_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred117() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred117_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred70() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred70_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred71() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred71_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred118() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred118_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred115() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred115_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred116() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred116_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred74() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred74_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred113() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred113_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred75() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred75_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred72() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred72_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred111() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred111_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred73() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred73_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred112() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred112_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred78() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred78_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred110() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred110_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred79() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred79_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred76() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred76_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred77() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred77_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred191() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred191_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred193() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred193_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred119() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred119_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred144() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred144_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred145() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred145_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred146() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred146_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred147() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred147_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred148() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred148_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred149() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred149_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred29() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred29_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred140() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred140_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred141() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred141_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred142() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred142_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred143() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred143_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred20() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred20_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred27() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred27_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred28() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred28_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11834,11 +9762,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred26() {
+    public final boolean synpred7() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred26_fragment(); // can never throw exception
+            synpred7_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11848,11 +9776,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred23() {
+    public final boolean synpred163() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred23_fragment(); // can never throw exception
+            synpred163_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11862,25 +9790,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred24() {
+    public final boolean synpred105() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred24_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred21() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred21_fragment(); // can never throw exception
+            synpred105_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11904,11 +9818,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred96() {
+    public final boolean synpred27() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred96_fragment(); // can never throw exception
+            synpred27_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11918,11 +9832,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred136() {
+    public final boolean synpred1() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred136_fragment(); // can never throw exception
+            synpred1_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11932,11 +9846,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred97() {
+    public final boolean synpred20() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred97_fragment(); // can never throw exception
+            synpred20_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11946,249 +9860,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred94() {
+    public final boolean synpred154() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred94_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred133() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred133_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred134() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred134_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred95() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred95_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred139() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred139_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred92() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred92_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred93() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred93_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred18() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred18_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred137() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred137_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred90() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred90_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred138() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred138_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred91() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred91_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred131() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred131_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred132() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred132_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred99() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred99_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred130() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred130_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred15() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred15_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred16() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred16_fragment(); // can never throw exception
+            synpred154_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -12212,11 +9888,81 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred10() {
+    public final boolean synpred153() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred10_fragment(); // can never throw exception
+            synpred153_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred90() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred90_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred132() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred132_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred193() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred193_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred18() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred18_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred160() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred160_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -12240,11 +9986,2265 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
+    public final boolean synpred86() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred86_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred116() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred116_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred8() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred8_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred64() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred64_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred191() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred191_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred42() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred42_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred21() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred21_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred44() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred44_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred166() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred166_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred87() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred87_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred180() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred180_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred136() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred136_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred99() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred99_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred45() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred45_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred43() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred43_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred186() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred186_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred24() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred24_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred6() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred6_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred164() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred164_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred53() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred53_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred143() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred143_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred37() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred37_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred142() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred142_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred131() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred131_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred190() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred190_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred91() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred91_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred54() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred54_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred15() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred15_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred84() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred84_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred117() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred117_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred46() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred46_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred128() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred128_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred62() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred62_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred109() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred109_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred38() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred38_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred155() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred155_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred92() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred92_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
     public final boolean synpred12() {
         backtracking++;
         int start = input.mark();
         try {
             synpred12_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred85() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred85_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred123() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred123_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred126() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred126_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred39() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred39_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred111() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred111_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred70() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred70_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred63() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred63_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred177() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred177_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred175() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred175_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred133() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred133_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred36() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred36_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred187() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred187_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred174() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred174_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred50() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred50_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred146() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred146_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred72() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred72_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred135() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred135_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred94() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred94_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred124() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred124_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred51() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred51_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred130() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred130_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred110() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred110_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred188() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred188_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred23() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred23_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred52() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred52_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred127() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred127_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred67() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred67_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred115() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred115_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred100() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred100_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred144() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred144_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred93() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred93_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred114() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred114_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred71() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred71_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred103() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred103_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred107() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred107_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred139() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred139_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred129() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred129_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred156() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred156_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred120() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred120_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred151() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred151_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred162() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred162_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred170() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred170_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred30() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred30_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred173() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred173_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred68() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred68_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred75() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred75_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred184() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred184_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred112() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred112_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred4() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred4_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred31() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred31_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred140() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred140_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred101() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred101_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred56() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred56_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred76() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred76_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred48() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred48_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred119() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred119_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred145() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred145_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred176() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred176_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred171() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred171_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred182() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred182_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred118() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred118_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred69() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred69_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred47() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred47_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred189() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred189_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred167() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred167_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred58() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred58_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred34() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred34_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred73() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred73_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred89() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred89_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred57() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred57_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred16() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred16_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred35() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred35_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred150() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred150_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred137() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred137_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred74() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred74_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred183() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred183_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred88() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred88_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred169() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred169_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred122() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred122_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred108() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred108_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred138() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred138_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred125() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred125_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred55() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred55_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred185() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred185_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred178() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred178_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred65() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred65_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred40() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred40_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred121() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred121_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred141() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred141_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred9() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred9_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred98() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred98_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred41() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred41_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred148() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred148_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred165() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred165_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred59() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred59_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred28() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred28_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred33() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred33_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred61() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred61_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred29() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred29_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred83() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred83_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred152() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred152_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred3() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred3_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred168() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred168_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred26() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred26_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred80() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred80_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred181() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred181_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred102() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred102_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred95() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred95_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred78() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred78_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred147() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred147_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred179() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred179_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred10() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred10_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred157() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred157_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred81() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred81_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred77() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred77_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred161() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred161_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred96() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred96_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred172() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred172_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred158() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred158_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred5() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred5_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred60() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred60_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred149() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred149_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred82() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred82_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred159() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred159_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
