@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 test/TestLexing/FuckAss.g 2007-11-08 17:28:09
+// $ANTLR 3.0.1 test/TestLexing/FuckAss.g 2007-11-08 17:41:35
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -65,7 +65,7 @@ public class FuckAssParser extends Parser {
             	case 1 :
             	    // test/TestLexing/FuckAss.g:29:10: en
             	    {
-            	    pushFollow(FOLLOW_en_in_expr139);
+            	    pushFollow(FOLLOW_en_in_expr141);
             	    en();
             	    _fsp--;
 
@@ -75,7 +75,7 @@ public class FuckAssParser extends Parser {
             	case 2 :
             	    // test/TestLexing/FuckAss.g:29:14: to
             	    {
-            	    pushFollow(FOLLOW_to_in_expr142);
+            	    pushFollow(FOLLOW_to_in_expr144);
             	    to();
             	    _fsp--;
 
@@ -85,7 +85,7 @@ public class FuckAssParser extends Parser {
             	case 3 :
             	    // test/TestLexing/FuckAss.g:29:19: tre
             	    {
-            	    pushFollow(FOLLOW_tre_in_expr146);
+            	    pushFollow(FOLLOW_tre_in_expr148);
             	    tre();
             	    _fsp--;
 
@@ -120,7 +120,7 @@ public class FuckAssParser extends Parser {
             // test/TestLexing/FuckAss.g:30:5: ( Word )
             // test/TestLexing/FuckAss.g:30:7: Word
             {
-            match(input,Word,FOLLOW_Word_in_en156); 
+            match(input,Word,FOLLOW_Word_in_en158); 
 
             }
 
@@ -143,7 +143,7 @@ public class FuckAssParser extends Parser {
             // test/TestLexing/FuckAss.g:31:5: ( Kom )
             // test/TestLexing/FuckAss.g:31:7: Kom
             {
-            match(input,Kom,FOLLOW_Kom_in_to164); 
+            match(input,Kom,FOLLOW_Kom_in_to166); 
 
             }
 
@@ -166,7 +166,7 @@ public class FuckAssParser extends Parser {
             // test/TestLexing/FuckAss.g:32:6: ( HORSE )
             // test/TestLexing/FuckAss.g:32:8: HORSE
             {
-            match(input,HORSE,FOLLOW_HORSE_in_tre172); 
+            match(input,HORSE,FOLLOW_HORSE_in_tre174); 
 
             }
 
@@ -184,11 +184,11 @@ public class FuckAssParser extends Parser {
 
  
 
-    public static final BitSet FOLLOW_en_in_expr139 = new BitSet(new long[]{0x0000000000000312L});
-    public static final BitSet FOLLOW_to_in_expr142 = new BitSet(new long[]{0x0000000000000312L});
-    public static final BitSet FOLLOW_tre_in_expr146 = new BitSet(new long[]{0x0000000000000312L});
-    public static final BitSet FOLLOW_Word_in_en156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Kom_in_to164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_HORSE_in_tre172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_en_in_expr141 = new BitSet(new long[]{0x0000000000000312L});
+    public static final BitSet FOLLOW_to_in_expr144 = new BitSet(new long[]{0x0000000000000312L});
+    public static final BitSet FOLLOW_tre_in_expr148 = new BitSet(new long[]{0x0000000000000312L});
+    public static final BitSet FOLLOW_Word_in_en158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Kom_in_to166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_HORSE_in_tre174 = new BitSet(new long[]{0x0000000000000002L});
 
 }

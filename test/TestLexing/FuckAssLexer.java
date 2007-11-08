@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 test/TestLexing/FuckAss.g 2007-11-08 17:28:09
+// $ANTLR 3.0.1 test/TestLexing/FuckAss.g 2007-11-08 17:41:35
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -105,82 +105,98 @@ public class FuckAssLexer extends Lexer {
     // $ANTLR start Kommentar
     public final void mKommentar() throws RecognitionException {
         try {
-            // test/TestLexing/FuckAss.g:21:20: ( '(:' ( options {greedy=false; } : {...}? => Kommentar | Char )* ':)' )
-            // test/TestLexing/FuckAss.g:21:22: '(:' ( options {greedy=false; } : {...}? => Kommentar | Char )* ':)'
+            // test/TestLexing/FuckAss.g:21:20: ( '(:' ( options {greedy=false; } : ({...}? => Kommentar | Char ) )* ':)' )
+            // test/TestLexing/FuckAss.g:21:22: '(:' ( options {greedy=false; } : ({...}? => Kommentar | Char ) )* ':)'
             {
             match("(:"); 
 
-            // test/TestLexing/FuckAss.g:21:27: ( options {greedy=false; } : {...}? => Kommentar | Char )*
-            loop1:
+            // test/TestLexing/FuckAss.g:21:27: ( options {greedy=false; } : ({...}? => Kommentar | Char ) )*
+            loop2:
             do {
-                int alt1=3;
-                switch ( input.LA(1) ) {
-                case ':':
-                    {
-                    alt1=2;
-                    }
-                    break;
-                case '(':
-                    {
-                    alt1=2;
-                    }
-                    break;
-                case ' ':
-                case ')':
-                case 'a':
-                case 'b':
-                case 'c':
-                case 'd':
-                case 'e':
-                case 'f':
-                case 'g':
-                case 'h':
-                case 'i':
-                case 'j':
-                case 'k':
-                case 'l':
-                case 'm':
-                case 'n':
-                case 'o':
-                case 'p':
-                case 'q':
-                case 'r':
-                case 's':
-                case 't':
-                case 'u':
-                case 'v':
-                case 'w':
-                case 'x':
-                case 'y':
-                case 'z':
-                    {
-                    alt1=2;
-                    }
-                    break;
+                int alt2=2;
+                int LA2_0 = input.LA(1);
 
+                if ( (LA2_0==':') ) {
+                    alt2=1;
+                }
+                else if ( (LA2_0==' '||(LA2_0>='(' && LA2_0<=')')||(LA2_0>='a' && LA2_0<='z')) ) {
+                    alt2=1;
                 }
 
-                switch (alt1) {
+
+                switch (alt2) {
             	case 1 :
-            	    // test/TestLexing/FuckAss.g:21:53: {...}? => Kommentar
+            	    // test/TestLexing/FuckAss.g:21:52: ({...}? => Kommentar | Char )
             	    {
-            	    if ( !(input.LT(1) =='(' && input.LT(2) == ':') ) {
-            	        throw new FailedPredicateException(input, "Kommentar", "input.LT(1) =='(' && input.LT(2) == ':'");
+            	    // test/TestLexing/FuckAss.g:21:52: ({...}? => Kommentar | Char )
+            	    int alt1=2;
+            	    int LA1_0 = input.LA(1);
+
+            	    if ( (LA1_0=='(') ) {
+            	        int LA1_1 = input.LA(2);
+
+            	        if ( (LA1_1==':') ) {
+            	            int LA1_3 = input.LA(3);
+
+            	            if ( (input.LT(1) =='(' && input.LT(2) == ':') ) {
+            	                alt1=1;
+            	            }
+            	            else if ( (true) ) {
+            	                alt1=2;
+            	            }
+            	            else {
+            	                NoViableAltException nvae =
+            	                    new NoViableAltException("21:52: ({...}? => Kommentar | Char )", 1, 3, input);
+
+            	                throw nvae;
+            	            }
+            	        }
+            	        else if ( (LA1_1==' '||(LA1_1>='(' && LA1_1<=')')||(LA1_1>='a' && LA1_1<='z')) ) {
+            	            alt1=2;
+            	        }
+            	        else {
+            	            NoViableAltException nvae =
+            	                new NoViableAltException("21:52: ({...}? => Kommentar | Char )", 1, 1, input);
+
+            	            throw nvae;
+            	        }
             	    }
-            	    mKommentar(); 
+            	    else if ( (LA1_0==' '||LA1_0==')'||LA1_0==':'||(LA1_0>='a' && LA1_0<='z')) ) {
+            	        alt1=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("21:52: ({...}? => Kommentar | Char )", 1, 0, input);
+
+            	        throw nvae;
+            	    }
+            	    switch (alt1) {
+            	        case 1 :
+            	            // test/TestLexing/FuckAss.g:21:54: {...}? => Kommentar
+            	            {
+            	            if ( !(input.LT(1) =='(' && input.LT(2) == ':') ) {
+            	                throw new FailedPredicateException(input, "Kommentar", "input.LT(1) =='(' && input.LT(2) == ':'");
+            	            }
+            	            mKommentar(); 
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // test/TestLexing/FuckAss.g:21:110: Char
+            	            {
+            	            mChar(); 
+
+            	            }
+            	            break;
 
             	    }
-            	    break;
-            	case 2 :
-            	    // test/TestLexing/FuckAss.g:21:109: Char
-            	    {
-            	    mChar(); 
+
 
             	    }
             	    break;
 
             	default :
-            	    break loop1;
+            	    break loop2;
                 }
             } while (true);
 
@@ -203,18 +219,18 @@ public class FuckAssLexer extends Lexer {
             // test/TestLexing/FuckAss.g:25:9: ( CleanChar )+
             {
             // test/TestLexing/FuckAss.g:25:9: ( CleanChar )+
-            int cnt2=0;
-            loop2:
+            int cnt3=0;
+            loop3:
             do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-                if ( ((LA2_0>='a' && LA2_0<='z')) ) {
-                    alt2=1;
+                if ( ((LA3_0>='a' && LA3_0<='z')) ) {
+                    alt3=1;
                 }
 
 
-                switch (alt2) {
+                switch (alt3) {
             	case 1 :
             	    // test/TestLexing/FuckAss.g:25:9: CleanChar
             	    {
@@ -224,12 +240,12 @@ public class FuckAssLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt2 >= 1 ) break loop2;
+            	    if ( cnt3 >= 1 ) break loop3;
                         EarlyExitException eee =
-                            new EarlyExitException(2, input);
+                            new EarlyExitException(3, input);
                         throw eee;
                 }
-                cnt2++;
+                cnt3++;
             } while (true);
 
 
@@ -263,46 +279,46 @@ public class FuckAssLexer extends Lexer {
 
     public void mTokens() throws RecognitionException {
         // test/TestLexing/FuckAss.g:1:8: ( HORSE | Kom | Word | WS )
-        int alt3=4;
+        int alt4=4;
         switch ( input.LA(1) ) {
         case 'h':
             {
-            int LA3_1 = input.LA(2);
+            int LA4_1 = input.LA(2);
 
-            if ( (LA3_1=='o') ) {
-                int LA3_5 = input.LA(3);
+            if ( (LA4_1=='o') ) {
+                int LA4_5 = input.LA(3);
 
-                if ( (LA3_5=='r') ) {
-                    int LA3_6 = input.LA(4);
+                if ( (LA4_5=='r') ) {
+                    int LA4_6 = input.LA(4);
 
-                    if ( (LA3_6=='s') ) {
-                        int LA3_7 = input.LA(5);
+                    if ( (LA4_6=='s') ) {
+                        int LA4_7 = input.LA(5);
 
-                        if ( (LA3_7=='e') ) {
-                            int LA3_8 = input.LA(6);
+                        if ( (LA4_7=='e') ) {
+                            int LA4_8 = input.LA(6);
 
-                            if ( ((LA3_8>='a' && LA3_8<='z')) ) {
-                                alt3=3;
+                            if ( ((LA4_8>='a' && LA4_8<='z')) ) {
+                                alt4=3;
                             }
                             else {
-                                alt3=1;}
+                                alt4=1;}
                         }
                         else {
-                            alt3=3;}
+                            alt4=3;}
                     }
                     else {
-                        alt3=3;}
+                        alt4=3;}
                 }
                 else {
-                    alt3=3;}
+                    alt4=3;}
             }
             else {
-                alt3=3;}
+                alt4=3;}
             }
             break;
         case '(':
             {
-            alt3=2;
+            alt4=2;
             }
             break;
         case 'a':
@@ -331,22 +347,22 @@ public class FuckAssLexer extends Lexer {
         case 'y':
         case 'z':
             {
-            alt3=3;
+            alt4=3;
             }
             break;
         case ' ':
             {
-            alt3=4;
+            alt4=4;
             }
             break;
         default:
             NoViableAltException nvae =
-                new NoViableAltException("1:1: Tokens : ( HORSE | Kom | Word | WS );", 3, 0, input);
+                new NoViableAltException("1:1: Tokens : ( HORSE | Kom | Word | WS );", 4, 0, input);
 
             throw nvae;
         }
 
-        switch (alt3) {
+        switch (alt4) {
             case 1 :
                 // test/TestLexing/FuckAss.g:1:10: HORSE
                 {
