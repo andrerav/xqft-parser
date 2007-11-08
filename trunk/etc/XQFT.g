@@ -457,19 +457,19 @@ filterExpr                  			: primaryExpr predicateList;
 		
 												
 			directConstructor           			: dirElemConstructor
-					                                | dirCommentConstructor
+					                                | DirCommentConstructor
                 									| dirPIConstructor;
                 									
             	dirElemConstructor          			: LTSi qName dirAttributeList 			/* ws: explicitXQ */
             											(RSELFTERMSi 
             											| GTSi dirElemContent* LENDTAGSi qName S? GTSi); 
             		dirAttributeList            			: (S (qName S? EQSi S? dirAttributeValue)?)*; 	/* ws: explicitXQ */
-            			dirAttributeValue           			: DBLQUOTSi   /* ws: explicitXQ */
-            														(EscapeQuot | quotAttrValueContent)* 
-            														DBLQUOTSi
-                												| SQUOTSi 
-                													(EscapeApos | aposAttrValueContent)* 
-                													SQUOTSi; 
+            			dirAttributeValue           			: QUOTSi   /* ws: explicitXQ */
+            														(ESCQUOTSi | quotAttrValueContent)* 
+            														QUOTSi
+                												| APOSSi 
+                													(ESCAPOSSi | aposAttrValueContent)* 
+                													APOSSi; 
                 			quotAttrValueContent	    			: QuotAttrContentChar | commonContent;
                 				commonContent               			: PredefinedEntityRef|CharRef|LDBLBRACSi|RDBLBRACSi|enclosedExpr;
 //                					enclosedExpr                			: LBRACESi expr RBRACSi
@@ -488,9 +488,6 @@ filterExpr                  			: primaryExpr predicateList;
 //            					expr                        			: exprSingle (COMMASi exprSingle)*;
 //									exprSingle#								: #PAA EGET#
 					
-				dirCommentConstructor       			: LCOMMENTSi dirCommentContents RCOMMENTSi;
-					dirCommentContents             			: (CharNotMinus | MINUSSi CharNotMinus)*; 		/* ws: explicitXQ */ 
-				
 				dirPIConstructor            			: LPISi piTarget (S dirPIContents)? RPISi; 	/* ws:explicitXQ */
 					piTarget            					: n=Name 					{ !$n.getText().equalsIgnoreCase("XML") }?;
 					dirPIContents               			: m=ZeroOrMoreChar			{ !$m.getText().contains("?>") }?  ;
@@ -530,17 +527,23 @@ filterExpr                  			: primaryExpr predicateList;
 
 
 //---------------------------------------------------- Lexer ---------------------------------------------------
-EscapeApos 	      	   	: '\'\'';
 
 CDataSection            : LCDATASi (options{greedy=false;} : Char)* RCDATASi; 				/* ws: explicitXQ */
 fragment LCDATASi		: '<![CDATA[';
 fragment RCDATASi 		: ']]>';
 
 Comment            		: LXQCOMMENTSi 
-							(Comment | (COLONSi ~RPARSi)=>COLONSi | (LPARSi ~COLONSi)=>LPARSi | ~(LPARSi | COLONSi | IkkeChar))* 
+							(Comment | (COLONSi ~RPARSi)=>COLONSi | (LPARSi ~COLONSi)=>LPARSi | ~(LPARSi | COLONSi | NotChar))* 
 							RXQCOMMENTSi {$channel=HIDDEN;};
 fragment LXQCOMMENTSi	: '(:';
 fragment RXQCOMMENTSi	: ':)';
+
+CharRef             	: CREFDECSi ('0'..'9')+ SEMICOLONSi 
+						| CREFHEXSi ('0'..'9'|'a'..'f'|'A'..'F')+ SEMICOLONSi;
+fragment CREFDECSi		: '&#';
+fragment CREFHEXSi		: '&#x';
+
+DirCommentConstructor   : LCOMMENTSi (CharNotMinus | (MINUSSi CharNotMinus)=> MINUSSi) RCOMMENTSi;
 
 LCOMMENTSi 				: '<!--';
 LPISi 					: '<?';
@@ -558,7 +561,6 @@ DBLSLASHSi 				: '//';
 RSELFTERMSi 			: '/>';
 
 LPRAGSi 				: '(#';
-EscapeQuot      	   	: '""';
 LDBLBRACSi 				: '{{';
 RDBLBRACSi 				: '}}';
 DOTDOTSi 				: '..';
@@ -711,11 +713,11 @@ XQUERY 					: 'xquery';
 
 //Characters that are in no other lexerproductions: ! " # $ & ' ( ) * + , - . / : ; < = > ? @ [ \ ] _ { | }
 fragment EXCLSi				: '!';					// not used in parser
-fragment DBLQUOTSi 			: '"';
+fragment QUOTSi 			: '"';
 fragment SHARPSi			: '#';					// not used in parser
 fragment DOLLARSi 			: '$';
 fragment AMPERSi			: '&';					// not used in parser
-fragment SQUOTSi 			: '\'';
+fragment APOSSi 			: '\'';
 fragment LPARSi 			: '(';
 fragment RPARSi 			: ')';
 fragment STARSi 			: '*';
@@ -739,51 +741,51 @@ fragment LBRACESi 			: '{';
 fragment PIPESi 			: '|';
 fragment RBRACSi 			: '}';
 
+fragment ESCQUOTSi        	: '""';
+fragment ESCAPOSSi 	 	  	: '\'\'';
 
-TOKENSWITCH				: DBLQUOTSi		{$type=DBLQUOTSi;}
-						| DOLLARSi		{$type=DOLLARSi;}				
-						| SQUOTSi 		{$type=SQUOTSi;}
-						| LPARSi 		{$type=LPARSi;}
-						| RPARSi		{$type=RPARSi;}
-						| STARSi		{$type=STARSi;}
-						| PLUSSi		{$type=PLUSSi;}
-						| COMMASi		{$type=COMMASi;}
-						| MINUSSi		{$type=MINUSSi;}
-						| DOTSi			{$type=DOTSi;}
-						| SLASHSi		{$type=SLASHSi;}
-						| COLONSi		{$type=COLONSi;}
-						| SEMICOLONSi	{$type=SEMICOLONSi;}
-						| LTSi			{$type=LTSi;}
-						| EQSi			{$type=EQSi;}
-						| GTSi			{$type=GTSi;}
-						| QUESTIONSi	{$type=QUESTIONSi;}
-						| ATSi			{$type=ATSi;}
-						| LBRACKSi		{$type=LBRACKSi;}
-						| RBRACKSi		{$type=RBRACKSi;}
-						| LBRACESi		{$type=LBRACESi;}
-						| PIPESi		{$type=PIPESi;}
-						| RBRACSi		{$type=RBRACSi;}	
+
+TOKENSWITCH				: (ESCQUOTSi)=>ESCQUOTSi	{$type=ESCQUOTSi;} 
+						| (ESCAPOSSi)=>ESCAPOSSi	{$type=ESCAPOSSi;}
+						| QUOTSi					{$type=QUOTSi;}
+						| DOLLARSi					{$type=DOLLARSi;}				
+						| APOSSi 					{$type=APOSSi;}
+						| LPARSi 					{$type=LPARSi;}
+						| RPARSi					{$type=RPARSi;}
+						| STARSi					{$type=STARSi;}
+						| PLUSSi					{$type=PLUSSi;}
+						| COMMASi					{$type=COMMASi;}
+						| MINUSSi					{$type=MINUSSi;}
+						| DOTSi						{$type=DOTSi;}
+						| SLASHSi					{$type=SLASHSi;}
+						| COLONSi					{$type=COLONSi;}
+						| SEMICOLONSi				{$type=SEMICOLONSi;}
+						| LTSi						{$type=LTSi;}
+						| EQSi						{$type=EQSi;}
+						| GTSi						{$type=GTSi;}
+						| QUESTIONSi				{$type=QUESTIONSi;}
+						| ATSi						{$type=ATSi;}
+						| LBRACKSi					{$type=LBRACKSi;}
+						| RBRACKSi					{$type=RBRACKSi;}
+						| LBRACESi					{$type=LBRACESi;}
+						| PIPESi					{$type=PIPESi;}
+						| RBRACSi					{$type=RBRACSi;}	
 						;
 
 NCName              					: NCNameStartChar NCNameChar*;
 fragment NCNameChar					   	: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | CombiningChar | Extender;
 fragment NCNameStartChar     			: Letter | UNDERSCORESi;
 
-StringLiteral	    					: DBLQUOTSi 
-											(PredefinedEntityRef | CharRef | EscapeQuot | ~(DBLQUOTSi|AMPERSi))* 
-											DBLQUOTSi 
-										| SQUOTSi 
-											(PredefinedEntityRef | CharRef | EscapeApos | ~(SQUOTSi|AMPERSi))* 
-											SQUOTSi
+StringLiteral	    					: QUOTSi 
+											(PredefinedEntityRef | CharRef | ESCQUOTSi | ~(QUOTSi|AMPERSi))* 
+											QUOTSi 
+										| APOSSi 
+											(PredefinedEntityRef | CharRef | ESCAPOSSi | ~(APOSSi|AMPERSi))* 
+											APOSSi
 										;
 
 
-CharRef             					: '&#' ('0'..'9')+ SEMICOLONSi 
-										| '&#x' ('0'..'9'|'a'..'f'|'A'..'F')+ SEMICOLONSi;
-
 S                   					: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+		{$channel=HIDDEN;};
-
-fragment WS								: ('\u0020' | '\u0009' | '\u000D' | '\u000A');
 
 IntegerLiteral  	    				: Digits;
 	
@@ -804,14 +806,14 @@ fragment CleanChar						: WS | BaseChar | Ideographic | CombiningChar | Extender
 										| DOTSi | SLASHSi | COLONSi | SEMICOLONSi | EQSi | GTSi | QUESTIONSi | ATSi 
 										| LBRACKSi | BACKSLASHSi | RBRACKSi	| UNDERSCORESi | PIPESi
 										;
-fragment Char							: CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | DBLQUOTSi | SQUOTSi | MINUSSi;
-fragment IkkeChar						: '\u0001'..'\u0008' | '\u000B' | '\u000C' | '\u000E'..'\u001F' | '\uD800'..'\uDFFF' 
+fragment Char							: CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi | MINUSSi;
+fragment NotChar						: '\u0001'..'\u0008' | '\u000B' | '\u000C' | '\u000E'..'\u001F' | '\uD800'..'\uDFFF' 
 										| '\uFFFE' | '\uFFFF';
 										 
 
-fragment ElementContentChar				: CleanChar | DBLQUOTSi | SQUOTSi | MINUSSi;		//KOMMER ALDRI HIT
-fragment QuotAttrContentChar			: CleanChar | SQUOTSi | MINUSSi;					//
-fragment AposAttrContentChar			: CleanChar | DBLQUOTSi | MINUSSi;					//
+fragment ElementContentChar				: CleanChar | QUOTSi | APOSSi | MINUSSi;		//KOMMER ALDRI HIT
+fragment QuotAttrContentChar			: CleanChar | APOSSi | MINUSSi;					//
+fragment AposAttrContentChar			: CleanChar | QUOTSi | MINUSSi;					//
 
 // Denne brukes bare i PITarget
 fragment NameChar            			: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender;
@@ -819,7 +821,7 @@ fragment Name                			: (Letter | UNDERSCORESi | COLONSi) (NameChar)*;
 
 fragment ZeroOrMoreChar		    		: Char*;
 fragment OneOrMoreChar		    		: Char+;
-fragment CharNotMinus					: CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | DBLQUOTSi | SQUOTSi;
+fragment CharNotMinus					: CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi;
 
 fragment PredefinedEntityRef	 		: AMPERSi ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
 
