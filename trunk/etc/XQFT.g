@@ -16,13 +16,13 @@ module                     				: versionDecl? (libraryModule | mainModule);
 	libraryModule               			: moduleDecl prolog;
 		moduleDecl                  			: MODULE NAMESPACE NCName EQSi uriLiteral separator;
 			uriLiteral                  			: StringLiteral;
-//		prolog# 											: #PÅ EGET#
+//		prolog# 											: #PAA EGET#
 		
 	mainModule                  			: prolog queryBody;
-//		prolog#									: #PÅ EGET#
+//		prolog#									: #PAA EGET#
 		queryBody                   			: expr;
 			expr                        			: exprSingle (COMMASi exprSingle)*;
-//				exprSingle#								: #PÅ EGET#
+//				exprSingle#								: #PAA EGET#
 												
 
 //----------------------------------------------------- Prolog ------------------------------------------
@@ -66,8 +66,8 @@ importStmt                  			: schemaImport | moduleImport;
 varDecl                     			: DECLARE VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNSi exprSingle) | EXTERNAL);
 	qName						 			: (NCName COLONSi)? NCName;
 	typeDeclaration             			: AS sequenceType;
-//		sequenceType# 							: #PÅ EGET#
-//	exprSingle# 							: #PÅ EGET#
+//		sequenceType# 							: #PAA EGET#
+//	exprSingle# 							: #PAA EGET#
 	
 functionDecl                			: DECLARE FUNCTION qName LPARSi paramList? RPARSi 
 											(AS sequenceType)? (enclosedExpr | EXTERNAL);
@@ -75,16 +75,16 @@ functionDecl                			: DECLARE FUNCTION qName LPARSi paramList? RPARSi
 		param                       			: DOLLARSi qName typeDeclaration?;
 //			qName						 			: (NCName COLONSi)? NCName;	  
 //			typeDeclaration             			: AS sequenceType;	 
-//	sequenceType# 							: #PÅ EGET#
+//	sequenceType# 							: #PAA EGET#
 	enclosedExpr                			: LBRACESi expr RBRACSi;
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
-//			exprSingle# 							: #PÅ EGET#
+//			exprSingle# 							: #PAA EGET#
 			
 optionDecl                  			: DECLARE OPTION qName StringLiteral;
 
 ftOptionDecl                			: DECLARE FTOPTION ftMatchOptions;
 	ftMatchOptions              			: ftMatchOption+;     					/* xgc: multiple-match-options */
-//		ftMatchOption# 							: #PÅ EGET#
+//		ftMatchOption# 							: #PAA EGET#
 	
 	
 //--------------------------------------------------------- SequenceType -----------------------------------------
@@ -145,12 +145,12 @@ exprSingle                  			: fLWORExpr
 													(COMMASi DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle)*;
 			varName                    				: qName;
 //			typeDeclaration             			: AS sequenceType;
-//				sequenceType# 							: #PÅ EGET#
+//				sequenceType# 							: #PAA EGET#
 			positionalVar               			: AT DOLLARSi varName;
 //				varName                    				: qName; 	
 			ftScoreVar                  			: SCORE DOLLARSi varName;
 //				varName                    				: qName; 
-//			exprSingle# 									: #PÅ EGET (DETTE)#
+//			exprSingle# 									: #PAA EGET (DETTE)#
 			
 		letClause                   		: (
 											 LET DOLLARSi varName typeDeclaration? 
@@ -167,22 +167,22 @@ exprSingle                  			: fLWORExpr
 											)*;
 //			varName                    				: qName; 
 //			typeDeclaration             			: AS sequenceType;
-//				sequenceType# 							: #PÅ EGET#
-//			exprSingle#								: #PÅ EGET (DETTE)#
+//				sequenceType# 							: #PAA EGET#
+//			exprSingle#								: #PAA EGET (DETTE)#
 //			ftScoreVar                  			: SCORE DOLLARSi varName; 
 //				varName                    				: qName; 
 		
 		whereClause                 		: WHERE exprSingle;	
-//			exprSingle#							: #PÅ EGET (DETTE)#
+//			exprSingle#							: #PAA EGET (DETTE)#
 			
 		orderByClause               		: (ORDER BY | STABLE ORDER BY) orderSpecList;
 			orderSpecList               		: orderSpec (COMMASi orderSpec)*;
 				orderSpec                   		: exprSingle orderModifier;
-//					exprSingle#							: #PÅ EGET (DETTE)#
+//					exprSingle#							: #PAA EGET (DETTE)#
 					orderModifier               		: (ASCENDING | DESCENDING)? (EMPTY (GREATEST | LEAST))? (COLLATION uriLiteral)?;
 //						uriLiteral                  		: StringLiteral;
 		
-//		exprSingle# 						: #PÅ EGET (DETTE)#
+//		exprSingle# 						: #PAA EGET (DETTE)#
 		
 
 	quantifiedExpr              			: (SOME | EVERY) DOLLARSi varName typeDeclaration? IN exprSingle 
@@ -193,24 +193,24 @@ exprSingle                  			: fLWORExpr
 	typeswitchExpr              			: TYPESWITCH LPARSi expr RPARSi caseClause+ 
 												DEFAULT (DOLLARSi varName)? RETURN exprSingle;
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
-//			exprSingle# 							: #PÅ EGET (DETTE)#
+//			exprSingle# 							: #PAA EGET (DETTE)#
 		caseClause                  			: CASE (DOLLARSi varName AS)? sequenceType RETURN exprSingle;
 //			varName                    				: qName; 
-//			sequenceType#							: #PÅ EGET#
-//			exprSingle# 							: #PÅ EGET (DETTE)#
+//			sequenceType#							: #PAA EGET#
+//			exprSingle# 							: #PAA EGET (DETTE)#
 //		varName                    				: qName; 
-//		exprSingle# 							: #PÅ EGET (DETTE)#
+//		exprSingle# 							: #PAA EGET (DETTE)#
 	
 	
 	ifExpr                      			: IF LPARSi expr RPARSi THEN exprSingle ELSE exprSingle;
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
-//			exprSingle#								: #PÅ EGET (DETTE)#
-//		exprSingle# 								: #PÅ EGET (DETTE)#
+//			exprSingle#								: #PAA EGET (DETTE)#
+//		exprSingle# 								: #PAA EGET (DETTE)#
 		
 		
 	orExpr                      			: andExpr ( OR andExpr )*;
 		andExpr                     			: comparisonExpr ( AND comparisonExpr )*;
-//			comparisonExpr# 						: #PÅ EGET#
+//			comparisonExpr# 						: #PAA EGET#
 			
 
 //------------------------------------------------------- ComparisonExpr -------------------------------------
@@ -230,15 +230,15 @@ comparisonExpr              			: ftContainsExpr ( (valueComp | generalComp | nod
 									castableExpr                			: castExpr ( CASTABLE AS singleType )?;
 										castExpr                    			: unaryExpr ( CAST AS singleType )?;
 											unaryExpr                   			: (MINUSSi | PLUSSi)* valueExpr;
-//												valueExpr# 								: #PÅ EGET#
+//												valueExpr# 								: #PAA EGET#
 											singleType                  			: atomicType QUESTIONSi?;
 												atomicType                  			: qName;
 //										singleType                  			: atomicType QUESTIONSi?; 
 //											atomicType                  			: qName; 
-//									sequenceType# 							: #PÅ EGET#	
-//								sequenceType# 							: #PÅ EGET#		
+//									sequenceType# 							: #PAA EGET#	
+//								sequenceType# 							: #PAA EGET#		
 		
-//		ftSelection#								: #PÅ EGET#
+//		ftSelection#								: #PAA EGET#
 		
 		ftIgnoreOption              			: WITHOUT CONTENT unionExpr;
 //			unionExpr#								: #SE DETTE -> ftContainsExpr->rangeExpr->additiveExpr->miltiplicativeExpr->unionExpr#
@@ -278,11 +278,11 @@ ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?;
                        					 								| (AT MOST additiveExpr)
 										                                | (FROM additiveExpr TO additiveExpr);
 //									additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#
-//							ftSelection# 							: #PÅ EGET (DETTE)#
+//							ftSelection# 							: #PAA EGET (DETTE)#
 							ftExtensionSelection        			: pragma+ LBRACESi ftSelection? RBRACSi;
 								pragma                      			: LPRAGSi S? qName (S pragmaContents)? RPRAGSi; /* ws: explicit */
 									pragmaContents        					: m=ZeroOrMoreChar	{ !$m.getText().contains("#") }?;
-//								ftSelection# 							: #PÅ EGET (DETTE)#
+//								ftSelection# 							: #PAA EGET (DETTE)#
 								
 //						ftMatchOptions              			: ftMatchOption+;     						/* xgc: multiple-match-options */
 //							ftMatchOption#							: #SE EGET#
@@ -375,7 +375,7 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 	validateExpr                			: VALIDATE validationMode? LBRACESi expr RBRACSi;
 		validationMode              			: LAX | STRICT;
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
-//			exprSingle#								: #PÅ EGET#
+//			exprSingle#								: #PAA EGET#
 			
 			
 	pathExpr                    			: (DBLSLASHSi relativePathExpr)=> DBLSLASHSi relativePathExpr 
@@ -384,7 +384,7 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 											| relativePathExpr;
 		relativePathExpr            			: stepExpr ((SLASHSi | DBLSLASHSi) stepExpr)*;		
 			stepExpr                    			: filterExpr | axisStep;
-//				filterExpr#								: #PÅ EGET#
+//				filterExpr#								: #PAA EGET#
 			axisStep                    			: (reverseStep | forwardStep) predicateList;
 			
 				reverseStep                 			: reverseAxis nodeTest | abbrevReverseStep;
@@ -411,7 +411,7 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
                 predicateList               			: predicate*;     									
                 	predicate                   			: LBRACKSi expr RBRACKSi;
 //						expr                        			: exprSingle (COMMASi exprSingle)*;
-//							exprSingle#								: #PÅ EGET#            									
+//							exprSingle#								: #PAA EGET#            									
 				
     
     extensionExpr               			: pragma+ LBRACESi expr? RBRACSi; 
