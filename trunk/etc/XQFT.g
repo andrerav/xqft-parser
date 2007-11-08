@@ -738,29 +738,29 @@ fragment PIPESi 			: '|';
 fragment RBRACSi 			: '}';
 
 
-TOKENSWITCH				: DBLQUOTSi		{$type=DBLQUOTSi}
-						| DOLLARSi		{$type=DOLLARSi}				
-						| SQUOTSi 		{$type=SQUOTSi}
-						| LPARSi 		{$type=LPARSi}
-						| RPARSi		{$type=RPARSi}
-						| STARSi		{$type=STARSi}
-						| PLUSSi		{$type=PLUSSi}
-						| COMMASi		{$type=COMMASi}
-						| MINUSSi		{$type=MINUSSi}
-						| DOTSi			{$type=DOTSi}
-						| SLASHSi		{$type=SLASHSi}
-						| COLONSi		{$type=COLONSi}
-						| SEMICOLONSi	{$type=SEMICOLONSi}
-						| LTSi			{$type=LTSi}
-						| EQSi			{$type=EQSi}
-						| GTSi			{$type=GTSi}
-						| QUESTIONSi	{$type=QUESTIONSi}
-						| ATSi			{$type=ATSi}
-						| LBRACKSi		{$type=LBRACKSi}
-						| RBRACKSi		{$type=RBRACKSi}
-						| LBRACESi		{$type=LBRACESi}
-						| PIPESi		{$type=PIPESi}
-						| RBRACSi		{$type=RBRACSi}	
+TOKENSWITCH				: DBLQUOTSi		{$type=DBLQUOTSi;}
+						| DOLLARSi		{$type=DOLLARSi;}				
+						| SQUOTSi 		{$type=SQUOTSi;}
+						| LPARSi 		{$type=LPARSi;}
+						| RPARSi		{$type=RPARSi;}
+						| STARSi		{$type=STARSi;}
+						| PLUSSi		{$type=PLUSSi;}
+						| COMMASi		{$type=COMMASi;}
+						| MINUSSi		{$type=MINUSSi;}
+						| DOTSi			{$type=DOTSi;}
+						| SLASHSi		{$type=SLASHSi;}
+						| COLONSi		{$type=COLONSi;}
+						| SEMICOLONSi	{$type=SEMICOLONSi;}
+						| LTSi			{$type=LTSi;}
+						| EQSi			{$type=EQSi;}
+						| GTSi			{$type=GTSi;}
+						| QUESTIONSi	{$type=QUESTIONSi;}
+						| ATSi			{$type=ATSi;}
+						| LBRACKSi		{$type=LBRACKSi;}
+						| RBRACKSi		{$type=RBRACKSi;}
+						| LBRACESi		{$type=LBRACESi;}
+						| PIPESi		{$type=PIPESi;}
+						| RBRACSi		{$type=RBRACSi;}	
 						;
 
 NCName              					: NCNameStartChar NCNameChar*;
