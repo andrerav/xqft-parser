@@ -539,9 +539,8 @@ fragment RCDATASi 		: ']]>';
 Comment            		: LXQCOMMENTSi 
 							(Comment | (COLONSi ~RPARSi)=>COLONSi | (LPARSi ~COLONSi)=>LPARSi | ~(LPARSi | COLONSi | IkkeChar))* 
 							RXQCOMMENTSi {$channel=HIDDEN;};
-fragment IkkeChar		: '\u0001'..'\u0008' | '\u000B' | '\u000C' | '\u000E'..'\u001F' | '\uD800'..'\uDFFF' 
-						| '\uFFFE' | '\uFFFF';
-
+fragment LXQCOMMENTSi	: '(:';
+fragment RXQCOMMENTSi	: ':)';
 
 LCOMMENTSi 				: '<!--';
 LPISi 					: '<?';
@@ -552,16 +551,13 @@ LTOREQSi 				: '<=';
 GTOREQSi 				: '>=';
 NODEAFTERSi 			: '>>';
 
-LPRAGSi 				: '(#';
-LXQCOMMENTSi			: '(:';
-
 DBLCOLONSi 				: '::';
-RXQCOMMENTSi			: ':)';
 ASSIGNSi 				: ':=';
 
 DBLSLASHSi 				: '//';
 RSELFTERMSi 			: '/>';
 
+LPRAGSi 				: '(#';
 EscapeQuot      	   	: '""';
 LDBLBRACSi 				: '{{';
 RDBLBRACSi 				: '}}';
@@ -809,6 +805,8 @@ fragment CleanChar						: WS | BaseChar | Ideographic | CombiningChar | Extender
 										| LBRACKSi | BACKSLASHSi | RBRACKSi	| UNDERSCORESi | PIPESi
 										;
 fragment Char							: CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | DBLQUOTSi | SQUOTSi | MINUSSi;
+fragment IkkeChar						: '\u0001'..'\u0008' | '\u000B' | '\u000C' | '\u000E'..'\u001F' | '\uD800'..'\uDFFF' 
+										| '\uFFFE' | '\uFFFF';
 										 
 
 fragment ElementContentChar				: CleanChar | DBLQUOTSi | SQUOTSi | MINUSSi;		//KOMMER ALDRI HIT
