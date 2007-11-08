@@ -18,7 +18,7 @@ public boolean tall = false;
 fragment CleanChar	: 'a'..'z';
 fragment Char	: CleanChar | '(' | ')' | ':' | ' ';
 Kom		: Kommentar;
-fragment Kommentar	: '(:' (options{greedy=false;} :( {input.LT(1) =='(' && input.LT(2) == ':'}?=>Kommentar | Char))* ':)';
+fragment Kommentar	: '(:' (options{greedy=false;} : ({(input.LT(1) == '(' && input.LT(2) == ':')}?=>Kommentar | {!(input.LT(1) == ':' && input.LT(2) == ')')}?=>Char))* ':)';
 //fragment KomSjekk	: {(input.LT(1) =='('  && input.LT(2) == ':')}? Kommentar
 //		| Char
 //		;
