@@ -12,7 +12,7 @@ fragment Char	: CleanChar | '(' | ')' | ':' | ' ';
 // $ANTLR src "test/TestLexing/FuckAss.g" 20
 Kom		: Kommentar;
 // $ANTLR src "test/TestLexing/FuckAss.g" 21
-fragment Kommentar	: '(:' (options{greedy=false;} : {input.LT(1) =='(' && input.LT(2) == ':'}?=>Kommentar | Char)* ':)';
+fragment Kommentar	: '(:' (options{greedy=false;} :( {input.LT(1) =='(' && input.LT(2) == ':'}?=>Kommentar | Char))* ':)';
 //fragment KomSjekk	: {(input.LT(1) =='('  && input.LT(2) == ':')}? Kommentar
 //		| Char
 //		;
