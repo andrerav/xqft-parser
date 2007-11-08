@@ -536,10 +536,11 @@ CDataSection            : LCDATASi (options{greedy=false;} : Char)* RCDATASi; 		
 fragment LCDATASi		: '<![CDATA[';
 fragment RCDATASi 		: ']]>';
 
-Comment            						: LXQCOMMENTSi (options{greedy=false;} : CommentCheck)* RXQCOMMENTSi 		{$channel=HIDDEN;};
-fragment CommentCheck					: (Comment)=> Comment
-										| CommentContents;
-fragment CommentContents	    		: m=OneOrMoreChar {((!$m.equals("(:")) && (!$m.equals(":)") ))}?;
+Comment            		: LXQCOMMENTSi 
+							(Comment | (COLONSi ~RPARSi)=>COLONSi | (LPARSi ~COLONSi)=>LPARSi | ~(LPARSi | COLONSi | IkkeChar))* 
+							RXQCOMMENTSi {$channel=HIDDEN;};
+fragment IkkeChar		: '\u0001'..'\u0008' | '\u000B' | '\u000C' | '\u000E'..'\u001F' | '\uD800'..'\uDFFF' 
+						| '\uFFFE' | '\uFFFF';
 
 
 LCOMMENTSi 				: '<!--';
