@@ -7,6 +7,6 @@ package no.ntnu.xqft.parse;
  * @author andreas
  *
  */
-public class VariableSymbol extends Symbol {
+public class VariableSymbol<T> extends Symbol<T> {
 
 }
