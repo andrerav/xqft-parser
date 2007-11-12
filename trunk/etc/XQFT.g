@@ -458,7 +458,7 @@ filterExpr                  			: primaryExpr predicateList;
 												
 			directConstructor           			: dirElemConstructor
 					                                | DirCommentConstructor
-                									| dirPIConstructor;
+                									| DirPIConstructor;
                 									
             	dirElemConstructor          			: LTSi qName dirAttributeList 			/* ws: explicitXQ */
             											(RSELFTERMSi 
@@ -487,11 +487,6 @@ filterExpr                  			: primaryExpr predicateList;
 //            				enclosedExpr                			: LBRACESi expr RBRACSi
 //            					expr                        			: exprSingle (COMMASi exprSingle)*;
 //									exprSingle#								: #PAA EGET#
-					
-				dirPIConstructor            			: LPISi piTarget (S dirPIContents)? RPISi; 	/* ws:explicitXQ */
-					piTarget            					: n=Name 					{ !$n.getText().equalsIgnoreCase("XML") }?;
-					dirPIContents               			: m=ZeroOrMoreChar			{ !$m.getText().contains("?>") }?  ;
-				
 				
 			computedConstructor         			: compDocConstructor
 					                                | compElemConstructor
@@ -528,25 +523,44 @@ filterExpr                  			: primaryExpr predicateList;
 
 //---------------------------------------------------- Lexer ---------------------------------------------------
 
-CDataSection            : LCDATASi (options{greedy=false;} : Char)* RCDATASi; 				/* ws: explicitXQ */
-fragment LCDATASi		: '<![CDATA[';
-fragment RCDATASi 		: ']]>';
+CDataSection            : LCDATASi 															/* ws: explicitXQ */
+							((RBRACKSi ~RBRACKSi)=> RBRACKSi | (RBRACKSi RBRACKSi ~'>')=> RBRACKSi | ~(RBRACKSi | NotChar))* 
+						  RCDATASi;	
+	fragment LCDATASi		: '<![CDATA[';
+	fragment RCDATASi 		: ']]>';
+
 
 Comment            		: LXQCOMMENTSi 
 							(Comment | (COLONSi ~RPARSi)=>COLONSi | (LPARSi ~COLONSi)=>LPARSi | ~(LPARSi | COLONSi | NotChar))* 
-							RXQCOMMENTSi {$channel=HIDDEN;};
-fragment LXQCOMMENTSi	: '(:';
-fragment RXQCOMMENTSi	: ':)';
+						  RXQCOMMENTSi {$channel=HIDDEN;};
+	fragment LXQCOMMENTSi	: '(:';
+	fragment RXQCOMMENTSi	: ':)';
 
+
+DirPIConstructor     	: LPISi PiTarget 													/* ws:explicitXQ */
+							(WS ((QUESTIONSi ~GTSi)=>QUESTIONSi | ~(NotChar | QUESTIONSi))*)? 
+						  RPISi; 							
+	fragment PiTarget		: n=Name								{ !$n.getText().equalsIgnoreCase("XML") }?;
+	fragment Name       	: (Letter | UNDERSCORESi | COLONSi) (NameChar)*;
+	fragment NameChar		: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender;
+	fragment LPISi 			: '<?';
+	fragment RPISi 			: '?>';
+
+
+DirCommentConstructor   : LCOMMENTSi 
+							((MINUSSi ~MINUSSi)=> MINUSSi | ~(NotChar | MINUSSi))* 
+						  RCOMMENTSi;
+	fragment LCOMMENTSi 	: '<!--';
+	fragment RCOMMENTSi		: '-->';
+
+
+// PROBLEM, finnes referanse til denne både i lexer og i parser
 CharRef             	: CREFDECSi ('0'..'9')+ SEMICOLONSi 
 						| CREFHEXSi ('0'..'9'|'a'..'f'|'A'..'F')+ SEMICOLONSi;
-fragment CREFDECSi		: '&#';
-fragment CREFHEXSi		: '&#x';
+	fragment CREFDECSi		: '&#';
+	fragment CREFHEXSi		: '&#x';
 
-DirCommentConstructor   : LCOMMENTSi (CharNotMinus | (MINUSSi CharNotMinus)=> MINUSSi) RCOMMENTSi;
 
-LCOMMENTSi 				: '<!--';
-LPISi 					: '<?';
 LENDTAGSi 				: '</';
 NODEBEFORESi 			: '<<';
 LTOREQSi 				: '<=';
@@ -564,8 +578,6 @@ LPRAGSi 				: '(#';
 LDBLBRACSi 				: '{{';
 RDBLBRACSi 				: '}}';
 DOTDOTSi 				: '..';
-RPISi 					: '?>';
-RCOMMENTSi 				: '-->';
 NEQSi 					: '!=';
 RPRAGSi 				: '#)';
 
@@ -786,6 +798,7 @@ StringLiteral	    					: QUOTSi
 
 
 S                   					: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+		{$channel=HIDDEN;};
+fragment WS            					: ('\u0020' | '\u0009' | '\u000D' | '\u000A');
 
 IntegerLiteral  	    				: Digits;
 	
@@ -815,13 +828,9 @@ fragment ElementContentChar				: CleanChar | QUOTSi | APOSSi | MINUSSi;		//KOMME
 fragment QuotAttrContentChar			: CleanChar | APOSSi | MINUSSi;					//
 fragment AposAttrContentChar			: CleanChar | QUOTSi | MINUSSi;					//
 
-// Denne brukes bare i PITarget
-fragment NameChar            			: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender;
-fragment Name                			: (Letter | UNDERSCORESi | COLONSi) (NameChar)*;
 
 fragment ZeroOrMoreChar		    		: Char*;
-fragment OneOrMoreChar		    		: Char+;
-fragment CharNotMinus					: CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi;
+
 
 fragment PredefinedEntityRef	 		: AMPERSi ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
 
