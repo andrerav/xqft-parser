@@ -1,53 +1,33 @@
 grammar FuckAss;
 
-tokens
-{
-	HORSE = 'horse';
-}
-
-@members
-{
-    public static void main(String[] args) throws Exception {
-        FuckAssLexer lex = new FuckAssLexer(new ANTLRFileStream(args[0]));
-       	CommonTokenStream tokens = new CommonTokenStream(lex);
-
-        FuckAssParser parser = new FuckAssParser(tokens);
-
-        try {
-            parser.root();
-        } catch (RecognitionException e)  {
-            e.printStackTrace();
-        }
-    }
-    
-
-public FuckAssLexer fulexer;
-}
 
 
-@lexer::members
-{
-public boolean tall = false;
-}
-fragment COMSTART	: '(:';
-fragment COMEND	: ':)';
+fragment Tall		: ('1'..'9' | '0')+;
+fragment Ord		: ('a'..'z')+;
+WS		: ' ' {$channel=HIDDEN;};
+fragment S		: ' ';
+Word		: ('a'..'z')+;
+fragment STA	: '(';
+fragment SLU	: ')';
+Sammen		: st=STA t=Tall s=S+ o=Ord? sl=SLU
+		{
+		$st.setType(STA);
+		emit($st);
+		$t.setType(Tall);
+		emit($t);
+		$s.setType(S);
+		emit($s);
+		if($o != null)
+		{
+		$o.setType(Ord);
+		emit($o);
+		}
+		$sl.setType(SLU);
+		emit($sl);
+		skip();
+		};
 
-fragment CleanChar	: 'a'..'z';
-fragment Char	: CleanChar | '(' | ')' | ':' | ' ';
-Kom		: Kommentar;
-fragment Kommentar	: COMSTART Komrest;
-fragment Komrest	: (COMEND)=> COMEND
-		| (COMSTART)=> Kommentar
-		| Char Komrest;
-
-Word		: CleanChar+;
-WS		:' ' {$channel=HIDDEN;} ;
-
-
-expr		: (en| to | tre | WS)*;
-en		: Word;
-to		: Kom;
-tre		: HORSE;
+tekst		: Word* STA Tall S Ord? SLU Word*;
 
 
 
