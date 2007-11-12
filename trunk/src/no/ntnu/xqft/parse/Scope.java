@@ -14,13 +14,13 @@ import java.util.*;
  *
  */
 public class Scope {
-    
+
     /* Symbol table */
-    protected SymTab symTab = null;
-    
+    protected SymTab<String, Symbol> symTab = null;
+
     /* Parent scope, or null if root */
     protected Scope parent = null;
-    
+
     /* Child scopes */
     protected LinkedList<Scope> children = new LinkedList<Scope>();
 
@@ -29,10 +29,24 @@ public class Scope {
      * 
      * @param child the child to add
      */
-    protected void addChild(Scope child) {
+    public void addChild(Scope child) {
 
         // TODO: check if child already exist in list - might not be necessary
-        this.children.add(child);
+        if (!this.children.contains(child)) {
+            this.children.add(child);            
+        }
+        child.setParent(this);
+    }
+    
+    /* Returns the first child in this scope */
+    public Scope getFirstChild() {
+        
+        if (this.children.size() > 0) {
+            return this.children.getFirst();
+        }
+        else {
+            return null;
+        }
     }
 
     /**
@@ -53,26 +67,42 @@ public class Scope {
      */
     public void setParent(Scope parent) {
         this.parent = parent;
-        parent.addChild(this);
+        
+        if (!parent.getChildren().contains(this)) {
+            parent.addChild(this);
+        }
     }
 
     /**
      * @return the symTab
      */
-    public SymTab getSymTab() {
+    public SymTab<String, Symbol> getSymTab() {
         return symTab;
     }
 
     /**
      * @param symTab the symTab to set
      */
-    public void setSymTab(SymTab symTab) {
+    public void setSymTab(SymTab<String, Symbol> symTab) {
         this.symTab = symTab;
     }
+
     
     public void defineFunc(String name, LinkedList<Symbol> params) {
         
     }
-    
-    
+
+    /**
+     * @return the children
+     */
+    public LinkedList<Scope> getChildren() {
+        return children;
+    }
+
+    /**
+     * @param children the children to set
+     */
+    public void setChildren(LinkedList<Scope> children) {
+        this.children = children;
+    }
 }

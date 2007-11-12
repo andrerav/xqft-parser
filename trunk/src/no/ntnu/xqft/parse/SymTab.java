@@ -14,6 +14,6 @@ import java.util.HashMap;
  * @author andreas, mads
  *
  */
-class SymTab extends HashMap {
-    SymTab parent = null;
+public class SymTab<K,V> extends HashMap<K,V> {
+    
 }
