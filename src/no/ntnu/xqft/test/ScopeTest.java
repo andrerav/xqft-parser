@@ -103,7 +103,7 @@ public class ScopeTest {
     }
 
     /**
-     * Test method for {@link no.ntnu.xqft.parse.Scope#defineFunc(java.lang.String, java.util.LinkedList)}.
+     * Test method for {@link no.ntnu.xqft.parse.Scope#defineFunction(java.lang.String, java.util.LinkedList)}.
      */
     @Test
     public void testDefineFunc() {

@@ -33,14 +33,14 @@ public class Scope {
 
         // TODO: check if child already exist in list - might not be necessary
         if (!this.children.contains(child)) {
-            this.children.add(child);            
+            this.children.add(child);
         }
         child.setParent(this);
     }
     
     /* Returns the first child in this scope */
     public Scope getFirstChild() {
-        
+
         if (this.children.size() > 0) {
             return this.children.getFirst();
         }
@@ -88,10 +88,28 @@ public class Scope {
     }
 
     
-    public void defineFunc(String name, LinkedList<Symbol> params) {
+    /**
+     * Define a function with a parameter list
+     * 
+     * @param name
+     * @param params
+     */
+    public void defineFunction(String name, LinkedList<Symbol> params) {
         
     }
-
+    
+    /**
+     * Define a function with a parameter list
+     * 
+     * @param name
+     * @param params
+     */
+    public void defineVariable(String name, Object value) {
+        VariableSymbol<Object> var = new VariableSymbol<Object>();
+        var.setName(name);
+        var.setValue(value);
+    }
+    
     /**
      * @return the children
      */
