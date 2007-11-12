@@ -25,7 +25,7 @@
         <move file="${tmp}/etc/XQFTLexer.java" tofile="${src}/no/ntnu/xqft/parse/XQFTLexer.java" />
     </target>
 
-   <target name="compile" depends="parser"
+   <target name="compile"
           description="compile the parser">
         <!-- Compile the java code from ${src} into ${bin} -->
         <javac srcdir="${src}" destdir="${bin}" >
@@ -60,7 +60,7 @@
         </fileset>
       </classpath>
       <formatter type="plain"/>
-      <test name="no.ntnu.xqft.test.XQFTParserTest"/>
+      <test name="no.ntnu.xqft.test.ScopeTest"/>
     </junit>
   </target>
 	
