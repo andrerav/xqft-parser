@@ -64,7 +64,7 @@ importStmt                  			: schemaImport | moduleImport;
 	moduleImport                			: IMPORT MODULE (NAMESPACE NCName EQSi)? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
 	
 varDecl                     			: DECLARE VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNSi exprSingle) | EXTERNAL);
-	qName						 			: (NCName COLONSi)? NCName;
+	qName						 			: NCName (COLONSi NCName)?;
 	typeDeclaration             			: AS sequenceType;
 //		sequenceType# 							: #PAA EGET#
 //	exprSingle# 							: #PAA EGET#
