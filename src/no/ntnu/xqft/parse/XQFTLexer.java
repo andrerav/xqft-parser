@@ -1,7 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2007-11-02 13:17:23
-
-    package no.ntnu.xqft.parse;
-
+// $ANTLR 3.0.1 etc/XQFT.g 2007-11-12 17:40:33
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -10,229 +7,241 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 public class XQFTLexer extends Lexer {
-    public static final int RIGHTPARENTHESISSi=115;
-    public static final int RIGHTCDATA=108;
-    public static final int END=186;
-    public static final int CommentContents=211;
-    public static final int NOINHERIT=132;
-    public static final int INSTANCE=43;
-    public static final int CONTENT=12;
-    public static final int LAX=162;
-    public static final int STOP=17;
-    public static final int PIPESi=4;
-    public static final int IMPORT=58;
-    public static final int DOT=176;
-    public static final int AposAttrContentChar=208;
-    public static final int CASTABLE=40;
-    public static final int ORDER=85;
-    public static final int Letter=190;
-    public static final int DIACRITICS=113;
-    public static final int RIGHTSELFTERMINATOR=60;
-    public static final int TYPESWITCH=18;
-    public static final int MODULE=117;
-    public static final int VERSION=13;
-    public static final int LEFTXMLCOMMENT=102;
-    public static final int Ideographic=189;
-    public static final int QUESTIONMARKSi=147;
-    public static final int EXACTLY=109;
-    public static final int FTNOT=79;
-    public static final int EQUALSi=15;
-    public static final int DECLARE=129;
-    public static final int ElementContentChar=206;
-    public static final int OCCURS=121;
-    public static final int UNION=87;
-    public static final int LEFTPITARGET=111;
-    public static final int STRIP=148;
-    public static final int NameChar=213;
-    public static final int PLUSSi=81;
-    public static final int BIGGERTHANOREQUALSi=6;
-    public static final int QuotAttrContentChar=207;
-    public static final int SAME=183;
-    public static final int FTCONTAINS=140;
-    public static final int DESCENDING=98;
-    public static final int FTOPTION=48;
-    public static final int ANCESTOR_OR_SELF=175;
-    public static final int RELATIONSHIP=141;
-    public static final int ANY=19;
-    public static final int GE=158;
-    public static final int CommentCheck=209;
-    public static final int WORD=33;
-    public static final int ELSE=28;
-    public static final int SCHEMAATTRIBUTE=84;
-    public static final int DOUBLECOLON=165;
-    public static final int SENSITIVE=78;
-    public static final int SELF=167;
-    public static final int LEFTBRACESi=14;
-    public static final int DISTANCE=24;
-    public static final int LEFTENDTAG=152;
-    public static final int LEFTBRACKETSi=106;
-    public static final int NODEBEFORESi=160;
-    public static final int TEXT=104;
-    public static final int DOTDOT=177;
-    public static final int PARENT=171;
-    public static final int CombiningChar=191;
-    public static final int BIGGERTHANSi=5;
-    public static final int NCName=215;
-    public static final int FTOR=93;
-    public static final int SCORE=71;
-    public static final int UNDERSCORE=53;
-    public static final int LEFTPARENTHESISSi=126;
-    public static final int EXTERNAL=114;
-    public static final int EMPTY_SEQUENCE=64;
-    public static final int Digit=192;
-    public static final int DOUBLERIGHTBRACES=90;
-    public static final int DOLLARSi=21;
-    public static final int CAST=23;
-    public static final int MOD=143;
-    public static final int EXCEPT=44;
-    public static final int OR=92;
-    public static final int NOPRESERVE=66;
-    public static final int S=218;
-    public static final int SCHEMAELEMENT=151;
-    public static final int BY=103;
-    public static final int LESSTHANSi=29;
-    public static final int COLONSi=50;
-    public static final int WEIGHT=47;
-    public static final int PRECEDING_SIBLING=173;
-    public static final int UPPERCASE=31;
-    public static final int RIGHTPITARGET=38;
-    public static final int SINGLEQUOTE=52;
-    public static final int SEMICOLONSi=51;
-    public static final int LESSTHANOREQUALSi=7;
-    public static final int FROM=88;
-    public static final int STEMMING=74;
-    public static final int TIMES=137;
-    public static final int EMPTY=54;
-    public static final int ASCENDING=8;
-    public static final int CleanChar=204;
-    public static final int IntegerLiteral=195;
-    public static final int SENTENCES=179;
-    public static final int NE=154;
-    public static final int COMMENT=119;
-    public static final int BASEURI=97;
-    public static final int MINUSSi=59;
-    public static final int NCNameChar=217;
-    public static final int ENTIRE=187;
-    public static final int WITH=110;
-    public static final int IN=150;
-    public static final int ASSIGNMENTOPERATOR=139;
-    public static final int SOME=146;
-    public static final int MOST=55;
-    public static final int OneOrMoreChar=212;
-    public static final int RETURN=118;
-    public static final int LET=69;
-    public static final int IF=96;
-    public static final int Extender=193;
-    public static final int NODE=145;
-    public static final int FOR=42;
-    public static final int Tokens=221;
-    public static final int DEFAULT=120;
-    public static final int PRESERVE=131;
-    public static final int DOUBLESLASH=94;
-    public static final int LEVELS=77;
-    public static final int COMMASi=68;
-    public static final int DOUBLELEFTBRACES=123;
-    public static final int ATTRIBUTE=138;
-    public static final int CHILD=164;
-    public static final int Digits=194;
-    public static final int NOT=133;
-    public static final int OPTION=73;
-    public static final int ELEMENT=125;
-    public static final int Comment=210;
-    public static final int INSENSITIVE=65;
-    public static final int DOCUMENT=61;
-    public static final int AS=101;
-    public static final int ENCODING=122;
-    public static final int BOUNDARYSPACE=20;
-    public static final int TREAT=30;
-    public static final int COPYNAMESPACES=127;
-    public static final int NAMESPACE=100;
-    public static final int THEN=67;
-    public static final int LEAST=95;
-    public static final int WORDS=178;
-    public static final int ZeroOrMoreChar=219;
-    public static final int PARAGRAPHS=180;
-    public static final int NCNameStartChar=216;
-    public static final int TO=45;
-    public static final int AND=130;
-    public static final int FUNCTION=135;
-    public static final int CharNotMinus=220;
-    public static final int LANGUAGE=72;
-    public static final int LOWERCASE=149;
-    public static final int LE=156;
-    public static final int SCHEMA=124;
-    public static final int CONSTRUCTION=46;
-    public static final int STARSi=99;
-    public static final int WILDCARDS=128;
-    public static final int DIFFERENT=184;
-    public static final int AT=83;
-    public static final int INTERSECT=134;
-    public static final int GREATEST=76;
-    public static final int BaseChar=188;
-    public static final int Char=205;
-    public static final int EQ=153;
-    public static final int LEFTCDATA=62;
-    public static final int LT=155;
-    public static final int OF=86;
-    public static final int WINDOW=70;
-    public static final int Name=214;
-    public static final int FOLLOWING=170;
-    public static final int CASE=56;
-    public static final int DESCENDANT_OR_SELF=168;
-    public static final int THESAURUS=142;
-    public static final int DecimalLiteral=196;
-    public static final int FTAND=82;
-    public static final int DIV=80;
-    public static final int PARAGRAPH=182;
-    public static final int ALL=32;
-    public static final int WHERE=10;
-    public static final int WITHOUT=112;
-    public static final int EVERY=39;
-    public static final int XQUERY=22;
-    public static final int DOUBLEQUOTESi=198;
-    public static final int IDIV=9;
-    public static final int SATISFIES=49;
-    public static final int ATSi=136;
-    public static final int DESCENDANT=166;
-    public static final int STRICT=163;
-    public static final int RIGHTPRAGMA=34;
-    public static final int FOLLOWING_SIBLING=169;
-    public static final int EscapeApos=202;
-    public static final int STABLE=105;
-    public static final int START=185;
-    public static final int DoubleLiteral=197;
-    public static final int VALIDATE=63;
-    public static final int EscapeQuot=201;
-    public static final int PRECEDING=174;
-    public static final int ORDERING=37;
-    public static final int UNORDERED=107;
-    public static final int PredefinedEntityRef=199;
-    public static final int LEFTPRAGMA=25;
-    public static final int SENTENCE=181;
-    public static final int INHERIT=35;
-    public static final int SLASH=36;
-    public static final int IS=159;
-    public static final int GT=157;
-    public static final int PHRASE=11;
-    public static final int StringLiteral=203;
-    public static final int DOCUMENTNODE=27;
-    public static final int RIGHTBRACESi=144;
-    public static final int ITEM=41;
-    public static final int ORDERED=26;
-    public static final int NOTEQUALSi=16;
-    public static final int PROCESSING_INSTRUCTION=57;
-    public static final int NODEAFTERSi=161;
-    public static final int COLLATION=89;
-    public static final int CharRef=200;
-    public static final int ANCESTOR=172;
-    public static final int VARIABLE=91;
+    public static final int FUNCTION=17;
+    public static final int MOD=88;
+    public static final int LPISi=197;
+    public static final int CREFHEXSi=209;
+    public static final int NOT=117;
+    public static final int EXCEPT=92;
     public static final int EOF=-1;
-    public static final int RIGHTXMLCOMMENT=116;
-    public static final int RIGHTBRACKETSi=75;
+    public static final int BaseChar=228;
+    public static final int Ideographic=229;
+    public static final int DISTANCE=139;
+    public static final int IMPORT=35;
+    public static final int ASSIGNSi=40;
+    public static final int CREFDECSi=208;
+    public static final int SENTENCE=142;
+    public static final int PRECEDING=168;
+    public static final int WORDS=125;
+    public static final int RETURN=63;
+    public static final int ELEMENT=16;
+    public static final int RPARSi=45;
+    public static final int DOLLARSi=39;
+    public static final int EQ=100;
+    public static final int DIACRITICS=158;
+    public static final int DBLCOLONSi=170;
+    public static final int CHILD=172;
+    public static final int GE=105;
+    public static final int STRICT=162;
+    public static final int PRESERVE=19;
+    public static final int UNDERSCORESi=217;
+    public static final int ELSE=80;
+    public static final int RCDATASi=203;
+    public static final int TYPESWITCH=76;
+    public static final int STOP=159;
+    public static final int CONTENT=99;
+    public static final int S=133;
+    public static final int FTOR=115;
+    public static final int EMPTY=28;
+    public static final int INTERSECT=91;
+    public static final int MINUSSi=85;
+    public static final int FTAND=116;
+    public static final int WS=226;
+    public static final int LANGUAGE=147;
+    public static final int LOWERCASE=156;
+    public static final int LPRAGSi=132;
+    public static final int INSENSITIVE=154;
+    public static final int APOSSi=187;
+    public static final int RSELFTERMSi=183;
+    public static final int LBRACKSi=179;
+    public static final int GT=104;
+    public static final int CharNotMinus=211;
+    public static final int END=145;
+    public static final int DoubleLiteral=121;
+    public static final int QUOTSi=185;
+    public static final int OPTION=48;
+    public static final int CharRef=191;
+    public static final int Extender=224;
+    public static final int DirCommentConstructor=182;
+    public static final int OCCURS=127;
+    public static final int THESAURUS=150;
+    public static final int VERSION=5;
+    public static final int SATISFIES=75;
+    public static final int RXQCOMMENTSi=207;
+    public static final int IDIV=87;
+    public static final int ASCENDING=71;
+    public static final int ExtraChar=227;
+    public static final int AT=37;
+    public static final int AS=43;
+    public static final int EMPTY_SEQUENCE=50;
+    public static final int PARENT=165;
+    public static final int CONSTRUCTION=23;
+    public static final int ATSi=178;
+    public static final int THEN=79;
+    public static final int DBLSLASHSi=163;
+    public static final int DOCUMENT=200;
+    public static final int COLLATION=21;
+    public static final int LCOMMENTSi=210;
+    public static final int ANCESTOR=166;
+    public static final int AMPERSi=215;
+    public static final int CleanChar=230;
+    public static final int CASTABLE=96;
+    public static final int RDBLBRACSi=193;
+    public static final int MOST=130;
+    public static final int EQSi=12;
+    public static final int NODEBEFORESi=112;
+    public static final int BY=69;
+    public static final int DOTSi=181;
+    public static final int NCNameChar=220;
+    public static final int ITEM=51;
+    public static final int TO=84;
+    public static final int INHERIT=33;
+    public static final int ANCESTOR_OR_SELF=169;
+    public static final int DOTDOTSi=171;
+    public static final int STEMMING=153;
+    public static final int LTOREQSi=108;
+    public static final int NotChar=206;
+    public static final int TEXT=60;
+    public static final int MODULE=9;
+    public static final int FTNOT=118;
+    public static final int Tokens=233;
+    public static final int ORDERED=25;
+    public static final int SAME=140;
+    public static final int UNION=89;
+    public static final int StringLiteral=6;
+    public static final int FOLLOWING_SIBLING=176;
+    public static final int SCHEMA=36;
+    public static final int COLONSi=42;
+    public static final int ENTIRE=146;
+    public static final int INSTANCE=93;
+    public static final int VALIDATE=160;
+    public static final int WILDCARDS=149;
+    public static final int NOINHERIT=34;
+    public static final int DECLARE=14;
+    public static final int START=144;
+    public static final int IntegerLiteral=119;
+    public static final int DIV=86;
+    public static final int CombiningChar=223;
+    public static final int DESCENDING=72;
+    public static final int SELF=174;
+    public static final int RPRAGSi=134;
+    public static final int NEQSi=106;
+    public static final int CAST=97;
+    public static final int SENTENCES=137;
+    public static final int EXTERNAL=41;
+    public static final int LT=102;
+    public static final int QUESTIONSi=53;
+    public static final int RBRACKSi=180;
+    public static final int BACKSLASHSi=216;
+    public static final int CASE=77;
+    public static final int ENCODING=7;
+    public static final int RCOMMENTSi=212;
+    public static final int PLUSSi=62;
+    public static final int DIFFERENT=141;
+    public static final int SCHEMAATTRIBUTE=57;
+    public static final int DOCUMENT_NODE=52;
+    public static final int LXQCOMMENTSi=204;
+    public static final int CDataSection=195;
+    public static final int SEMICOLONSi=8;
+    public static final int WORD=123;
+    public static final int SHARPSi=214;
+    public static final int UPPERCASE=157;
+    public static final int Comment=205;
+    public static final int Digits=225;
+    public static final int Char=202;
+    public static final int QuotAttrContentChar=189;
+    public static final int FTOPTION=49;
+    public static final int COMMENT=59;
+    public static final int NE=101;
+    public static final int BOUNDARYSPACE=18;
+    public static final int NODE=61;
+    public static final int AposAttrContentChar=194;
+    public static final int ZeroOrMoreChar=135;
+    public static final int GREATEST=29;
+    public static final int WITHOUT=98;
+    public static final int EVERY=74;
+    public static final int SENSITIVE=155;
+    public static final int PROCESSING_INSTRUCTION=58;
+    public static final int WEIGHT=114;
+    public static final int OF=94;
+    public static final int LTSi=107;
+    public static final int NODEAFTERSi=113;
+    public static final int RELATIONSHIP=151;
+    public static final int NAMESPACE=10;
+    public static final int LCDATASi=201;
+    public static final int LBRACESi=46;
+    public static final int VARIABLE=38;
+    public static final int DESCENDANT_OR_SELF=175;
+    public static final int BASE_URI=22;
+    public static final int NOPRESERVE=32;
+    public static final int OR=81;
+    public static final int LPARSi=44;
+    public static final int STARSi=54;
+    public static final int RPISi=198;
+    public static final int FROM=131;
+    public static final int PRECEDING_SIBLING=167;
+    public static final int Letter=221;
+    public static final int NCName=11;
+    public static final int WHERE=68;
+    public static final int LAX=161;
+    public static final int ORDER=27;
+    public static final int ATTRIBUTE=56;
+    public static final int FOR=64;
+    public static final int EXCLSi=213;
+    public static final int AND=82;
+    public static final int FOLLOWING=177;
+    public static final int FTCONTAINS=83;
+    public static final int IF=78;
+    public static final int SCHEMAELEMENT=55;
+    public static final int IN=65;
+    public static final int PARAGRAPH=143;
+    public static final int COPY_NAMESPACES=31;
+    public static final int IS=111;
+    public static final int SOME=73;
+    public static final int ALL=124;
+    public static final int STRIP=20;
+    public static final int LDBLBRACSi=192;
+    public static final int STABLE=70;
+    public static final int PIPESi=90;
+    public static final int WITH=148;
+    public static final int ESCAPOSSi=188;
+    public static final int NCNameStartChar=219;
+    public static final int LENDTAGSi=184;
+    public static final int GTSi=109;
+    public static final int RBRACSi=47;
+    public static final int XQUERY=4;
+    public static final int EXACTLY=129;
+    public static final int DEFAULT=15;
+    public static final int DESCENDANT=173;
+    public static final int NameChar=231;
+    public static final int COMMASi=13;
+    public static final int SLASHSi=164;
+    public static final int Digit=222;
+    public static final int DecimalLiteral=120;
+    public static final int GTOREQSi=110;
+    public static final int UNORDERED=26;
+    public static final int PHRASE=126;
+    public static final int ESCQUOTSi=186;
+    public static final int TOKENSWITCH=218;
+    public static final int ElementContentChar=196;
+    public static final int ANY=122;
+    public static final int SCORE=66;
+    public static final int ORDERING=24;
+    public static final int PredefinedEntityRef=190;
+    public static final int Name=199;
+    public static final int LEAST=30;
+    public static final int WINDOW=136;
+    public static final int LEVELS=152;
+    public static final int PARAGRAPHS=138;
+    public static final int TIMES=128;
+    public static final int LE=103;
+    public static final int TREAT=95;
+    public static final int LET=67;
+    public static final int OneOrMoreChar=232;
     public XQFTLexer() {;} 
     public XQFTLexer(CharStream input) {
         super(input);
-        ruleMemo = new HashMap[411+1];
+        ruleMemo = new HashMap[404+1];
      }
     public String getGrammarFileName() { return "etc/XQFT.g"; }
 
@@ -281,14 +290,43 @@ public class XQFTLexer extends Lexer {
     public boolean alreadyParsedRule(IntStream input, int ruleIndex) {
     if ( backtracking>1 ) return super.alreadyParsedRule(input, ruleIndex);
     return false;
-    }// $ANTLR start PIPESi
-    public final void mPIPESi() throws RecognitionException {
+    }// $ANTLR start CDataSection
+    public final void mCDataSection() throws RecognitionException {
         try {
-            int _type = PIPESi;
-            // etc/XQFT.g:10:8: ( '|' )
-            // etc/XQFT.g:10:10: '|'
+            int _type = CDataSection;
+            // etc/XQFT.g:531:25: ( LCDATASi ( options {greedy=false; } : Char )* RCDATASi )
+            // etc/XQFT.g:531:27: LCDATASi ( options {greedy=false; } : Char )* RCDATASi
             {
-            match('|'); if (failed) return ;
+            mLCDATASi(); if (failed) return ;
+            // etc/XQFT.g:531:36: ( options {greedy=false; } : Char )*
+            loop1:
+            do {
+                int alt1=2;
+                int LA1_0 = input.LA(1);
+
+                if ( (LA1_0==']') ) {
+                    alt1=1;
+                }
+                else if ( ((LA1_0>='\t' && LA1_0<='\n')||LA1_0=='\r'||(LA1_0>=' ' && LA1_0<='\\')||(LA1_0>='^' && LA1_0<='\uD7FF')||(LA1_0>='\uE000' && LA1_0<='\uFFFD')) ) {
+                    alt1=1;
+                }
+
+
+                switch (alt1) {
+            	case 1 :
+            	    // etc/XQFT.g:531:62: Char
+            	    {
+            	    mChar(); if (failed) return ;
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop1;
+                }
+            } while (true);
+
+            mRCDATASi(); if (failed) return ;
 
             }
 
@@ -297,1108 +335,164 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end PIPESi
+    // $ANTLR end CDataSection
 
-    // $ANTLR start BIGGERTHANSi
-    public final void mBIGGERTHANSi() throws RecognitionException {
+    // $ANTLR start LCDATASi
+    public final void mLCDATASi() throws RecognitionException {
         try {
-            int _type = BIGGERTHANSi;
-            // etc/XQFT.g:11:14: ( '>' )
-            // etc/XQFT.g:11:16: '>'
-            {
-            match('>'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end BIGGERTHANSi
-
-    // $ANTLR start BIGGERTHANOREQUALSi
-    public final void mBIGGERTHANOREQUALSi() throws RecognitionException {
-        try {
-            int _type = BIGGERTHANOREQUALSi;
-            // etc/XQFT.g:12:21: ( '>=' )
-            // etc/XQFT.g:12:23: '>='
-            {
-            match(">="); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end BIGGERTHANOREQUALSi
-
-    // $ANTLR start LESSTHANOREQUALSi
-    public final void mLESSTHANOREQUALSi() throws RecognitionException {
-        try {
-            int _type = LESSTHANOREQUALSi;
-            // etc/XQFT.g:13:19: ( '<=' )
-            // etc/XQFT.g:13:21: '<='
-            {
-            match("<="); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LESSTHANOREQUALSi
-
-    // $ANTLR start ASCENDING
-    public final void mASCENDING() throws RecognitionException {
-        try {
-            int _type = ASCENDING;
-            // etc/XQFT.g:14:11: ( 'ascending' )
-            // etc/XQFT.g:14:13: 'ascending'
-            {
-            match("ascending"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ASCENDING
-
-    // $ANTLR start IDIV
-    public final void mIDIV() throws RecognitionException {
-        try {
-            int _type = IDIV;
-            // etc/XQFT.g:15:6: ( 'idiv' )
-            // etc/XQFT.g:15:8: 'idiv'
-            {
-            match("idiv"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end IDIV
-
-    // $ANTLR start WHERE
-    public final void mWHERE() throws RecognitionException {
-        try {
-            int _type = WHERE;
-            // etc/XQFT.g:16:7: ( 'where' )
-            // etc/XQFT.g:16:9: 'where'
-            {
-            match("where"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end WHERE
-
-    // $ANTLR start PHRASE
-    public final void mPHRASE() throws RecognitionException {
-        try {
-            int _type = PHRASE;
-            // etc/XQFT.g:17:8: ( 'phrase' )
-            // etc/XQFT.g:17:10: 'phrase'
-            {
-            match("phrase"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end PHRASE
-
-    // $ANTLR start CONTENT
-    public final void mCONTENT() throws RecognitionException {
-        try {
-            int _type = CONTENT;
-            // etc/XQFT.g:18:9: ( 'content' )
-            // etc/XQFT.g:18:11: 'content'
-            {
-            match("content"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end CONTENT
-
-    // $ANTLR start VERSION
-    public final void mVERSION() throws RecognitionException {
-        try {
-            int _type = VERSION;
-            // etc/XQFT.g:19:9: ( 'version' )
-            // etc/XQFT.g:19:11: 'version'
-            {
-            match("version"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end VERSION
-
-    // $ANTLR start LEFTBRACESi
-    public final void mLEFTBRACESi() throws RecognitionException {
-        try {
-            int _type = LEFTBRACESi;
-            // etc/XQFT.g:20:13: ( '{' )
-            // etc/XQFT.g:20:15: '{'
-            {
-            match('{'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LEFTBRACESi
-
-    // $ANTLR start EQUALSi
-    public final void mEQUALSi() throws RecognitionException {
-        try {
-            int _type = EQUALSi;
-            // etc/XQFT.g:21:9: ( '=' )
-            // etc/XQFT.g:21:11: '='
-            {
-            match('='); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end EQUALSi
-
-    // $ANTLR start NOTEQUALSi
-    public final void mNOTEQUALSi() throws RecognitionException {
-        try {
-            int _type = NOTEQUALSi;
-            // etc/XQFT.g:22:12: ( '!=' )
-            // etc/XQFT.g:22:14: '!='
-            {
-            match("!="); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end NOTEQUALSi
-
-    // $ANTLR start STOP
-    public final void mSTOP() throws RecognitionException {
-        try {
-            int _type = STOP;
-            // etc/XQFT.g:23:6: ( 'stop' )
-            // etc/XQFT.g:23:8: 'stop'
-            {
-            match("stop"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end STOP
-
-    // $ANTLR start TYPESWITCH
-    public final void mTYPESWITCH() throws RecognitionException {
-        try {
-            int _type = TYPESWITCH;
-            // etc/XQFT.g:24:12: ( 'typeswitch' )
-            // etc/XQFT.g:24:14: 'typeswitch'
-            {
-            match("typeswitch"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end TYPESWITCH
-
-    // $ANTLR start ANY
-    public final void mANY() throws RecognitionException {
-        try {
-            int _type = ANY;
-            // etc/XQFT.g:25:5: ( 'any' )
-            // etc/XQFT.g:25:7: 'any'
-            {
-            match("any"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ANY
-
-    // $ANTLR start BOUNDARYSPACE
-    public final void mBOUNDARYSPACE() throws RecognitionException {
-        try {
-            int _type = BOUNDARYSPACE;
-            // etc/XQFT.g:26:15: ( 'boundary-space' )
-            // etc/XQFT.g:26:17: 'boundary-space'
-            {
-            match("boundary-space"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end BOUNDARYSPACE
-
-    // $ANTLR start DOLLARSi
-    public final void mDOLLARSi() throws RecognitionException {
-        try {
-            int _type = DOLLARSi;
-            // etc/XQFT.g:27:10: ( '$' )
-            // etc/XQFT.g:27:12: '$'
-            {
-            match('$'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DOLLARSi
-
-    // $ANTLR start XQUERY
-    public final void mXQUERY() throws RecognitionException {
-        try {
-            int _type = XQUERY;
-            // etc/XQFT.g:28:8: ( 'xquery' )
-            // etc/XQFT.g:28:10: 'xquery'
-            {
-            match("xquery"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end XQUERY
-
-    // $ANTLR start CAST
-    public final void mCAST() throws RecognitionException {
-        try {
-            int _type = CAST;
-            // etc/XQFT.g:29:6: ( 'cast' )
-            // etc/XQFT.g:29:8: 'cast'
-            {
-            match("cast"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end CAST
-
-    // $ANTLR start DISTANCE
-    public final void mDISTANCE() throws RecognitionException {
-        try {
-            int _type = DISTANCE;
-            // etc/XQFT.g:30:10: ( 'distance' )
-            // etc/XQFT.g:30:12: 'distance'
-            {
-            match("distance"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DISTANCE
-
-    // $ANTLR start LEFTPRAGMA
-    public final void mLEFTPRAGMA() throws RecognitionException {
-        try {
-            int _type = LEFTPRAGMA;
-            // etc/XQFT.g:31:12: ( '(#' )
-            // etc/XQFT.g:31:14: '(#'
-            {
-            match("(#"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LEFTPRAGMA
-
-    // $ANTLR start ORDERED
-    public final void mORDERED() throws RecognitionException {
-        try {
-            int _type = ORDERED;
-            // etc/XQFT.g:32:9: ( 'ordered' )
-            // etc/XQFT.g:32:11: 'ordered'
-            {
-            match("ordered"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ORDERED
-
-    // $ANTLR start DOCUMENTNODE
-    public final void mDOCUMENTNODE() throws RecognitionException {
-        try {
-            int _type = DOCUMENTNODE;
-            // etc/XQFT.g:33:14: ( 'document-node' )
-            // etc/XQFT.g:33:16: 'document-node'
-            {
-            match("document-node"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DOCUMENTNODE
-
-    // $ANTLR start ELSE
-    public final void mELSE() throws RecognitionException {
-        try {
-            int _type = ELSE;
-            // etc/XQFT.g:34:6: ( 'else' )
-            // etc/XQFT.g:34:8: 'else'
-            {
-            match("else"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ELSE
-
-    // $ANTLR start LESSTHANSi
-    public final void mLESSTHANSi() throws RecognitionException {
-        try {
-            int _type = LESSTHANSi;
-            // etc/XQFT.g:35:12: ( '<' )
-            // etc/XQFT.g:35:14: '<'
-            {
-            match('<'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LESSTHANSi
-
-    // $ANTLR start TREAT
-    public final void mTREAT() throws RecognitionException {
-        try {
-            int _type = TREAT;
-            // etc/XQFT.g:36:7: ( 'treat' )
-            // etc/XQFT.g:36:9: 'treat'
-            {
-            match("treat"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end TREAT
-
-    // $ANTLR start UPPERCASE
-    public final void mUPPERCASE() throws RecognitionException {
-        try {
-            int _type = UPPERCASE;
-            // etc/XQFT.g:37:11: ( 'uppercase' )
-            // etc/XQFT.g:37:13: 'uppercase'
-            {
-            match("uppercase"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end UPPERCASE
-
-    // $ANTLR start ALL
-    public final void mALL() throws RecognitionException {
-        try {
-            int _type = ALL;
-            // etc/XQFT.g:38:5: ( 'all' )
-            // etc/XQFT.g:38:7: 'all'
-            {
-            match("all"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ALL
-
-    // $ANTLR start WORD
-    public final void mWORD() throws RecognitionException {
-        try {
-            int _type = WORD;
-            // etc/XQFT.g:39:6: ( 'word' )
-            // etc/XQFT.g:39:8: 'word'
-            {
-            match("word"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end WORD
-
-    // $ANTLR start RIGHTPRAGMA
-    public final void mRIGHTPRAGMA() throws RecognitionException {
-        try {
-            int _type = RIGHTPRAGMA;
-            // etc/XQFT.g:40:13: ( '#)' )
-            // etc/XQFT.g:40:15: '#)'
-            {
-            match("#)"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end RIGHTPRAGMA
-
-    // $ANTLR start INHERIT
-    public final void mINHERIT() throws RecognitionException {
-        try {
-            int _type = INHERIT;
-            // etc/XQFT.g:41:9: ( 'inherit' )
-            // etc/XQFT.g:41:11: 'inherit'
-            {
-            match("inherit"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end INHERIT
-
-    // $ANTLR start SLASH
-    public final void mSLASH() throws RecognitionException {
-        try {
-            int _type = SLASH;
-            // etc/XQFT.g:42:7: ( '/' )
-            // etc/XQFT.g:42:9: '/'
-            {
-            match('/'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end SLASH
-
-    // $ANTLR start ORDERING
-    public final void mORDERING() throws RecognitionException {
-        try {
-            int _type = ORDERING;
-            // etc/XQFT.g:43:10: ( 'ordering' )
-            // etc/XQFT.g:43:12: 'ordering'
-            {
-            match("ordering"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ORDERING
-
-    // $ANTLR start RIGHTPITARGET
-    public final void mRIGHTPITARGET() throws RecognitionException {
-        try {
-            int _type = RIGHTPITARGET;
-            // etc/XQFT.g:44:15: ( '?>' )
-            // etc/XQFT.g:44:17: '?>'
-            {
-            match("?>"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end RIGHTPITARGET
-
-    // $ANTLR start EVERY
-    public final void mEVERY() throws RecognitionException {
-        try {
-            int _type = EVERY;
-            // etc/XQFT.g:45:7: ( 'every' )
-            // etc/XQFT.g:45:9: 'every'
-            {
-            match("every"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end EVERY
-
-    // $ANTLR start CASTABLE
-    public final void mCASTABLE() throws RecognitionException {
-        try {
-            int _type = CASTABLE;
-            // etc/XQFT.g:46:10: ( 'castable' )
-            // etc/XQFT.g:46:12: 'castable'
-            {
-            match("castable"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end CASTABLE
-
-    // $ANTLR start ITEM
-    public final void mITEM() throws RecognitionException {
-        try {
-            int _type = ITEM;
-            // etc/XQFT.g:47:6: ( 'item' )
-            // etc/XQFT.g:47:8: 'item'
-            {
-            match("item"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ITEM
-
-    // $ANTLR start FOR
-    public final void mFOR() throws RecognitionException {
-        try {
-            int _type = FOR;
-            // etc/XQFT.g:48:5: ( 'for' )
-            // etc/XQFT.g:48:7: 'for'
-            {
-            match("for"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end FOR
-
-    // $ANTLR start INSTANCE
-    public final void mINSTANCE() throws RecognitionException {
-        try {
-            int _type = INSTANCE;
-            // etc/XQFT.g:49:10: ( 'instance' )
-            // etc/XQFT.g:49:12: 'instance'
-            {
-            match("instance"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end INSTANCE
-
-    // $ANTLR start EXCEPT
-    public final void mEXCEPT() throws RecognitionException {
-        try {
-            int _type = EXCEPT;
-            // etc/XQFT.g:50:8: ( 'except' )
-            // etc/XQFT.g:50:10: 'except'
-            {
-            match("except"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end EXCEPT
-
-    // $ANTLR start TO
-    public final void mTO() throws RecognitionException {
-        try {
-            int _type = TO;
-            // etc/XQFT.g:51:4: ( 'to' )
-            // etc/XQFT.g:51:6: 'to'
-            {
-            match("to"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end TO
-
-    // $ANTLR start CONSTRUCTION
-    public final void mCONSTRUCTION() throws RecognitionException {
-        try {
-            int _type = CONSTRUCTION;
-            // etc/XQFT.g:52:14: ( 'construction' )
-            // etc/XQFT.g:52:16: 'construction'
-            {
-            match("construction"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end CONSTRUCTION
-
-    // $ANTLR start WEIGHT
-    public final void mWEIGHT() throws RecognitionException {
-        try {
-            int _type = WEIGHT;
-            // etc/XQFT.g:53:8: ( 'weight' )
-            // etc/XQFT.g:53:10: 'weight'
-            {
-            match("weight"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end WEIGHT
-
-    // $ANTLR start FTOPTION
-    public final void mFTOPTION() throws RecognitionException {
-        try {
-            int _type = FTOPTION;
-            // etc/XQFT.g:54:10: ( 'ft-option' )
-            // etc/XQFT.g:54:12: 'ft-option'
-            {
-            match("ft-option"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end FTOPTION
-
-    // $ANTLR start SATISFIES
-    public final void mSATISFIES() throws RecognitionException {
-        try {
-            int _type = SATISFIES;
-            // etc/XQFT.g:55:11: ( 'satisfies' )
-            // etc/XQFT.g:55:13: 'satisfies'
-            {
-            match("satisfies"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end SATISFIES
-
-    // $ANTLR start COLONSi
-    public final void mCOLONSi() throws RecognitionException {
-        try {
-            int _type = COLONSi;
-            // etc/XQFT.g:56:9: ( ':' )
-            // etc/XQFT.g:56:11: ':'
-            {
-            match(':'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end COLONSi
-
-    // $ANTLR start SEMICOLONSi
-    public final void mSEMICOLONSi() throws RecognitionException {
-        try {
-            int _type = SEMICOLONSi;
-            // etc/XQFT.g:57:13: ( ';' )
-            // etc/XQFT.g:57:15: ';'
-            {
-            match(';'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end SEMICOLONSi
-
-    // $ANTLR start SINGLEQUOTE
-    public final void mSINGLEQUOTE() throws RecognitionException {
-        try {
-            int _type = SINGLEQUOTE;
-            // etc/XQFT.g:58:13: ( '\\'' )
-            // etc/XQFT.g:58:15: '\\''
-            {
-            match('\''); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end SINGLEQUOTE
-
-    // $ANTLR start UNDERSCORE
-    public final void mUNDERSCORE() throws RecognitionException {
-        try {
-            int _type = UNDERSCORE;
-            // etc/XQFT.g:59:12: ( '_' )
-            // etc/XQFT.g:59:14: '_'
-            {
-            match('_'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end UNDERSCORE
-
-    // $ANTLR start EMPTY
-    public final void mEMPTY() throws RecognitionException {
-        try {
-            int _type = EMPTY;
-            // etc/XQFT.g:60:7: ( 'empty' )
-            // etc/XQFT.g:60:9: 'empty'
-            {
-            match("empty"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end EMPTY
-
-    // $ANTLR start MOST
-    public final void mMOST() throws RecognitionException {
-        try {
-            int _type = MOST;
-            // etc/XQFT.g:61:6: ( 'most' )
-            // etc/XQFT.g:61:8: 'most'
-            {
-            match("most"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end MOST
-
-    // $ANTLR start CASE
-    public final void mCASE() throws RecognitionException {
-        try {
-            int _type = CASE;
-            // etc/XQFT.g:62:6: ( 'case' )
-            // etc/XQFT.g:62:8: 'case'
-            {
-            match("case"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end CASE
-
-    // $ANTLR start PROCESSING_INSTRUCTION
-    public final void mPROCESSING_INSTRUCTION() throws RecognitionException {
-        try {
-            int _type = PROCESSING_INSTRUCTION;
-            // etc/XQFT.g:63:24: ( 'processing-instruction' )
-            // etc/XQFT.g:63:26: 'processing-instruction'
-            {
-            match("processing-instruction"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end PROCESSING_INSTRUCTION
-
-    // $ANTLR start IMPORT
-    public final void mIMPORT() throws RecognitionException {
-        try {
-            int _type = IMPORT;
-            // etc/XQFT.g:64:8: ( 'import' )
-            // etc/XQFT.g:64:10: 'import'
-            {
-            match("import"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end IMPORT
-
-    // $ANTLR start MINUSSi
-    public final void mMINUSSi() throws RecognitionException {
-        try {
-            int _type = MINUSSi;
-            // etc/XQFT.g:65:9: ( '-' )
-            // etc/XQFT.g:65:11: '-'
-            {
-            match('-'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end MINUSSi
-
-    // $ANTLR start RIGHTSELFTERMINATOR
-    public final void mRIGHTSELFTERMINATOR() throws RecognitionException {
-        try {
-            int _type = RIGHTSELFTERMINATOR;
-            // etc/XQFT.g:66:21: ( '/>' )
-            // etc/XQFT.g:66:23: '/>'
-            {
-            match("/>"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end RIGHTSELFTERMINATOR
-
-    // $ANTLR start DOCUMENT
-    public final void mDOCUMENT() throws RecognitionException {
-        try {
-            int _type = DOCUMENT;
-            // etc/XQFT.g:67:10: ( 'document' )
-            // etc/XQFT.g:67:12: 'document'
-            {
-            match("document"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DOCUMENT
-
-    // $ANTLR start LEFTCDATA
-    public final void mLEFTCDATA() throws RecognitionException {
-        try {
-            int _type = LEFTCDATA;
-            // etc/XQFT.g:68:11: ( '<![CDATA[' )
-            // etc/XQFT.g:68:13: '<![CDATA['
+            // etc/XQFT.g:532:20: ( '<![CDATA[' )
+            // etc/XQFT.g:532:22: '<![CDATA['
             {
             match("<![CDATA["); if (failed) return ;
 
 
             }
 
-            this.type = _type;
         }
         finally {
         }
     }
-    // $ANTLR end LEFTCDATA
+    // $ANTLR end LCDATASi
 
-    // $ANTLR start VALIDATE
-    public final void mVALIDATE() throws RecognitionException {
+    // $ANTLR start RCDATASi
+    public final void mRCDATASi() throws RecognitionException {
         try {
-            int _type = VALIDATE;
-            // etc/XQFT.g:69:10: ( 'validate' )
-            // etc/XQFT.g:69:12: 'validate'
+            // etc/XQFT.g:533:21: ( ']]>' )
+            // etc/XQFT.g:533:23: ']]>'
             {
-            match("validate"); if (failed) return ;
+            match("]]>"); if (failed) return ;
 
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end RCDATASi
+
+    // $ANTLR start Comment
+    public final void mComment() throws RecognitionException {
+        try {
+            int _type = Comment;
+            // etc/XQFT.g:535:22: ( LXQCOMMENTSi ( Comment | ( COLONSi ~ RPARSi )=> COLONSi | ( LPARSi ~ COLONSi )=> LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )* RXQCOMMENTSi )
+            // etc/XQFT.g:535:24: LXQCOMMENTSi ( Comment | ( COLONSi ~ RPARSi )=> COLONSi | ( LPARSi ~ COLONSi )=> LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )* RXQCOMMENTSi
+            {
+            mLXQCOMMENTSi(); if (failed) return ;
+            // etc/XQFT.g:536:8: ( Comment | ( COLONSi ~ RPARSi )=> COLONSi | ( LPARSi ~ COLONSi )=> LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )*
+            loop2:
+            do {
+                int alt2=5;
+                int LA2_0 = input.LA(1);
+
+                if ( (LA2_0==':') ) {
+                    int LA2_1 = input.LA(2);
+
+                    if ( (LA2_1==')') ) {
+                        int LA2_4 = input.LA(3);
+
+                        if ( (LA2_4==':') && (synpred1())) {
+                            alt2=2;
+                        }
+                        else if ( (LA2_4=='(') && (synpred1())) {
+                            alt2=2;
+                        }
+                        else if ( (LA2_4=='\u0000'||(LA2_4>='\t' && LA2_4<='\n')||LA2_4=='\r'||(LA2_4>=' ' && LA2_4<='\'')||(LA2_4>=')' && LA2_4<='9')||(LA2_4>=';' && LA2_4<='\uD7FF')||(LA2_4>='\uE000' && LA2_4<='\uFFFE')) && (synpred1())) {
+                            alt2=2;
+                        }
+
+
+                    }
+                    else if ( (LA2_1==':') && (synpred1())) {
+                        alt2=2;
+                    }
+                    else if ( (LA2_1=='(') && (synpred1())) {
+                        alt2=2;
+                    }
+                    else if ( (LA2_1=='\u0000'||(LA2_1>='\t' && LA2_1<='\n')||LA2_1=='\r'||(LA2_1>=' ' && LA2_1<='\'')||(LA2_1>='*' && LA2_1<='9')||(LA2_1>=';' && LA2_1<='\uD7FF')||(LA2_1>='\uE000' && LA2_1<='\uFFFE')) && (synpred1())) {
+                        alt2=2;
+                    }
+
+
+                }
+                else if ( (LA2_0=='(') ) {
+                    int LA2_2 = input.LA(2);
+
+                    if ( (LA2_2==':') ) {
+                        int LA2_8 = input.LA(3);
+
+                        if ( (true) ) {
+                            alt2=1;
+                        }
+                        else if ( (synpred2()) ) {
+                            alt2=3;
+                        }
+
+
+                    }
+                    else if ( (LA2_2=='(') && (synpred2())) {
+                        alt2=3;
+                    }
+                    else if ( (LA2_2=='\u0000'||(LA2_2>='\t' && LA2_2<='\n')||LA2_2=='\r'||(LA2_2>=' ' && LA2_2<='\'')||(LA2_2>=')' && LA2_2<='9')||(LA2_2>=';' && LA2_2<='\uD7FF')||(LA2_2>='\uE000' && LA2_2<='\uFFFE')) && (synpred2())) {
+                        alt2=3;
+                    }
+
+
+                }
+                else if ( (LA2_0=='\u0000'||(LA2_0>='\t' && LA2_0<='\n')||LA2_0=='\r'||(LA2_0>=' ' && LA2_0<='\'')||(LA2_0>=')' && LA2_0<='9')||(LA2_0>=';' && LA2_0<='\uD7FF')||(LA2_0>='\uE000' && LA2_0<='\uFFFE')) ) {
+                    alt2=4;
+                }
+
+
+                switch (alt2) {
+            	case 1 :
+            	    // etc/XQFT.g:536:9: Comment
+            	    {
+            	    mComment(); if (failed) return ;
+
+            	    }
+            	    break;
+            	case 2 :
+            	    // etc/XQFT.g:536:19: ( COLONSi ~ RPARSi )=> COLONSi
+            	    {
+            	    mCOLONSi(); if (failed) return ;
+
+            	    }
+            	    break;
+            	case 3 :
+            	    // etc/XQFT.g:536:48: ( LPARSi ~ COLONSi )=> LPARSi
+            	    {
+            	    mLPARSi(); if (failed) return ;
+
+            	    }
+            	    break;
+            	case 4 :
+            	    // etc/XQFT.g:536:76: ~ ( LPARSi | COLONSi | NotChar )
+            	    {
+            	    if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='\'')||(input.LA(1)>=')' && input.LA(1)<='9')||(input.LA(1)>=';' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFE') ) {
+            	        input.consume();
+            	    failed=false;
+            	    }
+            	    else {
+            	        if (backtracking>0) {failed=true; return ;}
+            	        MismatchedSetException mse =
+            	            new MismatchedSetException(null,input);
+            	        recover(mse);    throw mse;
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop2;
+                }
+            } while (true);
+
+            mRXQCOMMENTSi(); if (failed) return ;
+            if ( backtracking==1 ) {
+              channel=HIDDEN;
+            }
 
             }
 
@@ -1407,17 +501,261 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end VALIDATE
+    // $ANTLR end Comment
 
-    // $ANTLR start EMPTY_SEQUENCE
-    public final void mEMPTY_SEQUENCE() throws RecognitionException {
+    // $ANTLR start LXQCOMMENTSi
+    public final void mLXQCOMMENTSi() throws RecognitionException {
         try {
-            int _type = EMPTY_SEQUENCE;
-            // etc/XQFT.g:70:16: ( 'empty-sequence' )
-            // etc/XQFT.g:70:18: 'empty-sequence'
+            // etc/XQFT.g:538:23: ( '(:' )
+            // etc/XQFT.g:538:25: '(:'
             {
-            match("empty-sequence"); if (failed) return ;
+            match("(:"); if (failed) return ;
 
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LXQCOMMENTSi
+
+    // $ANTLR start RXQCOMMENTSi
+    public final void mRXQCOMMENTSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:539:23: ( ':)' )
+            // etc/XQFT.g:539:25: ':)'
+            {
+            match(":)"); if (failed) return ;
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end RXQCOMMENTSi
+
+    // $ANTLR start CharRef
+    public final void mCharRef() throws RecognitionException {
+        try {
+            int _type = CharRef;
+            // etc/XQFT.g:541:22: ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0=='&') ) {
+                int LA5_1 = input.LA(2);
+
+                if ( (LA5_1=='#') ) {
+                    int LA5_2 = input.LA(3);
+
+                    if ( (LA5_2=='x') ) {
+                        alt5=2;
+                    }
+                    else if ( ((LA5_2>='0' && LA5_2<='9')) ) {
+                        alt5=1;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return ;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("541:1: CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 5, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    if (backtracking>0) {failed=true; return ;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("541:1: CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 5, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("541:1: CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 5, 0, input);
+
+                throw nvae;
+            }
+            switch (alt5) {
+                case 1 :
+                    // etc/XQFT.g:541:24: CREFDECSi ( '0' .. '9' )+ SEMICOLONSi
+                    {
+                    mCREFDECSi(); if (failed) return ;
+                    // etc/XQFT.g:541:34: ( '0' .. '9' )+
+                    int cnt3=0;
+                    loop3:
+                    do {
+                        int alt3=2;
+                        int LA3_0 = input.LA(1);
+
+                        if ( ((LA3_0>='0' && LA3_0<='9')) ) {
+                            alt3=1;
+                        }
+
+
+                        switch (alt3) {
+                    	case 1 :
+                    	    // etc/XQFT.g:541:35: '0' .. '9'
+                    	    {
+                    	    matchRange('0','9'); if (failed) return ;
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt3 >= 1 ) break loop3;
+                    	    if (backtracking>0) {failed=true; return ;}
+                                EarlyExitException eee =
+                                    new EarlyExitException(3, input);
+                                throw eee;
+                        }
+                        cnt3++;
+                    } while (true);
+
+                    mSEMICOLONSi(); if (failed) return ;
+
+                    }
+                    break;
+                case 2 :
+                    // etc/XQFT.g:542:9: CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi
+                    {
+                    mCREFHEXSi(); if (failed) return ;
+                    // etc/XQFT.g:542:19: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+                    int cnt4=0;
+                    loop4:
+                    do {
+                        int alt4=2;
+                        int LA4_0 = input.LA(1);
+
+                        if ( ((LA4_0>='0' && LA4_0<='9')||(LA4_0>='A' && LA4_0<='F')||(LA4_0>='a' && LA4_0<='f')) ) {
+                            alt4=1;
+                        }
+
+
+                        switch (alt4) {
+                    	case 1 :
+                    	    // etc/XQFT.g:
+                    	    {
+                    	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
+                    	        input.consume();
+                    	    failed=false;
+                    	    }
+                    	    else {
+                    	        if (backtracking>0) {failed=true; return ;}
+                    	        MismatchedSetException mse =
+                    	            new MismatchedSetException(null,input);
+                    	        recover(mse);    throw mse;
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt4 >= 1 ) break loop4;
+                    	    if (backtracking>0) {failed=true; return ;}
+                                EarlyExitException eee =
+                                    new EarlyExitException(4, input);
+                                throw eee;
+                        }
+                        cnt4++;
+                    } while (true);
+
+                    mSEMICOLONSi(); if (failed) return ;
+
+                    }
+                    break;
+
+            }
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end CharRef
+
+    // $ANTLR start CREFDECSi
+    public final void mCREFDECSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:543:21: ( '&#' )
+            // etc/XQFT.g:543:23: '&#'
+            {
+            match("&#"); if (failed) return ;
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end CREFDECSi
+
+    // $ANTLR start CREFHEXSi
+    public final void mCREFHEXSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:544:21: ( '&#x' )
+            // etc/XQFT.g:544:23: '&#x'
+            {
+            match("&#x"); if (failed) return ;
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end CREFHEXSi
+
+    // $ANTLR start DirCommentConstructor
+    public final void mDirCommentConstructor() throws RecognitionException {
+        try {
+            int _type = DirCommentConstructor;
+            // etc/XQFT.g:546:25: ( LCOMMENTSi ( CharNotMinus | ( MINUSSi CharNotMinus )=> MINUSSi ) RCOMMENTSi )
+            // etc/XQFT.g:546:27: LCOMMENTSi ( CharNotMinus | ( MINUSSi CharNotMinus )=> MINUSSi ) RCOMMENTSi
+            {
+            mLCOMMENTSi(); if (failed) return ;
+            // etc/XQFT.g:546:38: ( CharNotMinus | ( MINUSSi CharNotMinus )=> MINUSSi )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( ((LA6_0>='\t' && LA6_0<='\n')||LA6_0=='\r'||(LA6_0>=' ' && LA6_0<=',')||(LA6_0>='.' && LA6_0<='\uD7FF')||(LA6_0>='\uE000' && LA6_0<='\uFFFD')) ) {
+                alt6=1;
+            }
+            else if ( (LA6_0=='-') && (synpred3())) {
+                alt6=2;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("546:38: ( CharNotMinus | ( MINUSSi CharNotMinus )=> MINUSSi )", 6, 0, input);
+
+                throw nvae;
+            }
+            switch (alt6) {
+                case 1 :
+                    // etc/XQFT.g:546:39: CharNotMinus
+                    {
+                    mCharNotMinus(); if (failed) return ;
+
+                    }
+                    break;
+                case 2 :
+                    // etc/XQFT.g:546:54: ( MINUSSi CharNotMinus )=> MINUSSi
+                    {
+                    mMINUSSi(); if (failed) return ;
+
+                    }
+                    break;
+
+            }
+
+            mRCOMMENTSi(); if (failed) return ;
 
             }
 
@@ -1426,713 +764,14 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end EMPTY_SEQUENCE
+    // $ANTLR end DirCommentConstructor
 
-    // $ANTLR start INSENSITIVE
-    public final void mINSENSITIVE() throws RecognitionException {
+    // $ANTLR start LCOMMENTSi
+    public final void mLCOMMENTSi() throws RecognitionException {
         try {
-            int _type = INSENSITIVE;
-            // etc/XQFT.g:71:13: ( 'insensitive' )
-            // etc/XQFT.g:71:15: 'insensitive'
-            {
-            match("insensitive"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end INSENSITIVE
-
-    // $ANTLR start NOPRESERVE
-    public final void mNOPRESERVE() throws RecognitionException {
-        try {
-            int _type = NOPRESERVE;
-            // etc/XQFT.g:72:12: ( 'no-preserve' )
-            // etc/XQFT.g:72:14: 'no-preserve'
-            {
-            match("no-preserve"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end NOPRESERVE
-
-    // $ANTLR start THEN
-    public final void mTHEN() throws RecognitionException {
-        try {
-            int _type = THEN;
-            // etc/XQFT.g:73:6: ( 'then' )
-            // etc/XQFT.g:73:8: 'then'
-            {
-            match("then"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end THEN
-
-    // $ANTLR start COMMASi
-    public final void mCOMMASi() throws RecognitionException {
-        try {
-            int _type = COMMASi;
-            // etc/XQFT.g:74:9: ( ',' )
-            // etc/XQFT.g:74:11: ','
-            {
-            match(','); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end COMMASi
-
-    // $ANTLR start LET
-    public final void mLET() throws RecognitionException {
-        try {
-            int _type = LET;
-            // etc/XQFT.g:75:5: ( 'let' )
-            // etc/XQFT.g:75:7: 'let'
-            {
-            match("let"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LET
-
-    // $ANTLR start WINDOW
-    public final void mWINDOW() throws RecognitionException {
-        try {
-            int _type = WINDOW;
-            // etc/XQFT.g:76:8: ( 'window' )
-            // etc/XQFT.g:76:10: 'window'
-            {
-            match("window"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end WINDOW
-
-    // $ANTLR start SCORE
-    public final void mSCORE() throws RecognitionException {
-        try {
-            int _type = SCORE;
-            // etc/XQFT.g:77:7: ( 'score' )
-            // etc/XQFT.g:77:9: 'score'
-            {
-            match("score"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end SCORE
-
-    // $ANTLR start LANGUAGE
-    public final void mLANGUAGE() throws RecognitionException {
-        try {
-            int _type = LANGUAGE;
-            // etc/XQFT.g:78:10: ( 'language' )
-            // etc/XQFT.g:78:12: 'language'
-            {
-            match("language"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LANGUAGE
-
-    // $ANTLR start OPTION
-    public final void mOPTION() throws RecognitionException {
-        try {
-            int _type = OPTION;
-            // etc/XQFT.g:79:8: ( 'option' )
-            // etc/XQFT.g:79:10: 'option'
-            {
-            match("option"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end OPTION
-
-    // $ANTLR start STEMMING
-    public final void mSTEMMING() throws RecognitionException {
-        try {
-            int _type = STEMMING;
-            // etc/XQFT.g:80:10: ( 'stemming' )
-            // etc/XQFT.g:80:12: 'stemming'
-            {
-            match("stemming"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end STEMMING
-
-    // $ANTLR start RIGHTBRACKETSi
-    public final void mRIGHTBRACKETSi() throws RecognitionException {
-        try {
-            int _type = RIGHTBRACKETSi;
-            // etc/XQFT.g:81:16: ( ']' )
-            // etc/XQFT.g:81:18: ']'
-            {
-            match(']'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end RIGHTBRACKETSi
-
-    // $ANTLR start GREATEST
-    public final void mGREATEST() throws RecognitionException {
-        try {
-            int _type = GREATEST;
-            // etc/XQFT.g:82:10: ( 'greatest' )
-            // etc/XQFT.g:82:12: 'greatest'
-            {
-            match("greatest"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end GREATEST
-
-    // $ANTLR start LEVELS
-    public final void mLEVELS() throws RecognitionException {
-        try {
-            int _type = LEVELS;
-            // etc/XQFT.g:83:8: ( 'levels' )
-            // etc/XQFT.g:83:10: 'levels'
-            {
-            match("levels"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LEVELS
-
-    // $ANTLR start SENSITIVE
-    public final void mSENSITIVE() throws RecognitionException {
-        try {
-            int _type = SENSITIVE;
-            // etc/XQFT.g:84:11: ( 'sensitive' )
-            // etc/XQFT.g:84:13: 'sensitive'
-            {
-            match("sensitive"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end SENSITIVE
-
-    // $ANTLR start FTNOT
-    public final void mFTNOT() throws RecognitionException {
-        try {
-            int _type = FTNOT;
-            // etc/XQFT.g:85:7: ( 'ftnot' )
-            // etc/XQFT.g:85:9: 'ftnot'
-            {
-            match("ftnot"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end FTNOT
-
-    // $ANTLR start DIV
-    public final void mDIV() throws RecognitionException {
-        try {
-            int _type = DIV;
-            // etc/XQFT.g:86:5: ( 'div' )
-            // etc/XQFT.g:86:7: 'div'
-            {
-            match("div"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DIV
-
-    // $ANTLR start PLUSSi
-    public final void mPLUSSi() throws RecognitionException {
-        try {
-            int _type = PLUSSi;
-            // etc/XQFT.g:87:8: ( '+' )
-            // etc/XQFT.g:87:10: '+'
-            {
-            match('+'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end PLUSSi
-
-    // $ANTLR start FTAND
-    public final void mFTAND() throws RecognitionException {
-        try {
-            int _type = FTAND;
-            // etc/XQFT.g:88:7: ( 'ftand' )
-            // etc/XQFT.g:88:9: 'ftand'
-            {
-            match("ftand"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end FTAND
-
-    // $ANTLR start AT
-    public final void mAT() throws RecognitionException {
-        try {
-            int _type = AT;
-            // etc/XQFT.g:89:4: ( 'at' )
-            // etc/XQFT.g:89:6: 'at'
-            {
-            match("at"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end AT
-
-    // $ANTLR start SCHEMAATTRIBUTE
-    public final void mSCHEMAATTRIBUTE() throws RecognitionException {
-        try {
-            int _type = SCHEMAATTRIBUTE;
-            // etc/XQFT.g:90:17: ( 'schema-attribute' )
-            // etc/XQFT.g:90:19: 'schema-attribute'
-            {
-            match("schema-attribute"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end SCHEMAATTRIBUTE
-
-    // $ANTLR start ORDER
-    public final void mORDER() throws RecognitionException {
-        try {
-            int _type = ORDER;
-            // etc/XQFT.g:91:7: ( 'order' )
-            // etc/XQFT.g:91:9: 'order'
-            {
-            match("order"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ORDER
-
-    // $ANTLR start OF
-    public final void mOF() throws RecognitionException {
-        try {
-            int _type = OF;
-            // etc/XQFT.g:92:4: ( 'of' )
-            // etc/XQFT.g:92:6: 'of'
-            {
-            match("of"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end OF
-
-    // $ANTLR start UNION
-    public final void mUNION() throws RecognitionException {
-        try {
-            int _type = UNION;
-            // etc/XQFT.g:93:7: ( 'union' )
-            // etc/XQFT.g:93:9: 'union'
-            {
-            match("union"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end UNION
-
-    // $ANTLR start FROM
-    public final void mFROM() throws RecognitionException {
-        try {
-            int _type = FROM;
-            // etc/XQFT.g:94:6: ( 'from' )
-            // etc/XQFT.g:94:8: 'from'
-            {
-            match("from"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end FROM
-
-    // $ANTLR start COLLATION
-    public final void mCOLLATION() throws RecognitionException {
-        try {
-            int _type = COLLATION;
-            // etc/XQFT.g:95:11: ( 'collation' )
-            // etc/XQFT.g:95:13: 'collation'
-            {
-            match("collation"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end COLLATION
-
-    // $ANTLR start DOUBLERIGHTBRACES
-    public final void mDOUBLERIGHTBRACES() throws RecognitionException {
-        try {
-            int _type = DOUBLERIGHTBRACES;
-            // etc/XQFT.g:96:19: ( '}}' )
-            // etc/XQFT.g:96:21: '}}'
-            {
-            match("}}"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DOUBLERIGHTBRACES
-
-    // $ANTLR start VARIABLE
-    public final void mVARIABLE() throws RecognitionException {
-        try {
-            int _type = VARIABLE;
-            // etc/XQFT.g:97:10: ( 'variable' )
-            // etc/XQFT.g:97:12: 'variable'
-            {
-            match("variable"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end VARIABLE
-
-    // $ANTLR start OR
-    public final void mOR() throws RecognitionException {
-        try {
-            int _type = OR;
-            // etc/XQFT.g:98:4: ( 'or' )
-            // etc/XQFT.g:98:6: 'or'
-            {
-            match("or"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end OR
-
-    // $ANTLR start FTOR
-    public final void mFTOR() throws RecognitionException {
-        try {
-            int _type = FTOR;
-            // etc/XQFT.g:99:6: ( 'ftor' )
-            // etc/XQFT.g:99:8: 'ftor'
-            {
-            match("ftor"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end FTOR
-
-    // $ANTLR start DOUBLESLASH
-    public final void mDOUBLESLASH() throws RecognitionException {
-        try {
-            int _type = DOUBLESLASH;
-            // etc/XQFT.g:100:13: ( '//' )
-            // etc/XQFT.g:100:15: '//'
-            {
-            match("//"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DOUBLESLASH
-
-    // $ANTLR start LEAST
-    public final void mLEAST() throws RecognitionException {
-        try {
-            int _type = LEAST;
-            // etc/XQFT.g:101:7: ( 'least' )
-            // etc/XQFT.g:101:9: 'least'
-            {
-            match("least"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LEAST
-
-    // $ANTLR start IF
-    public final void mIF() throws RecognitionException {
-        try {
-            int _type = IF;
-            // etc/XQFT.g:102:4: ( 'if' )
-            // etc/XQFT.g:102:6: 'if'
-            {
-            match("if"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end IF
-
-    // $ANTLR start BASEURI
-    public final void mBASEURI() throws RecognitionException {
-        try {
-            int _type = BASEURI;
-            // etc/XQFT.g:103:9: ( 'base-uri' )
-            // etc/XQFT.g:103:11: 'base-uri'
-            {
-            match("base-uri"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end BASEURI
-
-    // $ANTLR start DESCENDING
-    public final void mDESCENDING() throws RecognitionException {
-        try {
-            int _type = DESCENDING;
-            // etc/XQFT.g:104:12: ( 'descending' )
-            // etc/XQFT.g:104:14: 'descending'
-            {
-            match("descending"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DESCENDING
-
-    // $ANTLR start STARSi
-    public final void mSTARSi() throws RecognitionException {
-        try {
-            int _type = STARSi;
-            // etc/XQFT.g:105:8: ( '*' )
-            // etc/XQFT.g:105:10: '*'
-            {
-            match('*'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end STARSi
-
-    // $ANTLR start NAMESPACE
-    public final void mNAMESPACE() throws RecognitionException {
-        try {
-            int _type = NAMESPACE;
-            // etc/XQFT.g:106:11: ( 'namespace' )
-            // etc/XQFT.g:106:13: 'namespace'
-            {
-            match("namespace"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end NAMESPACE
-
-    // $ANTLR start AS
-    public final void mAS() throws RecognitionException {
-        try {
-            int _type = AS;
-            // etc/XQFT.g:107:4: ( 'as' )
-            // etc/XQFT.g:107:6: 'as'
-            {
-            match("as"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end AS
-
-    // $ANTLR start LEFTXMLCOMMENT
-    public final void mLEFTXMLCOMMENT() throws RecognitionException {
-        try {
-            int _type = LEFTXMLCOMMENT;
-            // etc/XQFT.g:108:16: ( '<!--' )
-            // etc/XQFT.g:108:18: '<!--'
+            int _type = LCOMMENTSi;
+            // etc/XQFT.g:548:16: ( '<!--' )
+            // etc/XQFT.g:548:18: '<!--'
             {
             match("<!--"); if (failed) return ;
 
@@ -2144,165 +783,14 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end LEFTXMLCOMMENT
+    // $ANTLR end LCOMMENTSi
 
-    // $ANTLR start BY
-    public final void mBY() throws RecognitionException {
+    // $ANTLR start LPISi
+    public final void mLPISi() throws RecognitionException {
         try {
-            int _type = BY;
-            // etc/XQFT.g:109:4: ( 'by' )
-            // etc/XQFT.g:109:6: 'by'
-            {
-            match("by"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end BY
-
-    // $ANTLR start TEXT
-    public final void mTEXT() throws RecognitionException {
-        try {
-            int _type = TEXT;
-            // etc/XQFT.g:110:6: ( 'text' )
-            // etc/XQFT.g:110:8: 'text'
-            {
-            match("text"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end TEXT
-
-    // $ANTLR start STABLE
-    public final void mSTABLE() throws RecognitionException {
-        try {
-            int _type = STABLE;
-            // etc/XQFT.g:111:8: ( 'stable' )
-            // etc/XQFT.g:111:10: 'stable'
-            {
-            match("stable"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end STABLE
-
-    // $ANTLR start LEFTBRACKETSi
-    public final void mLEFTBRACKETSi() throws RecognitionException {
-        try {
-            int _type = LEFTBRACKETSi;
-            // etc/XQFT.g:112:15: ( '[' )
-            // etc/XQFT.g:112:17: '['
-            {
-            match('['); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LEFTBRACKETSi
-
-    // $ANTLR start UNORDERED
-    public final void mUNORDERED() throws RecognitionException {
-        try {
-            int _type = UNORDERED;
-            // etc/XQFT.g:113:11: ( 'unordered' )
-            // etc/XQFT.g:113:13: 'unordered'
-            {
-            match("unordered"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end UNORDERED
-
-    // $ANTLR start RIGHTCDATA
-    public final void mRIGHTCDATA() throws RecognitionException {
-        try {
-            int _type = RIGHTCDATA;
-            // etc/XQFT.g:114:12: ( ']]>' )
-            // etc/XQFT.g:114:14: ']]>'
-            {
-            match("]]>"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end RIGHTCDATA
-
-    // $ANTLR start EXACTLY
-    public final void mEXACTLY() throws RecognitionException {
-        try {
-            int _type = EXACTLY;
-            // etc/XQFT.g:115:9: ( 'exactly' )
-            // etc/XQFT.g:115:11: 'exactly'
-            {
-            match("exactly"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end EXACTLY
-
-    // $ANTLR start WITH
-    public final void mWITH() throws RecognitionException {
-        try {
-            int _type = WITH;
-            // etc/XQFT.g:116:6: ( 'with' )
-            // etc/XQFT.g:116:8: 'with'
-            {
-            match("with"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end WITH
-
-    // $ANTLR start LEFTPITARGET
-    public final void mLEFTPITARGET() throws RecognitionException {
-        try {
-            int _type = LEFTPITARGET;
-            // etc/XQFT.g:117:14: ( '<?' )
-            // etc/XQFT.g:117:16: '<?'
+            int _type = LPISi;
+            // etc/XQFT.g:549:12: ( '<?' )
+            // etc/XQFT.g:549:14: '<?'
             {
             match("<?"); if (failed) return ;
 
@@ -2314,769 +802,14 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end LEFTPITARGET
+    // $ANTLR end LPISi
 
-    // $ANTLR start WITHOUT
-    public final void mWITHOUT() throws RecognitionException {
+    // $ANTLR start LENDTAGSi
+    public final void mLENDTAGSi() throws RecognitionException {
         try {
-            int _type = WITHOUT;
-            // etc/XQFT.g:118:9: ( 'without' )
-            // etc/XQFT.g:118:11: 'without'
-            {
-            match("without"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end WITHOUT
-
-    // $ANTLR start DIACRITICS
-    public final void mDIACRITICS() throws RecognitionException {
-        try {
-            int _type = DIACRITICS;
-            // etc/XQFT.g:119:12: ( 'diacritics' )
-            // etc/XQFT.g:119:14: 'diacritics'
-            {
-            match("diacritics"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DIACRITICS
-
-    // $ANTLR start EXTERNAL
-    public final void mEXTERNAL() throws RecognitionException {
-        try {
-            int _type = EXTERNAL;
-            // etc/XQFT.g:120:10: ( 'external' )
-            // etc/XQFT.g:120:12: 'external'
-            {
-            match("external"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end EXTERNAL
-
-    // $ANTLR start RIGHTPARENTHESISSi
-    public final void mRIGHTPARENTHESISSi() throws RecognitionException {
-        try {
-            int _type = RIGHTPARENTHESISSi;
-            // etc/XQFT.g:121:20: ( ')' )
-            // etc/XQFT.g:121:22: ')'
-            {
-            match(')'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end RIGHTPARENTHESISSi
-
-    // $ANTLR start RIGHTXMLCOMMENT
-    public final void mRIGHTXMLCOMMENT() throws RecognitionException {
-        try {
-            int _type = RIGHTXMLCOMMENT;
-            // etc/XQFT.g:122:17: ( '-->' )
-            // etc/XQFT.g:122:19: '-->'
-            {
-            match("-->"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end RIGHTXMLCOMMENT
-
-    // $ANTLR start MODULE
-    public final void mMODULE() throws RecognitionException {
-        try {
-            int _type = MODULE;
-            // etc/XQFT.g:123:8: ( 'module' )
-            // etc/XQFT.g:123:10: 'module'
-            {
-            match("module"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end MODULE
-
-    // $ANTLR start RETURN
-    public final void mRETURN() throws RecognitionException {
-        try {
-            int _type = RETURN;
-            // etc/XQFT.g:124:8: ( 'return' )
-            // etc/XQFT.g:124:10: 'return'
-            {
-            match("return"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end RETURN
-
-    // $ANTLR start COMMENT
-    public final void mCOMMENT() throws RecognitionException {
-        try {
-            int _type = COMMENT;
-            // etc/XQFT.g:125:9: ( 'comment' )
-            // etc/XQFT.g:125:11: 'comment'
-            {
-            match("comment"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end COMMENT
-
-    // $ANTLR start DEFAULT
-    public final void mDEFAULT() throws RecognitionException {
-        try {
-            int _type = DEFAULT;
-            // etc/XQFT.g:126:9: ( 'default' )
-            // etc/XQFT.g:126:11: 'default'
-            {
-            match("default"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DEFAULT
-
-    // $ANTLR start OCCURS
-    public final void mOCCURS() throws RecognitionException {
-        try {
-            int _type = OCCURS;
-            // etc/XQFT.g:127:8: ( 'occurs' )
-            // etc/XQFT.g:127:10: 'occurs'
-            {
-            match("occurs"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end OCCURS
-
-    // $ANTLR start ENCODING
-    public final void mENCODING() throws RecognitionException {
-        try {
-            int _type = ENCODING;
-            // etc/XQFT.g:128:10: ( 'encoding' )
-            // etc/XQFT.g:128:12: 'encoding'
-            {
-            match("encoding"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ENCODING
-
-    // $ANTLR start DOUBLELEFTBRACES
-    public final void mDOUBLELEFTBRACES() throws RecognitionException {
-        try {
-            int _type = DOUBLELEFTBRACES;
-            // etc/XQFT.g:129:18: ( '{{' )
-            // etc/XQFT.g:129:20: '{{'
-            {
-            match("{{"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DOUBLELEFTBRACES
-
-    // $ANTLR start SCHEMA
-    public final void mSCHEMA() throws RecognitionException {
-        try {
-            int _type = SCHEMA;
-            // etc/XQFT.g:130:8: ( 'schema' )
-            // etc/XQFT.g:130:10: 'schema'
-            {
-            match("schema"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end SCHEMA
-
-    // $ANTLR start ELEMENT
-    public final void mELEMENT() throws RecognitionException {
-        try {
-            int _type = ELEMENT;
-            // etc/XQFT.g:131:9: ( 'element' )
-            // etc/XQFT.g:131:11: 'element'
-            {
-            match("element"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ELEMENT
-
-    // $ANTLR start LEFTPARENTHESISSi
-    public final void mLEFTPARENTHESISSi() throws RecognitionException {
-        try {
-            int _type = LEFTPARENTHESISSi;
-            // etc/XQFT.g:132:19: ( '(' )
-            // etc/XQFT.g:132:21: '('
-            {
-            match('('); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LEFTPARENTHESISSi
-
-    // $ANTLR start COPYNAMESPACES
-    public final void mCOPYNAMESPACES() throws RecognitionException {
-        try {
-            int _type = COPYNAMESPACES;
-            // etc/XQFT.g:133:16: ( 'copy-namespaces' )
-            // etc/XQFT.g:133:18: 'copy-namespaces'
-            {
-            match("copy-namespaces"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end COPYNAMESPACES
-
-    // $ANTLR start WILDCARDS
-    public final void mWILDCARDS() throws RecognitionException {
-        try {
-            int _type = WILDCARDS;
-            // etc/XQFT.g:134:11: ( 'wildcards' )
-            // etc/XQFT.g:134:13: 'wildcards'
-            {
-            match("wildcards"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end WILDCARDS
-
-    // $ANTLR start DECLARE
-    public final void mDECLARE() throws RecognitionException {
-        try {
-            int _type = DECLARE;
-            // etc/XQFT.g:135:9: ( 'declare' )
-            // etc/XQFT.g:135:11: 'declare'
-            {
-            match("declare"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DECLARE
-
-    // $ANTLR start AND
-    public final void mAND() throws RecognitionException {
-        try {
-            int _type = AND;
-            // etc/XQFT.g:136:5: ( 'and' )
-            // etc/XQFT.g:136:7: 'and'
-            {
-            match("and"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end AND
-
-    // $ANTLR start PRESERVE
-    public final void mPRESERVE() throws RecognitionException {
-        try {
-            int _type = PRESERVE;
-            // etc/XQFT.g:137:10: ( 'preserve' )
-            // etc/XQFT.g:137:12: 'preserve'
-            {
-            match("preserve"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end PRESERVE
-
-    // $ANTLR start NOINHERIT
-    public final void mNOINHERIT() throws RecognitionException {
-        try {
-            int _type = NOINHERIT;
-            // etc/XQFT.g:138:11: ( 'no-inherit' )
-            // etc/XQFT.g:138:13: 'no-inherit'
-            {
-            match("no-inherit"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end NOINHERIT
-
-    // $ANTLR start NOT
-    public final void mNOT() throws RecognitionException {
-        try {
-            int _type = NOT;
-            // etc/XQFT.g:139:5: ( 'not' )
-            // etc/XQFT.g:139:7: 'not'
-            {
-            match("not"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end NOT
-
-    // $ANTLR start INTERSECT
-    public final void mINTERSECT() throws RecognitionException {
-        try {
-            int _type = INTERSECT;
-            // etc/XQFT.g:140:11: ( 'intersect' )
-            // etc/XQFT.g:140:13: 'intersect'
-            {
-            match("intersect"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end INTERSECT
-
-    // $ANTLR start FUNCTION
-    public final void mFUNCTION() throws RecognitionException {
-        try {
-            int _type = FUNCTION;
-            // etc/XQFT.g:141:10: ( 'function' )
-            // etc/XQFT.g:141:12: 'function'
-            {
-            match("function"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end FUNCTION
-
-    // $ANTLR start ATSi
-    public final void mATSi() throws RecognitionException {
-        try {
-            int _type = ATSi;
-            // etc/XQFT.g:142:6: ( '@' )
-            // etc/XQFT.g:142:8: '@'
-            {
-            match('@'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ATSi
-
-    // $ANTLR start TIMES
-    public final void mTIMES() throws RecognitionException {
-        try {
-            int _type = TIMES;
-            // etc/XQFT.g:143:7: ( 'times' )
-            // etc/XQFT.g:143:9: 'times'
-            {
-            match("times"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end TIMES
-
-    // $ANTLR start ATTRIBUTE
-    public final void mATTRIBUTE() throws RecognitionException {
-        try {
-            int _type = ATTRIBUTE;
-            // etc/XQFT.g:144:11: ( 'attribute' )
-            // etc/XQFT.g:144:13: 'attribute'
-            {
-            match("attribute"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ATTRIBUTE
-
-    // $ANTLR start ASSIGNMENTOPERATOR
-    public final void mASSIGNMENTOPERATOR() throws RecognitionException {
-        try {
-            int _type = ASSIGNMENTOPERATOR;
-            // etc/XQFT.g:145:20: ( ':=' )
-            // etc/XQFT.g:145:22: ':='
-            {
-            match(":="); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end ASSIGNMENTOPERATOR
-
-    // $ANTLR start FTCONTAINS
-    public final void mFTCONTAINS() throws RecognitionException {
-        try {
-            int _type = FTCONTAINS;
-            // etc/XQFT.g:146:12: ( 'ftcontains' )
-            // etc/XQFT.g:146:14: 'ftcontains'
-            {
-            match("ftcontains"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end FTCONTAINS
-
-    // $ANTLR start RELATIONSHIP
-    public final void mRELATIONSHIP() throws RecognitionException {
-        try {
-            int _type = RELATIONSHIP;
-            // etc/XQFT.g:147:14: ( 'relationship' )
-            // etc/XQFT.g:147:16: 'relationship'
-            {
-            match("relationship"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end RELATIONSHIP
-
-    // $ANTLR start THESAURUS
-    public final void mTHESAURUS() throws RecognitionException {
-        try {
-            int _type = THESAURUS;
-            // etc/XQFT.g:148:11: ( 'thesaurus' )
-            // etc/XQFT.g:148:13: 'thesaurus'
-            {
-            match("thesaurus"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end THESAURUS
-
-    // $ANTLR start MOD
-    public final void mMOD() throws RecognitionException {
-        try {
-            int _type = MOD;
-            // etc/XQFT.g:149:5: ( 'mod' )
-            // etc/XQFT.g:149:7: 'mod'
-            {
-            match("mod"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end MOD
-
-    // $ANTLR start RIGHTBRACESi
-    public final void mRIGHTBRACESi() throws RecognitionException {
-        try {
-            int _type = RIGHTBRACESi;
-            // etc/XQFT.g:150:14: ( '}' )
-            // etc/XQFT.g:150:16: '}'
-            {
-            match('}'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end RIGHTBRACESi
-
-    // $ANTLR start NODE
-    public final void mNODE() throws RecognitionException {
-        try {
-            int _type = NODE;
-            // etc/XQFT.g:151:6: ( 'node' )
-            // etc/XQFT.g:151:8: 'node'
-            {
-            match("node"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end NODE
-
-    // $ANTLR start SOME
-    public final void mSOME() throws RecognitionException {
-        try {
-            int _type = SOME;
-            // etc/XQFT.g:152:6: ( 'some' )
-            // etc/XQFT.g:152:8: 'some'
-            {
-            match("some"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end SOME
-
-    // $ANTLR start QUESTIONMARKSi
-    public final void mQUESTIONMARKSi() throws RecognitionException {
-        try {
-            int _type = QUESTIONMARKSi;
-            // etc/XQFT.g:153:16: ( '?' )
-            // etc/XQFT.g:153:18: '?'
-            {
-            match('?'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end QUESTIONMARKSi
-
-    // $ANTLR start STRIP
-    public final void mSTRIP() throws RecognitionException {
-        try {
-            int _type = STRIP;
-            // etc/XQFT.g:154:7: ( 'strip' )
-            // etc/XQFT.g:154:9: 'strip'
-            {
-            match("strip"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end STRIP
-
-    // $ANTLR start LOWERCASE
-    public final void mLOWERCASE() throws RecognitionException {
-        try {
-            int _type = LOWERCASE;
-            // etc/XQFT.g:155:11: ( 'lowercase' )
-            // etc/XQFT.g:155:13: 'lowercase'
-            {
-            match("lowercase"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LOWERCASE
-
-    // $ANTLR start IN
-    public final void mIN() throws RecognitionException {
-        try {
-            int _type = IN;
-            // etc/XQFT.g:156:4: ( 'in' )
-            // etc/XQFT.g:156:6: 'in'
-            {
-            match("in"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end IN
-
-    // $ANTLR start SCHEMAELEMENT
-    public final void mSCHEMAELEMENT() throws RecognitionException {
-        try {
-            int _type = SCHEMAELEMENT;
-            // etc/XQFT.g:157:15: ( 'schema-element' )
-            // etc/XQFT.g:157:17: 'schema-element'
-            {
-            match("schema-element"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end SCHEMAELEMENT
-
-    // $ANTLR start LEFTENDTAG
-    public final void mLEFTENDTAG() throws RecognitionException {
-        try {
-            int _type = LEFTENDTAG;
-            // etc/XQFT.g:158:12: ( '</' )
-            // etc/XQFT.g:158:14: '</'
+            int _type = LENDTAGSi;
+            // etc/XQFT.g:550:15: ( '</' )
+            // etc/XQFT.g:550:17: '</'
             {
             match("</"); if (failed) return ;
 
@@ -3088,147 +821,14 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end LEFTENDTAG
-
-    // $ANTLR start EQ
-    public final void mEQ() throws RecognitionException {
-        try {
-            int _type = EQ;
-            // etc/XQFT.g:159:4: ( 'eq' )
-            // etc/XQFT.g:159:6: 'eq'
-            {
-            match("eq"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end EQ
-
-    // $ANTLR start NE
-    public final void mNE() throws RecognitionException {
-        try {
-            int _type = NE;
-            // etc/XQFT.g:160:4: ( 'ne' )
-            // etc/XQFT.g:160:6: 'ne'
-            {
-            match("ne"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end NE
-
-    // $ANTLR start LT
-    public final void mLT() throws RecognitionException {
-        try {
-            int _type = LT;
-            // etc/XQFT.g:161:4: ( 'lt' )
-            // etc/XQFT.g:161:6: 'lt'
-            {
-            match("lt"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LT
-
-    // $ANTLR start LE
-    public final void mLE() throws RecognitionException {
-        try {
-            int _type = LE;
-            // etc/XQFT.g:162:4: ( 'le' )
-            // etc/XQFT.g:162:6: 'le'
-            {
-            match("le"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LE
-
-    // $ANTLR start GT
-    public final void mGT() throws RecognitionException {
-        try {
-            int _type = GT;
-            // etc/XQFT.g:163:4: ( 'gt' )
-            // etc/XQFT.g:163:6: 'gt'
-            {
-            match("gt"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end GT
-
-    // $ANTLR start GE
-    public final void mGE() throws RecognitionException {
-        try {
-            int _type = GE;
-            // etc/XQFT.g:164:4: ( 'ge' )
-            // etc/XQFT.g:164:6: 'ge'
-            {
-            match("ge"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end GE
-
-    // $ANTLR start IS
-    public final void mIS() throws RecognitionException {
-        try {
-            int _type = IS;
-            // etc/XQFT.g:165:4: ( 'is' )
-            // etc/XQFT.g:165:6: 'is'
-            {
-            match("is"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end IS
+    // $ANTLR end LENDTAGSi
 
     // $ANTLR start NODEBEFORESi
     public final void mNODEBEFORESi() throws RecognitionException {
         try {
             int _type = NODEBEFORESi;
-            // etc/XQFT.g:166:14: ( '<<' )
-            // etc/XQFT.g:166:16: '<<'
+            // etc/XQFT.g:551:17: ( '<<' )
+            // etc/XQFT.g:551:19: '<<'
             {
             match("<<"); if (failed) return ;
 
@@ -3242,12 +842,50 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end NODEBEFORESi
 
+    // $ANTLR start LTOREQSi
+    public final void mLTOREQSi() throws RecognitionException {
+        try {
+            int _type = LTOREQSi;
+            // etc/XQFT.g:552:14: ( '<=' )
+            // etc/XQFT.g:552:16: '<='
+            {
+            match("<="); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LTOREQSi
+
+    // $ANTLR start GTOREQSi
+    public final void mGTOREQSi() throws RecognitionException {
+        try {
+            int _type = GTOREQSi;
+            // etc/XQFT.g:554:14: ( '>=' )
+            // etc/XQFT.g:554:16: '>='
+            {
+            match(">="); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end GTOREQSi
+
     // $ANTLR start NODEAFTERSi
     public final void mNODEAFTERSi() throws RecognitionException {
         try {
             int _type = NODEAFTERSi;
-            // etc/XQFT.g:167:13: ( '>>' )
-            // etc/XQFT.g:167:15: '>>'
+            // etc/XQFT.g:555:16: ( '>>' )
+            // etc/XQFT.g:555:18: '>>'
             {
             match(">>"); if (failed) return ;
 
@@ -3261,69 +899,12 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end NODEAFTERSi
 
-    // $ANTLR start LAX
-    public final void mLAX() throws RecognitionException {
+    // $ANTLR start DBLCOLONSi
+    public final void mDBLCOLONSi() throws RecognitionException {
         try {
-            int _type = LAX;
-            // etc/XQFT.g:168:5: ( 'lax' )
-            // etc/XQFT.g:168:7: 'lax'
-            {
-            match("lax"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end LAX
-
-    // $ANTLR start STRICT
-    public final void mSTRICT() throws RecognitionException {
-        try {
-            int _type = STRICT;
-            // etc/XQFT.g:169:8: ( 'strict' )
-            // etc/XQFT.g:169:10: 'strict'
-            {
-            match("strict"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end STRICT
-
-    // $ANTLR start CHILD
-    public final void mCHILD() throws RecognitionException {
-        try {
-            int _type = CHILD;
-            // etc/XQFT.g:170:7: ( 'child' )
-            // etc/XQFT.g:170:9: 'child'
-            {
-            match("child"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end CHILD
-
-    // $ANTLR start DOUBLECOLON
-    public final void mDOUBLECOLON() throws RecognitionException {
-        try {
-            int _type = DOUBLECOLON;
-            // etc/XQFT.g:171:13: ( '::' )
-            // etc/XQFT.g:171:15: '::'
+            int _type = DBLCOLONSi;
+            // etc/XQFT.g:557:16: ( '::' )
+            // etc/XQFT.g:557:18: '::'
             {
             match("::"); if (failed) return ;
 
@@ -3335,16 +916,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end DOUBLECOLON
+    // $ANTLR end DBLCOLONSi
 
-    // $ANTLR start DESCENDANT
-    public final void mDESCENDANT() throws RecognitionException {
+    // $ANTLR start ASSIGNSi
+    public final void mASSIGNSi() throws RecognitionException {
         try {
-            int _type = DESCENDANT;
-            // etc/XQFT.g:172:12: ( 'descendant' )
-            // etc/XQFT.g:172:14: 'descendant'
+            int _type = ASSIGNSi;
+            // etc/XQFT.g:558:14: ( ':=' )
+            // etc/XQFT.g:558:16: ':='
             {
-            match("descendant"); if (failed) return ;
+            match(":="); if (failed) return ;
 
 
             }
@@ -3354,16 +935,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end DESCENDANT
+    // $ANTLR end ASSIGNSi
 
-    // $ANTLR start SELF
-    public final void mSELF() throws RecognitionException {
+    // $ANTLR start DBLSLASHSi
+    public final void mDBLSLASHSi() throws RecognitionException {
         try {
-            int _type = SELF;
-            // etc/XQFT.g:173:6: ( 'self' )
-            // etc/XQFT.g:173:8: 'self'
+            int _type = DBLSLASHSi;
+            // etc/XQFT.g:560:16: ( '//' )
+            // etc/XQFT.g:560:18: '//'
             {
-            match("self"); if (failed) return ;
+            match("//"); if (failed) return ;
 
 
             }
@@ -3373,16 +954,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end SELF
+    // $ANTLR end DBLSLASHSi
 
-    // $ANTLR start DESCENDANT_OR_SELF
-    public final void mDESCENDANT_OR_SELF() throws RecognitionException {
+    // $ANTLR start RSELFTERMSi
+    public final void mRSELFTERMSi() throws RecognitionException {
         try {
-            int _type = DESCENDANT_OR_SELF;
-            // etc/XQFT.g:174:20: ( 'descendant-or-self' )
-            // etc/XQFT.g:174:22: 'descendant-or-self'
+            int _type = RSELFTERMSi;
+            // etc/XQFT.g:561:16: ( '/>' )
+            // etc/XQFT.g:561:18: '/>'
             {
-            match("descendant-or-self"); if (failed) return ;
+            match("/>"); if (failed) return ;
 
 
             }
@@ -3392,16 +973,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end DESCENDANT_OR_SELF
+    // $ANTLR end RSELFTERMSi
 
-    // $ANTLR start FOLLOWING_SIBLING
-    public final void mFOLLOWING_SIBLING() throws RecognitionException {
+    // $ANTLR start LPRAGSi
+    public final void mLPRAGSi() throws RecognitionException {
         try {
-            int _type = FOLLOWING_SIBLING;
-            // etc/XQFT.g:175:19: ( 'following-sibling' )
-            // etc/XQFT.g:175:21: 'following-sibling'
+            int _type = LPRAGSi;
+            // etc/XQFT.g:563:13: ( '(#' )
+            // etc/XQFT.g:563:15: '(#'
             {
-            match("following-sibling"); if (failed) return ;
+            match("(#"); if (failed) return ;
 
 
             }
@@ -3411,16 +992,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end FOLLOWING_SIBLING
+    // $ANTLR end LPRAGSi
 
-    // $ANTLR start FOLLOWING
-    public final void mFOLLOWING() throws RecognitionException {
+    // $ANTLR start LDBLBRACSi
+    public final void mLDBLBRACSi() throws RecognitionException {
         try {
-            int _type = FOLLOWING;
-            // etc/XQFT.g:176:11: ( 'following' )
-            // etc/XQFT.g:176:13: 'following'
+            int _type = LDBLBRACSi;
+            // etc/XQFT.g:564:16: ( '{{' )
+            // etc/XQFT.g:564:18: '{{'
             {
-            match("following"); if (failed) return ;
+            match("{{"); if (failed) return ;
 
 
             }
@@ -3430,16 +1011,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end FOLLOWING
+    // $ANTLR end LDBLBRACSi
 
-    // $ANTLR start PARENT
-    public final void mPARENT() throws RecognitionException {
+    // $ANTLR start RDBLBRACSi
+    public final void mRDBLBRACSi() throws RecognitionException {
         try {
-            int _type = PARENT;
-            // etc/XQFT.g:177:8: ( 'parent' )
-            // etc/XQFT.g:177:10: 'parent'
+            int _type = RDBLBRACSi;
+            // etc/XQFT.g:565:16: ( '}}' )
+            // etc/XQFT.g:565:18: '}}'
             {
-            match("parent"); if (failed) return ;
+            match("}}"); if (failed) return ;
 
 
             }
@@ -3449,14 +1030,147 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end PARENT
+    // $ANTLR end RDBLBRACSi
+
+    // $ANTLR start DOTDOTSi
+    public final void mDOTDOTSi() throws RecognitionException {
+        try {
+            int _type = DOTDOTSi;
+            // etc/XQFT.g:566:14: ( '..' )
+            // etc/XQFT.g:566:16: '..'
+            {
+            match(".."); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DOTDOTSi
+
+    // $ANTLR start RPISi
+    public final void mRPISi() throws RecognitionException {
+        try {
+            int _type = RPISi;
+            // etc/XQFT.g:567:12: ( '?>' )
+            // etc/XQFT.g:567:14: '?>'
+            {
+            match("?>"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end RPISi
+
+    // $ANTLR start RCOMMENTSi
+    public final void mRCOMMENTSi() throws RecognitionException {
+        try {
+            int _type = RCOMMENTSi;
+            // etc/XQFT.g:568:16: ( '-->' )
+            // etc/XQFT.g:568:18: '-->'
+            {
+            match("-->"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end RCOMMENTSi
+
+    // $ANTLR start NEQSi
+    public final void mNEQSi() throws RecognitionException {
+        try {
+            int _type = NEQSi;
+            // etc/XQFT.g:569:12: ( '!=' )
+            // etc/XQFT.g:569:14: '!='
+            {
+            match("!="); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end NEQSi
+
+    // $ANTLR start RPRAGSi
+    public final void mRPRAGSi() throws RecognitionException {
+        try {
+            int _type = RPRAGSi;
+            // etc/XQFT.g:570:13: ( '#)' )
+            // etc/XQFT.g:570:15: '#)'
+            {
+            match("#)"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end RPRAGSi
+
+    // $ANTLR start ALL
+    public final void mALL() throws RecognitionException {
+        try {
+            int _type = ALL;
+            // etc/XQFT.g:573:10: ( 'all' )
+            // etc/XQFT.g:573:12: 'all'
+            {
+            match("all"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ALL
+
+    // $ANTLR start ANY
+    public final void mANY() throws RecognitionException {
+        try {
+            int _type = ANY;
+            // etc/XQFT.g:574:10: ( 'any' )
+            // etc/XQFT.g:574:12: 'any'
+            {
+            match("any"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ANY
 
     // $ANTLR start ANCESTOR
     public final void mANCESTOR() throws RecognitionException {
         try {
             int _type = ANCESTOR;
-            // etc/XQFT.g:178:10: ( 'ancestor' )
-            // etc/XQFT.g:178:12: 'ancestor'
+            // etc/XQFT.g:575:14: ( 'ancestor' )
+            // etc/XQFT.g:575:16: 'ancestor'
             {
             match("ancestor"); if (failed) return ;
 
@@ -3470,50 +1184,12 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end ANCESTOR
 
-    // $ANTLR start PRECEDING_SIBLING
-    public final void mPRECEDING_SIBLING() throws RecognitionException {
-        try {
-            int _type = PRECEDING_SIBLING;
-            // etc/XQFT.g:179:19: ( 'preceding-sibling' )
-            // etc/XQFT.g:179:21: 'preceding-sibling'
-            {
-            match("preceding-sibling"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end PRECEDING_SIBLING
-
-    // $ANTLR start PRECEDING
-    public final void mPRECEDING() throws RecognitionException {
-        try {
-            int _type = PRECEDING;
-            // etc/XQFT.g:180:11: ( 'preceding' )
-            // etc/XQFT.g:180:13: 'preceding'
-            {
-            match("preceding"); if (failed) return ;
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end PRECEDING
-
     // $ANTLR start ANCESTOR_OR_SELF
     public final void mANCESTOR_OR_SELF() throws RecognitionException {
         try {
             int _type = ANCESTOR_OR_SELF;
-            // etc/XQFT.g:181:18: ( 'ancestor-or-self' )
-            // etc/XQFT.g:181:20: 'ancestor-or-self'
+            // etc/XQFT.g:576:20: ( 'ancestor-or-self' )
+            // etc/XQFT.g:576:22: 'ancestor-or-self'
             {
             match("ancestor-or-self"); if (failed) return ;
 
@@ -3527,32 +1203,14 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end ANCESTOR_OR_SELF
 
-    // $ANTLR start DOT
-    public final void mDOT() throws RecognitionException {
+    // $ANTLR start AND
+    public final void mAND() throws RecognitionException {
         try {
-            int _type = DOT;
-            // etc/XQFT.g:182:5: ( '.' )
-            // etc/XQFT.g:182:7: '.'
+            int _type = AND;
+            // etc/XQFT.g:577:10: ( 'and' )
+            // etc/XQFT.g:577:12: 'and'
             {
-            match('.'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DOT
-
-    // $ANTLR start DOTDOT
-    public final void mDOTDOT() throws RecognitionException {
-        try {
-            int _type = DOTDOT;
-            // etc/XQFT.g:183:8: ( '..' )
-            // etc/XQFT.g:183:10: '..'
-            {
-            match(".."); if (failed) return ;
+            match("and"); if (failed) return ;
 
 
             }
@@ -3562,16 +1220,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end DOTDOT
+    // $ANTLR end AND
 
-    // $ANTLR start WORDS
-    public final void mWORDS() throws RecognitionException {
+    // $ANTLR start AS
+    public final void mAS() throws RecognitionException {
         try {
-            int _type = WORDS;
-            // etc/XQFT.g:184:7: ( 'words' )
-            // etc/XQFT.g:184:9: 'words'
+            int _type = AS;
+            // etc/XQFT.g:578:10: ( 'as' )
+            // etc/XQFT.g:578:12: 'as'
             {
-            match("words"); if (failed) return ;
+            match("as"); if (failed) return ;
 
 
             }
@@ -3581,16 +1239,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end WORDS
+    // $ANTLR end AS
 
-    // $ANTLR start SENTENCES
-    public final void mSENTENCES() throws RecognitionException {
+    // $ANTLR start ASCENDING
+    public final void mASCENDING() throws RecognitionException {
         try {
-            int _type = SENTENCES;
-            // etc/XQFT.g:185:11: ( 'sentences' )
-            // etc/XQFT.g:185:13: 'sentences'
+            int _type = ASCENDING;
+            // etc/XQFT.g:579:15: ( 'ascending' )
+            // etc/XQFT.g:579:17: 'ascending'
             {
-            match("sentences"); if (failed) return ;
+            match("ascending"); if (failed) return ;
 
 
             }
@@ -3600,16 +1258,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end SENTENCES
+    // $ANTLR end ASCENDING
 
-    // $ANTLR start PARAGRAPHS
-    public final void mPARAGRAPHS() throws RecognitionException {
+    // $ANTLR start AT
+    public final void mAT() throws RecognitionException {
         try {
-            int _type = PARAGRAPHS;
-            // etc/XQFT.g:186:12: ( 'paragraphs' )
-            // etc/XQFT.g:186:14: 'paragraphs'
+            int _type = AT;
+            // etc/XQFT.g:580:10: ( 'at' )
+            // etc/XQFT.g:580:12: 'at'
             {
-            match("paragraphs"); if (failed) return ;
+            match("at"); if (failed) return ;
 
 
             }
@@ -3619,16 +1277,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end PARAGRAPHS
+    // $ANTLR end AT
 
-    // $ANTLR start SENTENCE
-    public final void mSENTENCE() throws RecognitionException {
+    // $ANTLR start ATTRIBUTE
+    public final void mATTRIBUTE() throws RecognitionException {
         try {
-            int _type = SENTENCE;
-            // etc/XQFT.g:187:10: ( 'sentence' )
-            // etc/XQFT.g:187:12: 'sentence'
+            int _type = ATTRIBUTE;
+            // etc/XQFT.g:581:15: ( 'attribute' )
+            // etc/XQFT.g:581:17: 'attribute'
             {
-            match("sentence"); if (failed) return ;
+            match("attribute"); if (failed) return ;
 
 
             }
@@ -3638,16 +1296,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end SENTENCE
+    // $ANTLR end ATTRIBUTE
 
-    // $ANTLR start PARAGRAPH
-    public final void mPARAGRAPH() throws RecognitionException {
+    // $ANTLR start BASE_URI
+    public final void mBASE_URI() throws RecognitionException {
         try {
-            int _type = PARAGRAPH;
-            // etc/XQFT.g:188:11: ( 'paragraph' )
-            // etc/XQFT.g:188:13: 'paragraph'
+            int _type = BASE_URI;
+            // etc/XQFT.g:582:14: ( 'base-uri' )
+            // etc/XQFT.g:582:16: 'base-uri'
             {
-            match("paragraph"); if (failed) return ;
+            match("base-uri"); if (failed) return ;
 
 
             }
@@ -3657,16 +1315,16 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end PARAGRAPH
+    // $ANTLR end BASE_URI
 
-    // $ANTLR start SAME
-    public final void mSAME() throws RecognitionException {
+    // $ANTLR start BY
+    public final void mBY() throws RecognitionException {
         try {
-            int _type = SAME;
-            // etc/XQFT.g:189:6: ( 'same' )
-            // etc/XQFT.g:189:8: 'same'
+            int _type = BY;
+            // etc/XQFT.g:583:10: ( 'by' )
+            // etc/XQFT.g:583:12: 'by'
             {
-            match("same"); if (failed) return ;
+            match("by"); if (failed) return ;
 
 
             }
@@ -3676,14 +1334,318 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end SAME
+    // $ANTLR end BY
+
+    // $ANTLR start BOUNDARYSPACE
+    public final void mBOUNDARYSPACE() throws RecognitionException {
+        try {
+            int _type = BOUNDARYSPACE;
+            // etc/XQFT.g:584:18: ( 'boundary-space' )
+            // etc/XQFT.g:584:20: 'boundary-space'
+            {
+            match("boundary-space"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end BOUNDARYSPACE
+
+    // $ANTLR start CASE
+    public final void mCASE() throws RecognitionException {
+        try {
+            int _type = CASE;
+            // etc/XQFT.g:585:11: ( 'case' )
+            // etc/XQFT.g:585:13: 'case'
+            {
+            match("case"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end CASE
+
+    // $ANTLR start CAST
+    public final void mCAST() throws RecognitionException {
+        try {
+            int _type = CAST;
+            // etc/XQFT.g:586:11: ( 'cast' )
+            // etc/XQFT.g:586:13: 'cast'
+            {
+            match("cast"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end CAST
+
+    // $ANTLR start CASTABLE
+    public final void mCASTABLE() throws RecognitionException {
+        try {
+            int _type = CASTABLE;
+            // etc/XQFT.g:587:14: ( 'castable' )
+            // etc/XQFT.g:587:16: 'castable'
+            {
+            match("castable"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end CASTABLE
+
+    // $ANTLR start CHILD
+    public final void mCHILD() throws RecognitionException {
+        try {
+            int _type = CHILD;
+            // etc/XQFT.g:588:12: ( 'child' )
+            // etc/XQFT.g:588:14: 'child'
+            {
+            match("child"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end CHILD
+
+    // $ANTLR start COLLATION
+    public final void mCOLLATION() throws RecognitionException {
+        try {
+            int _type = COLLATION;
+            // etc/XQFT.g:589:15: ( 'collation' )
+            // etc/XQFT.g:589:17: 'collation'
+            {
+            match("collation"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end COLLATION
+
+    // $ANTLR start COMMENT
+    public final void mCOMMENT() throws RecognitionException {
+        try {
+            int _type = COMMENT;
+            // etc/XQFT.g:590:13: ( 'comment' )
+            // etc/XQFT.g:590:15: 'comment'
+            {
+            match("comment"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end COMMENT
+
+    // $ANTLR start CONSTRUCTION
+    public final void mCONSTRUCTION() throws RecognitionException {
+        try {
+            int _type = CONSTRUCTION;
+            // etc/XQFT.g:591:17: ( 'construction' )
+            // etc/XQFT.g:591:19: 'construction'
+            {
+            match("construction"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end CONSTRUCTION
+
+    // $ANTLR start CONTENT
+    public final void mCONTENT() throws RecognitionException {
+        try {
+            int _type = CONTENT;
+            // etc/XQFT.g:592:13: ( 'content' )
+            // etc/XQFT.g:592:15: 'content'
+            {
+            match("content"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end CONTENT
+
+    // $ANTLR start COPY_NAMESPACES
+    public final void mCOPY_NAMESPACES() throws RecognitionException {
+        try {
+            int _type = COPY_NAMESPACES;
+            // etc/XQFT.g:593:19: ( 'copy-namespaces' )
+            // etc/XQFT.g:593:21: 'copy-namespaces'
+            {
+            match("copy-namespaces"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end COPY_NAMESPACES
+
+    // $ANTLR start DECLARE
+    public final void mDECLARE() throws RecognitionException {
+        try {
+            int _type = DECLARE;
+            // etc/XQFT.g:594:14: ( 'declare' )
+            // etc/XQFT.g:594:16: 'declare'
+            {
+            match("declare"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DECLARE
+
+    // $ANTLR start DEFAULT
+    public final void mDEFAULT() throws RecognitionException {
+        try {
+            int _type = DEFAULT;
+            // etc/XQFT.g:595:13: ( 'default' )
+            // etc/XQFT.g:595:15: 'default'
+            {
+            match("default"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DEFAULT
+
+    // $ANTLR start DESCENDANT
+    public final void mDESCENDANT() throws RecognitionException {
+        try {
+            int _type = DESCENDANT;
+            // etc/XQFT.g:596:16: ( 'descendant' )
+            // etc/XQFT.g:596:18: 'descendant'
+            {
+            match("descendant"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DESCENDANT
+
+    // $ANTLR start DESCENDANT_OR_SELF
+    public final void mDESCENDANT_OR_SELF() throws RecognitionException {
+        try {
+            int _type = DESCENDANT_OR_SELF;
+            // etc/XQFT.g:597:22: ( 'descendant-or-self' )
+            // etc/XQFT.g:597:24: 'descendant-or-self'
+            {
+            match("descendant-or-self"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DESCENDANT_OR_SELF
+
+    // $ANTLR start DESCENDING
+    public final void mDESCENDING() throws RecognitionException {
+        try {
+            int _type = DESCENDING;
+            // etc/XQFT.g:598:16: ( 'descending' )
+            // etc/XQFT.g:598:18: 'descending'
+            {
+            match("descending"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DESCENDING
+
+    // $ANTLR start DIACRITICS
+    public final void mDIACRITICS() throws RecognitionException {
+        try {
+            int _type = DIACRITICS;
+            // etc/XQFT.g:599:16: ( 'diacritics' )
+            // etc/XQFT.g:599:18: 'diacritics'
+            {
+            match("diacritics"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DIACRITICS
 
     // $ANTLR start DIFFERENT
     public final void mDIFFERENT() throws RecognitionException {
         try {
             int _type = DIFFERENT;
-            // etc/XQFT.g:190:11: ( 'different' )
-            // etc/XQFT.g:190:13: 'different'
+            // etc/XQFT.g:600:15: ( 'different' )
+            // etc/XQFT.g:600:17: 'different'
             {
             match("different"); if (failed) return ;
 
@@ -3697,14 +1659,14 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end DIFFERENT
 
-    // $ANTLR start START
-    public final void mSTART() throws RecognitionException {
+    // $ANTLR start DISTANCE
+    public final void mDISTANCE() throws RecognitionException {
         try {
-            int _type = START;
-            // etc/XQFT.g:191:7: ( 'start' )
-            // etc/XQFT.g:191:9: 'start'
+            int _type = DISTANCE;
+            // etc/XQFT.g:601:14: ( 'distance' )
+            // etc/XQFT.g:601:16: 'distance'
             {
-            match("start"); if (failed) return ;
+            match("distance"); if (failed) return ;
 
 
             }
@@ -3714,14 +1676,128 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end START
+    // $ANTLR end DISTANCE
+
+    // $ANTLR start DIV
+    public final void mDIV() throws RecognitionException {
+        try {
+            int _type = DIV;
+            // etc/XQFT.g:602:10: ( 'div' )
+            // etc/XQFT.g:602:12: 'div'
+            {
+            match("div"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DIV
+
+    // $ANTLR start DOCUMENT
+    public final void mDOCUMENT() throws RecognitionException {
+        try {
+            int _type = DOCUMENT;
+            // etc/XQFT.g:603:14: ( 'document' )
+            // etc/XQFT.g:603:16: 'document'
+            {
+            match("document"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DOCUMENT
+
+    // $ANTLR start DOCUMENT_NODE
+    public final void mDOCUMENT_NODE() throws RecognitionException {
+        try {
+            int _type = DOCUMENT_NODE;
+            // etc/XQFT.g:604:18: ( 'document-node' )
+            // etc/XQFT.g:604:20: 'document-node'
+            {
+            match("document-node"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DOCUMENT_NODE
+
+    // $ANTLR start ELEMENT
+    public final void mELEMENT() throws RecognitionException {
+        try {
+            int _type = ELEMENT;
+            // etc/XQFT.g:605:13: ( 'element' )
+            // etc/XQFT.g:605:15: 'element'
+            {
+            match("element"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ELEMENT
+
+    // $ANTLR start ELSE
+    public final void mELSE() throws RecognitionException {
+        try {
+            int _type = ELSE;
+            // etc/XQFT.g:606:11: ( 'else' )
+            // etc/XQFT.g:606:13: 'else'
+            {
+            match("else"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ELSE
+
+    // $ANTLR start ENCODING
+    public final void mENCODING() throws RecognitionException {
+        try {
+            int _type = ENCODING;
+            // etc/XQFT.g:607:14: ( 'encoding' )
+            // etc/XQFT.g:607:16: 'encoding'
+            {
+            match("encoding"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ENCODING
 
     // $ANTLR start END
     public final void mEND() throws RecognitionException {
         try {
             int _type = END;
-            // etc/XQFT.g:192:5: ( 'end' )
-            // etc/XQFT.g:192:7: 'end'
+            // etc/XQFT.g:608:10: ( 'end' )
+            // etc/XQFT.g:608:12: 'end'
             {
             match("end"); if (failed) return ;
 
@@ -3739,8 +1815,8 @@ public class XQFTLexer extends Lexer {
     public final void mENTIRE() throws RecognitionException {
         try {
             int _type = ENTIRE;
-            // etc/XQFT.g:193:8: ( 'entire' )
-            // etc/XQFT.g:193:10: 'entire'
+            // etc/XQFT.g:609:13: ( 'entire' )
+            // etc/XQFT.g:609:15: 'entire'
             {
             match("entire"); if (failed) return ;
 
@@ -3754,13 +1830,2897 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end ENTIRE
 
-    // $ANTLR start Letter
-    public final void mLetter() throws RecognitionException {
+    // $ANTLR start EMPTY
+    public final void mEMPTY() throws RecognitionException {
         try {
-            // etc/XQFT.g:213:30: ( BaseChar | Ideographic )
+            int _type = EMPTY;
+            // etc/XQFT.g:610:12: ( 'empty' )
+            // etc/XQFT.g:610:14: 'empty'
+            {
+            match("empty"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end EMPTY
+
+    // $ANTLR start EMPTY_SEQUENCE
+    public final void mEMPTY_SEQUENCE() throws RecognitionException {
+        try {
+            int _type = EMPTY_SEQUENCE;
+            // etc/XQFT.g:611:19: ( 'empty-sequence' )
+            // etc/XQFT.g:611:21: 'empty-sequence'
+            {
+            match("empty-sequence"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end EMPTY_SEQUENCE
+
+    // $ANTLR start EQ
+    public final void mEQ() throws RecognitionException {
+        try {
+            int _type = EQ;
+            // etc/XQFT.g:612:10: ( 'eq' )
+            // etc/XQFT.g:612:12: 'eq'
+            {
+            match("eq"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end EQ
+
+    // $ANTLR start EVERY
+    public final void mEVERY() throws RecognitionException {
+        try {
+            int _type = EVERY;
+            // etc/XQFT.g:613:12: ( 'every' )
+            // etc/XQFT.g:613:14: 'every'
+            {
+            match("every"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end EVERY
+
+    // $ANTLR start EXACTLY
+    public final void mEXACTLY() throws RecognitionException {
+        try {
+            int _type = EXACTLY;
+            // etc/XQFT.g:614:13: ( 'exactly' )
+            // etc/XQFT.g:614:15: 'exactly'
+            {
+            match("exactly"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end EXACTLY
+
+    // $ANTLR start EXCEPT
+    public final void mEXCEPT() throws RecognitionException {
+        try {
+            int _type = EXCEPT;
+            // etc/XQFT.g:615:13: ( 'except' )
+            // etc/XQFT.g:615:15: 'except'
+            {
+            match("except"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end EXCEPT
+
+    // $ANTLR start EXTERNAL
+    public final void mEXTERNAL() throws RecognitionException {
+        try {
+            int _type = EXTERNAL;
+            // etc/XQFT.g:616:14: ( 'external' )
+            // etc/XQFT.g:616:16: 'external'
+            {
+            match("external"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end EXTERNAL
+
+    // $ANTLR start FOLLOWING
+    public final void mFOLLOWING() throws RecognitionException {
+        try {
+            int _type = FOLLOWING;
+            // etc/XQFT.g:617:15: ( 'following' )
+            // etc/XQFT.g:617:17: 'following'
+            {
+            match("following"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end FOLLOWING
+
+    // $ANTLR start FOLLOWING_SIBLING
+    public final void mFOLLOWING_SIBLING() throws RecognitionException {
+        try {
+            int _type = FOLLOWING_SIBLING;
+            // etc/XQFT.g:618:21: ( 'following-sibling' )
+            // etc/XQFT.g:618:23: 'following-sibling'
+            {
+            match("following-sibling"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end FOLLOWING_SIBLING
+
+    // $ANTLR start FOR
+    public final void mFOR() throws RecognitionException {
+        try {
+            int _type = FOR;
+            // etc/XQFT.g:619:10: ( 'for' )
+            // etc/XQFT.g:619:12: 'for'
+            {
+            match("for"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end FOR
+
+    // $ANTLR start FROM
+    public final void mFROM() throws RecognitionException {
+        try {
+            int _type = FROM;
+            // etc/XQFT.g:620:11: ( 'from' )
+            // etc/XQFT.g:620:13: 'from'
+            {
+            match("from"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end FROM
+
+    // $ANTLR start FTAND
+    public final void mFTAND() throws RecognitionException {
+        try {
+            int _type = FTAND;
+            // etc/XQFT.g:621:12: ( 'ftand' )
+            // etc/XQFT.g:621:14: 'ftand'
+            {
+            match("ftand"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end FTAND
+
+    // $ANTLR start FTCONTAINS
+    public final void mFTCONTAINS() throws RecognitionException {
+        try {
+            int _type = FTCONTAINS;
+            // etc/XQFT.g:622:16: ( 'ftcontains' )
+            // etc/XQFT.g:622:18: 'ftcontains'
+            {
+            match("ftcontains"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end FTCONTAINS
+
+    // $ANTLR start FTNOT
+    public final void mFTNOT() throws RecognitionException {
+        try {
+            int _type = FTNOT;
+            // etc/XQFT.g:623:12: ( 'ftnot' )
+            // etc/XQFT.g:623:14: 'ftnot'
+            {
+            match("ftnot"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end FTNOT
+
+    // $ANTLR start FTOPTION
+    public final void mFTOPTION() throws RecognitionException {
+        try {
+            int _type = FTOPTION;
+            // etc/XQFT.g:624:14: ( 'ft-option' )
+            // etc/XQFT.g:624:16: 'ft-option'
+            {
+            match("ft-option"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end FTOPTION
+
+    // $ANTLR start FTOR
+    public final void mFTOR() throws RecognitionException {
+        try {
+            int _type = FTOR;
+            // etc/XQFT.g:625:11: ( 'ftor' )
+            // etc/XQFT.g:625:13: 'ftor'
+            {
+            match("ftor"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end FTOR
+
+    // $ANTLR start FUNCTION
+    public final void mFUNCTION() throws RecognitionException {
+        try {
+            int _type = FUNCTION;
+            // etc/XQFT.g:626:14: ( 'function' )
+            // etc/XQFT.g:626:16: 'function'
+            {
+            match("function"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end FUNCTION
+
+    // $ANTLR start GE
+    public final void mGE() throws RecognitionException {
+        try {
+            int _type = GE;
+            // etc/XQFT.g:627:10: ( 'ge' )
+            // etc/XQFT.g:627:12: 'ge'
+            {
+            match("ge"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end GE
+
+    // $ANTLR start GREATEST
+    public final void mGREATEST() throws RecognitionException {
+        try {
+            int _type = GREATEST;
+            // etc/XQFT.g:628:14: ( 'greatest' )
+            // etc/XQFT.g:628:16: 'greatest'
+            {
+            match("greatest"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end GREATEST
+
+    // $ANTLR start GT
+    public final void mGT() throws RecognitionException {
+        try {
+            int _type = GT;
+            // etc/XQFT.g:629:10: ( 'gt' )
+            // etc/XQFT.g:629:12: 'gt'
+            {
+            match("gt"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end GT
+
+    // $ANTLR start IDIV
+    public final void mIDIV() throws RecognitionException {
+        try {
+            int _type = IDIV;
+            // etc/XQFT.g:630:11: ( 'idiv' )
+            // etc/XQFT.g:630:13: 'idiv'
+            {
+            match("idiv"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end IDIV
+
+    // $ANTLR start IF
+    public final void mIF() throws RecognitionException {
+        try {
+            int _type = IF;
+            // etc/XQFT.g:631:10: ( 'if' )
+            // etc/XQFT.g:631:12: 'if'
+            {
+            match("if"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end IF
+
+    // $ANTLR start IMPORT
+    public final void mIMPORT() throws RecognitionException {
+        try {
+            int _type = IMPORT;
+            // etc/XQFT.g:632:13: ( 'import' )
+            // etc/XQFT.g:632:15: 'import'
+            {
+            match("import"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end IMPORT
+
+    // $ANTLR start IN
+    public final void mIN() throws RecognitionException {
+        try {
+            int _type = IN;
+            // etc/XQFT.g:633:10: ( 'in' )
+            // etc/XQFT.g:633:12: 'in'
+            {
+            match("in"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end IN
+
+    // $ANTLR start INHERIT
+    public final void mINHERIT() throws RecognitionException {
+        try {
+            int _type = INHERIT;
+            // etc/XQFT.g:634:13: ( 'inherit' )
+            // etc/XQFT.g:634:15: 'inherit'
+            {
+            match("inherit"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end INHERIT
+
+    // $ANTLR start INSENSITIVE
+    public final void mINSENSITIVE() throws RecognitionException {
+        try {
+            int _type = INSENSITIVE;
+            // etc/XQFT.g:635:16: ( 'insensitive' )
+            // etc/XQFT.g:635:18: 'insensitive'
+            {
+            match("insensitive"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end INSENSITIVE
+
+    // $ANTLR start INSTANCE
+    public final void mINSTANCE() throws RecognitionException {
+        try {
+            int _type = INSTANCE;
+            // etc/XQFT.g:636:14: ( 'instance' )
+            // etc/XQFT.g:636:16: 'instance'
+            {
+            match("instance"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end INSTANCE
+
+    // $ANTLR start INTERSECT
+    public final void mINTERSECT() throws RecognitionException {
+        try {
+            int _type = INTERSECT;
+            // etc/XQFT.g:637:15: ( 'intersect' )
+            // etc/XQFT.g:637:17: 'intersect'
+            {
+            match("intersect"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end INTERSECT
+
+    // $ANTLR start IS
+    public final void mIS() throws RecognitionException {
+        try {
+            int _type = IS;
+            // etc/XQFT.g:638:10: ( 'is' )
+            // etc/XQFT.g:638:12: 'is'
+            {
+            match("is"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end IS
+
+    // $ANTLR start ITEM
+    public final void mITEM() throws RecognitionException {
+        try {
+            int _type = ITEM;
+            // etc/XQFT.g:639:11: ( 'item' )
+            // etc/XQFT.g:639:13: 'item'
+            {
+            match("item"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ITEM
+
+    // $ANTLR start LANGUAGE
+    public final void mLANGUAGE() throws RecognitionException {
+        try {
+            int _type = LANGUAGE;
+            // etc/XQFT.g:640:14: ( 'language' )
+            // etc/XQFT.g:640:16: 'language'
+            {
+            match("language"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LANGUAGE
+
+    // $ANTLR start LAX
+    public final void mLAX() throws RecognitionException {
+        try {
+            int _type = LAX;
+            // etc/XQFT.g:641:10: ( 'lax' )
+            // etc/XQFT.g:641:12: 'lax'
+            {
+            match("lax"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LAX
+
+    // $ANTLR start LE
+    public final void mLE() throws RecognitionException {
+        try {
+            int _type = LE;
+            // etc/XQFT.g:642:10: ( 'le' )
+            // etc/XQFT.g:642:12: 'le'
+            {
+            match("le"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LE
+
+    // $ANTLR start LEAST
+    public final void mLEAST() throws RecognitionException {
+        try {
+            int _type = LEAST;
+            // etc/XQFT.g:643:12: ( 'least' )
+            // etc/XQFT.g:643:14: 'least'
+            {
+            match("least"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LEAST
+
+    // $ANTLR start LET
+    public final void mLET() throws RecognitionException {
+        try {
+            int _type = LET;
+            // etc/XQFT.g:644:10: ( 'let' )
+            // etc/XQFT.g:644:12: 'let'
+            {
+            match("let"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LET
+
+    // $ANTLR start LEVELS
+    public final void mLEVELS() throws RecognitionException {
+        try {
+            int _type = LEVELS;
+            // etc/XQFT.g:645:13: ( 'levels' )
+            // etc/XQFT.g:645:15: 'levels'
+            {
+            match("levels"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LEVELS
+
+    // $ANTLR start LOWERCASE
+    public final void mLOWERCASE() throws RecognitionException {
+        try {
+            int _type = LOWERCASE;
+            // etc/XQFT.g:646:15: ( 'lowercase' )
+            // etc/XQFT.g:646:17: 'lowercase'
+            {
+            match("lowercase"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LOWERCASE
+
+    // $ANTLR start LT
+    public final void mLT() throws RecognitionException {
+        try {
+            int _type = LT;
+            // etc/XQFT.g:647:10: ( 'lt' )
+            // etc/XQFT.g:647:12: 'lt'
+            {
+            match("lt"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LT
+
+    // $ANTLR start MOD
+    public final void mMOD() throws RecognitionException {
+        try {
+            int _type = MOD;
+            // etc/XQFT.g:648:10: ( 'mod' )
+            // etc/XQFT.g:648:12: 'mod'
+            {
+            match("mod"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end MOD
+
+    // $ANTLR start MODULE
+    public final void mMODULE() throws RecognitionException {
+        try {
+            int _type = MODULE;
+            // etc/XQFT.g:649:13: ( 'module' )
+            // etc/XQFT.g:649:15: 'module'
+            {
+            match("module"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end MODULE
+
+    // $ANTLR start MOST
+    public final void mMOST() throws RecognitionException {
+        try {
+            int _type = MOST;
+            // etc/XQFT.g:650:11: ( 'most' )
+            // etc/XQFT.g:650:13: 'most'
+            {
+            match("most"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end MOST
+
+    // $ANTLR start NAMESPACE
+    public final void mNAMESPACE() throws RecognitionException {
+        try {
+            int _type = NAMESPACE;
+            // etc/XQFT.g:651:15: ( 'namespace' )
+            // etc/XQFT.g:651:17: 'namespace'
+            {
+            match("namespace"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end NAMESPACE
+
+    // $ANTLR start NE
+    public final void mNE() throws RecognitionException {
+        try {
+            int _type = NE;
+            // etc/XQFT.g:652:10: ( 'ne' )
+            // etc/XQFT.g:652:12: 'ne'
+            {
+            match("ne"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end NE
+
+    // $ANTLR start NODE
+    public final void mNODE() throws RecognitionException {
+        try {
+            int _type = NODE;
+            // etc/XQFT.g:653:11: ( 'node' )
+            // etc/XQFT.g:653:13: 'node'
+            {
+            match("node"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end NODE
+
+    // $ANTLR start NOINHERIT
+    public final void mNOINHERIT() throws RecognitionException {
+        try {
+            int _type = NOINHERIT;
+            // etc/XQFT.g:654:15: ( 'no-inherit' )
+            // etc/XQFT.g:654:17: 'no-inherit'
+            {
+            match("no-inherit"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end NOINHERIT
+
+    // $ANTLR start NOPRESERVE
+    public final void mNOPRESERVE() throws RecognitionException {
+        try {
+            int _type = NOPRESERVE;
+            // etc/XQFT.g:655:16: ( 'no-preserve' )
+            // etc/XQFT.g:655:18: 'no-preserve'
+            {
+            match("no-preserve"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end NOPRESERVE
+
+    // $ANTLR start NOT
+    public final void mNOT() throws RecognitionException {
+        try {
+            int _type = NOT;
+            // etc/XQFT.g:656:10: ( 'not' )
+            // etc/XQFT.g:656:12: 'not'
+            {
+            match("not"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end NOT
+
+    // $ANTLR start OCCURS
+    public final void mOCCURS() throws RecognitionException {
+        try {
+            int _type = OCCURS;
+            // etc/XQFT.g:657:13: ( 'occurs' )
+            // etc/XQFT.g:657:15: 'occurs'
+            {
+            match("occurs"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end OCCURS
+
+    // $ANTLR start OF
+    public final void mOF() throws RecognitionException {
+        try {
+            int _type = OF;
+            // etc/XQFT.g:658:10: ( 'of' )
+            // etc/XQFT.g:658:12: 'of'
+            {
+            match("of"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end OF
+
+    // $ANTLR start OPTION
+    public final void mOPTION() throws RecognitionException {
+        try {
+            int _type = OPTION;
+            // etc/XQFT.g:659:13: ( 'option' )
+            // etc/XQFT.g:659:15: 'option'
+            {
+            match("option"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end OPTION
+
+    // $ANTLR start OR
+    public final void mOR() throws RecognitionException {
+        try {
+            int _type = OR;
+            // etc/XQFT.g:660:10: ( 'or' )
+            // etc/XQFT.g:660:12: 'or'
+            {
+            match("or"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end OR
+
+    // $ANTLR start ORDER
+    public final void mORDER() throws RecognitionException {
+        try {
+            int _type = ORDER;
+            // etc/XQFT.g:661:12: ( 'order' )
+            // etc/XQFT.g:661:14: 'order'
+            {
+            match("order"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ORDER
+
+    // $ANTLR start ORDERED
+    public final void mORDERED() throws RecognitionException {
+        try {
+            int _type = ORDERED;
+            // etc/XQFT.g:662:13: ( 'ordered' )
+            // etc/XQFT.g:662:15: 'ordered'
+            {
+            match("ordered"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ORDERED
+
+    // $ANTLR start ORDERING
+    public final void mORDERING() throws RecognitionException {
+        try {
+            int _type = ORDERING;
+            // etc/XQFT.g:663:14: ( 'ordering' )
+            // etc/XQFT.g:663:16: 'ordering'
+            {
+            match("ordering"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ORDERING
+
+    // $ANTLR start PARAGRAPH
+    public final void mPARAGRAPH() throws RecognitionException {
+        try {
+            int _type = PARAGRAPH;
+            // etc/XQFT.g:664:15: ( 'paragraph' )
+            // etc/XQFT.g:664:17: 'paragraph'
+            {
+            match("paragraph"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end PARAGRAPH
+
+    // $ANTLR start PARAGRAPHS
+    public final void mPARAGRAPHS() throws RecognitionException {
+        try {
+            int _type = PARAGRAPHS;
+            // etc/XQFT.g:665:16: ( 'paragraphs' )
+            // etc/XQFT.g:665:18: 'paragraphs'
+            {
+            match("paragraphs"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end PARAGRAPHS
+
+    // $ANTLR start PARENT
+    public final void mPARENT() throws RecognitionException {
+        try {
+            int _type = PARENT;
+            // etc/XQFT.g:666:13: ( 'parent' )
+            // etc/XQFT.g:666:15: 'parent'
+            {
+            match("parent"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end PARENT
+
+    // $ANTLR start PHRASE
+    public final void mPHRASE() throws RecognitionException {
+        try {
+            int _type = PHRASE;
+            // etc/XQFT.g:667:13: ( 'phrase' )
+            // etc/XQFT.g:667:15: 'phrase'
+            {
+            match("phrase"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end PHRASE
+
+    // $ANTLR start PRECEDING
+    public final void mPRECEDING() throws RecognitionException {
+        try {
+            int _type = PRECEDING;
+            // etc/XQFT.g:668:15: ( 'preceding' )
+            // etc/XQFT.g:668:17: 'preceding'
+            {
+            match("preceding"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end PRECEDING
+
+    // $ANTLR start PRECEDING_SIBLING
+    public final void mPRECEDING_SIBLING() throws RecognitionException {
+        try {
+            int _type = PRECEDING_SIBLING;
+            // etc/XQFT.g:669:21: ( 'preceding-sibling' )
+            // etc/XQFT.g:669:23: 'preceding-sibling'
+            {
+            match("preceding-sibling"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end PRECEDING_SIBLING
+
+    // $ANTLR start PRESERVE
+    public final void mPRESERVE() throws RecognitionException {
+        try {
+            int _type = PRESERVE;
+            // etc/XQFT.g:670:14: ( 'preserve' )
+            // etc/XQFT.g:670:16: 'preserve'
+            {
+            match("preserve"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end PRESERVE
+
+    // $ANTLR start PROCESSING_INSTRUCTION
+    public final void mPROCESSING_INSTRUCTION() throws RecognitionException {
+        try {
+            int _type = PROCESSING_INSTRUCTION;
+            // etc/XQFT.g:671:25: ( 'processing-instruction' )
+            // etc/XQFT.g:671:27: 'processing-instruction'
+            {
+            match("processing-instruction"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end PROCESSING_INSTRUCTION
+
+    // $ANTLR start RELATIONSHIP
+    public final void mRELATIONSHIP() throws RecognitionException {
+        try {
+            int _type = RELATIONSHIP;
+            // etc/XQFT.g:672:17: ( 'relationship' )
+            // etc/XQFT.g:672:19: 'relationship'
+            {
+            match("relationship"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end RELATIONSHIP
+
+    // $ANTLR start RETURN
+    public final void mRETURN() throws RecognitionException {
+        try {
+            int _type = RETURN;
+            // etc/XQFT.g:673:13: ( 'return' )
+            // etc/XQFT.g:673:15: 'return'
+            {
+            match("return"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end RETURN
+
+    // $ANTLR start SAME
+    public final void mSAME() throws RecognitionException {
+        try {
+            int _type = SAME;
+            // etc/XQFT.g:674:11: ( 'same' )
+            // etc/XQFT.g:674:13: 'same'
+            {
+            match("same"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SAME
+
+    // $ANTLR start SATISFIES
+    public final void mSATISFIES() throws RecognitionException {
+        try {
+            int _type = SATISFIES;
+            // etc/XQFT.g:675:15: ( 'satisfies' )
+            // etc/XQFT.g:675:17: 'satisfies'
+            {
+            match("satisfies"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SATISFIES
+
+    // $ANTLR start SCHEMA
+    public final void mSCHEMA() throws RecognitionException {
+        try {
+            int _type = SCHEMA;
+            // etc/XQFT.g:676:13: ( 'schema' )
+            // etc/XQFT.g:676:15: 'schema'
+            {
+            match("schema"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SCHEMA
+
+    // $ANTLR start SCHEMAATTRIBUTE
+    public final void mSCHEMAATTRIBUTE() throws RecognitionException {
+        try {
+            int _type = SCHEMAATTRIBUTE;
+            // etc/XQFT.g:677:19: ( 'schema-attribute' )
+            // etc/XQFT.g:677:21: 'schema-attribute'
+            {
+            match("schema-attribute"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SCHEMAATTRIBUTE
+
+    // $ANTLR start SCHEMAELEMENT
+    public final void mSCHEMAELEMENT() throws RecognitionException {
+        try {
+            int _type = SCHEMAELEMENT;
+            // etc/XQFT.g:678:18: ( 'schema-element' )
+            // etc/XQFT.g:678:20: 'schema-element'
+            {
+            match("schema-element"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SCHEMAELEMENT
+
+    // $ANTLR start SCORE
+    public final void mSCORE() throws RecognitionException {
+        try {
+            int _type = SCORE;
+            // etc/XQFT.g:679:12: ( 'score' )
+            // etc/XQFT.g:679:14: 'score'
+            {
+            match("score"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SCORE
+
+    // $ANTLR start SELF
+    public final void mSELF() throws RecognitionException {
+        try {
+            int _type = SELF;
+            // etc/XQFT.g:680:11: ( 'self' )
+            // etc/XQFT.g:680:13: 'self'
+            {
+            match("self"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SELF
+
+    // $ANTLR start SENSITIVE
+    public final void mSENSITIVE() throws RecognitionException {
+        try {
+            int _type = SENSITIVE;
+            // etc/XQFT.g:681:15: ( 'sensitive' )
+            // etc/XQFT.g:681:17: 'sensitive'
+            {
+            match("sensitive"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SENSITIVE
+
+    // $ANTLR start SENTENCES
+    public final void mSENTENCES() throws RecognitionException {
+        try {
+            int _type = SENTENCES;
+            // etc/XQFT.g:682:15: ( 'sentences' )
+            // etc/XQFT.g:682:17: 'sentences'
+            {
+            match("sentences"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SENTENCES
+
+    // $ANTLR start SENTENCE
+    public final void mSENTENCE() throws RecognitionException {
+        try {
+            int _type = SENTENCE;
+            // etc/XQFT.g:683:14: ( 'sentence' )
+            // etc/XQFT.g:683:16: 'sentence'
+            {
+            match("sentence"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SENTENCE
+
+    // $ANTLR start SOME
+    public final void mSOME() throws RecognitionException {
+        try {
+            int _type = SOME;
+            // etc/XQFT.g:684:11: ( 'some' )
+            // etc/XQFT.g:684:13: 'some'
+            {
+            match("some"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SOME
+
+    // $ANTLR start STABLE
+    public final void mSTABLE() throws RecognitionException {
+        try {
+            int _type = STABLE;
+            // etc/XQFT.g:685:13: ( 'stable' )
+            // etc/XQFT.g:685:15: 'stable'
+            {
+            match("stable"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end STABLE
+
+    // $ANTLR start START
+    public final void mSTART() throws RecognitionException {
+        try {
+            int _type = START;
+            // etc/XQFT.g:686:12: ( 'start' )
+            // etc/XQFT.g:686:14: 'start'
+            {
+            match("start"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end START
+
+    // $ANTLR start STEMMING
+    public final void mSTEMMING() throws RecognitionException {
+        try {
+            int _type = STEMMING;
+            // etc/XQFT.g:687:14: ( 'stemming' )
+            // etc/XQFT.g:687:16: 'stemming'
+            {
+            match("stemming"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end STEMMING
+
+    // $ANTLR start STOP
+    public final void mSTOP() throws RecognitionException {
+        try {
+            int _type = STOP;
+            // etc/XQFT.g:688:11: ( 'stop' )
+            // etc/XQFT.g:688:13: 'stop'
+            {
+            match("stop"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end STOP
+
+    // $ANTLR start STRICT
+    public final void mSTRICT() throws RecognitionException {
+        try {
+            int _type = STRICT;
+            // etc/XQFT.g:689:13: ( 'strict' )
+            // etc/XQFT.g:689:15: 'strict'
+            {
+            match("strict"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end STRICT
+
+    // $ANTLR start STRIP
+    public final void mSTRIP() throws RecognitionException {
+        try {
+            int _type = STRIP;
+            // etc/XQFT.g:690:12: ( 'strip' )
+            // etc/XQFT.g:690:14: 'strip'
+            {
+            match("strip"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end STRIP
+
+    // $ANTLR start TEXT
+    public final void mTEXT() throws RecognitionException {
+        try {
+            int _type = TEXT;
+            // etc/XQFT.g:691:11: ( 'text' )
+            // etc/XQFT.g:691:13: 'text'
+            {
+            match("text"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end TEXT
+
+    // $ANTLR start THESAURUS
+    public final void mTHESAURUS() throws RecognitionException {
+        try {
+            int _type = THESAURUS;
+            // etc/XQFT.g:692:15: ( 'thesaurus' )
+            // etc/XQFT.g:692:17: 'thesaurus'
+            {
+            match("thesaurus"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end THESAURUS
+
+    // $ANTLR start THEN
+    public final void mTHEN() throws RecognitionException {
+        try {
+            int _type = THEN;
+            // etc/XQFT.g:693:11: ( 'then' )
+            // etc/XQFT.g:693:13: 'then'
+            {
+            match("then"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end THEN
+
+    // $ANTLR start TIMES
+    public final void mTIMES() throws RecognitionException {
+        try {
+            int _type = TIMES;
+            // etc/XQFT.g:694:12: ( 'times' )
+            // etc/XQFT.g:694:14: 'times'
+            {
+            match("times"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end TIMES
+
+    // $ANTLR start TO
+    public final void mTO() throws RecognitionException {
+        try {
+            int _type = TO;
+            // etc/XQFT.g:695:10: ( 'to' )
+            // etc/XQFT.g:695:12: 'to'
+            {
+            match("to"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end TO
+
+    // $ANTLR start TREAT
+    public final void mTREAT() throws RecognitionException {
+        try {
+            int _type = TREAT;
+            // etc/XQFT.g:696:12: ( 'treat' )
+            // etc/XQFT.g:696:14: 'treat'
+            {
+            match("treat"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end TREAT
+
+    // $ANTLR start TYPESWITCH
+    public final void mTYPESWITCH() throws RecognitionException {
+        try {
+            int _type = TYPESWITCH;
+            // etc/XQFT.g:697:16: ( 'typeswitch' )
+            // etc/XQFT.g:697:18: 'typeswitch'
+            {
+            match("typeswitch"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end TYPESWITCH
+
+    // $ANTLR start UNION
+    public final void mUNION() throws RecognitionException {
+        try {
+            int _type = UNION;
+            // etc/XQFT.g:698:12: ( 'union' )
+            // etc/XQFT.g:698:14: 'union'
+            {
+            match("union"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end UNION
+
+    // $ANTLR start UNORDERED
+    public final void mUNORDERED() throws RecognitionException {
+        try {
+            int _type = UNORDERED;
+            // etc/XQFT.g:699:15: ( 'unordered' )
+            // etc/XQFT.g:699:17: 'unordered'
+            {
+            match("unordered"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end UNORDERED
+
+    // $ANTLR start UPPERCASE
+    public final void mUPPERCASE() throws RecognitionException {
+        try {
+            int _type = UPPERCASE;
+            // etc/XQFT.g:700:15: ( 'uppercase' )
+            // etc/XQFT.g:700:17: 'uppercase'
+            {
+            match("uppercase"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end UPPERCASE
+
+    // $ANTLR start VALIDATE
+    public final void mVALIDATE() throws RecognitionException {
+        try {
+            int _type = VALIDATE;
+            // etc/XQFT.g:701:14: ( 'validate' )
+            // etc/XQFT.g:701:16: 'validate'
+            {
+            match("validate"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end VALIDATE
+
+    // $ANTLR start VARIABLE
+    public final void mVARIABLE() throws RecognitionException {
+        try {
+            int _type = VARIABLE;
+            // etc/XQFT.g:702:14: ( 'variable' )
+            // etc/XQFT.g:702:16: 'variable'
+            {
+            match("variable"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end VARIABLE
+
+    // $ANTLR start VERSION
+    public final void mVERSION() throws RecognitionException {
+        try {
+            int _type = VERSION;
+            // etc/XQFT.g:703:13: ( 'version' )
+            // etc/XQFT.g:703:15: 'version'
+            {
+            match("version"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end VERSION
+
+    // $ANTLR start WEIGHT
+    public final void mWEIGHT() throws RecognitionException {
+        try {
+            int _type = WEIGHT;
+            // etc/XQFT.g:704:13: ( 'weight' )
+            // etc/XQFT.g:704:15: 'weight'
+            {
+            match("weight"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end WEIGHT
+
+    // $ANTLR start WHERE
+    public final void mWHERE() throws RecognitionException {
+        try {
+            int _type = WHERE;
+            // etc/XQFT.g:705:12: ( 'where' )
+            // etc/XQFT.g:705:14: 'where'
+            {
+            match("where"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end WHERE
+
+    // $ANTLR start WILDCARDS
+    public final void mWILDCARDS() throws RecognitionException {
+        try {
+            int _type = WILDCARDS;
+            // etc/XQFT.g:706:15: ( 'wildcards' )
+            // etc/XQFT.g:706:17: 'wildcards'
+            {
+            match("wildcards"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end WILDCARDS
+
+    // $ANTLR start WINDOW
+    public final void mWINDOW() throws RecognitionException {
+        try {
+            int _type = WINDOW;
+            // etc/XQFT.g:707:13: ( 'window' )
+            // etc/XQFT.g:707:15: 'window'
+            {
+            match("window"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end WINDOW
+
+    // $ANTLR start WITH
+    public final void mWITH() throws RecognitionException {
+        try {
+            int _type = WITH;
+            // etc/XQFT.g:708:11: ( 'with' )
+            // etc/XQFT.g:708:13: 'with'
+            {
+            match("with"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end WITH
+
+    // $ANTLR start WITHOUT
+    public final void mWITHOUT() throws RecognitionException {
+        try {
+            int _type = WITHOUT;
+            // etc/XQFT.g:709:13: ( 'without' )
+            // etc/XQFT.g:709:15: 'without'
+            {
+            match("without"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end WITHOUT
+
+    // $ANTLR start WORD
+    public final void mWORD() throws RecognitionException {
+        try {
+            int _type = WORD;
+            // etc/XQFT.g:710:11: ( 'word' )
+            // etc/XQFT.g:710:13: 'word'
+            {
+            match("word"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end WORD
+
+    // $ANTLR start WORDS
+    public final void mWORDS() throws RecognitionException {
+        try {
+            int _type = WORDS;
+            // etc/XQFT.g:711:12: ( 'words' )
+            // etc/XQFT.g:711:14: 'words'
+            {
+            match("words"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end WORDS
+
+    // $ANTLR start XQUERY
+    public final void mXQUERY() throws RecognitionException {
+        try {
+            int _type = XQUERY;
+            // etc/XQFT.g:712:13: ( 'xquery' )
+            // etc/XQFT.g:712:15: 'xquery'
+            {
+            match("xquery"); if (failed) return ;
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end XQUERY
+
+    // $ANTLR start EXCLSi
+    public final void mEXCLSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:715:20: ( '!' )
+            // etc/XQFT.g:715:22: '!'
+            {
+            match('!'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end EXCLSi
+
+    // $ANTLR start QUOTSi
+    public final void mQUOTSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:716:20: ( '\"' )
+            // etc/XQFT.g:716:22: '\"'
+            {
+            match('\"'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end QUOTSi
+
+    // $ANTLR start SHARPSi
+    public final void mSHARPSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:717:20: ( '#' )
+            // etc/XQFT.g:717:22: '#'
+            {
+            match('#'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SHARPSi
+
+    // $ANTLR start DOLLARSi
+    public final void mDOLLARSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:718:22: ( '$' )
+            // etc/XQFT.g:718:24: '$'
+            {
+            match('$'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DOLLARSi
+
+    // $ANTLR start AMPERSi
+    public final void mAMPERSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:719:20: ( '&' )
+            // etc/XQFT.g:719:22: '&'
+            {
+            match('&'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end AMPERSi
+
+    // $ANTLR start APOSSi
+    public final void mAPOSSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:720:20: ( '\\'' )
+            // etc/XQFT.g:720:22: '\\''
+            {
+            match('\''); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end APOSSi
+
+    // $ANTLR start LPARSi
+    public final void mLPARSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:721:20: ( '(' )
+            // etc/XQFT.g:721:22: '('
+            {
+            match('('); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LPARSi
+
+    // $ANTLR start RPARSi
+    public final void mRPARSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:722:20: ( ')' )
+            // etc/XQFT.g:722:22: ')'
+            {
+            match(')'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end RPARSi
+
+    // $ANTLR start STARSi
+    public final void mSTARSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:723:20: ( '*' )
+            // etc/XQFT.g:723:22: '*'
+            {
+            match('*'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end STARSi
+
+    // $ANTLR start PLUSSi
+    public final void mPLUSSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:724:20: ( '+' )
+            // etc/XQFT.g:724:22: '+'
+            {
+            match('+'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end PLUSSi
+
+    // $ANTLR start COMMASi
+    public final void mCOMMASi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:725:21: ( ',' )
+            // etc/XQFT.g:725:23: ','
+            {
+            match(','); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end COMMASi
+
+    // $ANTLR start MINUSSi
+    public final void mMINUSSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:726:21: ( '-' )
+            // etc/XQFT.g:726:23: '-'
+            {
+            match('-'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end MINUSSi
+
+    // $ANTLR start DOTSi
+    public final void mDOTSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:727:20: ( '.' )
+            // etc/XQFT.g:727:22: '.'
+            {
+            match('.'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end DOTSi
+
+    // $ANTLR start SLASHSi
+    public final void mSLASHSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:728:21: ( '/' )
+            // etc/XQFT.g:728:23: '/'
+            {
+            match('/'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SLASHSi
+
+    // $ANTLR start COLONSi
+    public final void mCOLONSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:729:21: ( ':' )
+            // etc/XQFT.g:729:23: ':'
+            {
+            match(':'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end COLONSi
+
+    // $ANTLR start SEMICOLONSi
+    public final void mSEMICOLONSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:730:23: ( ';' )
+            // etc/XQFT.g:730:25: ';'
+            {
+            match(';'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end SEMICOLONSi
+
+    // $ANTLR start LTSi
+    public final void mLTSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:731:19: ( '<' )
+            // etc/XQFT.g:731:21: '<'
+            {
+            match('<'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LTSi
+
+    // $ANTLR start EQSi
+    public final void mEQSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:732:19: ( '=' )
+            // etc/XQFT.g:732:21: '='
+            {
+            match('='); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end EQSi
+
+    // $ANTLR start GTSi
+    public final void mGTSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:733:19: ( '>' )
+            // etc/XQFT.g:733:21: '>'
+            {
+            match('>'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end GTSi
+
+    // $ANTLR start QUESTIONSi
+    public final void mQUESTIONSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:734:23: ( '?' )
+            // etc/XQFT.g:734:25: '?'
+            {
+            match('?'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end QUESTIONSi
+
+    // $ANTLR start ATSi
+    public final void mATSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:735:19: ( '@' )
+            // etc/XQFT.g:735:21: '@'
+            {
+            match('@'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ATSi
+
+    // $ANTLR start LBRACKSi
+    public final void mLBRACKSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:736:22: ( '[' )
+            // etc/XQFT.g:736:24: '['
+            {
+            match('['); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LBRACKSi
+
+    // $ANTLR start BACKSLASHSi
+    public final void mBACKSLASHSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:737:23: ( '\\\\' )
+            // etc/XQFT.g:737:25: '\\\\'
+            {
+            match('\\'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end BACKSLASHSi
+
+    // $ANTLR start RBRACKSi
+    public final void mRBRACKSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:738:21: ( ']' )
+            // etc/XQFT.g:738:23: ']'
+            {
+            match(']'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end RBRACKSi
+
+    // $ANTLR start UNDERSCORESi
+    public final void mUNDERSCORESi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:739:25: ( '_' )
+            // etc/XQFT.g:739:27: '_'
+            {
+            match('_'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end UNDERSCORESi
+
+    // $ANTLR start LBRACESi
+    public final void mLBRACESi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:740:22: ( '{' )
+            // etc/XQFT.g:740:24: '{'
+            {
+            match('{'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end LBRACESi
+
+    // $ANTLR start PIPESi
+    public final void mPIPESi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:741:20: ( '|' )
+            // etc/XQFT.g:741:22: '|'
+            {
+            match('|'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end PIPESi
+
+    // $ANTLR start RBRACSi
+    public final void mRBRACSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:742:21: ( '}' )
+            // etc/XQFT.g:742:23: '}'
+            {
+            match('}'); if (failed) return ;
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end RBRACSi
+
+    // $ANTLR start ESCQUOTSi
+    public final void mESCQUOTSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:744:28: ( '\"\"' )
+            // etc/XQFT.g:744:30: '\"\"'
+            {
+            match("\"\""); if (failed) return ;
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ESCQUOTSi
+
+    // $ANTLR start ESCAPOSSi
+    public final void mESCAPOSSi() throws RecognitionException {
+        try {
+            // etc/XQFT.g:745:26: ( '\\'\\'' )
+            // etc/XQFT.g:745:28: '\\'\\''
+            {
+            match("\'\'"); if (failed) return ;
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end ESCAPOSSi
+
+    // $ANTLR start TOKENSWITCH
+    public final void mTOKENSWITCH() throws RecognitionException {
+        try {
+            int _type = TOKENSWITCH;
+            // etc/XQFT.g:748:16: ( ( ESCQUOTSi )=> ESCQUOTSi | ( ESCAPOSSi )=> ESCAPOSSi | QUOTSi | DOLLARSi | APOSSi | LPARSi | RPARSi | STARSi | PLUSSi | COMMASi | MINUSSi | DOTSi | SLASHSi | COLONSi | SEMICOLONSi | LTSi | EQSi | GTSi | QUESTIONSi | ATSi | LBRACKSi | RBRACKSi | LBRACESi | PIPESi | RBRACSi )
+            int alt7=25;
+            switch ( input.LA(1) ) {
+            case '\"':
+                {
+                int LA7_1 = input.LA(2);
+
+                if ( (LA7_1=='\"') && (synpred4())) {
+                    alt7=1;
+                }
+                else {
+                    alt7=3;}
+                }
+                break;
+            case '\'':
+                {
+                int LA7_2 = input.LA(2);
+
+                if ( (LA7_2=='\'') && (synpred5())) {
+                    alt7=2;
+                }
+                else {
+                    alt7=5;}
+                }
+                break;
+            case '$':
+                {
+                alt7=4;
+                }
+                break;
+            case '(':
+                {
+                alt7=6;
+                }
+                break;
+            case ')':
+                {
+                alt7=7;
+                }
+                break;
+            case '*':
+                {
+                alt7=8;
+                }
+                break;
+            case '+':
+                {
+                alt7=9;
+                }
+                break;
+            case ',':
+                {
+                alt7=10;
+                }
+                break;
+            case '-':
+                {
+                alt7=11;
+                }
+                break;
+            case '.':
+                {
+                alt7=12;
+                }
+                break;
+            case '/':
+                {
+                alt7=13;
+                }
+                break;
+            case ':':
+                {
+                alt7=14;
+                }
+                break;
+            case ';':
+                {
+                alt7=15;
+                }
+                break;
+            case '<':
+                {
+                alt7=16;
+                }
+                break;
+            case '=':
+                {
+                alt7=17;
+                }
+                break;
+            case '>':
+                {
+                alt7=18;
+                }
+                break;
+            case '?':
+                {
+                alt7=19;
+                }
+                break;
+            case '@':
+                {
+                alt7=20;
+                }
+                break;
+            case '[':
+                {
+                alt7=21;
+                }
+                break;
+            case ']':
+                {
+                alt7=22;
+                }
+                break;
+            case '{':
+                {
+                alt7=23;
+                }
+                break;
+            case '|':
+                {
+                alt7=24;
+                }
+                break;
+            case '}':
+                {
+                alt7=25;
+                }
+                break;
+            default:
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("748:1: TOKENSWITCH : ( ( ESCQUOTSi )=> ESCQUOTSi | ( ESCAPOSSi )=> ESCAPOSSi | QUOTSi | DOLLARSi | APOSSi | LPARSi | RPARSi | STARSi | PLUSSi | COMMASi | MINUSSi | DOTSi | SLASHSi | COLONSi | SEMICOLONSi | LTSi | EQSi | GTSi | QUESTIONSi | ATSi | LBRACKSi | RBRACKSi | LBRACESi | PIPESi | RBRACSi );", 7, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt7) {
+                case 1 :
+                    // etc/XQFT.g:748:18: ( ESCQUOTSi )=> ESCQUOTSi
+                    {
+                    mESCQUOTSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=ESCQUOTSi;
+                    }
+
+                    }
+                    break;
+                case 2 :
+                    // etc/XQFT.g:749:9: ( ESCAPOSSi )=> ESCAPOSSi
+                    {
+                    mESCAPOSSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=ESCAPOSSi;
+                    }
+
+                    }
+                    break;
+                case 3 :
+                    // etc/XQFT.g:750:9: QUOTSi
+                    {
+                    mQUOTSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=QUOTSi;
+                    }
+
+                    }
+                    break;
+                case 4 :
+                    // etc/XQFT.g:751:9: DOLLARSi
+                    {
+                    mDOLLARSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=DOLLARSi;
+                    }
+
+                    }
+                    break;
+                case 5 :
+                    // etc/XQFT.g:752:9: APOSSi
+                    {
+                    mAPOSSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=APOSSi;
+                    }
+
+                    }
+                    break;
+                case 6 :
+                    // etc/XQFT.g:753:9: LPARSi
+                    {
+                    mLPARSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=LPARSi;
+                    }
+
+                    }
+                    break;
+                case 7 :
+                    // etc/XQFT.g:754:9: RPARSi
+                    {
+                    mRPARSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=RPARSi;
+                    }
+
+                    }
+                    break;
+                case 8 :
+                    // etc/XQFT.g:755:9: STARSi
+                    {
+                    mSTARSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=STARSi;
+                    }
+
+                    }
+                    break;
+                case 9 :
+                    // etc/XQFT.g:756:9: PLUSSi
+                    {
+                    mPLUSSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=PLUSSi;
+                    }
+
+                    }
+                    break;
+                case 10 :
+                    // etc/XQFT.g:757:9: COMMASi
+                    {
+                    mCOMMASi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=COMMASi;
+                    }
+
+                    }
+                    break;
+                case 11 :
+                    // etc/XQFT.g:758:9: MINUSSi
+                    {
+                    mMINUSSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=MINUSSi;
+                    }
+
+                    }
+                    break;
+                case 12 :
+                    // etc/XQFT.g:759:9: DOTSi
+                    {
+                    mDOTSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=DOTSi;
+                    }
+
+                    }
+                    break;
+                case 13 :
+                    // etc/XQFT.g:760:9: SLASHSi
+                    {
+                    mSLASHSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=SLASHSi;
+                    }
+
+                    }
+                    break;
+                case 14 :
+                    // etc/XQFT.g:761:9: COLONSi
+                    {
+                    mCOLONSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=COLONSi;
+                    }
+
+                    }
+                    break;
+                case 15 :
+                    // etc/XQFT.g:762:9: SEMICOLONSi
+                    {
+                    mSEMICOLONSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=SEMICOLONSi;
+                    }
+
+                    }
+                    break;
+                case 16 :
+                    // etc/XQFT.g:763:9: LTSi
+                    {
+                    mLTSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=LTSi;
+                    }
+
+                    }
+                    break;
+                case 17 :
+                    // etc/XQFT.g:764:9: EQSi
+                    {
+                    mEQSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=EQSi;
+                    }
+
+                    }
+                    break;
+                case 18 :
+                    // etc/XQFT.g:765:9: GTSi
+                    {
+                    mGTSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=GTSi;
+                    }
+
+                    }
+                    break;
+                case 19 :
+                    // etc/XQFT.g:766:9: QUESTIONSi
+                    {
+                    mQUESTIONSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=QUESTIONSi;
+                    }
+
+                    }
+                    break;
+                case 20 :
+                    // etc/XQFT.g:767:9: ATSi
+                    {
+                    mATSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=ATSi;
+                    }
+
+                    }
+                    break;
+                case 21 :
+                    // etc/XQFT.g:768:9: LBRACKSi
+                    {
+                    mLBRACKSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=LBRACKSi;
+                    }
+
+                    }
+                    break;
+                case 22 :
+                    // etc/XQFT.g:769:9: RBRACKSi
+                    {
+                    mRBRACKSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=RBRACKSi;
+                    }
+
+                    }
+                    break;
+                case 23 :
+                    // etc/XQFT.g:770:9: LBRACESi
+                    {
+                    mLBRACESi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=LBRACESi;
+                    }
+
+                    }
+                    break;
+                case 24 :
+                    // etc/XQFT.g:771:9: PIPESi
+                    {
+                    mPIPESi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=PIPESi;
+                    }
+
+                    }
+                    break;
+                case 25 :
+                    // etc/XQFT.g:772:9: RBRACSi
+                    {
+                    mRBRACSi(); if (failed) return ;
+                    if ( backtracking==1 ) {
+                      _type=RBRACSi;
+                    }
+
+                    }
+                    break;
+
+            }
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end TOKENSWITCH
+
+    // $ANTLR start NCName
+    public final void mNCName() throws RecognitionException {
+        try {
+            int _type = NCName;
+            // etc/XQFT.g:775:26: ( NCNameStartChar ( NCNameChar )* )
+            // etc/XQFT.g:775:28: NCNameStartChar ( NCNameChar )*
+            {
+            mNCNameStartChar(); if (failed) return ;
+            // etc/XQFT.g:775:44: ( NCNameChar )*
+            loop8:
+            do {
+                int alt8=2;
+                int LA8_0 = input.LA(1);
+
+                if ( ((LA8_0>='-' && LA8_0<='.')||(LA8_0>='0' && LA8_0<='9')||(LA8_0>='A' && LA8_0<='Z')||LA8_0=='_'||(LA8_0>='a' && LA8_0<='z')||LA8_0=='\u00B7'||(LA8_0>='\u00C0' && LA8_0<='\u00D6')||(LA8_0>='\u00D8' && LA8_0<='\u00F6')||(LA8_0>='\u00F8' && LA8_0<='\u0131')||(LA8_0>='\u0134' && LA8_0<='\u013E')||(LA8_0>='\u0141' && LA8_0<='\u0148')||(LA8_0>='\u014A' && LA8_0<='\u017E')||(LA8_0>='\u0180' && LA8_0<='\u01C3')||(LA8_0>='\u01CD' && LA8_0<='\u01F0')||(LA8_0>='\u01F4' && LA8_0<='\u01F5')||(LA8_0>='\u01FA' && LA8_0<='\u0217')||(LA8_0>='\u0250' && LA8_0<='\u02A8')||(LA8_0>='\u02BB' && LA8_0<='\u02C1')||(LA8_0>='\u02D0' && LA8_0<='\u02D1')||(LA8_0>='\u0300' && LA8_0<='\u0345')||(LA8_0>='\u0360' && LA8_0<='\u0361')||(LA8_0>='\u0386' && LA8_0<='\u038A')||LA8_0=='\u038C'||(LA8_0>='\u038E' && LA8_0<='\u03A1')||(LA8_0>='\u03A3' && LA8_0<='\u03CE')||(LA8_0>='\u03D0' && LA8_0<='\u03D6')||LA8_0=='\u03DA'||LA8_0=='\u03DC'||LA8_0=='\u03DE'||LA8_0=='\u03E0'||(LA8_0>='\u03E2' && LA8_0<='\u03F3')||(LA8_0>='\u0401' && LA8_0<='\u040C')||(LA8_0>='\u040E' && LA8_0<='\u044F')||(LA8_0>='\u0451' && LA8_0<='\u045C')||(LA8_0>='\u045E' && LA8_0<='\u0481')||(LA8_0>='\u0483' && LA8_0<='\u0486')||(LA8_0>='\u0490' && LA8_0<='\u04C4')||(LA8_0>='\u04C7' && LA8_0<='\u04C8')||(LA8_0>='\u04CB' && LA8_0<='\u04CC')||(LA8_0>='\u04D0' && LA8_0<='\u04EB')||(LA8_0>='\u04EE' && LA8_0<='\u04F5')||(LA8_0>='\u04F8' && LA8_0<='\u04F9')||(LA8_0>='\u0531' && LA8_0<='\u0556')||LA8_0=='\u0559'||(LA8_0>='\u0561' && LA8_0<='\u0586')||(LA8_0>='\u0591' && LA8_0<='\u05A1')||(LA8_0>='\u05A3' && LA8_0<='\u05B9')||(LA8_0>='\u05BB' && LA8_0<='\u05BD')||LA8_0=='\u05BF'||(LA8_0>='\u05C1' && LA8_0<='\u05C2')||LA8_0=='\u05C4'||(LA8_0>='\u05D0' && LA8_0<='\u05EA')||(LA8_0>='\u05F0' && LA8_0<='\u05F2')||(LA8_0>='\u0621' && LA8_0<='\u063A')||(LA8_0>='\u0640' && LA8_0<='\u0652')||(LA8_0>='\u0660' && LA8_0<='\u0669')||(LA8_0>='\u0670' && LA8_0<='\u06B7')||(LA8_0>='\u06BA' && LA8_0<='\u06BE')||(LA8_0>='\u06C0' && LA8_0<='\u06CE')||(LA8_0>='\u06D0' && LA8_0<='\u06D3')||(LA8_0>='\u06D5' && LA8_0<='\u06E8')||(LA8_0>='\u06EA' && LA8_0<='\u06ED')||(LA8_0>='\u06F0' && LA8_0<='\u06F9')||(LA8_0>='\u0901' && LA8_0<='\u0903')||(LA8_0>='\u0905' && LA8_0<='\u0939')||(LA8_0>='\u093C' && LA8_0<='\u094D')||(LA8_0>='\u0951' && LA8_0<='\u0954')||(LA8_0>='\u0958' && LA8_0<='\u0963')||(LA8_0>='\u0966' && LA8_0<='\u096F')||(LA8_0>='\u0981' && LA8_0<='\u0983')||(LA8_0>='\u0985' && LA8_0<='\u098C')||(LA8_0>='\u098F' && LA8_0<='\u0990')||(LA8_0>='\u0993' && LA8_0<='\u09A8')||(LA8_0>='\u09AA' && LA8_0<='\u09B0')||LA8_0=='\u09B2'||(LA8_0>='\u09B6' && LA8_0<='\u09B9')||LA8_0=='\u09BC'||(LA8_0>='\u09BE' && LA8_0<='\u09C4')||(LA8_0>='\u09C7' && LA8_0<='\u09C8')||(LA8_0>='\u09CB' && LA8_0<='\u09CD')||LA8_0=='\u09D7'||(LA8_0>='\u09DC' && LA8_0<='\u09DD')||(LA8_0>='\u09DF' && LA8_0<='\u09E3')||(LA8_0>='\u09E6' && LA8_0<='\u09F1')||LA8_0=='\u0A02'||(LA8_0>='\u0A05' && LA8_0<='\u0A0A')||(LA8_0>='\u0A0F' && LA8_0<='\u0A10')||(LA8_0>='\u0A13' && LA8_0<='\u0A28')||(LA8_0>='\u0A2A' && LA8_0<='\u0A30')||(LA8_0>='\u0A32' && LA8_0<='\u0A33')||(LA8_0>='\u0A35' && LA8_0<='\u0A36')||(LA8_0>='\u0A38' && LA8_0<='\u0A39')||LA8_0=='\u0A3C'||(LA8_0>='\u0A3E' && LA8_0<='\u0A42')||(LA8_0>='\u0A47' && LA8_0<='\u0A48')||(LA8_0>='\u0A4B' && LA8_0<='\u0A4D')||(LA8_0>='\u0A59' && LA8_0<='\u0A5C')||LA8_0=='\u0A5E'||(LA8_0>='\u0A66' && LA8_0<='\u0A74')||(LA8_0>='\u0A81' && LA8_0<='\u0A83')||(LA8_0>='\u0A85' && LA8_0<='\u0A8B')||LA8_0=='\u0A8D'||(LA8_0>='\u0A8F' && LA8_0<='\u0A91')||(LA8_0>='\u0A93' && LA8_0<='\u0AA8')||(LA8_0>='\u0AAA' && LA8_0<='\u0AB0')||(LA8_0>='\u0AB2' && LA8_0<='\u0AB3')||(LA8_0>='\u0AB5' && LA8_0<='\u0AB9')||(LA8_0>='\u0ABC' && LA8_0<='\u0AC5')||(LA8_0>='\u0AC7' && LA8_0<='\u0AC9')||(LA8_0>='\u0ACB' && LA8_0<='\u0ACD')||LA8_0=='\u0AE0'||(LA8_0>='\u0AE6' && LA8_0<='\u0AEF')||(LA8_0>='\u0B01' && LA8_0<='\u0B03')||(LA8_0>='\u0B05' && LA8_0<='\u0B0C')||(LA8_0>='\u0B0F' && LA8_0<='\u0B10')||(LA8_0>='\u0B13' && LA8_0<='\u0B28')||(LA8_0>='\u0B2A' && LA8_0<='\u0B30')||(LA8_0>='\u0B32' && LA8_0<='\u0B33')||(LA8_0>='\u0B36' && LA8_0<='\u0B39')||(LA8_0>='\u0B3C' && LA8_0<='\u0B43')||(LA8_0>='\u0B47' && LA8_0<='\u0B48')||(LA8_0>='\u0B4B' && LA8_0<='\u0B4D')||(LA8_0>='\u0B56' && LA8_0<='\u0B57')||(LA8_0>='\u0B5C' && LA8_0<='\u0B5D')||(LA8_0>='\u0B5F' && LA8_0<='\u0B61')||(LA8_0>='\u0B66' && LA8_0<='\u0B6F')||(LA8_0>='\u0B82' && LA8_0<='\u0B83')||(LA8_0>='\u0B85' && LA8_0<='\u0B8A')||(LA8_0>='\u0B8E' && LA8_0<='\u0B90')||(LA8_0>='\u0B92' && LA8_0<='\u0B95')||(LA8_0>='\u0B99' && LA8_0<='\u0B9A')||LA8_0=='\u0B9C'||(LA8_0>='\u0B9E' && LA8_0<='\u0B9F')||(LA8_0>='\u0BA3' && LA8_0<='\u0BA4')||(LA8_0>='\u0BA8' && LA8_0<='\u0BAA')||(LA8_0>='\u0BAE' && LA8_0<='\u0BB5')||(LA8_0>='\u0BB7' && LA8_0<='\u0BB9')||(LA8_0>='\u0BBE' && LA8_0<='\u0BC2')||(LA8_0>='\u0BC6' && LA8_0<='\u0BC8')||(LA8_0>='\u0BCA' && LA8_0<='\u0BCD')||LA8_0=='\u0BD7'||(LA8_0>='\u0BE7' && LA8_0<='\u0BEF')||(LA8_0>='\u0C01' && LA8_0<='\u0C03')||(LA8_0>='\u0C05' && LA8_0<='\u0C0C')||(LA8_0>='\u0C0E' && LA8_0<='\u0C10')||(LA8_0>='\u0C12' && LA8_0<='\u0C28')||(LA8_0>='\u0C2A' && LA8_0<='\u0C33')||(LA8_0>='\u0C35' && LA8_0<='\u0C39')||(LA8_0>='\u0C3E' && LA8_0<='\u0C44')||(LA8_0>='\u0C46' && LA8_0<='\u0C48')||(LA8_0>='\u0C4A' && LA8_0<='\u0C4D')||(LA8_0>='\u0C55' && LA8_0<='\u0C56')||(LA8_0>='\u0C60' && LA8_0<='\u0C61')||(LA8_0>='\u0C66' && LA8_0<='\u0C6F')||(LA8_0>='\u0C82' && LA8_0<='\u0C83')||(LA8_0>='\u0C85' && LA8_0<='\u0C8C')||(LA8_0>='\u0C8E' && LA8_0<='\u0C90')||(LA8_0>='\u0C92' && LA8_0<='\u0CA8')||(LA8_0>='\u0CAA' && LA8_0<='\u0CB3')||(LA8_0>='\u0CB5' && LA8_0<='\u0CB9')||(LA8_0>='\u0CBE' && LA8_0<='\u0CC4')||(LA8_0>='\u0CC6' && LA8_0<='\u0CC8')||(LA8_0>='\u0CCA' && LA8_0<='\u0CCD')||(LA8_0>='\u0CD5' && LA8_0<='\u0CD6')||LA8_0=='\u0CDE'||(LA8_0>='\u0CE0' && LA8_0<='\u0CE1')||(LA8_0>='\u0CE6' && LA8_0<='\u0CEF')||(LA8_0>='\u0D02' && LA8_0<='\u0D03')||(LA8_0>='\u0D05' && LA8_0<='\u0D0C')||(LA8_0>='\u0D0E' && LA8_0<='\u0D10')||(LA8_0>='\u0D12' && LA8_0<='\u0D28')||(LA8_0>='\u0D2A' && LA8_0<='\u0D39')||(LA8_0>='\u0D3E' && LA8_0<='\u0D43')||(LA8_0>='\u0D46' && LA8_0<='\u0D48')||(LA8_0>='\u0D4A' && LA8_0<='\u0D4D')||LA8_0=='\u0D57'||(LA8_0>='\u0D60' && LA8_0<='\u0D61')||(LA8_0>='\u0D66' && LA8_0<='\u0D6F')||(LA8_0>='\u0E01' && LA8_0<='\u0E2E')||(LA8_0>='\u0E30' && LA8_0<='\u0E3A')||(LA8_0>='\u0E40' && LA8_0<='\u0E4E')||(LA8_0>='\u0E50' && LA8_0<='\u0E59')||(LA8_0>='\u0E81' && LA8_0<='\u0E82')||LA8_0=='\u0E84'||(LA8_0>='\u0E87' && LA8_0<='\u0E88')||LA8_0=='\u0E8A'||LA8_0=='\u0E8D'||(LA8_0>='\u0E94' && LA8_0<='\u0E97')||(LA8_0>='\u0E99' && LA8_0<='\u0E9F')||(LA8_0>='\u0EA1' && LA8_0<='\u0EA3')||LA8_0=='\u0EA5'||LA8_0=='\u0EA7'||(LA8_0>='\u0EAA' && LA8_0<='\u0EAB')||(LA8_0>='\u0EAD' && LA8_0<='\u0EAE')||(LA8_0>='\u0EB0' && LA8_0<='\u0EB9')||(LA8_0>='\u0EBB' && LA8_0<='\u0EBD')||(LA8_0>='\u0EC0' && LA8_0<='\u0EC4')||LA8_0=='\u0EC6'||(LA8_0>='\u0EC8' && LA8_0<='\u0ECD')||(LA8_0>='\u0ED0' && LA8_0<='\u0ED9')||(LA8_0>='\u0F18' && LA8_0<='\u0F19')||(LA8_0>='\u0F20' && LA8_0<='\u0F29')||LA8_0=='\u0F35'||LA8_0=='\u0F37'||LA8_0=='\u0F39'||(LA8_0>='\u0F3E' && LA8_0<='\u0F47')||(LA8_0>='\u0F49' && LA8_0<='\u0F69')||(LA8_0>='\u0F71' && LA8_0<='\u0F84')||(LA8_0>='\u0F86' && LA8_0<='\u0F8B')||(LA8_0>='\u0F90' && LA8_0<='\u0F95')||LA8_0=='\u0F97'||(LA8_0>='\u0F99' && LA8_0<='\u0FAD')||(LA8_0>='\u0FB1' && LA8_0<='\u0FB7')||LA8_0=='\u0FB9'||(LA8_0>='\u10A0' && LA8_0<='\u10C5')||(LA8_0>='\u10D0' && LA8_0<='\u10F6')||LA8_0=='\u1100'||(LA8_0>='\u1102' && LA8_0<='\u1103')||(LA8_0>='\u1105' && LA8_0<='\u1107')||LA8_0=='\u1109'||(LA8_0>='\u110B' && LA8_0<='\u110C')||(LA8_0>='\u110E' && LA8_0<='\u1112')||LA8_0=='\u113C'||LA8_0=='\u113E'||LA8_0=='\u1140'||LA8_0=='\u114C'||LA8_0=='\u114E'||LA8_0=='\u1150'||(LA8_0>='\u1154' && LA8_0<='\u1155')||LA8_0=='\u1159'||(LA8_0>='\u115F' && LA8_0<='\u1161')||LA8_0=='\u1163'||LA8_0=='\u1165'||LA8_0=='\u1167'||LA8_0=='\u1169'||(LA8_0>='\u116D' && LA8_0<='\u116E')||(LA8_0>='\u1172' && LA8_0<='\u1173')||LA8_0=='\u1175'||LA8_0=='\u119E'||LA8_0=='\u11A8'||LA8_0=='\u11AB'||(LA8_0>='\u11AE' && LA8_0<='\u11AF')||(LA8_0>='\u11B7' && LA8_0<='\u11B8')||LA8_0=='\u11BA'||(LA8_0>='\u11BC' && LA8_0<='\u11C2')||LA8_0=='\u11EB'||LA8_0=='\u11F0'||LA8_0=='\u11F9'||(LA8_0>='\u1E00' && LA8_0<='\u1E9B')||(LA8_0>='\u1EA0' && LA8_0<='\u1EF9')||(LA8_0>='\u1F00' && LA8_0<='\u1F15')||(LA8_0>='\u1F18' && LA8_0<='\u1F1D')||(LA8_0>='\u1F20' && LA8_0<='\u1F45')||(LA8_0>='\u1F48' && LA8_0<='\u1F4D')||(LA8_0>='\u1F50' && LA8_0<='\u1F57')||LA8_0=='\u1F59'||LA8_0=='\u1F5B'||LA8_0=='\u1F5D'||(LA8_0>='\u1F5F' && LA8_0<='\u1F7D')||(LA8_0>='\u1F80' && LA8_0<='\u1FB4')||(LA8_0>='\u1FB6' && LA8_0<='\u1FBC')||LA8_0=='\u1FBE'||(LA8_0>='\u1FC2' && LA8_0<='\u1FC4')||(LA8_0>='\u1FC6' && LA8_0<='\u1FCC')||(LA8_0>='\u1FD0' && LA8_0<='\u1FD3')||(LA8_0>='\u1FD6' && LA8_0<='\u1FDB')||(LA8_0>='\u1FE0' && LA8_0<='\u1FEC')||(LA8_0>='\u1FF2' && LA8_0<='\u1FF4')||(LA8_0>='\u1FF6' && LA8_0<='\u1FFC')||(LA8_0>='\u20D0' && LA8_0<='\u20DC')||LA8_0=='\u20E1'||LA8_0=='\u2126'||(LA8_0>='\u212A' && LA8_0<='\u212B')||LA8_0=='\u212E'||(LA8_0>='\u2180' && LA8_0<='\u2182')||LA8_0=='\u3005'||LA8_0=='\u3007'||(LA8_0>='\u3021' && LA8_0<='\u302F')||(LA8_0>='\u3031' && LA8_0<='\u3035')||(LA8_0>='\u3041' && LA8_0<='\u3094')||(LA8_0>='\u3099' && LA8_0<='\u309A')||(LA8_0>='\u309D' && LA8_0<='\u309E')||(LA8_0>='\u30A1' && LA8_0<='\u30FA')||(LA8_0>='\u30FC' && LA8_0<='\u30FE')||(LA8_0>='\u3105' && LA8_0<='\u312C')||(LA8_0>='\u4E00' && LA8_0<='\u9FA5')||(LA8_0>='\uAC00' && LA8_0<='\uD7A3')) ) {
+                    alt8=1;
+                }
+
+
+                switch (alt8) {
+            	case 1 :
+            	    // etc/XQFT.g:775:44: NCNameChar
+            	    {
+            	    mNCNameChar(); if (failed) return ;
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop8;
+                }
+            } while (true);
+
+
+            }
+
+            this.type = _type;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end NCName
+
+    // $ANTLR start NCNameChar
+    public final void mNCNameChar() throws RecognitionException {
+        try {
+            // etc/XQFT.g:776:29: ( Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | CombiningChar | Extender )
             // etc/XQFT.g:
             {
-            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
+            if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u00B7'||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||(input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0386' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0640' && input.LA(1)<='\u0652')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u0670' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||(input.LA(1)>='\u06D5' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||(input.LA(1)>='\u093C' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0958' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E3')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09F1')||input.LA(1)=='\u0A02'||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||(input.LA(1)>='\u0ABC' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||(input.LA(1)>='\u0B3C' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||(input.LA(1)>='\u0E30' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E4E')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||(input.LA(1)>='\u0EB0' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBD')||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||input.LA(1)=='\u0EC6'||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3005'||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
                 input.consume();
             failed=false;
             }
@@ -3778,15 +4738,15 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end Letter
+    // $ANTLR end NCNameChar
 
-    // $ANTLR start BaseChar
-    public final void mBaseChar() throws RecognitionException {
+    // $ANTLR start NCNameStartChar
+    public final void mNCNameStartChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:214:30: ( '\\u0041' .. '\\u005A' | '\\u0061' .. '\\u007A' | '\\u00C0' .. '\\u00D6' | '\\u00D8' .. '\\u00F6' | '\\u00F8' .. '\\u00FF' | '\\u0100' .. '\\u0131' | '\\u0134' .. '\\u013E' | '\\u0141' .. '\\u0148' | '\\u014A' .. '\\u017E' | '\\u0180' .. '\\u01C3' | '\\u01CD' .. '\\u01F0' | '\\u01F4' .. '\\u01F5' | '\\u01FA' .. '\\u0217' | '\\u0250' .. '\\u02A8' | '\\u02BB' .. '\\u02C1' | '\\u0386' | '\\u0388' .. '\\u038A' | '\\u038C' | '\\u038E' .. '\\u03A1' | '\\u03A3' .. '\\u03CE' | '\\u03D0' .. '\\u03D6' | '\\u03DA' | '\\u03DC' | '\\u03DE' | '\\u03E0' | '\\u03E2' .. '\\u03F3' | '\\u0401' .. '\\u040C' | '\\u040E' .. '\\u044F' | '\\u0451' .. '\\u045C' | '\\u045E' .. '\\u0481' | '\\u0490' .. '\\u04C4' | '\\u04C7' .. '\\u04C8' | '\\u04CB' .. '\\u04CC' | '\\u04D0' .. '\\u04EB' | '\\u04EE' .. '\\u04F5' | '\\u04F8' .. '\\u04F9' | '\\u0531' .. '\\u0556' | '\\u0559' | '\\u0561' .. '\\u0586' | '\\u05D0' .. '\\u05EA' | '\\u05F0' .. '\\u05F2' | '\\u0621' .. '\\u063A' | '\\u0641' .. '\\u064A' | '\\u0671' .. '\\u06B7' | '\\u06BA' .. '\\u06BE' | '\\u06C0' .. '\\u06CE' | '\\u06D0' .. '\\u06D3' | '\\u06D5' | '\\u06E5' .. '\\u06E6' | '\\u0905' .. '\\u0939' | '\\u093D' | '\\u0958' .. '\\u0961' | '\\u0985' .. '\\u098C' | '\\u098F' .. '\\u0990' | '\\u0993' .. '\\u09A8' | '\\u09AA' .. '\\u09B0' | '\\u09B2' | '\\u09B6' .. '\\u09B9' | '\\u09DC' .. '\\u09DD' | '\\u09DF' .. '\\u09E1' | '\\u09F0' .. '\\u09F1' | '\\u0A05' .. '\\u0A0A' | '\\u0A0F' .. '\\u0A10' | '\\u0A13' .. '\\u0A28' | '\\u0A2A' .. '\\u0A30' | '\\u0A32' .. '\\u0A33' | '\\u0A35' .. '\\u0A36' | '\\u0A38' .. '\\u0A39' | '\\u0A59' .. '\\u0A5C' | '\\u0A5E' | '\\u0A72' .. '\\u0A74' | '\\u0A85' .. '\\u0A8B' | '\\u0A8D' | '\\u0A8F' .. '\\u0A91' | '\\u0A93' .. '\\u0AA8' | '\\u0AAA' .. '\\u0AB0' | '\\u0AB2' .. '\\u0AB3' | '\\u0AB5' .. '\\u0AB9' | '\\u0ABD' | '\\u0AE0' | '\\u0B05' .. '\\u0B0C' | '\\u0B0F' .. '\\u0B10' | '\\u0B13' .. '\\u0B28' | '\\u0B2A' .. '\\u0B30' | '\\u0B32' .. '\\u0B33' | '\\u0B36' .. '\\u0B39' | '\\u0B3D' | '\\u0B5C' .. '\\u0B5D' | '\\u0B5F' .. '\\u0B61' | '\\u0B85' .. '\\u0B8A' | '\\u0B8E' .. '\\u0B90' | '\\u0B92' .. '\\u0B95' | '\\u0B99' .. '\\u0B9A' | '\\u0B9C' | '\\u0B9E' .. '\\u0B9F' | '\\u0BA3' .. '\\u0BA4' | '\\u0BA8' .. '\\u0BAA' | '\\u0BAE' .. '\\u0BB5' | '\\u0BB7' .. '\\u0BB9' | '\\u0C05' .. '\\u0C0C' | '\\u0C0E' .. '\\u0C10' | '\\u0C12' .. '\\u0C28' | '\\u0C2A' .. '\\u0C33' | '\\u0C35' .. '\\u0C39' | '\\u0C60' .. '\\u0C61' | '\\u0C85' .. '\\u0C8C' | '\\u0C8E' .. '\\u0C90' | '\\u0C92' .. '\\u0CA8' | '\\u0CAA' .. '\\u0CB3' | '\\u0CB5' .. '\\u0CB9' | '\\u0CDE' | '\\u0CE0' .. '\\u0CE1' | '\\u0D05' .. '\\u0D0C' | '\\u0D0E' .. '\\u0D10' | '\\u0D12' .. '\\u0D28' | '\\u0D2A' .. '\\u0D39' | '\\u0D60' .. '\\u0D61' | '\\u0E01' .. '\\u0E2E' | '\\u0E30' | '\\u0E32' .. '\\u0E33' | '\\u0E40' .. '\\u0E45' | '\\u0E81' .. '\\u0E82' | '\\u0E84' | '\\u0E87' .. '\\u0E88' | '\\u0E8A' | '\\u0E8D' | '\\u0E94' .. '\\u0E97' | '\\u0E99' .. '\\u0E9F' | '\\u0EA1' .. '\\u0EA3' | '\\u0EA5' | '\\u0EA7' | '\\u0EAA' .. '\\u0EAB' | '\\u0EAD' .. '\\u0EAE' | '\\u0EB0' | '\\u0EB2' .. '\\u0EB3' | '\\u0EBD' | '\\u0EC0' .. '\\u0EC4' | '\\u0F40' .. '\\u0F47' | '\\u0F49' .. '\\u0F69' | '\\u10A0' .. '\\u10C5' | '\\u10D0' .. '\\u10F6' | '\\u1100' | '\\u1102' .. '\\u1103' | '\\u1105' .. '\\u1107' | '\\u1109' | '\\u110B' .. '\\u110C' | '\\u110E' .. '\\u1112' | '\\u113C' | '\\u113E' | '\\u1140' | '\\u114C' | '\\u114E' | '\\u1150' | '\\u1154' .. '\\u1155' | '\\u1159' | '\\u115F' .. '\\u1161' | '\\u1163' | '\\u1165' | '\\u1167' | '\\u1169' | '\\u116D' .. '\\u116E' | '\\u1172' .. '\\u1173' | '\\u1175' | '\\u119E' | '\\u11A8' | '\\u11AB' | '\\u11AE' .. '\\u11AF' | '\\u11B7' .. '\\u11B8' | '\\u11BA' | '\\u11BC' .. '\\u11C2' | '\\u11EB' | '\\u11F0' | '\\u11F9' | '\\u1E00' .. '\\u1E9B' | '\\u1EA0' .. '\\u1EF9' | '\\u1F00' .. '\\u1F15' | '\\u1F18' .. '\\u1F1D' | '\\u1F20' .. '\\u1F45' | '\\u1F48' .. '\\u1F4D' | '\\u1F50' .. '\\u1F57' | '\\u1F59' | '\\u1F5B' | '\\u1F5D' | '\\u1F5F' .. '\\u1F7D' | '\\u1F80' .. '\\u1FB4' | '\\u1FB6' .. '\\u1FBC' | '\\u1FBE' | '\\u1FC2' .. '\\u1FC4' | '\\u1FC6' .. '\\u1FCC' | '\\u1FD0' .. '\\u1FD3' | '\\u1FD6' .. '\\u1FDB' | '\\u1FE0' .. '\\u1FEC' | '\\u1FF2' .. '\\u1FF4' | '\\u1FF6' .. '\\u1FFC' | '\\u2126' | '\\u212A' .. '\\u212B' | '\\u212E' | '\\u2180' .. '\\u2182' | '\\u3041' .. '\\u3094' | '\\u30A1' .. '\\u30FA' | '\\u3105' .. '\\u312C' | '\\uAC00' .. '\\uD7A3' )
+            // etc/XQFT.g:777:33: ( Letter | UNDERSCORESi )
             // etc/XQFT.g:
             {
-            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
+            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
                 input.consume();
             failed=false;
             }
@@ -3804,118 +4764,276 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end BaseChar
+    // $ANTLR end NCNameStartChar
 
-    // $ANTLR start Ideographic
-    public final void mIdeographic() throws RecognitionException {
+    // $ANTLR start StringLiteral
+    public final void mStringLiteral() throws RecognitionException {
         try {
-            // etc/XQFT.g:216:30: ( '\\u4E00' .. '\\u9FA5' | '\\u3007' | '\\u3021' .. '\\u3029' )
-            // etc/XQFT.g:
-            {
-            if ( input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5') ) {
-                input.consume();
-            failed=false;
+            int _type = StringLiteral;
+            // etc/XQFT.g:779:24: ( QUOTSi ( PredefinedEntityRef | CharRef | ESCQUOTSi | ~ ( QUOTSi | AMPERSi ) )* QUOTSi | APOSSi ( PredefinedEntityRef | CharRef | ESCAPOSSi | ~ ( APOSSi | AMPERSi ) )* APOSSi )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
+
+            if ( (LA11_0=='\"') ) {
+                alt11=1;
+            }
+            else if ( (LA11_0=='\'') ) {
+                alt11=2;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
-                MismatchedSetException mse =
-                    new MismatchedSetException(null,input);
-                recover(mse);    throw mse;
+                NoViableAltException nvae =
+                    new NoViableAltException("779:1: StringLiteral : ( QUOTSi ( PredefinedEntityRef | CharRef | ESCQUOTSi | ~ ( QUOTSi | AMPERSi ) )* QUOTSi | APOSSi ( PredefinedEntityRef | CharRef | ESCAPOSSi | ~ ( APOSSi | AMPERSi ) )* APOSSi );", 11, 0, input);
+
+                throw nvae;
             }
+            switch (alt11) {
+                case 1 :
+                    // etc/XQFT.g:779:26: QUOTSi ( PredefinedEntityRef | CharRef | ESCQUOTSi | ~ ( QUOTSi | AMPERSi ) )* QUOTSi
+                    {
+                    mQUOTSi(); if (failed) return ;
+                    // etc/XQFT.g:780:12: ( PredefinedEntityRef | CharRef | ESCQUOTSi | ~ ( QUOTSi | AMPERSi ) )*
+                    loop9:
+                    do {
+                        int alt9=5;
+                        int LA9_0 = input.LA(1);
 
+                        if ( (LA9_0=='\"') ) {
+                            int LA9_1 = input.LA(2);
+
+                            if ( (LA9_1=='\"') ) {
+                                alt9=3;
+                            }
+
+
+                        }
+                        else if ( (LA9_0=='&') ) {
+                            int LA9_2 = input.LA(2);
+
+                            if ( (LA9_2=='#') ) {
+                                alt9=2;
+                            }
+                            else if ( (LA9_2=='a'||LA9_2=='g'||LA9_2=='l'||LA9_2=='q') ) {
+                                alt9=1;
+                            }
+
+
+                        }
+                        else if ( ((LA9_0>='\u0000' && LA9_0<='!')||(LA9_0>='#' && LA9_0<='%')||(LA9_0>='\'' && LA9_0<='\uFFFE')) ) {
+                            alt9=4;
+                        }
+
+
+                        switch (alt9) {
+                    	case 1 :
+                    	    // etc/XQFT.g:780:13: PredefinedEntityRef
+                    	    {
+                    	    mPredefinedEntityRef(); if (failed) return ;
+
+                    	    }
+                    	    break;
+                    	case 2 :
+                    	    // etc/XQFT.g:780:35: CharRef
+                    	    {
+                    	    mCharRef(); if (failed) return ;
+
+                    	    }
+                    	    break;
+                    	case 3 :
+                    	    // etc/XQFT.g:780:45: ESCQUOTSi
+                    	    {
+                    	    mESCQUOTSi(); if (failed) return ;
+
+                    	    }
+                    	    break;
+                    	case 4 :
+                    	    // etc/XQFT.g:780:57: ~ ( QUOTSi | AMPERSi )
+                    	    {
+                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<='\uFFFE') ) {
+                    	        input.consume();
+                    	    failed=false;
+                    	    }
+                    	    else {
+                    	        if (backtracking>0) {failed=true; return ;}
+                    	        MismatchedSetException mse =
+                    	            new MismatchedSetException(null,input);
+                    	        recover(mse);    throw mse;
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop9;
+                        }
+                    } while (true);
+
+                    mQUOTSi(); if (failed) return ;
+
+                    }
+                    break;
+                case 2 :
+                    // etc/XQFT.g:782:13: APOSSi ( PredefinedEntityRef | CharRef | ESCAPOSSi | ~ ( APOSSi | AMPERSi ) )* APOSSi
+                    {
+                    mAPOSSi(); if (failed) return ;
+                    // etc/XQFT.g:783:12: ( PredefinedEntityRef | CharRef | ESCAPOSSi | ~ ( APOSSi | AMPERSi ) )*
+                    loop10:
+                    do {
+                        int alt10=5;
+                        int LA10_0 = input.LA(1);
+
+                        if ( (LA10_0=='\'') ) {
+                            int LA10_1 = input.LA(2);
+
+                            if ( (LA10_1=='\'') ) {
+                                alt10=3;
+                            }
+
+
+                        }
+                        else if ( (LA10_0=='&') ) {
+                            int LA10_2 = input.LA(2);
+
+                            if ( (LA10_2=='#') ) {
+                                alt10=2;
+                            }
+                            else if ( (LA10_2=='a'||LA10_2=='g'||LA10_2=='l'||LA10_2=='q') ) {
+                                alt10=1;
+                            }
+
+
+                        }
+                        else if ( ((LA10_0>='\u0000' && LA10_0<='%')||(LA10_0>='(' && LA10_0<='\uFFFE')) ) {
+                            alt10=4;
+                        }
+
+
+                        switch (alt10) {
+                    	case 1 :
+                    	    // etc/XQFT.g:783:13: PredefinedEntityRef
+                    	    {
+                    	    mPredefinedEntityRef(); if (failed) return ;
+
+                    	    }
+                    	    break;
+                    	case 2 :
+                    	    // etc/XQFT.g:783:35: CharRef
+                    	    {
+                    	    mCharRef(); if (failed) return ;
+
+                    	    }
+                    	    break;
+                    	case 3 :
+                    	    // etc/XQFT.g:783:45: ESCAPOSSi
+                    	    {
+                    	    mESCAPOSSi(); if (failed) return ;
+
+                    	    }
+                    	    break;
+                    	case 4 :
+                    	    // etc/XQFT.g:783:57: ~ ( APOSSi | AMPERSi )
+                    	    {
+                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<='\uFFFE') ) {
+                    	        input.consume();
+                    	    failed=false;
+                    	    }
+                    	    else {
+                    	        if (backtracking>0) {failed=true; return ;}
+                    	        MismatchedSetException mse =
+                    	            new MismatchedSetException(null,input);
+                    	        recover(mse);    throw mse;
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop10;
+                        }
+                    } while (true);
+
+                    mAPOSSi(); if (failed) return ;
+
+                    }
+                    break;
 
             }
-
+            this.type = _type;
         }
         finally {
         }
     }
-    // $ANTLR end Ideographic
+    // $ANTLR end StringLiteral
 
-    // $ANTLR start CombiningChar
-    public final void mCombiningChar() throws RecognitionException {
+    // $ANTLR start S
+    public final void mS() throws RecognitionException {
         try {
-            // etc/XQFT.g:217:30: ( '\\u0300' .. '\\u0345' | '\\u0360' .. '\\u0361' | '\\u0483' .. '\\u0486' | '\\u0591' .. '\\u05A1' | '\\u05A3' .. '\\u05B9' | '\\u05BB' .. '\\u05BD' | '\\u05BF' | '\\u05C1' .. '\\u05C2' | '\\u05C4' | '\\u064B' .. '\\u0652' | '\\u0670' | '\\u06D6' .. '\\u06DC' | '\\u06DD' .. '\\u06DF' | '\\u06E0' .. '\\u06E4' | '\\u06E7' .. '\\u06E8' | '\\u06EA' .. '\\u06ED' | '\\u0901' .. '\\u0903' | '\\u093C' | '\\u093E' .. '\\u094C' | '\\u094D' | '\\u0951' .. '\\u0954' | '\\u0962' .. '\\u0963' | '\\u0981' .. '\\u0983' | '\\u09BC' | '\\u09BE' | '\\u09BF' | '\\u09C0' .. '\\u09C4' | '\\u09C7' .. '\\u09C8' | '\\u09CB' .. '\\u09CD' | '\\u09D7' | '\\u09E2' .. '\\u09E3' | '\\u0A02' | '\\u0A3C' | '\\u0A3E' | '\\u0A3F' | '\\u0A40' .. '\\u0A42' | '\\u0A47' .. '\\u0A48' | '\\u0A4B' .. '\\u0A4D' | '\\u0A70' .. '\\u0A71' | '\\u0A81' .. '\\u0A83' | '\\u0ABC' | '\\u0ABE' .. '\\u0AC5' | '\\u0AC7' .. '\\u0AC9' | '\\u0ACB' .. '\\u0ACD' | '\\u0B01' .. '\\u0B03' | '\\u0B3C' | '\\u0B3E' .. '\\u0B43' | '\\u0B47' .. '\\u0B48' | '\\u0B4B' .. '\\u0B4D' | '\\u0B56' .. '\\u0B57' | '\\u0B82' .. '\\u0B83' | '\\u0BBE' .. '\\u0BC2' | '\\u0BC6' .. '\\u0BC8' | '\\u0BCA' .. '\\u0BCD' | '\\u0BD7' | '\\u0C01' .. '\\u0C03' | '\\u0C3E' .. '\\u0C44' | '\\u0C46' .. '\\u0C48' | '\\u0C4A' .. '\\u0C4D' | '\\u0C55' .. '\\u0C56' | '\\u0C82' .. '\\u0C83' | '\\u0CBE' .. '\\u0CC4' | '\\u0CC6' .. '\\u0CC8' | '\\u0CCA' .. '\\u0CCD' | '\\u0CD5' .. '\\u0CD6' | '\\u0D02' .. '\\u0D03' | '\\u0D3E' .. '\\u0D43' | '\\u0D46' .. '\\u0D48' | '\\u0D4A' .. '\\u0D4D' | '\\u0D57' | '\\u0E31' | '\\u0E34' .. '\\u0E3A' | '\\u0E47' .. '\\u0E4E' | '\\u0EB1' | '\\u0EB4' .. '\\u0EB9' | '\\u0EBB' .. '\\u0EBC' | '\\u0EC8' .. '\\u0ECD' | '\\u0F18' .. '\\u0F19' | '\\u0F35' | '\\u0F37' | '\\u0F39' | '\\u0F3E' | '\\u0F3F' | '\\u0F71' .. '\\u0F84' | '\\u0F86' .. '\\u0F8B' | '\\u0F90' .. '\\u0F95' | '\\u0F97' | '\\u0F99' .. '\\u0FAD' | '\\u0FB1' .. '\\u0FB7' | '\\u0FB9' | '\\u20D0' .. '\\u20DC' | '\\u20E1' | '\\u302A' .. '\\u302F' | '\\u3099' | '\\u309A' )
-            // etc/XQFT.g:
+            int _type = S;
+            // etc/XQFT.g:788:26: ( ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+ )
+            // etc/XQFT.g:788:28: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
             {
-            if ( (input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u064B' && input.LA(1)<='\u0652')||input.LA(1)=='\u0670'||(input.LA(1)>='\u06D6' && input.LA(1)<='\u06E4')||(input.LA(1)>='\u06E7' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||input.LA(1)=='\u093C'||(input.LA(1)>='\u093E' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0962' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09E2' && input.LA(1)<='\u09E3')||input.LA(1)=='\u0A02'||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A70' && input.LA(1)<='\u0A71')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||input.LA(1)=='\u0ABC'||(input.LA(1)>='\u0ABE' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||input.LA(1)=='\u0B3C'||(input.LA(1)>='\u0B3E' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||input.LA(1)=='\u0E31'||(input.LA(1)>='\u0E34' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E47' && input.LA(1)<='\u0E4E')||input.LA(1)=='\u0EB1'||(input.LA(1)>='\u0EB4' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBC')||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F3F')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||(input.LA(1)>='\u302A' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A') ) {
-                input.consume();
-            failed=false;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                MismatchedSetException mse =
-                    new MismatchedSetException(null,input);
-                recover(mse);    throw mse;
-            }
+            // etc/XQFT.g:788:28: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
+            int cnt12=0;
+            loop12:
+            do {
+                int alt12=2;
+                int LA12_0 = input.LA(1);
+
+                if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {
+                    alt12=1;
+                }
 
 
+                switch (alt12) {
+            	case 1 :
+            	    // etc/XQFT.g:
+            	    {
+            	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
+            	        input.consume();
+            	    failed=false;
+            	    }
+            	    else {
+            	        if (backtracking>0) {failed=true; return ;}
+            	        MismatchedSetException mse =
+            	            new MismatchedSetException(null,input);
+            	        recover(mse);    throw mse;
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt12 >= 1 ) break loop12;
+            	    if (backtracking>0) {failed=true; return ;}
+                        EarlyExitException eee =
+                            new EarlyExitException(12, input);
+                        throw eee;
+                }
+                cnt12++;
+            } while (true);
+
+            if ( backtracking==1 ) {
+              channel=HIDDEN;
             }
 
+            }
+
+            this.type = _type;
         }
         finally {
         }
     }
-    // $ANTLR end CombiningChar
-
-    // $ANTLR start Digit
-    public final void mDigit() throws RecognitionException {
-        try {
-            // etc/XQFT.g:218:30: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06F0' .. '\\u06F9' | '\\u0966' .. '\\u096F' | '\\u09E6' .. '\\u09EF' | '\\u0A66' .. '\\u0A6F' | '\\u0AE6' .. '\\u0AEF' | '\\u0B66' .. '\\u0B6F' | '\\u0BE7' .. '\\u0BEF' | '\\u0C66' .. '\\u0C6F' | '\\u0CE6' .. '\\u0CEF' | '\\u0D66' .. '\\u0D6F' | '\\u0E50' .. '\\u0E59' | '\\u0ED0' .. '\\u0ED9' | '\\u0F20' .. '\\u0F29' )
-            // etc/XQFT.g:
-            {
-            if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09EF')||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A6F')||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29') ) {
-                input.consume();
-            failed=false;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                MismatchedSetException mse =
-                    new MismatchedSetException(null,input);
-                recover(mse);    throw mse;
-            }
-
-
-            }
-
-        }
-        finally {
-        }
-    }
-    // $ANTLR end Digit
-
-    // $ANTLR start Extender
-    public final void mExtender() throws RecognitionException {
-        try {
-            // etc/XQFT.g:219:30: ( '\\u00B7' | '\\u02D0' | '\\u02D1' | '\\u0387' | '\\u0640' | '\\u0E46' | '\\u0EC6' | '\\u3005' | '\\u3031' .. '\\u3035' | '\\u309D' .. '\\u309E' | '\\u30FC' .. '\\u30FE' )
-            // etc/XQFT.g:
-            {
-            if ( input.LA(1)=='\u00B7'||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||input.LA(1)=='\u0387'||input.LA(1)=='\u0640'||input.LA(1)=='\u0E46'||input.LA(1)=='\u0EC6'||input.LA(1)=='\u3005'||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE') ) {
-                input.consume();
-            failed=false;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                MismatchedSetException mse =
-                    new MismatchedSetException(null,input);
-                recover(mse);    throw mse;
-            }
-
-
-            }
-
-        }
-        finally {
-        }
-    }
-    // $ANTLR end Extender
+    // $ANTLR end S
 
     // $ANTLR start IntegerLiteral
     public final void mIntegerLiteral() throws RecognitionException {
         try {
             int _type = IntegerLiteral;
-            // etc/XQFT.g:222:21: ( Digits )
-            // etc/XQFT.g:222:23: Digits
+            // etc/XQFT.g:790:26: ( Digits )
+            // etc/XQFT.g:790:28: Digits
             {
             mDigits(); if (failed) return ;
 
@@ -3932,60 +5050,51 @@ public class XQFTLexer extends Lexer {
     public final void mDecimalLiteral() throws RecognitionException {
         try {
             int _type = DecimalLiteral;
-            // etc/XQFT.g:223:21: ( ( DOT Digits ) | ( Digits DOT ( '0' .. '9' )* ) )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+            // etc/XQFT.g:792:26: ( DOTSi Digits | Digits DOTSi ( '0' .. '9' )* )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA2_0=='.') ) {
-                alt2=1;
+            if ( (LA14_0=='.') ) {
+                alt14=1;
             }
-            else if ( ((LA2_0>='0' && LA2_0<='9')) ) {
-                alt2=2;
+            else if ( ((LA14_0>='0' && LA14_0<='9')) ) {
+                alt14=2;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("223:1: DecimalLiteral : ( ( DOT Digits ) | ( Digits DOT ( '0' .. '9' )* ) );", 2, 0, input);
+                    new NoViableAltException("792:1: DecimalLiteral : ( DOTSi Digits | Digits DOTSi ( '0' .. '9' )* );", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt2) {
+            switch (alt14) {
                 case 1 :
-                    // etc/XQFT.g:223:23: ( DOT Digits )
+                    // etc/XQFT.g:792:28: DOTSi Digits
                     {
-                    // etc/XQFT.g:223:23: ( DOT Digits )
-                    // etc/XQFT.g:223:24: DOT Digits
-                    {
-                    mDOT(); if (failed) return ;
+                    mDOTSi(); if (failed) return ;
                     mDigits(); if (failed) return ;
-
-                    }
-
 
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:223:38: ( Digits DOT ( '0' .. '9' )* )
-                    {
-                    // etc/XQFT.g:223:38: ( Digits DOT ( '0' .. '9' )* )
-                    // etc/XQFT.g:223:39: Digits DOT ( '0' .. '9' )*
+                    // etc/XQFT.g:793:13: Digits DOTSi ( '0' .. '9' )*
                     {
                     mDigits(); if (failed) return ;
-                    mDOT(); if (failed) return ;
-                    // etc/XQFT.g:223:50: ( '0' .. '9' )*
-                    loop1:
+                    mDOTSi(); if (failed) return ;
+                    // etc/XQFT.g:793:26: ( '0' .. '9' )*
+                    loop13:
                     do {
-                        int alt1=2;
-                        int LA1_0 = input.LA(1);
+                        int alt13=2;
+                        int LA13_0 = input.LA(1);
 
-                        if ( ((LA1_0>='0' && LA1_0<='9')) ) {
-                            alt1=1;
+                        if ( ((LA13_0>='0' && LA13_0<='9')) ) {
+                            alt13=1;
                         }
 
 
-                        switch (alt1) {
+                        switch (alt13) {
                     	case 1 :
-                    	    // etc/XQFT.g:223:51: '0' .. '9'
+                    	    // etc/XQFT.g:793:27: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); if (failed) return ;
 
@@ -3993,12 +5102,9 @@ public class XQFTLexer extends Lexer {
                     	    break;
 
                     	default :
-                    	    break loop1;
+                    	    break loop13;
                         }
                     } while (true);
-
-
-                    }
 
 
                     }
@@ -4016,74 +5122,65 @@ public class XQFTLexer extends Lexer {
     public final void mDoubleLiteral() throws RecognitionException {
         try {
             int _type = DoubleLiteral;
-            // etc/XQFT.g:224:21: ( ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits )
-            // etc/XQFT.g:224:23: ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits
+            // etc/XQFT.g:795:27: ( ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits )
+            // etc/XQFT.g:795:30: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits
             {
-            // etc/XQFT.g:224:23: ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // etc/XQFT.g:795:30: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA5_0=='.') ) {
-                alt5=1;
+            if ( (LA17_0=='.') ) {
+                alt17=1;
             }
-            else if ( ((LA5_0>='0' && LA5_0<='9')) ) {
-                alt5=2;
+            else if ( ((LA17_0>='0' && LA17_0<='9')) ) {
+                alt17=2;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("224:23: ( ( DOT Digits ) | ( Digits ( DOT ( '0' .. '9' )* )? ) )", 5, 0, input);
+                    new NoViableAltException("795:30: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? )", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt5) {
+            switch (alt17) {
                 case 1 :
-                    // etc/XQFT.g:224:24: ( DOT Digits )
+                    // etc/XQFT.g:796:14: DOTSi Digits
                     {
-                    // etc/XQFT.g:224:24: ( DOT Digits )
-                    // etc/XQFT.g:224:25: DOT Digits
-                    {
-                    mDOT(); if (failed) return ;
+                    mDOTSi(); if (failed) return ;
                     mDigits(); if (failed) return ;
-
-                    }
-
 
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:224:39: ( Digits ( DOT ( '0' .. '9' )* )? )
-                    {
-                    // etc/XQFT.g:224:39: ( Digits ( DOT ( '0' .. '9' )* )? )
-                    // etc/XQFT.g:224:40: Digits ( DOT ( '0' .. '9' )* )?
+                    // etc/XQFT.g:797:14: Digits ( DOTSi ( '0' .. '9' )* )?
                     {
                     mDigits(); if (failed) return ;
-                    // etc/XQFT.g:224:47: ( DOT ( '0' .. '9' )* )?
-                    int alt4=2;
-                    int LA4_0 = input.LA(1);
+                    // etc/XQFT.g:797:21: ( DOTSi ( '0' .. '9' )* )?
+                    int alt16=2;
+                    int LA16_0 = input.LA(1);
 
-                    if ( (LA4_0=='.') ) {
-                        alt4=1;
+                    if ( (LA16_0=='.') ) {
+                        alt16=1;
                     }
-                    switch (alt4) {
+                    switch (alt16) {
                         case 1 :
-                            // etc/XQFT.g:224:48: DOT ( '0' .. '9' )*
+                            // etc/XQFT.g:797:23: DOTSi ( '0' .. '9' )*
                             {
-                            mDOT(); if (failed) return ;
-                            // etc/XQFT.g:224:52: ( '0' .. '9' )*
-                            loop3:
+                            mDOTSi(); if (failed) return ;
+                            // etc/XQFT.g:797:29: ( '0' .. '9' )*
+                            loop15:
                             do {
-                                int alt3=2;
-                                int LA3_0 = input.LA(1);
+                                int alt15=2;
+                                int LA15_0 = input.LA(1);
 
-                                if ( ((LA3_0>='0' && LA3_0<='9')) ) {
-                                    alt3=1;
+                                if ( ((LA15_0>='0' && LA15_0<='9')) ) {
+                                    alt15=1;
                                 }
 
 
-                                switch (alt3) {
+                                switch (alt15) {
                             	case 1 :
-                            	    // etc/XQFT.g:224:53: '0' .. '9'
+                            	    // etc/XQFT.g:797:30: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); if (failed) return ;
 
@@ -4091,16 +5188,13 @@ public class XQFTLexer extends Lexer {
                             	    break;
 
                             	default :
-                            	    break loop3;
+                            	    break loop15;
                                 }
                             } while (true);
 
 
                             }
                             break;
-
-                    }
-
 
                     }
 
@@ -4121,14 +5215,14 @@ public class XQFTLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // etc/XQFT.g:224:78: ( PLUSSi | MINUSSi )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // etc/XQFT.g:799:22: ( PLUSSi | MINUSSi )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA6_0=='+'||LA6_0=='-') ) {
-                alt6=1;
+            if ( (LA18_0=='+'||LA18_0=='-') ) {
+                alt18=1;
             }
-            switch (alt6) {
+            switch (alt18) {
                 case 1 :
                     // etc/XQFT.g:
                     {
@@ -4160,332 +5254,48 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end DoubleLiteral
 
-    // $ANTLR start StringLiteral
-    public final void mStringLiteral() throws RecognitionException {
+    // $ANTLR start WS
+    public final void mWS() throws RecognitionException {
         try {
-            int _type = StringLiteral;
-            // etc/XQFT.g:227:19: ( ( DOUBLEQUOTESi ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi ) | ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE ) )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0=='\"') ) {
-                alt9=1;
-            }
-            else if ( (LA9_0=='\'') ) {
-                alt9=2;
+            // etc/XQFT.g:803:20: ( ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' ) )
+            // etc/XQFT.g:803:22: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )
+            {
+            if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
+                input.consume();
+            failed=false;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("227:1: StringLiteral : ( ( DOUBLEQUOTESi ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi ) | ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE ) );", 9, 0, input);
-
-                throw nvae;
+                MismatchedSetException mse =
+                    new MismatchedSetException(null,input);
+                recover(mse);    throw mse;
             }
-            switch (alt9) {
-                case 1 :
-                    // etc/XQFT.g:227:21: ( DOUBLEQUOTESi ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi )
-                    {
-                    // etc/XQFT.g:227:21: ( DOUBLEQUOTESi ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi )
-                    // etc/XQFT.g:227:22: DOUBLEQUOTESi ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )* DOUBLEQUOTESi
-                    {
-                    mDOUBLEQUOTESi(); if (failed) return ;
-                    // etc/XQFT.g:227:36: ( PredefinedEntityRef | CharRef | EscapeQuot | ~ ( DOUBLEQUOTESi | '&' ) )*
-                    loop7:
-                    do {
-                        int alt7=5;
-                        int LA7_0 = input.LA(1);
 
-                        if ( (LA7_0=='\"') ) {
-                            int LA7_1 = input.LA(2);
-
-                            if ( (LA7_1=='\"') ) {
-                                alt7=3;
-                            }
-
-
-                        }
-                        else if ( (LA7_0=='&') ) {
-                            int LA7_2 = input.LA(2);
-
-                            if ( (LA7_2=='#') ) {
-                                alt7=2;
-                            }
-                            else if ( (LA7_2=='a'||LA7_2=='g'||LA7_2=='l'||LA7_2=='q') ) {
-                                alt7=1;
-                            }
-
-
-                        }
-                        else if ( ((LA7_0>='\u0000' && LA7_0<='!')||(LA7_0>='#' && LA7_0<='%')||(LA7_0>='\'' && LA7_0<='\uFFFE')) ) {
-                            alt7=4;
-                        }
-
-
-                        switch (alt7) {
-                    	case 1 :
-                    	    // etc/XQFT.g:227:37: PredefinedEntityRef
-                    	    {
-                    	    mPredefinedEntityRef(); if (failed) return ;
-
-                    	    }
-                    	    break;
-                    	case 2 :
-                    	    // etc/XQFT.g:227:59: CharRef
-                    	    {
-                    	    mCharRef(); if (failed) return ;
-
-                    	    }
-                    	    break;
-                    	case 3 :
-                    	    // etc/XQFT.g:227:69: EscapeQuot
-                    	    {
-                    	    mEscapeQuot(); if (failed) return ;
-
-                    	    }
-                    	    break;
-                    	case 4 :
-                    	    // etc/XQFT.g:227:82: ~ ( DOUBLEQUOTESi | '&' )
-                    	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<='\uFFFE') ) {
-                    	        input.consume();
-                    	    failed=false;
-                    	    }
-                    	    else {
-                    	        if (backtracking>0) {failed=true; return ;}
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop7;
-                        }
-                    } while (true);
-
-                    mDOUBLEQUOTESi(); if (failed) return ;
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // etc/XQFT.g:227:122: ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE )
-                    {
-                    // etc/XQFT.g:227:122: ( SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE )
-                    // etc/XQFT.g:227:123: SINGLEQUOTE ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )* SINGLEQUOTE
-                    {
-                    mSINGLEQUOTE(); if (failed) return ;
-                    // etc/XQFT.g:227:135: ( PredefinedEntityRef | CharRef | EscapeApos | ~ ( SINGLEQUOTE | '&' ) )*
-                    loop8:
-                    do {
-                        int alt8=5;
-                        int LA8_0 = input.LA(1);
-
-                        if ( (LA8_0=='\'') ) {
-                            int LA8_1 = input.LA(2);
-
-                            if ( (LA8_1=='\'') ) {
-                                alt8=3;
-                            }
-
-
-                        }
-                        else if ( (LA8_0=='&') ) {
-                            int LA8_2 = input.LA(2);
-
-                            if ( (LA8_2=='#') ) {
-                                alt8=2;
-                            }
-                            else if ( (LA8_2=='a'||LA8_2=='g'||LA8_2=='l'||LA8_2=='q') ) {
-                                alt8=1;
-                            }
-
-
-                        }
-                        else if ( ((LA8_0>='\u0000' && LA8_0<='%')||(LA8_0>='(' && LA8_0<='\uFFFE')) ) {
-                            alt8=4;
-                        }
-
-
-                        switch (alt8) {
-                    	case 1 :
-                    	    // etc/XQFT.g:227:136: PredefinedEntityRef
-                    	    {
-                    	    mPredefinedEntityRef(); if (failed) return ;
-
-                    	    }
-                    	    break;
-                    	case 2 :
-                    	    // etc/XQFT.g:227:158: CharRef
-                    	    {
-                    	    mCharRef(); if (failed) return ;
-
-                    	    }
-                    	    break;
-                    	case 3 :
-                    	    // etc/XQFT.g:227:168: EscapeApos
-                    	    {
-                    	    mEscapeApos(); if (failed) return ;
-
-                    	    }
-                    	    break;
-                    	case 4 :
-                    	    // etc/XQFT.g:227:181: ~ ( SINGLEQUOTE | '&' )
-                    	    {
-                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<='\uFFFE') ) {
-                    	        input.consume();
-                    	    failed=false;
-                    	    }
-                    	    else {
-                    	        if (backtracking>0) {failed=true; return ;}
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop8;
-                        }
-                    } while (true);
-
-                    mSINGLEQUOTE(); if (failed) return ;
-
-                    }
-
-
-                    }
-                    break;
 
             }
-            this.type = _type;
+
         }
         finally {
         }
     }
-    // $ANTLR end StringLiteral
+    // $ANTLR end WS
 
-    // $ANTLR start PredefinedEntityRef
-    public final void mPredefinedEntityRef() throws RecognitionException {
+    // $ANTLR start ExtraChar
+    public final void mExtraChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:228:30: ( '&' ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi )
-            // etc/XQFT.g:228:32: '&' ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi
+            // etc/XQFT.g:805:25: ( '\\u0025' | '\\u005E' | '\\u0060' | '\\u007E' .. '\\u00B6' | '\\u00B8' .. '\\u00BF' | '\\u00D7' | '\\u00F7' | '\\u0132' .. '\\u0133' | '\\u013F' .. '\\u0140' | '\\u0149' | '\\u017F' | '\\u01C4' .. '\\u01CC' | '\\u01F1' .. '\\u01F3' | '\\u01F6' .. '\\u01F9' | '\\u0218' .. '\\u024F' | '\\u02A9' .. '\\u02BA' | '\\u02C2' .. '\\u02CF' | '\\u02D2' .. '\\u02FF' | '\\u0346' .. '\\u035F' | '\\u0362' .. '\\u0385' | '\\u038B' | '\\u038D' | '\\u03A2' | '\\u03CF' | '\\u03D7' .. '\\u03D9' | '\\u03DB' | '\\u03DD' | '\\u03DF' | '\\u03E1' | '\\u03F4' .. '\\u0400' | '\\u040D' | '\\u0450' | '\\u045D' | '\\u0482' | '\\u0487' .. '\\u048F' | '\\u04C5' .. '\\u04C6' | '\\u04C9' .. '\\u04CA' | '\\u04CD' .. '\\u04CF' | '\\u04EC' .. '\\u04ED' | '\\u04F6' .. '\\u04F7' | '\\u04FA' .. '\\u0530' | '\\u0557' .. '\\u0558' | '\\u055A' .. '\\u0560' | '\\u0587' .. '\\u0590' | '\\u05A2' | '\\u05BA' | '\\u05BE' | '\\u05C0' | '\\u05C3' | '\\u05C5' .. '\\u05CF' | '\\u05EB' .. '\\u05EF' | '\\u05F3' .. '\\u0620' | '\\u063B' .. '\\u063F' | '\\u0653' .. '\\u065F' | '\\u066A' .. '\\u066F' | '\\u06B8' .. '\\u06B9' | '\\u06BF' | '\\u06CF' | '\\u06D4' | '\\u06E9' | '\\u06EE' .. '\\u06EF' | '\\u06FA' .. '\\u0900' | '\\u0904' | '\\u093A' .. '\\u093B' | '\\u094E' .. '\\u0950' | '\\u0955' .. '\\u0957' | '\\u0964' .. '\\u0965' | '\\u0970' .. '\\u0980' | '\\u0984' | '\\u098D' .. '\\u098E' | '\\u0991' .. '\\u0992' | '\\u09A9' | '\\u09B1' | '\\u09B3' .. '\\u09B5' | '\\u09BA' .. '\\u09BB' | '\\u09BD' | '\\u09C5' .. '\\u09C6' | '\\u09C9' .. '\\u09CA' | '\\u09CE' .. '\\u09D6' | '\\u09D8' .. '\\u09DB' | '\\u09DE' | '\\u09E4' .. '\\u09E5' | '\\u09F2' .. '\\u0A01' | '\\u0A03' .. '\\u0A04' | '\\u0A0B' .. '\\u0A0E' | '\\u0A11' .. '\\u0A12' | '\\u0A29' | '\\u0A31' | '\\u0A34' | '\\u0A37' | '\\u0A3A' .. '\\u0A3B' | '\\u0A3D' | '\\u0A43' .. '\\u0A46' | '\\u0A49' .. '\\u0A4A' | '\\u0A4E' .. '\\u0A58' | '\\u0A5D' | '\\u0A5F' .. '\\u0A65' | '\\u0A75' .. '\\u0A80' | '\\u0A84' | '\\u0A8C' | '\\u0A8E' | '\\u0A92' | '\\u0AA9' | '\\u0AB1' | '\\u0AB4' | '\\u0ABA' .. '\\u0ABB' | '\\u0AC6' | '\\u0ACA' | '\\u0ACE' .. '\\u0ADF' | '\\u0AE1' .. '\\u0AE5' | '\\u0AF0' .. '\\u0B00' | '\\u0B04' | '\\u0B0D' .. '\\u0B0E' | '\\u0B11' .. '\\u0B12' | '\\u0B29' | '\\u0B31' | '\\u0B34' .. '\\u0B35' | '\\u0B3A' .. '\\u0B3B' | '\\u0B44' .. '\\u0B46' | '\\u0B49' .. '\\u0B4A' | '\\u0B4E' .. '\\u0B55' | '\\u0B58' .. '\\u0B5B' | '\\u0B5E' | '\\u0B62' .. '\\u0B65' | '\\u0B70' .. '\\u0B81' | '\\u0B84' | '\\u0B8B' .. '\\u0B8D' | '\\u0B91' | '\\u0B96' .. '\\u0B98' | '\\u0B9B' | '\\u0B9D' | '\\u0BA0' .. '\\u0BA2' | '\\u0BA5' .. '\\u0BA7' | '\\u0BAB' .. '\\u0BAD' | '\\u0BB6' | '\\u0BBA' .. '\\u0BBD' | '\\u0BC3' .. '\\u0BC5' | '\\u0BC9' | '\\u0BCE' .. '\\u0BD6' | '\\u0BD8' .. '\\u0BE6' | '\\u0BF0' .. '\\u0C00' | '\\u0C04' | '\\u0C0D' | '\\u0C11' | '\\u0C29' | '\\u0C34' | '\\u0C3A' .. '\\u0C3D' | '\\u0C45' | '\\u0C49' | '\\u0C4E' .. '\\u0C54' | '\\u0C57' .. '\\u0C5F' | '\\u0C62' .. '\\u0C65' | '\\u0C70' .. '\\u0C81' | '\\u0C84' | '\\u0C8D' | '\\u0C91' | '\\u0CA9' | '\\u0CB4' | '\\u0CBA' .. '\\u0CBD' | '\\u0CC5' | '\\u0CC9' | '\\u0CCE' .. '\\u0CD4' | '\\u0CD7' .. '\\u0CDD' | '\\u0CDF' | '\\u0CE2' .. '\\u0CE5' | '\\u0CF0' .. '\\u0D01' | '\\u0D04' | '\\u0D0D' | '\\u0D11' | '\\u0D29' | '\\u0D3A' .. '\\u0D3D' | '\\u0D44' .. '\\u0D45' | '\\u0D49' | '\\u0D4E' .. '\\u0D56' | '\\u0D58' .. '\\u0D5F' | '\\u0D62' .. '\\u0D65' | '\\u0D70' .. '\\u0E00' | '\\u0E2F' | '\\u0E3B' .. '\\u0E3F' | '\\u0E4F' | '\\u0E5A' .. '\\u0E80' | '\\u0E83' | '\\u0E85' .. '\\u0E86' | '\\u0E89' | '\\u0E8B' .. '\\u0E8C' | '\\u0E8E' .. '\\u0E93' | '\\u0E98' | '\\u0EA0' | '\\u0EA4' | '\\u0EA6' | '\\u0EA8' .. '\\u0EA9' | '\\u0EAC' | '\\u0EAF' | '\\u0EBA' | '\\u0EBE' .. '\\u0EBF' | '\\u0EC5' | '\\u0EC7' | '\\u0ECE' .. '\\u0ECF' | '\\u0EDA' .. '\\u0F17' | '\\u0F1A' .. '\\u0F1F' | '\\u0F2A' .. '\\u0F34' | '\\u0F36' | '\\u0F38' | '\\u0F3A' .. '\\u0F3D' | '\\u0F48' | '\\u0F6A' .. '\\u0F70' | '\\u0F85' | '\\u0F8C' .. '\\u0F8F' | '\\u0F96' | '\\u0F98' | '\\u0FAE' .. '\\u0FB0' | '\\u0FB8' | '\\u0FBA' .. '\\u109F' | '\\u10C6' .. '\\u10CF' | '\\u10F7' .. '\\u10FF' | '\\u1101' | '\\u1104' | '\\u1108' | '\\u110A' | '\\u110D' | '\\u1113' .. '\\u113B' | '\\u113D' | '\\u113F' | '\\u1141' .. '\\u114B' | '\\u114D' | '\\u114F' | '\\u1151' .. '\\u1153' | '\\u1156' .. '\\u1158' | '\\u115A' .. '\\u115E' | '\\u1162' | '\\u1164' | '\\u1166' | '\\u1168' | '\\u116A' .. '\\u116C' | '\\u116F' .. '\\u1171' | '\\u1174' | '\\u1176' .. '\\u119D' | '\\u119F' .. '\\u11A7' | '\\u11A9' .. '\\u11AA' | '\\u11AC' .. '\\u11AD' | '\\u11B0' .. '\\u11B6' | '\\u11B9' | '\\u11BB' | '\\u11C3' .. '\\u11EA' | '\\u11EC' .. '\\u11EF' | '\\u11F1' .. '\\u11F8' | '\\u11FA' .. '\\u1DFF' | '\\u1E9C' .. '\\u1E9F' | '\\u1EFA' .. '\\u1EFF' | '\\u1F16' .. '\\u1F17' | '\\u1F1E' .. '\\u1F1F' | '\\u1F46' .. '\\u1F47' | '\\u1F4E' .. '\\u1F4F' | '\\u1F58' | '\\u1F5A' | '\\u1F5C' | '\\u1F5E' | '\\u1F7E' .. '\\u1F7F' | '\\u1FB5' | '\\u1FBD' | '\\u1FBF' .. '\\u1FC1' | '\\u1FC5' | '\\u1FCD' .. '\\u1FCF' | '\\u1FD4' .. '\\u1FD5' | '\\u1FDC' .. '\\u1FDF' | '\\u1FED' .. '\\u1FF1' | '\\u1FF5' | '\\u1FFD' .. '\\u20CF' | '\\u20DD' .. '\\u20E0' | '\\u20E2' .. '\\u2125' | '\\u2127' .. '\\u2129' | '\\u212C' .. '\\u212D' | '\\u212F' .. '\\u217F' | '\\u2183' .. '\\u3004' | '\\u3006' | '\\u3008' .. '\\u3020' | '\\u3030' | '\\u3036' .. '\\u3040' | '\\u3095' .. '\\u3098' | '\\u309B' .. '\\u309C' | '\\u309F' .. '\\u30A0' | '\\u30FB' | '\\u30FF' .. '\\u3104' | '\\u312D' .. '\\u4DFF' | '\\u9FA6' .. '\\uABFF' | '\\uD7A4' .. '\\uD7FF' | '\\uE000' .. '\\uFFFD' )
+            // etc/XQFT.g:
             {
-            match('&'); if (failed) return ;
-            // etc/XQFT.g:228:36: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )
-            int alt10=5;
-            switch ( input.LA(1) ) {
-            case 'l':
-                {
-                alt10=1;
-                }
-                break;
-            case 'g':
-                {
-                alt10=2;
-                }
-                break;
-            case 'a':
-                {
-                int LA10_3 = input.LA(2);
-
-                if ( (LA10_3=='p') ) {
-                    alt10=5;
-                }
-                else if ( (LA10_3=='m') ) {
-                    alt10=3;
-                }
-                else {
-                    if (backtracking>0) {failed=true; return ;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("228:36: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 10, 3, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            case 'q':
-                {
-                alt10=4;
-                }
-                break;
-            default:
+            if ( input.LA(1)=='%'||input.LA(1)=='^'||input.LA(1)=='`'||(input.LA(1)>='~' && input.LA(1)<='\u00B6')||(input.LA(1)>='\u00B8' && input.LA(1)<='\u00BF')||input.LA(1)=='\u00D7'||input.LA(1)=='\u00F7'||(input.LA(1)>='\u0132' && input.LA(1)<='\u0133')||(input.LA(1)>='\u013F' && input.LA(1)<='\u0140')||input.LA(1)=='\u0149'||input.LA(1)=='\u017F'||(input.LA(1)>='\u01C4' && input.LA(1)<='\u01CC')||(input.LA(1)>='\u01F1' && input.LA(1)<='\u01F3')||(input.LA(1)>='\u01F6' && input.LA(1)<='\u01F9')||(input.LA(1)>='\u0218' && input.LA(1)<='\u024F')||(input.LA(1)>='\u02A9' && input.LA(1)<='\u02BA')||(input.LA(1)>='\u02C2' && input.LA(1)<='\u02CF')||(input.LA(1)>='\u02D2' && input.LA(1)<='\u02FF')||(input.LA(1)>='\u0346' && input.LA(1)<='\u035F')||(input.LA(1)>='\u0362' && input.LA(1)<='\u0385')||input.LA(1)=='\u038B'||input.LA(1)=='\u038D'||input.LA(1)=='\u03A2'||input.LA(1)=='\u03CF'||(input.LA(1)>='\u03D7' && input.LA(1)<='\u03D9')||input.LA(1)=='\u03DB'||input.LA(1)=='\u03DD'||input.LA(1)=='\u03DF'||input.LA(1)=='\u03E1'||(input.LA(1)>='\u03F4' && input.LA(1)<='\u0400')||input.LA(1)=='\u040D'||input.LA(1)=='\u0450'||input.LA(1)=='\u045D'||input.LA(1)=='\u0482'||(input.LA(1)>='\u0487' && input.LA(1)<='\u048F')||(input.LA(1)>='\u04C5' && input.LA(1)<='\u04C6')||(input.LA(1)>='\u04C9' && input.LA(1)<='\u04CA')||(input.LA(1)>='\u04CD' && input.LA(1)<='\u04CF')||(input.LA(1)>='\u04EC' && input.LA(1)<='\u04ED')||(input.LA(1)>='\u04F6' && input.LA(1)<='\u04F7')||(input.LA(1)>='\u04FA' && input.LA(1)<='\u0530')||(input.LA(1)>='\u0557' && input.LA(1)<='\u0558')||(input.LA(1)>='\u055A' && input.LA(1)<='\u0560')||(input.LA(1)>='\u0587' && input.LA(1)<='\u0590')||input.LA(1)=='\u05A2'||input.LA(1)=='\u05BA'||input.LA(1)=='\u05BE'||input.LA(1)=='\u05C0'||input.LA(1)=='\u05C3'||(input.LA(1)>='\u05C5' && input.LA(1)<='\u05CF')||(input.LA(1)>='\u05EB' && input.LA(1)<='\u05EF')||(input.LA(1)>='\u05F3' && input.LA(1)<='\u0620')||(input.LA(1)>='\u063B' && input.LA(1)<='\u063F')||(input.LA(1)>='\u0653' && input.LA(1)<='\u065F')||(input.LA(1)>='\u066A' && input.LA(1)<='\u066F')||(input.LA(1)>='\u06B8' && input.LA(1)<='\u06B9')||input.LA(1)=='\u06BF'||input.LA(1)=='\u06CF'||input.LA(1)=='\u06D4'||input.LA(1)=='\u06E9'||(input.LA(1)>='\u06EE' && input.LA(1)<='\u06EF')||(input.LA(1)>='\u06FA' && input.LA(1)<='\u0900')||input.LA(1)=='\u0904'||(input.LA(1)>='\u093A' && input.LA(1)<='\u093B')||(input.LA(1)>='\u094E' && input.LA(1)<='\u0950')||(input.LA(1)>='\u0955' && input.LA(1)<='\u0957')||(input.LA(1)>='\u0964' && input.LA(1)<='\u0965')||(input.LA(1)>='\u0970' && input.LA(1)<='\u0980')||input.LA(1)=='\u0984'||(input.LA(1)>='\u098D' && input.LA(1)<='\u098E')||(input.LA(1)>='\u0991' && input.LA(1)<='\u0992')||input.LA(1)=='\u09A9'||input.LA(1)=='\u09B1'||(input.LA(1)>='\u09B3' && input.LA(1)<='\u09B5')||(input.LA(1)>='\u09BA' && input.LA(1)<='\u09BB')||input.LA(1)=='\u09BD'||(input.LA(1)>='\u09C5' && input.LA(1)<='\u09C6')||(input.LA(1)>='\u09C9' && input.LA(1)<='\u09CA')||(input.LA(1)>='\u09CE' && input.LA(1)<='\u09D6')||(input.LA(1)>='\u09D8' && input.LA(1)<='\u09DB')||input.LA(1)=='\u09DE'||(input.LA(1)>='\u09E4' && input.LA(1)<='\u09E5')||(input.LA(1)>='\u09F2' && input.LA(1)<='\u0A01')||(input.LA(1)>='\u0A03' && input.LA(1)<='\u0A04')||(input.LA(1)>='\u0A0B' && input.LA(1)<='\u0A0E')||(input.LA(1)>='\u0A11' && input.LA(1)<='\u0A12')||input.LA(1)=='\u0A29'||input.LA(1)=='\u0A31'||input.LA(1)=='\u0A34'||input.LA(1)=='\u0A37'||(input.LA(1)>='\u0A3A' && input.LA(1)<='\u0A3B')||input.LA(1)=='\u0A3D'||(input.LA(1)>='\u0A43' && input.LA(1)<='\u0A46')||(input.LA(1)>='\u0A49' && input.LA(1)<='\u0A4A')||(input.LA(1)>='\u0A4E' && input.LA(1)<='\u0A58')||input.LA(1)=='\u0A5D'||(input.LA(1)>='\u0A5F' && input.LA(1)<='\u0A65')||(input.LA(1)>='\u0A75' && input.LA(1)<='\u0A80')||input.LA(1)=='\u0A84'||input.LA(1)=='\u0A8C'||input.LA(1)=='\u0A8E'||input.LA(1)=='\u0A92'||input.LA(1)=='\u0AA9'||input.LA(1)=='\u0AB1'||input.LA(1)=='\u0AB4'||(input.LA(1)>='\u0ABA' && input.LA(1)<='\u0ABB')||input.LA(1)=='\u0AC6'||input.LA(1)=='\u0ACA'||(input.LA(1)>='\u0ACE' && input.LA(1)<='\u0ADF')||(input.LA(1)>='\u0AE1' && input.LA(1)<='\u0AE5')||(input.LA(1)>='\u0AF0' && input.LA(1)<='\u0B00')||input.LA(1)=='\u0B04'||(input.LA(1)>='\u0B0D' && input.LA(1)<='\u0B0E')||(input.LA(1)>='\u0B11' && input.LA(1)<='\u0B12')||input.LA(1)=='\u0B29'||input.LA(1)=='\u0B31'||(input.LA(1)>='\u0B34' && input.LA(1)<='\u0B35')||(input.LA(1)>='\u0B3A' && input.LA(1)<='\u0B3B')||(input.LA(1)>='\u0B44' && input.LA(1)<='\u0B46')||(input.LA(1)>='\u0B49' && input.LA(1)<='\u0B4A')||(input.LA(1)>='\u0B4E' && input.LA(1)<='\u0B55')||(input.LA(1)>='\u0B58' && input.LA(1)<='\u0B5B')||input.LA(1)=='\u0B5E'||(input.LA(1)>='\u0B62' && input.LA(1)<='\u0B65')||(input.LA(1)>='\u0B70' && input.LA(1)<='\u0B81')||input.LA(1)=='\u0B84'||(input.LA(1)>='\u0B8B' && input.LA(1)<='\u0B8D')||input.LA(1)=='\u0B91'||(input.LA(1)>='\u0B96' && input.LA(1)<='\u0B98')||input.LA(1)=='\u0B9B'||input.LA(1)=='\u0B9D'||(input.LA(1)>='\u0BA0' && input.LA(1)<='\u0BA2')||(input.LA(1)>='\u0BA5' && input.LA(1)<='\u0BA7')||(input.LA(1)>='\u0BAB' && input.LA(1)<='\u0BAD')||input.LA(1)=='\u0BB6'||(input.LA(1)>='\u0BBA' && input.LA(1)<='\u0BBD')||(input.LA(1)>='\u0BC3' && input.LA(1)<='\u0BC5')||input.LA(1)=='\u0BC9'||(input.LA(1)>='\u0BCE' && input.LA(1)<='\u0BD6')||(input.LA(1)>='\u0BD8' && input.LA(1)<='\u0BE6')||(input.LA(1)>='\u0BF0' && input.LA(1)<='\u0C00')||input.LA(1)=='\u0C04'||input.LA(1)=='\u0C0D'||input.LA(1)=='\u0C11'||input.LA(1)=='\u0C29'||input.LA(1)=='\u0C34'||(input.LA(1)>='\u0C3A' && input.LA(1)<='\u0C3D')||input.LA(1)=='\u0C45'||input.LA(1)=='\u0C49'||(input.LA(1)>='\u0C4E' && input.LA(1)<='\u0C54')||(input.LA(1)>='\u0C57' && input.LA(1)<='\u0C5F')||(input.LA(1)>='\u0C62' && input.LA(1)<='\u0C65')||(input.LA(1)>='\u0C70' && input.LA(1)<='\u0C81')||input.LA(1)=='\u0C84'||input.LA(1)=='\u0C8D'||input.LA(1)=='\u0C91'||input.LA(1)=='\u0CA9'||input.LA(1)=='\u0CB4'||(input.LA(1)>='\u0CBA' && input.LA(1)<='\u0CBD')||input.LA(1)=='\u0CC5'||input.LA(1)=='\u0CC9'||(input.LA(1)>='\u0CCE' && input.LA(1)<='\u0CD4')||(input.LA(1)>='\u0CD7' && input.LA(1)<='\u0CDD')||input.LA(1)=='\u0CDF'||(input.LA(1)>='\u0CE2' && input.LA(1)<='\u0CE5')||(input.LA(1)>='\u0CF0' && input.LA(1)<='\u0D01')||input.LA(1)=='\u0D04'||input.LA(1)=='\u0D0D'||input.LA(1)=='\u0D11'||input.LA(1)=='\u0D29'||(input.LA(1)>='\u0D3A' && input.LA(1)<='\u0D3D')||(input.LA(1)>='\u0D44' && input.LA(1)<='\u0D45')||input.LA(1)=='\u0D49'||(input.LA(1)>='\u0D4E' && input.LA(1)<='\u0D56')||(input.LA(1)>='\u0D58' && input.LA(1)<='\u0D5F')||(input.LA(1)>='\u0D62' && input.LA(1)<='\u0D65')||(input.LA(1)>='\u0D70' && input.LA(1)<='\u0E00')||input.LA(1)=='\u0E2F'||(input.LA(1)>='\u0E3B' && input.LA(1)<='\u0E3F')||input.LA(1)=='\u0E4F'||(input.LA(1)>='\u0E5A' && input.LA(1)<='\u0E80')||input.LA(1)=='\u0E83'||(input.LA(1)>='\u0E85' && input.LA(1)<='\u0E86')||input.LA(1)=='\u0E89'||(input.LA(1)>='\u0E8B' && input.LA(1)<='\u0E8C')||(input.LA(1)>='\u0E8E' && input.LA(1)<='\u0E93')||input.LA(1)=='\u0E98'||input.LA(1)=='\u0EA0'||input.LA(1)=='\u0EA4'||input.LA(1)=='\u0EA6'||(input.LA(1)>='\u0EA8' && input.LA(1)<='\u0EA9')||input.LA(1)=='\u0EAC'||input.LA(1)=='\u0EAF'||input.LA(1)=='\u0EBA'||(input.LA(1)>='\u0EBE' && input.LA(1)<='\u0EBF')||input.LA(1)=='\u0EC5'||input.LA(1)=='\u0EC7'||(input.LA(1)>='\u0ECE' && input.LA(1)<='\u0ECF')||(input.LA(1)>='\u0EDA' && input.LA(1)<='\u0F17')||(input.LA(1)>='\u0F1A' && input.LA(1)<='\u0F1F')||(input.LA(1)>='\u0F2A' && input.LA(1)<='\u0F34')||input.LA(1)=='\u0F36'||input.LA(1)=='\u0F38'||(input.LA(1)>='\u0F3A' && input.LA(1)<='\u0F3D')||input.LA(1)=='\u0F48'||(input.LA(1)>='\u0F6A' && input.LA(1)<='\u0F70')||input.LA(1)=='\u0F85'||(input.LA(1)>='\u0F8C' && input.LA(1)<='\u0F8F')||input.LA(1)=='\u0F96'||input.LA(1)=='\u0F98'||(input.LA(1)>='\u0FAE' && input.LA(1)<='\u0FB0')||input.LA(1)=='\u0FB8'||(input.LA(1)>='\u0FBA' && input.LA(1)<='\u109F')||(input.LA(1)>='\u10C6' && input.LA(1)<='\u10CF')||(input.LA(1)>='\u10F7' && input.LA(1)<='\u10FF')||input.LA(1)=='\u1101'||input.LA(1)=='\u1104'||input.LA(1)=='\u1108'||input.LA(1)=='\u110A'||input.LA(1)=='\u110D'||(input.LA(1)>='\u1113' && input.LA(1)<='\u113B')||input.LA(1)=='\u113D'||input.LA(1)=='\u113F'||(input.LA(1)>='\u1141' && input.LA(1)<='\u114B')||input.LA(1)=='\u114D'||input.LA(1)=='\u114F'||(input.LA(1)>='\u1151' && input.LA(1)<='\u1153')||(input.LA(1)>='\u1156' && input.LA(1)<='\u1158')||(input.LA(1)>='\u115A' && input.LA(1)<='\u115E')||input.LA(1)=='\u1162'||input.LA(1)=='\u1164'||input.LA(1)=='\u1166'||input.LA(1)=='\u1168'||(input.LA(1)>='\u116A' && input.LA(1)<='\u116C')||(input.LA(1)>='\u116F' && input.LA(1)<='\u1171')||input.LA(1)=='\u1174'||(input.LA(1)>='\u1176' && input.LA(1)<='\u119D')||(input.LA(1)>='\u119F' && input.LA(1)<='\u11A7')||(input.LA(1)>='\u11A9' && input.LA(1)<='\u11AA')||(input.LA(1)>='\u11AC' && input.LA(1)<='\u11AD')||(input.LA(1)>='\u11B0' && input.LA(1)<='\u11B6')||input.LA(1)=='\u11B9'||input.LA(1)=='\u11BB'||(input.LA(1)>='\u11C3' && input.LA(1)<='\u11EA')||(input.LA(1)>='\u11EC' && input.LA(1)<='\u11EF')||(input.LA(1)>='\u11F1' && input.LA(1)<='\u11F8')||(input.LA(1)>='\u11FA' && input.LA(1)<='\u1DFF')||(input.LA(1)>='\u1E9C' && input.LA(1)<='\u1E9F')||(input.LA(1)>='\u1EFA' && input.LA(1)<='\u1EFF')||(input.LA(1)>='\u1F16' && input.LA(1)<='\u1F17')||(input.LA(1)>='\u1F1E' && input.LA(1)<='\u1F1F')||(input.LA(1)>='\u1F46' && input.LA(1)<='\u1F47')||(input.LA(1)>='\u1F4E' && input.LA(1)<='\u1F4F')||input.LA(1)=='\u1F58'||input.LA(1)=='\u1F5A'||input.LA(1)=='\u1F5C'||input.LA(1)=='\u1F5E'||(input.LA(1)>='\u1F7E' && input.LA(1)<='\u1F7F')||input.LA(1)=='\u1FB5'||input.LA(1)=='\u1FBD'||(input.LA(1)>='\u1FBF' && input.LA(1)<='\u1FC1')||input.LA(1)=='\u1FC5'||(input.LA(1)>='\u1FCD' && input.LA(1)<='\u1FCF')||(input.LA(1)>='\u1FD4' && input.LA(1)<='\u1FD5')||(input.LA(1)>='\u1FDC' && input.LA(1)<='\u1FDF')||(input.LA(1)>='\u1FED' && input.LA(1)<='\u1FF1')||input.LA(1)=='\u1FF5'||(input.LA(1)>='\u1FFD' && input.LA(1)<='\u20CF')||(input.LA(1)>='\u20DD' && input.LA(1)<='\u20E0')||(input.LA(1)>='\u20E2' && input.LA(1)<='\u2125')||(input.LA(1)>='\u2127' && input.LA(1)<='\u2129')||(input.LA(1)>='\u212C' && input.LA(1)<='\u212D')||(input.LA(1)>='\u212F' && input.LA(1)<='\u217F')||(input.LA(1)>='\u2183' && input.LA(1)<='\u3004')||input.LA(1)=='\u3006'||(input.LA(1)>='\u3008' && input.LA(1)<='\u3020')||input.LA(1)=='\u3030'||(input.LA(1)>='\u3036' && input.LA(1)<='\u3040')||(input.LA(1)>='\u3095' && input.LA(1)<='\u3098')||(input.LA(1)>='\u309B' && input.LA(1)<='\u309C')||(input.LA(1)>='\u309F' && input.LA(1)<='\u30A0')||input.LA(1)=='\u30FB'||(input.LA(1)>='\u30FF' && input.LA(1)<='\u3104')||(input.LA(1)>='\u312D' && input.LA(1)<='\u4DFF')||(input.LA(1)>='\u9FA6' && input.LA(1)<='\uABFF')||(input.LA(1)>='\uD7A4' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
+                input.consume();
+            failed=false;
+            }
+            else {
                 if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("228:36: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 10, 0, input);
-
-                throw nvae;
+                MismatchedSetException mse =
+                    new MismatchedSetException(null,input);
+                recover(mse);    throw mse;
             }
-
-            switch (alt10) {
-                case 1 :
-                    // etc/XQFT.g:228:37: 'lt'
-                    {
-                    match("lt"); if (failed) return ;
-
-
-                    }
-                    break;
-                case 2 :
-                    // etc/XQFT.g:228:44: 'gt'
-                    {
-                    match("gt"); if (failed) return ;
-
-
-                    }
-                    break;
-                case 3 :
-                    // etc/XQFT.g:228:51: 'amp'
-                    {
-                    match("amp"); if (failed) return ;
-
-
-                    }
-                    break;
-                case 4 :
-                    // etc/XQFT.g:228:59: 'quot'
-                    {
-                    match("quot"); if (failed) return ;
-
-
-                    }
-                    break;
-                case 5 :
-                    // etc/XQFT.g:228:68: 'apos'
-                    {
-                    match("apos"); if (failed) return ;
-
-
-                    }
-                    break;
-
-            }
-
-            mSEMICOLONSi(); if (failed) return ;
-
-            }
-
-        }
-        finally {
-        }
-    }
-    // $ANTLR end PredefinedEntityRef
-
-    // $ANTLR start EscapeQuot
-    public final void mEscapeQuot() throws RecognitionException {
-        try {
-            // etc/XQFT.g:229:30: ( '\"\"' )
-            // etc/XQFT.g:229:32: '\"\"'
-            {
-            match("\"\""); if (failed) return ;
 
 
             }
@@ -4494,50 +5304,15 @@ public class XQFTLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end EscapeQuot
-
-    // $ANTLR start EscapeApos
-    public final void mEscapeApos() throws RecognitionException {
-        try {
-            // etc/XQFT.g:230:30: ( '\\'\\'' )
-            // etc/XQFT.g:230:32: '\\'\\''
-            {
-            match("\'\'"); if (failed) return ;
-
-
-            }
-
-        }
-        finally {
-        }
-    }
-    // $ANTLR end EscapeApos
-
-    // $ANTLR start DOUBLEQUOTESi
-    public final void mDOUBLEQUOTESi() throws RecognitionException {
-        try {
-            int _type = DOUBLEQUOTESi;
-            // etc/XQFT.g:232:15: ( '\"' )
-            // etc/XQFT.g:232:17: '\"'
-            {
-            match('\"'); if (failed) return ;
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end DOUBLEQUOTESi
+    // $ANTLR end ExtraChar
 
     // $ANTLR start CleanChar
     public final void mCleanChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:244:21: (~ ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' | '\\uFFFE' | '\\uFFFF' | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' ) )
-            // etc/XQFT.g:244:23: ~ ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' | '\\uFFFE' | '\\uFFFF' | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' )
+            // etc/XQFT.g:806:25: ( WS | BaseChar | Ideographic | CombiningChar | Extender | Digit | ExtraChar | EXCLSi | SHARPSi | DOLLARSi | LPARSi | RPARSi | STARSi | PLUSSi | COMMASi | DOTSi | SLASHSi | COLONSi | SEMICOLONSi | EQSi | GTSi | QUESTIONSi | ATSi | LBRACKSi | BACKSLASHSi | RBRACKSi | UNDERSCORESi | PIPESi )
+            // etc/XQFT.g:
             {
-            if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
+            if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
                 input.consume();
             failed=false;
             }
@@ -4560,10 +5335,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Char
     public final void mChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:246:17: ( CleanChar | '{' | '}' | '<' | '&' | '\"' | '\\'' | '-' )
+            // etc/XQFT.g:811:21: ( CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi | MINUSSi )
             // etc/XQFT.g:
             {
-            if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
+            if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
                 input.consume();
             failed=false;
             }
@@ -4583,13 +5358,39 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end Char
 
+    // $ANTLR start NotChar
+    public final void mNotChar() throws RecognitionException {
+        try {
+            // etc/XQFT.g:812:23: ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' )
+            // etc/XQFT.g:
+            {
+            if ( (input.LA(1)>='\u0001' && input.LA(1)<='\b')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\u001F')||(input.LA(1)>='\uD800' && input.LA(1)<='\uDFFF') ) {
+                input.consume();
+            failed=false;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                MismatchedSetException mse =
+                    new MismatchedSetException(null,input);
+                recover(mse);    throw mse;
+            }
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end NotChar
+
     // $ANTLR start ElementContentChar
     public final void mElementContentChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:248:30: ( CleanChar | '\"' | '\\'' | '-' )
+            // etc/XQFT.g:816:32: ( CleanChar | QUOTSi | APOSSi | MINUSSi )
             // etc/XQFT.g:
             {
-            if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
+            if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
                 input.consume();
             failed=false;
             }
@@ -4612,10 +5413,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start QuotAttrContentChar
     public final void mQuotAttrContentChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:249:30: ( CleanChar | '\\'' | '-' )
+            // etc/XQFT.g:817:32: ( CleanChar | APOSSi | MINUSSi )
             // etc/XQFT.g:
             {
-            if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
+            if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
                 input.consume();
             failed=false;
             }
@@ -4638,10 +5439,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start AposAttrContentChar
     public final void mAposAttrContentChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:250:30: ( CleanChar | '\"' | '-' )
+            // etc/XQFT.g:818:32: ( CleanChar | QUOTSi | MINUSSi )
             // etc/XQFT.g:
             {
-            if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
+            if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
                 input.consume();
             failed=false;
             }
@@ -4661,164 +5462,10 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end AposAttrContentChar
 
-    // $ANTLR start Comment
-    public final void mComment() throws RecognitionException {
-        try {
-            int _type = Comment;
-            // etc/XQFT.g:259:21: ( '(:' ( CommentCheck )* ':)' )
-            // etc/XQFT.g:259:22: '(:' ( CommentCheck )* ':)'
-            {
-            match("(:"); if (failed) return ;
-
-            // etc/XQFT.g:259:27: ( CommentCheck )*
-            loop11:
-            do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
-
-                if ( (LA11_0==':') ) {
-                    int LA11_1 = input.LA(2);
-
-                    if ( (LA11_1==')') ) {
-                        int LA11_3 = input.LA(3);
-
-                        if ( (LA11_3=='\u0000'||(LA11_3>='\t' && LA11_3<='\n')||LA11_3=='\r'||(LA11_3>=' ' && LA11_3<='\uD7FF')||(LA11_3>='\uE000' && LA11_3<='\uFFFD')) ) {
-                            alt11=1;
-                        }
-
-
-                    }
-                    else if ( (LA11_1=='\u0000'||(LA11_1>='\t' && LA11_1<='\n')||LA11_1=='\r'||(LA11_1>=' ' && LA11_1<='(')||(LA11_1>='*' && LA11_1<='\uD7FF')||(LA11_1>='\uE000' && LA11_1<='\uFFFD')) ) {
-                        alt11=1;
-                    }
-
-
-                }
-                else if ( (LA11_0=='\u0000'||(LA11_0>='\t' && LA11_0<='\n')||LA11_0=='\r'||(LA11_0>=' ' && LA11_0<='9')||(LA11_0>=';' && LA11_0<='\uD7FF')||(LA11_0>='\uE000' && LA11_0<='\uFFFD')) ) {
-                    alt11=1;
-                }
-
-
-                switch (alt11) {
-            	case 1 :
-            	    // etc/XQFT.g:259:28: CommentCheck
-            	    {
-            	    mCommentCheck(); if (failed) return ;
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop11;
-                }
-            } while (true);
-
-            match(":)"); if (failed) return ;
-
-            if ( backtracking==1 ) {
-              channel=HIDDEN;
-            }
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end Comment
-
-    // $ANTLR start CommentCheck
-    public final void mCommentCheck() throws RecognitionException {
-        try {
-            // etc/XQFT.g:260:22: ( ( Comment )=> Comment | CommentContents )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0=='(') ) {
-                int LA12_1 = input.LA(2);
-
-                if ( (LA12_1==':') ) {
-                    int LA12_3 = input.LA(3);
-
-                    if ( (synpred1()) ) {
-                        alt12=1;
-                    }
-                    else if ( (true) ) {
-                        alt12=2;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return ;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("260:10: fragment CommentCheck : ( ( Comment )=> Comment | CommentContents );", 12, 3, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    alt12=2;}
-            }
-            else if ( (LA12_0=='\u0000'||(LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||(LA12_0>=' ' && LA12_0<='\'')||(LA12_0>=')' && LA12_0<='\uD7FF')||(LA12_0>='\uE000' && LA12_0<='\uFFFD')) ) {
-                alt12=2;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("260:10: fragment CommentCheck : ( ( Comment )=> Comment | CommentContents );", 12, 0, input);
-
-                throw nvae;
-            }
-            switch (alt12) {
-                case 1 :
-                    // etc/XQFT.g:260:24: ( Comment )=> Comment
-                    {
-                    mComment(); if (failed) return ;
-
-                    }
-                    break;
-                case 2 :
-                    // etc/XQFT.g:261:8: CommentContents
-                    {
-                    mCommentContents(); if (failed) return ;
-
-                    }
-                    break;
-
-            }
-        }
-        finally {
-        }
-    }
-    // $ANTLR end CommentCheck
-
-    // $ANTLR start CommentContents
-    public final void mCommentContents() throws RecognitionException {
-        try {
-            Token m=null;
-
-            // etc/XQFT.g:265:30: (m= OneOrMoreChar {...}?)
-            // etc/XQFT.g:265:32: m= OneOrMoreChar {...}?
-            {
-            int mStart3903 = getCharIndex();
-            mOneOrMoreChar(); if (failed) return ;
-            m = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, mStart3903, getCharIndex()-1);
-            if ( !(((!m.equals("(:")) && (!m.equals(":)") ))) ) {
-                if (backtracking>0) {failed=true; return ;}
-                throw new FailedPredicateException(input, "CommentContents", "((!$m.equals(\"(:\")) && (!$m.equals(\":)\") ))");
-            }
-
-            }
-
-        }
-        finally {
-        }
-    }
-    // $ANTLR end CommentContents
-
     // $ANTLR start NameChar
     public final void mNameChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:270:30: ( Letter | Digit | DOT | MINUSSi | UNDERSCORE | COLONSi | CombiningChar | Extender )
+            // etc/XQFT.g:821:33: ( Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<=':')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u00B7'||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||(input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0386' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0640' && input.LA(1)<='\u0652')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u0670' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||(input.LA(1)>='\u06D5' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||(input.LA(1)>='\u093C' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0958' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E3')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09F1')||input.LA(1)=='\u0A02'||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||(input.LA(1)>='\u0ABC' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||(input.LA(1)>='\u0B3C' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||(input.LA(1)>='\u0E30' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E4E')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||(input.LA(1)>='\u0EB0' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBD')||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||input.LA(1)=='\u0EC6'||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3005'||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -4844,8 +5491,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Name
     public final void mName() throws RecognitionException {
         try {
-            // etc/XQFT.g:271:30: ( ( Letter | UNDERSCORE | COLONSi ) ( NameChar )* )
-            // etc/XQFT.g:271:32: ( Letter | UNDERSCORE | COLONSi ) ( NameChar )*
+            // etc/XQFT.g:822:33: ( ( Letter | UNDERSCORESi | COLONSi ) ( NameChar )* )
+            // etc/XQFT.g:822:35: ( Letter | UNDERSCORESi | COLONSi ) ( NameChar )*
             {
             if ( input.LA(1)==':'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
                 input.consume();
@@ -4858,20 +5505,20 @@ public class XQFTLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // etc/XQFT.g:271:64: ( NameChar )*
-            loop13:
+            // etc/XQFT.g:822:69: ( NameChar )*
+            loop19:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-                if ( ((LA13_0>='-' && LA13_0<='.')||(LA13_0>='0' && LA13_0<=':')||(LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||(LA13_0>='a' && LA13_0<='z')||LA13_0=='\u00B7'||(LA13_0>='\u00C0' && LA13_0<='\u00D6')||(LA13_0>='\u00D8' && LA13_0<='\u00F6')||(LA13_0>='\u00F8' && LA13_0<='\u0131')||(LA13_0>='\u0134' && LA13_0<='\u013E')||(LA13_0>='\u0141' && LA13_0<='\u0148')||(LA13_0>='\u014A' && LA13_0<='\u017E')||(LA13_0>='\u0180' && LA13_0<='\u01C3')||(LA13_0>='\u01CD' && LA13_0<='\u01F0')||(LA13_0>='\u01F4' && LA13_0<='\u01F5')||(LA13_0>='\u01FA' && LA13_0<='\u0217')||(LA13_0>='\u0250' && LA13_0<='\u02A8')||(LA13_0>='\u02BB' && LA13_0<='\u02C1')||(LA13_0>='\u02D0' && LA13_0<='\u02D1')||(LA13_0>='\u0300' && LA13_0<='\u0345')||(LA13_0>='\u0360' && LA13_0<='\u0361')||(LA13_0>='\u0386' && LA13_0<='\u038A')||LA13_0=='\u038C'||(LA13_0>='\u038E' && LA13_0<='\u03A1')||(LA13_0>='\u03A3' && LA13_0<='\u03CE')||(LA13_0>='\u03D0' && LA13_0<='\u03D6')||LA13_0=='\u03DA'||LA13_0=='\u03DC'||LA13_0=='\u03DE'||LA13_0=='\u03E0'||(LA13_0>='\u03E2' && LA13_0<='\u03F3')||(LA13_0>='\u0401' && LA13_0<='\u040C')||(LA13_0>='\u040E' && LA13_0<='\u044F')||(LA13_0>='\u0451' && LA13_0<='\u045C')||(LA13_0>='\u045E' && LA13_0<='\u0481')||(LA13_0>='\u0483' && LA13_0<='\u0486')||(LA13_0>='\u0490' && LA13_0<='\u04C4')||(LA13_0>='\u04C7' && LA13_0<='\u04C8')||(LA13_0>='\u04CB' && LA13_0<='\u04CC')||(LA13_0>='\u04D0' && LA13_0<='\u04EB')||(LA13_0>='\u04EE' && LA13_0<='\u04F5')||(LA13_0>='\u04F8' && LA13_0<='\u04F9')||(LA13_0>='\u0531' && LA13_0<='\u0556')||LA13_0=='\u0559'||(LA13_0>='\u0561' && LA13_0<='\u0586')||(LA13_0>='\u0591' && LA13_0<='\u05A1')||(LA13_0>='\u05A3' && LA13_0<='\u05B9')||(LA13_0>='\u05BB' && LA13_0<='\u05BD')||LA13_0=='\u05BF'||(LA13_0>='\u05C1' && LA13_0<='\u05C2')||LA13_0=='\u05C4'||(LA13_0>='\u05D0' && LA13_0<='\u05EA')||(LA13_0>='\u05F0' && LA13_0<='\u05F2')||(LA13_0>='\u0621' && LA13_0<='\u063A')||(LA13_0>='\u0640' && LA13_0<='\u0652')||(LA13_0>='\u0660' && LA13_0<='\u0669')||(LA13_0>='\u0670' && LA13_0<='\u06B7')||(LA13_0>='\u06BA' && LA13_0<='\u06BE')||(LA13_0>='\u06C0' && LA13_0<='\u06CE')||(LA13_0>='\u06D0' && LA13_0<='\u06D3')||(LA13_0>='\u06D5' && LA13_0<='\u06E8')||(LA13_0>='\u06EA' && LA13_0<='\u06ED')||(LA13_0>='\u06F0' && LA13_0<='\u06F9')||(LA13_0>='\u0901' && LA13_0<='\u0903')||(LA13_0>='\u0905' && LA13_0<='\u0939')||(LA13_0>='\u093C' && LA13_0<='\u094D')||(LA13_0>='\u0951' && LA13_0<='\u0954')||(LA13_0>='\u0958' && LA13_0<='\u0963')||(LA13_0>='\u0966' && LA13_0<='\u096F')||(LA13_0>='\u0981' && LA13_0<='\u0983')||(LA13_0>='\u0985' && LA13_0<='\u098C')||(LA13_0>='\u098F' && LA13_0<='\u0990')||(LA13_0>='\u0993' && LA13_0<='\u09A8')||(LA13_0>='\u09AA' && LA13_0<='\u09B0')||LA13_0=='\u09B2'||(LA13_0>='\u09B6' && LA13_0<='\u09B9')||LA13_0=='\u09BC'||(LA13_0>='\u09BE' && LA13_0<='\u09C4')||(LA13_0>='\u09C7' && LA13_0<='\u09C8')||(LA13_0>='\u09CB' && LA13_0<='\u09CD')||LA13_0=='\u09D7'||(LA13_0>='\u09DC' && LA13_0<='\u09DD')||(LA13_0>='\u09DF' && LA13_0<='\u09E3')||(LA13_0>='\u09E6' && LA13_0<='\u09F1')||LA13_0=='\u0A02'||(LA13_0>='\u0A05' && LA13_0<='\u0A0A')||(LA13_0>='\u0A0F' && LA13_0<='\u0A10')||(LA13_0>='\u0A13' && LA13_0<='\u0A28')||(LA13_0>='\u0A2A' && LA13_0<='\u0A30')||(LA13_0>='\u0A32' && LA13_0<='\u0A33')||(LA13_0>='\u0A35' && LA13_0<='\u0A36')||(LA13_0>='\u0A38' && LA13_0<='\u0A39')||LA13_0=='\u0A3C'||(LA13_0>='\u0A3E' && LA13_0<='\u0A42')||(LA13_0>='\u0A47' && LA13_0<='\u0A48')||(LA13_0>='\u0A4B' && LA13_0<='\u0A4D')||(LA13_0>='\u0A59' && LA13_0<='\u0A5C')||LA13_0=='\u0A5E'||(LA13_0>='\u0A66' && LA13_0<='\u0A74')||(LA13_0>='\u0A81' && LA13_0<='\u0A83')||(LA13_0>='\u0A85' && LA13_0<='\u0A8B')||LA13_0=='\u0A8D'||(LA13_0>='\u0A8F' && LA13_0<='\u0A91')||(LA13_0>='\u0A93' && LA13_0<='\u0AA8')||(LA13_0>='\u0AAA' && LA13_0<='\u0AB0')||(LA13_0>='\u0AB2' && LA13_0<='\u0AB3')||(LA13_0>='\u0AB5' && LA13_0<='\u0AB9')||(LA13_0>='\u0ABC' && LA13_0<='\u0AC5')||(LA13_0>='\u0AC7' && LA13_0<='\u0AC9')||(LA13_0>='\u0ACB' && LA13_0<='\u0ACD')||LA13_0=='\u0AE0'||(LA13_0>='\u0AE6' && LA13_0<='\u0AEF')||(LA13_0>='\u0B01' && LA13_0<='\u0B03')||(LA13_0>='\u0B05' && LA13_0<='\u0B0C')||(LA13_0>='\u0B0F' && LA13_0<='\u0B10')||(LA13_0>='\u0B13' && LA13_0<='\u0B28')||(LA13_0>='\u0B2A' && LA13_0<='\u0B30')||(LA13_0>='\u0B32' && LA13_0<='\u0B33')||(LA13_0>='\u0B36' && LA13_0<='\u0B39')||(LA13_0>='\u0B3C' && LA13_0<='\u0B43')||(LA13_0>='\u0B47' && LA13_0<='\u0B48')||(LA13_0>='\u0B4B' && LA13_0<='\u0B4D')||(LA13_0>='\u0B56' && LA13_0<='\u0B57')||(LA13_0>='\u0B5C' && LA13_0<='\u0B5D')||(LA13_0>='\u0B5F' && LA13_0<='\u0B61')||(LA13_0>='\u0B66' && LA13_0<='\u0B6F')||(LA13_0>='\u0B82' && LA13_0<='\u0B83')||(LA13_0>='\u0B85' && LA13_0<='\u0B8A')||(LA13_0>='\u0B8E' && LA13_0<='\u0B90')||(LA13_0>='\u0B92' && LA13_0<='\u0B95')||(LA13_0>='\u0B99' && LA13_0<='\u0B9A')||LA13_0=='\u0B9C'||(LA13_0>='\u0B9E' && LA13_0<='\u0B9F')||(LA13_0>='\u0BA3' && LA13_0<='\u0BA4')||(LA13_0>='\u0BA8' && LA13_0<='\u0BAA')||(LA13_0>='\u0BAE' && LA13_0<='\u0BB5')||(LA13_0>='\u0BB7' && LA13_0<='\u0BB9')||(LA13_0>='\u0BBE' && LA13_0<='\u0BC2')||(LA13_0>='\u0BC6' && LA13_0<='\u0BC8')||(LA13_0>='\u0BCA' && LA13_0<='\u0BCD')||LA13_0=='\u0BD7'||(LA13_0>='\u0BE7' && LA13_0<='\u0BEF')||(LA13_0>='\u0C01' && LA13_0<='\u0C03')||(LA13_0>='\u0C05' && LA13_0<='\u0C0C')||(LA13_0>='\u0C0E' && LA13_0<='\u0C10')||(LA13_0>='\u0C12' && LA13_0<='\u0C28')||(LA13_0>='\u0C2A' && LA13_0<='\u0C33')||(LA13_0>='\u0C35' && LA13_0<='\u0C39')||(LA13_0>='\u0C3E' && LA13_0<='\u0C44')||(LA13_0>='\u0C46' && LA13_0<='\u0C48')||(LA13_0>='\u0C4A' && LA13_0<='\u0C4D')||(LA13_0>='\u0C55' && LA13_0<='\u0C56')||(LA13_0>='\u0C60' && LA13_0<='\u0C61')||(LA13_0>='\u0C66' && LA13_0<='\u0C6F')||(LA13_0>='\u0C82' && LA13_0<='\u0C83')||(LA13_0>='\u0C85' && LA13_0<='\u0C8C')||(LA13_0>='\u0C8E' && LA13_0<='\u0C90')||(LA13_0>='\u0C92' && LA13_0<='\u0CA8')||(LA13_0>='\u0CAA' && LA13_0<='\u0CB3')||(LA13_0>='\u0CB5' && LA13_0<='\u0CB9')||(LA13_0>='\u0CBE' && LA13_0<='\u0CC4')||(LA13_0>='\u0CC6' && LA13_0<='\u0CC8')||(LA13_0>='\u0CCA' && LA13_0<='\u0CCD')||(LA13_0>='\u0CD5' && LA13_0<='\u0CD6')||LA13_0=='\u0CDE'||(LA13_0>='\u0CE0' && LA13_0<='\u0CE1')||(LA13_0>='\u0CE6' && LA13_0<='\u0CEF')||(LA13_0>='\u0D02' && LA13_0<='\u0D03')||(LA13_0>='\u0D05' && LA13_0<='\u0D0C')||(LA13_0>='\u0D0E' && LA13_0<='\u0D10')||(LA13_0>='\u0D12' && LA13_0<='\u0D28')||(LA13_0>='\u0D2A' && LA13_0<='\u0D39')||(LA13_0>='\u0D3E' && LA13_0<='\u0D43')||(LA13_0>='\u0D46' && LA13_0<='\u0D48')||(LA13_0>='\u0D4A' && LA13_0<='\u0D4D')||LA13_0=='\u0D57'||(LA13_0>='\u0D60' && LA13_0<='\u0D61')||(LA13_0>='\u0D66' && LA13_0<='\u0D6F')||(LA13_0>='\u0E01' && LA13_0<='\u0E2E')||(LA13_0>='\u0E30' && LA13_0<='\u0E3A')||(LA13_0>='\u0E40' && LA13_0<='\u0E4E')||(LA13_0>='\u0E50' && LA13_0<='\u0E59')||(LA13_0>='\u0E81' && LA13_0<='\u0E82')||LA13_0=='\u0E84'||(LA13_0>='\u0E87' && LA13_0<='\u0E88')||LA13_0=='\u0E8A'||LA13_0=='\u0E8D'||(LA13_0>='\u0E94' && LA13_0<='\u0E97')||(LA13_0>='\u0E99' && LA13_0<='\u0E9F')||(LA13_0>='\u0EA1' && LA13_0<='\u0EA3')||LA13_0=='\u0EA5'||LA13_0=='\u0EA7'||(LA13_0>='\u0EAA' && LA13_0<='\u0EAB')||(LA13_0>='\u0EAD' && LA13_0<='\u0EAE')||(LA13_0>='\u0EB0' && LA13_0<='\u0EB9')||(LA13_0>='\u0EBB' && LA13_0<='\u0EBD')||(LA13_0>='\u0EC0' && LA13_0<='\u0EC4')||LA13_0=='\u0EC6'||(LA13_0>='\u0EC8' && LA13_0<='\u0ECD')||(LA13_0>='\u0ED0' && LA13_0<='\u0ED9')||(LA13_0>='\u0F18' && LA13_0<='\u0F19')||(LA13_0>='\u0F20' && LA13_0<='\u0F29')||LA13_0=='\u0F35'||LA13_0=='\u0F37'||LA13_0=='\u0F39'||(LA13_0>='\u0F3E' && LA13_0<='\u0F47')||(LA13_0>='\u0F49' && LA13_0<='\u0F69')||(LA13_0>='\u0F71' && LA13_0<='\u0F84')||(LA13_0>='\u0F86' && LA13_0<='\u0F8B')||(LA13_0>='\u0F90' && LA13_0<='\u0F95')||LA13_0=='\u0F97'||(LA13_0>='\u0F99' && LA13_0<='\u0FAD')||(LA13_0>='\u0FB1' && LA13_0<='\u0FB7')||LA13_0=='\u0FB9'||(LA13_0>='\u10A0' && LA13_0<='\u10C5')||(LA13_0>='\u10D0' && LA13_0<='\u10F6')||LA13_0=='\u1100'||(LA13_0>='\u1102' && LA13_0<='\u1103')||(LA13_0>='\u1105' && LA13_0<='\u1107')||LA13_0=='\u1109'||(LA13_0>='\u110B' && LA13_0<='\u110C')||(LA13_0>='\u110E' && LA13_0<='\u1112')||LA13_0=='\u113C'||LA13_0=='\u113E'||LA13_0=='\u1140'||LA13_0=='\u114C'||LA13_0=='\u114E'||LA13_0=='\u1150'||(LA13_0>='\u1154' && LA13_0<='\u1155')||LA13_0=='\u1159'||(LA13_0>='\u115F' && LA13_0<='\u1161')||LA13_0=='\u1163'||LA13_0=='\u1165'||LA13_0=='\u1167'||LA13_0=='\u1169'||(LA13_0>='\u116D' && LA13_0<='\u116E')||(LA13_0>='\u1172' && LA13_0<='\u1173')||LA13_0=='\u1175'||LA13_0=='\u119E'||LA13_0=='\u11A8'||LA13_0=='\u11AB'||(LA13_0>='\u11AE' && LA13_0<='\u11AF')||(LA13_0>='\u11B7' && LA13_0<='\u11B8')||LA13_0=='\u11BA'||(LA13_0>='\u11BC' && LA13_0<='\u11C2')||LA13_0=='\u11EB'||LA13_0=='\u11F0'||LA13_0=='\u11F9'||(LA13_0>='\u1E00' && LA13_0<='\u1E9B')||(LA13_0>='\u1EA0' && LA13_0<='\u1EF9')||(LA13_0>='\u1F00' && LA13_0<='\u1F15')||(LA13_0>='\u1F18' && LA13_0<='\u1F1D')||(LA13_0>='\u1F20' && LA13_0<='\u1F45')||(LA13_0>='\u1F48' && LA13_0<='\u1F4D')||(LA13_0>='\u1F50' && LA13_0<='\u1F57')||LA13_0=='\u1F59'||LA13_0=='\u1F5B'||LA13_0=='\u1F5D'||(LA13_0>='\u1F5F' && LA13_0<='\u1F7D')||(LA13_0>='\u1F80' && LA13_0<='\u1FB4')||(LA13_0>='\u1FB6' && LA13_0<='\u1FBC')||LA13_0=='\u1FBE'||(LA13_0>='\u1FC2' && LA13_0<='\u1FC4')||(LA13_0>='\u1FC6' && LA13_0<='\u1FCC')||(LA13_0>='\u1FD0' && LA13_0<='\u1FD3')||(LA13_0>='\u1FD6' && LA13_0<='\u1FDB')||(LA13_0>='\u1FE0' && LA13_0<='\u1FEC')||(LA13_0>='\u1FF2' && LA13_0<='\u1FF4')||(LA13_0>='\u1FF6' && LA13_0<='\u1FFC')||(LA13_0>='\u20D0' && LA13_0<='\u20DC')||LA13_0=='\u20E1'||LA13_0=='\u2126'||(LA13_0>='\u212A' && LA13_0<='\u212B')||LA13_0=='\u212E'||(LA13_0>='\u2180' && LA13_0<='\u2182')||LA13_0=='\u3005'||LA13_0=='\u3007'||(LA13_0>='\u3021' && LA13_0<='\u302F')||(LA13_0>='\u3031' && LA13_0<='\u3035')||(LA13_0>='\u3041' && LA13_0<='\u3094')||(LA13_0>='\u3099' && LA13_0<='\u309A')||(LA13_0>='\u309D' && LA13_0<='\u309E')||(LA13_0>='\u30A1' && LA13_0<='\u30FA')||(LA13_0>='\u30FC' && LA13_0<='\u30FE')||(LA13_0>='\u3105' && LA13_0<='\u312C')||(LA13_0>='\u4E00' && LA13_0<='\u9FA5')||(LA13_0>='\uAC00' && LA13_0<='\uD7A3')) ) {
-                    alt13=1;
+                if ( ((LA19_0>='-' && LA19_0<='.')||(LA19_0>='0' && LA19_0<=':')||(LA19_0>='A' && LA19_0<='Z')||LA19_0=='_'||(LA19_0>='a' && LA19_0<='z')||LA19_0=='\u00B7'||(LA19_0>='\u00C0' && LA19_0<='\u00D6')||(LA19_0>='\u00D8' && LA19_0<='\u00F6')||(LA19_0>='\u00F8' && LA19_0<='\u0131')||(LA19_0>='\u0134' && LA19_0<='\u013E')||(LA19_0>='\u0141' && LA19_0<='\u0148')||(LA19_0>='\u014A' && LA19_0<='\u017E')||(LA19_0>='\u0180' && LA19_0<='\u01C3')||(LA19_0>='\u01CD' && LA19_0<='\u01F0')||(LA19_0>='\u01F4' && LA19_0<='\u01F5')||(LA19_0>='\u01FA' && LA19_0<='\u0217')||(LA19_0>='\u0250' && LA19_0<='\u02A8')||(LA19_0>='\u02BB' && LA19_0<='\u02C1')||(LA19_0>='\u02D0' && LA19_0<='\u02D1')||(LA19_0>='\u0300' && LA19_0<='\u0345')||(LA19_0>='\u0360' && LA19_0<='\u0361')||(LA19_0>='\u0386' && LA19_0<='\u038A')||LA19_0=='\u038C'||(LA19_0>='\u038E' && LA19_0<='\u03A1')||(LA19_0>='\u03A3' && LA19_0<='\u03CE')||(LA19_0>='\u03D0' && LA19_0<='\u03D6')||LA19_0=='\u03DA'||LA19_0=='\u03DC'||LA19_0=='\u03DE'||LA19_0=='\u03E0'||(LA19_0>='\u03E2' && LA19_0<='\u03F3')||(LA19_0>='\u0401' && LA19_0<='\u040C')||(LA19_0>='\u040E' && LA19_0<='\u044F')||(LA19_0>='\u0451' && LA19_0<='\u045C')||(LA19_0>='\u045E' && LA19_0<='\u0481')||(LA19_0>='\u0483' && LA19_0<='\u0486')||(LA19_0>='\u0490' && LA19_0<='\u04C4')||(LA19_0>='\u04C7' && LA19_0<='\u04C8')||(LA19_0>='\u04CB' && LA19_0<='\u04CC')||(LA19_0>='\u04D0' && LA19_0<='\u04EB')||(LA19_0>='\u04EE' && LA19_0<='\u04F5')||(LA19_0>='\u04F8' && LA19_0<='\u04F9')||(LA19_0>='\u0531' && LA19_0<='\u0556')||LA19_0=='\u0559'||(LA19_0>='\u0561' && LA19_0<='\u0586')||(LA19_0>='\u0591' && LA19_0<='\u05A1')||(LA19_0>='\u05A3' && LA19_0<='\u05B9')||(LA19_0>='\u05BB' && LA19_0<='\u05BD')||LA19_0=='\u05BF'||(LA19_0>='\u05C1' && LA19_0<='\u05C2')||LA19_0=='\u05C4'||(LA19_0>='\u05D0' && LA19_0<='\u05EA')||(LA19_0>='\u05F0' && LA19_0<='\u05F2')||(LA19_0>='\u0621' && LA19_0<='\u063A')||(LA19_0>='\u0640' && LA19_0<='\u0652')||(LA19_0>='\u0660' && LA19_0<='\u0669')||(LA19_0>='\u0670' && LA19_0<='\u06B7')||(LA19_0>='\u06BA' && LA19_0<='\u06BE')||(LA19_0>='\u06C0' && LA19_0<='\u06CE')||(LA19_0>='\u06D0' && LA19_0<='\u06D3')||(LA19_0>='\u06D5' && LA19_0<='\u06E8')||(LA19_0>='\u06EA' && LA19_0<='\u06ED')||(LA19_0>='\u06F0' && LA19_0<='\u06F9')||(LA19_0>='\u0901' && LA19_0<='\u0903')||(LA19_0>='\u0905' && LA19_0<='\u0939')||(LA19_0>='\u093C' && LA19_0<='\u094D')||(LA19_0>='\u0951' && LA19_0<='\u0954')||(LA19_0>='\u0958' && LA19_0<='\u0963')||(LA19_0>='\u0966' && LA19_0<='\u096F')||(LA19_0>='\u0981' && LA19_0<='\u0983')||(LA19_0>='\u0985' && LA19_0<='\u098C')||(LA19_0>='\u098F' && LA19_0<='\u0990')||(LA19_0>='\u0993' && LA19_0<='\u09A8')||(LA19_0>='\u09AA' && LA19_0<='\u09B0')||LA19_0=='\u09B2'||(LA19_0>='\u09B6' && LA19_0<='\u09B9')||LA19_0=='\u09BC'||(LA19_0>='\u09BE' && LA19_0<='\u09C4')||(LA19_0>='\u09C7' && LA19_0<='\u09C8')||(LA19_0>='\u09CB' && LA19_0<='\u09CD')||LA19_0=='\u09D7'||(LA19_0>='\u09DC' && LA19_0<='\u09DD')||(LA19_0>='\u09DF' && LA19_0<='\u09E3')||(LA19_0>='\u09E6' && LA19_0<='\u09F1')||LA19_0=='\u0A02'||(LA19_0>='\u0A05' && LA19_0<='\u0A0A')||(LA19_0>='\u0A0F' && LA19_0<='\u0A10')||(LA19_0>='\u0A13' && LA19_0<='\u0A28')||(LA19_0>='\u0A2A' && LA19_0<='\u0A30')||(LA19_0>='\u0A32' && LA19_0<='\u0A33')||(LA19_0>='\u0A35' && LA19_0<='\u0A36')||(LA19_0>='\u0A38' && LA19_0<='\u0A39')||LA19_0=='\u0A3C'||(LA19_0>='\u0A3E' && LA19_0<='\u0A42')||(LA19_0>='\u0A47' && LA19_0<='\u0A48')||(LA19_0>='\u0A4B' && LA19_0<='\u0A4D')||(LA19_0>='\u0A59' && LA19_0<='\u0A5C')||LA19_0=='\u0A5E'||(LA19_0>='\u0A66' && LA19_0<='\u0A74')||(LA19_0>='\u0A81' && LA19_0<='\u0A83')||(LA19_0>='\u0A85' && LA19_0<='\u0A8B')||LA19_0=='\u0A8D'||(LA19_0>='\u0A8F' && LA19_0<='\u0A91')||(LA19_0>='\u0A93' && LA19_0<='\u0AA8')||(LA19_0>='\u0AAA' && LA19_0<='\u0AB0')||(LA19_0>='\u0AB2' && LA19_0<='\u0AB3')||(LA19_0>='\u0AB5' && LA19_0<='\u0AB9')||(LA19_0>='\u0ABC' && LA19_0<='\u0AC5')||(LA19_0>='\u0AC7' && LA19_0<='\u0AC9')||(LA19_0>='\u0ACB' && LA19_0<='\u0ACD')||LA19_0=='\u0AE0'||(LA19_0>='\u0AE6' && LA19_0<='\u0AEF')||(LA19_0>='\u0B01' && LA19_0<='\u0B03')||(LA19_0>='\u0B05' && LA19_0<='\u0B0C')||(LA19_0>='\u0B0F' && LA19_0<='\u0B10')||(LA19_0>='\u0B13' && LA19_0<='\u0B28')||(LA19_0>='\u0B2A' && LA19_0<='\u0B30')||(LA19_0>='\u0B32' && LA19_0<='\u0B33')||(LA19_0>='\u0B36' && LA19_0<='\u0B39')||(LA19_0>='\u0B3C' && LA19_0<='\u0B43')||(LA19_0>='\u0B47' && LA19_0<='\u0B48')||(LA19_0>='\u0B4B' && LA19_0<='\u0B4D')||(LA19_0>='\u0B56' && LA19_0<='\u0B57')||(LA19_0>='\u0B5C' && LA19_0<='\u0B5D')||(LA19_0>='\u0B5F' && LA19_0<='\u0B61')||(LA19_0>='\u0B66' && LA19_0<='\u0B6F')||(LA19_0>='\u0B82' && LA19_0<='\u0B83')||(LA19_0>='\u0B85' && LA19_0<='\u0B8A')||(LA19_0>='\u0B8E' && LA19_0<='\u0B90')||(LA19_0>='\u0B92' && LA19_0<='\u0B95')||(LA19_0>='\u0B99' && LA19_0<='\u0B9A')||LA19_0=='\u0B9C'||(LA19_0>='\u0B9E' && LA19_0<='\u0B9F')||(LA19_0>='\u0BA3' && LA19_0<='\u0BA4')||(LA19_0>='\u0BA8' && LA19_0<='\u0BAA')||(LA19_0>='\u0BAE' && LA19_0<='\u0BB5')||(LA19_0>='\u0BB7' && LA19_0<='\u0BB9')||(LA19_0>='\u0BBE' && LA19_0<='\u0BC2')||(LA19_0>='\u0BC6' && LA19_0<='\u0BC8')||(LA19_0>='\u0BCA' && LA19_0<='\u0BCD')||LA19_0=='\u0BD7'||(LA19_0>='\u0BE7' && LA19_0<='\u0BEF')||(LA19_0>='\u0C01' && LA19_0<='\u0C03')||(LA19_0>='\u0C05' && LA19_0<='\u0C0C')||(LA19_0>='\u0C0E' && LA19_0<='\u0C10')||(LA19_0>='\u0C12' && LA19_0<='\u0C28')||(LA19_0>='\u0C2A' && LA19_0<='\u0C33')||(LA19_0>='\u0C35' && LA19_0<='\u0C39')||(LA19_0>='\u0C3E' && LA19_0<='\u0C44')||(LA19_0>='\u0C46' && LA19_0<='\u0C48')||(LA19_0>='\u0C4A' && LA19_0<='\u0C4D')||(LA19_0>='\u0C55' && LA19_0<='\u0C56')||(LA19_0>='\u0C60' && LA19_0<='\u0C61')||(LA19_0>='\u0C66' && LA19_0<='\u0C6F')||(LA19_0>='\u0C82' && LA19_0<='\u0C83')||(LA19_0>='\u0C85' && LA19_0<='\u0C8C')||(LA19_0>='\u0C8E' && LA19_0<='\u0C90')||(LA19_0>='\u0C92' && LA19_0<='\u0CA8')||(LA19_0>='\u0CAA' && LA19_0<='\u0CB3')||(LA19_0>='\u0CB5' && LA19_0<='\u0CB9')||(LA19_0>='\u0CBE' && LA19_0<='\u0CC4')||(LA19_0>='\u0CC6' && LA19_0<='\u0CC8')||(LA19_0>='\u0CCA' && LA19_0<='\u0CCD')||(LA19_0>='\u0CD5' && LA19_0<='\u0CD6')||LA19_0=='\u0CDE'||(LA19_0>='\u0CE0' && LA19_0<='\u0CE1')||(LA19_0>='\u0CE6' && LA19_0<='\u0CEF')||(LA19_0>='\u0D02' && LA19_0<='\u0D03')||(LA19_0>='\u0D05' && LA19_0<='\u0D0C')||(LA19_0>='\u0D0E' && LA19_0<='\u0D10')||(LA19_0>='\u0D12' && LA19_0<='\u0D28')||(LA19_0>='\u0D2A' && LA19_0<='\u0D39')||(LA19_0>='\u0D3E' && LA19_0<='\u0D43')||(LA19_0>='\u0D46' && LA19_0<='\u0D48')||(LA19_0>='\u0D4A' && LA19_0<='\u0D4D')||LA19_0=='\u0D57'||(LA19_0>='\u0D60' && LA19_0<='\u0D61')||(LA19_0>='\u0D66' && LA19_0<='\u0D6F')||(LA19_0>='\u0E01' && LA19_0<='\u0E2E')||(LA19_0>='\u0E30' && LA19_0<='\u0E3A')||(LA19_0>='\u0E40' && LA19_0<='\u0E4E')||(LA19_0>='\u0E50' && LA19_0<='\u0E59')||(LA19_0>='\u0E81' && LA19_0<='\u0E82')||LA19_0=='\u0E84'||(LA19_0>='\u0E87' && LA19_0<='\u0E88')||LA19_0=='\u0E8A'||LA19_0=='\u0E8D'||(LA19_0>='\u0E94' && LA19_0<='\u0E97')||(LA19_0>='\u0E99' && LA19_0<='\u0E9F')||(LA19_0>='\u0EA1' && LA19_0<='\u0EA3')||LA19_0=='\u0EA5'||LA19_0=='\u0EA7'||(LA19_0>='\u0EAA' && LA19_0<='\u0EAB')||(LA19_0>='\u0EAD' && LA19_0<='\u0EAE')||(LA19_0>='\u0EB0' && LA19_0<='\u0EB9')||(LA19_0>='\u0EBB' && LA19_0<='\u0EBD')||(LA19_0>='\u0EC0' && LA19_0<='\u0EC4')||LA19_0=='\u0EC6'||(LA19_0>='\u0EC8' && LA19_0<='\u0ECD')||(LA19_0>='\u0ED0' && LA19_0<='\u0ED9')||(LA19_0>='\u0F18' && LA19_0<='\u0F19')||(LA19_0>='\u0F20' && LA19_0<='\u0F29')||LA19_0=='\u0F35'||LA19_0=='\u0F37'||LA19_0=='\u0F39'||(LA19_0>='\u0F3E' && LA19_0<='\u0F47')||(LA19_0>='\u0F49' && LA19_0<='\u0F69')||(LA19_0>='\u0F71' && LA19_0<='\u0F84')||(LA19_0>='\u0F86' && LA19_0<='\u0F8B')||(LA19_0>='\u0F90' && LA19_0<='\u0F95')||LA19_0=='\u0F97'||(LA19_0>='\u0F99' && LA19_0<='\u0FAD')||(LA19_0>='\u0FB1' && LA19_0<='\u0FB7')||LA19_0=='\u0FB9'||(LA19_0>='\u10A0' && LA19_0<='\u10C5')||(LA19_0>='\u10D0' && LA19_0<='\u10F6')||LA19_0=='\u1100'||(LA19_0>='\u1102' && LA19_0<='\u1103')||(LA19_0>='\u1105' && LA19_0<='\u1107')||LA19_0=='\u1109'||(LA19_0>='\u110B' && LA19_0<='\u110C')||(LA19_0>='\u110E' && LA19_0<='\u1112')||LA19_0=='\u113C'||LA19_0=='\u113E'||LA19_0=='\u1140'||LA19_0=='\u114C'||LA19_0=='\u114E'||LA19_0=='\u1150'||(LA19_0>='\u1154' && LA19_0<='\u1155')||LA19_0=='\u1159'||(LA19_0>='\u115F' && LA19_0<='\u1161')||LA19_0=='\u1163'||LA19_0=='\u1165'||LA19_0=='\u1167'||LA19_0=='\u1169'||(LA19_0>='\u116D' && LA19_0<='\u116E')||(LA19_0>='\u1172' && LA19_0<='\u1173')||LA19_0=='\u1175'||LA19_0=='\u119E'||LA19_0=='\u11A8'||LA19_0=='\u11AB'||(LA19_0>='\u11AE' && LA19_0<='\u11AF')||(LA19_0>='\u11B7' && LA19_0<='\u11B8')||LA19_0=='\u11BA'||(LA19_0>='\u11BC' && LA19_0<='\u11C2')||LA19_0=='\u11EB'||LA19_0=='\u11F0'||LA19_0=='\u11F9'||(LA19_0>='\u1E00' && LA19_0<='\u1E9B')||(LA19_0>='\u1EA0' && LA19_0<='\u1EF9')||(LA19_0>='\u1F00' && LA19_0<='\u1F15')||(LA19_0>='\u1F18' && LA19_0<='\u1F1D')||(LA19_0>='\u1F20' && LA19_0<='\u1F45')||(LA19_0>='\u1F48' && LA19_0<='\u1F4D')||(LA19_0>='\u1F50' && LA19_0<='\u1F57')||LA19_0=='\u1F59'||LA19_0=='\u1F5B'||LA19_0=='\u1F5D'||(LA19_0>='\u1F5F' && LA19_0<='\u1F7D')||(LA19_0>='\u1F80' && LA19_0<='\u1FB4')||(LA19_0>='\u1FB6' && LA19_0<='\u1FBC')||LA19_0=='\u1FBE'||(LA19_0>='\u1FC2' && LA19_0<='\u1FC4')||(LA19_0>='\u1FC6' && LA19_0<='\u1FCC')||(LA19_0>='\u1FD0' && LA19_0<='\u1FD3')||(LA19_0>='\u1FD6' && LA19_0<='\u1FDB')||(LA19_0>='\u1FE0' && LA19_0<='\u1FEC')||(LA19_0>='\u1FF2' && LA19_0<='\u1FF4')||(LA19_0>='\u1FF6' && LA19_0<='\u1FFC')||(LA19_0>='\u20D0' && LA19_0<='\u20DC')||LA19_0=='\u20E1'||LA19_0=='\u2126'||(LA19_0>='\u212A' && LA19_0<='\u212B')||LA19_0=='\u212E'||(LA19_0>='\u2180' && LA19_0<='\u2182')||LA19_0=='\u3005'||LA19_0=='\u3007'||(LA19_0>='\u3021' && LA19_0<='\u302F')||(LA19_0>='\u3031' && LA19_0<='\u3035')||(LA19_0>='\u3041' && LA19_0<='\u3094')||(LA19_0>='\u3099' && LA19_0<='\u309A')||(LA19_0>='\u309D' && LA19_0<='\u309E')||(LA19_0>='\u30A1' && LA19_0<='\u30FA')||(LA19_0>='\u30FC' && LA19_0<='\u30FE')||(LA19_0>='\u3105' && LA19_0<='\u312C')||(LA19_0>='\u4E00' && LA19_0<='\u9FA5')||(LA19_0>='\uAC00' && LA19_0<='\uD7A3')) ) {
+                    alt19=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt19) {
             	case 1 :
-            	    // etc/XQFT.g:271:65: NameChar
+            	    // etc/XQFT.g:822:70: NameChar
             	    {
             	    mNameChar(); if (failed) return ;
 
@@ -4879,7 +5526,7 @@ public class XQFTLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop19;
                 }
             } while (true);
 
@@ -4892,371 +5539,26 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end Name
 
-    // $ANTLR start CharRef
-    public final void mCharRef() throws RecognitionException {
-        try {
-            int _type = CharRef;
-            // etc/XQFT.g:292:21: ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi )
-            int alt16=2;
-            int LA16_0 = input.LA(1);
-
-            if ( (LA16_0=='&') ) {
-                int LA16_1 = input.LA(2);
-
-                if ( (LA16_1=='#') ) {
-                    int LA16_2 = input.LA(3);
-
-                    if ( (LA16_2=='x') ) {
-                        alt16=2;
-                    }
-                    else if ( ((LA16_2>='0' && LA16_2<='9')) ) {
-                        alt16=1;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return ;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("292:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 2, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    if (backtracking>0) {failed=true; return ;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("292:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 1, input);
-
-                    throw nvae;
-                }
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("292:1: CharRef : ( '&#' ( '0' .. '9' )+ SEMICOLONSi | '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 16, 0, input);
-
-                throw nvae;
-            }
-            switch (alt16) {
-                case 1 :
-                    // etc/XQFT.g:292:23: '&#' ( '0' .. '9' )+ SEMICOLONSi
-                    {
-                    match("&#"); if (failed) return ;
-
-                    // etc/XQFT.g:292:28: ( '0' .. '9' )+
-                    int cnt14=0;
-                    loop14:
-                    do {
-                        int alt14=2;
-                        int LA14_0 = input.LA(1);
-
-                        if ( ((LA14_0>='0' && LA14_0<='9')) ) {
-                            alt14=1;
-                        }
-
-
-                        switch (alt14) {
-                    	case 1 :
-                    	    // etc/XQFT.g:292:29: '0' .. '9'
-                    	    {
-                    	    matchRange('0','9'); if (failed) return ;
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    if ( cnt14 >= 1 ) break loop14;
-                    	    if (backtracking>0) {failed=true; return ;}
-                                EarlyExitException eee =
-                                    new EarlyExitException(14, input);
-                                throw eee;
-                        }
-                        cnt14++;
-                    } while (true);
-
-                    mSEMICOLONSi(); if (failed) return ;
-
-                    }
-                    break;
-                case 2 :
-                    // etc/XQFT.g:292:54: '&#x' ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi
-                    {
-                    match("&#x"); if (failed) return ;
-
-                    // etc/XQFT.g:292:60: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
-                    int cnt15=0;
-                    loop15:
-                    do {
-                        int alt15=2;
-                        int LA15_0 = input.LA(1);
-
-                        if ( ((LA15_0>='0' && LA15_0<='9')||(LA15_0>='A' && LA15_0<='F')||(LA15_0>='a' && LA15_0<='f')) ) {
-                            alt15=1;
-                        }
-
-
-                        switch (alt15) {
-                    	case 1 :
-                    	    // etc/XQFT.g:
-                    	    {
-                    	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
-                    	        input.consume();
-                    	    failed=false;
-                    	    }
-                    	    else {
-                    	        if (backtracking>0) {failed=true; return ;}
-                    	        MismatchedSetException mse =
-                    	            new MismatchedSetException(null,input);
-                    	        recover(mse);    throw mse;
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    if ( cnt15 >= 1 ) break loop15;
-                    	    if (backtracking>0) {failed=true; return ;}
-                                EarlyExitException eee =
-                                    new EarlyExitException(15, input);
-                                throw eee;
-                        }
-                        cnt15++;
-                    } while (true);
-
-                    mSEMICOLONSi(); if (failed) return ;
-
-                    }
-                    break;
-
-            }
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end CharRef
-
-    // $ANTLR start NCName
-    public final void mNCName() throws RecognitionException {
-        try {
-            int _type = NCName;
-            // etc/XQFT.g:307:21: ( NCNameStartChar ( NCNameChar )* )
-            // etc/XQFT.g:307:23: NCNameStartChar ( NCNameChar )*
-            {
-            mNCNameStartChar(); if (failed) return ;
-            // etc/XQFT.g:307:39: ( NCNameChar )*
-            loop17:
-            do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
-
-                if ( ((LA17_0>='-' && LA17_0<='.')||(LA17_0>='0' && LA17_0<='9')||(LA17_0>='A' && LA17_0<='Z')||LA17_0=='_'||(LA17_0>='a' && LA17_0<='z')||LA17_0=='\u00B7'||(LA17_0>='\u00C0' && LA17_0<='\u00D6')||(LA17_0>='\u00D8' && LA17_0<='\u00F6')||(LA17_0>='\u00F8' && LA17_0<='\u0131')||(LA17_0>='\u0134' && LA17_0<='\u013E')||(LA17_0>='\u0141' && LA17_0<='\u0148')||(LA17_0>='\u014A' && LA17_0<='\u017E')||(LA17_0>='\u0180' && LA17_0<='\u01C3')||(LA17_0>='\u01CD' && LA17_0<='\u01F0')||(LA17_0>='\u01F4' && LA17_0<='\u01F5')||(LA17_0>='\u01FA' && LA17_0<='\u0217')||(LA17_0>='\u0250' && LA17_0<='\u02A8')||(LA17_0>='\u02BB' && LA17_0<='\u02C1')||(LA17_0>='\u02D0' && LA17_0<='\u02D1')||(LA17_0>='\u0300' && LA17_0<='\u0345')||(LA17_0>='\u0360' && LA17_0<='\u0361')||(LA17_0>='\u0386' && LA17_0<='\u038A')||LA17_0=='\u038C'||(LA17_0>='\u038E' && LA17_0<='\u03A1')||(LA17_0>='\u03A3' && LA17_0<='\u03CE')||(LA17_0>='\u03D0' && LA17_0<='\u03D6')||LA17_0=='\u03DA'||LA17_0=='\u03DC'||LA17_0=='\u03DE'||LA17_0=='\u03E0'||(LA17_0>='\u03E2' && LA17_0<='\u03F3')||(LA17_0>='\u0401' && LA17_0<='\u040C')||(LA17_0>='\u040E' && LA17_0<='\u044F')||(LA17_0>='\u0451' && LA17_0<='\u045C')||(LA17_0>='\u045E' && LA17_0<='\u0481')||(LA17_0>='\u0483' && LA17_0<='\u0486')||(LA17_0>='\u0490' && LA17_0<='\u04C4')||(LA17_0>='\u04C7' && LA17_0<='\u04C8')||(LA17_0>='\u04CB' && LA17_0<='\u04CC')||(LA17_0>='\u04D0' && LA17_0<='\u04EB')||(LA17_0>='\u04EE' && LA17_0<='\u04F5')||(LA17_0>='\u04F8' && LA17_0<='\u04F9')||(LA17_0>='\u0531' && LA17_0<='\u0556')||LA17_0=='\u0559'||(LA17_0>='\u0561' && LA17_0<='\u0586')||(LA17_0>='\u0591' && LA17_0<='\u05A1')||(LA17_0>='\u05A3' && LA17_0<='\u05B9')||(LA17_0>='\u05BB' && LA17_0<='\u05BD')||LA17_0=='\u05BF'||(LA17_0>='\u05C1' && LA17_0<='\u05C2')||LA17_0=='\u05C4'||(LA17_0>='\u05D0' && LA17_0<='\u05EA')||(LA17_0>='\u05F0' && LA17_0<='\u05F2')||(LA17_0>='\u0621' && LA17_0<='\u063A')||(LA17_0>='\u0640' && LA17_0<='\u0652')||(LA17_0>='\u0660' && LA17_0<='\u0669')||(LA17_0>='\u0670' && LA17_0<='\u06B7')||(LA17_0>='\u06BA' && LA17_0<='\u06BE')||(LA17_0>='\u06C0' && LA17_0<='\u06CE')||(LA17_0>='\u06D0' && LA17_0<='\u06D3')||(LA17_0>='\u06D5' && LA17_0<='\u06E8')||(LA17_0>='\u06EA' && LA17_0<='\u06ED')||(LA17_0>='\u06F0' && LA17_0<='\u06F9')||(LA17_0>='\u0901' && LA17_0<='\u0903')||(LA17_0>='\u0905' && LA17_0<='\u0939')||(LA17_0>='\u093C' && LA17_0<='\u094D')||(LA17_0>='\u0951' && LA17_0<='\u0954')||(LA17_0>='\u0958' && LA17_0<='\u0963')||(LA17_0>='\u0966' && LA17_0<='\u096F')||(LA17_0>='\u0981' && LA17_0<='\u0983')||(LA17_0>='\u0985' && LA17_0<='\u098C')||(LA17_0>='\u098F' && LA17_0<='\u0990')||(LA17_0>='\u0993' && LA17_0<='\u09A8')||(LA17_0>='\u09AA' && LA17_0<='\u09B0')||LA17_0=='\u09B2'||(LA17_0>='\u09B6' && LA17_0<='\u09B9')||LA17_0=='\u09BC'||(LA17_0>='\u09BE' && LA17_0<='\u09C4')||(LA17_0>='\u09C7' && LA17_0<='\u09C8')||(LA17_0>='\u09CB' && LA17_0<='\u09CD')||LA17_0=='\u09D7'||(LA17_0>='\u09DC' && LA17_0<='\u09DD')||(LA17_0>='\u09DF' && LA17_0<='\u09E3')||(LA17_0>='\u09E6' && LA17_0<='\u09F1')||LA17_0=='\u0A02'||(LA17_0>='\u0A05' && LA17_0<='\u0A0A')||(LA17_0>='\u0A0F' && LA17_0<='\u0A10')||(LA17_0>='\u0A13' && LA17_0<='\u0A28')||(LA17_0>='\u0A2A' && LA17_0<='\u0A30')||(LA17_0>='\u0A32' && LA17_0<='\u0A33')||(LA17_0>='\u0A35' && LA17_0<='\u0A36')||(LA17_0>='\u0A38' && LA17_0<='\u0A39')||LA17_0=='\u0A3C'||(LA17_0>='\u0A3E' && LA17_0<='\u0A42')||(LA17_0>='\u0A47' && LA17_0<='\u0A48')||(LA17_0>='\u0A4B' && LA17_0<='\u0A4D')||(LA17_0>='\u0A59' && LA17_0<='\u0A5C')||LA17_0=='\u0A5E'||(LA17_0>='\u0A66' && LA17_0<='\u0A74')||(LA17_0>='\u0A81' && LA17_0<='\u0A83')||(LA17_0>='\u0A85' && LA17_0<='\u0A8B')||LA17_0=='\u0A8D'||(LA17_0>='\u0A8F' && LA17_0<='\u0A91')||(LA17_0>='\u0A93' && LA17_0<='\u0AA8')||(LA17_0>='\u0AAA' && LA17_0<='\u0AB0')||(LA17_0>='\u0AB2' && LA17_0<='\u0AB3')||(LA17_0>='\u0AB5' && LA17_0<='\u0AB9')||(LA17_0>='\u0ABC' && LA17_0<='\u0AC5')||(LA17_0>='\u0AC7' && LA17_0<='\u0AC9')||(LA17_0>='\u0ACB' && LA17_0<='\u0ACD')||LA17_0=='\u0AE0'||(LA17_0>='\u0AE6' && LA17_0<='\u0AEF')||(LA17_0>='\u0B01' && LA17_0<='\u0B03')||(LA17_0>='\u0B05' && LA17_0<='\u0B0C')||(LA17_0>='\u0B0F' && LA17_0<='\u0B10')||(LA17_0>='\u0B13' && LA17_0<='\u0B28')||(LA17_0>='\u0B2A' && LA17_0<='\u0B30')||(LA17_0>='\u0B32' && LA17_0<='\u0B33')||(LA17_0>='\u0B36' && LA17_0<='\u0B39')||(LA17_0>='\u0B3C' && LA17_0<='\u0B43')||(LA17_0>='\u0B47' && LA17_0<='\u0B48')||(LA17_0>='\u0B4B' && LA17_0<='\u0B4D')||(LA17_0>='\u0B56' && LA17_0<='\u0B57')||(LA17_0>='\u0B5C' && LA17_0<='\u0B5D')||(LA17_0>='\u0B5F' && LA17_0<='\u0B61')||(LA17_0>='\u0B66' && LA17_0<='\u0B6F')||(LA17_0>='\u0B82' && LA17_0<='\u0B83')||(LA17_0>='\u0B85' && LA17_0<='\u0B8A')||(LA17_0>='\u0B8E' && LA17_0<='\u0B90')||(LA17_0>='\u0B92' && LA17_0<='\u0B95')||(LA17_0>='\u0B99' && LA17_0<='\u0B9A')||LA17_0=='\u0B9C'||(LA17_0>='\u0B9E' && LA17_0<='\u0B9F')||(LA17_0>='\u0BA3' && LA17_0<='\u0BA4')||(LA17_0>='\u0BA8' && LA17_0<='\u0BAA')||(LA17_0>='\u0BAE' && LA17_0<='\u0BB5')||(LA17_0>='\u0BB7' && LA17_0<='\u0BB9')||(LA17_0>='\u0BBE' && LA17_0<='\u0BC2')||(LA17_0>='\u0BC6' && LA17_0<='\u0BC8')||(LA17_0>='\u0BCA' && LA17_0<='\u0BCD')||LA17_0=='\u0BD7'||(LA17_0>='\u0BE7' && LA17_0<='\u0BEF')||(LA17_0>='\u0C01' && LA17_0<='\u0C03')||(LA17_0>='\u0C05' && LA17_0<='\u0C0C')||(LA17_0>='\u0C0E' && LA17_0<='\u0C10')||(LA17_0>='\u0C12' && LA17_0<='\u0C28')||(LA17_0>='\u0C2A' && LA17_0<='\u0C33')||(LA17_0>='\u0C35' && LA17_0<='\u0C39')||(LA17_0>='\u0C3E' && LA17_0<='\u0C44')||(LA17_0>='\u0C46' && LA17_0<='\u0C48')||(LA17_0>='\u0C4A' && LA17_0<='\u0C4D')||(LA17_0>='\u0C55' && LA17_0<='\u0C56')||(LA17_0>='\u0C60' && LA17_0<='\u0C61')||(LA17_0>='\u0C66' && LA17_0<='\u0C6F')||(LA17_0>='\u0C82' && LA17_0<='\u0C83')||(LA17_0>='\u0C85' && LA17_0<='\u0C8C')||(LA17_0>='\u0C8E' && LA17_0<='\u0C90')||(LA17_0>='\u0C92' && LA17_0<='\u0CA8')||(LA17_0>='\u0CAA' && LA17_0<='\u0CB3')||(LA17_0>='\u0CB5' && LA17_0<='\u0CB9')||(LA17_0>='\u0CBE' && LA17_0<='\u0CC4')||(LA17_0>='\u0CC6' && LA17_0<='\u0CC8')||(LA17_0>='\u0CCA' && LA17_0<='\u0CCD')||(LA17_0>='\u0CD5' && LA17_0<='\u0CD6')||LA17_0=='\u0CDE'||(LA17_0>='\u0CE0' && LA17_0<='\u0CE1')||(LA17_0>='\u0CE6' && LA17_0<='\u0CEF')||(LA17_0>='\u0D02' && LA17_0<='\u0D03')||(LA17_0>='\u0D05' && LA17_0<='\u0D0C')||(LA17_0>='\u0D0E' && LA17_0<='\u0D10')||(LA17_0>='\u0D12' && LA17_0<='\u0D28')||(LA17_0>='\u0D2A' && LA17_0<='\u0D39')||(LA17_0>='\u0D3E' && LA17_0<='\u0D43')||(LA17_0>='\u0D46' && LA17_0<='\u0D48')||(LA17_0>='\u0D4A' && LA17_0<='\u0D4D')||LA17_0=='\u0D57'||(LA17_0>='\u0D60' && LA17_0<='\u0D61')||(LA17_0>='\u0D66' && LA17_0<='\u0D6F')||(LA17_0>='\u0E01' && LA17_0<='\u0E2E')||(LA17_0>='\u0E30' && LA17_0<='\u0E3A')||(LA17_0>='\u0E40' && LA17_0<='\u0E4E')||(LA17_0>='\u0E50' && LA17_0<='\u0E59')||(LA17_0>='\u0E81' && LA17_0<='\u0E82')||LA17_0=='\u0E84'||(LA17_0>='\u0E87' && LA17_0<='\u0E88')||LA17_0=='\u0E8A'||LA17_0=='\u0E8D'||(LA17_0>='\u0E94' && LA17_0<='\u0E97')||(LA17_0>='\u0E99' && LA17_0<='\u0E9F')||(LA17_0>='\u0EA1' && LA17_0<='\u0EA3')||LA17_0=='\u0EA5'||LA17_0=='\u0EA7'||(LA17_0>='\u0EAA' && LA17_0<='\u0EAB')||(LA17_0>='\u0EAD' && LA17_0<='\u0EAE')||(LA17_0>='\u0EB0' && LA17_0<='\u0EB9')||(LA17_0>='\u0EBB' && LA17_0<='\u0EBD')||(LA17_0>='\u0EC0' && LA17_0<='\u0EC4')||LA17_0=='\u0EC6'||(LA17_0>='\u0EC8' && LA17_0<='\u0ECD')||(LA17_0>='\u0ED0' && LA17_0<='\u0ED9')||(LA17_0>='\u0F18' && LA17_0<='\u0F19')||(LA17_0>='\u0F20' && LA17_0<='\u0F29')||LA17_0=='\u0F35'||LA17_0=='\u0F37'||LA17_0=='\u0F39'||(LA17_0>='\u0F3E' && LA17_0<='\u0F47')||(LA17_0>='\u0F49' && LA17_0<='\u0F69')||(LA17_0>='\u0F71' && LA17_0<='\u0F84')||(LA17_0>='\u0F86' && LA17_0<='\u0F8B')||(LA17_0>='\u0F90' && LA17_0<='\u0F95')||LA17_0=='\u0F97'||(LA17_0>='\u0F99' && LA17_0<='\u0FAD')||(LA17_0>='\u0FB1' && LA17_0<='\u0FB7')||LA17_0=='\u0FB9'||(LA17_0>='\u10A0' && LA17_0<='\u10C5')||(LA17_0>='\u10D0' && LA17_0<='\u10F6')||LA17_0=='\u1100'||(LA17_0>='\u1102' && LA17_0<='\u1103')||(LA17_0>='\u1105' && LA17_0<='\u1107')||LA17_0=='\u1109'||(LA17_0>='\u110B' && LA17_0<='\u110C')||(LA17_0>='\u110E' && LA17_0<='\u1112')||LA17_0=='\u113C'||LA17_0=='\u113E'||LA17_0=='\u1140'||LA17_0=='\u114C'||LA17_0=='\u114E'||LA17_0=='\u1150'||(LA17_0>='\u1154' && LA17_0<='\u1155')||LA17_0=='\u1159'||(LA17_0>='\u115F' && LA17_0<='\u1161')||LA17_0=='\u1163'||LA17_0=='\u1165'||LA17_0=='\u1167'||LA17_0=='\u1169'||(LA17_0>='\u116D' && LA17_0<='\u116E')||(LA17_0>='\u1172' && LA17_0<='\u1173')||LA17_0=='\u1175'||LA17_0=='\u119E'||LA17_0=='\u11A8'||LA17_0=='\u11AB'||(LA17_0>='\u11AE' && LA17_0<='\u11AF')||(LA17_0>='\u11B7' && LA17_0<='\u11B8')||LA17_0=='\u11BA'||(LA17_0>='\u11BC' && LA17_0<='\u11C2')||LA17_0=='\u11EB'||LA17_0=='\u11F0'||LA17_0=='\u11F9'||(LA17_0>='\u1E00' && LA17_0<='\u1E9B')||(LA17_0>='\u1EA0' && LA17_0<='\u1EF9')||(LA17_0>='\u1F00' && LA17_0<='\u1F15')||(LA17_0>='\u1F18' && LA17_0<='\u1F1D')||(LA17_0>='\u1F20' && LA17_0<='\u1F45')||(LA17_0>='\u1F48' && LA17_0<='\u1F4D')||(LA17_0>='\u1F50' && LA17_0<='\u1F57')||LA17_0=='\u1F59'||LA17_0=='\u1F5B'||LA17_0=='\u1F5D'||(LA17_0>='\u1F5F' && LA17_0<='\u1F7D')||(LA17_0>='\u1F80' && LA17_0<='\u1FB4')||(LA17_0>='\u1FB6' && LA17_0<='\u1FBC')||LA17_0=='\u1FBE'||(LA17_0>='\u1FC2' && LA17_0<='\u1FC4')||(LA17_0>='\u1FC6' && LA17_0<='\u1FCC')||(LA17_0>='\u1FD0' && LA17_0<='\u1FD3')||(LA17_0>='\u1FD6' && LA17_0<='\u1FDB')||(LA17_0>='\u1FE0' && LA17_0<='\u1FEC')||(LA17_0>='\u1FF2' && LA17_0<='\u1FF4')||(LA17_0>='\u1FF6' && LA17_0<='\u1FFC')||(LA17_0>='\u20D0' && LA17_0<='\u20DC')||LA17_0=='\u20E1'||LA17_0=='\u2126'||(LA17_0>='\u212A' && LA17_0<='\u212B')||LA17_0=='\u212E'||(LA17_0>='\u2180' && LA17_0<='\u2182')||LA17_0=='\u3005'||LA17_0=='\u3007'||(LA17_0>='\u3021' && LA17_0<='\u302F')||(LA17_0>='\u3031' && LA17_0<='\u3035')||(LA17_0>='\u3041' && LA17_0<='\u3094')||(LA17_0>='\u3099' && LA17_0<='\u309A')||(LA17_0>='\u309D' && LA17_0<='\u309E')||(LA17_0>='\u30A1' && LA17_0<='\u30FA')||(LA17_0>='\u30FC' && LA17_0<='\u30FE')||(LA17_0>='\u3105' && LA17_0<='\u312C')||(LA17_0>='\u4E00' && LA17_0<='\u9FA5')||(LA17_0>='\uAC00' && LA17_0<='\uD7A3')) ) {
-                    alt17=1;
-                }
-
-
-                switch (alt17) {
-            	case 1 :
-            	    // etc/XQFT.g:307:39: NCNameChar
-            	    {
-            	    mNCNameChar(); if (failed) return ;
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop17;
-                }
-            } while (true);
-
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end NCName
-
-    // $ANTLR start NCNameChar
-    public final void mNCNameChar() throws RecognitionException {
-        try {
-            // etc/XQFT.g:314:28: ( Letter | Digit | DOT | MINUSSi | UNDERSCORE | CombiningChar | Extender )
-            // etc/XQFT.g:
-            {
-            if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u00B7'||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||(input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0386' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0640' && input.LA(1)<='\u0652')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u0670' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||(input.LA(1)>='\u06D5' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||(input.LA(1)>='\u093C' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0958' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E3')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09F1')||input.LA(1)=='\u0A02'||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||(input.LA(1)>='\u0ABC' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||(input.LA(1)>='\u0B3C' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||(input.LA(1)>='\u0E30' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E4E')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||(input.LA(1)>='\u0EB0' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBD')||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||input.LA(1)=='\u0EC6'||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3005'||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
-                input.consume();
-            failed=false;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                MismatchedSetException mse =
-                    new MismatchedSetException(null,input);
-                recover(mse);    throw mse;
-            }
-
-
-            }
-
-        }
-        finally {
-        }
-    }
-    // $ANTLR end NCNameChar
-
-    // $ANTLR start NCNameStartChar
-    public final void mNCNameStartChar() throws RecognitionException {
-        try {
-            // etc/XQFT.g:316:30: ( Letter | UNDERSCORE )
-            // etc/XQFT.g:
-            {
-            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
-                input.consume();
-            failed=false;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                MismatchedSetException mse =
-                    new MismatchedSetException(null,input);
-                recover(mse);    throw mse;
-            }
-
-
-            }
-
-        }
-        finally {
-        }
-    }
-    // $ANTLR end NCNameStartChar
-
-    // $ANTLR start S
-    public final void mS() throws RecognitionException {
-        try {
-            int _type = S;
-            // etc/XQFT.g:319:21: ( ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+ )
-            // etc/XQFT.g:319:23: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
-            {
-            // etc/XQFT.g:319:23: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
-            int cnt18=0;
-            loop18:
-            do {
-                int alt18=2;
-                int LA18_0 = input.LA(1);
-
-                if ( ((LA18_0>='\t' && LA18_0<='\n')||LA18_0=='\r'||LA18_0==' ') ) {
-                    alt18=1;
-                }
-
-
-                switch (alt18) {
-            	case 1 :
-            	    // etc/XQFT.g:
-            	    {
-            	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
-            	        input.consume();
-            	    failed=false;
-            	    }
-            	    else {
-            	        if (backtracking>0) {failed=true; return ;}
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recover(mse);    throw mse;
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt18 >= 1 ) break loop18;
-            	    if (backtracking>0) {failed=true; return ;}
-                        EarlyExitException eee =
-                            new EarlyExitException(18, input);
-                        throw eee;
-                }
-                cnt18++;
-            } while (true);
-
-            if ( backtracking==1 ) {
-              channel=HIDDEN;
-            }
-
-            }
-
-            this.type = _type;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end S
-
-    // $ANTLR start Digits
-    public final void mDigits() throws RecognitionException {
-        try {
-            // etc/XQFT.g:322:30: ( ( '0' .. '9' )+ )
-            // etc/XQFT.g:322:32: ( '0' .. '9' )+
-            {
-            // etc/XQFT.g:322:32: ( '0' .. '9' )+
-            int cnt19=0;
-            loop19:
-            do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
-
-                if ( ((LA19_0>='0' && LA19_0<='9')) ) {
-                    alt19=1;
-                }
-
-
-                switch (alt19) {
-            	case 1 :
-            	    // etc/XQFT.g:322:33: '0' .. '9'
-            	    {
-            	    matchRange('0','9'); if (failed) return ;
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt19 >= 1 ) break loop19;
-            	    if (backtracking>0) {failed=true; return ;}
-                        EarlyExitException eee =
-                            new EarlyExitException(19, input);
-                        throw eee;
-                }
-                cnt19++;
-            } while (true);
-
-
-            }
-
-        }
-        finally {
-        }
-    }
-    // $ANTLR end Digits
-
     // $ANTLR start ZeroOrMoreChar
     public final void mZeroOrMoreChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:326:30: ( ( Char )* )
-            // etc/XQFT.g:326:32: ( Char )*
+            // etc/XQFT.g:824:32: ( ( Char )* )
+            // etc/XQFT.g:824:34: ( Char )*
             {
-            // etc/XQFT.g:326:32: ( Char )*
+            // etc/XQFT.g:824:34: ( Char )*
             loop20:
             do {
                 int alt20=2;
                 int LA20_0 = input.LA(1);
 
-                if ( (LA20_0=='\u0000'||(LA20_0>='\t' && LA20_0<='\n')||LA20_0=='\r'||(LA20_0>=' ' && LA20_0<='\uD7FF')||(LA20_0>='\uE000' && LA20_0<='\uFFFD')) ) {
+                if ( ((LA20_0>='\t' && LA20_0<='\n')||LA20_0=='\r'||(LA20_0>=' ' && LA20_0<='\uD7FF')||(LA20_0>='\uE000' && LA20_0<='\uFFFD')) ) {
                     alt20=1;
                 }
 
 
                 switch (alt20) {
             	case 1 :
-            	    // etc/XQFT.g:326:32: Char
+            	    // etc/XQFT.g:824:34: Char
             	    {
             	    mChar(); if (failed) return ;
 
@@ -5280,24 +5582,24 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start OneOrMoreChar
     public final void mOneOrMoreChar() throws RecognitionException {
         try {
-            // etc/XQFT.g:327:29: ( ( Char )+ )
-            // etc/XQFT.g:327:31: ( Char )+
+            // etc/XQFT.g:825:31: ( ( Char )+ )
+            // etc/XQFT.g:825:33: ( Char )+
             {
-            // etc/XQFT.g:327:31: ( Char )+
+            // etc/XQFT.g:825:33: ( Char )+
             int cnt21=0;
             loop21:
             do {
                 int alt21=2;
                 int LA21_0 = input.LA(1);
 
-                if ( (LA21_0=='\u0000'||(LA21_0>='\t' && LA21_0<='\n')||LA21_0=='\r'||(LA21_0>=' ' && LA21_0<='\uD7FF')||(LA21_0>='\uE000' && LA21_0<='\uFFFD')) ) {
+                if ( ((LA21_0>='\t' && LA21_0<='\n')||LA21_0=='\r'||(LA21_0>=' ' && LA21_0<='\uD7FF')||(LA21_0>='\uE000' && LA21_0<='\uFFFD')) ) {
                     alt21=1;
                 }
 
 
                 switch (alt21) {
             	case 1 :
-            	    // etc/XQFT.g:327:31: Char
+            	    // etc/XQFT.g:825:33: Char
             	    {
             	    mChar(); if (failed) return ;
 
@@ -5326,10 +5628,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CharNotMinus
     public final void mCharNotMinus() throws RecognitionException {
         try {
-            // etc/XQFT.g:328:25: ( CleanChar | '{' | '}' | '<' | '&' | '\"' | '\\'' )
+            // etc/XQFT.g:826:27: ( CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi )
             // etc/XQFT.g:
             {
-            if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
+            if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
                 input.consume();
             failed=false;
             }
@@ -5349,2403 +5651,2492 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end CharNotMinus
 
-    public void mTokens() throws RecognitionException {
-        // etc/XQFT.g:1:39: ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S )
-        int alt22=193;
-        int LA22_0 = input.LA(1);
-
-        if ( (LA22_0=='|') ) {
-            alt22=1;
-        }
-        else if ( (LA22_0=='>') ) {
-            int LA22_2 = input.LA(2);
-
-            if ( (synpred3()) ) {
+    // $ANTLR start PredefinedEntityRef
+    public final void mPredefinedEntityRef() throws RecognitionException {
+        try {
+            // etc/XQFT.g:828:33: ( AMPERSi ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi )
+            // etc/XQFT.g:828:35: AMPERSi ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi
+            {
+            mAMPERSi(); if (failed) return ;
+            // etc/XQFT.g:828:43: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )
+            int alt22=5;
+            switch ( input.LA(1) ) {
+            case 'l':
+                {
+                alt22=1;
+                }
+                break;
+            case 'g':
+                {
                 alt22=2;
-            }
-            else if ( (synpred4()) ) {
-                alt22=3;
-            }
-            else if ( (synpred159()) ) {
-                alt22=158;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 2, input);
+                }
+                break;
+            case 'a':
+                {
+                int LA22_3 = input.LA(2);
 
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='<') ) {
-            int LA22_3 = input.LA(2);
+                if ( (LA22_3=='m') ) {
+                    alt22=3;
+                }
+                else if ( (LA22_3=='p') ) {
+                    alt22=5;
+                }
+                else {
+                    if (backtracking>0) {failed=true; return ;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("828:43: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 22, 3, input);
 
-            if ( (synpred5()) ) {
+                    throw nvae;
+                }
+                }
+                break;
+            case 'q':
+                {
                 alt22=4;
-            }
-            else if ( (synpred27()) ) {
-                alt22=26;
-            }
-            else if ( (synpred60()) ) {
-                alt22=59;
-            }
-            else if ( (synpred100()) ) {
-                alt22=99;
-            }
-            else if ( (synpred109()) ) {
-                alt22=108;
-            }
-            else if ( (synpred150()) ) {
-                alt22=149;
-            }
-            else if ( (synpred158()) ) {
-                alt22=157;
-            }
-            else {
+                }
+                break;
+            default:
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 3, input);
+                    new NoViableAltException("828:43: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 22, 0, input);
 
                 throw nvae;
             }
+
+            switch (alt22) {
+                case 1 :
+                    // etc/XQFT.g:828:44: 'lt'
+                    {
+                    match("lt"); if (failed) return ;
+
+
+                    }
+                    break;
+                case 2 :
+                    // etc/XQFT.g:828:51: 'gt'
+                    {
+                    match("gt"); if (failed) return ;
+
+
+                    }
+                    break;
+                case 3 :
+                    // etc/XQFT.g:828:58: 'amp'
+                    {
+                    match("amp"); if (failed) return ;
+
+
+                    }
+                    break;
+                case 4 :
+                    // etc/XQFT.g:828:66: 'quot'
+                    {
+                    match("quot"); if (failed) return ;
+
+
+                    }
+                    break;
+                case 5 :
+                    // etc/XQFT.g:828:75: 'apos'
+                    {
+                    match("apos"); if (failed) return ;
+
+
+                    }
+                    break;
+
+            }
+
+            mSEMICOLONSi(); if (failed) return ;
+
+            }
+
         }
-        else if ( (LA22_0=='a') ) {
-            int LA22_4 = input.LA(2);
+        finally {
+        }
+    }
+    // $ANTLR end PredefinedEntityRef
+
+    // $ANTLR start Digits
+    public final void mDigits() throws RecognitionException {
+        try {
+            // etc/XQFT.g:830:33: ( ( '0' .. '9' )+ )
+            // etc/XQFT.g:830:35: ( '0' .. '9' )+
+            {
+            // etc/XQFT.g:830:35: ( '0' .. '9' )+
+            int cnt23=0;
+            loop23:
+            do {
+                int alt23=2;
+                int LA23_0 = input.LA(1);
+
+                if ( ((LA23_0>='0' && LA23_0<='9')) ) {
+                    alt23=1;
+                }
+
+
+                switch (alt23) {
+            	case 1 :
+            	    // etc/XQFT.g:830:36: '0' .. '9'
+            	    {
+            	    matchRange('0','9'); if (failed) return ;
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt23 >= 1 ) break loop23;
+            	    if (backtracking>0) {failed=true; return ;}
+                        EarlyExitException eee =
+                            new EarlyExitException(23, input);
+                        throw eee;
+                }
+                cnt23++;
+            } while (true);
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end Digits
+
+    // $ANTLR start Digit
+    public final void mDigit() throws RecognitionException {
+        try {
+            // etc/XQFT.g:832:33: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06F0' .. '\\u06F9' | '\\u0966' .. '\\u096F' | '\\u09E6' .. '\\u09EF' | '\\u0A66' .. '\\u0A6F' | '\\u0AE6' .. '\\u0AEF' | '\\u0B66' .. '\\u0B6F' | '\\u0BE7' .. '\\u0BEF' | '\\u0C66' .. '\\u0C6F' | '\\u0CE6' .. '\\u0CEF' | '\\u0D66' .. '\\u0D6F' | '\\u0E50' .. '\\u0E59' | '\\u0ED0' .. '\\u0ED9' | '\\u0F20' .. '\\u0F29' )
+            // etc/XQFT.g:
+            {
+            if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09EF')||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A6F')||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29') ) {
+                input.consume();
+            failed=false;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                MismatchedSetException mse =
+                    new MismatchedSetException(null,input);
+                recover(mse);    throw mse;
+            }
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end Digit
+
+    // $ANTLR start Letter
+    public final void mLetter() throws RecognitionException {
+        try {
+            // etc/XQFT.g:834:23: ( BaseChar | Ideographic )
+            // etc/XQFT.g:
+            {
+            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
+                input.consume();
+            failed=false;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                MismatchedSetException mse =
+                    new MismatchedSetException(null,input);
+                recover(mse);    throw mse;
+            }
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end Letter
+
+    // $ANTLR start BaseChar
+    public final void mBaseChar() throws RecognitionException {
+        try {
+            // etc/XQFT.g:836:33: ( '\\u0041' .. '\\u005A' | '\\u0061' .. '\\u007A' | '\\u00C0' .. '\\u00D6' | '\\u00D8' .. '\\u00F6' | '\\u00F8' .. '\\u00FF' | '\\u0100' .. '\\u0131' | '\\u0134' .. '\\u013E' | '\\u0141' .. '\\u0148' | '\\u014A' .. '\\u017E' | '\\u0180' .. '\\u01C3' | '\\u01CD' .. '\\u01F0' | '\\u01F4' .. '\\u01F5' | '\\u01FA' .. '\\u0217' | '\\u0250' .. '\\u02A8' | '\\u02BB' .. '\\u02C1' | '\\u0386' | '\\u0388' .. '\\u038A' | '\\u038C' | '\\u038E' .. '\\u03A1' | '\\u03A3' .. '\\u03CE' | '\\u03D0' .. '\\u03D6' | '\\u03DA' | '\\u03DC' | '\\u03DE' | '\\u03E0' | '\\u03E2' .. '\\u03F3' | '\\u0401' .. '\\u040C' | '\\u040E' .. '\\u044F' | '\\u0451' .. '\\u045C' | '\\u045E' .. '\\u0481' | '\\u0490' .. '\\u04C4' | '\\u04C7' .. '\\u04C8' | '\\u04CB' .. '\\u04CC' | '\\u04D0' .. '\\u04EB' | '\\u04EE' .. '\\u04F5' | '\\u04F8' .. '\\u04F9' | '\\u0531' .. '\\u0556' | '\\u0559' | '\\u0561' .. '\\u0586' | '\\u05D0' .. '\\u05EA' | '\\u05F0' .. '\\u05F2' | '\\u0621' .. '\\u063A' | '\\u0641' .. '\\u064A' | '\\u0671' .. '\\u06B7' | '\\u06BA' .. '\\u06BE' | '\\u06C0' .. '\\u06CE' | '\\u06D0' .. '\\u06D3' | '\\u06D5' | '\\u06E5' .. '\\u06E6' | '\\u0905' .. '\\u0939' | '\\u093D' | '\\u0958' .. '\\u0961' | '\\u0985' .. '\\u098C' | '\\u098F' .. '\\u0990' | '\\u0993' .. '\\u09A8' | '\\u09AA' .. '\\u09B0' | '\\u09B2' | '\\u09B6' .. '\\u09B9' | '\\u09DC' .. '\\u09DD' | '\\u09DF' .. '\\u09E1' | '\\u09F0' .. '\\u09F1' | '\\u0A05' .. '\\u0A0A' | '\\u0A0F' .. '\\u0A10' | '\\u0A13' .. '\\u0A28' | '\\u0A2A' .. '\\u0A30' | '\\u0A32' .. '\\u0A33' | '\\u0A35' .. '\\u0A36' | '\\u0A38' .. '\\u0A39' | '\\u0A59' .. '\\u0A5C' | '\\u0A5E' | '\\u0A72' .. '\\u0A74' | '\\u0A85' .. '\\u0A8B' | '\\u0A8D' | '\\u0A8F' .. '\\u0A91' | '\\u0A93' .. '\\u0AA8' | '\\u0AAA' .. '\\u0AB0' | '\\u0AB2' .. '\\u0AB3' | '\\u0AB5' .. '\\u0AB9' | '\\u0ABD' | '\\u0AE0' | '\\u0B05' .. '\\u0B0C' | '\\u0B0F' .. '\\u0B10' | '\\u0B13' .. '\\u0B28' | '\\u0B2A' .. '\\u0B30' | '\\u0B32' .. '\\u0B33' | '\\u0B36' .. '\\u0B39' | '\\u0B3D' | '\\u0B5C' .. '\\u0B5D' | '\\u0B5F' .. '\\u0B61' | '\\u0B85' .. '\\u0B8A' | '\\u0B8E' .. '\\u0B90' | '\\u0B92' .. '\\u0B95' | '\\u0B99' .. '\\u0B9A' | '\\u0B9C' | '\\u0B9E' .. '\\u0B9F' | '\\u0BA3' .. '\\u0BA4' | '\\u0BA8' .. '\\u0BAA' | '\\u0BAE' .. '\\u0BB5' | '\\u0BB7' .. '\\u0BB9' | '\\u0C05' .. '\\u0C0C' | '\\u0C0E' .. '\\u0C10' | '\\u0C12' .. '\\u0C28' | '\\u0C2A' .. '\\u0C33' | '\\u0C35' .. '\\u0C39' | '\\u0C60' .. '\\u0C61' | '\\u0C85' .. '\\u0C8C' | '\\u0C8E' .. '\\u0C90' | '\\u0C92' .. '\\u0CA8' | '\\u0CAA' .. '\\u0CB3' | '\\u0CB5' .. '\\u0CB9' | '\\u0CDE' | '\\u0CE0' .. '\\u0CE1' | '\\u0D05' .. '\\u0D0C' | '\\u0D0E' .. '\\u0D10' | '\\u0D12' .. '\\u0D28' | '\\u0D2A' .. '\\u0D39' | '\\u0D60' .. '\\u0D61' | '\\u0E01' .. '\\u0E2E' | '\\u0E30' | '\\u0E32' .. '\\u0E33' | '\\u0E40' .. '\\u0E45' | '\\u0E81' .. '\\u0E82' | '\\u0E84' | '\\u0E87' .. '\\u0E88' | '\\u0E8A' | '\\u0E8D' | '\\u0E94' .. '\\u0E97' | '\\u0E99' .. '\\u0E9F' | '\\u0EA1' .. '\\u0EA3' | '\\u0EA5' | '\\u0EA7' | '\\u0EAA' .. '\\u0EAB' | '\\u0EAD' .. '\\u0EAE' | '\\u0EB0' | '\\u0EB2' .. '\\u0EB3' | '\\u0EBD' | '\\u0EC0' .. '\\u0EC4' | '\\u0F40' .. '\\u0F47' | '\\u0F49' .. '\\u0F69' | '\\u10A0' .. '\\u10C5' | '\\u10D0' .. '\\u10F6' | '\\u1100' | '\\u1102' .. '\\u1103' | '\\u1105' .. '\\u1107' | '\\u1109' | '\\u110B' .. '\\u110C' | '\\u110E' .. '\\u1112' | '\\u113C' | '\\u113E' | '\\u1140' | '\\u114C' | '\\u114E' | '\\u1150' | '\\u1154' .. '\\u1155' | '\\u1159' | '\\u115F' .. '\\u1161' | '\\u1163' | '\\u1165' | '\\u1167' | '\\u1169' | '\\u116D' .. '\\u116E' | '\\u1172' .. '\\u1173' | '\\u1175' | '\\u119E' | '\\u11A8' | '\\u11AB' | '\\u11AE' .. '\\u11AF' | '\\u11B7' .. '\\u11B8' | '\\u11BA' | '\\u11BC' .. '\\u11C2' | '\\u11EB' | '\\u11F0' | '\\u11F9' | '\\u1E00' .. '\\u1E9B' | '\\u1EA0' .. '\\u1EF9' | '\\u1F00' .. '\\u1F15' | '\\u1F18' .. '\\u1F1D' | '\\u1F20' .. '\\u1F45' | '\\u1F48' .. '\\u1F4D' | '\\u1F50' .. '\\u1F57' | '\\u1F59' | '\\u1F5B' | '\\u1F5D' | '\\u1F5F' .. '\\u1F7D' | '\\u1F80' .. '\\u1FB4' | '\\u1FB6' .. '\\u1FBC' | '\\u1FBE' | '\\u1FC2' .. '\\u1FC4' | '\\u1FC6' .. '\\u1FCC' | '\\u1FD0' .. '\\u1FD3' | '\\u1FD6' .. '\\u1FDB' | '\\u1FE0' .. '\\u1FEC' | '\\u1FF2' .. '\\u1FF4' | '\\u1FF6' .. '\\u1FFC' | '\\u2126' | '\\u212A' .. '\\u212B' | '\\u212E' | '\\u2180' .. '\\u2182' | '\\u3041' .. '\\u3094' | '\\u30A1' .. '\\u30FA' | '\\u3105' .. '\\u312C' | '\\uAC00' .. '\\uD7A3' )
+            // etc/XQFT.g:
+            {
+            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
+                input.consume();
+            failed=false;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                MismatchedSetException mse =
+                    new MismatchedSetException(null,input);
+                recover(mse);    throw mse;
+            }
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end BaseChar
+
+    // $ANTLR start Ideographic
+    public final void mIdeographic() throws RecognitionException {
+        try {
+            // etc/XQFT.g:838:32: ( '\\u4E00' .. '\\u9FA5' | '\\u3007' | '\\u3021' .. '\\u3029' )
+            // etc/XQFT.g:
+            {
+            if ( input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5') ) {
+                input.consume();
+            failed=false;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                MismatchedSetException mse =
+                    new MismatchedSetException(null,input);
+                recover(mse);    throw mse;
+            }
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end Ideographic
+
+    // $ANTLR start CombiningChar
+    public final void mCombiningChar() throws RecognitionException {
+        try {
+            // etc/XQFT.g:840:33: ( '\\u0300' .. '\\u0345' | '\\u0360' .. '\\u0361' | '\\u0483' .. '\\u0486' | '\\u0591' .. '\\u05A1' | '\\u05A3' .. '\\u05B9' | '\\u05BB' .. '\\u05BD' | '\\u05BF' | '\\u05C1' .. '\\u05C2' | '\\u05C4' | '\\u064B' .. '\\u0652' | '\\u0670' | '\\u06D6' .. '\\u06DC' | '\\u06DD' .. '\\u06DF' | '\\u06E0' .. '\\u06E4' | '\\u06E7' .. '\\u06E8' | '\\u06EA' .. '\\u06ED' | '\\u0901' .. '\\u0903' | '\\u093C' | '\\u093E' .. '\\u094C' | '\\u094D' | '\\u0951' .. '\\u0954' | '\\u0962' .. '\\u0963' | '\\u0981' .. '\\u0983' | '\\u09BC' | '\\u09BE' | '\\u09BF' | '\\u09C0' .. '\\u09C4' | '\\u09C7' .. '\\u09C8' | '\\u09CB' .. '\\u09CD' | '\\u09D7' | '\\u09E2' .. '\\u09E3' | '\\u0A02' | '\\u0A3C' | '\\u0A3E' | '\\u0A3F' | '\\u0A40' .. '\\u0A42' | '\\u0A47' .. '\\u0A48' | '\\u0A4B' .. '\\u0A4D' | '\\u0A70' .. '\\u0A71' | '\\u0A81' .. '\\u0A83' | '\\u0ABC' | '\\u0ABE' .. '\\u0AC5' | '\\u0AC7' .. '\\u0AC9' | '\\u0ACB' .. '\\u0ACD' | '\\u0B01' .. '\\u0B03' | '\\u0B3C' | '\\u0B3E' .. '\\u0B43' | '\\u0B47' .. '\\u0B48' | '\\u0B4B' .. '\\u0B4D' | '\\u0B56' .. '\\u0B57' | '\\u0B82' .. '\\u0B83' | '\\u0BBE' .. '\\u0BC2' | '\\u0BC6' .. '\\u0BC8' | '\\u0BCA' .. '\\u0BCD' | '\\u0BD7' | '\\u0C01' .. '\\u0C03' | '\\u0C3E' .. '\\u0C44' | '\\u0C46' .. '\\u0C48' | '\\u0C4A' .. '\\u0C4D' | '\\u0C55' .. '\\u0C56' | '\\u0C82' .. '\\u0C83' | '\\u0CBE' .. '\\u0CC4' | '\\u0CC6' .. '\\u0CC8' | '\\u0CCA' .. '\\u0CCD' | '\\u0CD5' .. '\\u0CD6' | '\\u0D02' .. '\\u0D03' | '\\u0D3E' .. '\\u0D43' | '\\u0D46' .. '\\u0D48' | '\\u0D4A' .. '\\u0D4D' | '\\u0D57' | '\\u0E31' | '\\u0E34' .. '\\u0E3A' | '\\u0E47' .. '\\u0E4E' | '\\u0EB1' | '\\u0EB4' .. '\\u0EB9' | '\\u0EBB' .. '\\u0EBC' | '\\u0EC8' .. '\\u0ECD' | '\\u0F18' .. '\\u0F19' | '\\u0F35' | '\\u0F37' | '\\u0F39' | '\\u0F3E' | '\\u0F3F' | '\\u0F71' .. '\\u0F84' | '\\u0F86' .. '\\u0F8B' | '\\u0F90' .. '\\u0F95' | '\\u0F97' | '\\u0F99' .. '\\u0FAD' | '\\u0FB1' .. '\\u0FB7' | '\\u0FB9' | '\\u20D0' .. '\\u20DC' | '\\u20E1' | '\\u302A' .. '\\u302F' | '\\u3099' | '\\u309A' )
+            // etc/XQFT.g:
+            {
+            if ( (input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u064B' && input.LA(1)<='\u0652')||input.LA(1)=='\u0670'||(input.LA(1)>='\u06D6' && input.LA(1)<='\u06E4')||(input.LA(1)>='\u06E7' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||input.LA(1)=='\u093C'||(input.LA(1)>='\u093E' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0962' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09E2' && input.LA(1)<='\u09E3')||input.LA(1)=='\u0A02'||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A70' && input.LA(1)<='\u0A71')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||input.LA(1)=='\u0ABC'||(input.LA(1)>='\u0ABE' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||input.LA(1)=='\u0B3C'||(input.LA(1)>='\u0B3E' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||input.LA(1)=='\u0E31'||(input.LA(1)>='\u0E34' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E47' && input.LA(1)<='\u0E4E')||input.LA(1)=='\u0EB1'||(input.LA(1)>='\u0EB4' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBC')||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F3F')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||(input.LA(1)>='\u302A' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A') ) {
+                input.consume();
+            failed=false;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                MismatchedSetException mse =
+                    new MismatchedSetException(null,input);
+                recover(mse);    throw mse;
+            }
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end CombiningChar
+
+    // $ANTLR start Extender
+    public final void mExtender() throws RecognitionException {
+        try {
+            // etc/XQFT.g:842:33: ( '\\u00B7' | '\\u02D0' | '\\u02D1' | '\\u0387' | '\\u0640' | '\\u0E46' | '\\u0EC6' | '\\u3005' | '\\u3031' .. '\\u3035' | '\\u309D' .. '\\u309E' | '\\u30FC' .. '\\u30FE' )
+            // etc/XQFT.g:
+            {
+            if ( input.LA(1)=='\u00B7'||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||input.LA(1)=='\u0387'||input.LA(1)=='\u0640'||input.LA(1)=='\u0E46'||input.LA(1)=='\u0EC6'||input.LA(1)=='\u3005'||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE') ) {
+                input.consume();
+            failed=false;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                MismatchedSetException mse =
+                    new MismatchedSetException(null,input);
+                recover(mse);    throw mse;
+            }
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end Extender
+
+    public void mTokens() throws RecognitionException {
+        // etc/XQFT.g:1:39: ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral )
+        int alt24=170;
+        int LA24_0 = input.LA(1);
+
+        if ( (LA24_0=='<') ) {
+            int LA24_1 = input.LA(2);
 
             if ( (synpred6()) ) {
-                alt22=5;
+                alt24=1;
             }
-            else if ( (synpred17()) ) {
-                alt22=16;
+            else if ( (synpred9()) ) {
+                alt24=4;
             }
-            else if ( (synpred30()) ) {
-                alt22=29;
+            else if ( (synpred10()) ) {
+                alt24=5;
             }
-            else if ( (synpred81()) ) {
-                alt22=80;
+            else if ( (synpred11()) ) {
+                alt24=6;
             }
-            else if ( (synpred99()) ) {
-                alt22=98;
+            else if ( (synpred12()) ) {
+                alt24=7;
             }
-            else if ( (synpred128()) ) {
-                alt22=127;
+            else if ( (synpred13()) ) {
+                alt24=8;
             }
-            else if ( (synpred136()) ) {
-                alt22=135;
-            }
-            else if ( (synpred170()) ) {
-                alt22=169;
-            }
-            else if ( (synpred173()) ) {
-                alt22=172;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 4, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='i') ) {
-            int LA22_5 = input.LA(2);
-
-            if ( (synpred7()) ) {
-                alt22=6;
-            }
-            else if ( (synpred33()) ) {
-                alt22=32;
-            }
-            else if ( (synpred39()) ) {
-                alt22=38;
-            }
-            else if ( (synpred41()) ) {
-                alt22=40;
-            }
-            else if ( (synpred56()) ) {
-                alt22=55;
-            }
-            else if ( (synpred63()) ) {
-                alt22=62;
-            }
-            else if ( (synpred94()) ) {
-                alt22=93;
-            }
-            else if ( (synpred132()) ) {
-                alt22=131;
-            }
-            else if ( (synpred148()) ) {
-                alt22=147;
-            }
-            else if ( (synpred157()) ) {
-                alt22=156;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 5, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='w') ) {
-            int LA22_6 = input.LA(2);
-
-            if ( (synpred8()) ) {
-                alt22=7;
-            }
-            else if ( (synpred31()) ) {
-                alt22=30;
-            }
-            else if ( (synpred45()) ) {
-                alt22=44;
-            }
-            else if ( (synpred68()) ) {
-                alt22=67;
-            }
-            else if ( (synpred108()) ) {
-                alt22=107;
-            }
-            else if ( (synpred110()) ) {
-                alt22=109;
-            }
-            else if ( (synpred126()) ) {
-                alt22=125;
-            }
-            else if ( (synpred176()) ) {
-                alt22=175;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 6, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='p') ) {
-            int LA22_7 = input.LA(2);
-
-            if ( (synpred9()) ) {
-                alt22=8;
-            }
-            else if ( (synpred55()) ) {
-                alt22=54;
-            }
-            else if ( (synpred129()) ) {
-                alt22=128;
+            else if ( (synpred14()) ) {
+                alt24=9;
             }
             else if ( (synpred169()) ) {
-                alt22=168;
-            }
-            else if ( (synpred171()) ) {
-                alt22=170;
-            }
-            else if ( (synpred172()) ) {
-                alt22=171;
-            }
-            else if ( (synpred178()) ) {
-                alt22=177;
-            }
-            else if ( (synpred180()) ) {
-                alt22=179;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
+                alt24=164;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 7, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 1, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='c') ) {
-            int LA22_8 = input.LA(2);
+        else if ( (LA24_0=='(') ) {
+            int LA24_2 = input.LA(2);
 
-            if ( (synpred10()) ) {
-                alt22=9;
+            if ( (synpred7()) ) {
+                alt24=2;
             }
             else if ( (synpred21()) ) {
-                alt22=20;
+                alt24=16;
             }
-            else if ( (synpred38()) ) {
-                alt22=37;
-            }
-            else if ( (synpred44()) ) {
-                alt22=43;
-            }
-            else if ( (synpred54()) ) {
-                alt22=53;
-            }
-            else if ( (synpred87()) ) {
-                alt22=86;
-            }
-            else if ( (synpred117()) ) {
-                alt22=116;
-            }
-            else if ( (synpred125()) ) {
-                alt22=124;
-            }
-            else if ( (synpred162()) ) {
-                alt22=161;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred169()) ) {
+                alt24=164;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 8, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 2, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='v') ) {
-            int LA22_9 = input.LA(2);
-
-            if ( (synpred11()) ) {
-                alt22=10;
-            }
-            else if ( (synpred61()) ) {
-                alt22=60;
-            }
-            else if ( (synpred89()) ) {
-                alt22=88;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 9, input);
-
-                throw nvae;
-            }
+        else if ( (LA24_0=='&') ) {
+            alt24=3;
         }
-        else if ( (LA22_0=='{') ) {
-            int LA22_10 = input.LA(2);
-
-            if ( (synpred12()) ) {
-                alt22=11;
-            }
-            else if ( (synpred121()) ) {
-                alt22=120;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 10, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='=') ) {
-            alt22=12;
-        }
-        else if ( (LA22_0=='!') ) {
-            alt22=13;
-        }
-        else if ( (LA22_0=='s') ) {
-            int LA22_13 = input.LA(2);
+        else if ( (LA24_0=='>') ) {
+            int LA24_4 = input.LA(2);
 
             if ( (synpred15()) ) {
-                alt22=14;
+                alt24=10;
             }
-            else if ( (synpred47()) ) {
-                alt22=46;
+            else if ( (synpred16()) ) {
+                alt24=11;
             }
-            else if ( (synpred69()) ) {
-                alt22=68;
-            }
-            else if ( (synpred72()) ) {
-                alt22=71;
-            }
-            else if ( (synpred76()) ) {
-                alt22=75;
-            }
-            else if ( (synpred82()) ) {
-                alt22=81;
-            }
-            else if ( (synpred103()) ) {
-                alt22=102;
-            }
-            else if ( (synpred122()) ) {
-                alt22=121;
-            }
-            else if ( (synpred144()) ) {
-                alt22=143;
-            }
-            else if ( (synpred146()) ) {
-                alt22=145;
-            }
-            else if ( (synpred149()) ) {
-                alt22=148;
-            }
-            else if ( (synpred161()) ) {
-                alt22=160;
-            }
-            else if ( (synpred165()) ) {
-                alt22=164;
-            }
-            else if ( (synpred177()) ) {
-                alt22=176;
-            }
-            else if ( (synpred179()) ) {
-                alt22=178;
-            }
-            else if ( (synpred181()) ) {
-                alt22=180;
-            }
-            else if ( (synpred183()) ) {
-                alt22=182;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred169()) ) {
+                alt24=164;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 13, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 4, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='t') ) {
-            int LA22_14 = input.LA(2);
+        else if ( (LA24_0==':') ) {
+            int LA24_5 = input.LA(2);
 
-            if ( (synpred16()) ) {
-                alt22=15;
+            if ( (synpred17()) ) {
+                alt24=12;
             }
-            else if ( (synpred28()) ) {
-                alt22=27;
+            else if ( (synpred18()) ) {
+                alt24=13;
             }
-            else if ( (synpred43()) ) {
-                alt22=42;
-            }
-            else if ( (synpred65()) ) {
-                alt22=64;
-            }
-            else if ( (synpred102()) ) {
-                alt22=101;
-            }
-            else if ( (synpred135()) ) {
-                alt22=134;
-            }
-            else if ( (synpred140()) ) {
-                alt22=139;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred169()) ) {
+                alt24=164;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 14, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 5, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='b') ) {
-            int LA22_15 = input.LA(2);
+        else if ( (LA24_0=='/') ) {
+            int LA24_6 = input.LA(2);
 
-            if ( (synpred18()) ) {
-                alt22=17;
+            if ( (synpred19()) ) {
+                alt24=14;
             }
-            else if ( (synpred95()) ) {
-                alt22=94;
+            else if ( (synpred20()) ) {
+                alt24=15;
             }
-            else if ( (synpred101()) ) {
-                alt22=100;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred169()) ) {
+                alt24=164;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 15, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 6, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='$') ) {
-            alt22=18;
-        }
-        else if ( (LA22_0=='x') ) {
-            int LA22_17 = input.LA(2);
-
-            if ( (synpred20()) ) {
-                alt22=19;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 17, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0=='d') ) {
-            int LA22_18 = input.LA(2);
+        else if ( (LA24_0=='{') ) {
+            int LA24_7 = input.LA(2);
 
             if ( (synpred22()) ) {
-                alt22=21;
+                alt24=17;
             }
-            else if ( (synpred25()) ) {
-                alt22=24;
-            }
-            else if ( (synpred59()) ) {
-                alt22=58;
-            }
-            else if ( (synpred78()) ) {
-                alt22=77;
-            }
-            else if ( (synpred96()) ) {
-                alt22=95;
-            }
-            else if ( (synpred111()) ) {
-                alt22=110;
-            }
-            else if ( (synpred118()) ) {
-                alt22=117;
-            }
-            else if ( (synpred127()) ) {
-                alt22=126;
-            }
-            else if ( (synpred164()) ) {
-                alt22=163;
-            }
-            else if ( (synpred166()) ) {
-                alt22=165;
-            }
-            else if ( (synpred182()) ) {
-                alt22=181;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred169()) ) {
+                alt24=164;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 18, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 7, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='(') ) {
-            int LA22_19 = input.LA(2);
+        else if ( (LA24_0=='}') ) {
+            int LA24_8 = input.LA(2);
 
             if ( (synpred23()) ) {
-                alt22=22;
+                alt24=18;
             }
-            else if ( (synpred124()) ) {
-                alt22=123;
-            }
-            else if ( (synpred191()) ) {
-                alt22=190;
+            else if ( (synpred169()) ) {
+                alt24=164;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 19, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 8, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='o') ) {
-            int LA22_20 = input.LA(2);
+        else if ( (LA24_0=='.') ) {
+            int LA24_9 = input.LA(2);
 
             if ( (synpred24()) ) {
-                alt22=23;
+                alt24=19;
             }
-            else if ( (synpred35()) ) {
-                alt22=34;
+            else if ( (synpred169()) ) {
+                alt24=164;
             }
-            else if ( (synpred71()) ) {
-                alt22=70;
+            else if ( (synpred174()) ) {
+                alt24=169;
             }
-            else if ( (synpred83()) ) {
-                alt22=82;
-            }
-            else if ( (synpred84()) ) {
-                alt22=83;
-            }
-            else if ( (synpred90()) ) {
-                alt22=89;
-            }
-            else if ( (synpred119()) ) {
-                alt22=118;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (true) ) {
+                alt24=170;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 20, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 9, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='e') ) {
-            int LA22_21 = input.LA(2);
+        else if ( (LA24_0=='?') ) {
+            int LA24_10 = input.LA(2);
+
+            if ( (synpred25()) ) {
+                alt24=20;
+            }
+            else if ( (synpred169()) ) {
+                alt24=164;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 10, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA24_0=='-') ) {
+            int LA24_11 = input.LA(2);
 
             if ( (synpred26()) ) {
-                alt22=25;
+                alt24=21;
             }
-            else if ( (synpred37()) ) {
-                alt22=36;
-            }
-            else if ( (synpred42()) ) {
-                alt22=41;
-            }
-            else if ( (synpred52()) ) {
-                alt22=51;
-            }
-            else if ( (synpred62()) ) {
-                alt22=61;
-            }
-            else if ( (synpred107()) ) {
-                alt22=106;
-            }
-            else if ( (synpred112()) ) {
-                alt22=111;
-            }
-            else if ( (synpred120()) ) {
-                alt22=119;
-            }
-            else if ( (synpred123()) ) {
-                alt22=122;
-            }
-            else if ( (synpred151()) ) {
-                alt22=150;
-            }
-            else if ( (synpred184()) ) {
-                alt22=183;
-            }
-            else if ( (synpred185()) ) {
-                alt22=184;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred169()) ) {
+                alt24=164;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 21, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 11, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='u') ) {
-            int LA22_22 = input.LA(2);
+        else if ( (LA24_0=='!') ) {
+            alt24=22;
+        }
+        else if ( (LA24_0=='#') ) {
+            alt24=23;
+        }
+        else if ( (LA24_0=='a') ) {
+            int LA24_14 = input.LA(2);
 
             if ( (synpred29()) ) {
-                alt22=28;
+                alt24=24;
             }
-            else if ( (synpred85()) ) {
-                alt22=84;
+            else if ( (synpred30()) ) {
+                alt24=25;
             }
-            else if ( (synpred105()) ) {
-                alt22=104;
+            else if ( (synpred31()) ) {
+                alt24=26;
             }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred32()) ) {
+                alt24=27;
             }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 22, input);
-
-                throw nvae;
+            else if ( (synpred33()) ) {
+                alt24=28;
             }
-        }
-        else if ( (LA22_0=='#') ) {
-            alt22=31;
-        }
-        else if ( (LA22_0=='/') ) {
-            int LA22_24 = input.LA(2);
-
-            if ( (synpred34()) ) {
-                alt22=33;
+            else if ( (synpred34()) ) {
+                alt24=29;
             }
-            else if ( (synpred58()) ) {
-                alt22=57;
+            else if ( (synpred35()) ) {
+                alt24=30;
             }
-            else if ( (synpred92()) ) {
-                alt22=91;
+            else if ( (synpred36()) ) {
+                alt24=31;
+            }
+            else if ( (synpred37()) ) {
+                alt24=32;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 24, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 14, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='?') ) {
-            int LA22_25 = input.LA(2);
+        else if ( (LA24_0=='b') ) {
+            int LA24_15 = input.LA(2);
 
-            if ( (synpred36()) ) {
-                alt22=35;
+            if ( (synpred38()) ) {
+                alt24=33;
             }
-            else if ( (synpred145()) ) {
-                alt22=144;
+            else if ( (synpred39()) ) {
+                alt24=34;
+            }
+            else if ( (synpred40()) ) {
+                alt24=35;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 25, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 15, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='f') ) {
-            int LA22_26 = input.LA(2);
+        else if ( (LA24_0=='c') ) {
+            int LA24_16 = input.LA(2);
 
-            if ( (synpred40()) ) {
-                alt22=39;
+            if ( (synpred41()) ) {
+                alt24=36;
+            }
+            else if ( (synpred42()) ) {
+                alt24=37;
+            }
+            else if ( (synpred43()) ) {
+                alt24=38;
+            }
+            else if ( (synpred44()) ) {
+                alt24=39;
+            }
+            else if ( (synpred45()) ) {
+                alt24=40;
             }
             else if ( (synpred46()) ) {
-                alt22=45;
+                alt24=41;
             }
-            else if ( (synpred77()) ) {
-                alt22=76;
+            else if ( (synpred47()) ) {
+                alt24=42;
             }
-            else if ( (synpred80()) ) {
-                alt22=79;
+            else if ( (synpred48()) ) {
+                alt24=43;
             }
-            else if ( (synpred86()) ) {
-                alt22=85;
+            else if ( (synpred49()) ) {
+                alt24=44;
             }
-            else if ( (synpred91()) ) {
-                alt22=90;
-            }
-            else if ( (synpred133()) ) {
-                alt22=132;
-            }
-            else if ( (synpred138()) ) {
-                alt22=137;
-            }
-            else if ( (synpred167()) ) {
-                alt22=166;
-            }
-            else if ( (synpred168()) ) {
-                alt22=167;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred170()) ) {
+                alt24=165;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 26, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 16, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0==':') ) {
-            int LA22_27 = input.LA(2);
-
-            if ( (synpred48()) ) {
-                alt22=47;
-            }
-            else if ( (synpred137()) ) {
-                alt22=136;
-            }
-            else if ( (synpred163()) ) {
-                alt22=162;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 27, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0==';') ) {
-            alt22=48;
-        }
-        else if ( (LA22_0=='\'') ) {
-            int LA22_29 = input.LA(2);
+        else if ( (LA24_0=='d') ) {
+            int LA24_17 = input.LA(2);
 
             if ( (synpred50()) ) {
-                alt22=49;
+                alt24=45;
             }
-            else if ( (synpred189()) ) {
-                alt22=188;
+            else if ( (synpred51()) ) {
+                alt24=46;
             }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 29, input);
-
-                throw nvae;
+            else if ( (synpred52()) ) {
+                alt24=47;
             }
-        }
-        else if ( (LA22_0=='_') ) {
-            int LA22_30 = input.LA(2);
-
-            if ( (synpred51()) ) {
-                alt22=50;
+            else if ( (synpred53()) ) {
+                alt24=48;
             }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred54()) ) {
+                alt24=49;
             }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 30, input);
-
-                throw nvae;
+            else if ( (synpred55()) ) {
+                alt24=50;
             }
-        }
-        else if ( (LA22_0=='m') ) {
-            int LA22_31 = input.LA(2);
-
-            if ( (synpred53()) ) {
-                alt22=52;
+            else if ( (synpred56()) ) {
+                alt24=51;
             }
-            else if ( (synpred115()) ) {
-                alt22=114;
+            else if ( (synpred57()) ) {
+                alt24=52;
             }
-            else if ( (synpred141()) ) {
-                alt22=140;
+            else if ( (synpred58()) ) {
+                alt24=53;
             }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred59()) ) {
+                alt24=54;
+            }
+            else if ( (synpred60()) ) {
+                alt24=55;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 31, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 17, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='-') ) {
-            int LA22_32 = input.LA(2);
+        else if ( (LA24_0=='e') ) {
+            int LA24_18 = input.LA(2);
 
-            if ( (synpred57()) ) {
-                alt22=56;
+            if ( (synpred61()) ) {
+                alt24=56;
             }
-            else if ( (synpred114()) ) {
-                alt22=113;
+            else if ( (synpred62()) ) {
+                alt24=57;
             }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 32, input);
-
-                throw nvae;
+            else if ( (synpred63()) ) {
+                alt24=58;
             }
-        }
-        else if ( (LA22_0=='n') ) {
-            int LA22_33 = input.LA(2);
-
-            if ( (synpred64()) ) {
-                alt22=63;
+            else if ( (synpred64()) ) {
+                alt24=59;
             }
-            else if ( (synpred98()) ) {
-                alt22=97;
+            else if ( (synpred65()) ) {
+                alt24=60;
             }
-            else if ( (synpred130()) ) {
-                alt22=129;
+            else if ( (synpred66()) ) {
+                alt24=61;
             }
-            else if ( (synpred131()) ) {
-                alt22=130;
+            else if ( (synpred67()) ) {
+                alt24=62;
             }
-            else if ( (synpred143()) ) {
-                alt22=142;
+            else if ( (synpred68()) ) {
+                alt24=63;
             }
-            else if ( (synpred152()) ) {
-                alt22=151;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
-            }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 33, input);
-
-                throw nvae;
-            }
-        }
-        else if ( (LA22_0==',') ) {
-            alt22=65;
-        }
-        else if ( (LA22_0=='l') ) {
-            int LA22_35 = input.LA(2);
-
-            if ( (synpred67()) ) {
-                alt22=66;
+            else if ( (synpred69()) ) {
+                alt24=64;
             }
             else if ( (synpred70()) ) {
-                alt22=69;
+                alt24=65;
             }
-            else if ( (synpred75()) ) {
-                alt22=74;
+            else if ( (synpred71()) ) {
+                alt24=66;
             }
-            else if ( (synpred93()) ) {
-                alt22=92;
+            else if ( (synpred72()) ) {
+                alt24=67;
             }
-            else if ( (synpred147()) ) {
-                alt22=146;
-            }
-            else if ( (synpred153()) ) {
-                alt22=152;
-            }
-            else if ( (synpred154()) ) {
-                alt22=153;
-            }
-            else if ( (synpred160()) ) {
-                alt22=159;
-            }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred170()) ) {
+                alt24=165;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 35, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 18, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0==']') ) {
-            int LA22_36 = input.LA(2);
+        else if ( (LA24_0=='f') ) {
+            int LA24_19 = input.LA(2);
 
             if ( (synpred73()) ) {
-                alt22=72;
+                alt24=68;
+            }
+            else if ( (synpred74()) ) {
+                alt24=69;
+            }
+            else if ( (synpred75()) ) {
+                alt24=70;
+            }
+            else if ( (synpred76()) ) {
+                alt24=71;
+            }
+            else if ( (synpred77()) ) {
+                alt24=72;
+            }
+            else if ( (synpred78()) ) {
+                alt24=73;
+            }
+            else if ( (synpred79()) ) {
+                alt24=74;
+            }
+            else if ( (synpred80()) ) {
+                alt24=75;
+            }
+            else if ( (synpred81()) ) {
+                alt24=76;
+            }
+            else if ( (synpred82()) ) {
+                alt24=77;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 19, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA24_0=='g') ) {
+            int LA24_20 = input.LA(2);
+
+            if ( (synpred83()) ) {
+                alt24=78;
+            }
+            else if ( (synpred84()) ) {
+                alt24=79;
+            }
+            else if ( (synpred85()) ) {
+                alt24=80;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 20, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA24_0=='i') ) {
+            int LA24_21 = input.LA(2);
+
+            if ( (synpred86()) ) {
+                alt24=81;
+            }
+            else if ( (synpred87()) ) {
+                alt24=82;
+            }
+            else if ( (synpred88()) ) {
+                alt24=83;
+            }
+            else if ( (synpred89()) ) {
+                alt24=84;
+            }
+            else if ( (synpred90()) ) {
+                alt24=85;
+            }
+            else if ( (synpred91()) ) {
+                alt24=86;
+            }
+            else if ( (synpred92()) ) {
+                alt24=87;
+            }
+            else if ( (synpred93()) ) {
+                alt24=88;
+            }
+            else if ( (synpred94()) ) {
+                alt24=89;
+            }
+            else if ( (synpred95()) ) {
+                alt24=90;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 21, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA24_0=='l') ) {
+            int LA24_22 = input.LA(2);
+
+            if ( (synpred96()) ) {
+                alt24=91;
+            }
+            else if ( (synpred97()) ) {
+                alt24=92;
+            }
+            else if ( (synpred98()) ) {
+                alt24=93;
+            }
+            else if ( (synpred99()) ) {
+                alt24=94;
+            }
+            else if ( (synpred100()) ) {
+                alt24=95;
+            }
+            else if ( (synpred101()) ) {
+                alt24=96;
+            }
+            else if ( (synpred102()) ) {
+                alt24=97;
+            }
+            else if ( (synpred103()) ) {
+                alt24=98;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 22, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA24_0=='m') ) {
+            int LA24_23 = input.LA(2);
+
+            if ( (synpred104()) ) {
+                alt24=99;
+            }
+            else if ( (synpred105()) ) {
+                alt24=100;
             }
             else if ( (synpred106()) ) {
-                alt22=105;
+                alt24=101;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 36, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 23, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='g') ) {
-            int LA22_37 = input.LA(2);
+        else if ( (LA24_0=='n') ) {
+            int LA24_24 = input.LA(2);
 
-            if ( (synpred74()) ) {
-                alt22=73;
+            if ( (synpred107()) ) {
+                alt24=102;
             }
-            else if ( (synpred155()) ) {
-                alt22=154;
+            else if ( (synpred108()) ) {
+                alt24=103;
             }
-            else if ( (synpred156()) ) {
-                alt22=155;
+            else if ( (synpred109()) ) {
+                alt24=104;
             }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred110()) ) {
+                alt24=105;
+            }
+            else if ( (synpred111()) ) {
+                alt24=106;
+            }
+            else if ( (synpred112()) ) {
+                alt24=107;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 37, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 24, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='+') ) {
-            alt22=78;
-        }
-        else if ( (LA22_0=='}') ) {
-            int LA22_39 = input.LA(2);
+        else if ( (LA24_0=='o') ) {
+            int LA24_25 = input.LA(2);
 
-            if ( (synpred88()) ) {
-                alt22=87;
+            if ( (synpred113()) ) {
+                alt24=108;
             }
-            else if ( (synpred142()) ) {
-                alt22=141;
+            else if ( (synpred114()) ) {
+                alt24=109;
+            }
+            else if ( (synpred115()) ) {
+                alt24=110;
+            }
+            else if ( (synpred116()) ) {
+                alt24=111;
+            }
+            else if ( (synpred117()) ) {
+                alt24=112;
+            }
+            else if ( (synpred118()) ) {
+                alt24=113;
+            }
+            else if ( (synpred119()) ) {
+                alt24=114;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 39, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 25, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='*') ) {
-            alt22=96;
-        }
-        else if ( (LA22_0=='[') ) {
-            alt22=103;
-        }
-        else if ( (LA22_0==')') ) {
-            alt22=112;
-        }
-        else if ( (LA22_0=='r') ) {
-            int LA22_43 = input.LA(2);
+        else if ( (LA24_0=='p') ) {
+            int LA24_26 = input.LA(2);
 
-            if ( (synpred116()) ) {
-                alt22=115;
+            if ( (synpred120()) ) {
+                alt24=115;
+            }
+            else if ( (synpred121()) ) {
+                alt24=116;
+            }
+            else if ( (synpred122()) ) {
+                alt24=117;
+            }
+            else if ( (synpred123()) ) {
+                alt24=118;
+            }
+            else if ( (synpred124()) ) {
+                alt24=119;
+            }
+            else if ( (synpred125()) ) {
+                alt24=120;
+            }
+            else if ( (synpred126()) ) {
+                alt24=121;
+            }
+            else if ( (synpred127()) ) {
+                alt24=122;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 26, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA24_0=='r') ) {
+            int LA24_27 = input.LA(2);
+
+            if ( (synpred128()) ) {
+                alt24=123;
+            }
+            else if ( (synpred129()) ) {
+                alt24=124;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 27, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA24_0=='s') ) {
+            int LA24_28 = input.LA(2);
+
+            if ( (synpred130()) ) {
+                alt24=125;
+            }
+            else if ( (synpred131()) ) {
+                alt24=126;
+            }
+            else if ( (synpred132()) ) {
+                alt24=127;
+            }
+            else if ( (synpred133()) ) {
+                alt24=128;
+            }
+            else if ( (synpred134()) ) {
+                alt24=129;
+            }
+            else if ( (synpred135()) ) {
+                alt24=130;
+            }
+            else if ( (synpred136()) ) {
+                alt24=131;
+            }
+            else if ( (synpred137()) ) {
+                alt24=132;
+            }
+            else if ( (synpred138()) ) {
+                alt24=133;
             }
             else if ( (synpred139()) ) {
-                alt22=138;
+                alt24=134;
             }
-            else if ( (synpred193()) ) {
-                alt22=192;
+            else if ( (synpred140()) ) {
+                alt24=135;
             }
-            else {
-                if (backtracking>0) {failed=true; return ;}
-                NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 43, input);
-
-                throw nvae;
+            else if ( (synpred141()) ) {
+                alt24=136;
             }
-        }
-        else if ( (LA22_0=='@') ) {
-            alt22=133;
-        }
-        else if ( (LA22_0=='.') ) {
-            int LA22_45 = input.LA(2);
-
-            if ( (synpred174()) ) {
-                alt22=173;
+            else if ( (synpred142()) ) {
+                alt24=137;
             }
-            else if ( (synpred175()) ) {
-                alt22=174;
+            else if ( (synpred143()) ) {
+                alt24=138;
             }
-            else if ( (synpred187()) ) {
-                alt22=186;
+            else if ( (synpred144()) ) {
+                alt24=139;
             }
-            else if ( (synpred188()) ) {
-                alt22=187;
+            else if ( (synpred145()) ) {
+                alt24=140;
+            }
+            else if ( (synpred146()) ) {
+                alt24=141;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 45, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 28, input);
 
                 throw nvae;
             }
         }
-        else if ( ((LA22_0>='0' && LA22_0<='9')) ) {
-            int LA22_46 = input.LA(2);
+        else if ( (LA24_0=='t') ) {
+            int LA24_29 = input.LA(2);
 
-            if ( (synpred186()) ) {
-                alt22=185;
+            if ( (synpred147()) ) {
+                alt24=142;
             }
-            else if ( (synpred187()) ) {
-                alt22=186;
+            else if ( (synpred148()) ) {
+                alt24=143;
             }
-            else if ( (synpred188()) ) {
-                alt22=187;
+            else if ( (synpred149()) ) {
+                alt24=144;
+            }
+            else if ( (synpred150()) ) {
+                alt24=145;
+            }
+            else if ( (synpred151()) ) {
+                alt24=146;
+            }
+            else if ( (synpred152()) ) {
+                alt24=147;
+            }
+            else if ( (synpred153()) ) {
+                alt24=148;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 46, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 29, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='\"') ) {
-            int LA22_47 = input.LA(2);
+        else if ( (LA24_0=='u') ) {
+            int LA24_30 = input.LA(2);
 
-            if ( (synpred189()) ) {
-                alt22=188;
+            if ( (synpred154()) ) {
+                alt24=149;
             }
-            else if ( (synpred190()) ) {
-                alt22=189;
+            else if ( (synpred155()) ) {
+                alt24=150;
+            }
+            else if ( (synpred156()) ) {
+                alt24=151;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
             }
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 47, input);
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 30, input);
 
                 throw nvae;
             }
         }
-        else if ( (LA22_0=='&') ) {
-            alt22=191;
+        else if ( (LA24_0=='v') ) {
+            int LA24_31 = input.LA(2);
+
+            if ( (synpred157()) ) {
+                alt24=152;
+            }
+            else if ( (synpred158()) ) {
+                alt24=153;
+            }
+            else if ( (synpred159()) ) {
+                alt24=154;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 31, input);
+
+                throw nvae;
+            }
         }
-        else if ( ((LA22_0>='A' && LA22_0<='Z')||LA22_0=='h'||(LA22_0>='j' && LA22_0<='k')||LA22_0=='q'||(LA22_0>='y' && LA22_0<='z')||(LA22_0>='\u00C0' && LA22_0<='\u00D6')||(LA22_0>='\u00D8' && LA22_0<='\u00F6')||(LA22_0>='\u00F8' && LA22_0<='\u0131')||(LA22_0>='\u0134' && LA22_0<='\u013E')||(LA22_0>='\u0141' && LA22_0<='\u0148')||(LA22_0>='\u014A' && LA22_0<='\u017E')||(LA22_0>='\u0180' && LA22_0<='\u01C3')||(LA22_0>='\u01CD' && LA22_0<='\u01F0')||(LA22_0>='\u01F4' && LA22_0<='\u01F5')||(LA22_0>='\u01FA' && LA22_0<='\u0217')||(LA22_0>='\u0250' && LA22_0<='\u02A8')||(LA22_0>='\u02BB' && LA22_0<='\u02C1')||LA22_0=='\u0386'||(LA22_0>='\u0388' && LA22_0<='\u038A')||LA22_0=='\u038C'||(LA22_0>='\u038E' && LA22_0<='\u03A1')||(LA22_0>='\u03A3' && LA22_0<='\u03CE')||(LA22_0>='\u03D0' && LA22_0<='\u03D6')||LA22_0=='\u03DA'||LA22_0=='\u03DC'||LA22_0=='\u03DE'||LA22_0=='\u03E0'||(LA22_0>='\u03E2' && LA22_0<='\u03F3')||(LA22_0>='\u0401' && LA22_0<='\u040C')||(LA22_0>='\u040E' && LA22_0<='\u044F')||(LA22_0>='\u0451' && LA22_0<='\u045C')||(LA22_0>='\u045E' && LA22_0<='\u0481')||(LA22_0>='\u0490' && LA22_0<='\u04C4')||(LA22_0>='\u04C7' && LA22_0<='\u04C8')||(LA22_0>='\u04CB' && LA22_0<='\u04CC')||(LA22_0>='\u04D0' && LA22_0<='\u04EB')||(LA22_0>='\u04EE' && LA22_0<='\u04F5')||(LA22_0>='\u04F8' && LA22_0<='\u04F9')||(LA22_0>='\u0531' && LA22_0<='\u0556')||LA22_0=='\u0559'||(LA22_0>='\u0561' && LA22_0<='\u0586')||(LA22_0>='\u05D0' && LA22_0<='\u05EA')||(LA22_0>='\u05F0' && LA22_0<='\u05F2')||(LA22_0>='\u0621' && LA22_0<='\u063A')||(LA22_0>='\u0641' && LA22_0<='\u064A')||(LA22_0>='\u0671' && LA22_0<='\u06B7')||(LA22_0>='\u06BA' && LA22_0<='\u06BE')||(LA22_0>='\u06C0' && LA22_0<='\u06CE')||(LA22_0>='\u06D0' && LA22_0<='\u06D3')||LA22_0=='\u06D5'||(LA22_0>='\u06E5' && LA22_0<='\u06E6')||(LA22_0>='\u0905' && LA22_0<='\u0939')||LA22_0=='\u093D'||(LA22_0>='\u0958' && LA22_0<='\u0961')||(LA22_0>='\u0985' && LA22_0<='\u098C')||(LA22_0>='\u098F' && LA22_0<='\u0990')||(LA22_0>='\u0993' && LA22_0<='\u09A8')||(LA22_0>='\u09AA' && LA22_0<='\u09B0')||LA22_0=='\u09B2'||(LA22_0>='\u09B6' && LA22_0<='\u09B9')||(LA22_0>='\u09DC' && LA22_0<='\u09DD')||(LA22_0>='\u09DF' && LA22_0<='\u09E1')||(LA22_0>='\u09F0' && LA22_0<='\u09F1')||(LA22_0>='\u0A05' && LA22_0<='\u0A0A')||(LA22_0>='\u0A0F' && LA22_0<='\u0A10')||(LA22_0>='\u0A13' && LA22_0<='\u0A28')||(LA22_0>='\u0A2A' && LA22_0<='\u0A30')||(LA22_0>='\u0A32' && LA22_0<='\u0A33')||(LA22_0>='\u0A35' && LA22_0<='\u0A36')||(LA22_0>='\u0A38' && LA22_0<='\u0A39')||(LA22_0>='\u0A59' && LA22_0<='\u0A5C')||LA22_0=='\u0A5E'||(LA22_0>='\u0A72' && LA22_0<='\u0A74')||(LA22_0>='\u0A85' && LA22_0<='\u0A8B')||LA22_0=='\u0A8D'||(LA22_0>='\u0A8F' && LA22_0<='\u0A91')||(LA22_0>='\u0A93' && LA22_0<='\u0AA8')||(LA22_0>='\u0AAA' && LA22_0<='\u0AB0')||(LA22_0>='\u0AB2' && LA22_0<='\u0AB3')||(LA22_0>='\u0AB5' && LA22_0<='\u0AB9')||LA22_0=='\u0ABD'||LA22_0=='\u0AE0'||(LA22_0>='\u0B05' && LA22_0<='\u0B0C')||(LA22_0>='\u0B0F' && LA22_0<='\u0B10')||(LA22_0>='\u0B13' && LA22_0<='\u0B28')||(LA22_0>='\u0B2A' && LA22_0<='\u0B30')||(LA22_0>='\u0B32' && LA22_0<='\u0B33')||(LA22_0>='\u0B36' && LA22_0<='\u0B39')||LA22_0=='\u0B3D'||(LA22_0>='\u0B5C' && LA22_0<='\u0B5D')||(LA22_0>='\u0B5F' && LA22_0<='\u0B61')||(LA22_0>='\u0B85' && LA22_0<='\u0B8A')||(LA22_0>='\u0B8E' && LA22_0<='\u0B90')||(LA22_0>='\u0B92' && LA22_0<='\u0B95')||(LA22_0>='\u0B99' && LA22_0<='\u0B9A')||LA22_0=='\u0B9C'||(LA22_0>='\u0B9E' && LA22_0<='\u0B9F')||(LA22_0>='\u0BA3' && LA22_0<='\u0BA4')||(LA22_0>='\u0BA8' && LA22_0<='\u0BAA')||(LA22_0>='\u0BAE' && LA22_0<='\u0BB5')||(LA22_0>='\u0BB7' && LA22_0<='\u0BB9')||(LA22_0>='\u0C05' && LA22_0<='\u0C0C')||(LA22_0>='\u0C0E' && LA22_0<='\u0C10')||(LA22_0>='\u0C12' && LA22_0<='\u0C28')||(LA22_0>='\u0C2A' && LA22_0<='\u0C33')||(LA22_0>='\u0C35' && LA22_0<='\u0C39')||(LA22_0>='\u0C60' && LA22_0<='\u0C61')||(LA22_0>='\u0C85' && LA22_0<='\u0C8C')||(LA22_0>='\u0C8E' && LA22_0<='\u0C90')||(LA22_0>='\u0C92' && LA22_0<='\u0CA8')||(LA22_0>='\u0CAA' && LA22_0<='\u0CB3')||(LA22_0>='\u0CB5' && LA22_0<='\u0CB9')||LA22_0=='\u0CDE'||(LA22_0>='\u0CE0' && LA22_0<='\u0CE1')||(LA22_0>='\u0D05' && LA22_0<='\u0D0C')||(LA22_0>='\u0D0E' && LA22_0<='\u0D10')||(LA22_0>='\u0D12' && LA22_0<='\u0D28')||(LA22_0>='\u0D2A' && LA22_0<='\u0D39')||(LA22_0>='\u0D60' && LA22_0<='\u0D61')||(LA22_0>='\u0E01' && LA22_0<='\u0E2E')||LA22_0=='\u0E30'||(LA22_0>='\u0E32' && LA22_0<='\u0E33')||(LA22_0>='\u0E40' && LA22_0<='\u0E45')||(LA22_0>='\u0E81' && LA22_0<='\u0E82')||LA22_0=='\u0E84'||(LA22_0>='\u0E87' && LA22_0<='\u0E88')||LA22_0=='\u0E8A'||LA22_0=='\u0E8D'||(LA22_0>='\u0E94' && LA22_0<='\u0E97')||(LA22_0>='\u0E99' && LA22_0<='\u0E9F')||(LA22_0>='\u0EA1' && LA22_0<='\u0EA3')||LA22_0=='\u0EA5'||LA22_0=='\u0EA7'||(LA22_0>='\u0EAA' && LA22_0<='\u0EAB')||(LA22_0>='\u0EAD' && LA22_0<='\u0EAE')||LA22_0=='\u0EB0'||(LA22_0>='\u0EB2' && LA22_0<='\u0EB3')||LA22_0=='\u0EBD'||(LA22_0>='\u0EC0' && LA22_0<='\u0EC4')||(LA22_0>='\u0F40' && LA22_0<='\u0F47')||(LA22_0>='\u0F49' && LA22_0<='\u0F69')||(LA22_0>='\u10A0' && LA22_0<='\u10C5')||(LA22_0>='\u10D0' && LA22_0<='\u10F6')||LA22_0=='\u1100'||(LA22_0>='\u1102' && LA22_0<='\u1103')||(LA22_0>='\u1105' && LA22_0<='\u1107')||LA22_0=='\u1109'||(LA22_0>='\u110B' && LA22_0<='\u110C')||(LA22_0>='\u110E' && LA22_0<='\u1112')||LA22_0=='\u113C'||LA22_0=='\u113E'||LA22_0=='\u1140'||LA22_0=='\u114C'||LA22_0=='\u114E'||LA22_0=='\u1150'||(LA22_0>='\u1154' && LA22_0<='\u1155')||LA22_0=='\u1159'||(LA22_0>='\u115F' && LA22_0<='\u1161')||LA22_0=='\u1163'||LA22_0=='\u1165'||LA22_0=='\u1167'||LA22_0=='\u1169'||(LA22_0>='\u116D' && LA22_0<='\u116E')||(LA22_0>='\u1172' && LA22_0<='\u1173')||LA22_0=='\u1175'||LA22_0=='\u119E'||LA22_0=='\u11A8'||LA22_0=='\u11AB'||(LA22_0>='\u11AE' && LA22_0<='\u11AF')||(LA22_0>='\u11B7' && LA22_0<='\u11B8')||LA22_0=='\u11BA'||(LA22_0>='\u11BC' && LA22_0<='\u11C2')||LA22_0=='\u11EB'||LA22_0=='\u11F0'||LA22_0=='\u11F9'||(LA22_0>='\u1E00' && LA22_0<='\u1E9B')||(LA22_0>='\u1EA0' && LA22_0<='\u1EF9')||(LA22_0>='\u1F00' && LA22_0<='\u1F15')||(LA22_0>='\u1F18' && LA22_0<='\u1F1D')||(LA22_0>='\u1F20' && LA22_0<='\u1F45')||(LA22_0>='\u1F48' && LA22_0<='\u1F4D')||(LA22_0>='\u1F50' && LA22_0<='\u1F57')||LA22_0=='\u1F59'||LA22_0=='\u1F5B'||LA22_0=='\u1F5D'||(LA22_0>='\u1F5F' && LA22_0<='\u1F7D')||(LA22_0>='\u1F80' && LA22_0<='\u1FB4')||(LA22_0>='\u1FB6' && LA22_0<='\u1FBC')||LA22_0=='\u1FBE'||(LA22_0>='\u1FC2' && LA22_0<='\u1FC4')||(LA22_0>='\u1FC6' && LA22_0<='\u1FCC')||(LA22_0>='\u1FD0' && LA22_0<='\u1FD3')||(LA22_0>='\u1FD6' && LA22_0<='\u1FDB')||(LA22_0>='\u1FE0' && LA22_0<='\u1FEC')||(LA22_0>='\u1FF2' && LA22_0<='\u1FF4')||(LA22_0>='\u1FF6' && LA22_0<='\u1FFC')||LA22_0=='\u2126'||(LA22_0>='\u212A' && LA22_0<='\u212B')||LA22_0=='\u212E'||(LA22_0>='\u2180' && LA22_0<='\u2182')||LA22_0=='\u3007'||(LA22_0>='\u3021' && LA22_0<='\u3029')||(LA22_0>='\u3041' && LA22_0<='\u3094')||(LA22_0>='\u30A1' && LA22_0<='\u30FA')||(LA22_0>='\u3105' && LA22_0<='\u312C')||(LA22_0>='\u4E00' && LA22_0<='\u9FA5')||(LA22_0>='\uAC00' && LA22_0<='\uD7A3')) ) {
-            alt22=192;
+        else if ( (LA24_0=='w') ) {
+            int LA24_32 = input.LA(2);
+
+            if ( (synpred160()) ) {
+                alt24=155;
+            }
+            else if ( (synpred161()) ) {
+                alt24=156;
+            }
+            else if ( (synpred162()) ) {
+                alt24=157;
+            }
+            else if ( (synpred163()) ) {
+                alt24=158;
+            }
+            else if ( (synpred164()) ) {
+                alt24=159;
+            }
+            else if ( (synpred165()) ) {
+                alt24=160;
+            }
+            else if ( (synpred166()) ) {
+                alt24=161;
+            }
+            else if ( (synpred167()) ) {
+                alt24=162;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 32, input);
+
+                throw nvae;
+            }
         }
-        else if ( ((LA22_0>='\t' && LA22_0<='\n')||LA22_0=='\r'||LA22_0==' ') ) {
-            alt22=193;
+        else if ( (LA24_0=='x') ) {
+            int LA24_33 = input.LA(2);
+
+            if ( (synpred168()) ) {
+                alt24=163;
+            }
+            else if ( (synpred170()) ) {
+                alt24=165;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 33, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA24_0=='\"') ) {
+            int LA24_34 = input.LA(2);
+
+            if ( (synpred169()) ) {
+                alt24=164;
+            }
+            else if ( (synpred171()) ) {
+                alt24=166;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 34, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA24_0=='\'') ) {
+            int LA24_35 = input.LA(2);
+
+            if ( (synpred169()) ) {
+                alt24=164;
+            }
+            else if ( (synpred171()) ) {
+                alt24=166;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 35, input);
+
+                throw nvae;
+            }
+        }
+        else if ( (LA24_0=='$'||(LA24_0>=')' && LA24_0<=',')||LA24_0==';'||LA24_0=='='||LA24_0=='@'||LA24_0=='['||LA24_0==']'||LA24_0=='|') ) {
+            alt24=164;
+        }
+        else if ( ((LA24_0>='A' && LA24_0<='Z')||LA24_0=='_'||LA24_0=='h'||(LA24_0>='j' && LA24_0<='k')||LA24_0=='q'||(LA24_0>='y' && LA24_0<='z')||(LA24_0>='\u00C0' && LA24_0<='\u00D6')||(LA24_0>='\u00D8' && LA24_0<='\u00F6')||(LA24_0>='\u00F8' && LA24_0<='\u0131')||(LA24_0>='\u0134' && LA24_0<='\u013E')||(LA24_0>='\u0141' && LA24_0<='\u0148')||(LA24_0>='\u014A' && LA24_0<='\u017E')||(LA24_0>='\u0180' && LA24_0<='\u01C3')||(LA24_0>='\u01CD' && LA24_0<='\u01F0')||(LA24_0>='\u01F4' && LA24_0<='\u01F5')||(LA24_0>='\u01FA' && LA24_0<='\u0217')||(LA24_0>='\u0250' && LA24_0<='\u02A8')||(LA24_0>='\u02BB' && LA24_0<='\u02C1')||LA24_0=='\u0386'||(LA24_0>='\u0388' && LA24_0<='\u038A')||LA24_0=='\u038C'||(LA24_0>='\u038E' && LA24_0<='\u03A1')||(LA24_0>='\u03A3' && LA24_0<='\u03CE')||(LA24_0>='\u03D0' && LA24_0<='\u03D6')||LA24_0=='\u03DA'||LA24_0=='\u03DC'||LA24_0=='\u03DE'||LA24_0=='\u03E0'||(LA24_0>='\u03E2' && LA24_0<='\u03F3')||(LA24_0>='\u0401' && LA24_0<='\u040C')||(LA24_0>='\u040E' && LA24_0<='\u044F')||(LA24_0>='\u0451' && LA24_0<='\u045C')||(LA24_0>='\u045E' && LA24_0<='\u0481')||(LA24_0>='\u0490' && LA24_0<='\u04C4')||(LA24_0>='\u04C7' && LA24_0<='\u04C8')||(LA24_0>='\u04CB' && LA24_0<='\u04CC')||(LA24_0>='\u04D0' && LA24_0<='\u04EB')||(LA24_0>='\u04EE' && LA24_0<='\u04F5')||(LA24_0>='\u04F8' && LA24_0<='\u04F9')||(LA24_0>='\u0531' && LA24_0<='\u0556')||LA24_0=='\u0559'||(LA24_0>='\u0561' && LA24_0<='\u0586')||(LA24_0>='\u05D0' && LA24_0<='\u05EA')||(LA24_0>='\u05F0' && LA24_0<='\u05F2')||(LA24_0>='\u0621' && LA24_0<='\u063A')||(LA24_0>='\u0641' && LA24_0<='\u064A')||(LA24_0>='\u0671' && LA24_0<='\u06B7')||(LA24_0>='\u06BA' && LA24_0<='\u06BE')||(LA24_0>='\u06C0' && LA24_0<='\u06CE')||(LA24_0>='\u06D0' && LA24_0<='\u06D3')||LA24_0=='\u06D5'||(LA24_0>='\u06E5' && LA24_0<='\u06E6')||(LA24_0>='\u0905' && LA24_0<='\u0939')||LA24_0=='\u093D'||(LA24_0>='\u0958' && LA24_0<='\u0961')||(LA24_0>='\u0985' && LA24_0<='\u098C')||(LA24_0>='\u098F' && LA24_0<='\u0990')||(LA24_0>='\u0993' && LA24_0<='\u09A8')||(LA24_0>='\u09AA' && LA24_0<='\u09B0')||LA24_0=='\u09B2'||(LA24_0>='\u09B6' && LA24_0<='\u09B9')||(LA24_0>='\u09DC' && LA24_0<='\u09DD')||(LA24_0>='\u09DF' && LA24_0<='\u09E1')||(LA24_0>='\u09F0' && LA24_0<='\u09F1')||(LA24_0>='\u0A05' && LA24_0<='\u0A0A')||(LA24_0>='\u0A0F' && LA24_0<='\u0A10')||(LA24_0>='\u0A13' && LA24_0<='\u0A28')||(LA24_0>='\u0A2A' && LA24_0<='\u0A30')||(LA24_0>='\u0A32' && LA24_0<='\u0A33')||(LA24_0>='\u0A35' && LA24_0<='\u0A36')||(LA24_0>='\u0A38' && LA24_0<='\u0A39')||(LA24_0>='\u0A59' && LA24_0<='\u0A5C')||LA24_0=='\u0A5E'||(LA24_0>='\u0A72' && LA24_0<='\u0A74')||(LA24_0>='\u0A85' && LA24_0<='\u0A8B')||LA24_0=='\u0A8D'||(LA24_0>='\u0A8F' && LA24_0<='\u0A91')||(LA24_0>='\u0A93' && LA24_0<='\u0AA8')||(LA24_0>='\u0AAA' && LA24_0<='\u0AB0')||(LA24_0>='\u0AB2' && LA24_0<='\u0AB3')||(LA24_0>='\u0AB5' && LA24_0<='\u0AB9')||LA24_0=='\u0ABD'||LA24_0=='\u0AE0'||(LA24_0>='\u0B05' && LA24_0<='\u0B0C')||(LA24_0>='\u0B0F' && LA24_0<='\u0B10')||(LA24_0>='\u0B13' && LA24_0<='\u0B28')||(LA24_0>='\u0B2A' && LA24_0<='\u0B30')||(LA24_0>='\u0B32' && LA24_0<='\u0B33')||(LA24_0>='\u0B36' && LA24_0<='\u0B39')||LA24_0=='\u0B3D'||(LA24_0>='\u0B5C' && LA24_0<='\u0B5D')||(LA24_0>='\u0B5F' && LA24_0<='\u0B61')||(LA24_0>='\u0B85' && LA24_0<='\u0B8A')||(LA24_0>='\u0B8E' && LA24_0<='\u0B90')||(LA24_0>='\u0B92' && LA24_0<='\u0B95')||(LA24_0>='\u0B99' && LA24_0<='\u0B9A')||LA24_0=='\u0B9C'||(LA24_0>='\u0B9E' && LA24_0<='\u0B9F')||(LA24_0>='\u0BA3' && LA24_0<='\u0BA4')||(LA24_0>='\u0BA8' && LA24_0<='\u0BAA')||(LA24_0>='\u0BAE' && LA24_0<='\u0BB5')||(LA24_0>='\u0BB7' && LA24_0<='\u0BB9')||(LA24_0>='\u0C05' && LA24_0<='\u0C0C')||(LA24_0>='\u0C0E' && LA24_0<='\u0C10')||(LA24_0>='\u0C12' && LA24_0<='\u0C28')||(LA24_0>='\u0C2A' && LA24_0<='\u0C33')||(LA24_0>='\u0C35' && LA24_0<='\u0C39')||(LA24_0>='\u0C60' && LA24_0<='\u0C61')||(LA24_0>='\u0C85' && LA24_0<='\u0C8C')||(LA24_0>='\u0C8E' && LA24_0<='\u0C90')||(LA24_0>='\u0C92' && LA24_0<='\u0CA8')||(LA24_0>='\u0CAA' && LA24_0<='\u0CB3')||(LA24_0>='\u0CB5' && LA24_0<='\u0CB9')||LA24_0=='\u0CDE'||(LA24_0>='\u0CE0' && LA24_0<='\u0CE1')||(LA24_0>='\u0D05' && LA24_0<='\u0D0C')||(LA24_0>='\u0D0E' && LA24_0<='\u0D10')||(LA24_0>='\u0D12' && LA24_0<='\u0D28')||(LA24_0>='\u0D2A' && LA24_0<='\u0D39')||(LA24_0>='\u0D60' && LA24_0<='\u0D61')||(LA24_0>='\u0E01' && LA24_0<='\u0E2E')||LA24_0=='\u0E30'||(LA24_0>='\u0E32' && LA24_0<='\u0E33')||(LA24_0>='\u0E40' && LA24_0<='\u0E45')||(LA24_0>='\u0E81' && LA24_0<='\u0E82')||LA24_0=='\u0E84'||(LA24_0>='\u0E87' && LA24_0<='\u0E88')||LA24_0=='\u0E8A'||LA24_0=='\u0E8D'||(LA24_0>='\u0E94' && LA24_0<='\u0E97')||(LA24_0>='\u0E99' && LA24_0<='\u0E9F')||(LA24_0>='\u0EA1' && LA24_0<='\u0EA3')||LA24_0=='\u0EA5'||LA24_0=='\u0EA7'||(LA24_0>='\u0EAA' && LA24_0<='\u0EAB')||(LA24_0>='\u0EAD' && LA24_0<='\u0EAE')||LA24_0=='\u0EB0'||(LA24_0>='\u0EB2' && LA24_0<='\u0EB3')||LA24_0=='\u0EBD'||(LA24_0>='\u0EC0' && LA24_0<='\u0EC4')||(LA24_0>='\u0F40' && LA24_0<='\u0F47')||(LA24_0>='\u0F49' && LA24_0<='\u0F69')||(LA24_0>='\u10A0' && LA24_0<='\u10C5')||(LA24_0>='\u10D0' && LA24_0<='\u10F6')||LA24_0=='\u1100'||(LA24_0>='\u1102' && LA24_0<='\u1103')||(LA24_0>='\u1105' && LA24_0<='\u1107')||LA24_0=='\u1109'||(LA24_0>='\u110B' && LA24_0<='\u110C')||(LA24_0>='\u110E' && LA24_0<='\u1112')||LA24_0=='\u113C'||LA24_0=='\u113E'||LA24_0=='\u1140'||LA24_0=='\u114C'||LA24_0=='\u114E'||LA24_0=='\u1150'||(LA24_0>='\u1154' && LA24_0<='\u1155')||LA24_0=='\u1159'||(LA24_0>='\u115F' && LA24_0<='\u1161')||LA24_0=='\u1163'||LA24_0=='\u1165'||LA24_0=='\u1167'||LA24_0=='\u1169'||(LA24_0>='\u116D' && LA24_0<='\u116E')||(LA24_0>='\u1172' && LA24_0<='\u1173')||LA24_0=='\u1175'||LA24_0=='\u119E'||LA24_0=='\u11A8'||LA24_0=='\u11AB'||(LA24_0>='\u11AE' && LA24_0<='\u11AF')||(LA24_0>='\u11B7' && LA24_0<='\u11B8')||LA24_0=='\u11BA'||(LA24_0>='\u11BC' && LA24_0<='\u11C2')||LA24_0=='\u11EB'||LA24_0=='\u11F0'||LA24_0=='\u11F9'||(LA24_0>='\u1E00' && LA24_0<='\u1E9B')||(LA24_0>='\u1EA0' && LA24_0<='\u1EF9')||(LA24_0>='\u1F00' && LA24_0<='\u1F15')||(LA24_0>='\u1F18' && LA24_0<='\u1F1D')||(LA24_0>='\u1F20' && LA24_0<='\u1F45')||(LA24_0>='\u1F48' && LA24_0<='\u1F4D')||(LA24_0>='\u1F50' && LA24_0<='\u1F57')||LA24_0=='\u1F59'||LA24_0=='\u1F5B'||LA24_0=='\u1F5D'||(LA24_0>='\u1F5F' && LA24_0<='\u1F7D')||(LA24_0>='\u1F80' && LA24_0<='\u1FB4')||(LA24_0>='\u1FB6' && LA24_0<='\u1FBC')||LA24_0=='\u1FBE'||(LA24_0>='\u1FC2' && LA24_0<='\u1FC4')||(LA24_0>='\u1FC6' && LA24_0<='\u1FCC')||(LA24_0>='\u1FD0' && LA24_0<='\u1FD3')||(LA24_0>='\u1FD6' && LA24_0<='\u1FDB')||(LA24_0>='\u1FE0' && LA24_0<='\u1FEC')||(LA24_0>='\u1FF2' && LA24_0<='\u1FF4')||(LA24_0>='\u1FF6' && LA24_0<='\u1FFC')||LA24_0=='\u2126'||(LA24_0>='\u212A' && LA24_0<='\u212B')||LA24_0=='\u212E'||(LA24_0>='\u2180' && LA24_0<='\u2182')||LA24_0=='\u3007'||(LA24_0>='\u3021' && LA24_0<='\u3029')||(LA24_0>='\u3041' && LA24_0<='\u3094')||(LA24_0>='\u30A1' && LA24_0<='\u30FA')||(LA24_0>='\u3105' && LA24_0<='\u312C')||(LA24_0>='\u4E00' && LA24_0<='\u9FA5')||(LA24_0>='\uAC00' && LA24_0<='\uD7A3')) ) {
+            alt24=165;
+        }
+        else if ( ((LA24_0>='\t' && LA24_0<='\n')||LA24_0=='\r'||LA24_0==' ') ) {
+            alt24=167;
+        }
+        else if ( ((LA24_0>='0' && LA24_0<='9')) ) {
+            int LA24_49 = input.LA(2);
+
+            if ( (synpred173()) ) {
+                alt24=168;
+            }
+            else if ( (synpred174()) ) {
+                alt24=169;
+            }
+            else if ( (true) ) {
+                alt24=170;
+            }
+            else {
+                if (backtracking>0) {failed=true; return ;}
+                NoViableAltException nvae =
+                    new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 49, input);
+
+                throw nvae;
+            }
         }
         else {
             if (backtracking>0) {failed=true; return ;}
             NoViableAltException nvae =
-                new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( PIPESi | BIGGERTHANSi | BIGGERTHANOREQUALSi | LESSTHANOREQUALSi | ASCENDING | IDIV | WHERE | PHRASE | CONTENT | VERSION | LEFTBRACESi | EQUALSi | NOTEQUALSi | STOP | TYPESWITCH | ANY | BOUNDARYSPACE | DOLLARSi | XQUERY | CAST | DISTANCE | LEFTPRAGMA | ORDERED | DOCUMENTNODE | ELSE | LESSTHANSi | TREAT | UPPERCASE | ALL | WORD | RIGHTPRAGMA | INHERIT | SLASH | ORDERING | RIGHTPITARGET | EVERY | CASTABLE | ITEM | FOR | INSTANCE | EXCEPT | TO | CONSTRUCTION | WEIGHT | FTOPTION | SATISFIES | COLONSi | SEMICOLONSi | SINGLEQUOTE | UNDERSCORE | EMPTY | MOST | CASE | PROCESSING_INSTRUCTION | IMPORT | MINUSSi | RIGHTSELFTERMINATOR | DOCUMENT | LEFTCDATA | VALIDATE | EMPTY_SEQUENCE | INSENSITIVE | NOPRESERVE | THEN | COMMASi | LET | WINDOW | SCORE | LANGUAGE | OPTION | STEMMING | RIGHTBRACKETSi | GREATEST | LEVELS | SENSITIVE | FTNOT | DIV | PLUSSi | FTAND | AT | SCHEMAATTRIBUTE | ORDER | OF | UNION | FROM | COLLATION | DOUBLERIGHTBRACES | VARIABLE | OR | FTOR | DOUBLESLASH | LEAST | IF | BASEURI | DESCENDING | STARSi | NAMESPACE | AS | LEFTXMLCOMMENT | BY | TEXT | STABLE | LEFTBRACKETSi | UNORDERED | RIGHTCDATA | EXACTLY | WITH | LEFTPITARGET | WITHOUT | DIACRITICS | EXTERNAL | RIGHTPARENTHESISSi | RIGHTXMLCOMMENT | MODULE | RETURN | COMMENT | DEFAULT | OCCURS | ENCODING | DOUBLELEFTBRACES | SCHEMA | ELEMENT | LEFTPARENTHESISSi | COPYNAMESPACES | WILDCARDS | DECLARE | AND | PRESERVE | NOINHERIT | NOT | INTERSECT | FUNCTION | ATSi | TIMES | ATTRIBUTE | ASSIGNMENTOPERATOR | FTCONTAINS | RELATIONSHIP | THESAURUS | MOD | RIGHTBRACESi | NODE | SOME | QUESTIONMARKSi | STRIP | LOWERCASE | IN | SCHEMAELEMENT | LEFTENDTAG | EQ | NE | LT | LE | GT | GE | IS | NODEBEFORESi | NODEAFTERSi | LAX | STRICT | CHILD | DOUBLECOLON | DESCENDANT | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING | PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF | DOT | DOTDOT | WORDS | SENTENCES | PARAGRAPHS | SENTENCE | PARAGRAPH | SAME | DIFFERENT | START | END | ENTIRE | IntegerLiteral | DecimalLiteral | DoubleLiteral | StringLiteral | DOUBLEQUOTESi | Comment | CharRef | NCName | S );", 22, 0, input);
+                new NoViableAltException("1:1: Tokens options {k=1; backtrack=true; } : ( CDataSection | Comment | CharRef | DirCommentConstructor | LCOMMENTSi | LPISi | LENDTAGSi | NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | RSELFTERMSi | LPRAGSi | LDBLBRACSi | RDBLBRACSi | DOTDOTSi | RPISi | RCOMMENTSi | NEQSi | RPRAGSi | ALL | ANY | ANCESTOR | ANCESTOR_OR_SELF | AND | AS | ASCENDING | AT | ATTRIBUTE | BASE_URI | BY | BOUNDARYSPACE | CASE | CAST | CASTABLE | CHILD | COLLATION | COMMENT | CONSTRUCTION | CONTENT | COPY_NAMESPACES | DECLARE | DEFAULT | DESCENDANT | DESCENDANT_OR_SELF | DESCENDING | DIACRITICS | DIFFERENT | DISTANCE | DIV | DOCUMENT | DOCUMENT_NODE | ELEMENT | ELSE | ENCODING | END | ENTIRE | EMPTY | EMPTY_SEQUENCE | EQ | EVERY | EXACTLY | EXCEPT | EXTERNAL | FOLLOWING | FOLLOWING_SIBLING | FOR | FROM | FTAND | FTCONTAINS | FTNOT | FTOPTION | FTOR | FUNCTION | GE | GREATEST | GT | IDIV | IF | IMPORT | IN | INHERIT | INSENSITIVE | INSTANCE | INTERSECT | IS | ITEM | LANGUAGE | LAX | LE | LEAST | LET | LEVELS | LOWERCASE | LT | MOD | MODULE | MOST | NAMESPACE | NE | NODE | NOINHERIT | NOPRESERVE | NOT | OCCURS | OF | OPTION | OR | ORDER | ORDERED | ORDERING | PARAGRAPH | PARAGRAPHS | PARENT | PHRASE | PRECEDING | PRECEDING_SIBLING | PRESERVE | PROCESSING_INSTRUCTION | RELATIONSHIP | RETURN | SAME | SATISFIES | SCHEMA | SCHEMAATTRIBUTE | SCHEMAELEMENT | SCORE | SELF | SENSITIVE | SENTENCES | SENTENCE | SOME | STABLE | START | STEMMING | STOP | STRICT | STRIP | TEXT | THESAURUS | THEN | TIMES | TO | TREAT | TYPESWITCH | UNION | UNORDERED | UPPERCASE | VALIDATE | VARIABLE | VERSION | WEIGHT | WHERE | WILDCARDS | WINDOW | WITH | WITHOUT | WORD | WORDS | XQUERY | TOKENSWITCH | NCName | StringLiteral | S | IntegerLiteral | DecimalLiteral | DoubleLiteral );", 24, 0, input);
 
             throw nvae;
         }
-        switch (alt22) {
+        switch (alt24) {
             case 1 :
-                // etc/XQFT.g:1:41: PIPESi
+                // etc/XQFT.g:1:41: CDataSection
                 {
-                mPIPESi(); if (failed) return ;
+                mCDataSection(); if (failed) return ;
 
                 }
                 break;
             case 2 :
-                // etc/XQFT.g:1:48: BIGGERTHANSi
-                {
-                mBIGGERTHANSi(); if (failed) return ;
-
-                }
-                break;
-            case 3 :
-                // etc/XQFT.g:1:61: BIGGERTHANOREQUALSi
-                {
-                mBIGGERTHANOREQUALSi(); if (failed) return ;
-
-                }
-                break;
-            case 4 :
-                // etc/XQFT.g:1:81: LESSTHANOREQUALSi
-                {
-                mLESSTHANOREQUALSi(); if (failed) return ;
-
-                }
-                break;
-            case 5 :
-                // etc/XQFT.g:1:99: ASCENDING
-                {
-                mASCENDING(); if (failed) return ;
-
-                }
-                break;
-            case 6 :
-                // etc/XQFT.g:1:109: IDIV
-                {
-                mIDIV(); if (failed) return ;
-
-                }
-                break;
-            case 7 :
-                // etc/XQFT.g:1:114: WHERE
-                {
-                mWHERE(); if (failed) return ;
-
-                }
-                break;
-            case 8 :
-                // etc/XQFT.g:1:120: PHRASE
-                {
-                mPHRASE(); if (failed) return ;
-
-                }
-                break;
-            case 9 :
-                // etc/XQFT.g:1:127: CONTENT
-                {
-                mCONTENT(); if (failed) return ;
-
-                }
-                break;
-            case 10 :
-                // etc/XQFT.g:1:135: VERSION
-                {
-                mVERSION(); if (failed) return ;
-
-                }
-                break;
-            case 11 :
-                // etc/XQFT.g:1:143: LEFTBRACESi
-                {
-                mLEFTBRACESi(); if (failed) return ;
-
-                }
-                break;
-            case 12 :
-                // etc/XQFT.g:1:155: EQUALSi
-                {
-                mEQUALSi(); if (failed) return ;
-
-                }
-                break;
-            case 13 :
-                // etc/XQFT.g:1:163: NOTEQUALSi
-                {
-                mNOTEQUALSi(); if (failed) return ;
-
-                }
-                break;
-            case 14 :
-                // etc/XQFT.g:1:174: STOP
-                {
-                mSTOP(); if (failed) return ;
-
-                }
-                break;
-            case 15 :
-                // etc/XQFT.g:1:179: TYPESWITCH
-                {
-                mTYPESWITCH(); if (failed) return ;
-
-                }
-                break;
-            case 16 :
-                // etc/XQFT.g:1:190: ANY
-                {
-                mANY(); if (failed) return ;
-
-                }
-                break;
-            case 17 :
-                // etc/XQFT.g:1:194: BOUNDARYSPACE
-                {
-                mBOUNDARYSPACE(); if (failed) return ;
-
-                }
-                break;
-            case 18 :
-                // etc/XQFT.g:1:208: DOLLARSi
-                {
-                mDOLLARSi(); if (failed) return ;
-
-                }
-                break;
-            case 19 :
-                // etc/XQFT.g:1:217: XQUERY
-                {
-                mXQUERY(); if (failed) return ;
-
-                }
-                break;
-            case 20 :
-                // etc/XQFT.g:1:224: CAST
-                {
-                mCAST(); if (failed) return ;
-
-                }
-                break;
-            case 21 :
-                // etc/XQFT.g:1:229: DISTANCE
-                {
-                mDISTANCE(); if (failed) return ;
-
-                }
-                break;
-            case 22 :
-                // etc/XQFT.g:1:238: LEFTPRAGMA
-                {
-                mLEFTPRAGMA(); if (failed) return ;
-
-                }
-                break;
-            case 23 :
-                // etc/XQFT.g:1:249: ORDERED
-                {
-                mORDERED(); if (failed) return ;
-
-                }
-                break;
-            case 24 :
-                // etc/XQFT.g:1:257: DOCUMENTNODE
-                {
-                mDOCUMENTNODE(); if (failed) return ;
-
-                }
-                break;
-            case 25 :
-                // etc/XQFT.g:1:270: ELSE
-                {
-                mELSE(); if (failed) return ;
-
-                }
-                break;
-            case 26 :
-                // etc/XQFT.g:1:275: LESSTHANSi
-                {
-                mLESSTHANSi(); if (failed) return ;
-
-                }
-                break;
-            case 27 :
-                // etc/XQFT.g:1:286: TREAT
-                {
-                mTREAT(); if (failed) return ;
-
-                }
-                break;
-            case 28 :
-                // etc/XQFT.g:1:292: UPPERCASE
-                {
-                mUPPERCASE(); if (failed) return ;
-
-                }
-                break;
-            case 29 :
-                // etc/XQFT.g:1:302: ALL
-                {
-                mALL(); if (failed) return ;
-
-                }
-                break;
-            case 30 :
-                // etc/XQFT.g:1:306: WORD
-                {
-                mWORD(); if (failed) return ;
-
-                }
-                break;
-            case 31 :
-                // etc/XQFT.g:1:311: RIGHTPRAGMA
-                {
-                mRIGHTPRAGMA(); if (failed) return ;
-
-                }
-                break;
-            case 32 :
-                // etc/XQFT.g:1:323: INHERIT
-                {
-                mINHERIT(); if (failed) return ;
-
-                }
-                break;
-            case 33 :
-                // etc/XQFT.g:1:331: SLASH
-                {
-                mSLASH(); if (failed) return ;
-
-                }
-                break;
-            case 34 :
-                // etc/XQFT.g:1:337: ORDERING
-                {
-                mORDERING(); if (failed) return ;
-
-                }
-                break;
-            case 35 :
-                // etc/XQFT.g:1:346: RIGHTPITARGET
-                {
-                mRIGHTPITARGET(); if (failed) return ;
-
-                }
-                break;
-            case 36 :
-                // etc/XQFT.g:1:360: EVERY
-                {
-                mEVERY(); if (failed) return ;
-
-                }
-                break;
-            case 37 :
-                // etc/XQFT.g:1:366: CASTABLE
-                {
-                mCASTABLE(); if (failed) return ;
-
-                }
-                break;
-            case 38 :
-                // etc/XQFT.g:1:375: ITEM
-                {
-                mITEM(); if (failed) return ;
-
-                }
-                break;
-            case 39 :
-                // etc/XQFT.g:1:380: FOR
-                {
-                mFOR(); if (failed) return ;
-
-                }
-                break;
-            case 40 :
-                // etc/XQFT.g:1:384: INSTANCE
-                {
-                mINSTANCE(); if (failed) return ;
-
-                }
-                break;
-            case 41 :
-                // etc/XQFT.g:1:393: EXCEPT
-                {
-                mEXCEPT(); if (failed) return ;
-
-                }
-                break;
-            case 42 :
-                // etc/XQFT.g:1:400: TO
-                {
-                mTO(); if (failed) return ;
-
-                }
-                break;
-            case 43 :
-                // etc/XQFT.g:1:403: CONSTRUCTION
-                {
-                mCONSTRUCTION(); if (failed) return ;
-
-                }
-                break;
-            case 44 :
-                // etc/XQFT.g:1:416: WEIGHT
-                {
-                mWEIGHT(); if (failed) return ;
-
-                }
-                break;
-            case 45 :
-                // etc/XQFT.g:1:423: FTOPTION
-                {
-                mFTOPTION(); if (failed) return ;
-
-                }
-                break;
-            case 46 :
-                // etc/XQFT.g:1:432: SATISFIES
-                {
-                mSATISFIES(); if (failed) return ;
-
-                }
-                break;
-            case 47 :
-                // etc/XQFT.g:1:442: COLONSi
-                {
-                mCOLONSi(); if (failed) return ;
-
-                }
-                break;
-            case 48 :
-                // etc/XQFT.g:1:450: SEMICOLONSi
-                {
-                mSEMICOLONSi(); if (failed) return ;
-
-                }
-                break;
-            case 49 :
-                // etc/XQFT.g:1:462: SINGLEQUOTE
-                {
-                mSINGLEQUOTE(); if (failed) return ;
-
-                }
-                break;
-            case 50 :
-                // etc/XQFT.g:1:474: UNDERSCORE
-                {
-                mUNDERSCORE(); if (failed) return ;
-
-                }
-                break;
-            case 51 :
-                // etc/XQFT.g:1:485: EMPTY
-                {
-                mEMPTY(); if (failed) return ;
-
-                }
-                break;
-            case 52 :
-                // etc/XQFT.g:1:491: MOST
-                {
-                mMOST(); if (failed) return ;
-
-                }
-                break;
-            case 53 :
-                // etc/XQFT.g:1:496: CASE
-                {
-                mCASE(); if (failed) return ;
-
-                }
-                break;
-            case 54 :
-                // etc/XQFT.g:1:501: PROCESSING_INSTRUCTION
-                {
-                mPROCESSING_INSTRUCTION(); if (failed) return ;
-
-                }
-                break;
-            case 55 :
-                // etc/XQFT.g:1:524: IMPORT
-                {
-                mIMPORT(); if (failed) return ;
-
-                }
-                break;
-            case 56 :
-                // etc/XQFT.g:1:531: MINUSSi
-                {
-                mMINUSSi(); if (failed) return ;
-
-                }
-                break;
-            case 57 :
-                // etc/XQFT.g:1:539: RIGHTSELFTERMINATOR
-                {
-                mRIGHTSELFTERMINATOR(); if (failed) return ;
-
-                }
-                break;
-            case 58 :
-                // etc/XQFT.g:1:559: DOCUMENT
-                {
-                mDOCUMENT(); if (failed) return ;
-
-                }
-                break;
-            case 59 :
-                // etc/XQFT.g:1:568: LEFTCDATA
-                {
-                mLEFTCDATA(); if (failed) return ;
-
-                }
-                break;
-            case 60 :
-                // etc/XQFT.g:1:578: VALIDATE
-                {
-                mVALIDATE(); if (failed) return ;
-
-                }
-                break;
-            case 61 :
-                // etc/XQFT.g:1:587: EMPTY_SEQUENCE
-                {
-                mEMPTY_SEQUENCE(); if (failed) return ;
-
-                }
-                break;
-            case 62 :
-                // etc/XQFT.g:1:602: INSENSITIVE
-                {
-                mINSENSITIVE(); if (failed) return ;
-
-                }
-                break;
-            case 63 :
-                // etc/XQFT.g:1:614: NOPRESERVE
-                {
-                mNOPRESERVE(); if (failed) return ;
-
-                }
-                break;
-            case 64 :
-                // etc/XQFT.g:1:625: THEN
-                {
-                mTHEN(); if (failed) return ;
-
-                }
-                break;
-            case 65 :
-                // etc/XQFT.g:1:630: COMMASi
-                {
-                mCOMMASi(); if (failed) return ;
-
-                }
-                break;
-            case 66 :
-                // etc/XQFT.g:1:638: LET
-                {
-                mLET(); if (failed) return ;
-
-                }
-                break;
-            case 67 :
-                // etc/XQFT.g:1:642: WINDOW
-                {
-                mWINDOW(); if (failed) return ;
-
-                }
-                break;
-            case 68 :
-                // etc/XQFT.g:1:649: SCORE
-                {
-                mSCORE(); if (failed) return ;
-
-                }
-                break;
-            case 69 :
-                // etc/XQFT.g:1:655: LANGUAGE
-                {
-                mLANGUAGE(); if (failed) return ;
-
-                }
-                break;
-            case 70 :
-                // etc/XQFT.g:1:664: OPTION
-                {
-                mOPTION(); if (failed) return ;
-
-                }
-                break;
-            case 71 :
-                // etc/XQFT.g:1:671: STEMMING
-                {
-                mSTEMMING(); if (failed) return ;
-
-                }
-                break;
-            case 72 :
-                // etc/XQFT.g:1:680: RIGHTBRACKETSi
-                {
-                mRIGHTBRACKETSi(); if (failed) return ;
-
-                }
-                break;
-            case 73 :
-                // etc/XQFT.g:1:695: GREATEST
-                {
-                mGREATEST(); if (failed) return ;
-
-                }
-                break;
-            case 74 :
-                // etc/XQFT.g:1:704: LEVELS
-                {
-                mLEVELS(); if (failed) return ;
-
-                }
-                break;
-            case 75 :
-                // etc/XQFT.g:1:711: SENSITIVE
-                {
-                mSENSITIVE(); if (failed) return ;
-
-                }
-                break;
-            case 76 :
-                // etc/XQFT.g:1:721: FTNOT
-                {
-                mFTNOT(); if (failed) return ;
-
-                }
-                break;
-            case 77 :
-                // etc/XQFT.g:1:727: DIV
-                {
-                mDIV(); if (failed) return ;
-
-                }
-                break;
-            case 78 :
-                // etc/XQFT.g:1:731: PLUSSi
-                {
-                mPLUSSi(); if (failed) return ;
-
-                }
-                break;
-            case 79 :
-                // etc/XQFT.g:1:738: FTAND
-                {
-                mFTAND(); if (failed) return ;
-
-                }
-                break;
-            case 80 :
-                // etc/XQFT.g:1:744: AT
-                {
-                mAT(); if (failed) return ;
-
-                }
-                break;
-            case 81 :
-                // etc/XQFT.g:1:747: SCHEMAATTRIBUTE
-                {
-                mSCHEMAATTRIBUTE(); if (failed) return ;
-
-                }
-                break;
-            case 82 :
-                // etc/XQFT.g:1:763: ORDER
-                {
-                mORDER(); if (failed) return ;
-
-                }
-                break;
-            case 83 :
-                // etc/XQFT.g:1:769: OF
-                {
-                mOF(); if (failed) return ;
-
-                }
-                break;
-            case 84 :
-                // etc/XQFT.g:1:772: UNION
-                {
-                mUNION(); if (failed) return ;
-
-                }
-                break;
-            case 85 :
-                // etc/XQFT.g:1:778: FROM
-                {
-                mFROM(); if (failed) return ;
-
-                }
-                break;
-            case 86 :
-                // etc/XQFT.g:1:783: COLLATION
-                {
-                mCOLLATION(); if (failed) return ;
-
-                }
-                break;
-            case 87 :
-                // etc/XQFT.g:1:793: DOUBLERIGHTBRACES
-                {
-                mDOUBLERIGHTBRACES(); if (failed) return ;
-
-                }
-                break;
-            case 88 :
-                // etc/XQFT.g:1:811: VARIABLE
-                {
-                mVARIABLE(); if (failed) return ;
-
-                }
-                break;
-            case 89 :
-                // etc/XQFT.g:1:820: OR
-                {
-                mOR(); if (failed) return ;
-
-                }
-                break;
-            case 90 :
-                // etc/XQFT.g:1:823: FTOR
-                {
-                mFTOR(); if (failed) return ;
-
-                }
-                break;
-            case 91 :
-                // etc/XQFT.g:1:828: DOUBLESLASH
-                {
-                mDOUBLESLASH(); if (failed) return ;
-
-                }
-                break;
-            case 92 :
-                // etc/XQFT.g:1:840: LEAST
-                {
-                mLEAST(); if (failed) return ;
-
-                }
-                break;
-            case 93 :
-                // etc/XQFT.g:1:846: IF
-                {
-                mIF(); if (failed) return ;
-
-                }
-                break;
-            case 94 :
-                // etc/XQFT.g:1:849: BASEURI
-                {
-                mBASEURI(); if (failed) return ;
-
-                }
-                break;
-            case 95 :
-                // etc/XQFT.g:1:857: DESCENDING
-                {
-                mDESCENDING(); if (failed) return ;
-
-                }
-                break;
-            case 96 :
-                // etc/XQFT.g:1:868: STARSi
-                {
-                mSTARSi(); if (failed) return ;
-
-                }
-                break;
-            case 97 :
-                // etc/XQFT.g:1:875: NAMESPACE
-                {
-                mNAMESPACE(); if (failed) return ;
-
-                }
-                break;
-            case 98 :
-                // etc/XQFT.g:1:885: AS
-                {
-                mAS(); if (failed) return ;
-
-                }
-                break;
-            case 99 :
-                // etc/XQFT.g:1:888: LEFTXMLCOMMENT
-                {
-                mLEFTXMLCOMMENT(); if (failed) return ;
-
-                }
-                break;
-            case 100 :
-                // etc/XQFT.g:1:903: BY
-                {
-                mBY(); if (failed) return ;
-
-                }
-                break;
-            case 101 :
-                // etc/XQFT.g:1:906: TEXT
-                {
-                mTEXT(); if (failed) return ;
-
-                }
-                break;
-            case 102 :
-                // etc/XQFT.g:1:911: STABLE
-                {
-                mSTABLE(); if (failed) return ;
-
-                }
-                break;
-            case 103 :
-                // etc/XQFT.g:1:918: LEFTBRACKETSi
-                {
-                mLEFTBRACKETSi(); if (failed) return ;
-
-                }
-                break;
-            case 104 :
-                // etc/XQFT.g:1:932: UNORDERED
-                {
-                mUNORDERED(); if (failed) return ;
-
-                }
-                break;
-            case 105 :
-                // etc/XQFT.g:1:942: RIGHTCDATA
-                {
-                mRIGHTCDATA(); if (failed) return ;
-
-                }
-                break;
-            case 106 :
-                // etc/XQFT.g:1:953: EXACTLY
-                {
-                mEXACTLY(); if (failed) return ;
-
-                }
-                break;
-            case 107 :
-                // etc/XQFT.g:1:961: WITH
-                {
-                mWITH(); if (failed) return ;
-
-                }
-                break;
-            case 108 :
-                // etc/XQFT.g:1:966: LEFTPITARGET
-                {
-                mLEFTPITARGET(); if (failed) return ;
-
-                }
-                break;
-            case 109 :
-                // etc/XQFT.g:1:979: WITHOUT
-                {
-                mWITHOUT(); if (failed) return ;
-
-                }
-                break;
-            case 110 :
-                // etc/XQFT.g:1:987: DIACRITICS
-                {
-                mDIACRITICS(); if (failed) return ;
-
-                }
-                break;
-            case 111 :
-                // etc/XQFT.g:1:998: EXTERNAL
-                {
-                mEXTERNAL(); if (failed) return ;
-
-                }
-                break;
-            case 112 :
-                // etc/XQFT.g:1:1007: RIGHTPARENTHESISSi
-                {
-                mRIGHTPARENTHESISSi(); if (failed) return ;
-
-                }
-                break;
-            case 113 :
-                // etc/XQFT.g:1:1026: RIGHTXMLCOMMENT
-                {
-                mRIGHTXMLCOMMENT(); if (failed) return ;
-
-                }
-                break;
-            case 114 :
-                // etc/XQFT.g:1:1042: MODULE
-                {
-                mMODULE(); if (failed) return ;
-
-                }
-                break;
-            case 115 :
-                // etc/XQFT.g:1:1049: RETURN
-                {
-                mRETURN(); if (failed) return ;
-
-                }
-                break;
-            case 116 :
-                // etc/XQFT.g:1:1056: COMMENT
-                {
-                mCOMMENT(); if (failed) return ;
-
-                }
-                break;
-            case 117 :
-                // etc/XQFT.g:1:1064: DEFAULT
-                {
-                mDEFAULT(); if (failed) return ;
-
-                }
-                break;
-            case 118 :
-                // etc/XQFT.g:1:1072: OCCURS
-                {
-                mOCCURS(); if (failed) return ;
-
-                }
-                break;
-            case 119 :
-                // etc/XQFT.g:1:1079: ENCODING
-                {
-                mENCODING(); if (failed) return ;
-
-                }
-                break;
-            case 120 :
-                // etc/XQFT.g:1:1088: DOUBLELEFTBRACES
-                {
-                mDOUBLELEFTBRACES(); if (failed) return ;
-
-                }
-                break;
-            case 121 :
-                // etc/XQFT.g:1:1105: SCHEMA
-                {
-                mSCHEMA(); if (failed) return ;
-
-                }
-                break;
-            case 122 :
-                // etc/XQFT.g:1:1112: ELEMENT
-                {
-                mELEMENT(); if (failed) return ;
-
-                }
-                break;
-            case 123 :
-                // etc/XQFT.g:1:1120: LEFTPARENTHESISSi
-                {
-                mLEFTPARENTHESISSi(); if (failed) return ;
-
-                }
-                break;
-            case 124 :
-                // etc/XQFT.g:1:1138: COPYNAMESPACES
-                {
-                mCOPYNAMESPACES(); if (failed) return ;
-
-                }
-                break;
-            case 125 :
-                // etc/XQFT.g:1:1153: WILDCARDS
-                {
-                mWILDCARDS(); if (failed) return ;
-
-                }
-                break;
-            case 126 :
-                // etc/XQFT.g:1:1163: DECLARE
-                {
-                mDECLARE(); if (failed) return ;
-
-                }
-                break;
-            case 127 :
-                // etc/XQFT.g:1:1171: AND
-                {
-                mAND(); if (failed) return ;
-
-                }
-                break;
-            case 128 :
-                // etc/XQFT.g:1:1175: PRESERVE
-                {
-                mPRESERVE(); if (failed) return ;
-
-                }
-                break;
-            case 129 :
-                // etc/XQFT.g:1:1184: NOINHERIT
-                {
-                mNOINHERIT(); if (failed) return ;
-
-                }
-                break;
-            case 130 :
-                // etc/XQFT.g:1:1194: NOT
-                {
-                mNOT(); if (failed) return ;
-
-                }
-                break;
-            case 131 :
-                // etc/XQFT.g:1:1198: INTERSECT
-                {
-                mINTERSECT(); if (failed) return ;
-
-                }
-                break;
-            case 132 :
-                // etc/XQFT.g:1:1208: FUNCTION
-                {
-                mFUNCTION(); if (failed) return ;
-
-                }
-                break;
-            case 133 :
-                // etc/XQFT.g:1:1217: ATSi
-                {
-                mATSi(); if (failed) return ;
-
-                }
-                break;
-            case 134 :
-                // etc/XQFT.g:1:1222: TIMES
-                {
-                mTIMES(); if (failed) return ;
-
-                }
-                break;
-            case 135 :
-                // etc/XQFT.g:1:1228: ATTRIBUTE
-                {
-                mATTRIBUTE(); if (failed) return ;
-
-                }
-                break;
-            case 136 :
-                // etc/XQFT.g:1:1238: ASSIGNMENTOPERATOR
-                {
-                mASSIGNMENTOPERATOR(); if (failed) return ;
-
-                }
-                break;
-            case 137 :
-                // etc/XQFT.g:1:1257: FTCONTAINS
-                {
-                mFTCONTAINS(); if (failed) return ;
-
-                }
-                break;
-            case 138 :
-                // etc/XQFT.g:1:1268: RELATIONSHIP
-                {
-                mRELATIONSHIP(); if (failed) return ;
-
-                }
-                break;
-            case 139 :
-                // etc/XQFT.g:1:1281: THESAURUS
-                {
-                mTHESAURUS(); if (failed) return ;
-
-                }
-                break;
-            case 140 :
-                // etc/XQFT.g:1:1291: MOD
-                {
-                mMOD(); if (failed) return ;
-
-                }
-                break;
-            case 141 :
-                // etc/XQFT.g:1:1295: RIGHTBRACESi
-                {
-                mRIGHTBRACESi(); if (failed) return ;
-
-                }
-                break;
-            case 142 :
-                // etc/XQFT.g:1:1308: NODE
-                {
-                mNODE(); if (failed) return ;
-
-                }
-                break;
-            case 143 :
-                // etc/XQFT.g:1:1313: SOME
-                {
-                mSOME(); if (failed) return ;
-
-                }
-                break;
-            case 144 :
-                // etc/XQFT.g:1:1318: QUESTIONMARKSi
-                {
-                mQUESTIONMARKSi(); if (failed) return ;
-
-                }
-                break;
-            case 145 :
-                // etc/XQFT.g:1:1333: STRIP
-                {
-                mSTRIP(); if (failed) return ;
-
-                }
-                break;
-            case 146 :
-                // etc/XQFT.g:1:1339: LOWERCASE
-                {
-                mLOWERCASE(); if (failed) return ;
-
-                }
-                break;
-            case 147 :
-                // etc/XQFT.g:1:1349: IN
-                {
-                mIN(); if (failed) return ;
-
-                }
-                break;
-            case 148 :
-                // etc/XQFT.g:1:1352: SCHEMAELEMENT
-                {
-                mSCHEMAELEMENT(); if (failed) return ;
-
-                }
-                break;
-            case 149 :
-                // etc/XQFT.g:1:1366: LEFTENDTAG
-                {
-                mLEFTENDTAG(); if (failed) return ;
-
-                }
-                break;
-            case 150 :
-                // etc/XQFT.g:1:1377: EQ
-                {
-                mEQ(); if (failed) return ;
-
-                }
-                break;
-            case 151 :
-                // etc/XQFT.g:1:1380: NE
-                {
-                mNE(); if (failed) return ;
-
-                }
-                break;
-            case 152 :
-                // etc/XQFT.g:1:1383: LT
-                {
-                mLT(); if (failed) return ;
-
-                }
-                break;
-            case 153 :
-                // etc/XQFT.g:1:1386: LE
-                {
-                mLE(); if (failed) return ;
-
-                }
-                break;
-            case 154 :
-                // etc/XQFT.g:1:1389: GT
-                {
-                mGT(); if (failed) return ;
-
-                }
-                break;
-            case 155 :
-                // etc/XQFT.g:1:1392: GE
-                {
-                mGE(); if (failed) return ;
-
-                }
-                break;
-            case 156 :
-                // etc/XQFT.g:1:1395: IS
-                {
-                mIS(); if (failed) return ;
-
-                }
-                break;
-            case 157 :
-                // etc/XQFT.g:1:1398: NODEBEFORESi
-                {
-                mNODEBEFORESi(); if (failed) return ;
-
-                }
-                break;
-            case 158 :
-                // etc/XQFT.g:1:1411: NODEAFTERSi
-                {
-                mNODEAFTERSi(); if (failed) return ;
-
-                }
-                break;
-            case 159 :
-                // etc/XQFT.g:1:1423: LAX
-                {
-                mLAX(); if (failed) return ;
-
-                }
-                break;
-            case 160 :
-                // etc/XQFT.g:1:1427: STRICT
-                {
-                mSTRICT(); if (failed) return ;
-
-                }
-                break;
-            case 161 :
-                // etc/XQFT.g:1:1434: CHILD
-                {
-                mCHILD(); if (failed) return ;
-
-                }
-                break;
-            case 162 :
-                // etc/XQFT.g:1:1440: DOUBLECOLON
-                {
-                mDOUBLECOLON(); if (failed) return ;
-
-                }
-                break;
-            case 163 :
-                // etc/XQFT.g:1:1452: DESCENDANT
-                {
-                mDESCENDANT(); if (failed) return ;
-
-                }
-                break;
-            case 164 :
-                // etc/XQFT.g:1:1463: SELF
-                {
-                mSELF(); if (failed) return ;
-
-                }
-                break;
-            case 165 :
-                // etc/XQFT.g:1:1468: DESCENDANT_OR_SELF
-                {
-                mDESCENDANT_OR_SELF(); if (failed) return ;
-
-                }
-                break;
-            case 166 :
-                // etc/XQFT.g:1:1487: FOLLOWING_SIBLING
-                {
-                mFOLLOWING_SIBLING(); if (failed) return ;
-
-                }
-                break;
-            case 167 :
-                // etc/XQFT.g:1:1505: FOLLOWING
-                {
-                mFOLLOWING(); if (failed) return ;
-
-                }
-                break;
-            case 168 :
-                // etc/XQFT.g:1:1515: PARENT
-                {
-                mPARENT(); if (failed) return ;
-
-                }
-                break;
-            case 169 :
-                // etc/XQFT.g:1:1522: ANCESTOR
-                {
-                mANCESTOR(); if (failed) return ;
-
-                }
-                break;
-            case 170 :
-                // etc/XQFT.g:1:1531: PRECEDING_SIBLING
-                {
-                mPRECEDING_SIBLING(); if (failed) return ;
-
-                }
-                break;
-            case 171 :
-                // etc/XQFT.g:1:1549: PRECEDING
-                {
-                mPRECEDING(); if (failed) return ;
-
-                }
-                break;
-            case 172 :
-                // etc/XQFT.g:1:1559: ANCESTOR_OR_SELF
-                {
-                mANCESTOR_OR_SELF(); if (failed) return ;
-
-                }
-                break;
-            case 173 :
-                // etc/XQFT.g:1:1576: DOT
-                {
-                mDOT(); if (failed) return ;
-
-                }
-                break;
-            case 174 :
-                // etc/XQFT.g:1:1580: DOTDOT
-                {
-                mDOTDOT(); if (failed) return ;
-
-                }
-                break;
-            case 175 :
-                // etc/XQFT.g:1:1587: WORDS
-                {
-                mWORDS(); if (failed) return ;
-
-                }
-                break;
-            case 176 :
-                // etc/XQFT.g:1:1593: SENTENCES
-                {
-                mSENTENCES(); if (failed) return ;
-
-                }
-                break;
-            case 177 :
-                // etc/XQFT.g:1:1603: PARAGRAPHS
-                {
-                mPARAGRAPHS(); if (failed) return ;
-
-                }
-                break;
-            case 178 :
-                // etc/XQFT.g:1:1614: SENTENCE
-                {
-                mSENTENCE(); if (failed) return ;
-
-                }
-                break;
-            case 179 :
-                // etc/XQFT.g:1:1623: PARAGRAPH
-                {
-                mPARAGRAPH(); if (failed) return ;
-
-                }
-                break;
-            case 180 :
-                // etc/XQFT.g:1:1633: SAME
-                {
-                mSAME(); if (failed) return ;
-
-                }
-                break;
-            case 181 :
-                // etc/XQFT.g:1:1638: DIFFERENT
-                {
-                mDIFFERENT(); if (failed) return ;
-
-                }
-                break;
-            case 182 :
-                // etc/XQFT.g:1:1648: START
-                {
-                mSTART(); if (failed) return ;
-
-                }
-                break;
-            case 183 :
-                // etc/XQFT.g:1:1654: END
-                {
-                mEND(); if (failed) return ;
-
-                }
-                break;
-            case 184 :
-                // etc/XQFT.g:1:1658: ENTIRE
-                {
-                mENTIRE(); if (failed) return ;
-
-                }
-                break;
-            case 185 :
-                // etc/XQFT.g:1:1665: IntegerLiteral
-                {
-                mIntegerLiteral(); if (failed) return ;
-
-                }
-                break;
-            case 186 :
-                // etc/XQFT.g:1:1680: DecimalLiteral
-                {
-                mDecimalLiteral(); if (failed) return ;
-
-                }
-                break;
-            case 187 :
-                // etc/XQFT.g:1:1695: DoubleLiteral
-                {
-                mDoubleLiteral(); if (failed) return ;
-
-                }
-                break;
-            case 188 :
-                // etc/XQFT.g:1:1709: StringLiteral
-                {
-                mStringLiteral(); if (failed) return ;
-
-                }
-                break;
-            case 189 :
-                // etc/XQFT.g:1:1723: DOUBLEQUOTESi
-                {
-                mDOUBLEQUOTESi(); if (failed) return ;
-
-                }
-                break;
-            case 190 :
-                // etc/XQFT.g:1:1737: Comment
+                // etc/XQFT.g:1:54: Comment
                 {
                 mComment(); if (failed) return ;
 
                 }
                 break;
-            case 191 :
-                // etc/XQFT.g:1:1745: CharRef
+            case 3 :
+                // etc/XQFT.g:1:62: CharRef
                 {
                 mCharRef(); if (failed) return ;
 
                 }
                 break;
-            case 192 :
-                // etc/XQFT.g:1:1753: NCName
+            case 4 :
+                // etc/XQFT.g:1:70: DirCommentConstructor
+                {
+                mDirCommentConstructor(); if (failed) return ;
+
+                }
+                break;
+            case 5 :
+                // etc/XQFT.g:1:92: LCOMMENTSi
+                {
+                mLCOMMENTSi(); if (failed) return ;
+
+                }
+                break;
+            case 6 :
+                // etc/XQFT.g:1:103: LPISi
+                {
+                mLPISi(); if (failed) return ;
+
+                }
+                break;
+            case 7 :
+                // etc/XQFT.g:1:109: LENDTAGSi
+                {
+                mLENDTAGSi(); if (failed) return ;
+
+                }
+                break;
+            case 8 :
+                // etc/XQFT.g:1:119: NODEBEFORESi
+                {
+                mNODEBEFORESi(); if (failed) return ;
+
+                }
+                break;
+            case 9 :
+                // etc/XQFT.g:1:132: LTOREQSi
+                {
+                mLTOREQSi(); if (failed) return ;
+
+                }
+                break;
+            case 10 :
+                // etc/XQFT.g:1:141: GTOREQSi
+                {
+                mGTOREQSi(); if (failed) return ;
+
+                }
+                break;
+            case 11 :
+                // etc/XQFT.g:1:150: NODEAFTERSi
+                {
+                mNODEAFTERSi(); if (failed) return ;
+
+                }
+                break;
+            case 12 :
+                // etc/XQFT.g:1:162: DBLCOLONSi
+                {
+                mDBLCOLONSi(); if (failed) return ;
+
+                }
+                break;
+            case 13 :
+                // etc/XQFT.g:1:173: ASSIGNSi
+                {
+                mASSIGNSi(); if (failed) return ;
+
+                }
+                break;
+            case 14 :
+                // etc/XQFT.g:1:182: DBLSLASHSi
+                {
+                mDBLSLASHSi(); if (failed) return ;
+
+                }
+                break;
+            case 15 :
+                // etc/XQFT.g:1:193: RSELFTERMSi
+                {
+                mRSELFTERMSi(); if (failed) return ;
+
+                }
+                break;
+            case 16 :
+                // etc/XQFT.g:1:205: LPRAGSi
+                {
+                mLPRAGSi(); if (failed) return ;
+
+                }
+                break;
+            case 17 :
+                // etc/XQFT.g:1:213: LDBLBRACSi
+                {
+                mLDBLBRACSi(); if (failed) return ;
+
+                }
+                break;
+            case 18 :
+                // etc/XQFT.g:1:224: RDBLBRACSi
+                {
+                mRDBLBRACSi(); if (failed) return ;
+
+                }
+                break;
+            case 19 :
+                // etc/XQFT.g:1:235: DOTDOTSi
+                {
+                mDOTDOTSi(); if (failed) return ;
+
+                }
+                break;
+            case 20 :
+                // etc/XQFT.g:1:244: RPISi
+                {
+                mRPISi(); if (failed) return ;
+
+                }
+                break;
+            case 21 :
+                // etc/XQFT.g:1:250: RCOMMENTSi
+                {
+                mRCOMMENTSi(); if (failed) return ;
+
+                }
+                break;
+            case 22 :
+                // etc/XQFT.g:1:261: NEQSi
+                {
+                mNEQSi(); if (failed) return ;
+
+                }
+                break;
+            case 23 :
+                // etc/XQFT.g:1:267: RPRAGSi
+                {
+                mRPRAGSi(); if (failed) return ;
+
+                }
+                break;
+            case 24 :
+                // etc/XQFT.g:1:275: ALL
+                {
+                mALL(); if (failed) return ;
+
+                }
+                break;
+            case 25 :
+                // etc/XQFT.g:1:279: ANY
+                {
+                mANY(); if (failed) return ;
+
+                }
+                break;
+            case 26 :
+                // etc/XQFT.g:1:283: ANCESTOR
+                {
+                mANCESTOR(); if (failed) return ;
+
+                }
+                break;
+            case 27 :
+                // etc/XQFT.g:1:292: ANCESTOR_OR_SELF
+                {
+                mANCESTOR_OR_SELF(); if (failed) return ;
+
+                }
+                break;
+            case 28 :
+                // etc/XQFT.g:1:309: AND
+                {
+                mAND(); if (failed) return ;
+
+                }
+                break;
+            case 29 :
+                // etc/XQFT.g:1:313: AS
+                {
+                mAS(); if (failed) return ;
+
+                }
+                break;
+            case 30 :
+                // etc/XQFT.g:1:316: ASCENDING
+                {
+                mASCENDING(); if (failed) return ;
+
+                }
+                break;
+            case 31 :
+                // etc/XQFT.g:1:326: AT
+                {
+                mAT(); if (failed) return ;
+
+                }
+                break;
+            case 32 :
+                // etc/XQFT.g:1:329: ATTRIBUTE
+                {
+                mATTRIBUTE(); if (failed) return ;
+
+                }
+                break;
+            case 33 :
+                // etc/XQFT.g:1:339: BASE_URI
+                {
+                mBASE_URI(); if (failed) return ;
+
+                }
+                break;
+            case 34 :
+                // etc/XQFT.g:1:348: BY
+                {
+                mBY(); if (failed) return ;
+
+                }
+                break;
+            case 35 :
+                // etc/XQFT.g:1:351: BOUNDARYSPACE
+                {
+                mBOUNDARYSPACE(); if (failed) return ;
+
+                }
+                break;
+            case 36 :
+                // etc/XQFT.g:1:365: CASE
+                {
+                mCASE(); if (failed) return ;
+
+                }
+                break;
+            case 37 :
+                // etc/XQFT.g:1:370: CAST
+                {
+                mCAST(); if (failed) return ;
+
+                }
+                break;
+            case 38 :
+                // etc/XQFT.g:1:375: CASTABLE
+                {
+                mCASTABLE(); if (failed) return ;
+
+                }
+                break;
+            case 39 :
+                // etc/XQFT.g:1:384: CHILD
+                {
+                mCHILD(); if (failed) return ;
+
+                }
+                break;
+            case 40 :
+                // etc/XQFT.g:1:390: COLLATION
+                {
+                mCOLLATION(); if (failed) return ;
+
+                }
+                break;
+            case 41 :
+                // etc/XQFT.g:1:400: COMMENT
+                {
+                mCOMMENT(); if (failed) return ;
+
+                }
+                break;
+            case 42 :
+                // etc/XQFT.g:1:408: CONSTRUCTION
+                {
+                mCONSTRUCTION(); if (failed) return ;
+
+                }
+                break;
+            case 43 :
+                // etc/XQFT.g:1:421: CONTENT
+                {
+                mCONTENT(); if (failed) return ;
+
+                }
+                break;
+            case 44 :
+                // etc/XQFT.g:1:429: COPY_NAMESPACES
+                {
+                mCOPY_NAMESPACES(); if (failed) return ;
+
+                }
+                break;
+            case 45 :
+                // etc/XQFT.g:1:445: DECLARE
+                {
+                mDECLARE(); if (failed) return ;
+
+                }
+                break;
+            case 46 :
+                // etc/XQFT.g:1:453: DEFAULT
+                {
+                mDEFAULT(); if (failed) return ;
+
+                }
+                break;
+            case 47 :
+                // etc/XQFT.g:1:461: DESCENDANT
+                {
+                mDESCENDANT(); if (failed) return ;
+
+                }
+                break;
+            case 48 :
+                // etc/XQFT.g:1:472: DESCENDANT_OR_SELF
+                {
+                mDESCENDANT_OR_SELF(); if (failed) return ;
+
+                }
+                break;
+            case 49 :
+                // etc/XQFT.g:1:491: DESCENDING
+                {
+                mDESCENDING(); if (failed) return ;
+
+                }
+                break;
+            case 50 :
+                // etc/XQFT.g:1:502: DIACRITICS
+                {
+                mDIACRITICS(); if (failed) return ;
+
+                }
+                break;
+            case 51 :
+                // etc/XQFT.g:1:513: DIFFERENT
+                {
+                mDIFFERENT(); if (failed) return ;
+
+                }
+                break;
+            case 52 :
+                // etc/XQFT.g:1:523: DISTANCE
+                {
+                mDISTANCE(); if (failed) return ;
+
+                }
+                break;
+            case 53 :
+                // etc/XQFT.g:1:532: DIV
+                {
+                mDIV(); if (failed) return ;
+
+                }
+                break;
+            case 54 :
+                // etc/XQFT.g:1:536: DOCUMENT
+                {
+                mDOCUMENT(); if (failed) return ;
+
+                }
+                break;
+            case 55 :
+                // etc/XQFT.g:1:545: DOCUMENT_NODE
+                {
+                mDOCUMENT_NODE(); if (failed) return ;
+
+                }
+                break;
+            case 56 :
+                // etc/XQFT.g:1:559: ELEMENT
+                {
+                mELEMENT(); if (failed) return ;
+
+                }
+                break;
+            case 57 :
+                // etc/XQFT.g:1:567: ELSE
+                {
+                mELSE(); if (failed) return ;
+
+                }
+                break;
+            case 58 :
+                // etc/XQFT.g:1:572: ENCODING
+                {
+                mENCODING(); if (failed) return ;
+
+                }
+                break;
+            case 59 :
+                // etc/XQFT.g:1:581: END
+                {
+                mEND(); if (failed) return ;
+
+                }
+                break;
+            case 60 :
+                // etc/XQFT.g:1:585: ENTIRE
+                {
+                mENTIRE(); if (failed) return ;
+
+                }
+                break;
+            case 61 :
+                // etc/XQFT.g:1:592: EMPTY
+                {
+                mEMPTY(); if (failed) return ;
+
+                }
+                break;
+            case 62 :
+                // etc/XQFT.g:1:598: EMPTY_SEQUENCE
+                {
+                mEMPTY_SEQUENCE(); if (failed) return ;
+
+                }
+                break;
+            case 63 :
+                // etc/XQFT.g:1:613: EQ
+                {
+                mEQ(); if (failed) return ;
+
+                }
+                break;
+            case 64 :
+                // etc/XQFT.g:1:616: EVERY
+                {
+                mEVERY(); if (failed) return ;
+
+                }
+                break;
+            case 65 :
+                // etc/XQFT.g:1:622: EXACTLY
+                {
+                mEXACTLY(); if (failed) return ;
+
+                }
+                break;
+            case 66 :
+                // etc/XQFT.g:1:630: EXCEPT
+                {
+                mEXCEPT(); if (failed) return ;
+
+                }
+                break;
+            case 67 :
+                // etc/XQFT.g:1:637: EXTERNAL
+                {
+                mEXTERNAL(); if (failed) return ;
+
+                }
+                break;
+            case 68 :
+                // etc/XQFT.g:1:646: FOLLOWING
+                {
+                mFOLLOWING(); if (failed) return ;
+
+                }
+                break;
+            case 69 :
+                // etc/XQFT.g:1:656: FOLLOWING_SIBLING
+                {
+                mFOLLOWING_SIBLING(); if (failed) return ;
+
+                }
+                break;
+            case 70 :
+                // etc/XQFT.g:1:674: FOR
+                {
+                mFOR(); if (failed) return ;
+
+                }
+                break;
+            case 71 :
+                // etc/XQFT.g:1:678: FROM
+                {
+                mFROM(); if (failed) return ;
+
+                }
+                break;
+            case 72 :
+                // etc/XQFT.g:1:683: FTAND
+                {
+                mFTAND(); if (failed) return ;
+
+                }
+                break;
+            case 73 :
+                // etc/XQFT.g:1:689: FTCONTAINS
+                {
+                mFTCONTAINS(); if (failed) return ;
+
+                }
+                break;
+            case 74 :
+                // etc/XQFT.g:1:700: FTNOT
+                {
+                mFTNOT(); if (failed) return ;
+
+                }
+                break;
+            case 75 :
+                // etc/XQFT.g:1:706: FTOPTION
+                {
+                mFTOPTION(); if (failed) return ;
+
+                }
+                break;
+            case 76 :
+                // etc/XQFT.g:1:715: FTOR
+                {
+                mFTOR(); if (failed) return ;
+
+                }
+                break;
+            case 77 :
+                // etc/XQFT.g:1:720: FUNCTION
+                {
+                mFUNCTION(); if (failed) return ;
+
+                }
+                break;
+            case 78 :
+                // etc/XQFT.g:1:729: GE
+                {
+                mGE(); if (failed) return ;
+
+                }
+                break;
+            case 79 :
+                // etc/XQFT.g:1:732: GREATEST
+                {
+                mGREATEST(); if (failed) return ;
+
+                }
+                break;
+            case 80 :
+                // etc/XQFT.g:1:741: GT
+                {
+                mGT(); if (failed) return ;
+
+                }
+                break;
+            case 81 :
+                // etc/XQFT.g:1:744: IDIV
+                {
+                mIDIV(); if (failed) return ;
+
+                }
+                break;
+            case 82 :
+                // etc/XQFT.g:1:749: IF
+                {
+                mIF(); if (failed) return ;
+
+                }
+                break;
+            case 83 :
+                // etc/XQFT.g:1:752: IMPORT
+                {
+                mIMPORT(); if (failed) return ;
+
+                }
+                break;
+            case 84 :
+                // etc/XQFT.g:1:759: IN
+                {
+                mIN(); if (failed) return ;
+
+                }
+                break;
+            case 85 :
+                // etc/XQFT.g:1:762: INHERIT
+                {
+                mINHERIT(); if (failed) return ;
+
+                }
+                break;
+            case 86 :
+                // etc/XQFT.g:1:770: INSENSITIVE
+                {
+                mINSENSITIVE(); if (failed) return ;
+
+                }
+                break;
+            case 87 :
+                // etc/XQFT.g:1:782: INSTANCE
+                {
+                mINSTANCE(); if (failed) return ;
+
+                }
+                break;
+            case 88 :
+                // etc/XQFT.g:1:791: INTERSECT
+                {
+                mINTERSECT(); if (failed) return ;
+
+                }
+                break;
+            case 89 :
+                // etc/XQFT.g:1:801: IS
+                {
+                mIS(); if (failed) return ;
+
+                }
+                break;
+            case 90 :
+                // etc/XQFT.g:1:804: ITEM
+                {
+                mITEM(); if (failed) return ;
+
+                }
+                break;
+            case 91 :
+                // etc/XQFT.g:1:809: LANGUAGE
+                {
+                mLANGUAGE(); if (failed) return ;
+
+                }
+                break;
+            case 92 :
+                // etc/XQFT.g:1:818: LAX
+                {
+                mLAX(); if (failed) return ;
+
+                }
+                break;
+            case 93 :
+                // etc/XQFT.g:1:822: LE
+                {
+                mLE(); if (failed) return ;
+
+                }
+                break;
+            case 94 :
+                // etc/XQFT.g:1:825: LEAST
+                {
+                mLEAST(); if (failed) return ;
+
+                }
+                break;
+            case 95 :
+                // etc/XQFT.g:1:831: LET
+                {
+                mLET(); if (failed) return ;
+
+                }
+                break;
+            case 96 :
+                // etc/XQFT.g:1:835: LEVELS
+                {
+                mLEVELS(); if (failed) return ;
+
+                }
+                break;
+            case 97 :
+                // etc/XQFT.g:1:842: LOWERCASE
+                {
+                mLOWERCASE(); if (failed) return ;
+
+                }
+                break;
+            case 98 :
+                // etc/XQFT.g:1:852: LT
+                {
+                mLT(); if (failed) return ;
+
+                }
+                break;
+            case 99 :
+                // etc/XQFT.g:1:855: MOD
+                {
+                mMOD(); if (failed) return ;
+
+                }
+                break;
+            case 100 :
+                // etc/XQFT.g:1:859: MODULE
+                {
+                mMODULE(); if (failed) return ;
+
+                }
+                break;
+            case 101 :
+                // etc/XQFT.g:1:866: MOST
+                {
+                mMOST(); if (failed) return ;
+
+                }
+                break;
+            case 102 :
+                // etc/XQFT.g:1:871: NAMESPACE
+                {
+                mNAMESPACE(); if (failed) return ;
+
+                }
+                break;
+            case 103 :
+                // etc/XQFT.g:1:881: NE
+                {
+                mNE(); if (failed) return ;
+
+                }
+                break;
+            case 104 :
+                // etc/XQFT.g:1:884: NODE
+                {
+                mNODE(); if (failed) return ;
+
+                }
+                break;
+            case 105 :
+                // etc/XQFT.g:1:889: NOINHERIT
+                {
+                mNOINHERIT(); if (failed) return ;
+
+                }
+                break;
+            case 106 :
+                // etc/XQFT.g:1:899: NOPRESERVE
+                {
+                mNOPRESERVE(); if (failed) return ;
+
+                }
+                break;
+            case 107 :
+                // etc/XQFT.g:1:910: NOT
+                {
+                mNOT(); if (failed) return ;
+
+                }
+                break;
+            case 108 :
+                // etc/XQFT.g:1:914: OCCURS
+                {
+                mOCCURS(); if (failed) return ;
+
+                }
+                break;
+            case 109 :
+                // etc/XQFT.g:1:921: OF
+                {
+                mOF(); if (failed) return ;
+
+                }
+                break;
+            case 110 :
+                // etc/XQFT.g:1:924: OPTION
+                {
+                mOPTION(); if (failed) return ;
+
+                }
+                break;
+            case 111 :
+                // etc/XQFT.g:1:931: OR
+                {
+                mOR(); if (failed) return ;
+
+                }
+                break;
+            case 112 :
+                // etc/XQFT.g:1:934: ORDER
+                {
+                mORDER(); if (failed) return ;
+
+                }
+                break;
+            case 113 :
+                // etc/XQFT.g:1:940: ORDERED
+                {
+                mORDERED(); if (failed) return ;
+
+                }
+                break;
+            case 114 :
+                // etc/XQFT.g:1:948: ORDERING
+                {
+                mORDERING(); if (failed) return ;
+
+                }
+                break;
+            case 115 :
+                // etc/XQFT.g:1:957: PARAGRAPH
+                {
+                mPARAGRAPH(); if (failed) return ;
+
+                }
+                break;
+            case 116 :
+                // etc/XQFT.g:1:967: PARAGRAPHS
+                {
+                mPARAGRAPHS(); if (failed) return ;
+
+                }
+                break;
+            case 117 :
+                // etc/XQFT.g:1:978: PARENT
+                {
+                mPARENT(); if (failed) return ;
+
+                }
+                break;
+            case 118 :
+                // etc/XQFT.g:1:985: PHRASE
+                {
+                mPHRASE(); if (failed) return ;
+
+                }
+                break;
+            case 119 :
+                // etc/XQFT.g:1:992: PRECEDING
+                {
+                mPRECEDING(); if (failed) return ;
+
+                }
+                break;
+            case 120 :
+                // etc/XQFT.g:1:1002: PRECEDING_SIBLING
+                {
+                mPRECEDING_SIBLING(); if (failed) return ;
+
+                }
+                break;
+            case 121 :
+                // etc/XQFT.g:1:1020: PRESERVE
+                {
+                mPRESERVE(); if (failed) return ;
+
+                }
+                break;
+            case 122 :
+                // etc/XQFT.g:1:1029: PROCESSING_INSTRUCTION
+                {
+                mPROCESSING_INSTRUCTION(); if (failed) return ;
+
+                }
+                break;
+            case 123 :
+                // etc/XQFT.g:1:1052: RELATIONSHIP
+                {
+                mRELATIONSHIP(); if (failed) return ;
+
+                }
+                break;
+            case 124 :
+                // etc/XQFT.g:1:1065: RETURN
+                {
+                mRETURN(); if (failed) return ;
+
+                }
+                break;
+            case 125 :
+                // etc/XQFT.g:1:1072: SAME
+                {
+                mSAME(); if (failed) return ;
+
+                }
+                break;
+            case 126 :
+                // etc/XQFT.g:1:1077: SATISFIES
+                {
+                mSATISFIES(); if (failed) return ;
+
+                }
+                break;
+            case 127 :
+                // etc/XQFT.g:1:1087: SCHEMA
+                {
+                mSCHEMA(); if (failed) return ;
+
+                }
+                break;
+            case 128 :
+                // etc/XQFT.g:1:1094: SCHEMAATTRIBUTE
+                {
+                mSCHEMAATTRIBUTE(); if (failed) return ;
+
+                }
+                break;
+            case 129 :
+                // etc/XQFT.g:1:1110: SCHEMAELEMENT
+                {
+                mSCHEMAELEMENT(); if (failed) return ;
+
+                }
+                break;
+            case 130 :
+                // etc/XQFT.g:1:1124: SCORE
+                {
+                mSCORE(); if (failed) return ;
+
+                }
+                break;
+            case 131 :
+                // etc/XQFT.g:1:1130: SELF
+                {
+                mSELF(); if (failed) return ;
+
+                }
+                break;
+            case 132 :
+                // etc/XQFT.g:1:1135: SENSITIVE
+                {
+                mSENSITIVE(); if (failed) return ;
+
+                }
+                break;
+            case 133 :
+                // etc/XQFT.g:1:1145: SENTENCES
+                {
+                mSENTENCES(); if (failed) return ;
+
+                }
+                break;
+            case 134 :
+                // etc/XQFT.g:1:1155: SENTENCE
+                {
+                mSENTENCE(); if (failed) return ;
+
+                }
+                break;
+            case 135 :
+                // etc/XQFT.g:1:1164: SOME
+                {
+                mSOME(); if (failed) return ;
+
+                }
+                break;
+            case 136 :
+                // etc/XQFT.g:1:1169: STABLE
+                {
+                mSTABLE(); if (failed) return ;
+
+                }
+                break;
+            case 137 :
+                // etc/XQFT.g:1:1176: START
+                {
+                mSTART(); if (failed) return ;
+
+                }
+                break;
+            case 138 :
+                // etc/XQFT.g:1:1182: STEMMING
+                {
+                mSTEMMING(); if (failed) return ;
+
+                }
+                break;
+            case 139 :
+                // etc/XQFT.g:1:1191: STOP
+                {
+                mSTOP(); if (failed) return ;
+
+                }
+                break;
+            case 140 :
+                // etc/XQFT.g:1:1196: STRICT
+                {
+                mSTRICT(); if (failed) return ;
+
+                }
+                break;
+            case 141 :
+                // etc/XQFT.g:1:1203: STRIP
+                {
+                mSTRIP(); if (failed) return ;
+
+                }
+                break;
+            case 142 :
+                // etc/XQFT.g:1:1209: TEXT
+                {
+                mTEXT(); if (failed) return ;
+
+                }
+                break;
+            case 143 :
+                // etc/XQFT.g:1:1214: THESAURUS
+                {
+                mTHESAURUS(); if (failed) return ;
+
+                }
+                break;
+            case 144 :
+                // etc/XQFT.g:1:1224: THEN
+                {
+                mTHEN(); if (failed) return ;
+
+                }
+                break;
+            case 145 :
+                // etc/XQFT.g:1:1229: TIMES
+                {
+                mTIMES(); if (failed) return ;
+
+                }
+                break;
+            case 146 :
+                // etc/XQFT.g:1:1235: TO
+                {
+                mTO(); if (failed) return ;
+
+                }
+                break;
+            case 147 :
+                // etc/XQFT.g:1:1238: TREAT
+                {
+                mTREAT(); if (failed) return ;
+
+                }
+                break;
+            case 148 :
+                // etc/XQFT.g:1:1244: TYPESWITCH
+                {
+                mTYPESWITCH(); if (failed) return ;
+
+                }
+                break;
+            case 149 :
+                // etc/XQFT.g:1:1255: UNION
+                {
+                mUNION(); if (failed) return ;
+
+                }
+                break;
+            case 150 :
+                // etc/XQFT.g:1:1261: UNORDERED
+                {
+                mUNORDERED(); if (failed) return ;
+
+                }
+                break;
+            case 151 :
+                // etc/XQFT.g:1:1271: UPPERCASE
+                {
+                mUPPERCASE(); if (failed) return ;
+
+                }
+                break;
+            case 152 :
+                // etc/XQFT.g:1:1281: VALIDATE
+                {
+                mVALIDATE(); if (failed) return ;
+
+                }
+                break;
+            case 153 :
+                // etc/XQFT.g:1:1290: VARIABLE
+                {
+                mVARIABLE(); if (failed) return ;
+
+                }
+                break;
+            case 154 :
+                // etc/XQFT.g:1:1299: VERSION
+                {
+                mVERSION(); if (failed) return ;
+
+                }
+                break;
+            case 155 :
+                // etc/XQFT.g:1:1307: WEIGHT
+                {
+                mWEIGHT(); if (failed) return ;
+
+                }
+                break;
+            case 156 :
+                // etc/XQFT.g:1:1314: WHERE
+                {
+                mWHERE(); if (failed) return ;
+
+                }
+                break;
+            case 157 :
+                // etc/XQFT.g:1:1320: WILDCARDS
+                {
+                mWILDCARDS(); if (failed) return ;
+
+                }
+                break;
+            case 158 :
+                // etc/XQFT.g:1:1330: WINDOW
+                {
+                mWINDOW(); if (failed) return ;
+
+                }
+                break;
+            case 159 :
+                // etc/XQFT.g:1:1337: WITH
+                {
+                mWITH(); if (failed) return ;
+
+                }
+                break;
+            case 160 :
+                // etc/XQFT.g:1:1342: WITHOUT
+                {
+                mWITHOUT(); if (failed) return ;
+
+                }
+                break;
+            case 161 :
+                // etc/XQFT.g:1:1350: WORD
+                {
+                mWORD(); if (failed) return ;
+
+                }
+                break;
+            case 162 :
+                // etc/XQFT.g:1:1355: WORDS
+                {
+                mWORDS(); if (failed) return ;
+
+                }
+                break;
+            case 163 :
+                // etc/XQFT.g:1:1361: XQUERY
+                {
+                mXQUERY(); if (failed) return ;
+
+                }
+                break;
+            case 164 :
+                // etc/XQFT.g:1:1368: TOKENSWITCH
+                {
+                mTOKENSWITCH(); if (failed) return ;
+
+                }
+                break;
+            case 165 :
+                // etc/XQFT.g:1:1380: NCName
                 {
                 mNCName(); if (failed) return ;
 
                 }
                 break;
-            case 193 :
-                // etc/XQFT.g:1:1760: S
+            case 166 :
+                // etc/XQFT.g:1:1387: StringLiteral
+                {
+                mStringLiteral(); if (failed) return ;
+
+                }
+                break;
+            case 167 :
+                // etc/XQFT.g:1:1401: S
                 {
                 mS(); if (failed) return ;
+
+                }
+                break;
+            case 168 :
+                // etc/XQFT.g:1:1403: IntegerLiteral
+                {
+                mIntegerLiteral(); if (failed) return ;
+
+                }
+                break;
+            case 169 :
+                // etc/XQFT.g:1:1418: DecimalLiteral
+                {
+                mDecimalLiteral(); if (failed) return ;
+
+                }
+                break;
+            case 170 :
+                // etc/XQFT.g:1:1433: DoubleLiteral
+                {
+                mDoubleLiteral(); if (failed) return ;
 
                 }
                 break;
@@ -7756,21 +8147,55 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred1
     public final void synpred1_fragment() throws RecognitionException {   
-        // etc/XQFT.g:260:24: ( Comment )
-        // etc/XQFT.g:260:25: Comment
+        // etc/XQFT.g:536:19: ( COLONSi ~ RPARSi )
+        // etc/XQFT.g:536:20: COLONSi ~ RPARSi
         {
-        mComment(); if (failed) return ;
+        mCOLONSi(); if (failed) return ;
+        if ( (input.LA(1)>='\u0000' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<='\uFFFE') ) {
+            input.consume();
+        failed=false;
+        }
+        else {
+            if (backtracking>0) {failed=true; return ;}
+            MismatchedSetException mse =
+                new MismatchedSetException(null,input);
+            recover(mse);    throw mse;
+        }
+
 
         }
     }
     // $ANTLR end synpred1
 
+    // $ANTLR start synpred2
+    public final void synpred2_fragment() throws RecognitionException {   
+        // etc/XQFT.g:536:48: ( LPARSi ~ COLONSi )
+        // etc/XQFT.g:536:49: LPARSi ~ COLONSi
+        {
+        mLPARSi(); if (failed) return ;
+        if ( (input.LA(1)>='\u0000' && input.LA(1)<=')')||(input.LA(1)>='+' && input.LA(1)<='\uFFFE') ) {
+            input.consume();
+        failed=false;
+        }
+        else {
+            if (backtracking>0) {failed=true; return ;}
+            MismatchedSetException mse =
+                new MismatchedSetException(null,input);
+            recover(mse);    throw mse;
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred2
+
     // $ANTLR start synpred3
     public final void synpred3_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:48: ( BIGGERTHANSi )
-        // etc/XQFT.g:1:48: BIGGERTHANSi
+        // etc/XQFT.g:546:54: ( MINUSSi CharNotMinus )
+        // etc/XQFT.g:546:55: MINUSSi CharNotMinus
         {
-        mBIGGERTHANSi(); if (failed) return ;
+        mMINUSSi(); if (failed) return ;
+        mCharNotMinus(); if (failed) return ;
 
         }
     }
@@ -7778,10 +8203,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred4
     public final void synpred4_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:61: ( BIGGERTHANOREQUALSi )
-        // etc/XQFT.g:1:61: BIGGERTHANOREQUALSi
+        // etc/XQFT.g:748:18: ( ESCQUOTSi )
+        // etc/XQFT.g:748:19: ESCQUOTSi
         {
-        mBIGGERTHANOREQUALSi(); if (failed) return ;
+        mESCQUOTSi(); if (failed) return ;
 
         }
     }
@@ -7789,10 +8214,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred5
     public final void synpred5_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:81: ( LESSTHANOREQUALSi )
-        // etc/XQFT.g:1:81: LESSTHANOREQUALSi
+        // etc/XQFT.g:749:9: ( ESCAPOSSi )
+        // etc/XQFT.g:749:10: ESCAPOSSi
         {
-        mLESSTHANOREQUALSi(); if (failed) return ;
+        mESCAPOSSi(); if (failed) return ;
 
         }
     }
@@ -7800,10 +8225,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred6
     public final void synpred6_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:99: ( ASCENDING )
-        // etc/XQFT.g:1:99: ASCENDING
+        // etc/XQFT.g:1:41: ( CDataSection )
+        // etc/XQFT.g:1:41: CDataSection
         {
-        mASCENDING(); if (failed) return ;
+        mCDataSection(); if (failed) return ;
 
         }
     }
@@ -7811,32 +8236,21 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred7
     public final void synpred7_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:109: ( IDIV )
-        // etc/XQFT.g:1:109: IDIV
+        // etc/XQFT.g:1:54: ( Comment )
+        // etc/XQFT.g:1:54: Comment
         {
-        mIDIV(); if (failed) return ;
+        mComment(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred7
 
-    // $ANTLR start synpred8
-    public final void synpred8_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:114: ( WHERE )
-        // etc/XQFT.g:1:114: WHERE
-        {
-        mWHERE(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred8
-
     // $ANTLR start synpred9
     public final void synpred9_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:120: ( PHRASE )
-        // etc/XQFT.g:1:120: PHRASE
+        // etc/XQFT.g:1:70: ( DirCommentConstructor )
+        // etc/XQFT.g:1:70: DirCommentConstructor
         {
-        mPHRASE(); if (failed) return ;
+        mDirCommentConstructor(); if (failed) return ;
 
         }
     }
@@ -7844,10 +8258,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred10
     public final void synpred10_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:127: ( CONTENT )
-        // etc/XQFT.g:1:127: CONTENT
+        // etc/XQFT.g:1:92: ( LCOMMENTSi )
+        // etc/XQFT.g:1:92: LCOMMENTSi
         {
-        mCONTENT(); if (failed) return ;
+        mLCOMMENTSi(); if (failed) return ;
 
         }
     }
@@ -7855,10 +8269,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred11
     public final void synpred11_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:135: ( VERSION )
-        // etc/XQFT.g:1:135: VERSION
+        // etc/XQFT.g:1:103: ( LPISi )
+        // etc/XQFT.g:1:103: LPISi
         {
-        mVERSION(); if (failed) return ;
+        mLPISi(); if (failed) return ;
 
         }
     }
@@ -7866,21 +8280,43 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred12
     public final void synpred12_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:143: ( LEFTBRACESi )
-        // etc/XQFT.g:1:143: LEFTBRACESi
+        // etc/XQFT.g:1:109: ( LENDTAGSi )
+        // etc/XQFT.g:1:109: LENDTAGSi
         {
-        mLEFTBRACESi(); if (failed) return ;
+        mLENDTAGSi(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred12
 
+    // $ANTLR start synpred13
+    public final void synpred13_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:119: ( NODEBEFORESi )
+        // etc/XQFT.g:1:119: NODEBEFORESi
+        {
+        mNODEBEFORESi(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred13
+
+    // $ANTLR start synpred14
+    public final void synpred14_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:132: ( LTOREQSi )
+        // etc/XQFT.g:1:132: LTOREQSi
+        {
+        mLTOREQSi(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred14
+
     // $ANTLR start synpred15
     public final void synpred15_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:174: ( STOP )
-        // etc/XQFT.g:1:174: STOP
+        // etc/XQFT.g:1:141: ( GTOREQSi )
+        // etc/XQFT.g:1:141: GTOREQSi
         {
-        mSTOP(); if (failed) return ;
+        mGTOREQSi(); if (failed) return ;
 
         }
     }
@@ -7888,10 +8324,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred16
     public final void synpred16_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:179: ( TYPESWITCH )
-        // etc/XQFT.g:1:179: TYPESWITCH
+        // etc/XQFT.g:1:150: ( NODEAFTERSi )
+        // etc/XQFT.g:1:150: NODEAFTERSi
         {
-        mTYPESWITCH(); if (failed) return ;
+        mNODEAFTERSi(); if (failed) return ;
 
         }
     }
@@ -7899,10 +8335,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred17
     public final void synpred17_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:190: ( ANY )
-        // etc/XQFT.g:1:190: ANY
+        // etc/XQFT.g:1:162: ( DBLCOLONSi )
+        // etc/XQFT.g:1:162: DBLCOLONSi
         {
-        mANY(); if (failed) return ;
+        mDBLCOLONSi(); if (failed) return ;
 
         }
     }
@@ -7910,21 +8346,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred18
     public final void synpred18_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:194: ( BOUNDARYSPACE )
-        // etc/XQFT.g:1:194: BOUNDARYSPACE
+        // etc/XQFT.g:1:173: ( ASSIGNSi )
+        // etc/XQFT.g:1:173: ASSIGNSi
         {
-        mBOUNDARYSPACE(); if (failed) return ;
+        mASSIGNSi(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred18
 
+    // $ANTLR start synpred19
+    public final void synpred19_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:182: ( DBLSLASHSi )
+        // etc/XQFT.g:1:182: DBLSLASHSi
+        {
+        mDBLSLASHSi(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred19
+
     // $ANTLR start synpred20
     public final void synpred20_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:217: ( XQUERY )
-        // etc/XQFT.g:1:217: XQUERY
+        // etc/XQFT.g:1:193: ( RSELFTERMSi )
+        // etc/XQFT.g:1:193: RSELFTERMSi
         {
-        mXQUERY(); if (failed) return ;
+        mRSELFTERMSi(); if (failed) return ;
 
         }
     }
@@ -7932,10 +8379,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred21
     public final void synpred21_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:224: ( CAST )
-        // etc/XQFT.g:1:224: CAST
+        // etc/XQFT.g:1:205: ( LPRAGSi )
+        // etc/XQFT.g:1:205: LPRAGSi
         {
-        mCAST(); if (failed) return ;
+        mLPRAGSi(); if (failed) return ;
 
         }
     }
@@ -7943,10 +8390,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred22
     public final void synpred22_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:229: ( DISTANCE )
-        // etc/XQFT.g:1:229: DISTANCE
+        // etc/XQFT.g:1:213: ( LDBLBRACSi )
+        // etc/XQFT.g:1:213: LDBLBRACSi
         {
-        mDISTANCE(); if (failed) return ;
+        mLDBLBRACSi(); if (failed) return ;
 
         }
     }
@@ -7954,10 +8401,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred23
     public final void synpred23_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:238: ( LEFTPRAGMA )
-        // etc/XQFT.g:1:238: LEFTPRAGMA
+        // etc/XQFT.g:1:224: ( RDBLBRACSi )
+        // etc/XQFT.g:1:224: RDBLBRACSi
         {
-        mLEFTPRAGMA(); if (failed) return ;
+        mRDBLBRACSi(); if (failed) return ;
 
         }
     }
@@ -7965,10 +8412,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred24
     public final void synpred24_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:249: ( ORDERED )
-        // etc/XQFT.g:1:249: ORDERED
+        // etc/XQFT.g:1:235: ( DOTDOTSi )
+        // etc/XQFT.g:1:235: DOTDOTSi
         {
-        mORDERED(); if (failed) return ;
+        mDOTDOTSi(); if (failed) return ;
 
         }
     }
@@ -7976,10 +8423,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred25
     public final void synpred25_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:257: ( DOCUMENTNODE )
-        // etc/XQFT.g:1:257: DOCUMENTNODE
+        // etc/XQFT.g:1:244: ( RPISi )
+        // etc/XQFT.g:1:244: RPISi
         {
-        mDOCUMENTNODE(); if (failed) return ;
+        mRPISi(); if (failed) return ;
 
         }
     }
@@ -7987,43 +8434,21 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred26
     public final void synpred26_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:270: ( ELSE )
-        // etc/XQFT.g:1:270: ELSE
+        // etc/XQFT.g:1:250: ( RCOMMENTSi )
+        // etc/XQFT.g:1:250: RCOMMENTSi
         {
-        mELSE(); if (failed) return ;
+        mRCOMMENTSi(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred26
 
-    // $ANTLR start synpred27
-    public final void synpred27_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:275: ( LESSTHANSi )
-        // etc/XQFT.g:1:275: LESSTHANSi
-        {
-        mLESSTHANSi(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred27
-
-    // $ANTLR start synpred28
-    public final void synpred28_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:286: ( TREAT )
-        // etc/XQFT.g:1:286: TREAT
-        {
-        mTREAT(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred28
-
     // $ANTLR start synpred29
     public final void synpred29_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:292: ( UPPERCASE )
-        // etc/XQFT.g:1:292: UPPERCASE
+        // etc/XQFT.g:1:275: ( ALL )
+        // etc/XQFT.g:1:275: ALL
         {
-        mUPPERCASE(); if (failed) return ;
+        mALL(); if (failed) return ;
 
         }
     }
@@ -8031,10 +8456,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred30
     public final void synpred30_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:302: ( ALL )
-        // etc/XQFT.g:1:302: ALL
+        // etc/XQFT.g:1:279: ( ANY )
+        // etc/XQFT.g:1:279: ANY
         {
-        mALL(); if (failed) return ;
+        mANY(); if (failed) return ;
 
         }
     }
@@ -8042,21 +8467,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred31
     public final void synpred31_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:306: ( WORD )
-        // etc/XQFT.g:1:306: WORD
+        // etc/XQFT.g:1:283: ( ANCESTOR )
+        // etc/XQFT.g:1:283: ANCESTOR
         {
-        mWORD(); if (failed) return ;
+        mANCESTOR(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred31
 
+    // $ANTLR start synpred32
+    public final void synpred32_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:292: ( ANCESTOR_OR_SELF )
+        // etc/XQFT.g:1:292: ANCESTOR_OR_SELF
+        {
+        mANCESTOR_OR_SELF(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred32
+
     // $ANTLR start synpred33
     public final void synpred33_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:323: ( INHERIT )
-        // etc/XQFT.g:1:323: INHERIT
+        // etc/XQFT.g:1:309: ( AND )
+        // etc/XQFT.g:1:309: AND
         {
-        mINHERIT(); if (failed) return ;
+        mAND(); if (failed) return ;
 
         }
     }
@@ -8064,10 +8500,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred34
     public final void synpred34_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:331: ( SLASH )
-        // etc/XQFT.g:1:331: SLASH
+        // etc/XQFT.g:1:313: ( AS )
+        // etc/XQFT.g:1:313: AS
         {
-        mSLASH(); if (failed) return ;
+        mAS(); if (failed) return ;
 
         }
     }
@@ -8075,10 +8511,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred35
     public final void synpred35_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:337: ( ORDERING )
-        // etc/XQFT.g:1:337: ORDERING
+        // etc/XQFT.g:1:316: ( ASCENDING )
+        // etc/XQFT.g:1:316: ASCENDING
         {
-        mORDERING(); if (failed) return ;
+        mASCENDING(); if (failed) return ;
 
         }
     }
@@ -8086,10 +8522,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred36
     public final void synpred36_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:346: ( RIGHTPITARGET )
-        // etc/XQFT.g:1:346: RIGHTPITARGET
+        // etc/XQFT.g:1:326: ( AT )
+        // etc/XQFT.g:1:326: AT
         {
-        mRIGHTPITARGET(); if (failed) return ;
+        mAT(); if (failed) return ;
 
         }
     }
@@ -8097,10 +8533,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred37
     public final void synpred37_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:360: ( EVERY )
-        // etc/XQFT.g:1:360: EVERY
+        // etc/XQFT.g:1:329: ( ATTRIBUTE )
+        // etc/XQFT.g:1:329: ATTRIBUTE
         {
-        mEVERY(); if (failed) return ;
+        mATTRIBUTE(); if (failed) return ;
 
         }
     }
@@ -8108,10 +8544,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred38
     public final void synpred38_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:366: ( CASTABLE )
-        // etc/XQFT.g:1:366: CASTABLE
+        // etc/XQFT.g:1:339: ( BASE_URI )
+        // etc/XQFT.g:1:339: BASE_URI
         {
-        mCASTABLE(); if (failed) return ;
+        mBASE_URI(); if (failed) return ;
 
         }
     }
@@ -8119,10 +8555,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred39
     public final void synpred39_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:375: ( ITEM )
-        // etc/XQFT.g:1:375: ITEM
+        // etc/XQFT.g:1:348: ( BY )
+        // etc/XQFT.g:1:348: BY
         {
-        mITEM(); if (failed) return ;
+        mBY(); if (failed) return ;
 
         }
     }
@@ -8130,10 +8566,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred40
     public final void synpred40_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:380: ( FOR )
-        // etc/XQFT.g:1:380: FOR
+        // etc/XQFT.g:1:351: ( BOUNDARYSPACE )
+        // etc/XQFT.g:1:351: BOUNDARYSPACE
         {
-        mFOR(); if (failed) return ;
+        mBOUNDARYSPACE(); if (failed) return ;
 
         }
     }
@@ -8141,10 +8577,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred41
     public final void synpred41_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:384: ( INSTANCE )
-        // etc/XQFT.g:1:384: INSTANCE
+        // etc/XQFT.g:1:365: ( CASE )
+        // etc/XQFT.g:1:365: CASE
         {
-        mINSTANCE(); if (failed) return ;
+        mCASE(); if (failed) return ;
 
         }
     }
@@ -8152,10 +8588,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred42
     public final void synpred42_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:393: ( EXCEPT )
-        // etc/XQFT.g:1:393: EXCEPT
+        // etc/XQFT.g:1:370: ( CAST )
+        // etc/XQFT.g:1:370: CAST
         {
-        mEXCEPT(); if (failed) return ;
+        mCAST(); if (failed) return ;
 
         }
     }
@@ -8163,10 +8599,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred43
     public final void synpred43_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:400: ( TO )
-        // etc/XQFT.g:1:400: TO
+        // etc/XQFT.g:1:375: ( CASTABLE )
+        // etc/XQFT.g:1:375: CASTABLE
         {
-        mTO(); if (failed) return ;
+        mCASTABLE(); if (failed) return ;
 
         }
     }
@@ -8174,10 +8610,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred44
     public final void synpred44_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:403: ( CONSTRUCTION )
-        // etc/XQFT.g:1:403: CONSTRUCTION
+        // etc/XQFT.g:1:384: ( CHILD )
+        // etc/XQFT.g:1:384: CHILD
         {
-        mCONSTRUCTION(); if (failed) return ;
+        mCHILD(); if (failed) return ;
 
         }
     }
@@ -8185,10 +8621,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred45
     public final void synpred45_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:416: ( WEIGHT )
-        // etc/XQFT.g:1:416: WEIGHT
+        // etc/XQFT.g:1:390: ( COLLATION )
+        // etc/XQFT.g:1:390: COLLATION
         {
-        mWEIGHT(); if (failed) return ;
+        mCOLLATION(); if (failed) return ;
 
         }
     }
@@ -8196,10 +8632,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred46
     public final void synpred46_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:423: ( FTOPTION )
-        // etc/XQFT.g:1:423: FTOPTION
+        // etc/XQFT.g:1:400: ( COMMENT )
+        // etc/XQFT.g:1:400: COMMENT
         {
-        mFTOPTION(); if (failed) return ;
+        mCOMMENT(); if (failed) return ;
 
         }
     }
@@ -8207,10 +8643,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred47
     public final void synpred47_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:432: ( SATISFIES )
-        // etc/XQFT.g:1:432: SATISFIES
+        // etc/XQFT.g:1:408: ( CONSTRUCTION )
+        // etc/XQFT.g:1:408: CONSTRUCTION
         {
-        mSATISFIES(); if (failed) return ;
+        mCONSTRUCTION(); if (failed) return ;
 
         }
     }
@@ -8218,21 +8654,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred48
     public final void synpred48_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:442: ( COLONSi )
-        // etc/XQFT.g:1:442: COLONSi
+        // etc/XQFT.g:1:421: ( CONTENT )
+        // etc/XQFT.g:1:421: CONTENT
         {
-        mCOLONSi(); if (failed) return ;
+        mCONTENT(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred48
 
+    // $ANTLR start synpred49
+    public final void synpred49_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:429: ( COPY_NAMESPACES )
+        // etc/XQFT.g:1:429: COPY_NAMESPACES
+        {
+        mCOPY_NAMESPACES(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred49
+
     // $ANTLR start synpred50
     public final void synpred50_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:462: ( SINGLEQUOTE )
-        // etc/XQFT.g:1:462: SINGLEQUOTE
+        // etc/XQFT.g:1:445: ( DECLARE )
+        // etc/XQFT.g:1:445: DECLARE
         {
-        mSINGLEQUOTE(); if (failed) return ;
+        mDECLARE(); if (failed) return ;
 
         }
     }
@@ -8240,10 +8687,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred51
     public final void synpred51_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:474: ( UNDERSCORE )
-        // etc/XQFT.g:1:474: UNDERSCORE
+        // etc/XQFT.g:1:453: ( DEFAULT )
+        // etc/XQFT.g:1:453: DEFAULT
         {
-        mUNDERSCORE(); if (failed) return ;
+        mDEFAULT(); if (failed) return ;
 
         }
     }
@@ -8251,10 +8698,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred52
     public final void synpred52_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:485: ( EMPTY )
-        // etc/XQFT.g:1:485: EMPTY
+        // etc/XQFT.g:1:461: ( DESCENDANT )
+        // etc/XQFT.g:1:461: DESCENDANT
         {
-        mEMPTY(); if (failed) return ;
+        mDESCENDANT(); if (failed) return ;
 
         }
     }
@@ -8262,10 +8709,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred53
     public final void synpred53_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:491: ( MOST )
-        // etc/XQFT.g:1:491: MOST
+        // etc/XQFT.g:1:472: ( DESCENDANT_OR_SELF )
+        // etc/XQFT.g:1:472: DESCENDANT_OR_SELF
         {
-        mMOST(); if (failed) return ;
+        mDESCENDANT_OR_SELF(); if (failed) return ;
 
         }
     }
@@ -8273,10 +8720,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred54
     public final void synpred54_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:496: ( CASE )
-        // etc/XQFT.g:1:496: CASE
+        // etc/XQFT.g:1:491: ( DESCENDING )
+        // etc/XQFT.g:1:491: DESCENDING
         {
-        mCASE(); if (failed) return ;
+        mDESCENDING(); if (failed) return ;
 
         }
     }
@@ -8284,10 +8731,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred55
     public final void synpred55_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:501: ( PROCESSING_INSTRUCTION )
-        // etc/XQFT.g:1:501: PROCESSING_INSTRUCTION
+        // etc/XQFT.g:1:502: ( DIACRITICS )
+        // etc/XQFT.g:1:502: DIACRITICS
         {
-        mPROCESSING_INSTRUCTION(); if (failed) return ;
+        mDIACRITICS(); if (failed) return ;
 
         }
     }
@@ -8295,10 +8742,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred56
     public final void synpred56_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:524: ( IMPORT )
-        // etc/XQFT.g:1:524: IMPORT
+        // etc/XQFT.g:1:513: ( DIFFERENT )
+        // etc/XQFT.g:1:513: DIFFERENT
         {
-        mIMPORT(); if (failed) return ;
+        mDIFFERENT(); if (failed) return ;
 
         }
     }
@@ -8306,10 +8753,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred57
     public final void synpred57_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:531: ( MINUSSi )
-        // etc/XQFT.g:1:531: MINUSSi
+        // etc/XQFT.g:1:523: ( DISTANCE )
+        // etc/XQFT.g:1:523: DISTANCE
         {
-        mMINUSSi(); if (failed) return ;
+        mDISTANCE(); if (failed) return ;
 
         }
     }
@@ -8317,10 +8764,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred58
     public final void synpred58_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:539: ( RIGHTSELFTERMINATOR )
-        // etc/XQFT.g:1:539: RIGHTSELFTERMINATOR
+        // etc/XQFT.g:1:532: ( DIV )
+        // etc/XQFT.g:1:532: DIV
         {
-        mRIGHTSELFTERMINATOR(); if (failed) return ;
+        mDIV(); if (failed) return ;
 
         }
     }
@@ -8328,8 +8775,8 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred59
     public final void synpred59_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:559: ( DOCUMENT )
-        // etc/XQFT.g:1:559: DOCUMENT
+        // etc/XQFT.g:1:536: ( DOCUMENT )
+        // etc/XQFT.g:1:536: DOCUMENT
         {
         mDOCUMENT(); if (failed) return ;
 
@@ -8339,10 +8786,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred60
     public final void synpred60_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:568: ( LEFTCDATA )
-        // etc/XQFT.g:1:568: LEFTCDATA
+        // etc/XQFT.g:1:545: ( DOCUMENT_NODE )
+        // etc/XQFT.g:1:545: DOCUMENT_NODE
         {
-        mLEFTCDATA(); if (failed) return ;
+        mDOCUMENT_NODE(); if (failed) return ;
 
         }
     }
@@ -8350,10 +8797,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred61
     public final void synpred61_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:578: ( VALIDATE )
-        // etc/XQFT.g:1:578: VALIDATE
+        // etc/XQFT.g:1:559: ( ELEMENT )
+        // etc/XQFT.g:1:559: ELEMENT
         {
-        mVALIDATE(); if (failed) return ;
+        mELEMENT(); if (failed) return ;
 
         }
     }
@@ -8361,10 +8808,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred62
     public final void synpred62_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:587: ( EMPTY_SEQUENCE )
-        // etc/XQFT.g:1:587: EMPTY_SEQUENCE
+        // etc/XQFT.g:1:567: ( ELSE )
+        // etc/XQFT.g:1:567: ELSE
         {
-        mEMPTY_SEQUENCE(); if (failed) return ;
+        mELSE(); if (failed) return ;
 
         }
     }
@@ -8372,10 +8819,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred63
     public final void synpred63_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:602: ( INSENSITIVE )
-        // etc/XQFT.g:1:602: INSENSITIVE
+        // etc/XQFT.g:1:572: ( ENCODING )
+        // etc/XQFT.g:1:572: ENCODING
         {
-        mINSENSITIVE(); if (failed) return ;
+        mENCODING(); if (failed) return ;
 
         }
     }
@@ -8383,10 +8830,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred64
     public final void synpred64_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:614: ( NOPRESERVE )
-        // etc/XQFT.g:1:614: NOPRESERVE
+        // etc/XQFT.g:1:581: ( END )
+        // etc/XQFT.g:1:581: END
         {
-        mNOPRESERVE(); if (failed) return ;
+        mEND(); if (failed) return ;
 
         }
     }
@@ -8394,21 +8841,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred65
     public final void synpred65_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:625: ( THEN )
-        // etc/XQFT.g:1:625: THEN
+        // etc/XQFT.g:1:585: ( ENTIRE )
+        // etc/XQFT.g:1:585: ENTIRE
         {
-        mTHEN(); if (failed) return ;
+        mENTIRE(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred65
 
+    // $ANTLR start synpred66
+    public final void synpred66_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:592: ( EMPTY )
+        // etc/XQFT.g:1:592: EMPTY
+        {
+        mEMPTY(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred66
+
     // $ANTLR start synpred67
     public final void synpred67_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:638: ( LET )
-        // etc/XQFT.g:1:638: LET
+        // etc/XQFT.g:1:598: ( EMPTY_SEQUENCE )
+        // etc/XQFT.g:1:598: EMPTY_SEQUENCE
         {
-        mLET(); if (failed) return ;
+        mEMPTY_SEQUENCE(); if (failed) return ;
 
         }
     }
@@ -8416,10 +8874,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred68
     public final void synpred68_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:642: ( WINDOW )
-        // etc/XQFT.g:1:642: WINDOW
+        // etc/XQFT.g:1:613: ( EQ )
+        // etc/XQFT.g:1:613: EQ
         {
-        mWINDOW(); if (failed) return ;
+        mEQ(); if (failed) return ;
 
         }
     }
@@ -8427,10 +8885,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred69
     public final void synpred69_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:649: ( SCORE )
-        // etc/XQFT.g:1:649: SCORE
+        // etc/XQFT.g:1:616: ( EVERY )
+        // etc/XQFT.g:1:616: EVERY
         {
-        mSCORE(); if (failed) return ;
+        mEVERY(); if (failed) return ;
 
         }
     }
@@ -8438,10 +8896,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred70
     public final void synpred70_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:655: ( LANGUAGE )
-        // etc/XQFT.g:1:655: LANGUAGE
+        // etc/XQFT.g:1:622: ( EXACTLY )
+        // etc/XQFT.g:1:622: EXACTLY
         {
-        mLANGUAGE(); if (failed) return ;
+        mEXACTLY(); if (failed) return ;
 
         }
     }
@@ -8449,10 +8907,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred71
     public final void synpred71_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:664: ( OPTION )
-        // etc/XQFT.g:1:664: OPTION
+        // etc/XQFT.g:1:630: ( EXCEPT )
+        // etc/XQFT.g:1:630: EXCEPT
         {
-        mOPTION(); if (failed) return ;
+        mEXCEPT(); if (failed) return ;
 
         }
     }
@@ -8460,10 +8918,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred72
     public final void synpred72_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:671: ( STEMMING )
-        // etc/XQFT.g:1:671: STEMMING
+        // etc/XQFT.g:1:637: ( EXTERNAL )
+        // etc/XQFT.g:1:637: EXTERNAL
         {
-        mSTEMMING(); if (failed) return ;
+        mEXTERNAL(); if (failed) return ;
 
         }
     }
@@ -8471,10 +8929,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred73
     public final void synpred73_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:680: ( RIGHTBRACKETSi )
-        // etc/XQFT.g:1:680: RIGHTBRACKETSi
+        // etc/XQFT.g:1:646: ( FOLLOWING )
+        // etc/XQFT.g:1:646: FOLLOWING
         {
-        mRIGHTBRACKETSi(); if (failed) return ;
+        mFOLLOWING(); if (failed) return ;
 
         }
     }
@@ -8482,10 +8940,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred74
     public final void synpred74_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:695: ( GREATEST )
-        // etc/XQFT.g:1:695: GREATEST
+        // etc/XQFT.g:1:656: ( FOLLOWING_SIBLING )
+        // etc/XQFT.g:1:656: FOLLOWING_SIBLING
         {
-        mGREATEST(); if (failed) return ;
+        mFOLLOWING_SIBLING(); if (failed) return ;
 
         }
     }
@@ -8493,10 +8951,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred75
     public final void synpred75_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:704: ( LEVELS )
-        // etc/XQFT.g:1:704: LEVELS
+        // etc/XQFT.g:1:674: ( FOR )
+        // etc/XQFT.g:1:674: FOR
         {
-        mLEVELS(); if (failed) return ;
+        mFOR(); if (failed) return ;
 
         }
     }
@@ -8504,10 +8962,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred76
     public final void synpred76_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:711: ( SENSITIVE )
-        // etc/XQFT.g:1:711: SENSITIVE
+        // etc/XQFT.g:1:678: ( FROM )
+        // etc/XQFT.g:1:678: FROM
         {
-        mSENSITIVE(); if (failed) return ;
+        mFROM(); if (failed) return ;
 
         }
     }
@@ -8515,10 +8973,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred77
     public final void synpred77_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:721: ( FTNOT )
-        // etc/XQFT.g:1:721: FTNOT
+        // etc/XQFT.g:1:683: ( FTAND )
+        // etc/XQFT.g:1:683: FTAND
         {
-        mFTNOT(); if (failed) return ;
+        mFTAND(); if (failed) return ;
 
         }
     }
@@ -8526,21 +8984,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred78
     public final void synpred78_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:727: ( DIV )
-        // etc/XQFT.g:1:727: DIV
+        // etc/XQFT.g:1:689: ( FTCONTAINS )
+        // etc/XQFT.g:1:689: FTCONTAINS
         {
-        mDIV(); if (failed) return ;
+        mFTCONTAINS(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred78
 
+    // $ANTLR start synpred79
+    public final void synpred79_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:700: ( FTNOT )
+        // etc/XQFT.g:1:700: FTNOT
+        {
+        mFTNOT(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred79
+
     // $ANTLR start synpred80
     public final void synpred80_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:738: ( FTAND )
-        // etc/XQFT.g:1:738: FTAND
+        // etc/XQFT.g:1:706: ( FTOPTION )
+        // etc/XQFT.g:1:706: FTOPTION
         {
-        mFTAND(); if (failed) return ;
+        mFTOPTION(); if (failed) return ;
 
         }
     }
@@ -8548,10 +9017,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred81
     public final void synpred81_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:744: ( AT )
-        // etc/XQFT.g:1:744: AT
+        // etc/XQFT.g:1:715: ( FTOR )
+        // etc/XQFT.g:1:715: FTOR
         {
-        mAT(); if (failed) return ;
+        mFTOR(); if (failed) return ;
 
         }
     }
@@ -8559,10 +9028,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred82
     public final void synpred82_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:747: ( SCHEMAATTRIBUTE )
-        // etc/XQFT.g:1:747: SCHEMAATTRIBUTE
+        // etc/XQFT.g:1:720: ( FUNCTION )
+        // etc/XQFT.g:1:720: FUNCTION
         {
-        mSCHEMAATTRIBUTE(); if (failed) return ;
+        mFUNCTION(); if (failed) return ;
 
         }
     }
@@ -8570,10 +9039,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred83
     public final void synpred83_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:763: ( ORDER )
-        // etc/XQFT.g:1:763: ORDER
+        // etc/XQFT.g:1:729: ( GE )
+        // etc/XQFT.g:1:729: GE
         {
-        mORDER(); if (failed) return ;
+        mGE(); if (failed) return ;
 
         }
     }
@@ -8581,10 +9050,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred84
     public final void synpred84_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:769: ( OF )
-        // etc/XQFT.g:1:769: OF
+        // etc/XQFT.g:1:732: ( GREATEST )
+        // etc/XQFT.g:1:732: GREATEST
         {
-        mOF(); if (failed) return ;
+        mGREATEST(); if (failed) return ;
 
         }
     }
@@ -8592,10 +9061,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred85
     public final void synpred85_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:772: ( UNION )
-        // etc/XQFT.g:1:772: UNION
+        // etc/XQFT.g:1:741: ( GT )
+        // etc/XQFT.g:1:741: GT
         {
-        mUNION(); if (failed) return ;
+        mGT(); if (failed) return ;
 
         }
     }
@@ -8603,10 +9072,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred86
     public final void synpred86_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:778: ( FROM )
-        // etc/XQFT.g:1:778: FROM
+        // etc/XQFT.g:1:744: ( IDIV )
+        // etc/XQFT.g:1:744: IDIV
         {
-        mFROM(); if (failed) return ;
+        mIDIV(); if (failed) return ;
 
         }
     }
@@ -8614,10 +9083,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred87
     public final void synpred87_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:783: ( COLLATION )
-        // etc/XQFT.g:1:783: COLLATION
+        // etc/XQFT.g:1:749: ( IF )
+        // etc/XQFT.g:1:749: IF
         {
-        mCOLLATION(); if (failed) return ;
+        mIF(); if (failed) return ;
 
         }
     }
@@ -8625,10 +9094,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred88
     public final void synpred88_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:793: ( DOUBLERIGHTBRACES )
-        // etc/XQFT.g:1:793: DOUBLERIGHTBRACES
+        // etc/XQFT.g:1:752: ( IMPORT )
+        // etc/XQFT.g:1:752: IMPORT
         {
-        mDOUBLERIGHTBRACES(); if (failed) return ;
+        mIMPORT(); if (failed) return ;
 
         }
     }
@@ -8636,10 +9105,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred89
     public final void synpred89_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:811: ( VARIABLE )
-        // etc/XQFT.g:1:811: VARIABLE
+        // etc/XQFT.g:1:759: ( IN )
+        // etc/XQFT.g:1:759: IN
         {
-        mVARIABLE(); if (failed) return ;
+        mIN(); if (failed) return ;
 
         }
     }
@@ -8647,10 +9116,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred90
     public final void synpred90_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:820: ( OR )
-        // etc/XQFT.g:1:820: OR
+        // etc/XQFT.g:1:762: ( INHERIT )
+        // etc/XQFT.g:1:762: INHERIT
         {
-        mOR(); if (failed) return ;
+        mINHERIT(); if (failed) return ;
 
         }
     }
@@ -8658,10 +9127,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred91
     public final void synpred91_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:823: ( FTOR )
-        // etc/XQFT.g:1:823: FTOR
+        // etc/XQFT.g:1:770: ( INSENSITIVE )
+        // etc/XQFT.g:1:770: INSENSITIVE
         {
-        mFTOR(); if (failed) return ;
+        mINSENSITIVE(); if (failed) return ;
 
         }
     }
@@ -8669,10 +9138,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred92
     public final void synpred92_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:828: ( DOUBLESLASH )
-        // etc/XQFT.g:1:828: DOUBLESLASH
+        // etc/XQFT.g:1:782: ( INSTANCE )
+        // etc/XQFT.g:1:782: INSTANCE
         {
-        mDOUBLESLASH(); if (failed) return ;
+        mINSTANCE(); if (failed) return ;
 
         }
     }
@@ -8680,10 +9149,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred93
     public final void synpred93_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:840: ( LEAST )
-        // etc/XQFT.g:1:840: LEAST
+        // etc/XQFT.g:1:791: ( INTERSECT )
+        // etc/XQFT.g:1:791: INTERSECT
         {
-        mLEAST(); if (failed) return ;
+        mINTERSECT(); if (failed) return ;
 
         }
     }
@@ -8691,10 +9160,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred94
     public final void synpred94_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:846: ( IF )
-        // etc/XQFT.g:1:846: IF
+        // etc/XQFT.g:1:801: ( IS )
+        // etc/XQFT.g:1:801: IS
         {
-        mIF(); if (failed) return ;
+        mIS(); if (failed) return ;
 
         }
     }
@@ -8702,10 +9171,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred95
     public final void synpred95_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:849: ( BASEURI )
-        // etc/XQFT.g:1:849: BASEURI
+        // etc/XQFT.g:1:804: ( ITEM )
+        // etc/XQFT.g:1:804: ITEM
         {
-        mBASEURI(); if (failed) return ;
+        mITEM(); if (failed) return ;
 
         }
     }
@@ -8713,21 +9182,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred96
     public final void synpred96_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:857: ( DESCENDING )
-        // etc/XQFT.g:1:857: DESCENDING
+        // etc/XQFT.g:1:809: ( LANGUAGE )
+        // etc/XQFT.g:1:809: LANGUAGE
         {
-        mDESCENDING(); if (failed) return ;
+        mLANGUAGE(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred96
 
+    // $ANTLR start synpred97
+    public final void synpred97_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:818: ( LAX )
+        // etc/XQFT.g:1:818: LAX
+        {
+        mLAX(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred97
+
     // $ANTLR start synpred98
     public final void synpred98_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:875: ( NAMESPACE )
-        // etc/XQFT.g:1:875: NAMESPACE
+        // etc/XQFT.g:1:822: ( LE )
+        // etc/XQFT.g:1:822: LE
         {
-        mNAMESPACE(); if (failed) return ;
+        mLE(); if (failed) return ;
 
         }
     }
@@ -8735,10 +9215,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred99
     public final void synpred99_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:885: ( AS )
-        // etc/XQFT.g:1:885: AS
+        // etc/XQFT.g:1:825: ( LEAST )
+        // etc/XQFT.g:1:825: LEAST
         {
-        mAS(); if (failed) return ;
+        mLEAST(); if (failed) return ;
 
         }
     }
@@ -8746,10 +9226,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred100
     public final void synpred100_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:888: ( LEFTXMLCOMMENT )
-        // etc/XQFT.g:1:888: LEFTXMLCOMMENT
+        // etc/XQFT.g:1:831: ( LET )
+        // etc/XQFT.g:1:831: LET
         {
-        mLEFTXMLCOMMENT(); if (failed) return ;
+        mLET(); if (failed) return ;
 
         }
     }
@@ -8757,10 +9237,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred101
     public final void synpred101_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:903: ( BY )
-        // etc/XQFT.g:1:903: BY
+        // etc/XQFT.g:1:835: ( LEVELS )
+        // etc/XQFT.g:1:835: LEVELS
         {
-        mBY(); if (failed) return ;
+        mLEVELS(); if (failed) return ;
 
         }
     }
@@ -8768,10 +9248,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred102
     public final void synpred102_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:906: ( TEXT )
-        // etc/XQFT.g:1:906: TEXT
+        // etc/XQFT.g:1:842: ( LOWERCASE )
+        // etc/XQFT.g:1:842: LOWERCASE
         {
-        mTEXT(); if (failed) return ;
+        mLOWERCASE(); if (failed) return ;
 
         }
     }
@@ -8779,21 +9259,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred103
     public final void synpred103_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:911: ( STABLE )
-        // etc/XQFT.g:1:911: STABLE
+        // etc/XQFT.g:1:852: ( LT )
+        // etc/XQFT.g:1:852: LT
         {
-        mSTABLE(); if (failed) return ;
+        mLT(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred103
 
+    // $ANTLR start synpred104
+    public final void synpred104_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:855: ( MOD )
+        // etc/XQFT.g:1:855: MOD
+        {
+        mMOD(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred104
+
     // $ANTLR start synpred105
     public final void synpred105_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:932: ( UNORDERED )
-        // etc/XQFT.g:1:932: UNORDERED
+        // etc/XQFT.g:1:859: ( MODULE )
+        // etc/XQFT.g:1:859: MODULE
         {
-        mUNORDERED(); if (failed) return ;
+        mMODULE(); if (failed) return ;
 
         }
     }
@@ -8801,10 +9292,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred106
     public final void synpred106_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:942: ( RIGHTCDATA )
-        // etc/XQFT.g:1:942: RIGHTCDATA
+        // etc/XQFT.g:1:866: ( MOST )
+        // etc/XQFT.g:1:866: MOST
         {
-        mRIGHTCDATA(); if (failed) return ;
+        mMOST(); if (failed) return ;
 
         }
     }
@@ -8812,10 +9303,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred107
     public final void synpred107_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:953: ( EXACTLY )
-        // etc/XQFT.g:1:953: EXACTLY
+        // etc/XQFT.g:1:871: ( NAMESPACE )
+        // etc/XQFT.g:1:871: NAMESPACE
         {
-        mEXACTLY(); if (failed) return ;
+        mNAMESPACE(); if (failed) return ;
 
         }
     }
@@ -8823,10 +9314,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred108
     public final void synpred108_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:961: ( WITH )
-        // etc/XQFT.g:1:961: WITH
+        // etc/XQFT.g:1:881: ( NE )
+        // etc/XQFT.g:1:881: NE
         {
-        mWITH(); if (failed) return ;
+        mNE(); if (failed) return ;
 
         }
     }
@@ -8834,10 +9325,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred109
     public final void synpred109_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:966: ( LEFTPITARGET )
-        // etc/XQFT.g:1:966: LEFTPITARGET
+        // etc/XQFT.g:1:884: ( NODE )
+        // etc/XQFT.g:1:884: NODE
         {
-        mLEFTPITARGET(); if (failed) return ;
+        mNODE(); if (failed) return ;
 
         }
     }
@@ -8845,10 +9336,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred110
     public final void synpred110_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:979: ( WITHOUT )
-        // etc/XQFT.g:1:979: WITHOUT
+        // etc/XQFT.g:1:889: ( NOINHERIT )
+        // etc/XQFT.g:1:889: NOINHERIT
         {
-        mWITHOUT(); if (failed) return ;
+        mNOINHERIT(); if (failed) return ;
 
         }
     }
@@ -8856,10 +9347,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred111
     public final void synpred111_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:987: ( DIACRITICS )
-        // etc/XQFT.g:1:987: DIACRITICS
+        // etc/XQFT.g:1:899: ( NOPRESERVE )
+        // etc/XQFT.g:1:899: NOPRESERVE
         {
-        mDIACRITICS(); if (failed) return ;
+        mNOPRESERVE(); if (failed) return ;
 
         }
     }
@@ -8867,21 +9358,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred112
     public final void synpred112_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:998: ( EXTERNAL )
-        // etc/XQFT.g:1:998: EXTERNAL
+        // etc/XQFT.g:1:910: ( NOT )
+        // etc/XQFT.g:1:910: NOT
         {
-        mEXTERNAL(); if (failed) return ;
+        mNOT(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred112
 
+    // $ANTLR start synpred113
+    public final void synpred113_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:914: ( OCCURS )
+        // etc/XQFT.g:1:914: OCCURS
+        {
+        mOCCURS(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred113
+
     // $ANTLR start synpred114
     public final void synpred114_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1026: ( RIGHTXMLCOMMENT )
-        // etc/XQFT.g:1:1026: RIGHTXMLCOMMENT
+        // etc/XQFT.g:1:921: ( OF )
+        // etc/XQFT.g:1:921: OF
         {
-        mRIGHTXMLCOMMENT(); if (failed) return ;
+        mOF(); if (failed) return ;
 
         }
     }
@@ -8889,10 +9391,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred115
     public final void synpred115_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1042: ( MODULE )
-        // etc/XQFT.g:1:1042: MODULE
+        // etc/XQFT.g:1:924: ( OPTION )
+        // etc/XQFT.g:1:924: OPTION
         {
-        mMODULE(); if (failed) return ;
+        mOPTION(); if (failed) return ;
 
         }
     }
@@ -8900,10 +9402,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred116
     public final void synpred116_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1049: ( RETURN )
-        // etc/XQFT.g:1:1049: RETURN
+        // etc/XQFT.g:1:931: ( OR )
+        // etc/XQFT.g:1:931: OR
         {
-        mRETURN(); if (failed) return ;
+        mOR(); if (failed) return ;
 
         }
     }
@@ -8911,10 +9413,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred117
     public final void synpred117_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1056: ( COMMENT )
-        // etc/XQFT.g:1:1056: COMMENT
+        // etc/XQFT.g:1:934: ( ORDER )
+        // etc/XQFT.g:1:934: ORDER
         {
-        mCOMMENT(); if (failed) return ;
+        mORDER(); if (failed) return ;
 
         }
     }
@@ -8922,10 +9424,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred118
     public final void synpred118_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1064: ( DEFAULT )
-        // etc/XQFT.g:1:1064: DEFAULT
+        // etc/XQFT.g:1:940: ( ORDERED )
+        // etc/XQFT.g:1:940: ORDERED
         {
-        mDEFAULT(); if (failed) return ;
+        mORDERED(); if (failed) return ;
 
         }
     }
@@ -8933,10 +9435,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred119
     public final void synpred119_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1072: ( OCCURS )
-        // etc/XQFT.g:1:1072: OCCURS
+        // etc/XQFT.g:1:948: ( ORDERING )
+        // etc/XQFT.g:1:948: ORDERING
         {
-        mOCCURS(); if (failed) return ;
+        mORDERING(); if (failed) return ;
 
         }
     }
@@ -8944,10 +9446,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred120
     public final void synpred120_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1079: ( ENCODING )
-        // etc/XQFT.g:1:1079: ENCODING
+        // etc/XQFT.g:1:957: ( PARAGRAPH )
+        // etc/XQFT.g:1:957: PARAGRAPH
         {
-        mENCODING(); if (failed) return ;
+        mPARAGRAPH(); if (failed) return ;
 
         }
     }
@@ -8955,10 +9457,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred121
     public final void synpred121_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1088: ( DOUBLELEFTBRACES )
-        // etc/XQFT.g:1:1088: DOUBLELEFTBRACES
+        // etc/XQFT.g:1:967: ( PARAGRAPHS )
+        // etc/XQFT.g:1:967: PARAGRAPHS
         {
-        mDOUBLELEFTBRACES(); if (failed) return ;
+        mPARAGRAPHS(); if (failed) return ;
 
         }
     }
@@ -8966,10 +9468,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred122
     public final void synpred122_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1105: ( SCHEMA )
-        // etc/XQFT.g:1:1105: SCHEMA
+        // etc/XQFT.g:1:978: ( PARENT )
+        // etc/XQFT.g:1:978: PARENT
         {
-        mSCHEMA(); if (failed) return ;
+        mPARENT(); if (failed) return ;
 
         }
     }
@@ -8977,10 +9479,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred123
     public final void synpred123_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1112: ( ELEMENT )
-        // etc/XQFT.g:1:1112: ELEMENT
+        // etc/XQFT.g:1:985: ( PHRASE )
+        // etc/XQFT.g:1:985: PHRASE
         {
-        mELEMENT(); if (failed) return ;
+        mPHRASE(); if (failed) return ;
 
         }
     }
@@ -8988,10 +9490,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred124
     public final void synpred124_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1120: ( LEFTPARENTHESISSi )
-        // etc/XQFT.g:1:1120: LEFTPARENTHESISSi
+        // etc/XQFT.g:1:992: ( PRECEDING )
+        // etc/XQFT.g:1:992: PRECEDING
         {
-        mLEFTPARENTHESISSi(); if (failed) return ;
+        mPRECEDING(); if (failed) return ;
 
         }
     }
@@ -8999,10 +9501,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred125
     public final void synpred125_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1138: ( COPYNAMESPACES )
-        // etc/XQFT.g:1:1138: COPYNAMESPACES
+        // etc/XQFT.g:1:1002: ( PRECEDING_SIBLING )
+        // etc/XQFT.g:1:1002: PRECEDING_SIBLING
         {
-        mCOPYNAMESPACES(); if (failed) return ;
+        mPRECEDING_SIBLING(); if (failed) return ;
 
         }
     }
@@ -9010,10 +9512,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred126
     public final void synpred126_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1153: ( WILDCARDS )
-        // etc/XQFT.g:1:1153: WILDCARDS
+        // etc/XQFT.g:1:1020: ( PRESERVE )
+        // etc/XQFT.g:1:1020: PRESERVE
         {
-        mWILDCARDS(); if (failed) return ;
+        mPRESERVE(); if (failed) return ;
 
         }
     }
@@ -9021,10 +9523,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred127
     public final void synpred127_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1163: ( DECLARE )
-        // etc/XQFT.g:1:1163: DECLARE
+        // etc/XQFT.g:1:1029: ( PROCESSING_INSTRUCTION )
+        // etc/XQFT.g:1:1029: PROCESSING_INSTRUCTION
         {
-        mDECLARE(); if (failed) return ;
+        mPROCESSING_INSTRUCTION(); if (failed) return ;
 
         }
     }
@@ -9032,10 +9534,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred128
     public final void synpred128_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1171: ( AND )
-        // etc/XQFT.g:1:1171: AND
+        // etc/XQFT.g:1:1052: ( RELATIONSHIP )
+        // etc/XQFT.g:1:1052: RELATIONSHIP
         {
-        mAND(); if (failed) return ;
+        mRELATIONSHIP(); if (failed) return ;
 
         }
     }
@@ -9043,10 +9545,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred129
     public final void synpred129_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1175: ( PRESERVE )
-        // etc/XQFT.g:1:1175: PRESERVE
+        // etc/XQFT.g:1:1065: ( RETURN )
+        // etc/XQFT.g:1:1065: RETURN
         {
-        mPRESERVE(); if (failed) return ;
+        mRETURN(); if (failed) return ;
 
         }
     }
@@ -9054,10 +9556,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred130
     public final void synpred130_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1184: ( NOINHERIT )
-        // etc/XQFT.g:1:1184: NOINHERIT
+        // etc/XQFT.g:1:1072: ( SAME )
+        // etc/XQFT.g:1:1072: SAME
         {
-        mNOINHERIT(); if (failed) return ;
+        mSAME(); if (failed) return ;
 
         }
     }
@@ -9065,10 +9567,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred131
     public final void synpred131_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1194: ( NOT )
-        // etc/XQFT.g:1:1194: NOT
+        // etc/XQFT.g:1:1077: ( SATISFIES )
+        // etc/XQFT.g:1:1077: SATISFIES
         {
-        mNOT(); if (failed) return ;
+        mSATISFIES(); if (failed) return ;
 
         }
     }
@@ -9076,10 +9578,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred132
     public final void synpred132_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1198: ( INTERSECT )
-        // etc/XQFT.g:1:1198: INTERSECT
+        // etc/XQFT.g:1:1087: ( SCHEMA )
+        // etc/XQFT.g:1:1087: SCHEMA
         {
-        mINTERSECT(); if (failed) return ;
+        mSCHEMA(); if (failed) return ;
 
         }
     }
@@ -9087,21 +9589,32 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred133
     public final void synpred133_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1208: ( FUNCTION )
-        // etc/XQFT.g:1:1208: FUNCTION
+        // etc/XQFT.g:1:1094: ( SCHEMAATTRIBUTE )
+        // etc/XQFT.g:1:1094: SCHEMAATTRIBUTE
         {
-        mFUNCTION(); if (failed) return ;
+        mSCHEMAATTRIBUTE(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred133
 
+    // $ANTLR start synpred134
+    public final void synpred134_fragment() throws RecognitionException {   
+        // etc/XQFT.g:1:1110: ( SCHEMAELEMENT )
+        // etc/XQFT.g:1:1110: SCHEMAELEMENT
+        {
+        mSCHEMAELEMENT(); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred134
+
     // $ANTLR start synpred135
     public final void synpred135_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1222: ( TIMES )
-        // etc/XQFT.g:1:1222: TIMES
+        // etc/XQFT.g:1:1124: ( SCORE )
+        // etc/XQFT.g:1:1124: SCORE
         {
-        mTIMES(); if (failed) return ;
+        mSCORE(); if (failed) return ;
 
         }
     }
@@ -9109,10 +9622,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred136
     public final void synpred136_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1228: ( ATTRIBUTE )
-        // etc/XQFT.g:1:1228: ATTRIBUTE
+        // etc/XQFT.g:1:1130: ( SELF )
+        // etc/XQFT.g:1:1130: SELF
         {
-        mATTRIBUTE(); if (failed) return ;
+        mSELF(); if (failed) return ;
 
         }
     }
@@ -9120,10 +9633,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred137
     public final void synpred137_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1238: ( ASSIGNMENTOPERATOR )
-        // etc/XQFT.g:1:1238: ASSIGNMENTOPERATOR
+        // etc/XQFT.g:1:1135: ( SENSITIVE )
+        // etc/XQFT.g:1:1135: SENSITIVE
         {
-        mASSIGNMENTOPERATOR(); if (failed) return ;
+        mSENSITIVE(); if (failed) return ;
 
         }
     }
@@ -9131,10 +9644,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred138
     public final void synpred138_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1257: ( FTCONTAINS )
-        // etc/XQFT.g:1:1257: FTCONTAINS
+        // etc/XQFT.g:1:1145: ( SENTENCES )
+        // etc/XQFT.g:1:1145: SENTENCES
         {
-        mFTCONTAINS(); if (failed) return ;
+        mSENTENCES(); if (failed) return ;
 
         }
     }
@@ -9142,10 +9655,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred139
     public final void synpred139_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1268: ( RELATIONSHIP )
-        // etc/XQFT.g:1:1268: RELATIONSHIP
+        // etc/XQFT.g:1:1155: ( SENTENCE )
+        // etc/XQFT.g:1:1155: SENTENCE
         {
-        mRELATIONSHIP(); if (failed) return ;
+        mSENTENCE(); if (failed) return ;
 
         }
     }
@@ -9153,10 +9666,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred140
     public final void synpred140_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1281: ( THESAURUS )
-        // etc/XQFT.g:1:1281: THESAURUS
+        // etc/XQFT.g:1:1164: ( SOME )
+        // etc/XQFT.g:1:1164: SOME
         {
-        mTHESAURUS(); if (failed) return ;
+        mSOME(); if (failed) return ;
 
         }
     }
@@ -9164,10 +9677,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred141
     public final void synpred141_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1291: ( MOD )
-        // etc/XQFT.g:1:1291: MOD
+        // etc/XQFT.g:1:1169: ( STABLE )
+        // etc/XQFT.g:1:1169: STABLE
         {
-        mMOD(); if (failed) return ;
+        mSTABLE(); if (failed) return ;
 
         }
     }
@@ -9175,10 +9688,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred142
     public final void synpred142_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1295: ( RIGHTBRACESi )
-        // etc/XQFT.g:1:1295: RIGHTBRACESi
+        // etc/XQFT.g:1:1176: ( START )
+        // etc/XQFT.g:1:1176: START
         {
-        mRIGHTBRACESi(); if (failed) return ;
+        mSTART(); if (failed) return ;
 
         }
     }
@@ -9186,10 +9699,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred143
     public final void synpred143_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1308: ( NODE )
-        // etc/XQFT.g:1:1308: NODE
+        // etc/XQFT.g:1:1182: ( STEMMING )
+        // etc/XQFT.g:1:1182: STEMMING
         {
-        mNODE(); if (failed) return ;
+        mSTEMMING(); if (failed) return ;
 
         }
     }
@@ -9197,10 +9710,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred144
     public final void synpred144_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1313: ( SOME )
-        // etc/XQFT.g:1:1313: SOME
+        // etc/XQFT.g:1:1191: ( STOP )
+        // etc/XQFT.g:1:1191: STOP
         {
-        mSOME(); if (failed) return ;
+        mSTOP(); if (failed) return ;
 
         }
     }
@@ -9208,10 +9721,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred145
     public final void synpred145_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1318: ( QUESTIONMARKSi )
-        // etc/XQFT.g:1:1318: QUESTIONMARKSi
+        // etc/XQFT.g:1:1196: ( STRICT )
+        // etc/XQFT.g:1:1196: STRICT
         {
-        mQUESTIONMARKSi(); if (failed) return ;
+        mSTRICT(); if (failed) return ;
 
         }
     }
@@ -9219,8 +9732,8 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred146
     public final void synpred146_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1333: ( STRIP )
-        // etc/XQFT.g:1:1333: STRIP
+        // etc/XQFT.g:1:1203: ( STRIP )
+        // etc/XQFT.g:1:1203: STRIP
         {
         mSTRIP(); if (failed) return ;
 
@@ -9230,10 +9743,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred147
     public final void synpred147_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1339: ( LOWERCASE )
-        // etc/XQFT.g:1:1339: LOWERCASE
+        // etc/XQFT.g:1:1209: ( TEXT )
+        // etc/XQFT.g:1:1209: TEXT
         {
-        mLOWERCASE(); if (failed) return ;
+        mTEXT(); if (failed) return ;
 
         }
     }
@@ -9241,10 +9754,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred148
     public final void synpred148_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1349: ( IN )
-        // etc/XQFT.g:1:1349: IN
+        // etc/XQFT.g:1:1214: ( THESAURUS )
+        // etc/XQFT.g:1:1214: THESAURUS
         {
-        mIN(); if (failed) return ;
+        mTHESAURUS(); if (failed) return ;
 
         }
     }
@@ -9252,10 +9765,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred149
     public final void synpred149_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1352: ( SCHEMAELEMENT )
-        // etc/XQFT.g:1:1352: SCHEMAELEMENT
+        // etc/XQFT.g:1:1224: ( THEN )
+        // etc/XQFT.g:1:1224: THEN
         {
-        mSCHEMAELEMENT(); if (failed) return ;
+        mTHEN(); if (failed) return ;
 
         }
     }
@@ -9263,10 +9776,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred150
     public final void synpred150_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1366: ( LEFTENDTAG )
-        // etc/XQFT.g:1:1366: LEFTENDTAG
+        // etc/XQFT.g:1:1229: ( TIMES )
+        // etc/XQFT.g:1:1229: TIMES
         {
-        mLEFTENDTAG(); if (failed) return ;
+        mTIMES(); if (failed) return ;
 
         }
     }
@@ -9274,10 +9787,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred151
     public final void synpred151_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1377: ( EQ )
-        // etc/XQFT.g:1:1377: EQ
+        // etc/XQFT.g:1:1235: ( TO )
+        // etc/XQFT.g:1:1235: TO
         {
-        mEQ(); if (failed) return ;
+        mTO(); if (failed) return ;
 
         }
     }
@@ -9285,10 +9798,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred152
     public final void synpred152_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1380: ( NE )
-        // etc/XQFT.g:1:1380: NE
+        // etc/XQFT.g:1:1238: ( TREAT )
+        // etc/XQFT.g:1:1238: TREAT
         {
-        mNE(); if (failed) return ;
+        mTREAT(); if (failed) return ;
 
         }
     }
@@ -9296,10 +9809,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred153
     public final void synpred153_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1383: ( LT )
-        // etc/XQFT.g:1:1383: LT
+        // etc/XQFT.g:1:1244: ( TYPESWITCH )
+        // etc/XQFT.g:1:1244: TYPESWITCH
         {
-        mLT(); if (failed) return ;
+        mTYPESWITCH(); if (failed) return ;
 
         }
     }
@@ -9307,10 +9820,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred154
     public final void synpred154_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1386: ( LE )
-        // etc/XQFT.g:1:1386: LE
+        // etc/XQFT.g:1:1255: ( UNION )
+        // etc/XQFT.g:1:1255: UNION
         {
-        mLE(); if (failed) return ;
+        mUNION(); if (failed) return ;
 
         }
     }
@@ -9318,10 +9831,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred155
     public final void synpred155_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1389: ( GT )
-        // etc/XQFT.g:1:1389: GT
+        // etc/XQFT.g:1:1261: ( UNORDERED )
+        // etc/XQFT.g:1:1261: UNORDERED
         {
-        mGT(); if (failed) return ;
+        mUNORDERED(); if (failed) return ;
 
         }
     }
@@ -9329,10 +9842,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred156
     public final void synpred156_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1392: ( GE )
-        // etc/XQFT.g:1:1392: GE
+        // etc/XQFT.g:1:1271: ( UPPERCASE )
+        // etc/XQFT.g:1:1271: UPPERCASE
         {
-        mGE(); if (failed) return ;
+        mUPPERCASE(); if (failed) return ;
 
         }
     }
@@ -9340,10 +9853,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred157
     public final void synpred157_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1395: ( IS )
-        // etc/XQFT.g:1:1395: IS
+        // etc/XQFT.g:1:1281: ( VALIDATE )
+        // etc/XQFT.g:1:1281: VALIDATE
         {
-        mIS(); if (failed) return ;
+        mVALIDATE(); if (failed) return ;
 
         }
     }
@@ -9351,10 +9864,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred158
     public final void synpred158_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1398: ( NODEBEFORESi )
-        // etc/XQFT.g:1:1398: NODEBEFORESi
+        // etc/XQFT.g:1:1290: ( VARIABLE )
+        // etc/XQFT.g:1:1290: VARIABLE
         {
-        mNODEBEFORESi(); if (failed) return ;
+        mVARIABLE(); if (failed) return ;
 
         }
     }
@@ -9362,10 +9875,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred159
     public final void synpred159_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1411: ( NODEAFTERSi )
-        // etc/XQFT.g:1:1411: NODEAFTERSi
+        // etc/XQFT.g:1:1299: ( VERSION )
+        // etc/XQFT.g:1:1299: VERSION
         {
-        mNODEAFTERSi(); if (failed) return ;
+        mVERSION(); if (failed) return ;
 
         }
     }
@@ -9373,10 +9886,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred160
     public final void synpred160_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1423: ( LAX )
-        // etc/XQFT.g:1:1423: LAX
+        // etc/XQFT.g:1:1307: ( WEIGHT )
+        // etc/XQFT.g:1:1307: WEIGHT
         {
-        mLAX(); if (failed) return ;
+        mWEIGHT(); if (failed) return ;
 
         }
     }
@@ -9384,10 +9897,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred161
     public final void synpred161_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1427: ( STRICT )
-        // etc/XQFT.g:1:1427: STRICT
+        // etc/XQFT.g:1:1314: ( WHERE )
+        // etc/XQFT.g:1:1314: WHERE
         {
-        mSTRICT(); if (failed) return ;
+        mWHERE(); if (failed) return ;
 
         }
     }
@@ -9395,10 +9908,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred162
     public final void synpred162_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1434: ( CHILD )
-        // etc/XQFT.g:1:1434: CHILD
+        // etc/XQFT.g:1:1320: ( WILDCARDS )
+        // etc/XQFT.g:1:1320: WILDCARDS
         {
-        mCHILD(); if (failed) return ;
+        mWILDCARDS(); if (failed) return ;
 
         }
     }
@@ -9406,10 +9919,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred163
     public final void synpred163_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1440: ( DOUBLECOLON )
-        // etc/XQFT.g:1:1440: DOUBLECOLON
+        // etc/XQFT.g:1:1330: ( WINDOW )
+        // etc/XQFT.g:1:1330: WINDOW
         {
-        mDOUBLECOLON(); if (failed) return ;
+        mWINDOW(); if (failed) return ;
 
         }
     }
@@ -9417,10 +9930,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred164
     public final void synpred164_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1452: ( DESCENDANT )
-        // etc/XQFT.g:1:1452: DESCENDANT
+        // etc/XQFT.g:1:1337: ( WITH )
+        // etc/XQFT.g:1:1337: WITH
         {
-        mDESCENDANT(); if (failed) return ;
+        mWITH(); if (failed) return ;
 
         }
     }
@@ -9428,10 +9941,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred165
     public final void synpred165_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1463: ( SELF )
-        // etc/XQFT.g:1:1463: SELF
+        // etc/XQFT.g:1:1342: ( WITHOUT )
+        // etc/XQFT.g:1:1342: WITHOUT
         {
-        mSELF(); if (failed) return ;
+        mWITHOUT(); if (failed) return ;
 
         }
     }
@@ -9439,10 +9952,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred166
     public final void synpred166_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1468: ( DESCENDANT_OR_SELF )
-        // etc/XQFT.g:1:1468: DESCENDANT_OR_SELF
+        // etc/XQFT.g:1:1350: ( WORD )
+        // etc/XQFT.g:1:1350: WORD
         {
-        mDESCENDANT_OR_SELF(); if (failed) return ;
+        mWORD(); if (failed) return ;
 
         }
     }
@@ -9450,10 +9963,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred167
     public final void synpred167_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1487: ( FOLLOWING_SIBLING )
-        // etc/XQFT.g:1:1487: FOLLOWING_SIBLING
+        // etc/XQFT.g:1:1355: ( WORDS )
+        // etc/XQFT.g:1:1355: WORDS
         {
-        mFOLLOWING_SIBLING(); if (failed) return ;
+        mWORDS(); if (failed) return ;
 
         }
     }
@@ -9461,10 +9974,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred168
     public final void synpred168_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1505: ( FOLLOWING )
-        // etc/XQFT.g:1:1505: FOLLOWING
+        // etc/XQFT.g:1:1361: ( XQUERY )
+        // etc/XQFT.g:1:1361: XQUERY
         {
-        mFOLLOWING(); if (failed) return ;
+        mXQUERY(); if (failed) return ;
 
         }
     }
@@ -9472,10 +9985,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred169
     public final void synpred169_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1515: ( PARENT )
-        // etc/XQFT.g:1:1515: PARENT
+        // etc/XQFT.g:1:1368: ( TOKENSWITCH )
+        // etc/XQFT.g:1:1368: TOKENSWITCH
         {
-        mPARENT(); if (failed) return ;
+        mTOKENSWITCH(); if (failed) return ;
 
         }
     }
@@ -9483,10 +9996,10 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred170
     public final void synpred170_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1522: ( ANCESTOR )
-        // etc/XQFT.g:1:1522: ANCESTOR
+        // etc/XQFT.g:1:1380: ( NCName )
+        // etc/XQFT.g:1:1380: NCName
         {
-        mANCESTOR(); if (failed) return ;
+        mNCName(); if (failed) return ;
 
         }
     }
@@ -9494,32 +10007,21 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred171
     public final void synpred171_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1531: ( PRECEDING_SIBLING )
-        // etc/XQFT.g:1:1531: PRECEDING_SIBLING
+        // etc/XQFT.g:1:1387: ( StringLiteral )
+        // etc/XQFT.g:1:1387: StringLiteral
         {
-        mPRECEDING_SIBLING(); if (failed) return ;
+        mStringLiteral(); if (failed) return ;
 
         }
     }
     // $ANTLR end synpred171
 
-    // $ANTLR start synpred172
-    public final void synpred172_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1549: ( PRECEDING )
-        // etc/XQFT.g:1:1549: PRECEDING
-        {
-        mPRECEDING(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred172
-
     // $ANTLR start synpred173
     public final void synpred173_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1559: ( ANCESTOR_OR_SELF )
-        // etc/XQFT.g:1:1559: ANCESTOR_OR_SELF
+        // etc/XQFT.g:1:1403: ( IntegerLiteral )
+        // etc/XQFT.g:1:1403: IntegerLiteral
         {
-        mANCESTOR_OR_SELF(); if (failed) return ;
+        mIntegerLiteral(); if (failed) return ;
 
         }
     }
@@ -9527,652 +10029,20 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred174
     public final void synpred174_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1576: ( DOT )
-        // etc/XQFT.g:1:1576: DOT
-        {
-        mDOT(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred174
-
-    // $ANTLR start synpred175
-    public final void synpred175_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1580: ( DOTDOT )
-        // etc/XQFT.g:1:1580: DOTDOT
-        {
-        mDOTDOT(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred175
-
-    // $ANTLR start synpred176
-    public final void synpred176_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1587: ( WORDS )
-        // etc/XQFT.g:1:1587: WORDS
-        {
-        mWORDS(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred176
-
-    // $ANTLR start synpred177
-    public final void synpred177_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1593: ( SENTENCES )
-        // etc/XQFT.g:1:1593: SENTENCES
-        {
-        mSENTENCES(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred177
-
-    // $ANTLR start synpred178
-    public final void synpred178_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1603: ( PARAGRAPHS )
-        // etc/XQFT.g:1:1603: PARAGRAPHS
-        {
-        mPARAGRAPHS(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred178
-
-    // $ANTLR start synpred179
-    public final void synpred179_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1614: ( SENTENCE )
-        // etc/XQFT.g:1:1614: SENTENCE
-        {
-        mSENTENCE(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred179
-
-    // $ANTLR start synpred180
-    public final void synpred180_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1623: ( PARAGRAPH )
-        // etc/XQFT.g:1:1623: PARAGRAPH
-        {
-        mPARAGRAPH(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred180
-
-    // $ANTLR start synpred181
-    public final void synpred181_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1633: ( SAME )
-        // etc/XQFT.g:1:1633: SAME
-        {
-        mSAME(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred181
-
-    // $ANTLR start synpred182
-    public final void synpred182_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1638: ( DIFFERENT )
-        // etc/XQFT.g:1:1638: DIFFERENT
-        {
-        mDIFFERENT(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred182
-
-    // $ANTLR start synpred183
-    public final void synpred183_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1648: ( START )
-        // etc/XQFT.g:1:1648: START
-        {
-        mSTART(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred183
-
-    // $ANTLR start synpred184
-    public final void synpred184_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1654: ( END )
-        // etc/XQFT.g:1:1654: END
-        {
-        mEND(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred184
-
-    // $ANTLR start synpred185
-    public final void synpred185_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1658: ( ENTIRE )
-        // etc/XQFT.g:1:1658: ENTIRE
-        {
-        mENTIRE(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred185
-
-    // $ANTLR start synpred186
-    public final void synpred186_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1665: ( IntegerLiteral )
-        // etc/XQFT.g:1:1665: IntegerLiteral
-        {
-        mIntegerLiteral(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred186
-
-    // $ANTLR start synpred187
-    public final void synpred187_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1680: ( DecimalLiteral )
-        // etc/XQFT.g:1:1680: DecimalLiteral
+        // etc/XQFT.g:1:1418: ( DecimalLiteral )
+        // etc/XQFT.g:1:1418: DecimalLiteral
         {
         mDecimalLiteral(); if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred187
+    // $ANTLR end synpred174
 
-    // $ANTLR start synpred188
-    public final void synpred188_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1695: ( DoubleLiteral )
-        // etc/XQFT.g:1:1695: DoubleLiteral
-        {
-        mDoubleLiteral(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred188
-
-    // $ANTLR start synpred189
-    public final void synpred189_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1709: ( StringLiteral )
-        // etc/XQFT.g:1:1709: StringLiteral
-        {
-        mStringLiteral(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred189
-
-    // $ANTLR start synpred190
-    public final void synpred190_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1723: ( DOUBLEQUOTESi )
-        // etc/XQFT.g:1:1723: DOUBLEQUOTESi
-        {
-        mDOUBLEQUOTESi(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred190
-
-    // $ANTLR start synpred191
-    public final void synpred191_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1737: ( Comment )
-        // etc/XQFT.g:1:1737: Comment
-        {
-        mComment(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred191
-
-    // $ANTLR start synpred193
-    public final void synpred193_fragment() throws RecognitionException {   
-        // etc/XQFT.g:1:1753: ( NCName )
-        // etc/XQFT.g:1:1753: NCName
-        {
-        mNCName(); if (failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred193
-
-    public final boolean synpred106() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred106_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred25() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred25_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred7() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred7_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred163() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred163_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred105() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred105_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred22() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred22_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred27() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred27_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred1() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred1_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred20() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred20_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred154() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred154_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred17() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred17_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred153() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred153_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred90() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred90_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred132() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred132_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred193() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred193_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred18() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred18_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred160() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred160_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred11() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred11_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred86() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred86_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred116() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred116_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred8() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred8_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred64() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred64_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred191() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred191_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred42() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred42_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred21() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred21_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
     public final boolean synpred44() {
         backtracking++;
         int start = input.mark();
         try {
             synpred44_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred166() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred166_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred87() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred87_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred180() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred180_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred136() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred136_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred99() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred99_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred45() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred45_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -10196,216 +10066,6 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred186() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred186_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred24() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred24_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred6() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred6_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred164() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred164_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred53() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred53_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred143() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred143_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred37() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred37_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred142() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred142_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred131() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred131_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred190() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred190_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred91() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred91_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred54() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred54_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred15() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred15_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred84() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred84_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred117() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred117_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
     public final boolean synpred46() {
         backtracking++;
         int start = input.mark();
@@ -10420,851 +10080,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred128() {
+    public final boolean synpred45() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred128_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred62() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred62_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred109() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred109_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred38() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred38_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred155() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred155_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred92() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred92_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred12() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred12_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred85() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred85_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred123() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred123_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred126() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred126_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred39() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred39_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred111() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred111_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred70() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred70_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred63() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred63_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred177() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred177_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred175() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred175_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred133() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred133_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred36() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred36_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred187() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred187_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred174() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred174_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred50() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred50_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred146() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred146_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred72() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred72_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred135() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred135_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred94() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred94_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred124() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred124_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred51() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred51_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred130() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred130_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred110() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred110_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred188() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred188_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred23() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred23_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred52() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred52_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred127() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred127_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred67() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred67_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred115() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred115_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred100() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred100_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred144() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred144_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred93() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred93_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred114() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred114_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred71() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred71_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred103() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred103_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred107() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred107_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred139() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred139_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred129() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred129_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred156() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred156_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred120() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred120_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred151() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred151_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred162() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred162_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred170() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred170_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred30() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred30_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred173() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred173_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred68() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred68_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred75() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred75_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred184() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred184_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred112() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred112_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred4() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred4_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred31() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred31_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred140() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred140_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred101() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred101_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred56() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred56_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred76() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred76_fragment(); // can never throw exception
+            synpred45_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11288,104 +10108,6 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred119() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred119_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred145() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred145_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred176() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred176_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred171() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred171_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred182() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred182_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred118() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred118_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred69() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred69_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
     public final boolean synpred47() {
         backtracking++;
         int start = input.mark();
@@ -11400,319 +10122,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred189() {
+    public final boolean synpred49() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred189_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred167() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred167_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred58() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred58_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred34() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred34_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred73() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred73_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred89() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred89_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred57() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred57_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred16() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred16_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred35() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred35_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred150() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred150_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred137() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred137_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred74() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred74_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred183() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred183_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred88() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred88_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred169() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred169_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred122() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred122_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred108() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred108_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred138() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred138_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred125() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred125_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred55() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred55_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred185() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred185_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred178() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred178_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred65() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred65_fragment(); // can never throw exception
+            synpred49_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11736,53 +10150,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred121() {
+    public final boolean synpred42() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred121_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred141() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred141_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred9() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred9_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred98() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred98_fragment(); // can never throw exception
+            synpred42_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11806,20 +10178,6 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred148() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred148_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
     public final boolean synpred165() {
         backtracking++;
         int start = input.mark();
@@ -11834,11 +10192,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred59() {
+    public final boolean synpred164() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred59_fragment(); // can never throw exception
+            synpred164_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11848,11 +10206,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred28() {
+    public final boolean synpred163() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred28_fragment(); // can never throw exception
+            synpred163_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11862,263 +10220,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred33() {
+    public final boolean synpred162() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred33_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred61() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred61_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred29() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred29_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred83() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred83_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred152() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred152_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred3() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred3_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred168() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred168_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred26() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred26_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred80() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred80_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred181() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred181_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred102() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred102_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred95() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred95_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred78() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred78_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred147() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred147_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred179() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred179_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred10() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred10_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred157() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred157_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred81() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred81_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred77() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred77_fragment(); // can never throw exception
+            synpred162_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -12142,11 +10248,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred96() {
+    public final boolean synpred160() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred96_fragment(); // can never throw exception
+            synpred160_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -12156,11 +10262,305 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred172() {
+    public final boolean synpred169() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred172_fragment(); // can never throw exception
+            synpred169_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred168() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred168_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred167() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred167_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred166() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred166_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred35() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred35_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred34() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred34_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred33() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred33_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred32() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred32_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred39() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred39_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred38() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred38_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred37() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred37_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred36() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred36_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred31() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred31_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred30() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred30_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred152() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred152_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred151() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred151_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred154() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred154_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred153() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred153_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred150() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred150_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred159() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred159_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred156() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred156_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred155() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred155_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -12184,11 +10584,235 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred5() {
+    public final boolean synpred157() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred5_fragment(); // can never throw exception
+            synpred157_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred69() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred69_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred66() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred66_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred65() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred65_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred68() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred68_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred67() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred67_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred62() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred62_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred101() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred101_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred100() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred100_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred61() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred61_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred103() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred103_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred64() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred64_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred102() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred102_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred63() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred63_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred105() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred105_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred104() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred104_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred107() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred107_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -12212,11 +10836,431 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred149() {
+    public final boolean synpred106() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred149_fragment(); // can never throw exception
+            synpred106_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred108() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred108_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred109() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred109_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred59() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred59_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred58() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred58_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred57() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred57_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred56() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred56_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred55() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred55_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred54() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred54_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred5() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred5_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred53() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred53_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred6() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred6_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred52() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred52_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred7() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred7_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred51() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred51_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred50() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred50_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred1() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred1_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred2() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred2_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred3() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred3_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred4() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred4_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred170() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred170_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred171() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred171_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred174() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred174_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred173() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred173_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred9() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred9_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred126() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred126_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred127() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred127_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred80() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred80_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred128() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred128_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred81() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred81_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred129() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred129_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -12240,11 +11284,1131 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred159() {
+    public final boolean synpred122() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred159_fragment(); // can never throw exception
+            synpred122_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred83() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred83_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred123() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred123_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred84() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred84_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred124() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred124_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred85() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred85_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred125() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred125_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred86() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred86_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred87() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred87_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred88() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred88_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred120() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred120_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred89() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred89_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred121() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred121_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred117() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred117_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred70() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred70_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred118() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred118_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred71() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred71_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred115() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred115_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred116() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred116_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred113() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred113_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred74() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred74_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred114() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred114_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred75() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred75_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred111() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred111_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred72() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred72_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred112() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred112_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred73() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred73_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred78() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred78_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred110() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred110_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred79() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred79_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred76() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred76_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred77() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred77_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred119() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred119_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred144() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred144_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred145() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred145_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred146() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred146_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred147() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred147_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred148() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred148_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred149() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred149_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred29() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred29_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred140() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred140_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred141() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred141_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred142() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred142_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred143() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred143_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred20() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred20_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred25() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred25_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred26() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred26_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred23() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred23_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred24() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred24_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred21() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred21_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred22() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred22_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred135() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred135_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred96() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred96_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred136() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred136_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred97() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred97_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred133() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred133_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred94() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred94_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred134() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred134_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred95() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred95_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred139() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred139_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred19() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred19_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred92() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred92_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred18() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred18_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred93() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred93_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred137() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred137_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred90() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred90_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred138() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred138_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred91() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred91_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred131() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred131_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred132() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred132_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred98() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred98_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred130() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred130_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred99() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred99_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred14() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred14_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred15() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred15_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred16() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred16_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred17() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred17_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred10() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred10_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred11() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred11_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred12() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred12_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred13() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred13_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
