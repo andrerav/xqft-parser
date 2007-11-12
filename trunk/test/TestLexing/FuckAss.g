@@ -7,6 +7,20 @@ tokens
 
 @members
 {
+    public static void main(String[] args) throws Exception {
+        FuckAssLexer lex = new FuckAssLexer(new ANTLRFileStream(args[0]));
+       	CommonTokenStream tokens = new CommonTokenStream(lex);
+
+        FuckAssParser parser = new FuckAssParser(tokens);
+
+        try {
+            parser.root();
+        } catch (RecognitionException e)  {
+            e.printStackTrace();
+        }
+    }
+    
+
 public FuckAssLexer fulexer;
 }
 

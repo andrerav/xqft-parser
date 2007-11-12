@@ -115,6 +115,34 @@ TODO: example
 
 TODO: result (also note in conclusion)
 
+\subsubsection{Nested comments}
+XQuery allows nested comments, for example:
+\begin{verbatim}
+(: this is a comment (: this comment is nested :) :)
+\end{verbatim}
+This is a classic problem in compiler construction, however it can be solved
+using standard Antlr syntax, without resorting to custom functions/methods for
+consuming input and keeping track of nesting. The original EBNF as specified by
+W3C is as follows:
+\begin{verbatim}
+Comment ::= "(:" (CommentContents | Comment)* ":)"
+\end{verbatim}
+At first glance, this seems uncomplicated and straight forward, but this grammar
+needs to be rewritten to be accepted by an LL(1) parser. A suggestion for a 
+solution to this problem was initially found on the Antlr mailing
+list\footnote{http://www.antlr.org:8080/pipermail/antlr-interest/2005-July/012967.html},
+and we based our implementation on such an approach. This lexer rule will
+correctly detect and allow nested comments, and hide them from the parser:
+\begin{verbatim}	
+Comment : LXQCOMMENTSi 
+          (Comment | (COLONSi ~RPARSi)=>COLONSi 
+          | (LPARSi ~COLONSi)=>LPARSi 
+          | ~(LPARSi | COLONSi | IkkeChar))* 
+          RXQCOMMENTSi {$channel=HIDDEN;};
+\end{verbatim}
+TODO: oppdater eksempelet over (IkkeChar)
+
+
 \subsection{Unit testing the grammar}
 Unit testing can be a powerful tool for asserting functionality and can be a
 helpful aid in debugging and prevention of regression errors.  For unit testing the
@@ -153,3 +181,9 @@ must not fail to pass the test).
 
 gUnit is also capable of parsing abstract syntax trees built by the generated
 parser, but this feature has not been used in this project.
+
+\subsection{Debugging}
+There are several approaches to debugging. Antlrworks \cite{antlrwrks00} is a
+simple tool for writing, testing and debugging Antlr grammars. The debugging
+interface is useful in that it draws a realtime step-by-step parse tree as the
+input is being parsed, as well as displaying a list of parser events.

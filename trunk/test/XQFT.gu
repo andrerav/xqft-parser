@@ -20,8 +20,6 @@ piTarget: // Test piTarget rule
 	":ABC" OK
 	"_A_B_C" OK
 	":A_B_C" OK
-	
-
 
 forClause: // Test forClause rule
 
@@ -37,3 +35,13 @@ forClause: // Test forClause rule
 		score $score as $b//content ftcontains \"usability && testing\"
 		where $score > 0
 		return {$b}" OK
+		
+module: // Comment tests
+	"(: This is a comment :)" OK
+	"(: This is a (: nested :) comment :)" OK
+	"(: This is a (: very (: nested :):) comment :)" OK
+	"(: This is a badly formed comment" FAIL
+	"(: This is a badly formed comment :) :)" FAIL
+	"(: This is a badly (: nested comment :)" FAIL
+	
+	
