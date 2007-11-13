@@ -564,16 +564,12 @@ CharRef             	: CREFDECSi ('0'..'9')+ SEMICOLONSi
 LENDTAGSi 				: '</';
 NODEBEFORESi 			: '<<';
 LTOREQSi 				: '<=';
-
 GTOREQSi 				: '>=';
 NODEAFTERSi 			: '>>';
-
 DBLCOLONSi 				: '::';
 ASSIGNSi 				: ':=';
-
 DBLSLASHSi 				: '//';
 RSELFTERMSi 			: '/>';
-
 LPRAGSi 				: '(#';
 LDBLBRACSi 				: '{{';
 RDBLBRACSi 				: '}}';

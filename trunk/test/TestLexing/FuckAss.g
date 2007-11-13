@@ -1,4 +1,5 @@
 grammar FuckAss;
+/*
 @lexer::members {
 List tokens = new ArrayList();
 public void emit(Token token) {
@@ -12,7 +13,7 @@ public Token nextToken() {
         }
         return (Token)tokens.remove(0);
 }
-}
+}*/
 
 
 
@@ -21,10 +22,10 @@ fragment Ord		: ('a'..'z')+;
 WS		: ' ' {$channel=HIDDEN;};
 fragment S		: ' '+;
 Word		: ('a'..'z')+;
-fragment STA	: '(';
-fragment SLU	: ')';
-Sammen		: st=STA t=Tall S o=Ord? slu=SLU
-		{
+fragment STA	: '(' {emit();};
+fragment SLU	: ')' {emit();};
+Sammen		: STA t=Tall S o=Ord? SLU
+/*		{
 		$st.setType(STA);
 		emit($st);
 		$t.setType(Tall);
@@ -33,9 +34,9 @@ Sammen		: st=STA t=Tall S o=Ord? slu=SLU
 		emit($o);
 		$slu.setType(SLU);
 		emit($slu);
-		};
+		}*/ ;
 
 tekst		: Word* greie  Word*;
-greie		: STA Tall Ord? SLU;
+greie		: STA Sammen SLU;
 
 
