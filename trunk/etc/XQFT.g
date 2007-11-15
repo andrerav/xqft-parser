@@ -6,6 +6,32 @@ filter=true;
     //output=AST;
     //ASTLabelType=Object;
 }
+
+@lexer::members {
+
+ArrayList<Token> tokens = new ArrayList<Token>();
+
+public void emit(Token token) {
+	this.token = token;
+	tokens.add(token);
+	}
+	
+public Token nextToken() {
+	super.nextToken();
+	if ( tokens.size()==0 ) {
+	    return Token.EOF_TOKEN;
+	}
+	return tokens.remove(0);
+	}
+
+public void prepareSubToken(){
+	tokenStartCharIndex = input.index();
+	tokenStartCharPositionInLine = input.getCharPositionInLine();
+	tokenStartLine = input.getLine();
+	text = null;
+}
+}
+
 //----------------------------------------------------- Module -------------------------------------------------------
 
 module                     				: versionDecl? (libraryModule | mainModule);
@@ -280,8 +306,7 @@ ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?;
 //									additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#
 //							ftSelection# 							: #PAA EGET (DETTE)#
 							ftExtensionSelection        			: pragma+ LBRACESi ftSelection? RBRACSi;
-								pragma                      			: LPRAGSi S? qName (S pragmaContents)? RPRAGSi; /* ws: explicit */
-									pragmaContents        					: m=ZeroOrMoreChar	{ !$m.getText().contains("#") }?;
+								pragma                      			: LPRAGSi qName PragmaContents? RPRAGSi;
 //								ftSelection# 							: #PAA EGET (DETTE)#
 								
 //						ftMatchOptions              			: ftMatchOption+;     						/* xgc: multiple-match-options */
@@ -415,8 +440,7 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 				
     
     extensionExpr               			: pragma+ LBRACESi expr? RBRACSi; 
-//    	pragma                      			: LPRAGSi S? qName (S pragmaContents)? RPRAGSi; 							/* ws: explicit */  
-//    		pragmaContents        					: m=ZeroOrMoreChar				{ !$m.getText().contains("#") }?;
+//    	pragma                      			: LPRAGSi qName PragmaContents? RPRAGSi; 
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
 //			exprSingle#								: #PAA EGET#            									
 
@@ -457,8 +481,8 @@ filterExpr                  			: primaryExpr predicateList;
 		
 												
 			directConstructor           			: dirElemConstructor
-					                                | DirCommentConstructor
-                									| DirPIConstructor;
+					                                | dirCommentConstructor
+                									| dirPIConstructor;
                 									
             	dirElemConstructor          			: LTSi qName dirAttributeList 			/* ws: explicitXQ */
             											(RSELFTERMSi 
@@ -481,12 +505,17 @@ filterExpr                  			: primaryExpr predicateList;
 //                						expr                        			: exprSingle (COMMASi exprSingle)*;
 //											exprSingle#								: #PAA EGET#
 
-					dirElemContent              			: directConstructor | CDataSection | commonContent | ElementContentChar;
+					dirElemContent              			: directConstructor | cDataSection | commonContent | ElementContentChar;
 //						directConstructor#						: #SE filterExpr->primaryExpr->constructor->directConstructor#
+						cDataSection							: LCDATASi CDataContents RCDATASi;
 //         				commonContent               			: PredefinedEntityRef | CharRef | LDBLBRACSi| RDBLBRACSi| enclosedExpr;
 //            				enclosedExpr                			: LBRACESi expr RBRACSi
 //            					expr                        			: exprSingle (COMMASi exprSingle)*;
 //									exprSingle#								: #PAA EGET#
+				
+				dirCommentConstructor					: LCOMMENTSi DirCommentContent RCOMMENTSi;
+				
+				dirPiConstructor						: LPISi PiTarget DirPiContents? RPISi;
 				
 			computedConstructor         			: compDocConstructor
 					                                | compElemConstructor
@@ -522,11 +551,21 @@ filterExpr                  			: primaryExpr predicateList;
 
 
 //---------------------------------------------------- Lexer ---------------------------------------------------
+/*
+Productions with -LEX suffix are productions with similar named parser productions. The ones in the lexer generally emits more
+than one token, and will not generate a token of it self.
 
-CDataSection            : LCDATASi 															/* ws: explicitXQ */
-							((RBRACKSi ~RBRACKSi)=> RBRACKSi | (RBRACKSi RBRACKSi ~'>')=> RBRACKSi | ~(RBRACKSi | NotChar))* 
-						  RCDATASi;	
+Productions with a -Si suffix are productions consisting of only matching a special character or a series of special characters,
+eg. QUESTIONSi = '?' and DBLSLASHSi = '//'
+*/
+
+
+
+CDataSectionLEX           : {prepareSubToken();} 	LCDATASi 		{this.type=LCDATASi; emit();}		/* ws: explicitXQ */
+						    {prepareSubToken();} 	CDataContents 	{this.type=CDataContents; emit();}
+						    {prepareSubToken();} 	RCDATASi 		{this.type=RCDATASi; emit();};
 	fragment LCDATASi		: '<![CDATA[';
+	fragment CDataContents	: ((RBRACKSi ~RBRACKSi)=> RBRACKSi | (RBRACKSi RBRACKSi ~'>')=> RBRACKSi | ~(RBRACKSi | NotChar))* ;
 	fragment RCDATASi 		: ']]>';
 
 
@@ -537,28 +576,51 @@ Comment            		: LXQCOMMENTSi
 	fragment RXQCOMMENTSi	: ':)';
 
 
-DirPIConstructor     	: LPISi PiTarget 													/* ws:explicitXQ */
-							(WS ((QUESTIONSi ~GTSi)=>QUESTIONSi | ~(NotChar | QUESTIONSi))*)? 
-						  RPISi; 							
-	fragment PiTarget		: n=Name								{ !$n.getText().equalsIgnoreCase("XML") }?;
-	fragment Name       	: (Letter | UNDERSCORESi | COLONSi) (NameChar)*;
-	fragment NameChar		: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender;
+DirPIConstructor     	: {prepareSubToken();}	LPISi			{this.type=LPISi; emit();} /* ws:explicitXQ */
+						  {prepareSubToken();}	PiTarget 		{this.type=PiTarget; emit();}
+						  (WS 
+						  {prepareSubToken();}	d=DirPiContents	{if(d!=null){this.type=DirPiContents; emit();}} )?
+						  {prepareSubToken();}	RPISi 			{this.type=RPISi; emit();};
 	fragment LPISi 			: '<?';
+	fragment PiTarget		: n=Name{ !$n.getText().equalsIgnoreCase("XML") }?;
+		fragment Name       	: (Letter | UNDERSCORESi | COLONSi) (NameChar)*;
+		fragment NameChar		: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender;
+	fragment DirPiContents	: ((QUESTIONSi ~GTSi)=>QUESTIONSi | ~(NotChar | QUESTIONSi))*;
 	fragment RPISi 			: '?>';
 
 
-DirCommentConstructor   : LCOMMENTSi 
-							((MINUSSi ~MINUSSi)=> MINUSSi | ~(NotChar | MINUSSi))* 
-						  RCOMMENTSi;
-	fragment LCOMMENTSi 	: '<!--';
-	fragment RCOMMENTSi		: '-->';
+DirCommentConstructorLEX	: {prepareSubToken();}	LCOMMENTSi 			{this.type=LCOMMENTSi; emit();}
+						  	  {prepareSubToken();}	DirCommentContent	{this.type=DirCommentContent; emit();}
+						  	  {prepareSubToken();}	RCOMMENTSi			{this.type=RCOMMENTSi; emit();};
+	fragment LCOMMENTSi 		: '<!--';
+	fragment DirCommentContent	: ((MINUSSi ~MINUSSi)=> MINUSSi | ~(NotChar | MINUSSi))* ;
+	fragment RCOMMENTSi			: '-->';
+
+/* ws: explicit */
+PragmaLEX					: {prepareSubToken();}	LPRAGSi					{this.type=LPRAGSi; emit();} 
+							  WS? 
+							  {prepareSubToken();}	NCName					{this.type=NCName; emit();}
+							  (
+							  	{prepareSubToken();}	c=COLONSi			{if(c!=null){this.type=COLONSi; emit();}}
+							  	{prepareSubToken();}	n=NCName			{if(n!=null){this.type=NCName; emit();}}
+							  	)?
+							  (WS 
+							  	{prepareSubToken();}	p=PragmaContents	{if(p!=null){this.type=PragmaContents; emit();}}
+							  	)? 
+							  {prepareSubToken();}	RPRAGSi					{this.type=RPRAGSi; emit();}; 
+	LPRAGSi 					: '(#';										  
+	PragmaContents        		: ((SHARPSi ~ RPARSi)=> SHARPSi | ~(NotChar | SHARPSi))*;
+	RPRAGSi 					: '#)';
 
 
-// PROBLEM, finnes referanse til denne både i lexer og i parser
-CharRef             	: CREFDECSi ('0'..'9')+ SEMICOLONSi 
-						| CREFHEXSi ('0'..'9'|'a'..'f'|'A'..'F')+ SEMICOLONSi;
-	fragment CREFDECSi		: '&#';
-	fragment CREFHEXSi		: '&#x';
+IntegerLiteral				: Digits;
+DecimalLiteral				: DOTSi Digits 
+							| Digits DOTSi ('0'..'9')*;
+DoubleLiteral				: (
+								DOTSi Digits 
+								| Digits ( DOTSi ('0'..'9')* )?
+								) 
+							('e'|'E') (PLUSSi|MINUSSi)? Digits;
 
 
 LENDTAGSi 				: '</';
@@ -570,12 +632,10 @@ DBLCOLONSi 				: '::';
 ASSIGNSi 				: ':=';
 DBLSLASHSi 				: '//';
 RSELFTERMSi 			: '/>';
-LPRAGSi 				: '(#';
 LDBLBRACSi 				: '{{';
 RDBLBRACSi 				: '}}';
 DOTDOTSi 				: '..';
 NEQSi 					: '!=';
-RPRAGSi 				: '#)';
 
 
 ALL 					: 'all';
@@ -719,6 +779,10 @@ WORD 					: 'word';
 WORDS 					: 'words';
 XQUERY 					: 'xquery';
 
+NCName              					: NCNameStartChar NCNameChar*;
+fragment NCNameChar					   	: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | CombiningChar | Extender;
+fragment NCNameStartChar     			: Letter | UNDERSCORESi;
+
 //Characters that are in no other lexerproductions: ! " # $ & ' ( ) * + , - . / : ; < = > ? @ [ \ ] _ { | }
 fragment EXCLSi				: '!';					// not used in parser
 fragment QUOTSi 			: '"';
@@ -780,10 +844,6 @@ TOKENSWITCH				: (ESCQUOTSi)=>ESCQUOTSi	{$type=ESCQUOTSi;}
 						| RBRACSi					{$type=RBRACSi;}	
 						;
 
-NCName              					: NCNameStartChar NCNameChar*;
-fragment NCNameChar					   	: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | CombiningChar | Extender;
-fragment NCNameStartChar     			: Letter | UNDERSCORESi;
-
 StringLiteral	    					: QUOTSi 
 											(PredefinedEntityRef | CharRef | ESCQUOTSi | ~(QUOTSi|AMPERSi))* 
 											QUOTSi 
@@ -791,23 +851,35 @@ StringLiteral	    					: QUOTSi
 											(PredefinedEntityRef | CharRef | ESCAPOSSi | ~(APOSSi|AMPERSi))* 
 											APOSSi
 										;
+										
+/*
+dirAttributeValue           			: QUOTSi   
+											(ESCQUOTSi | QuotAttrContentChar | PredefinedEntityRef|CharRef
+											|LDBLBRACSi|RDBLBRACSi|enclosedExpr)* 
+											QUOTSi
+										| APOSSi 
+											(ESCAPOSSi | AposAttrContentChar | PredefinedEntityRef|CharRef
+												|LDBLBRACSi|RDBLBRACSi|enclosedExpr)* 
+											APOSSi; 
+*/
+
+fragment ElementContentChar				: CleanChar | QUOTSi | APOSSi | MINUSSi;		//KOMMER ALDRI HIT
+fragment QuotAttrContentChar			: CleanChar | APOSSi | MINUSSi;					//
+fragment AposAttrContentChar			: CleanChar | QUOTSi | MINUSSi;					//
+
+// PROBLEM, finnes referanse til denne både i lexer og i parser
+fragment CharRef             	: CREFDECSi ('0'..'9')+ SEMICOLONSi 
+								| CREFHEXSi ('0'..'9'|'a'..'f'|'A'..'F')+ SEMICOLONSi;
+	fragment CREFDECSi				: '&#';
+	fragment CREFHEXSi				: '&#x';
+
+//BRUKES OGSÅ I PARSER
+fragment PredefinedEntityRef	 		: AMPERSi ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
 
 
 S                   					: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+		{$channel=HIDDEN;};
 fragment WS            					: ('\u0020' | '\u0009' | '\u000D' | '\u000A');
 
-IntegerLiteral  	    				: Digits;
-	
-DecimalLiteral      					: DOTSi Digits 
-										| Digits DOTSi ('0'..'9')*
-										;
-DoubleLiteral    		   				: 	(
-											  DOTSi Digits 
-											| Digits ( DOTSi ('0'..'9')* )?
-											) 
-											('e'|'E') (PLUSSi|MINUSSi)? Digits
-										;
-	
 
 fragment ExtraChar						: '\u0025' | '\u005E' | '\u0060' | '\u007E'..'\u00B6' | '\u00B8'..'\u00BF' | '\u00D7' | '\u00F7' | '\u0132'..'\u0133' | '\u013F'..'\u0140' | '\u0149' | '\u017F' | '\u01C4'..'\u01CC' | '\u01F1'..'\u01F3' | '\u01F6'..'\u01F9' | '\u0218'..'\u024F' | '\u02A9'..'\u02BA' | '\u02C2'..'\u02CF' | '\u02D2'..'\u02FF' | '\u0346'..'\u035F' | '\u0362'..'\u0385' | '\u038B' | '\u038D' | '\u03A2' | '\u03CF' | '\u03D7'..'\u03D9' | '\u03DB' | '\u03DD' | '\u03DF' | '\u03E1' | '\u03F4'..'\u0400' | '\u040D' | '\u0450' | '\u045D' | '\u0482' | '\u0487'..'\u048F' | '\u04C5'..'\u04C6' | '\u04C9'..'\u04CA' | '\u04CD'..'\u04CF' | '\u04EC'..'\u04ED' | '\u04F6'..'\u04F7' | '\u04FA'..'\u0530' | '\u0557'..'\u0558' | '\u055A'..'\u0560' | '\u0587'..'\u0590' | '\u05A2' | '\u05BA' | '\u05BE' | '\u05C0' | '\u05C3' | '\u05C5'..'\u05CF' | '\u05EB'..'\u05EF' | '\u05F3'..'\u0620' | '\u063B'..'\u063F' | '\u0653'..'\u065F' | '\u066A'..'\u066F' | '\u06B8'..'\u06B9' | '\u06BF' | '\u06CF' | '\u06D4' | '\u06E9' | '\u06EE'..'\u06EF' | '\u06FA'..'\u0900' | '\u0904' | '\u093A'..'\u093B' | '\u094E'..'\u0950' | '\u0955'..'\u0957' | '\u0964'..'\u0965' | '\u0970'..'\u0980' | '\u0984' | '\u098D'..'\u098E' | '\u0991'..'\u0992' | '\u09A9' | '\u09B1' | '\u09B3'..'\u09B5' | '\u09BA'..'\u09BB' | '\u09BD' | '\u09C5'..'\u09C6' | '\u09C9'..'\u09CA' | '\u09CE'..'\u09D6' | '\u09D8'..'\u09DB' | '\u09DE' | '\u09E4'..'\u09E5' | '\u09F2'..'\u0A01' | '\u0A03'..'\u0A04' | '\u0A0B'..'\u0A0E' | '\u0A11'..'\u0A12' | '\u0A29' | '\u0A31' | '\u0A34' | '\u0A37' | '\u0A3A'..'\u0A3B' | '\u0A3D' | '\u0A43'..'\u0A46' | '\u0A49'..'\u0A4A' | '\u0A4E'..'\u0A58' | '\u0A5D' | '\u0A5F'..'\u0A65' | '\u0A75'..'\u0A80' | '\u0A84' | '\u0A8C' | '\u0A8E' | '\u0A92' | '\u0AA9' | '\u0AB1' | '\u0AB4' | '\u0ABA'..'\u0ABB' | '\u0AC6' | '\u0ACA' | '\u0ACE'..'\u0ADF' | '\u0AE1'..'\u0AE5' | '\u0AF0'..'\u0B00' | '\u0B04' | '\u0B0D'..'\u0B0E' | '\u0B11'..'\u0B12' | '\u0B29' | '\u0B31' | '\u0B34'..'\u0B35' | '\u0B3A'..'\u0B3B' | '\u0B44'..'\u0B46' | '\u0B49'..'\u0B4A' | '\u0B4E'..'\u0B55' | '\u0B58'..'\u0B5B' | '\u0B5E' | '\u0B62'..'\u0B65' | '\u0B70'..'\u0B81' | '\u0B84' | '\u0B8B'..'\u0B8D' | '\u0B91' | '\u0B96'..'\u0B98' | '\u0B9B' | '\u0B9D' | '\u0BA0'..'\u0BA2' | '\u0BA5'..'\u0BA7' | '\u0BAB'..'\u0BAD' | '\u0BB6' | '\u0BBA'..'\u0BBD' | '\u0BC3'..'\u0BC5' | '\u0BC9' | '\u0BCE'..'\u0BD6' | '\u0BD8'..'\u0BE6' | '\u0BF0'..'\u0C00' | '\u0C04' | '\u0C0D' | '\u0C11' | '\u0C29' | '\u0C34' | '\u0C3A'..'\u0C3D' | '\u0C45' | '\u0C49' | '\u0C4E'..'\u0C54' | '\u0C57'..'\u0C5F' | '\u0C62'..'\u0C65' | '\u0C70'..'\u0C81' | '\u0C84' | '\u0C8D' | '\u0C91' | '\u0CA9' | '\u0CB4' | '\u0CBA'..'\u0CBD' | '\u0CC5' | '\u0CC9' | '\u0CCE'..'\u0CD4' | '\u0CD7'..'\u0CDD' | '\u0CDF' | '\u0CE2'..'\u0CE5' | '\u0CF0'..'\u0D01' | '\u0D04' | '\u0D0D' | '\u0D11' | '\u0D29' | '\u0D3A'..'\u0D3D' | '\u0D44'..'\u0D45' | '\u0D49' | '\u0D4E'..'\u0D56' | '\u0D58'..'\u0D5F' | '\u0D62'..'\u0D65' | '\u0D70'..'\u0E00' | '\u0E2F' | '\u0E3B'..'\u0E3F' | '\u0E4F' | '\u0E5A'..'\u0E80' | '\u0E83' | '\u0E85'..'\u0E86' | '\u0E89' | '\u0E8B'..'\u0E8C' | '\u0E8E'..'\u0E93' | '\u0E98' | '\u0EA0' | '\u0EA4' | '\u0EA6' | '\u0EA8'..'\u0EA9' | '\u0EAC' | '\u0EAF' | '\u0EBA' | '\u0EBE'..'\u0EBF' | '\u0EC5' | '\u0EC7' | '\u0ECE'..'\u0ECF' | '\u0EDA'..'\u0F17' | '\u0F1A'..'\u0F1F' | '\u0F2A'..'\u0F34' | '\u0F36' | '\u0F38' | '\u0F3A'..'\u0F3D' | '\u0F48' | '\u0F6A'..'\u0F70' | '\u0F85' | '\u0F8C'..'\u0F8F' | '\u0F96' | '\u0F98' | '\u0FAE'..'\u0FB0' | '\u0FB8' | '\u0FBA'..'\u109F' | '\u10C6'..'\u10CF' | '\u10F7'..'\u10FF' | '\u1101' | '\u1104' | '\u1108' | '\u110A' | '\u110D' | '\u1113'..'\u113B' | '\u113D' | '\u113F' | '\u1141'..'\u114B' | '\u114D' | '\u114F' | '\u1151'..'\u1153' | '\u1156'..'\u1158' | '\u115A'..'\u115E' | '\u1162' | '\u1164' | '\u1166' | '\u1168' | '\u116A'..'\u116C' | '\u116F'..'\u1171' | '\u1174' | '\u1176'..'\u119D' | '\u119F'..'\u11A7' | '\u11A9'..'\u11AA' | '\u11AC'..'\u11AD' | '\u11B0'..'\u11B6' | '\u11B9' | '\u11BB' | '\u11C3'..'\u11EA' | '\u11EC'..'\u11EF' | '\u11F1'..'\u11F8' | '\u11FA'..'\u1DFF' | '\u1E9C'..'\u1E9F' | '\u1EFA'..'\u1EFF' | '\u1F16'..'\u1F17' | '\u1F1E'..'\u1F1F' | '\u1F46'..'\u1F47' | '\u1F4E'..'\u1F4F' | '\u1F58' | '\u1F5A' | '\u1F5C' | '\u1F5E' | '\u1F7E'..'\u1F7F' | '\u1FB5' | '\u1FBD' | '\u1FBF'..'\u1FC1' | '\u1FC5' | '\u1FCD'..'\u1FCF' | '\u1FD4'..'\u1FD5' | '\u1FDC'..'\u1FDF' | '\u1FED'..'\u1FF1' | '\u1FF5' | '\u1FFD'..'\u20CF' | '\u20DD'..'\u20E0' | '\u20E2'..'\u2125' | '\u2127'..'\u2129' | '\u212C'..'\u212D' | '\u212F'..'\u217F' | '\u2183'..'\u3004' | '\u3006' | '\u3008'..'\u3020' | '\u3030' | '\u3036'..'\u3040' | '\u3095'..'\u3098' | '\u309B'..'\u309C' | '\u309F'..'\u30A0' | '\u30FB' | '\u30FF'..'\u3104' | '\u312D'..'\u4DFF' | '\u9FA6'..'\uABFF' | '\uD7A4'..'\uD7FF' | '\uE000'..'\uFFFD';
 fragment CleanChar						: WS | BaseChar | Ideographic | CombiningChar | Extender | Digit | ExtraChar 
@@ -819,16 +891,6 @@ fragment Char							: CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi |
 fragment NotChar						: '\u0001'..'\u0008' | '\u000B' | '\u000C' | '\u000E'..'\u001F' | '\uD800'..'\uDFFF' 
 										| '\uFFFE' | '\uFFFF';
 										 
-
-fragment ElementContentChar				: CleanChar | QUOTSi | APOSSi | MINUSSi;		//KOMMER ALDRI HIT
-fragment QuotAttrContentChar			: CleanChar | APOSSi | MINUSSi;					//
-fragment AposAttrContentChar			: CleanChar | QUOTSi | MINUSSi;					//
-
-
-fragment ZeroOrMoreChar		    		: Char*;
-
-
-fragment PredefinedEntityRef	 		: AMPERSi ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
 
 fragment Digits              			: ('0'..'9')+;
 //"Tall + asiatiske tall" 
@@ -843,4 +905,3 @@ fragment Ideographic        			: '\u4E00'..'\u9FA5' | '\u3007' | '\u3021'..'\u30
 fragment CombiningChar       			: '\u0300'..'\u0345' | '\u0360'..'\u0361' | '\u0483'..'\u0486' | '\u0591'..'\u05A1' | '\u05A3'..'\u05B9' | '\u05BB'..'\u05BD' | '\u05BF' | '\u05C1'..'\u05C2' | '\u05C4' | '\u064B'..'\u0652' | '\u0670' | '\u06D6'..'\u06DC' | '\u06DD'..'\u06DF' | '\u06E0'..'\u06E4' | '\u06E7'..'\u06E8' | '\u06EA'..'\u06ED' | '\u0901'..'\u0903' | '\u093C' | '\u093E'..'\u094C' | '\u094D' | '\u0951'..'\u0954' | '\u0962'..'\u0963' | '\u0981'..'\u0983' | '\u09BC' | '\u09BE' | '\u09BF' | '\u09C0'..'\u09C4' | '\u09C7'..'\u09C8' | '\u09CB'..'\u09CD' | '\u09D7' | '\u09E2'..'\u09E3' | '\u0A02' | '\u0A3C' | '\u0A3E' | '\u0A3F' | '\u0A40'..'\u0A42' | '\u0A47'..'\u0A48' | '\u0A4B'..'\u0A4D' | '\u0A70'..'\u0A71' | '\u0A81'..'\u0A83' | '\u0ABC' | '\u0ABE'..'\u0AC5' | '\u0AC7'..'\u0AC9' | '\u0ACB'..'\u0ACD' | '\u0B01'..'\u0B03' | '\u0B3C' | '\u0B3E'..'\u0B43' | '\u0B47'..'\u0B48' | '\u0B4B'..'\u0B4D' | '\u0B56'..'\u0B57' | '\u0B82'..'\u0B83' | '\u0BBE'..'\u0BC2' | '\u0BC6'..'\u0BC8' | '\u0BCA'..'\u0BCD' | '\u0BD7' | '\u0C01'..'\u0C03' | '\u0C3E'..'\u0C44' | '\u0C46'..'\u0C48' | '\u0C4A'..'\u0C4D' | '\u0C55'..'\u0C56' | '\u0C82'..'\u0C83' | '\u0CBE'..'\u0CC4' | '\u0CC6'..'\u0CC8' | '\u0CCA'..'\u0CCD' | '\u0CD5'..'\u0CD6' | '\u0D02'..'\u0D03' | '\u0D3E'..'\u0D43' | '\u0D46'..'\u0D48' | '\u0D4A'..'\u0D4D' | '\u0D57' | '\u0E31' | '\u0E34'..'\u0E3A' | '\u0E47'..'\u0E4E' | '\u0EB1' | '\u0EB4'..'\u0EB9' | '\u0EBB'..'\u0EBC' | '\u0EC8'..'\u0ECD' | '\u0F18'..'\u0F19' | '\u0F35' | '\u0F37' | '\u0F39' | '\u0F3E' | '\u0F3F' | '\u0F71'..'\u0F84' | '\u0F86'..'\u0F8B' | '\u0F90'..'\u0F95' | '\u0F97' | '\u0F99'..'\u0FAD' | '\u0FB1'..'\u0FB7' | '\u0FB9' | '\u20D0'..'\u20DC' | '\u20E1' | '\u302A'..'\u302F' | '\u3099' | '\u309A';
 //"Asiatiske talltillegg?"
 fragment Extender    			        : '\u00B7' | '\u02D0' | '\u02D1' | '\u0387' | '\u0640' | '\u0E46' | '\u0EC6' | '\u3005' | '\u3031'..'\u3035' | '\u309D'..'\u309E' | '\u30FC'..'\u30FE';
-							
