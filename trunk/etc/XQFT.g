@@ -7,29 +7,43 @@ filter=true;
     //ASTLabelType=Object;
 }
 
-@lexer::members {
-
-ArrayList<Token> tokens = new ArrayList<Token>();
-
-public void emit(Token token) {
-	this.token = token;
-	tokens.add(token);
-	}
-	
-public Token nextToken() {
-	super.nextToken();
-	if ( tokens.size()==0 ) {
-	    return Token.EOF_TOKEN;
-	}
-	return tokens.remove(0);
-	}
-
-public void prepareSubToken(){
-	tokenStartCharIndex = input.index();
-	tokenStartCharPositionInLine = input.getCharPositionInLine();
-	tokenStartLine = input.getLine();
-	text = null;
+@parser::header {
+	package no.ntnu.xqft.parse;	
 }
+
+@lexer::header {
+	package no.ntnu.xqft.parse;	
+}
+
+@parser::members {
+	
+	/* Root scope */
+	Scope currentScope = new Scope();	
+}
+
+@lexer::members {
+    
+    ArrayList<Token> tokens = new ArrayList<Token>();
+    
+    public void emit(Token token) {
+    	this.token = token;
+    	tokens.add(token);
+    	}
+    	
+    public Token nextToken() {
+    	super.nextToken();
+    	if ( tokens.size()==0 ) {
+    	    return Token.EOF_TOKEN;
+    	}
+    	return tokens.remove(0);
+    	}
+    
+    public void prepareSubToken(){
+    	tokenStartCharIndex = input.index();
+    	tokenStartCharPositionInLine = input.getCharPositionInLine();
+    	tokenStartLine = input.getLine();
+    	text = null;
+    }
 }
 
 //----------------------------------------------------- Module -------------------------------------------------------
@@ -102,7 +116,14 @@ functionDecl                			: DECLARE FUNCTION qName LPARSi paramList? RPARSi
 //			qName						 			: (NCName COLONSi)? NCName;	  
 //			typeDeclaration             			: AS sequenceType;	 
 //	sequenceType# 							: #PAA EGET#
-	enclosedExpr                			: LBRACESi expr RBRACSi;
+
+// TODO: enter/exit new scope
+	enclosedExpr                			: 
+												LBRACESi {Scope parent = this.currentScope; this.currentScope = new Scope(); this.currentScope.setParent(parent); }
+												expr 
+												RBRACSi { this.currentScope = this.currentScope.getParent(); }
+											;
+
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
 //			exprSingle# 							: #PAA EGET#
 			
@@ -159,7 +180,8 @@ sequenceType                			: (itemType occurrenceIndicator) => itemType occu
 	
 //---------------------------------------------------------- ExprSingle ---------------------------------------------------------
 
-exprSingle                  			: fLWORExpr
+exprSingle                  			:
+										fLWORExpr
                                 		| quantifiedExpr
                                 		| typeswitchExpr
                                 		| ifExpr
@@ -482,7 +504,7 @@ filterExpr                  			: primaryExpr predicateList;
 												
 			directConstructor           			: dirElemConstructor
 					                                | dirCommentConstructor
-                									| dirPIConstructor;
+                									| DirPIConstructor;
                 									
             	dirElemConstructor          			: LTSi qName dirAttributeList 			/* ws: explicitXQ */
             											(RSELFTERMSi 
@@ -889,7 +911,7 @@ fragment CleanChar						: WS | BaseChar | Ideographic | CombiningChar | Extender
 										;
 fragment Char							: CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi | MINUSSi;
 fragment NotChar						: '\u0001'..'\u0008' | '\u000B' | '\u000C' | '\u000E'..'\u001F' | '\uD800'..'\uDFFF' 
-										| '\uFFFE' | '\uFFFF';
+										/*| '\uFFFE' | '\uFFFF'*/;
 										 
 
 fragment Digits              			: ('0'..'9')+;

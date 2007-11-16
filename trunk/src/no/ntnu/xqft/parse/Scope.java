@@ -95,7 +95,7 @@ public class Scope {
      * @param params
      */
     public void defineFunction(String name, LinkedList<Symbol> params) {
-        
+        // TODO: Check if function exists
     }
     
     /**
@@ -105,6 +105,8 @@ public class Scope {
      * @param params
      */
     public void defineVariable(String name, Object value) {
+        
+        // TODO: check if var exists first
         VariableSymbol<Object> var = new VariableSymbol<Object>();
         var.setName(name);
         var.setValue(value);
