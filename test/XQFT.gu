@@ -1,26 +1,6 @@
 gunit XQFT;
 @header{package no.ntnu.xqft.parse;}
 
-piTarget: // Test piTarget rule
-
-	// Any case permutation of 'XML' must fail
-	"Xml" FAIL
-	"XMl" FAIL
-	"XML" FAIL
-	"XmL" FAIL
-
-	"xml" FAIL
-	"xMl" FAIL
-	"xML" FAIL
-	"xmL" FAIL
-	
-	// These should be ok once Name/NCName/etc works
-	"ABC" OK
-	"_ABC" OK
-	":ABC" OK
-	"_A_B_C" OK
-	":A_B_C" OK
-
 forClause: // Test forClause rule
 
 	// For loop with call to document(), should pass when problems with
