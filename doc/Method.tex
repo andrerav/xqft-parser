@@ -187,3 +187,55 @@ There are several approaches to debugging. Antlrworks \cite{antlrwrks00} is a
 simple tool for writing, testing and debugging Antlr grammars. The debugging
 interface is useful in that it draws a realtime step-by-step parse tree as the
 input is being parsed, as well as displaying a list of parser events.
+
+\subsection{Scoping and symbol tables}
+Scoping was implemented using a simple tree structure consisting of parent- and
+child scopes. XQuery only allows new scopes to be defined through the
+enclosedExpr production rule. This makes it trivial to start a new scope at the
+beginning of a enclosedExpr, and end the scope and the end of an enclosedExpr.
+This has been implemented as follows:
+\begin{verbatim}
+enclosedExpr : 
+    LBRACESi {
+        Scope parent = this.currentScope; 
+        this.currentScope = new Scope(); 
+        this.currentScope.setParent(parent); 
+    }
+    expr 
+    RBRACSi { 
+        this.currentScope = this.currentScope.getParent(); 
+    }
+;
+\end{verbatim}
+Where this.currentScope is a reference to the ``current'' scope in this
+context. This member variable is initiated with an empty scope when an object
+of the parser class is instantiated.
+
+The implementation above (which is formatted slightly for brevity) will
+automatically build a scope tree as the input is parsed.
+
+The currentScope object, which is an object of type Scope, holds one reference
+to a symbol table. The symbol table, which is a simple subclass of
+java.util.HashMap, is not capable of performing symbol lookups throughout the
+scope tree. This functionality is rather provided by the Scope class. This UML diagram
+illustrates the relationship between the Scope, SymTab, and Symbol classes:
+\begin{figure}
+  \centering
+    \includegraphics[width=0.8\textwidth]{img/uml1.png}
+  \caption{Simplified UML overview of classes related to scope and symbol table}
+\end{figure}
+
+\subsection{Type checking}
+XQuery/XPath has a well-defined type hierarchy:
+\begin{figure}
+  \centering
+    \includegraphics[width=0.8\textwidth]{img/xpathtypehierarchy.png}
+  \caption{XQuery/XPath type hierarchy}
+\end{figure}
+All types are derived from the following types in the hierarchy:
+\begin{itemize}
+  \item Node types
+  \item Structure types
+  \item Atomic types
+  \item Simple types
+\end{itemize}
