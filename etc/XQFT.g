@@ -876,8 +876,7 @@ StringLiteral	    					: QUOTSi
 										
 /*
 dirAttributeValue           			: QUOTSi   
-											(ESCQUOTSi | QuotAttrContentChar | PredefinedEntityRef|CharRef
-											|LDBLBRACSi|RDBLBRACSi|enclosedExpr)* 
+											(ESCQUOTSi | QuotAttrContentChar | PredefinedEntityRef|CharRef|LDBLBRACSi|RDBLBRACSi|enclosedExpr)* 
 											QUOTSi
 										| APOSSi 
 											(ESCAPOSSi | AposAttrContentChar | PredefinedEntityRef|CharRef
