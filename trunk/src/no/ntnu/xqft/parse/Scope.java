@@ -104,10 +104,10 @@ public class Scope {
      * @param name
      * @param params
      */
-    public void defineVariable(String name, Object value) {
+    public void defineVariable(String name, String value, int type) {
         
         // TODO: check if var exists first
-        VariableSymbol<Object> var = new VariableSymbol<Object>();
+        VariableSymbol var = new VariableSymbol();
         var.setName(name);
         var.setValue(value);
     }

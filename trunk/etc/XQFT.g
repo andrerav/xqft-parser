@@ -1,4 +1,4 @@
-grammar XQFT; 
+ grammar XQFT; 
 
 options { 
 filter=true;
@@ -199,20 +199,15 @@ exprSingle                  			:
 			ftScoreVar                  			: SCORE DOLLARSi varName;
 //				varName                    				: qName; 
 //			exprSingle# 									: #PAA EGET (DETTE)#
-			
-		letClause                   		: (
-											 LET DOLLARSi varName typeDeclaration? 
-											|LET SCORE DOLLARSi varName
-											) 
-											ASSIGNSi exprSingle 
-											(
-											COMMASi 
-												(
-											  	DOLLARSi varName typeDeclaration? 
-												| ftScoreVar
-												) 
-											ASSIGNSi exprSingle
-											)*;
+            
+		letClause                           : LET varBinding (COMMASi varBinding)*;
+
+		varBinding :
+			(DOLLARSi v=varName typeDeclaration? { this.currentScope.defineVariable($v); } | SCORE DOLLARSi v=varName { this.currentScope.defineVariable($v); })
+            ASSIGNSi exprSingle;
+
+
+
 //			varName                    				: qName; 
 //			typeDeclaration             			: AS sequenceType;
 //				sequenceType# 							: #PAA EGET#

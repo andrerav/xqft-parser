@@ -11,10 +11,10 @@ package no.ntnu.xqft.parse;
  * @author andreas, mads
  *
  */
-public class Symbol<T> {
+public class Symbol {
     
     protected String name;
-    protected T value;
+    protected String value;
     
     /**
      * @return the name
@@ -31,13 +31,13 @@ public class Symbol<T> {
     /**
      * @return the value
      */
-    public T getValue() {
+    public String getValue() {
         return value;
     }
     /**
      * @param value the value to set
      */
-    public void setValue(T value) {
+    public void setValue(String value) {
         this.value = value;
     }    
 }
