@@ -105,7 +105,7 @@ importStmt                  			: schemaImport | moduleImport;
 	moduleImport                			: IMPORT MODULE (NAMESPACE NCName EQSi)? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
 	
 varDecl                     			: DECLARE VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNSi exprSingle) | EXTERNAL);
-	qName						 			: NCName (COLONSi NCName)?;
+	qName returns [String text]			    : nc1=NCName (c=COLONSi nc2=NCName)? { $text = $nc1.text + ($c != null ? $c.text + $nc2.text : ""); };
 	typeDeclaration             			: AS sequenceType;
 //		sequenceType# 							: #PAA EGET#
 //	exprSingle# 							: #PAA EGET#
@@ -192,7 +192,7 @@ exprSingle                  			:
 	
 		forClause                   			: FOR DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle 
 													(COMMASi DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle)*;
-			varName                    				: qName;
+			varName returns [String name]          : qn=qName {$name = $qn.text;};
 //			typeDeclaration             			: AS sequenceType;
 //				sequenceType# 							: #PAA EGET#
 			positionalVar               			: AT DOLLARSi varName;
@@ -202,12 +202,9 @@ exprSingle                  			:
 //			exprSingle# 									: #PAA EGET (DETTE)#
             
 		letClause                           : LET varBinding (COMMASi varBinding)*;
-			varBinding :
-				(  DOLLARSi varName typeDeclaration? //{ this.currentScope.defineVariable($v); } TOK BORT v= FØR VARNAME
-				| SCORE DOLLARSi varName //{ this.currentScope.defineVariable($v); }
-				)
-            	ASSIGNSi exprSingle;
-
+		varBinding :
+			(DOLLARSi v1=varName typeDeclaration? { this.currentScope.defineVariable($v1.name); } | SCORE DOLLARSi v2=varName { this.currentScope.defineVariable($v2.name); })
+            ASSIGNSi exprSingle;
 
 
 //			varName                    				: qName; 
@@ -877,7 +874,7 @@ fragment CharRef             	: CREFDECSi ('0'..'9')+ SEMICOLONSi
 	fragment CREFDECSi				: '&#';
 	fragment CREFHEXSi				: '&#x';
 
-//BRUKES OGSÅ I PARSER
+//BRUKES OGSAA I PARSER
 fragment PredefinedEntityRef	 		: AMPERSi ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
 
 
