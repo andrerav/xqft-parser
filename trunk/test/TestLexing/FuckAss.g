@@ -73,7 +73,8 @@ Token_switch	: {staten==ELEMENT}? APOS {$type=APOS;}  	// 1
 		;
 		
 
-fragment Litz	: (IF)=>IF {tokenTypebukk=IF;}
+fragment Litz	: SLASHSLASHSi{tokenTypebukk=SLASHSLASHSi;} 
+		|(IF)=>IF {tokenTypebukk=IF;}
 		| (FOR)=>FOR {tokenTypebukk=FOR;}
 		| (IN)=>IN {tokenTypebukk=IN;}
 		| w=Word{tokenTypebukk=Word;;System.out.println(" xx" + $w.text + "xx");};
@@ -83,6 +84,8 @@ fragment IF	: 'if' {System.out.println("IF");};
 fragment FOR	: 'for'{System.out.println("FOR");};
 fragment IN	: 'in'{System.out.println("IN");};
 fragment APOS	:'"'{System.out.println("APOS");};
+fragment SLASHSLASHSi : SLASHSi SLASHSi {System.out.println("SLASHSLASH");};
+fragment SLASHSi:	'/';
 fragment StrLitt: QUOT Char+ QUOT;
 fragment LT	: '<'{System.out.println("LT");};
 fragment LTAG	: '<'{System.out.println("LTAG");};
@@ -95,16 +98,17 @@ fragment PLUSS	: '+' {System.out.println("PLUSS");};
 fragment MINUS	: '-' {System.out.println("MINUS");};
 fragment SEMI	: ';' {System.out.println("SEMI");};
 fragment QUOT	: '"' {System.out.println("QUOT");};
+fragment DOT	: '.' {System.out.println("DOT");};
 fragment AttCon	: AttChar* {System.out.print("AttCon");};
 fragment ElemCon: ElemChar* {System.out.print("ElemChar");};
 fragment Word	: Letter+ {System.out.print("Word");};
-fragment Number	: Digit+ {System.out.print("Number");};
+fragment Number	: Digit+ DOT Digit* {System.out.print("Number");};
 fragment Call	: '&' Digit Digit Digit {System.out.println("Call");};
 fragment WS	: (' ' | '\n')+ {$channel=HIDDEN;System.out.println("WS");};
 
-fragment Char	: 'a'..'z'|'A'..'Z'|'1'..'9'|'0'|'>'|'<'|'}'|'{'|'-'|'+'|'$'|';';
-fragment AttChar: 'a'..'z'|'A'..'Z'|'1'..'9'|'0'|'>'|'<'|'}'|'-'|'+'|'$'|' '|';';
-fragment ElemChar: 'a'..'z'|'A'..'Z'|'1'..'9'|'0'|'<'|'}'|'-'|'+'|'$'|' '|';';
+fragment Char	: 'a'..'z'|'A'..'Z'|'1'..'9'|'0'|'>'|'<'|'}'|'{'|'-'|'+'|'$'|';'|'/';
+fragment AttChar: 'a'..'z'|'A'..'Z'|'1'..'9'|'0'|'>'|'<'|'}'|'-'|'+'|'$'|' '|';'|'/';
+fragment ElemChar: 'a'..'z'|'A'..'Z'|'1'..'9'|'0'|'<'|'}'|'-'|'+'|'$'|' '|';'|'/';
 fragment Letter	: 'a'..'z'|'A'..'Z';
 fragment Digit	: '1'..'9'|'0';
 
@@ -117,7 +121,7 @@ expres		: elementMake
 		| forExpr  
 		| StrLitt 
 		| compExpr;
-ifExpr		: IF (variable | compExpr) calcExpr;
+ifExpr		: IF (variable | compExpr) calcExpr SLASHSLASHSi;
 forExpr		: FOR (variable | compExpr) IN (variable| StrLitt);
 calcExpr	: (Number) (PLUSS|MINUS) (variable);
 compExpr	: {fulexer.staten=2;System.out.println("OPERATOR");}(Number) (GT | LT) (variable){fulexer.staten=0;System.out.println("DEFAULT");};
