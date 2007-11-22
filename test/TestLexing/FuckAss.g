@@ -102,11 +102,11 @@ fragment DOT	: '.' {System.out.println("DOT");};
 fragment AttCon	: AttChar* {System.out.print("AttCon");};
 fragment ElemCon: ElemChar* {System.out.print("ElemChar");};
 fragment Word	: Letter+ {System.out.print("Word");};
-fragment Number	: Digit+ DOT Digit* {System.out.print("Number");};
+fragment Number	: Digit+ {System.out.print("Number");};
 fragment Call	: '&' Digit Digit Digit {System.out.println("Call");};
 fragment WS	: (' ' | '\n')+ {$channel=HIDDEN;System.out.println("WS");};
 
-fragment Char	: 'a'..'z'|'A'..'Z'|'1'..'9'|'0'|'>'|'<'|'}'|'{'|'-'|'+'|'$'|';'|'/';
+fragment Char	: 'a'..'z'|'A'..'Z'|'1'..'9'|'0'|'>'|'<'|'}'|'{'|'-'|'+'|'$'|';'|'/'|' ';
 fragment AttChar: 'a'..'z'|'A'..'Z'|'1'..'9'|'0'|'>'|'<'|'}'|'-'|'+'|'$'|' '|';'|'/';
 fragment ElemChar: 'a'..'z'|'A'..'Z'|'1'..'9'|'0'|'<'|'}'|'-'|'+'|'$'|' '|';'|'/';
 fragment Letter	: 'a'..'z'|'A'..'Z';
