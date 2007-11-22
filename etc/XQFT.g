@@ -1,11 +1,11 @@
  grammar XQFT; 
 
-options { 
-filter=true;
+//options { 
+//filter=true;
 //    k = 3;
     //output=AST;
     //ASTLabelType=Object;
-}
+//}
 
 @parser::header {
 	package no.ntnu.xqft.parse;	
@@ -23,7 +23,8 @@ filter=true;
 
 @lexer::members {
     
-    ArrayList<Token> tokens = new ArrayList<Token>();
+    private int tokenType = -1;										// used to pass type from fragment to fragment in LexLiterals
+    private ArrayList<Token> tokens = new ArrayList<Token>();
     
     public void emit(Token token) {
     	this.token = token;
@@ -201,10 +202,11 @@ exprSingle                  			:
 //			exprSingle# 									: #PAA EGET (DETTE)#
             
 		letClause                           : LET varBinding (COMMASi varBinding)*;
-
-		varBinding :
-			(DOLLARSi v=varName typeDeclaration? { this.currentScope.defineVariable($v); } | SCORE DOLLARSi v=varName { this.currentScope.defineVariable($v); })
-            ASSIGNSi exprSingle;
+			varBinding :
+				(  DOLLARSi varName typeDeclaration? //{ this.currentScope.defineVariable($v); } TOK BORT v= FØR VARNAME
+				| SCORE DOLLARSi varName //{ this.currentScope.defineVariable($v); }
+				)
+            	ASSIGNSi exprSingle;
 
 
 
@@ -577,59 +579,6 @@ eg. QUESTIONSi = '?' and DBLSLASHSi = '//'
 */
 
 
-
-CDataSectionLEX           : {prepareSubToken();} 	LCDATASi 		{this.type=LCDATASi; emit();}		/* ws: explicitXQ */
-						    {prepareSubToken();} 	CDataContents 	{this.type=CDataContents; emit();}
-						    {prepareSubToken();} 	RCDATASi 		{this.type=RCDATASi; emit();};
-	fragment LCDATASi		: '<![CDATA[';
-	fragment CDataContents	: ((RBRACKSi ~RBRACKSi)=> RBRACKSi | (RBRACKSi RBRACKSi ~'>')=> RBRACKSi | ~(RBRACKSi | NotChar))* ;
-	fragment RCDATASi 		: ']]>';
-
-
-Comment            		: LXQCOMMENTSi 
-							(Comment | (COLONSi ~RPARSi)=>COLONSi | (LPARSi ~COLONSi)=>LPARSi | ~(LPARSi | COLONSi | NotChar))* 
-						  RXQCOMMENTSi {$channel=HIDDEN;};
-	fragment LXQCOMMENTSi	: '(:';
-	fragment RXQCOMMENTSi	: ':)';
-
-
-DirPIConstructor     	: {prepareSubToken();}	LPISi			{this.type=LPISi; emit();} /* ws:explicitXQ */
-						  {prepareSubToken();}	PiTarget 		{this.type=PiTarget; emit();}
-						  (WS 
-						  {prepareSubToken();}	d=DirPiContents	{if(d!=null){this.type=DirPiContents; emit();}} )?
-						  {prepareSubToken();}	RPISi 			{this.type=RPISi; emit();};
-	fragment LPISi 			: '<?';
-	fragment PiTarget		: n=Name{ !$n.getText().equalsIgnoreCase("XML") }?;
-		fragment Name       	: (Letter | UNDERSCORESi | COLONSi) (NameChar)*;
-		fragment NameChar		: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender;
-	fragment DirPiContents	: ((QUESTIONSi ~GTSi)=>QUESTIONSi | ~(NotChar | QUESTIONSi))*;
-	fragment RPISi 			: '?>';
-
-
-DirCommentConstructorLEX	: {prepareSubToken();}	LCOMMENTSi 			{this.type=LCOMMENTSi; emit();}
-						  	  {prepareSubToken();}	DirCommentContent	{this.type=DirCommentContent; emit();}
-						  	  {prepareSubToken();}	RCOMMENTSi			{this.type=RCOMMENTSi; emit();};
-	fragment LCOMMENTSi 		: '<!--';
-	fragment DirCommentContent	: ((MINUSSi ~MINUSSi)=> MINUSSi | ~(NotChar | MINUSSi))* ;
-	fragment RCOMMENTSi			: '-->';
-
-/* ws: explicit */
-PragmaLEX					: {prepareSubToken();}	LPRAGSi					{this.type=LPRAGSi; emit();} 
-							  WS? 
-							  {prepareSubToken();}	NCName					{this.type=NCName; emit();}
-							  (
-							  	{prepareSubToken();}	c=COLONSi			{if(c!=null){this.type=COLONSi; emit();}}
-							  	{prepareSubToken();}	n=NCName			{if(n!=null){this.type=NCName; emit();}}
-							  	)?
-							  (WS 
-							  	{prepareSubToken();}	p=PragmaContents	{if(p!=null){this.type=PragmaContents; emit();}}
-							  	)? 
-							  {prepareSubToken();}	RPRAGSi					{this.type=RPRAGSi; emit();}; 
-	LPRAGSi 					: '(#';										  
-	PragmaContents        		: ((SHARPSi ~ RPARSi)=> SHARPSi | ~(NotChar | SHARPSi))*;
-	RPRAGSi 					: '#)';
-
-
 IntegerLiteral				: Digits;
 DecimalLiteral				: DOTSi Digits 
 							| Digits DOTSi ('0'..'9')*;
@@ -640,165 +589,315 @@ DoubleLiteral				: (
 							('e'|'E') (PLUSSi|MINUSSi)? Digits;
 
 
-LENDTAGSi 				: '</';
-NODEBEFORESi 			: '<<';
-LTOREQSi 				: '<=';
-GTOREQSi 				: '>=';
-NODEAFTERSi 			: '>>';
-DBLCOLONSi 				: '::';
-ASSIGNSi 				: ':=';
-DBLSLASHSi 				: '//';
-RSELFTERMSi 			: '/>';
-LDBLBRACSi 				: '{{';
-RDBLBRACSi 				: '}}';
-DOTDOTSi 				: '..';
-NEQSi 					: '!=';
+
+TOKENSWITCH				: CDataSectionLEX			// emits subtokens
+						| DirPIConstructor			// emits subtokens
+						| DirCommentConstLEX		// emits subtokens
+						| PragmaLEX					// emits subtokens
+						| Comment					{$type=Comment; $channel=HIDDEN;}
+						| LexLiterals				{$type=this.tokenType;}
+						| LexSigns					{$type=this.tokenType;}
+						| QUOTSi					{$type=QUOTSi;}
+						| DOLLARSi					{$type=DOLLARSi;}				
+						| APOSSi 					{$type=APOSSi;}
+						| LPARSi 					{$type=LPARSi;}
+						| RPARSi					{$type=RPARSi;}
+						| STARSi					{$type=STARSi;}
+						| PLUSSi					{$type=PLUSSi;}
+						| COMMASi					{$type=COMMASi;}
+						| MINUSSi					{$type=MINUSSi;}
+						| DOTSi						{$type=DOTSi;}
+						| SLASHSi					{$type=SLASHSi;}
+						| COLONSi					{$type=COLONSi;}
+						| SEMICOLONSi				{$type=SEMICOLONSi;}
+						| LTSi						{$type=LTSi;}
+						| EQSi						{$type=EQSi;}
+						| GTSi						{$type=GTSi;}
+						| QUESTIONSi				{$type=QUESTIONSi;}
+						| ATSi						{$type=ATSi;}
+						| LBRACKSi					{$type=LBRACKSi;}
+						| RBRACKSi					{$type=RBRACKSi;}
+						| LBRACESi					{$type=LBRACESi;}
+						| PIPESi					{$type=PIPESi;}
+						| RBRACSi					{$type=RBRACSi;}	
+						;
+
+fragment CDataSectionLEX	: {prepareSubToken();} 	LCDATASi 		{this.type=LCDATASi; emit();}		/* ws: explicitXQ */
+							  {prepareSubToken();} 	CDataContents 	{this.type=CDataContents; emit();}
+							  {prepareSubToken();} 	RCDATASi 		{this.type=RCDATASi; emit();};
+	fragment LCDATASi			: '<![CDATA[';
+	fragment CDataContents		: ((RBRACKSi ~RBRACKSi)=> RBRACKSi | (RBRACKSi RBRACKSi ~'>')=> RBRACKSi | ~(RBRACKSi | NotChar))* ;
+	fragment RCDATASi 			: ']]>';
 
 
-ALL 					: 'all';
-ANY 					: 'any';
-ANCESTOR 				: 'ancestor';
-ANCESTOR_OR_SELF 		: 'ancestor-or-self';
-AND 					: 'and';
-AS 						: 'as';
-ASCENDING 				: 'ascending';
-AT 						: 'at';
-ATTRIBUTE 				: 'attribute';
-BASE_URI 				: 'base-uri';
-BY 						: 'by';
-BOUNDARYSPACE 			: 'boundary-space';
-CASE 					: 'case';
-CAST 					: 'cast';
-CASTABLE 				: 'castable';
-CHILD 					: 'child';
-COLLATION 				: 'collation';
-COMMENT 				: 'comment';
-CONSTRUCTION 			: 'construction';
-CONTENT 				: 'content';
-COPY_NAMESPACES 		: 'copy-namespaces';
-DECLARE			 		: 'declare';
-DEFAULT 				: 'default';
-DESCENDANT 				: 'descendant';
-DESCENDANT_OR_SELF 		: 'descendant-or-self';
-DESCENDING 				: 'descending';
-DIACRITICS 				: 'diacritics';
-DIFFERENT 				: 'different';
-DISTANCE 				: 'distance';
-DIV 					: 'div';
-DOCUMENT 				: 'document';
-DOCUMENT_NODE 			: 'document-node';
-ELEMENT 				: 'element';
-ELSE 					: 'else';
-ENCODING 				: 'encoding';
-END 					: 'end';
-ENTIRE 					: 'entire';
-EMPTY 					: 'empty';
-EMPTY_SEQUENCE 			: 'empty-sequence';
-EQ 						: 'eq';
-EVERY 					: 'every';
-EXACTLY 				: 'exactly';
-EXCEPT 					: 'except';
-EXTERNAL 				: 'external';
-FOLLOWING 				: 'following';
-FOLLOWING_SIBLING 		: 'following-sibling';
-FOR 					: 'for';
-FROM 					: 'from';
-FTAND 					: 'ftand';
-FTCONTAINS 				: 'ftcontains';
-FTNOT 					: 'ftnot';
-FTOPTION 				: 'ft-option';
-FTOR 					: 'ftor';
-FUNCTION 				: 'function';
-GE 						: 'ge';
-GREATEST 				: 'greatest';
-GT 						: 'gt';
-IDIV 					: 'idiv';
-IF 						: 'if';
-IMPORT 					: 'import';
-IN 						: 'in';
-INHERIT 				: 'inherit';
-INSENSITIVE 			: 'insensitive';
-INSTANCE 				: 'instance';
-INTERSECT 				: 'intersect';
-IS 						: 'is';
-ITEM 					: 'item';
-LANGUAGE 				: 'language';
-LAX 					: 'lax';
-LE 						: 'le';
-LEAST 					: 'least';
-LET 					: 'let';
-LEVELS 					: 'levels';
-LOWERCASE 				: 'lowercase';
-LT 						: 'lt';
-MOD 					: 'mod';
-MODULE 					: 'module';
-MOST 					: 'most';
-NAMESPACE 				: 'namespace';
-NE 						: 'ne';
-NODE 					: 'node';
-NOINHERIT 				: 'no-inherit';
-NOPRESERVE 				: 'no-preserve';
-NOT 					: 'not';
-OCCURS 					: 'occurs';
-OF 						: 'of';
-OPTION 					: 'option';
-OR 						: 'or';
-ORDER 					: 'order';
-ORDERED 				: 'ordered';
-ORDERING 				: 'ordering';
-PARAGRAPH 				: 'paragraph';
-PARAGRAPHS 				: 'paragraphs';
-PARENT 					: 'parent';
-PHRASE 					: 'phrase';
-PRECEDING 				: 'preceding';
-PRECEDING_SIBLING 		: 'preceding-sibling';
-PRESERVE 				: 'preserve';
-PROCESSING_INSTRUCTION 	: 'processing-instruction';
-RELATIONSHIP 			: 'relationship';
-RETURN 					: 'return';
-SAME 					: 'same';
-SATISFIES 				: 'satisfies';
-SCHEMA 					: 'schema';
-SCHEMAATTRIBUTE 		: 'schema-attribute';
-SCHEMAELEMENT 			: 'schema-element';
-SCORE 					: 'score';
-SELF 					: 'self';
-SENSITIVE 				: 'sensitive';
-SENTENCES 				: 'sentences';
-SENTENCE 				: 'sentence';
-SOME 					: 'some';
-STABLE 					: 'stable';
-START 					: 'start';
-STEMMING 				: 'stemming';
-STOP 					: 'stop';
-STRICT 					: 'strict';
-STRIP 					: 'strip';
-TEXT 					: 'text';
-THESAURUS 				: 'thesaurus';
-THEN 					: 'then';
-TIMES 					: 'times';
-TO 						: 'to';
-TREAT 					: 'treat';
-TYPESWITCH 				: 'typeswitch';
-UNION 					: 'union';
-UNORDERED 				: 'unordered';
-UPPERCASE 				: 'uppercase';
-VALIDATE 				: 'validate';
-VARIABLE 				: 'variable';
-VERSION 				: 'version';
-WEIGHT 					: 'weight';
-WHERE 					: 'where';
-WILDCARDS 				: 'wildcards';
-WINDOW 					: 'window';
-WITH 					: 'with';
-WITHOUT 				: 'without';
-WORD 					: 'word';
-WORDS 					: 'words';
-XQUERY 					: 'xquery';
+fragment DirPIConstructor	: {prepareSubToken();}	LPISi			{this.type=LPISi; emit();} /* ws:explicitXQ */
+							  {prepareSubToken();}	PiTarget 		{this.type=PiTarget; emit();}
+						  	  (WS 
+						  	  {prepareSubToken();}	d=DirPiContents	{if(d!=null){this.type=DirPiContents; emit();}} )?
+						  	  {prepareSubToken();}	RPISi 			{this.type=RPISi; emit();};
+	fragment LPISi 				: '<?';
+	fragment PiTarget			: n=Name{ !$n.getText().equalsIgnoreCase("XML") }?;
+		fragment Name       		: (Letter | UNDERSCORESi | COLONSi) (NameChar)*;
+		fragment NameChar			: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender;
+	fragment DirPiContents		: ((QUESTIONSi ~GTSi)=>QUESTIONSi | ~(NotChar | QUESTIONSi))*;
+	fragment RPISi 				: '?>';
 
-NCName              					: NCNameStartChar NCNameChar*;
-fragment NCNameChar					   	: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | CombiningChar | Extender;
-fragment NCNameStartChar     			: Letter | UNDERSCORESi;
+
+fragment DirCommentConstLEX	: {prepareSubToken();}	LCOMMENTSi 			{this.type=LCOMMENTSi; emit();}
+						  	  {prepareSubToken();}	DirCommentContent	{this.type=DirCommentContent; emit();}
+						  	  {prepareSubToken();}	RCOMMENTSi			{this.type=RCOMMENTSi; emit();};
+	fragment LCOMMENTSi 		: '<!--';
+	fragment DirCommentContent	: ((MINUSSi ~MINUSSi)=> MINUSSi | ~(NotChar | MINUSSi))* ;
+	fragment RCOMMENTSi			: '-->';
+
+
+fragment PragmaLEX			: {prepareSubToken();}	LPRAGSi					{this.type=LPRAGSi; emit();} 
+							  WS? 
+							  {prepareSubToken();}	NCName					{this.type=NCName; emit();}
+							  (
+							  	{prepareSubToken();}	c=COLONSi			{if(c!=null){this.type=COLONSi; emit();}}
+							  	{prepareSubToken();}	n=NCName			{if(n!=null){this.type=NCName; emit();}}
+							  	)?
+							  (WS 
+							  	{prepareSubToken();}	p=PragmaContents	{if(p!=null){this.type=PragmaContents; emit();}}
+							  	)? 
+							  {prepareSubToken();}	RPRAGSi					{this.type=RPRAGSi; emit();}; 
+	fragment LPRAGSi			: '(#';										  
+	fragment PragmaContents		: ((SHARPSi ~ RPARSi)=> SHARPSi | ~(NotChar | SHARPSi))*;
+	fragment RPRAGSi 			: '#)';
+
+
+fragment Comment       		: LXQCOMMENTSi 
+								({(input.LA(1)=='(' && input.LA(2)==':')}?Comment 		// if it looks like a comment...
+								| {input.LA(2)!=')'}?=>COLONSi							// Hide if next char is )
+								| {input.LA(2)!=':'}?=>LPARSi 							// Hide if next char is :
+								| ~(LPARSi | COLONSi | NotChar))* 						// ( and : have to be handled by two earlier alt
+						  	  RXQCOMMENTSi {$channel=HIDDEN;};
+	fragment LXQCOMMENTSi		: '(:';
+	fragment RXQCOMMENTSi		: ':)';
+
+
+
+						
+// Signsequences of two or more characters had to be made fragment so they won't be matched 
+// when in ElementContent or AttributeContent						
+fragment LexSigns		: LENDTAGSi 				{ this.tokenType=LENDTAGSi;}			
+						| NODEBEFORESi 				{ this.tokenType=NODEBEFORESi;} 			
+						| LTOREQSi 					{ this.tokenType=LTOREQSi;} 				
+						| GTOREQSi 					{ this.tokenType=GTOREQSi;} 				
+						| NODEAFTERSi 				{ this.tokenType=NODEAFTERSi;} 			
+						| DBLCOLONSi 				{ this.tokenType=DBLCOLONSi;} 			
+						| ASSIGNSi  				{ this.tokenType=ASSIGNSi;}				
+						| DBLSLASHSi 				{ this.tokenType=DBLSLASHSi;} 			
+						| RSELFTERMSi  				{ this.tokenType=RSELFTERMSi;}			
+						| LDBLBRACSi 				{ this.tokenType=LDBLBRACSi;} 			
+						| RDBLBRACSi 				{ this.tokenType=RDBLBRACSi;} 			
+						| DOTDOTSi  				{ this.tokenType=DOTDOTSi;}				
+						| NEQSi  					{ this.tokenType=NEQSi;}				
+
+
+fragment NCName              			: NCNameStartChar NCNameChar*;
+	fragment NCNameChar					   	: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | CombiningChar | Extender;
+	fragment NCNameStartChar     			: Letter | UNDERSCORESi;
+
+
+//All keywords and NCName. Made a fragmen so they will not be matched when in ElementContent or AttributeContent.
+fragment LexLiterals	: (ALL)=> ALL 										{ this.tokenType=ALL;}			
+						| (ANY)=> ANY 										{ this.tokenType=ANY;}
+						| (ANCESTOR)=> ANCESTOR 							{ this.tokenType=ANCESTOR;}
+						| (ANCESTOR_OR_SELF)=> ANCESTOR_OR_SELF			 	{ this.tokenType=ANCESTOR_OR_SELF;}
+						| (AND)=> AND 										{ this.tokenType=AND;}
+						| (AS)=> AS 										{ this.tokenType=AS;}
+						| (ASCENDING)=> ASCENDING 							{ this.tokenType=ASCENDING;}
+						| (AT)=> AT 										{ this.tokenType=AT;}
+						| (ATTRIBUTE)=> ATTRIBUTE 							{ this.tokenType=ATTRIBUTE;}
+						| (BASE_URI)=> BASE_URI 							{ this.tokenType=BASE_URI;}
+						| (BY)=> BY 										{ this.tokenType=BY;}
+						| (BOUNDARYSPACE)=> BOUNDARYSPACE 					{ this.tokenType=BOUNDARYSPACE;}
+						| (CASE)=> CASE 									{ this.tokenType=CASE;}
+						| (CAST)=> CAST 									{ this.tokenType=CAST;}
+						| (CASTABLE)=> CASTABLE 							{ this.tokenType=CASTABLE;}
+						| (CHILD)=> CHILD 									{ this.tokenType=CHILD;}
+						| (COLLATION)=> COLLATION 							{ this.tokenType=COLLATION;}
+						| (COMMENT)=> COMMENT 								{ this.tokenType=COMMENT;}
+						| (CONSTRUCTION)=> CONSTRUCTION 					{ this.tokenType=CONSTRUCTION;}
+						| (CONTENT)=> CONTENT 								{ this.tokenType=CONTENT;}
+						| (COPY_NAMESPACES)=> COPY_NAMESPACES 				{ this.tokenType=COPY_NAMESPACES;}
+						| (DECLARE)=> DECLARE 								{ this.tokenType=DECLARE;}
+						| (DEFAULT)=> DEFAULT 								{ this.tokenType=DEFAULT;}
+						| (DESCENDANT)=> DESCENDANT 						{ this.tokenType=DESCENDANT;}
+						| (DESCENDANT_OR_SELF)=> DESCENDANT_OR_SELF 		{ this.tokenType=DESCENDANT_OR_SELF;}
+						| (DESCENDING)=> DESCENDING 						{ this.tokenType=DESCENDING;}
+						| (DIACRITICS)=> DIACRITICS 						{ this.tokenType=DIACRITICS;}
+						| (DIFFERENT)=> DIFFERENT 							{ this.tokenType=DIFFERENT;}
+						| (DISTANCE)=> DISTANCE 							{ this.tokenType=DISTANCE;}
+						| (DIV)=> DIV 										{ this.tokenType=DIV;}
+						| (DOCUMENT)=> DOCUMENT 							{ this.tokenType=DOCUMENT;}
+						| (DOCUMENT_NODE)=> DOCUMENT_NODE 					{ this.tokenType=DOCUMENT_NODE;}
+						| (ELEMENT)=> ELEMENT 								{ this.tokenType=ELEMENT;}
+						| (ELSE)=> ELSE 									{ this.tokenType=ELSE;}
+						| (ENCODING)=> ENCODING 							{ this.tokenType=ENCODING;}
+						| (END)=> END 										{ this.tokenType=END;}
+						| (ENTIRE)=> ENTIRE 								{ this.tokenType=ENTIRE;}
+						| (EMPTY)=> EMPTY 									{ this.tokenType=EMPTY;}
+						| (EMPTY_SEQUENCE)=> EMPTY_SEQUENCE 				{ this.tokenType=EMPTY_SEQUENCE;}
+						| (EQ)=> EQ 										{ this.tokenType=EQ;}
+						| (EVERY)=> EVERY 									{ this.tokenType=EVERY;}
+						| (EXACTLY)=> EXACTLY 								{ this.tokenType=EXACTLY;}
+						| (EXCEPT)=> EXCEPT 								{ this.tokenType=EXCEPT;}
+						| (EXTERNAL)=> EXTERNAL 							{ this.tokenType=EXTERNAL;}
+						| (FOLLOWING)=> FOLLOWING 							{ this.tokenType=FOLLOWING;}
+						| (FOLLOWING_SIBLING)=> FOLLOWING_SIBLING 			{ this.tokenType=FOLLOWING_SIBLING;}
+						| (FOR)=> FOR 										{ this.tokenType=FOR;}
+						| (FROM)=> FROM 									{ this.tokenType=FROM;}
+						| (FTAND)=> FTAND 									{ this.tokenType=FTAND;}
+						| (FTCONTAINS)=> FTCONTAINS 						{ this.tokenType=FTCONTAINS;}
+						| (FTNOT)=> FTNOT 									{ this.tokenType=FTNOT;}
+						| (FTOPTION)=> FTOPTION 							{ this.tokenType=FTOPTION;}
+						| (FTOR)=> FTOR 									{ this.tokenType=FTOR;}
+						| (FUNCTION)=> FUNCTION 							{ this.tokenType=FUNCTION;}
+						| (GE)=> GE 										{ this.tokenType=GE;}
+						| (GREATEST)=> GREATEST 							{ this.tokenType=GREATEST;}
+						| (GT)=> GT 										{ this.tokenType=GT;}
+						| (IDIV)=> IDIV 									{ this.tokenType=IDIV;}
+						| (IF)=> IF 										{ this.tokenType=IF;}
+						| (IMPORT)=> IMPORT 								{ this.tokenType=IMPORT;}
+						| (IN)=> IN 										{ this.tokenType=IN;}
+						| (INHERIT)=> INHERIT 								{ this.tokenType=INHERIT;}
+						| (INSENSITIVE)=> INSENSITIVE						{ this.tokenType=INSENSITIVE;}
+						| (INSTANCE)=> INSTANCE 							{ this.tokenType=INSTANCE;}
+						| (INTERSECT)=> INTERSECT 							{ this.tokenType=INTERSECT;}
+						| (IS)=> IS 										{ this.tokenType=IS;}
+						| (ITEM)=> ITEM 									{ this.tokenType=ITEM;}
+						| (LANGUAGE)=> LANGUAGE 							{ this.tokenType=LANGUAGE;}
+						| (LAX)=> LAX 										{ this.tokenType=LAX;}
+						| (LE)=> LE 										{ this.tokenType=LE;}
+						| (LEAST)=> LEAST 									{ this.tokenType=LEAST;}
+						| (LET)=> LET 										{ this.tokenType=LET;}
+						| (LEVELS)=> LEVELS 								{ this.tokenType=LEVELS;}
+						| (LOWERCASE)=> LOWERCASE 							{ this.tokenType=LOWERCASE;}
+						| (LT)=> LT 										{ this.tokenType=LT;}
+						| (MOD)=> MOD 										{ this.tokenType=MOD;}
+						| (MODULE)=> MODULE 								{ this.tokenType=MODULE;}
+						| (MOST)=> MOST 									{ this.tokenType=MOST;}
+						| (NAMESPACE)=> NAMESPACE 							{ this.tokenType=NAMESPACE;}
+						| (NE)=> NE 										{ this.tokenType=NE;}
+						| (NODE)=> NODE 									{ this.tokenType=NODE;}
+						| (NOINHERIT)=> NOINHERIT 							{ this.tokenType=NOINHERIT;}
+						| (NOPRESERVE)=> NOPRESERVE 						{ this.tokenType=NOPRESERVE;}
+						| (NOT)=> NOT 										{ this.tokenType=NOT;}
+						| (OCCURS)=> OCCURS 								{ this.tokenType=OCCURS;}
+						| (OF)=> OF 										{ this.tokenType=OF;}
+						| (OPTION)=> OPTION 								{ this.tokenType=OPTION;}
+						| (OR)=> OR 										{ this.tokenType=OR;}
+						| (ORDER)=> ORDER 									{ this.tokenType=ORDER;}
+						| (ORDERED)=> ORDERED 								{ this.tokenType=ORDERED;}
+						| (ORDERING)=> ORDERING 							{ this.tokenType=ORDERING;}
+						| (PARAGRAPH)=> PARAGRAPH 							{ this.tokenType=PARAGRAPH;}
+						| (PARAGRAPHS)=> PARAGRAPHS 						{ this.tokenType=PARAGRAPHS;}
+						| (PARENT)=> PARENT 								{ this.tokenType=PARENT;}
+						| (PHRASE)=> PHRASE 								{ this.tokenType=PHRASE;}
+						| (PRECEDING)=> PRECEDING 							{ this.tokenType=PRECEDING;}
+						| (PRECEDING_SIBLING)=> PRECEDING_SIBLING 			{ this.tokenType=PRECEDING_SIBLING;}
+						| (PRESERVE)=> PRESERVE 							{ this.tokenType=PRESERVE;}
+						| (PROCESSING_INSTRUCTION)=> PROCESSING_INSTRUCTION { this.tokenType=PROCESSING_INSTRUCTION;}
+						| (RELATIONSHIP)=> RELATIONSHIP 					{ this.tokenType=RELATIONSHIP;}
+						| (RETURN)=> RETURN 								{ this.tokenType=RETURN;}
+						| (SAME)=> SAME 									{ this.tokenType=SAME;}
+						| (SATISFIES)=> SATISFIES 							{ this.tokenType=SATISFIES;}
+						| (SCHEMA)=> SCHEMA 								{ this.tokenType=SCHEMA;}
+						| (SCHEMAATTRIBUTE)=> SCHEMAATTRIBUTE 				{ this.tokenType=SCHEMAATTRIBUTE;}
+						| (SCHEMAELEMENT)=> SCHEMAELEMENT 					{ this.tokenType=SCHEMAELEMENT;}
+						| (SCORE)=> SCORE 									{ this.tokenType=SCORE;}
+						| (SELF)=> SELF 									{ this.tokenType=SELF;}
+						| (SENSITIVE)=> SENSITIVE 							{ this.tokenType=SENSITIVE;}
+						| (SENTENCES)=> SENTENCES 							{ this.tokenType=SENTENCES;}
+						| (SENTENCE)=> SENTENCE 							{ this.tokenType=SENTENCE;}
+						| (SOME)=> SOME 									{ this.tokenType=SOME;}
+						| (STABLE)=> STABLE 								{ this.tokenType=STABLE;}
+						| (START)=> START 									{ this.tokenType=START;}
+						| (STEMMING)=> STEMMING 							{ this.tokenType=STEMMING;}
+						| (STOP)=> STOP 									{ this.tokenType=STOP;}
+						| (STRICT)=> STRICT 								{ this.tokenType=STRICT;}
+						| (STRIP)=> STRIP 									{ this.tokenType=STRIP;}
+						| (TEXT)=> TEXT 									{ this.tokenType=TEXT;}
+						| (THESAURUS)=> THESAURUS 							{ this.tokenType=THESAURUS;}
+						| (THEN)=> THEN 									{ this.tokenType=THEN;}
+						| (TIMES)=> TIMES 									{ this.tokenType=TIMES;}
+						| (TO)=> TO 										{ this.tokenType=TO;}
+						| (TREAT)=> TREAT 									{ this.tokenType=TREAT;}
+						| (TYPESWITCH)=> TYPESWITCH 						{ this.tokenType=TYPESWITCH;}
+						| (UNION)=> UNION 									{ this.tokenType=UNION;}
+						| (UNORDERED)=> UNORDERED 							{ this.tokenType=UNORDERED;}
+						| (UPPERCASE)=> UPPERCASE 							{ this.tokenType=UPPERCASE;}
+						| (VALIDATE)=> VALIDATE 							{ this.tokenType=VALIDATE;}
+						| (VARIABLE)=> VARIABLE 							{ this.tokenType=VARIABLE;}
+						| (VERSION)=> VERSION 								{ this.tokenType=VERSION;}
+						| (WEIGHT)=> WEIGHT 								{ this.tokenType=WEIGHT;}
+						| (WHERE)=> WHERE 									{ this.tokenType=WHERE;}
+						| (WILDCARDS)=> WILDCARDS 							{ this.tokenType=WILDCARDS;}
+						| (WINDOW)=> WINDOW 								{ this.tokenType=WINDOW;}
+						| (WITH)=> WITH 									{ this.tokenType=WITH;}
+						| (WITHOUT)=> WITHOUT 								{ this.tokenType=WITHOUT;}
+						| (WORD)=> WORD 									{ this.tokenType=WORD;}
+						| (WORDS)=> WORDS 									{ this.tokenType=WORDS;}
+						| (XQUERY)=> XQUERY 								{ this.tokenType=XQUERY;}
+						| NCName 											{ this.tokenType=NCName;}
+
+
+StringLiteral	    					: QUOTSi 
+											(PredefinedEntityRef | CharRef | ESCQUOTSi | ~(QUOTSi|AMPERSi))* 
+											QUOTSi 
+										| APOSSi 
+											(PredefinedEntityRef | CharRef | ESCAPOSSi | ~(APOSSi|AMPERSi))* 
+											APOSSi
+										;
+										
+/*
+dirAttributeValue           			: QUOTSi   
+											(ESCQUOTSi | QuotAttrContentChar | PredefinedEntityRef|CharRef
+												|LDBLBRACSi|RDBLBRACSi|enclosedExpr)* 
+											QUOTSi
+										| APOSSi 
+											(ESCAPOSSi | AposAttrContentChar | PredefinedEntityRef|CharRef
+												|LDBLBRACSi|RDBLBRACSi|enclosedExpr)* 
+											APOSSi; 
+*/
+
+fragment ESCQUOTSi        	: '""';
+fragment ESCAPOSSi 	 	  	: '\'\'';
+
+fragment ElementContentChar				: CleanChar | QUOTSi | APOSSi | MINUSSi;		//KOMMER ALDRI HIT
+fragment QuotAttrContentChar			: CleanChar | APOSSi | MINUSSi;					//
+fragment AposAttrContentChar			: CleanChar | QUOTSi | MINUSSi;					//
+
+// PROBLEM, finnes referanse til denne både i lexer og i parser
+fragment CharRef             	: CREFDECSi ('0'..'9')+ SEMICOLONSi 
+								| CREFHEXSi ('0'..'9'|'a'..'f'|'A'..'F')+ SEMICOLONSi;
+	fragment CREFDECSi				: '&#';
+	fragment CREFHEXSi				: '&#x';
+
+//BRUKES OGSÅ I PARSER
+fragment PredefinedEntityRef	 		: AMPERSi ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
+
+
+S                   					: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+		{$channel=HIDDEN;};
+fragment WS            					: ('\u0020' | '\u0009' | '\u000D' | '\u000A');
+
+
+fragment LENDTAGSi 				: '</';
+fragment NODEBEFORESi 			: '<<';
+fragment LTOREQSi 				: '<=';
+fragment GTOREQSi 				: '>=';
+fragment NODEAFTERSi 			: '>>';
+fragment DBLCOLONSi 			: '::';
+fragment ASSIGNSi 				: ':=';
+fragment DBLSLASHSi 			: '//';
+fragment RSELFTERMSi 			: '/>';
+fragment LDBLBRACSi 			: '{{';
+fragment RDBLBRACSi 			: '}}';
+fragment DOTDOTSi 				: '..';
+fragment NEQSi 					: '!=';
 
 //Characters that are in no other lexerproductions: ! " # $ & ' ( ) * + , - . / : ; < = > ? @ [ \ ] _ { | }
 fragment EXCLSi				: '!';					// not used in parser
@@ -830,71 +929,146 @@ fragment LBRACESi 			: '{';
 fragment PIPESi 			: '|';
 fragment RBRACSi 			: '}';
 
-fragment ESCQUOTSi        	: '""';
-fragment ESCAPOSSi 	 	  	: '\'\'';
-
-
-TOKENSWITCH				: (ESCQUOTSi)=>ESCQUOTSi	{$type=ESCQUOTSi;} 
-						| (ESCAPOSSi)=>ESCAPOSSi	{$type=ESCAPOSSi;}
-						| QUOTSi					{$type=QUOTSi;}
-						| DOLLARSi					{$type=DOLLARSi;}				
-						| APOSSi 					{$type=APOSSi;}
-						| LPARSi 					{$type=LPARSi;}
-						| RPARSi					{$type=RPARSi;}
-						| STARSi					{$type=STARSi;}
-						| PLUSSi					{$type=PLUSSi;}
-						| COMMASi					{$type=COMMASi;}
-						| MINUSSi					{$type=MINUSSi;}
-						| DOTSi						{$type=DOTSi;}
-						| SLASHSi					{$type=SLASHSi;}
-						| COLONSi					{$type=COLONSi;}
-						| SEMICOLONSi				{$type=SEMICOLONSi;}
-						| LTSi						{$type=LTSi;}
-						| EQSi						{$type=EQSi;}
-						| GTSi						{$type=GTSi;}
-						| QUESTIONSi				{$type=QUESTIONSi;}
-						| ATSi						{$type=ATSi;}
-						| LBRACKSi					{$type=LBRACKSi;}
-						| RBRACKSi					{$type=RBRACKSi;}
-						| LBRACESi					{$type=LBRACESi;}
-						| PIPESi					{$type=PIPESi;}
-						| RBRACSi					{$type=RBRACSi;}	
-						;
-
-StringLiteral	    					: QUOTSi 
-											(PredefinedEntityRef | CharRef | ESCQUOTSi | ~(QUOTSi|AMPERSi))* 
-											QUOTSi 
-										| APOSSi 
-											(PredefinedEntityRef | CharRef | ESCAPOSSi | ~(APOSSi|AMPERSi))* 
-											APOSSi
-										;
-										
-/*
-dirAttributeValue           			: QUOTSi   
-											(ESCQUOTSi | QuotAttrContentChar | PredefinedEntityRef|CharRef|LDBLBRACSi|RDBLBRACSi|enclosedExpr)* 
-											QUOTSi
-										| APOSSi 
-											(ESCAPOSSi | AposAttrContentChar | PredefinedEntityRef|CharRef
-												|LDBLBRACSi|RDBLBRACSi|enclosedExpr)* 
-											APOSSi; 
-*/
-
-fragment ElementContentChar				: CleanChar | QUOTSi | APOSSi | MINUSSi;		//KOMMER ALDRI HIT
-fragment QuotAttrContentChar			: CleanChar | APOSSi | MINUSSi;					//
-fragment AposAttrContentChar			: CleanChar | QUOTSi | MINUSSi;					//
-
-// PROBLEM, finnes referanse til denne både i lexer og i parser
-fragment CharRef             	: CREFDECSi ('0'..'9')+ SEMICOLONSi 
-								| CREFHEXSi ('0'..'9'|'a'..'f'|'A'..'F')+ SEMICOLONSi;
-	fragment CREFDECSi				: '&#';
-	fragment CREFHEXSi				: '&#x';
-
-//BRUKES OGSÅ I PARSER
-fragment PredefinedEntityRef	 		: AMPERSi ('lt' | 'gt' | 'amp' | 'quot' | 'apos') SEMICOLONSi;
-
-
-S                   					: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+		{$channel=HIDDEN;};
-fragment WS            					: ('\u0020' | '\u0009' | '\u000D' | '\u000A');
+fragment ALL 					: 'all';
+fragment ANY 					: 'any';
+fragment ANCESTOR 				: 'ancestor';
+fragment ANCESTOR_OR_SELF 		: 'ancestor-or-self';
+fragment AND 					: 'and';
+fragment AS 					: 'as';
+fragment ASCENDING 				: 'ascending';
+fragment AT 					: 'at';
+fragment ATTRIBUTE 				: 'attribute';
+fragment BASE_URI 				: 'base-uri';
+fragment BY 					: 'by';
+fragment BOUNDARYSPACE 			: 'boundary-space';
+fragment CASE 					: 'case';
+fragment CAST 					: 'cast';
+fragment CASTABLE 				: 'castable';
+fragment CHILD 					: 'child';
+fragment COLLATION 				: 'collation';
+fragment COMMENT 				: 'comment';
+fragment CONSTRUCTION 			: 'construction';
+fragment CONTENT 				: 'content';
+fragment COPY_NAMESPACES 		: 'copy-namespaces';
+fragment DECLARE			 	: 'declare';
+fragment DEFAULT 				: 'default';
+fragment DESCENDANT 			: 'descendant';
+fragment DESCENDANT_OR_SELF 	: 'descendant-or-self';
+fragment DESCENDING 			: 'descending';
+fragment DIACRITICS 			: 'diacritics';
+fragment DIFFERENT 				: 'different';
+fragment DISTANCE 				: 'distance';
+fragment DIV 					: 'div';
+fragment DOCUMENT 				: 'document';
+fragment DOCUMENT_NODE 			: 'document-node';
+fragment ELEMENT 				: 'element';
+fragment ELSE 					: 'else';
+fragment ENCODING 				: 'encoding';
+fragment END 					: 'end';
+fragment ENTIRE 				: 'entire';
+fragment EMPTY 					: 'empty';
+fragment EMPTY_SEQUENCE 		: 'empty-sequence';
+fragment EQ 					: 'eq';
+fragment EVERY 					: 'every';
+fragment EXACTLY 				: 'exactly';
+fragment EXCEPT 				: 'except';
+fragment EXTERNAL 				: 'external';
+fragment FOLLOWING 				: 'following';
+fragment FOLLOWING_SIBLING 		: 'following-sibling';
+fragment FOR 					: 'for';
+fragment FROM 					: 'from';
+fragment FTAND 					: 'ftand';
+fragment FTCONTAINS 			: 'ftcontains';
+fragment FTNOT 					: 'ftnot';
+fragment FTOPTION 				: 'ft-option';
+fragment FTOR 					: 'ftor';
+fragment FUNCTION 				: 'function';
+fragment GE 					: 'ge';
+fragment GREATEST 				: 'greatest';
+fragment GT 					: 'gt';
+fragment IDIV 					: 'idiv';
+fragment IF 					: 'if';
+fragment IMPORT 				: 'import';
+fragment IN 					: 'in';
+fragment INHERIT 				: 'inherit';
+fragment INSENSITIVE 			: 'insensitive';
+fragment INSTANCE 				: 'instance';
+fragment INTERSECT 				: 'intersect';
+fragment IS 					: 'is';
+fragment ITEM 					: 'item';
+fragment LANGUAGE 				: 'language';
+fragment LAX 					: 'lax';
+fragment LE 					: 'le';
+fragment LEAST 					: 'least';
+fragment LET 					: 'let';
+fragment LEVELS 				: 'levels';
+fragment LOWERCASE 				: 'lowercase';
+fragment LT 					: 'lt';
+fragment MOD 					: 'mod';
+fragment MODULE 				: 'module';
+fragment MOST 					: 'most';
+fragment NAMESPACE 				: 'namespace';
+fragment NE 					: 'ne';
+fragment NODE 					: 'node';
+fragment NOINHERIT 				: 'no-inherit';
+fragment NOPRESERVE 			: 'no-preserve';
+fragment NOT 					: 'not';
+fragment OCCURS 				: 'occurs';
+fragment OF 					: 'of';
+fragment OPTION 				: 'option';
+fragment OR 					: 'or';
+fragment ORDER 					: 'order';
+fragment ORDERED 				: 'ordered';
+fragment ORDERING 				: 'ordering';
+fragment PARAGRAPH 				: 'paragraph';
+fragment PARAGRAPHS 			: 'paragraphs';
+fragment PARENT 				: 'parent';
+fragment PHRASE 				: 'phrase';
+fragment PRECEDING 				: 'preceding';
+fragment PRECEDING_SIBLING 		: 'preceding-sibling';
+fragment PRESERVE 				: 'preserve';
+fragment PROCESSING_INSTRUCTION	: 'processing-instruction';
+fragment RELATIONSHIP 			: 'relationship';
+fragment RETURN 				: 'return';
+fragment SAME 					: 'same';
+fragment SATISFIES 				: 'satisfies';
+fragment SCHEMA 				: 'schema';
+fragment SCHEMAATTRIBUTE 		: 'schema-attribute';
+fragment SCHEMAELEMENT 			: 'schema-element';
+fragment SCORE 					: 'score';
+fragment SELF 					: 'self';
+fragment SENSITIVE 				: 'sensitive';
+fragment SENTENCES 				: 'sentences';
+fragment SENTENCE 				: 'sentence';
+fragment SOME 					: 'some';
+fragment STABLE 				: 'stable';
+fragment START 					: 'start';
+fragment STEMMING 				: 'stemming';
+fragment STOP 					: 'stop';
+fragment STRICT 				: 'strict';
+fragment STRIP 					: 'strip';
+fragment TEXT 					: 'text';
+fragment THESAURUS 				: 'thesaurus';
+fragment THEN 					: 'then';
+fragment TIMES 					: 'times';
+fragment TO 					: 'to';
+fragment TREAT 					: 'treat';
+fragment TYPESWITCH 			: 'typeswitch';
+fragment UNION 					: 'union';
+fragment UNORDERED 				: 'unordered';
+fragment UPPERCASE 				: 'uppercase';
+fragment VALIDATE 				: 'validate';
+fragment VARIABLE 				: 'variable';
+fragment VERSION 				: 'version';
+fragment WEIGHT 				: 'weight';
+fragment WHERE 					: 'where';
+fragment WILDCARDS 				: 'wildcards';
+fragment WINDOW 				: 'window';
+fragment WITH 					: 'with';
+fragment WITHOUT 				: 'without';
+fragment WORD 					: 'word';
+fragment WORDS 					: 'words';
+fragment XQUERY					: 'xquery';
 
 
 fragment ExtraChar						: '\u0025' | '\u005E' | '\u0060' | '\u007E'..'\u00B6' | '\u00B8'..'\u00BF' | '\u00D7' | '\u00F7' | '\u0132'..'\u0133' | '\u013F'..'\u0140' | '\u0149' | '\u017F' | '\u01C4'..'\u01CC' | '\u01F1'..'\u01F3' | '\u01F6'..'\u01F9' | '\u0218'..'\u024F' | '\u02A9'..'\u02BA' | '\u02C2'..'\u02CF' | '\u02D2'..'\u02FF' | '\u0346'..'\u035F' | '\u0362'..'\u0385' | '\u038B' | '\u038D' | '\u03A2' | '\u03CF' | '\u03D7'..'\u03D9' | '\u03DB' | '\u03DD' | '\u03DF' | '\u03E1' | '\u03F4'..'\u0400' | '\u040D' | '\u0450' | '\u045D' | '\u0482' | '\u0487'..'\u048F' | '\u04C5'..'\u04C6' | '\u04C9'..'\u04CA' | '\u04CD'..'\u04CF' | '\u04EC'..'\u04ED' | '\u04F6'..'\u04F7' | '\u04FA'..'\u0530' | '\u0557'..'\u0558' | '\u055A'..'\u0560' | '\u0587'..'\u0590' | '\u05A2' | '\u05BA' | '\u05BE' | '\u05C0' | '\u05C3' | '\u05C5'..'\u05CF' | '\u05EB'..'\u05EF' | '\u05F3'..'\u0620' | '\u063B'..'\u063F' | '\u0653'..'\u065F' | '\u066A'..'\u066F' | '\u06B8'..'\u06B9' | '\u06BF' | '\u06CF' | '\u06D4' | '\u06E9' | '\u06EE'..'\u06EF' | '\u06FA'..'\u0900' | '\u0904' | '\u093A'..'\u093B' | '\u094E'..'\u0950' | '\u0955'..'\u0957' | '\u0964'..'\u0965' | '\u0970'..'\u0980' | '\u0984' | '\u098D'..'\u098E' | '\u0991'..'\u0992' | '\u09A9' | '\u09B1' | '\u09B3'..'\u09B5' | '\u09BA'..'\u09BB' | '\u09BD' | '\u09C5'..'\u09C6' | '\u09C9'..'\u09CA' | '\u09CE'..'\u09D6' | '\u09D8'..'\u09DB' | '\u09DE' | '\u09E4'..'\u09E5' | '\u09F2'..'\u0A01' | '\u0A03'..'\u0A04' | '\u0A0B'..'\u0A0E' | '\u0A11'..'\u0A12' | '\u0A29' | '\u0A31' | '\u0A34' | '\u0A37' | '\u0A3A'..'\u0A3B' | '\u0A3D' | '\u0A43'..'\u0A46' | '\u0A49'..'\u0A4A' | '\u0A4E'..'\u0A58' | '\u0A5D' | '\u0A5F'..'\u0A65' | '\u0A75'..'\u0A80' | '\u0A84' | '\u0A8C' | '\u0A8E' | '\u0A92' | '\u0AA9' | '\u0AB1' | '\u0AB4' | '\u0ABA'..'\u0ABB' | '\u0AC6' | '\u0ACA' | '\u0ACE'..'\u0ADF' | '\u0AE1'..'\u0AE5' | '\u0AF0'..'\u0B00' | '\u0B04' | '\u0B0D'..'\u0B0E' | '\u0B11'..'\u0B12' | '\u0B29' | '\u0B31' | '\u0B34'..'\u0B35' | '\u0B3A'..'\u0B3B' | '\u0B44'..'\u0B46' | '\u0B49'..'\u0B4A' | '\u0B4E'..'\u0B55' | '\u0B58'..'\u0B5B' | '\u0B5E' | '\u0B62'..'\u0B65' | '\u0B70'..'\u0B81' | '\u0B84' | '\u0B8B'..'\u0B8D' | '\u0B91' | '\u0B96'..'\u0B98' | '\u0B9B' | '\u0B9D' | '\u0BA0'..'\u0BA2' | '\u0BA5'..'\u0BA7' | '\u0BAB'..'\u0BAD' | '\u0BB6' | '\u0BBA'..'\u0BBD' | '\u0BC3'..'\u0BC5' | '\u0BC9' | '\u0BCE'..'\u0BD6' | '\u0BD8'..'\u0BE6' | '\u0BF0'..'\u0C00' | '\u0C04' | '\u0C0D' | '\u0C11' | '\u0C29' | '\u0C34' | '\u0C3A'..'\u0C3D' | '\u0C45' | '\u0C49' | '\u0C4E'..'\u0C54' | '\u0C57'..'\u0C5F' | '\u0C62'..'\u0C65' | '\u0C70'..'\u0C81' | '\u0C84' | '\u0C8D' | '\u0C91' | '\u0CA9' | '\u0CB4' | '\u0CBA'..'\u0CBD' | '\u0CC5' | '\u0CC9' | '\u0CCE'..'\u0CD4' | '\u0CD7'..'\u0CDD' | '\u0CDF' | '\u0CE2'..'\u0CE5' | '\u0CF0'..'\u0D01' | '\u0D04' | '\u0D0D' | '\u0D11' | '\u0D29' | '\u0D3A'..'\u0D3D' | '\u0D44'..'\u0D45' | '\u0D49' | '\u0D4E'..'\u0D56' | '\u0D58'..'\u0D5F' | '\u0D62'..'\u0D65' | '\u0D70'..'\u0E00' | '\u0E2F' | '\u0E3B'..'\u0E3F' | '\u0E4F' | '\u0E5A'..'\u0E80' | '\u0E83' | '\u0E85'..'\u0E86' | '\u0E89' | '\u0E8B'..'\u0E8C' | '\u0E8E'..'\u0E93' | '\u0E98' | '\u0EA0' | '\u0EA4' | '\u0EA6' | '\u0EA8'..'\u0EA9' | '\u0EAC' | '\u0EAF' | '\u0EBA' | '\u0EBE'..'\u0EBF' | '\u0EC5' | '\u0EC7' | '\u0ECE'..'\u0ECF' | '\u0EDA'..'\u0F17' | '\u0F1A'..'\u0F1F' | '\u0F2A'..'\u0F34' | '\u0F36' | '\u0F38' | '\u0F3A'..'\u0F3D' | '\u0F48' | '\u0F6A'..'\u0F70' | '\u0F85' | '\u0F8C'..'\u0F8F' | '\u0F96' | '\u0F98' | '\u0FAE'..'\u0FB0' | '\u0FB8' | '\u0FBA'..'\u109F' | '\u10C6'..'\u10CF' | '\u10F7'..'\u10FF' | '\u1101' | '\u1104' | '\u1108' | '\u110A' | '\u110D' | '\u1113'..'\u113B' | '\u113D' | '\u113F' | '\u1141'..'\u114B' | '\u114D' | '\u114F' | '\u1151'..'\u1153' | '\u1156'..'\u1158' | '\u115A'..'\u115E' | '\u1162' | '\u1164' | '\u1166' | '\u1168' | '\u116A'..'\u116C' | '\u116F'..'\u1171' | '\u1174' | '\u1176'..'\u119D' | '\u119F'..'\u11A7' | '\u11A9'..'\u11AA' | '\u11AC'..'\u11AD' | '\u11B0'..'\u11B6' | '\u11B9' | '\u11BB' | '\u11C3'..'\u11EA' | '\u11EC'..'\u11EF' | '\u11F1'..'\u11F8' | '\u11FA'..'\u1DFF' | '\u1E9C'..'\u1E9F' | '\u1EFA'..'\u1EFF' | '\u1F16'..'\u1F17' | '\u1F1E'..'\u1F1F' | '\u1F46'..'\u1F47' | '\u1F4E'..'\u1F4F' | '\u1F58' | '\u1F5A' | '\u1F5C' | '\u1F5E' | '\u1F7E'..'\u1F7F' | '\u1FB5' | '\u1FBD' | '\u1FBF'..'\u1FC1' | '\u1FC5' | '\u1FCD'..'\u1FCF' | '\u1FD4'..'\u1FD5' | '\u1FDC'..'\u1FDF' | '\u1FED'..'\u1FF1' | '\u1FF5' | '\u1FFD'..'\u20CF' | '\u20DD'..'\u20E0' | '\u20E2'..'\u2125' | '\u2127'..'\u2129' | '\u212C'..'\u212D' | '\u212F'..'\u217F' | '\u2183'..'\u3004' | '\u3006' | '\u3008'..'\u3020' | '\u3030' | '\u3036'..'\u3040' | '\u3095'..'\u3098' | '\u309B'..'\u309C' | '\u309F'..'\u30A0' | '\u30FB' | '\u30FF'..'\u3104' | '\u312D'..'\u4DFF' | '\u9FA6'..'\uABFF' | '\uD7A4'..'\uD7FF' | '\uE000'..'\uFFFD';
