@@ -104,12 +104,17 @@ public class Scope {
      * @param name
      * @param params
      */
-    public void defineVariable(String name, String value, int type) {
+    public void defineVariable(String name) throws ParseException {
         
-        // TODO: check if var exists first
+        // TODO: check if var exists in current scope first
         VariableSymbol var = new VariableSymbol();
         var.setName(name);
-        var.setValue(value);
+        
+        if (this.symTab.containsKey(name)) {
+            throw new ParseException("Variable \"" + name + "\" previously declared");
+        }
+        
+        this.symTab.put(name, var);
     }
     
     /**

@@ -11,6 +11,8 @@
     <property name="etc"  location="etc"/>
     <property name="tmp"  location="tmp"/>
 
+
+	
     <target name="init">
         <!-- Create the time stamp -->
         <tstamp/>
@@ -20,7 +22,8 @@
     
     <target name="parser" depends="init"
             description="Generate the parser">
-        <exec command="java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool -o ${tmp} -Xconversiontimeout 80000000 etc/XQFT.g" dir="./" />
+    	
+    	<exec command="java -cp lib/antlr.jar;lib/antlr2.jar;lib/stringtemplate.jar org.antlr.Tool -o ${tmp} -Xconversiontimeout 80000000 etc/XQFT.g" dir="./" />
         <move file="${tmp}/etc/XQFTParser.java" tofile="${src}/no/ntnu/xqft/parse/XQFTParser.java" />
         <move file="${tmp}/etc/XQFTLexer.java" tofile="${src}/no/ntnu/xqft/parse/XQFTLexer.java" />
     </target>
