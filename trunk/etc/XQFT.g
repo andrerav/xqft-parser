@@ -8,13 +8,11 @@
 //}
 
 @parser::header {
-	//package no.ntnu.xqft.parse;
-	import extra.*;		
+	package no.ntnu.xqft.parse;
 }
 
 @lexer::header {
-	//package no.ntnu.xqft.parse;	
-	import extra.*;
+	package no.ntnu.xqft.parse;	
 }
 
 @parser::members {

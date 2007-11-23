@@ -1,4 +1,4 @@
-package nrEn;
+package no.ntnu.xqft.parse;
 
 import java.util.ArrayList;
 
