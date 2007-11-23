@@ -29,7 +29,7 @@ CDataSection:
 	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool test/CDataSectionContents/CData.g
 
 TestLexing:
-	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool test/TestLexing/FuckAss.g
+	java -Xmx512M  -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool -Xconversiontimeout 80000000 test/testlexing/FuckAss.g
 
 DirComment:
 	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool test/DirCommentContents/DirComment.g
