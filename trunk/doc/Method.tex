@@ -1,13 +1,13 @@
 %Relasjonsalgebra
-\section{Method}
-\subsection{Parser construction}
+\chapter{Method}
+\section{Parser construction}
 Writing a parser from scratch was ruled out early for being too time consuming.
 Instead it was decided to use tools for compiler and parser construction to
 generate a parser from the XQuery 1.0 and XPath 2.0 grammar specifications
 developed by the W3C.
 
-\subsection{Evaluated alternatives}
-\subsubsection{JFlex/CUP}
+\section{Evaluated alternatives}
+\subsection{JFlex/CUP}
 JFlex and CUP is a versatile combination consisting of JFlex which is a lexer
 generator, and CUP which is a parser generator. These tools can be interfaced to
 generate a complete parser with a separate lexical analyzer.
@@ -16,20 +16,20 @@ JFlex and CUP produces only LALR parsers, and since the W3C has specified an
 LL(1) grammar for XQuery 1.0 and XPath 2.0, the combination of JFlex and CUP was
 rejected from this project.
 
-\subsubsection{JavaCC}
+\subsection{JavaCC}
 JavaCC could have been a viable alternative as it produces LL(k) parsers,
 however compared to Antlr its grammar specification syntax deviated so much
 from the W3C EBNF syntax, that grammar would have had to be extensively
 rewritten.
 
-\subsubsection{Antlr}
+\subsection{Antlr}
 Antlr is a renowned tool for parser generation, and can generate LL(k) parsers.
 Additionally, Antlr accepts a grammar specification syntactically very close to
 the EBNF used by the W3C. This is the parser generater chosen for our project,
 based on the criteria outlined in this section.
 
-\subsection{Limitations in Antlr}
-\subsubsection{Unicode}
+\section{Limitations in Antlr}
+\subsection{Unicode}
 It is important to note, however, that Antlr has limited support for unicode.
 In this project this implies that our parser will not accept unicode characters
 in the range from and above 0x10000. This will exclude the supplementary
@@ -44,8 +44,8 @@ Antlr which will accept unicode characters in the above mentioned character
 ranges. For the sake of simplicity this has not been further investigated nor
 implemented in this project.
 
-\subsection{Rewriting the grammar for Antlr syntax conformity}
-\subsubsection{Lexer vs. parser syntax}
+\section{Rewriting the grammar for Antlr syntax conformity}
+\subsection{Lexer vs. parser syntax}
 The Antlr parser generator can generate parsers and lexers from a single grammar
 file. The distinction between terminals and non-terminals is simply a matter of
 convention, where terminals are assumed to start with uppercase letters, and
@@ -59,7 +59,7 @@ small and non-functional parser.
 This was mitigated by converting non-terminal productions to start with
 lowercase letters.
 
-\subsubsection{Rewriting the W3C 'dash' operator}
+\subsection{Rewriting the W3C 'dash' operator}
 In their specification, the W3c uses a dash operator, which has the following
 semantic meaning in a grammar (from \cite{w3c03}, section 6):
 \begin{quote}
@@ -88,7 +88,7 @@ method with boolean return type, which for example then can be placed inside a
 external class. This makes it possible to add complex grammar logic without
 disturbing grammar brevity, if necessary.
 
-\subsubsection{Grammar LL(1) conformity}
+\subsection{Grammar LL(1) conformity}
 The grammar specification given by W3C is in a very compact and non-verbose
 form, annoted with links to certain constraints and issues that need to be kept
 in mind by anyone seeking to write a parser for XQuery and XPath. Here we will
@@ -98,7 +98,7 @@ list these constraints and briefly explain their implications for the parser.
   \item 
 \end{itemize}
 
-\subsubsection{Reserved keywords}
+\subsection{Reserved keywords}
 A particular feature in XQuery is the lack of reserved keywords. This creates a
 series of problems when a lexer based on the verbatim grammar specification from
 the W3C is trying to recognize tokens. The culprit is the ambiguously defined
@@ -115,7 +115,7 @@ TODO: example
 
 TODO: result (also note in conclusion)
 
-\subsubsection{Nested comments}
+\subsection{Nested comments}
 XQuery allows nested comments, for example:
 \begin{verbatim}
 (: this is a comment (: this comment is nested :) :)
@@ -143,7 +143,7 @@ Comment : LXQCOMMENTSi
 TODO: oppdater eksempelet over (IkkeChar)
 
 
-\subsection{Unit testing the grammar}
+\section{Unit testing the grammar}
 Unit testing can be a powerful tool for asserting functionality and can be a
 helpful aid in debugging and prevention of regression errors.  For unit testing the
 grammar specification, gUnit \cite{gunit00} was employed. This tool uses a
@@ -157,11 +157,11 @@ gunit XQFT;
 
 piTarget: // Test piTarget rule
 
-	// Any case permutation of 'XML' must fail
-	"Xml" FAIL
-	"XMl" FAIL
-	"XML" FAIL
-	"XmL" FAIL
+    // Any case permutation of 'XML' must fail
+    "Xml" FAIL
+    "XMl" FAIL
+    "XML" FAIL
+    "XmL" FAIL
 \end{verbatim}
 
 This is a complete input file for gUnit, and will automatically discover the
@@ -182,18 +182,19 @@ must not fail to pass the test).
 gUnit is also capable of parsing abstract syntax trees built by the generated
 parser, but this feature has not been used in this project.
 
-\subsection{Debugging}
+\section{Debugging}
 There are several approaches to debugging. Antlrworks \cite{antlrwrks00} is a
 simple tool for writing, testing and debugging Antlr grammars. The debugging
 interface is useful in that it draws a realtime step-by-step parse tree as the
 input is being parsed, as well as displaying a list of parser events.
 
-\subsection{Scoping and symbol tables}
+\section{Scoping and symbol tables}
 Scoping was implemented using a simple tree structure consisting of parent- and
 child scopes. XQuery only allows new scopes to be defined through the
 enclosedExpr production rule. This makes it trivial to start a new scope at the
 beginning of a enclosedExpr, and end the scope and the end of an enclosedExpr.
 This has been implemented as follows:
+\begin{figure}[!h]
 \begin{verbatim}
 enclosedExpr : 
     LBRACESi {
@@ -207,6 +208,9 @@ enclosedExpr :
     }
 ;
 \end{verbatim}
+\caption{Scoping logic embedded in grammar definition}
+\end{figure}
+
 Where this.currentScope is a reference to the ``current'' scope in this
 context. This member variable is initiated with an empty scope when an object
 of the parser class is instantiated.
@@ -219,18 +223,19 @@ to a symbol table. The symbol table, which is a simple subclass of
 java.util.HashMap, is not capable of performing symbol lookups throughout the
 scope tree. This functionality is rather provided by the Scope class. This UML diagram
 illustrates the relationship between the Scope, SymTab, and Symbol classes:
-\begin{figure}
+\begin{figure}[!h]
   \centering
-    \includegraphics[width=0.8\textwidth]{img/uml1.png}
+    \includegraphics[scale=0.8]{img/uml1}
   \caption{Simplified UML overview of classes related to scope and symbol table}
 \end{figure}
 
-\subsection{Type checking}
+\section{Type checking}
 XQuery/XPath has a well-defined type hierarchy:
-\begin{figure}
+\begin{figure}[!h]
   \centering
-    \includegraphics[width=0.8\textwidth]{img/xpathtypehierarchy.png}
-  \caption{XQuery/XPath type hierarchy}
+    \includegraphics[scale=0.5]{img/xpathtypehierarchy}
+  \caption{XQuery/XPath type hierarchy \cite{w3c04} (graphic copyright
+  \copyright W3C)}
 \end{figure}
 All types are derived from the following types in the hierarchy:
 \begin{itemize}
