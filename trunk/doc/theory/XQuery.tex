@@ -22,6 +22,8 @@ FLWOR is an integral part of XQuery, and can be compared to the select-from-wher
 \item Return - not to be mistaken with return statements from imperative languages. Returning in this context is more similar to yielding known from functional programming. The return statement is executed once for every iteration
 \end{itemize}
 This example from \cite{STYL00} illustrates the usage of FLWOR, and compares it to its SQL counterpart:
+
+\begin{verbatim}
 /* FLWOR example */
 for \$v in \$doc//video
 where \$v/year = 1999
@@ -29,6 +31,7 @@ return \$v/title
 
 /* Corresponding SQL example */
 SELECT v.title FROM video v WHERE v.year = 1999
+\end{verbatim}
 
 \subsection{Full text extensions}
 The Xquery 1.0  and Xpath 2.0 specifications have been extended with full text capabilities (see \cite{W3C02}), which enables the use of stemming, thesaurus, and similar tools for full-text queries. Specifically, the full-text extensions extend Xquery 1.0 and Xpath 2.0 in the following ways:
@@ -37,3 +40,8 @@ The Xquery 1.0  and Xpath 2.0 specifications have been extended with full text c
 \item The addition of score variables to FLWOR expressions, for keeping track of search result scores, also known as rank, as seen in most modern search engines
 \item Static context declarations for full-text match options to the query prologue
 \end{itemize}
+
+\subsection{Precedence}
+//TODO
+presedens er relevant i forhold til bygging av AST
+//TODO
