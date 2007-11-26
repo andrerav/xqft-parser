@@ -33,6 +33,7 @@ to a symbol table. The symbol table, which is a simple subclass of
 java.util.HashMap, is not capable of performing symbol lookups throughout the
 scope tree. This functionality is rather provided by the Scope class. This UML diagram
 illustrates the relationship between the Scope, SymTab, and Symbol classes:
+\clearpage
 \begin{figure}[!h]
   \centering
     \includegraphics[scale=0.8]{img/uml1}
@@ -40,18 +41,41 @@ illustrates the relationship between the Scope, SymTab, and Symbol classes:
 \end{figure}
 
 \section{Type checking}
-XQuery/XPath has a well-defined type hierarchy:
-\begin{figure}[!h]
+XQuery/XPath has a well-defined type hierarchy.
+\begin{figure}[h!]
   \centering
     \includegraphics[scale=0.5]{img/xpathtypehierarchy}
-  \caption{XQuery/XPath type hierarchy \cite{w3c04} (graphic copyright
+  \caption{XQuery/XPath type hierarchy \cite{w3c04} (copyright
   \copyright W3C)}
 \end{figure}
-All types are derived from the following ``super types'' in the hierarchy:
+Here is a short overview of the basic type system:
 \begin{itemize}
   \item Node types
+    \begin{itemize}
+      \item element()
+      \item attribute()
+      \item text()
+      \item commment()
+      \item document-node()
+      \item processing-instruction()
+    \end{itemize}
   \item Structure types
-  \item Atomic types
-  \item Simple types
+    \begin{itemize}
+      \item Atomic types (xs:integer, xs:string, ..)
+      \item Simple types (list, union)
+      \item Complex types (user-defined types from an XML schema, except
+      xs:anyType and xdt:untyped)
+    \end{itemize}
 \end{itemize}
-There are various implementations of the XQuery
+
+Atomic types are strongly typed except xs:untypedAtomic, xs:anyURI, as well as
+numerical types (xs:integer, xs:double, ..). Non-atomic simple types as well as
+complex types are both strongly typed.
+
+//TODO
+\begin{itemize}
+  \item Dynamic vs. Static typing
+  \item Strong vs. Weak (what and when)
+  \item Type inference
+  \item Michael Rys
+\end{itemize}
