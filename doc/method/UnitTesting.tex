@@ -1,4 +1,5 @@
 \section{Unit testing the grammar}
+\subsection{gUnit}
 Unit testing can be a powerful tool for asserting functionality and can be a
 helpful aid in debugging and prevention of regression errors.  For unit testing the
 grammar specification, gUnit \cite{gunit00} was employed. This tool uses a
@@ -36,3 +37,23 @@ must not fail to pass the test).
 
 gUnit is also capable of parsing abstract syntax trees built by the generated
 parser, but this feature has not been used in this project.
+
+After adding a custom TokenStream class to allow the lexer to be under control
+of the parser, the gUnit framework was no longer capable of executing its test
+suite. The reason for this is incompatability with the custom TokenStream class.
+In the current state of affairs, gUnit will simply block and wait for more data,
+leaving the programing hanging indefinitely. 
+\subsection{jUnit}
+In addition to the gUnit tests for the grammar, jUnit was used to write unit tests for
+the additional classes needed for this parser. In particular, the classes
+related to scoping and symbol tables. Here is one example, asserting that the
+setParent() method in the scope class works as expected:
+\begin{verbatim}
+    @Test
+    public void testSetParent() {
+        this.scope = new Scope();
+        Scope tmp = new Scope();
+        this.scope.setParent(tmp);
+        assertEquals(this.scope.getParent(), tmp);
+    }
+\end{verbatim}
