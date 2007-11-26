@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2007-11-23 22:12:05
+// $ANTLR 3.0.1 etc/XQFT.g 2007-11-23 22:14:04
 
 	package no.ntnu.xqft.parse;	
 
@@ -10,241 +10,241 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 public class XQFTLexer extends Lexer {
-    public static final int NotChar=216;
-    public static final int LENDTAGSi=182;
-    public static final int QUOTSi=183;
-    public static final int END=144;
-    public static final int NOINHERIT=34;
-    public static final int INSTANCE=93;
-    public static final int LBRACESi=46;
-    public static final int CONTENT=99;
-    public static final int LAX=160;
-    public static final int STOP=158;
-    public static final int IMPORT=35;
-    public static final int PIPESi=90;
-    public static final int APOSSi=185;
-    public static final int DBLCOLONSi=169;
-    public static final int AposAttrContentChar=212;
-    public static final int Letter=218;
-    public static final int ORDER=27;
-    public static final int CASTABLE=96;
-    public static final int DIACRITICS=157;
-    public static final int RCOMMENTSi=193;
-    public static final int TYPESWITCH=76;
-    public static final int MODULE=9;
-    public static final int VERSION=5;
-    public static final int Ideographic=234;
-    public static final int DBLSLASHSi=162;
-    public static final int EXACTLY=129;
-    public static final int FTNOT=118;
-    public static final int DECLARE=14;
-    public static final int GTSi=109;
-    public static final int TOKENSWITCH=207;
-    public static final int ElementContentChar=213;
-    public static final int OCCURS=127;
-    public static final int UNION=89;
-    public static final int STRIP=20;
-    public static final int NameChar=220;
-    public static final int PLUSSi=62;
-    public static final int QuotAttrContentChar=211;
-    public static final int SAME=139;
-    public static final int FTCONTAINS=83;
-    public static final int QUESTIONSi=53;
-    public static final int DESCENDING=72;
-    public static final int FTOPTION=49;
-    public static final int DOCUMENT_NODE=52;
-    public static final int ANCESTOR_OR_SELF=168;
-    public static final int LCDATASi=188;
-    public static final int RELATIONSHIP=150;
-    public static final int ANY=122;
-    public static final int GE=105;
-    public static final int GTOREQSi=110;
-    public static final int CREFHEXSi=215;
-    public static final int WORD=123;
-    public static final int ELSE=80;
-    public static final int SCHEMAATTRIBUTE=57;
-    public static final int SENSITIVE=154;
-    public static final int SELF=173;
-    public static final int DISTANCE=138;
-    public static final int LPISi=194;
-    public static final int ExtraChar=232;
-    public static final int NODEBEFORESi=112;
-    public static final int CREFDECSi=214;
-    public static final int TEXT=60;
-    public static final int PARENT=164;
-    public static final int CombiningChar=222;
-    public static final int NCName=11;
-    public static final int FTOR=115;
-    public static final int SCORE=66;
-    public static final int PragmaLEX=202;
-    public static final int EXTERNAL=41;
-    public static final int EMPTY_SEQUENCE=50;
-    public static final int Digit=221;
-    public static final int UNDERSCORESi=219;
-    public static final int DOLLARSi=39;
-    public static final int RCDATASi=190;
-    public static final int CAST=97;
-    public static final int MOD=88;
-    public static final int EXCEPT=92;
-    public static final int NOPRESERVE=32;
-    public static final int OR=81;
-    public static final int S=205;
-    public static final int RPARSi=45;
-    public static final int SCHEMAELEMENT=55;
-    public static final int BY=69;
-    public static final int COLONSi=42;
-    public static final int SLASHSi=163;
-    public static final int WEIGHT=114;
-    public static final int PRECEDING_SIBLING=166;
-    public static final int UPPERCASE=156;
-    public static final int SEMICOLONSi=8;
-    public static final int FROM=131;
-    public static final int STEMMING=152;
-    public static final int TIMES=128;
-    public static final int EMPTY=28;
-    public static final int ASCENDING=71;
-    public static final int CleanChar=235;
-    public static final int IntegerLiteral=119;
-    public static final int SENTENCES=136;
-    public static final int NE=101;
-    public static final int COMMENT=59;
-    public static final int AposAttributeContent=186;
-    public static final int MINUSSi=85;
-    public static final int NCNameChar=229;
-    public static final int ENTIRE=145;
-    public static final int WITH=147;
-    public static final int IN=65;
-    public static final int SOME=73;
-    public static final int MOST=130;
-    public static final int RETURN=63;
-    public static final int IF=78;
-    public static final int LET=67;
-    public static final int Extender=223;
-    public static final int NODE=61;
-    public static final int FOR=64;
-    public static final int Tokens=237;
-    public static final int PRESERVE=19;
-    public static final int DEFAULT=15;
-    public static final int DirCommentContent=192;
-    public static final int LEVELS=151;
-    public static final int LPRAGSi=132;
-    public static final int COMMASi=13;
-    public static final int ATTRIBUTE=56;
-    public static final int CHILD=171;
-    public static final int Digits=227;
-    public static final int NOT=117;
-    public static final int OPTION=48;
-    public static final int ELEMENT=16;
-    public static final int Comment=203;
-    public static final int INSENSITIVE=153;
-    public static final int DOCUMENT=198;
-    public static final int AS=43;
-    public static final int ENCODING=7;
-    public static final int BOUNDARYSPACE=18;
-    public static final int TREAT=95;
-    public static final int NAMESPACE=10;
-    public static final int LXQCOMMENTSi=225;
-    public static final int THEN=79;
-    public static final int LEAST=30;
-    public static final int WORDS=125;
-    public static final int PiTarget=195;
-    public static final int CDataContents=189;
-    public static final int PARAGRAPHS=137;
-    public static final int NCNameStartChar=228;
-    public static final int TO=84;
-    public static final int AND=82;
-    public static final int BASE_URI=22;
-    public static final int QuotAttributeContent=184;
     public static final int FUNCTION=17;
-    public static final int LexSigns=204;
-    public static final int NEQSi=106;
-    public static final int LANGUAGE=146;
-    public static final int LE=103;
-    public static final int LOWERCASE=155;
-    public static final int BACKSLASHSi=231;
-    public static final int SCHEMA=36;
-    public static final int CONSTRUCTION=23;
-    public static final int STARSi=54;
-    public static final int RPRAGSi=134;
-    public static final int WILDCARDS=148;
-    public static final int DOTDOTSi=170;
-    public static final int DIFFERENT=140;
-    public static final int LTOREQSi=108;
-    public static final int INTERSECT=91;
-    public static final int AT=37;
-    public static final int GREATEST=29;
-    public static final int DOTSi=180;
-    public static final int BaseChar=233;
-    public static final int Char=236;
-    public static final int EQ=100;
-    public static final int LT=102;
-    public static final int OF=94;
-    public static final int WINDOW=135;
-    public static final int Name=217;
-    public static final int FOLLOWING=176;
-    public static final int CASE=77;
-    public static final int RXQCOMMENTSi=226;
-    public static final int DESCENDANT_OR_SELF=174;
-    public static final int CDataSectionLEX=199;
-    public static final int THESAURUS=149;
-    public static final int RSELFTERMSi=181;
-    public static final int FTAND=116;
-    public static final int DecimalLiteral=120;
+    public static final int MOD=88;
+    public static final int LPISi=194;
+    public static final int CREFHEXSi=215;
+    public static final int NOT=117;
+    public static final int EXCEPT=92;
+    public static final int EOF=-1;
     public static final int PragmaContents=133;
-    public static final int DIV=86;
+    public static final int BaseChar=233;
+    public static final int Ideographic=234;
+    public static final int DISTANCE=138;
+    public static final int IMPORT=35;
+    public static final int ASSIGNSi=40;
+    public static final int CREFDECSi=214;
+    public static final int SENTENCE=141;
+    public static final int PRECEDING=167;
+    public static final int WORDS=125;
+    public static final int RETURN=63;
+    public static final int ELEMENT=16;
+    public static final int RPARSi=45;
+    public static final int DOLLARSi=39;
+    public static final int EQ=100;
+    public static final int DIACRITICS=157;
+    public static final int DBLCOLONSi=169;
+    public static final int CHILD=171;
+    public static final int GE=105;
+    public static final int STRICT=161;
+    public static final int PRESERVE=19;
+    public static final int UNDERSCORESi=219;
+    public static final int ELSE=80;
+    public static final int RCDATASi=190;
+    public static final int TYPESWITCH=76;
+    public static final int STOP=158;
+    public static final int CONTENT=99;
+    public static final int S=205;
+    public static final int FTOR=115;
+    public static final int EMPTY=28;
+    public static final int INTERSECT=91;
+    public static final int MINUSSi=85;
+    public static final int FTAND=116;
+    public static final int LANGUAGE=146;
+    public static final int LOWERCASE=155;
+    public static final int LPRAGSi=132;
+    public static final int INSENSITIVE=153;
+    public static final int APOSSi=185;
+    public static final int RSELFTERMSi=181;
+    public static final int LBRACKSi=178;
+    public static final int GT=104;
+    public static final int END=144;
+    public static final int DoubleLiteral=121;
+    public static final int QUOTSi=183;
+    public static final int DirCommentContent=192;
+    public static final int LexLiterals=206;
+    public static final int OPTION=48;
+    public static final int CharRef=209;
+    public static final int Extender=223;
+    public static final int OCCURS=127;
+    public static final int THESAURUS=149;
+    public static final int VERSION=5;
+    public static final int SATISFIES=75;
+    public static final int RXQCOMMENTSi=226;
+    public static final int IDIV=87;
+    public static final int ASCENDING=71;
+    public static final int ExtraChar=232;
+    public static final int AT=37;
+    public static final int AS=43;
+    public static final int EMPTY_SEQUENCE=50;
+    public static final int PARENT=164;
+    public static final int CONSTRUCTION=23;
+    public static final int ATSi=177;
+    public static final int THEN=79;
+    public static final int DBLSLASHSi=162;
+    public static final int DOCUMENT=198;
+    public static final int COLLATION=21;
+    public static final int LCOMMENTSi=191;
+    public static final int ANCESTOR=165;
+    public static final int AMPERSi=210;
+    public static final int CleanChar=235;
+    public static final int ElementContent=187;
+    public static final int CASTABLE=96;
+    public static final int MOST=130;
     public static final int EQSi=12;
-    public static final int PARAGRAPH=142;
-    public static final int ALL=124;
-    public static final int EXCLSi=230;
-    public static final int WHERE=68;
+    public static final int NODEBEFORESi=112;
+    public static final int BY=69;
+    public static final int DOTSi=180;
+    public static final int NCNameChar=229;
+    public static final int ITEM=51;
+    public static final int TO=84;
+    public static final int INHERIT=33;
+    public static final int ANCESTOR_OR_SELF=168;
+    public static final int DOTDOTSi=170;
+    public static final int STEMMING=152;
+    public static final int LTOREQSi=108;
+    public static final int NotChar=216;
     public static final int DirPIConstructor=200;
+    public static final int TEXT=60;
+    public static final int MODULE=9;
+    public static final int FTNOT=118;
+    public static final int Tokens=237;
+    public static final int ORDERED=25;
+    public static final int SAME=139;
+    public static final int UNION=89;
+    public static final int StringLiteral=6;
+    public static final int FOLLOWING_SIBLING=175;
+    public static final int SCHEMA=36;
+    public static final int COLONSi=42;
+    public static final int PiTarget=195;
+    public static final int ENTIRE=145;
+    public static final int INSTANCE=93;
+    public static final int VALIDATE=159;
+    public static final int WILDCARDS=148;
+    public static final int NOINHERIT=34;
+    public static final int DECLARE=14;
+    public static final int START=143;
+    public static final int IntegerLiteral=119;
+    public static final int DIV=86;
+    public static final int CombiningChar=222;
+    public static final int DESCENDING=72;
+    public static final int SELF=173;
+    public static final int RPRAGSi=134;
+    public static final int NEQSi=106;
+    public static final int CAST=97;
+    public static final int SENTENCES=136;
+    public static final int EXTERNAL=41;
+    public static final int LT=102;
+    public static final int QUESTIONSi=53;
+    public static final int RBRACKSi=179;
+    public static final int BACKSLASHSi=231;
+    public static final int CASE=77;
+    public static final int ENCODING=7;
+    public static final int RCOMMENTSi=193;
+    public static final int PLUSSi=62;
+    public static final int DIFFERENT=140;
+    public static final int PragmaLEX=202;
+    public static final int SCHEMAATTRIBUTE=57;
+    public static final int DOCUMENT_NODE=52;
+    public static final int LXQCOMMENTSi=225;
+    public static final int SEMICOLONSi=8;
+    public static final int WORD=123;
+    public static final int SHARPSi=224;
+    public static final int UPPERCASE=156;
+    public static final int Comment=203;
+    public static final int Char=236;
+    public static final int Digits=227;
+    public static final int QuotAttrContentChar=211;
+    public static final int FTOPTION=49;
+    public static final int AposAttributeContent=186;
+    public static final int COMMENT=59;
+    public static final int NE=101;
+    public static final int CDataSectionLEX=199;
+    public static final int BOUNDARYSPACE=18;
+    public static final int NODE=61;
+    public static final int CDataContents=189;
+    public static final int AposAttrContentChar=212;
+    public static final int GREATEST=29;
     public static final int WITHOUT=98;
     public static final int EVERY=74;
-    public static final int XQUERY=4;
-    public static final int IDIV=87;
-    public static final int SATISFIES=75;
-    public static final int ATSi=177;
-    public static final int DESCENDANT=172;
-    public static final int STRICT=161;
-    public static final int RBRACKSi=179;
-    public static final int FOLLOWING_SIBLING=175;
-    public static final int STABLE=70;
-    public static final int START=143;
-    public static final int DoubleLiteral=121;
-    public static final int AMPERSi=210;
-    public static final int VALIDATE=159;
-    public static final int PRECEDING=167;
-    public static final int COPY_NAMESPACES=31;
-    public static final int ORDERING=24;
-    public static final int ASSIGNSi=40;
-    public static final int UNORDERED=26;
-    public static final int PredefinedEntityRef=208;
-    public static final int LTSi=107;
-    public static final int SENTENCE=141;
-    public static final int INHERIT=33;
-    public static final int LexLiterals=206;
-    public static final int SHARPSi=224;
-    public static final int IS=111;
-    public static final int GT=104;
-    public static final int PHRASE=126;
-    public static final int StringLiteral=6;
-    public static final int RPISi=197;
-    public static final int ITEM=51;
-    public static final int DirPiContents=196;
-    public static final int ORDERED=25;
-    public static final int DirCommentConstLEX=201;
+    public static final int SENSITIVE=154;
     public static final int PROCESSING_INSTRUCTION=58;
+    public static final int WEIGHT=114;
+    public static final int OF=94;
+    public static final int LTSi=107;
     public static final int NODEAFTERSi=113;
-    public static final int COLLATION=21;
-    public static final int CharRef=209;
-    public static final int LPARSi=44;
-    public static final int ANCESTOR=165;
+    public static final int RELATIONSHIP=150;
+    public static final int NAMESPACE=10;
+    public static final int LCDATASi=188;
+    public static final int LBRACESi=46;
     public static final int VARIABLE=38;
-    public static final int EOF=-1;
+    public static final int DESCENDANT_OR_SELF=174;
+    public static final int BASE_URI=22;
+    public static final int NOPRESERVE=32;
+    public static final int DirPiContents=196;
+    public static final int OR=81;
+    public static final int LPARSi=44;
+    public static final int STARSi=54;
+    public static final int QuotAttributeContent=184;
+    public static final int RPISi=197;
+    public static final int FROM=131;
+    public static final int PRECEDING_SIBLING=166;
+    public static final int Letter=218;
+    public static final int NCName=11;
+    public static final int WHERE=68;
+    public static final int LAX=160;
+    public static final int ORDER=27;
+    public static final int ATTRIBUTE=56;
+    public static final int FOR=64;
+    public static final int EXCLSi=230;
+    public static final int FOLLOWING=176;
+    public static final int AND=82;
+    public static final int FTCONTAINS=83;
+    public static final int IF=78;
+    public static final int SCHEMAELEMENT=55;
+    public static final int IN=65;
+    public static final int PARAGRAPH=142;
+    public static final int COPY_NAMESPACES=31;
+    public static final int IS=111;
+    public static final int SOME=73;
+    public static final int ALL=124;
+    public static final int STRIP=20;
+    public static final int STABLE=70;
+    public static final int PIPESi=90;
+    public static final int WITH=147;
+    public static final int NCNameStartChar=228;
+    public static final int LENDTAGSi=182;
+    public static final int GTSi=109;
     public static final int RBRACSi=47;
-    public static final int ElementContent=187;
-    public static final int LCOMMENTSi=191;
-    public static final int LBRACKSi=178;
+    public static final int XQUERY=4;
+    public static final int EXACTLY=129;
+    public static final int DEFAULT=15;
+    public static final int DESCENDANT=172;
+    public static final int NameChar=220;
+    public static final int COMMASi=13;
+    public static final int SLASHSi=163;
+    public static final int Digit=221;
+    public static final int DecimalLiteral=120;
+    public static final int GTOREQSi=110;
+    public static final int UNORDERED=26;
+    public static final int PHRASE=126;
+    public static final int TOKENSWITCH=207;
+    public static final int ElementContentChar=213;
+    public static final int ANY=122;
+    public static final int SCORE=66;
+    public static final int LexSigns=204;
+    public static final int ORDERING=24;
+    public static final int PredefinedEntityRef=208;
+    public static final int Name=217;
+    public static final int LEAST=30;
+    public static final int WINDOW=135;
+    public static final int LEVELS=151;
+    public static final int PARAGRAPHS=137;
+    public static final int TIMES=128;
+    public static final int DirCommentConstLEX=201;
+    public static final int LE=103;
+    public static final int TREAT=95;
+    public static final int LET=67;
 
         
         public int state = 0;
@@ -3132,12 +3132,56 @@ public class XQFTLexer extends Lexer {
 
             if ( (LA33_0=='a') ) {
                 switch ( input.LA(2) ) {
+                case 't':
+                    {
+                    int LA33_22 = input.LA(3);
+
+                    if ( (LA33_22=='t') && (synpred14())) {
+                        alt33=9;
+                    }
+                    else if ( (synpred13()) ) {
+                        alt33=8;
+                    }
+                    else if ( (true) ) {
+                        alt33=141;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return ;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 22, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 's':
+                    {
+                    int LA33_23 = input.LA(3);
+
+                    if ( (LA33_23=='c') && (synpred12())) {
+                        alt33=7;
+                    }
+                    else if ( (synpred11()) ) {
+                        alt33=6;
+                    }
+                    else if ( (true) ) {
+                        alt33=141;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return ;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 23, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
                 case 'n':
                     {
                     switch ( input.LA(3) ) {
                     case 'd':
                         {
-                        int LA33_90 = input.LA(4);
+                        int LA33_94 = input.LA(4);
 
                         if ( (synpred10()) ) {
                             alt33=5;
@@ -3148,7 +3192,7 @@ public class XQFTLexer extends Lexer {
                         else {
                             if (backtracking>0) {failed=true; return ;}
                             NoViableAltException nvae =
-                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 90, input);
+                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 94, input);
 
                             throw nvae;
                         }
@@ -3156,9 +3200,9 @@ public class XQFTLexer extends Lexer {
                         break;
                     case 'c':
                         {
-                        int LA33_91 = input.LA(4);
+                        int LA33_95 = input.LA(4);
 
-                        if ( (LA33_91=='e') ) {
+                        if ( (LA33_95=='e') ) {
                             int LA33_204 = input.LA(5);
 
                             if ( (LA33_204=='s') ) {
@@ -3208,7 +3252,7 @@ public class XQFTLexer extends Lexer {
                         break;
                     case 'y':
                         {
-                        int LA33_92 = input.LA(4);
+                        int LA33_96 = input.LA(4);
 
                         if ( (synpred7()) ) {
                             alt33=2;
@@ -3219,7 +3263,7 @@ public class XQFTLexer extends Lexer {
                         else {
                             if (backtracking>0) {failed=true; return ;}
                             NoViableAltException nvae =
-                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 92, input);
+                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 96, input);
 
                             throw nvae;
                         }
@@ -3232,10 +3276,10 @@ public class XQFTLexer extends Lexer {
                     break;
                 case 'l':
                     {
-                    int LA33_23 = input.LA(3);
+                    int LA33_25 = input.LA(3);
 
-                    if ( (LA33_23=='l') ) {
-                        int LA33_93 = input.LA(4);
+                    if ( (LA33_25=='l') ) {
+                        int LA33_97 = input.LA(4);
 
                         if ( (synpred6()) ) {
                             alt33=1;
@@ -3246,57 +3290,13 @@ public class XQFTLexer extends Lexer {
                         else {
                             if (backtracking>0) {failed=true; return ;}
                             NoViableAltException nvae =
-                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 93, input);
+                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 97, input);
 
                             throw nvae;
                         }
                     }
                     else {
                         alt33=141;}
-                    }
-                    break;
-                case 's':
-                    {
-                    int LA33_24 = input.LA(3);
-
-                    if ( (LA33_24=='c') && (synpred12())) {
-                        alt33=7;
-                    }
-                    else if ( (synpred11()) ) {
-                        alt33=6;
-                    }
-                    else if ( (true) ) {
-                        alt33=141;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return ;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 24, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case 't':
-                    {
-                    int LA33_25 = input.LA(3);
-
-                    if ( (LA33_25=='t') && (synpred14())) {
-                        alt33=9;
-                    }
-                    else if ( (synpred13()) ) {
-                        alt33=8;
-                    }
-                    else if ( (true) ) {
-                        alt33=141;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return ;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 25, input);
-
-                        throw nvae;
-                    }
                     }
                     break;
                 default:
@@ -3476,99 +3476,211 @@ public class XQFTLexer extends Lexer {
             }
             else if ( (LA33_0=='c') ) {
                 switch ( input.LA(2) ) {
-                case 'a':
+                case 'o':
                     {
-                    int LA33_29 = input.LA(3);
+                    switch ( input.LA(3) ) {
+                    case 'l':
+                        {
+                        int LA33_101 = input.LA(4);
 
-                    if ( (LA33_29=='s') ) {
-                        switch ( input.LA(4) ) {
-                        case 't':
-                            {
+                        if ( (LA33_101=='l') ) {
                             int LA33_209 = input.LA(5);
 
-                            if ( (LA33_209=='a') && (synpred20())) {
-                                alt33=15;
-                            }
-                            else if ( (synpred19()) ) {
-                                alt33=14;
-                            }
-                            else if ( (true) ) {
-                                alt33=141;
+                            if ( (LA33_209=='a') ) {
+                                int LA33_307 = input.LA(6);
+
+                                if ( (LA33_307=='t') ) {
+                                    int LA33_400 = input.LA(7);
+
+                                    if ( (LA33_400=='i') ) {
+                                        int LA33_476 = input.LA(8);
+
+                                        if ( (LA33_476=='o') ) {
+                                            int LA33_537 = input.LA(9);
+
+                                            if ( (LA33_537=='n') ) {
+                                                int LA33_587 = input.LA(10);
+
+                                                if ( (synpred22()) ) {
+                                                    alt33=17;
+                                                }
+                                                else if ( (true) ) {
+                                                    alt33=141;
+                                                }
+                                                else {
+                                                    if (backtracking>0) {failed=true; return ;}
+                                                    NoViableAltException nvae =
+                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 587, input);
+
+                                                    throw nvae;
+                                                }
+                                            }
+                                            else {
+                                                alt33=141;}
+                                        }
+                                        else {
+                                            alt33=141;}
+                                    }
+                                    else {
+                                        alt33=141;}
+                                }
+                                else {
+                                    alt33=141;}
                             }
                             else {
-                                if (backtracking>0) {failed=true; return ;}
-                                NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 209, input);
-
-                                throw nvae;
-                            }
-                            }
-                            break;
-                        case 'e':
+                                alt33=141;}
+                        }
+                        else {
+                            alt33=141;}
+                        }
+                        break;
+                    case 'n':
+                        {
+                        switch ( input.LA(4) ) {
+                        case 's':
                             {
                             int LA33_210 = input.LA(5);
 
-                            if ( (synpred18()) ) {
-                                alt33=13;
-                            }
-                            else if ( (true) ) {
-                                alt33=141;
+                            if ( (LA33_210=='t') ) {
+                                int LA33_308 = input.LA(6);
+
+                                if ( (LA33_308=='r') ) {
+                                    int LA33_401 = input.LA(7);
+
+                                    if ( (LA33_401=='u') ) {
+                                        int LA33_477 = input.LA(8);
+
+                                        if ( (LA33_477=='c') ) {
+                                            int LA33_538 = input.LA(9);
+
+                                            if ( (LA33_538=='t') ) {
+                                                int LA33_588 = input.LA(10);
+
+                                                if ( (LA33_588=='i') ) {
+                                                    int LA33_628 = input.LA(11);
+
+                                                    if ( (LA33_628=='o') ) {
+                                                        int LA33_656 = input.LA(12);
+
+                                                        if ( (LA33_656=='n') ) {
+                                                            int LA33_669 = input.LA(13);
+
+                                                            if ( (synpred24()) ) {
+                                                                alt33=19;
+                                                            }
+                                                            else if ( (true) ) {
+                                                                alt33=141;
+                                                            }
+                                                            else {
+                                                                if (backtracking>0) {failed=true; return ;}
+                                                                NoViableAltException nvae =
+                                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 669, input);
+
+                                                                throw nvae;
+                                                            }
+                                                        }
+                                                        else {
+                                                            alt33=141;}
+                                                    }
+                                                    else {
+                                                        alt33=141;}
+                                                }
+                                                else {
+                                                    alt33=141;}
+                                            }
+                                            else {
+                                                alt33=141;}
+                                        }
+                                        else {
+                                            alt33=141;}
+                                    }
+                                    else {
+                                        alt33=141;}
+                                }
+                                else {
+                                    alt33=141;}
                             }
                             else {
-                                if (backtracking>0) {failed=true; return ;}
-                                NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 210, input);
-
-                                throw nvae;
+                                alt33=141;}
                             }
+                            break;
+                        case 't':
+                            {
+                            int LA33_211 = input.LA(5);
+
+                            if ( (LA33_211=='e') ) {
+                                int LA33_309 = input.LA(6);
+
+                                if ( (LA33_309=='n') ) {
+                                    int LA33_402 = input.LA(7);
+
+                                    if ( (LA33_402=='t') ) {
+                                        int LA33_478 = input.LA(8);
+
+                                        if ( (synpred25()) ) {
+                                            alt33=20;
+                                        }
+                                        else if ( (true) ) {
+                                            alt33=141;
+                                        }
+                                        else {
+                                            if (backtracking>0) {failed=true; return ;}
+                                            NoViableAltException nvae =
+                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 478, input);
+
+                                            throw nvae;
+                                        }
+                                    }
+                                    else {
+                                        alt33=141;}
+                                }
+                                else {
+                                    alt33=141;}
+                            }
+                            else {
+                                alt33=141;}
                             }
                             break;
                         default:
                             alt33=141;}
 
-                    }
-                    else {
-                        alt33=141;}
-                    }
-                    break;
-                case 'o':
-                    {
-                    switch ( input.LA(3) ) {
+                        }
+                        break;
                     case 'p':
                         {
-                        int LA33_102 = input.LA(4);
+                        int LA33_103 = input.LA(4);
 
-                        if ( (LA33_102=='y') ) {
-                            int LA33_211 = input.LA(5);
+                        if ( (LA33_103=='y') ) {
+                            int LA33_212 = input.LA(5);
 
-                            if ( (LA33_211=='-') ) {
+                            if ( (LA33_212=='-') ) {
                                 int LA33_310 = input.LA(6);
 
                                 if ( (LA33_310=='n') ) {
-                                    int LA33_400 = input.LA(7);
+                                    int LA33_403 = input.LA(7);
 
-                                    if ( (LA33_400=='a') ) {
-                                        int LA33_476 = input.LA(8);
+                                    if ( (LA33_403=='a') ) {
+                                        int LA33_479 = input.LA(8);
 
-                                        if ( (LA33_476=='m') ) {
-                                            int LA33_537 = input.LA(9);
+                                        if ( (LA33_479=='m') ) {
+                                            int LA33_540 = input.LA(9);
 
-                                            if ( (LA33_537=='e') ) {
-                                                int LA33_587 = input.LA(10);
+                                            if ( (LA33_540=='e') ) {
+                                                int LA33_589 = input.LA(10);
 
-                                                if ( (LA33_587=='s') ) {
-                                                    int LA33_627 = input.LA(11);
+                                                if ( (LA33_589=='s') ) {
+                                                    int LA33_629 = input.LA(11);
 
-                                                    if ( (LA33_627=='p') ) {
-                                                        int LA33_656 = input.LA(12);
+                                                    if ( (LA33_629=='p') ) {
+                                                        int LA33_657 = input.LA(12);
 
-                                                        if ( (LA33_656=='a') ) {
-                                                            int LA33_669 = input.LA(13);
+                                                        if ( (LA33_657=='a') ) {
+                                                            int LA33_670 = input.LA(13);
 
-                                                            if ( (LA33_669=='c') ) {
-                                                                int LA33_675 = input.LA(14);
+                                                            if ( (LA33_670=='c') ) {
+                                                                int LA33_676 = input.LA(14);
 
-                                                                if ( (LA33_675=='e') ) {
+                                                                if ( (LA33_676=='e') ) {
                                                                     int LA33_680 = input.LA(15);
 
                                                                     if ( (LA33_680=='s') ) {
@@ -3625,133 +3737,21 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    case 'n':
-                        {
-                        switch ( input.LA(4) ) {
-                        case 't':
-                            {
-                            int LA33_212 = input.LA(5);
-
-                            if ( (LA33_212=='e') ) {
-                                int LA33_311 = input.LA(6);
-
-                                if ( (LA33_311=='n') ) {
-                                    int LA33_401 = input.LA(7);
-
-                                    if ( (LA33_401=='t') ) {
-                                        int LA33_477 = input.LA(8);
-
-                                        if ( (synpred25()) ) {
-                                            alt33=20;
-                                        }
-                                        else if ( (true) ) {
-                                            alt33=141;
-                                        }
-                                        else {
-                                            if (backtracking>0) {failed=true; return ;}
-                                            NoViableAltException nvae =
-                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 477, input);
-
-                                            throw nvae;
-                                        }
-                                    }
-                                    else {
-                                        alt33=141;}
-                                }
-                                else {
-                                    alt33=141;}
-                            }
-                            else {
-                                alt33=141;}
-                            }
-                            break;
-                        case 's':
-                            {
-                            int LA33_213 = input.LA(5);
-
-                            if ( (LA33_213=='t') ) {
-                                int LA33_312 = input.LA(6);
-
-                                if ( (LA33_312=='r') ) {
-                                    int LA33_402 = input.LA(7);
-
-                                    if ( (LA33_402=='u') ) {
-                                        int LA33_478 = input.LA(8);
-
-                                        if ( (LA33_478=='c') ) {
-                                            int LA33_539 = input.LA(9);
-
-                                            if ( (LA33_539=='t') ) {
-                                                int LA33_588 = input.LA(10);
-
-                                                if ( (LA33_588=='i') ) {
-                                                    int LA33_628 = input.LA(11);
-
-                                                    if ( (LA33_628=='o') ) {
-                                                        int LA33_657 = input.LA(12);
-
-                                                        if ( (LA33_657=='n') ) {
-                                                            int LA33_670 = input.LA(13);
-
-                                                            if ( (synpred24()) ) {
-                                                                alt33=19;
-                                                            }
-                                                            else if ( (true) ) {
-                                                                alt33=141;
-                                                            }
-                                                            else {
-                                                                if (backtracking>0) {failed=true; return ;}
-                                                                NoViableAltException nvae =
-                                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 670, input);
-
-                                                                throw nvae;
-                                                            }
-                                                        }
-                                                        else {
-                                                            alt33=141;}
-                                                    }
-                                                    else {
-                                                        alt33=141;}
-                                                }
-                                                else {
-                                                    alt33=141;}
-                                            }
-                                            else {
-                                                alt33=141;}
-                                        }
-                                        else {
-                                            alt33=141;}
-                                    }
-                                    else {
-                                        alt33=141;}
-                                }
-                                else {
-                                    alt33=141;}
-                            }
-                            else {
-                                alt33=141;}
-                            }
-                            break;
-                        default:
-                            alt33=141;}
-
-                        }
-                        break;
                     case 'm':
                         {
                         int LA33_104 = input.LA(4);
 
                         if ( (LA33_104=='m') ) {
-                            int LA33_214 = input.LA(5);
+                            int LA33_213 = input.LA(5);
 
-                            if ( (LA33_214=='e') ) {
-                                int LA33_313 = input.LA(6);
+                            if ( (LA33_213=='e') ) {
+                                int LA33_311 = input.LA(6);
 
-                                if ( (LA33_313=='n') ) {
-                                    int LA33_403 = input.LA(7);
+                                if ( (LA33_311=='n') ) {
+                                    int LA33_404 = input.LA(7);
 
-                                    if ( (LA33_403=='t') ) {
-                                        int LA33_479 = input.LA(8);
+                                    if ( (LA33_404=='t') ) {
+                                        int LA33_480 = input.LA(8);
 
                                         if ( (synpred23()) ) {
                                             alt33=18;
@@ -3762,65 +3762,10 @@ public class XQFTLexer extends Lexer {
                                         else {
                                             if (backtracking>0) {failed=true; return ;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 479, input);
+                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 480, input);
 
                                             throw nvae;
                                         }
-                                    }
-                                    else {
-                                        alt33=141;}
-                                }
-                                else {
-                                    alt33=141;}
-                            }
-                            else {
-                                alt33=141;}
-                        }
-                        else {
-                            alt33=141;}
-                        }
-                        break;
-                    case 'l':
-                        {
-                        int LA33_105 = input.LA(4);
-
-                        if ( (LA33_105=='l') ) {
-                            int LA33_215 = input.LA(5);
-
-                            if ( (LA33_215=='a') ) {
-                                int LA33_314 = input.LA(6);
-
-                                if ( (LA33_314=='t') ) {
-                                    int LA33_404 = input.LA(7);
-
-                                    if ( (LA33_404=='i') ) {
-                                        int LA33_480 = input.LA(8);
-
-                                        if ( (LA33_480=='o') ) {
-                                            int LA33_541 = input.LA(9);
-
-                                            if ( (LA33_541=='n') ) {
-                                                int LA33_589 = input.LA(10);
-
-                                                if ( (synpred22()) ) {
-                                                    alt33=17;
-                                                }
-                                                else if ( (true) ) {
-                                                    alt33=141;
-                                                }
-                                                else {
-                                                    if (backtracking>0) {failed=true; return ;}
-                                                    NoViableAltException nvae =
-                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 589, input);
-
-                                                    throw nvae;
-                                                }
-                                            }
-                                            else {
-                                                alt33=141;}
-                                        }
-                                        else {
-                                            alt33=141;}
                                     }
                                     else {
                                         alt33=141;}
@@ -3838,6 +3783,61 @@ public class XQFTLexer extends Lexer {
                     default:
                         alt33=141;}
 
+                    }
+                    break;
+                case 'a':
+                    {
+                    int LA33_30 = input.LA(3);
+
+                    if ( (LA33_30=='s') ) {
+                        switch ( input.LA(4) ) {
+                        case 't':
+                            {
+                            int LA33_214 = input.LA(5);
+
+                            if ( (LA33_214=='a') && (synpred20())) {
+                                alt33=15;
+                            }
+                            else if ( (synpred19()) ) {
+                                alt33=14;
+                            }
+                            else if ( (true) ) {
+                                alt33=141;
+                            }
+                            else {
+                                if (backtracking>0) {failed=true; return ;}
+                                NoViableAltException nvae =
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 214, input);
+
+                                throw nvae;
+                            }
+                            }
+                            break;
+                        case 'e':
+                            {
+                            int LA33_215 = input.LA(5);
+
+                            if ( (synpred18()) ) {
+                                alt33=13;
+                            }
+                            else if ( (true) ) {
+                                alt33=141;
+                            }
+                            else {
+                                if (backtracking>0) {failed=true; return ;}
+                                NoViableAltException nvae =
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 215, input);
+
+                                throw nvae;
+                            }
+                            }
+                            break;
+                        default:
+                            alt33=141;}
+
+                    }
+                    else {
+                        alt33=141;}
                     }
                     break;
                 case 'h':
@@ -3886,33 +3886,14 @@ public class XQFTLexer extends Lexer {
                 case 'i':
                     {
                     switch ( input.LA(3) ) {
-                    case 'v':
+                    case 'f':
                         {
                         int LA33_107 = input.LA(4);
 
-                        if ( (synpred35()) ) {
-                            alt33=30;
-                        }
-                        else if ( (true) ) {
-                            alt33=141;
-                        }
-                        else {
-                            if (backtracking>0) {failed=true; return ;}
-                            NoViableAltException nvae =
-                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 107, input);
+                        if ( (LA33_107=='f') ) {
+                            int LA33_217 = input.LA(5);
 
-                            throw nvae;
-                        }
-                        }
-                        break;
-                    case 'f':
-                        {
-                        int LA33_108 = input.LA(4);
-
-                        if ( (LA33_108=='f') ) {
-                            int LA33_218 = input.LA(5);
-
-                            if ( (LA33_218=='e') ) {
+                            if ( (LA33_217=='e') ) {
                                 int LA33_316 = input.LA(6);
 
                                 if ( (LA33_316=='r') ) {
@@ -3962,12 +3943,12 @@ public class XQFTLexer extends Lexer {
                         break;
                     case 's':
                         {
-                        int LA33_109 = input.LA(4);
+                        int LA33_108 = input.LA(4);
 
-                        if ( (LA33_109=='t') ) {
-                            int LA33_219 = input.LA(5);
+                        if ( (LA33_108=='t') ) {
+                            int LA33_218 = input.LA(5);
 
-                            if ( (LA33_219=='a') ) {
+                            if ( (LA33_218=='a') ) {
                                 int LA33_317 = input.LA(6);
 
                                 if ( (LA33_317=='n') ) {
@@ -4007,6 +3988,25 @@ public class XQFTLexer extends Lexer {
                         }
                         else {
                             alt33=141;}
+                        }
+                        break;
+                    case 'v':
+                        {
+                        int LA33_109 = input.LA(4);
+
+                        if ( (synpred35()) ) {
+                            alt33=30;
+                        }
+                        else if ( (true) ) {
+                            alt33=141;
+                        }
+                        else {
+                            if (backtracking>0) {failed=true; return ;}
+                            NoViableAltException nvae =
+                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 109, input);
+
+                            throw nvae;
+                        }
                         }
                         break;
                     case 'a':
@@ -4093,18 +4093,21 @@ public class XQFTLexer extends Lexer {
 
                                     if ( (LA33_409=='d') ) {
                                         switch ( input.LA(8) ) {
-                                        case 'i':
+                                        case 'a':
                                             {
                                             int LA33_545 = input.LA(9);
 
                                             if ( (LA33_545=='n') ) {
                                                 int LA33_593 = input.LA(10);
 
-                                                if ( (LA33_593=='g') ) {
+                                                if ( (LA33_593=='t') ) {
                                                     int LA33_632 = input.LA(11);
 
-                                                    if ( (synpred31()) ) {
-                                                        alt33=26;
+                                                    if ( (LA33_632=='-') && (synpred30())) {
+                                                        alt33=25;
+                                                    }
+                                                    else if ( (synpred29()) ) {
+                                                        alt33=24;
                                                     }
                                                     else if ( (true) ) {
                                                         alt33=141;
@@ -4124,21 +4127,18 @@ public class XQFTLexer extends Lexer {
                                                 alt33=141;}
                                             }
                                             break;
-                                        case 'a':
+                                        case 'i':
                                             {
                                             int LA33_546 = input.LA(9);
 
                                             if ( (LA33_546=='n') ) {
                                                 int LA33_594 = input.LA(10);
 
-                                                if ( (LA33_594=='t') ) {
+                                                if ( (LA33_594=='g') ) {
                                                     int LA33_633 = input.LA(11);
 
-                                                    if ( (LA33_633=='-') && (synpred30())) {
-                                                        alt33=25;
-                                                    }
-                                                    else if ( (synpred29()) ) {
-                                                        alt33=24;
+                                                    if ( (synpred31()) ) {
+                                                        alt33=26;
                                                     }
                                                     else if ( (true) ) {
                                                         alt33=141;
@@ -4175,24 +4175,24 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    case 'f':
+                    case 'c':
                         {
                         int LA33_112 = input.LA(4);
 
-                        if ( (LA33_112=='a') ) {
+                        if ( (LA33_112=='l') ) {
                             int LA33_222 = input.LA(5);
 
-                            if ( (LA33_222=='u') ) {
+                            if ( (LA33_222=='a') ) {
                                 int LA33_320 = input.LA(6);
 
-                                if ( (LA33_320=='l') ) {
+                                if ( (LA33_320=='r') ) {
                                     int LA33_410 = input.LA(7);
 
-                                    if ( (LA33_410=='t') ) {
+                                    if ( (LA33_410=='e') ) {
                                         int LA33_485 = input.LA(8);
 
-                                        if ( (synpred28()) ) {
-                                            alt33=23;
+                                        if ( (synpred27()) ) {
+                                            alt33=22;
                                         }
                                         else if ( (true) ) {
                                             alt33=141;
@@ -4218,24 +4218,24 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    case 'c':
+                    case 'f':
                         {
                         int LA33_113 = input.LA(4);
 
-                        if ( (LA33_113=='l') ) {
+                        if ( (LA33_113=='a') ) {
                             int LA33_223 = input.LA(5);
 
-                            if ( (LA33_223=='a') ) {
+                            if ( (LA33_223=='u') ) {
                                 int LA33_321 = input.LA(6);
 
-                                if ( (LA33_321=='r') ) {
+                                if ( (LA33_321=='l') ) {
                                     int LA33_411 = input.LA(7);
 
-                                    if ( (LA33_411=='e') ) {
+                                    if ( (LA33_411=='t') ) {
                                         int LA33_486 = input.LA(8);
 
-                                        if ( (synpred27()) ) {
-                                            alt33=22;
+                                        if ( (synpred28()) ) {
+                                            alt33=23;
                                         }
                                         else if ( (true) ) {
                                             alt33=141;
@@ -4330,44 +4330,38 @@ public class XQFTLexer extends Lexer {
             }
             else if ( (LA33_0=='e') ) {
                 switch ( input.LA(2) ) {
-                case 'n':
+                case 'x':
                     {
                     switch ( input.LA(3) ) {
-                    case 'c':
+                    case 'a':
                         {
                         int LA33_115 = input.LA(4);
 
-                        if ( (LA33_115=='o') ) {
+                        if ( (LA33_115=='c') ) {
                             int LA33_225 = input.LA(5);
 
-                            if ( (LA33_225=='d') ) {
+                            if ( (LA33_225=='t') ) {
                                 int LA33_323 = input.LA(6);
 
-                                if ( (LA33_323=='i') ) {
+                                if ( (LA33_323=='l') ) {
                                     int LA33_413 = input.LA(7);
 
-                                    if ( (LA33_413=='n') ) {
+                                    if ( (LA33_413=='y') ) {
                                         int LA33_488 = input.LA(8);
 
-                                        if ( (LA33_488=='g') ) {
-                                            int LA33_550 = input.LA(9);
-
-                                            if ( (synpred40()) ) {
-                                                alt33=35;
-                                            }
-                                            else if ( (true) ) {
-                                                alt33=141;
-                                            }
-                                            else {
-                                                if (backtracking>0) {failed=true; return ;}
-                                                NoViableAltException nvae =
-                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 550, input);
-
-                                                throw nvae;
-                                            }
+                                        if ( (synpred47()) ) {
+                                            alt33=42;
+                                        }
+                                        else if ( (true) ) {
+                                            alt33=141;
                                         }
                                         else {
-                                            alt33=141;}
+                                            if (backtracking>0) {failed=true; return ;}
+                                            NoViableAltException nvae =
+                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 488, input);
+
+                                            throw nvae;
+                                        }
                                     }
                                     else {
                                         alt33=141;}
@@ -4382,40 +4376,21 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    case 'd':
+                    case 'c':
                         {
                         int LA33_116 = input.LA(4);
 
-                        if ( (synpred41()) ) {
-                            alt33=36;
-                        }
-                        else if ( (true) ) {
-                            alt33=141;
-                        }
-                        else {
-                            if (backtracking>0) {failed=true; return ;}
-                            NoViableAltException nvae =
-                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 116, input);
+                        if ( (LA33_116=='e') ) {
+                            int LA33_226 = input.LA(5);
 
-                            throw nvae;
-                        }
-                        }
-                        break;
-                    case 't':
-                        {
-                        int LA33_117 = input.LA(4);
-
-                        if ( (LA33_117=='i') ) {
-                            int LA33_227 = input.LA(5);
-
-                            if ( (LA33_227=='r') ) {
+                            if ( (LA33_226=='p') ) {
                                 int LA33_324 = input.LA(6);
 
-                                if ( (LA33_324=='e') ) {
+                                if ( (LA33_324=='t') ) {
                                     int LA33_414 = input.LA(7);
 
-                                    if ( (synpred42()) ) {
-                                        alt33=37;
+                                    if ( (synpred48()) ) {
+                                        alt33=43;
                                     }
                                     else if ( (true) ) {
                                         alt33=141;
@@ -4438,145 +4413,24 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    default:
-                        alt33=141;}
-
-                    }
-                    break;
-                case 'v':
-                    {
-                    int LA33_36 = input.LA(3);
-
-                    if ( (LA33_36=='e') ) {
-                        int LA33_118 = input.LA(4);
-
-                        if ( (LA33_118=='r') ) {
-                            int LA33_228 = input.LA(5);
-
-                            if ( (LA33_228=='y') ) {
-                                int LA33_325 = input.LA(6);
-
-                                if ( (synpred46()) ) {
-                                    alt33=41;
-                                }
-                                else if ( (true) ) {
-                                    alt33=141;
-                                }
-                                else {
-                                    if (backtracking>0) {failed=true; return ;}
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 325, input);
-
-                                    throw nvae;
-                                }
-                            }
-                            else {
-                                alt33=141;}
-                        }
-                        else {
-                            alt33=141;}
-                    }
-                    else {
-                        alt33=141;}
-                    }
-                    break;
-                case 'l':
-                    {
-                    switch ( input.LA(3) ) {
-                    case 'e':
-                        {
-                        int LA33_119 = input.LA(4);
-
-                        if ( (LA33_119=='m') ) {
-                            int LA33_229 = input.LA(5);
-
-                            if ( (LA33_229=='e') ) {
-                                int LA33_326 = input.LA(6);
-
-                                if ( (LA33_326=='n') ) {
-                                    int LA33_416 = input.LA(7);
-
-                                    if ( (LA33_416=='t') ) {
-                                        int LA33_490 = input.LA(8);
-
-                                        if ( (synpred38()) ) {
-                                            alt33=33;
-                                        }
-                                        else if ( (true) ) {
-                                            alt33=141;
-                                        }
-                                        else {
-                                            if (backtracking>0) {failed=true; return ;}
-                                            NoViableAltException nvae =
-                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 490, input);
-
-                                            throw nvae;
-                                        }
-                                    }
-                                    else {
-                                        alt33=141;}
-                                }
-                                else {
-                                    alt33=141;}
-                            }
-                            else {
-                                alt33=141;}
-                        }
-                        else {
-                            alt33=141;}
-                        }
-                        break;
-                    case 's':
-                        {
-                        int LA33_120 = input.LA(4);
-
-                        if ( (LA33_120=='e') ) {
-                            int LA33_230 = input.LA(5);
-
-                            if ( (synpred39()) ) {
-                                alt33=34;
-                            }
-                            else if ( (true) ) {
-                                alt33=141;
-                            }
-                            else {
-                                if (backtracking>0) {failed=true; return ;}
-                                NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 230, input);
-
-                                throw nvae;
-                            }
-                        }
-                        else {
-                            alt33=141;}
-                        }
-                        break;
-                    default:
-                        alt33=141;}
-
-                    }
-                    break;
-                case 'x':
-                    {
-                    switch ( input.LA(3) ) {
                     case 't':
                         {
-                        int LA33_121 = input.LA(4);
+                        int LA33_117 = input.LA(4);
 
-                        if ( (LA33_121=='e') ) {
-                            int LA33_231 = input.LA(5);
+                        if ( (LA33_117=='e') ) {
+                            int LA33_227 = input.LA(5);
 
-                            if ( (LA33_231=='r') ) {
-                                int LA33_328 = input.LA(6);
+                            if ( (LA33_227=='r') ) {
+                                int LA33_325 = input.LA(6);
 
-                                if ( (LA33_328=='n') ) {
-                                    int LA33_417 = input.LA(7);
+                                if ( (LA33_325=='n') ) {
+                                    int LA33_415 = input.LA(7);
 
-                                    if ( (LA33_417=='a') ) {
-                                        int LA33_491 = input.LA(8);
+                                    if ( (LA33_415=='a') ) {
+                                        int LA33_490 = input.LA(8);
 
-                                        if ( (LA33_491=='l') ) {
-                                            int LA33_552 = input.LA(9);
+                                        if ( (LA33_490=='l') ) {
+                                            int LA33_551 = input.LA(9);
 
                                             if ( (synpred49()) ) {
                                                 alt33=44;
@@ -4587,7 +4441,7 @@ public class XQFTLexer extends Lexer {
                                             else {
                                                 if (backtracking>0) {failed=true; return ;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 552, input);
+                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 551, input);
 
                                                 throw nvae;
                                             }
@@ -4608,24 +4462,32 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    case 'a':
+                    default:
+                        alt33=141;}
+
+                    }
+                    break;
+                case 'l':
+                    {
+                    switch ( input.LA(3) ) {
+                    case 'e':
                         {
-                        int LA33_122 = input.LA(4);
+                        int LA33_118 = input.LA(4);
 
-                        if ( (LA33_122=='c') ) {
-                            int LA33_232 = input.LA(5);
+                        if ( (LA33_118=='m') ) {
+                            int LA33_228 = input.LA(5);
 
-                            if ( (LA33_232=='t') ) {
-                                int LA33_329 = input.LA(6);
+                            if ( (LA33_228=='e') ) {
+                                int LA33_326 = input.LA(6);
 
-                                if ( (LA33_329=='l') ) {
-                                    int LA33_418 = input.LA(7);
+                                if ( (LA33_326=='n') ) {
+                                    int LA33_416 = input.LA(7);
 
-                                    if ( (LA33_418=='y') ) {
-                                        int LA33_492 = input.LA(8);
+                                    if ( (LA33_416=='t') ) {
+                                        int LA33_491 = input.LA(8);
 
-                                        if ( (synpred47()) ) {
-                                            alt33=42;
+                                        if ( (synpred38()) ) {
+                                            alt33=33;
                                         }
                                         else if ( (true) ) {
                                             alt33=141;
@@ -4633,7 +4495,7 @@ public class XQFTLexer extends Lexer {
                                         else {
                                             if (backtracking>0) {failed=true; return ;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 492, input);
+                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 491, input);
 
                                             throw nvae;
                                         }
@@ -4651,21 +4513,54 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    case 'c':
+                    case 's':
                         {
-                        int LA33_123 = input.LA(4);
+                        int LA33_119 = input.LA(4);
 
-                        if ( (LA33_123=='e') ) {
-                            int LA33_233 = input.LA(5);
+                        if ( (LA33_119=='e') ) {
+                            int LA33_229 = input.LA(5);
 
-                            if ( (LA33_233=='p') ) {
-                                int LA33_330 = input.LA(6);
+                            if ( (synpred39()) ) {
+                                alt33=34;
+                            }
+                            else if ( (true) ) {
+                                alt33=141;
+                            }
+                            else {
+                                if (backtracking>0) {failed=true; return ;}
+                                NoViableAltException nvae =
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 229, input);
 
-                                if ( (LA33_330=='t') ) {
-                                    int LA33_419 = input.LA(7);
+                                throw nvae;
+                            }
+                        }
+                        else {
+                            alt33=141;}
+                        }
+                        break;
+                    default:
+                        alt33=141;}
 
-                                    if ( (synpred48()) ) {
-                                        alt33=43;
+                    }
+                    break;
+                case 'n':
+                    {
+                    switch ( input.LA(3) ) {
+                    case 't':
+                        {
+                        int LA33_120 = input.LA(4);
+
+                        if ( (LA33_120=='i') ) {
+                            int LA33_230 = input.LA(5);
+
+                            if ( (LA33_230=='r') ) {
+                                int LA33_328 = input.LA(6);
+
+                                if ( (LA33_328=='e') ) {
+                                    int LA33_417 = input.LA(7);
+
+                                    if ( (synpred42()) ) {
+                                        alt33=37;
                                     }
                                     else if ( (true) ) {
                                         alt33=141;
@@ -4673,7 +4568,7 @@ public class XQFTLexer extends Lexer {
                                     else {
                                         if (backtracking>0) {failed=true; return ;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 419, input);
+                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 417, input);
 
                                         throw nvae;
                                     }
@@ -4688,48 +4583,134 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
+                    case 'c':
+                        {
+                        int LA33_121 = input.LA(4);
+
+                        if ( (LA33_121=='o') ) {
+                            int LA33_231 = input.LA(5);
+
+                            if ( (LA33_231=='d') ) {
+                                int LA33_329 = input.LA(6);
+
+                                if ( (LA33_329=='i') ) {
+                                    int LA33_418 = input.LA(7);
+
+                                    if ( (LA33_418=='n') ) {
+                                        int LA33_493 = input.LA(8);
+
+                                        if ( (LA33_493=='g') ) {
+                                            int LA33_553 = input.LA(9);
+
+                                            if ( (synpred40()) ) {
+                                                alt33=35;
+                                            }
+                                            else if ( (true) ) {
+                                                alt33=141;
+                                            }
+                                            else {
+                                                if (backtracking>0) {failed=true; return ;}
+                                                NoViableAltException nvae =
+                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 553, input);
+
+                                                throw nvae;
+                                            }
+                                        }
+                                        else {
+                                            alt33=141;}
+                                    }
+                                    else {
+                                        alt33=141;}
+                                }
+                                else {
+                                    alt33=141;}
+                            }
+                            else {
+                                alt33=141;}
+                        }
+                        else {
+                            alt33=141;}
+                        }
+                        break;
+                    case 'd':
+                        {
+                        int LA33_122 = input.LA(4);
+
+                        if ( (synpred41()) ) {
+                            alt33=36;
+                        }
+                        else if ( (true) ) {
+                            alt33=141;
+                        }
+                        else {
+                            if (backtracking>0) {failed=true; return ;}
+                            NoViableAltException nvae =
+                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 122, input);
+
+                            throw nvae;
+                        }
+                        }
+                        break;
                     default:
                         alt33=141;}
 
                     }
                     break;
-                case 'q':
+                case 'm':
+                    {
+                    int LA33_38 = input.LA(3);
+
+                    if ( (LA33_38=='p') ) {
+                        int LA33_123 = input.LA(4);
+
+                        if ( (LA33_123=='t') ) {
+                            int LA33_233 = input.LA(5);
+
+                            if ( (LA33_233=='y') ) {
+                                int LA33_330 = input.LA(6);
+
+                                if ( (LA33_330=='-') && (synpred44())) {
+                                    alt33=39;
+                                }
+                                else if ( (synpred43()) ) {
+                                    alt33=38;
+                                }
+                                else if ( (true) ) {
+                                    alt33=141;
+                                }
+                                else {
+                                    if (backtracking>0) {failed=true; return ;}
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 330, input);
+
+                                    throw nvae;
+                                }
+                            }
+                            else {
+                                alt33=141;}
+                        }
+                        else {
+                            alt33=141;}
+                    }
+                    else {
+                        alt33=141;}
+                    }
+                    break;
+                case 'v':
                     {
                     int LA33_39 = input.LA(3);
 
-                    if ( (synpred45()) ) {
-                        alt33=40;
-                    }
-                    else if ( (true) ) {
-                        alt33=141;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return ;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 39, input);
+                    if ( (LA33_39=='e') ) {
+                        int LA33_124 = input.LA(4);
 
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case 'm':
-                    {
-                    int LA33_40 = input.LA(3);
-
-                    if ( (LA33_40=='p') ) {
-                        int LA33_125 = input.LA(4);
-
-                        if ( (LA33_125=='t') ) {
+                        if ( (LA33_124=='r') ) {
                             int LA33_234 = input.LA(5);
 
                             if ( (LA33_234=='y') ) {
                                 int LA33_331 = input.LA(6);
 
-                                if ( (LA33_331=='-') && (synpred44())) {
-                                    alt33=39;
-                                }
-                                else if ( (synpred43()) ) {
-                                    alt33=38;
+                                if ( (synpred46()) ) {
+                                    alt33=41;
                                 }
                                 else if ( (true) ) {
                                     alt33=141;
@@ -4752,6 +4733,25 @@ public class XQFTLexer extends Lexer {
                         alt33=141;}
                     }
                     break;
+                case 'q':
+                    {
+                    int LA33_40 = input.LA(3);
+
+                    if ( (synpred45()) ) {
+                        alt33=40;
+                    }
+                    else if ( (true) ) {
+                        alt33=141;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return ;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 40, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
                 default:
                     alt33=141;}
 
@@ -4761,14 +4761,33 @@ public class XQFTLexer extends Lexer {
                 case 'o':
                     {
                     switch ( input.LA(3) ) {
-                    case 'l':
+                    case 'r':
                         {
                         int LA33_126 = input.LA(4);
 
-                        if ( (LA33_126=='l') ) {
-                            int LA33_235 = input.LA(5);
+                        if ( (synpred52()) ) {
+                            alt33=47;
+                        }
+                        else if ( (true) ) {
+                            alt33=141;
+                        }
+                        else {
+                            if (backtracking>0) {failed=true; return ;}
+                            NoViableAltException nvae =
+                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 126, input);
 
-                            if ( (LA33_235=='o') ) {
+                            throw nvae;
+                        }
+                        }
+                        break;
+                    case 'l':
+                        {
+                        int LA33_127 = input.LA(4);
+
+                        if ( (LA33_127=='l') ) {
+                            int LA33_236 = input.LA(5);
+
+                            if ( (LA33_236=='o') ) {
                                 int LA33_332 = input.LA(6);
 
                                 if ( (LA33_332=='w') ) {
@@ -4819,83 +4838,9 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    case 'r':
-                        {
-                        int LA33_127 = input.LA(4);
-
-                        if ( (synpred52()) ) {
-                            alt33=47;
-                        }
-                        else if ( (true) ) {
-                            alt33=141;
-                        }
-                        else {
-                            if (backtracking>0) {failed=true; return ;}
-                            NoViableAltException nvae =
-                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 127, input);
-
-                            throw nvae;
-                        }
-                        }
-                        break;
                     default:
                         alt33=141;}
 
-                    }
-                    break;
-                case 'u':
-                    {
-                    int LA33_42 = input.LA(3);
-
-                    if ( (LA33_42=='n') ) {
-                        int LA33_128 = input.LA(4);
-
-                        if ( (LA33_128=='c') ) {
-                            int LA33_237 = input.LA(5);
-
-                            if ( (LA33_237=='t') ) {
-                                int LA33_333 = input.LA(6);
-
-                                if ( (LA33_333=='i') ) {
-                                    int LA33_423 = input.LA(7);
-
-                                    if ( (LA33_423=='o') ) {
-                                        int LA33_495 = input.LA(8);
-
-                                        if ( (LA33_495=='n') ) {
-                                            int LA33_555 = input.LA(9);
-
-                                            if ( (synpred59()) ) {
-                                                alt33=54;
-                                            }
-                                            else if ( (true) ) {
-                                                alt33=141;
-                                            }
-                                            else {
-                                                if (backtracking>0) {failed=true; return ;}
-                                                NoViableAltException nvae =
-                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 555, input);
-
-                                                throw nvae;
-                                            }
-                                        }
-                                        else {
-                                            alt33=141;}
-                                    }
-                                    else {
-                                        alt33=141;}
-                                }
-                                else {
-                                    alt33=141;}
-                            }
-                            else {
-                                alt33=141;}
-                        }
-                        else {
-                            alt33=141;}
-                    }
-                    else {
-                        alt33=141;}
                     }
                     break;
                 case 't':
@@ -4903,25 +4848,25 @@ public class XQFTLexer extends Lexer {
                     switch ( input.LA(3) ) {
                     case '-':
                         {
-                        int LA33_129 = input.LA(4);
+                        int LA33_128 = input.LA(4);
 
-                        if ( (LA33_129=='o') ) {
-                            int LA33_238 = input.LA(5);
+                        if ( (LA33_128=='o') ) {
+                            int LA33_237 = input.LA(5);
 
-                            if ( (LA33_238=='p') ) {
-                                int LA33_334 = input.LA(6);
+                            if ( (LA33_237=='p') ) {
+                                int LA33_333 = input.LA(6);
 
-                                if ( (LA33_334=='t') ) {
-                                    int LA33_424 = input.LA(7);
+                                if ( (LA33_333=='t') ) {
+                                    int LA33_423 = input.LA(7);
 
-                                    if ( (LA33_424=='i') ) {
-                                        int LA33_496 = input.LA(8);
+                                    if ( (LA33_423=='i') ) {
+                                        int LA33_495 = input.LA(8);
 
-                                        if ( (LA33_496=='o') ) {
-                                            int LA33_556 = input.LA(9);
+                                        if ( (LA33_495=='o') ) {
+                                            int LA33_555 = input.LA(9);
 
-                                            if ( (LA33_556=='n') ) {
-                                                int LA33_601 = input.LA(10);
+                                            if ( (LA33_555=='n') ) {
+                                                int LA33_600 = input.LA(10);
 
                                                 if ( (synpred57()) ) {
                                                     alt33=52;
@@ -4932,7 +4877,7 @@ public class XQFTLexer extends Lexer {
                                                 else {
                                                     if (backtracking>0) {failed=true; return ;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 601, input);
+                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 600, input);
 
                                                     throw nvae;
                                                 }
@@ -4956,26 +4901,63 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    case 'o':
+                    case 'n':
+                        {
+                        int LA33_129 = input.LA(4);
+
+                        if ( (LA33_129=='o') ) {
+                            int LA33_238 = input.LA(5);
+
+                            if ( (LA33_238=='t') ) {
+                                int LA33_334 = input.LA(6);
+
+                                if ( (synpred56()) ) {
+                                    alt33=51;
+                                }
+                                else if ( (true) ) {
+                                    alt33=141;
+                                }
+                                else {
+                                    if (backtracking>0) {failed=true; return ;}
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 334, input);
+
+                                    throw nvae;
+                                }
+                            }
+                            else {
+                                alt33=141;}
+                        }
+                        else {
+                            alt33=141;}
+                        }
+                        break;
+                    case 'a':
                         {
                         int LA33_130 = input.LA(4);
 
-                        if ( (LA33_130=='r') ) {
+                        if ( (LA33_130=='n') ) {
                             int LA33_239 = input.LA(5);
 
-                            if ( (synpred58()) ) {
-                                alt33=53;
-                            }
-                            else if ( (true) ) {
-                                alt33=141;
+                            if ( (LA33_239=='d') ) {
+                                int LA33_335 = input.LA(6);
+
+                                if ( (synpred54()) ) {
+                                    alt33=49;
+                                }
+                                else if ( (true) ) {
+                                    alt33=141;
+                                }
+                                else {
+                                    if (backtracking>0) {failed=true; return ;}
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 335, input);
+
+                                    throw nvae;
+                                }
                             }
                             else {
-                                if (backtracking>0) {failed=true; return ;}
-                                NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 239, input);
-
-                                throw nvae;
-                            }
+                                alt33=141;}
                         }
                         else {
                             alt33=141;}
@@ -4992,18 +4974,18 @@ public class XQFTLexer extends Lexer {
                                 int LA33_336 = input.LA(6);
 
                                 if ( (LA33_336=='t') ) {
-                                    int LA33_425 = input.LA(7);
+                                    int LA33_426 = input.LA(7);
 
-                                    if ( (LA33_425=='a') ) {
-                                        int LA33_497 = input.LA(8);
+                                    if ( (LA33_426=='a') ) {
+                                        int LA33_496 = input.LA(8);
 
-                                        if ( (LA33_497=='i') ) {
-                                            int LA33_557 = input.LA(9);
+                                        if ( (LA33_496=='i') ) {
+                                            int LA33_556 = input.LA(9);
 
-                                            if ( (LA33_557=='n') ) {
-                                                int LA33_602 = input.LA(10);
+                                            if ( (LA33_556=='n') ) {
+                                                int LA33_601 = input.LA(10);
 
-                                                if ( (LA33_602=='s') ) {
+                                                if ( (LA33_601=='s') ) {
                                                     int LA33_637 = input.LA(11);
 
                                                     if ( (synpred55()) ) {
@@ -5042,63 +5024,26 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    case 'n':
+                    case 'o':
                         {
                         int LA33_132 = input.LA(4);
 
-                        if ( (LA33_132=='o') ) {
+                        if ( (LA33_132=='r') ) {
                             int LA33_241 = input.LA(5);
 
-                            if ( (LA33_241=='t') ) {
-                                int LA33_337 = input.LA(6);
-
-                                if ( (synpred56()) ) {
-                                    alt33=51;
-                                }
-                                else if ( (true) ) {
-                                    alt33=141;
-                                }
-                                else {
-                                    if (backtracking>0) {failed=true; return ;}
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 337, input);
-
-                                    throw nvae;
-                                }
+                            if ( (synpred58()) ) {
+                                alt33=53;
+                            }
+                            else if ( (true) ) {
+                                alt33=141;
                             }
                             else {
-                                alt33=141;}
-                        }
-                        else {
-                            alt33=141;}
-                        }
-                        break;
-                    case 'a':
-                        {
-                        int LA33_133 = input.LA(4);
+                                if (backtracking>0) {failed=true; return ;}
+                                NoViableAltException nvae =
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 241, input);
 
-                        if ( (LA33_133=='n') ) {
-                            int LA33_242 = input.LA(5);
-
-                            if ( (LA33_242=='d') ) {
-                                int LA33_338 = input.LA(6);
-
-                                if ( (synpred54()) ) {
-                                    alt33=49;
-                                }
-                                else if ( (true) ) {
-                                    alt33=141;
-                                }
-                                else {
-                                    if (backtracking>0) {failed=true; return ;}
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 338, input);
-
-                                    throw nvae;
-                                }
+                                throw nvae;
                             }
-                            else {
-                                alt33=141;}
                         }
                         else {
                             alt33=141;}
@@ -5111,13 +5056,13 @@ public class XQFTLexer extends Lexer {
                     break;
                 case 'r':
                     {
-                    int LA33_44 = input.LA(3);
+                    int LA33_43 = input.LA(3);
 
-                    if ( (LA33_44=='o') ) {
-                        int LA33_134 = input.LA(4);
+                    if ( (LA33_43=='o') ) {
+                        int LA33_133 = input.LA(4);
 
-                        if ( (LA33_134=='m') ) {
-                            int LA33_243 = input.LA(5);
+                        if ( (LA33_133=='m') ) {
+                            int LA33_242 = input.LA(5);
 
                             if ( (synpred53()) ) {
                                 alt33=48;
@@ -5128,10 +5073,65 @@ public class XQFTLexer extends Lexer {
                             else {
                                 if (backtracking>0) {failed=true; return ;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 243, input);
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 242, input);
 
                                 throw nvae;
                             }
+                        }
+                        else {
+                            alt33=141;}
+                    }
+                    else {
+                        alt33=141;}
+                    }
+                    break;
+                case 'u':
+                    {
+                    int LA33_44 = input.LA(3);
+
+                    if ( (LA33_44=='n') ) {
+                        int LA33_134 = input.LA(4);
+
+                        if ( (LA33_134=='c') ) {
+                            int LA33_243 = input.LA(5);
+
+                            if ( (LA33_243=='t') ) {
+                                int LA33_339 = input.LA(6);
+
+                                if ( (LA33_339=='i') ) {
+                                    int LA33_427 = input.LA(7);
+
+                                    if ( (LA33_427=='o') ) {
+                                        int LA33_497 = input.LA(8);
+
+                                        if ( (LA33_497=='n') ) {
+                                            int LA33_557 = input.LA(9);
+
+                                            if ( (synpred59()) ) {
+                                                alt33=54;
+                                            }
+                                            else if ( (true) ) {
+                                                alt33=141;
+                                            }
+                                            else {
+                                                if (backtracking>0) {failed=true; return ;}
+                                                NoViableAltException nvae =
+                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 557, input);
+
+                                                throw nvae;
+                                            }
+                                        }
+                                        else {
+                                            alt33=141;}
+                                    }
+                                    else {
+                                        alt33=141;}
+                                }
+                                else {
+                                    alt33=141;}
+                            }
+                            else {
+                                alt33=141;}
                         }
                         else {
                             alt33=141;}
@@ -5146,12 +5146,12 @@ public class XQFTLexer extends Lexer {
             }
             else if ( (LA33_0=='g') ) {
                 switch ( input.LA(2) ) {
-                case 'e':
+                case 't':
                     {
                     int LA33_45 = input.LA(3);
 
-                    if ( (synpred60()) ) {
-                        alt33=55;
+                    if ( (synpred62()) ) {
+                        alt33=57;
                     }
                     else if ( (true) ) {
                         alt33=141;
@@ -5220,12 +5220,12 @@ public class XQFTLexer extends Lexer {
                         alt33=141;}
                     }
                     break;
-                case 't':
+                case 'e':
                     {
                     int LA33_47 = input.LA(3);
 
-                    if ( (synpred62()) ) {
-                        alt33=57;
+                    if ( (synpred60()) ) {
+                        alt33=55;
                     }
                     else if ( (true) ) {
                         alt33=141;
@@ -5249,25 +5249,25 @@ public class XQFTLexer extends Lexer {
                     {
                     int LA33_48 = input.LA(3);
 
-                    if ( (LA33_48=='h') && (synpred67())) {
-                        alt33=62;
-                    }
-                    else if ( (LA33_48=='s') ) {
-                        int LA33_139 = input.LA(4);
+                    if ( (LA33_48=='s') ) {
+                        int LA33_138 = input.LA(4);
 
-                        if ( (LA33_139=='e') && (synpred68())) {
+                        if ( (LA33_138=='e') && (synpred68())) {
                             alt33=63;
                         }
-                        else if ( (LA33_139=='t') && (synpred69())) {
+                        else if ( (LA33_138=='t') && (synpred69())) {
                             alt33=64;
                         }
                         else {
                             if (backtracking>0) {failed=true; return ;}
                             NoViableAltException nvae =
-                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 139, input);
+                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 138, input);
 
                             throw nvae;
                         }
+                    }
+                    else if ( (LA33_48=='h') && (synpred67())) {
+                        alt33=62;
                     }
                     else if ( (LA33_48=='t') && (synpred70())) {
                         alt33=65;
@@ -5287,29 +5287,41 @@ public class XQFTLexer extends Lexer {
                     }
                     }
                     break;
-                case 't':
+                case 'm':
                     {
                     int LA33_49 = input.LA(3);
 
-                    if ( (LA33_49=='e') ) {
+                    if ( (LA33_49=='p') ) {
                         int LA33_142 = input.LA(4);
 
-                        if ( (LA33_142=='m') ) {
+                        if ( (LA33_142=='o') ) {
                             int LA33_247 = input.LA(5);
 
-                            if ( (synpred72()) ) {
-                                alt33=67;
-                            }
-                            else if ( (true) ) {
-                                alt33=141;
+                            if ( (LA33_247=='r') ) {
+                                int LA33_341 = input.LA(6);
+
+                                if ( (LA33_341=='t') ) {
+                                    int LA33_429 = input.LA(7);
+
+                                    if ( (synpred65()) ) {
+                                        alt33=60;
+                                    }
+                                    else if ( (true) ) {
+                                        alt33=141;
+                                    }
+                                    else {
+                                        if (backtracking>0) {failed=true; return ;}
+                                        NoViableAltException nvae =
+                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 429, input);
+
+                                        throw nvae;
+                                    }
+                                }
+                                else {
+                                    alt33=141;}
                             }
                             else {
-                                if (backtracking>0) {failed=true; return ;}
-                                NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 247, input);
-
-                                throw nvae;
-                            }
+                                alt33=141;}
                         }
                         else {
                             alt33=141;}
@@ -5318,12 +5330,12 @@ public class XQFTLexer extends Lexer {
                         alt33=141;}
                     }
                     break;
-                case 's':
+                case 'f':
                     {
                     int LA33_50 = input.LA(3);
 
-                    if ( (synpred71()) ) {
-                        alt33=66;
+                    if ( (synpred64()) ) {
+                        alt33=59;
                     }
                     else if ( (true) ) {
                         alt33=141;
@@ -5368,41 +5380,48 @@ public class XQFTLexer extends Lexer {
                         alt33=141;}
                     }
                     break;
-                case 'm':
+                case 's':
                     {
                     int LA33_52 = input.LA(3);
 
-                    if ( (LA33_52=='p') ) {
-                        int LA33_145 = input.LA(4);
+                    if ( (synpred71()) ) {
+                        alt33=66;
+                    }
+                    else if ( (true) ) {
+                        alt33=141;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return ;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 52, input);
 
-                        if ( (LA33_145=='o') ) {
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 't':
+                    {
+                    int LA33_53 = input.LA(3);
+
+                    if ( (LA33_53=='e') ) {
+                        int LA33_146 = input.LA(4);
+
+                        if ( (LA33_146=='m') ) {
                             int LA33_249 = input.LA(5);
 
-                            if ( (LA33_249=='r') ) {
-                                int LA33_343 = input.LA(6);
-
-                                if ( (LA33_343=='t') ) {
-                                    int LA33_429 = input.LA(7);
-
-                                    if ( (synpred65()) ) {
-                                        alt33=60;
-                                    }
-                                    else if ( (true) ) {
-                                        alt33=141;
-                                    }
-                                    else {
-                                        if (backtracking>0) {failed=true; return ;}
-                                        NoViableAltException nvae =
-                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 429, input);
-
-                                        throw nvae;
-                                    }
-                                }
-                                else {
-                                    alt33=141;}
+                            if ( (synpred72()) ) {
+                                alt33=67;
+                            }
+                            else if ( (true) ) {
+                                alt33=141;
                             }
                             else {
-                                alt33=141;}
+                                if (backtracking>0) {failed=true; return ;}
+                                NoViableAltException nvae =
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 249, input);
+
+                                throw nvae;
+                            }
                         }
                         else {
                             alt33=141;}
@@ -5411,67 +5430,20 @@ public class XQFTLexer extends Lexer {
                         alt33=141;}
                     }
                     break;
-                case 'f':
-                    {
-                    int LA33_53 = input.LA(3);
-
-                    if ( (synpred64()) ) {
-                        alt33=59;
-                    }
-                    else if ( (true) ) {
-                        alt33=141;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return ;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 53, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
                 default:
                     alt33=141;}
 
             }
             else if ( (LA33_0=='l') ) {
                 switch ( input.LA(2) ) {
-                case 'e':
-                    {
-                    int LA33_54 = input.LA(3);
-
-                    if ( (LA33_54=='t') && (synpred77())) {
-                        alt33=72;
-                    }
-                    else if ( (LA33_54=='a') && (synpred76())) {
-                        alt33=71;
-                    }
-                    else if ( (LA33_54=='v') && (synpred78())) {
-                        alt33=73;
-                    }
-                    else if ( (synpred75()) ) {
-                        alt33=70;
-                    }
-                    else if ( (true) ) {
-                        alt33=141;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return ;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 54, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
                 case 'a':
                     {
                     switch ( input.LA(3) ) {
                     case 'n':
                         {
-                        int LA33_151 = input.LA(4);
+                        int LA33_147 = input.LA(4);
 
-                        if ( (LA33_151=='g') ) {
+                        if ( (LA33_147=='g') ) {
                             int LA33_250 = input.LA(5);
 
                             if ( (LA33_250=='u') ) {
@@ -5518,7 +5490,7 @@ public class XQFTLexer extends Lexer {
                         break;
                     case 'x':
                         {
-                        int LA33_152 = input.LA(4);
+                        int LA33_148 = input.LA(4);
 
                         if ( (synpred74()) ) {
                             alt33=69;
@@ -5529,7 +5501,7 @@ public class XQFTLexer extends Lexer {
                         else {
                             if (backtracking>0) {failed=true; return ;}
                             NoViableAltException nvae =
-                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 152, input);
+                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 148, input);
 
                             throw nvae;
                         }
@@ -5540,12 +5512,21 @@ public class XQFTLexer extends Lexer {
 
                     }
                     break;
-                case 't':
+                case 'e':
                     {
-                    int LA33_56 = input.LA(3);
+                    int LA33_55 = input.LA(3);
 
-                    if ( (synpred80()) ) {
-                        alt33=75;
+                    if ( (LA33_55=='a') && (synpred76())) {
+                        alt33=71;
+                    }
+                    else if ( (LA33_55=='t') && (synpred77())) {
+                        alt33=72;
+                    }
+                    else if ( (LA33_55=='v') && (synpred78())) {
+                        alt33=73;
+                    }
+                    else if ( (synpred75()) ) {
+                        alt33=70;
                     }
                     else if ( (true) ) {
                         alt33=141;
@@ -5553,7 +5534,7 @@ public class XQFTLexer extends Lexer {
                     else {
                         if (backtracking>0) {failed=true; return ;}
                         NoViableAltException nvae =
-                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 56, input);
+                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 55, input);
 
                         throw nvae;
                     }
@@ -5561,12 +5542,12 @@ public class XQFTLexer extends Lexer {
                     break;
                 case 'o':
                     {
-                    int LA33_57 = input.LA(3);
+                    int LA33_56 = input.LA(3);
 
-                    if ( (LA33_57=='w') ) {
-                        int LA33_154 = input.LA(4);
+                    if ( (LA33_56=='w') ) {
+                        int LA33_153 = input.LA(4);
 
-                        if ( (LA33_154=='e') ) {
+                        if ( (LA33_153=='e') ) {
                             int LA33_252 = input.LA(5);
 
                             if ( (LA33_252=='r') ) {
@@ -5618,6 +5599,25 @@ public class XQFTLexer extends Lexer {
                     }
                     else {
                         alt33=141;}
+                    }
+                    break;
+                case 't':
+                    {
+                    int LA33_57 = input.LA(3);
+
+                    if ( (synpred80()) ) {
+                        alt33=75;
+                    }
+                    else if ( (true) ) {
+                        alt33=141;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return ;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 57, input);
+
+                        throw nvae;
+                    }
                     }
                     break;
                 default:
@@ -5688,34 +5688,64 @@ public class XQFTLexer extends Lexer {
                 case 'o':
                     {
                     switch ( input.LA(3) ) {
-                    case 'd':
-                        {
-                        int LA33_157 = input.LA(4);
-
-                        if ( (LA33_157=='e') ) {
-                            int LA33_256 = input.LA(5);
-
-                            if ( (synpred86()) ) {
-                                alt33=81;
-                            }
-                            else if ( (true) ) {
-                                alt33=141;
-                            }
-                            else {
-                                if (backtracking>0) {failed=true; return ;}
-                                NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 256, input);
-
-                                throw nvae;
-                            }
-                        }
-                        else {
-                            alt33=141;}
-                        }
-                        break;
                     case '-':
                         {
                         switch ( input.LA(4) ) {
+                        case 'i':
+                            {
+                            int LA33_256 = input.LA(5);
+
+                            if ( (LA33_256=='n') ) {
+                                int LA33_347 = input.LA(6);
+
+                                if ( (LA33_347=='h') ) {
+                                    int LA33_432 = input.LA(7);
+
+                                    if ( (LA33_432=='e') ) {
+                                        int LA33_502 = input.LA(8);
+
+                                        if ( (LA33_502=='r') ) {
+                                            int LA33_561 = input.LA(9);
+
+                                            if ( (LA33_561=='i') ) {
+                                                int LA33_606 = input.LA(10);
+
+                                                if ( (LA33_606=='t') ) {
+                                                    int LA33_639 = input.LA(11);
+
+                                                    if ( (synpred87()) ) {
+                                                        alt33=82;
+                                                    }
+                                                    else if ( (true) ) {
+                                                        alt33=141;
+                                                    }
+                                                    else {
+                                                        if (backtracking>0) {failed=true; return ;}
+                                                        NoViableAltException nvae =
+                                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 639, input);
+
+                                                        throw nvae;
+                                                    }
+                                                }
+                                                else {
+                                                    alt33=141;}
+                                            }
+                                            else {
+                                                alt33=141;}
+                                        }
+                                        else {
+                                            alt33=141;}
+                                    }
+                                    else {
+                                        alt33=141;}
+                                }
+                                else {
+                                    alt33=141;}
+                            }
+                            else {
+                                alt33=141;}
+                            }
+                            break;
                         case 'p':
                             {
                             int LA33_257 = input.LA(5);
@@ -5724,22 +5754,22 @@ public class XQFTLexer extends Lexer {
                                 int LA33_348 = input.LA(6);
 
                                 if ( (LA33_348=='e') ) {
-                                    int LA33_432 = input.LA(7);
+                                    int LA33_433 = input.LA(7);
 
-                                    if ( (LA33_432=='s') ) {
-                                        int LA33_502 = input.LA(8);
+                                    if ( (LA33_433=='s') ) {
+                                        int LA33_503 = input.LA(8);
 
-                                        if ( (LA33_502=='e') ) {
-                                            int LA33_561 = input.LA(9);
+                                        if ( (LA33_503=='e') ) {
+                                            int LA33_562 = input.LA(9);
 
-                                            if ( (LA33_561=='r') ) {
-                                                int LA33_606 = input.LA(10);
+                                            if ( (LA33_562=='r') ) {
+                                                int LA33_607 = input.LA(10);
 
-                                                if ( (LA33_606=='v') ) {
-                                                    int LA33_639 = input.LA(11);
+                                                if ( (LA33_607=='v') ) {
+                                                    int LA33_640 = input.LA(11);
 
-                                                    if ( (LA33_639=='e') ) {
-                                                        int LA33_663 = input.LA(12);
+                                                    if ( (LA33_640=='e') ) {
+                                                        int LA33_664 = input.LA(12);
 
                                                         if ( (synpred88()) ) {
                                                             alt33=83;
@@ -5750,7 +5780,7 @@ public class XQFTLexer extends Lexer {
                                                         else {
                                                             if (backtracking>0) {failed=true; return ;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 663, input);
+                                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 664, input);
 
                                                             throw nvae;
                                                         }
@@ -5777,64 +5807,34 @@ public class XQFTLexer extends Lexer {
                                 alt33=141;}
                             }
                             break;
-                        case 'i':
-                            {
-                            int LA33_258 = input.LA(5);
-
-                            if ( (LA33_258=='n') ) {
-                                int LA33_349 = input.LA(6);
-
-                                if ( (LA33_349=='h') ) {
-                                    int LA33_433 = input.LA(7);
-
-                                    if ( (LA33_433=='e') ) {
-                                        int LA33_503 = input.LA(8);
-
-                                        if ( (LA33_503=='r') ) {
-                                            int LA33_562 = input.LA(9);
-
-                                            if ( (LA33_562=='i') ) {
-                                                int LA33_607 = input.LA(10);
-
-                                                if ( (LA33_607=='t') ) {
-                                                    int LA33_640 = input.LA(11);
-
-                                                    if ( (synpred87()) ) {
-                                                        alt33=82;
-                                                    }
-                                                    else if ( (true) ) {
-                                                        alt33=141;
-                                                    }
-                                                    else {
-                                                        if (backtracking>0) {failed=true; return ;}
-                                                        NoViableAltException nvae =
-                                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 640, input);
-
-                                                        throw nvae;
-                                                    }
-                                                }
-                                                else {
-                                                    alt33=141;}
-                                            }
-                                            else {
-                                                alt33=141;}
-                                        }
-                                        else {
-                                            alt33=141;}
-                                    }
-                                    else {
-                                        alt33=141;}
-                                }
-                                else {
-                                    alt33=141;}
-                            }
-                            else {
-                                alt33=141;}
-                            }
-                            break;
                         default:
                             alt33=141;}
 
+                        }
+                        break;
+                    case 'd':
+                        {
+                        int LA33_158 = input.LA(4);
+
+                        if ( (LA33_158=='e') ) {
+                            int LA33_258 = input.LA(5);
+
+                            if ( (synpred86()) ) {
+                                alt33=81;
+                            }
+                            else if ( (true) ) {
+                                alt33=141;
+                            }
+                            else {
+                                if (backtracking>0) {failed=true; return ;}
+                                NoViableAltException nvae =
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 258, input);
+
+                                throw nvae;
+                            }
+                        }
+                        else {
+                            alt33=141;}
                         }
                         break;
                     case 't':
@@ -5947,74 +5947,21 @@ public class XQFTLexer extends Lexer {
             }
             else if ( (LA33_0=='o') ) {
                 switch ( input.LA(2) ) {
-                case 'r':
+                case 'c':
                     {
                     int LA33_62 = input.LA(3);
 
-                    if ( (LA33_62=='d') ) {
+                    if ( (LA33_62=='c') ) {
                         int LA33_162 = input.LA(4);
 
-                        if ( (LA33_162=='e') ) {
+                        if ( (LA33_162=='u') ) {
                             int LA33_261 = input.LA(5);
 
                             if ( (LA33_261=='r') ) {
                                 int LA33_351 = input.LA(6);
 
-                                if ( (LA33_351=='i') && (synpred96())) {
-                                    alt33=91;
-                                }
-                                else if ( (LA33_351=='e') && (synpred95())) {
-                                    alt33=90;
-                                }
-                                else {
-                                    alt33=89;}
-                            }
-                            else {
-                                if (backtracking>0) {failed=true; return ;}
-                                NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 261, input);
-
-                                throw nvae;
-                            }
-                        }
-                        else {
-                            if (backtracking>0) {failed=true; return ;}
-                            NoViableAltException nvae =
-                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 162, input);
-
-                            throw nvae;
-                        }
-                    }
-                    else if ( (synpred93()) ) {
-                        alt33=88;
-                    }
-                    else if ( (true) ) {
-                        alt33=141;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return ;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 62, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case 'c':
-                    {
-                    int LA33_63 = input.LA(3);
-
-                    if ( (LA33_63=='c') ) {
-                        int LA33_164 = input.LA(4);
-
-                        if ( (LA33_164=='u') ) {
-                            int LA33_262 = input.LA(5);
-
-                            if ( (LA33_262=='r') ) {
-                                int LA33_352 = input.LA(6);
-
-                                if ( (LA33_352=='s') ) {
-                                    int LA33_438 = input.LA(7);
+                                if ( (LA33_351=='s') ) {
+                                    int LA33_435 = input.LA(7);
 
                                     if ( (synpred90()) ) {
                                         alt33=85;
@@ -6025,7 +5972,7 @@ public class XQFTLexer extends Lexer {
                                     else {
                                         if (backtracking>0) {failed=true; return ;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 438, input);
+                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 435, input);
 
                                         throw nvae;
                                     }
@@ -6045,10 +5992,63 @@ public class XQFTLexer extends Lexer {
                     break;
                 case 'f':
                     {
-                    int LA33_64 = input.LA(3);
+                    int LA33_63 = input.LA(3);
 
                     if ( (synpred91()) ) {
                         alt33=86;
+                    }
+                    else if ( (true) ) {
+                        alt33=141;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return ;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 63, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 'r':
+                    {
+                    int LA33_64 = input.LA(3);
+
+                    if ( (LA33_64=='d') ) {
+                        int LA33_164 = input.LA(4);
+
+                        if ( (LA33_164=='e') ) {
+                            int LA33_262 = input.LA(5);
+
+                            if ( (LA33_262=='r') ) {
+                                int LA33_352 = input.LA(6);
+
+                                if ( (LA33_352=='i') && (synpred96())) {
+                                    alt33=91;
+                                }
+                                else if ( (LA33_352=='e') && (synpred95())) {
+                                    alt33=90;
+                                }
+                                else {
+                                    alt33=89;}
+                            }
+                            else {
+                                if (backtracking>0) {failed=true; return ;}
+                                NoViableAltException nvae =
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 262, input);
+
+                                throw nvae;
+                            }
+                        }
+                        else {
+                            if (backtracking>0) {failed=true; return ;}
+                            NoViableAltException nvae =
+                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 164, input);
+
+                            throw nvae;
+                        }
+                    }
+                    else if ( (synpred93()) ) {
+                        alt33=88;
                     }
                     else if ( (true) ) {
                         alt33=141;
@@ -6111,79 +6111,36 @@ public class XQFTLexer extends Lexer {
             }
             else if ( (LA33_0=='p') ) {
                 switch ( input.LA(2) ) {
-                case 'r':
+                case 'a':
                     {
-                    switch ( input.LA(3) ) {
-                    case 'e':
-                        {
+                    int LA33_66 = input.LA(3);
+
+                    if ( (LA33_66=='r') ) {
                         switch ( input.LA(4) ) {
-                        case 's':
+                        case 'a':
                             {
                             int LA33_264 = input.LA(5);
 
-                            if ( (LA33_264=='e') ) {
+                            if ( (LA33_264=='g') ) {
                                 int LA33_354 = input.LA(6);
 
                                 if ( (LA33_354=='r') ) {
                                     int LA33_440 = input.LA(7);
 
-                                    if ( (LA33_440=='v') ) {
+                                    if ( (LA33_440=='a') ) {
                                         int LA33_507 = input.LA(8);
 
-                                        if ( (LA33_507=='e') ) {
+                                        if ( (LA33_507=='p') ) {
                                             int LA33_564 = input.LA(9);
 
-                                            if ( (synpred103()) ) {
-                                                alt33=98;
-                                            }
-                                            else if ( (true) ) {
-                                                alt33=141;
-                                            }
-                                            else {
-                                                if (backtracking>0) {failed=true; return ;}
-                                                NoViableAltException nvae =
-                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 564, input);
+                                            if ( (LA33_564=='h') ) {
+                                                int LA33_609 = input.LA(10);
 
-                                                throw nvae;
-                                            }
-                                        }
-                                        else {
-                                            alt33=141;}
-                                    }
-                                    else {
-                                        alt33=141;}
-                                }
-                                else {
-                                    alt33=141;}
-                            }
-                            else {
-                                alt33=141;}
-                            }
-                            break;
-                        case 'c':
-                            {
-                            int LA33_265 = input.LA(5);
-
-                            if ( (LA33_265=='e') ) {
-                                int LA33_355 = input.LA(6);
-
-                                if ( (LA33_355=='d') ) {
-                                    int LA33_441 = input.LA(7);
-
-                                    if ( (LA33_441=='i') ) {
-                                        int LA33_508 = input.LA(8);
-
-                                        if ( (LA33_508=='n') ) {
-                                            int LA33_565 = input.LA(9);
-
-                                            if ( (LA33_565=='g') ) {
-                                                int LA33_610 = input.LA(10);
-
-                                                if ( (LA33_610=='-') && (synpred102())) {
-                                                    alt33=97;
+                                                if ( (LA33_609=='s') && (synpred98())) {
+                                                    alt33=93;
                                                 }
-                                                else if ( (synpred101()) ) {
-                                                    alt33=96;
+                                                else if ( (synpred97()) ) {
+                                                    alt33=92;
                                                 }
                                                 else if ( (true) ) {
                                                     alt33=141;
@@ -6191,7 +6148,7 @@ public class XQFTLexer extends Lexer {
                                                 else {
                                                     if (backtracking>0) {failed=true; return ;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 610, input);
+                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 609, input);
 
                                                     throw nvae;
                                                 }
@@ -6212,34 +6169,114 @@ public class XQFTLexer extends Lexer {
                                 alt33=141;}
                             }
                             break;
+                        case 'e':
+                            {
+                            int LA33_265 = input.LA(5);
+
+                            if ( (LA33_265=='n') ) {
+                                int LA33_355 = input.LA(6);
+
+                                if ( (LA33_355=='t') ) {
+                                    int LA33_441 = input.LA(7);
+
+                                    if ( (synpred99()) ) {
+                                        alt33=94;
+                                    }
+                                    else if ( (true) ) {
+                                        alt33=141;
+                                    }
+                                    else {
+                                        if (backtracking>0) {failed=true; return ;}
+                                        NoViableAltException nvae =
+                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 441, input);
+
+                                        throw nvae;
+                                    }
+                                }
+                                else {
+                                    alt33=141;}
+                            }
+                            else {
+                                alt33=141;}
+                            }
+                            break;
                         default:
                             alt33=141;}
 
-                        }
-                        break;
-                    case 'o':
-                        {
+                    }
+                    else {
+                        alt33=141;}
+                    }
+                    break;
+                case 'h':
+                    {
+                    int LA33_67 = input.LA(3);
+
+                    if ( (LA33_67=='r') ) {
                         int LA33_168 = input.LA(4);
 
-                        if ( (LA33_168=='c') ) {
+                        if ( (LA33_168=='a') ) {
                             int LA33_266 = input.LA(5);
 
-                            if ( (LA33_266=='e') ) {
+                            if ( (LA33_266=='s') ) {
                                 int LA33_356 = input.LA(6);
 
-                                if ( (LA33_356=='s') ) {
+                                if ( (LA33_356=='e') ) {
                                     int LA33_442 = input.LA(7);
 
-                                    if ( (LA33_442=='s') ) {
-                                        int LA33_509 = input.LA(8);
+                                    if ( (synpred100()) ) {
+                                        alt33=95;
+                                    }
+                                    else if ( (true) ) {
+                                        alt33=141;
+                                    }
+                                    else {
+                                        if (backtracking>0) {failed=true; return ;}
+                                        NoViableAltException nvae =
+                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 442, input);
 
-                                        if ( (LA33_509=='i') ) {
-                                            int LA33_566 = input.LA(9);
+                                        throw nvae;
+                                    }
+                                }
+                                else {
+                                    alt33=141;}
+                            }
+                            else {
+                                alt33=141;}
+                        }
+                        else {
+                            alt33=141;}
+                    }
+                    else {
+                        alt33=141;}
+                    }
+                    break;
+                case 'r':
+                    {
+                    switch ( input.LA(3) ) {
+                    case 'o':
+                        {
+                        int LA33_169 = input.LA(4);
 
-                                            if ( (LA33_566=='n') ) {
-                                                int LA33_611 = input.LA(10);
+                        if ( (LA33_169=='c') ) {
+                            int LA33_267 = input.LA(5);
 
-                                                if ( (LA33_611=='g') ) {
+                            if ( (LA33_267=='e') ) {
+                                int LA33_357 = input.LA(6);
+
+                                if ( (LA33_357=='s') ) {
+                                    int LA33_443 = input.LA(7);
+
+                                    if ( (LA33_443=='s') ) {
+                                        int LA33_510 = input.LA(8);
+
+                                        if ( (LA33_510=='i') ) {
+                                            int LA33_565 = input.LA(9);
+
+                                            if ( (LA33_565=='n') ) {
+                                                int LA33_610 = input.LA(10);
+
+                                                if ( (LA33_610=='g') ) {
                                                     int LA33_644 = input.LA(11);
 
                                                     if ( (LA33_644=='-') ) {
@@ -6350,41 +6387,33 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    default:
-                        alt33=141;}
-
-                    }
-                    break;
-                case 'a':
-                    {
-                    int LA33_67 = input.LA(3);
-
-                    if ( (LA33_67=='r') ) {
+                    case 'e':
+                        {
                         switch ( input.LA(4) ) {
-                        case 'a':
+                        case 'c':
                             {
-                            int LA33_267 = input.LA(5);
+                            int LA33_268 = input.LA(5);
 
-                            if ( (LA33_267=='g') ) {
-                                int LA33_357 = input.LA(6);
+                            if ( (LA33_268=='e') ) {
+                                int LA33_358 = input.LA(6);
 
-                                if ( (LA33_357=='r') ) {
-                                    int LA33_443 = input.LA(7);
+                                if ( (LA33_358=='d') ) {
+                                    int LA33_444 = input.LA(7);
 
-                                    if ( (LA33_443=='a') ) {
-                                        int LA33_510 = input.LA(8);
+                                    if ( (LA33_444=='i') ) {
+                                        int LA33_511 = input.LA(8);
 
-                                        if ( (LA33_510=='p') ) {
-                                            int LA33_567 = input.LA(9);
+                                        if ( (LA33_511=='n') ) {
+                                            int LA33_566 = input.LA(9);
 
-                                            if ( (LA33_567=='h') ) {
-                                                int LA33_612 = input.LA(10);
+                                            if ( (LA33_566=='g') ) {
+                                                int LA33_611 = input.LA(10);
 
-                                                if ( (LA33_612=='s') && (synpred98())) {
-                                                    alt33=93;
+                                                if ( (LA33_611=='-') && (synpred102())) {
+                                                    alt33=97;
                                                 }
-                                                else if ( (synpred97()) ) {
-                                                    alt33=92;
+                                                else if ( (synpred101()) ) {
+                                                    alt33=96;
                                                 }
                                                 else if ( (true) ) {
                                                     alt33=141;
@@ -6392,7 +6421,7 @@ public class XQFTLexer extends Lexer {
                                                 else {
                                                     if (backtracking>0) {failed=true; return ;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 612, input);
+                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 611, input);
 
                                                     throw nvae;
                                                 }
@@ -6413,29 +6442,41 @@ public class XQFTLexer extends Lexer {
                                 alt33=141;}
                             }
                             break;
-                        case 'e':
+                        case 's':
                             {
-                            int LA33_268 = input.LA(5);
+                            int LA33_269 = input.LA(5);
 
-                            if ( (LA33_268=='n') ) {
-                                int LA33_358 = input.LA(6);
+                            if ( (LA33_269=='e') ) {
+                                int LA33_359 = input.LA(6);
 
-                                if ( (LA33_358=='t') ) {
-                                    int LA33_444 = input.LA(7);
+                                if ( (LA33_359=='r') ) {
+                                    int LA33_445 = input.LA(7);
 
-                                    if ( (synpred99()) ) {
-                                        alt33=94;
-                                    }
-                                    else if ( (true) ) {
-                                        alt33=141;
+                                    if ( (LA33_445=='v') ) {
+                                        int LA33_512 = input.LA(8);
+
+                                        if ( (LA33_512=='e') ) {
+                                            int LA33_567 = input.LA(9);
+
+                                            if ( (synpred103()) ) {
+                                                alt33=98;
+                                            }
+                                            else if ( (true) ) {
+                                                alt33=141;
+                                            }
+                                            else {
+                                                if (backtracking>0) {failed=true; return ;}
+                                                NoViableAltException nvae =
+                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 567, input);
+
+                                                throw nvae;
+                                            }
+                                        }
+                                        else {
+                                            alt33=141;}
                                     }
                                     else {
-                                        if (backtracking>0) {failed=true; return ;}
-                                        NoViableAltException nvae =
-                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 444, input);
-
-                                        throw nvae;
-                                    }
+                                        alt33=141;}
                                 }
                                 else {
                                     alt33=141;}
@@ -6447,29 +6488,37 @@ public class XQFTLexer extends Lexer {
                         default:
                             alt33=141;}
 
-                    }
-                    else {
+                        }
+                        break;
+                    default:
                         alt33=141;}
+
                     }
                     break;
-                case 'h':
-                    {
-                    int LA33_68 = input.LA(3);
+                default:
+                    alt33=141;}
 
-                    if ( (LA33_68=='r') ) {
-                        int LA33_170 = input.LA(4);
+            }
+            else if ( (LA33_0=='r') ) {
+                int LA33_14 = input.LA(2);
 
-                        if ( (LA33_170=='a') ) {
-                            int LA33_269 = input.LA(5);
+                if ( (LA33_14=='e') ) {
+                    switch ( input.LA(3) ) {
+                    case 't':
+                        {
+                        int LA33_171 = input.LA(4);
 
-                            if ( (LA33_269=='s') ) {
-                                int LA33_359 = input.LA(6);
+                        if ( (LA33_171=='u') ) {
+                            int LA33_270 = input.LA(5);
 
-                                if ( (LA33_359=='e') ) {
-                                    int LA33_445 = input.LA(7);
+                            if ( (LA33_270=='r') ) {
+                                int LA33_360 = input.LA(6);
 
-                                    if ( (synpred100()) ) {
-                                        alt33=95;
+                                if ( (LA33_360=='n') ) {
+                                    int LA33_446 = input.LA(7);
+
+                                    if ( (synpred106()) ) {
+                                        alt33=101;
                                     }
                                     else if ( (true) ) {
                                         alt33=141;
@@ -6477,7 +6526,7 @@ public class XQFTLexer extends Lexer {
                                     else {
                                         if (backtracking>0) {failed=true; return ;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 445, input);
+                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 446, input);
 
                                         throw nvae;
                                     }
@@ -6490,37 +6539,25 @@ public class XQFTLexer extends Lexer {
                         }
                         else {
                             alt33=141;}
-                    }
-                    else {
-                        alt33=141;}
-                    }
-                    break;
-                default:
-                    alt33=141;}
-
-            }
-            else if ( (LA33_0=='r') ) {
-                int LA33_14 = input.LA(2);
-
-                if ( (LA33_14=='e') ) {
-                    switch ( input.LA(3) ) {
+                        }
+                        break;
                     case 'l':
                         {
-                        int LA33_171 = input.LA(4);
+                        int LA33_172 = input.LA(4);
 
-                        if ( (LA33_171=='a') ) {
-                            int LA33_270 = input.LA(5);
+                        if ( (LA33_172=='a') ) {
+                            int LA33_271 = input.LA(5);
 
-                            if ( (LA33_270=='t') ) {
-                                int LA33_360 = input.LA(6);
+                            if ( (LA33_271=='t') ) {
+                                int LA33_361 = input.LA(6);
 
-                                if ( (LA33_360=='i') ) {
-                                    int LA33_446 = input.LA(7);
+                                if ( (LA33_361=='i') ) {
+                                    int LA33_447 = input.LA(7);
 
-                                    if ( (LA33_446=='o') ) {
-                                        int LA33_513 = input.LA(8);
+                                    if ( (LA33_447=='o') ) {
+                                        int LA33_514 = input.LA(8);
 
-                                        if ( (LA33_513=='n') ) {
+                                        if ( (LA33_514=='n') ) {
                                             int LA33_568 = input.LA(9);
 
                                             if ( (LA33_568=='s') ) {
@@ -6577,43 +6614,6 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    case 't':
-                        {
-                        int LA33_172 = input.LA(4);
-
-                        if ( (LA33_172=='u') ) {
-                            int LA33_271 = input.LA(5);
-
-                            if ( (LA33_271=='r') ) {
-                                int LA33_361 = input.LA(6);
-
-                                if ( (LA33_361=='n') ) {
-                                    int LA33_447 = input.LA(7);
-
-                                    if ( (synpred106()) ) {
-                                        alt33=101;
-                                    }
-                                    else if ( (true) ) {
-                                        alt33=141;
-                                    }
-                                    else {
-                                        if (backtracking>0) {failed=true; return ;}
-                                        NoViableAltException nvae =
-                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 447, input);
-
-                                        throw nvae;
-                                    }
-                                }
-                                else {
-                                    alt33=141;}
-                            }
-                            else {
-                                alt33=141;}
-                        }
-                        else {
-                            alt33=141;}
-                        }
-                        break;
                     default:
                         alt33=141;}
 
@@ -6623,163 +6623,89 @@ public class XQFTLexer extends Lexer {
             }
             else if ( (LA33_0=='s') ) {
                 switch ( input.LA(2) ) {
-                case 'o':
+                case 'c':
                     {
-                    int LA33_70 = input.LA(3);
-
-                    if ( (LA33_70=='m') ) {
+                    switch ( input.LA(3) ) {
+                    case 'o':
+                        {
                         int LA33_173 = input.LA(4);
 
-                        if ( (LA33_173=='e') ) {
+                        if ( (LA33_173=='r') ) {
                             int LA33_272 = input.LA(5);
 
-                            if ( (synpred117()) ) {
-                                alt33=112;
-                            }
-                            else if ( (true) ) {
-                                alt33=141;
+                            if ( (LA33_272=='e') ) {
+                                int LA33_362 = input.LA(6);
+
+                                if ( (synpred112()) ) {
+                                    alt33=107;
+                                }
+                                else if ( (true) ) {
+                                    alt33=141;
+                                }
+                                else {
+                                    if (backtracking>0) {failed=true; return ;}
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 362, input);
+
+                                    throw nvae;
+                                }
                             }
                             else {
-                                if (backtracking>0) {failed=true; return ;}
-                                NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 272, input);
-
-                                throw nvae;
-                            }
+                                alt33=141;}
                         }
                         else {
                             alt33=141;}
-                    }
-                    else {
-                        alt33=141;}
-                    }
-                    break;
-                case 'e':
-                    {
-                    switch ( input.LA(3) ) {
-                    case 'n':
-                        {
-                        switch ( input.LA(4) ) {
-                        case 's':
-                            {
-                            int LA33_273 = input.LA(5);
-
-                            if ( (LA33_273=='i') ) {
-                                int LA33_363 = input.LA(6);
-
-                                if ( (LA33_363=='t') ) {
-                                    int LA33_448 = input.LA(7);
-
-                                    if ( (LA33_448=='i') ) {
-                                        int LA33_515 = input.LA(8);
-
-                                        if ( (LA33_515=='v') ) {
-                                            int LA33_569 = input.LA(9);
-
-                                            if ( (LA33_569=='e') ) {
-                                                int LA33_614 = input.LA(10);
-
-                                                if ( (synpred114()) ) {
-                                                    alt33=109;
-                                                }
-                                                else if ( (true) ) {
-                                                    alt33=141;
-                                                }
-                                                else {
-                                                    if (backtracking>0) {failed=true; return ;}
-                                                    NoViableAltException nvae =
-                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 614, input);
-
-                                                    throw nvae;
-                                                }
-                                            }
-                                            else {
-                                                alt33=141;}
-                                        }
-                                        else {
-                                            alt33=141;}
-                                    }
-                                    else {
-                                        alt33=141;}
-                                }
-                                else {
-                                    alt33=141;}
-                            }
-                            else {
-                                alt33=141;}
-                            }
-                            break;
-                        case 't':
-                            {
-                            int LA33_274 = input.LA(5);
-
-                            if ( (LA33_274=='e') ) {
-                                int LA33_364 = input.LA(6);
-
-                                if ( (LA33_364=='n') ) {
-                                    int LA33_449 = input.LA(7);
-
-                                    if ( (LA33_449=='c') ) {
-                                        int LA33_516 = input.LA(8);
-
-                                        if ( (LA33_516=='e') ) {
-                                            int LA33_570 = input.LA(9);
-
-                                            if ( (LA33_570=='s') && (synpred115())) {
-                                                alt33=110;
-                                            }
-                                            else if ( (synpred116()) ) {
-                                                alt33=111;
-                                            }
-                                            else if ( (true) ) {
-                                                alt33=141;
-                                            }
-                                            else {
-                                                if (backtracking>0) {failed=true; return ;}
-                                                NoViableAltException nvae =
-                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 570, input);
-
-                                                throw nvae;
-                                            }
-                                        }
-                                        else {
-                                            alt33=141;}
-                                    }
-                                    else {
-                                        alt33=141;}
-                                }
-                                else {
-                                    alt33=141;}
-                            }
-                            else {
-                                alt33=141;}
-                            }
-                            break;
-                        default:
-                            alt33=141;}
-
                         }
                         break;
-                    case 'l':
+                    case 'h':
                         {
-                        int LA33_175 = input.LA(4);
+                        int LA33_174 = input.LA(4);
 
-                        if ( (LA33_175=='f') ) {
-                            int LA33_275 = input.LA(5);
+                        if ( (LA33_174=='e') ) {
+                            int LA33_273 = input.LA(5);
 
-                            if ( (synpred113()) ) {
-                                alt33=108;
-                            }
-                            else if ( (true) ) {
-                                alt33=141;
+                            if ( (LA33_273=='m') ) {
+                                int LA33_363 = input.LA(6);
+
+                                if ( (LA33_363=='a') ) {
+                                    int LA33_449 = input.LA(7);
+
+                                    if ( (LA33_449=='-') ) {
+                                        int LA33_515 = input.LA(8);
+
+                                        if ( (LA33_515=='a') && (synpred110())) {
+                                            alt33=105;
+                                        }
+                                        else if ( (LA33_515=='e') && (synpred111())) {
+                                            alt33=106;
+                                        }
+                                        else {
+                                            if (backtracking>0) {failed=true; return ;}
+                                            NoViableAltException nvae =
+                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 515, input);
+
+                                            throw nvae;
+                                        }
+                                    }
+                                    else if ( (synpred109()) ) {
+                                        alt33=104;
+                                    }
+                                    else if ( (true) ) {
+                                        alt33=141;
+                                    }
+                                    else {
+                                        if (backtracking>0) {failed=true; return ;}
+                                        NoViableAltException nvae =
+                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 449, input);
+
+                                        throw nvae;
+                                    }
+                                }
+                                else {
+                                    alt33=141;}
                             }
                             else {
-                                if (backtracking>0) {failed=true; return ;}
-                                NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 275, input);
-
-                                throw nvae;
-                            }
+                                alt33=141;}
                         }
                         else {
                             alt33=141;}
@@ -6790,152 +6716,33 @@ public class XQFTLexer extends Lexer {
 
                     }
                     break;
-                case 't':
+                case 'e':
                     {
                     switch ( input.LA(3) ) {
-                    case 'a':
+                    case 'n':
                         {
                         switch ( input.LA(4) ) {
-                        case 'b':
+                        case 't':
                             {
-                            int LA33_276 = input.LA(5);
+                            int LA33_274 = input.LA(5);
 
-                            if ( (LA33_276=='l') ) {
-                                int LA33_366 = input.LA(6);
+                            if ( (LA33_274=='e') ) {
+                                int LA33_364 = input.LA(6);
 
-                                if ( (LA33_366=='e') ) {
+                                if ( (LA33_364=='n') ) {
                                     int LA33_450 = input.LA(7);
 
-                                    if ( (synpred118()) ) {
-                                        alt33=113;
-                                    }
-                                    else if ( (true) ) {
-                                        alt33=141;
-                                    }
-                                    else {
-                                        if (backtracking>0) {failed=true; return ;}
-                                        NoViableAltException nvae =
-                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 450, input);
+                                    if ( (LA33_450=='c') ) {
+                                        int LA33_517 = input.LA(8);
 
-                                        throw nvae;
-                                    }
-                                }
-                                else {
-                                    alt33=141;}
-                            }
-                            else {
-                                alt33=141;}
-                            }
-                            break;
-                        case 'r':
-                            {
-                            int LA33_277 = input.LA(5);
-
-                            if ( (LA33_277=='t') ) {
-                                int LA33_367 = input.LA(6);
-
-                                if ( (synpred119()) ) {
-                                    alt33=114;
-                                }
-                                else if ( (true) ) {
-                                    alt33=141;
-                                }
-                                else {
-                                    if (backtracking>0) {failed=true; return ;}
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 367, input);
-
-                                    throw nvae;
-                                }
-                            }
-                            else {
-                                alt33=141;}
-                            }
-                            break;
-                        default:
-                            alt33=141;}
-
-                        }
-                        break;
-                    case 'r':
-                        {
-                        int LA33_177 = input.LA(4);
-
-                        if ( (LA33_177=='i') ) {
-                            switch ( input.LA(5) ) {
-                            case 'p':
-                                {
-                                int LA33_368 = input.LA(6);
-
-                                if ( (synpred123()) ) {
-                                    alt33=118;
-                                }
-                                else if ( (true) ) {
-                                    alt33=141;
-                                }
-                                else {
-                                    if (backtracking>0) {failed=true; return ;}
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 368, input);
-
-                                    throw nvae;
-                                }
-                                }
-                                break;
-                            case 'c':
-                                {
-                                int LA33_369 = input.LA(6);
-
-                                if ( (LA33_369=='t') ) {
-                                    int LA33_453 = input.LA(7);
-
-                                    if ( (synpred122()) ) {
-                                        alt33=117;
-                                    }
-                                    else if ( (true) ) {
-                                        alt33=141;
-                                    }
-                                    else {
-                                        if (backtracking>0) {failed=true; return ;}
-                                        NoViableAltException nvae =
-                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 453, input);
-
-                                        throw nvae;
-                                    }
-                                }
-                                else {
-                                    alt33=141;}
-                                }
-                                break;
-                            default:
-                                alt33=141;}
-
-                        }
-                        else {
-                            alt33=141;}
-                        }
-                        break;
-                    case 'e':
-                        {
-                        int LA33_178 = input.LA(4);
-
-                        if ( (LA33_178=='m') ) {
-                            int LA33_279 = input.LA(5);
-
-                            if ( (LA33_279=='m') ) {
-                                int LA33_370 = input.LA(6);
-
-                                if ( (LA33_370=='i') ) {
-                                    int LA33_454 = input.LA(7);
-
-                                    if ( (LA33_454=='n') ) {
-                                        int LA33_519 = input.LA(8);
-
-                                        if ( (LA33_519=='g') ) {
+                                        if ( (LA33_517=='e') ) {
                                             int LA33_571 = input.LA(9);
 
-                                            if ( (synpred120()) ) {
-                                                alt33=115;
+                                            if ( (LA33_571=='s') && (synpred115())) {
+                                                alt33=110;
+                                            }
+                                            else if ( (synpred116()) ) {
+                                                alt33=111;
                                             }
                                             else if ( (true) ) {
                                                 alt33=141;
@@ -6959,20 +6766,71 @@ public class XQFTLexer extends Lexer {
                             }
                             else {
                                 alt33=141;}
-                        }
-                        else {
+                            }
+                            break;
+                        case 's':
+                            {
+                            int LA33_275 = input.LA(5);
+
+                            if ( (LA33_275=='i') ) {
+                                int LA33_365 = input.LA(6);
+
+                                if ( (LA33_365=='t') ) {
+                                    int LA33_451 = input.LA(7);
+
+                                    if ( (LA33_451=='i') ) {
+                                        int LA33_518 = input.LA(8);
+
+                                        if ( (LA33_518=='v') ) {
+                                            int LA33_572 = input.LA(9);
+
+                                            if ( (LA33_572=='e') ) {
+                                                int LA33_616 = input.LA(10);
+
+                                                if ( (synpred114()) ) {
+                                                    alt33=109;
+                                                }
+                                                else if ( (true) ) {
+                                                    alt33=141;
+                                                }
+                                                else {
+                                                    if (backtracking>0) {failed=true; return ;}
+                                                    NoViableAltException nvae =
+                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 616, input);
+
+                                                    throw nvae;
+                                                }
+                                            }
+                                            else {
+                                                alt33=141;}
+                                        }
+                                        else {
+                                            alt33=141;}
+                                    }
+                                    else {
+                                        alt33=141;}
+                                }
+                                else {
+                                    alt33=141;}
+                            }
+                            else {
+                                alt33=141;}
+                            }
+                            break;
+                        default:
                             alt33=141;}
+
                         }
                         break;
-                    case 'o':
+                    case 'l':
                         {
-                        int LA33_179 = input.LA(4);
+                        int LA33_176 = input.LA(4);
 
-                        if ( (LA33_179=='p') ) {
-                            int LA33_280 = input.LA(5);
+                        if ( (LA33_176=='f') ) {
+                            int LA33_276 = input.LA(5);
 
-                            if ( (synpred121()) ) {
-                                alt33=116;
+                            if ( (synpred113()) ) {
+                                alt33=108;
                             }
                             else if ( (true) ) {
                                 alt33=141;
@@ -6980,7 +6838,7 @@ public class XQFTLexer extends Lexer {
                             else {
                                 if (backtracking>0) {failed=true; return ;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 280, input);
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 276, input);
 
                                 throw nvae;
                             }
@@ -6999,25 +6857,25 @@ public class XQFTLexer extends Lexer {
                     switch ( input.LA(3) ) {
                     case 't':
                         {
-                        int LA33_180 = input.LA(4);
+                        int LA33_177 = input.LA(4);
 
-                        if ( (LA33_180=='i') ) {
-                            int LA33_281 = input.LA(5);
+                        if ( (LA33_177=='i') ) {
+                            int LA33_277 = input.LA(5);
 
-                            if ( (LA33_281=='s') ) {
-                                int LA33_372 = input.LA(6);
+                            if ( (LA33_277=='s') ) {
+                                int LA33_367 = input.LA(6);
 
-                                if ( (LA33_372=='f') ) {
-                                    int LA33_455 = input.LA(7);
+                                if ( (LA33_367=='f') ) {
+                                    int LA33_452 = input.LA(7);
 
-                                    if ( (LA33_455=='i') ) {
-                                        int LA33_520 = input.LA(8);
+                                    if ( (LA33_452=='i') ) {
+                                        int LA33_519 = input.LA(8);
 
-                                        if ( (LA33_520=='e') ) {
-                                            int LA33_572 = input.LA(9);
+                                        if ( (LA33_519=='e') ) {
+                                            int LA33_573 = input.LA(9);
 
-                                            if ( (LA33_572=='s') ) {
-                                                int LA33_618 = input.LA(10);
+                                            if ( (LA33_573=='s') ) {
+                                                int LA33_617 = input.LA(10);
 
                                                 if ( (synpred108()) ) {
                                                     alt33=103;
@@ -7028,7 +6886,7 @@ public class XQFTLexer extends Lexer {
                                                 else {
                                                     if (backtracking>0) {failed=true; return ;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 618, input);
+                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 617, input);
 
                                                     throw nvae;
                                                 }
@@ -7054,10 +6912,10 @@ public class XQFTLexer extends Lexer {
                         break;
                     case 'm':
                         {
-                        int LA33_181 = input.LA(4);
+                        int LA33_178 = input.LA(4);
 
-                        if ( (LA33_181=='e') ) {
-                            int LA33_282 = input.LA(5);
+                        if ( (LA33_178=='e') ) {
+                            int LA33_278 = input.LA(5);
 
                             if ( (synpred107()) ) {
                                 alt33=102;
@@ -7068,7 +6926,7 @@ public class XQFTLexer extends Lexer {
                             else {
                                 if (backtracking>0) {failed=true; return ;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 282, input);
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 278, input);
 
                                 throw nvae;
                             }
@@ -7082,41 +6940,132 @@ public class XQFTLexer extends Lexer {
 
                     }
                     break;
-                case 'c':
+                case 't':
                     {
                     switch ( input.LA(3) ) {
-                    case 'h':
+                    case 'o':
                         {
-                        int LA33_182 = input.LA(4);
+                        int LA33_179 = input.LA(4);
 
-                        if ( (LA33_182=='e') ) {
-                            int LA33_283 = input.LA(5);
+                        if ( (LA33_179=='p') ) {
+                            int LA33_279 = input.LA(5);
 
-                            if ( (LA33_283=='m') ) {
-                                int LA33_374 = input.LA(6);
+                            if ( (synpred121()) ) {
+                                alt33=116;
+                            }
+                            else if ( (true) ) {
+                                alt33=141;
+                            }
+                            else {
+                                if (backtracking>0) {failed=true; return ;}
+                                NoViableAltException nvae =
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 279, input);
 
-                                if ( (LA33_374=='a') ) {
+                                throw nvae;
+                            }
+                        }
+                        else {
+                            alt33=141;}
+                        }
+                        break;
+                    case 'r':
+                        {
+                        int LA33_180 = input.LA(4);
+
+                        if ( (LA33_180=='i') ) {
+                            switch ( input.LA(5) ) {
+                            case 'c':
+                                {
+                                int LA33_370 = input.LA(6);
+
+                                if ( (LA33_370=='t') ) {
+                                    int LA33_453 = input.LA(7);
+
+                                    if ( (synpred122()) ) {
+                                        alt33=117;
+                                    }
+                                    else if ( (true) ) {
+                                        alt33=141;
+                                    }
+                                    else {
+                                        if (backtracking>0) {failed=true; return ;}
+                                        NoViableAltException nvae =
+                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 453, input);
+
+                                        throw nvae;
+                                    }
+                                }
+                                else {
+                                    alt33=141;}
+                                }
+                                break;
+                            case 'p':
+                                {
+                                int LA33_371 = input.LA(6);
+
+                                if ( (synpred123()) ) {
+                                    alt33=118;
+                                }
+                                else if ( (true) ) {
+                                    alt33=141;
+                                }
+                                else {
+                                    if (backtracking>0) {failed=true; return ;}
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 371, input);
+
+                                    throw nvae;
+                                }
+                                }
+                                break;
+                            default:
+                                alt33=141;}
+
+                        }
+                        else {
+                            alt33=141;}
+                        }
+                        break;
+                    case 'a':
+                        {
+                        switch ( input.LA(4) ) {
+                        case 'r':
+                            {
+                            int LA33_281 = input.LA(5);
+
+                            if ( (LA33_281=='t') ) {
+                                int LA33_372 = input.LA(6);
+
+                                if ( (synpred119()) ) {
+                                    alt33=114;
+                                }
+                                else if ( (true) ) {
+                                    alt33=141;
+                                }
+                                else {
+                                    if (backtracking>0) {failed=true; return ;}
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 372, input);
+
+                                    throw nvae;
+                                }
+                            }
+                            else {
+                                alt33=141;}
+                            }
+                            break;
+                        case 'b':
+                            {
+                            int LA33_282 = input.LA(5);
+
+                            if ( (LA33_282=='l') ) {
+                                int LA33_373 = input.LA(6);
+
+                                if ( (LA33_373=='e') ) {
                                     int LA33_456 = input.LA(7);
 
-                                    if ( (LA33_456=='-') ) {
-                                        int LA33_521 = input.LA(8);
-
-                                        if ( (LA33_521=='a') && (synpred110())) {
-                                            alt33=105;
-                                        }
-                                        else if ( (LA33_521=='e') && (synpred111())) {
-                                            alt33=106;
-                                        }
-                                        else {
-                                            if (backtracking>0) {failed=true; return ;}
-                                            NoViableAltException nvae =
-                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 521, input);
-
-                                            throw nvae;
-                                        }
-                                    }
-                                    else if ( (synpred109()) ) {
-                                        alt33=104;
+                                    if ( (synpred118()) ) {
+                                        alt33=113;
                                     }
                                     else if ( (true) ) {
                                         alt33=141;
@@ -7134,34 +7083,54 @@ public class XQFTLexer extends Lexer {
                             }
                             else {
                                 alt33=141;}
-                        }
-                        else {
+                            }
+                            break;
+                        default:
                             alt33=141;}
+
                         }
                         break;
-                    case 'o':
+                    case 'e':
                         {
-                        int LA33_183 = input.LA(4);
+                        int LA33_182 = input.LA(4);
 
-                        if ( (LA33_183=='r') ) {
-                            int LA33_284 = input.LA(5);
+                        if ( (LA33_182=='m') ) {
+                            int LA33_283 = input.LA(5);
 
-                            if ( (LA33_284=='e') ) {
-                                int LA33_375 = input.LA(6);
+                            if ( (LA33_283=='m') ) {
+                                int LA33_374 = input.LA(6);
 
-                                if ( (synpred112()) ) {
-                                    alt33=107;
-                                }
-                                else if ( (true) ) {
-                                    alt33=141;
+                                if ( (LA33_374=='i') ) {
+                                    int LA33_457 = input.LA(7);
+
+                                    if ( (LA33_457=='n') ) {
+                                        int LA33_522 = input.LA(8);
+
+                                        if ( (LA33_522=='g') ) {
+                                            int LA33_574 = input.LA(9);
+
+                                            if ( (synpred120()) ) {
+                                                alt33=115;
+                                            }
+                                            else if ( (true) ) {
+                                                alt33=141;
+                                            }
+                                            else {
+                                                if (backtracking>0) {failed=true; return ;}
+                                                NoViableAltException nvae =
+                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 574, input);
+
+                                                throw nvae;
+                                            }
+                                        }
+                                        else {
+                                            alt33=141;}
+                                    }
+                                    else {
+                                        alt33=141;}
                                 }
                                 else {
-                                    if (backtracking>0) {failed=true; return ;}
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 375, input);
-
-                                    throw nvae;
-                                }
+                                    alt33=141;}
                             }
                             else {
                                 alt33=141;}
@@ -7175,60 +7144,29 @@ public class XQFTLexer extends Lexer {
 
                     }
                     break;
-                default:
-                    alt33=141;}
-
-            }
-            else if ( (LA33_0=='t') ) {
-                switch ( input.LA(2) ) {
                 case 'o':
                     {
-                    int LA33_75 = input.LA(3);
+                    int LA33_74 = input.LA(3);
 
-                    if ( (synpred128()) ) {
-                        alt33=123;
-                    }
-                    else if ( (true) ) {
-                        alt33=141;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return ;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 75, input);
+                    if ( (LA33_74=='m') ) {
+                        int LA33_183 = input.LA(4);
 
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case 'r':
-                    {
-                    int LA33_76 = input.LA(3);
+                        if ( (LA33_183=='e') ) {
+                            int LA33_284 = input.LA(5);
 
-                    if ( (LA33_76=='e') ) {
-                        int LA33_185 = input.LA(4);
-
-                        if ( (LA33_185=='a') ) {
-                            int LA33_285 = input.LA(5);
-
-                            if ( (LA33_285=='t') ) {
-                                int LA33_376 = input.LA(6);
-
-                                if ( (synpred129()) ) {
-                                    alt33=124;
-                                }
-                                else if ( (true) ) {
-                                    alt33=141;
-                                }
-                                else {
-                                    if (backtracking>0) {failed=true; return ;}
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 376, input);
-
-                                    throw nvae;
-                                }
+                            if ( (synpred117()) ) {
+                                alt33=112;
+                            }
+                            else if ( (true) ) {
+                                alt33=141;
                             }
                             else {
-                                alt33=141;}
+                                if (backtracking>0) {failed=true; return ;}
+                                NoViableAltException nvae =
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 284, input);
+
+                                throw nvae;
+                            }
                         }
                         else {
                             alt33=141;}
@@ -7237,23 +7175,29 @@ public class XQFTLexer extends Lexer {
                         alt33=141;}
                     }
                     break;
+                default:
+                    alt33=141;}
+
+            }
+            else if ( (LA33_0=='t') ) {
+                switch ( input.LA(2) ) {
                 case 'y':
                     {
-                    int LA33_77 = input.LA(3);
+                    int LA33_75 = input.LA(3);
 
-                    if ( (LA33_77=='p') ) {
-                        int LA33_186 = input.LA(4);
+                    if ( (LA33_75=='p') ) {
+                        int LA33_184 = input.LA(4);
 
-                        if ( (LA33_186=='e') ) {
-                            int LA33_286 = input.LA(5);
+                        if ( (LA33_184=='e') ) {
+                            int LA33_285 = input.LA(5);
 
-                            if ( (LA33_286=='s') ) {
-                                int LA33_377 = input.LA(6);
+                            if ( (LA33_285=='s') ) {
+                                int LA33_376 = input.LA(6);
 
-                                if ( (LA33_377=='w') ) {
-                                    int LA33_459 = input.LA(7);
+                                if ( (LA33_376=='w') ) {
+                                    int LA33_458 = input.LA(7);
 
-                                    if ( (LA33_459=='i') ) {
+                                    if ( (LA33_458=='i') ) {
                                         int LA33_523 = input.LA(8);
 
                                         if ( (LA33_523=='t') ) {
@@ -7304,23 +7248,116 @@ public class XQFTLexer extends Lexer {
                         alt33=141;}
                     }
                     break;
-                case 'h':
+                case 'r':
+                    {
+                    int LA33_76 = input.LA(3);
+
+                    if ( (LA33_76=='e') ) {
+                        int LA33_185 = input.LA(4);
+
+                        if ( (LA33_185=='a') ) {
+                            int LA33_286 = input.LA(5);
+
+                            if ( (LA33_286=='t') ) {
+                                int LA33_377 = input.LA(6);
+
+                                if ( (synpred129()) ) {
+                                    alt33=124;
+                                }
+                                else if ( (true) ) {
+                                    alt33=141;
+                                }
+                                else {
+                                    if (backtracking>0) {failed=true; return ;}
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 377, input);
+
+                                    throw nvae;
+                                }
+                            }
+                            else {
+                                alt33=141;}
+                        }
+                        else {
+                            alt33=141;}
+                    }
+                    else {
+                        alt33=141;}
+                    }
+                    break;
+                case 'o':
+                    {
+                    int LA33_77 = input.LA(3);
+
+                    if ( (synpred128()) ) {
+                        alt33=123;
+                    }
+                    else if ( (true) ) {
+                        alt33=141;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return ;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 77, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 'i':
                     {
                     int LA33_78 = input.LA(3);
 
-                    if ( (LA33_78=='e') ) {
+                    if ( (LA33_78=='m') ) {
+                        int LA33_187 = input.LA(4);
+
+                        if ( (LA33_187=='e') ) {
+                            int LA33_287 = input.LA(5);
+
+                            if ( (LA33_287=='s') ) {
+                                int LA33_378 = input.LA(6);
+
+                                if ( (synpred127()) ) {
+                                    alt33=122;
+                                }
+                                else if ( (true) ) {
+                                    alt33=141;
+                                }
+                                else {
+                                    if (backtracking>0) {failed=true; return ;}
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 378, input);
+
+                                    throw nvae;
+                                }
+                            }
+                            else {
+                                alt33=141;}
+                        }
+                        else {
+                            alt33=141;}
+                    }
+                    else {
+                        alt33=141;}
+                    }
+                    break;
+                case 'h':
+                    {
+                    int LA33_79 = input.LA(3);
+
+                    if ( (LA33_79=='e') ) {
                         switch ( input.LA(4) ) {
                         case 's':
                             {
-                            int LA33_287 = input.LA(5);
+                            int LA33_288 = input.LA(5);
 
-                            if ( (LA33_287=='a') ) {
-                                int LA33_378 = input.LA(6);
+                            if ( (LA33_288=='a') ) {
+                                int LA33_379 = input.LA(6);
 
-                                if ( (LA33_378=='u') ) {
-                                    int LA33_460 = input.LA(7);
+                                if ( (LA33_379=='u') ) {
+                                    int LA33_461 = input.LA(7);
 
-                                    if ( (LA33_460=='r') ) {
+                                    if ( (LA33_461=='r') ) {
                                         int LA33_524 = input.LA(8);
 
                                         if ( (LA33_524=='u') ) {
@@ -7361,7 +7398,7 @@ public class XQFTLexer extends Lexer {
                             break;
                         case 'n':
                             {
-                            int LA33_288 = input.LA(5);
+                            int LA33_289 = input.LA(5);
 
                             if ( (synpred126()) ) {
                                 alt33=121;
@@ -7372,7 +7409,7 @@ public class XQFTLexer extends Lexer {
                             else {
                                 if (backtracking>0) {failed=true; return ;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 288, input);
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 289, input);
 
                                 throw nvae;
                             }
@@ -7388,13 +7425,13 @@ public class XQFTLexer extends Lexer {
                     break;
                 case 'e':
                     {
-                    int LA33_79 = input.LA(3);
+                    int LA33_80 = input.LA(3);
 
-                    if ( (LA33_79=='x') ) {
-                        int LA33_188 = input.LA(4);
+                    if ( (LA33_80=='x') ) {
+                        int LA33_189 = input.LA(4);
 
-                        if ( (LA33_188=='t') ) {
-                            int LA33_289 = input.LA(5);
+                        if ( (LA33_189=='t') ) {
+                            int LA33_290 = input.LA(5);
 
                             if ( (synpred124()) ) {
                                 alt33=119;
@@ -7405,47 +7442,10 @@ public class XQFTLexer extends Lexer {
                             else {
                                 if (backtracking>0) {failed=true; return ;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 289, input);
+                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 290, input);
 
                                 throw nvae;
                             }
-                        }
-                        else {
-                            alt33=141;}
-                    }
-                    else {
-                        alt33=141;}
-                    }
-                    break;
-                case 'i':
-                    {
-                    int LA33_80 = input.LA(3);
-
-                    if ( (LA33_80=='m') ) {
-                        int LA33_189 = input.LA(4);
-
-                        if ( (LA33_189=='e') ) {
-                            int LA33_290 = input.LA(5);
-
-                            if ( (LA33_290=='s') ) {
-                                int LA33_381 = input.LA(6);
-
-                                if ( (synpred127()) ) {
-                                    alt33=122;
-                                }
-                                else if ( (true) ) {
-                                    alt33=141;
-                                }
-                                else {
-                                    if (backtracking>0) {failed=true; return ;}
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 381, input);
-
-                                    throw nvae;
-                                }
-                            }
-                            else {
-                                alt33=141;}
                         }
                         else {
                             alt33=141;}
@@ -7460,64 +7460,33 @@ public class XQFTLexer extends Lexer {
             }
             else if ( (LA33_0=='u') ) {
                 switch ( input.LA(2) ) {
-                case 'n':
+                case 'p':
                     {
-                    switch ( input.LA(3) ) {
-                    case 'i':
-                        {
+                    int LA33_81 = input.LA(3);
+
+                    if ( (LA33_81=='p') ) {
                         int LA33_190 = input.LA(4);
 
-                        if ( (LA33_190=='o') ) {
+                        if ( (LA33_190=='e') ) {
                             int LA33_291 = input.LA(5);
 
-                            if ( (LA33_291=='n') ) {
+                            if ( (LA33_291=='r') ) {
                                 int LA33_382 = input.LA(6);
 
-                                if ( (synpred131()) ) {
-                                    alt33=126;
-                                }
-                                else if ( (true) ) {
-                                    alt33=141;
-                                }
-                                else {
-                                    if (backtracking>0) {failed=true; return ;}
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 382, input);
+                                if ( (LA33_382=='c') ) {
+                                    int LA33_462 = input.LA(7);
 
-                                    throw nvae;
-                                }
-                            }
-                            else {
-                                alt33=141;}
-                        }
-                        else {
-                            alt33=141;}
-                        }
-                        break;
-                    case 'o':
-                        {
-                        int LA33_191 = input.LA(4);
-
-                        if ( (LA33_191=='r') ) {
-                            int LA33_292 = input.LA(5);
-
-                            if ( (LA33_292=='d') ) {
-                                int LA33_383 = input.LA(6);
-
-                                if ( (LA33_383=='e') ) {
-                                    int LA33_463 = input.LA(7);
-
-                                    if ( (LA33_463=='r') ) {
+                                    if ( (LA33_462=='a') ) {
                                         int LA33_525 = input.LA(8);
 
-                                        if ( (LA33_525=='e') ) {
+                                        if ( (LA33_525=='s') ) {
                                             int LA33_577 = input.LA(9);
 
-                                            if ( (LA33_577=='d') ) {
+                                            if ( (LA33_577=='e') ) {
                                                 int LA33_621 = input.LA(10);
 
-                                                if ( (synpred132()) ) {
-                                                    alt33=127;
+                                                if ( (synpred133()) ) {
+                                                    alt33=128;
                                                 }
                                                 else if ( (true) ) {
                                                     alt33=141;
@@ -7547,40 +7516,69 @@ public class XQFTLexer extends Lexer {
                         }
                         else {
                             alt33=141;}
-                        }
-                        break;
-                    default:
+                    }
+                    else {
                         alt33=141;}
-
                     }
                     break;
-                case 'p':
+                case 'n':
                     {
-                    int LA33_82 = input.LA(3);
+                    switch ( input.LA(3) ) {
+                    case 'i':
+                        {
+                        int LA33_191 = input.LA(4);
 
-                    if ( (LA33_82=='p') ) {
+                        if ( (LA33_191=='o') ) {
+                            int LA33_292 = input.LA(5);
+
+                            if ( (LA33_292=='n') ) {
+                                int LA33_383 = input.LA(6);
+
+                                if ( (synpred131()) ) {
+                                    alt33=126;
+                                }
+                                else if ( (true) ) {
+                                    alt33=141;
+                                }
+                                else {
+                                    if (backtracking>0) {failed=true; return ;}
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 383, input);
+
+                                    throw nvae;
+                                }
+                            }
+                            else {
+                                alt33=141;}
+                        }
+                        else {
+                            alt33=141;}
+                        }
+                        break;
+                    case 'o':
+                        {
                         int LA33_192 = input.LA(4);
 
-                        if ( (LA33_192=='e') ) {
+                        if ( (LA33_192=='r') ) {
                             int LA33_293 = input.LA(5);
 
-                            if ( (LA33_293=='r') ) {
+                            if ( (LA33_293=='d') ) {
                                 int LA33_384 = input.LA(6);
 
-                                if ( (LA33_384=='c') ) {
+                                if ( (LA33_384=='e') ) {
                                     int LA33_464 = input.LA(7);
 
-                                    if ( (LA33_464=='a') ) {
+                                    if ( (LA33_464=='r') ) {
                                         int LA33_526 = input.LA(8);
 
-                                        if ( (LA33_526=='s') ) {
+                                        if ( (LA33_526=='e') ) {
                                             int LA33_578 = input.LA(9);
 
-                                            if ( (LA33_578=='e') ) {
+                                            if ( (LA33_578=='d') ) {
                                                 int LA33_622 = input.LA(10);
 
-                                                if ( (synpred133()) ) {
-                                                    alt33=128;
+                                                if ( (synpred132()) ) {
+                                                    alt33=127;
                                                 }
                                                 else if ( (true) ) {
                                                     alt33=141;
@@ -7610,9 +7608,11 @@ public class XQFTLexer extends Lexer {
                         }
                         else {
                             alt33=141;}
-                    }
-                    else {
+                        }
+                        break;
+                    default:
                         alt33=141;}
+
                     }
                     break;
                 default:
@@ -7621,44 +7621,38 @@ public class XQFTLexer extends Lexer {
             }
             else if ( (LA33_0=='v') ) {
                 switch ( input.LA(2) ) {
-                case 'a':
+                case 'e':
                     {
-                    switch ( input.LA(3) ) {
-                    case 'l':
-                        {
+                    int LA33_83 = input.LA(3);
+
+                    if ( (LA33_83=='r') ) {
                         int LA33_193 = input.LA(4);
 
-                        if ( (LA33_193=='i') ) {
+                        if ( (LA33_193=='s') ) {
                             int LA33_294 = input.LA(5);
 
-                            if ( (LA33_294=='d') ) {
+                            if ( (LA33_294=='i') ) {
                                 int LA33_385 = input.LA(6);
 
-                                if ( (LA33_385=='a') ) {
+                                if ( (LA33_385=='o') ) {
                                     int LA33_465 = input.LA(7);
 
-                                    if ( (LA33_465=='t') ) {
+                                    if ( (LA33_465=='n') ) {
                                         int LA33_527 = input.LA(8);
 
-                                        if ( (LA33_527=='e') ) {
-                                            int LA33_579 = input.LA(9);
-
-                                            if ( (synpred134()) ) {
-                                                alt33=129;
-                                            }
-                                            else if ( (true) ) {
-                                                alt33=141;
-                                            }
-                                            else {
-                                                if (backtracking>0) {failed=true; return ;}
-                                                NoViableAltException nvae =
-                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 579, input);
-
-                                                throw nvae;
-                                            }
+                                        if ( (synpred136()) ) {
+                                            alt33=131;
+                                        }
+                                        else if ( (true) ) {
+                                            alt33=141;
                                         }
                                         else {
-                                            alt33=141;}
+                                            if (backtracking>0) {failed=true; return ;}
+                                            NoViableAltException nvae =
+                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 527, input);
+
+                                            throw nvae;
+                                        }
                                     }
                                     else {
                                         alt33=141;}
@@ -7671,8 +7665,14 @@ public class XQFTLexer extends Lexer {
                         }
                         else {
                             alt33=141;}
-                        }
-                        break;
+                    }
+                    else {
+                        alt33=141;}
+                    }
+                    break;
+                case 'a':
+                    {
+                    switch ( input.LA(3) ) {
                     case 'r':
                         {
                         int LA33_194 = input.LA(4);
@@ -7722,43 +7722,41 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    default:
-                        alt33=141;}
-
-                    }
-                    break;
-                case 'e':
-                    {
-                    int LA33_84 = input.LA(3);
-
-                    if ( (LA33_84=='r') ) {
+                    case 'l':
+                        {
                         int LA33_195 = input.LA(4);
 
-                        if ( (LA33_195=='s') ) {
+                        if ( (LA33_195=='i') ) {
                             int LA33_296 = input.LA(5);
 
-                            if ( (LA33_296=='i') ) {
+                            if ( (LA33_296=='d') ) {
                                 int LA33_387 = input.LA(6);
 
-                                if ( (LA33_387=='o') ) {
+                                if ( (LA33_387=='a') ) {
                                     int LA33_467 = input.LA(7);
 
-                                    if ( (LA33_467=='n') ) {
+                                    if ( (LA33_467=='t') ) {
                                         int LA33_529 = input.LA(8);
 
-                                        if ( (synpred136()) ) {
-                                            alt33=131;
-                                        }
-                                        else if ( (true) ) {
-                                            alt33=141;
+                                        if ( (LA33_529=='e') ) {
+                                            int LA33_581 = input.LA(9);
+
+                                            if ( (synpred134()) ) {
+                                                alt33=129;
+                                            }
+                                            else if ( (true) ) {
+                                                alt33=141;
+                                            }
+                                            else {
+                                                if (backtracking>0) {failed=true; return ;}
+                                                NoViableAltException nvae =
+                                                    new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 581, input);
+
+                                                throw nvae;
+                                            }
                                         }
                                         else {
-                                            if (backtracking>0) {failed=true; return ;}
-                                            NoViableAltException nvae =
-                                                new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 529, input);
-
-                                            throw nvae;
-                                        }
+                                            alt33=141;}
                                     }
                                     else {
                                         alt33=141;}
@@ -7771,9 +7769,11 @@ public class XQFTLexer extends Lexer {
                         }
                         else {
                             alt33=141;}
-                    }
-                    else {
+                        }
+                        break;
+                    default:
                         alt33=141;}
+
                     }
                     break;
                 default:
@@ -7785,32 +7785,50 @@ public class XQFTLexer extends Lexer {
                 case 'i':
                     {
                     switch ( input.LA(3) ) {
-                    case 'n':
+                    case 'l':
                         {
                         int LA33_196 = input.LA(4);
 
                         if ( (LA33_196=='d') ) {
                             int LA33_297 = input.LA(5);
 
-                            if ( (LA33_297=='o') ) {
+                            if ( (LA33_297=='c') ) {
                                 int LA33_388 = input.LA(6);
 
-                                if ( (LA33_388=='w') ) {
+                                if ( (LA33_388=='a') ) {
                                     int LA33_468 = input.LA(7);
 
-                                    if ( (synpred140()) ) {
-                                        alt33=135;
-                                    }
-                                    else if ( (true) ) {
-                                        alt33=141;
+                                    if ( (LA33_468=='r') ) {
+                                        int LA33_530 = input.LA(8);
+
+                                        if ( (LA33_530=='d') ) {
+                                            int LA33_582 = input.LA(9);
+
+                                            if ( (LA33_582=='s') ) {
+                                                int LA33_625 = input.LA(10);
+
+                                                if ( (synpred139()) ) {
+                                                    alt33=134;
+                                                }
+                                                else if ( (true) ) {
+                                                    alt33=141;
+                                                }
+                                                else {
+                                                    if (backtracking>0) {failed=true; return ;}
+                                                    NoViableAltException nvae =
+                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 625, input);
+
+                                                    throw nvae;
+                                                }
+                                            }
+                                            else {
+                                                alt33=141;}
+                                        }
+                                        else {
+                                            alt33=141;}
                                     }
                                     else {
-                                        if (backtracking>0) {failed=true; return ;}
-                                        NoViableAltException nvae =
-                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 468, input);
-
-                                        throw nvae;
-                                    }
+                                        alt33=141;}
                                 }
                                 else {
                                     alt33=141;}
@@ -7850,50 +7868,32 @@ public class XQFTLexer extends Lexer {
                             alt33=141;}
                         }
                         break;
-                    case 'l':
+                    case 'n':
                         {
                         int LA33_198 = input.LA(4);
 
                         if ( (LA33_198=='d') ) {
                             int LA33_299 = input.LA(5);
 
-                            if ( (LA33_299=='c') ) {
+                            if ( (LA33_299=='o') ) {
                                 int LA33_391 = input.LA(6);
 
-                                if ( (LA33_391=='a') ) {
+                                if ( (LA33_391=='w') ) {
                                     int LA33_469 = input.LA(7);
 
-                                    if ( (LA33_469=='r') ) {
-                                        int LA33_531 = input.LA(8);
-
-                                        if ( (LA33_531=='d') ) {
-                                            int LA33_582 = input.LA(9);
-
-                                            if ( (LA33_582=='s') ) {
-                                                int LA33_625 = input.LA(10);
-
-                                                if ( (synpred139()) ) {
-                                                    alt33=134;
-                                                }
-                                                else if ( (true) ) {
-                                                    alt33=141;
-                                                }
-                                                else {
-                                                    if (backtracking>0) {failed=true; return ;}
-                                                    NoViableAltException nvae =
-                                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 625, input);
-
-                                                    throw nvae;
-                                                }
-                                            }
-                                            else {
-                                                alt33=141;}
-                                        }
-                                        else {
-                                            alt33=141;}
+                                    if ( (synpred140()) ) {
+                                        alt33=135;
+                                    }
+                                    else if ( (true) ) {
+                                        alt33=141;
                                     }
                                     else {
-                                        alt33=141;}
+                                        if (backtracking>0) {failed=true; return ;}
+                                        NoViableAltException nvae =
+                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 469, input);
+
+                                        throw nvae;
+                                    }
                                 }
                                 else {
                                     alt33=141;}
@@ -7910,38 +7910,32 @@ public class XQFTLexer extends Lexer {
 
                     }
                     break;
-                case 'e':
+                case 'h':
                     {
                     int LA33_86 = input.LA(3);
 
-                    if ( (LA33_86=='i') ) {
+                    if ( (LA33_86=='e') ) {
                         int LA33_199 = input.LA(4);
 
-                        if ( (LA33_199=='g') ) {
+                        if ( (LA33_199=='r') ) {
                             int LA33_300 = input.LA(5);
 
-                            if ( (LA33_300=='h') ) {
+                            if ( (LA33_300=='e') ) {
                                 int LA33_392 = input.LA(6);
 
-                                if ( (LA33_392=='t') ) {
-                                    int LA33_470 = input.LA(7);
-
-                                    if ( (synpred137()) ) {
-                                        alt33=132;
-                                    }
-                                    else if ( (true) ) {
-                                        alt33=141;
-                                    }
-                                    else {
-                                        if (backtracking>0) {failed=true; return ;}
-                                        NoViableAltException nvae =
-                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 470, input);
-
-                                        throw nvae;
-                                    }
+                                if ( (synpred138()) ) {
+                                    alt33=133;
+                                }
+                                else if ( (true) ) {
+                                    alt33=141;
                                 }
                                 else {
-                                    alt33=141;}
+                                    if (backtracking>0) {failed=true; return ;}
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 392, input);
+
+                                    throw nvae;
+                                }
                             }
                             else {
                                 alt33=141;}
@@ -7953,32 +7947,38 @@ public class XQFTLexer extends Lexer {
                         alt33=141;}
                     }
                     break;
-                case 'h':
+                case 'e':
                     {
                     int LA33_87 = input.LA(3);
 
-                    if ( (LA33_87=='e') ) {
+                    if ( (LA33_87=='i') ) {
                         int LA33_200 = input.LA(4);
 
-                        if ( (LA33_200=='r') ) {
+                        if ( (LA33_200=='g') ) {
                             int LA33_301 = input.LA(5);
 
-                            if ( (LA33_301=='e') ) {
+                            if ( (LA33_301=='h') ) {
                                 int LA33_393 = input.LA(6);
 
-                                if ( (synpred138()) ) {
-                                    alt33=133;
-                                }
-                                else if ( (true) ) {
-                                    alt33=141;
+                                if ( (LA33_393=='t') ) {
+                                    int LA33_471 = input.LA(7);
+
+                                    if ( (synpred137()) ) {
+                                        alt33=132;
+                                    }
+                                    else if ( (true) ) {
+                                        alt33=141;
+                                    }
+                                    else {
+                                        if (backtracking>0) {failed=true; return ;}
+                                        NoViableAltException nvae =
+                                            new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 471, input);
+
+                                        throw nvae;
+                                    }
                                 }
                                 else {
-                                    if (backtracking>0) {failed=true; return ;}
-                                    NoViableAltException nvae =
-                                        new NoViableAltException("775:10: fragment LexLiterals : ( ( ALL )=> ALL | ( ANY )=> ANY | ( ANCESTOR )=> ANCESTOR | ( ANCESTOR_OR_SELF )=> ANCESTOR_OR_SELF | ( AND )=> AND | ( AS )=> AS | ( ASCENDING )=> ASCENDING | ( AT )=> AT | ( ATTRIBUTE )=> ATTRIBUTE | ( BASE_URI )=> BASE_URI | ( BY )=> BY | ( BOUNDARYSPACE )=> BOUNDARYSPACE | ( CASE )=> CASE | ( CAST )=> CAST | ( CASTABLE )=> CASTABLE | ( CHILD )=> CHILD | ( COLLATION )=> COLLATION | ( COMMENT )=> COMMENT | ( CONSTRUCTION )=> CONSTRUCTION | ( CONTENT )=> CONTENT | ( COPY_NAMESPACES )=> COPY_NAMESPACES | ( DECLARE )=> DECLARE | ( DEFAULT )=> DEFAULT | ( DESCENDANT )=> DESCENDANT | ( DESCENDANT_OR_SELF )=> DESCENDANT_OR_SELF | ( DESCENDING )=> DESCENDING | ( DIACRITICS )=> DIACRITICS | ( DIFFERENT )=> DIFFERENT | ( DISTANCE )=> DISTANCE | ( DIV )=> DIV | ( DOCUMENT )=> DOCUMENT | ( DOCUMENT_NODE )=> DOCUMENT_NODE | ( ELEMENT )=> ELEMENT | ( ELSE )=> ELSE | ( ENCODING )=> ENCODING | ( END )=> END | ( ENTIRE )=> ENTIRE | ( EMPTY )=> EMPTY | ( EMPTY_SEQUENCE )=> EMPTY_SEQUENCE | ( EQ )=> EQ | ( EVERY )=> EVERY | ( EXACTLY )=> EXACTLY | ( EXCEPT )=> EXCEPT | ( EXTERNAL )=> EXTERNAL | ( FOLLOWING )=> FOLLOWING | ( FOLLOWING_SIBLING )=> FOLLOWING_SIBLING | ( FOR )=> FOR | ( FROM )=> FROM | ( FTAND )=> FTAND | ( FTCONTAINS )=> FTCONTAINS | ( FTNOT )=> FTNOT | ( FTOPTION )=> FTOPTION | ( FTOR )=> FTOR | ( FUNCTION )=> FUNCTION | ( GE )=> GE | ( GREATEST )=> GREATEST | ( GT )=> GT | ( IDIV )=> IDIV | ( IF )=> IF | ( IMPORT )=> IMPORT | ( IN )=> IN | ( INHERIT )=> INHERIT | ( INSENSITIVE )=> INSENSITIVE | ( INSTANCE )=> INSTANCE | ( INTERSECT )=> INTERSECT | ( IS )=> IS | ( ITEM )=> ITEM | ( LANGUAGE )=> LANGUAGE | ( LAX )=> LAX | ( LE )=> LE | ( LEAST )=> LEAST | ( LET )=> LET | ( LEVELS )=> LEVELS | ( LOWERCASE )=> LOWERCASE | ( LT )=> LT | ( MOD )=> MOD | ( MODULE )=> MODULE | ( MOST )=> MOST | ( NAMESPACE )=> NAMESPACE | ( NE )=> NE | ( NODE )=> NODE | ( NOINHERIT )=> NOINHERIT | ( NOPRESERVE )=> NOPRESERVE | ( NOT )=> NOT | ( OCCURS )=> OCCURS | ( OF )=> OF | ( OPTION )=> OPTION | ( OR )=> OR | ( ORDER )=> ORDER | ( ORDERED )=> ORDERED | ( ORDERING )=> ORDERING | ( PARAGRAPH )=> PARAGRAPH | ( PARAGRAPHS )=> PARAGRAPHS | ( PARENT )=> PARENT | ( PHRASE )=> PHRASE | ( PRECEDING )=> PRECEDING | ( PRECEDING_SIBLING )=> PRECEDING_SIBLING | ( PRESERVE )=> PRESERVE | ( PROCESSING_INSTRUCTION )=> PROCESSING_INSTRUCTION | ( RELATIONSHIP )=> RELATIONSHIP | ( RETURN )=> RETURN | ( SAME )=> SAME | ( SATISFIES )=> SATISFIES | ( SCHEMA )=> SCHEMA | ( SCHEMAATTRIBUTE )=> SCHEMAATTRIBUTE | ( SCHEMAELEMENT )=> SCHEMAELEMENT | ( SCORE )=> SCORE | ( SELF )=> SELF | ( SENSITIVE )=> SENSITIVE | ( SENTENCES )=> SENTENCES | ( SENTENCE )=> SENTENCE | ( SOME )=> SOME | ( STABLE )=> STABLE | ( START )=> START | ( STEMMING )=> STEMMING | ( STOP )=> STOP | ( STRICT )=> STRICT | ( STRIP )=> STRIP | ( TEXT )=> TEXT | ( THESAURUS )=> THESAURUS | ( THEN )=> THEN | ( TIMES )=> TIMES | ( TO )=> TO | ( TREAT )=> TREAT | ( TYPESWITCH )=> TYPESWITCH | ( UNION )=> UNION | ( UNORDERED )=> UNORDERED | ( UPPERCASE )=> UPPERCASE | ( VALIDATE )=> VALIDATE | ( VARIABLE )=> VARIABLE | ( VERSION )=> VERSION | ( WEIGHT )=> WEIGHT | ( WHERE )=> WHERE | ( WILDCARDS )=> WILDCARDS | ( WINDOW )=> WINDOW | ( WITH )=> WITH | ( WITHOUT )=> WITHOUT | ( WORD )=> WORD | ( WORDS )=> WORDS | ( XQUERY )=> XQUERY | NCName );", 33, 393, input);
-
-                                    throw nvae;
-                                }
+                                    alt33=141;}
                             }
                             else {
                                 alt33=141;}
@@ -9514,11 +9514,11 @@ public class XQFTLexer extends Lexer {
                 {
                 int LA34_1 = input.LA(2);
 
-                if ( (LA34_1=='<') ) {
-                    alt34=1;
-                }
-                else if ( (LA34_1=='=') ) {
+                if ( (LA34_1=='=') ) {
                     alt34=2;
+                }
+                else if ( (LA34_1=='<') ) {
+                    alt34=1;
                 }
                 else {
                     if (backtracking>0) {failed=true; return ;}
@@ -9552,11 +9552,11 @@ public class XQFTLexer extends Lexer {
                 {
                 int LA34_3 = input.LA(2);
 
-                if ( (LA34_3==':') ) {
-                    alt34=5;
-                }
-                else if ( (LA34_3=='=') ) {
+                if ( (LA34_3=='=') ) {
                     alt34=6;
+                }
+                else if ( (LA34_3==':') ) {
+                    alt34=5;
                 }
                 else {
                     if (backtracking>0) {failed=true; return ;}
@@ -15026,361 +15026,11 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end synpred145
 
-    public final boolean synpred106() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred106_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred25() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred25_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred7() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred7_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred14() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred14_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred105() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred105_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred22() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred22_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred27() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred27_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred20() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred20_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred1() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred1_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred17() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred17_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred90() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred90_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred132() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred132_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred79() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred79_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred18() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred18_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred11() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred11_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred86() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred86_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred8() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred8_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred116() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred116_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred64() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred64_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred21() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred21_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred42() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred42_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
     public final boolean synpred44() {
         backtracking++;
         int start = input.mark();
         try {
             synpred44_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred87() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred87_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred136() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred136_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred99() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred99_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred45() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred45_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -15404,188 +15054,6 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred24() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred24_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred6() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred6_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred13() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred13_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred53() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred53_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred143() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred143_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred37() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred37_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred142() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred142_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred131() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred131_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred91() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred91_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred54() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred54_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred15() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred15_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred84() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred84_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred117() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred117_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
     public final boolean synpred46() {
         backtracking++;
         int start = input.mark();
@@ -15600,739 +15068,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred128() {
+    public final boolean synpred45() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred128_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred62() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred62_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred109() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred109_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred38() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred38_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred12() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred12_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred92() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred92_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred85() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred85_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred123() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred123_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred126() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred126_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred39() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred39_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred111() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred111_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred70() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred70_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred104() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred104_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred63() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred63_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred133() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred133_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred36() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred36_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred134() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred134_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred50() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred50_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred72() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred72_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred135() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred135_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred94() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred94_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred113() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred113_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred124() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred124_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred51() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred51_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred110() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred110_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred130() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred130_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred23() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred23_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred52() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred52_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred127() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred127_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred115() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred115_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred67() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred67_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred100() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred100_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred144() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred144_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred93() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred93_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred114() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred114_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred71() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred71_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred66() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred66_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred103() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred103_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred107() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred107_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred139() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred139_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred129() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred129_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred120() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred120_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred30() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred30_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred68() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred68_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred75() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred75_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred4() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred4_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred112() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred112_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred49() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred49_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred31() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred31_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred140() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred140_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred101() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred101_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred76() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred76_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred56() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred56_fragment(); // can never throw exception
+            synpred45_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -16356,76 +15096,6 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred119() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred119_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred145() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred145_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred2() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred2_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred118() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred118_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred69() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred69_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
     public final boolean synpred47() {
         backtracking++;
         int start = input.mark();
@@ -16440,249 +15110,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred58() {
+    public final boolean synpred49() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred58_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred34() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred34_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred89() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred89_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred73() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred73_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred57() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred57_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred16() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred16_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred35() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred35_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred137() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred137_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred74() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred74_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred88() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred88_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred122() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred122_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred108() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred108_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred138() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred138_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred125() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred125_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred55() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred55_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred97() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred97_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred65() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred65_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred121() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred121_fragment(); // can never throw exception
+            synpred49_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -16706,39 +15138,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred141() {
+    public final boolean synpred42() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred141_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred9() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred9_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred98() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred98_fragment(); // can never throw exception
+            synpred42_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -16762,11 +15166,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred59() {
+    public final boolean synpred35() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred59_fragment(); // can never throw exception
+            synpred35_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -16776,25 +15180,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred28() {
+    public final boolean synpred34() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred28_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred61() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred61_fragment(); // can never throw exception
+            synpred34_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -16818,48 +15208,6 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred29() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred29_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred83() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred83_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred3() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred3_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
     public final boolean synpred32() {
         backtracking++;
         int start = input.mark();
@@ -16874,11 +15222,235 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred26() {
+    public final boolean synpred39() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred26_fragment(); // can never throw exception
+            synpred39_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred38() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred38_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred37() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred37_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred36() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred36_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred31() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred31_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred30() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred30_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred69() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred69_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred66() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred66_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred65() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred65_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred68() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred68_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred67() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred67_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred101() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred101_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred62() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred62_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred100() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred100_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred61() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred61_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred64() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred64_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred103() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred103_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -16902,11 +15474,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred80() {
+    public final boolean synpred63() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred80_fragment(); // can never throw exception
+            synpred63_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -16916,11 +15488,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred95() {
+    public final boolean synpred105() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred95_fragment(); // can never throw exception
+            synpred105_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -16930,11 +15502,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred78() {
+    public final boolean synpred104() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred78_fragment(); // can never throw exception
+            synpred104_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -16944,81 +15516,11 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred10() {
+    public final boolean synpred107() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred10_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred81() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred81_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred96() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred96_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred77() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred77_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred19() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred19_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred5() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred5_fragment(); // can never throw exception
+            synpred107_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -17042,6 +15544,384 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
+    public final boolean synpred106() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred106_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred108() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred108_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred109() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred109_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred59() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred59_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred58() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred58_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred57() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred57_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred56() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred56_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred55() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred55_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred54() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred54_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred53() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred53_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred5() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred5_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred52() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred52_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred6() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred6_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred51() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred51_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred7() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred7_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred8() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred8_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred50() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred50_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred1() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred1_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred2() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred2_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred3() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred3_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred4() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred4_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred9() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred9_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred126() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred126_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred80() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred80_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred127() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred127_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred81() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred81_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred128() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred128_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
     public final boolean synpred82() {
         backtracking++;
         int start = input.mark();
@@ -17056,39 +15936,1159 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
+    public final boolean synpred129() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred129_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred83() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred83_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred122() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred122_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred84() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred84_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred123() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred123_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred124() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred124_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred85() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred85_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred125() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred125_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred86() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred86_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred87() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred87_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred88() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred88_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred89() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred89_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred120() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred120_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred121() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred121_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred70() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred70_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred117() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred117_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred71() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred71_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred118() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred118_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred115() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred115_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred116() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred116_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred113() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred113_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred74() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred74_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred114() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred114_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred75() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred75_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred111() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred111_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred72() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred72_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred112() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred112_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred73() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred73_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred78() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred78_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred110() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred110_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred79() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred79_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred76() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred76_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred77() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred77_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred119() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred119_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred144() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred144_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred145() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred145_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred29() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred29_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred140() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred140_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred141() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred141_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred142() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred142_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred143() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred143_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred20() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred20_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred27() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred27_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred28() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred28_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred25() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred25_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred26() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred26_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred23() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred23_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred24() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred24_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred21() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred21_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred22() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred22_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred96() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred96_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred135() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred135_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred97() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred97_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred136() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred136_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred94() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred94_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred133() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred133_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred95() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred95_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred134() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred134_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred139() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred139_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred19() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred19_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred92() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred92_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred18() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred18_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred93() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred93_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred90() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred90_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred137() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred137_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred91() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred91_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred138() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred138_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred131() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred131_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred132() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred132_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred98() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred98_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred130() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred130_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred99() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred99_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred14() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred14_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred15() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred15_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred16() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred16_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred17() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred17_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred10() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred10_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred11() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred11_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred12() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred12_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred13() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred13_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
 
 
     protected DFA1 dfa1 = new DFA1(this);
     static final String DFA1_eotS =
-        "\1\6\1\67\1\uffff\1\75\1\77\105\uffff\1\171\3\uffff\1\171\53\uffff"+
-        "\1\171\11\uffff";
+        "\1\6\1\67\1\uffff\1\75\1\77\105\uffff\1\177\3\uffff\1\177\61\uffff"+
+        "\1\177\12\uffff";
     static final String DFA1_eofS =
-        "\u0084\uffff";
+        "\u008b\uffff";
     static final String DFA1_minS =
         "\1\0\1\41\1\43\1\173\1\175\1\43\1\0\2\56\1\75\1\72\1\57\1\75\46"+
-        "\0\1\uffff\1\55\3\uffff\1\60\2\164\1\155\1\165\1\uffff\1\0\1\uffff"+
-        "\1\0\11\uffff\1\60\1\56\2\uffff\1\60\35\uffff\2\60\2\73\1\157\1"+
-        "\160\1\157\7\uffff\2\60\2\0\1\163\1\73\1\164\1\0\2\73";
+        "\0\2\uffff\1\55\2\uffff\1\60\2\164\1\155\1\165\1\uffff\1\0\1\uffff"+
+        "\1\0\11\uffff\1\60\1\56\2\uffff\1\60\43\uffff\2\60\2\73\1\160\2"+
+        "\157\7\uffff\2\60\2\0\1\73\1\163\1\164\1\0\1\uffff\2\73";
     static final String DFA1_maxS =
         "\1\ufffe\1\77\1\161\1\173\1\175\1\72\1\0\1\145\1\71\1\76\1\75\1"+
-        "\76\1\75\1\0\2\ufffe\43\0\1\uffff\1\133\3\uffff\1\170\2\164\1\160"+
-        "\1\165\1\uffff\1\0\1\uffff\1\0\11\uffff\2\145\2\uffff\1\145\35\uffff"+
-        "\1\146\3\73\1\157\1\160\1\157\7\uffff\1\145\1\146\2\0\1\163\1\73"+
-        "\1\164\1\0\2\73";
+        "\76\1\75\1\0\2\ufffe\43\0\2\uffff\1\133\2\uffff\1\170\2\164\1\160"+
+        "\1\165\1\uffff\1\0\1\uffff\1\0\11\uffff\2\145\2\uffff\1\145\43\uffff"+
+        "\1\146\3\73\1\160\2\157\7\uffff\1\145\1\146\2\0\1\73\1\163\1\164"+
+        "\1\0\1\uffff\2\73";
     static final String DFA1_acceptS =
-        "\63\uffff\1\13\1\uffff\1\4\1\2\1\37\5\uffff\1\46\1\uffff\1\50\1"+
+        "\63\uffff\1\13\1\4\1\uffff\1\2\1\37\5\uffff\1\46\1\uffff\1\50\1"+
         "\uffff\1\7\1\6\1\5\1\17\1\20\1\25\1\5\1\17\1\20\2\uffff\1\12\1\10"+
         "\1\uffff\1\33\1\41\1\35\1\21\1\34\1\14\1\15\1\17\1\20\1\22\1\17"+
-        "\1\20\1\24\1\16\1\23\1\26\1\27\1\30\1\31\1\32\1\36\1\40\1\42\1\43"+
-        "\1\44\1\45\1\47\1\1\1\3\7\uffff\1\5\1\17\1\20\1\5\1\17\1\20\1\11"+
-        "\12\uffff";
+        "\1\20\1\24\7\16\1\23\1\26\1\27\1\30\1\31\1\32\1\36\1\40\1\42\1\43"+
+        "\1\44\1\45\1\47\1\3\1\1\7\uffff\1\5\1\17\1\20\1\5\1\17\1\20\1\11"+
+        "\10\uffff\1\17\2\uffff";
     static final String DFA1_specialS =
-        "\1\uffff\1\44\1\uffff\1\66\1\52\1\12\1\60\1\23\1\43\1\26\1\25\1"+
-        "\15\1\63\1\36\1\21\1\31\1\35\1\3\1\54\1\0\1\61\1\33\1\6\1\55\1\11"+
-        "\1\5\1\51\1\20\1\57\1\2\1\65\1\37\1\42\1\41\1\62\1\32\1\50\1\13"+
-        "\1\47\1\4\1\7\1\56\1\67\1\45\1\30\1\27\1\1\1\46\1\71\1\22\1\10\13"+
-        "\uffff\1\16\1\uffff\1\17\11\uffff\1\24\1\40\2\uffff\1\53\53\uffff"+
-        "\1\64\1\uffff\1\34\1\70\3\uffff\1\14\2\uffff}>";
+        "\1\uffff\1\27\1\uffff\1\53\1\25\1\55\1\7\1\41\1\23\1\30\1\33\1\22"+
+        "\1\64\1\12\1\44\1\65\1\16\1\54\1\51\1\26\1\45\1\63\1\61\1\37\1\3"+
+        "\1\14\1\1\1\50\1\60\1\4\1\5\1\6\1\36\1\67\1\11\1\47\1\21\1\2\1\71"+
+        "\1\52\1\57\1\46\1\43\1\40\1\32\1\31\1\17\1\13\1\10\1\0\1\56\13\uffff"+
+        "\1\15\1\uffff\1\20\11\uffff\1\42\1\34\2\uffff\1\62\61\uffff\1\70"+
+        "\1\uffff\1\66\1\24\3\uffff\1\35\3\uffff}>";
     static final String[] DFA1_transitionS = {
             "\1\62\10\uffff\2\15\2\uffff\1\15\22\uffff\1\15\1\14\1\16\1\62"+
             "\1\45\1\62\1\2\1\17\1\5\1\46\1\47\1\50\1\51\1\52\1\10\1\13\12"+
@@ -17133,7 +17133,7 @@ public class XQFTLexer extends Lexer {
             "\62\3\44\u0e84\62\1\44\31\62\11\44\27\62\124\44\14\62\132\44"+
             "\12\62\50\44\u1cd3\62\u51a6\44\u0c5a\62\u2ba4\44\134\62\u0800"+
             "\uffff\u1fff\62",
-            "\1\64\15\uffff\1\65\14\uffff\2\63\1\uffff\1\66",
+            "\1\65\15\uffff\1\64\14\uffff\2\63\1\uffff\1\66",
             "\1\70\75\uffff\1\73\5\uffff\1\72\4\uffff\1\71\4\uffff\1\74",
             "\1\76",
             "\1\100",
@@ -17184,20 +17184,19 @@ public class XQFTLexer extends Lexer {
             "\1\uffff",
             "\1\uffff",
             "",
-            "\1\153\55\uffff\1\152",
+            "",
+            "\1\160\55\uffff\1\161",
             "",
             "",
-            "",
-            "\12\155\76\uffff\1\154",
-            "\1\156",
-            "\1\157",
-            "\1\161\2\uffff\1\160",
-            "\1\162",
-            "",
-            "\1\uffff",
+            "\12\163\76\uffff\1\162",
+            "\1\164",
+            "\1\165",
+            "\1\166\2\uffff\1\167",
+            "\1\170",
             "",
             "\1\uffff",
             "",
+            "\1\uffff",
             "",
             "",
             "",
@@ -17206,7 +17205,8 @@ public class XQFTLexer extends Lexer {
             "",
             "",
             "",
-            "\12\172\13\uffff\1\114\37\uffff\1\114",
+            "",
+            "\12\u0080\13\uffff\1\114\37\uffff\1\114",
             "\1\112\1\uffff\12\113\13\uffff\1\114\37\uffff\1\114",
             "",
             "",
@@ -17240,30 +17240,37 @@ public class XQFTLexer extends Lexer {
             "",
             "",
             "",
-            "\12\173\7\uffff\6\173\32\uffff\6\173",
-            "\12\155\1\uffff\1\174",
-            "\1\175",
-            "\1\175",
-            "\1\176",
-            "\1\177",
-            "\1\u0080",
             "",
             "",
             "",
             "",
             "",
             "",
-            "",
-            "\12\172\13\uffff\1\114\37\uffff\1\114",
-            "\12\173\1\uffff\1\u0081\5\uffff\6\173\32\uffff\6\173",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\u0082",
-            "\1\175",
+            "\12\u0081\7\uffff\6\u0081\32\uffff\6\u0081",
+            "\12\163\1\uffff\1\u0082",
             "\1\u0083",
+            "\1\u0083",
+            "\1\u0084",
+            "\1\u0085",
+            "\1\u0086",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\12\u0080\13\uffff\1\114\37\uffff\1\114",
+            "\12\u0081\1\uffff\1\u0087\5\uffff\6\u0081\32\uffff\6\u0081",
             "\1\uffff",
-            "\1\175",
-            "\1\175"
+            "\1\uffff",
+            "\1\u0083",
+            "\1\u0089",
+            "\1\u008a",
+            "\1\uffff",
+            "",
+            "\1\u0083",
+            "\1\u0083"
     };
 
     static final short[] DFA1_eot = DFA.unpackEncodedString(DFA1_eotS);
@@ -17302,217 +17309,44 @@ public class XQFTLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA1_19 = input.LA(1);
+                        int LA1_49 = input.LA(1);
 
                          
-                        int index1_19 = input.index();
+                        int index1_49 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
 
                         else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
 
+                        else if ( (true) ) {s = 111;}
+
                          
-                        input.seek(index1_19);
+                        input.seek(index1_49);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA1_46 = input.LA(1);
+                        int LA1_26 = input.LA(1);
 
                          
-                        int index1_46 = input.index();
+                        int index1_26 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
 
                         else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
 
-                        else if ( (true) ) {s = 102;}
-
                          
-                        input.seek(index1_46);
+                        input.seek(index1_26);
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA1_29 = input.LA(1);
-
-                         
-                        int index1_29 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_29);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA1_17 = input.LA(1);
-
-                         
-                        int index1_17 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_17);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA1_39 = input.LA(1);
-
-                         
-                        int index1_39 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                        else if ( (true) ) {s = 95;}
-
-                         
-                        input.seek(index1_39);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA1_25 = input.LA(1);
-
-                         
-                        int index1_25 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_25);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 6 : 
-                        int LA1_22 = input.LA(1);
-
-                         
-                        int index1_22 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_22);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 7 : 
-                        int LA1_40 = input.LA(1);
-
-                         
-                        int index1_40 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                        else if ( (true) ) {s = 96;}
-
-                         
-                        input.seek(index1_40);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 8 : 
-                        int LA1_50 = input.LA(1);
-
-                         
-                        int index1_50 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_50);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 9 : 
-                        int LA1_24 = input.LA(1);
-
-                         
-                        int index1_24 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_24);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 10 : 
-                        int LA1_5 = input.LA(1);
-
-                         
-                        int index1_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_5==':') ) {s = 65;}
-
-                        else if ( (LA1_5=='#') ) {s = 66;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                        else if ( (true) ) {s = 70;}
-
-                         
-                        input.seek(index1_5);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 11 : 
                         int LA1_37 = input.LA(1);
 
                          
@@ -17525,30 +17359,292 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
 
-                        else if ( (true) ) {s = 93;}
+                        else if ( (true) ) {s = 99;}
 
                          
                         input.seek(index1_37);
                         if ( s>=0 ) return s;
                         break;
-                    case 12 : 
-                        int LA1_129 = input.LA(1);
+                    case 3 : 
+                        int LA1_24 = input.LA(1);
 
                          
-                        int index1_129 = input.index();
+                        int index1_24 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 95;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_24);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA1_29 = input.LA(1);
+
+                         
+                        int index1_29 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_29);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA1_30 = input.LA(1);
+
+                         
+                        int index1_30 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 97;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 89;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 87;}
+
+                         
+                        input.seek(index1_30);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA1_31 = input.LA(1);
+
+                         
+                        int index1_31 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_31);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA1_6 = input.LA(1);
+
+                         
+                        int index1_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 71;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 72;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 73;}
+
+                         
+                        input.seek(index1_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 8 : 
+                        int LA1_48 = input.LA(1);
+
+                         
+                        int index1_48 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 67;}
 
                         else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
 
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 87;}
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                        else if ( (true) ) {s = 110;}
 
                          
-                        input.seek(index1_129);
+                        input.seek(index1_48);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 9 : 
+                        int LA1_34 = input.LA(1);
+
+                         
+                        int index1_34 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 98;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_34);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 10 : 
+                        int LA1_13 = input.LA(1);
+
+                         
+                        int index1_13 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.DEFAULT) ) {s = 84;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_13);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 11 : 
+                        int LA1_47 = input.LA(1);
+
+                         
+                        int index1_47 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                        else if ( (true) ) {s = 109;}
+
+                         
+                        input.seek(index1_47);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 12 : 
+                        int LA1_25 = input.LA(1);
+
+                         
+                        int index1_25 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_25);
                         if ( s>=0 ) return s;
                         break;
                     case 13 : 
+                        int LA1_62 = input.LA(1);
+
+                         
+                        int index1_62 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 121;}
+
+                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 122;}
+
+                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 123;}
+
+                         
+                        input.seek(index1_62);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 14 : 
+                        int LA1_16 = input.LA(1);
+
+                         
+                        int index1_16 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_16);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 15 : 
+                        int LA1_46 = input.LA(1);
+
+                         
+                        int index1_46 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                        else if ( (true) ) {s = 108;}
+
+                         
+                        input.seek(index1_46);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 16 : 
+                        int LA1_64 = input.LA(1);
+
+                         
+                        int index1_64 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 124;}
+
+                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 125;}
+
+                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 126;}
+
+                         
+                        input.seek(index1_64);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 17 : 
+                        int LA1_36 = input.LA(1);
+
+                         
+                        int index1_36 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_36);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 18 : 
                         int LA1_11 = input.LA(1);
 
                          
@@ -17571,85 +17667,258 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_11);
                         if ( s>=0 ) return s;
                         break;
-                    case 14 : 
-                        int LA1_62 = input.LA(1);
+                    case 19 : 
+                        int LA1_8 = input.LA(1);
 
                          
-                        int index1_62 = input.index();
+                        int index1_8 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 115;}
+                        if ( (LA1_8=='.') && (state==State.DEFAULT)) {s = 51;}
 
-                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 116;}
+                        else if ( ((LA1_8>='0' && LA1_8<='9')) && (state==State.DEFAULT)) {s = 78;}
 
-                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 117;}
+                        else if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                        else if ( (true) ) {s = 79;}
 
                          
-                        input.seek(index1_62);
+                        input.seek(index1_8);
                         if ( s>=0 ) return s;
                         break;
-                    case 15 : 
-                        int LA1_64 = input.LA(1);
+                    case 20 : 
+                        int LA1_131 = input.LA(1);
 
                          
-                        int index1_64 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 118;}
-
-                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 119;}
-
-                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 120;}
-
-                         
-                        input.seek(index1_64);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 16 : 
-                        int LA1_27 = input.LA(1);
-
-                         
-                        int index1_27 = input.index();
+                        int index1_131 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 67;}
 
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 136;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_131);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 21 : 
+                        int LA1_4 = input.LA(1);
+
+                         
+                        int index1_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_4=='}') && ((input.LA(1)=='}' && input.LA(2)=='}'))) {s = 64;}
+
+                        else s = 63;
+
+                         
+                        input.seek(index1_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 22 : 
+                        int LA1_19 = input.LA(1);
+
+                         
+                        int index1_19 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
 
                         else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
 
                          
-                        input.seek(index1_27);
+                        input.seek(index1_19);
                         if ( s>=0 ) return s;
                         break;
-                    case 17 : 
-                        int LA1_14 = input.LA(1);
+                    case 23 : 
+                        int LA1_1 = input.LA(1);
 
                          
-                        int index1_14 = input.index();
+                        int index1_1 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((LA1_14>='\u0000' && LA1_14<='\uFFFE')) && (state==State.DEFAULT)) {s = 85;}
+                        if ( ((LA1_1>='<' && LA1_1<='=')) && (state==State.DEFAULT)) {s = 51;}
+
+                        else if ( (LA1_1=='/') ) {s = 52;}
+
+                        else if ( (LA1_1=='!') ) {s = 53;}
+
+                        else if ( (LA1_1=='?') ) {s = 54;}
+
+                        else s = 55;
+
+                         
+                        input.seek(index1_1);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 24 : 
+                        int LA1_9 = input.LA(1);
+
+                         
+                        int index1_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((LA1_9>='=' && LA1_9<='>')) && (state==State.DEFAULT)) {s = 51;}
 
                         else if ( (state==State.IN_ELEMENT) ) {s = 67;}
 
-                        else if ( ((state==State.IN_QUOT_ATTRIBUTE||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"')))) ) {s = 86;}
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
 
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 87;}
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
 
-                        else if ( (true) ) {s = 88;}
+                        else if ( (true) ) {s = 80;}
 
                          
-                        input.seek(index1_14);
+                        input.seek(index1_9);
                         if ( s>=0 ) return s;
                         break;
-                    case 18 : 
-                        int LA1_49 = input.LA(1);
+                    case 25 : 
+                        int LA1_45 = input.LA(1);
 
                          
-                        int index1_49 = input.index();
+                        int index1_45 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                        else if ( (true) ) {s = 107;}
+
+                         
+                        input.seek(index1_45);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 26 : 
+                        int LA1_44 = input.LA(1);
+
+                         
+                        int index1_44 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                        else if ( (true) ) {s = 106;}
+
+                         
+                        input.seek(index1_44);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 27 : 
+                        int LA1_10 = input.LA(1);
+
+                         
+                        int index1_10 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_10==':'||LA1_10=='=') && (state==State.DEFAULT)) {s = 51;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                        else if ( (true) ) {s = 81;}
+
+                         
+                        input.seek(index1_10);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 28 : 
+                        int LA1_75 = input.LA(1);
+
+                         
+                        int index1_75 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_75=='.') && (state==State.DEFAULT)) {s = 74;}
+
+                        else if ( ((LA1_75>='0' && LA1_75<='9')) && (state==State.DEFAULT)) {s = 75;}
+
+                        else if ( (LA1_75=='E'||LA1_75=='e') && (state==State.DEFAULT)) {s = 76;}
+
+                         
+                        input.seek(index1_75);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 29 : 
+                        int LA1_135 = input.LA(1);
+
+                         
+                        int index1_135 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_135);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 30 : 
+                        int LA1_32 = input.LA(1);
+
+                         
+                        int index1_32 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_32);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 31 : 
+                        int LA1_23 = input.LA(1);
+
+                         
+                        int index1_23 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_23);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 32 : 
+                        int LA1_43 = input.LA(1);
+
+                         
+                        int index1_43 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 67;}
@@ -17661,10 +17930,10 @@ public class XQFTLexer extends Lexer {
                         else if ( (true) ) {s = 105;}
 
                          
-                        input.seek(index1_49);
+                        input.seek(index1_43);
                         if ( s>=0 ) return s;
                         break;
-                    case 19 : 
+                    case 33 : 
                         int LA1_7 = input.LA(1);
 
                          
@@ -17689,70 +17958,163 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_7);
                         if ( s>=0 ) return s;
                         break;
-                    case 20 : 
+                    case 34 : 
                         int LA1_74 = input.LA(1);
 
                          
                         int index1_74 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((LA1_74>='0' && LA1_74<='9')) && (state==State.DEFAULT)) {s = 122;}
+                        if ( ((LA1_74>='0' && LA1_74<='9')) && (state==State.DEFAULT)) {s = 128;}
 
                         else if ( (LA1_74=='E'||LA1_74=='e') && (state==State.DEFAULT)) {s = 76;}
 
-                        else s = 121;
+                        else s = 127;
 
                          
                         input.seek(index1_74);
                         if ( s>=0 ) return s;
                         break;
-                    case 21 : 
-                        int LA1_10 = input.LA(1);
+                    case 35 : 
+                        int LA1_42 = input.LA(1);
 
                          
-                        int index1_10 = input.index();
+                        int index1_42 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_10==':'||LA1_10=='=') && (state==State.DEFAULT)) {s = 51;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 67;}
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
 
                         else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
 
-                        else if ( (true) ) {s = 81;}
+                        else if ( (true) ) {s = 104;}
 
                          
-                        input.seek(index1_10);
+                        input.seek(index1_42);
                         if ( s>=0 ) return s;
                         break;
-                    case 22 : 
-                        int LA1_9 = input.LA(1);
+                    case 36 : 
+                        int LA1_14 = input.LA(1);
 
                          
-                        int index1_9 = input.index();
+                        int index1_14 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((LA1_9>='=' && LA1_9<='>')) && (state==State.DEFAULT)) {s = 51;}
+                        if ( ((LA1_14>='\u0000' && LA1_14<='\uFFFE')) && (state==State.DEFAULT)) {s = 85;}
 
                         else if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||state==State.IN_QUOT_ATTRIBUTE)) ) {s = 86;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 87;}
+
+                        else if ( (true) ) {s = 88;}
+
+                         
+                        input.seek(index1_14);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 37 : 
+                        int LA1_20 = input.LA(1);
+
+                         
+                        int index1_20 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
 
                         else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
 
-                        else if ( (true) ) {s = 80;}
-
                          
-                        input.seek(index1_9);
+                        input.seek(index1_20);
                         if ( s>=0 ) return s;
                         break;
-                    case 23 : 
-                        int LA1_45 = input.LA(1);
+                    case 38 : 
+                        int LA1_41 = input.LA(1);
 
                          
-                        int index1_45 = input.index();
+                        int index1_41 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                        else if ( (true) ) {s = 103;}
+
+                         
+                        input.seek(index1_41);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 39 : 
+                        int LA1_35 = input.LA(1);
+
+                         
+                        int index1_35 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_35);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 40 : 
+                        int LA1_27 = input.LA(1);
+
+                         
+                        int index1_27 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_27);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 41 : 
+                        int LA1_18 = input.LA(1);
+
+                         
+                        int index1_18 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_18);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 42 : 
+                        int LA1_39 = input.LA(1);
+
+                         
+                        int index1_39 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 67;}
@@ -17764,14 +18126,71 @@ public class XQFTLexer extends Lexer {
                         else if ( (true) ) {s = 101;}
 
                          
-                        input.seek(index1_45);
+                        input.seek(index1_39);
                         if ( s>=0 ) return s;
                         break;
-                    case 24 : 
-                        int LA1_44 = input.LA(1);
+                    case 43 : 
+                        int LA1_3 = input.LA(1);
 
                          
-                        int index1_44 = input.index();
+                        int index1_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_3=='{') && ((input.LA(1)=='{' && input.LA(2)=='{'))) {s = 62;}
+
+                        else s = 61;
+
+                         
+                        input.seek(index1_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 44 : 
+                        int LA1_17 = input.LA(1);
+
+                         
+                        int index1_17 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_17);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 45 : 
+                        int LA1_5 = input.LA(1);
+
+                         
+                        int index1_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_5==':') ) {s = 65;}
+
+                        else if ( (LA1_5=='#') ) {s = 66;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                        else if ( (true) ) {s = 70;}
+
+                         
+                        input.seek(index1_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 46 : 
+                        int LA1_50 = input.LA(1);
+
+                         
+                        int index1_50 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 67;}
@@ -17780,13 +18199,123 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
 
-                        else if ( (true) ) {s = 100;}
-
                          
-                        input.seek(index1_44);
+                        input.seek(index1_50);
                         if ( s>=0 ) return s;
                         break;
-                    case 25 : 
+                    case 47 : 
+                        int LA1_40 = input.LA(1);
+
+                         
+                        int index1_40 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                        else if ( (true) ) {s = 102;}
+
+                         
+                        input.seek(index1_40);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 48 : 
+                        int LA1_28 = input.LA(1);
+
+                         
+                        int index1_28 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 96;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_28);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 49 : 
+                        int LA1_22 = input.LA(1);
+
+                         
+                        int index1_22 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_22);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 50 : 
+                        int LA1_78 = input.LA(1);
+
+                         
+                        int index1_78 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((LA1_78>='0' && LA1_78<='9')) && (state==State.DEFAULT)) {s = 78;}
+
+                        else if ( (LA1_78=='E'||LA1_78=='e') && (state==State.DEFAULT)) {s = 76;}
+
+                        else s = 127;
+
+                         
+                        input.seek(index1_78);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 51 : 
+                        int LA1_21 = input.LA(1);
+
+                         
+                        int index1_21 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 94;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_21);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 52 : 
+                        int LA1_12 = input.LA(1);
+
+                         
+                        int index1_12 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_12=='=') && (state==State.DEFAULT)) {s = 51;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 67;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+
+                         
+                        input.seek(index1_12);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 53 : 
                         int LA1_15 = input.LA(1);
 
                          
@@ -17807,136 +18336,24 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_15);
                         if ( s>=0 ) return s;
                         break;
-                    case 26 : 
-                        int LA1_35 = input.LA(1);
+                    case 54 : 
+                        int LA1_130 = input.LA(1);
 
                          
-                        int index1_35 = input.index();
+                        int index1_130 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
 
                         else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
 
                          
-                        input.seek(index1_35);
+                        input.seek(index1_130);
                         if ( s>=0 ) return s;
                         break;
-                    case 27 : 
-                        int LA1_21 = input.LA(1);
-
-                         
-                        int index1_21 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_21);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 28 : 
-                        int LA1_124 = input.LA(1);
-
-                         
-                        int index1_124 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 87;}
-
-                         
-                        input.seek(index1_124);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 29 : 
-                        int LA1_16 = input.LA(1);
-
-                         
-                        int index1_16 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_16);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 30 : 
-                        int LA1_13 = input.LA(1);
-
-                         
-                        int index1_13 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.DEFAULT) ) {s = 84;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_13);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 31 : 
-                        int LA1_31 = input.LA(1);
-
-                         
-                        int index1_31 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_31);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 32 : 
-                        int LA1_75 = input.LA(1);
-
-                         
-                        int index1_75 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_75=='.') && (state==State.DEFAULT)) {s = 74;}
-
-                        else if ( ((LA1_75>='0' && LA1_75<='9')) && (state==State.DEFAULT)) {s = 75;}
-
-                        else if ( (LA1_75=='E'||LA1_75=='e') && (state==State.DEFAULT)) {s = 76;}
-
-                         
-                        input.seek(index1_75);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 33 : 
+                    case 55 : 
                         int LA1_33 = input.LA(1);
 
                          
@@ -17945,7 +18362,7 @@ public class XQFTLexer extends Lexer {
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 67;}
 
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 93;}
 
                         else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
 
@@ -17955,108 +18372,24 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_33);
                         if ( s>=0 ) return s;
                         break;
-                    case 34 : 
-                        int LA1_32 = input.LA(1);
+                    case 56 : 
+                        int LA1_128 = input.LA(1);
 
                          
-                        int index1_32 = input.index();
+                        int index1_128 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
+                        if ( (LA1_128=='E'||LA1_128=='e') && (state==State.DEFAULT)) {s = 76;}
 
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
+                        else if ( ((LA1_128>='0' && LA1_128<='9')) && (state==State.DEFAULT)) {s = 128;}
 
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
+                        else s = 127;
 
                          
-                        input.seek(index1_32);
+                        input.seek(index1_128);
                         if ( s>=0 ) return s;
                         break;
-                    case 35 : 
-                        int LA1_8 = input.LA(1);
-
-                         
-                        int index1_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_8=='.') && (state==State.DEFAULT)) {s = 51;}
-
-                        else if ( ((LA1_8>='0' && LA1_8<='9')) && (state==State.DEFAULT)) {s = 78;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                        else if ( (true) ) {s = 79;}
-
-                         
-                        input.seek(index1_8);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 36 : 
-                        int LA1_1 = input.LA(1);
-
-                         
-                        int index1_1 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( ((LA1_1>='<' && LA1_1<='=')) && (state==State.DEFAULT)) {s = 51;}
-
-                        else if ( (LA1_1=='!') ) {s = 52;}
-
-                        else if ( (LA1_1=='/') ) {s = 53;}
-
-                        else if ( (LA1_1=='?') ) {s = 54;}
-
-                        else s = 55;
-
-                         
-                        input.seek(index1_1);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 37 : 
-                        int LA1_43 = input.LA(1);
-
-                         
-                        int index1_43 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                        else if ( (true) ) {s = 99;}
-
-                         
-                        input.seek(index1_43);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 38 : 
-                        int LA1_47 = input.LA(1);
-
-                         
-                        int index1_47 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                        else if ( (true) ) {s = 103;}
-
-                         
-                        input.seek(index1_47);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 39 : 
+                    case 57 : 
                         int LA1_38 = input.LA(1);
 
                          
@@ -18069,336 +18402,10 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
 
-                        else if ( (true) ) {s = 94;}
+                        else if ( (true) ) {s = 100;}
 
                          
                         input.seek(index1_38);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 40 : 
-                        int LA1_36 = input.LA(1);
-
-                         
-                        int index1_36 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_36);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 41 : 
-                        int LA1_26 = input.LA(1);
-
-                         
-                        int index1_26 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_26);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 42 : 
-                        int LA1_4 = input.LA(1);
-
-                         
-                        int index1_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_4=='}') && ((input.LA(1)=='}' && input.LA(2)=='}'))) {s = 64;}
-
-                        else s = 63;
-
-                         
-                        input.seek(index1_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 43 : 
-                        int LA1_78 = input.LA(1);
-
-                         
-                        int index1_78 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_78=='E'||LA1_78=='e') && (state==State.DEFAULT)) {s = 76;}
-
-                        else if ( ((LA1_78>='0' && LA1_78<='9')) && (state==State.DEFAULT)) {s = 78;}
-
-                        else s = 121;
-
-                         
-                        input.seek(index1_78);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 44 : 
-                        int LA1_18 = input.LA(1);
-
-                         
-                        int index1_18 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_18);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 45 : 
-                        int LA1_23 = input.LA(1);
-
-                         
-                        int index1_23 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_23);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 46 : 
-                        int LA1_41 = input.LA(1);
-
-                         
-                        int index1_41 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                        else if ( (true) ) {s = 97;}
-
-                         
-                        input.seek(index1_41);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 47 : 
-                        int LA1_28 = input.LA(1);
-
-                         
-                        int index1_28 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_28);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 48 : 
-                        int LA1_6 = input.LA(1);
-
-                         
-                        int index1_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 71;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 72;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 73;}
-
-                         
-                        input.seek(index1_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 49 : 
-                        int LA1_20 = input.LA(1);
-
-                         
-                        int index1_20 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_20);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 50 : 
-                        int LA1_34 = input.LA(1);
-
-                         
-                        int index1_34 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_34);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 51 : 
-                        int LA1_12 = input.LA(1);
-
-                         
-                        int index1_12 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_12=='=') && (state==State.DEFAULT)) {s = 51;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                         
-                        input.seek(index1_12);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 52 : 
-                        int LA1_122 = input.LA(1);
-
-                         
-                        int index1_122 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( ((LA1_122>='0' && LA1_122<='9')) && (state==State.DEFAULT)) {s = 122;}
-
-                        else if ( (LA1_122=='E'||LA1_122=='e') && (state==State.DEFAULT)) {s = 76;}
-
-                        else s = 121;
-
-                         
-                        input.seek(index1_122);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 53 : 
-                        int LA1_30 = input.LA(1);
-
-                         
-                        int index1_30 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 92;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 89;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 87;}
-
-                         
-                        input.seek(index1_30);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 54 : 
-                        int LA1_3 = input.LA(1);
-
-                         
-                        int index1_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_3=='{') && ((input.LA(1)=='{' && input.LA(2)=='{'))) {s = 62;}
-
-                        else s = 61;
-
-                         
-                        input.seek(index1_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 55 : 
-                        int LA1_42 = input.LA(1);
-
-                         
-                        int index1_42 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                        else if ( (true) ) {s = 98;}
-
-                         
-                        input.seek(index1_42);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 56 : 
-                        int LA1_125 = input.LA(1);
-
-                         
-                        int index1_125 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 87;}
-
-                         
-                        input.seek(index1_125);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 57 : 
-                        int LA1_48 = input.LA(1);
-
-                         
-                        int index1_48 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 67;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 68;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 69;}
-
-                        else if ( (true) ) {s = 104;}
-
-                         
-                        input.seek(index1_48);
                         if ( s>=0 ) return s;
                         break;
             }
