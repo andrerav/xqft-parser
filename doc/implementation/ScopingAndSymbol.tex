@@ -1,0 +1,57 @@
+\section{Scoping and symbol tables}
+Scoping was implemented using a simple tree structure consisting of parent- and
+child scopes. XQuery only allows new scopes to be defined through the
+enclosedExpr production rule. This makes it trivial to start a new scope at the
+beginning of a enclosedExpr, and end the scope and the end of an enclosedExpr.
+This has been implemented as follows:
+\begin{figure}[!h]
+\begin{verbatim}
+enclosedExpr : 
+    LBRACESi {
+        Scope parent = this.currentScope; 
+        this.currentScope = new Scope(); 
+        this.currentScope.setParent(parent); 
+    }
+    expr 
+    RBRACSi { 
+        this.currentScope = this.currentScope.getParent(); 
+    }
+;
+\end{verbatim}
+\caption{Scoping logic embedded in grammar definition}
+\end{figure}
+
+Where this.currentScope is a reference to the ``current'' scope in this
+context. This member variable is initiated with an empty scope when an object
+of the parser class is instantiated.
+
+The implementation above (which is formatted slightly for brevity) will
+automatically build a scope tree as the input is parsed.
+
+The currentScope object, which is an object of type Scope, holds one reference
+to a symbol table. The symbol table, which is a simple subclass of
+java.util.HashMap, is not capable of performing symbol lookups throughout the
+scope tree. This functionality is rather provided by the Scope class. This UML diagram
+illustrates the relationship between the Scope, SymTab, and Symbol classes:
+\begin{figure}[!h]
+  \centering
+    \includegraphics[scale=0.8]{img/uml1}
+  \caption{Simplified UML overview of classes related to scope and symbol table}
+\end{figure}
+
+\section{Type checking}
+XQuery/XPath has a well-defined type hierarchy:
+\begin{figure}[!h]
+  \centering
+    \includegraphics[scale=0.5]{img/xpathtypehierarchy}
+  \caption{XQuery/XPath type hierarchy \cite{w3c04} (graphic copyright
+  \copyright W3C)}
+\end{figure}
+All types are derived from the following ``super types'' in the hierarchy:
+\begin{itemize}
+  \item Node types
+  \item Structure types
+  \item Atomic types
+  \item Simple types
+\end{itemize}
+There are various implementations of the XQuery
