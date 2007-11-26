@@ -22,7 +22,25 @@
 	XQFTLexer lexer;
 	
 	public void setTokenStream(TokenStream input) {
+				String inputz =  "<html> \n" +                                                   //1
+                        "{ \n"+                                                         //2
+                        "for \$act in doc(\"hamlet.xml\")//ACT\n" +                      //3
+                        "let \$speakers := distinct-values(\$act//SPEAKER)\n"+            //4
+                        "return\n"+                                                     //5
+                        "<span>\n"+                                                     //6
+                        "<h1>{ \$act/TITLE/text() }</h1>\n"+                             //7
+                        "<ul>\n"+                                                       //8
+                        "{\n"+                                                          //9
+                        "for \$speaker in \$speakers\n"+                                  //10
+                        "return <li>{ \$speaker }</li>\n"+                               //11
+                        "}\n"+                                                          //12
+                        "</ul>\n"+                                                      //13
+                        "</span>\n"+                                                    //14
+                        "}\n"+                                                          //15
+                        "</html>\n";                                                    //16
+                        	CharStream cs = new ANTLRStringStream(inputz);
 		lexer = (XQFTLexer)input.getTokenSource();
+		lexer.setCharStream(cs);
 		UnbufferedCommonTokenStream tokenz = new UnbufferedCommonTokenStream();
 		tokenz.setTokenSource(lexer);
 		super.setTokenStream(tokenz);
