@@ -1,0 +1,38 @@
+\section{Unit testing the grammar}
+Unit testing can be a powerful tool for asserting functionality and can be a
+helpful aid in debugging and prevention of regression errors.  For unit testing the
+grammar specification, gUnit \cite{gunit00} was employed. This tool uses a
+syntax similar to Antlr itself, however instead of defining productions, one
+defines a set of inputs for some rule, as well as the expected result. Consider
+this example:
+
+\begin{verbatim}
+gunit XQFT;
+@header{package no.ntnu.xqft.parse;}
+
+piTarget: // Test piTarget rule
+
+    // Any case permutation of 'XML' must fail
+    "Xml" FAIL
+    "XMl" FAIL
+    "XML" FAIL
+    "XmL" FAIL
+\end{verbatim}
+
+This is a complete input file for gUnit, and will automatically discover the
+classes XQFTLexer and XQFTParser in the package no.ntnu.xqft.parse. gUnit will
+then proceed to invoke the lexer with ``Xml'', ``XMl'', ``XML'', and ``XmL'' as
+input, and pass the lexer to an instance of XQFTParser and execute the production
+piTarget. For all these inputs, it will assert that the parser emits an error
+(i.e it must fail to pass the test).
+
+In case of a test where the parser should not fail, the syntax is as follows:
+\begin{verbatim}
+forClause:
+	"for $a in document(\"abc.xml\")/a/b/text()" OK
+\end{verbatim}
+Here gUnit will assert that the parser will not fail for the given inpu (i.e it
+must not fail to pass the test).
+
+gUnit is also capable of parsing abstract syntax trees built by the generated
+parser, but this feature has not been used in this project.
