@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2007-12-04 17:52:23
+// $ANTLR 3.0.1 etc/XQFT.g 2007-12-04 19:00:26
 
 	package no.ntnu.xqft.parse;
 
@@ -13,240 +13,240 @@ public class XQFTParser extends Parser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "XQUERY", "VERSION", "StringLiteral", "ENCODING", "SEMICOLONSi", "MODULE", "NAMESPACE", "NCName", "EQSi", "COMMASi", "DECLARE", "DEFAULT", "ELEMENT", "FUNCTION", "BOUNDARYSPACE", "PRESERVE", "STRIP", "COLLATION", "BASE_URI", "CONSTRUCTION", "ORDERING", "ORDERED", "UNORDERED", "ORDER", "EMPTY", "GREATEST", "LEAST", "COPY_NAMESPACES", "NOPRESERVE", "INHERIT", "NOINHERIT", "IMPORT", "SCHEMA", "AT", "VARIABLE", "DOLLARSi", "ASSIGNSi", "EXTERNAL", "COLONSi", "AS", "LPARSi", "RPARSi", "LBRACESi", "RBRACSi", "OPTION", "FTOPTION", "EMPTY_SEQUENCE", "ITEM", "DOCUMENT_NODE", "QUESTIONSi", "STARSi", "SCHEMAELEMENT", "ATTRIBUTE", "SCHEMAATTRIBUTE", "PROCESSING_INSTRUCTION", "COMMENT", "TEXT", "NODE", "PLUSSi", "RETURN", "FOR", "IN", "SCORE", "LET", "WHERE", "BY", "STABLE", "ASCENDING", "DESCENDING", "SOME", "EVERY", "SATISFIES", "TYPESWITCH", "CASE", "IF", "THEN", "ELSE", "OR", "AND", "FTCONTAINS", "TO", "MINUSSi", "DIV", "IDIV", "MOD", "UNION", "PIPESi", "INTERSECT", "EXCEPT", "INSTANCE", "OF", "TREAT", "CASTABLE", "CAST", "WITHOUT", "CONTENT", "EQ", "NE", "LT", "LE", "GT", "GE", "NEQSi", "LTSi", "LTOREQSi", "GTSi", "GTOREQSi", "IS", "NODEBEFORESi", "NODEAFTERSi", "WEIGHT", "FTOR", "FTAND", "NOT", "FTNOT", "IntegerLiteral", "DecimalLiteral", "DoubleLiteral", "ANY", "WORD", "ALL", "WORDS", "PHRASE", "OCCURS", "TIMES", "EXACTLY", "MOST", "FROM", "LPRAGSi", "PragmaContents", "RPRAGSi", "WINDOW", "SENTENCES", "PARAGRAPHS", "DISTANCE", "SAME", "DIFFERENT", "SENTENCE", "PARAGRAPH", "START", "END", "ENTIRE", "LANGUAGE", "WITH", "WILDCARDS", "THESAURUS", "RELATIONSHIP", "LEVELS", "STEMMING", "INSENSITIVE", "SENSITIVE", "LOWERCASE", "UPPERCASE", "DIACRITICS", "STOP", "VALIDATE", "LAX", "STRICT", "DBLSLASHSi", "SLASHSi", "PARENT", "ANCESTOR", "PRECEDING_SIBLING", "PRECEDING", "ANCESTOR_OR_SELF", "DBLCOLONSi", "DOTDOTSi", "CHILD", "DESCENDANT", "SELF", "DESCENDANT_OR_SELF", "FOLLOWING_SIBLING", "FOLLOWING", "ATSi", "LBRACKSi", "RBRACKSi", "DOTSi", "RSELFTERMSi", "LENDTAGSi", "QUOTSi", "QuotAttributeContent", "APOSSi", "AposAttributeContent", "ElementContent", "LCDATASi", "CDataContents", "RCDATASi", "LCOMMENTSi", "DirCommentContent", "RCOMMENTSi", "LPISi", "PiTarget", "DirPiContents", "RPISi", "DOCUMENT", "CDataSectionLEX", "DirPIConstructor", "DirCommentConstLEX", "PragmaLEX", "Comment", "LexSigns", "S", "LexLiterals", "TOKENSWITCH", "PredefinedEntityRef", "CharRef", "AMPERSi", "QuotAttrContentChar", "AposAttrContentChar", "ElementContentChar", "CREFDECSi", "CREFHEXSi", "NotChar", "Name", "Letter", "UNDERSCORESi", "NameChar", "Digit", "CombiningChar", "Extender", "SHARPSi", "LXQCOMMENTSi", "RXQCOMMENTSi", "Digits", "NCNameStartChar", "NCNameChar", "EXCLSi", "BACKSLASHSi", "ExtraChar", "BaseChar", "Ideographic", "CleanChar", "Char"
     };
-    public static final int FUNCTION=17;
-    public static final int MOD=88;
-    public static final int LPISi=194;
-    public static final int CREFHEXSi=215;
-    public static final int NOT=117;
-    public static final int EXCEPT=92;
-    public static final int EOF=-1;
-    public static final int PragmaContents=133;
-    public static final int BaseChar=233;
-    public static final int Ideographic=234;
-    public static final int DISTANCE=138;
-    public static final int IMPORT=35;
-    public static final int ASSIGNSi=40;
-    public static final int CREFDECSi=214;
-    public static final int SENTENCE=141;
-    public static final int PRECEDING=167;
-    public static final int WORDS=125;
-    public static final int RETURN=63;
-    public static final int ELEMENT=16;
-    public static final int RPARSi=45;
-    public static final int DOLLARSi=39;
-    public static final int EQ=100;
-    public static final int DIACRITICS=157;
-    public static final int DBLCOLONSi=169;
-    public static final int CHILD=171;
-    public static final int GE=105;
-    public static final int STRICT=161;
-    public static final int PRESERVE=19;
-    public static final int UNDERSCORESi=219;
-    public static final int ELSE=80;
-    public static final int RCDATASi=190;
-    public static final int TYPESWITCH=76;
-    public static final int STOP=158;
-    public static final int CONTENT=99;
-    public static final int S=205;
-    public static final int FTOR=115;
-    public static final int EMPTY=28;
-    public static final int INTERSECT=91;
-    public static final int MINUSSi=85;
-    public static final int FTAND=116;
-    public static final int LANGUAGE=146;
-    public static final int LOWERCASE=155;
-    public static final int LPRAGSi=132;
-    public static final int INSENSITIVE=153;
-    public static final int APOSSi=185;
-    public static final int LBRACKSi=178;
-    public static final int RSELFTERMSi=181;
-    public static final int GT=104;
-    public static final int END=144;
-    public static final int DoubleLiteral=121;
-    public static final int QUOTSi=183;
-    public static final int LexLiterals=206;
-    public static final int DirCommentContent=192;
-    public static final int CharRef=209;
-    public static final int OPTION=48;
-    public static final int Extender=223;
-    public static final int OCCURS=127;
-    public static final int THESAURUS=149;
-    public static final int SATISFIES=75;
-    public static final int VERSION=5;
-    public static final int RXQCOMMENTSi=226;
-    public static final int IDIV=87;
-    public static final int ASCENDING=71;
-    public static final int ExtraChar=232;
-    public static final int AT=37;
-    public static final int EMPTY_SEQUENCE=50;
-    public static final int AS=43;
-    public static final int PARENT=164;
-    public static final int CONSTRUCTION=23;
-    public static final int THEN=79;
-    public static final int ATSi=177;
-    public static final int DOCUMENT=198;
-    public static final int DBLSLASHSi=162;
-    public static final int COLLATION=21;
-    public static final int LCOMMENTSi=191;
-    public static final int ANCESTOR=165;
-    public static final int AMPERSi=210;
-    public static final int CleanChar=235;
-    public static final int CASTABLE=96;
-    public static final int ElementContent=187;
-    public static final int MOST=130;
-    public static final int EQSi=12;
-    public static final int BY=69;
-    public static final int NODEBEFORESi=112;
-    public static final int DOTSi=180;
-    public static final int NCNameChar=229;
-    public static final int ITEM=51;
-    public static final int TO=84;
-    public static final int INHERIT=33;
-    public static final int ANCESTOR_OR_SELF=168;
-    public static final int DOTDOTSi=170;
-    public static final int STEMMING=152;
-    public static final int LTOREQSi=108;
     public static final int NotChar=216;
-    public static final int DirPIConstructor=200;
-    public static final int TEXT=60;
-    public static final int MODULE=9;
-    public static final int FTNOT=118;
-    public static final int ORDERED=25;
-    public static final int SAME=139;
-    public static final int UNION=89;
-    public static final int StringLiteral=6;
-    public static final int FOLLOWING_SIBLING=175;
-    public static final int SCHEMA=36;
-    public static final int COLONSi=42;
-    public static final int PiTarget=195;
-    public static final int ENTIRE=145;
-    public static final int INSTANCE=93;
-    public static final int VALIDATE=159;
-    public static final int WILDCARDS=148;
-    public static final int NOINHERIT=34;
-    public static final int DECLARE=14;
-    public static final int START=143;
-    public static final int IntegerLiteral=119;
-    public static final int DIV=86;
-    public static final int CombiningChar=222;
-    public static final int DESCENDING=72;
-    public static final int SELF=173;
-    public static final int RPRAGSi=134;
-    public static final int NEQSi=106;
-    public static final int CAST=97;
-    public static final int SENTENCES=136;
-    public static final int EXTERNAL=41;
-    public static final int LT=102;
-    public static final int QUESTIONSi=53;
-    public static final int RBRACKSi=179;
-    public static final int BACKSLASHSi=231;
-    public static final int CASE=77;
-    public static final int ENCODING=7;
-    public static final int RCOMMENTSi=193;
-    public static final int PLUSSi=62;
-    public static final int DIFFERENT=140;
-    public static final int PragmaLEX=202;
-    public static final int SCHEMAATTRIBUTE=57;
-    public static final int DOCUMENT_NODE=52;
-    public static final int LXQCOMMENTSi=225;
-    public static final int SEMICOLONSi=8;
-    public static final int WORD=123;
-    public static final int SHARPSi=224;
-    public static final int UPPERCASE=156;
-    public static final int Comment=203;
-    public static final int Char=236;
-    public static final int Digits=227;
-    public static final int QuotAttrContentChar=211;
-    public static final int FTOPTION=49;
-    public static final int AposAttributeContent=186;
-    public static final int COMMENT=59;
-    public static final int NE=101;
-    public static final int CDataSectionLEX=199;
-    public static final int BOUNDARYSPACE=18;
-    public static final int NODE=61;
-    public static final int CDataContents=189;
-    public static final int AposAttrContentChar=212;
-    public static final int GREATEST=29;
-    public static final int WITHOUT=98;
-    public static final int EVERY=74;
-    public static final int SENSITIVE=154;
-    public static final int PROCESSING_INSTRUCTION=58;
-    public static final int WEIGHT=114;
-    public static final int OF=94;
-    public static final int LTSi=107;
-    public static final int NODEAFTERSi=113;
-    public static final int RELATIONSHIP=150;
-    public static final int NAMESPACE=10;
-    public static final int LCDATASi=188;
-    public static final int LBRACESi=46;
-    public static final int VARIABLE=38;
-    public static final int DESCENDANT_OR_SELF=174;
-    public static final int BASE_URI=22;
-    public static final int NOPRESERVE=32;
-    public static final int DirPiContents=196;
-    public static final int OR=81;
-    public static final int LPARSi=44;
-    public static final int STARSi=54;
-    public static final int QuotAttributeContent=184;
-    public static final int RPISi=197;
-    public static final int FROM=131;
-    public static final int PRECEDING_SIBLING=166;
-    public static final int Letter=218;
-    public static final int NCName=11;
-    public static final int WHERE=68;
-    public static final int LAX=160;
-    public static final int ORDER=27;
-    public static final int ATTRIBUTE=56;
-    public static final int FOR=64;
-    public static final int EXCLSi=230;
-    public static final int AND=82;
-    public static final int FOLLOWING=176;
-    public static final int FTCONTAINS=83;
-    public static final int IF=78;
-    public static final int SCHEMAELEMENT=55;
-    public static final int IN=65;
-    public static final int PARAGRAPH=142;
-    public static final int COPY_NAMESPACES=31;
-    public static final int IS=111;
-    public static final int SOME=73;
-    public static final int ALL=124;
-    public static final int STRIP=20;
-    public static final int STABLE=70;
-    public static final int PIPESi=90;
-    public static final int WITH=147;
-    public static final int NCNameStartChar=228;
     public static final int LENDTAGSi=182;
-    public static final int RBRACSi=47;
-    public static final int GTSi=109;
-    public static final int XQUERY=4;
+    public static final int QUOTSi=183;
+    public static final int END=144;
+    public static final int NOINHERIT=34;
+    public static final int LBRACESi=46;
+    public static final int INSTANCE=93;
+    public static final int CONTENT=99;
+    public static final int STOP=158;
+    public static final int LAX=160;
+    public static final int PIPESi=90;
+    public static final int IMPORT=35;
+    public static final int APOSSi=185;
+    public static final int AposAttrContentChar=212;
+    public static final int DBLCOLONSi=169;
+    public static final int Letter=218;
+    public static final int ORDER=27;
+    public static final int CASTABLE=96;
+    public static final int DIACRITICS=157;
+    public static final int RCOMMENTSi=193;
+    public static final int TYPESWITCH=76;
+    public static final int MODULE=9;
+    public static final int VERSION=5;
+    public static final int Ideographic=234;
+    public static final int DBLSLASHSi=162;
     public static final int EXACTLY=129;
-    public static final int DEFAULT=15;
-    public static final int DESCENDANT=172;
-    public static final int NameChar=220;
-    public static final int COMMASi=13;
-    public static final int SLASHSi=163;
-    public static final int Digit=221;
-    public static final int DecimalLiteral=120;
-    public static final int GTOREQSi=110;
-    public static final int UNORDERED=26;
-    public static final int PHRASE=126;
+    public static final int FTNOT=118;
+    public static final int DECLARE=14;
+    public static final int GTSi=109;
     public static final int TOKENSWITCH=207;
     public static final int ElementContentChar=213;
+    public static final int OCCURS=127;
+    public static final int UNION=89;
+    public static final int STRIP=20;
+    public static final int NameChar=220;
+    public static final int PLUSSi=62;
+    public static final int QuotAttrContentChar=211;
+    public static final int SAME=139;
+    public static final int FTCONTAINS=83;
+    public static final int QUESTIONSi=53;
+    public static final int DESCENDING=72;
+    public static final int FTOPTION=49;
+    public static final int DOCUMENT_NODE=52;
+    public static final int ANCESTOR_OR_SELF=168;
+    public static final int LCDATASi=188;
     public static final int ANY=122;
+    public static final int RELATIONSHIP=150;
+    public static final int GE=105;
+    public static final int CREFHEXSi=215;
+    public static final int GTOREQSi=110;
+    public static final int ELSE=80;
+    public static final int WORD=123;
+    public static final int SCHEMAATTRIBUTE=57;
+    public static final int SENSITIVE=154;
+    public static final int SELF=173;
+    public static final int DISTANCE=138;
+    public static final int ExtraChar=232;
+    public static final int LPISi=194;
+    public static final int CREFDECSi=214;
+    public static final int NODEBEFORESi=112;
+    public static final int TEXT=60;
+    public static final int CombiningChar=222;
+    public static final int PARENT=164;
+    public static final int NCName=11;
     public static final int SCORE=66;
-    public static final int LexSigns=204;
-    public static final int ORDERING=24;
-    public static final int PredefinedEntityRef=208;
-    public static final int Name=217;
-    public static final int LEAST=30;
-    public static final int WINDOW=135;
+    public static final int FTOR=115;
+    public static final int PragmaLEX=202;
+    public static final int Digit=221;
+    public static final int EMPTY_SEQUENCE=50;
+    public static final int EXTERNAL=41;
+    public static final int UNDERSCORESi=219;
+    public static final int RCDATASi=190;
+    public static final int DOLLARSi=39;
+    public static final int CAST=97;
+    public static final int MOD=88;
+    public static final int EXCEPT=92;
+    public static final int OR=81;
+    public static final int NOPRESERVE=32;
+    public static final int S=205;
+    public static final int RPARSi=45;
+    public static final int BY=69;
+    public static final int SCHEMAELEMENT=55;
+    public static final int COLONSi=42;
+    public static final int SLASHSi=163;
+    public static final int WEIGHT=114;
+    public static final int UPPERCASE=156;
+    public static final int PRECEDING_SIBLING=166;
+    public static final int SEMICOLONSi=8;
+    public static final int FROM=131;
+    public static final int STEMMING=152;
     public static final int TIMES=128;
-    public static final int PARAGRAPHS=137;
-    public static final int LEVELS=151;
-    public static final int DirCommentConstLEX=201;
+    public static final int EMPTY=28;
+    public static final int ASCENDING=71;
+    public static final int CleanChar=235;
+    public static final int IntegerLiteral=119;
+    public static final int SENTENCES=136;
+    public static final int NE=101;
+    public static final int COMMENT=59;
+    public static final int AposAttributeContent=186;
+    public static final int MINUSSi=85;
+    public static final int NCNameChar=229;
+    public static final int ENTIRE=145;
+    public static final int WITH=147;
+    public static final int IN=65;
+    public static final int SOME=73;
+    public static final int MOST=130;
+    public static final int RETURN=63;
+    public static final int IF=78;
     public static final int LET=67;
+    public static final int Extender=223;
+    public static final int NODE=61;
+    public static final int FOR=64;
+    public static final int PRESERVE=19;
+    public static final int DEFAULT=15;
+    public static final int DirCommentContent=192;
+    public static final int LEVELS=151;
+    public static final int LPRAGSi=132;
+    public static final int COMMASi=13;
+    public static final int ATTRIBUTE=56;
+    public static final int CHILD=171;
+    public static final int Digits=227;
+    public static final int NOT=117;
+    public static final int OPTION=48;
+    public static final int ELEMENT=16;
+    public static final int Comment=203;
+    public static final int INSENSITIVE=153;
+    public static final int DOCUMENT=198;
+    public static final int AS=43;
+    public static final int ENCODING=7;
+    public static final int BOUNDARYSPACE=18;
     public static final int TREAT=95;
+    public static final int NAMESPACE=10;
+    public static final int LXQCOMMENTSi=225;
+    public static final int THEN=79;
+    public static final int LEAST=30;
+    public static final int WORDS=125;
+    public static final int PiTarget=195;
+    public static final int CDataContents=189;
+    public static final int PARAGRAPHS=137;
+    public static final int NCNameStartChar=228;
+    public static final int TO=84;
+    public static final int AND=82;
+    public static final int BASE_URI=22;
+    public static final int QuotAttributeContent=184;
+    public static final int FUNCTION=17;
+    public static final int LexSigns=204;
+    public static final int NEQSi=106;
+    public static final int LANGUAGE=146;
     public static final int LE=103;
+    public static final int LOWERCASE=155;
+    public static final int BACKSLASHSi=231;
+    public static final int SCHEMA=36;
+    public static final int CONSTRUCTION=23;
+    public static final int STARSi=54;
+    public static final int RPRAGSi=134;
+    public static final int WILDCARDS=148;
+    public static final int DOTDOTSi=170;
+    public static final int DIFFERENT=140;
+    public static final int LTOREQSi=108;
+    public static final int INTERSECT=91;
+    public static final int AT=37;
+    public static final int GREATEST=29;
+    public static final int DOTSi=180;
+    public static final int BaseChar=233;
+    public static final int Char=236;
+    public static final int EQ=100;
+    public static final int LT=102;
+    public static final int OF=94;
+    public static final int WINDOW=135;
+    public static final int Name=217;
+    public static final int FOLLOWING=176;
+    public static final int CASE=77;
+    public static final int RXQCOMMENTSi=226;
+    public static final int DESCENDANT_OR_SELF=174;
+    public static final int CDataSectionLEX=199;
+    public static final int THESAURUS=149;
+    public static final int RSELFTERMSi=181;
+    public static final int FTAND=116;
+    public static final int DecimalLiteral=120;
+    public static final int PragmaContents=133;
+    public static final int DIV=86;
+    public static final int EQSi=12;
+    public static final int PARAGRAPH=142;
+    public static final int ALL=124;
+    public static final int EXCLSi=230;
+    public static final int DirPIConstructor=200;
+    public static final int WHERE=68;
+    public static final int WITHOUT=98;
+    public static final int EVERY=74;
+    public static final int XQUERY=4;
+    public static final int IDIV=87;
+    public static final int SATISFIES=75;
+    public static final int DESCENDANT=172;
+    public static final int ATSi=177;
+    public static final int STRICT=161;
+    public static final int RBRACKSi=179;
+    public static final int FOLLOWING_SIBLING=175;
+    public static final int STABLE=70;
+    public static final int DoubleLiteral=121;
+    public static final int START=143;
+    public static final int AMPERSi=210;
+    public static final int VALIDATE=159;
+    public static final int PRECEDING=167;
+    public static final int ORDERING=24;
+    public static final int COPY_NAMESPACES=31;
+    public static final int ASSIGNSi=40;
+    public static final int UNORDERED=26;
+    public static final int PredefinedEntityRef=208;
+    public static final int LTSi=107;
+    public static final int SENTENCE=141;
+    public static final int INHERIT=33;
+    public static final int LexLiterals=206;
+    public static final int SHARPSi=224;
+    public static final int IS=111;
+    public static final int GT=104;
+    public static final int PHRASE=126;
+    public static final int StringLiteral=6;
+    public static final int RPISi=197;
+    public static final int DirPiContents=196;
+    public static final int ITEM=51;
+    public static final int ORDERED=25;
+    public static final int DirCommentConstLEX=201;
+    public static final int PROCESSING_INSTRUCTION=58;
+    public static final int NODEAFTERSi=113;
+    public static final int CharRef=209;
+    public static final int COLLATION=21;
+    public static final int LPARSi=44;
+    public static final int ANCESTOR=165;
+    public static final int EOF=-1;
+    public static final int VARIABLE=38;
+    public static final int RBRACSi=47;
+    public static final int ElementContent=187;
+    public static final int LCOMMENTSi=191;
+    public static final int LBRACKSi=178;
 
         public XQFTParser(TokenStream input) {
             super(input);
@@ -263,7 +263,7 @@ public class XQFTParser extends Parser {
     	//Scope currentScope = new Scope();	   // @init-ting her ogsaa
     	XQFTLexer lexer;
     	/*
-    	public void setTokenStream(TokenStream input) {
+    	/*public void setTokenStream(TokenStream input) {
     				String inputz =  "<html> \n" +                                                   //1
                             "{ \n"+                                                         //2
                             "for $act in doc(\"hamlet.xml\")//ACT\n" +                      //3
@@ -287,7 +287,7 @@ public class XQFTParser extends Parser {
     		tokenz.setTokenSource(lexer);
     		super.setTokenStream(tokenz);
      	
-    	}
+    	}*/
     */
 
         protected void mismatch(IntStream input, int ttype, BitSet follow)
@@ -699,11 +699,11 @@ public class XQFTParser extends Parser {
             	            {
             	            int LA5_3 = input.LA(3);
 
-            	            if ( (LA5_3==COLLATION||LA5_3==ORDER) ) {
-            	                alt5=2;
-            	            }
-            	            else if ( ((LA5_3>=ELEMENT && LA5_3<=FUNCTION)) ) {
+            	            if ( ((LA5_3>=ELEMENT && LA5_3<=FUNCTION)) ) {
             	                alt5=1;
+            	            }
+            	            else if ( (LA5_3==COLLATION||LA5_3==ORDER) ) {
+            	                alt5=2;
             	            }
             	            else {
             	                if (backtracking>0) {failed=true; return ;}
@@ -830,6 +830,11 @@ public class XQFTParser extends Parser {
             	            alt7=4;
             	            }
             	            break;
+            	        case OPTION:
+            	            {
+            	            alt7=3;
+            	            }
+            	            break;
             	        case VARIABLE:
             	            {
             	            alt7=1;
@@ -838,11 +843,6 @@ public class XQFTParser extends Parser {
             	        case FUNCTION:
             	            {
             	            alt7=2;
-            	            }
-            	            break;
-            	        case OPTION:
-            	            {
-            	            alt7=3;
             	            }
             	            break;
             	        default:
@@ -983,38 +983,9 @@ public class XQFTParser extends Parser {
 
             if ( (LA9_0==DECLARE) ) {
                 switch ( input.LA(2) ) {
-                case ORDERING:
-                    {
-                    alt9=5;
-                    }
-                    break;
-                case CONSTRUCTION:
-                    {
-                    alt9=4;
-                    }
-                    break;
                 case BASE_URI:
                     {
                     alt9=3;
-                    }
-                    break;
-                case DEFAULT:
-                    {
-                    int LA9_5 = input.LA(3);
-
-                    if ( (LA9_5==COLLATION) ) {
-                        alt9=2;
-                    }
-                    else if ( (LA9_5==ORDER) ) {
-                        alt9=6;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return ;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("146:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );", 9, 5, input);
-
-                        throw nvae;
-                    }
                     }
                     break;
                 case BOUNDARYSPACE:
@@ -1022,9 +993,38 @@ public class XQFTParser extends Parser {
                     alt9=1;
                     }
                     break;
+                case ORDERING:
+                    {
+                    alt9=5;
+                    }
+                    break;
                 case COPY_NAMESPACES:
                     {
                     alt9=7;
+                    }
+                    break;
+                case DEFAULT:
+                    {
+                    int LA9_6 = input.LA(3);
+
+                    if ( (LA9_6==COLLATION) ) {
+                        alt9=2;
+                    }
+                    else if ( (LA9_6==ORDER) ) {
+                        alt9=6;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return ;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("146:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );", 9, 6, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case CONSTRUCTION:
+                    {
+                    alt9=4;
                     }
                     break;
                 default:
@@ -1467,11 +1467,11 @@ public class XQFTParser extends Parser {
             if ( (LA10_0==IMPORT) ) {
                 int LA10_1 = input.LA(2);
 
-                if ( (LA10_1==MODULE) ) {
-                    alt10=2;
-                }
-                else if ( (LA10_1==SCHEMA) ) {
+                if ( (LA10_1==SCHEMA) ) {
                     alt10=1;
+                }
+                else if ( (LA10_1==MODULE) ) {
+                    alt10=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return ;}
@@ -6496,11 +6496,11 @@ public class XQFTParser extends Parser {
                 {
                 int LA96_2 = input.LA(2);
 
-                if ( (LA96_2==LEAST) ) {
-                    alt96=2;
-                }
-                else if ( (LA96_2==MOST) ) {
+                if ( (LA96_2==MOST) ) {
                     alt96=3;
+                }
+                else if ( (LA96_2==LEAST) ) {
+                    alt96=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return ;}
@@ -7045,11 +7045,11 @@ public class XQFTParser extends Parser {
             if ( (LA101_0==AT) ) {
                 int LA101_1 = input.LA(2);
 
-                if ( (LA101_1==END) ) {
-                    alt101=2;
-                }
-                else if ( (LA101_1==START) ) {
+                if ( (LA101_1==START) ) {
                     alt101=1;
+                }
+                else if ( (LA101_1==END) ) {
+                    alt101=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return ;}
@@ -7123,9 +7123,10 @@ public class XQFTParser extends Parser {
             case WITH:
                 {
                 switch ( input.LA(2) ) {
-                case STEMMING:
+                case DEFAULT:
+                case STOP:
                     {
-                    alt102=4;
+                    alt102=7;
                     }
                     break;
                 case THESAURUS:
@@ -7133,10 +7134,9 @@ public class XQFTParser extends Parser {
                     alt102=3;
                     }
                     break;
-                case DEFAULT:
-                case STOP:
+                case STEMMING:
                     {
-                    alt102=7;
+                    alt102=4;
                     }
                     break;
                 case WILDCARDS:
@@ -7157,14 +7157,14 @@ public class XQFTParser extends Parser {
             case WITHOUT:
                 {
                 switch ( input.LA(2) ) {
+                case WILDCARDS:
+                    {
+                    alt102=2;
+                    }
+                    break;
                 case STEMMING:
                     {
                     alt102=4;
-                    }
-                    break;
-                case THESAURUS:
-                    {
-                    alt102=3;
                     }
                     break;
                 case STOP:
@@ -7172,9 +7172,9 @@ public class XQFTParser extends Parser {
                     alt102=7;
                     }
                     break;
-                case WILDCARDS:
+                case THESAURUS:
                     {
-                    alt102=2;
+                    alt102=3;
                     }
                     break;
                 default:
@@ -8498,10 +8498,7 @@ public class XQFTParser extends Parser {
                     {
                     int LA122_9 = input.LA(3);
 
-                    if ( (LA122_9==STARSi) ) {
-                        alt122=2;
-                    }
-                    else if ( (LA122_9==NCName) ) {
+                    if ( (LA122_9==NCName) ) {
                         int LA122_10 = input.LA(4);
 
                         if ( (LA122_10==EOF||LA122_10==SEMICOLONSi||(LA122_10>=EQSi && LA122_10<=COMMASi)||LA122_10==DEFAULT||LA122_10==COLLATION||(LA122_10>=ORDER && LA122_10<=EMPTY)||LA122_10==RPARSi||LA122_10==RBRACSi||LA122_10==STARSi||(LA122_10>=PLUSSi && LA122_10<=FOR)||(LA122_10>=LET && LA122_10<=WHERE)||(LA122_10>=STABLE && LA122_10<=DESCENDING)||LA122_10==SATISFIES||LA122_10==CASE||(LA122_10>=ELSE && LA122_10<=INSTANCE)||(LA122_10>=TREAT && LA122_10<=WITHOUT)||(LA122_10>=EQ && LA122_10<=NODEAFTERSi)||LA122_10==WORDS||LA122_10==TIMES||(LA122_10>=SENTENCES && LA122_10<=PARAGRAPHS)||LA122_10==LEVELS||(LA122_10>=DBLSLASHSi && LA122_10<=SLASHSi)||(LA122_10>=LBRACKSi && LA122_10<=RBRACKSi)) ) {
@@ -8518,6 +8515,9 @@ public class XQFTParser extends Parser {
                             throw nvae;
                         }
                     }
+                    else if ( (LA122_9==STARSi) ) {
+                        alt122=2;
+                    }
                     else {
                         if (backtracking>0) {failed=true; return ;}
                         NoViableAltException nvae =
@@ -8525,11 +8525,6 @@ public class XQFTParser extends Parser {
 
                         throw nvae;
                     }
-                    }
-                    break;
-                case LPARSi:
-                    {
-                    alt122=1;
                     }
                     break;
                 case EOF:
@@ -8598,6 +8593,11 @@ public class XQFTParser extends Parser {
                     alt122=2;
                     }
                     break;
+                case LPARSi:
+                    {
+                    alt122=1;
+                    }
+                    break;
                 default:
                     if (backtracking>0) {failed=true; return ;}
                     NoViableAltException nvae =
@@ -8650,11 +8650,11 @@ public class XQFTParser extends Parser {
                 {
                 int LA122_5 = input.LA(2);
 
-                if ( (LA122_5==LPARSi) ) {
-                    alt122=2;
-                }
-                else if ( (LA122_5==LBRACESi) ) {
+                if ( (LA122_5==LBRACESi) ) {
                     alt122=1;
+                }
+                else if ( (LA122_5==LPARSi) ) {
+                    alt122=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return ;}
@@ -8999,11 +8999,11 @@ public class XQFTParser extends Parser {
                 if ( (LA126_1==COLONSi) ) {
                     int LA126_3 = input.LA(3);
 
-                    if ( (LA126_3==STARSi) ) {
-                        alt126=2;
-                    }
-                    else if ( (LA126_3==NCName) ) {
+                    if ( (LA126_3==NCName) ) {
                         alt126=1;
+                    }
+                    else if ( (LA126_3==STARSi) ) {
+                        alt126=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return ;}
@@ -9178,11 +9178,11 @@ public class XQFTParser extends Parser {
                 {
                 int LA128_1 = input.LA(2);
 
-                if ( (LA128_1==DBLCOLONSi) ) {
-                    alt128=1;
-                }
-                else if ( (LA128_1==LPARSi) ) {
+                if ( (LA128_1==LPARSi) ) {
                     alt128=2;
+                }
+                else if ( (LA128_1==DBLCOLONSi) ) {
+                    alt128=1;
                 }
                 else {
                     if (backtracking>0) {failed=true; return ;}
@@ -11148,11 +11148,11 @@ public class XQFTParser extends Parser {
     }
     // $ANTLR end synpred4
 
-    public final boolean synpred1() {
+    public final boolean synpred4() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred1_fragment(); // can never throw exception
+            synpred4_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11190,11 +11190,11 @@ public class XQFTParser extends Parser {
         failed=false;
         return success;
     }
-    public final boolean synpred4() {
+    public final boolean synpred1() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred4_fragment(); // can never throw exception
+            synpred1_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -11209,39 +11209,49 @@ public class XQFTParser extends Parser {
     protected DFA27 dfa27 = new DFA27(this);
     protected DFA120 dfa120 = new DFA120(this);
     static final String DFA27_eotS =
-        "\u01c2\uffff";
+        "\u021f\uffff";
     static final String DFA27_eofS =
-        "\13\uffff\1\31\14\uffff\1\104\1\uffff\1\104\3\uffff\1\31\2\uffff"+
-        "\1\31\2\uffff\1\31\3\uffff\6\31\2\uffff\1\31\52\uffff\1\31\7\uffff"+
-        "\1\31\1\uffff\1\31\50\uffff\1\104\30\uffff\1\104\1\uffff\1\104\31"+
-        "\uffff\1\104\1\uffff\2\104\u00fb\uffff";
+        "\13\uffff\1\31\14\uffff\1\102\1\uffff\1\102\3\uffff\1\31\2\uffff"+
+        "\1\31\2\uffff\1\31\3\uffff\6\31\13\uffff\1\31\37\uffff\1\31\11\uffff"+
+        "\1\31\1\uffff\1\31\3\uffff\1\102\1\uffff\1\102\101\uffff\1\102\26"+
+        "\uffff\3\102\u0158\uffff";
     static final String DFA27_minS =
         "\1\13\12\54\1\10\1\uffff\1\20\4\13\1\6\4\55\1\13\1\6\1\uffff\1\6"+
-        "\1\uffff\2\54\1\10\2\15\1\10\2\15\1\10\2\52\1\55\6\10\3\6\50\uffff"+
-        "\1\0\2\6\7\13\1\10\1\13\1\10\1\6\1\56\1\6\3\0\1\13\3\0\2\56\1\13"+
-        "\1\u00c0\1\u00c3\1\56\2\13\2\54\1\13\1\u00a9\1\0\1\u00a9\1\13\4"+
-        "\54\1\0\1\13\11\uffff\1\10\25\uffff\4\6\1\uffff\1\6\31\uffff\1\10"+
-        "\3\6\2\15\1\55\1\52\1\15\1\52\1\15\1\52\2\55\1\0\1\56\75\0\21\uffff"+
-        "\72\0\1\uffff\2\0\11\uffff\133\0";
+        "\1\uffff\2\54\1\10\2\15\1\10\2\15\1\10\2\52\1\55\6\10\13\uffff\2"+
+        "\6\3\uffff\1\6\32\uffff\1\6\1\0\1\6\7\13\1\10\1\13\1\10\4\6\1\uffff"+
+        "\1\6\31\uffff\1\56\1\6\3\0\1\13\3\0\2\56\1\13\1\u00c0\1\u00c3\1"+
+        "\56\2\13\2\54\1\13\1\u00a9\1\0\1\u00a9\1\13\4\54\1\0\1\13\1\6\11"+
+        "\uffff\1\10\25\uffff\3\6\1\10\2\15\1\55\1\52\1\15\1\52\1\15\1\52"+
+        "\2\55\2\0\1\13\3\0\2\56\1\13\1\u00c0\1\u00c3\1\56\2\13\2\54\1\13"+
+        "\1\u00a9\1\0\1\u00a9\1\13\4\54\1\0\1\56\1\6\3\0\1\13\3\0\2\56\1"+
+        "\13\1\u00c0\1\u00c3\1\56\2\13\2\54\1\13\1\u00a9\1\0\1\u00a9\1\13"+
+        "\4\54\1\0\1\13\1\6\1\0\1\uffff\2\0\12\uffff\32\0\1\uffff\77\0\17"+
+        "\uffff\u009e\0";
     static final String DFA27_maxS =
         "\1\75\12\54\1\u00b3\1\uffff\1\67\2\66\2\13\5\55\1\13\1\u00c6\1\uffff"+
         "\1\u00c6\1\uffff\2\54\1\u00b3\2\55\1\u00b3\2\55\1\u00b3\3\55\6\u00b3"+
-        "\3\u00c6\50\uffff\1\0\2\u00c6\1\66\6\13\1\u00b3\1\13\1\u00b3\1\u00c6"+
-        "\1\u00a1\1\u00c6\3\0\1\13\3\0\2\56\1\13\1\u00c0\1\u00c3\2\56\1\u00a9"+
-        "\3\56\1\u00a9\1\0\1\u00a9\1\75\4\54\1\0\1\13\11\uffff\1\u00b5\25"+
-        "\uffff\4\u00c6\1\uffff\1\u00c6\31\uffff\1\u00b5\3\u00c6\5\55\1\65"+
-        "\4\55\1\0\1\56\75\0\21\uffff\72\0\1\uffff\2\0\11\uffff\133\0";
+        "\13\uffff\2\u00c6\3\uffff\1\u00c6\32\uffff\1\u00c6\1\0\1\u00c6\1"+
+        "\66\6\13\1\u00b3\1\13\1\u00b3\4\u00c6\1\uffff\1\u00c6\31\uffff\1"+
+        "\u00a1\1\u00c6\3\0\1\13\3\0\2\56\1\13\1\u00c0\1\u00c3\2\56\1\u00a9"+
+        "\3\56\1\u00a9\1\0\1\u00a9\1\75\4\54\1\0\1\13\1\u00c6\11\uffff\1"+
+        "\u00b5\25\uffff\3\u00c6\1\u00b5\5\55\1\65\4\55\2\0\1\13\3\0\2\56"+
+        "\1\13\1\u00c0\1\u00c3\2\56\1\u00a9\3\56\1\u00a9\1\0\1\u00a9\1\75"+
+        "\4\54\1\0\1\u00a1\1\u00c6\3\0\1\13\3\0\2\56\1\13\1\u00c0\1\u00c3"+
+        "\2\56\1\u00a9\3\56\1\u00a9\1\0\1\u00a9\1\75\4\54\1\0\1\13\1\u00c6"+
+        "\1\0\1\uffff\2\0\12\uffff\32\0\1\uffff\77\0\17\uffff\u009e\0";
     static final String DFA27_acceptS =
-        "\14\uffff\1\3\14\uffff\1\2\1\uffff\1\1\25\uffff\50\1\54\uffff\11"+
-        "\1\1\uffff\25\1\4\uffff\1\1\1\uffff\31\1\115\uffff\21\1\72\uffff"+
-        "\1\1\2\uffff\11\1\133\uffff";
+        "\14\uffff\1\3\14\uffff\1\2\1\uffff\1\1\22\uffff\13\1\2\uffff\3\1"+
+        "\1\uffff\32\1\21\uffff\1\1\1\uffff\31\1\37\uffff\11\1\1\uffff\25"+
+        "\1\110\uffff\1\1\2\uffff\12\1\32\uffff\1\1\77\uffff\17\1\u009e\uffff";
     static final String DFA27_specialS =
-        "\13\uffff\1\17\14\uffff\1\41\1\uffff\1\31\3\uffff\1\40\2\uffff\1"+
-        "\13\2\uffff\1\20\3\uffff\1\26\1\2\1\1\1\0\1\27\1\37\1\uffff\1\21"+
-        "\1\12\50\uffff\1\23\1\22\1\14\7\uffff\1\16\1\uffff\1\30\3\uffff"+
-        "\1\34\1\3\1\4\1\uffff\1\7\1\15\1\6\14\uffff\1\5\6\uffff\1\11\12"+
-        "\uffff\1\32\30\uffff\1\24\1\uffff\1\35\31\uffff\1\33\1\uffff\1\25"+
-        "\1\36\12\uffff\1\10\u00f0\uffff}>";
+        "\13\uffff\1\52\14\uffff\1\36\1\uffff\1\51\3\uffff\1\12\2\uffff\1"+
+        "\46\2\uffff\1\2\3\uffff\1\55\1\4\1\3\1\7\1\41\1\10\13\uffff\1\13"+
+        "\4\uffff\1\37\32\uffff\1\47\1\42\1\40\7\uffff\1\0\1\uffff\1\27\3"+
+        "\uffff\1\31\1\uffff\1\5\33\uffff\1\56\1\30\1\33\1\uffff\1\22\1\11"+
+        "\1\26\14\uffff\1\16\6\uffff\1\25\13\uffff\1\53\26\uffff\1\32\1\6"+
+        "\1\54\12\uffff\1\1\1\14\1\uffff\1\23\1\57\1\21\14\uffff\1\15\6\uffff"+
+        "\1\24\2\uffff\1\45\1\34\1\43\1\uffff\1\50\1\20\1\35\14\uffff\1\17"+
+        "\6\uffff\1\44\u0117\uffff}>";
     static final String[] DFA27_transitionS = {
             "\1\13\4\uffff\1\2\41\uffff\1\14\1\12\1\1\2\uffff\1\4\1\3\1\5"+
             "\1\6\1\7\1\10\1\11",
@@ -11272,26 +11282,26 @@ public class XQFTParser extends Parser {
             "\1\53",
             "\1\54",
             "\1\55",
-            "\1\31\1\uffff\1\107\2\uffff\1\31\1\100\1\63\1\uffff\1\121\1"+
-            "\31\4\uffff\1\117\3\uffff\2\31\1\111\1\116\10\uffff\1\65\1\uffff"+
-            "\1\31\1\61\1\62\2\uffff\1\31\1\64\1\70\1\105\4\uffff\1\31\1"+
-            "\uffff\1\60\7\31\1\56\1\71\1\113\1\67\1\66\1\114\1\110\1\uffff"+
-            "\1\112\2\115\2\uffff\1\120\1\uffff\1\122\2\uffff\1\123\1\103"+
-            "\1\102\1\76\1\75\1\56\3\74\2\73\2\72\1\130\4\uffff\1\124\1\uffff"+
-            "\6\77\1\100\1\57\3\100\3\101\5\uffff\3\31\3\uffff\1\126\2\uffff"+
-            "\1\125\3\uffff\1\31\3\uffff\2\126\15\uffff\1\127\7\uffff\1\31"+
-            "\2\uffff\7\31\1\uffff\10\31\1\uffff\1\106\1\31\12\uffff\1\31"+
-            "\2\uffff\1\31\3\uffff\1\31",
+            "\1\31\1\uffff\1\105\2\uffff\1\31\1\127\1\60\1\uffff\1\117\1"+
+            "\31\4\uffff\1\115\3\uffff\2\31\1\107\1\114\10\uffff\1\62\1\uffff"+
+            "\1\31\1\56\1\57\2\uffff\1\31\1\61\1\65\1\103\4\uffff\1\31\1"+
+            "\uffff\1\71\7\31\1\72\1\66\1\111\1\64\1\63\1\112\1\106\1\uffff"+
+            "\1\110\2\113\2\uffff\1\116\1\uffff\1\120\2\uffff\1\121\1\101"+
+            "\1\100\1\74\1\73\1\72\3\130\2\70\2\67\1\126\4\uffff\1\122\1"+
+            "\uffff\6\75\1\127\1\76\3\127\3\77\5\uffff\3\31\3\uffff\1\124"+
+            "\2\uffff\1\123\3\uffff\1\31\3\uffff\2\124\15\uffff\1\125\7\uffff"+
+            "\1\31\2\uffff\7\31\1\uffff\10\31\1\uffff\1\104\1\31\12\uffff"+
+            "\1\31\2\uffff\1\31\3\uffff\1\31",
             "",
-            "\1\31\1\uffff\1\107\2\uffff\1\31\1\100\1\63\1\uffff\1\121\1"+
-            "\31\4\uffff\1\117\3\uffff\2\31\1\111\1\116\10\uffff\1\65\1\uffff"+
-            "\1\31\1\61\1\62\2\uffff\1\31\1\64\1\70\1\105\4\uffff\1\31\1"+
-            "\uffff\1\133\7\31\1\131\1\71\1\113\1\67\1\66\1\114\1\110\1\uffff"+
-            "\1\112\2\115\2\uffff\1\120\1\uffff\1\122\2\uffff\1\123\1\103"+
-            "\1\102\1\76\1\75\1\131\3\74\2\73\2\72\1\130\4\uffff\1\124\1"+
-            "\uffff\6\77\1\100\1\132\3\100\3\101\5\uffff\3\31\3\uffff\1\126"+
-            "\2\uffff\1\125\3\uffff\1\31\3\uffff\2\126\15\uffff\1\127\7\uffff"+
-            "\1\31\2\uffff\7\31\1\uffff\10\31\1\uffff\1\106\1\31\12\uffff"+
+            "\1\31\1\uffff\1\105\2\uffff\1\31\1\127\1\60\1\uffff\1\117\1"+
+            "\31\4\uffff\1\115\3\uffff\2\31\1\107\1\114\10\uffff\1\62\1\uffff"+
+            "\1\31\1\56\1\57\2\uffff\1\31\1\61\1\65\1\103\4\uffff\1\31\1"+
+            "\uffff\1\131\7\31\1\132\1\66\1\111\1\64\1\63\1\112\1\106\1\uffff"+
+            "\1\110\2\113\2\uffff\1\116\1\uffff\1\120\2\uffff\1\121\1\101"+
+            "\1\100\1\74\1\73\1\132\3\130\2\70\2\67\1\126\4\uffff\1\122\1"+
+            "\uffff\6\75\1\127\1\133\3\127\3\77\5\uffff\3\31\3\uffff\1\124"+
+            "\2\uffff\1\123\3\uffff\1\31\3\uffff\2\124\15\uffff\1\125\7\uffff"+
+            "\1\31\2\uffff\7\31\1\uffff\10\31\1\uffff\1\104\1\31\12\uffff"+
             "\1\31\2\uffff\1\31\3\uffff\1\31",
             "",
             "\1\134",
@@ -11348,29 +11358,44 @@ public class XQFTParser extends Parser {
             "\1\32\6\31\1\uffff\3\31\2\uffff\1\31\1\uffff\1\31\2\uffff\16"+
             "\31\4\uffff\1\31\1\uffff\16\31\13\uffff\1\31\2\uffff\1\31\7"+
             "\uffff\2\31\15\uffff\1\31\33\uffff\1\31",
-            "\1\153\4\uffff\1\157\4\uffff\1\166\10\uffff\1\160\1\161\14\uffff"+
-            "\1\154\4\uffff\1\155\7\uffff\1\177\1\uffff\1\u0083\1\u0080\1"+
-            "\167\1\u0081\1\172\1\171\1\170\1\u0082\1\146\26\uffff\1\146"+
-            "\25\uffff\1\162\13\uffff\3\152\12\uffff\1\u0084\32\uffff\1\147"+
-            "\2\uffff\1\150\1\151\5\173\1\uffff\1\174\6\175\1\176\2\uffff"+
-            "\1\156\12\uffff\1\163\2\uffff\1\164\3\uffff\1\165",
-            "\1\u008a\4\uffff\1\u008e\4\uffff\1\u0095\10\uffff\1\u008f\1"+
-            "\u0090\14\uffff\1\u008b\4\uffff\1\u008c\7\uffff\1\u009e\1\uffff"+
-            "\1\u00a2\1\u009f\1\u0096\1\u00a0\1\u0099\1\u0098\1\u0097\1\u00a1"+
-            "\1\u0085\26\uffff\1\u0085\25\uffff\1\u0091\13\uffff\3\u0089"+
-            "\12\uffff\1\u00a3\32\uffff\1\u0086\2\uffff\1\u0087\1\u0088\5"+
-            "\u009a\1\uffff\1\u009b\6\u009c\1\u009d\2\uffff\1\u008d\12\uffff"+
-            "\1\u0092\2\uffff\1\u0093\3\uffff\1\u0094",
-            "\1\u00ab\1\uffff\1\31\2\uffff\1\u00af\2\31\1\uffff\1\31\1\u00b5"+
-            "\4\uffff\1\31\3\uffff\1\u00b0\1\u00b1\2\31\12\uffff\1\u00ac"+
-            "\2\uffff\1\31\1\uffff\1\u00ad\1\31\1\uffff\1\31\4\uffff\1\u00be"+
-            "\1\uffff\1\u00a7\1\u00bf\1\u00b6\1\u00c0\1\u00b9\1\u00b8\1\u00b7"+
-            "\1\u00c1\1\u00a5\2\31\2\uffff\2\31\1\uffff\3\31\2\uffff\1\31"+
-            "\1\uffff\1\31\2\uffff\5\31\1\u00a5\10\31\1\uffff\4\31\1\uffff"+
-            "\7\31\1\u00a6\6\31\5\uffff\3\u00aa\3\uffff\1\31\2\uffff\1\31"+
-            "\3\uffff\1\u00c2\3\uffff\2\31\15\uffff\1\31\7\uffff\1\u00a8"+
-            "\2\uffff\1\u00a4\1\u00a9\5\u00ba\1\uffff\1\u00bb\6\u00bc\1\u00bd"+
-            "\2\31\1\u00ae\12\uffff\1\u00b2\2\uffff\1\u00b3\3\uffff\1\u00b4",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\155\1\uffff\1\31\2\uffff\1\161\2\31\1\uffff\1\31\1\167\4"+
+            "\uffff\1\31\3\uffff\1\162\1\163\2\31\12\uffff\1\156\2\uffff"+
+            "\1\31\1\uffff\1\157\1\31\1\uffff\1\31\4\uffff\1\u0080\1\uffff"+
+            "\1\151\1\u0081\1\170\1\u0082\1\173\1\172\1\171\1\u0083\1\147"+
+            "\2\31\2\uffff\2\31\1\uffff\3\31\2\uffff\1\31\1\uffff\1\31\2"+
+            "\uffff\5\31\1\147\10\31\1\uffff\4\31\1\uffff\7\31\1\150\6\31"+
+            "\5\uffff\3\154\3\uffff\1\31\2\uffff\1\31\3\uffff\1\u0084\3\uffff"+
+            "\2\31\15\uffff\1\31\7\uffff\1\152\2\uffff\1\146\1\153\5\174"+
+            "\1\uffff\1\175\6\176\1\177\2\31\1\160\12\uffff\1\164\2\uffff"+
+            "\1\165\3\uffff\1\166",
+            "\1\u0089\4\uffff\1\u008d\4\uffff\1\u0094\10\uffff\1\u008e\1"+
+            "\u008f\14\uffff\1\u008a\4\uffff\1\u008b\7\uffff\1\u009d\1\uffff"+
+            "\1\u00a1\1\u009e\1\u0095\1\u009f\1\u0098\1\u0097\1\u0096\1\u00a0"+
+            "\1\u00a3\26\uffff\1\u00a3\25\uffff\1\u0090\13\uffff\3\u0088"+
+            "\12\uffff\1\u00a2\32\uffff\1\u0085\2\uffff\1\u0086\1\u0087\5"+
+            "\u0099\1\uffff\1\u009a\6\u009b\1\u009c\2\uffff\1\u008c\12\uffff"+
+            "\1\u0091\2\uffff\1\u0092\3\uffff\1\u0093",
+            "",
+            "",
+            "",
+            "\1\u00a9\4\uffff\1\u00ad\4\uffff\1\u00b4\10\uffff\1\u00ae\1"+
+            "\u00af\14\uffff\1\u00aa\4\uffff\1\u00ab\7\uffff\1\u00bd\1\uffff"+
+            "\1\u00c1\1\u00be\1\u00b5\1\u00bf\1\u00b8\1\u00b7\1\u00b6\1\u00c0"+
+            "\1\u00a4\26\uffff\1\u00a4\25\uffff\1\u00b0\13\uffff\3\u00a8"+
+            "\12\uffff\1\u00c2\32\uffff\1\u00a5\2\uffff\1\u00a6\1\u00a7\5"+
+            "\u00b9\1\uffff\1\u00ba\6\u00bb\1\u00bc\2\uffff\1\u00ac\12\uffff"+
+            "\1\u00b1\2\uffff\1\u00b2\3\uffff\1\u00b3",
             "",
             "",
             "",
@@ -11397,38 +11422,24 @@ public class XQFTParser extends Parser {
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\155\1\uffff\1\31\2\uffff\1\161\2\31\1\uffff\1\31\1\167\4"+
+            "\uffff\1\31\3\uffff\1\162\1\163\2\31\12\uffff\1\156\2\uffff"+
+            "\1\31\1\uffff\1\157\1\31\1\uffff\1\31\4\uffff\1\u0080\1\uffff"+
+            "\1\u00c4\1\u0081\1\170\1\u0082\1\173\1\172\1\171\1\u0083\1\147"+
+            "\2\31\2\uffff\2\31\1\uffff\3\31\2\uffff\1\31\1\uffff\1\31\2"+
+            "\uffff\5\31\1\147\10\31\1\uffff\4\31\1\uffff\7\31\1\150\6\31"+
+            "\5\uffff\3\154\3\uffff\1\31\2\uffff\1\31\3\uffff\1\u0084\3\uffff"+
+            "\2\31\15\uffff\1\31\7\uffff\1\152\2\uffff\1\u00c3\1\u00c5\5"+
+            "\174\1\uffff\1\175\6\176\1\177\2\31\1\160\12\uffff\1\164\2\uffff"+
+            "\1\165\3\uffff\1\166",
             "\1\uffff",
-            "\1\u008a\4\uffff\1\u00c3\4\uffff\1\u0095\10\uffff\1\u008f\1"+
-            "\u0090\14\uffff\1\u008b\4\uffff\1\u008c\7\uffff\1\u009e\1\uffff"+
-            "\1\u00a2\1\u009f\1\u0096\1\u00a0\1\u0099\1\u0098\1\u0097\1\u00a1"+
-            "\1\u0085\26\uffff\1\u0085\25\uffff\1\u0091\13\uffff\3\u0089"+
-            "\12\uffff\1\u00a3\32\uffff\1\u0086\2\uffff\1\u0087\1\u0088\5"+
-            "\u009a\1\uffff\1\u009b\6\u009c\1\u009d\2\uffff\1\u008d\12\uffff"+
-            "\1\u0092\2\uffff\1\u0093\3\uffff\1\u0094",
-            "\1\u00ab\1\uffff\1\31\2\uffff\1\u00af\2\31\1\uffff\1\31\1\u00b5"+
-            "\4\uffff\1\31\3\uffff\1\u00b0\1\u00b1\2\31\12\uffff\1\u00ac"+
-            "\2\uffff\1\31\1\uffff\1\u00ad\1\31\1\uffff\1\31\4\uffff\1\u00be"+
-            "\1\uffff\1\u00c5\1\u00bf\1\u00b6\1\u00c0\1\u00b9\1\u00b8\1\u00b7"+
-            "\1\u00c1\1\u00a5\2\31\2\uffff\2\31\1\uffff\3\31\2\uffff\1\31"+
-            "\1\uffff\1\31\2\uffff\5\31\1\u00a5\10\31\1\uffff\4\31\1\uffff"+
-            "\7\31\1\u00a6\6\31\5\uffff\3\u00aa\3\uffff\1\31\2\uffff\1\31"+
-            "\3\uffff\1\u00c2\3\uffff\2\31\15\uffff\1\31\7\uffff\1\u00a8"+
-            "\2\uffff\1\u00c4\1\u00c6\5\u00ba\1\uffff\1\u00bb\6\u00bc\1\u00bd"+
-            "\2\31\1\u00ae\12\uffff\1\u00b2\2\uffff\1\u00b3\3\uffff\1\u00b4",
+            "\1\u00a9\4\uffff\1\u00c6\4\uffff\1\u00b4\10\uffff\1\u00ae\1"+
+            "\u00af\14\uffff\1\u00aa\4\uffff\1\u00ab\7\uffff\1\u00bd\1\uffff"+
+            "\1\u00c1\1\u00be\1\u00b5\1\u00bf\1\u00b8\1\u00b7\1\u00b6\1\u00c0"+
+            "\1\u00a4\26\uffff\1\u00a4\25\uffff\1\u00b0\13\uffff\3\u00a8"+
+            "\12\uffff\1\u00c2\32\uffff\1\u00a5\2\uffff\1\u00a6\1\u00a7\5"+
+            "\u00b9\1\uffff\1\u00ba\6\u00bb\1\u00bc\2\uffff\1\u00ac\12\uffff"+
+            "\1\u00b1\2\uffff\1\u00b2\3\uffff\1\u00b3",
             "\1\u00c7\41\uffff\1\u00c9\10\uffff\1\u00c8",
             "\1\u00ca",
             "\1\u00cb",
@@ -11447,130 +11458,48 @@ public class XQFTParser extends Parser {
             "\1\32\6\31\1\uffff\3\31\2\uffff\1\31\1\uffff\1\31\2\uffff\16"+
             "\31\4\uffff\1\31\1\uffff\16\31\13\uffff\1\31\2\uffff\1\31\7"+
             "\uffff\2\31\15\uffff\1\31\33\uffff\1\31",
-            "\1\153\4\uffff\1\157\4\uffff\1\166\10\uffff\1\160\1\161\14\uffff"+
-            "\1\154\4\uffff\1\u00d1\7\uffff\1\177\1\uffff\1\u0083\1\u0080"+
-            "\1\167\1\u0081\1\172\1\171\1\170\1\u0082\1\146\26\uffff\1\146"+
-            "\25\uffff\1\162\13\uffff\3\152\12\uffff\1\u0084\32\uffff\1\147"+
-            "\2\uffff\1\150\1\151\5\173\1\uffff\1\174\6\175\1\176\2\uffff"+
-            "\1\156\12\uffff\1\163\2\uffff\1\164\3\uffff\1\165",
-            "\1\u00d3\161\uffff\2\u00d2",
-            "\1\u00d5\4\uffff\1\u00d9\4\uffff\1\u00e0\10\uffff\1\u00da\1"+
-            "\u00db\14\uffff\1\u00d6\4\uffff\1\u00d7\7\uffff\1\u00e9\1\uffff"+
-            "\1\u00ed\1\u00ea\1\u00e1\1\u00eb\1\u00e4\1\u00e3\1\u00e2\1\u00ec"+
-            "\55\uffff\1\u00dc\13\uffff\3\u00d4\52\uffff\5\u00e5\1\uffff"+
-            "\1\u00e6\6\u00e7\1\u00e8\2\uffff\1\u00d8\12\uffff\1\u00dd\2"+
-            "\uffff\1\u00de\3\uffff\1\u00df",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\u00ee",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\u00ef",
-            "\1\u00f0",
-            "\1\u00f1",
-            "\1\u00f2",
-            "\1\u00f3",
-            "\1\u00f4",
-            "\1\u00f6\40\uffff\1\u00f5\1\uffff\1\u00f7",
-            "\1\u00fa\40\uffff\1\u00f9\1\uffff\1\u00fb\172\uffff\1\u00f8",
-            "\1\u00fd\1\uffff\1\u00fc",
-            "\1\u00ff\1\uffff\1\u00fe",
-            "\1\u0101\40\uffff\1\u0100\1\uffff\1\u0102",
-            "\1\u0103",
-            "\1\uffff",
-            "\1\u00f8",
-            "\1\u0109\4\uffff\1\u0104\43\uffff\1\177\1\uffff\1\u0083\1\u0080"+
-            "\1\u0105\1\u0081\1\u0106\1\u0107\1\u0108\1\u0082",
-            "\1\u010a",
-            "\1\u010b",
-            "\1\u010c",
-            "\1\u010d",
-            "\1\uffff",
-            "\1\u010e",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\107\2\uffff\1\31\1\uffff\1\u011d\1\uffff\1\121\5\uffff\1"+
-            "\117\5\uffff\1\111\1\116\15\uffff\1\u010f\1\uffff\1\u0110\1"+
-            "\u011f\1\uffff\1\u011e\6\uffff\1\u0119\7\uffff\1\u011a\1\u0120"+
-            "\1\113\2\uffff\1\114\1\110\1\uffff\1\112\2\115\2\uffff\1\120"+
-            "\1\uffff\1\122\2\uffff\1\123\1\103\1\102\1\u011c\1\u011b\1\u011a"+
-            "\3\u0119\2\u0118\2\u0117\1\u0116\1\uffff\1\u0115\1\u0114\1\u0113"+
-            "\13\uffff\1\31\64\uffff\2\u0112\16\uffff\1\u0111\1\106\1\uffff"+
-            "\1\31",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0122\4\uffff\1\u0126\4\uffff\1\u012d\10\uffff\1\u0127\1"+
-            "\u0128\14\uffff\1\u0123\4\uffff\1\u0124\7\uffff\1\u0136\1\uffff"+
-            "\1\u013a\1\u0137\1\u012e\1\u0138\1\u0131\1\u0130\1\u012f\1\u0139"+
-            "\55\uffff\1\u0129\13\uffff\3\u0121\52\uffff\5\u0132\1\uffff"+
-            "\1\u0133\6\u0134\1\u0135\2\uffff\1\u0125\12\uffff\1\u012a\2"+
-            "\uffff\1\u012b\3\uffff\1\u012c",
-            "\1\u0140\4\uffff\1\u0144\4\uffff\1\u014b\10\uffff\1\u0145\1"+
-            "\u0146\14\uffff\1\u0141\4\uffff\1\u0142\7\uffff\1\u0154\1\uffff"+
-            "\1\u0158\1\u0155\1\u014c\1\u0156\1\u014f\1\u014e\1\u014d\1\u0157"+
-            "\1\u013b\26\uffff\1\u013b\25\uffff\1\u0147\13\uffff\3\u013f"+
-            "\12\uffff\1\u0159\32\uffff\1\u013c\2\uffff\1\u013d\1\u013e\5"+
-            "\u0150\1\uffff\1\u0151\6\u0152\1\u0153\2\uffff\1\u0143\12\uffff"+
-            "\1\u0148\2\uffff\1\u0149\3\uffff\1\u014a",
-            "\1\31\4\uffff\1\u015a\4\uffff\1\31\10\uffff\2\31\14\uffff\1"+
+            "\1\u00d2\4\uffff\1\u00d6\4\uffff\1\u00dd\10\uffff\1\u00d7\1"+
+            "\u00d8\14\uffff\1\u00d3\4\uffff\1\u00d4\7\uffff\1\u00e6\1\uffff"+
+            "\1\u00ea\1\u00e7\1\u00de\1\u00e8\1\u00e1\1\u00e0\1\u00df\1\u00e9"+
+            "\55\uffff\1\u00d9\13\uffff\3\u00d1\52\uffff\5\u00e2\1\uffff"+
+            "\1\u00e3\6\u00e4\1\u00e5\2\uffff\1\u00d5\12\uffff\1\u00da\2"+
+            "\uffff\1\u00db\3\uffff\1\u00dc",
+            "\1\u00ef\4\uffff\1\u00f3\4\uffff\1\u00fa\10\uffff\1\u00f4\1"+
+            "\u00f5\14\uffff\1\u00f0\4\uffff\1\u00f1\7\uffff\1\u0103\1\uffff"+
+            "\1\u0107\1\u0104\1\u00fb\1\u0105\1\u00fe\1\u00fd\1\u00fc\1\u0106"+
+            "\1\u0109\26\uffff\1\u0109\25\uffff\1\u00f6\13\uffff\3\u00ee"+
+            "\12\uffff\1\u0108\32\uffff\1\u00eb\2\uffff\1\u00ec\1\u00ed\5"+
+            "\u00ff\1\uffff\1\u0100\6\u0101\1\u0102\2\uffff\1\u00f2\12\uffff"+
+            "\1\u00f7\2\uffff\1\u00f8\3\uffff\1\u00f9",
+            "\1\31\4\uffff\1\u010a\4\uffff\1\31\10\uffff\2\31\14\uffff\1"+
             "\31\4\uffff\1\31\7\uffff\1\31\1\uffff\11\31\26\uffff\1\31\25"+
             "\uffff\1\31\13\uffff\3\31\12\uffff\1\31\32\uffff\1\31\2\uffff"+
             "\7\31\1\uffff\10\31\2\uffff\1\31\12\uffff\1\31\2\uffff\1\31"+
             "\3\uffff\1\31",
-            "\1\31\1\uffff\1\107\2\uffff\1\31\1\100\1\u011d\1\uffff\1\121"+
-            "\1\31\4\uffff\1\117\3\uffff\2\31\1\111\1\116\12\uffff\1\31\2"+
-            "\uffff\1\u015b\1\uffff\1\31\1\u0165\1\uffff\1\105\4\uffff\1"+
-            "\31\1\uffff\1\60\7\31\1\56\1\u0120\1\113\2\uffff\1\114\1\110"+
-            "\1\uffff\1\112\2\115\2\uffff\1\120\1\uffff\1\122\2\uffff\1\123"+
-            "\1\103\1\102\1\76\1\75\1\56\3\74\2\u0164\2\u0163\1\u0162\1\uffff"+
-            "\1\u0161\1\u0160\1\u015f\1\124\1\uffff\6\77\1\100\1\57\3\100"+
-            "\3\101\5\uffff\3\31\3\uffff\1\126\2\uffff\1\125\3\uffff\1\31"+
-            "\3\uffff\2\126\15\uffff\1\127\7\uffff\1\31\2\uffff\1\u015c\1"+
-            "\u015d\5\31\1\uffff\10\31\1\u015e\1\106\1\31\12\uffff\1\31\2"+
-            "\uffff\1\31\3\uffff\1\31",
+            "\1\31\1\uffff\1\105\2\uffff\1\31\1\127\1\u0115\1\uffff\1\117"+
+            "\1\31\4\uffff\1\115\3\uffff\2\31\1\107\1\114\12\uffff\1\31\2"+
+            "\uffff\1\u010b\1\uffff\1\31\1\u0116\1\uffff\1\103\4\uffff\1"+
+            "\31\1\uffff\1\71\7\31\1\72\1\u0117\1\111\2\uffff\1\112\1\106"+
+            "\1\uffff\1\110\2\113\2\uffff\1\116\1\uffff\1\120\2\uffff\1\121"+
+            "\1\101\1\100\1\74\1\73\1\72\3\130\2\u0114\2\u0113\1\u0112\1"+
+            "\uffff\1\u0111\1\u0110\1\u010f\1\122\1\uffff\6\75\1\127\1\76"+
+            "\3\127\3\77\5\uffff\3\31\3\uffff\1\124\2\uffff\1\123\3\uffff"+
+            "\1\31\3\uffff\2\124\15\uffff\1\125\7\uffff\1\31\2\uffff\1\u010c"+
+            "\1\u010d\5\31\1\uffff\10\31\1\u010e\1\104\1\31\12\uffff\1\31"+
+            "\2\uffff\1\31\3\uffff\1\31",
             "",
-            "\1\u016a\1\uffff\1\107\2\uffff\1\u016e\1\100\1\u011d\1\uffff"+
-            "\1\121\1\u0174\4\uffff\1\117\3\uffff\1\u016f\1\u0170\1\111\1"+
-            "\116\12\uffff\1\u016b\4\uffff\1\u016c\1\u0165\1\uffff\1\105"+
-            "\4\uffff\1\u017d\1\uffff\1\u0168\1\u017e\1\u0175\1\u017f\1\u0178"+
-            "\1\u0177\1\u0176\1\u0180\1\u0166\1\u0120\1\113\2\uffff\1\114"+
-            "\1\110\1\uffff\1\112\2\115\2\uffff\1\120\1\uffff\1\122\2\uffff"+
-            "\1\123\1\103\1\102\1\76\1\75\1\u0166\3\74\2\u0164\2\u0163\1"+
-            "\u0162\1\uffff\1\u0161\1\u0160\1\u015f\1\124\1\uffff\6\77\1"+
-            "\100\1\u0167\3\100\3\101\5\uffff\3\u0169\3\uffff\1\126\2\uffff"+
-            "\1\125\7\uffff\2\126\15\uffff\1\127\14\uffff\5\u0179\1\uffff"+
-            "\1\u017a\6\u017b\1\u017c\1\uffff\1\106\1\u016d\12\uffff\1\u0171"+
-            "\2\uffff\1\u0172\3\uffff\1\u0173",
-            "",
-            "",
+            "\1\u0119\1\uffff\1\105\2\uffff\1\u011d\1\127\1\u0115\1\uffff"+
+            "\1\117\1\u0124\4\uffff\1\115\3\uffff\1\u011e\1\u011f\1\107\1"+
+            "\114\12\uffff\1\u011a\4\uffff\1\u011b\1\u0116\1\uffff\1\103"+
+            "\4\uffff\1\u012d\1\uffff\1\u0131\1\u012e\1\u0125\1\u012f\1\u0128"+
+            "\1\u0127\1\u0126\1\u0130\1\u0132\1\u0117\1\111\2\uffff\1\112"+
+            "\1\106\1\uffff\1\110\2\113\2\uffff\1\116\1\uffff\1\120\2\uffff"+
+            "\1\121\1\101\1\100\1\74\1\73\1\u0132\3\130\2\u0114\2\u0113\1"+
+            "\u0112\1\uffff\1\u0111\1\u0110\1\u010f\1\122\1\uffff\6\75\1"+
+            "\127\1\u0120\3\127\3\77\5\uffff\3\u0118\3\uffff\1\124\2\uffff"+
+            "\1\123\7\uffff\2\124\15\uffff\1\125\14\uffff\5\u0129\1\uffff"+
+            "\1\u012a\6\u012b\1\u012c\1\uffff\1\104\1\u011c\12\uffff\1\u0121"+
+            "\2\uffff\1\u0122\3\uffff\1\u0123",
             "",
             "",
             "",
@@ -11594,43 +11523,126 @@ public class XQFTParser extends Parser {
             "",
             "",
             "",
-            "\1\107\2\uffff\1\31\1\uffff\1\u011d\1\uffff\1\121\5\uffff\1"+
-            "\117\5\uffff\1\111\1\116\15\uffff\1\u0181\1\uffff\1\u0110\1"+
-            "\u011f\1\uffff\1\u011e\6\uffff\1\u0119\7\uffff\1\u011a\1\u0120"+
-            "\1\113\2\uffff\1\114\1\110\1\uffff\1\112\2\115\2\uffff\1\120"+
-            "\1\uffff\1\122\2\uffff\1\123\1\103\1\102\1\u011c\1\u011b\1\u011a"+
-            "\3\u0119\2\u0118\2\u0117\1\u0116\1\uffff\1\u0115\1\u0114\1\u0113"+
-            "\13\uffff\1\31\64\uffff\2\u0112\16\uffff\1\u0111\1\106\1\uffff"+
+            "",
+            "",
+            "\1\u0134\161\uffff\2\u0133",
+            "\1\u0136\4\uffff\1\u013a\4\uffff\1\u0141\10\uffff\1\u013b\1"+
+            "\u013c\14\uffff\1\u0137\4\uffff\1\u0138\7\uffff\1\u014a\1\uffff"+
+            "\1\u014e\1\u014b\1\u0142\1\u014c\1\u0145\1\u0144\1\u0143\1\u014d"+
+            "\55\uffff\1\u013d\13\uffff\3\u0135\52\uffff\5\u0146\1\uffff"+
+            "\1\u0147\6\u0148\1\u0149\2\uffff\1\u0139\12\uffff\1\u013e\2"+
+            "\uffff\1\u013f\3\uffff\1\u0140",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\u014f",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\u0150",
+            "\1\u0151",
+            "\1\u0152",
+            "\1\u0153",
+            "\1\u0154",
+            "\1\u0155",
+            "\1\u0157\40\uffff\1\u0156\1\uffff\1\u0158",
+            "\1\u015b\40\uffff\1\u015a\1\uffff\1\u015c\172\uffff\1\u0159",
+            "\1\u015e\1\uffff\1\u015d",
+            "\1\u0160\1\uffff\1\u015f",
+            "\1\u0162\40\uffff\1\u0161\1\uffff\1\u0163",
+            "\1\u0164",
+            "\1\uffff",
+            "\1\u0159",
+            "\1\u016a\4\uffff\1\u0165\43\uffff\1\u009d\1\uffff\1\u00a1\1"+
+            "\u009e\1\u0166\1\u009f\1\u0167\1\u0168\1\u0169\1\u00a0",
+            "\1\u016b",
+            "\1\u016c",
+            "\1\u016d",
+            "\1\u016e",
+            "\1\uffff",
+            "\1\u016f",
+            "\1\u0089\4\uffff\1\u008d\4\uffff\1\u0094\10\uffff\1\u008e\1"+
+            "\u008f\14\uffff\1\u008a\4\uffff\1\u0170\7\uffff\1\u009d\1\uffff"+
+            "\1\u00a1\1\u009e\1\u0095\1\u009f\1\u0098\1\u0097\1\u0096\1\u00a0"+
+            "\1\u00a3\26\uffff\1\u00a3\25\uffff\1\u0090\13\uffff\3\u0088"+
+            "\12\uffff\1\u00a2\32\uffff\1\u0085\2\uffff\1\u0086\1\u0087\5"+
+            "\u0099\1\uffff\1\u009a\6\u009b\1\u009c\2\uffff\1\u008c\12\uffff"+
+            "\1\u0091\2\uffff\1\u0092\3\uffff\1\u0093",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\105\2\uffff\1\31\1\uffff\1\u0115\1\uffff\1\117\5\uffff\1"+
+            "\115\5\uffff\1\107\1\114\15\uffff\1\u0171\1\uffff\1\u0172\1"+
+            "\u0180\1\uffff\1\u017f\6\uffff\1\u017b\7\uffff\1\u017c\1\u0117"+
+            "\1\111\2\uffff\1\112\1\106\1\uffff\1\110\2\113\2\uffff\1\116"+
+            "\1\uffff\1\120\2\uffff\1\121\1\101\1\100\1\u017e\1\u017d\1\u017c"+
+            "\3\u017b\2\u017a\2\u0179\1\u0178\1\uffff\1\u0177\1\u0176\1\u0175"+
+            "\13\uffff\1\31\64\uffff\2\u0174\16\uffff\1\u0173\1\104\1\uffff"+
             "\1\31",
-            "\1\u0183\4\uffff\1\u0187\4\uffff\1\u018e\10\uffff\1\u0188\1"+
-            "\u0189\14\uffff\1\u0184\4\uffff\1\u0185\7\uffff\1\u0197\1\uffff"+
-            "\1\u019b\1\u0198\1\u018f\1\u0199\1\u0192\1\u0191\1\u0190\1\u019a"+
-            "\55\uffff\1\u018a\13\uffff\3\u0182\52\uffff\5\u0193\1\uffff"+
-            "\1\u0194\6\u0195\1\u0196\2\uffff\1\u0186\12\uffff\1\u018b\2"+
-            "\uffff\1\u018c\3\uffff\1\u018d",
-            "\1\31\1\uffff\1\107\2\uffff\1\31\1\100\1\u011d\1\uffff\1\121"+
-            "\1\31\4\uffff\1\117\3\uffff\2\31\1\111\1\116\12\uffff\1\31\2"+
-            "\uffff\1\u015b\1\uffff\1\31\1\u0165\1\uffff\1\105\4\uffff\1"+
-            "\31\1\uffff\1\u01a0\7\31\1\u019c\1\u0120\1\113\2\uffff\1\114"+
-            "\1\110\1\uffff\1\112\2\115\2\uffff\1\120\1\uffff\1\122\2\uffff"+
-            "\1\123\1\103\1\102\1\76\1\75\1\u019c\3\74\2\u0164\2\u0163\1"+
-            "\u0162\1\uffff\1\u0161\1\u0160\1\u015f\1\124\1\uffff\6\77\1"+
-            "\100\1\u019f\3\100\3\101\5\uffff\3\31\3\uffff\1\126\2\uffff"+
-            "\1\125\3\uffff\1\31\3\uffff\2\126\15\uffff\1\127\7\uffff\1\31"+
-            "\2\uffff\1\u019d\1\u019e\5\31\1\uffff\10\31\1\u015e\1\106\1"+
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0182\4\uffff\1\u0186\4\uffff\1\u018d\10\uffff\1\u0187\1"+
+            "\u0188\14\uffff\1\u0183\4\uffff\1\u0184\7\uffff\1\u0196\1\uffff"+
+            "\1\u019a\1\u0197\1\u018e\1\u0198\1\u0191\1\u0190\1\u018f\1\u0199"+
+            "\55\uffff\1\u0189\13\uffff\3\u0181\52\uffff\5\u0192\1\uffff"+
+            "\1\u0193\6\u0194\1\u0195\2\uffff\1\u0185\12\uffff\1\u018a\2"+
+            "\uffff\1\u018b\3\uffff\1\u018c",
+            "\1\31\1\uffff\1\105\2\uffff\1\31\1\127\1\u0115\1\uffff\1\117"+
+            "\1\31\4\uffff\1\115\3\uffff\2\31\1\107\1\114\12\uffff\1\31\2"+
+            "\uffff\1\u010b\1\uffff\1\31\1\u0116\1\uffff\1\103\4\uffff\1"+
+            "\31\1\uffff\1\u019f\7\31\1\u019b\1\u0117\1\111\2\uffff\1\112"+
+            "\1\106\1\uffff\1\110\2\113\2\uffff\1\116\1\uffff\1\120\2\uffff"+
+            "\1\121\1\101\1\100\1\74\1\73\1\u019b\3\130\2\u0114\2\u0113\1"+
+            "\u0112\1\uffff\1\u0111\1\u0110\1\u010f\1\122\1\uffff\6\75\1"+
+            "\127\1\u019e\3\127\3\77\5\uffff\3\31\3\uffff\1\124\2\uffff\1"+
+            "\123\3\uffff\1\31\3\uffff\2\124\15\uffff\1\125\7\uffff\1\31"+
+            "\2\uffff\1\u019c\1\u019d\5\31\1\uffff\10\31\1\u010e\1\104\1"+
             "\31\12\uffff\1\31\2\uffff\1\31\3\uffff\1\31",
-            "\1\u01a4\1\uffff\1\107\2\uffff\1\u01a8\1\100\1\u011d\1\uffff"+
-            "\1\121\1\u01ae\4\uffff\1\117\3\uffff\1\u01a9\1\u01aa\1\111\1"+
-            "\116\12\uffff\1\u01a5\4\uffff\1\u01a6\1\u0165\1\uffff\1\105"+
-            "\4\uffff\1\u01b7\1\uffff\1\u01a2\1\u01b8\1\u01af\1\u01b9\1\u01b2"+
-            "\1\u01b1\1\u01b0\1\u01ba\1\u0166\1\u0120\1\113\2\uffff\1\114"+
-            "\1\110\1\uffff\1\112\2\115\2\uffff\1\120\1\uffff\1\122\2\uffff"+
-            "\1\123\1\103\1\102\1\76\1\75\1\u0166\3\74\2\u0164\2\u0163\1"+
-            "\u0162\1\uffff\1\u0161\1\u0160\1\u015f\1\124\1\uffff\6\77\1"+
-            "\100\1\u01a1\3\100\3\101\5\uffff\3\u01a3\3\uffff\1\126\2\uffff"+
-            "\1\125\7\uffff\2\126\15\uffff\1\127\14\uffff\5\u01b3\1\uffff"+
-            "\1\u01b4\6\u01b5\1\u01b6\1\uffff\1\106\1\u01a7\12\uffff\1\u01ab"+
-            "\2\uffff\1\u01ac\3\uffff\1\u01ad",
+            "\1\u01a1\1\uffff\1\105\2\uffff\1\u01a5\1\127\1\u0115\1\uffff"+
+            "\1\117\1\u01ac\4\uffff\1\115\3\uffff\1\u01a6\1\u01a7\1\107\1"+
+            "\114\12\uffff\1\u01a2\4\uffff\1\u01a3\1\u0116\1\uffff\1\103"+
+            "\4\uffff\1\u01b5\1\uffff\1\u01b9\1\u01b6\1\u01ad\1\u01b7\1\u01b0"+
+            "\1\u01af\1\u01ae\1\u01b8\1\u0132\1\u0117\1\111\2\uffff\1\112"+
+            "\1\106\1\uffff\1\110\2\113\2\uffff\1\116\1\uffff\1\120\2\uffff"+
+            "\1\121\1\101\1\100\1\74\1\73\1\u0132\3\130\2\u0114\2\u0113\1"+
+            "\u0112\1\uffff\1\u0111\1\u0110\1\u010f\1\122\1\uffff\6\75\1"+
+            "\127\1\u01a8\3\127\3\77\5\uffff\3\u01a0\3\uffff\1\124\2\uffff"+
+            "\1\123\7\uffff\2\124\15\uffff\1\125\14\uffff\5\u01b1\1\uffff"+
+            "\1\u01b2\6\u01b3\1\u01b4\1\uffff\1\104\1\u01a4\12\uffff\1\u01a9"+
+            "\2\uffff\1\u01aa\3\uffff\1\u01ab",
+            "\1\105\2\uffff\1\31\1\uffff\1\u0115\1\uffff\1\117\5\uffff\1"+
+            "\115\5\uffff\1\107\1\114\15\uffff\1\u01ba\1\uffff\1\u0172\1"+
+            "\u0180\1\uffff\1\u017f\6\uffff\1\u017b\7\uffff\1\u017c\1\u0117"+
+            "\1\111\2\uffff\1\112\1\106\1\uffff\1\110\2\113\2\uffff\1\116"+
+            "\1\uffff\1\120\2\uffff\1\121\1\101\1\100\1\u017e\1\u017d\1\u017c"+
+            "\3\u017b\2\u017a\2\u0179\1\u0178\1\uffff\1\u0177\1\u0176\1\u0175"+
+            "\13\uffff\1\31\64\uffff\2\u0174\16\uffff\1\u0173\1\104\1\uffff"+
+            "\1\31",
             "\1\u01bc\34\uffff\1\u01bb\2\uffff\1\u00c9",
             "\1\u01bc\37\uffff\1\u00c9",
             "\1\36",
@@ -11642,7 +11654,118 @@ public class XQFTParser extends Parser {
             "\1\143",
             "\1\145",
             "\1\uffff",
-            "\1\u00d3",
+            "\1\uffff",
+            "\1\u01c2",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\u01c3",
+            "\1\u01c4",
+            "\1\u01c5",
+            "\1\u01c6",
+            "\1\u01c7",
+            "\1\u01c8",
+            "\1\u01ca\40\uffff\1\u01c9\1\uffff\1\u01cb",
+            "\1\u01ce\40\uffff\1\u01cd\1\uffff\1\u01cf\172\uffff\1\u01cc",
+            "\1\u01d1\1\uffff\1\u01d0",
+            "\1\u01d2\1\uffff\1\u01d3",
+            "\1\u01d5\40\uffff\1\u01d4\1\uffff\1\u01d6",
+            "\1\u01d7",
+            "\1\uffff",
+            "\1\u01cc",
+            "\1\u01dd\4\uffff\1\u01d8\43\uffff\1\u00e6\1\uffff\1\u00ea\1"+
+            "\u00e7\1\u01d9\1\u00e8\1\u01da\1\u01db\1\u01dc\1\u00e9",
+            "\1\u01de",
+            "\1\u01df",
+            "\1\u01e0",
+            "\1\u01e1",
+            "\1\uffff",
+            "\1\u01e3\161\uffff\2\u01e2",
+            "\1\u01e5\4\uffff\1\u01e9\4\uffff\1\u01f0\10\uffff\1\u01ea\1"+
+            "\u01eb\14\uffff\1\u01e6\4\uffff\1\u01e7\7\uffff\1\u01f9\1\uffff"+
+            "\1\u01fd\1\u01fa\1\u01f1\1\u01fb\1\u01f4\1\u01f3\1\u01f2\1\u01fc"+
+            "\55\uffff\1\u01ec\13\uffff\3\u01e4\52\uffff\5\u01f5\1\uffff"+
+            "\1\u01f6\6\u01f7\1\u01f8\2\uffff\1\u01e8\12\uffff\1\u01ed\2"+
+            "\uffff\1\u01ee\3\uffff\1\u01ef",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\u01fe",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\u01ff",
+            "\1\u0200",
+            "\1\u0201",
+            "\1\u0202",
+            "\1\u0203",
+            "\1\u0204",
+            "\1\u0206\40\uffff\1\u0205\1\uffff\1\u0207",
+            "\1\u020a\40\uffff\1\u0209\1\uffff\1\u020b\172\uffff\1\u0208",
+            "\1\u020c\1\uffff\1\u020d",
+            "\1\u020e\1\uffff\1\u020f",
+            "\1\u0211\40\uffff\1\u0210\1\uffff\1\u0212",
+            "\1\u0213",
+            "\1\uffff",
+            "\1\u0208",
+            "\1\u0219\4\uffff\1\u0214\43\uffff\1\u0103\1\uffff\1\u0107\1"+
+            "\u0104\1\u0215\1\u0105\1\u0216\1\u0217\1\u0218\1\u0106",
+            "\1\u021a",
+            "\1\u021b",
+            "\1\u021c",
+            "\1\u021d",
+            "\1\uffff",
+            "\1\u021e",
+            "\1\u00ef\4\uffff\1\u00f3\4\uffff\1\u00fa\10\uffff\1\u00f4\1"+
+            "\u00f5\14\uffff\1\u00f0\4\uffff\1\u00f1\7\uffff\1\u0103\1\uffff"+
+            "\1\u0107\1\u0104\1\u00fb\1\u0105\1\u00fe\1\u00fd\1\u00fc\1\u0106"+
+            "\1\u0109\26\uffff\1\u0109\25\uffff\1\u00f6\13\uffff\3\u00ee"+
+            "\12\uffff\1\u0108\32\uffff\1\u00eb\2\uffff\1\u00ec\1\u00ed\5"+
+            "\u00ff\1\uffff\1\u0100\6\u0101\1\u0102\2\uffff\1\u00f2\12\uffff"+
+            "\1\u00f7\2\uffff\1\u00f8\3\uffff\1\u00f9",
+            "\1\uffff",
+            "",
+            "\1\uffff",
+            "\1\uffff",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "",
+            "\1\uffff",
+            "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -11719,8 +11842,6 @@ public class XQFTParser extends Parser {
             "",
             "",
             "",
-            "",
-            "",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -11779,18 +11900,15 @@ public class XQFTParser extends Parser {
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
-            "",
             "\1\uffff",
             "\1\uffff",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -11920,25 +12038,59 @@ public class XQFTParser extends Parser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA27_43 = input.LA(1);
+                        int LA27_99 = input.LA(1);
 
                          
-                        int index27_43 = input.index();
+                        int index27_99 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA27_43==STARSi) ) {s = 24;}
+                        if ( (LA27_99==EOF||LA27_99==SEMICOLONSi||(LA27_99>=EQSi && LA27_99<=COMMASi)||LA27_99==DEFAULT||LA27_99==COLLATION||(LA27_99>=ORDER && LA27_99<=EMPTY)||LA27_99==AT||(LA27_99>=ASSIGNSi && LA27_99<=EXTERNAL)||(LA27_99>=RPARSi && LA27_99<=RBRACSi)||(LA27_99>=RETURN && LA27_99<=WHERE)||(LA27_99>=STABLE && LA27_99<=DESCENDING)||LA27_99==SATISFIES||LA27_99==CASE||(LA27_99>=ELSE && LA27_99<=INSTANCE)||LA27_99==WITHOUT||(LA27_99>=EQ && LA27_99<=NODEAFTERSi)||LA27_99==WORDS||LA27_99==TIMES||(LA27_99>=SENTENCES && LA27_99<=PARAGRAPHS)||LA27_99==LEVELS||LA27_99==RBRACKSi) ) {s = 25;}
 
-                        else if ( (LA27_43==EOF||LA27_43==SEMICOLONSi||(LA27_43>=EQSi && LA27_43<=COMMASi)||LA27_43==DEFAULT||LA27_43==COLLATION||(LA27_43>=ORDER && LA27_43<=EMPTY)||LA27_43==AT||(LA27_43>=ASSIGNSi && LA27_43<=EXTERNAL)||(LA27_43>=RPARSi && LA27_43<=RBRACSi)||(LA27_43>=RETURN && LA27_43<=WHERE)||(LA27_43>=STABLE && LA27_43<=DESCENDING)||LA27_43==SATISFIES||LA27_43==CASE||(LA27_43>=ELSE && LA27_43<=INSTANCE)||LA27_43==WITHOUT||(LA27_43>=EQ && LA27_43<=NODEAFTERSi)||LA27_43==WORDS||LA27_43==TIMES||(LA27_43>=SENTENCES && LA27_43<=PARAGRAPHS)||LA27_43==LEVELS||LA27_43==RBRACKSi) ) {s = 25;}
+                        else if ( (LA27_99==STARSi) ) {s = 24;}
 
-                        else if ( (LA27_43==PLUSSi) ) {s = 26;}
+                        else if ( (LA27_99==PLUSSi) ) {s = 26;}
 
-                        else if ( (LA27_43==QUESTIONSi) && (synpred1())) {s = 27;}
+                        else if ( (LA27_99==QUESTIONSi) && (synpred1())) {s = 27;}
 
                          
-                        input.seek(index27_43);
+                        input.seek(index27_99);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
+                        int LA27_209 = input.LA(1);
+
+                         
+                        int index27_209 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_209);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA27_36 = input.LA(1);
+
+                         
+                        int index27_36 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA27_36==STARSi) ) {s = 24;}
+
+                        else if ( (LA27_36==EOF||LA27_36==SEMICOLONSi||(LA27_36>=EQSi && LA27_36<=COMMASi)||LA27_36==DEFAULT||LA27_36==COLLATION||(LA27_36>=ORDER && LA27_36<=EMPTY)||LA27_36==AT||(LA27_36>=ASSIGNSi && LA27_36<=EXTERNAL)||(LA27_36>=RPARSi && LA27_36<=RBRACSi)||(LA27_36>=RETURN && LA27_36<=WHERE)||(LA27_36>=STABLE && LA27_36<=DESCENDING)||LA27_36==SATISFIES||LA27_36==CASE||(LA27_36>=ELSE && LA27_36<=INSTANCE)||LA27_36==WITHOUT||(LA27_36>=EQ && LA27_36<=NODEAFTERSi)||LA27_36==WORDS||LA27_36==TIMES||(LA27_36>=SENTENCES && LA27_36<=PARAGRAPHS)||LA27_36==LEVELS||LA27_36==RBRACKSi) ) {s = 25;}
+
+                        else if ( (LA27_36==PLUSSi) ) {s = 26;}
+
+                        else if ( (LA27_36==QUESTIONSi) && (synpred1())) {s = 27;}
+
+                         
+                        input.seek(index27_36);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
                         int LA27_42 = input.LA(1);
 
                          
@@ -11957,7 +12109,7 @@ public class XQFTParser extends Parser {
                         input.seek(index27_42);
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
+                    case 4 : 
                         int LA27_41 = input.LA(1);
 
                          
@@ -11976,101 +12128,1146 @@ public class XQFTParser extends Parser {
                         input.seek(index27_41);
                         if ( s>=0 ) return s;
                         break;
-                    case 3 : 
-                        int LA27_106 = input.LA(1);
-
-                         
-                        int index27_106 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1()) ) {s = 194;}
-
-                        else if ( (true) ) {s = 25;}
-
-                         
-                        input.seek(index27_106);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
+                    case 5 : 
                         int LA27_107 = input.LA(1);
 
                          
                         int index27_107 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred1()) ) {s = 194;}
+                        if ( ((LA27_107>=IntegerLiteral && LA27_107<=DoubleLiteral)) ) {s = 280;}
 
-                        else if ( (true) ) {s = 25;}
+                        else if ( (LA27_107==StringLiteral) ) {s = 281;}
+
+                        else if ( (LA27_107==DOLLARSi) ) {s = 282;}
+
+                        else if ( (LA27_107==LPARSi) ) {s = 283;}
+
+                        else if ( (LA27_107==DOTSi) ) {s = 284;}
+
+                        else if ( (LA27_107==NCName) ) {s = 285;}
+
+                        else if ( (LA27_107==ORDERED) ) {s = 286;}
+
+                        else if ( (LA27_107==UNORDERED) ) {s = 287;}
+
+                        else if ( (LA27_107==LTSi) ) {s = 288;}
+
+                        else if ( (LA27_107==LCOMMENTSi) ) {s = 289;}
+
+                        else if ( (LA27_107==LPISi) ) {s = 290;}
+
+                        else if ( (LA27_107==DOCUMENT) ) {s = 291;}
+
+                        else if ( (LA27_107==ELEMENT) ) {s = 292;}
+
+                        else if ( (LA27_107==ATTRIBUTE) ) {s = 293;}
+
+                        else if ( (LA27_107==TEXT) ) {s = 294;}
+
+                        else if ( (LA27_107==COMMENT) ) {s = 295;}
+
+                        else if ( (LA27_107==PROCESSING_INSTRUCTION) ) {s = 296;}
+
+                        else if ( ((LA27_107>=PARENT && LA27_107<=ANCESTOR_OR_SELF)) ) {s = 297;}
+
+                        else if ( (LA27_107==DOTDOTSi) ) {s = 298;}
+
+                        else if ( ((LA27_107>=CHILD && LA27_107<=FOLLOWING)) ) {s = 299;}
+
+                        else if ( (LA27_107==ATSi) ) {s = 300;}
+
+                        else if ( (LA27_107==DOCUMENT_NODE) ) {s = 301;}
+
+                        else if ( (LA27_107==SCHEMAELEMENT) ) {s = 302;}
+
+                        else if ( (LA27_107==SCHEMAATTRIBUTE) ) {s = 303;}
+
+                        else if ( (LA27_107==NODE) ) {s = 304;}
+
+                        else if ( (LA27_107==STARSi) ) {s = 305;}
+
+                        else if ( (LA27_107==CAST) && (synpred1())) {s = 271;}
+
+                        else if ( (LA27_107==CASTABLE) && (synpred1())) {s = 272;}
+
+                        else if ( (LA27_107==TREAT) && (synpred1())) {s = 273;}
+
+                        else if ( (LA27_107==INSTANCE) && (synpred1())) {s = 274;}
+
+                        else if ( ((LA27_107>=INTERSECT && LA27_107<=EXCEPT)) && (synpred1())) {s = 275;}
+
+                        else if ( ((LA27_107>=UNION && LA27_107<=PIPESi)) && (synpred1())) {s = 276;}
+
+                        else if ( (LA27_107==PLUSSi||LA27_107==MINUSSi) && (synpred1())) {s = 306;}
+
+                        else if ( (LA27_107==TO) && (synpred1())) {s = 59;}
+
+                        else if ( (LA27_107==FTCONTAINS) && (synpred1())) {s = 60;}
+
+                        else if ( ((LA27_107>=EQ && LA27_107<=GE)) && (synpred1())) {s = 61;}
+
+                        else if ( (LA27_107==EQSi||LA27_107==NEQSi||(LA27_107>=LTOREQSi && LA27_107<=GTOREQSi)) && (synpred1())) {s = 87;}
+
+                        else if ( ((LA27_107>=IS && LA27_107<=NODEAFTERSi)) && (synpred1())) {s = 63;}
+
+                        else if ( (LA27_107==AND) && (synpred1())) {s = 64;}
+
+                        else if ( (LA27_107==OR) && (synpred1())) {s = 65;}
+
+                        else if ( (LA27_107==COMMASi) && (synpred1())) {s = 277;}
+
+                        else if ( (LA27_107==EOF) && (synpred1())) {s = 66;}
+
+                        else if ( (LA27_107==RBRACSi) && (synpred1())) {s = 67;}
+
+                        else if ( (LA27_107==RPARSi) && (synpred1())) {s = 278;}
+
+                        else if ( (LA27_107==RBRACKSi) && (synpred1())) {s = 68;}
+
+                        else if ( (LA27_107==SEMICOLONSi) && (synpred1())) {s = 69;}
+
+                        else if ( (LA27_107==WHERE) && (synpred1())) {s = 70;}
+
+                        else if ( (LA27_107==ORDER) && (synpred1())) {s = 71;}
+
+                        else if ( (LA27_107==STABLE) && (synpred1())) {s = 72;}
+
+                        else if ( (LA27_107==RETURN) && (synpred1())) {s = 279;}
+
+                        else if ( (LA27_107==FOR) && (synpred1())) {s = 73;}
+
+                        else if ( (LA27_107==LET) && (synpred1())) {s = 74;}
+
+                        else if ( ((LA27_107>=ASCENDING && LA27_107<=DESCENDING)) && (synpred1())) {s = 75;}
+
+                        else if ( (LA27_107==EMPTY) && (synpred1())) {s = 76;}
+
+                        else if ( (LA27_107==COLLATION) && (synpred1())) {s = 77;}
+
+                        else if ( (LA27_107==SATISFIES) && (synpred1())) {s = 78;}
+
+                        else if ( (LA27_107==DEFAULT) && (synpred1())) {s = 79;}
+
+                        else if ( (LA27_107==CASE) && (synpred1())) {s = 80;}
+
+                        else if ( (LA27_107==ELSE) && (synpred1())) {s = 81;}
+
+                        else if ( (LA27_107==WITHOUT) && (synpred1())) {s = 82;}
+
+                        else if ( (LA27_107==TIMES) && (synpred1())) {s = 83;}
+
+                        else if ( (LA27_107==WORDS||(LA27_107>=SENTENCES && LA27_107<=PARAGRAPHS)) && (synpred1())) {s = 84;}
+
+                        else if ( (LA27_107==LEVELS) && (synpred1())) {s = 85;}
+
+                        else if ( ((LA27_107>=DIV && LA27_107<=MOD)) && (synpred1())) {s = 88;}
 
                          
                         input.seek(index27_107);
                         if ( s>=0 ) return s;
                         break;
-                    case 5 : 
-                        int LA27_124 = input.LA(1);
-
-                         
-                        int index27_124 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1()) ) {s = 194;}
-
-                        else if ( (true) ) {s = 25;}
-
-                         
-                        input.seek(index27_124);
-                        if ( s>=0 ) return s;
-                        break;
                     case 6 : 
-                        int LA27_111 = input.LA(1);
+                        int LA27_197 = input.LA(1);
 
                          
-                        int index27_111 = input.index();
+                        int index27_197 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred1()) ) {s = 194;}
+                        if ( ((LA27_197>=IntegerLiteral && LA27_197<=DoubleLiteral)) ) {s = 416;}
 
-                        else if ( (true) ) {s = 25;}
+                        else if ( (LA27_197==StringLiteral) ) {s = 417;}
+
+                        else if ( (LA27_197==DOLLARSi) ) {s = 418;}
+
+                        else if ( (LA27_197==LPARSi) ) {s = 419;}
+
+                        else if ( (LA27_197==DOTSi) ) {s = 420;}
+
+                        else if ( (LA27_197==NCName) ) {s = 421;}
+
+                        else if ( (LA27_197==ORDERED) ) {s = 422;}
+
+                        else if ( (LA27_197==UNORDERED) ) {s = 423;}
+
+                        else if ( (LA27_197==LTSi) ) {s = 424;}
+
+                        else if ( (LA27_197==LCOMMENTSi) ) {s = 425;}
+
+                        else if ( (LA27_197==LPISi) ) {s = 426;}
+
+                        else if ( (LA27_197==DOCUMENT) ) {s = 427;}
+
+                        else if ( (LA27_197==ELEMENT) ) {s = 428;}
+
+                        else if ( (LA27_197==ATTRIBUTE) ) {s = 429;}
+
+                        else if ( (LA27_197==TEXT) ) {s = 430;}
+
+                        else if ( (LA27_197==COMMENT) ) {s = 431;}
+
+                        else if ( (LA27_197==PROCESSING_INSTRUCTION) ) {s = 432;}
+
+                        else if ( ((LA27_197>=PARENT && LA27_197<=ANCESTOR_OR_SELF)) ) {s = 433;}
+
+                        else if ( (LA27_197==DOTDOTSi) ) {s = 434;}
+
+                        else if ( ((LA27_197>=CHILD && LA27_197<=FOLLOWING)) ) {s = 435;}
+
+                        else if ( (LA27_197==ATSi) ) {s = 436;}
+
+                        else if ( (LA27_197==DOCUMENT_NODE) ) {s = 437;}
+
+                        else if ( (LA27_197==SCHEMAELEMENT) ) {s = 438;}
+
+                        else if ( (LA27_197==SCHEMAATTRIBUTE) ) {s = 439;}
+
+                        else if ( (LA27_197==NODE) ) {s = 440;}
+
+                        else if ( (LA27_197==STARSi) ) {s = 441;}
+
+                        else if ( (LA27_197==CAST) && (synpred1())) {s = 271;}
+
+                        else if ( (LA27_197==CASTABLE) && (synpred1())) {s = 272;}
+
+                        else if ( (LA27_197==TREAT) && (synpred1())) {s = 273;}
+
+                        else if ( (LA27_197==INSTANCE) && (synpred1())) {s = 274;}
+
+                        else if ( ((LA27_197>=INTERSECT && LA27_197<=EXCEPT)) && (synpred1())) {s = 275;}
+
+                        else if ( ((LA27_197>=UNION && LA27_197<=PIPESi)) && (synpred1())) {s = 276;}
+
+                        else if ( (LA27_197==PLUSSi||LA27_197==MINUSSi) && (synpred1())) {s = 306;}
+
+                        else if ( (LA27_197==TO) && (synpred1())) {s = 59;}
+
+                        else if ( (LA27_197==FTCONTAINS) && (synpred1())) {s = 60;}
+
+                        else if ( ((LA27_197>=EQ && LA27_197<=GE)) && (synpred1())) {s = 61;}
+
+                        else if ( (LA27_197==EQSi||LA27_197==NEQSi||(LA27_197>=LTOREQSi && LA27_197<=GTOREQSi)) && (synpred1())) {s = 87;}
+
+                        else if ( ((LA27_197>=IS && LA27_197<=NODEAFTERSi)) && (synpred1())) {s = 63;}
+
+                        else if ( (LA27_197==AND) && (synpred1())) {s = 64;}
+
+                        else if ( (LA27_197==OR) && (synpred1())) {s = 65;}
+
+                        else if ( (LA27_197==COMMASi) && (synpred1())) {s = 277;}
+
+                        else if ( (LA27_197==EOF) && (synpred1())) {s = 66;}
+
+                        else if ( (LA27_197==RBRACSi) && (synpred1())) {s = 67;}
+
+                        else if ( (LA27_197==RPARSi) && (synpred1())) {s = 278;}
+
+                        else if ( (LA27_197==RBRACKSi) && (synpred1())) {s = 68;}
+
+                        else if ( (LA27_197==SEMICOLONSi) && (synpred1())) {s = 69;}
+
+                        else if ( (LA27_197==WHERE) && (synpred1())) {s = 70;}
+
+                        else if ( (LA27_197==ORDER) && (synpred1())) {s = 71;}
+
+                        else if ( (LA27_197==STABLE) && (synpred1())) {s = 72;}
+
+                        else if ( (LA27_197==RETURN) && (synpred1())) {s = 279;}
+
+                        else if ( (LA27_197==FOR) && (synpred1())) {s = 73;}
+
+                        else if ( (LA27_197==LET) && (synpred1())) {s = 74;}
+
+                        else if ( ((LA27_197>=ASCENDING && LA27_197<=DESCENDING)) && (synpred1())) {s = 75;}
+
+                        else if ( (LA27_197==EMPTY) && (synpred1())) {s = 76;}
+
+                        else if ( (LA27_197==COLLATION) && (synpred1())) {s = 77;}
+
+                        else if ( (LA27_197==SATISFIES) && (synpred1())) {s = 78;}
+
+                        else if ( (LA27_197==DEFAULT) && (synpred1())) {s = 79;}
+
+                        else if ( (LA27_197==CASE) && (synpred1())) {s = 80;}
+
+                        else if ( (LA27_197==ELSE) && (synpred1())) {s = 81;}
+
+                        else if ( (LA27_197==WITHOUT) && (synpred1())) {s = 82;}
+
+                        else if ( (LA27_197==TIMES) && (synpred1())) {s = 83;}
+
+                        else if ( (LA27_197==WORDS||(LA27_197>=SENTENCES && LA27_197<=PARAGRAPHS)) && (synpred1())) {s = 84;}
+
+                        else if ( (LA27_197==LEVELS) && (synpred1())) {s = 85;}
+
+                        else if ( ((LA27_197>=DIV && LA27_197<=MOD)) && (synpred1())) {s = 88;}
 
                          
-                        input.seek(index27_111);
+                        input.seek(index27_197);
                         if ( s>=0 ) return s;
                         break;
                     case 7 : 
-                        int LA27_109 = input.LA(1);
+                        int LA27_43 = input.LA(1);
 
                          
-                        int index27_109 = input.index();
+                        int index27_43 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred1()) ) {s = 194;}
+                        if ( (LA27_43==STARSi) ) {s = 24;}
 
-                        else if ( (true) ) {s = 25;}
+                        else if ( (LA27_43==EOF||LA27_43==SEMICOLONSi||(LA27_43>=EQSi && LA27_43<=COMMASi)||LA27_43==DEFAULT||LA27_43==COLLATION||(LA27_43>=ORDER && LA27_43<=EMPTY)||LA27_43==AT||(LA27_43>=ASSIGNSi && LA27_43<=EXTERNAL)||(LA27_43>=RPARSi && LA27_43<=RBRACSi)||(LA27_43>=RETURN && LA27_43<=WHERE)||(LA27_43>=STABLE && LA27_43<=DESCENDING)||LA27_43==SATISFIES||LA27_43==CASE||(LA27_43>=ELSE && LA27_43<=INSTANCE)||LA27_43==WITHOUT||(LA27_43>=EQ && LA27_43<=NODEAFTERSi)||LA27_43==WORDS||LA27_43==TIMES||(LA27_43>=SENTENCES && LA27_43<=PARAGRAPHS)||LA27_43==LEVELS||LA27_43==RBRACKSi) ) {s = 25;}
+
+                        else if ( (LA27_43==PLUSSi) ) {s = 26;}
+
+                        else if ( (LA27_43==QUESTIONSi) && (synpred1())) {s = 27;}
 
                          
-                        input.seek(index27_109);
+                        input.seek(index27_43);
                         if ( s>=0 ) return s;
                         break;
                     case 8 : 
-                        int LA27_209 = input.LA(1);
+                        int LA27_45 = input.LA(1);
 
                          
-                        int index27_209 = input.index();
+                        int index27_45 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred1()) ) {s = 358;}
+                        if ( (LA27_45==EOF||LA27_45==SEMICOLONSi||(LA27_45>=EQSi && LA27_45<=COMMASi)||LA27_45==DEFAULT||LA27_45==COLLATION||(LA27_45>=ORDER && LA27_45<=EMPTY)||LA27_45==AT||(LA27_45>=ASSIGNSi && LA27_45<=EXTERNAL)||(LA27_45>=RPARSi && LA27_45<=RBRACSi)||(LA27_45>=RETURN && LA27_45<=WHERE)||(LA27_45>=STABLE && LA27_45<=DESCENDING)||LA27_45==SATISFIES||LA27_45==CASE||(LA27_45>=ELSE && LA27_45<=INSTANCE)||LA27_45==WITHOUT||(LA27_45>=EQ && LA27_45<=NODEAFTERSi)||LA27_45==WORDS||LA27_45==TIMES||(LA27_45>=SENTENCES && LA27_45<=PARAGRAPHS)||LA27_45==LEVELS||LA27_45==RBRACKSi) ) {s = 25;}
+
+                        else if ( (LA27_45==STARSi) ) {s = 24;}
+
+                        else if ( (LA27_45==PLUSSi) ) {s = 26;}
+
+                        else if ( (LA27_45==QUESTIONSi) && (synpred1())) {s = 27;}
+
+                         
+                        input.seek(index27_45);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 9 : 
+                        int LA27_140 = input.LA(1);
+
+                         
+                        int index27_140 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 306;}
 
                         else if ( (true) ) {s = 25;}
 
                          
-                        input.seek(index27_209);
+                        input.seek(index27_140);
                         if ( s>=0 ) return s;
                         break;
-                    case 9 : 
-                        int LA27_131 = input.LA(1);
+                    case 10 : 
+                        int LA27_30 = input.LA(1);
 
                          
-                        int index27_131 = input.index();
+                        int index27_30 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA27_30==STARSi) ) {s = 24;}
+
+                        else if ( (LA27_30==EOF||LA27_30==SEMICOLONSi||(LA27_30>=EQSi && LA27_30<=COMMASi)||LA27_30==DEFAULT||LA27_30==COLLATION||(LA27_30>=ORDER && LA27_30<=EMPTY)||LA27_30==AT||(LA27_30>=ASSIGNSi && LA27_30<=EXTERNAL)||(LA27_30>=RPARSi && LA27_30<=RBRACSi)||(LA27_30>=RETURN && LA27_30<=WHERE)||(LA27_30>=STABLE && LA27_30<=DESCENDING)||LA27_30==SATISFIES||LA27_30==CASE||(LA27_30>=ELSE && LA27_30<=INSTANCE)||LA27_30==WITHOUT||(LA27_30>=EQ && LA27_30<=NODEAFTERSi)||LA27_30==WORDS||LA27_30==TIMES||(LA27_30>=SENTENCES && LA27_30<=PARAGRAPHS)||LA27_30==LEVELS||LA27_30==RBRACKSi) ) {s = 25;}
+
+                        else if ( (LA27_30==PLUSSi) ) {s = 26;}
+
+                        else if ( (LA27_30==QUESTIONSi) && (synpred1())) {s = 27;}
+
+                         
+                        input.seek(index27_30);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 11 : 
+                        int LA27_57 = input.LA(1);
+
+                         
+                        int index27_57 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA27_57==EOF||LA27_57==SEMICOLONSi||(LA27_57>=EQSi && LA27_57<=COMMASi)||LA27_57==DEFAULT||LA27_57==COLLATION||(LA27_57>=ORDER && LA27_57<=EMPTY)||LA27_57==COLONSi||LA27_57==RPARSi||LA27_57==RBRACSi||(LA27_57>=RETURN && LA27_57<=FOR)||(LA27_57>=LET && LA27_57<=WHERE)||(LA27_57>=STABLE && LA27_57<=DESCENDING)||LA27_57==SATISFIES||LA27_57==CASE||(LA27_57>=ELSE && LA27_57<=TO)||(LA27_57>=DIV && LA27_57<=INSTANCE)||(LA27_57>=TREAT && LA27_57<=WITHOUT)||(LA27_57>=EQ && LA27_57<=NEQSi)||(LA27_57>=LTOREQSi && LA27_57<=NODEAFTERSi)||LA27_57==WORDS||LA27_57==TIMES||(LA27_57>=SENTENCES && LA27_57<=PARAGRAPHS)||LA27_57==LEVELS||(LA27_57>=LBRACKSi && LA27_57<=RBRACKSi)) ) {s = 25;}
+
+                        else if ( (LA27_57==DBLSLASHSi) ) {s = 102;}
+
+                        else if ( (LA27_57==PLUSSi||LA27_57==MINUSSi) ) {s = 103;}
+
+                        else if ( (LA27_57==LTSi) ) {s = 104;}
+
+                        else if ( (LA27_57==STARSi) ) {s = 105;}
+
+                        else if ( (LA27_57==VALIDATE) && (synpred1())) {s = 106;}
+
+                        else if ( (LA27_57==SLASHSi) ) {s = 107;}
+
+                        else if ( ((LA27_57>=IntegerLiteral && LA27_57<=DoubleLiteral)) && (synpred1())) {s = 108;}
+
+                        else if ( (LA27_57==StringLiteral) && (synpred1())) {s = 109;}
+
+                        else if ( (LA27_57==DOLLARSi) && (synpred1())) {s = 110;}
+
+                        else if ( (LA27_57==LPARSi) && (synpred1())) {s = 111;}
+
+                        else if ( (LA27_57==DOTSi) && (synpred1())) {s = 112;}
+
+                        else if ( (LA27_57==NCName) && (synpred1())) {s = 113;}
+
+                        else if ( (LA27_57==ORDERED) && (synpred1())) {s = 114;}
+
+                        else if ( (LA27_57==UNORDERED) && (synpred1())) {s = 115;}
+
+                        else if ( (LA27_57==LCOMMENTSi) && (synpred1())) {s = 116;}
+
+                        else if ( (LA27_57==LPISi) && (synpred1())) {s = 117;}
+
+                        else if ( (LA27_57==DOCUMENT) && (synpred1())) {s = 118;}
+
+                        else if ( (LA27_57==ELEMENT) && (synpred1())) {s = 119;}
+
+                        else if ( (LA27_57==ATTRIBUTE) && (synpred1())) {s = 120;}
+
+                        else if ( (LA27_57==TEXT) && (synpred1())) {s = 121;}
+
+                        else if ( (LA27_57==COMMENT) && (synpred1())) {s = 122;}
+
+                        else if ( (LA27_57==PROCESSING_INSTRUCTION) && (synpred1())) {s = 123;}
+
+                        else if ( ((LA27_57>=PARENT && LA27_57<=ANCESTOR_OR_SELF)) && (synpred1())) {s = 124;}
+
+                        else if ( (LA27_57==DOTDOTSi) && (synpred1())) {s = 125;}
+
+                        else if ( ((LA27_57>=CHILD && LA27_57<=FOLLOWING)) && (synpred1())) {s = 126;}
+
+                        else if ( (LA27_57==ATSi) && (synpred1())) {s = 127;}
+
+                        else if ( (LA27_57==DOCUMENT_NODE) && (synpred1())) {s = 128;}
+
+                        else if ( (LA27_57==SCHEMAELEMENT) && (synpred1())) {s = 129;}
+
+                        else if ( (LA27_57==SCHEMAATTRIBUTE) && (synpred1())) {s = 130;}
+
+                        else if ( (LA27_57==NODE) && (synpred1())) {s = 131;}
+
+                        else if ( (LA27_57==LPRAGSi) && (synpred1())) {s = 132;}
+
+                         
+                        input.seek(index27_57);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 12 : 
+                        int LA27_210 = input.LA(1);
+
+                         
+                        int index27_210 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_210);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 13 : 
+                        int LA27_227 = input.LA(1);
+
+                         
+                        int index27_227 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_227);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 14 : 
+                        int LA27_154 = input.LA(1);
+
+                         
+                        int index27_154 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 306;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_154);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 15 : 
+                        int LA27_256 = input.LA(1);
+
+                         
+                        int index27_256 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_256);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 16 : 
+                        int LA27_242 = input.LA(1);
+
+                         
+                        int index27_242 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_242);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 17 : 
+                        int LA27_214 = input.LA(1);
+
+                         
+                        int index27_214 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_214);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 18 : 
+                        int LA27_139 = input.LA(1);
+
+                         
+                        int index27_139 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 306;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_139);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 19 : 
+                        int LA27_212 = input.LA(1);
+
+                         
+                        int index27_212 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_212);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 20 : 
+                        int LA27_234 = input.LA(1);
+
+                         
+                        int index27_234 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_234);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 21 : 
+                        int LA27_161 = input.LA(1);
+
+                         
+                        int index27_161 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 306;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_161);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 22 : 
+                        int LA27_141 = input.LA(1);
+
+                         
+                        int index27_141 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 306;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_141);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 23 : 
+                        int LA27_101 = input.LA(1);
+
+                         
+                        int index27_101 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA27_101==EOF||LA27_101==SEMICOLONSi||(LA27_101>=EQSi && LA27_101<=COMMASi)||LA27_101==DEFAULT||LA27_101==COLLATION||(LA27_101>=ORDER && LA27_101<=EMPTY)||LA27_101==AT||(LA27_101>=ASSIGNSi && LA27_101<=EXTERNAL)||(LA27_101>=RPARSi && LA27_101<=RBRACSi)||(LA27_101>=RETURN && LA27_101<=WHERE)||(LA27_101>=STABLE && LA27_101<=DESCENDING)||LA27_101==SATISFIES||LA27_101==CASE||(LA27_101>=ELSE && LA27_101<=INSTANCE)||LA27_101==WITHOUT||(LA27_101>=EQ && LA27_101<=NODEAFTERSi)||LA27_101==WORDS||LA27_101==TIMES||(LA27_101>=SENTENCES && LA27_101<=PARAGRAPHS)||LA27_101==LEVELS||LA27_101==RBRACKSi) ) {s = 25;}
+
+                        else if ( (LA27_101==STARSi) ) {s = 24;}
+
+                        else if ( (LA27_101==PLUSSi) ) {s = 26;}
+
+                        else if ( (LA27_101==QUESTIONSi) && (synpred1())) {s = 27;}
+
+                         
+                        input.seek(index27_101);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 24 : 
+                        int LA27_136 = input.LA(1);
+
+                         
+                        int index27_136 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 306;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_136);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 25 : 
+                        int LA27_105 = input.LA(1);
+
+                         
+                        int index27_105 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA27_105==COLONSi) && (synpred1())) {s = 267;}
+
+                        else if ( (LA27_105==PLUSSi||LA27_105==MINUSSi) ) {s = 58;}
+
+                        else if ( (LA27_105==StringLiteral||LA27_105==NCName||LA27_105==ELEMENT||(LA27_105>=ORDERED && LA27_105<=UNORDERED)||LA27_105==DOLLARSi||LA27_105==LPARSi||LA27_105==DOCUMENT_NODE||(LA27_105>=SCHEMAELEMENT && LA27_105<=NODE)||(LA27_105>=IntegerLiteral && LA27_105<=DoubleLiteral)||LA27_105==LPRAGSi||LA27_105==VALIDATE||(LA27_105>=PARENT && LA27_105<=ANCESTOR_OR_SELF)||(LA27_105>=DOTDOTSi && LA27_105<=ATSi)||LA27_105==DOTSi||LA27_105==LCOMMENTSi||LA27_105==LPISi||LA27_105==DOCUMENT) ) {s = 25;}
+
+                        else if ( (LA27_105==DBLSLASHSi) ) {s = 268;}
+
+                        else if ( (LA27_105==SLASHSi) ) {s = 269;}
+
+                        else if ( (LA27_105==LTSi) ) {s = 62;}
+
+                        else if ( (LA27_105==STARSi) ) {s = 57;}
+
+                        else if ( (LA27_105==LBRACKSi) && (synpred1())) {s = 270;}
+
+                        else if ( (LA27_105==CAST) && (synpred1())) {s = 271;}
+
+                        else if ( (LA27_105==CASTABLE) && (synpred1())) {s = 272;}
+
+                        else if ( (LA27_105==TREAT) && (synpred1())) {s = 273;}
+
+                        else if ( (LA27_105==INSTANCE) && (synpred1())) {s = 274;}
+
+                        else if ( ((LA27_105>=INTERSECT && LA27_105<=EXCEPT)) && (synpred1())) {s = 275;}
+
+                        else if ( ((LA27_105>=UNION && LA27_105<=PIPESi)) && (synpred1())) {s = 276;}
+
+                        else if ( (LA27_105==TO) && (synpred1())) {s = 59;}
+
+                        else if ( (LA27_105==FTCONTAINS) && (synpred1())) {s = 60;}
+
+                        else if ( ((LA27_105>=EQ && LA27_105<=GE)) && (synpred1())) {s = 61;}
+
+                        else if ( (LA27_105==EQSi||LA27_105==NEQSi||(LA27_105>=LTOREQSi && LA27_105<=GTOREQSi)) && (synpred1())) {s = 87;}
+
+                        else if ( ((LA27_105>=IS && LA27_105<=NODEAFTERSi)) && (synpred1())) {s = 63;}
+
+                        else if ( (LA27_105==AND) && (synpred1())) {s = 64;}
+
+                        else if ( (LA27_105==OR) && (synpred1())) {s = 65;}
+
+                        else if ( (LA27_105==COMMASi) && (synpred1())) {s = 277;}
+
+                        else if ( (LA27_105==EOF) && (synpred1())) {s = 66;}
+
+                        else if ( (LA27_105==RBRACSi) && (synpred1())) {s = 67;}
+
+                        else if ( (LA27_105==RPARSi) && (synpred1())) {s = 278;}
+
+                        else if ( (LA27_105==RBRACKSi) && (synpred1())) {s = 68;}
+
+                        else if ( (LA27_105==SEMICOLONSi) && (synpred1())) {s = 69;}
+
+                        else if ( (LA27_105==WHERE) && (synpred1())) {s = 70;}
+
+                        else if ( (LA27_105==ORDER) && (synpred1())) {s = 71;}
+
+                        else if ( (LA27_105==STABLE) && (synpred1())) {s = 72;}
+
+                        else if ( (LA27_105==RETURN) && (synpred1())) {s = 279;}
+
+                        else if ( (LA27_105==FOR) && (synpred1())) {s = 73;}
+
+                        else if ( (LA27_105==LET) && (synpred1())) {s = 74;}
+
+                        else if ( ((LA27_105>=ASCENDING && LA27_105<=DESCENDING)) && (synpred1())) {s = 75;}
+
+                        else if ( (LA27_105==EMPTY) && (synpred1())) {s = 76;}
+
+                        else if ( (LA27_105==COLLATION) && (synpred1())) {s = 77;}
+
+                        else if ( (LA27_105==SATISFIES) && (synpred1())) {s = 78;}
+
+                        else if ( (LA27_105==DEFAULT) && (synpred1())) {s = 79;}
+
+                        else if ( (LA27_105==CASE) && (synpred1())) {s = 80;}
+
+                        else if ( (LA27_105==ELSE) && (synpred1())) {s = 81;}
+
+                        else if ( (LA27_105==WITHOUT) && (synpred1())) {s = 82;}
+
+                        else if ( (LA27_105==TIMES) && (synpred1())) {s = 83;}
+
+                        else if ( (LA27_105==WORDS||(LA27_105>=SENTENCES && LA27_105<=PARAGRAPHS)) && (synpred1())) {s = 84;}
+
+                        else if ( (LA27_105==LEVELS) && (synpred1())) {s = 85;}
+
+                        else if ( ((LA27_105>=DIV && LA27_105<=MOD)) && (synpred1())) {s = 88;}
+
+                         
+                        input.seek(index27_105);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 26 : 
+                        int LA27_196 = input.LA(1);
+
+                         
+                        int index27_196 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA27_196==COLONSi) && (synpred1())) {s = 267;}
+
+                        else if ( (LA27_196==PLUSSi||LA27_196==MINUSSi) ) {s = 411;}
+
+                        else if ( (LA27_196==StringLiteral||LA27_196==NCName||LA27_196==ELEMENT||(LA27_196>=ORDERED && LA27_196<=UNORDERED)||LA27_196==DOLLARSi||LA27_196==LPARSi||LA27_196==DOCUMENT_NODE||(LA27_196>=SCHEMAELEMENT && LA27_196<=NODE)||(LA27_196>=IntegerLiteral && LA27_196<=DoubleLiteral)||LA27_196==LPRAGSi||LA27_196==VALIDATE||(LA27_196>=PARENT && LA27_196<=ANCESTOR_OR_SELF)||(LA27_196>=DOTDOTSi && LA27_196<=ATSi)||LA27_196==DOTSi||LA27_196==LCOMMENTSi||LA27_196==LPISi||LA27_196==DOCUMENT) ) {s = 25;}
+
+                        else if ( (LA27_196==DBLSLASHSi) ) {s = 412;}
+
+                        else if ( (LA27_196==SLASHSi) ) {s = 413;}
+
+                        else if ( (LA27_196==LTSi) ) {s = 414;}
+
+                        else if ( (LA27_196==STARSi) ) {s = 415;}
+
+                        else if ( (LA27_196==LBRACKSi) && (synpred1())) {s = 270;}
+
+                        else if ( (LA27_196==CAST) && (synpred1())) {s = 271;}
+
+                        else if ( (LA27_196==CASTABLE) && (synpred1())) {s = 272;}
+
+                        else if ( (LA27_196==TREAT) && (synpred1())) {s = 273;}
+
+                        else if ( (LA27_196==INSTANCE) && (synpred1())) {s = 274;}
+
+                        else if ( ((LA27_196>=INTERSECT && LA27_196<=EXCEPT)) && (synpred1())) {s = 275;}
+
+                        else if ( ((LA27_196>=UNION && LA27_196<=PIPESi)) && (synpred1())) {s = 276;}
+
+                        else if ( (LA27_196==TO) && (synpred1())) {s = 59;}
+
+                        else if ( (LA27_196==FTCONTAINS) && (synpred1())) {s = 60;}
+
+                        else if ( ((LA27_196>=EQ && LA27_196<=GE)) && (synpred1())) {s = 61;}
+
+                        else if ( (LA27_196==EQSi||LA27_196==NEQSi||(LA27_196>=LTOREQSi && LA27_196<=GTOREQSi)) && (synpred1())) {s = 87;}
+
+                        else if ( ((LA27_196>=IS && LA27_196<=NODEAFTERSi)) && (synpred1())) {s = 63;}
+
+                        else if ( (LA27_196==AND) && (synpred1())) {s = 64;}
+
+                        else if ( (LA27_196==OR) && (synpred1())) {s = 65;}
+
+                        else if ( (LA27_196==COMMASi) && (synpred1())) {s = 277;}
+
+                        else if ( (LA27_196==EOF) && (synpred1())) {s = 66;}
+
+                        else if ( (LA27_196==RBRACSi) && (synpred1())) {s = 67;}
+
+                        else if ( (LA27_196==RPARSi) && (synpred1())) {s = 278;}
+
+                        else if ( (LA27_196==RBRACKSi) && (synpred1())) {s = 68;}
+
+                        else if ( (LA27_196==SEMICOLONSi) && (synpred1())) {s = 69;}
+
+                        else if ( (LA27_196==WHERE) && (synpred1())) {s = 70;}
+
+                        else if ( (LA27_196==ORDER) && (synpred1())) {s = 71;}
+
+                        else if ( (LA27_196==STABLE) && (synpred1())) {s = 72;}
+
+                        else if ( (LA27_196==RETURN) && (synpred1())) {s = 279;}
+
+                        else if ( (LA27_196==FOR) && (synpred1())) {s = 73;}
+
+                        else if ( (LA27_196==LET) && (synpred1())) {s = 74;}
+
+                        else if ( ((LA27_196>=ASCENDING && LA27_196<=DESCENDING)) && (synpred1())) {s = 75;}
+
+                        else if ( (LA27_196==EMPTY) && (synpred1())) {s = 76;}
+
+                        else if ( (LA27_196==COLLATION) && (synpred1())) {s = 77;}
+
+                        else if ( (LA27_196==SATISFIES) && (synpred1())) {s = 78;}
+
+                        else if ( (LA27_196==DEFAULT) && (synpred1())) {s = 79;}
+
+                        else if ( (LA27_196==CASE) && (synpred1())) {s = 80;}
+
+                        else if ( (LA27_196==ELSE) && (synpred1())) {s = 81;}
+
+                        else if ( (LA27_196==WITHOUT) && (synpred1())) {s = 82;}
+
+                        else if ( (LA27_196==TIMES) && (synpred1())) {s = 83;}
+
+                        else if ( (LA27_196==WORDS||(LA27_196>=SENTENCES && LA27_196<=PARAGRAPHS)) && (synpred1())) {s = 84;}
+
+                        else if ( (LA27_196==LEVELS) && (synpred1())) {s = 85;}
+
+                        else if ( ((LA27_196>=DIV && LA27_196<=MOD)) && (synpred1())) {s = 88;}
+
+                         
+                        input.seek(index27_196);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 27 : 
+                        int LA27_137 = input.LA(1);
+
+                         
+                        int index27_137 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 306;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_137);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 28 : 
+                        int LA27_238 = input.LA(1);
+
+                         
+                        int index27_238 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_238);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 29 : 
+                        int LA27_243 = input.LA(1);
+
+                         
+                        int index27_243 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_243);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 30 : 
+                        int LA27_24 = input.LA(1);
+
+                         
+                        int index27_24 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA27_24==ASSIGNSi) && (synpred1())) {s = 46;}
+
+                        else if ( (LA27_24==EXTERNAL) && (synpred1())) {s = 47;}
+
+                        else if ( (LA27_24==COMMASi) && (synpred1())) {s = 48;}
+
+                        else if ( (LA27_24==RPARSi) && (synpred1())) {s = 49;}
+
+                        else if ( (LA27_24==AT) && (synpred1())) {s = 50;}
+
+                        else if ( (LA27_24==SCORE) && (synpred1())) {s = 51;}
+
+                        else if ( (LA27_24==IN) && (synpred1())) {s = 52;}
+
+                        else if ( (LA27_24==LBRACESi) && (synpred1())) {s = 53;}
+
+                        else if ( (LA27_24==RETURN) && (synpred1())) {s = 54;}
+
+                        else if ( ((LA27_24>=INTERSECT && LA27_24<=EXCEPT)) && (synpred1())) {s = 55;}
+
+                        else if ( ((LA27_24>=UNION && LA27_24<=PIPESi)) && (synpred1())) {s = 56;}
+
+                        else if ( (LA27_24==STARSi) ) {s = 57;}
+
+                        else if ( (LA27_24==PLUSSi||LA27_24==MINUSSi) ) {s = 58;}
+
+                        else if ( (LA27_24==TO) && (synpred1())) {s = 59;}
+
+                        else if ( (LA27_24==FTCONTAINS) && (synpred1())) {s = 60;}
+
+                        else if ( ((LA27_24>=EQ && LA27_24<=GE)) && (synpred1())) {s = 61;}
+
+                        else if ( (LA27_24==LTSi) ) {s = 62;}
+
+                        else if ( ((LA27_24>=IS && LA27_24<=NODEAFTERSi)) && (synpred1())) {s = 63;}
+
+                        else if ( (LA27_24==AND) && (synpred1())) {s = 64;}
+
+                        else if ( (LA27_24==OR) && (synpred1())) {s = 65;}
+
+                        else if ( (LA27_24==EOF) && (synpred1())) {s = 66;}
+
+                        else if ( (LA27_24==RBRACSi) && (synpred1())) {s = 67;}
+
+                        else if ( (LA27_24==RBRACKSi) && (synpred1())) {s = 68;}
+
+                        else if ( (LA27_24==SEMICOLONSi) && (synpred1())) {s = 69;}
+
+                        else if ( (LA27_24==WHERE) && (synpred1())) {s = 70;}
+
+                        else if ( (LA27_24==ORDER) && (synpred1())) {s = 71;}
+
+                        else if ( (LA27_24==STABLE) && (synpred1())) {s = 72;}
+
+                        else if ( (LA27_24==FOR) && (synpred1())) {s = 73;}
+
+                        else if ( (LA27_24==LET) && (synpred1())) {s = 74;}
+
+                        else if ( ((LA27_24>=ASCENDING && LA27_24<=DESCENDING)) && (synpred1())) {s = 75;}
+
+                        else if ( (LA27_24==EMPTY) && (synpred1())) {s = 76;}
+
+                        else if ( (LA27_24==COLLATION) && (synpred1())) {s = 77;}
+
+                        else if ( (LA27_24==SATISFIES) && (synpred1())) {s = 78;}
+
+                        else if ( (LA27_24==DEFAULT) && (synpred1())) {s = 79;}
+
+                        else if ( (LA27_24==CASE) && (synpred1())) {s = 80;}
+
+                        else if ( (LA27_24==ELSE) && (synpred1())) {s = 81;}
+
+                        else if ( (LA27_24==WITHOUT) && (synpred1())) {s = 82;}
+
+                        else if ( (LA27_24==TIMES) && (synpred1())) {s = 83;}
+
+                        else if ( (LA27_24==WORDS||(LA27_24>=SENTENCES && LA27_24<=PARAGRAPHS)) && (synpred1())) {s = 84;}
+
+                        else if ( (LA27_24==LEVELS) && (synpred1())) {s = 85;}
+
+                        else if ( (LA27_24==INSTANCE) && (synpred1())) {s = 86;}
+
+                        else if ( (LA27_24==StringLiteral||LA27_24==NCName||LA27_24==ELEMENT||(LA27_24>=ORDERED && LA27_24<=UNORDERED)||LA27_24==DOLLARSi||LA27_24==LPARSi||LA27_24==DOCUMENT_NODE||(LA27_24>=SCHEMAELEMENT && LA27_24<=NODE)||(LA27_24>=IntegerLiteral && LA27_24<=DoubleLiteral)||LA27_24==LPRAGSi||LA27_24==VALIDATE||(LA27_24>=DBLSLASHSi && LA27_24<=ANCESTOR_OR_SELF)||(LA27_24>=DOTDOTSi && LA27_24<=ATSi)||LA27_24==DOTSi||LA27_24==LCOMMENTSi||LA27_24==LPISi||LA27_24==DOCUMENT) ) {s = 25;}
+
+                        else if ( (LA27_24==EQSi||LA27_24==NEQSi||(LA27_24>=LTOREQSi && LA27_24<=GTOREQSi)) && (synpred1())) {s = 87;}
+
+                        else if ( ((LA27_24>=DIV && LA27_24<=MOD)) && (synpred1())) {s = 88;}
+
+                         
+                        input.seek(index27_24);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 31 : 
+                        int LA27_62 = input.LA(1);
+
+                         
+                        int index27_62 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA27_62==PLUSSi||LA27_62==MINUSSi) && (synpred1())) {s = 164;}
+
+                        else if ( (LA27_62==VALIDATE) && (synpred1())) {s = 165;}
+
+                        else if ( (LA27_62==DBLSLASHSi) && (synpred1())) {s = 166;}
+
+                        else if ( (LA27_62==SLASHSi) && (synpred1())) {s = 167;}
+
+                        else if ( ((LA27_62>=IntegerLiteral && LA27_62<=DoubleLiteral)) && (synpred1())) {s = 168;}
+
+                        else if ( (LA27_62==StringLiteral) && (synpred1())) {s = 169;}
+
+                        else if ( (LA27_62==DOLLARSi) && (synpred1())) {s = 170;}
+
+                        else if ( (LA27_62==LPARSi) && (synpred1())) {s = 171;}
+
+                        else if ( (LA27_62==DOTSi) && (synpred1())) {s = 172;}
+
+                        else if ( (LA27_62==NCName) ) {s = 173;}
+
+                        else if ( (LA27_62==ORDERED) && (synpred1())) {s = 174;}
+
+                        else if ( (LA27_62==UNORDERED) && (synpred1())) {s = 175;}
+
+                        else if ( (LA27_62==LTSi) && (synpred1())) {s = 176;}
+
+                        else if ( (LA27_62==LCOMMENTSi) && (synpred1())) {s = 177;}
+
+                        else if ( (LA27_62==LPISi) && (synpred1())) {s = 178;}
+
+                        else if ( (LA27_62==DOCUMENT) && (synpred1())) {s = 179;}
+
+                        else if ( (LA27_62==ELEMENT) && (synpred1())) {s = 180;}
+
+                        else if ( (LA27_62==ATTRIBUTE) && (synpred1())) {s = 181;}
+
+                        else if ( (LA27_62==TEXT) && (synpred1())) {s = 182;}
+
+                        else if ( (LA27_62==COMMENT) && (synpred1())) {s = 183;}
+
+                        else if ( (LA27_62==PROCESSING_INSTRUCTION) && (synpred1())) {s = 184;}
+
+                        else if ( ((LA27_62>=PARENT && LA27_62<=ANCESTOR_OR_SELF)) && (synpred1())) {s = 185;}
+
+                        else if ( (LA27_62==DOTDOTSi) && (synpred1())) {s = 186;}
+
+                        else if ( ((LA27_62>=CHILD && LA27_62<=FOLLOWING)) && (synpred1())) {s = 187;}
+
+                        else if ( (LA27_62==ATSi) && (synpred1())) {s = 188;}
+
+                        else if ( (LA27_62==DOCUMENT_NODE) && (synpred1())) {s = 189;}
+
+                        else if ( (LA27_62==SCHEMAELEMENT) && (synpred1())) {s = 190;}
+
+                        else if ( (LA27_62==SCHEMAATTRIBUTE) && (synpred1())) {s = 191;}
+
+                        else if ( (LA27_62==NODE) && (synpred1())) {s = 192;}
+
+                        else if ( (LA27_62==STARSi) && (synpred1())) {s = 193;}
+
+                        else if ( (LA27_62==LPRAGSi) && (synpred1())) {s = 194;}
+
+                         
+                        input.seek(index27_62);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 32 : 
+                        int LA27_91 = input.LA(1);
+
+                         
+                        int index27_91 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA27_91==PLUSSi||LA27_91==MINUSSi) && (synpred1())) {s = 164;}
+
+                        else if ( (LA27_91==VALIDATE) && (synpred1())) {s = 165;}
+
+                        else if ( (LA27_91==DBLSLASHSi) && (synpred1())) {s = 166;}
+
+                        else if ( (LA27_91==SLASHSi) && (synpred1())) {s = 167;}
+
+                        else if ( ((LA27_91>=IntegerLiteral && LA27_91<=DoubleLiteral)) && (synpred1())) {s = 168;}
+
+                        else if ( (LA27_91==StringLiteral) && (synpred1())) {s = 169;}
+
+                        else if ( (LA27_91==DOLLARSi) && (synpred1())) {s = 170;}
+
+                        else if ( (LA27_91==LPARSi) && (synpred1())) {s = 171;}
+
+                        else if ( (LA27_91==DOTSi) && (synpred1())) {s = 172;}
+
+                        else if ( (LA27_91==NCName) ) {s = 198;}
+
+                        else if ( (LA27_91==ORDERED) && (synpred1())) {s = 174;}
+
+                        else if ( (LA27_91==UNORDERED) && (synpred1())) {s = 175;}
+
+                        else if ( (LA27_91==LTSi) && (synpred1())) {s = 176;}
+
+                        else if ( (LA27_91==LCOMMENTSi) && (synpred1())) {s = 177;}
+
+                        else if ( (LA27_91==LPISi) && (synpred1())) {s = 178;}
+
+                        else if ( (LA27_91==DOCUMENT) && (synpred1())) {s = 179;}
+
+                        else if ( (LA27_91==ELEMENT) && (synpred1())) {s = 180;}
+
+                        else if ( (LA27_91==ATTRIBUTE) && (synpred1())) {s = 181;}
+
+                        else if ( (LA27_91==TEXT) && (synpred1())) {s = 182;}
+
+                        else if ( (LA27_91==COMMENT) && (synpred1())) {s = 183;}
+
+                        else if ( (LA27_91==PROCESSING_INSTRUCTION) && (synpred1())) {s = 184;}
+
+                        else if ( ((LA27_91>=PARENT && LA27_91<=ANCESTOR_OR_SELF)) && (synpred1())) {s = 185;}
+
+                        else if ( (LA27_91==DOTDOTSi) && (synpred1())) {s = 186;}
+
+                        else if ( ((LA27_91>=CHILD && LA27_91<=FOLLOWING)) && (synpred1())) {s = 187;}
+
+                        else if ( (LA27_91==ATSi) && (synpred1())) {s = 188;}
+
+                        else if ( (LA27_91==DOCUMENT_NODE) && (synpred1())) {s = 189;}
+
+                        else if ( (LA27_91==SCHEMAELEMENT) && (synpred1())) {s = 190;}
+
+                        else if ( (LA27_91==SCHEMAATTRIBUTE) && (synpred1())) {s = 191;}
+
+                        else if ( (LA27_91==NODE) && (synpred1())) {s = 192;}
+
+                        else if ( (LA27_91==STARSi) && (synpred1())) {s = 193;}
+
+                        else if ( (LA27_91==LPRAGSi) && (synpred1())) {s = 194;}
+
+                         
+                        input.seek(index27_91);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 33 : 
+                        int LA27_44 = input.LA(1);
+
+                         
+                        int index27_44 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA27_44==EOF||LA27_44==SEMICOLONSi||(LA27_44>=EQSi && LA27_44<=COMMASi)||LA27_44==DEFAULT||LA27_44==COLLATION||(LA27_44>=ORDER && LA27_44<=EMPTY)||LA27_44==AT||(LA27_44>=ASSIGNSi && LA27_44<=EXTERNAL)||(LA27_44>=RPARSi && LA27_44<=RBRACSi)||(LA27_44>=RETURN && LA27_44<=WHERE)||(LA27_44>=STABLE && LA27_44<=DESCENDING)||LA27_44==SATISFIES||LA27_44==CASE||(LA27_44>=ELSE && LA27_44<=INSTANCE)||LA27_44==WITHOUT||(LA27_44>=EQ && LA27_44<=NODEAFTERSi)||LA27_44==WORDS||LA27_44==TIMES||(LA27_44>=SENTENCES && LA27_44<=PARAGRAPHS)||LA27_44==LEVELS||LA27_44==RBRACKSi) ) {s = 25;}
+
+                        else if ( (LA27_44==STARSi) ) {s = 24;}
+
+                        else if ( (LA27_44==PLUSSi) ) {s = 26;}
+
+                        else if ( (LA27_44==QUESTIONSi) && (synpred1())) {s = 27;}
+
+                         
+                        input.seek(index27_44);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 34 : 
+                        int LA27_90 = input.LA(1);
+
+                         
+                        int index27_90 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (synpred1()) ) {s = 194;}
@@ -12078,85 +13275,55 @@ public class XQFTParser extends Parser {
                         else if ( (true) ) {s = 25;}
 
                          
-                        input.seek(index27_131);
+                        input.seek(index27_90);
                         if ( s>=0 ) return s;
                         break;
-                    case 10 : 
-                        int LA27_48 = input.LA(1);
+                    case 35 : 
+                        int LA27_239 = input.LA(1);
 
                          
-                        int index27_48 = input.index();
+                        int index27_239 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA27_48==EOF||LA27_48==SEMICOLONSi||(LA27_48>=EQSi && LA27_48<=COMMASi)||LA27_48==DEFAULT||LA27_48==COLLATION||(LA27_48>=ORDER && LA27_48<=EMPTY)||LA27_48==COLONSi||LA27_48==RPARSi||LA27_48==RBRACSi||(LA27_48>=RETURN && LA27_48<=FOR)||(LA27_48>=LET && LA27_48<=WHERE)||(LA27_48>=STABLE && LA27_48<=DESCENDING)||LA27_48==SATISFIES||LA27_48==CASE||(LA27_48>=ELSE && LA27_48<=TO)||(LA27_48>=DIV && LA27_48<=INSTANCE)||(LA27_48>=TREAT && LA27_48<=WITHOUT)||(LA27_48>=EQ && LA27_48<=NEQSi)||(LA27_48>=LTOREQSi && LA27_48<=NODEAFTERSi)||LA27_48==WORDS||LA27_48==TIMES||(LA27_48>=SENTENCES && LA27_48<=PARAGRAPHS)||LA27_48==LEVELS||(LA27_48>=LBRACKSi && LA27_48<=RBRACKSi)) ) {s = 25;}
+                        if ( (synpred1()) ) {s = 384;}
 
-                        else if ( (LA27_48==DBLSLASHSi) ) {s = 164;}
-
-                        else if ( (LA27_48==PLUSSi||LA27_48==MINUSSi) ) {s = 165;}
-
-                        else if ( (LA27_48==LTSi) ) {s = 166;}
-
-                        else if ( (LA27_48==STARSi) ) {s = 167;}
-
-                        else if ( (LA27_48==VALIDATE) && (synpred1())) {s = 168;}
-
-                        else if ( (LA27_48==SLASHSi) ) {s = 169;}
-
-                        else if ( ((LA27_48>=IntegerLiteral && LA27_48<=DoubleLiteral)) && (synpred1())) {s = 170;}
-
-                        else if ( (LA27_48==StringLiteral) && (synpred1())) {s = 171;}
-
-                        else if ( (LA27_48==DOLLARSi) && (synpred1())) {s = 172;}
-
-                        else if ( (LA27_48==LPARSi) && (synpred1())) {s = 173;}
-
-                        else if ( (LA27_48==DOTSi) && (synpred1())) {s = 174;}
-
-                        else if ( (LA27_48==NCName) && (synpred1())) {s = 175;}
-
-                        else if ( (LA27_48==ORDERED) && (synpred1())) {s = 176;}
-
-                        else if ( (LA27_48==UNORDERED) && (synpred1())) {s = 177;}
-
-                        else if ( (LA27_48==LCOMMENTSi) && (synpred1())) {s = 178;}
-
-                        else if ( (LA27_48==LPISi) && (synpred1())) {s = 179;}
-
-                        else if ( (LA27_48==DOCUMENT) && (synpred1())) {s = 180;}
-
-                        else if ( (LA27_48==ELEMENT) && (synpred1())) {s = 181;}
-
-                        else if ( (LA27_48==ATTRIBUTE) && (synpred1())) {s = 182;}
-
-                        else if ( (LA27_48==TEXT) && (synpred1())) {s = 183;}
-
-                        else if ( (LA27_48==COMMENT) && (synpred1())) {s = 184;}
-
-                        else if ( (LA27_48==PROCESSING_INSTRUCTION) && (synpred1())) {s = 185;}
-
-                        else if ( ((LA27_48>=PARENT && LA27_48<=ANCESTOR_OR_SELF)) && (synpred1())) {s = 186;}
-
-                        else if ( (LA27_48==DOTDOTSi) && (synpred1())) {s = 187;}
-
-                        else if ( ((LA27_48>=CHILD && LA27_48<=FOLLOWING)) && (synpred1())) {s = 188;}
-
-                        else if ( (LA27_48==ATSi) && (synpred1())) {s = 189;}
-
-                        else if ( (LA27_48==DOCUMENT_NODE) && (synpred1())) {s = 190;}
-
-                        else if ( (LA27_48==SCHEMAELEMENT) && (synpred1())) {s = 191;}
-
-                        else if ( (LA27_48==SCHEMAATTRIBUTE) && (synpred1())) {s = 192;}
-
-                        else if ( (LA27_48==NODE) && (synpred1())) {s = 193;}
-
-                        else if ( (LA27_48==LPRAGSi) && (synpred1())) {s = 194;}
+                        else if ( (true) ) {s = 25;}
 
                          
-                        input.seek(index27_48);
+                        input.seek(index27_239);
                         if ( s>=0 ) return s;
                         break;
-                    case 11 : 
+                    case 36 : 
+                        int LA27_263 = input.LA(1);
+
+                         
+                        int index27_263 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_263);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 37 : 
+                        int LA27_237 = input.LA(1);
+
+                         
+                        int index27_237 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1()) ) {s = 384;}
+
+                        else if ( (true) ) {s = 25;}
+
+                         
+                        input.seek(index27_237);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 38 : 
                         int LA27_33 = input.LA(1);
 
                          
@@ -12175,116 +13342,196 @@ public class XQFTParser extends Parser {
                         input.seek(index27_33);
                         if ( s>=0 ) return s;
                         break;
-                    case 12 : 
-                        int LA27_91 = input.LA(1);
+                    case 39 : 
+                        int LA27_89 = input.LA(1);
 
                          
-                        int index27_91 = input.index();
+                        int index27_89 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA27_91==EOF||LA27_91==SEMICOLONSi||(LA27_91>=EQSi && LA27_91<=COMMASi)||LA27_91==DEFAULT||LA27_91==COLLATION||(LA27_91>=ORDER && LA27_91<=EMPTY)||LA27_91==COLONSi||LA27_91==RPARSi||LA27_91==RBRACSi||(LA27_91>=RETURN && LA27_91<=FOR)||(LA27_91>=LET && LA27_91<=WHERE)||(LA27_91>=STABLE && LA27_91<=DESCENDING)||LA27_91==SATISFIES||LA27_91==CASE||(LA27_91>=ELSE && LA27_91<=TO)||(LA27_91>=DIV && LA27_91<=INSTANCE)||(LA27_91>=TREAT && LA27_91<=WITHOUT)||(LA27_91>=EQ && LA27_91<=NEQSi)||(LA27_91>=LTOREQSi && LA27_91<=NODEAFTERSi)||LA27_91==WORDS||LA27_91==TIMES||(LA27_91>=SENTENCES && LA27_91<=PARAGRAPHS)||LA27_91==LEVELS||(LA27_91>=LBRACKSi && LA27_91<=RBRACKSi)) ) {s = 25;}
+                        if ( (LA27_89==EOF||LA27_89==SEMICOLONSi||(LA27_89>=EQSi && LA27_89<=COMMASi)||LA27_89==DEFAULT||LA27_89==COLLATION||(LA27_89>=ORDER && LA27_89<=EMPTY)||LA27_89==COLONSi||LA27_89==RPARSi||LA27_89==RBRACSi||(LA27_89>=RETURN && LA27_89<=FOR)||(LA27_89>=LET && LA27_89<=WHERE)||(LA27_89>=STABLE && LA27_89<=DESCENDING)||LA27_89==SATISFIES||LA27_89==CASE||(LA27_89>=ELSE && LA27_89<=TO)||(LA27_89>=DIV && LA27_89<=INSTANCE)||(LA27_89>=TREAT && LA27_89<=WITHOUT)||(LA27_89>=EQ && LA27_89<=NEQSi)||(LA27_89>=LTOREQSi && LA27_89<=NODEAFTERSi)||LA27_89==WORDS||LA27_89==TIMES||(LA27_89>=SENTENCES && LA27_89<=PARAGRAPHS)||LA27_89==LEVELS||(LA27_89>=LBRACKSi && LA27_89<=RBRACKSi)) ) {s = 25;}
 
-                        else if ( (LA27_91==DBLSLASHSi) ) {s = 196;}
+                        else if ( (LA27_89==DBLSLASHSi) ) {s = 195;}
 
-                        else if ( (LA27_91==STARSi) ) {s = 197;}
+                        else if ( (LA27_89==STARSi) ) {s = 196;}
 
-                        else if ( (LA27_91==LTSi) ) {s = 166;}
+                        else if ( (LA27_89==LTSi) ) {s = 104;}
 
-                        else if ( (LA27_91==PLUSSi||LA27_91==MINUSSi) ) {s = 165;}
+                        else if ( (LA27_89==PLUSSi||LA27_89==MINUSSi) ) {s = 103;}
 
-                        else if ( (LA27_91==VALIDATE) && (synpred1())) {s = 168;}
+                        else if ( (LA27_89==VALIDATE) && (synpred1())) {s = 106;}
 
-                        else if ( (LA27_91==SLASHSi) ) {s = 198;}
+                        else if ( (LA27_89==SLASHSi) ) {s = 197;}
 
-                        else if ( ((LA27_91>=IntegerLiteral && LA27_91<=DoubleLiteral)) && (synpred1())) {s = 170;}
+                        else if ( ((LA27_89>=IntegerLiteral && LA27_89<=DoubleLiteral)) && (synpred1())) {s = 108;}
 
-                        else if ( (LA27_91==StringLiteral) && (synpred1())) {s = 171;}
+                        else if ( (LA27_89==StringLiteral) && (synpred1())) {s = 109;}
 
-                        else if ( (LA27_91==DOLLARSi) && (synpred1())) {s = 172;}
+                        else if ( (LA27_89==DOLLARSi) && (synpred1())) {s = 110;}
 
-                        else if ( (LA27_91==LPARSi) && (synpred1())) {s = 173;}
+                        else if ( (LA27_89==LPARSi) && (synpred1())) {s = 111;}
 
-                        else if ( (LA27_91==DOTSi) && (synpred1())) {s = 174;}
+                        else if ( (LA27_89==DOTSi) && (synpred1())) {s = 112;}
 
-                        else if ( (LA27_91==NCName) && (synpred1())) {s = 175;}
+                        else if ( (LA27_89==NCName) && (synpred1())) {s = 113;}
 
-                        else if ( (LA27_91==ORDERED) && (synpred1())) {s = 176;}
+                        else if ( (LA27_89==ORDERED) && (synpred1())) {s = 114;}
 
-                        else if ( (LA27_91==UNORDERED) && (synpred1())) {s = 177;}
+                        else if ( (LA27_89==UNORDERED) && (synpred1())) {s = 115;}
 
-                        else if ( (LA27_91==LCOMMENTSi) && (synpred1())) {s = 178;}
+                        else if ( (LA27_89==LCOMMENTSi) && (synpred1())) {s = 116;}
 
-                        else if ( (LA27_91==LPISi) && (synpred1())) {s = 179;}
+                        else if ( (LA27_89==LPISi) && (synpred1())) {s = 117;}
 
-                        else if ( (LA27_91==DOCUMENT) && (synpred1())) {s = 180;}
+                        else if ( (LA27_89==DOCUMENT) && (synpred1())) {s = 118;}
 
-                        else if ( (LA27_91==ELEMENT) && (synpred1())) {s = 181;}
+                        else if ( (LA27_89==ELEMENT) && (synpred1())) {s = 119;}
 
-                        else if ( (LA27_91==ATTRIBUTE) && (synpred1())) {s = 182;}
+                        else if ( (LA27_89==ATTRIBUTE) && (synpred1())) {s = 120;}
 
-                        else if ( (LA27_91==TEXT) && (synpred1())) {s = 183;}
+                        else if ( (LA27_89==TEXT) && (synpred1())) {s = 121;}
 
-                        else if ( (LA27_91==COMMENT) && (synpred1())) {s = 184;}
+                        else if ( (LA27_89==COMMENT) && (synpred1())) {s = 122;}
 
-                        else if ( (LA27_91==PROCESSING_INSTRUCTION) && (synpred1())) {s = 185;}
+                        else if ( (LA27_89==PROCESSING_INSTRUCTION) && (synpred1())) {s = 123;}
 
-                        else if ( ((LA27_91>=PARENT && LA27_91<=ANCESTOR_OR_SELF)) && (synpred1())) {s = 186;}
+                        else if ( ((LA27_89>=PARENT && LA27_89<=ANCESTOR_OR_SELF)) && (synpred1())) {s = 124;}
 
-                        else if ( (LA27_91==DOTDOTSi) && (synpred1())) {s = 187;}
+                        else if ( (LA27_89==DOTDOTSi) && (synpred1())) {s = 125;}
 
-                        else if ( ((LA27_91>=CHILD && LA27_91<=FOLLOWING)) && (synpred1())) {s = 188;}
+                        else if ( ((LA27_89>=CHILD && LA27_89<=FOLLOWING)) && (synpred1())) {s = 126;}
 
-                        else if ( (LA27_91==ATSi) && (synpred1())) {s = 189;}
+                        else if ( (LA27_89==ATSi) && (synpred1())) {s = 127;}
 
-                        else if ( (LA27_91==DOCUMENT_NODE) && (synpred1())) {s = 190;}
+                        else if ( (LA27_89==DOCUMENT_NODE) && (synpred1())) {s = 128;}
 
-                        else if ( (LA27_91==SCHEMAELEMENT) && (synpred1())) {s = 191;}
+                        else if ( (LA27_89==SCHEMAELEMENT) && (synpred1())) {s = 129;}
 
-                        else if ( (LA27_91==SCHEMAATTRIBUTE) && (synpred1())) {s = 192;}
+                        else if ( (LA27_89==SCHEMAATTRIBUTE) && (synpred1())) {s = 130;}
 
-                        else if ( (LA27_91==NODE) && (synpred1())) {s = 193;}
+                        else if ( (LA27_89==NODE) && (synpred1())) {s = 131;}
 
-                        else if ( (LA27_91==LPRAGSi) && (synpred1())) {s = 194;}
+                        else if ( (LA27_89==LPRAGSi) && (synpred1())) {s = 132;}
 
                          
-                        input.seek(index27_91);
+                        input.seek(index27_89);
                         if ( s>=0 ) return s;
                         break;
-                    case 13 : 
-                        int LA27_110 = input.LA(1);
+                    case 40 : 
+                        int LA27_241 = input.LA(1);
 
                          
-                        int index27_110 = input.index();
+                        int index27_241 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred1()) ) {s = 194;}
+                        if ( (synpred1()) ) {s = 384;}
 
                         else if ( (true) ) {s = 25;}
 
                          
-                        input.seek(index27_110);
+                        input.seek(index27_241);
                         if ( s>=0 ) return s;
                         break;
-                    case 14 : 
-                        int LA27_99 = input.LA(1);
+                    case 41 : 
+                        int LA27_26 = input.LA(1);
 
                          
-                        int index27_99 = input.index();
+                        int index27_26 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA27_99==STARSi) ) {s = 24;}
+                        if ( (LA27_26==ASSIGNSi) && (synpred1())) {s = 46;}
 
-                        else if ( (LA27_99==EOF||LA27_99==SEMICOLONSi||(LA27_99>=EQSi && LA27_99<=COMMASi)||LA27_99==DEFAULT||LA27_99==COLLATION||(LA27_99>=ORDER && LA27_99<=EMPTY)||LA27_99==AT||(LA27_99>=ASSIGNSi && LA27_99<=EXTERNAL)||(LA27_99>=RPARSi && LA27_99<=RBRACSi)||(LA27_99>=RETURN && LA27_99<=WHERE)||(LA27_99>=STABLE && LA27_99<=DESCENDING)||LA27_99==SATISFIES||LA27_99==CASE||(LA27_99>=ELSE && LA27_99<=INSTANCE)||LA27_99==WITHOUT||(LA27_99>=EQ && LA27_99<=NODEAFTERSi)||LA27_99==WORDS||LA27_99==TIMES||(LA27_99>=SENTENCES && LA27_99<=PARAGRAPHS)||LA27_99==LEVELS||LA27_99==RBRACKSi) ) {s = 25;}
+                        else if ( (LA27_26==EXTERNAL) && (synpred1())) {s = 47;}
 
-                        else if ( (LA27_99==PLUSSi) ) {s = 26;}
+                        else if ( (LA27_26==COMMASi) && (synpred1())) {s = 48;}
 
-                        else if ( (LA27_99==QUESTIONSi) && (synpred1())) {s = 27;}
+                        else if ( (LA27_26==RPARSi) && (synpred1())) {s = 49;}
+
+                        else if ( (LA27_26==AT) && (synpred1())) {s = 50;}
+
+                        else if ( (LA27_26==SCORE) && (synpred1())) {s = 51;}
+
+                        else if ( (LA27_26==IN) && (synpred1())) {s = 52;}
+
+                        else if ( (LA27_26==LBRACESi) && (synpred1())) {s = 53;}
+
+                        else if ( (LA27_26==RETURN) && (synpred1())) {s = 54;}
+
+                        else if ( ((LA27_26>=INTERSECT && LA27_26<=EXCEPT)) && (synpred1())) {s = 55;}
+
+                        else if ( ((LA27_26>=UNION && LA27_26<=PIPESi)) && (synpred1())) {s = 56;}
+
+                        else if ( (LA27_26==STARSi) ) {s = 89;}
+
+                        else if ( (LA27_26==PLUSSi||LA27_26==MINUSSi) ) {s = 90;}
+
+                        else if ( (LA27_26==TO) && (synpred1())) {s = 59;}
+
+                        else if ( (LA27_26==FTCONTAINS) && (synpred1())) {s = 60;}
+
+                        else if ( ((LA27_26>=EQ && LA27_26<=GE)) && (synpred1())) {s = 61;}
+
+                        else if ( (LA27_26==LTSi) ) {s = 91;}
+
+                        else if ( ((LA27_26>=IS && LA27_26<=NODEAFTERSi)) && (synpred1())) {s = 63;}
+
+                        else if ( (LA27_26==AND) && (synpred1())) {s = 64;}
+
+                        else if ( (LA27_26==OR) && (synpred1())) {s = 65;}
+
+                        else if ( (LA27_26==EOF) && (synpred1())) {s = 66;}
+
+                        else if ( (LA27_26==RBRACSi) && (synpred1())) {s = 67;}
+
+                        else if ( (LA27_26==RBRACKSi) && (synpred1())) {s = 68;}
+
+                        else if ( (LA27_26==SEMICOLONSi) && (synpred1())) {s = 69;}
+
+                        else if ( (LA27_26==WHERE) && (synpred1())) {s = 70;}
+
+                        else if ( (LA27_26==ORDER) && (synpred1())) {s = 71;}
+
+                        else if ( (LA27_26==STABLE) && (synpred1())) {s = 72;}
+
+                        else if ( (LA27_26==FOR) && (synpred1())) {s = 73;}
+
+                        else if ( (LA27_26==LET) && (synpred1())) {s = 74;}
+
+                        else if ( ((LA27_26>=ASCENDING && LA27_26<=DESCENDING)) && (synpred1())) {s = 75;}
+
+                        else if ( (LA27_26==EMPTY) && (synpred1())) {s = 76;}
+
+                        else if ( (LA27_26==COLLATION) && (synpred1())) {s = 77;}
+
+                        else if ( (LA27_26==SATISFIES) && (synpred1())) {s = 78;}
+
+                        else if ( (LA27_26==DEFAULT) && (synpred1())) {s = 79;}
+
+                        else if ( (LA27_26==CASE) && (synpred1())) {s = 80;}
+
+                        else if ( (LA27_26==ELSE) && (synpred1())) {s = 81;}
+
+                        else if ( (LA27_26==WITHOUT) && (synpred1())) {s = 82;}
+
+                        else if ( (LA27_26==TIMES) && (synpred1())) {s = 83;}
+
+                        else if ( (LA27_26==WORDS||(LA27_26>=SENTENCES && LA27_26<=PARAGRAPHS)) && (synpred1())) {s = 84;}
+
+                        else if ( (LA27_26==LEVELS) && (synpred1())) {s = 85;}
+
+                        else if ( (LA27_26==INSTANCE) && (synpred1())) {s = 86;}
+
+                        else if ( (LA27_26==StringLiteral||LA27_26==NCName||LA27_26==ELEMENT||(LA27_26>=ORDERED && LA27_26<=UNORDERED)||LA27_26==DOLLARSi||LA27_26==LPARSi||LA27_26==DOCUMENT_NODE||(LA27_26>=SCHEMAELEMENT && LA27_26<=NODE)||(LA27_26>=IntegerLiteral && LA27_26<=DoubleLiteral)||LA27_26==LPRAGSi||LA27_26==VALIDATE||(LA27_26>=DBLSLASHSi && LA27_26<=ANCESTOR_OR_SELF)||(LA27_26>=DOTDOTSi && LA27_26<=ATSi)||LA27_26==DOTSi||LA27_26==LCOMMENTSi||LA27_26==LPISi||LA27_26==DOCUMENT) ) {s = 25;}
+
+                        else if ( (LA27_26==EQSi||LA27_26==NEQSi||(LA27_26>=LTOREQSi && LA27_26<=GTOREQSi)) && (synpred1())) {s = 87;}
+
+                        else if ( ((LA27_26>=DIV && LA27_26<=MOD)) && (synpred1())) {s = 88;}
 
                          
-                        input.seek(index27_99);
+                        input.seek(index27_26);
                         if ( s>=0 ) return s;
                         break;
-                    case 15 : 
+                    case 42 : 
                         int LA27_11 = input.LA(1);
 
                          
@@ -12305,398 +13552,182 @@ public class XQFTParser extends Parser {
                         input.seek(index27_11);
                         if ( s>=0 ) return s;
                         break;
-                    case 16 : 
-                        int LA27_36 = input.LA(1);
+                    case 43 : 
+                        int LA27_173 = input.LA(1);
 
                          
-                        int index27_36 = input.index();
+                        int index27_173 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA27_36==EOF||LA27_36==SEMICOLONSi||(LA27_36>=EQSi && LA27_36<=COMMASi)||LA27_36==DEFAULT||LA27_36==COLLATION||(LA27_36>=ORDER && LA27_36<=EMPTY)||LA27_36==AT||(LA27_36>=ASSIGNSi && LA27_36<=EXTERNAL)||(LA27_36>=RPARSi && LA27_36<=RBRACSi)||(LA27_36>=RETURN && LA27_36<=WHERE)||(LA27_36>=STABLE && LA27_36<=DESCENDING)||LA27_36==SATISFIES||LA27_36==CASE||(LA27_36>=ELSE && LA27_36<=INSTANCE)||LA27_36==WITHOUT||(LA27_36>=EQ && LA27_36<=NODEAFTERSi)||LA27_36==WORDS||LA27_36==TIMES||(LA27_36>=SENTENCES && LA27_36<=PARAGRAPHS)||LA27_36==LEVELS||LA27_36==RBRACKSi) ) {s = 25;}
+                        if ( (LA27_173==COLONSi) ) {s = 369;}
 
-                        else if ( (LA27_36==STARSi) ) {s = 24;}
+                        else if ( (LA27_173==LPARSi) && (synpred1())) {s = 370;}
 
-                        else if ( (LA27_36==PLUSSi) ) {s = 26;}
+                        else if ( (LA27_173==LBRACKSi) && (synpred1())) {s = 371;}
 
-                        else if ( (LA27_36==QUESTIONSi) && (synpred1())) {s = 27;}
+                        else if ( ((LA27_173>=DBLSLASHSi && LA27_173<=SLASHSi)) && (synpred1())) {s = 372;}
+
+                        else if ( (LA27_173==CAST) && (synpred1())) {s = 373;}
+
+                        else if ( (LA27_173==CASTABLE) && (synpred1())) {s = 374;}
+
+                        else if ( (LA27_173==TREAT) && (synpred1())) {s = 375;}
+
+                        else if ( (LA27_173==INSTANCE) && (synpred1())) {s = 376;}
+
+                        else if ( ((LA27_173>=INTERSECT && LA27_173<=EXCEPT)) && (synpred1())) {s = 377;}
+
+                        else if ( ((LA27_173>=UNION && LA27_173<=PIPESi)) && (synpred1())) {s = 378;}
+
+                        else if ( (LA27_173==STARSi||(LA27_173>=DIV && LA27_173<=MOD)) && (synpred1())) {s = 379;}
+
+                        else if ( (LA27_173==PLUSSi||LA27_173==MINUSSi) && (synpred1())) {s = 380;}
+
+                        else if ( (LA27_173==TO) && (synpred1())) {s = 381;}
+
+                        else if ( (LA27_173==FTCONTAINS) && (synpred1())) {s = 382;}
+
+                        else if ( (LA27_173==AND) && (synpred1())) {s = 64;}
+
+                        else if ( (LA27_173==OR) && (synpred1())) {s = 65;}
+
+                        else if ( (LA27_173==COMMASi) && (synpred1())) {s = 277;}
+
+                        else if ( (LA27_173==EOF) && (synpred1())) {s = 66;}
+
+                        else if ( (LA27_173==RBRACSi) && (synpred1())) {s = 383;}
+
+                        else if ( (LA27_173==RPARSi) && (synpred1())) {s = 384;}
+
+                        else if ( (LA27_173==RBRACKSi) && (synpred1())) {s = 68;}
+
+                        else if ( (LA27_173==SEMICOLONSi) && (synpred1())) {s = 69;}
+
+                        else if ( (LA27_173==WHERE) && (synpred1())) {s = 70;}
+
+                        else if ( (LA27_173==ORDER) && (synpred1())) {s = 71;}
+
+                        else if ( (LA27_173==STABLE) && (synpred1())) {s = 72;}
+
+                        else if ( (LA27_173==RETURN) && (synpred1())) {s = 279;}
+
+                        else if ( (LA27_173==FOR) && (synpred1())) {s = 73;}
+
+                        else if ( (LA27_173==LET) && (synpred1())) {s = 74;}
+
+                        else if ( ((LA27_173>=ASCENDING && LA27_173<=DESCENDING)) && (synpred1())) {s = 75;}
+
+                        else if ( (LA27_173==EMPTY) && (synpred1())) {s = 76;}
+
+                        else if ( (LA27_173==COLLATION) && (synpred1())) {s = 77;}
+
+                        else if ( (LA27_173==SATISFIES) && (synpred1())) {s = 78;}
+
+                        else if ( (LA27_173==DEFAULT) && (synpred1())) {s = 79;}
+
+                        else if ( (LA27_173==CASE) && (synpred1())) {s = 80;}
+
+                        else if ( (LA27_173==ELSE) && (synpred1())) {s = 81;}
+
+                        else if ( (LA27_173==NCName||LA27_173==GTSi||LA27_173==RSELFTERMSi) ) {s = 25;}
 
                          
-                        input.seek(index27_36);
+                        input.seek(index27_173);
                         if ( s>=0 ) return s;
                         break;
-                    case 17 : 
-                        int LA27_47 = input.LA(1);
+                    case 44 : 
+                        int LA27_198 = input.LA(1);
 
                          
-                        int index27_47 = input.index();
+                        int index27_198 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA27_47==PLUSSi||LA27_47==MINUSSi) && (synpred1())) {s = 133;}
+                        if ( (LA27_198==COLONSi) ) {s = 442;}
 
-                        else if ( (LA27_47==VALIDATE) && (synpred1())) {s = 134;}
+                        else if ( (LA27_198==LPARSi) && (synpred1())) {s = 370;}
 
-                        else if ( (LA27_47==DBLSLASHSi) && (synpred1())) {s = 135;}
+                        else if ( (LA27_198==NCName||LA27_198==GTSi||LA27_198==RSELFTERMSi) ) {s = 25;}
 
-                        else if ( (LA27_47==SLASHSi) && (synpred1())) {s = 136;}
+                        else if ( (LA27_198==LBRACKSi) && (synpred1())) {s = 371;}
 
-                        else if ( ((LA27_47>=IntegerLiteral && LA27_47<=DoubleLiteral)) && (synpred1())) {s = 137;}
+                        else if ( ((LA27_198>=DBLSLASHSi && LA27_198<=SLASHSi)) && (synpred1())) {s = 372;}
 
-                        else if ( (LA27_47==StringLiteral) && (synpred1())) {s = 138;}
+                        else if ( (LA27_198==CAST) && (synpred1())) {s = 373;}
 
-                        else if ( (LA27_47==DOLLARSi) && (synpred1())) {s = 139;}
+                        else if ( (LA27_198==CASTABLE) && (synpred1())) {s = 374;}
 
-                        else if ( (LA27_47==LPARSi) && (synpred1())) {s = 140;}
+                        else if ( (LA27_198==TREAT) && (synpred1())) {s = 375;}
 
-                        else if ( (LA27_47==DOTSi) && (synpred1())) {s = 141;}
+                        else if ( (LA27_198==INSTANCE) && (synpred1())) {s = 376;}
 
-                        else if ( (LA27_47==NCName) ) {s = 142;}
+                        else if ( ((LA27_198>=INTERSECT && LA27_198<=EXCEPT)) && (synpred1())) {s = 377;}
 
-                        else if ( (LA27_47==ORDERED) && (synpred1())) {s = 143;}
+                        else if ( ((LA27_198>=UNION && LA27_198<=PIPESi)) && (synpred1())) {s = 378;}
 
-                        else if ( (LA27_47==UNORDERED) && (synpred1())) {s = 144;}
+                        else if ( (LA27_198==STARSi||(LA27_198>=DIV && LA27_198<=MOD)) && (synpred1())) {s = 379;}
 
-                        else if ( (LA27_47==LTSi) && (synpred1())) {s = 145;}
+                        else if ( (LA27_198==PLUSSi||LA27_198==MINUSSi) && (synpred1())) {s = 380;}
 
-                        else if ( (LA27_47==LCOMMENTSi) && (synpred1())) {s = 146;}
+                        else if ( (LA27_198==TO) && (synpred1())) {s = 381;}
 
-                        else if ( (LA27_47==LPISi) && (synpred1())) {s = 147;}
+                        else if ( (LA27_198==FTCONTAINS) && (synpred1())) {s = 382;}
 
-                        else if ( (LA27_47==DOCUMENT) && (synpred1())) {s = 148;}
+                        else if ( (LA27_198==AND) && (synpred1())) {s = 64;}
 
-                        else if ( (LA27_47==ELEMENT) && (synpred1())) {s = 149;}
+                        else if ( (LA27_198==OR) && (synpred1())) {s = 65;}
 
-                        else if ( (LA27_47==ATTRIBUTE) && (synpred1())) {s = 150;}
+                        else if ( (LA27_198==COMMASi) && (synpred1())) {s = 277;}
 
-                        else if ( (LA27_47==TEXT) && (synpred1())) {s = 151;}
+                        else if ( (LA27_198==EOF) && (synpred1())) {s = 66;}
 
-                        else if ( (LA27_47==COMMENT) && (synpred1())) {s = 152;}
+                        else if ( (LA27_198==RBRACSi) && (synpred1())) {s = 383;}
 
-                        else if ( (LA27_47==PROCESSING_INSTRUCTION) && (synpred1())) {s = 153;}
+                        else if ( (LA27_198==RPARSi) && (synpred1())) {s = 384;}
 
-                        else if ( ((LA27_47>=PARENT && LA27_47<=ANCESTOR_OR_SELF)) && (synpred1())) {s = 154;}
+                        else if ( (LA27_198==RBRACKSi) && (synpred1())) {s = 68;}
 
-                        else if ( (LA27_47==DOTDOTSi) && (synpred1())) {s = 155;}
+                        else if ( (LA27_198==SEMICOLONSi) && (synpred1())) {s = 69;}
 
-                        else if ( ((LA27_47>=CHILD && LA27_47<=FOLLOWING)) && (synpred1())) {s = 156;}
+                        else if ( (LA27_198==WHERE) && (synpred1())) {s = 70;}
 
-                        else if ( (LA27_47==ATSi) && (synpred1())) {s = 157;}
+                        else if ( (LA27_198==ORDER) && (synpred1())) {s = 71;}
 
-                        else if ( (LA27_47==DOCUMENT_NODE) && (synpred1())) {s = 158;}
+                        else if ( (LA27_198==STABLE) && (synpred1())) {s = 72;}
 
-                        else if ( (LA27_47==SCHEMAELEMENT) && (synpred1())) {s = 159;}
+                        else if ( (LA27_198==RETURN) && (synpred1())) {s = 279;}
 
-                        else if ( (LA27_47==SCHEMAATTRIBUTE) && (synpred1())) {s = 160;}
+                        else if ( (LA27_198==FOR) && (synpred1())) {s = 73;}
 
-                        else if ( (LA27_47==NODE) && (synpred1())) {s = 161;}
+                        else if ( (LA27_198==LET) && (synpred1())) {s = 74;}
 
-                        else if ( (LA27_47==STARSi) && (synpred1())) {s = 162;}
+                        else if ( ((LA27_198>=ASCENDING && LA27_198<=DESCENDING)) && (synpred1())) {s = 75;}
 
-                        else if ( (LA27_47==LPRAGSi) && (synpred1())) {s = 163;}
+                        else if ( (LA27_198==EMPTY) && (synpred1())) {s = 76;}
+
+                        else if ( (LA27_198==COLLATION) && (synpred1())) {s = 77;}
+
+                        else if ( (LA27_198==SATISFIES) && (synpred1())) {s = 78;}
+
+                        else if ( (LA27_198==DEFAULT) && (synpred1())) {s = 79;}
+
+                        else if ( (LA27_198==CASE) && (synpred1())) {s = 80;}
+
+                        else if ( (LA27_198==ELSE) && (synpred1())) {s = 81;}
 
                          
-                        input.seek(index27_47);
+                        input.seek(index27_198);
                         if ( s>=0 ) return s;
                         break;
-                    case 18 : 
-                        int LA27_90 = input.LA(1);
-
-                         
-                        int index27_90 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_90==NCName) ) {s = 195;}
-
-                        else if ( (LA27_90==PLUSSi||LA27_90==MINUSSi) && (synpred1())) {s = 133;}
-
-                        else if ( (LA27_90==VALIDATE) && (synpred1())) {s = 134;}
-
-                        else if ( (LA27_90==DBLSLASHSi) && (synpred1())) {s = 135;}
-
-                        else if ( (LA27_90==SLASHSi) && (synpred1())) {s = 136;}
-
-                        else if ( ((LA27_90>=IntegerLiteral && LA27_90<=DoubleLiteral)) && (synpred1())) {s = 137;}
-
-                        else if ( (LA27_90==StringLiteral) && (synpred1())) {s = 138;}
-
-                        else if ( (LA27_90==DOLLARSi) && (synpred1())) {s = 139;}
-
-                        else if ( (LA27_90==LPARSi) && (synpred1())) {s = 140;}
-
-                        else if ( (LA27_90==DOTSi) && (synpred1())) {s = 141;}
-
-                        else if ( (LA27_90==ORDERED) && (synpred1())) {s = 143;}
-
-                        else if ( (LA27_90==UNORDERED) && (synpred1())) {s = 144;}
-
-                        else if ( (LA27_90==LTSi) && (synpred1())) {s = 145;}
-
-                        else if ( (LA27_90==LCOMMENTSi) && (synpred1())) {s = 146;}
-
-                        else if ( (LA27_90==LPISi) && (synpred1())) {s = 147;}
-
-                        else if ( (LA27_90==DOCUMENT) && (synpred1())) {s = 148;}
-
-                        else if ( (LA27_90==ELEMENT) && (synpred1())) {s = 149;}
-
-                        else if ( (LA27_90==ATTRIBUTE) && (synpred1())) {s = 150;}
-
-                        else if ( (LA27_90==TEXT) && (synpred1())) {s = 151;}
-
-                        else if ( (LA27_90==COMMENT) && (synpred1())) {s = 152;}
-
-                        else if ( (LA27_90==PROCESSING_INSTRUCTION) && (synpred1())) {s = 153;}
-
-                        else if ( ((LA27_90>=PARENT && LA27_90<=ANCESTOR_OR_SELF)) && (synpred1())) {s = 154;}
-
-                        else if ( (LA27_90==DOTDOTSi) && (synpred1())) {s = 155;}
-
-                        else if ( ((LA27_90>=CHILD && LA27_90<=FOLLOWING)) && (synpred1())) {s = 156;}
-
-                        else if ( (LA27_90==ATSi) && (synpred1())) {s = 157;}
-
-                        else if ( (LA27_90==DOCUMENT_NODE) && (synpred1())) {s = 158;}
-
-                        else if ( (LA27_90==SCHEMAELEMENT) && (synpred1())) {s = 159;}
-
-                        else if ( (LA27_90==SCHEMAATTRIBUTE) && (synpred1())) {s = 160;}
-
-                        else if ( (LA27_90==NODE) && (synpred1())) {s = 161;}
-
-                        else if ( (LA27_90==STARSi) && (synpred1())) {s = 162;}
-
-                        else if ( (LA27_90==LPRAGSi) && (synpred1())) {s = 163;}
-
-                         
-                        input.seek(index27_90);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 19 : 
-                        int LA27_89 = input.LA(1);
-
-                         
-                        int index27_89 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1()) ) {s = 194;}
-
-                        else if ( (true) ) {s = 25;}
-
-                         
-                        input.seek(index27_89);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 20 : 
-                        int LA27_167 = input.LA(1);
-
-                         
-                        int index27_167 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_167==COLONSi) && (synpred1())) {s = 347;}
-
-                        else if ( (LA27_167==PLUSSi||LA27_167==MINUSSi) ) {s = 46;}
-
-                        else if ( (LA27_167==StringLiteral||LA27_167==NCName||LA27_167==ELEMENT||(LA27_167>=ORDERED && LA27_167<=UNORDERED)||LA27_167==DOLLARSi||LA27_167==LPARSi||LA27_167==DOCUMENT_NODE||(LA27_167>=SCHEMAELEMENT && LA27_167<=NODE)||(LA27_167>=IntegerLiteral && LA27_167<=DoubleLiteral)||LA27_167==LPRAGSi||LA27_167==VALIDATE||(LA27_167>=PARENT && LA27_167<=ANCESTOR_OR_SELF)||(LA27_167>=DOTDOTSi && LA27_167<=ATSi)||LA27_167==DOTSi||LA27_167==LCOMMENTSi||LA27_167==LPISi||LA27_167==DOCUMENT) ) {s = 25;}
-
-                        else if ( (LA27_167==DBLSLASHSi) ) {s = 348;}
-
-                        else if ( (LA27_167==SLASHSi) ) {s = 349;}
-
-                        else if ( (LA27_167==LTSi) ) {s = 47;}
-
-                        else if ( (LA27_167==STARSi) ) {s = 48;}
-
-                        else if ( (LA27_167==LBRACKSi) && (synpred1())) {s = 350;}
-
-                        else if ( (LA27_167==CAST) && (synpred1())) {s = 351;}
-
-                        else if ( (LA27_167==CASTABLE) && (synpred1())) {s = 352;}
-
-                        else if ( (LA27_167==TREAT) && (synpred1())) {s = 353;}
-
-                        else if ( (LA27_167==INSTANCE) && (synpred1())) {s = 354;}
-
-                        else if ( ((LA27_167>=INTERSECT && LA27_167<=EXCEPT)) && (synpred1())) {s = 355;}
-
-                        else if ( ((LA27_167>=UNION && LA27_167<=PIPESi)) && (synpred1())) {s = 356;}
-
-                        else if ( (LA27_167==TO) && (synpred1())) {s = 61;}
-
-                        else if ( (LA27_167==FTCONTAINS) && (synpred1())) {s = 62;}
-
-                        else if ( ((LA27_167>=EQ && LA27_167<=GE)) && (synpred1())) {s = 63;}
-
-                        else if ( (LA27_167==EQSi||LA27_167==NEQSi||(LA27_167>=LTOREQSi && LA27_167<=GTOREQSi)) && (synpred1())) {s = 64;}
-
-                        else if ( ((LA27_167>=IS && LA27_167<=NODEAFTERSi)) && (synpred1())) {s = 65;}
-
-                        else if ( (LA27_167==AND) && (synpred1())) {s = 66;}
-
-                        else if ( (LA27_167==OR) && (synpred1())) {s = 67;}
-
-                        else if ( (LA27_167==COMMASi) && (synpred1())) {s = 285;}
-
-                        else if ( (LA27_167==EOF) && (synpred1())) {s = 68;}
-
-                        else if ( (LA27_167==RBRACSi) && (synpred1())) {s = 69;}
-
-                        else if ( (LA27_167==RPARSi) && (synpred1())) {s = 357;}
-
-                        else if ( (LA27_167==RBRACKSi) && (synpred1())) {s = 70;}
-
-                        else if ( (LA27_167==SEMICOLONSi) && (synpred1())) {s = 71;}
-
-                        else if ( (LA27_167==WHERE) && (synpred1())) {s = 72;}
-
-                        else if ( (LA27_167==ORDER) && (synpred1())) {s = 73;}
-
-                        else if ( (LA27_167==STABLE) && (synpred1())) {s = 74;}
-
-                        else if ( (LA27_167==RETURN) && (synpred1())) {s = 288;}
-
-                        else if ( (LA27_167==FOR) && (synpred1())) {s = 75;}
-
-                        else if ( (LA27_167==LET) && (synpred1())) {s = 76;}
-
-                        else if ( ((LA27_167>=ASCENDING && LA27_167<=DESCENDING)) && (synpred1())) {s = 77;}
-
-                        else if ( (LA27_167==EMPTY) && (synpred1())) {s = 78;}
-
-                        else if ( (LA27_167==COLLATION) && (synpred1())) {s = 79;}
-
-                        else if ( (LA27_167==SATISFIES) && (synpred1())) {s = 80;}
-
-                        else if ( (LA27_167==DEFAULT) && (synpred1())) {s = 81;}
-
-                        else if ( (LA27_167==CASE) && (synpred1())) {s = 82;}
-
-                        else if ( (LA27_167==ELSE) && (synpred1())) {s = 83;}
-
-                        else if ( (LA27_167==WITHOUT) && (synpred1())) {s = 84;}
-
-                        else if ( (LA27_167==TIMES) && (synpred1())) {s = 85;}
-
-                        else if ( (LA27_167==WORDS||(LA27_167>=SENTENCES && LA27_167<=PARAGRAPHS)) && (synpred1())) {s = 86;}
-
-                        else if ( (LA27_167==LEVELS) && (synpred1())) {s = 87;}
-
-                        else if ( ((LA27_167>=DIV && LA27_167<=MOD)) && (synpred1())) {s = 60;}
-
-                         
-                        input.seek(index27_167);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 21 : 
-                        int LA27_197 = input.LA(1);
-
-                         
-                        int index27_197 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_197==COLONSi) && (synpred1())) {s = 347;}
-
-                        else if ( (LA27_197==PLUSSi||LA27_197==MINUSSi) ) {s = 412;}
-
-                        else if ( (LA27_197==StringLiteral||LA27_197==NCName||LA27_197==ELEMENT||(LA27_197>=ORDERED && LA27_197<=UNORDERED)||LA27_197==DOLLARSi||LA27_197==LPARSi||LA27_197==DOCUMENT_NODE||(LA27_197>=SCHEMAELEMENT && LA27_197<=NODE)||(LA27_197>=IntegerLiteral && LA27_197<=DoubleLiteral)||LA27_197==LPRAGSi||LA27_197==VALIDATE||(LA27_197>=PARENT && LA27_197<=ANCESTOR_OR_SELF)||(LA27_197>=DOTDOTSi && LA27_197<=ATSi)||LA27_197==DOTSi||LA27_197==LCOMMENTSi||LA27_197==LPISi||LA27_197==DOCUMENT) ) {s = 25;}
-
-                        else if ( (LA27_197==DBLSLASHSi) ) {s = 413;}
-
-                        else if ( (LA27_197==SLASHSi) ) {s = 414;}
-
-                        else if ( (LA27_197==LTSi) ) {s = 415;}
-
-                        else if ( (LA27_197==STARSi) ) {s = 416;}
-
-                        else if ( (LA27_197==LBRACKSi) && (synpred1())) {s = 350;}
-
-                        else if ( (LA27_197==CAST) && (synpred1())) {s = 351;}
-
-                        else if ( (LA27_197==CASTABLE) && (synpred1())) {s = 352;}
-
-                        else if ( (LA27_197==TREAT) && (synpred1())) {s = 353;}
-
-                        else if ( (LA27_197==INSTANCE) && (synpred1())) {s = 354;}
-
-                        else if ( ((LA27_197>=INTERSECT && LA27_197<=EXCEPT)) && (synpred1())) {s = 355;}
-
-                        else if ( ((LA27_197>=UNION && LA27_197<=PIPESi)) && (synpred1())) {s = 356;}
-
-                        else if ( (LA27_197==TO) && (synpred1())) {s = 61;}
-
-                        else if ( (LA27_197==FTCONTAINS) && (synpred1())) {s = 62;}
-
-                        else if ( ((LA27_197>=EQ && LA27_197<=GE)) && (synpred1())) {s = 63;}
-
-                        else if ( (LA27_197==EQSi||LA27_197==NEQSi||(LA27_197>=LTOREQSi && LA27_197<=GTOREQSi)) && (synpred1())) {s = 64;}
-
-                        else if ( ((LA27_197>=IS && LA27_197<=NODEAFTERSi)) && (synpred1())) {s = 65;}
-
-                        else if ( (LA27_197==AND) && (synpred1())) {s = 66;}
-
-                        else if ( (LA27_197==OR) && (synpred1())) {s = 67;}
-
-                        else if ( (LA27_197==COMMASi) && (synpred1())) {s = 285;}
-
-                        else if ( (LA27_197==EOF) && (synpred1())) {s = 68;}
-
-                        else if ( (LA27_197==RBRACSi) && (synpred1())) {s = 69;}
-
-                        else if ( (LA27_197==RPARSi) && (synpred1())) {s = 357;}
-
-                        else if ( (LA27_197==RBRACKSi) && (synpred1())) {s = 70;}
-
-                        else if ( (LA27_197==SEMICOLONSi) && (synpred1())) {s = 71;}
-
-                        else if ( (LA27_197==WHERE) && (synpred1())) {s = 72;}
-
-                        else if ( (LA27_197==ORDER) && (synpred1())) {s = 73;}
-
-                        else if ( (LA27_197==STABLE) && (synpred1())) {s = 74;}
-
-                        else if ( (LA27_197==RETURN) && (synpred1())) {s = 288;}
-
-                        else if ( (LA27_197==FOR) && (synpred1())) {s = 75;}
-
-                        else if ( (LA27_197==LET) && (synpred1())) {s = 76;}
-
-                        else if ( ((LA27_197>=ASCENDING && LA27_197<=DESCENDING)) && (synpred1())) {s = 77;}
-
-                        else if ( (LA27_197==EMPTY) && (synpred1())) {s = 78;}
-
-                        else if ( (LA27_197==COLLATION) && (synpred1())) {s = 79;}
-
-                        else if ( (LA27_197==SATISFIES) && (synpred1())) {s = 80;}
-
-                        else if ( (LA27_197==DEFAULT) && (synpred1())) {s = 81;}
-
-                        else if ( (LA27_197==CASE) && (synpred1())) {s = 82;}
-
-                        else if ( (LA27_197==ELSE) && (synpred1())) {s = 83;}
-
-                        else if ( (LA27_197==WITHOUT) && (synpred1())) {s = 84;}
-
-                        else if ( (LA27_197==TIMES) && (synpred1())) {s = 85;}
-
-                        else if ( (LA27_197==WORDS||(LA27_197>=SENTENCES && LA27_197<=PARAGRAPHS)) && (synpred1())) {s = 86;}
-
-                        else if ( (LA27_197==LEVELS) && (synpred1())) {s = 87;}
-
-                        else if ( ((LA27_197>=DIV && LA27_197<=MOD)) && (synpred1())) {s = 60;}
-
-                         
-                        input.seek(index27_197);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 22 : 
+                    case 45 : 
                         int LA27_40 = input.LA(1);
 
                          
                         int index27_40 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA27_40==EOF||LA27_40==SEMICOLONSi||(LA27_40>=EQSi && LA27_40<=COMMASi)||LA27_40==DEFAULT||LA27_40==COLLATION||(LA27_40>=ORDER && LA27_40<=EMPTY)||LA27_40==AT||(LA27_40>=ASSIGNSi && LA27_40<=EXTERNAL)||(LA27_40>=RPARSi && LA27_40<=RBRACSi)||(LA27_40>=RETURN && LA27_40<=WHERE)||(LA27_40>=STABLE && LA27_40<=DESCENDING)||LA27_40==SATISFIES||LA27_40==CASE||(LA27_40>=ELSE && LA27_40<=INSTANCE)||LA27_40==WITHOUT||(LA27_40>=EQ && LA27_40<=NODEAFTERSi)||LA27_40==WORDS||LA27_40==TIMES||(LA27_40>=SENTENCES && LA27_40<=PARAGRAPHS)||LA27_40==LEVELS||LA27_40==RBRACKSi) ) {s = 25;}
+                        if ( (LA27_40==STARSi) ) {s = 24;}
 
-                        else if ( (LA27_40==STARSi) ) {s = 24;}
+                        else if ( (LA27_40==EOF||LA27_40==SEMICOLONSi||(LA27_40>=EQSi && LA27_40<=COMMASi)||LA27_40==DEFAULT||LA27_40==COLLATION||(LA27_40>=ORDER && LA27_40<=EMPTY)||LA27_40==AT||(LA27_40>=ASSIGNSi && LA27_40<=EXTERNAL)||(LA27_40>=RPARSi && LA27_40<=RBRACSi)||(LA27_40>=RETURN && LA27_40<=WHERE)||(LA27_40>=STABLE && LA27_40<=DESCENDING)||LA27_40==SATISFIES||LA27_40==CASE||(LA27_40>=ELSE && LA27_40<=INSTANCE)||LA27_40==WITHOUT||(LA27_40>=EQ && LA27_40<=NODEAFTERSi)||LA27_40==WORDS||LA27_40==TIMES||(LA27_40>=SENTENCES && LA27_40<=PARAGRAPHS)||LA27_40==LEVELS||LA27_40==RBRACKSi) ) {s = 25;}
 
                         else if ( (LA27_40==PLUSSi) ) {s = 26;}
 
@@ -12706,737 +13737,34 @@ public class XQFTParser extends Parser {
                         input.seek(index27_40);
                         if ( s>=0 ) return s;
                         break;
-                    case 23 : 
-                        int LA27_44 = input.LA(1);
+                    case 46 : 
+                        int LA27_135 = input.LA(1);
 
                          
-                        int index27_44 = input.index();
+                        int index27_135 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA27_44==STARSi) ) {s = 24;}
-
-                        else if ( (LA27_44==EOF||LA27_44==SEMICOLONSi||(LA27_44>=EQSi && LA27_44<=COMMASi)||LA27_44==DEFAULT||LA27_44==COLLATION||(LA27_44>=ORDER && LA27_44<=EMPTY)||LA27_44==AT||(LA27_44>=ASSIGNSi && LA27_44<=EXTERNAL)||(LA27_44>=RPARSi && LA27_44<=RBRACSi)||(LA27_44>=RETURN && LA27_44<=WHERE)||(LA27_44>=STABLE && LA27_44<=DESCENDING)||LA27_44==SATISFIES||LA27_44==CASE||(LA27_44>=ELSE && LA27_44<=INSTANCE)||LA27_44==WITHOUT||(LA27_44>=EQ && LA27_44<=NODEAFTERSi)||LA27_44==WORDS||LA27_44==TIMES||(LA27_44>=SENTENCES && LA27_44<=PARAGRAPHS)||LA27_44==LEVELS||LA27_44==RBRACKSi) ) {s = 25;}
-
-                        else if ( (LA27_44==PLUSSi) ) {s = 26;}
-
-                        else if ( (LA27_44==QUESTIONSi) && (synpred1())) {s = 27;}
-
-                         
-                        input.seek(index27_44);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 24 : 
-                        int LA27_101 = input.LA(1);
-
-                         
-                        int index27_101 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_101==STARSi) ) {s = 24;}
-
-                        else if ( (LA27_101==EOF||LA27_101==SEMICOLONSi||(LA27_101>=EQSi && LA27_101<=COMMASi)||LA27_101==DEFAULT||LA27_101==COLLATION||(LA27_101>=ORDER && LA27_101<=EMPTY)||LA27_101==AT||(LA27_101>=ASSIGNSi && LA27_101<=EXTERNAL)||(LA27_101>=RPARSi && LA27_101<=RBRACSi)||(LA27_101>=RETURN && LA27_101<=WHERE)||(LA27_101>=STABLE && LA27_101<=DESCENDING)||LA27_101==SATISFIES||LA27_101==CASE||(LA27_101>=ELSE && LA27_101<=INSTANCE)||LA27_101==WITHOUT||(LA27_101>=EQ && LA27_101<=NODEAFTERSi)||LA27_101==WORDS||LA27_101==TIMES||(LA27_101>=SENTENCES && LA27_101<=PARAGRAPHS)||LA27_101==LEVELS||LA27_101==RBRACKSi) ) {s = 25;}
-
-                        else if ( (LA27_101==PLUSSi) ) {s = 26;}
-
-                        else if ( (LA27_101==QUESTIONSi) && (synpred1())) {s = 27;}
-
-                         
-                        input.seek(index27_101);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 25 : 
-                        int LA27_26 = input.LA(1);
-
-                         
-                        int index27_26 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_26==PLUSSi||LA27_26==MINUSSi) ) {s = 89;}
-
-                        else if ( (LA27_26==StringLiteral||LA27_26==NCName||LA27_26==ELEMENT||(LA27_26>=ORDERED && LA27_26<=UNORDERED)||LA27_26==DOLLARSi||LA27_26==LPARSi||LA27_26==DOCUMENT_NODE||(LA27_26>=SCHEMAELEMENT && LA27_26<=NODE)||(LA27_26>=IntegerLiteral && LA27_26<=DoubleLiteral)||LA27_26==LPRAGSi||LA27_26==VALIDATE||(LA27_26>=DBLSLASHSi && LA27_26<=ANCESTOR_OR_SELF)||(LA27_26>=DOTDOTSi && LA27_26<=ATSi)||LA27_26==DOTSi||LA27_26==LCOMMENTSi||LA27_26==LPISi||LA27_26==DOCUMENT) ) {s = 25;}
-
-                        else if ( (LA27_26==LTSi) ) {s = 90;}
-
-                        else if ( (LA27_26==STARSi) ) {s = 91;}
-
-                        else if ( (LA27_26==ASSIGNSi) && (synpred1())) {s = 49;}
-
-                        else if ( (LA27_26==EXTERNAL) && (synpred1())) {s = 50;}
-
-                        else if ( (LA27_26==COMMASi) && (synpred1())) {s = 51;}
-
-                        else if ( (LA27_26==RPARSi) && (synpred1())) {s = 52;}
-
-                        else if ( (LA27_26==AT) && (synpred1())) {s = 53;}
-
-                        else if ( (LA27_26==SCORE) && (synpred1())) {s = 54;}
-
-                        else if ( (LA27_26==IN) && (synpred1())) {s = 55;}
-
-                        else if ( (LA27_26==LBRACESi) && (synpred1())) {s = 56;}
-
-                        else if ( (LA27_26==RETURN) && (synpred1())) {s = 57;}
-
-                        else if ( ((LA27_26>=INTERSECT && LA27_26<=EXCEPT)) && (synpred1())) {s = 58;}
-
-                        else if ( ((LA27_26>=UNION && LA27_26<=PIPESi)) && (synpred1())) {s = 59;}
-
-                        else if ( ((LA27_26>=DIV && LA27_26<=MOD)) && (synpred1())) {s = 60;}
-
-                        else if ( (LA27_26==TO) && (synpred1())) {s = 61;}
-
-                        else if ( (LA27_26==FTCONTAINS) && (synpred1())) {s = 62;}
-
-                        else if ( ((LA27_26>=EQ && LA27_26<=GE)) && (synpred1())) {s = 63;}
-
-                        else if ( (LA27_26==EQSi||LA27_26==NEQSi||(LA27_26>=LTOREQSi && LA27_26<=GTOREQSi)) && (synpred1())) {s = 64;}
-
-                        else if ( ((LA27_26>=IS && LA27_26<=NODEAFTERSi)) && (synpred1())) {s = 65;}
-
-                        else if ( (LA27_26==AND) && (synpred1())) {s = 66;}
-
-                        else if ( (LA27_26==OR) && (synpred1())) {s = 67;}
-
-                        else if ( (LA27_26==EOF) && (synpred1())) {s = 68;}
-
-                        else if ( (LA27_26==RBRACSi) && (synpred1())) {s = 69;}
-
-                        else if ( (LA27_26==RBRACKSi) && (synpred1())) {s = 70;}
-
-                        else if ( (LA27_26==SEMICOLONSi) && (synpred1())) {s = 71;}
-
-                        else if ( (LA27_26==WHERE) && (synpred1())) {s = 72;}
-
-                        else if ( (LA27_26==ORDER) && (synpred1())) {s = 73;}
-
-                        else if ( (LA27_26==STABLE) && (synpred1())) {s = 74;}
-
-                        else if ( (LA27_26==FOR) && (synpred1())) {s = 75;}
-
-                        else if ( (LA27_26==LET) && (synpred1())) {s = 76;}
-
-                        else if ( ((LA27_26>=ASCENDING && LA27_26<=DESCENDING)) && (synpred1())) {s = 77;}
-
-                        else if ( (LA27_26==EMPTY) && (synpred1())) {s = 78;}
-
-                        else if ( (LA27_26==COLLATION) && (synpred1())) {s = 79;}
-
-                        else if ( (LA27_26==SATISFIES) && (synpred1())) {s = 80;}
-
-                        else if ( (LA27_26==DEFAULT) && (synpred1())) {s = 81;}
-
-                        else if ( (LA27_26==CASE) && (synpred1())) {s = 82;}
-
-                        else if ( (LA27_26==ELSE) && (synpred1())) {s = 83;}
-
-                        else if ( (LA27_26==WITHOUT) && (synpred1())) {s = 84;}
-
-                        else if ( (LA27_26==TIMES) && (synpred1())) {s = 85;}
-
-                        else if ( (LA27_26==WORDS||(LA27_26>=SENTENCES && LA27_26<=PARAGRAPHS)) && (synpred1())) {s = 86;}
-
-                        else if ( (LA27_26==LEVELS) && (synpred1())) {s = 87;}
-
-                        else if ( (LA27_26==INSTANCE) && (synpred1())) {s = 88;}
-
-                         
-                        input.seek(index27_26);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 26 : 
-                        int LA27_142 = input.LA(1);
-
-                         
-                        int index27_142 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_142==COLONSi) ) {s = 271;}
-
-                        else if ( (LA27_142==LPARSi) && (synpred1())) {s = 272;}
-
-                        else if ( (LA27_142==NCName||LA27_142==GTSi||LA27_142==RSELFTERMSi) ) {s = 25;}
-
-                        else if ( (LA27_142==LBRACKSi) && (synpred1())) {s = 273;}
-
-                        else if ( ((LA27_142>=DBLSLASHSi && LA27_142<=SLASHSi)) && (synpred1())) {s = 274;}
-
-                        else if ( (LA27_142==CAST) && (synpred1())) {s = 275;}
-
-                        else if ( (LA27_142==CASTABLE) && (synpred1())) {s = 276;}
-
-                        else if ( (LA27_142==TREAT) && (synpred1())) {s = 277;}
-
-                        else if ( (LA27_142==INSTANCE) && (synpred1())) {s = 278;}
-
-                        else if ( ((LA27_142>=INTERSECT && LA27_142<=EXCEPT)) && (synpred1())) {s = 279;}
-
-                        else if ( ((LA27_142>=UNION && LA27_142<=PIPESi)) && (synpred1())) {s = 280;}
-
-                        else if ( (LA27_142==STARSi||(LA27_142>=DIV && LA27_142<=MOD)) && (synpred1())) {s = 281;}
-
-                        else if ( (LA27_142==PLUSSi||LA27_142==MINUSSi) && (synpred1())) {s = 282;}
-
-                        else if ( (LA27_142==TO) && (synpred1())) {s = 283;}
-
-                        else if ( (LA27_142==FTCONTAINS) && (synpred1())) {s = 284;}
-
-                        else if ( (LA27_142==AND) && (synpred1())) {s = 66;}
-
-                        else if ( (LA27_142==OR) && (synpred1())) {s = 67;}
-
-                        else if ( (LA27_142==COMMASi) && (synpred1())) {s = 285;}
-
-                        else if ( (LA27_142==EOF) && (synpred1())) {s = 68;}
-
-                        else if ( (LA27_142==RBRACSi) && (synpred1())) {s = 286;}
-
-                        else if ( (LA27_142==RPARSi) && (synpred1())) {s = 287;}
-
-                        else if ( (LA27_142==RBRACKSi) && (synpred1())) {s = 70;}
-
-                        else if ( (LA27_142==SEMICOLONSi) && (synpred1())) {s = 71;}
-
-                        else if ( (LA27_142==WHERE) && (synpred1())) {s = 72;}
-
-                        else if ( (LA27_142==ORDER) && (synpred1())) {s = 73;}
-
-                        else if ( (LA27_142==STABLE) && (synpred1())) {s = 74;}
-
-                        else if ( (LA27_142==RETURN) && (synpred1())) {s = 288;}
-
-                        else if ( (LA27_142==FOR) && (synpred1())) {s = 75;}
-
-                        else if ( (LA27_142==LET) && (synpred1())) {s = 76;}
-
-                        else if ( ((LA27_142>=ASCENDING && LA27_142<=DESCENDING)) && (synpred1())) {s = 77;}
-
-                        else if ( (LA27_142==EMPTY) && (synpred1())) {s = 78;}
-
-                        else if ( (LA27_142==COLLATION) && (synpred1())) {s = 79;}
-
-                        else if ( (LA27_142==SATISFIES) && (synpred1())) {s = 80;}
-
-                        else if ( (LA27_142==DEFAULT) && (synpred1())) {s = 81;}
-
-                        else if ( (LA27_142==CASE) && (synpred1())) {s = 82;}
-
-                        else if ( (LA27_142==ELSE) && (synpred1())) {s = 83;}
-
-                         
-                        input.seek(index27_142);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 27 : 
-                        int LA27_195 = input.LA(1);
-
-                         
-                        int index27_195 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_195==COLONSi) ) {s = 385;}
-
-                        else if ( (LA27_195==NCName||LA27_195==GTSi||LA27_195==RSELFTERMSi) ) {s = 25;}
-
-                        else if ( (LA27_195==LPARSi) && (synpred1())) {s = 272;}
-
-                        else if ( (LA27_195==LBRACKSi) && (synpred1())) {s = 273;}
-
-                        else if ( ((LA27_195>=DBLSLASHSi && LA27_195<=SLASHSi)) && (synpred1())) {s = 274;}
-
-                        else if ( (LA27_195==CAST) && (synpred1())) {s = 275;}
-
-                        else if ( (LA27_195==CASTABLE) && (synpred1())) {s = 276;}
-
-                        else if ( (LA27_195==TREAT) && (synpred1())) {s = 277;}
-
-                        else if ( (LA27_195==INSTANCE) && (synpred1())) {s = 278;}
-
-                        else if ( ((LA27_195>=INTERSECT && LA27_195<=EXCEPT)) && (synpred1())) {s = 279;}
-
-                        else if ( ((LA27_195>=UNION && LA27_195<=PIPESi)) && (synpred1())) {s = 280;}
-
-                        else if ( (LA27_195==STARSi||(LA27_195>=DIV && LA27_195<=MOD)) && (synpred1())) {s = 281;}
-
-                        else if ( (LA27_195==PLUSSi||LA27_195==MINUSSi) && (synpred1())) {s = 282;}
-
-                        else if ( (LA27_195==TO) && (synpred1())) {s = 283;}
-
-                        else if ( (LA27_195==FTCONTAINS) && (synpred1())) {s = 284;}
-
-                        else if ( (LA27_195==AND) && (synpred1())) {s = 66;}
-
-                        else if ( (LA27_195==OR) && (synpred1())) {s = 67;}
-
-                        else if ( (LA27_195==COMMASi) && (synpred1())) {s = 285;}
-
-                        else if ( (LA27_195==EOF) && (synpred1())) {s = 68;}
-
-                        else if ( (LA27_195==RBRACSi) && (synpred1())) {s = 286;}
-
-                        else if ( (LA27_195==RPARSi) && (synpred1())) {s = 287;}
-
-                        else if ( (LA27_195==RBRACKSi) && (synpred1())) {s = 70;}
-
-                        else if ( (LA27_195==SEMICOLONSi) && (synpred1())) {s = 71;}
-
-                        else if ( (LA27_195==WHERE) && (synpred1())) {s = 72;}
-
-                        else if ( (LA27_195==ORDER) && (synpred1())) {s = 73;}
-
-                        else if ( (LA27_195==STABLE) && (synpred1())) {s = 74;}
-
-                        else if ( (LA27_195==RETURN) && (synpred1())) {s = 288;}
-
-                        else if ( (LA27_195==FOR) && (synpred1())) {s = 75;}
-
-                        else if ( (LA27_195==LET) && (synpred1())) {s = 76;}
-
-                        else if ( ((LA27_195>=ASCENDING && LA27_195<=DESCENDING)) && (synpred1())) {s = 77;}
-
-                        else if ( (LA27_195==EMPTY) && (synpred1())) {s = 78;}
-
-                        else if ( (LA27_195==COLLATION) && (synpred1())) {s = 79;}
-
-                        else if ( (LA27_195==SATISFIES) && (synpred1())) {s = 80;}
-
-                        else if ( (LA27_195==DEFAULT) && (synpred1())) {s = 81;}
-
-                        else if ( (LA27_195==CASE) && (synpred1())) {s = 82;}
-
-                        else if ( (LA27_195==ELSE) && (synpred1())) {s = 83;}
-
-                         
-                        input.seek(index27_195);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 28 : 
-                        int LA27_105 = input.LA(1);
-
-                         
-                        int index27_105 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1()) ) {s = 194;}
+                        if ( (synpred1()) ) {s = 306;}
 
                         else if ( (true) ) {s = 25;}
 
                          
-                        input.seek(index27_105);
+                        input.seek(index27_135);
                         if ( s>=0 ) return s;
                         break;
-                    case 29 : 
-                        int LA27_169 = input.LA(1);
+                    case 47 : 
+                        int LA27_213 = input.LA(1);
 
                          
-                        int index27_169 = input.index();
+                        int index27_213 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA27_169==CAST) && (synpred1())) {s = 351;}
+                        if ( (synpred1()) ) {s = 384;}
 
-                        else if ( (LA27_169==CASTABLE) && (synpred1())) {s = 352;}
-
-                        else if ( (LA27_169==TREAT) && (synpred1())) {s = 353;}
-
-                        else if ( (LA27_169==INSTANCE) && (synpred1())) {s = 354;}
-
-                        else if ( ((LA27_169>=INTERSECT && LA27_169<=EXCEPT)) && (synpred1())) {s = 355;}
-
-                        else if ( ((LA27_169>=UNION && LA27_169<=PIPESi)) && (synpred1())) {s = 356;}
-
-                        else if ( (LA27_169==PLUSSi||LA27_169==MINUSSi) && (synpred1())) {s = 358;}
-
-                        else if ( (LA27_169==TO) && (synpred1())) {s = 61;}
-
-                        else if ( (LA27_169==FTCONTAINS) && (synpred1())) {s = 62;}
-
-                        else if ( ((LA27_169>=EQ && LA27_169<=GE)) && (synpred1())) {s = 63;}
-
-                        else if ( (LA27_169==LTSi) ) {s = 359;}
-
-                        else if ( ((LA27_169>=IS && LA27_169<=NODEAFTERSi)) && (synpred1())) {s = 65;}
-
-                        else if ( (LA27_169==AND) && (synpred1())) {s = 66;}
-
-                        else if ( (LA27_169==OR) && (synpred1())) {s = 67;}
-
-                        else if ( (LA27_169==COMMASi) && (synpred1())) {s = 285;}
-
-                        else if ( (LA27_169==EOF) && (synpred1())) {s = 68;}
-
-                        else if ( (LA27_169==RBRACSi) && (synpred1())) {s = 69;}
-
-                        else if ( (LA27_169==RPARSi) && (synpred1())) {s = 357;}
-
-                        else if ( (LA27_169==RBRACKSi) && (synpred1())) {s = 70;}
-
-                        else if ( (LA27_169==SEMICOLONSi) && (synpred1())) {s = 71;}
-
-                        else if ( (LA27_169==WHERE) && (synpred1())) {s = 72;}
-
-                        else if ( (LA27_169==ORDER) && (synpred1())) {s = 73;}
-
-                        else if ( (LA27_169==STABLE) && (synpred1())) {s = 74;}
-
-                        else if ( (LA27_169==RETURN) && (synpred1())) {s = 288;}
-
-                        else if ( (LA27_169==FOR) && (synpred1())) {s = 75;}
-
-                        else if ( (LA27_169==LET) && (synpred1())) {s = 76;}
-
-                        else if ( ((LA27_169>=ASCENDING && LA27_169<=DESCENDING)) && (synpred1())) {s = 77;}
-
-                        else if ( (LA27_169==EMPTY) && (synpred1())) {s = 78;}
-
-                        else if ( (LA27_169==COLLATION) && (synpred1())) {s = 79;}
-
-                        else if ( (LA27_169==SATISFIES) && (synpred1())) {s = 80;}
-
-                        else if ( (LA27_169==DEFAULT) && (synpred1())) {s = 81;}
-
-                        else if ( (LA27_169==CASE) && (synpred1())) {s = 82;}
-
-                        else if ( (LA27_169==ELSE) && (synpred1())) {s = 83;}
-
-                        else if ( (LA27_169==WITHOUT) && (synpred1())) {s = 84;}
-
-                        else if ( (LA27_169==TIMES) && (synpred1())) {s = 85;}
-
-                        else if ( (LA27_169==WORDS||(LA27_169>=SENTENCES && LA27_169<=PARAGRAPHS)) && (synpred1())) {s = 86;}
-
-                        else if ( (LA27_169==LEVELS) && (synpred1())) {s = 87;}
-
-                        else if ( (LA27_169==STARSi) ) {s = 360;}
-
-                        else if ( ((LA27_169>=IntegerLiteral && LA27_169<=DoubleLiteral)) ) {s = 361;}
-
-                        else if ( (LA27_169==StringLiteral) ) {s = 362;}
-
-                        else if ( (LA27_169==DOLLARSi) ) {s = 363;}
-
-                        else if ( (LA27_169==LPARSi) ) {s = 364;}
-
-                        else if ( (LA27_169==DOTSi) ) {s = 365;}
-
-                        else if ( (LA27_169==NCName) ) {s = 366;}
-
-                        else if ( (LA27_169==ORDERED) ) {s = 367;}
-
-                        else if ( (LA27_169==UNORDERED) ) {s = 368;}
-
-                        else if ( (LA27_169==EQSi||LA27_169==NEQSi||(LA27_169>=LTOREQSi && LA27_169<=GTOREQSi)) && (synpred1())) {s = 64;}
-
-                        else if ( (LA27_169==LCOMMENTSi) ) {s = 369;}
-
-                        else if ( (LA27_169==LPISi) ) {s = 370;}
-
-                        else if ( (LA27_169==DOCUMENT) ) {s = 371;}
-
-                        else if ( (LA27_169==ELEMENT) ) {s = 372;}
-
-                        else if ( (LA27_169==ATTRIBUTE) ) {s = 373;}
-
-                        else if ( (LA27_169==TEXT) ) {s = 374;}
-
-                        else if ( (LA27_169==COMMENT) ) {s = 375;}
-
-                        else if ( (LA27_169==PROCESSING_INSTRUCTION) ) {s = 376;}
-
-                        else if ( ((LA27_169>=PARENT && LA27_169<=ANCESTOR_OR_SELF)) ) {s = 377;}
-
-                        else if ( (LA27_169==DOTDOTSi) ) {s = 378;}
-
-                        else if ( ((LA27_169>=CHILD && LA27_169<=FOLLOWING)) ) {s = 379;}
-
-                        else if ( (LA27_169==ATSi) ) {s = 380;}
-
-                        else if ( (LA27_169==DOCUMENT_NODE) ) {s = 381;}
-
-                        else if ( (LA27_169==SCHEMAELEMENT) ) {s = 382;}
-
-                        else if ( (LA27_169==SCHEMAATTRIBUTE) ) {s = 383;}
-
-                        else if ( (LA27_169==NODE) ) {s = 384;}
-
-                        else if ( ((LA27_169>=DIV && LA27_169<=MOD)) && (synpred1())) {s = 60;}
+                        else if ( (true) ) {s = 25;}
 
                          
-                        input.seek(index27_169);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 30 : 
-                        int LA27_198 = input.LA(1);
-
-                         
-                        int index27_198 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_198==CAST) && (synpred1())) {s = 351;}
-
-                        else if ( (LA27_198==CASTABLE) && (synpred1())) {s = 352;}
-
-                        else if ( (LA27_198==TREAT) && (synpred1())) {s = 353;}
-
-                        else if ( (LA27_198==INSTANCE) && (synpred1())) {s = 354;}
-
-                        else if ( ((LA27_198>=INTERSECT && LA27_198<=EXCEPT)) && (synpred1())) {s = 355;}
-
-                        else if ( ((LA27_198>=UNION && LA27_198<=PIPESi)) && (synpred1())) {s = 356;}
-
-                        else if ( (LA27_198==PLUSSi||LA27_198==MINUSSi) && (synpred1())) {s = 358;}
-
-                        else if ( (LA27_198==TO) && (synpred1())) {s = 61;}
-
-                        else if ( (LA27_198==FTCONTAINS) && (synpred1())) {s = 62;}
-
-                        else if ( ((LA27_198>=EQ && LA27_198<=GE)) && (synpred1())) {s = 63;}
-
-                        else if ( (LA27_198==LTSi) ) {s = 417;}
-
-                        else if ( ((LA27_198>=IS && LA27_198<=NODEAFTERSi)) && (synpred1())) {s = 65;}
-
-                        else if ( (LA27_198==AND) && (synpred1())) {s = 66;}
-
-                        else if ( (LA27_198==OR) && (synpred1())) {s = 67;}
-
-                        else if ( (LA27_198==COMMASi) && (synpred1())) {s = 285;}
-
-                        else if ( (LA27_198==EOF) && (synpred1())) {s = 68;}
-
-                        else if ( (LA27_198==RBRACSi) && (synpred1())) {s = 69;}
-
-                        else if ( (LA27_198==RPARSi) && (synpred1())) {s = 357;}
-
-                        else if ( (LA27_198==RBRACKSi) && (synpred1())) {s = 70;}
-
-                        else if ( (LA27_198==SEMICOLONSi) && (synpred1())) {s = 71;}
-
-                        else if ( (LA27_198==WHERE) && (synpred1())) {s = 72;}
-
-                        else if ( (LA27_198==ORDER) && (synpred1())) {s = 73;}
-
-                        else if ( (LA27_198==STABLE) && (synpred1())) {s = 74;}
-
-                        else if ( (LA27_198==RETURN) && (synpred1())) {s = 288;}
-
-                        else if ( (LA27_198==FOR) && (synpred1())) {s = 75;}
-
-                        else if ( (LA27_198==LET) && (synpred1())) {s = 76;}
-
-                        else if ( ((LA27_198>=ASCENDING && LA27_198<=DESCENDING)) && (synpred1())) {s = 77;}
-
-                        else if ( (LA27_198==EMPTY) && (synpred1())) {s = 78;}
-
-                        else if ( (LA27_198==COLLATION) && (synpred1())) {s = 79;}
-
-                        else if ( (LA27_198==SATISFIES) && (synpred1())) {s = 80;}
-
-                        else if ( (LA27_198==DEFAULT) && (synpred1())) {s = 81;}
-
-                        else if ( (LA27_198==CASE) && (synpred1())) {s = 82;}
-
-                        else if ( (LA27_198==ELSE) && (synpred1())) {s = 83;}
-
-                        else if ( (LA27_198==WITHOUT) && (synpred1())) {s = 84;}
-
-                        else if ( (LA27_198==TIMES) && (synpred1())) {s = 85;}
-
-                        else if ( (LA27_198==WORDS||(LA27_198>=SENTENCES && LA27_198<=PARAGRAPHS)) && (synpred1())) {s = 86;}
-
-                        else if ( (LA27_198==LEVELS) && (synpred1())) {s = 87;}
-
-                        else if ( (LA27_198==STARSi) ) {s = 418;}
-
-                        else if ( ((LA27_198>=IntegerLiteral && LA27_198<=DoubleLiteral)) ) {s = 419;}
-
-                        else if ( (LA27_198==StringLiteral) ) {s = 420;}
-
-                        else if ( (LA27_198==DOLLARSi) ) {s = 421;}
-
-                        else if ( (LA27_198==LPARSi) ) {s = 422;}
-
-                        else if ( (LA27_198==DOTSi) ) {s = 423;}
-
-                        else if ( (LA27_198==NCName) ) {s = 424;}
-
-                        else if ( (LA27_198==ORDERED) ) {s = 425;}
-
-                        else if ( (LA27_198==UNORDERED) ) {s = 426;}
-
-                        else if ( (LA27_198==EQSi||LA27_198==NEQSi||(LA27_198>=LTOREQSi && LA27_198<=GTOREQSi)) && (synpred1())) {s = 64;}
-
-                        else if ( (LA27_198==LCOMMENTSi) ) {s = 427;}
-
-                        else if ( (LA27_198==LPISi) ) {s = 428;}
-
-                        else if ( (LA27_198==DOCUMENT) ) {s = 429;}
-
-                        else if ( (LA27_198==ELEMENT) ) {s = 430;}
-
-                        else if ( (LA27_198==ATTRIBUTE) ) {s = 431;}
-
-                        else if ( (LA27_198==TEXT) ) {s = 432;}
-
-                        else if ( (LA27_198==COMMENT) ) {s = 433;}
-
-                        else if ( (LA27_198==PROCESSING_INSTRUCTION) ) {s = 434;}
-
-                        else if ( ((LA27_198>=PARENT && LA27_198<=ANCESTOR_OR_SELF)) ) {s = 435;}
-
-                        else if ( (LA27_198==DOTDOTSi) ) {s = 436;}
-
-                        else if ( ((LA27_198>=CHILD && LA27_198<=FOLLOWING)) ) {s = 437;}
-
-                        else if ( (LA27_198==ATSi) ) {s = 438;}
-
-                        else if ( (LA27_198==DOCUMENT_NODE) ) {s = 439;}
-
-                        else if ( (LA27_198==SCHEMAELEMENT) ) {s = 440;}
-
-                        else if ( (LA27_198==SCHEMAATTRIBUTE) ) {s = 441;}
-
-                        else if ( (LA27_198==NODE) ) {s = 442;}
-
-                        else if ( ((LA27_198>=DIV && LA27_198<=MOD)) && (synpred1())) {s = 60;}
-
-                         
-                        input.seek(index27_198);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 31 : 
-                        int LA27_45 = input.LA(1);
-
-                         
-                        int index27_45 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_45==EOF||LA27_45==SEMICOLONSi||(LA27_45>=EQSi && LA27_45<=COMMASi)||LA27_45==DEFAULT||LA27_45==COLLATION||(LA27_45>=ORDER && LA27_45<=EMPTY)||LA27_45==AT||(LA27_45>=ASSIGNSi && LA27_45<=EXTERNAL)||(LA27_45>=RPARSi && LA27_45<=RBRACSi)||(LA27_45>=RETURN && LA27_45<=WHERE)||(LA27_45>=STABLE && LA27_45<=DESCENDING)||LA27_45==SATISFIES||LA27_45==CASE||(LA27_45>=ELSE && LA27_45<=INSTANCE)||LA27_45==WITHOUT||(LA27_45>=EQ && LA27_45<=NODEAFTERSi)||LA27_45==WORDS||LA27_45==TIMES||(LA27_45>=SENTENCES && LA27_45<=PARAGRAPHS)||LA27_45==LEVELS||LA27_45==RBRACKSi) ) {s = 25;}
-
-                        else if ( (LA27_45==STARSi) ) {s = 24;}
-
-                        else if ( (LA27_45==PLUSSi) ) {s = 26;}
-
-                        else if ( (LA27_45==QUESTIONSi) && (synpred1())) {s = 27;}
-
-                         
-                        input.seek(index27_45);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 32 : 
-                        int LA27_30 = input.LA(1);
-
-                         
-                        int index27_30 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_30==EOF||LA27_30==SEMICOLONSi||(LA27_30>=EQSi && LA27_30<=COMMASi)||LA27_30==DEFAULT||LA27_30==COLLATION||(LA27_30>=ORDER && LA27_30<=EMPTY)||LA27_30==AT||(LA27_30>=ASSIGNSi && LA27_30<=EXTERNAL)||(LA27_30>=RPARSi && LA27_30<=RBRACSi)||(LA27_30>=RETURN && LA27_30<=WHERE)||(LA27_30>=STABLE && LA27_30<=DESCENDING)||LA27_30==SATISFIES||LA27_30==CASE||(LA27_30>=ELSE && LA27_30<=INSTANCE)||LA27_30==WITHOUT||(LA27_30>=EQ && LA27_30<=NODEAFTERSi)||LA27_30==WORDS||LA27_30==TIMES||(LA27_30>=SENTENCES && LA27_30<=PARAGRAPHS)||LA27_30==LEVELS||LA27_30==RBRACKSi) ) {s = 25;}
-
-                        else if ( (LA27_30==STARSi) ) {s = 24;}
-
-                        else if ( (LA27_30==PLUSSi) ) {s = 26;}
-
-                        else if ( (LA27_30==QUESTIONSi) && (synpred1())) {s = 27;}
-
-                         
-                        input.seek(index27_30);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 33 : 
-                        int LA27_24 = input.LA(1);
-
-                         
-                        int index27_24 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA27_24==PLUSSi||LA27_24==MINUSSi) ) {s = 46;}
-
-                        else if ( (LA27_24==StringLiteral||LA27_24==NCName||LA27_24==ELEMENT||(LA27_24>=ORDERED && LA27_24<=UNORDERED)||LA27_24==DOLLARSi||LA27_24==LPARSi||LA27_24==DOCUMENT_NODE||(LA27_24>=SCHEMAELEMENT && LA27_24<=NODE)||(LA27_24>=IntegerLiteral && LA27_24<=DoubleLiteral)||LA27_24==LPRAGSi||LA27_24==VALIDATE||(LA27_24>=DBLSLASHSi && LA27_24<=ANCESTOR_OR_SELF)||(LA27_24>=DOTDOTSi && LA27_24<=ATSi)||LA27_24==DOTSi||LA27_24==LCOMMENTSi||LA27_24==LPISi||LA27_24==DOCUMENT) ) {s = 25;}
-
-                        else if ( (LA27_24==LTSi) ) {s = 47;}
-
-                        else if ( (LA27_24==STARSi) ) {s = 48;}
-
-                        else if ( (LA27_24==ASSIGNSi) && (synpred1())) {s = 49;}
-
-                        else if ( (LA27_24==EXTERNAL) && (synpred1())) {s = 50;}
-
-                        else if ( (LA27_24==COMMASi) && (synpred1())) {s = 51;}
-
-                        else if ( (LA27_24==RPARSi) && (synpred1())) {s = 52;}
-
-                        else if ( (LA27_24==AT) && (synpred1())) {s = 53;}
-
-                        else if ( (LA27_24==SCORE) && (synpred1())) {s = 54;}
-
-                        else if ( (LA27_24==IN) && (synpred1())) {s = 55;}
-
-                        else if ( (LA27_24==LBRACESi) && (synpred1())) {s = 56;}
-
-                        else if ( (LA27_24==RETURN) && (synpred1())) {s = 57;}
-
-                        else if ( ((LA27_24>=INTERSECT && LA27_24<=EXCEPT)) && (synpred1())) {s = 58;}
-
-                        else if ( ((LA27_24>=UNION && LA27_24<=PIPESi)) && (synpred1())) {s = 59;}
-
-                        else if ( ((LA27_24>=DIV && LA27_24<=MOD)) && (synpred1())) {s = 60;}
-
-                        else if ( (LA27_24==TO) && (synpred1())) {s = 61;}
-
-                        else if ( (LA27_24==FTCONTAINS) && (synpred1())) {s = 62;}
-
-                        else if ( ((LA27_24>=EQ && LA27_24<=GE)) && (synpred1())) {s = 63;}
-
-                        else if ( (LA27_24==EQSi||LA27_24==NEQSi||(LA27_24>=LTOREQSi && LA27_24<=GTOREQSi)) && (synpred1())) {s = 64;}
-
-                        else if ( ((LA27_24>=IS && LA27_24<=NODEAFTERSi)) && (synpred1())) {s = 65;}
-
-                        else if ( (LA27_24==AND) && (synpred1())) {s = 66;}
-
-                        else if ( (LA27_24==OR) && (synpred1())) {s = 67;}
-
-                        else if ( (LA27_24==EOF) && (synpred1())) {s = 68;}
-
-                        else if ( (LA27_24==RBRACSi) && (synpred1())) {s = 69;}
-
-                        else if ( (LA27_24==RBRACKSi) && (synpred1())) {s = 70;}
-
-                        else if ( (LA27_24==SEMICOLONSi) && (synpred1())) {s = 71;}
-
-                        else if ( (LA27_24==WHERE) && (synpred1())) {s = 72;}
-
-                        else if ( (LA27_24==ORDER) && (synpred1())) {s = 73;}
-
-                        else if ( (LA27_24==STABLE) && (synpred1())) {s = 74;}
-
-                        else if ( (LA27_24==FOR) && (synpred1())) {s = 75;}
-
-                        else if ( (LA27_24==LET) && (synpred1())) {s = 76;}
-
-                        else if ( ((LA27_24>=ASCENDING && LA27_24<=DESCENDING)) && (synpred1())) {s = 77;}
-
-                        else if ( (LA27_24==EMPTY) && (synpred1())) {s = 78;}
-
-                        else if ( (LA27_24==COLLATION) && (synpred1())) {s = 79;}
-
-                        else if ( (LA27_24==SATISFIES) && (synpred1())) {s = 80;}
-
-                        else if ( (LA27_24==DEFAULT) && (synpred1())) {s = 81;}
-
-                        else if ( (LA27_24==CASE) && (synpred1())) {s = 82;}
-
-                        else if ( (LA27_24==ELSE) && (synpred1())) {s = 83;}
-
-                        else if ( (LA27_24==WITHOUT) && (synpred1())) {s = 84;}
-
-                        else if ( (LA27_24==TIMES) && (synpred1())) {s = 85;}
-
-                        else if ( (LA27_24==WORDS||(LA27_24>=SENTENCES && LA27_24<=PARAGRAPHS)) && (synpred1())) {s = 86;}
-
-                        else if ( (LA27_24==LEVELS) && (synpred1())) {s = 87;}
-
-                        else if ( (LA27_24==INSTANCE) && (synpred1())) {s = 88;}
-
-                         
-                        input.seek(index27_24);
+                        input.seek(index27_213);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -13448,43 +13776,37 @@ public class XQFTParser extends Parser {
         }
     }
     static final String DFA120_eotS =
-        "\u01d0\uffff";
+        "\u019e\uffff";
     static final String DFA120_eofS =
-        "\2\uffff\1\36\32\uffff\1\66\1\uffff\1\36\3\uffff\1\36\1\uffff\1"+
-        "\36\u0086\uffff\1\66\30\uffff\1\66\31\uffff\1\66\1\uffff\1\36\u00ee"+
-        "\uffff";
+        "\2\uffff\1\36\32\uffff\1\63\1\uffff\1\36\11\uffff\1\36\37\uffff"+
+        "\1\36\43\uffff\1\63\31\uffff\1\63\u0116\uffff";
     static final String DFA120_minS =
-        "\1\6\1\uffff\1\6\11\uffff\1\6\20\uffff\1\6\1\uffff\1\10\1\uffff"+
-        "\5\6\46\uffff\1\13\3\uffff\1\6\1\56\1\6\3\0\1\13\3\0\2\56\1\13\1"+
-        "\u00c0\1\u00c3\1\56\2\13\2\54\1\13\1\u00a9\1\0\1\u00a9\1\13\4\54"+
-        "\1\0\1\13\2\0\1\13\3\0\2\56\1\13\1\u00c0\1\u00c3\1\56\2\13\2\54"+
-        "\1\13\1\u00a9\1\0\1\u00a9\1\13\4\54\1\0\1\6\3\0\1\13\3\0\2\56\1"+
-        "\u00c0\1\u00c3\1\56\2\13\2\54\1\13\1\u00a9\1\0\1\u00a9\1\13\4\54"+
-        "\11\uffff\1\10\25\uffff\1\6\1\uffff\2\6\10\uffff\1\6\20\uffff\1"+
-        "\6\1\uffff\1\10\1\0\1\56\176\0\17\uffff\71\0\7\uffff\33\0\1\uffff"+
-        "\2\0\1\uffff";
+        "\1\6\1\uffff\1\6\11\uffff\1\6\20\uffff\1\6\1\uffff\1\10\2\uffff"+
+        "\1\6\6\uffff\2\6\3\uffff\1\6\32\uffff\1\6\2\uffff\1\13\3\uffff\2"+
+        "\0\1\13\3\0\2\56\1\13\1\u00c0\1\u00c3\1\56\2\13\2\54\1\13\1\u00a9"+
+        "\1\0\1\u00a9\1\13\4\54\1\0\1\6\1\uffff\2\6\10\uffff\1\6\20\uffff"+
+        "\1\6\1\uffff\1\56\1\6\3\0\1\13\3\0\2\56\1\13\1\u00c0\1\u00c3\1\56"+
+        "\2\13\2\54\1\13\1\u00a9\1\0\1\u00a9\1\13\4\54\1\0\1\13\1\6\1\0\36"+
+        "\uffff\164\0\7\uffff\33\0\2\uffff\77\0";
     static final String DFA120_maxS =
         "\1\u00c6\1\uffff\1\u00c6\11\uffff\1\u00c6\20\uffff\1\u00c6\1\uffff"+
-        "\1\u00b5\1\uffff\5\u00c6\46\uffff\1\66\3\uffff\1\u00c6\1\u00a1\1"+
-        "\u00c6\3\0\1\13\3\0\2\56\1\13\1\u00c0\1\u00c3\2\56\1\u00a9\3\56"+
-        "\1\u00a9\1\0\1\u00a9\1\75\4\54\1\0\1\13\2\0\1\13\3\0\2\56\1\13\1"+
-        "\u00c0\1\u00c3\2\56\1\u00a9\3\56\1\u00a9\1\0\1\u00a9\1\75\4\54\1"+
-        "\0\1\u00c6\3\0\1\13\3\0\2\56\1\u00c0\1\u00c3\2\56\1\u00a9\3\56\1"+
-        "\u00a9\1\0\1\u00a9\1\75\4\54\11\uffff\1\u00b5\25\uffff\1\u00c6\1"+
-        "\uffff\2\u00c6\10\uffff\1\u00c6\20\uffff\1\u00c6\1\uffff\1\u00b5"+
-        "\1\0\1\56\176\0\17\uffff\71\0\7\uffff\33\0\1\uffff\2\0\1\uffff";
+        "\1\u00b5\2\uffff\1\u00c6\6\uffff\2\u00c6\3\uffff\1\u00c6\32\uffff"+
+        "\1\u00c6\2\uffff\1\66\3\uffff\2\0\1\13\3\0\2\56\1\13\1\u00c0\1\u00c3"+
+        "\2\56\1\u00a9\3\56\1\u00a9\1\0\1\u00a9\1\75\4\54\1\0\1\u00c6\1\uffff"+
+        "\2\u00c6\10\uffff\1\u00c6\20\uffff\1\u00c6\1\uffff\1\u00a1\1\u00c6"+
+        "\3\0\1\13\3\0\2\56\1\13\1\u00c0\1\u00c3\2\56\1\u00a9\3\56\1\u00a9"+
+        "\1\0\1\u00a9\1\75\4\54\1\0\1\13\1\u00c6\1\0\36\uffff\164\0\7\uffff"+
+        "\33\0\2\uffff\77\0";
     static final String DFA120_acceptS =
-        "\1\uffff\1\1\1\uffff\1\4\10\2\1\uffff\20\2\1\uffff\1\3\1\uffff\1"+
-        "\2\5\uffff\46\2\1\uffff\3\2\123\uffff\11\2\1\uffff\25\2\1\uffff"+
-        "\1\2\2\uffff\10\2\1\uffff\20\2\1\uffff\1\2\u0081\uffff\17\2\71\uffff"+
-        "\7\2\33\uffff\1\2\2\uffff\1\2";
+        "\1\uffff\1\1\1\uffff\1\4\10\2\1\uffff\20\2\1\uffff\1\3\1\uffff\2"+
+        "\2\1\uffff\6\2\2\uffff\3\2\1\uffff\32\2\1\uffff\2\2\1\uffff\3\2"+
+        "\33\uffff\1\2\2\uffff\10\2\1\uffff\20\2\1\uffff\1\2\40\uffff\36"+
+        "\2\164\uffff\7\2\33\uffff\2\2\77\uffff";
     static final String DFA120_specialS =
-        "\1\17\1\uffff\1\11\32\uffff\1\22\1\uffff\1\2\4\uffff\1\20\1\16\55"+
-        "\uffff\1\21\1\7\1\32\1\uffff\1\5\1\34\1\14\14\uffff\1\24\6\uffff"+
-        "\1\0\1\uffff\1\4\1\30\1\uffff\1\27\1\12\1\33\14\uffff\1\37\6\uffff"+
-        "\1\25\1\uffff\1\6\1\3\1\31\1\uffff\1\15\1\13\1\35\13\uffff\1\40"+
-        "\17\uffff\1\36\30\uffff\1\26\31\uffff\1\23\1\uffff\1\10\1\1\u00ed"+
-        "\uffff}>";
+        "\1\26\1\uffff\1\22\32\uffff\1\20\1\uffff\1\7\11\uffff\1\5\4\uffff"+
+        "\1\10\41\uffff\1\21\1\0\1\uffff\1\11\1\2\1\14\14\uffff\1\1\6\uffff"+
+        "\1\25\3\uffff\1\12\31\uffff\1\16\3\uffff\1\24\1\6\1\13\1\uffff\1"+
+        "\23\1\17\1\3\14\uffff\1\15\6\uffff\1\4\u00f8\uffff}>";
     static final String[] DFA120_transitionS = {
             "\1\3\4\uffff\1\3\4\uffff\1\3\10\uffff\2\3\14\uffff\1\3\4\uffff"+
             "\1\3\7\uffff\1\3\1\uffff\10\3\55\uffff\1\3\13\uffff\3\3\50\uffff"+
@@ -13529,15 +13851,15 @@ public class XQFTParser extends Parser {
             "",
             "",
             "",
-            "\1\36\1\uffff\1\72\2\uffff\1\36\1\61\1\65\1\uffff\1\105\1\36"+
-            "\4\uffff\1\103\3\uffff\2\36\1\74\1\102\12\uffff\1\36\2\uffff"+
-            "\1\40\1\uffff\1\36\1\70\1\uffff\1\67\4\uffff\1\36\1\uffff\1"+
-            "\45\7\36\1\41\1\76\1\77\2\uffff\1\100\1\73\1\uffff\1\75\2\101"+
-            "\2\uffff\1\104\1\uffff\1\106\2\uffff\1\107\1\64\1\63\1\57\1"+
-            "\56\1\41\3\55\2\54\2\53\1\52\1\uffff\1\51\1\50\1\47\1\110\1"+
-            "\uffff\6\60\1\61\1\44\3\61\3\62\5\uffff\3\36\3\uffff\1\112\2"+
-            "\uffff\1\111\3\uffff\1\36\3\uffff\2\112\15\uffff\1\113\7\uffff"+
-            "\1\36\2\uffff\1\42\1\43\5\36\1\uffff\10\36\1\46\1\71\1\36\12"+
+            "\1\36\1\uffff\1\67\2\uffff\1\36\1\112\1\62\1\uffff\1\102\1\36"+
+            "\4\uffff\1\100\3\uffff\2\36\1\71\1\77\12\uffff\1\36\2\uffff"+
+            "\1\40\1\uffff\1\36\1\65\1\uffff\1\64\4\uffff\1\36\1\uffff\1"+
+            "\51\7\36\1\52\1\73\1\74\2\uffff\1\75\1\70\1\uffff\1\72\2\76"+
+            "\2\uffff\1\101\1\uffff\1\103\2\uffff\1\104\1\61\1\60\1\54\1"+
+            "\53\1\52\3\113\2\50\2\47\1\46\1\uffff\1\45\1\44\1\43\1\105\1"+
+            "\uffff\6\55\1\112\1\56\3\112\3\57\5\uffff\3\36\3\uffff\1\107"+
+            "\2\uffff\1\106\3\uffff\1\36\3\uffff\2\107\15\uffff\1\110\7\uffff"+
+            "\1\36\2\uffff\1\42\1\111\5\36\1\uffff\10\36\1\41\1\66\1\36\12"+
             "\uffff\1\36\2\uffff\1\36\3\uffff\1\36",
             "",
             "\1\36\2\uffff\1\115\1\uffff\1\36\1\uffff\1\36\5\uffff\1\36\5"+
@@ -13546,185 +13868,139 @@ public class XQFTParser extends Parser {
             "\uffff\1\36\2\uffff\16\36\1\uffff\3\36\13\uffff\1\117\64\uffff"+
             "\2\36\16\uffff\2\36\1\uffff\1\116",
             "",
-            "\1\125\4\uffff\1\131\4\uffff\1\140\10\uffff\1\132\1\133\14\uffff"+
-            "\1\126\4\uffff\1\127\7\uffff\1\151\1\uffff\1\155\1\152\1\141"+
-            "\1\153\1\144\1\143\1\142\1\154\1\120\26\uffff\1\120\25\uffff"+
-            "\1\134\13\uffff\3\124\12\uffff\1\156\32\uffff\1\121\2\uffff"+
-            "\1\122\1\123\5\145\1\uffff\1\146\6\147\1\150\2\uffff\1\130\12"+
-            "\uffff\1\135\2\uffff\1\136\3\uffff\1\137",
-            "\1\160\4\uffff\1\164\4\uffff\1\173\10\uffff\1\165\1\166\14\uffff"+
-            "\1\161\4\uffff\1\162\7\uffff\1\u0084\1\uffff\1\u0088\1\u0085"+
-            "\1\174\1\u0086\1\177\1\176\1\175\1\u0087\55\uffff\1\167\13\uffff"+
-            "\3\157\52\uffff\5\u0080\1\uffff\1\u0081\6\u0082\1\u0083\2\uffff"+
-            "\1\163\12\uffff\1\170\2\uffff\1\171\3\uffff\1\172",
-            "\1\u008c\1\uffff\1\36\2\uffff\1\u0090\2\36\1\uffff\1\36\1\u0096"+
-            "\4\uffff\1\36\3\uffff\1\u0091\1\u0092\2\36\12\uffff\1\u008d"+
-            "\4\uffff\1\u008e\1\36\1\uffff\1\36\4\uffff\1\u009f\1\uffff\1"+
-            "\u008a\1\u00a0\1\u0097\1\u00a1\1\u009a\1\u0099\1\u0098\1\u00a2"+
+            "",
+            "\1\121\4\uffff\1\125\4\uffff\1\134\10\uffff\1\126\1\127\14\uffff"+
+            "\1\122\4\uffff\1\123\7\uffff\1\145\1\uffff\1\151\1\146\1\135"+
+            "\1\147\1\140\1\137\1\136\1\150\55\uffff\1\130\13\uffff\3\120"+
+            "\52\uffff\5\141\1\uffff\1\142\6\143\1\144\2\uffff\1\124\12\uffff"+
+            "\1\131\2\uffff\1\132\3\uffff\1\133",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\157\1\uffff\1\36\2\uffff\1\163\2\36\1\uffff\1\36\1\172\4"+
+            "\uffff\1\36\3\uffff\1\164\1\165\2\36\12\uffff\1\160\2\uffff"+
+            "\1\36\1\uffff\1\161\1\36\1\uffff\1\36\4\uffff\1\u0083\1\uffff"+
+            "\1\u0087\1\u0084\1\173\1\u0085\1\176\1\175\1\174\1\u0086\1\152"+
+            "\2\36\2\uffff\2\36\1\uffff\3\36\2\uffff\1\36\1\uffff\1\36\2"+
+            "\uffff\5\36\1\152\10\36\1\uffff\4\36\1\uffff\7\36\1\166\6\36"+
+            "\5\uffff\3\156\3\uffff\1\36\2\uffff\1\36\3\uffff\1\u0088\3\uffff"+
+            "\2\36\15\uffff\1\36\7\uffff\1\153\2\uffff\1\154\1\155\5\177"+
+            "\1\uffff\1\u0080\6\u0081\1\u0082\2\36\1\162\12\uffff\1\167\2"+
+            "\uffff\1\170\3\uffff\1\171",
+            "\1\u008d\4\uffff\1\u0091\4\uffff\1\u0098\10\uffff\1\u0092\1"+
+            "\u0093\14\uffff\1\u008e\4\uffff\1\u008f\7\uffff\1\u00a1\1\uffff"+
+            "\1\u00a5\1\u00a2\1\u0099\1\u00a3\1\u009c\1\u009b\1\u009a\1\u00a4"+
+            "\1\u00a7\26\uffff\1\u00a7\25\uffff\1\u0094\13\uffff\3\u008c"+
+            "\12\uffff\1\u00a6\32\uffff\1\u0089\2\uffff\1\u008a\1\u008b\5"+
+            "\u009d\1\uffff\1\u009e\6\u009f\1\u00a0\2\uffff\1\u0090\12\uffff"+
+            "\1\u0095\2\uffff\1\u0096\3\uffff\1\u0097",
+            "",
+            "",
+            "",
+            "\1\u00ae\4\uffff\1\u00a8\4\uffff\1\u00b8\10\uffff\1\u00b2\1"+
+            "\u00b3\14\uffff\1\u00af\4\uffff\1\u00b0\7\uffff\1\u00c1\1\uffff"+
+            "\1\u00c5\1\u00c2\1\u00b9\1\u00c3\1\u00bc\1\u00bb\1\u00ba\1\u00c4"+
+            "\1\u00a9\26\uffff\1\u00a9\25\uffff\1\u00b4\13\uffff\3\u00ad"+
+            "\12\uffff\1\u00c6\32\uffff\1\u00aa\2\uffff\1\u00ab\1\u00ac\5"+
+            "\u00bd\1\uffff\1\u00be\6\u00bf\1\u00c0\2\uffff\1\u00b1\12\uffff"+
+            "\1\u00b5\2\uffff\1\u00b6\3\uffff\1\u00b7",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u00c8\1\uffff\1\36\2\uffff\1\u00cc\2\36\1\uffff\1\36\1\u00d3"+
+            "\4\uffff\1\36\3\uffff\1\u00cd\1\u00ce\2\36\12\uffff\1\u00c9"+
+            "\4\uffff\1\u00ca\1\36\1\uffff\1\36\4\uffff\1\u00dc\1\uffff\1"+
+            "\u00e0\1\u00dd\1\u00d4\1\u00de\1\u00d7\1\u00d6\1\u00d5\1\u00df"+
             "\3\36\2\uffff\2\36\1\uffff\3\36\2\uffff\1\36\1\uffff\1\36\2"+
-            "\uffff\16\36\1\uffff\4\36\1\uffff\7\36\1\u0089\6\36\5\uffff"+
-            "\3\u008b\3\uffff\1\36\2\uffff\1\36\7\uffff\2\36\15\uffff\1\36"+
-            "\14\uffff\5\u009b\1\uffff\1\u009c\6\u009d\1\u009e\1\uffff\1"+
-            "\36\1\u008f\12\uffff\1\u0093\2\uffff\1\u0094\3\uffff\1\u0095",
-            "\1\u00a8\4\uffff\1\u00ac\4\uffff\1\u00b3\10\uffff\1\u00ad\1"+
-            "\u00ae\14\uffff\1\u00a9\4\uffff\1\u00aa\7\uffff\1\u00bc\1\uffff"+
-            "\1\u00c0\1\u00bd\1\u00b4\1\u00be\1\u00b7\1\u00b6\1\u00b5\1\u00bf"+
-            "\1\u00a3\26\uffff\1\u00a3\25\uffff\1\u00af\13\uffff\3\u00a7"+
-            "\12\uffff\1\u00c1\32\uffff\1\u00a4\2\uffff\1\u00a5\1\u00a6\5"+
-            "\u00b8\1\uffff\1\u00b9\6\u00ba\1\u00bb\2\uffff\1\u00ab\12\uffff"+
-            "\1\u00b0\2\uffff\1\u00b1\3\uffff\1\u00b2",
-            "\1\u00c7\1\uffff\1\36\2\uffff\1\u00cb\2\36\1\uffff\1\36\1\u00d2"+
-            "\4\uffff\1\36\3\uffff\1\u00cc\1\u00cd\2\36\12\uffff\1\u00c8"+
-            "\2\uffff\1\36\1\uffff\1\u00c9\1\36\1\uffff\1\36\4\uffff\1\u00db"+
-            "\1\uffff\1\u00df\1\u00dc\1\u00d3\1\u00dd\1\u00d6\1\u00d5\1\u00d4"+
-            "\1\u00de\1\u00c2\2\36\2\uffff\2\36\1\uffff\3\36\2\uffff\1\36"+
-            "\1\uffff\1\36\2\uffff\5\36\1\u00c2\10\36\1\uffff\4\36\1\uffff"+
-            "\7\36\1\u00ce\6\36\5\uffff\3\u00c6\3\uffff\1\36\2\uffff\1\36"+
-            "\3\uffff\1\u00e0\3\uffff\2\36\15\uffff\1\36\7\uffff\1\u00c3"+
-            "\2\uffff\1\u00c4\1\u00c5\5\u00d7\1\uffff\1\u00d8\6\u00d9\1\u00da"+
-            "\2\36\1\u00ca\12\uffff\1\u00cf\2\uffff\1\u00d0\3\uffff\1\u00d1",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\uffff\16\36\1\uffff\4\36\1\uffff\7\36\1\u00cf\6\36\5\uffff"+
+            "\3\u00c7\3\uffff\1\36\2\uffff\1\36\7\uffff\2\36\15\uffff\1\36"+
+            "\14\uffff\5\u00d8\1\uffff\1\u00d9\6\u00da\1\u00db\1\uffff\1"+
+            "\36\1\u00cb\12\uffff\1\u00d0\2\uffff\1\u00d1\3\uffff\1\u00d2",
             "",
             "",
             "\1\u00e1\52\uffff\1\36",
             "",
             "",
             "",
-            "\1\125\4\uffff\1\131\4\uffff\1\140\10\uffff\1\132\1\133\14\uffff"+
-            "\1\126\4\uffff\1\u00e2\7\uffff\1\151\1\uffff\1\155\1\152\1\141"+
-            "\1\153\1\144\1\143\1\142\1\154\1\120\26\uffff\1\120\25\uffff"+
-            "\1\134\13\uffff\3\124\12\uffff\1\156\32\uffff\1\121\2\uffff"+
-            "\1\122\1\123\5\145\1\uffff\1\146\6\147\1\150\2\uffff\1\130\12"+
-            "\uffff\1\135\2\uffff\1\136\3\uffff\1\137",
-            "\1\u00e4\161\uffff\2\u00e3",
-            "\1\u00e6\4\uffff\1\u00ea\4\uffff\1\u00f1\10\uffff\1\u00eb\1"+
-            "\u00ec\14\uffff\1\u00e7\4\uffff\1\u00e8\7\uffff\1\u00fa\1\uffff"+
-            "\1\u00fe\1\u00fb\1\u00f2\1\u00fc\1\u00f5\1\u00f4\1\u00f3\1\u00fd"+
-            "\55\uffff\1\u00ed\13\uffff\3\u00e5\52\uffff\5\u00f6\1\uffff"+
-            "\1\u00f7\6\u00f8\1\u00f9\2\uffff\1\u00e9\12\uffff\1\u00ee\2"+
-            "\uffff\1\u00ef\3\uffff\1\u00f0",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\u00e2",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
+            "\1\u00e3",
+            "\1\u00e4",
+            "\1\u00e5",
+            "\1\u00e6",
+            "\1\u00e7",
+            "\1\u00e8",
+            "\1\u00ea\40\uffff\1\u00e9\1\uffff\1\u00eb",
+            "\1\u00ee\40\uffff\1\u00ed\1\uffff\1\u00ef\172\uffff\1\u00ec",
+            "\1\u00f1\1\uffff\1\u00f0",
+            "\1\u00f2\1\uffff\1\u00f3",
+            "\1\u00f5\40\uffff\1\u00f4\1\uffff\1\u00f6",
+            "\1\u00f7",
+            "\1\uffff",
+            "\1\u00ec",
+            "\1\u00fd\4\uffff\1\u00f8\43\uffff\1\145\1\uffff\1\151\1\146"+
+            "\1\u00f9\1\147\1\u00fa\1\u00fb\1\u00fc\1\150",
+            "\1\u00fe",
             "\1\u00ff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
             "\1\u0100",
             "\1\u0101",
-            "\1\u0102",
-            "\1\u0103",
-            "\1\u0104",
-            "\1\u0105",
-            "\1\u0107\40\uffff\1\u0106\1\uffff\1\u0108",
-            "\1\u010b\40\uffff\1\u010a\1\uffff\1\u010c\172\uffff\1\u0109",
-            "\1\u010e\1\uffff\1\u010d",
-            "\1\u0110\1\uffff\1\u010f",
-            "\1\u0112\40\uffff\1\u0111\1\uffff\1\u0113",
-            "\1\u0114",
             "\1\uffff",
-            "\1\u0109",
-            "\1\u011a\4\uffff\1\u0115\43\uffff\1\151\1\uffff\1\155\1\152"+
-            "\1\u0116\1\153\1\u0117\1\u0118\1\u0119\1\154",
-            "\1\u011b",
-            "\1\u011c",
-            "\1\u011d",
-            "\1\u011e",
-            "\1\uffff",
-            "\1\u011f",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\u0120",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\u0121",
-            "\1\u0122",
-            "\1\u0123",
-            "\1\u0124",
-            "\1\u0125",
-            "\1\u0126",
-            "\1\u0128\40\uffff\1\u0127\1\uffff\1\u0129",
-            "\1\u012c\40\uffff\1\u012b\1\uffff\1\u012d\172\uffff\1\u012a",
-            "\1\u012f\1\uffff\1\u012e",
-            "\1\u0131\1\uffff\1\u0130",
-            "\1\u0133\40\uffff\1\u0132\1\uffff\1\u0134",
-            "\1\u0135",
-            "\1\uffff",
-            "\1\u012a",
-            "\1\u013b\4\uffff\1\u0136\43\uffff\1\u0084\1\uffff\1\u0088\1"+
-            "\u0085\1\u0137\1\u0086\1\u0138\1\u0139\1\u013a\1\u0087",
-            "\1\u013c",
-            "\1\u013d",
-            "\1\u013e",
-            "\1\u013f",
-            "\1\uffff",
-            "\1\36\4\uffff\1\u0140\4\uffff\1\36\10\uffff\2\36\14\uffff\1"+
-            "\36\4\uffff\1\36\7\uffff\1\36\1\uffff\11\36\26\uffff\1\36\25"+
-            "\uffff\1\36\13\uffff\3\36\12\uffff\1\36\32\uffff\1\36\2\uffff"+
-            "\7\36\1\uffff\10\36\2\uffff\1\36\12\uffff\1\36\2\uffff\1\36"+
-            "\3\uffff\1\36",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\u0141",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\u0142",
-            "\1\u0143",
-            "\1\u0144",
-            "\1\u0145",
-            "\1\u0146",
-            "\1\u0148\40\uffff\1\u0147\1\uffff\1\u0149",
-            "\1\u014c\40\uffff\1\u014b\1\uffff\1\u014d\172\uffff\1\u014a",
-            "\1\u014f\1\uffff\1\u014e",
-            "\1\u0151\1\uffff\1\u0150",
-            "\1\u0153\40\uffff\1\u0152\1\uffff\1\u0154",
-            "\1\u0155",
-            "\1\uffff",
-            "\1\u014a",
-            "\1\u015b\4\uffff\1\u0156\43\uffff\1\u009f\1\uffff\1\u015c\1"+
-            "\u00a0\1\u0157\1\u00a1\1\u0158\1\u0159\1\u015a\1\u00a2",
-            "\1\u015d",
-            "\1\u015e",
-            "\1\u015f",
-            "\1\u0160",
+            "\1\u0107\4\uffff\1\u010b\4\uffff\1\u0112\10\uffff\1\u010c\1"+
+            "\u010d\14\uffff\1\u0108\4\uffff\1\u0109\7\uffff\1\u011b\1\uffff"+
+            "\1\u011f\1\u011c\1\u0113\1\u011d\1\u0116\1\u0115\1\u0114\1\u011e"+
+            "\1\u0102\26\uffff\1\u0102\25\uffff\1\u010e\13\uffff\3\u0106"+
+            "\12\uffff\1\u0120\32\uffff\1\u0103\2\uffff\1\u0104\1\u0105\5"+
+            "\u0117\1\uffff\1\u0118\6\u0119\1\u011a\2\uffff\1\u010a\12\uffff"+
+            "\1\u010f\2\uffff\1\u0110\3\uffff\1\u0111",
+            "",
+            "\1\u0122\4\uffff\1\u0126\4\uffff\1\u012d\10\uffff\1\u0127\1"+
+            "\u0128\14\uffff\1\u0123\4\uffff\1\u0124\7\uffff\1\u0136\1\uffff"+
+            "\1\u013a\1\u0137\1\u012e\1\u0138\1\u0131\1\u0130\1\u012f\1\u0139"+
+            "\55\uffff\1\u0129\13\uffff\3\u0121\52\uffff\5\u0132\1\uffff"+
+            "\1\u0133\6\u0134\1\u0135\2\uffff\1\u0125\12\uffff\1\u012a\2"+
+            "\uffff\1\u012b\3\uffff\1\u012c",
+            "\1\u0145\1\uffff\1\67\2\uffff\1\u0149\1\112\1\62\1\uffff\1\102"+
+            "\1\u014f\4\uffff\1\100\3\uffff\1\u014a\1\u014b\1\71\1\77\12"+
+            "\uffff\1\u0146\4\uffff\1\u0147\1\65\1\uffff\1\64\4\uffff\1\u0158"+
+            "\1\uffff\1\u0143\1\u0159\1\u0150\1\u015a\1\u0153\1\u0152\1\u0151"+
+            "\1\u015b\1\u0141\1\73\1\74\2\uffff\1\75\1\70\1\uffff\1\72\2"+
+            "\76\2\uffff\1\101\1\uffff\1\103\2\uffff\1\104\1\61\1\60\1\54"+
+            "\1\53\1\u0141\3\113\2\u0140\2\u013f\1\u013e\1\uffff\1\u013d"+
+            "\1\u013c\1\u013b\1\105\1\uffff\6\55\1\112\1\u0142\3\112\3\57"+
+            "\5\uffff\3\u0144\3\uffff\1\107\2\uffff\1\106\7\uffff\2\107\15"+
+            "\uffff\1\110\14\uffff\5\u0154\1\uffff\1\u0155\6\u0156\1\u0157"+
+            "\1\uffff\1\66\1\u0148\12\uffff\1\u014c\2\uffff\1\u014d\3\uffff"+
+            "\1\u014e",
             "",
             "",
             "",
@@ -13733,70 +14009,7 @@ public class XQFTParser extends Parser {
             "",
             "",
             "",
-            "",
-            "\1\72\2\uffff\1\36\1\uffff\1\65\1\uffff\1\105\5\uffff\1\103"+
-            "\5\uffff\1\74\1\102\15\uffff\1\u0161\1\uffff\1\u0162\1\u0170"+
-            "\1\uffff\1\u016f\6\uffff\1\u016b\7\uffff\1\u016c\1\76\1\77\2"+
-            "\uffff\1\100\1\73\1\uffff\1\75\2\101\2\uffff\1\104\1\uffff\1"+
-            "\106\2\uffff\1\107\1\64\1\63\1\u016e\1\u016d\1\u016c\3\u016b"+
-            "\2\u016a\2\u0169\1\u0168\1\uffff\1\u0167\1\u0166\1\u0165\13"+
-            "\uffff\1\36\64\uffff\2\u0164\16\uffff\1\u0163\1\71\1\uffff\1"+
-            "\36",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0176\4\uffff\1\u017a\4\uffff\1\u0181\10\uffff\1\u017b\1"+
-            "\u017c\14\uffff\1\u0177\4\uffff\1\u0178\7\uffff\1\u018a\1\uffff"+
-            "\1\u018e\1\u018b\1\u0182\1\u018c\1\u0185\1\u0184\1\u0183\1\u018d"+
-            "\1\u0171\26\uffff\1\u0171\25\uffff\1\u017d\13\uffff\3\u0175"+
-            "\12\uffff\1\u018f\32\uffff\1\u0172\2\uffff\1\u0173\1\u0174\5"+
-            "\u0186\1\uffff\1\u0187\6\u0188\1\u0189\2\uffff\1\u0179\12\uffff"+
-            "\1\u017e\2\uffff\1\u017f\3\uffff\1\u0180",
-            "",
-            "\1\u0191\4\uffff\1\u0195\4\uffff\1\u019c\10\uffff\1\u0196\1"+
-            "\u0197\14\uffff\1\u0192\4\uffff\1\u0193\7\uffff\1\u01a5\1\uffff"+
-            "\1\u01a9\1\u01a6\1\u019d\1\u01a7\1\u01a0\1\u019f\1\u019e\1\u01a8"+
-            "\55\uffff\1\u0198\13\uffff\3\u0190\52\uffff\5\u01a1\1\uffff"+
-            "\1\u01a2\6\u01a3\1\u01a4\2\uffff\1\u0194\12\uffff\1\u0199\2"+
-            "\uffff\1\u019a\3\uffff\1\u019b",
-            "\1\u01b4\1\uffff\1\72\2\uffff\1\u01b8\1\61\1\65\1\uffff\1\105"+
-            "\1\u01be\4\uffff\1\103\3\uffff\1\u01b9\1\u01ba\1\74\1\102\12"+
-            "\uffff\1\u01b5\4\uffff\1\u01b6\1\70\1\uffff\1\67\4\uffff\1\u01c7"+
-            "\1\uffff\1\u01b2\1\u01c8\1\u01bf\1\u01c9\1\u01c2\1\u01c1\1\u01c0"+
-            "\1\u01ca\1\u01b0\1\76\1\77\2\uffff\1\100\1\73\1\uffff\1\75\2"+
-            "\101\2\uffff\1\104\1\uffff\1\106\2\uffff\1\107\1\64\1\63\1\57"+
-            "\1\56\1\u01b0\3\55\2\u01af\2\u01ae\1\u01ad\1\uffff\1\u01ac\1"+
-            "\u01ab\1\u01aa\1\110\1\uffff\6\60\1\61\1\u01b1\3\61\3\62\5\uffff"+
-            "\3\u01b3\3\uffff\1\112\2\uffff\1\111\7\uffff\2\112\15\uffff"+
-            "\1\113\14\uffff\5\u01c3\1\uffff\1\u01c4\6\u01c5\1\u01c6\1\uffff"+
-            "\1\71\1\u01b7\12\uffff\1\u01bb\2\uffff\1\u01bc\3\uffff\1\u01bd",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\36\4\uffff\1\u01cb\4\uffff\1\36\10\uffff\2\36\14\uffff\1"+
+            "\1\36\4\uffff\1\u015c\4\uffff\1\36\10\uffff\2\36\14\uffff\1"+
             "\36\4\uffff\1\36\7\uffff\1\36\1\uffff\11\36\26\uffff\1\36\25"+
             "\uffff\1\36\13\uffff\3\36\12\uffff\1\36\32\uffff\1\36\2\uffff"+
             "\7\36\1\uffff\10\36\2\uffff\1\36\12\uffff\1\36\2\uffff\1\36"+
@@ -13817,149 +14030,61 @@ public class XQFTParser extends Parser {
             "",
             "",
             "",
-            "\1\36\1\uffff\1\72\2\uffff\1\36\1\61\1\65\1\uffff\1\105\1\36"+
-            "\4\uffff\1\103\3\uffff\2\36\1\74\1\102\12\uffff\1\36\2\uffff"+
-            "\1\u01cc\1\uffff\1\36\1\70\1\uffff\1\67\4\uffff\1\36\1\uffff"+
-            "\1\45\7\36\1\41\1\76\1\77\2\uffff\1\100\1\73\1\uffff\1\75\2"+
-            "\101\2\uffff\1\104\1\uffff\1\106\2\uffff\1\107\1\64\1\63\1\57"+
-            "\1\56\1\41\3\55\2\u01af\2\u01ae\1\u01ad\1\uffff\1\u01ac\1\u01ab"+
-            "\1\u01aa\1\110\1\uffff\6\60\1\61\1\44\3\61\3\62\5\uffff\3\36"+
-            "\3\uffff\1\112\2\uffff\1\111\3\uffff\1\36\3\uffff\2\112\15\uffff"+
-            "\1\113\7\uffff\1\36\2\uffff\1\u01cd\1\u01ce\5\36\1\uffff\10"+
-            "\36\1\u01cf\1\71\1\36\12\uffff\1\36\2\uffff\1\36\3\uffff\1\36",
+            "\1\36\1\uffff\1\67\2\uffff\1\36\1\112\1\62\1\uffff\1\102\1\36"+
+            "\4\uffff\1\100\3\uffff\2\36\1\71\1\77\12\uffff\1\36\2\uffff"+
+            "\1\u015d\1\uffff\1\36\1\65\1\uffff\1\64\4\uffff\1\36\1\uffff"+
+            "\1\51\7\36\1\52\1\73\1\74\2\uffff\1\75\1\70\1\uffff\1\72\2\76"+
+            "\2\uffff\1\101\1\uffff\1\103\2\uffff\1\104\1\61\1\60\1\54\1"+
+            "\53\1\52\3\113\2\u0140\2\u013f\1\u013e\1\uffff\1\u013d\1\u013c"+
+            "\1\u013b\1\105\1\uffff\6\55\1\112\1\56\3\112\3\57\5\uffff\3"+
+            "\36\3\uffff\1\107\2\uffff\1\106\3\uffff\1\36\3\uffff\2\107\15"+
+            "\uffff\1\110\7\uffff\1\36\2\uffff\1\u015f\1\u0160\5\36\1\uffff"+
+            "\10\36\1\u015e\1\66\1\36\12\uffff\1\36\2\uffff\1\36\3\uffff"+
+            "\1\36",
             "",
-            "\1\36\2\uffff\1\115\1\uffff\1\36\1\uffff\1\36\5\uffff\1\36\5"+
-            "\uffff\2\36\17\uffff\2\36\1\uffff\1\36\6\uffff\1\36\7\uffff"+
-            "\3\36\2\uffff\2\36\1\uffff\3\36\2\uffff\1\36\1\uffff\1\36\2"+
-            "\uffff\16\36\1\uffff\3\36\13\uffff\1\117\64\uffff\2\36\16\uffff"+
-            "\2\36\1\uffff\1\116",
-            "\1\uffff",
-            "\1\u00e4",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
-            "\1\uffff",
+            "\1\u0162\161\uffff\2\u0161",
+            "\1\u0164\4\uffff\1\u0168\4\uffff\1\u016f\10\uffff\1\u0169\1"+
+            "\u016a\14\uffff\1\u0165\4\uffff\1\u0166\7\uffff\1\u0178\1\uffff"+
+            "\1\u017c\1\u0179\1\u0170\1\u017a\1\u0173\1\u0172\1\u0171\1\u017b"+
+            "\55\uffff\1\u016b\13\uffff\3\u0163\52\uffff\5\u0174\1\uffff"+
+            "\1\u0175\6\u0176\1\u0177\2\uffff\1\u0167\12\uffff\1\u016c\2"+
+            "\uffff\1\u016d\3\uffff\1\u016e",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\u017d",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\u017e",
+            "\1\u017f",
+            "\1\u0180",
+            "\1\u0181",
+            "\1\u0182",
+            "\1\u0183",
+            "\1\u0185\40\uffff\1\u0184\1\uffff\1\u0186",
+            "\1\u0189\40\uffff\1\u0188\1\uffff\1\u018a\172\uffff\1\u0187",
+            "\1\u018b\1\uffff\1\u018c",
+            "\1\u018d\1\uffff\1\u018e",
+            "\1\u0190\40\uffff\1\u018f\1\uffff\1\u0191",
+            "\1\u0192",
+            "\1\uffff",
+            "\1\u0187",
+            "\1\u0198\4\uffff\1\u0193\43\uffff\1\u00a1\1\uffff\1\u00a5\1"+
+            "\u00a2\1\u0194\1\u00a3\1\u0195\1\u0196\1\u0197\1\u00a4",
+            "\1\u0199",
+            "\1\u019a",
+            "\1\u019b",
+            "\1\u019c",
+            "\1\uffff",
+            "\1\u019d",
+            "\1\u008d\4\uffff\1\u0091\4\uffff\1\u0098\10\uffff\1\u0092\1"+
+            "\u0093\14\uffff\1\u008e\4\uffff\1\u008f\7\uffff\1\u00a1\1\uffff"+
+            "\1\u00a5\1\u00a2\1\u0099\1\u00a3\1\u009c\1\u009b\1\u009a\1\u00a4"+
+            "\1\u00a7\26\uffff\1\u00a7\25\uffff\1\u0094\13\uffff\3\u008c"+
+            "\12\uffff\1\u00a6\32\uffff\1\u0089\2\uffff\1\u008a\1\u008b\5"+
+            "\u009d\1\uffff\1\u009e\6\u009f\1\u00a0\2\uffff\1\u0090\12\uffff"+
+            "\1\u0095\2\uffff\1\u0096\3\uffff\1\u0097",
             "\1\uffff",
             "",
             "",
@@ -13976,6 +14101,80 @@ public class XQFTParser extends Parser {
             "",
             "",
             "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -14068,9 +14267,70 @@ public class XQFTParser extends Parser {
             "\1\uffff",
             "\1\uffff",
             "",
+            "",
             "\1\uffff",
             "\1\uffff",
-            ""
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff",
+            "\1\uffff"
     };
 
     static final short[] DFA120_eot = DFA.unpackEncodedString(DFA120_eotS);
@@ -14109,36 +14369,171 @@ public class XQFTParser extends Parser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA120_109 = input.LA(1);
+                        int LA120_81 = input.LA(1);
 
                          
-                        int index120_109 = input.index();
+                        int index120_81 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred3()) ) {s = 224;}
+                        if ( (synpred3()) ) {s = 198;}
 
                         else if ( (true) ) {s = 30;}
 
                          
-                        input.seek(index120_109);
+                        input.seek(index120_81);
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA120_226 = input.LA(1);
+                        int LA120_98 = input.LA(1);
 
                          
-                        int index120_226 = input.index();
+                        int index120_98 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred3()) ) {s = 463;}
+                        if ( (synpred3()) ) {s = 198;}
 
                         else if ( (true) ) {s = 30;}
 
                          
-                        input.seek(index120_226);
+                        input.seek(index120_98);
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
+                        int LA120_84 = input.LA(1);
+
+                         
+                        int index120_84 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred3()) ) {s = 198;}
+
+                        else if ( (true) ) {s = 30;}
+
+                         
+                        input.seek(index120_84);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA120_145 = input.LA(1);
+
+                         
+                        int index120_145 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred3()) ) {s = 350;}
+
+                        else if ( (true) ) {s = 30;}
+
+                         
+                        input.seek(index120_145);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA120_165 = input.LA(1);
+
+                         
+                        int index120_165 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred3()) ) {s = 350;}
+
+                        else if ( (true) ) {s = 30;}
+
+                         
+                        input.seek(index120_165);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA120_41 = input.LA(1);
+
+                         
+                        int index120_41 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA120_41==EOF||LA120_41==SEMICOLONSi||(LA120_41>=EQSi && LA120_41<=COMMASi)||LA120_41==DEFAULT||LA120_41==COLLATION||(LA120_41>=ORDER && LA120_41<=EMPTY)||LA120_41==COLONSi||LA120_41==RPARSi||LA120_41==RBRACSi||(LA120_41>=RETURN && LA120_41<=FOR)||(LA120_41>=LET && LA120_41<=WHERE)||(LA120_41>=STABLE && LA120_41<=DESCENDING)||LA120_41==SATISFIES||LA120_41==CASE||(LA120_41>=ELSE && LA120_41<=TO)||(LA120_41>=DIV && LA120_41<=INSTANCE)||(LA120_41>=TREAT && LA120_41<=WITHOUT)||(LA120_41>=EQ && LA120_41<=NEQSi)||(LA120_41>=LTOREQSi && LA120_41<=NODEAFTERSi)||LA120_41==WORDS||LA120_41==TIMES||(LA120_41>=SENTENCES && LA120_41<=PARAGRAPHS)||LA120_41==LEVELS||(LA120_41>=LBRACKSi && LA120_41<=RBRACKSi)) ) {s = 30;}
+
+                        else if ( (LA120_41==PLUSSi||LA120_41==MINUSSi) ) {s = 106;}
+
+                        else if ( (LA120_41==VALIDATE) && (synpred3())) {s = 107;}
+
+                        else if ( (LA120_41==DBLSLASHSi) ) {s = 108;}
+
+                        else if ( (LA120_41==SLASHSi) ) {s = 109;}
+
+                        else if ( ((LA120_41>=IntegerLiteral && LA120_41<=DoubleLiteral)) && (synpred3())) {s = 110;}
+
+                        else if ( (LA120_41==StringLiteral) && (synpred3())) {s = 111;}
+
+                        else if ( (LA120_41==DOLLARSi) && (synpred3())) {s = 112;}
+
+                        else if ( (LA120_41==LPARSi) && (synpred3())) {s = 113;}
+
+                        else if ( (LA120_41==DOTSi) && (synpred3())) {s = 114;}
+
+                        else if ( (LA120_41==NCName) && (synpred3())) {s = 115;}
+
+                        else if ( (LA120_41==ORDERED) && (synpred3())) {s = 116;}
+
+                        else if ( (LA120_41==UNORDERED) && (synpred3())) {s = 117;}
+
+                        else if ( (LA120_41==LTSi) ) {s = 118;}
+
+                        else if ( (LA120_41==LCOMMENTSi) && (synpred3())) {s = 119;}
+
+                        else if ( (LA120_41==LPISi) && (synpred3())) {s = 120;}
+
+                        else if ( (LA120_41==DOCUMENT) && (synpred3())) {s = 121;}
+
+                        else if ( (LA120_41==ELEMENT) && (synpred3())) {s = 122;}
+
+                        else if ( (LA120_41==ATTRIBUTE) && (synpred3())) {s = 123;}
+
+                        else if ( (LA120_41==TEXT) && (synpred3())) {s = 124;}
+
+                        else if ( (LA120_41==COMMENT) && (synpred3())) {s = 125;}
+
+                        else if ( (LA120_41==PROCESSING_INSTRUCTION) && (synpred3())) {s = 126;}
+
+                        else if ( ((LA120_41>=PARENT && LA120_41<=ANCESTOR_OR_SELF)) && (synpred3())) {s = 127;}
+
+                        else if ( (LA120_41==DOTDOTSi) && (synpred3())) {s = 128;}
+
+                        else if ( ((LA120_41>=CHILD && LA120_41<=FOLLOWING)) && (synpred3())) {s = 129;}
+
+                        else if ( (LA120_41==ATSi) && (synpred3())) {s = 130;}
+
+                        else if ( (LA120_41==DOCUMENT_NODE) && (synpred3())) {s = 131;}
+
+                        else if ( (LA120_41==SCHEMAELEMENT) && (synpred3())) {s = 132;}
+
+                        else if ( (LA120_41==SCHEMAATTRIBUTE) && (synpred3())) {s = 133;}
+
+                        else if ( (LA120_41==NODE) && (synpred3())) {s = 134;}
+
+                        else if ( (LA120_41==STARSi) ) {s = 135;}
+
+                        else if ( (LA120_41==LPRAGSi) && (synpred3())) {s = 136;}
+
+                         
+                        input.seek(index120_41);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA120_140 = input.LA(1);
+
+                         
+                        int index120_140 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred3()) ) {s = 350;}
+
+                        else if ( (true) ) {s = 30;}
+
+                         
+                        input.seek(index120_140);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
                         int LA120_31 = input.LA(1);
 
                          
@@ -14159,101 +14554,511 @@ public class XQFTParser extends Parser {
                         input.seek(index120_31);
                         if ( s>=0 ) return s;
                         break;
-                    case 3 : 
-                        int LA120_139 = input.LA(1);
-
-                         
-                        int index120_139 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_139);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA120_111 = input.LA(1);
-
-                         
-                        int index120_111 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_111);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA120_87 = input.LA(1);
-
-                         
-                        int index120_87 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_87);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 6 : 
-                        int LA120_138 = input.LA(1);
-
-                         
-                        int index120_138 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_138);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 7 : 
-                        int LA120_84 = input.LA(1);
-
-                         
-                        int index120_84 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_84);
-                        if ( s>=0 ) return s;
-                        break;
                     case 8 : 
-                        int LA120_225 = input.LA(1);
+                        int LA120_46 = input.LA(1);
 
                          
-                        int index120_225 = input.index();
+                        int index120_46 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA120_225==EOF||LA120_225==SEMICOLONSi||LA120_225==COMMASi||LA120_225==DEFAULT||LA120_225==COLLATION||(LA120_225>=ORDER && LA120_225<=EMPTY)||(LA120_225>=LPARSi && LA120_225<=RPARSi)||LA120_225==RBRACSi||LA120_225==STARSi||(LA120_225>=PLUSSi && LA120_225<=FOR)||(LA120_225>=LET && LA120_225<=WHERE)||(LA120_225>=STABLE && LA120_225<=DESCENDING)||LA120_225==SATISFIES||LA120_225==CASE||(LA120_225>=ELSE && LA120_225<=INSTANCE)||(LA120_225>=TREAT && LA120_225<=CAST)||(LA120_225>=DBLSLASHSi && LA120_225<=SLASHSi)||(LA120_225>=LBRACKSi && LA120_225<=RBRACKSi)) ) {s = 30;}
+                        if ( (LA120_46==NCName) ) {s = 168;}
 
-                        else if ( (LA120_225==NCName) && (synpred3())) {s = 77;}
+                        else if ( (LA120_46==PLUSSi||LA120_46==MINUSSi) && (synpred3())) {s = 169;}
 
-                        else if ( (LA120_225==RSELFTERMSi) && (synpred3())) {s = 78;}
+                        else if ( (LA120_46==VALIDATE) && (synpred3())) {s = 170;}
 
-                        else if ( (LA120_225==GTSi) && (synpred3())) {s = 79;}
+                        else if ( (LA120_46==DBLSLASHSi) && (synpred3())) {s = 171;}
+
+                        else if ( (LA120_46==SLASHSi) && (synpred3())) {s = 172;}
+
+                        else if ( ((LA120_46>=IntegerLiteral && LA120_46<=DoubleLiteral)) && (synpred3())) {s = 173;}
+
+                        else if ( (LA120_46==StringLiteral) && (synpred3())) {s = 174;}
+
+                        else if ( (LA120_46==DOLLARSi) && (synpred3())) {s = 175;}
+
+                        else if ( (LA120_46==LPARSi) && (synpred3())) {s = 176;}
+
+                        else if ( (LA120_46==DOTSi) && (synpred3())) {s = 177;}
+
+                        else if ( (LA120_46==ORDERED) && (synpred3())) {s = 178;}
+
+                        else if ( (LA120_46==UNORDERED) && (synpred3())) {s = 179;}
+
+                        else if ( (LA120_46==LTSi) && (synpred3())) {s = 180;}
+
+                        else if ( (LA120_46==LCOMMENTSi) && (synpred3())) {s = 181;}
+
+                        else if ( (LA120_46==LPISi) && (synpred3())) {s = 182;}
+
+                        else if ( (LA120_46==DOCUMENT) && (synpred3())) {s = 183;}
+
+                        else if ( (LA120_46==ELEMENT) && (synpred3())) {s = 184;}
+
+                        else if ( (LA120_46==ATTRIBUTE) && (synpred3())) {s = 185;}
+
+                        else if ( (LA120_46==TEXT) && (synpred3())) {s = 186;}
+
+                        else if ( (LA120_46==COMMENT) && (synpred3())) {s = 187;}
+
+                        else if ( (LA120_46==PROCESSING_INSTRUCTION) && (synpred3())) {s = 188;}
+
+                        else if ( ((LA120_46>=PARENT && LA120_46<=ANCESTOR_OR_SELF)) && (synpred3())) {s = 189;}
+
+                        else if ( (LA120_46==DOTDOTSi) && (synpred3())) {s = 190;}
+
+                        else if ( ((LA120_46>=CHILD && LA120_46<=FOLLOWING)) && (synpred3())) {s = 191;}
+
+                        else if ( (LA120_46==ATSi) && (synpred3())) {s = 192;}
+
+                        else if ( (LA120_46==DOCUMENT_NODE) && (synpred3())) {s = 193;}
+
+                        else if ( (LA120_46==SCHEMAELEMENT) && (synpred3())) {s = 194;}
+
+                        else if ( (LA120_46==SCHEMAATTRIBUTE) && (synpred3())) {s = 195;}
+
+                        else if ( (LA120_46==NODE) && (synpred3())) {s = 196;}
+
+                        else if ( (LA120_46==STARSi) && (synpred3())) {s = 197;}
+
+                        else if ( (LA120_46==LPRAGSi) && (synpred3())) {s = 198;}
 
                          
-                        input.seek(index120_225);
+                        input.seek(index120_46);
                         if ( s>=0 ) return s;
                         break;
                     case 9 : 
+                        int LA120_83 = input.LA(1);
+
+                         
+                        int index120_83 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred3()) ) {s = 198;}
+
+                        else if ( (true) ) {s = 30;}
+
+                         
+                        input.seek(index120_83);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 10 : 
+                        int LA120_109 = input.LA(1);
+
+                         
+                        int index120_109 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA120_109==CAST) && (synpred3())) {s = 315;}
+
+                        else if ( (LA120_109==CASTABLE) && (synpred3())) {s = 316;}
+
+                        else if ( (LA120_109==TREAT) && (synpred3())) {s = 317;}
+
+                        else if ( (LA120_109==INSTANCE) && (synpred3())) {s = 318;}
+
+                        else if ( ((LA120_109>=INTERSECT && LA120_109<=EXCEPT)) && (synpred3())) {s = 319;}
+
+                        else if ( ((LA120_109>=UNION && LA120_109<=PIPESi)) && (synpred3())) {s = 320;}
+
+                        else if ( (LA120_109==PLUSSi||LA120_109==MINUSSi) && (synpred3())) {s = 321;}
+
+                        else if ( (LA120_109==TO) && (synpred3())) {s = 43;}
+
+                        else if ( (LA120_109==FTCONTAINS) && (synpred3())) {s = 44;}
+
+                        else if ( ((LA120_109>=EQ && LA120_109<=GE)) && (synpred3())) {s = 45;}
+
+                        else if ( (LA120_109==LTSi) ) {s = 322;}
+
+                        else if ( ((LA120_109>=IS && LA120_109<=NODEAFTERSi)) && (synpred3())) {s = 47;}
+
+                        else if ( (LA120_109==AND) && (synpred3())) {s = 48;}
+
+                        else if ( (LA120_109==OR) && (synpred3())) {s = 49;}
+
+                        else if ( (LA120_109==COMMASi) && (synpred3())) {s = 50;}
+
+                        else if ( (LA120_109==EOF) && (synpred3())) {s = 51;}
+
+                        else if ( (LA120_109==RBRACSi) && (synpred3())) {s = 52;}
+
+                        else if ( (LA120_109==RPARSi) && (synpred3())) {s = 53;}
+
+                        else if ( (LA120_109==RBRACKSi) && (synpred3())) {s = 54;}
+
+                        else if ( (LA120_109==SEMICOLONSi) && (synpred3())) {s = 55;}
+
+                        else if ( (LA120_109==WHERE) && (synpred3())) {s = 56;}
+
+                        else if ( (LA120_109==ORDER) && (synpred3())) {s = 57;}
+
+                        else if ( (LA120_109==STABLE) && (synpred3())) {s = 58;}
+
+                        else if ( (LA120_109==RETURN) && (synpred3())) {s = 59;}
+
+                        else if ( (LA120_109==FOR) && (synpred3())) {s = 60;}
+
+                        else if ( (LA120_109==LET) && (synpred3())) {s = 61;}
+
+                        else if ( ((LA120_109>=ASCENDING && LA120_109<=DESCENDING)) && (synpred3())) {s = 62;}
+
+                        else if ( (LA120_109==EMPTY) && (synpred3())) {s = 63;}
+
+                        else if ( (LA120_109==COLLATION) && (synpred3())) {s = 64;}
+
+                        else if ( (LA120_109==SATISFIES) && (synpred3())) {s = 65;}
+
+                        else if ( (LA120_109==DEFAULT) && (synpred3())) {s = 66;}
+
+                        else if ( (LA120_109==CASE) && (synpred3())) {s = 67;}
+
+                        else if ( (LA120_109==ELSE) && (synpred3())) {s = 68;}
+
+                        else if ( (LA120_109==WITHOUT) && (synpred3())) {s = 69;}
+
+                        else if ( (LA120_109==TIMES) && (synpred3())) {s = 70;}
+
+                        else if ( (LA120_109==WORDS||(LA120_109>=SENTENCES && LA120_109<=PARAGRAPHS)) && (synpred3())) {s = 71;}
+
+                        else if ( (LA120_109==LEVELS) && (synpred3())) {s = 72;}
+
+                        else if ( (LA120_109==STARSi) ) {s = 323;}
+
+                        else if ( ((LA120_109>=IntegerLiteral && LA120_109<=DoubleLiteral)) ) {s = 324;}
+
+                        else if ( (LA120_109==StringLiteral) ) {s = 325;}
+
+                        else if ( (LA120_109==DOLLARSi) ) {s = 326;}
+
+                        else if ( (LA120_109==LPARSi) ) {s = 327;}
+
+                        else if ( (LA120_109==DOTSi) ) {s = 328;}
+
+                        else if ( (LA120_109==NCName) ) {s = 329;}
+
+                        else if ( (LA120_109==ORDERED) ) {s = 330;}
+
+                        else if ( (LA120_109==UNORDERED) ) {s = 331;}
+
+                        else if ( (LA120_109==EQSi||LA120_109==NEQSi||(LA120_109>=LTOREQSi && LA120_109<=GTOREQSi)) && (synpred3())) {s = 74;}
+
+                        else if ( (LA120_109==LCOMMENTSi) ) {s = 332;}
+
+                        else if ( (LA120_109==LPISi) ) {s = 333;}
+
+                        else if ( (LA120_109==DOCUMENT) ) {s = 334;}
+
+                        else if ( (LA120_109==ELEMENT) ) {s = 335;}
+
+                        else if ( (LA120_109==ATTRIBUTE) ) {s = 336;}
+
+                        else if ( (LA120_109==TEXT) ) {s = 337;}
+
+                        else if ( (LA120_109==COMMENT) ) {s = 338;}
+
+                        else if ( (LA120_109==PROCESSING_INSTRUCTION) ) {s = 339;}
+
+                        else if ( ((LA120_109>=PARENT && LA120_109<=ANCESTOR_OR_SELF)) ) {s = 340;}
+
+                        else if ( (LA120_109==DOTDOTSi) ) {s = 341;}
+
+                        else if ( ((LA120_109>=CHILD && LA120_109<=FOLLOWING)) ) {s = 342;}
+
+                        else if ( (LA120_109==ATSi) ) {s = 343;}
+
+                        else if ( (LA120_109==DOCUMENT_NODE) ) {s = 344;}
+
+                        else if ( (LA120_109==SCHEMAELEMENT) ) {s = 345;}
+
+                        else if ( (LA120_109==SCHEMAATTRIBUTE) ) {s = 346;}
+
+                        else if ( (LA120_109==NODE) ) {s = 347;}
+
+                        else if ( ((LA120_109>=DIV && LA120_109<=MOD)) && (synpred3())) {s = 75;}
+
+                         
+                        input.seek(index120_109);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 11 : 
+                        int LA120_141 = input.LA(1);
+
+                         
+                        int index120_141 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred3()) ) {s = 350;}
+
+                        else if ( (true) ) {s = 30;}
+
+                         
+                        input.seek(index120_141);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 12 : 
+                        int LA120_85 = input.LA(1);
+
+                         
+                        int index120_85 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred3()) ) {s = 198;}
+
+                        else if ( (true) ) {s = 30;}
+
+                         
+                        input.seek(index120_85);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 13 : 
+                        int LA120_158 = input.LA(1);
+
+                         
+                        int index120_158 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred3()) ) {s = 350;}
+
+                        else if ( (true) ) {s = 30;}
+
+                         
+                        input.seek(index120_158);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 14 : 
+                        int LA120_135 = input.LA(1);
+
+                         
+                        int index120_135 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA120_135==COLONSi) && (synpred3())) {s = 349;}
+
+                        else if ( (LA120_135==LBRACKSi) && (synpred3())) {s = 350;}
+
+                        else if ( (LA120_135==DBLSLASHSi) ) {s = 351;}
+
+                        else if ( (LA120_135==CAST) && (synpred3())) {s = 315;}
+
+                        else if ( (LA120_135==CASTABLE) && (synpred3())) {s = 316;}
+
+                        else if ( (LA120_135==TREAT) && (synpred3())) {s = 317;}
+
+                        else if ( (LA120_135==INSTANCE) && (synpred3())) {s = 318;}
+
+                        else if ( ((LA120_135>=INTERSECT && LA120_135<=EXCEPT)) && (synpred3())) {s = 319;}
+
+                        else if ( ((LA120_135>=UNION && LA120_135<=PIPESi)) && (synpred3())) {s = 320;}
+
+                        else if ( (LA120_135==PLUSSi||LA120_135==MINUSSi) ) {s = 42;}
+
+                        else if ( (LA120_135==TO) && (synpred3())) {s = 43;}
+
+                        else if ( (LA120_135==FTCONTAINS) && (synpred3())) {s = 44;}
+
+                        else if ( ((LA120_135>=EQ && LA120_135<=GE)) && (synpred3())) {s = 45;}
+
+                        else if ( (LA120_135==LTSi) ) {s = 46;}
+
+                        else if ( ((LA120_135>=IS && LA120_135<=NODEAFTERSi)) && (synpred3())) {s = 47;}
+
+                        else if ( (LA120_135==AND) && (synpred3())) {s = 48;}
+
+                        else if ( (LA120_135==OR) && (synpred3())) {s = 49;}
+
+                        else if ( (LA120_135==COMMASi) && (synpred3())) {s = 50;}
+
+                        else if ( (LA120_135==EOF) && (synpred3())) {s = 51;}
+
+                        else if ( (LA120_135==RBRACSi) && (synpred3())) {s = 52;}
+
+                        else if ( (LA120_135==RPARSi) && (synpred3())) {s = 53;}
+
+                        else if ( (LA120_135==RBRACKSi) && (synpred3())) {s = 54;}
+
+                        else if ( (LA120_135==SEMICOLONSi) && (synpred3())) {s = 55;}
+
+                        else if ( (LA120_135==WHERE) && (synpred3())) {s = 56;}
+
+                        else if ( (LA120_135==ORDER) && (synpred3())) {s = 57;}
+
+                        else if ( (LA120_135==STABLE) && (synpred3())) {s = 58;}
+
+                        else if ( (LA120_135==RETURN) && (synpred3())) {s = 59;}
+
+                        else if ( (LA120_135==FOR) && (synpred3())) {s = 60;}
+
+                        else if ( (LA120_135==LET) && (synpred3())) {s = 61;}
+
+                        else if ( ((LA120_135>=ASCENDING && LA120_135<=DESCENDING)) && (synpred3())) {s = 62;}
+
+                        else if ( (LA120_135==EMPTY) && (synpred3())) {s = 63;}
+
+                        else if ( (LA120_135==COLLATION) && (synpred3())) {s = 64;}
+
+                        else if ( (LA120_135==SATISFIES) && (synpred3())) {s = 65;}
+
+                        else if ( (LA120_135==DEFAULT) && (synpred3())) {s = 66;}
+
+                        else if ( (LA120_135==CASE) && (synpred3())) {s = 67;}
+
+                        else if ( (LA120_135==ELSE) && (synpred3())) {s = 68;}
+
+                        else if ( (LA120_135==WITHOUT) && (synpred3())) {s = 69;}
+
+                        else if ( (LA120_135==TIMES) && (synpred3())) {s = 70;}
+
+                        else if ( (LA120_135==WORDS||(LA120_135>=SENTENCES && LA120_135<=PARAGRAPHS)) && (synpred3())) {s = 71;}
+
+                        else if ( (LA120_135==LEVELS) && (synpred3())) {s = 72;}
+
+                        else if ( (LA120_135==STARSi) ) {s = 41;}
+
+                        else if ( (LA120_135==StringLiteral||LA120_135==NCName||LA120_135==ELEMENT||(LA120_135>=ORDERED && LA120_135<=UNORDERED)||LA120_135==DOLLARSi||LA120_135==LPARSi||LA120_135==DOCUMENT_NODE||(LA120_135>=SCHEMAELEMENT && LA120_135<=NODE)||(LA120_135>=IntegerLiteral && LA120_135<=DoubleLiteral)||LA120_135==LPRAGSi||LA120_135==VALIDATE||(LA120_135>=PARENT && LA120_135<=ANCESTOR_OR_SELF)||(LA120_135>=DOTDOTSi && LA120_135<=ATSi)||LA120_135==DOTSi||LA120_135==LCOMMENTSi||LA120_135==LPISi||LA120_135==DOCUMENT) ) {s = 30;}
+
+                        else if ( (LA120_135==SLASHSi) ) {s = 352;}
+
+                        else if ( (LA120_135==EQSi||LA120_135==NEQSi||(LA120_135>=LTOREQSi && LA120_135<=GTOREQSi)) && (synpred3())) {s = 74;}
+
+                        else if ( ((LA120_135>=DIV && LA120_135<=MOD)) && (synpred3())) {s = 75;}
+
+                         
+                        input.seek(index120_135);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 15 : 
+                        int LA120_144 = input.LA(1);
+
+                         
+                        int index120_144 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred3()) ) {s = 350;}
+
+                        else if ( (true) ) {s = 30;}
+
+                         
+                        input.seek(index120_144);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 16 : 
+                        int LA120_29 = input.LA(1);
+
+                         
+                        int index120_29 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA120_29==COLONSi) && (synpred3())) {s = 32;}
+
+                        else if ( (LA120_29==LBRACKSi) && (synpred3())) {s = 33;}
+
+                        else if ( (LA120_29==DBLSLASHSi) ) {s = 34;}
+
+                        else if ( (LA120_29==CAST) && (synpred3())) {s = 35;}
+
+                        else if ( (LA120_29==CASTABLE) && (synpred3())) {s = 36;}
+
+                        else if ( (LA120_29==TREAT) && (synpred3())) {s = 37;}
+
+                        else if ( (LA120_29==INSTANCE) && (synpred3())) {s = 38;}
+
+                        else if ( ((LA120_29>=INTERSECT && LA120_29<=EXCEPT)) && (synpred3())) {s = 39;}
+
+                        else if ( ((LA120_29>=UNION && LA120_29<=PIPESi)) && (synpred3())) {s = 40;}
+
+                        else if ( (LA120_29==STARSi) ) {s = 41;}
+
+                        else if ( (LA120_29==PLUSSi||LA120_29==MINUSSi) ) {s = 42;}
+
+                        else if ( (LA120_29==TO) && (synpred3())) {s = 43;}
+
+                        else if ( (LA120_29==FTCONTAINS) && (synpred3())) {s = 44;}
+
+                        else if ( ((LA120_29>=EQ && LA120_29<=GE)) && (synpred3())) {s = 45;}
+
+                        else if ( (LA120_29==LTSi) ) {s = 46;}
+
+                        else if ( ((LA120_29>=IS && LA120_29<=NODEAFTERSi)) && (synpred3())) {s = 47;}
+
+                        else if ( (LA120_29==AND) && (synpred3())) {s = 48;}
+
+                        else if ( (LA120_29==OR) && (synpred3())) {s = 49;}
+
+                        else if ( (LA120_29==COMMASi) && (synpred3())) {s = 50;}
+
+                        else if ( (LA120_29==EOF) && (synpred3())) {s = 51;}
+
+                        else if ( (LA120_29==RBRACSi) && (synpred3())) {s = 52;}
+
+                        else if ( (LA120_29==RPARSi) && (synpred3())) {s = 53;}
+
+                        else if ( (LA120_29==RBRACKSi) && (synpred3())) {s = 54;}
+
+                        else if ( (LA120_29==SEMICOLONSi) && (synpred3())) {s = 55;}
+
+                        else if ( (LA120_29==WHERE) && (synpred3())) {s = 56;}
+
+                        else if ( (LA120_29==ORDER) && (synpred3())) {s = 57;}
+
+                        else if ( (LA120_29==STABLE) && (synpred3())) {s = 58;}
+
+                        else if ( (LA120_29==RETURN) && (synpred3())) {s = 59;}
+
+                        else if ( (LA120_29==FOR) && (synpred3())) {s = 60;}
+
+                        else if ( (LA120_29==LET) && (synpred3())) {s = 61;}
+
+                        else if ( ((LA120_29>=ASCENDING && LA120_29<=DESCENDING)) && (synpred3())) {s = 62;}
+
+                        else if ( (LA120_29==EMPTY) && (synpred3())) {s = 63;}
+
+                        else if ( (LA120_29==COLLATION) && (synpred3())) {s = 64;}
+
+                        else if ( (LA120_29==SATISFIES) && (synpred3())) {s = 65;}
+
+                        else if ( (LA120_29==DEFAULT) && (synpred3())) {s = 66;}
+
+                        else if ( (LA120_29==CASE) && (synpred3())) {s = 67;}
+
+                        else if ( (LA120_29==ELSE) && (synpred3())) {s = 68;}
+
+                        else if ( (LA120_29==WITHOUT) && (synpred3())) {s = 69;}
+
+                        else if ( (LA120_29==TIMES) && (synpred3())) {s = 70;}
+
+                        else if ( (LA120_29==WORDS||(LA120_29>=SENTENCES && LA120_29<=PARAGRAPHS)) && (synpred3())) {s = 71;}
+
+                        else if ( (LA120_29==LEVELS) && (synpred3())) {s = 72;}
+
+                        else if ( (LA120_29==StringLiteral||LA120_29==NCName||LA120_29==ELEMENT||(LA120_29>=ORDERED && LA120_29<=UNORDERED)||LA120_29==DOLLARSi||LA120_29==LPARSi||LA120_29==DOCUMENT_NODE||(LA120_29>=SCHEMAELEMENT && LA120_29<=NODE)||(LA120_29>=IntegerLiteral && LA120_29<=DoubleLiteral)||LA120_29==LPRAGSi||LA120_29==VALIDATE||(LA120_29>=PARENT && LA120_29<=ANCESTOR_OR_SELF)||(LA120_29>=DOTDOTSi && LA120_29<=ATSi)||LA120_29==DOTSi||LA120_29==LCOMMENTSi||LA120_29==LPISi||LA120_29==DOCUMENT) ) {s = 30;}
+
+                        else if ( (LA120_29==SLASHSi) ) {s = 73;}
+
+                        else if ( (LA120_29==EQSi||LA120_29==NEQSi||(LA120_29>=LTOREQSi && LA120_29<=GTOREQSi)) && (synpred3())) {s = 74;}
+
+                        else if ( ((LA120_29>=DIV && LA120_29<=MOD)) && (synpred3())) {s = 75;}
+
+                         
+                        input.seek(index120_29);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 17 : 
+                        int LA120_80 = input.LA(1);
+
+                         
+                        int index120_80 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred3()) ) {s = 198;}
+
+                        else if ( (true) ) {s = 30;}
+
+                         
+                        input.seek(index120_80);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 18 : 
                         int LA120_2 = input.LA(1);
 
                          
@@ -14318,29 +15123,14 @@ public class XQFTParser extends Parser {
                         input.seek(index120_2);
                         if ( s>=0 ) return s;
                         break;
-                    case 10 : 
-                        int LA120_115 = input.LA(1);
-
-                         
-                        int index120_115 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_115);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 11 : 
+                    case 19 : 
                         int LA120_143 = input.LA(1);
 
                          
                         int index120_143 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred3()) ) {s = 224;}
+                        if ( (synpred3()) ) {s = 350;}
 
                         else if ( (true) ) {s = 30;}
 
@@ -14348,112 +15138,37 @@ public class XQFTParser extends Parser {
                         input.seek(index120_143);
                         if ( s>=0 ) return s;
                         break;
-                    case 12 : 
-                        int LA120_89 = input.LA(1);
+                    case 20 : 
+                        int LA120_139 = input.LA(1);
 
                          
-                        int index120_89 = input.index();
+                        int index120_139 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred3()) ) {s = 224;}
+                        if ( (synpred3()) ) {s = 350;}
 
                         else if ( (true) ) {s = 30;}
 
                          
-                        input.seek(index120_89);
+                        input.seek(index120_139);
                         if ( s>=0 ) return s;
                         break;
-                    case 13 : 
-                        int LA120_142 = input.LA(1);
+                    case 21 : 
+                        int LA120_105 = input.LA(1);
 
                          
-                        int index120_142 = input.index();
+                        int index120_105 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (synpred3()) ) {s = 224;}
+                        if ( (synpred3()) ) {s = 198;}
 
                         else if ( (true) ) {s = 30;}
 
                          
-                        input.seek(index120_142);
+                        input.seek(index120_105);
                         if ( s>=0 ) return s;
                         break;
-                    case 14 : 
-                        int LA120_37 = input.LA(1);
-
-                         
-                        int index120_37 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA120_37==EOF||LA120_37==SEMICOLONSi||(LA120_37>=EQSi && LA120_37<=COMMASi)||LA120_37==DEFAULT||LA120_37==COLLATION||(LA120_37>=ORDER && LA120_37<=EMPTY)||LA120_37==COLONSi||LA120_37==RPARSi||LA120_37==RBRACSi||(LA120_37>=RETURN && LA120_37<=FOR)||(LA120_37>=LET && LA120_37<=WHERE)||(LA120_37>=STABLE && LA120_37<=DESCENDING)||LA120_37==SATISFIES||LA120_37==CASE||(LA120_37>=ELSE && LA120_37<=TO)||(LA120_37>=DIV && LA120_37<=INSTANCE)||(LA120_37>=TREAT && LA120_37<=WITHOUT)||(LA120_37>=EQ && LA120_37<=NEQSi)||(LA120_37>=LTOREQSi && LA120_37<=NODEAFTERSi)||LA120_37==WORDS||LA120_37==TIMES||(LA120_37>=SENTENCES && LA120_37<=PARAGRAPHS)||LA120_37==LEVELS||(LA120_37>=LBRACKSi && LA120_37<=RBRACKSi)) ) {s = 30;}
-
-                        else if ( (LA120_37==PLUSSi||LA120_37==MINUSSi) ) {s = 194;}
-
-                        else if ( (LA120_37==VALIDATE) && (synpred3())) {s = 195;}
-
-                        else if ( (LA120_37==DBLSLASHSi) ) {s = 196;}
-
-                        else if ( (LA120_37==SLASHSi) ) {s = 197;}
-
-                        else if ( ((LA120_37>=IntegerLiteral && LA120_37<=DoubleLiteral)) && (synpred3())) {s = 198;}
-
-                        else if ( (LA120_37==StringLiteral) && (synpred3())) {s = 199;}
-
-                        else if ( (LA120_37==DOLLARSi) && (synpred3())) {s = 200;}
-
-                        else if ( (LA120_37==LPARSi) && (synpred3())) {s = 201;}
-
-                        else if ( (LA120_37==DOTSi) && (synpred3())) {s = 202;}
-
-                        else if ( (LA120_37==NCName) && (synpred3())) {s = 203;}
-
-                        else if ( (LA120_37==ORDERED) && (synpred3())) {s = 204;}
-
-                        else if ( (LA120_37==UNORDERED) && (synpred3())) {s = 205;}
-
-                        else if ( (LA120_37==LTSi) ) {s = 206;}
-
-                        else if ( (LA120_37==LCOMMENTSi) && (synpred3())) {s = 207;}
-
-                        else if ( (LA120_37==LPISi) && (synpred3())) {s = 208;}
-
-                        else if ( (LA120_37==DOCUMENT) && (synpred3())) {s = 209;}
-
-                        else if ( (LA120_37==ELEMENT) && (synpred3())) {s = 210;}
-
-                        else if ( (LA120_37==ATTRIBUTE) && (synpred3())) {s = 211;}
-
-                        else if ( (LA120_37==TEXT) && (synpred3())) {s = 212;}
-
-                        else if ( (LA120_37==COMMENT) && (synpred3())) {s = 213;}
-
-                        else if ( (LA120_37==PROCESSING_INSTRUCTION) && (synpred3())) {s = 214;}
-
-                        else if ( ((LA120_37>=PARENT && LA120_37<=ANCESTOR_OR_SELF)) && (synpred3())) {s = 215;}
-
-                        else if ( (LA120_37==DOTDOTSi) && (synpred3())) {s = 216;}
-
-                        else if ( ((LA120_37>=CHILD && LA120_37<=FOLLOWING)) && (synpred3())) {s = 217;}
-
-                        else if ( (LA120_37==ATSi) && (synpred3())) {s = 218;}
-
-                        else if ( (LA120_37==DOCUMENT_NODE) && (synpred3())) {s = 219;}
-
-                        else if ( (LA120_37==SCHEMAELEMENT) && (synpred3())) {s = 220;}
-
-                        else if ( (LA120_37==SCHEMAATTRIBUTE) && (synpred3())) {s = 221;}
-
-                        else if ( (LA120_37==NODE) && (synpred3())) {s = 222;}
-
-                        else if ( (LA120_37==STARSi) ) {s = 223;}
-
-                        else if ( (LA120_37==LPRAGSi) && (synpred3())) {s = 224;}
-
-                         
-                        input.seek(index120_37);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 15 : 
+                    case 22 : 
                         int LA120_0 = input.LA(1);
 
                          
@@ -14468,683 +15183,6 @@ public class XQFTParser extends Parser {
 
                          
                         input.seek(index120_0);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 16 : 
-                        int LA120_36 = input.LA(1);
-
-                         
-                        int index120_36 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA120_36==PLUSSi||LA120_36==MINUSSi) && (synpred3())) {s = 163;}
-
-                        else if ( (LA120_36==VALIDATE) && (synpred3())) {s = 164;}
-
-                        else if ( (LA120_36==DBLSLASHSi) && (synpred3())) {s = 165;}
-
-                        else if ( (LA120_36==SLASHSi) && (synpred3())) {s = 166;}
-
-                        else if ( ((LA120_36>=IntegerLiteral && LA120_36<=DoubleLiteral)) && (synpred3())) {s = 167;}
-
-                        else if ( (LA120_36==StringLiteral) && (synpred3())) {s = 168;}
-
-                        else if ( (LA120_36==DOLLARSi) && (synpred3())) {s = 169;}
-
-                        else if ( (LA120_36==LPARSi) && (synpred3())) {s = 170;}
-
-                        else if ( (LA120_36==DOTSi) && (synpred3())) {s = 171;}
-
-                        else if ( (LA120_36==NCName) ) {s = 172;}
-
-                        else if ( (LA120_36==ORDERED) && (synpred3())) {s = 173;}
-
-                        else if ( (LA120_36==UNORDERED) && (synpred3())) {s = 174;}
-
-                        else if ( (LA120_36==LTSi) && (synpred3())) {s = 175;}
-
-                        else if ( (LA120_36==LCOMMENTSi) && (synpred3())) {s = 176;}
-
-                        else if ( (LA120_36==LPISi) && (synpred3())) {s = 177;}
-
-                        else if ( (LA120_36==DOCUMENT) && (synpred3())) {s = 178;}
-
-                        else if ( (LA120_36==ELEMENT) && (synpred3())) {s = 179;}
-
-                        else if ( (LA120_36==ATTRIBUTE) && (synpred3())) {s = 180;}
-
-                        else if ( (LA120_36==TEXT) && (synpred3())) {s = 181;}
-
-                        else if ( (LA120_36==COMMENT) && (synpred3())) {s = 182;}
-
-                        else if ( (LA120_36==PROCESSING_INSTRUCTION) && (synpred3())) {s = 183;}
-
-                        else if ( ((LA120_36>=PARENT && LA120_36<=ANCESTOR_OR_SELF)) && (synpred3())) {s = 184;}
-
-                        else if ( (LA120_36==DOTDOTSi) && (synpred3())) {s = 185;}
-
-                        else if ( ((LA120_36>=CHILD && LA120_36<=FOLLOWING)) && (synpred3())) {s = 186;}
-
-                        else if ( (LA120_36==ATSi) && (synpred3())) {s = 187;}
-
-                        else if ( (LA120_36==DOCUMENT_NODE) && (synpred3())) {s = 188;}
-
-                        else if ( (LA120_36==SCHEMAELEMENT) && (synpred3())) {s = 189;}
-
-                        else if ( (LA120_36==SCHEMAATTRIBUTE) && (synpred3())) {s = 190;}
-
-                        else if ( (LA120_36==NODE) && (synpred3())) {s = 191;}
-
-                        else if ( (LA120_36==STARSi) && (synpred3())) {s = 192;}
-
-                        else if ( (LA120_36==LPRAGSi) && (synpred3())) {s = 193;}
-
-                         
-                        input.seek(index120_36);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 17 : 
-                        int LA120_83 = input.LA(1);
-
-                         
-                        int index120_83 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_83);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 18 : 
-                        int LA120_29 = input.LA(1);
-
-                         
-                        int index120_29 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA120_29==COLONSi) && (synpred3())) {s = 32;}
-
-                        else if ( (LA120_29==PLUSSi||LA120_29==MINUSSi) ) {s = 33;}
-
-                        else if ( (LA120_29==StringLiteral||LA120_29==NCName||LA120_29==ELEMENT||(LA120_29>=ORDERED && LA120_29<=UNORDERED)||LA120_29==DOLLARSi||LA120_29==LPARSi||LA120_29==DOCUMENT_NODE||(LA120_29>=SCHEMAELEMENT && LA120_29<=NODE)||(LA120_29>=IntegerLiteral && LA120_29<=DoubleLiteral)||LA120_29==LPRAGSi||LA120_29==VALIDATE||(LA120_29>=PARENT && LA120_29<=ANCESTOR_OR_SELF)||(LA120_29>=DOTDOTSi && LA120_29<=ATSi)||LA120_29==DOTSi||LA120_29==LCOMMENTSi||LA120_29==LPISi||LA120_29==DOCUMENT) ) {s = 30;}
-
-                        else if ( (LA120_29==DBLSLASHSi) ) {s = 34;}
-
-                        else if ( (LA120_29==SLASHSi) ) {s = 35;}
-
-                        else if ( (LA120_29==LTSi) ) {s = 36;}
-
-                        else if ( (LA120_29==STARSi) ) {s = 37;}
-
-                        else if ( (LA120_29==LBRACKSi) && (synpred3())) {s = 38;}
-
-                        else if ( (LA120_29==CAST) && (synpred3())) {s = 39;}
-
-                        else if ( (LA120_29==CASTABLE) && (synpred3())) {s = 40;}
-
-                        else if ( (LA120_29==TREAT) && (synpred3())) {s = 41;}
-
-                        else if ( (LA120_29==INSTANCE) && (synpred3())) {s = 42;}
-
-                        else if ( ((LA120_29>=INTERSECT && LA120_29<=EXCEPT)) && (synpred3())) {s = 43;}
-
-                        else if ( ((LA120_29>=UNION && LA120_29<=PIPESi)) && (synpred3())) {s = 44;}
-
-                        else if ( ((LA120_29>=DIV && LA120_29<=MOD)) && (synpred3())) {s = 45;}
-
-                        else if ( (LA120_29==TO) && (synpred3())) {s = 46;}
-
-                        else if ( (LA120_29==FTCONTAINS) && (synpred3())) {s = 47;}
-
-                        else if ( ((LA120_29>=EQ && LA120_29<=GE)) && (synpred3())) {s = 48;}
-
-                        else if ( (LA120_29==EQSi||LA120_29==NEQSi||(LA120_29>=LTOREQSi && LA120_29<=GTOREQSi)) && (synpred3())) {s = 49;}
-
-                        else if ( ((LA120_29>=IS && LA120_29<=NODEAFTERSi)) && (synpred3())) {s = 50;}
-
-                        else if ( (LA120_29==AND) && (synpred3())) {s = 51;}
-
-                        else if ( (LA120_29==OR) && (synpred3())) {s = 52;}
-
-                        else if ( (LA120_29==COMMASi) && (synpred3())) {s = 53;}
-
-                        else if ( (LA120_29==EOF) && (synpred3())) {s = 54;}
-
-                        else if ( (LA120_29==RBRACSi) && (synpred3())) {s = 55;}
-
-                        else if ( (LA120_29==RPARSi) && (synpred3())) {s = 56;}
-
-                        else if ( (LA120_29==RBRACKSi) && (synpred3())) {s = 57;}
-
-                        else if ( (LA120_29==SEMICOLONSi) && (synpred3())) {s = 58;}
-
-                        else if ( (LA120_29==WHERE) && (synpred3())) {s = 59;}
-
-                        else if ( (LA120_29==ORDER) && (synpred3())) {s = 60;}
-
-                        else if ( (LA120_29==STABLE) && (synpred3())) {s = 61;}
-
-                        else if ( (LA120_29==RETURN) && (synpred3())) {s = 62;}
-
-                        else if ( (LA120_29==FOR) && (synpred3())) {s = 63;}
-
-                        else if ( (LA120_29==LET) && (synpred3())) {s = 64;}
-
-                        else if ( ((LA120_29>=ASCENDING && LA120_29<=DESCENDING)) && (synpred3())) {s = 65;}
-
-                        else if ( (LA120_29==EMPTY) && (synpred3())) {s = 66;}
-
-                        else if ( (LA120_29==COLLATION) && (synpred3())) {s = 67;}
-
-                        else if ( (LA120_29==SATISFIES) && (synpred3())) {s = 68;}
-
-                        else if ( (LA120_29==DEFAULT) && (synpred3())) {s = 69;}
-
-                        else if ( (LA120_29==CASE) && (synpred3())) {s = 70;}
-
-                        else if ( (LA120_29==ELSE) && (synpred3())) {s = 71;}
-
-                        else if ( (LA120_29==WITHOUT) && (synpred3())) {s = 72;}
-
-                        else if ( (LA120_29==TIMES) && (synpred3())) {s = 73;}
-
-                        else if ( (LA120_29==WORDS||(LA120_29>=SENTENCES && LA120_29<=PARAGRAPHS)) && (synpred3())) {s = 74;}
-
-                        else if ( (LA120_29==LEVELS) && (synpred3())) {s = 75;}
-
-                         
-                        input.seek(index120_29);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 19 : 
-                        int LA120_223 = input.LA(1);
-
-                         
-                        int index120_223 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA120_223==COLONSi) && (synpred3())) {s = 460;}
-
-                        else if ( (LA120_223==PLUSSi||LA120_223==MINUSSi) ) {s = 33;}
-
-                        else if ( (LA120_223==StringLiteral||LA120_223==NCName||LA120_223==ELEMENT||(LA120_223>=ORDERED && LA120_223<=UNORDERED)||LA120_223==DOLLARSi||LA120_223==LPARSi||LA120_223==DOCUMENT_NODE||(LA120_223>=SCHEMAELEMENT && LA120_223<=NODE)||(LA120_223>=IntegerLiteral && LA120_223<=DoubleLiteral)||LA120_223==LPRAGSi||LA120_223==VALIDATE||(LA120_223>=PARENT && LA120_223<=ANCESTOR_OR_SELF)||(LA120_223>=DOTDOTSi && LA120_223<=ATSi)||LA120_223==DOTSi||LA120_223==LCOMMENTSi||LA120_223==LPISi||LA120_223==DOCUMENT) ) {s = 30;}
-
-                        else if ( (LA120_223==DBLSLASHSi) ) {s = 461;}
-
-                        else if ( (LA120_223==SLASHSi) ) {s = 462;}
-
-                        else if ( (LA120_223==LTSi) ) {s = 36;}
-
-                        else if ( (LA120_223==STARSi) ) {s = 37;}
-
-                        else if ( (LA120_223==LBRACKSi) && (synpred3())) {s = 463;}
-
-                        else if ( (LA120_223==CAST) && (synpred3())) {s = 426;}
-
-                        else if ( (LA120_223==CASTABLE) && (synpred3())) {s = 427;}
-
-                        else if ( (LA120_223==TREAT) && (synpred3())) {s = 428;}
-
-                        else if ( (LA120_223==INSTANCE) && (synpred3())) {s = 429;}
-
-                        else if ( ((LA120_223>=INTERSECT && LA120_223<=EXCEPT)) && (synpred3())) {s = 430;}
-
-                        else if ( ((LA120_223>=UNION && LA120_223<=PIPESi)) && (synpred3())) {s = 431;}
-
-                        else if ( (LA120_223==TO) && (synpred3())) {s = 46;}
-
-                        else if ( (LA120_223==FTCONTAINS) && (synpred3())) {s = 47;}
-
-                        else if ( ((LA120_223>=EQ && LA120_223<=GE)) && (synpred3())) {s = 48;}
-
-                        else if ( (LA120_223==EQSi||LA120_223==NEQSi||(LA120_223>=LTOREQSi && LA120_223<=GTOREQSi)) && (synpred3())) {s = 49;}
-
-                        else if ( ((LA120_223>=IS && LA120_223<=NODEAFTERSi)) && (synpred3())) {s = 50;}
-
-                        else if ( (LA120_223==AND) && (synpred3())) {s = 51;}
-
-                        else if ( (LA120_223==OR) && (synpred3())) {s = 52;}
-
-                        else if ( (LA120_223==COMMASi) && (synpred3())) {s = 53;}
-
-                        else if ( (LA120_223==EOF) && (synpred3())) {s = 54;}
-
-                        else if ( (LA120_223==RBRACSi) && (synpred3())) {s = 55;}
-
-                        else if ( (LA120_223==RPARSi) && (synpred3())) {s = 56;}
-
-                        else if ( (LA120_223==RBRACKSi) && (synpred3())) {s = 57;}
-
-                        else if ( (LA120_223==SEMICOLONSi) && (synpred3())) {s = 58;}
-
-                        else if ( (LA120_223==WHERE) && (synpred3())) {s = 59;}
-
-                        else if ( (LA120_223==ORDER) && (synpred3())) {s = 60;}
-
-                        else if ( (LA120_223==STABLE) && (synpred3())) {s = 61;}
-
-                        else if ( (LA120_223==RETURN) && (synpred3())) {s = 62;}
-
-                        else if ( (LA120_223==FOR) && (synpred3())) {s = 63;}
-
-                        else if ( (LA120_223==LET) && (synpred3())) {s = 64;}
-
-                        else if ( ((LA120_223>=ASCENDING && LA120_223<=DESCENDING)) && (synpred3())) {s = 65;}
-
-                        else if ( (LA120_223==EMPTY) && (synpred3())) {s = 66;}
-
-                        else if ( (LA120_223==COLLATION) && (synpred3())) {s = 67;}
-
-                        else if ( (LA120_223==SATISFIES) && (synpred3())) {s = 68;}
-
-                        else if ( (LA120_223==DEFAULT) && (synpred3())) {s = 69;}
-
-                        else if ( (LA120_223==CASE) && (synpred3())) {s = 70;}
-
-                        else if ( (LA120_223==ELSE) && (synpred3())) {s = 71;}
-
-                        else if ( (LA120_223==WITHOUT) && (synpred3())) {s = 72;}
-
-                        else if ( (LA120_223==TIMES) && (synpred3())) {s = 73;}
-
-                        else if ( (LA120_223==WORDS||(LA120_223>=SENTENCES && LA120_223<=PARAGRAPHS)) && (synpred3())) {s = 74;}
-
-                        else if ( (LA120_223==LEVELS) && (synpred3())) {s = 75;}
-
-                        else if ( ((LA120_223>=DIV && LA120_223<=MOD)) && (synpred3())) {s = 45;}
-
-                         
-                        input.seek(index120_223);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 20 : 
-                        int LA120_102 = input.LA(1);
-
-                         
-                        int index120_102 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_102);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 21 : 
-                        int LA120_136 = input.LA(1);
-
-                         
-                        int index120_136 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_136);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 22 : 
-                        int LA120_197 = input.LA(1);
-
-                         
-                        int index120_197 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA120_197==CAST) && (synpred3())) {s = 426;}
-
-                        else if ( (LA120_197==CASTABLE) && (synpred3())) {s = 427;}
-
-                        else if ( (LA120_197==TREAT) && (synpred3())) {s = 428;}
-
-                        else if ( (LA120_197==INSTANCE) && (synpred3())) {s = 429;}
-
-                        else if ( ((LA120_197>=INTERSECT && LA120_197<=EXCEPT)) && (synpred3())) {s = 430;}
-
-                        else if ( ((LA120_197>=UNION && LA120_197<=PIPESi)) && (synpred3())) {s = 431;}
-
-                        else if ( (LA120_197==PLUSSi||LA120_197==MINUSSi) && (synpred3())) {s = 432;}
-
-                        else if ( (LA120_197==TO) && (synpred3())) {s = 46;}
-
-                        else if ( (LA120_197==FTCONTAINS) && (synpred3())) {s = 47;}
-
-                        else if ( ((LA120_197>=EQ && LA120_197<=GE)) && (synpred3())) {s = 48;}
-
-                        else if ( (LA120_197==LTSi) ) {s = 433;}
-
-                        else if ( ((LA120_197>=IS && LA120_197<=NODEAFTERSi)) && (synpred3())) {s = 50;}
-
-                        else if ( (LA120_197==AND) && (synpred3())) {s = 51;}
-
-                        else if ( (LA120_197==OR) && (synpred3())) {s = 52;}
-
-                        else if ( (LA120_197==COMMASi) && (synpred3())) {s = 53;}
-
-                        else if ( (LA120_197==EOF) && (synpred3())) {s = 54;}
-
-                        else if ( (LA120_197==RBRACSi) && (synpred3())) {s = 55;}
-
-                        else if ( (LA120_197==RPARSi) && (synpred3())) {s = 56;}
-
-                        else if ( (LA120_197==RBRACKSi) && (synpred3())) {s = 57;}
-
-                        else if ( (LA120_197==SEMICOLONSi) && (synpred3())) {s = 58;}
-
-                        else if ( (LA120_197==WHERE) && (synpred3())) {s = 59;}
-
-                        else if ( (LA120_197==ORDER) && (synpred3())) {s = 60;}
-
-                        else if ( (LA120_197==STABLE) && (synpred3())) {s = 61;}
-
-                        else if ( (LA120_197==RETURN) && (synpred3())) {s = 62;}
-
-                        else if ( (LA120_197==FOR) && (synpred3())) {s = 63;}
-
-                        else if ( (LA120_197==LET) && (synpred3())) {s = 64;}
-
-                        else if ( ((LA120_197>=ASCENDING && LA120_197<=DESCENDING)) && (synpred3())) {s = 65;}
-
-                        else if ( (LA120_197==EMPTY) && (synpred3())) {s = 66;}
-
-                        else if ( (LA120_197==COLLATION) && (synpred3())) {s = 67;}
-
-                        else if ( (LA120_197==SATISFIES) && (synpred3())) {s = 68;}
-
-                        else if ( (LA120_197==DEFAULT) && (synpred3())) {s = 69;}
-
-                        else if ( (LA120_197==CASE) && (synpred3())) {s = 70;}
-
-                        else if ( (LA120_197==ELSE) && (synpred3())) {s = 71;}
-
-                        else if ( (LA120_197==WITHOUT) && (synpred3())) {s = 72;}
-
-                        else if ( (LA120_197==TIMES) && (synpred3())) {s = 73;}
-
-                        else if ( (LA120_197==WORDS||(LA120_197>=SENTENCES && LA120_197<=PARAGRAPHS)) && (synpred3())) {s = 74;}
-
-                        else if ( (LA120_197==LEVELS) && (synpred3())) {s = 75;}
-
-                        else if ( (LA120_197==STARSi) ) {s = 434;}
-
-                        else if ( ((LA120_197>=IntegerLiteral && LA120_197<=DoubleLiteral)) ) {s = 435;}
-
-                        else if ( (LA120_197==StringLiteral) ) {s = 436;}
-
-                        else if ( (LA120_197==DOLLARSi) ) {s = 437;}
-
-                        else if ( (LA120_197==LPARSi) ) {s = 438;}
-
-                        else if ( (LA120_197==DOTSi) ) {s = 439;}
-
-                        else if ( (LA120_197==NCName) ) {s = 440;}
-
-                        else if ( (LA120_197==ORDERED) ) {s = 441;}
-
-                        else if ( (LA120_197==UNORDERED) ) {s = 442;}
-
-                        else if ( (LA120_197==EQSi||LA120_197==NEQSi||(LA120_197>=LTOREQSi && LA120_197<=GTOREQSi)) && (synpred3())) {s = 49;}
-
-                        else if ( (LA120_197==LCOMMENTSi) ) {s = 443;}
-
-                        else if ( (LA120_197==LPISi) ) {s = 444;}
-
-                        else if ( (LA120_197==DOCUMENT) ) {s = 445;}
-
-                        else if ( (LA120_197==ELEMENT) ) {s = 446;}
-
-                        else if ( (LA120_197==ATTRIBUTE) ) {s = 447;}
-
-                        else if ( (LA120_197==TEXT) ) {s = 448;}
-
-                        else if ( (LA120_197==COMMENT) ) {s = 449;}
-
-                        else if ( (LA120_197==PROCESSING_INSTRUCTION) ) {s = 450;}
-
-                        else if ( ((LA120_197>=PARENT && LA120_197<=ANCESTOR_OR_SELF)) ) {s = 451;}
-
-                        else if ( (LA120_197==DOTDOTSi) ) {s = 452;}
-
-                        else if ( ((LA120_197>=CHILD && LA120_197<=FOLLOWING)) ) {s = 453;}
-
-                        else if ( (LA120_197==ATSi) ) {s = 454;}
-
-                        else if ( (LA120_197==DOCUMENT_NODE) ) {s = 455;}
-
-                        else if ( (LA120_197==SCHEMAELEMENT) ) {s = 456;}
-
-                        else if ( (LA120_197==SCHEMAATTRIBUTE) ) {s = 457;}
-
-                        else if ( (LA120_197==NODE) ) {s = 458;}
-
-                        else if ( ((LA120_197>=DIV && LA120_197<=MOD)) && (synpred3())) {s = 45;}
-
-                         
-                        input.seek(index120_197);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 23 : 
-                        int LA120_114 = input.LA(1);
-
-                         
-                        int index120_114 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_114);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 24 : 
-                        int LA120_112 = input.LA(1);
-
-                         
-                        int index120_112 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_112);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 25 : 
-                        int LA120_140 = input.LA(1);
-
-                         
-                        int index120_140 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_140);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 26 : 
-                        int LA120_85 = input.LA(1);
-
-                         
-                        int index120_85 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_85);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 27 : 
-                        int LA120_116 = input.LA(1);
-
-                         
-                        int index120_116 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_116);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 28 : 
-                        int LA120_88 = input.LA(1);
-
-                         
-                        int index120_88 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_88);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 29 : 
-                        int LA120_144 = input.LA(1);
-
-                         
-                        int index120_144 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_144);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 30 : 
-                        int LA120_172 = input.LA(1);
-
-                         
-                        int index120_172 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA120_172==COLONSi) ) {s = 353;}
-
-                        else if ( (LA120_172==LPARSi) && (synpred3())) {s = 354;}
-
-                        else if ( (LA120_172==NCName||LA120_172==GTSi||LA120_172==RSELFTERMSi) ) {s = 30;}
-
-                        else if ( (LA120_172==LBRACKSi) && (synpred3())) {s = 355;}
-
-                        else if ( ((LA120_172>=DBLSLASHSi && LA120_172<=SLASHSi)) && (synpred3())) {s = 356;}
-
-                        else if ( (LA120_172==CAST) && (synpred3())) {s = 357;}
-
-                        else if ( (LA120_172==CASTABLE) && (synpred3())) {s = 358;}
-
-                        else if ( (LA120_172==TREAT) && (synpred3())) {s = 359;}
-
-                        else if ( (LA120_172==INSTANCE) && (synpred3())) {s = 360;}
-
-                        else if ( ((LA120_172>=INTERSECT && LA120_172<=EXCEPT)) && (synpred3())) {s = 361;}
-
-                        else if ( ((LA120_172>=UNION && LA120_172<=PIPESi)) && (synpred3())) {s = 362;}
-
-                        else if ( (LA120_172==STARSi||(LA120_172>=DIV && LA120_172<=MOD)) && (synpred3())) {s = 363;}
-
-                        else if ( (LA120_172==PLUSSi||LA120_172==MINUSSi) && (synpred3())) {s = 364;}
-
-                        else if ( (LA120_172==TO) && (synpred3())) {s = 365;}
-
-                        else if ( (LA120_172==FTCONTAINS) && (synpred3())) {s = 366;}
-
-                        else if ( (LA120_172==AND) && (synpred3())) {s = 51;}
-
-                        else if ( (LA120_172==OR) && (synpred3())) {s = 52;}
-
-                        else if ( (LA120_172==COMMASi) && (synpred3())) {s = 53;}
-
-                        else if ( (LA120_172==EOF) && (synpred3())) {s = 54;}
-
-                        else if ( (LA120_172==RBRACSi) && (synpred3())) {s = 367;}
-
-                        else if ( (LA120_172==RPARSi) && (synpred3())) {s = 368;}
-
-                        else if ( (LA120_172==RBRACKSi) && (synpred3())) {s = 57;}
-
-                        else if ( (LA120_172==SEMICOLONSi) && (synpred3())) {s = 58;}
-
-                        else if ( (LA120_172==WHERE) && (synpred3())) {s = 59;}
-
-                        else if ( (LA120_172==ORDER) && (synpred3())) {s = 60;}
-
-                        else if ( (LA120_172==STABLE) && (synpred3())) {s = 61;}
-
-                        else if ( (LA120_172==RETURN) && (synpred3())) {s = 62;}
-
-                        else if ( (LA120_172==FOR) && (synpred3())) {s = 63;}
-
-                        else if ( (LA120_172==LET) && (synpred3())) {s = 64;}
-
-                        else if ( ((LA120_172>=ASCENDING && LA120_172<=DESCENDING)) && (synpred3())) {s = 65;}
-
-                        else if ( (LA120_172==EMPTY) && (synpred3())) {s = 66;}
-
-                        else if ( (LA120_172==COLLATION) && (synpred3())) {s = 67;}
-
-                        else if ( (LA120_172==SATISFIES) && (synpred3())) {s = 68;}
-
-                        else if ( (LA120_172==DEFAULT) && (synpred3())) {s = 69;}
-
-                        else if ( (LA120_172==CASE) && (synpred3())) {s = 70;}
-
-                        else if ( (LA120_172==ELSE) && (synpred3())) {s = 71;}
-
-                         
-                        input.seek(index120_172);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 31 : 
-                        int LA120_129 = input.LA(1);
-
-                         
-                        int index120_129 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_129);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 32 : 
-                        int LA120_156 = input.LA(1);
-
-                         
-                        int index120_156 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred3()) ) {s = 224;}
-
-                        else if ( (true) ) {s = 30;}
-
-                         
-                        input.seek(index120_156);
                         if ( s>=0 ) return s;
                         break;
             }
