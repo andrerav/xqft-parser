@@ -50,7 +50,7 @@ public class Mein {
                         "(xs:dayTimeDuration(\"P42DT10H10M\") div xs:dayTimeDuration(\"P10DT10H10M\"))\n" +
                         "div\n" +
                         "(xs:dayTimeDuration(\"P20DT10H10M\") div xs:dayTimeDuration(\"P18DT10H10M\"))\n" +*/
-                        ",15)";
+                        ",15";
 		CharStream cs = new ANTLRStringStream(input);
 		XQFTLexer lexer = new XQFTLexer(cs);
 		UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
