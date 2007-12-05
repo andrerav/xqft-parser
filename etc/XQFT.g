@@ -641,7 +641,7 @@ eg. QUESTIONSi = '?' and DBLSLASHSi = '//'
 */
 
 
-TOKENSWITCH				: {System.err.println("State is: " + state);}({state==State.IN_ELEMENT}?=>
+TOKENSWITCH				: {System.out.println("State is: " + state);}({state==State.IN_ELEMENT}?=>
                           n=CDataSectionLEX						// emits subtokens
 						| {state==State.IN_ELEMENT}?=>
 						  n=DirPIConstructor					// emits subtokens
@@ -694,7 +694,7 @@ TOKENSWITCH				: {System.err.println("State is: " + state);}({state==State.IN_EL
 						| n=LBRACESi							{$type=LBRACESi;}
 						| n=PIPESi								{$type=PIPESi;}
 						| n=RBRACSi								{$type=RBRACSi;})
-						{System.err.println(XQFTParser.tokenNames[$type] + " xx"+ $n.text +"xx in state: " + state);}	
+						{System.out.println(XQFTParser.tokenNames[$type] + " xx"+ $n.text +"xx in state: " + state);}	
 						;
 
 fragment S                   		: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+		{$channel=HIDDEN;};
