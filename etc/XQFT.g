@@ -665,11 +665,11 @@ TOKENSWITCH				: {System.out.println("State is: " + state);}({state==State.IN_EL
 						  n=StringLiteral						{$type=StringLiteral;}
 						| {(state==State.DEFAULT || state==State.IN_TAG)}?=>
 						  n=LexLiterals							{$type=this.tokenType;}						  
-						| {state==State.IN_QUOT_ATTRIBUTE}?
+						| {state==State.IN_QUOT_ATTRIBUTE}?=>
 						  n=QuotAttributeContent				{$type=QuotAttributeContent;}
-						| {state==State.IN_APOS_ATTRIBUTE}?
+						| {state==State.IN_APOS_ATTRIBUTE}?=>
 						  n=AposAttributeContent				{$type=AposAttributeContent;}
-						| {state==State.IN_TAG}?
+						| {state==State.IN_TAG}?=>
 						  n=RSELFTERMSi							{$type=RSELFTERMSi;}
 						| n=QUOTSi								{$type=QUOTSi;}
 						| n=DOLLARSi							{$type=DOLLARSi;}				
