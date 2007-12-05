@@ -43,7 +43,7 @@ of the parser, the gUnit framework was no longer capable of executing its test
 suite. The reason for this is incompatability with the custom TokenStream class.
 In the current state of affairs, gUnit will simply block and wait for more data,
 leaving the programing hanging indefinitely. 
-//TODO: add the above to results instead
+//TODO: add the above to results instead?
 
 \subsection{jUnit}
 In addition to the gUnit tests for the grammar, jUnit was used to write unit tests for
@@ -66,3 +66,6 @@ as a benchmark for XQuery compliance. Specifically, we simplified this approach
 into counting any test query accepted by the parser as passed. Since the parser
 does not generate any results from queries, it was impossible to run a
 comparison to the given expected results.
+
+The test suite consists of a total of 12584 different queries, with a broad
+coverage of XQuery functionality.
