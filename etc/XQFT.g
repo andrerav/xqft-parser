@@ -6,6 +6,148 @@
     //output=AST;
     //ASTLabelType=Object;
 //}
+tokens{
+ALL;
+ANY;
+ANCESTOR;
+ANCESTOR_OR_SELF;
+AND;
+AS;
+ASCENDING;
+AT;
+ATTRIBUTE;
+BASE_URI;
+BY;
+BOUNDARYSPACE;
+CASE;
+CAST;
+CASTABLE;
+CHILD;
+COLLATION;
+COMMENT;
+CONSTRUCTION;
+CONTENT;
+COPY_NAMESPACES;
+DECLARE;
+DEFAULT;
+DESCENDANT;
+DESCENDANT_OR_SELF;
+DESCENDING;
+DIACRITICS;
+DIFFERENT;
+DISTANCE;
+DIV;
+DOCUMENT;
+DOCUMENT_NODE;
+ELEMENT;
+ELSE;
+ENCODING;
+END;
+ENTIRE;
+EMPTY;
+EMPTY_SEQUENCE;
+EQ;
+EVERY;
+EXACTLY;
+EXCEPT;
+EXTERNAL;
+FOLLOWING;
+FOLLOWING_SIBLING;
+FOR;
+FROM;
+FTAND;
+FTCONTAINS;
+FTNOT;
+FTOPTION;
+FTOR;
+FUNCTION;
+GE;
+GREATEST;
+GT;
+IDIV;
+IF;
+IMPORT;
+IN;
+INHERIT;
+INSENSITIVE;
+INSTANCE;
+INTERSECT;
+IS;
+ITEM;
+LANGUAGE;
+LAX;
+LE;
+LEAST;
+LET;
+LEVELS;
+LOWERCASE;
+LT;
+MOD;
+MODULE;
+MOST;
+NAMESPACE;
+NE;
+NODE;
+NOINHERIT;
+NOPRESERVE;
+NOT;
+OCCURS;
+OF;
+OPTION;
+OR;
+ORDER;
+ORDERED;
+ORDERING;
+PARAGRAPH;
+PARAGRAPHS;
+PARENT;
+PHRASE;
+PRECEDING;
+PRECEDING_SIBLING;
+PRESERVE;
+PROCESSING_INSTRUCTION;
+RELATIONSHIP;
+RETURN;
+SAME;
+SATISFIES;
+SCHEMA;
+SCHEMAATTRIBUTE;
+SCHEMAELEMENT;
+SCORE;
+SELF;
+SENSITIVE;
+SENTENCES;
+SENTENCE;
+SOME;
+STABLE;
+START;
+STEMMING;
+STOP;
+STRICT;
+STRIP;
+TEXT;
+THESAURUS;
+THEN;
+TIMES;
+TO;
+TREAT;
+TYPESWITCH;
+UNION;
+UNORDERED;
+UPPERCASE;
+VALIDATE;
+VARIABLE;
+VERSION;
+WEIGHT;
+WHERE;
+WILDCARDS;
+WINDOW;
+WITH;
+WITHOUT;
+WORD;
+WORDS;
+XQUERY;
+}
 
 @parser::header {
 	package no.ntnu.xqft.parse;
@@ -824,148 +966,149 @@ fragment NCName              			: NCNameStartChar NCNameChar*;
 
 
 //All keywords and NCName. Made a fragmen so they will not be matched when in ElementContent or AttributeContent.
-fragment LexLiterals	: {true}? ALL 									{ this.tokenType=ALL;}			
-						| {true}? ANY 									{ this.tokenType=ANY;}
-						| {true}? ANCESTOR 								{ this.tokenType=ANCESTOR;}
-						| {true}? ANCESTOR_OR_SELF			 			{ this.tokenType=ANCESTOR_OR_SELF;}
-						| {true}? AND 									{ this.tokenType=AND;}
-						| {true}? AS 									{ this.tokenType=AS;}
-						| {true}? ASCENDING 							{ this.tokenType=ASCENDING;}
-						| {true}? AT 									{ this.tokenType=AT;}
-						| {true}? ATTRIBUTE 							{ this.tokenType=ATTRIBUTE;}
-						| {true}? BASE_URI 								{ this.tokenType=BASE_URI;}
-						| {true}? BY 									{ this.tokenType=BY;}
-						| {true}? BOUNDARYSPACE 						{ this.tokenType=BOUNDARYSPACE;}
-						| {true}? CASE 									{ this.tokenType=CASE;}
-						| {true}? CAST 									{ this.tokenType=CAST;}
-						| {true}? CASTABLE 								{ this.tokenType=CASTABLE;}
-						| {true}? CHILD 								{ this.tokenType=CHILD;}
-						| {true}? COLLATION 							{ this.tokenType=COLLATION;}
-						| {true}? COMMENT 								{ this.tokenType=COMMENT;}
-						| {true}? CONSTRUCTION 							{ this.tokenType=CONSTRUCTION;}
-						| {true}? CONTENT 								{ this.tokenType=CONTENT;}
-						| {true}? COPY_NAMESPACES 						{ this.tokenType=COPY_NAMESPACES;}
-						| {true}? DECLARE 								{ this.tokenType=DECLARE;}
-						| {true}? DEFAULT 								{ this.tokenType=DEFAULT;}
-						| {true}? DESCENDANT 							{ this.tokenType=DESCENDANT;}
-						| {true}? DESCENDANT_OR_SELF 					{ this.tokenType=DESCENDANT_OR_SELF;}
-						| {true}? DESCENDING 							{ this.tokenType=DESCENDING;}
-						| {true}? DIACRITICS 							{ this.tokenType=DIACRITICS;}
-						| {true}? DIFFERENT 							{ this.tokenType=DIFFERENT;}
-						| {true}? DISTANCE 								{ this.tokenType=DISTANCE;}
-						| {true}? DIV 									{ this.tokenType=DIV;}
-						| {true}? DOCUMENT 								{ this.tokenType=DOCUMENT;}
-						| {true}? DOCUMENT_NODE 						{ this.tokenType=DOCUMENT_NODE;}
-						| {true}? ELEMENT 								{ this.tokenType=ELEMENT;}
-						| {true}? ELSE 									{ this.tokenType=ELSE;}
-						| {true}? ENCODING 								{ this.tokenType=ENCODING;}
-						| {true}? END 									{ this.tokenType=END;}
-						| {true}? ENTIRE 								{ this.tokenType=ENTIRE;}
-						| {true}? EMPTY 								{ this.tokenType=EMPTY;}
-						| {true}? EMPTY_SEQUENCE 						{ this.tokenType=EMPTY_SEQUENCE;}
-						| {true}? EQ 									{ this.tokenType=EQ;}
-						| {true}? EVERY 								{ this.tokenType=EVERY;}
-						| {true}? EXACTLY 								{ this.tokenType=EXACTLY;}
-						| {true}? EXCEPT 								{ this.tokenType=EXCEPT;}
-						| {true}? EXTERNAL 								{ this.tokenType=EXTERNAL;}
-						| {true}? FOLLOWING 							{ this.tokenType=FOLLOWING;}
-						| {true}? FOLLOWING_SIBLING 					{ this.tokenType=FOLLOWING_SIBLING;}
-						| {true}? FOR 									{ this.tokenType=FOR;}
-						| {true}? FROM 									{ this.tokenType=FROM;}
-						| {true}? FTAND 								{ this.tokenType=FTAND;}
-						| {true}? FTCONTAINS 							{ this.tokenType=FTCONTAINS;}
-						| {true}? FTNOT 								{ this.tokenType=FTNOT;}
-						| {true}? FTOPTION 								{ this.tokenType=FTOPTION;}
-						| {true}? FTOR 									{ this.tokenType=FTOR;}
-						| {true}? FUNCTION 								{ this.tokenType=FUNCTION;}
-						| {true}? GE 									{ this.tokenType=GE;}
-						| {true}? GREATEST 								{ this.tokenType=GREATEST;}
-						| {true}? GT 									{ this.tokenType=GT;}
-						| {true}? IDIV 									{ this.tokenType=IDIV;}
-						| {true}? IF 									{ this.tokenType=IF;}
-						| {true}? IMPORT 								{ this.tokenType=IMPORT;}
-						| {true}? IN 									{ this.tokenType=IN;}
-						| {true}? INHERIT 								{ this.tokenType=INHERIT;}
-						| {true}? INSENSITIVE							{ this.tokenType=INSENSITIVE;}
-						| {true}? INSTANCE 								{ this.tokenType=INSTANCE;}
-						| {true}? INTERSECT 							{ this.tokenType=INTERSECT;}
-						| {true}? IS 									{ this.tokenType=IS;}
-						| {true}? ITEM 									{ this.tokenType=ITEM;}
-						| {true}? LANGUAGE 								{ this.tokenType=LANGUAGE;}
-						| {true}? LAX 									{ this.tokenType=LAX;}
-						| {true}? LE 									{ this.tokenType=LE;}
-						| {true}? LEAST 								{ this.tokenType=LEAST;}
-						| {true}? LET 									{ this.tokenType=LET;}
-						| {true}? LEVELS 								{ this.tokenType=LEVELS;}
-						| {true}? LOWERCASE 							{ this.tokenType=LOWERCASE;}
-						| {true}? LT 									{ this.tokenType=LT;}
-						| {true}? MOD 									{ this.tokenType=MOD;}
-						| {true}? MODULE 								{ this.tokenType=MODULE;}
-						| {true}? MOST 									{ this.tokenType=MOST;}
-						| {true}? NAMESPACE 							{ this.tokenType=NAMESPACE;}
-						| {true}? NE 									{ this.tokenType=NE;}
-						| {true}? NODE 									{ this.tokenType=NODE;}
-						| {true}? NOINHERIT 							{ this.tokenType=NOINHERIT;}
-						| {true}? NOPRESERVE 							{ this.tokenType=NOPRESERVE;}
-						| {true}? NOT 									{ this.tokenType=NOT;}
-						| {true}? OCCURS 								{ this.tokenType=OCCURS;}
-						| {true}? OF 									{ this.tokenType=OF;}
-						| {true}? OPTION 								{ this.tokenType=OPTION;}
-						| {true}? OR 									{ this.tokenType=OR;}
-						| {true}? ORDER 								{ this.tokenType=ORDER;}
-						| {true}? ORDERED 								{ this.tokenType=ORDERED;}
-						| {true}? ORDERING 								{ this.tokenType=ORDERING;}
-						| {true}? PARAGRAPH 							{ this.tokenType=PARAGRAPH;}
-						| {true}? PARAGRAPHS 							{ this.tokenType=PARAGRAPHS;}
-						| {true}? PARENT 								{ this.tokenType=PARENT;}
-						| {true}? PHRASE 								{ this.tokenType=PHRASE;}
-						| {true}? PRECEDING 							{ this.tokenType=PRECEDING;}
-						| {true}? PRECEDING_SIBLING 					{ this.tokenType=PRECEDING_SIBLING;}
-						| {true}? PRESERVE 								{ this.tokenType=PRESERVE;}
-						| {true}? PROCESSING_INSTRUCTION 				{ this.tokenType=PROCESSING_INSTRUCTION;}
-						| {true}? RELATIONSHIP 							{ this.tokenType=RELATIONSHIP;}
-						| {true}? RETURN 								{ this.tokenType=RETURN;}
-						| {true}? SAME 									{ this.tokenType=SAME;}
-						| {true}? SATISFIES 							{ this.tokenType=SATISFIES;}
-						| {true}? SCHEMA 								{ this.tokenType=SCHEMA;}
-						| {true}? SCHEMAATTRIBUTE 						{ this.tokenType=SCHEMAATTRIBUTE;}
-						| {true}? SCHEMAELEMENT 						{ this.tokenType=SCHEMAELEMENT;}
-						| {true}? SCORE 								{ this.tokenType=SCORE;}
-						| {true}? SELF 									{ this.tokenType=SELF;}
-						| {true}? SENSITIVE 							{ this.tokenType=SENSITIVE;}
-						| {true}? SENTENCES 							{ this.tokenType=SENTENCES;}
-						| {true}? SENTENCE 								{ this.tokenType=SENTENCE;}
-						| {true}? SOME 									{ this.tokenType=SOME;}
-						| {true}? STABLE 								{ this.tokenType=STABLE;}
-						| {true}? START 								{ this.tokenType=START;}
-						| {true}? STEMMING 								{ this.tokenType=STEMMING;}
-						| {true}? STOP 									{ this.tokenType=STOP;}
-						| {true}? STRICT 								{ this.tokenType=STRICT;}
-						| {true}? STRIP 								{ this.tokenType=STRIP;}
-						| {true}? TEXT 									{ this.tokenType=TEXT;}
-						| {true}? THESAURUS 							{ this.tokenType=THESAURUS;}
-						| {true}? THEN 									{ this.tokenType=THEN;}
-						| {true}? TIMES 								{ this.tokenType=TIMES;}
-						| {true}? TO 									{ this.tokenType=TO;}
-						| {true}? TREAT 								{ this.tokenType=TREAT;}
-						| {true}? TYPESWITCH 							{ this.tokenType=TYPESWITCH;}
-						| {true}? UNION 								{ this.tokenType=UNION;}
-						| {true}? UNORDERED 							{ this.tokenType=UNORDERED;}
-						| {true}? UPPERCASE 							{ this.tokenType=UPPERCASE;}
-						| {true}? VALIDATE 								{ this.tokenType=VALIDATE;}
-						| {true}? VARIABLE 								{ this.tokenType=VARIABLE;}
-						| {true}? VERSION 								{ this.tokenType=VERSION;}
-						| {true}? WEIGHT 								{ this.tokenType=WEIGHT;}
-						| {true}? WHERE 								{ this.tokenType=WHERE;}
-						| {true}? WILDCARDS 							{ this.tokenType=WILDCARDS;}
-						| {true}? WINDOW 								{ this.tokenType=WINDOW;}
-						| {true}? WITH 									{ this.tokenType=WITH;}
-						| {true}? WITHOUT 								{ this.tokenType=WITHOUT;}
-						| {true}? WORD 									{ this.tokenType=WORD;}
-						| {true}? WORDS 								{ this.tokenType=WORDS;}
-						| {true}? XQUERY 								{ this.tokenType=XQUERY;}
-						| {true}? NCName 								{ this.tokenType=NCName;}
-						;
+fragment LexLiterals	: n=NCName{
+				 if($n.getText().equals("all")) this.tokenType=ALL;
+				 else if($n.getText().equals("any")) this.tokenType=ANY;
+				 else if($n.getText().equals("ancestor")) this.tokenType=ANCESTOR;
+				 else if($n.getText().equals("ancestor-or-self")) this.tokenType=ANCESTOR_OR_SELF;
+				 else if($n.getText().equals("and")) this.tokenType=AND;
+				 else if($n.getText().equals("as")) this.tokenType=AS;
+				 else if($n.getText().equals("ascending")) this.tokenType=ASCENDING;
+				 else if($n.getText().equals("at")) this.tokenType=AT;
+				 else if($n.getText().equals("attribute")) this.tokenType=ATTRIBUTE;
+				 else if($n.getText().equals("base-uri")) this.tokenType=BASE_URI;
+				 else if($n.getText().equals("by")) this.tokenType=BY;
+				 else if($n.getText().equals("boundary-space")) this.tokenType=BOUNDARYSPACE;
+				 else if($n.getText().equals("case")) this.tokenType=CASE;
+				 else if($n.getText().equals("cast")) this.tokenType=CAST;
+				 else if($n.getText().equals("castable")) this.tokenType=CASTABLE;
+				 else if($n.getText().equals("child")) this.tokenType=CHILD;
+				 else if($n.getText().equals("collation")) this.tokenType=COLLATION;
+				 else if($n.getText().equals("comment")) this.tokenType=COMMENT;
+				 else if($n.getText().equals("construction")) this.tokenType=CONSTRUCTION;
+				 else if($n.getText().equals("content")) this.tokenType=CONTENT;
+				 else if($n.getText().equals("copy-namespaces")) this.tokenType=COPY_NAMESPACES;
+				 else if($n.getText().equals("declare")) this.tokenType=DECLARE;
+				 else if($n.getText().equals("default")) this.tokenType=DEFAULT;
+				 else if($n.getText().equals("descendant")) this.tokenType=DESCENDANT;
+				 else if($n.getText().equals("descendant-or-self")) this.tokenType=DESCENDANT_OR_SELF;
+				 else if($n.getText().equals("descending")) this.tokenType=DESCENDING;
+				 else if($n.getText().equals("diacritics")) this.tokenType=DIACRITICS;
+				 else if($n.getText().equals("different")) this.tokenType=DIFFERENT;
+				 else if($n.getText().equals("distance")) this.tokenType=DISTANCE;
+				 else if($n.getText().equals("div")) this.tokenType=DIV;
+				 else if($n.getText().equals("document")) this.tokenType=DOCUMENT;
+				 else if($n.getText().equals("document-node")) this.tokenType=DOCUMENT_NODE;
+				 else if($n.getText().equals("element")) this.tokenType=ELEMENT;
+				 else if($n.getText().equals("else")) this.tokenType=ELSE;
+				 else if($n.getText().equals("encoding")) this.tokenType=ENCODING;
+				 else if($n.getText().equals("end")) this.tokenType=END;
+				 else if($n.getText().equals("entire")) this.tokenType=ENTIRE;
+				 else if($n.getText().equals("empty")) this.tokenType=EMPTY;
+				 else if($n.getText().equals("empty-sequence")) this.tokenType=EMPTY_SEQUENCE;
+				 else if($n.getText().equals("eq")) this.tokenType=EQ;
+				 else if($n.getText().equals("every")) this.tokenType=EVERY;
+				 else if($n.getText().equals("exactly")) this.tokenType=EXACTLY;
+				 else if($n.getText().equals("except")) this.tokenType=EXCEPT;
+				 else if($n.getText().equals("external")) this.tokenType=EXTERNAL;
+				 else if($n.getText().equals("following")) this.tokenType=FOLLOWING;
+				 else if($n.getText().equals("following-sibling")) this.tokenType=FOLLOWING_SIBLING;
+				 else if($n.getText().equals("for")) this.tokenType=FOR;
+				 else if($n.getText().equals("from")) this.tokenType=FROM;
+				 else if($n.getText().equals("ftand")) this.tokenType=FTAND;
+				 else if($n.getText().equals("ftcontains")) this.tokenType=FTCONTAINS;
+				 else if($n.getText().equals("ftnot")) this.tokenType=FTNOT;
+				 else if($n.getText().equals("ft-option")) this.tokenType=FTOPTION;
+				 else if($n.getText().equals("ftor")) this.tokenType=FTOR;
+				 else if($n.getText().equals("function")) this.tokenType=FUNCTION;
+				 else if($n.getText().equals("ge")) this.tokenType=GE;
+				 else if($n.getText().equals("greatest")) this.tokenType=GREATEST;
+				 else if($n.getText().equals("gt")) this.tokenType=GT;
+				 else if($n.getText().equals("idiv")) this.tokenType=IDIV;
+				 else if($n.getText().equals("if")) this.tokenType=IF;
+				 else if($n.getText().equals("import")) this.tokenType=IMPORT;
+				 else if($n.getText().equals("in")) this.tokenType=IN;
+				 else if($n.getText().equals("inherit")) this.tokenType=INHERIT;
+				 else if($n.getText().equals("insensitive")) this.tokenType=INSENSITIVE;
+				 else if($n.getText().equals("instance")) this.tokenType=INSTANCE;
+				 else if($n.getText().equals("intersect")) this.tokenType=INTERSECT;
+				 else if($n.getText().equals("is")) this.tokenType=IS;
+				 else if($n.getText().equals("item")) this.tokenType=ITEM;
+				 else if($n.getText().equals("language")) this.tokenType=LANGUAGE;
+				 else if($n.getText().equals("lax")) this.tokenType=LAX;
+				 else if($n.getText().equals("le")) this.tokenType=LE;
+				 else if($n.getText().equals("least")) this.tokenType=LEAST;
+				 else if($n.getText().equals("let")) this.tokenType=LET;
+				 else if($n.getText().equals("levels")) this.tokenType=LEVELS;
+				 else if($n.getText().equals("lowercase")) this.tokenType=LOWERCASE;
+				 else if($n.getText().equals("lt")) this.tokenType=LT;
+				 else if($n.getText().equals("mod")) this.tokenType=MOD;
+				 else if($n.getText().equals("module")) this.tokenType=MODULE;
+				 else if($n.getText().equals("most")) this.tokenType=MOST;
+				 else if($n.getText().equals("namespace")) this.tokenType=NAMESPACE;
+				 else if($n.getText().equals("ne")) this.tokenType=NE;
+				 else if($n.getText().equals("node")) this.tokenType=NODE;
+				 else if($n.getText().equals("no-inherit")) this.tokenType=NOINHERIT;
+				 else if($n.getText().equals("no-preserve")) this.tokenType=NOPRESERVE;
+				 else if($n.getText().equals("not")) this.tokenType=NOT;
+				 else if($n.getText().equals("occurs")) this.tokenType=OCCURS;
+				 else if($n.getText().equals("of")) this.tokenType=OF;
+				 else if($n.getText().equals("option")) this.tokenType=OPTION;
+				 else if($n.getText().equals("or")) this.tokenType=OR;
+				 else if($n.getText().equals("order")) this.tokenType=ORDER;
+				 else if($n.getText().equals("ordered")) this.tokenType=ORDERED;
+				 else if($n.getText().equals("ordering")) this.tokenType=ORDERING;
+				 else if($n.getText().equals("paragraph")) this.tokenType=PARAGRAPH;
+				 else if($n.getText().equals("paragraphs")) this.tokenType=PARAGRAPHS;
+				 else if($n.getText().equals("parent")) this.tokenType=PARENT;
+				 else if($n.getText().equals("phrase")) this.tokenType=PHRASE;
+				 else if($n.getText().equals("preceding")) this.tokenType=PRECEDING;
+				 else if($n.getText().equals("preceding-sibling")) this.tokenType=PRECEDING_SIBLING;
+				 else if($n.getText().equals("preserve")) this.tokenType=PRESERVE;
+				 else if($n.getText().equals("processing-instruction")) this.tokenType=PROCESSING_INSTRUCTION;
+				 else if($n.getText().equals("relationship")) this.tokenType=RELATIONSHIP;
+				 else if($n.getText().equals("return")) this.tokenType=RETURN;
+				 else if($n.getText().equals("same")) this.tokenType=SAME;
+				 else if($n.getText().equals("satisfies")) this.tokenType=SATISFIES;
+				 else if($n.getText().equals("schema")) this.tokenType=SCHEMA;
+				 else if($n.getText().equals("schema-attribute")) this.tokenType=SCHEMAATTRIBUTE;
+				 else if($n.getText().equals("schema-element")) this.tokenType=SCHEMAELEMENT;
+				 else if($n.getText().equals("score")) this.tokenType=SCORE;
+				 else if($n.getText().equals("self")) this.tokenType=SELF;
+				 else if($n.getText().equals("sensitive")) this.tokenType=SENSITIVE;
+				 else if($n.getText().equals("sentences")) this.tokenType=SENTENCES;
+				 else if($n.getText().equals("sentence")) this.tokenType=SENTENCE;
+				 else if($n.getText().equals("some")) this.tokenType=SOME;
+				 else if($n.getText().equals("stable")) this.tokenType=STABLE;
+				 else if($n.getText().equals("start")) this.tokenType=START;
+				 else if($n.getText().equals("stemming")) this.tokenType=STEMMING;
+				 else if($n.getText().equals("stop")) this.tokenType=STOP;
+				 else if($n.getText().equals("strict")) this.tokenType=STRICT;
+				 else if($n.getText().equals("strip")) this.tokenType=STRIP;
+				 else if($n.getText().equals("text")) this.tokenType=TEXT;
+				 else if($n.getText().equals("thesaurus")) this.tokenType=THESAURUS;
+				 else if($n.getText().equals("then")) this.tokenType=THEN;
+				 else if($n.getText().equals("times")) this.tokenType=TIMES;
+				 else if($n.getText().equals("to")) this.tokenType=TO;
+				 else if($n.getText().equals("treat")) this.tokenType=TREAT;
+				 else if($n.getText().equals("typeswitch")) this.tokenType=TYPESWITCH;
+				 else if($n.getText().equals("union")) this.tokenType=UNION;
+				 else if($n.getText().equals("unordered")) this.tokenType=UNORDERED;
+				 else if($n.getText().equals("uppercase")) this.tokenType=UPPERCASE;
+				 else if($n.getText().equals("validate")) this.tokenType=VALIDATE;
+				 else if($n.getText().equals("variable")) this.tokenType=VARIABLE;
+				 else if($n.getText().equals("version")) this.tokenType=VERSION;
+				 else if($n.getText().equals("weight")) this.tokenType=WEIGHT;
+				 else if($n.getText().equals("where")) this.tokenType=WHERE;
+				 else if($n.getText().equals("wildcards")) this.tokenType=WILDCARDS;
+				 else if($n.getText().equals("window")) this.tokenType=WINDOW;
+				 else if($n.getText().equals("with")) this.tokenType=WITH;
+				 else if($n.getText().equals("without")) this.tokenType=WITHOUT;
+				 else if($n.getText().equals("word")) this.tokenType=WORD;
+				 else if($n.getText().equals("words")) this.tokenType=WORDS;
+				 else if($n.getText().equals("xquery")) this.tokenType=XQUERY;
+				 else this.tokenType=NCName;
+				};
 						
 // Sign sequences of two or more characters had to be made fragment so they won't be matched 
 // when in ElementContent or AttributeContent						
