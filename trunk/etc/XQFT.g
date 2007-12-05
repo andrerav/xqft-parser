@@ -641,63 +641,59 @@ eg. QUESTIONSi = '?' and DBLSLASHSi = '//'
 */
 
 
-TOKENSWITCH				: {System.err.println("State is: " + state);}({state==State.IN_ELEMENT}?
-                          n=CDataSectionLEX			// emits subtokens
-						| {state==State.IN_ELEMENT}?
-						  n=DirPIConstructor			// emits subtokens
-						| {state==State.IN_ELEMENT}?
-						  n=DirCommentConstLEX		// emits subtokens
-						| {state==State.IN_ELEMENT}?
-						  n=LENDTAGSi 				{$type=LENDTAGSi;}
-  					  	| {state==State.IN_ELEMENT}? 
-						  n=ElementContent			{$type=ElementContent;}	  
-						| {state==State.DEFAULT}?
-						  n=PragmaLEX					// emits subtokens
-						| {state==State.DEFAULT}?
-						  n=Comment					{$type=Comment; $channel=HIDDEN;}
+TOKENSWITCH				: {System.err.println("State is: " + state);}({state==State.IN_ELEMENT}?=>
+                          n=CDataSectionLEX						// emits subtokens
+						| {state==State.IN_ELEMENT}?=>
+						  n=DirPIConstructor					// emits subtokens
+						| {state==State.IN_ELEMENT}?=>
+						  n=DirCommentConstLEX					// emits subtokens
+						| {state==State.IN_ELEMENT}?=>
+						  n=LENDTAGSi 							{$type=LENDTAGSi;}
+  					  	| {state==State.IN_ELEMENT}? =>
+						  n=ElementContent						{$type=ElementContent;}	  
+						| {state==State.DEFAULT}?=>
+						  n=PragmaLEX							// emits subtokens
+						| {state==State.DEFAULT}?=>
+						  n=Comment								{$type=Comment; $channel=HIDDEN;}
 						| {state==State.DEFAULT}?=> 
-						  n=IntegerLiteral			{$type=IntegerLiteral;}
+						  n=NumberLEX							{$type=this.tokenType;}
 						| {state==State.DEFAULT}?=>
-						  n=DecimalLiteral			{$type=DecimalLiteral;}
+						  n=LexSigns							{$type=this.tokenType;}
 						| {state==State.DEFAULT}?=>
-						  n=DoubleLiteral				{$type=DoubleLiteral;}												
+						  n=S									{$type=S; $channel=HIDDEN;}
 						| {state==State.DEFAULT}?=>
-						  n=LexSigns					{$type=this.tokenType;}
-						| {state==State.DEFAULT}?=>
-						  n=S							{$type=S; $channel=HIDDEN;}
-						| {state==State.DEFAULT}?=>
-						  n=StringLiteral				{$type=StringLiteral;}
+						  n=StringLiteral						{$type=StringLiteral;}
 						| {(state==State.DEFAULT || state==State.IN_TAG)}?=>
-						  n=LexLiterals				{$type=this.tokenType;}						  
+						  n=LexLiterals							{$type=this.tokenType;}						  
 						| {state==State.IN_QUOT_ATTRIBUTE}?
-						  n=QuotAttributeContent		{$type=QuotAttributeContent;}
+						  n=QuotAttributeContent				{$type=QuotAttributeContent;}
 						| {state==State.IN_APOS_ATTRIBUTE}?
-						  n=AposAttributeContent		{$type=AposAttributeContent;}
+						  n=AposAttributeContent				{$type=AposAttributeContent;}
 						| {state==State.IN_TAG}?
-						  n=RSELFTERMSi				{$type=RSELFTERMSi;}
-						| n=QUOTSi					{$type=QUOTSi;}
-						| n=DOLLARSi					{$type=DOLLARSi;}				
-						| n=APOSSi 					{$type=APOSSi;}
-						| n=LPARSi 					{$type=LPARSi;}
-						| n=RPARSi					{$type=RPARSi;}
-						| n=STARSi					{$type=STARSi;}
-						| n=PLUSSi					{$type=PLUSSi;}
-						| n=COMMASi					{$type=COMMASi;}
-						| n=MINUSSi					{$type=MINUSSi;}
-						| n=DOTSi						{$type=DOTSi;}
-						| n=SLASHSi					{$type=SLASHSi;}
-						| n=COLONSi					{$type=COLONSi;}
-						| n=SEMICOLONSi				{$type=SEMICOLONSi;}
-						| n=LTSi						{$type=LTSi;}
-						| n=EQSi						{$type=EQSi;}
-						| n=GTSi						{$type=GTSi;}
-						| n=QUESTIONSi				{$type=QUESTIONSi;}
-						| n=ATSi						{$type=ATSi;}
-						| n=LBRACKSi					{$type=LBRACKSi;}
-						| n=RBRACKSi					{$type=RBRACKSi;}
-						| n=LBRACESi					{$type=LBRACESi;}
-						| n=PIPESi					{$type=PIPESi;}
-						| n=RBRACSi					{$type=RBRACSi;})
+						  n=RSELFTERMSi							{$type=RSELFTERMSi;}
+						| n=QUOTSi								{$type=QUOTSi;}
+						| n=DOLLARSi							{$type=DOLLARSi;}				
+						| n=APOSSi 								{$type=APOSSi;}
+						| n=LPARSi 								{$type=LPARSi;}
+						| n=RPARSi								{$type=RPARSi;}
+						| n=STARSi								{$type=STARSi;}
+						| n=PLUSSi								{$type=PLUSSi;}
+						| n=COMMASi								{$type=COMMASi;}
+						| n=MINUSSi								{$type=MINUSSi;}
+						| n=DOTSi								{$type=DOTSi;}
+						| n=SLASHSi								{$type=SLASHSi;}
+						| n=COLONSi								{$type=COLONSi;}
+						| n=SEMICOLONSi							{$type=SEMICOLONSi;}
+						| n=LTSi								{$type=LTSi;}
+						| n=EQSi								{$type=EQSi;}
+						| n=GTSi								{$type=GTSi;}
+						| n=QUESTIONSi							{$type=QUESTIONSi;}
+						| n=ATSi								{$type=ATSi;}
+						| n=LBRACKSi							{$type=LBRACKSi;}
+						| n=RBRACKSi							{$type=RBRACKSi;}
+						| n=LBRACESi							{$type=LBRACESi;}
+						| n=PIPESi								{$type=PIPESi;}
+						| n=RBRACSi								{$type=RBRACSi;})
 						{System.err.println(XQFTParser.tokenNames[$type] + " xx"+ $n.text +"xx in state: " + state);}	
 						;
 
@@ -808,8 +804,11 @@ fragment Comment       		: LXQCOMMENTSi
 
 
 //--------------------------------------------- Litterals ----------------------------------------------------------------------
-
-
+fragment NumberLEX					: (DoubleLiteral)=>	DoubleLiteral				{this.tokenType=DoubleLiteral;}
+								  	| (DecimalLiteral)=>DecimalLiteral				{this.tokenType=DecimalLiteral;}
+									| (IntegerLiteral)=>IntegerLiteral				{this.tokenType=IntegerLiteral;}
+									;
+									
 fragment IntegerLiteral				: Digits;
 fragment DecimalLiteral				: DOTSi Digits 
 									| Digits DOTSi ('0'..'9')*;
@@ -825,147 +824,147 @@ fragment NCName              			: NCNameStartChar NCNameChar*;
 
 
 //All keywords and NCName. Made a fragmen so they will not be matched when in ElementContent or AttributeContent.
-fragment LexLiterals	: (ALL)=> ALL 										{ this.tokenType=ALL;}			
-						| (ANY)=> ANY 										{ this.tokenType=ANY;}
-						| (ANCESTOR)=> ANCESTOR 							{ this.tokenType=ANCESTOR;}
-						| (ANCESTOR_OR_SELF)=> ANCESTOR_OR_SELF			 	{ this.tokenType=ANCESTOR_OR_SELF;}
-						| (AND)=> AND 										{ this.tokenType=AND;}
-						| (AS)=> AS 										{ this.tokenType=AS;}
-						| (ASCENDING)=> ASCENDING 							{ this.tokenType=ASCENDING;}
-						| (AT)=> AT 										{ this.tokenType=AT;}
-						| (ATTRIBUTE)=> ATTRIBUTE 							{ this.tokenType=ATTRIBUTE;}
-						| (BASE_URI)=> BASE_URI 							{ this.tokenType=BASE_URI;}
-						| (BY)=> BY 										{ this.tokenType=BY;}
-						| (BOUNDARYSPACE)=> BOUNDARYSPACE 					{ this.tokenType=BOUNDARYSPACE;}
-						| (CASE)=> CASE 									{ this.tokenType=CASE;}
-						| (CAST)=> CAST 									{ this.tokenType=CAST;}
-						| (CASTABLE)=> CASTABLE 							{ this.tokenType=CASTABLE;}
-						| (CHILD)=> CHILD 									{ this.tokenType=CHILD;}
-						| (COLLATION)=> COLLATION 							{ this.tokenType=COLLATION;}
-						| (COMMENT)=> COMMENT 								{ this.tokenType=COMMENT;}
-						| (CONSTRUCTION)=> CONSTRUCTION 					{ this.tokenType=CONSTRUCTION;}
-						| (CONTENT)=> CONTENT 								{ this.tokenType=CONTENT;}
-						| (COPY_NAMESPACES)=> COPY_NAMESPACES 				{ this.tokenType=COPY_NAMESPACES;}
-						| (DECLARE)=> DECLARE 								{ this.tokenType=DECLARE;}
-						| (DEFAULT)=> DEFAULT 								{ this.tokenType=DEFAULT;}
-						| (DESCENDANT)=> DESCENDANT 						{ this.tokenType=DESCENDANT;}
-						| (DESCENDANT_OR_SELF)=> DESCENDANT_OR_SELF 		{ this.tokenType=DESCENDANT_OR_SELF;}
-						| (DESCENDING)=> DESCENDING 						{ this.tokenType=DESCENDING;}
-						| (DIACRITICS)=> DIACRITICS 						{ this.tokenType=DIACRITICS;}
-						| (DIFFERENT)=> DIFFERENT 							{ this.tokenType=DIFFERENT;}
-						| (DISTANCE)=> DISTANCE 							{ this.tokenType=DISTANCE;}
-						| (DIV)=> DIV 										{ this.tokenType=DIV;}
-						| (DOCUMENT)=> DOCUMENT 							{ this.tokenType=DOCUMENT;}
-						| (DOCUMENT_NODE)=> DOCUMENT_NODE 					{ this.tokenType=DOCUMENT_NODE;}
-						| (ELEMENT)=> ELEMENT 								{ this.tokenType=ELEMENT;}
-						| (ELSE)=> ELSE 									{ this.tokenType=ELSE;}
-						| (ENCODING)=> ENCODING 							{ this.tokenType=ENCODING;}
-						| (END)=> END 										{ this.tokenType=END;}
-						| (ENTIRE)=> ENTIRE 								{ this.tokenType=ENTIRE;}
-						| (EMPTY)=> EMPTY 									{ this.tokenType=EMPTY;}
-						| (EMPTY_SEQUENCE)=> EMPTY_SEQUENCE 				{ this.tokenType=EMPTY_SEQUENCE;}
-						| (EQ)=> EQ 										{ this.tokenType=EQ;}
-						| (EVERY)=> EVERY 									{ this.tokenType=EVERY;}
-						| (EXACTLY)=> EXACTLY 								{ this.tokenType=EXACTLY;}
-						| (EXCEPT)=> EXCEPT 								{ this.tokenType=EXCEPT;}
-						| (EXTERNAL)=> EXTERNAL 							{ this.tokenType=EXTERNAL;}
-						| (FOLLOWING)=> FOLLOWING 							{ this.tokenType=FOLLOWING;}
-						| (FOLLOWING_SIBLING)=> FOLLOWING_SIBLING 			{ this.tokenType=FOLLOWING_SIBLING;}
-						| (FOR)=> FOR 										{ this.tokenType=FOR;}
-						| (FROM)=> FROM 									{ this.tokenType=FROM;}
-						| (FTAND)=> FTAND 									{ this.tokenType=FTAND;}
-						| (FTCONTAINS)=> FTCONTAINS 						{ this.tokenType=FTCONTAINS;}
-						| (FTNOT)=> FTNOT 									{ this.tokenType=FTNOT;}
-						| (FTOPTION)=> FTOPTION 							{ this.tokenType=FTOPTION;}
-						| (FTOR)=> FTOR 									{ this.tokenType=FTOR;}
-						| (FUNCTION)=> FUNCTION 							{ this.tokenType=FUNCTION;}
-						| (GE)=> GE 										{ this.tokenType=GE;}
-						| (GREATEST)=> GREATEST 							{ this.tokenType=GREATEST;}
-						| (GT)=> GT 										{ this.tokenType=GT;}
-						| (IDIV)=> IDIV 									{ this.tokenType=IDIV;}
-						| (IF)=> IF 										{ this.tokenType=IF;}
-						| (IMPORT)=> IMPORT 								{ this.tokenType=IMPORT;}
-						| (IN)=> IN 										{ this.tokenType=IN;}
-						| (INHERIT)=> INHERIT 								{ this.tokenType=INHERIT;}
-						| (INSENSITIVE)=> INSENSITIVE						{ this.tokenType=INSENSITIVE;}
-						| (INSTANCE)=> INSTANCE 							{ this.tokenType=INSTANCE;}
-						| (INTERSECT)=> INTERSECT 							{ this.tokenType=INTERSECT;}
-						| (IS)=> IS 										{ this.tokenType=IS;}
-						| (ITEM)=> ITEM 									{ this.tokenType=ITEM;}
-						| (LANGUAGE)=> LANGUAGE 							{ this.tokenType=LANGUAGE;}
-						| (LAX)=> LAX 										{ this.tokenType=LAX;}
-						| (LE)=> LE 										{ this.tokenType=LE;}
-						| (LEAST)=> LEAST 									{ this.tokenType=LEAST;}
-						| (LET)=> LET 										{ this.tokenType=LET;}
-						| (LEVELS)=> LEVELS 								{ this.tokenType=LEVELS;}
-						| (LOWERCASE)=> LOWERCASE 							{ this.tokenType=LOWERCASE;}
-						| (LT)=> LT 										{ this.tokenType=LT;}
-						| (MOD)=> MOD 										{ this.tokenType=MOD;}
-						| (MODULE)=> MODULE 								{ this.tokenType=MODULE;}
-						| (MOST)=> MOST 									{ this.tokenType=MOST;}
-						| (NAMESPACE)=> NAMESPACE 							{ this.tokenType=NAMESPACE;}
-						| (NE)=> NE 										{ this.tokenType=NE;}
-						| (NODE)=> NODE 									{ this.tokenType=NODE;}
-						| (NOINHERIT)=> NOINHERIT 							{ this.tokenType=NOINHERIT;}
-						| (NOPRESERVE)=> NOPRESERVE 						{ this.tokenType=NOPRESERVE;}
-						| (NOT)=> NOT 										{ this.tokenType=NOT;}
-						| (OCCURS)=> OCCURS 								{ this.tokenType=OCCURS;}
-						| (OF)=> OF 										{ this.tokenType=OF;}
-						| (OPTION)=> OPTION 								{ this.tokenType=OPTION;}
-						| (OR)=> OR 										{ this.tokenType=OR;}
-						| (ORDER)=> ORDER 									{ this.tokenType=ORDER;}
-						| (ORDERED)=> ORDERED 								{ this.tokenType=ORDERED;}
-						| (ORDERING)=> ORDERING 							{ this.tokenType=ORDERING;}
-						| (PARAGRAPH)=> PARAGRAPH 							{ this.tokenType=PARAGRAPH;}
-						| (PARAGRAPHS)=> PARAGRAPHS 						{ this.tokenType=PARAGRAPHS;}
-						| (PARENT)=> PARENT 								{ this.tokenType=PARENT;}
-						| (PHRASE)=> PHRASE 								{ this.tokenType=PHRASE;}
-						| (PRECEDING)=> PRECEDING 							{ this.tokenType=PRECEDING;}
-						| (PRECEDING_SIBLING)=> PRECEDING_SIBLING 			{ this.tokenType=PRECEDING_SIBLING;}
-						| (PRESERVE)=> PRESERVE 							{ this.tokenType=PRESERVE;}
-						| (PROCESSING_INSTRUCTION)=> PROCESSING_INSTRUCTION { this.tokenType=PROCESSING_INSTRUCTION;}
-						| (RELATIONSHIP)=> RELATIONSHIP 					{ this.tokenType=RELATIONSHIP;}
-						| (RETURN)=> RETURN 								{ this.tokenType=RETURN;}
-						| (SAME)=> SAME 									{ this.tokenType=SAME;}
-						| (SATISFIES)=> SATISFIES 							{ this.tokenType=SATISFIES;}
-						| (SCHEMA)=> SCHEMA 								{ this.tokenType=SCHEMA;}
-						| (SCHEMAATTRIBUTE)=> SCHEMAATTRIBUTE 				{ this.tokenType=SCHEMAATTRIBUTE;}
-						| (SCHEMAELEMENT)=> SCHEMAELEMENT 					{ this.tokenType=SCHEMAELEMENT;}
-						| (SCORE)=> SCORE 									{ this.tokenType=SCORE;}
-						| (SELF)=> SELF 									{ this.tokenType=SELF;}
-						| (SENSITIVE)=> SENSITIVE 							{ this.tokenType=SENSITIVE;}
-						| (SENTENCES)=> SENTENCES 							{ this.tokenType=SENTENCES;}
-						| (SENTENCE)=> SENTENCE 							{ this.tokenType=SENTENCE;}
-						| (SOME)=> SOME 									{ this.tokenType=SOME;}
-						| (STABLE)=> STABLE 								{ this.tokenType=STABLE;}
-						| (START)=> START 									{ this.tokenType=START;}
-						| (STEMMING)=> STEMMING 							{ this.tokenType=STEMMING;}
-						| (STOP)=> STOP 									{ this.tokenType=STOP;}
-						| (STRICT)=> STRICT 								{ this.tokenType=STRICT;}
-						| (STRIP)=> STRIP 									{ this.tokenType=STRIP;}
-						| (TEXT)=> TEXT 									{ this.tokenType=TEXT;}
-						| (THESAURUS)=> THESAURUS 							{ this.tokenType=THESAURUS;}
-						| (THEN)=> THEN 									{ this.tokenType=THEN;}
-						| (TIMES)=> TIMES 									{ this.tokenType=TIMES;}
-						| (TO)=> TO 										{ this.tokenType=TO;}
-						| (TREAT)=> TREAT 									{ this.tokenType=TREAT;}
-						| (TYPESWITCH)=> TYPESWITCH 						{ this.tokenType=TYPESWITCH;}
-						| (UNION)=> UNION 									{ this.tokenType=UNION;}
-						| (UNORDERED)=> UNORDERED 							{ this.tokenType=UNORDERED;}
-						| (UPPERCASE)=> UPPERCASE 							{ this.tokenType=UPPERCASE;}
-						| (VALIDATE)=> VALIDATE 							{ this.tokenType=VALIDATE;}
-						| (VARIABLE)=> VARIABLE 							{ this.tokenType=VARIABLE;}
-						| (VERSION)=> VERSION 								{ this.tokenType=VERSION;}
-						| (WEIGHT)=> WEIGHT 								{ this.tokenType=WEIGHT;}
-						| (WHERE)=> WHERE 									{ this.tokenType=WHERE;}
-						| (WILDCARDS)=> WILDCARDS 							{ this.tokenType=WILDCARDS;}
-						| (WINDOW)=> WINDOW 								{ this.tokenType=WINDOW;}
-						| (WITH)=> WITH 									{ this.tokenType=WITH;}
-						| (WITHOUT)=> WITHOUT 								{ this.tokenType=WITHOUT;}
-						| (WORD)=> WORD 									{ this.tokenType=WORD;}
-						| (WORDS)=> WORDS 									{ this.tokenType=WORDS;}
-						| (XQUERY)=> XQUERY 								{ this.tokenType=XQUERY;}
-						| NCName 											{ this.tokenType=NCName;}
+fragment LexLiterals	: {true}? ALL 									{ this.tokenType=ALL;}			
+						| {true}? ANY 									{ this.tokenType=ANY;}
+						| {true}? ANCESTOR 								{ this.tokenType=ANCESTOR;}
+						| {true}? ANCESTOR_OR_SELF			 			{ this.tokenType=ANCESTOR_OR_SELF;}
+						| {true}? AND 									{ this.tokenType=AND;}
+						| {true}? AS 									{ this.tokenType=AS;}
+						| {true}? ASCENDING 							{ this.tokenType=ASCENDING;}
+						| {true}? AT 									{ this.tokenType=AT;}
+						| {true}? ATTRIBUTE 							{ this.tokenType=ATTRIBUTE;}
+						| {true}? BASE_URI 								{ this.tokenType=BASE_URI;}
+						| {true}? BY 									{ this.tokenType=BY;}
+						| {true}? BOUNDARYSPACE 						{ this.tokenType=BOUNDARYSPACE;}
+						| {true}? CASE 									{ this.tokenType=CASE;}
+						| {true}? CAST 									{ this.tokenType=CAST;}
+						| {true}? CASTABLE 								{ this.tokenType=CASTABLE;}
+						| {true}? CHILD 								{ this.tokenType=CHILD;}
+						| {true}? COLLATION 							{ this.tokenType=COLLATION;}
+						| {true}? COMMENT 								{ this.tokenType=COMMENT;}
+						| {true}? CONSTRUCTION 							{ this.tokenType=CONSTRUCTION;}
+						| {true}? CONTENT 								{ this.tokenType=CONTENT;}
+						| {true}? COPY_NAMESPACES 						{ this.tokenType=COPY_NAMESPACES;}
+						| {true}? DECLARE 								{ this.tokenType=DECLARE;}
+						| {true}? DEFAULT 								{ this.tokenType=DEFAULT;}
+						| {true}? DESCENDANT 							{ this.tokenType=DESCENDANT;}
+						| {true}? DESCENDANT_OR_SELF 					{ this.tokenType=DESCENDANT_OR_SELF;}
+						| {true}? DESCENDING 							{ this.tokenType=DESCENDING;}
+						| {true}? DIACRITICS 							{ this.tokenType=DIACRITICS;}
+						| {true}? DIFFERENT 							{ this.tokenType=DIFFERENT;}
+						| {true}? DISTANCE 								{ this.tokenType=DISTANCE;}
+						| {true}? DIV 									{ this.tokenType=DIV;}
+						| {true}? DOCUMENT 								{ this.tokenType=DOCUMENT;}
+						| {true}? DOCUMENT_NODE 						{ this.tokenType=DOCUMENT_NODE;}
+						| {true}? ELEMENT 								{ this.tokenType=ELEMENT;}
+						| {true}? ELSE 									{ this.tokenType=ELSE;}
+						| {true}? ENCODING 								{ this.tokenType=ENCODING;}
+						| {true}? END 									{ this.tokenType=END;}
+						| {true}? ENTIRE 								{ this.tokenType=ENTIRE;}
+						| {true}? EMPTY 								{ this.tokenType=EMPTY;}
+						| {true}? EMPTY_SEQUENCE 						{ this.tokenType=EMPTY_SEQUENCE;}
+						| {true}? EQ 									{ this.tokenType=EQ;}
+						| {true}? EVERY 								{ this.tokenType=EVERY;}
+						| {true}? EXACTLY 								{ this.tokenType=EXACTLY;}
+						| {true}? EXCEPT 								{ this.tokenType=EXCEPT;}
+						| {true}? EXTERNAL 								{ this.tokenType=EXTERNAL;}
+						| {true}? FOLLOWING 							{ this.tokenType=FOLLOWING;}
+						| {true}? FOLLOWING_SIBLING 					{ this.tokenType=FOLLOWING_SIBLING;}
+						| {true}? FOR 									{ this.tokenType=FOR;}
+						| {true}? FROM 									{ this.tokenType=FROM;}
+						| {true}? FTAND 								{ this.tokenType=FTAND;}
+						| {true}? FTCONTAINS 							{ this.tokenType=FTCONTAINS;}
+						| {true}? FTNOT 								{ this.tokenType=FTNOT;}
+						| {true}? FTOPTION 								{ this.tokenType=FTOPTION;}
+						| {true}? FTOR 									{ this.tokenType=FTOR;}
+						| {true}? FUNCTION 								{ this.tokenType=FUNCTION;}
+						| {true}? GE 									{ this.tokenType=GE;}
+						| {true}? GREATEST 								{ this.tokenType=GREATEST;}
+						| {true}? GT 									{ this.tokenType=GT;}
+						| {true}? IDIV 									{ this.tokenType=IDIV;}
+						| {true}? IF 									{ this.tokenType=IF;}
+						| {true}? IMPORT 								{ this.tokenType=IMPORT;}
+						| {true}? IN 									{ this.tokenType=IN;}
+						| {true}? INHERIT 								{ this.tokenType=INHERIT;}
+						| {true}? INSENSITIVE							{ this.tokenType=INSENSITIVE;}
+						| {true}? INSTANCE 								{ this.tokenType=INSTANCE;}
+						| {true}? INTERSECT 							{ this.tokenType=INTERSECT;}
+						| {true}? IS 									{ this.tokenType=IS;}
+						| {true}? ITEM 									{ this.tokenType=ITEM;}
+						| {true}? LANGUAGE 								{ this.tokenType=LANGUAGE;}
+						| {true}? LAX 									{ this.tokenType=LAX;}
+						| {true}? LE 									{ this.tokenType=LE;}
+						| {true}? LEAST 								{ this.tokenType=LEAST;}
+						| {true}? LET 									{ this.tokenType=LET;}
+						| {true}? LEVELS 								{ this.tokenType=LEVELS;}
+						| {true}? LOWERCASE 							{ this.tokenType=LOWERCASE;}
+						| {true}? LT 									{ this.tokenType=LT;}
+						| {true}? MOD 									{ this.tokenType=MOD;}
+						| {true}? MODULE 								{ this.tokenType=MODULE;}
+						| {true}? MOST 									{ this.tokenType=MOST;}
+						| {true}? NAMESPACE 							{ this.tokenType=NAMESPACE;}
+						| {true}? NE 									{ this.tokenType=NE;}
+						| {true}? NODE 									{ this.tokenType=NODE;}
+						| {true}? NOINHERIT 							{ this.tokenType=NOINHERIT;}
+						| {true}? NOPRESERVE 							{ this.tokenType=NOPRESERVE;}
+						| {true}? NOT 									{ this.tokenType=NOT;}
+						| {true}? OCCURS 								{ this.tokenType=OCCURS;}
+						| {true}? OF 									{ this.tokenType=OF;}
+						| {true}? OPTION 								{ this.tokenType=OPTION;}
+						| {true}? OR 									{ this.tokenType=OR;}
+						| {true}? ORDER 								{ this.tokenType=ORDER;}
+						| {true}? ORDERED 								{ this.tokenType=ORDERED;}
+						| {true}? ORDERING 								{ this.tokenType=ORDERING;}
+						| {true}? PARAGRAPH 							{ this.tokenType=PARAGRAPH;}
+						| {true}? PARAGRAPHS 							{ this.tokenType=PARAGRAPHS;}
+						| {true}? PARENT 								{ this.tokenType=PARENT;}
+						| {true}? PHRASE 								{ this.tokenType=PHRASE;}
+						| {true}? PRECEDING 							{ this.tokenType=PRECEDING;}
+						| {true}? PRECEDING_SIBLING 					{ this.tokenType=PRECEDING_SIBLING;}
+						| {true}? PRESERVE 								{ this.tokenType=PRESERVE;}
+						| {true}? PROCESSING_INSTRUCTION 				{ this.tokenType=PROCESSING_INSTRUCTION;}
+						| {true}? RELATIONSHIP 							{ this.tokenType=RELATIONSHIP;}
+						| {true}? RETURN 								{ this.tokenType=RETURN;}
+						| {true}? SAME 									{ this.tokenType=SAME;}
+						| {true}? SATISFIES 							{ this.tokenType=SATISFIES;}
+						| {true}? SCHEMA 								{ this.tokenType=SCHEMA;}
+						| {true}? SCHEMAATTRIBUTE 						{ this.tokenType=SCHEMAATTRIBUTE;}
+						| {true}? SCHEMAELEMENT 						{ this.tokenType=SCHEMAELEMENT;}
+						| {true}? SCORE 								{ this.tokenType=SCORE;}
+						| {true}? SELF 									{ this.tokenType=SELF;}
+						| {true}? SENSITIVE 							{ this.tokenType=SENSITIVE;}
+						| {true}? SENTENCES 							{ this.tokenType=SENTENCES;}
+						| {true}? SENTENCE 								{ this.tokenType=SENTENCE;}
+						| {true}? SOME 									{ this.tokenType=SOME;}
+						| {true}? STABLE 								{ this.tokenType=STABLE;}
+						| {true}? START 								{ this.tokenType=START;}
+						| {true}? STEMMING 								{ this.tokenType=STEMMING;}
+						| {true}? STOP 									{ this.tokenType=STOP;}
+						| {true}? STRICT 								{ this.tokenType=STRICT;}
+						| {true}? STRIP 								{ this.tokenType=STRIP;}
+						| {true}? TEXT 									{ this.tokenType=TEXT;}
+						| {true}? THESAURUS 							{ this.tokenType=THESAURUS;}
+						| {true}? THEN 									{ this.tokenType=THEN;}
+						| {true}? TIMES 								{ this.tokenType=TIMES;}
+						| {true}? TO 									{ this.tokenType=TO;}
+						| {true}? TREAT 								{ this.tokenType=TREAT;}
+						| {true}? TYPESWITCH 							{ this.tokenType=TYPESWITCH;}
+						| {true}? UNION 								{ this.tokenType=UNION;}
+						| {true}? UNORDERED 							{ this.tokenType=UNORDERED;}
+						| {true}? UPPERCASE 							{ this.tokenType=UPPERCASE;}
+						| {true}? VALIDATE 								{ this.tokenType=VALIDATE;}
+						| {true}? VARIABLE 								{ this.tokenType=VARIABLE;}
+						| {true}? VERSION 								{ this.tokenType=VERSION;}
+						| {true}? WEIGHT 								{ this.tokenType=WEIGHT;}
+						| {true}? WHERE 								{ this.tokenType=WHERE;}
+						| {true}? WILDCARDS 							{ this.tokenType=WILDCARDS;}
+						| {true}? WINDOW 								{ this.tokenType=WINDOW;}
+						| {true}? WITH 									{ this.tokenType=WITH;}
+						| {true}? WITHOUT 								{ this.tokenType=WITHOUT;}
+						| {true}? WORD 									{ this.tokenType=WORD;}
+						| {true}? WORDS 								{ this.tokenType=WORDS;}
+						| {true}? XQUERY 								{ this.tokenType=XQUERY;}
+						| {true}? NCName 								{ this.tokenType=NCName;}
 						;
 						
 // Sign sequences of two or more characters had to be made fragment so they won't be matched 
