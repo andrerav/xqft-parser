@@ -388,8 +388,7 @@ sequenceType                			: (itemType occurrenceIndicator) => itemType occu
 	
 //---------------------------------------------------------- ExprSingle ---------------------------------------------------------
 
-exprSingle                  			:
-										fLWORExpr
+exprSingle                  			: fLWORExpr
                                 		| quantifiedExpr
                                 		| typeswitchExpr
                                 		| ifExpr
@@ -631,7 +630,9 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 											| SLASHSi
 											| relativePathExpr;
 		relativePathExpr            			: stepExpr ((SLASHSi | DBLSLASHSi) stepExpr)*;		
-			stepExpr                    			: filterExpr | axisStep;
+			stepExpr                    			: axisStep
+													| filterExpr
+													;
 //				filterExpr#								: #PAA EGET#
 			axisStep                    			: (reverseStep | forwardStep) predicateList;
 			
@@ -773,6 +774,154 @@ filterExpr                  			: primaryExpr predicateList;
 //		predicate                   			: LBRACKSi expr RBRACKSi;   	
 
 
+//-------------------------------------------------- NCName or Keyword? --------------------------------------------------
+/*
+ncNameorKeyword							: NCName
+										| ALL
+										| ANY
+										| ANCESTOR
+										| ANCESTOR_OR_SELF
+										| AND
+										| AS
+										| ASCENDING
+										| AT
+										| ATTRIBUTE
+										| BASE_URI
+										| BY
+										| BOUNDARYSPACE
+										| CASE
+										| CAST
+										| CASTABLE
+										| CHILD
+										| COLLATION
+										| COMMENT
+										| CONSTRUCTION
+										| CONTENT
+										| COPY_NAMESPACES
+										| DECLARE
+										| DEFAULT
+										| DESCENDANT
+										| DESCENDANT_OR_SELF
+										| DESCENDING
+										| DIACRITICS
+										| DIFFERENT
+										| DISTANCE
+										| DIV
+										| DOCUMENT
+										| DOCUMENT_NODE
+										| ELEMENT
+										| ELSE
+										| ENCODING
+										| END
+										| ENTIRE
+										| EMPTY
+										| EMPTY_SEQUENCE
+										| EQ
+										| EVERY
+										| EXACTLY
+										| EXCEPT
+										| EXTERNAL
+										| FOLLOWING
+										| FOLLOWING_SIBLING
+										| FOR
+										| FROM
+										| FTAND
+										| FTCONTAINS
+										| FTNOT
+										| FTOPTION
+										| FTOR
+										| FUNCTION
+										| GE
+										| GREATEST
+										| GT
+										| IDIV
+										| IF
+										| IMPORT
+										| IN
+										| INHERIT
+										| INSENSITIVE
+										| INSTANCE
+										| INTERSECT
+										| IS
+										| ITEM
+										| LANGUAGE
+										| LAX
+										| LE
+										| LEAST
+										| LET
+										| LEVELS
+										| LOWERCASE
+										| LT
+										| MOD
+										| MODULE
+										| MOST
+										| NAMESPACE
+										| NE
+										| NODE
+										| NOINHERIT
+										| NOPRESERVE
+										| NOT
+										| OCCURS
+										| OF
+										| OPTION
+										| OR
+										| ORDER
+										| ORDERED
+										| ORDERING
+										| PARAGRAPH
+										| PARAGRAPHS
+										| PARENT
+										| PHRASE
+										| PRECEDING
+										| PRECEDING_SIBLING
+										| PRESERVE
+										| PROCESSING_INSTRUCTION
+										| RELATIONSHIP
+										| RETURN
+										| SAME
+										| SATISFIES
+										| SCHEMA
+										| SCHEMAATTRIBUTE
+										| SCHEMAELEMENT
+										| SCORE
+										| SELF
+										| SENSITIVE
+										| SENTENCES
+										| SENTENCE
+										| SOME
+										| STABLE
+										| START
+										| STEMMING
+										| STOP
+										| STRICT
+										| STRIP
+										| TEXT
+										| THESAURUS
+										| THEN
+										| TIMES
+										| TO
+										| TREAT
+										| TYPESWITCH
+										| UNION
+										| UNORDERED
+										| UPPERCASE
+										| VALIDATE
+										| VARIABLE
+										| VERSION
+										| WEIGHT
+										| WHERE
+										| WILDCARDS
+										| WINDOW
+										| WITH
+										| WITHOUT
+										| WORD
+										| WORDS
+										| XQUERY
+										;
+					
+*/
+
+
 //---------------------------------------------------- Lexer ---------------------------------------------------
 /*
 Productions with -LEX suffix are productions with similar named parser productions. The ones in the lexer generally emits more
@@ -839,7 +988,7 @@ TOKENSWITCH				: {System.out.println("State is: " + state);}({state==State.IN_EL
 						{System.out.println(XQFTParser.tokenNames[$type] + " xx"+ $n.text +"xx in state: " + state);}	
 						;
 
-fragment S                   		: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+		{$channel=HIDDEN;};
+fragment S                   		: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
 
 
 
@@ -930,7 +1079,7 @@ fragment PragmaLEX			: {prepareSubToken();}	LPRAGSi					{this.type=LPRAGSi; emit
 							  	)? 
 							  {prepareSubToken();}	RPRAGSi					{this.type=RPRAGSi; emit();}; 
 	fragment LPRAGSi			: '(#';										  
-	fragment PragmaContents		: ((SHARPSi ~ RPARSi)=> SHARPSi | ~(NotChar | SHARPSi))*;
+	fragment PragmaContents		: ({(input.LA(2)!=')')}?=> SHARPSi | {!(input.LA(1)=='#' && input.LA(2)==')')}?=>~(NotChar | SHARPSi))*;
 	fragment RPRAGSi 			: '#)';
 
 
@@ -939,7 +1088,7 @@ fragment Comment       		: LXQCOMMENTSi
 								| {input.LA(2)!=')'}?=>COLONSi							// Hide if next char is )
 								| {input.LA(2)!=':'}?=>LPARSi 							// Hide if next char is :
 								| ~(LPARSi | COLONSi | NotChar))* 						// ( and : have to be handled by two earlier alt
-						  	  RXQCOMMENTSi {$channel=HIDDEN;};
+						  	  RXQCOMMENTSi;
 	fragment LXQCOMMENTSi		: '(:';
 	fragment RXQCOMMENTSi		: ':)';
 
@@ -967,6 +1116,7 @@ fragment NCName              			: NCNameStartChar NCNameChar*;
 
 //All keywords and NCName. Made a fragmen so they will not be matched when in ElementContent or AttributeContent.
 fragment LexLiterals	: n=NCName{
+		if(state != State.IN_TAG){
 				 if($n.getText().equals("all")) this.tokenType=ALL;
 				 else if($n.getText().equals("any")) this.tokenType=ANY;
 				 else if($n.getText().equals("ancestor")) this.tokenType=ANCESTOR;
@@ -1108,6 +1258,9 @@ fragment LexLiterals	: n=NCName{
 				 else if($n.getText().equals("words")) this.tokenType=WORDS;
 				 else if($n.getText().equals("xquery")) this.tokenType=XQUERY;
 				 else this.tokenType=NCName;
+		}
+		else
+			this.tokenType=NCName;
 				};
 						
 // Sign sequences of two or more characters had to be made fragment so they won't be matched 
