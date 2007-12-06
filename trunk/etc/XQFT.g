@@ -955,7 +955,7 @@ TOKENSWITCH				: {System.out.println("State is: " + state);}(
 						  n=NumberLEX							{$type=this.tokenType;}
 						| {state==State.DEFAULT}?=>
 						  n=LexSigns							{$type=this.tokenType;}
-						| {state==State.DEFAULT}?=>
+						| {(state==State.DEFAULT || state==State.IN_TAG)}?=>
 						  n=S									{$type=S; $channel=HIDDEN;}
 						| {state==State.DEFAULT}?=>
 						  n=StringLiteral						{$type=StringLiteral;}
@@ -1035,11 +1035,11 @@ fragment ElementContent				: (PredefinedEntityRef | CharRef | ElementContentChar
 	fragment QuotAttrContentChar	: ({(input.LA(1)=='"' && input.LA(2)=='"')}?=> QUOTSi QUOTSi
 									| {(input.LA(1)=='{' && input.LA(2)=='{')}?=> LBRACESi LBRACESi 
 									| {(input.LA(1)=='}' && input.LA(2)=='}')}?=> RBRACSi RBRACSi 
-									| ~(NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ));
+									| ~(NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi));
 	fragment AposAttrContentChar	: ({(input.LA(1)=='\'' && input.LA(2)=='\'')}?=> APOSSi APOSSi
 									| {(input.LA(1)=='{' && input.LA(2)=='{')}?=> LBRACESi LBRACESi 
 									| {(input.LA(1)=='}' && input.LA(2)=='}')}?=> RBRACSi RBRACSi 
-									| ~(NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ));
+									| ~(NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ));
 //---------------------------------------- Enclosed composite tokens -------------------------------------------------------------
 
 
