@@ -27,5 +27,15 @@ Where \verb!QuotAttrContentChar! and \verb!AposAttrContentChar! is as defined ea
 \end{quote}
 Meaning that e.g. \verb![^"&]! equals \verb!Char - ["&]!. It is easy to see that these productions would overlap significantly, thus the lexer must be aware of the context of a incomming character to differanciate between the rules. We considered several alternatives, as discussed in the following sections.
 
+\subsection{Fuzzy Token Lexer}
+A fuzzy token lexer is typicaly a simple lexer which leaves the meaning of the tokens somewhat ambiguous. Such a lexer may e.g. have a production \verb!Letters! which bundles all consecutive letter characters into tokens. The tokens would then be refined to their appropriate type during the context sensitive parsing process. Problems would occur, though, if e.g. the parser encounters a \verb!Letters! token but is expecting a token consisting of both letters, numbers and other symbols. The parser would then need to do the comlicated task of splitting and merging such tokens.
+
+\subsection{Island Grammars}
+Island grammars is a strategy where ambiguous parts of a grammar is taken out of the main section and turned into its own subgrammar. This will lead to a case where the system will consist of more than one lexer. The parser would then, in the power of being aware of the context, switch between the lexers when necessary. Communication between the lexers is a must, as they need to know where to start scanning in the input stream. ANTLR does not support island grammars by default, allthough there is thoughs about implementing it in future versions \footnote{http://www.antlr.org/wiki/display/ANTLR3/island+grammar+formalization}.
+
 \subsection{State Driven Lexer}
-With this method the lexer would only sets of words when in an appropriate state. The acceptance of a word in one state may lead to a state transition. 
+With this method the lexer would only sets of words when in an appropriate state. The acceptance of a word in one state may lead to a state transition. I.e. the lexical recognition would be implemented as transition tables for a push-down automata. A suggestion for such transition tables for XQuery (not Full Text) are published as W3C working draft (\cite{createTokenizer}) with the following disclaimer:
+\begin{quote}
+The following tables were hand-constructed and have not, at the time of this writing, been exhaustively verified against all possible paths that may be legal in the XQuery and XPath EBNFs, which is to say, it is possible they contain bugs.
+\end{quote}
+We made a prototype of a state driven lexer for a tiny subset of XQuery, leading us to the conclusion that it would be a cumbersome task to implement for a the full XQuery Full Text grammar.
