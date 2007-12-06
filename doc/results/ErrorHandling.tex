@@ -1,6 +1,12 @@
 % ERROR HANDLING
 \section{Error handling}
 \subsection{Syntax errors}
-\subsection{Type errors}
+\label{sect:error_handling:syntax_errors}
+As mentioned in section \ref{sec:impl:errorhandling}, error handling was added
+by forcing ANTLR into throwing exceptions upwards to the calling program.
 
-\underline{\textbf{\LARGE //TODO:}}
+However, it quickly became appareant that some of the errors in the lexer were
+not discovered by the parser, and no exceptions were thrown for these errors. The
+lexer would simply print an error message to stderr, consume the offending
+character, and attempt recovery. This led to complications when running the
+XQuery Test Suite (see section \ref{sect:tests:manual}).

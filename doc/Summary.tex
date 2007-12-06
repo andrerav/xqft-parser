@@ -1,5 +1,29 @@
 \chapter{Summary}
 
+\section{Future work and improvements}
+\subsection{Improving lexer error handling}
+As noted in sections \ref{sect:error_handling:syntax_errors} and
+\ref{sec:impl:errorhandling}, the nextToken() method in the lexer base class
+would ``hijack'' lexical exceptions and handle them by printing an error message
+to stderr and then attempting to recover from the error by simply consuming the
+offending character and ignoring it in the following construction of tokens. It is 
+not immediately appareant, but the nextToken() method can not be overridden and
+forced to throw the exception onwards, due to the method signature itself which
+does not allow exceptions to be thrown. 
+
+However, one possible solution to this problem could be to override the
+nextToken() method and employ the observer design
+pattern to allow a
+simple and decoupled way of flagging an exception to the parser.
+
+\subsection{Type checking}
+Currently the parser will not perform type checking on the parsed queries. This
+is an essential feature and will be necessary to implement for the parser to be
+applicable in any realistic setting. A type checking system with proper type
+inference and synthesis would be a complex feature to implement in a language
+such as XQuery. 
+
+\label{sect:summary:future_work}
 \underline{\textbf{\LARGE //TODO:}}
 \begin{itemize}
 	\item Forbedringer/fremtidig arbeid:
@@ -10,14 +34,15 @@
 		\item sjekke noesting av xml-tagger, ikke krevd i spesifikasjonen, men kan vaere praktisk
 		\item lage flere lexere, og skifte mellom disse naar vi naa skifter state
 		(island grammars)
+		\item typesjekking
 	\end{itemize}
 	
 	\item \item stolte for mye paa EBNF fra W3C, sannsynlig ment for mennesker, ikke datamaskiner
 	\item arbeidsprossess? / metoder?
 \end{itemize}
 
-\textbf{\LARGE flyttet fra implementation - blindveier}
 
+\textbf{\LARGE flyttet fra implementation - blindveier}
 \subsection{Lexer vs. parser syntax}
 The Antlr parser generator can generate parsers and lexers from a single grammar
 file. The distinction between terminals and non-terminals is simply a matter of
@@ -34,6 +59,7 @@ lowercase letters.
 
 \subsection{Rewriting the W3C 'dash' operator}
 This operator is not supported in Antlr, so it was necessary to rewrite
-these productions using \emph{semantic predicates} where necessary.
+these productions using \emph{semantic predicates} (see section \ref{sect:antlr:semantic_preds}) where
+necessary.
 
 \underline{\textbf{\LARGE //ODOT:}}

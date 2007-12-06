@@ -126,6 +126,8 @@ public class XQueryTestSuite implements Observer {
         tokens.setTokenSource(lexer);
 
         XQFTParser parser = new XQFTParser(tokens);
+        
+        parser.setLexer(lexer);
 
         return parser;
     }
