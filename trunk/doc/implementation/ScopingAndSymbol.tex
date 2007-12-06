@@ -72,6 +72,12 @@ Atomic types are strongly typed except xs:untypedAtomic, xs:anyURI, as well as
 numerical types (xs:integer, xs:double, ..). Non-atomic simple types as well as
 complex types are both strongly typed.
 
+Proper type checking requires implementation of type inference and type
+synthesis. This requires a stable abstract syntax tree and advanced data flow
+analysis techniques to be feasible. Due to the inherent limitations in this
+project, type checking has not been implemented - however the possibility of
+this is discussed in section \ref{sect:summary:future_work}.
+
 \underline{\textbf{\LARGE //TODO:}}
 \begin{itemize}
   \item Dynamic vs. Static typing
