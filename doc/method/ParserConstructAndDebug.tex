@@ -46,4 +46,6 @@ implemented in this project.
 There are several approaches to debugging. Antlrworks \cite{antlrwrks00} is a
 simple tool for writing, testing and debugging Antlr grammars. The debugging
 interface is useful in that it draws a realtime step-by-step parse tree as the
-input is being parsed, as well as displaying a list of parser events.
+input is being parsed, as well as displaying a list of parser events. ANTLRWorks also helps eliminate grammar nondeterminisms by drawing the syntax diagram associated with a grammar and highlighting nondeterministic paths. A big drawback, though, is as the grammar grows bigger, the application tends to become unstable.
+
+When working properly, ANTLRWorks is a great tool for debuging the parser, but no so much for the lexer. It will show the tokens returned to the parser, but no information or decision path indicating the reason for returning just that token. A more appropriate tool for such a task would be the standard debuging environment in Eclipse.

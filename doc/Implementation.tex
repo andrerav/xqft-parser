@@ -3,22 +3,8 @@
 \underline{\textbf{\LARGE //TODO:}} skriv om.
 The main part of implementing the parser was to rewrite the EBNF provided by W3C in \cite{w3c01} to conform to ANTLR's syntax and semantics. In the following chapter we will present the reason why this was not a trivial task, the ambiguous terminals, and by which means we solved this. In addition we will present other ANTLR conforformity rewrites and finally our implementation of scoping and symbol tables.
 
-
+\underline{\textbf{\LARGE //ODOT:}}
 
 \input{implementation/RewriteGrammar}
 \input{implementation/ScopingAndSymbol}
 \input{implementation/ErrorHandling}
-
-\section{TODO}
-
-\underline{\textbf{\LARGE //TODO:}}
-\begin{itemize}
-\item Sammensatte omhyllede lexerregler (<? noe ?>, <!-- noe --> etc)
-\item Omskriving av lexer for a la produksjoner avgi mer enn ett token
-\item Omskriving av TokenStream for at den ikke skal buffre mer en strengt tatt nodvendig
-\item Kjempetvetydigheten med ElementContentChar / AttributeContentChar / NCName etc.
-\item Systemet med states, stack og parser snakker direkte til lexer
-\item Systemet med NCNames vs keywords
-\end{itemize}
-
-\underline{\textbf{\LARGE //ODOT:}}
