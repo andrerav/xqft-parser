@@ -189,7 +189,7 @@ XQUERY;
  	
 	}
 */
-	public void setLexer(Lexer lex)
+	public void setLexer(XQFTLexer lex)
 	{
 		this.lexer=lex;
 	}
