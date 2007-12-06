@@ -1,6 +1,5 @@
-\section{STATE}
+\section{Seperating Parser and Lexer Rules}
 
-\subsection{Converting grammar to proper casing}
 The ANTLR parser generator can generate parsers and lexers from a single grammar
 file. The distinction between terminals and non-terminals is simply a matter of
 convention, where terminals are assumed to start with \emph{uppercase} letters,
@@ -14,7 +13,8 @@ small and non-functional parser.
 This was mitigated by converting non-terminal productions to start with
 lowercase letters.
 
-\subsection{Rewriting the W3C 'dash' operator}
+
+\section{Rewriting the W3C 'dash' operator}
 This operator is not supported in Antlr, so it was necessary to rewrite
 these productions using \emph{semantic predicates} (see section \ref{sect:antlr:semantic_preds}) where
 necessary.
@@ -41,35 +41,30 @@ method with boolean return type, which for example then can be placed inside a
 external class. This makes it possible to add complex grammar logic without
 disturbing grammar brevity, if necessary.
 
-\subsection{Grammar LL(1) conformity}
-The grammar specification given by W3C is in a very compact and non-verbose
-form, annoted with links to certain constraints and issues that need to be kept
-in mind by anyone seeking to write a parser for XQuery and XPath. Here we will
-list these constraints and briefly explain their implications for the parser.
 
-\underline{\textbf{\LARGE //TODO:}} W3C spesifikasjonen holder ikke LL(1)
+\section{Parser Controlled State Driven Lexer}
 
-\subsection{Reserved keywords}
+\textbf{\LARGE //TODO:} Kjempetvetydigheten med ElementContentChar / AttributeContentChar / NCName etc.
+\textbf{\LARGE //TODO:} Systemet med states, stack og parser snakker direkte til lexer
 
-\underline{\textbf{\LARGE //TODO:}} dette maa flyttes eller skrives om.
+\subsection{UnbufferedCommenTokenStream}
+\textbf{\LARGE //TODO:}  Omskriving av TokenStream for at den ikke skal buffre mer en strengt tatt nodvendig
 
-A particular feature in XQuery is the lack of reserved keywords. This creates a
-series of problems when a lexer based on the verbatim grammar specification from
-the W3C is trying to recognize tokens. The culprit is the ambiguously defined
-terminal symbols. Some of the base character tokens intersect with each other
-and makes it hard if not impossible for the lexer to distinguish two different
-tokens composed of different token fragments with intersecting characters.
+\subsection{Reorganizing the Grammar}
 
-One possible solution to this problem was to eliminate ambiguities in the lexer.
-This approach was tried by finding and removing duplicate characters from token
-fragments, and then generalizing the tokens and adding semantic predicates to
-check for illegal and/or missing characters.
+\textbf{\LARGE //TODO:} Lage fragment av alt, TOKENSWITCH, semantiske predikat, etc.
 
-\underline{\textbf{\LARGE //ODOT:}} vaar parser har enna reserved keywords, flytte dette til future work?
+\section{Enclosed Composite Lexer Productions}
 
+\textbf{\LARGE //TODO:} fint for aa skille alternativer, kjipt at man ikke faar tak i deltokens... saa derfor ----v
 
+\subsection{Emiting More Than One Token Per Production}
+\textbf{\LARGE //TODO:} Omskriving av lexer for a la produksjoner avgi mer enn ett token
 
-\subsection{Nested comments}
+\subsection{PI, Pragma, XMLComment and CDATA Sections}
+\textbf{\LARGE //TODO:} Sammensatte omhyllede lexerregler (<? noe ?>, <!-- noe --> etc)
+
+\subsection{Nested XQuery Comments}
 XQuery allows nested comments, for example:
 \begin{verbatim}
 (: this is a comment (: this comment is nested :) :)
@@ -96,3 +91,34 @@ Comment : LXQCOMMENTSi
 \end{verbatim}
 
 \underline{\textbf{\LARGE //TODO:}} oppdater eksempelet over (NotChar) og semantisk predikat
+
+\section{Differentiating NCName and Keywords}
+
+\textbf{\LARGE //TODO:} Systemet med NCNames vs keywords
+
+\section{Extra-grammatical Constraints}
+
+\section{Resolving Non-determinisms in the Parser }
+
+\textbf{\LARGE //TODO:} pathExpr og itemtype occurenceindicator trengte syntaktiske predikat
+
+\section{Reserved Keywords}
+
+\underline{\textbf{\LARGE //TODO:}} dette maa flyttes eller skrives om.
+
+A particular feature in XQuery is the lack of reserved keywords. This creates a
+series of problems when a lexer based on the verbatim grammar specification from
+the W3C is trying to recognize tokens. The culprit is the ambiguously defined
+terminal symbols. Some of the base character tokens intersect with each other
+and makes it hard if not impossible for the lexer to distinguish two different
+tokens composed of different token fragments with intersecting characters.
+
+One possible solution to this problem was to eliminate ambiguities in the lexer.
+This approach was tried by finding and removing duplicate characters from token
+fragments, and then generalizing the tokens and adding semantic predicates to
+check for illegal and/or missing characters.
+
+\underline{\textbf{\LARGE //ODOT:}} vaar parser har enna reserved keywords, flytte dette til future work?
+
+
+
