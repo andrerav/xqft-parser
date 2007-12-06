@@ -20,8 +20,14 @@ simple and decoupled way of flagging an exception to the parser.
 Currently the parser will not perform type checking on the parsed queries. This
 is an essential feature and will be necessary to implement for the parser to be
 applicable in any realistic setting. A type checking system with proper type
-inference and synthesis would be a complex feature to implement in a language
-such as XQuery. 
+inference and synthesis could be a complex feature to implement in a language
+such as XQuery, and might require considerable effort, especially in quality
+insurance. 
+
+\subsection{Scoping and symbol tables on AST}
+Currently the scoping and symbol tables are being used directly in the grammar -
+that is, during parse time. It would be benefitial to move this into being
+performed in run time, and combine with type checking functionality.
 
 \label{sect:summary:future_work}
 \underline{\textbf{\LARGE //TODO:}}
@@ -34,10 +40,10 @@ such as XQuery.
 		\item sjekke noesting av xml-tagger, ikke krevd i spesifikasjonen, men kan vaere praktisk
 		\item lage flere lexere, og skifte mellom disse naar vi naa skifter state
 		(island grammars)
-		\item typesjekking
 	\end{itemize}
 	
-	\item \item stolte for mye paa EBNF fra W3C, sannsynlig ment for mennesker, ikke datamaskiner
+	\item stolte for mye paa EBNF fra W3C, sannsynlig ment for mennesker, ikke
+	datamaskiner
 	\item arbeidsprossess? / metoder?
 \end{itemize}
 
