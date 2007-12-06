@@ -1,13 +1,6 @@
-\section{Ambiguous Terminals}
+\section{STATE}
 
 
-
-\subsection{Rewriting the W3C 'dash' operator}
-In their specification, the W3c uses a dash operator, which has the following
-semantic meaning in a grammar (from \cite{w3c03}, section 6):
-\begin{quote}
-A - B: matches any string that matches A but does not match B.
-\end{quote}
 This operator is not supported in Antlr, so it was necessary to rewrite
 these productions using \emph{semantic predicates} where necessary.
 \\ \underline{\textbf{\LARGE //TODO:}} se over dette igjen: /* Thankfully,
