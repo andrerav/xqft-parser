@@ -33,7 +33,6 @@ performed in run time, and combine with type checking functionality.
 \underline{\textbf{\LARGE //TODO:}}
 \begin{itemize}
 	\item Forbedringer/fremtidig arbeid:
-	
 	\begin{itemize}
 		\item lage lexer for haand, kan bli mindre kompleks
 		\item ingen reserved keywords - i hennhold til spesifikasjonen
@@ -49,23 +48,6 @@ performed in run time, and combine with type checking functionality.
 
 
 \textbf{\LARGE flyttet fra implementation - blindveier}
-\subsection{Lexer vs. parser syntax}
-The Antlr parser generator can generate parsers and lexers from a single grammar
-file. The distinction between terminals and non-terminals is simply a matter of
-convention, where terminals are assumed to start with uppercase letters, and
-non-terminals are assumed to start with lowercase letters.
 
-In the grammar specified by the W3C, all the productions (terminals and
-non-terminals) all start with uppercase letters. Initially this caused some
-confusion, because this grammar naturally generated a very big lexer and a very
-small and non-functional parser.
-
-This was mitigated by converting non-terminal productions to start with
-lowercase letters.
-
-\subsection{Rewriting the W3C 'dash' operator}
-This operator is not supported in Antlr, so it was necessary to rewrite
-these productions using \emph{semantic predicates} (see section \ref{sect:antlr:semantic_preds}) where
-necessary.
 
 \underline{\textbf{\LARGE //ODOT:}}

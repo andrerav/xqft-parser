@@ -1,9 +1,16 @@
-\section{Tests}
+\section{Test results}
 \subsection{Unit tests}
 Unit testing was used solely for regression testing, so they did not directly 
 produce any results of particular interest.
 
-\subsection{Manual tests}
+However, it is important to note that after adding a custom TokenStream class to
+allow the lexer to be under control of the parser, the gUnit framework was no
+longer capable of executing its test suite. The reason for this is
+incompatability with the custom TokenStream class. In the current state of
+affairs, gUnit will simply block and wait for more data, leaving the programing
+hanging indefinitely. 
+
+\subsection{Manual coverage tests}
 \label{sect:tests:manual}
 To test for standards compliance, we created a manual test harness for running
 the complete XQuery Test Suite\cite{w3c05} consisting of 12584 queries. Our
