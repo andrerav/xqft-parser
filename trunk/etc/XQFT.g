@@ -932,11 +932,12 @@ eg. QUESTIONSi = '?' and DBLSLASHSi = '//'
 */
 
 
-TOKENSWITCH				: {System.out.println("State is: " + state);}({state==State.IN_ELEMENT}?=>
+TOKENSWITCH				: {System.out.println("State is: " + state);}(
+						  {state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE}?=>
                           n=CDataSectionLEX						// emits subtokens
-						| {state==State.IN_ELEMENT}?=>
+						| {state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE}?=>
 						  n=DirPIConstructor					// emits subtokens
-						| {state==State.IN_ELEMENT}?=>
+						| {state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE}?=>
 						  n=DirCommentConstLEX					// emits subtokens
 						| {state==State.IN_ELEMENT}?=>
 						  n=LENDTAGSi 							{$type=LENDTAGSi;}
@@ -1063,7 +1064,7 @@ fragment DirCommentConstLEX			: {prepareSubToken();}	LCOMMENTSi 			{this.type=LC
 						  	  		  {prepareSubToken();}	DirCommentContent	{this.type=DirCommentContent; emit();}
 						  	  		  {prepareSubToken();}	RCOMMENTSi			{this.type=RCOMMENTSi; emit();};
 	fragment LCOMMENTSi 				: '<!--';
-	fragment DirCommentContent			: ((MINUSSi ~MINUSSi)=> MINUSSi | ~(NotChar | MINUSSi))* ;
+	fragment DirCommentContent			: ({(input.LA(2)!='-')}?=> MINUSSi | {!(input.LA(1)=='-' && input.LA(2)=='-')}?=>~(NotChar | MINUSSi))* ;
 	fragment RCOMMENTSi					: '-->';
 
 
