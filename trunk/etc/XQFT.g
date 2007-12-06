@@ -189,6 +189,10 @@ XQUERY;
  	
 	}
 */
+	public void setLexer(Lexer lex)
+	{
+		this.lexer=lex;
+	}
 
     protected void mismatch(IntStream input, int ttype, BitSet follow)
         throws RecognitionException
@@ -1043,7 +1047,7 @@ fragment CDataSectionLEX			: {prepareSubToken();} 	LCDATASi 		{this.type=LCDATAS
 									  {prepareSubToken();} 	CDataContents 	{this.type=CDataContents; emit();}
 							  		  {prepareSubToken();} 	RCDATASi 		{this.type=RCDATASi; emit();};
 	fragment LCDATASi					: '<![CDATA[';
-	fragment CDataContents				: ((RBRACKSi ~RBRACKSi)=> RBRACKSi | (RBRACKSi RBRACKSi ~'>')=> RBRACKSi | ~(RBRACKSi | NotChar))* ;
+	fragment CDataContents				: ({!(input.LA(2)==']' && input.LA(3)=='>')}?=> RBRACKSi | ~(RBRACKSi | NotChar))* ;
 	fragment RCDATASi 					: ']]>';
 
 
@@ -1056,7 +1060,7 @@ fragment DirPIConstructor			: {prepareSubToken();}	LPISi			{this.type=LPISi; emi
 	fragment PiTarget					: n=Name{ !$n.getText().equalsIgnoreCase("XML") }?;
 		fragment Name       				: (Letter | UNDERSCORESi | COLONSi) (NameChar)*;
 		fragment NameChar					: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender;
-	fragment DirPiContents				: ((QUESTIONSi ~GTSi)=>QUESTIONSi | ~(NotChar | QUESTIONSi))*;
+	fragment DirPiContents				: ({(input.LA(2)!='>')}?=>QUESTIONSi | ~(NotChar | QUESTIONSi))*;
 	fragment RPISi 						: '?>';
 
 
@@ -1064,7 +1068,7 @@ fragment DirCommentConstLEX			: {prepareSubToken();}	LCOMMENTSi 			{this.type=LC
 						  	  		  {prepareSubToken();}	DirCommentContent	{this.type=DirCommentContent; emit();}
 						  	  		  {prepareSubToken();}	RCOMMENTSi			{this.type=RCOMMENTSi; emit();};
 	fragment LCOMMENTSi 				: '<!--';
-	fragment DirCommentContent			: ({(input.LA(2)!='-')}?=> MINUSSi | {!(input.LA(1)=='-' && input.LA(2)=='-')}?=>~(NotChar | MINUSSi))* ;
+	fragment DirCommentContent			: ({(input.LA(2)!='-')}?=> MINUSSi | ~(NotChar | MINUSSi))* ;
 	fragment RCOMMENTSi					: '-->';
 
 
@@ -1080,7 +1084,7 @@ fragment PragmaLEX			: {prepareSubToken();}	LPRAGSi					{this.type=LPRAGSi; emit
 							  	)? 
 							  {prepareSubToken();}	RPRAGSi					{this.type=RPRAGSi; emit();}; 
 	fragment LPRAGSi			: '(#';										  
-	fragment PragmaContents		: ({(input.LA(2)!=')')}?=> SHARPSi | {!(input.LA(1)=='#' && input.LA(2)==')')}?=>~(NotChar | SHARPSi))*;
+	fragment PragmaContents		: ({(input.LA(2)!=')')}?=> SHARPSi | ~(NotChar | SHARPSi))*;
 	fragment RPRAGSi 			: '#)';
 
 
