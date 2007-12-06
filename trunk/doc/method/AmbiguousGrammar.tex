@@ -10,7 +10,7 @@ NCNameChar                 ::= Letter | Digit | '.' | '-' | '_'
 NCNameStartChar            ::= Letter | '_'
 \end{verbatim}
 Where \verb!Char! denotes all possible legal characters in XQuery, \verb!Digits! is all possible number characters and \verb!Letter! denotes all possible letter characters. In their specification, the W3C uses a dash operator, which has the following
-semantic meaning in a grammar (from \cite{w3c03}, section 6):
+semantic meaning in a grammar (\cite{w3c03}, section 6):
 \begin{quote}
 A - B: matches any string that matches A but does not match B.
 \end{quote}
@@ -21,8 +21,11 @@ dirAttributeValue          ::= ('"' (QuotAttrContentChar)* '"')
 StringLiteral              ::= ('"' ([^"&])* '"') 
                              | ("'" ([^'&])* "'")
 \end{verbatim}
-Where \verb!QuotAttrContentChar! and \verb!AposAttrContentChar! is as defined earlier, and the hat operator (\verb!^!) is defined as follows:
+Where \verb!QuotAttrContentChar! and \verb!AposAttrContentChar! is as defined earlier, and the hat operator (\verb!^!) is defined as follows(\cite{w3c03}, section 6):
 \begin{quote}
-[^abc] matches any Char with a value not among the characters given.
+[\^{}abc] matches any Char with a value not among the characters given.
 \end{quote}
-Thus \verb![^"&]! is equal \verb!Char - ["&]!.
+Meaning that e.g. \verb![^"&]! equals \verb!Char - ["&]!. It is easy to see that these productions would overlap significantly, thus the lexer must be aware of the context of a incomming character to differanciate between the rules. We considered several alternatives, as discussed in the following sections.
+
+\subsection{State Driven Lexer}
+With this method the lexer would only sets of words when in an appropriate state. The acceptance of a word in one state may lead to a state transition. 
