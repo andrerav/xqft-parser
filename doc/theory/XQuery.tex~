@@ -1,0 +1,49 @@
+% Kort utledning om XQuery
+\section{XQuery / XPath with full text extensions}
+\subsection{General}
+XML is a markup language and a form of data representation capable of storing data from a vast number of diverse data sources. These data sources include relational databases and in particular data structures bearing a resemblance to trees. XQuery is primarily an XML document query language, developed as an recommendation by the World Wide Web Consortium\cite{W3C00} (abbreviated W3C). This implies that XQuery is capable of querying any data structure which may be represented as an XML document.
+
+The full text extensions to Xquery 1.0 and Xpath 2.0 employs tokenisation and phrase search to provide more accurate search results, and generally giving the benefits known from modern search engines. This is also believed to provide better support for diverse languages, and more accurate search queries (see \cite{W3C02}, "Introduction").
+
+\subsection{Xpath / path expressions}
+XPath is, as well as a recommendation by the W3C \cite{W3C01}, a subset of Xquery. However XPath predates XQuery and is also limited only to path expressions, which includes axis specifiers for addressing nodes in a document as well as node tests, predicates, and arithmetic operators.
+
+Consider this trivial example, from \cite{W3S00}:
+/bookstore/book[price>35]/title
+This strongly resembles a reference to a file or folder on a standard Unix file system, with the exception of the conditional expression enclosed within angular brackets. In terms of Xpath, this particular example would translate into "fetch all title nodes where the price attribute is higher than 35".
+
+\subsection{FLWOR}
+FLWOR is an integral part of XQuery, and can be compared to the select-from-where in SQL by a loose analogy. The abbreviation FLWOR means:
+\begin{itemize}
+\item For - imperative for-loop for iterating over tuples
+\item Let - assignment of tuples to variables
+\item Where - conditional filtering of tuples
+\item Order by - ordering of the resulting tuples
+\item Return - not to be mistaken with return statements from imperative languages. Returning in this context is more similar to yielding known from functional programming. The return statement is executed once for every iteration
+\end{itemize}
+This example from \cite{STYL00} illustrates the usage of FLWOR, and compares it to its SQL counterpart:
+
+\begin{verbatim}
+/* FLWOR example */
+for \$v in \$doc//video
+where \$v/year = 1999
+return \$v/title
+
+/* Corresponding SQL example */
+SELECT v.title FROM video v WHERE v.year = 1999
+\end{verbatim}
+
+\subsection{Full text extensions}
+The Xquery 1.0  and Xpath 2.0 specifications have been extended with full text capabilities (see \cite{W3C02}), which enables the use of stemming, thesaurus, and similar tools for full-text queries. Specifically, the full-text extensions extend Xquery 1.0 and Xpath 2.0 in the following ways:
+\begin{itemize}
+\item A new and essential expression, FTContainsExpr, as well as new operators such as FTOr and FTAnd
+\item The addition of score variables to FLWOR expressions, for keeping track of search result scores, also known as rank, as seen in most modern search engines
+\item Static context declarations for full-text match options to the query prologue
+\end{itemize}
+
+\subsection{Precedence}
+\underline{\textbf{\LARGE //TODO}}
+\\
+presedens er relevant i forhold til bygging av AST - men det er gitt implisitt i gramatikken?
+\\
+\underline{\textbf{\LARGE //TODO}}

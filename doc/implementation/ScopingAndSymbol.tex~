@@ -36,7 +36,7 @@ illustrates the relationship between the Scope, SymTab, and Symbol classes:
 \clearpage
 \begin{figure}[!h]
   \centering
-    \includegraphics[scale=0.6]{img/uml1}
+    \includegraphics[scale=0.8]{img/uml1}
   \caption{Simplified UML overview of classes related to scope and symbol table}
 \end{figure}
 
