@@ -5,7 +5,7 @@ options {
   // k = 1;
     output=AST;
     ASTLabelType=CommonTree;
-}
+} 
 tokens{
 ALL;
 ANY;
@@ -158,18 +158,20 @@ AST_QUANTIFIEDEXPR;
 AST_TYPESWITCHEXPR;
 AST_CASECLAUSE;
 AST_IFEXPR;
-AST_OREXPR;
-AST_ANDEXPR;
+AST_FTSELECTION;
+AST_FTPOSFILTER;
 
 
 }
 
 @parser::header {
 	package no.ntnu.xqft.parse;
+    import extra.*;
 }
 
 @lexer::header {
 	package no.ntnu.xqft.parse;	
+    import extra.*;
 }
 
 @parser::members {
@@ -177,7 +179,6 @@ AST_ANDEXPR;
 	/* Root scope */
 	//Scope currentScope = new Scope();	   // @init-ting her ogsaa
 	XQFTLexer lexer;
-	/*
 	public void setTokenStream(TokenStream input) {
 				String inputz =  "<html> \n" +                                                   //1
                         "{ \n"+                                                         //2
@@ -203,7 +204,6 @@ AST_ANDEXPR;
 		super.setTokenStream(tokenz);
  	
 	}
-*/
 	public void setLexer(XQFTLexer lex)
 	{
 		this.lexer=lex;
@@ -288,7 +288,8 @@ module                     				: versionDecl? (libraryModule | mainModule);
 	mainModule                  			: prolog queryBody;
 //		prolog#									: #PAA EGET#
 		queryBody                   			: expr;
-			expr                        			: exprSingle (COMMASi exprSingle)*;
+			expr                        			: exprSingle (COMMASi exprSingle)* 
+                                                        -> exprSingle+;
 //				exprSingle#								: #PAA EGET#
 												
 
@@ -500,7 +501,7 @@ exprSingle                  			: fLWORExpr
 
 //------------------------------------------------------- ComparisonExpr -------------------------------------
 
-comparisonExpr              			: ftContainsExpr ( (valueComp | generalComp | nodeComp) ftContainsExpr )?;
+comparisonExpr              			: ftContainsExpr ( (valueComp | generalComp | nodeComp)^ ftContainsExpr )?;
 
 
 	ftContainsExpr              			: rangeExpr ( FTCONTAINS^ ftSelection ftIgnoreOption? )?;
@@ -510,11 +511,11 @@ comparisonExpr              			: ftContainsExpr ( (valueComp | generalComp | nod
 				multiplicativeExpr          			: unionExpr ( (STARSi | DIV | IDIV | MOD)^ unionExpr )*;
 					unionExpr                   			: intersectExceptExpr ( (UNION | PIPESi)^ intersectExceptExpr )*;
 						intersectExceptExpr        				: instanceofExpr ( (INTERSECT | EXCEPT)^ instanceofExpr )*;
-							instanceofExpr              			: treatExpr ( INSTANCE OF sequenceType )?;
-								treatExpr                   			: castableExpr ( TREAT AS sequenceType )?;
-									castableExpr                			: castExpr ( CASTABLE AS singleType )?;
-										castExpr                    			: unaryExpr ( CAST AS singleType )?;
-											unaryExpr                   			: (MINUSSi | PLUSSi)* valueExpr;
+							instanceofExpr              			: treatExpr ( INSTANCE^ OF! sequenceType )?;
+								treatExpr                   			: castableExpr ( TREAT^ AS! sequenceType )?;
+									castableExpr                			: castExpr ( CASTABLE^ AS! singleType )?;
+										castExpr                    			: unaryExpr ( CAST^ AS! singleType )?;
+											unaryExpr                   			: ((MINUSSi | PLUSSi)*)^ valueExpr;
 //												valueExpr# 								: #PAA EGET#
 											singleType                  			: atomicType QUESTIONSi?;
 												atomicType                  			: qName;
@@ -527,25 +528,24 @@ comparisonExpr              			: ftContainsExpr ( (valueComp | generalComp | nod
 		
 		ftIgnoreOption              			: WITHOUT CONTENT unionExpr;
 //			unionExpr#								: #SE DETTE -> ftContainsExpr->rangeExpr->additiveExpr->miltiplicativeExpr->unionExpr#
-	
-	
+
+
 	valueComp                   			: EQ | NE | LT | LE | GT | GE;
-	
-	
+
+
 	generalComp                 			: EQSi | NEQSi | LTSi | LTOREQSi | GTSi | GTOREQSi;
-	
-	
-	nodeComp                    			: IS | NODEBEFORESi | NODEAFTERSi;	
-	
+
+
+	nodeComp                    			: IS | NODEBEFORESi | NODEAFTERSi;
+
 //--------------------------------------------------------- FtSelection ---------------------------------------------
 
-ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?;
-
-
-	ftOr                        			: ftAnd ( FTOR ftAnd )*;
-		ftAnd                       			: ftMildNot ( FTAND ftMildNot )*;
-			ftMildNot                   			: ftUnaryNot ( NOT IN ftUnaryNot )*;
-				ftUnaryNot                  			: (FTNOT)? ftPrimaryWithOptions;
+ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?
+												-> ^(AST_FTSELECTION ftOr ftPosFilter* ^(WEIGHT rangeExpr)?);
+	ftOr                        			: ftAnd ( FTOR^ ftAnd )*;
+		ftAnd                       			: ftMildNot ( FTAND^ ftMildNot )*;
+			ftMildNot                   			: ftUnaryNot ( NOT^ IN! ftUnaryNot )*;
+				ftUnaryNot                  			: (FTNOT^)? ftPrimaryWithOptions;
 					ftPrimaryWithOptions        			: ftPrimary ftMatchOptions?;
 					
 						ftPrimary                   			: ftWords ftTimes? 
@@ -557,15 +557,15 @@ ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?;
 									literal                     			: numericLiteral | StringLiteral;
 										numericLiteral              			: IntegerLiteral | DecimalLiteral | DoubleLiteral;
 								ftAnyallOption              			: (ANY WORD?) | (ALL WORDS?) | PHRASE;
-							ftTimes                     			: OCCURS ftRange TIMES;
+							ftTimes                     			: OCCURS! ftRange TIMES!;
 								ftRange                     			: (EXACTLY additiveExpr)
                         												| (AT LEAST additiveExpr)
                        					 								| (AT MOST additiveExpr)
 										                                | (FROM additiveExpr TO additiveExpr);
 //									additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#
 //							ftSelection# 							: #PAA EGET (DETTE)#
-							ftExtensionSelection        			: pragma+ LBRACESi ftSelection? RBRACSi;
-								pragma                      			: LPRAGSi qName PragmaContents? RPRAGSi;
+							ftExtensionSelection        			: pragma+ LBRACESi! ftSelection? RBRACSi!;
+								pragma                      			: LPRAGSi! qName PragmaContents? RPRAGSi!;
 //								ftSelection# 							: #PAA EGET (DETTE)#
 								
 //						ftMatchOptions              			: ftMatchOption+;     						/* xgc: multiple-match-options */
@@ -666,12 +666,13 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 											| (SLASHSi relativePathExpr) => SLASHSi relativePathExpr
 											| SLASHSi
 											| relativePathExpr;
-		relativePathExpr            			: stepExpr ((SLASHSi | DBLSLASHSi) stepExpr)*;		
+		relativePathExpr            			: stepExpr ((SLASHSi | DBLSLASHSi)^ stepExpr)*;
+
 			stepExpr                    			: axisStep
 													| filterExpr
 													;
 //				filterExpr#								: #PAA EGET#
-			axisStep                    			: (reverseStep | forwardStep) predicateList;
+			axisStep                    			: (reverseStep | forwardStep)^ predicateList;
 			
 				reverseStep                 			: reverseAxis nodeTest | abbrevReverseStep;
 					reverseAxis                 			: (PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF) DBLCOLONSi;
@@ -695,8 +696,8 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 					abbrevForwardStep           			: ATSi? nodeTest;                	
                 
                 predicateList               			: predicate*;     									
-                	predicate                   			: LBRACKSi expr RBRACKSi;
-//						expr                        			: exprSingle (COMMASi exprSingle)*;
+                	predicate                   			: LBRACKSi! expr RBRACKSi!;
+//						expr                        			: exprSingle (COMMASi exprSingle)*
 //							exprSingle#								: #PAA EGET#            									
 				
     
