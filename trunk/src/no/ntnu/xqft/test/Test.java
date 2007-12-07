@@ -8,11 +8,12 @@ import java.io.File;
 import java.io.FileReader;
 
 import no.ntnu.xqft.parse.UnbufferedCommonTokenStream;
-import no.ntnu.xqft.parse.XQFTLexer;
+import no.ntnu.xqft.parse.*;
 import no.ntnu.xqft.parse.XQFTParser;
 
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
+import org.antlr.runtime.tree.*;
 
 /**
  * @author andreas
@@ -26,8 +27,10 @@ abstract class Test {
         XQFTLexer lexer = new XQFTLexer(cs);
         UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
         tokens.setTokenSource(lexer);
-
+        
         XQFTParser parser = new XQFTParser(tokens);
+        
+        parser.setTreeAdaptor(new XQFTTreeAdaptor());
         
         parser.setLexer(lexer);
 
