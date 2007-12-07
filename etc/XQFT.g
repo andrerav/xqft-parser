@@ -1,11 +1,11 @@
- grammar XQFT; 
- 
-//options { 
+grammar XQFT;
+
+options { 
 //filter=true;
   // k = 1;
-    //output=AST;
-    //ASTLabelType=Object;
-//}
+    output=AST;
+    ASTLabelType=CommonTree;
+}
 tokens{
 ALL;
 ANY;
@@ -147,6 +147,21 @@ WITHOUT;
 WORD;
 WORDS;
 XQUERY;
+
+/* Imaginary tokens */
+AST_FORCLAUSE;
+AST_LETCLAUSE;
+AST_ORDERBYCLAUSE;
+AST_WHERECLAUSE;
+AST_RETURNCLAUSE;
+AST_QUANTIFIEDEXPR;
+AST_TYPESWITCHEXPR;
+AST_CASECLAUSE;
+AST_IFEXPR;
+AST_OREXPR;
+AST_ANDEXPR;
+
+
 }
 
 @parser::header {
@@ -400,8 +415,10 @@ exprSingle                  			: fLWORExpr
                                 		;
 	fLWORExpr                   			: (forClause | letClause)+ whereClause? orderByClause? RETURN exprSingle;
 	
-		forClause                   			: FOR DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle 
-													(COMMASi DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle)*;
+		forClause                   			: FOR forClauseTupletDef (COMMASi forClauseTupletDef)*
+                                                    -> ^(AST_FORCLAUSE forClauseTupletDef+);
+            forClauseTupletDef                  : DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle;
+
 			varName returns [String name]          : qn=qName {$name = $qn.text;};
 //			typeDeclaration             			: AS sequenceType;
 //				sequenceType# 							: #PAA EGET#
@@ -411,10 +428,12 @@ exprSingle                  			: fLWORExpr
 //				varName                    				: qName; 
 //			exprSingle# 									: #PAA EGET (DETTE)#
             
-		letClause                           : LET varBinding (COMMASi varBinding)*;
+		letClause                           : LET varBinding (COMMASi varBinding)*
+                                                    -> ^(AST_LETCLAUSE varBinding+);
 		varBinding :
-			(DOLLARSi v1=varName typeDeclaration? /*{ this.currentScope.defineVariable($v1.name); }*/ | SCORE DOLLARSi v2=varName /*{ this.currentScope.defineVariable($v2.name); }*/)
-            ASSIGNSi exprSingle;
+			(DOLLARSi v=varName typeDeclaration? | SCORE DOLLARSi v=varName )
+            ASSIGNSi exprSingle
+            -> SCORE? $v typeDeclaration? exprSingle;
 
 
 //			varName                    				: qName; 
@@ -424,11 +443,16 @@ exprSingle                  			: fLWORExpr
 //			ftScoreVar                  			: SCORE DOLLARSi varName; 
 //				varName                    				: qName; 
 		
-		whereClause                 		: WHERE exprSingle;	
+		whereClause                 		: WHERE exprSingle
+                                                -> ^(AST_WHERECLAUSE exprSingle);
 //			exprSingle#							: #PAA EGET (DETTE)#
 			
-		orderByClause               		: (ORDER BY | STABLE ORDER BY) orderSpecList;
-			orderSpecList               		: orderSpec (COMMASi orderSpec)*;
+		orderByClause               		: (ORDER BY | STABLE ORDER BY) orderSpecList
+                                                    -> ^(AST_ORDERBYCLAUSE STABLE? orderSpecList);
+
+			orderSpecList               		: orderSpec (COMMASi orderSpec)*
+                                                    -> orderSpec+;
+
 				orderSpec                   		: exprSingle orderModifier;
 //					exprSingle#							: #PAA EGET (DETTE)#
 					orderModifier               		: (ASCENDING | DESCENDING)? (EMPTY (GREATEST | LEAST))? (COLLATION uriLiteral)?;
@@ -437,16 +461,23 @@ exprSingle                  			: fLWORExpr
 //		exprSingle# 						: #PAA EGET (DETTE)#
 		
 
-	quantifiedExpr              			: (SOME | EVERY) DOLLARSi varName typeDeclaration? IN exprSingle 
-												(COMMASi DOLLARSi varName typeDeclaration? IN exprSingle)* SATISFIES exprSingle;			
+	quantifiedExpr              			: quant=(SOME | EVERY) quantifiedExprTupleDef
+												(COMMASi quantifiedExprTupleDef)* SATISFIES exprSingle
+                                                -> ^(AST_QUANTIFIEDEXPR $quant quantifiedExprTupleDef+ exprSingle);
+
+        quantifiedExprTupleDef              : DOLLARSi varName typeDeclaration? exprSingle
+                                                -> varName typeDeclaration? exprSingle; /* TODO: Add imaginary token? */
+
 //		#SE forClause# :
-		
-	
+
 	typeswitchExpr              			: TYPESWITCH LPARSi expr RPARSi caseClause+ 
-												DEFAULT (DOLLARSi varName)? RETURN exprSingle;
+												DEFAULT (DOLLARSi varName)? RETURN exprSingle
+                                                -> ^(AST_TYPESWITCHEXPR expr caseClause+ varName? exprSingle);
+
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
 //			exprSingle# 							: #PAA EGET (DETTE)#
-		caseClause                  			: CASE (DOLLARSi varName AS)? sequenceType RETURN exprSingle;
+		caseClause                  			: CASE (DOLLARSi varName AS)? sequenceType RETURN exprSingle
+                                                    -> ^(AST_CASECLAUSE varName? sequenceType exprSingle);
 //			varName                    				: qName; 
 //			sequenceType#							: #PAA EGET#
 //			exprSingle# 							: #PAA EGET (DETTE)#
@@ -454,14 +485,16 @@ exprSingle                  			: fLWORExpr
 //		exprSingle# 							: #PAA EGET (DETTE)#
 	
 	
-	ifExpr                      			: IF LPARSi expr RPARSi THEN exprSingle ELSE exprSingle;
+	ifExpr                      			: IF LPARSi expr RPARSi THEN exprSingle ELSE exprSingle
+                                                -> ^(AST_IFEXPR expr exprSingle exprSingle);
+
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
 //			exprSingle#								: #PAA EGET (DETTE)#
 //		exprSingle# 								: #PAA EGET (DETTE)#
 		
 		
-	orExpr                      			: andExpr ( OR andExpr )*;
-		andExpr                     			: comparisonExpr ( AND comparisonExpr )*;
+	orExpr                      			: andExpr ( OR^ andExpr )*;
+		andExpr                     			: comparisonExpr ( AND^ comparisonExpr )*;
 //			comparisonExpr# 						: #PAA EGET#
 			
 
@@ -470,13 +503,13 @@ exprSingle                  			: fLWORExpr
 comparisonExpr              			: ftContainsExpr ( (valueComp | generalComp | nodeComp) ftContainsExpr )?;
 
 
-	ftContainsExpr              			: rangeExpr ( FTCONTAINS ftSelection ftIgnoreOption? )?;
+	ftContainsExpr              			: rangeExpr ( FTCONTAINS^ ftSelection ftIgnoreOption? )?;
 	
-		rangeExpr                   			: additiveExpr ( TO additiveExpr )?;
-			additiveExpr                			: multiplicativeExpr ( (PLUSSi | MINUSSi) multiplicativeExpr )*;
-				multiplicativeExpr          			: unionExpr ( (STARSi | DIV | IDIV | MOD) unionExpr )*;
-					unionExpr                   			: intersectExceptExpr ( (UNION | PIPESi) intersectExceptExpr )*;
-						intersectExceptExpr        				: instanceofExpr ( (INTERSECT | EXCEPT) instanceofExpr )*;
+		rangeExpr                   			: additiveExpr ( TO^ additiveExpr )?;
+			additiveExpr                			: multiplicativeExpr ( (PLUSSi | MINUSSi)^ multiplicativeExpr )*;
+				multiplicativeExpr          			: unionExpr ( (STARSi | DIV | IDIV | MOD)^ unionExpr )*;
+					unionExpr                   			: intersectExceptExpr ( (UNION | PIPESi)^ intersectExceptExpr )*;
+						intersectExceptExpr        				: instanceofExpr ( (INTERSECT | EXCEPT)^ instanceofExpr )*;
 							instanceofExpr              			: treatExpr ( INSTANCE OF sequenceType )?;
 								treatExpr                   			: castableExpr ( TREAT AS sequenceType )?;
 									castableExpr                			: castExpr ( CASTABLE AS singleType )?;
@@ -1271,7 +1304,7 @@ fragment LexLiterals	: n=NCName{
 // Sign sequences of two or more characters had to be made fragment so they won't be matched 
 // when in ElementContent or AttributeContent						
 fragment LexSigns		: NODEBEFORESi 				{ this.tokenType=NODEBEFORESi;} 			
-						| LTOREQSi 					{ this.tokenType=LTOREQSi;} 				
+						| LTOREQSi 	    			{ this.tokenType=LTOREQSi;} 				
 						| GTOREQSi 					{ this.tokenType=GTOREQSi;} 				
 						| NODEAFTERSi 				{ this.tokenType=NODEAFTERSi;} 			
 						| DBLCOLONSi 				{ this.tokenType=DBLCOLONSi;} 			
