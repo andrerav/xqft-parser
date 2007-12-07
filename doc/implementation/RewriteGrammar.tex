@@ -16,10 +16,10 @@ Where \verb!NCName! is another terminal, thus creating an easily solvable ambigu
 \begin{verbatim}
 qName             : (NCName COLONSi)? NCName;
 \end{verbatim}
-There is however a reason for \embph{not} defining \verb!QName! as a terminal: by doing so, ANTLR would have generated token containing the whole \verb!QName!, meaning that e.g. if one is only interested in the localpart, one would have to manually split the text.
+There is however a reason for \emph{not} defining \verb!QName! as a terminal: by doing so, ANTLR would have generated token containing the whole \verb!QName!, meaning that e.g. if one is only interested in the localpart, one would have to manually split the text.
 
 \subsection{Rewriting the W3C 'dash' and 'hat' operators}
-The 'hat' operator (section \ref{sect:ambiguousgrammar:ambigTerm}) is mostly used to define legal characters by defining which are illigal. These productions can be rewritten in ANTLR syntax by using the not-operator (\verb!~!) and a \verb!fragment! production rule \verb!NotChar! which is manually defined as all unicode characters (up to 0xFFFF, see section \ref{sect:parserconstructanddebug:limitations}) not allowed by the W3C defined \verb!Char!:
+The 'hat' operator (section \ref{sect:ambiguousgrammar:ambigTerm}) is mostly used to define legal characters by defining which are illigal. These productions can be rewritten in ANTLR syntax by using the not-operator ($\sim$) and a \verb!fragment! production rule \verb!NotChar! which is manually defined as all unicode characters (up to 0xFFFF, see section \ref{sect:parserconstructanddebug:limitations}) not allowed by the W3C defined \verb!Char!:
 \begin{verbatim}
 // The extracted part of StringLiteral:
 PartOf          ::= [^"&]
@@ -29,7 +29,7 @@ PartOf            : ~(NotChar | COLONSi | AMPSi);
 \end{verbatim}
 The 'dash' operator is sometimes also used like this, like in e.g. \verb!QuotAttrContentChar! but because of our introduced production \verb!QuotAttributeContent! (section \ref{sect:rewriteGrammar:reorganizing}) it is rewritten in the same way as with the enclosed expressions (section \ref{sect:rewriteGrammar:enclosedComposite}), where the operator is used to define that a very gereral production should not be greedy. 
 
-In \verb!piTarget! the 'dash' operator is used in a unique way:
+In \verb!piTarget! the 'dash' operator is used in a unique way, and thus needed to be treated differently:
 \begin{verbatim}
 // Original production
 PiTarget    ::= Name - (('X' | 'x') ('M' | 'm') ('L' | 'l'))
@@ -37,7 +37,7 @@ PiTarget    ::= Name - (('X' | 'x') ('M' | 'm') ('L' | 'l'))
 // Rewritten production using a semantic predicate
 piTarget    : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
 \end{verbatim}
-Where the original production can be interpreted as ``piTarget can be a Name, but not `XML', regardless of character casing''. The validating semantic predicate will imitate this behaviour using the method equalsIgnoreCase().
+Where the original production can be interpreted as ``piTarget can be a Name, but not `XML', regardless of character casing''. The validating semantic predicate will imitate this behaviour using the method \verb!equalsIgnoreCase()!.
 
 \section{Parser Controlled State Driven Lexer}
 
