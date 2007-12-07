@@ -40,29 +40,48 @@ piTarget    : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
 Where the original production can be interpreted as ``piTarget can be a Name, but not `XML', regardless of character casing''. The validating semantic predicate will imitate this behaviour using the method \verb!equalsIgnoreCase()!.
 
 \section{Parser Controlled State Driven Lexer}
-
-\textbf{\LARGE //TODO:} 
-
-Kjempetvetydigheten med ElementContentChar / AttributeContentChar / NCName etc. \\
-Systemet med states, stack og parser snakker direkte til lexer
-
-\textbf{\LARGE //TODO:} 
+As we saw in section \ref{sect:ambiguousgrammar:ambigTerm}, unless we employ a scan-while-parse scanning strategy, we need to make the lexer somehow aware of the context of incomming characters to be able to correctly generate tokens. Our parser controlled state driven lexer strategy implies that the parser must directly infulence the state of the lexer, and the lexer must know what state it is in \emph{before} trying to match a token. ANTLRs default parser input \verb!TokenStream!, \verb!CommonTokenStream!, will at first peek ask the lexer to generate tokens until \verb!EOF! and place them in a buffer, meaning that the parser will be in an initial state as the lexer runs. This is not compatible with our lexer strategy, so we had to make our own \verb!TokenStream!, not buffering more than strictly needed. This method as well as how we control the state transitions, how we introduced container tokens to ease the parsing and how we reorganized the grammar to make it susceptible to states will be discussed in the following sections.
 
 \subsection{UnbufferedCommenTokenStream}
+ANTLRs \verb!CommonTokenStream! has a method \verb!LT(int k)! which returns the $k$th token forward from its current position (simplified):
+\begin{verbatim}
+public Token LT(int k) {
+      if ( p == -1 ) {
+         fillBuffer();
+      }
+      int i = p;
+      int n = 1;
+      while ( n<k ) {
+         i = skipOffTokenChannels(i+1); // leave p on valid token
+         n++;
+      }
+      if ( i>=tokens.size() ) {
+         return Token.EOF_TOKEN;
+      }
+      return (Token)tokens.get(i);
+}
+\end{verbatim}
+Where \verb!p! a pointer to the current token in the token stream and the method \verb!skipOffTokenChannels(int r)! returns the position number bigger or equal to \verb!r! on which there resides a valid token, i.e. a token in the default virtual channel (identified by the integer \verb!channel!).
 \textbf{\LARGE //TODO:}  
 
 Omskriving av TokenStream for at den ikke skal buffre mer en strengt tatt nodvendig
-
-\subsection{Reorganizing the Grammar}
-\label{sect:rewriteGrammar:reorganizing}
-\textbf{\LARGE //TODO:} 
-
-Slik at state-systemet fungerer: Lage fragment av alt, nye tokens (ElementContent), TOKENSWITCH, semantiske predikat, etc.
 
 \subsection{State Transitions}
 \textbf{\LARGE //TODO:} 
 
 Hvordan parseren gaar over fra en state til en annen, systemet med stack.
+
+\subsection{Introducing Container Tokens}
+\textbf{\LARGE //TODO:} 
+
+ElementContent, Apossoppassellers etc..
+
+\subsection{Reorganizing the Grammar}
+\label{sect:rewriteGrammar:reorganizing}
+\textbf{\LARGE //TODO:} 
+
+Slik at state-systemet fungerer: Lage fragment av alt, TOKENSWITCH, semantiske predikat, etc.
+
 
 \section{Enclosed Composite Lexer Productions}
 \label{sect:rewriteGrammar:enclosedComposite}
@@ -92,7 +111,7 @@ This is a classic problem in compiler construction, however it can be solved usi
 Comment ::= "(:" (CommentContents | Comment)* ":)"
 \end{verbatim}
 At first glance, this seems uncomplicated and straight forward, but this grammar needs to be rewritten to be accepted by an LL parser. A suggestion for a solution to this problem was initially found on the Antlr mailing list\footnote{http://www.antlr.org:8080/pipermail/antlr-interest/2005-July/012967.html}, and we loosly based our implementation on such an approach. This lexer rule will correctly detect and allow nested comments, and hide them from the parser:
-\begin{verbatim}	
+\begin{verbatim}   
 Comment   : LXQCOMMENTSi 
            ({(input.LA(1)=='(' && input.LA(2)==':')}?Comment 
            | {input.LA(2)!=')'}?=>COLONSi
