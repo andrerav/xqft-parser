@@ -3,7 +3,7 @@ The W3C(\cite{w3c00}) and ANTLR(section \ref{sect:antlr:grammarSpec}) EBNF synta
 
 \subsection{Seperating Parser and Lexer Rules}
 
-The ANTLR parser generator can generate parsers and lexers from a single grammar file. The distinction between terminals and non-terminals is that terminals start with \emph{uppercase} letters, and non-terminals start with \emph{lowercase} letters. Which productions to go where is highly dependant on what strategy we chose to solve the ambigious terminals problem. E.g. by defining all the ambigious terminals as non-terminals we would have solution very close to a scan-while-parse scanner (section \ref{sect:ambiguousgrammar:scanWhileParse}). Because we chose the strategy of letting the parser control the lexer's state, we could define a division of terminals and non-terminals very similar to the one specified by W3C. The exception is \verb!QName!, which by W3C is defined as follows:
+The ANTLR parser generator can generate parsers and lexers from a single grammar file. The distinction between terminals and non-terminals is that terminals start with \emph{uppercase} letters, and non-terminals start with \emph{lowercase} letters. Which productions to go where is highly dependant on what strategy we chose to solve the ambigious terminals problem. E.g. by defining all the ambigious terminals as non-terminals we would have solution very close to a scan-while-parse scanner (section \ref{sect:ambiguousgrammar:scanWhileParse}). Because we chose the strategy of letting the parser control the lexer's state, we vere able define a division of terminals and non-terminals very similar to the one specified by W3C. The exception is \verb!QName!, which by W3C is defined as follows:
 \begin{verbatim}
 QName           ::= PrefixedName
                   | UnprefixedName
@@ -12,11 +12,11 @@ UnprefixedName  ::= LocalPart
 Prefix          ::= NCName
 LocalPart       ::= NCName
 \end{verbatim}
-Where \verb!NCName! is another terminal, thus creating an easily solvable ambiguity. It is possible to rank the \verb!QName! production higher than the \verb!NCName! with a syntactic predicate checking if the token after \verb!NCName! is a \verb!':'!, but there is no good reason for doing so, when it can be defined as a non-terminal in this way:
+Where \verb!NCName! is another terminal, thus creating an ambiguity in the case where \verb!QName! uses the \verb!UnprefixedName! alternative. It is possible to rank the \verb!QName! production higher than the \verb!NCName! with a syntactic predicate checking if the token after \verb!NCName! is a \verb!':'!, but there is no good reason for doing so, when it can be defined as a non-terminal in this way:
 \begin{verbatim}
 qName             : (NCName COLONSi)? NCName;
 \end{verbatim}
-There is however a reason for \emph{not} defining \verb!QName! as a terminal: by doing so, ANTLR would have generated token containing the whole \verb!QName!, meaning that e.g. if one is only interested in the localpart, one would have to manually split the text.
+There is however some reasons for \emph{not} defining \verb!QName! as a terminal: by doing so, ANTLR would have generated token containing the whole \verb!QName!, meaning that e.g. if one is only interested in the localpart, one would have to manually split the text. And parser productions reffering to \verb!QName! would have to be rewritten as expecting a \verb!QName! \emph{or} a \verb!NCName!.
 
 \subsection{Rewriting the W3C 'dash' and 'hat' operators}
 The 'hat' operator (section \ref{sect:ambiguousgrammar:ambigTerm}) is mostly used to define legal characters by defining which are illigal. These productions can be rewritten in ANTLR syntax by using the not-operator ($\sim$) and a \verb!fragment! production rule \verb!NotChar! which is manually defined as all unicode characters (up to 0xFFFF, see section \ref{sect:parserconstructanddebug:limitations}) not allowed by the W3C defined \verb!Char!:
@@ -43,7 +43,7 @@ Where the original production can be interpreted as ``piTarget can be a Name, bu
 As we saw in section \ref{sect:ambiguousgrammar:ambigTerm}, unless we employ a scan-while-parse scanning strategy, we need to make the lexer somehow aware of the context of incomming characters to be able to correctly generate tokens. Our parser controlled state driven lexer strategy implies that the parser must directly infulence the state of the lexer, and the lexer must know what state it is in \emph{before} trying to match a token. ANTLRs default parser input \verb!TokenStream!, \verb!CommonTokenStream!, will at first peek ask the lexer to generate tokens until \verb!EOF! and place them in a buffer, meaning that the parser will be in an initial state as the lexer runs. This is not compatible with our lexer strategy, so we had to make our own \verb!TokenStream!, not buffering more than strictly needed. This method as well as how we control the state transitions, how we introduced container tokens to ease the parsing and how we reorganized the grammar to make it susceptible to states will be discussed in the following sections.
 
 \subsection{UnbufferedCommenTokenStream}
-ANTLRs \verb!CommonTokenStream! has a method \verb!LT(int k)! which returns the $k$th token forward from its current position (simplified):
+For an overview of how the lexer, parser and tokenen stream is connected see section \ref{sect:antlr:parser}. ANTLRs \verb!CommonTokenStream! has a method \verb!LT(int k)! which returns the $k$th token forward from its current position (simplified):
 \begin{verbatim}
 public Token LT(int k) {
       if ( p == -1 ) {
@@ -61,20 +61,68 @@ public Token LT(int k) {
       return (Token)tokens.get(i);
 }
 \end{verbatim}
-Where \verb!p! a pointer to the current token in the token stream and the method \verb!skipOffTokenChannels(int r)! returns the position number bigger or equal to \verb!r! on which there resides a valid token, i.e. a token in the default virtual channel (identified by the integer \verb!channel!).
-\textbf{\LARGE //TODO:}  
+Where \verb!p! a pointer to the current token in the token stream, \verb!tokens! is a list of the tokens generated, and the method \verb!skipOffTokenChannels(int r)! returns the position number bigger or equal to \verb!r! on which there resides a valid token, i.e. a token in the default virtual channel (identified by the integer \verb!channel!). The pionter \verb!p! is initialized to $-1$, thus the the first time \verb!LT(int k)! is run, it calls method \verb!fillBuffer()! (simplified):
+\begin{verbatim}
+protected void fillBuffer() {
+   Token t = tokenSource.nextToken();
+   while ( t!=null && t.getType()!=CharStream.EOF ) {
+      tokens.add(t);
+      t = tokenSource.nextToken();
+   }
+   p = skipOffTokenChannels(0);
+}
+\end{verbatim}
+Where \verb!tokenSource! is the lexer connected. The omitted parts of the code are mainly related to virtual channel handling and other means to hide tokens from the parser. Both of these methods had to be overridden in our \verb!CommonTokenStream! derived \verb!UnbufferedCommonTokenStream!. The name \verb!UnbufferedCommonTokenStream! can be a bit misleading, as it does buffer all allready matched tokens -- but only as many tokens forward as necessary at any given time. To implement this we introduced a method \verb!fillBuffer(int k)! which fills the buffer with $k$ new \emph{valid} tokens (simplified):
+\begin{verbatim}
+protected void fillBuffer(int k) 
+{
+   int no = 0;
+   Token t = tokenSource.nextToken();
+   while (t!=null && t.getType()!=CharStream.EOF) 
+   {
+      t.setTokenIndex(tokenIndex);
+      tokens.add(t);
+      tokenIndex++;
+      if(t.getChannel()==channel)
+         if(++no == k){
+            p = skipOffTokenChannels(p);
+            break;
+         }
+      t = tokenSource.nextToken();
+   }
+}
+\end{verbatim}
+Where \verb!channel! identifies the valid virtual channel, and the \verb!no! variable acts as a valid tokens encountered counter. The pointer \verb!p! must be adjusted right before \verb!break! to ensure that does not point to a hidden token. A filling of the buffer such as this, though, must only take place when there are not enough tokens generated, This lead us to insert a check in our overridden \verb!LT(int k)!, which we implemented in form of a method \verb!enoughValidLH(int k)!:
+\begin{verbatim}
+protected boolean enoughValidLH(int k)
+{
+   int i = p;
+   int n = tokens.size();
+   int no = 0;
+   while (i<n) {
+      if(((Token)tokens.get(i)).getChannel()==channel)
+         if(++no == k)
+            return true;
+         i++;
+      }
+   return false;
+}
+\end{verbatim}
+Where \verb!no! once again acts as a counter over valid tokens. The \verb!while! construct til iterate until enough such tokens are identified, or it reaches the end of the buffer.
 
-Omskriving av TokenStream for at den ikke skal buffre mer en strengt tatt nodvendig
-
-\subsection{State Transitions}
-\textbf{\LARGE //TODO:} 
-
-Hvordan parseren gaar over fra en state til en annen, systemet med stack.
-
-\subsection{Introducing Container Tokens}
+\subsection{Introducing the States}
 \textbf{\LARGE //TODO:} 
 
 ElementContent, Apossoppassellers etc..
+
+
+
+\subsection{State Transitions}
+
+
+\textbf{\LARGE //TODO:} 
+
+Hvordan parseren gaar over fra en state til en annen, systemet med stack.
 
 \subsection{Reorganizing the Grammar}
 \label{sect:rewriteGrammar:reorganizing}
