@@ -13,9 +13,12 @@ The LL(*) parsing strategy is a strategy unique to ANTLR, invented by Terrence P
 All alternatives have a lookahead language, and if the lookahead languages of the alternatives are disjoint, the decision is LL(*). Except for not having a finite lookahead, LL(*) differs from LL(k) with backtracking in that it is looking ahead with the DFA, and not the whole parser. A thorough description of LL(*) can be found in \cite{lookahead}.
 
 \subsection{Grammar Specification}
+\label{sect:antlr:grammarSpec}
 The grammar is specified in a type of extended Backus-Naur form (EBNF), where the extension from BNF consists of the Kleene operators $?$, $ +$ and $\ast$, and the not-operator $\sim$.  In addition, ANTLR introduces some types of predicates, namely validating, hoisting and gated semantic predicates and syntactic predicates. Validating and disambiguating semantic predicates is on the form \verb!{sem. predicate}?!, gated semantic predicates is on the form \verb!{sem. predicate}?=>! and syntactic predicates is on the form \verb!(syn. pred.)=>!.
 
-Actions specified in the target language can be inserted at appropriate places in the production rules wrapped by \verb!{! and \verb!}!. Lexer productions and token names start with a capital letter, and parser productions do not. It is possible, and even common, to specify both the lexer and parser grammar in one file, thus ANTLR will determine which productions that belong to the lexer and the parser respectively by looking at the case of the first letter in the name of the production rules. An example of ANTLR grammar can be seen in figure \ref{code:simpleGrammar}. This grammar will generate a parser that recognizes input such as "John is 37 years old".
+Member methods and variables of the parser can be placed in a \verb!@members{! members \verb!}! construct, and the corresponding \verb!@lexer::members{! members \verb!}! for the lexer. Actions specified in the target language can be inserted at appropriate places in the production rules wrapped in \verb!{! and \verb!}!. 
+
+Lexer productions and token names start with a capital letter, and parser productions do not. It is possible, and even common, to specify both the lexer and parser grammar in one file, thus ANTLR will determine which productions that belong to the lexer and the parser respectively by looking at the case of the first letter in the name of the production rules. An example of ANTLR grammar can be seen in figure \ref{code:simpleGrammar}. This grammar will generate a parser that recognizes input such as "John is 37 years old".
 \begin{figure}[h!]
 \begin{verbatim}
 NAME     : ( 'a'..'z' | 'A'..'Z')+;  
@@ -144,6 +147,8 @@ expr    : ID {$ID.getText().equalsIgnoreCase("xml");}?
 \caption{Validating semantic predicate.}
 \label{code:validateSemantic}
 \end{figure}
+As can be seen from this example, a semantic predicate is simply any kind of boolean Java expression. This is a flexible solution, because the boolean expression can be wrapped in a method with boolean return type, which for example then can be placed inside a @members { } clause in the grammar file, or even as a static method in an external class. This makes it possible to add complex grammar logic without
+disturbing grammar brevity, if necessary.
 
 \subsubsection{Disambiguating Semantic Predicates}
 Disambiguating semantic predicates are hoisted into the prediction decisions of the LL(*) recognizer, but only if no decision can be made by syntax alone. There are generally two cases where these types of predicates are really useful: when a property of a token must dictate how the parser interprets it, and when a surrounding construct or some runtime information should alter how the parser matches the current construct. In most cases when a validating semantic predicate is applied, it can be transformed into a disambiguating semantic predicate. This will result in a syntax error instead of an exception if the predicate evaluates to $false$.

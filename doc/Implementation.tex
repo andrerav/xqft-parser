@@ -1,9 +1,9 @@
 \chapter{Implementation}
 
-\underline{\textbf{\LARGE //TODO:}} skriv om.
-The main part of implementing the parser was to rewrite the EBNF provided by W3C in \cite{w3c01} to conform to ANTLR's syntax and semantics. In the following chapter we will present the reason why this was not a trivial task, the ambiguous terminals, and by which means we solved this. In addition we will present other ANTLR conforformity rewrites and finally our implementation of scoping and symbol tables.
 
-\underline{\textbf{\LARGE //ODOT:}}
+The main part of implementing the parser was to rewrite the EBNF provided by W3C in \cite{w3c01} to conform to ANTLR's syntax and semantics. Because of the amibguous terminals described in section \ref{sect:ambiguousgrammar:ambigTerm} this was not a trivial task, and in the following chapter we will present by which means we solved this. In addition we will present other ANTLR conforformity rewrites, how we augmented the grammar to output a correct AST and finally our implementation of scoping and symbol tables.
+
+
 
 \input{implementation/RewriteGrammar}
 \input{implementation/CreateAST}
