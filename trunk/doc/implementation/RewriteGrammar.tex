@@ -16,10 +16,10 @@ Where \verb!NCName! is another terminal, thus creating an easily solvable ambigu
 \begin{verbatim}
 qName             : (NCName COLONSi)? NCName;
 \end{verbatim}
-There is however a reason for not defining \verb!QName! as a terminal: by doing so, ANTLR would have generated token containing the whole \verb!QName!, meaning that e.g. if one is only interested in the localpart, one would have to manually split the text.
+There is however a reason for \embph{not} defining \verb!QName! as a terminal: by doing so, ANTLR would have generated token containing the whole \verb!QName!, meaning that e.g. if one is only interested in the localpart, one would have to manually split the text.
 
 \subsection{Rewriting the W3C 'dash' and 'hat' operators}
-The 'hat' operator (section \ref{sect:ambiguousgrammar:ambigTerm}) is mostly used to define legal characters by defining which are illigal. These productions can be rewritten in ANTLR syntax by using the not-operator (\verb!\sim!) and a \verb!fragment! production rule \verb!NotChar! which is manually defined as all unicode characters (up to 0xFFFF, see section \ref{sect:parserconstructanddebug:limitations}) not allowed by the W3C defined \verb!Char!:
+The 'hat' operator (section \ref{sect:ambiguousgrammar:ambigTerm}) is mostly used to define legal characters by defining which are illigal. These productions can be rewritten in ANTLR syntax by using the not-operator (\verb!~!) and a \verb!fragment! production rule \verb!NotChar! which is manually defined as all unicode characters (up to 0xFFFF, see section \ref{sect:parserconstructanddebug:limitations}) not allowed by the W3C defined \verb!Char!:
 \begin{verbatim}
 // The extracted part of StringLiteral:
 PartOf          ::= [^"&]
@@ -59,6 +59,11 @@ Omskriving av TokenStream for at den ikke skal buffre mer en strengt tatt nodven
 
 Slik at state-systemet fungerer: Lage fragment av alt, nye tokens (ElementContent), TOKENSWITCH, semantiske predikat, etc.
 
+\subsection{State Transitions}
+\textbf{\LARGE //TODO:} 
+
+Hvordan parseren gaar over fra en state til en annen, systemet med stack.
+
 \section{Enclosed Composite Lexer Productions}
 \label{sect:rewriteGrammar:enclosedComposite}
 \textbf{\LARGE //TODO:} 
@@ -97,7 +102,7 @@ Comment   : LXQCOMMENTSi
     fragment LXQCOMMENTSi     : '(:';
     fragment RXQCOMMENTSi     : ':)';
 \end{verbatim}
-Where the disambiguating semantic predicate on the second line can be seen as "if it looks like a comment, it is". The gated semantic predicates on the third and fourth line guards the production from being greedy, i.e. they hide the posibility of matching a \verb!':'! if it is followed by a \verb!')'!, and \verb!'('! if it is followed by a \verb!':'!. By using \verb!$channel=HIDDEN! will put this token in an different virtual channel than the default one, making it invisible for the parser unless explicitly asked for. 
+Where the disambiguating semantic predicate on the second line can be understood as "if it looks like a comment, it is a comment". The gated semantic predicates on the third and fourth line guards the production from being greedy, i.e. they hide the posibility of matching a \verb!':'! if it is followed by a \verb!')'!, and \verb!'('! if it is followed by a \verb!':'!. By using \verb!$channel=HIDDEN! ANTLR will put this token in an different virtual channel than the default one, making it invisible for the parser unless explicitly asked for. 
 
 \section{Differentiating NCName and Keywords}
 
