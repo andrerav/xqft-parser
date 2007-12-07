@@ -332,7 +332,7 @@ importStmt                  			: schemaImport | moduleImport;
 	moduleImport                			: IMPORT MODULE (NAMESPACE NCName EQSi)? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
 	
 varDecl                     			: DECLARE VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNSi exprSingle) | EXTERNAL);
-	qName returns [String text]			    : nc1=NCName (c=COLONSi nc2=NCName)? { $text = $nc1.text + ($c != null ? $c.text + $nc2.text : ""); };
+	qName returns [String text]			    : (nc1=NCName c=COLONSi)? nc2=NCName { $text = $nc2.text + ($c != null ? $c.text + $nc1.text : ""); };
 	typeDeclaration             			: AS sequenceType;
 //		sequenceType# 							: #PAA EGET#
 //	exprSingle# 							: #PAA EGET#
@@ -662,8 +662,8 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 //			exprSingle#								: #PAA EGET#
 			
 			
-	pathExpr                    			: (DBLSLASHSi relativePathExpr)=> DBLSLASHSi relativePathExpr 
-											| (SLASHSi relativePathExpr) => SLASHSi relativePathExpr
+	pathExpr                    			: {input.LA(1)=='/' && input.LA(2)=='/'}? DBLSLASHSi relativePathExpr 
+											| {input.LA(2)=='*'}? SLASHSi relativePathExpr
 											| SLASHSi
 											| relativePathExpr;
 		relativePathExpr            			: stepExpr ((SLASHSi | DBLSLASHSi)^ stepExpr)*;
@@ -762,9 +762,10 @@ filterExpr                  			: primaryExpr predicateList;
                 												| APOSSi {lexer.state=State.IN_APOS_ATTRIBUTE;}
                 													(AposAttributeContent | xmlEnclosedExpr)* 
                 												  APOSSi {lexer.state=State.IN_TAG;}; 
-        					xmlEnclosedExpr                			: LBRACESi {lexer.stack.pushState(lexer.state); lexer.state=State.DEFAULT;}
+        					xmlEnclosedExpr                			: LBRACESi {lexer.stack.pushState(lexer.state);System.out.println("Pushstate: " +lexer.state); lexer.state=State.DEFAULT;}
         																expr 
-        															  RBRACSi {lexer.state = lexer.stack.pop();};
+        																{lexer.state = lexer.stack.pop(); System.err.println("Setter nå state til " +lexer.state);}
+        															  RBRACSi ;
 //        						expr                        			: exprSingle (COMMASi exprSingle)*;
 //									exprSingle#								: #PAA EGET#
 
@@ -1035,10 +1036,10 @@ fragment S                   		: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
 
 
 fragment StringLiteral	    		: QUOTSi 
-										(PredefinedEntityRef | CharRef | {(input.LA(1)=='"' && input.LA(2)=='"')}?=> QUOTSi QUOTSi | ~(QUOTSi|AMPERSi))* 
+										(PredefinedEntityRef | CharRef | {(input.LA(1)=='"' && input.LA(2)=='"')}?=> QUOTSi QUOTSi | ~(NotChar | QUOTSi|AMPERSi))* 
 										QUOTSi 
 									| APOSSi 
-										(PredefinedEntityRef | CharRef | {(input.LA(1)=='\'' && input.LA(2)=='\'')}?=> APOSSi APOSSi | ~(APOSSi|AMPERSi))* 
+										(PredefinedEntityRef | CharRef | {(input.LA(1)=='\'' && input.LA(2)=='\'')}?=> APOSSi APOSSi | ~(NotChar | APOSSi|AMPERSi))* 
 										APOSSi
 									;
 
