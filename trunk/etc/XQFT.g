@@ -162,6 +162,7 @@ AST_IFEXPR;
 AST_FTSELECTION;
 AST_FTPOSFILTER;
 AST_FUNCTIONCALL;
+AST_FUNCTIONDECL;
 
 AST_DIRELEMCONSTRUCTOR;
 AST_DIRELEMCONTENT;
@@ -301,11 +302,11 @@ module                     				: versionDecl? (libraryModule | mainModule);
 
 prolog                      			: 	(
 											(defaultNamespaceDecl | setter | namespaceDecl | importStmt) 
-											separator
+											separator!
 											)* 
 											(
 											(varDecl | functionDecl | optionDecl | ftOptionDecl)
-											separator
+											separator!
 											)*;
 
 
@@ -343,7 +344,10 @@ varDecl                     			: DECLARE VARIABLE DOLLARSi qName typeDeclaration
 //	exprSingle# 							: #PAA EGET#
 	
 functionDecl                			: DECLARE FUNCTION qName LPARSi paramList? RPARSi 
-											(AS sequenceType)? (enclosedExpr | EXTERNAL);
+											(AS sequenceType)? (enclosedExpr | EXTERNAL)
+                                            -> ^(AST_FUNCTIONDECL qName paramList? sequenceType? enclosedExpr? EXTERNAL?);
+
+
 	paramList                   			: param (COMMASi param)*;
 		param                       			: DOLLARSi qName typeDeclaration?;
 //			qName						 			: (NCName COLONSi)? NCName;	  
@@ -775,18 +779,9 @@ filterExpr                  			: primaryExpr predicateList;
                 												| APOSSi {lexer.state=State.IN_APOS_ATTRIBUTE;}
                 													(AposAttributeContent | xmlEnclosedExpr)* 
                 												  APOSSi {lexer.state=State.IN_TAG;}; 
-//<<<<<<< .mine
         					xmlEnclosedExpr                			: LBRACESi! {lexer.stack.pushState(lexer.state); lexer.state=State.DEFAULT;}
-//=======
-//        					xmlEnclosedExpr                			: LBRACESi {lexer.stack.pushState(lexer.state);System.out.println("Pushstate: " +lexer.state); lexer.state=State.DEFAULT;}
-//>>>>>>> .r232
         																expr 
-//<<<<<<< .mine
         															  RBRACSi! {lexer.state = lexer.stack.pop();};
-//=======
-//        																{lexer.state = lexer.stack.pop(); System.err.println("Setter nå state til " +lexer.state);}
-//        															  RBRACSi ;
-//>>>>>>> .r232
 //        						expr                        			: exprSingle (COMMASi exprSingle)*;
 //									exprSingle#								: #PAA EGET#
 
@@ -810,7 +805,7 @@ filterExpr                  			: primaryExpr predicateList;
 					                                | compCommentConstructor
 					                                | compPIConstructor; 
 			
-				compDocConstructor          			: DOCUMENT LBRACESi expr RBRACSi;
+				compDocConstructor          			: DOCUMENT LBRACESi! expr RBRACSi!;
 //					expr                        			: exprSingle (COMMASi exprSingle)*;
 //						exprSingle#								: #PAA EGET#
 				
@@ -822,15 +817,15 @@ filterExpr                  			: primaryExpr predicateList;
 //						expr                        			: exprSingle (COMMASi exprSingle)*;
 //							exprSingle#								: #PAA EGET#
 				
-				compAttrConstructor         			: ATTRIBUTE (qName | (LBRACESi expr RBRACSi)) 
-															LBRACESi expr? RBRACSi;									
+				compAttrConstructor         			: ATTRIBUTE (qName | (LBRACESi! expr RBRACSi!)) 
+															LBRACESi! expr? RBRACSi!;									
 				
-				compTextConstructor         			: TEXT LBRACESi expr RBRACSi;
+				compTextConstructor         			: TEXT LBRACESi! expr RBRACSi!;
 				
-				compCommentConstructor      			: COMMENT LBRACESi expr RBRACSi;
+				compCommentConstructor      			: COMMENT LBRACESi! expr RBRACSi!;
 				
-				compPIConstructor           			: PROCESSING_INSTRUCTION (NCName | (LBRACESi expr RBRACSi)) 
-															LBRACESi expr? RBRACSi;
+				compPIConstructor           			: PROCESSING_INSTRUCTION (NCName | (LBRACESi! expr RBRACSi!)) 
+															LBRACESi! expr? RBRACSi!;
 															
 //	predicateList               			: predicate*;
 //		predicate                   			: LBRACKSi expr RBRACKSi;   	
