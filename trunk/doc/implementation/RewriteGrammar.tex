@@ -1,106 +1,122 @@
-\section{Seperating Parser and Lexer Rules}
+\section{ANTLR Syntax Conformity}
+The W3C(\cite{w3c00}) and ANTLR(section \ref{sect:antlr:grammarSpec}) EBNF syntax differs in multiple ways. Some of the differences are trivial, e.g. the "defined by"-operator, which in W3C syntax is denoted with \verb!::=! and in ANTLR syntax as \verb!:!. Such differences can be fixed by means of a simple symbol replacement. However, the W3C metagrammar also embodies some operators such as the 'hat' and the 'dash' operators, described in section \ref{sect:ambiguousgrammar:ambigTerm}, of which there are no complete equivalents in the ANTLR metagrammar. In addition, the W3C grammar defines some producions as terminal and other as non-terminal, but this division does not hold for all implementations.
 
-The ANTLR parser generator can generate parsers and lexers from a single grammar
-file. The distinction between terminals and non-terminals is simply a matter of
-convention, where terminals are assumed to start with \emph{uppercase} letters,
-and non-terminals are assumed to start with \emph{lowercase} letters.
+\subsection{Seperating Parser and Lexer Rules}
 
-In the grammar specified by the W3C, all the productions (terminals and
-non-terminals) all start with uppercase letters. Initially this caused some
-confusion, because this grammar naturally generated a very big lexer and a very
-small and non-functional parser.
+The ANTLR parser generator can generate parsers and lexers from a single grammar file. The distinction between terminals and non-terminals is that terminals start with \emph{uppercase} letters, and non-terminals start with \emph{lowercase} letters. Which productions to go where is highly dependant on what strategy we chose to solve the ambigious terminals problem. E.g. by defining all the ambigious terminals as non-terminals we would have solution very close to a scan-while-parse scanner (section \ref{sect:ambiguousgrammar:scanWhileParse}). Because we chose the strategy of letting the parser control the lexer's state, we could define a division of terminals and non-terminals very similar to the one specified by W3C. The exception is \verb!QName!, which by W3C is defined as follows:
+\begin{verbatim}
+QName           ::= PrefixedName
+                  | UnprefixedName
+PrefixedName    ::= Prefix ':' LocalPart 
+UnprefixedName  ::= LocalPart 
+Prefix          ::= NCName
+LocalPart       ::= NCName
+\end{verbatim}
+Where \verb!NCName! is another terminal, thus creating an easily solvable ambiguity. It is possible to rank the \verb!QName! production higher than the \verb!NCName! with a syntactic predicate checking if the token after \verb!NCName! is a \verb!':'!, but there is no good reason for doing so, when it can be defined as a non-terminal in this way:
+\begin{verbatim}
+qName             : (NCName COLONSi)? NCName;
+\end{verbatim}
+There is however a reason for not defining \verb!QName! as a terminal: by doing so, ANTLR would have generated token containing the whole \verb!QName!, meaning that e.g. if one is only interested in the localpart, one would have to manually split the text.
 
-This was mitigated by converting non-terminal productions to start with
-lowercase letters.
+\subsection{Rewriting the W3C 'dash' and 'hat' operators}
+The 'hat' operator (section \ref{sect:ambiguousgrammar:ambigTerm}) is mostly used to define legal characters by defining which are illigal. These productions can be rewritten in ANTLR syntax by using the not-operator (\verb!\sim!) and a \verb!fragment! production rule \verb!NotChar! which is manually defined as all unicode characters (up to 0xFFFF, see section \ref{sect:parserconstructanddebug:limitations}) not allowed by the W3C defined \verb!Char!:
+\begin{verbatim}
+// The extracted part of StringLiteral:
+PartOf          ::= [^"&]
 
+// can be written in ANTLR syntax as:
+PartOf            : ~(NotChar | COLONSi | AMPSi);
+\end{verbatim}
+The 'dash' operator is sometimes also used like this, like in e.g. \verb!QuotAttrContentChar! but because of our introduced production \verb!QuotAttributeContent! (section \ref{sect:rewriteGrammar:reorganizing}) it is rewritten in the same way as with the enclosed expressions (section \ref{sect:rewriteGrammar:enclosedComposite}), where the operator is used to define that a very gereral production should not be greedy. 
 
-\section{Rewriting the W3C 'dash' operator}
-This operator is not supported in Antlr, so it was necessary to rewrite
-these productions using \emph{semantic predicates} (see section \ref{sect:antlr:semantic_preds}) where
-necessary.
-
-\underline{\textbf{\LARGE //TODO:}} se over dette igjen: /* Thankfully,
-in the original specification, the usage of the dash operator was rather sparse
-and only used in trivial productions.*/
-
-An example of rewriting the dash operator using semantic predicates:
+In \verb!piTarget! the 'dash' operator is used in a unique way:
 \begin{verbatim}
 // Original production
-piTarget : Name - (('X' | 'x') ('M' | 'm') ('L' | 'l'));
+PiTarget    ::= Name - (('X' | 'x') ('M' | 'm') ('L' | 'l'))
 
 // Rewritten production using a semantic predicate
-piTarget : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
+piTarget    : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
 \end{verbatim}
-The original production can be interpreted as ``piTarget can be a Name, but not
-`XML', regardless of character casing''. The syntactic predicate will imitate
-this behaviour using the method equalsIgnoreCase(). As can be seen from this
-example, a semantic predicate is simply any kind of boolean Java expression.
-This is a flexible solution, because the boolean expression can be wrapped in a
-method with boolean return type, which for example then can be placed inside a
-@members { } clause in the grammar file, or even as a static method in an
-external class. This makes it possible to add complex grammar logic without
-disturbing grammar brevity, if necessary.
-
+Where the original production can be interpreted as ``piTarget can be a Name, but not `XML', regardless of character casing''. The validating semantic predicate will imitate this behaviour using the method equalsIgnoreCase().
 
 \section{Parser Controlled State Driven Lexer}
 
-\textbf{\LARGE //TODO:} Kjempetvetydigheten med ElementContentChar / AttributeContentChar / NCName etc.
-\textbf{\LARGE //TODO:} Systemet med states, stack og parser snakker direkte til lexer
+\textbf{\LARGE //TODO:} 
+
+Kjempetvetydigheten med ElementContentChar / AttributeContentChar / NCName etc. \\
+Systemet med states, stack og parser snakker direkte til lexer
+
+\textbf{\LARGE //TODO:} 
 
 \subsection{UnbufferedCommenTokenStream}
-\textbf{\LARGE //TODO:}  Omskriving av TokenStream for at den ikke skal buffre mer en strengt tatt nodvendig
+\textbf{\LARGE //TODO:}  
+
+Omskriving av TokenStream for at den ikke skal buffre mer en strengt tatt nodvendig
 
 \subsection{Reorganizing the Grammar}
+\label{sect:rewriteGrammar:reorganizing}
+\textbf{\LARGE //TODO:} 
 
-\textbf{\LARGE //TODO:} Lage fragment av alt, TOKENSWITCH, semantiske predikat, etc.
+Slik at state-systemet fungerer: Lage fragment av alt, nye tokens (ElementContent), TOKENSWITCH, semantiske predikat, etc.
 
 \section{Enclosed Composite Lexer Productions}
+\label{sect:rewriteGrammar:enclosedComposite}
+\textbf{\LARGE //TODO:} 
 
-\textbf{\LARGE //TODO:} fint for aa skille alternativer, kjipt at man ikke faar tak i deltokens... saa derfor ----v
+Regler som PI, Pragma, XMLComment and CDATA kan fanges i sin helhet i lexeren. Samme med saertilfellet XQuerykommentarer. 
+
+Fint for aa skille alternativer, men man ikke faar tak i deltokens... saa derfor ----v
 
 \subsection{Emiting More Than One Token Per Production}
-\textbf{\LARGE //TODO:} Omskriving av lexer for a la produksjoner avgi mer enn ett token
+\textbf{\LARGE //TODO:} 
+
+Omskriving av lexer for a la produksjoner avgi mer enn ett token
 
 \subsection{PI, Pragma, XMLComment and CDATA Sections}
-\textbf{\LARGE //TODO:} Sammensatte omhyllede lexerregler (<? noe ?>, <!-- noe --> etc)
+\textbf{\LARGE //TODO:} 
+
+Sammensatte omhyllede lexerregler (<? noe ?>, <!-- noe --> etc)
 
 \subsection{Nested XQuery Comments}
 XQuery allows nested comments, for example:
 \begin{verbatim}
 (: this is a comment (: this comment is nested :) :)
 \end{verbatim}
-This is a classic problem in compiler construction, however it can be solved
-using standard Antlr syntax, without resorting to custom functions/methods for
-consuming input and keeping track of nesting. The original EBNF as specified by
-W3C is as follows:
+This is a classic problem in compiler construction, however it can be solved using standard ANTLR syntax, without resorting to custom functions/methods for consuming input and keeping track of nesting. The original EBNF as specified by W3C is as follows:
 \begin{verbatim}
 Comment ::= "(:" (CommentContents | Comment)* ":)"
 \end{verbatim}
-At first glance, this seems uncomplicated and straight forward, but this grammar
-needs to be rewritten to be accepted by an LL parser. A suggestion for a 
-solution to this problem was initially found on the Antlr mailing
-list\footnote{http://www.antlr.org:8080/pipermail/antlr-interest/2005-July/012967.html},
-and we based our implementation on such an approach. This lexer rule will
-correctly detect and allow nested comments, and hide them from the parser:
+At first glance, this seems uncomplicated and straight forward, but this grammar needs to be rewritten to be accepted by an LL parser. A suggestion for a solution to this problem was initially found on the Antlr mailing list\footnote{http://www.antlr.org:8080/pipermail/antlr-interest/2005-July/012967.html}, and we loosly based our implementation on such an approach. This lexer rule will correctly detect and allow nested comments, and hide them from the parser:
 \begin{verbatim}	
-Comment : LXQCOMMENTSi 
-          (Comment | (COLONSi ~RPARSi)=>COLONSi 
-          | (LPARSi ~COLONSi)=>LPARSi 
-          | ~(LPARSi | COLONSi | IkkeChar))* 
-          RXQCOMMENTSi {$channel=HIDDEN;};
+Comment   : LXQCOMMENTSi 
+           ({(input.LA(1)=='(' && input.LA(2)==':')}?Comment 
+           | {input.LA(2)!=')'}?=>COLONSi
+           | {input.LA(2)!=':'}?=>LPARSi
+           | ~(LPARSi | COLONSi | NotChar))*
+            RXQCOMMENTSi; {$channel=HIDDEN;}
+    fragment LXQCOMMENTSi     : '(:';
+    fragment RXQCOMMENTSi     : ':)';
 \end{verbatim}
-
-\underline{\textbf{\LARGE //TODO:}} oppdater eksempelet over (NotChar) og semantisk predikat
+Where the disambiguating semantic predicate on the second line can be seen as "if it looks like a comment, it is". The gated semantic predicates on the third and fourth line guards the production from being greedy, i.e. they hide the posibility of matching a \verb!':'! if it is followed by a \verb!')'!, and \verb!'('! if it is followed by a \verb!':'!. By using \verb!$channel=HIDDEN! will put this token in an different virtual channel than the default one, making it invisible for the parser unless explicitly asked for. 
 
 \section{Differentiating NCName and Keywords}
 
-\textbf{\LARGE //TODO:} Systemet med NCNames vs keywords
+\textbf{\LARGE //TODO:} 
+
+Systemet med NCNames vs keywords. \\
+Husk: Keywords er uttrykt som tokens for aa sperre av for parsing og for oversiktlige feilmeldinger.
 
 \section{Extra-grammatical Constraints}
 
+\textbf{\LARGE //TODO:} 
+
+Whitespace, leading dash etc..
+
 \section{Resolving Non-determinisms in the Parser }
 
-\textbf{\LARGE //TODO:} pathExpr og itemtype occurenceindicator trengte syntaktiske predikat
+\textbf{\LARGE //TODO:} 
+
+pathExpr og itemtype occurenceindicator trengte syntaktiske predikat
 
 \section{Reserved Keywords}
 
@@ -108,17 +124,10 @@ Comment : LXQCOMMENTSi
 
 A particular feature in XQuery is the lack of reserved keywords. This creates a
 series of problems when a lexer based on the verbatim grammar specification from
-the W3C is trying to recognize tokens. The culprit is the ambiguously defined
-terminal symbols. Some of the base character tokens intersect with each other
-and makes it hard if not impossible for the lexer to distinguish two different
-tokens composed of different token fragments with intersecting characters.
+the W3C is trying to recognize tokens. 
 
-One possible solution to this problem was to eliminate ambiguities in the lexer.
-This approach was tried by finding and removing duplicate characters from token
-fragments, and then generalizing the tokens and adding semantic predicates to
-check for illegal and/or missing characters.
-
-\underline{\textbf{\LARGE //ODOT:}} vaar parser har enna reserved keywords, flytte dette til future work?
+vaar parser har enna reserved keywords, flytte dette til future work? \\
+\underline{\textbf{\LARGE //ODOT:}} 
 
 
 
