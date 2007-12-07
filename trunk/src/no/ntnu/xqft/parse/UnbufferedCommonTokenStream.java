@@ -42,7 +42,7 @@ public class UnbufferedCommonTokenStream extends CommonTokenStream
      * @param k the number of tokens to look ahead
      * @return true if there is enough tokens in the buffer, false if not.
      */
-    public boolean enoughValidLH(int k)
+    protected boolean enoughValidLH(int k)
     {
         int i = p;
         int n = tokens.size();
