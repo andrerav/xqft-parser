@@ -27,7 +27,7 @@ PartOf          ::= [^"&]
 // can be written in ANTLR syntax as:
 PartOf            : ~(NotChar | COLONSi | AMPSi);
 \end{verbatim}
-The 'dash' operator is sometimes also used like this, like in e.g. \verb!QuotAttrContentChar! but because of our introduced production \verb!QuotAttributeContent! (section \ref{sect:rewriteGrammar:reorganizing}) it is rewritten in the same way as with the enclosed expressions (section \ref{sect:rewriteGrammar:enclosedComposite}), where the operator is used to define that a very gereral production should not be greedy. 
+The 'dash' operator is sometimes also used like this, like in e.g. \verb!QuotAttrContentChar! but because of our introduced production \verb!QuotAttributeContent! (section \ref{sect:rewriteGrammar:introduceStates}) it is rewritten in the same way as with the enclosed expressions (section \ref{sect:rewriteGrammar:enclosedComposite}), where the operator is used to define that a very gereral production should not be greedy. 
 
 In \verb!piTarget! the 'dash' operator is used in a unique way, and thus needed to be treated differently:
 \begin{verbatim}
@@ -111,6 +111,30 @@ protected boolean enoughValidLH(int k)
 Where \verb!no! once again acts as a counter over valid tokens. The \verb!while! construct til iterate until enough such tokens are identified, or it reaches the end of the buffer.
 
 \subsection{Introducing the States}
+\label{sect:rewriteGrammar:introduceStates}
+Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLitteral! be addressed. By looking at where these productions are referred to (or not referred to in the case of \verb!StringLitteral!) in the W3C specified grammar, we see that it is possible to solve this ambiguousity with states (figure \ref{fig:ambigTerminalRef}).
+\begin{figure}
+\begin{verbatim}
+DirElemConstructor     ::= "<" QName DirAttributeList 
+                               ("/>" 
+                               | (">" DirElemContent* "</" QName ">"))
+DirAttributeList       ::= (QName "=" DirAttributeValue)*
+DirAttributeValue      ::= ('"' (EscapeQuot | QuotAttrValueContent)* '"')
+                         | ("'" (EscapeApos | AposAttrValueContent)* "'")
+QuotAttrValueContent   ::= QuotAttrContentChar
+                         | CommonContent
+AposAttrValueContent   ::= AposAttrContentChar
+                         | CommonContent
+DirElemContent         ::= ElementContentChar
+                         | CommonContent
+CommonContent          ::= "{{" | "}}" | EnclosedExpr
+EnclosedExpr           ::= "{" Expr "}"
+\end{verbatim}
+\caption[Grammar reffering to amiguous terminals.]{A simplified overview of the non-terminal productions refering to the ambiguous terminals}
+\label{fig:ambigTerminalRef}
+\end{figure}
+Where \verb!EscapeApos! is \verb!''! and is used to escape the single \verb!'! within a apostrophe enveloped construct. \verb!EscapeQuot! is an analog for the quote sign \verb!"!. \verb!Expr! is a very high-level production able to match almost any legal XQuery syntax.
+
 \textbf{\LARGE //TODO:} 
 
 ElementContent, Apossoppassellers etc..

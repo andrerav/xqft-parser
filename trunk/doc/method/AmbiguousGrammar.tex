@@ -15,9 +15,9 @@ semantic meaning in a grammar (\cite{w3c03}, section 6):
 \begin{quote}
 A - B: matches any string that matches A but does not match B.
 \end{quote}
-In addition, the specification contains explicit defined litterals and symbols such as \verb!'for'! and \verb!'::'!, aswell as \verb!StringLitteral! which is indeed comparable with the non-terminal \verb!dirAttributeList! (simplified):
+In addition, the specification contains explicit defined litterals and symbols such as \verb!'for'! and \verb!'::'!, aswell as \verb!StringLitteral! which is indeed comparable with the non-terminal \verb!DirAttributeList! (simplified):
 \begin{verbatim}
-dirAttributeValue             ::= ('"' (QuotAttrContentChar)* '"')
+DirAttributeValue             ::= ('"' (QuotAttrContentChar)* '"')
                                 | ("'" (AposAttrContentChar)* "'")
 StringLiteral                 ::= ('"' ([^"&])* '"') 
                                 | ("'" ([^'&])* "'")
