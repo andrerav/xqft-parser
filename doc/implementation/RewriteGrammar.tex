@@ -114,7 +114,7 @@ Where \verb!no! once again acts as a counter over valid tokens. The \verb!while!
 
 \subsection{Introducing the States}
 \label{sect:rewriteGrammar:introduceStates}
-Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLitteral! be addressed. Figure \ref{fig:ambigTerminalRef} shows where these productions are referred to (or not referred to in the case of \verb!StringLitteral!) in the W3C specified grammar. As we can see, all the problem terminals are in a way connected to XML markup, and consist of the characters allowed as the text in elements and the characters allowed as attribute values.
+Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLitteral! be addressed. Figure \ref{fig:ambigTerminalRef} shows where these productions are referred to (or not referred to in the case of \verb!StringLitteral!) in the W3C specified grammar. As we can see, neither of the problem terminals are ambigious when enclosed in higher level productions -- a necessity for our state driven strategy. We also see that all the problem terminals are in a way connected to XML markup, and consist of the characters allowed as the text in elements and the characters allowed as attribute values.
 \begin{figure}[h]
 \begin{verbatim}
 DirElemConst    ::= "<" QName DirAttributeList 
@@ -136,15 +136,15 @@ EnclosedExpr    ::= "{" Expr "}"
 \caption[Grammar reffering to amiguous terminals.]{A simplified overview of the non-terminal productions refering to the ambiguous terminals. \textbf{EscapeApos} is \textbf{''} and is used to escape the single \textbf{'} within a apostrophe enveloped construct, and the analog for the quote sign \textbf{"} is \textbf{EscapeQuot}. \textbf{Expr} is a very high-level production able to match almost any legal XQuery syntax.}
 \label{fig:ambigTerminalRef}
 \end{figure}
-Explained with an example input character stream, \verb!<a id="1"> b </a>!, and where \textbf{$\times$} marks the spot where the lexer is in the respective state, our five defined states are shown in figure \ref{fig:states}.
+Explained with an example input character stream, \verb!<a id="1"> b </a>!, and where \textbf{\Large $\times$} marks the spot where the lexer is in the respective state, our five defined states are shown in figure \ref{fig:states}.
 \begin{figure}[h]
 \centering
 \begin{tabular}{ll}
-DEFAULT				& \textbf{\Large $\times$}\verb!<a id="1"> b </a>!\textbf{$\times$} \\
-IN\_TAG				& \emph{X}\verb!<a id="1"> b </a>!\emph{X} \\
-IN\_APOS\_ATTRIBUTE\verb!   !	& \emph{X}\verb!<a id="1"> b </a>!\emph{X} \\
-IN\_QUOT\_ATTRIBUTE		& \emph{X}\verb!<a id="1"> b </a>!\emph{X} \\
-IN\_ELEMENT			& \emph{X}\verb!<a id="1"> b </a>!\emph{X} \\
+DEFAULT				& \textbf{\Large $\times$}\verb!<a id="1"> b </a>!\textbf{\Large $\times$} \\
+IN\_TAG				& \verb!<!\textbf{\Large $\times$}\verb!a id="1"> b </a>! \\
+IN\_APOS\_ATTRIBUTE\verb!   !	& \verb!<a id="1"> b </a>! \\
+IN\_QUOT\_ATTRIBUTE		& \verb!<a id="1"> b </a>! \\
+IN\_ELEMENT			& \verb!<a id="1"> b </a>! \\
 \end{tabular}
 \caption{An illustrated overview of the different states.}
 \label{fig:states}
