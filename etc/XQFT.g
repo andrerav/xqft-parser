@@ -4,7 +4,7 @@ options {
 //filter=true;
   // k = 1;
     output=AST;
-    ASTLabelType=CommonTree;
+    ASTLabelType=XQFTTree;
 } 
 tokens{
 ALL;
@@ -149,6 +149,7 @@ WORDS;
 XQUERY;
 
 /* Imaginary tokens */
+AST_FLWOR;
 AST_FORCLAUSE;
 AST_LETCLAUSE;
 AST_ORDERBYCLAUSE;
@@ -160,18 +161,20 @@ AST_CASECLAUSE;
 AST_IFEXPR;
 AST_FTSELECTION;
 AST_FTPOSFILTER;
+AST_FUNCTIONCALL;
+
+AST_DIRELEMCONSTRUCTOR;
+AST_DIRELEMCONTENT;
 
 
 }
 
 @parser::header {
 	package no.ntnu.xqft.parse;
-    import extra.*;
 }
 
 @lexer::header {
 	package no.ntnu.xqft.parse;	
-    import extra.*;
 }
 
 @parser::members {
@@ -179,6 +182,7 @@ AST_FTPOSFILTER;
 	/* Root scope */
 	//Scope currentScope = new Scope();	   // @init-ting her ogsaa
 	XQFTLexer lexer;
+/*
 	public void setTokenStream(TokenStream input) {
 				String inputz =  "<html> \n" +                                                   //1
                         "{ \n"+                                                         //2
@@ -203,7 +207,7 @@ AST_FTPOSFILTER;
 		tokenz.setTokenSource(lexer);
 		super.setTokenStream(tokenz);
  	
-	}
+	}*/
 	public void setLexer(XQFTLexer lex)
 	{
 		this.lexer=lex;
@@ -347,9 +351,9 @@ functionDecl                			: DECLARE FUNCTION qName LPARSi paramList? RPARSi
 
 // TODO: enter/exit new scope
 	enclosedExpr                			: 
-												LBRACESi //{Scope parent = this.currentScope; this.currentScope = new Scope(); this.currentScope.setParent(parent); }
+												LBRACESi! //{Scope parent = this.currentScope; this.currentScope = new Scope(); this.currentScope.setParent(parent); }
 												expr 
-												RBRACSi //{ this.currentScope = this.currentScope.getParent(); }
+												RBRACSi! //{ this.currentScope = this.currentScope.getParent(); }
 											;
 
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
@@ -414,11 +418,12 @@ exprSingle                  			: fLWORExpr
                                 		| ifExpr
                                 		| orExpr
                                 		;
-	fLWORExpr                   			: (forClause | letClause)+ whereClause? orderByClause? RETURN exprSingle;
+	fLWORExpr                   			: (fc+=forClause | lc+=letClause)+ whereClause? orderByClause? RETURN exprSingle
+                                                -> ^(AST_FLWOR $fc* $lc* whereClause? orderByClause? exprSingle);
 	
 		forClause                   			: FOR forClauseTupletDef (COMMASi forClauseTupletDef)*
                                                     -> ^(AST_FORCLAUSE forClauseTupletDef+);
-            forClauseTupletDef                  : DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle;
+            forClauseTupletDef                  : DOLLARSi! varName typeDeclaration? positionalVar? ftScoreVar? IN! exprSingle;
 
 			varName returns [String name]          : qn=qName {$name = $qn.text;};
 //			typeDeclaration             			: AS sequenceType;
@@ -553,7 +558,7 @@ ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?
 																| ftExtensionSelection
 																;
 							ftWords                     			: ftWordsValue ftAnyallOption?;
-								ftWordsValue                			: literal | (LBRACESi expr RBRACSi);
+								ftWordsValue                			: literal | (LBRACESi! expr RBRACSi!);
 									literal                     			: numericLiteral | StringLiteral;
 										numericLiteral              			: IntegerLiteral | DecimalLiteral | DoubleLiteral;
 								ftAnyallOption              			: (ANY WORD?) | (ALL WORDS?) | PHRASE;
@@ -656,7 +661,7 @@ ftMatchOption               			: ftLanguageOption
 valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 
 
-	validateExpr                			: VALIDATE validationMode? LBRACESi expr RBRACSi;
+	validateExpr                			: VALIDATE validationMode? LBRACESi! expr RBRACSi!;
 		validationMode              			: LAX | STRICT;
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
 //			exprSingle#								: #PAA EGET#
@@ -701,7 +706,7 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 //							exprSingle#								: #PAA EGET#            									
 				
     
-    extensionExpr               			: pragma+ LBRACESi expr? RBRACSi; 
+    extensionExpr               			: pragma+ LBRACESi! expr? RBRACSi!; 
 //    	pragma                      			: LPRAGSi qName PragmaContents? RPRAGSi; 
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
 //			exprSingle#								: #PAA EGET#            									
@@ -723,20 +728,22 @@ filterExpr                  			: primaryExpr predicateList;
 		
 //		literal                     			: numericLiteral | StringLiteral;
 //			numericLiteral              			: IntegerLiteral | DecimalLiteral | DoubleLiteral;
-		varRef                      			: DOLLARSi varName;
+		varRef                      			: DOLLARSi! varName;
 //			varName                     			: qName;
-		parenthesizedExpr           			: LPARSi expr? RPARSi;
+		parenthesizedExpr           			: LPARSi! expr? RPARSi!;
 //			expr                        			: exprSingle (COMMASi exprSingle)*;
 //				exprSingle#								: #PAA EGET#
 		contextItemExpr             			: DOTSi;
 		functionCall                			: qName LPARSi /* xgc: reserved-function-namesXQ */
 													(exprSingle (COMMASi exprSingle)*)? 
-													RPARSi; 
+													RPARSi
+                                                    -> ^(AST_FUNCTIONCALL qName exprSingle+);
+
 //			exprSingle#								: #PAA EGET#
-		orderedExpr                 			: ORDERED LBRACESi expr RBRACSi;
+		orderedExpr                 			: ORDERED LBRACESi! expr RBRACSi!;
 //			expr                        			: exprSingle (COMMASi exprSingle)*;
 //				exprSingle#								: #PAA EGET#
-		unorderedExpr               			: UNORDERED LBRACESi expr RBRACSi;	
+		unorderedExpr               			: UNORDERED LBRACESi! expr RBRACSi!;	
 //			expr                        			: exprSingle (COMMASi exprSingle)*;
 //				exprSingle#								: #PAA EGET#
 		constructor                 			: directConstructor | computedConstructor;	
@@ -747,14 +754,19 @@ filterExpr                  			: primaryExpr predicateList;
                 									| dirPIConstructor;
                 									
             	dirElemConstructor          			: LTSi {lexer.stack.pushState(lexer.state); lexer.state=State.IN_TAG;}
-            												 qName dirAttributeList 			
-            											(RSELFTERMSi {lexer.state=lexer.stack.pop();}
-            											| GTSi {lexer.state=State.IN_ELEMENT;}
+                                                            qn=qName dirAttributeList
+                                                            (RSELFTERMSi
+                                                                {lexer.state=lexer.stack.pop();}
+            										        |  GTSi 
+                                                                {lexer.state=State.IN_ELEMENT;}
+
             												 dirElemContent* 
             												 LENDTAGSi {lexer.state=State.IN_TAG;}
             												 	qName 
             												 	GTSi {lexer.state=lexer.stack.pop();}
-            												 	); 
+            												 	)
+                                                            -> ^(AST_DIRELEMCONSTRUCTOR $qn dirAttributeList dirElemContent*);
+
             		dirAttributeList            			: (qName EQSi dirAttributeValue)*; 
             			dirAttributeValue           			: QUOTSi {lexer.state=State.IN_QUOT_ATTRIBUTE;}
             														(QuotAttributeContent | xmlEnclosedExpr)* 
@@ -762,14 +774,16 @@ filterExpr                  			: primaryExpr predicateList;
                 												| APOSSi {lexer.state=State.IN_APOS_ATTRIBUTE;}
                 													(AposAttributeContent | xmlEnclosedExpr)* 
                 												  APOSSi {lexer.state=State.IN_TAG;}; 
-        					xmlEnclosedExpr                			: LBRACESi {lexer.stack.pushState(lexer.state);System.out.println("Pushstate: " +lexer.state); lexer.state=State.DEFAULT;}
+        					xmlEnclosedExpr                			: LBRACESi! {lexer.stack.pushState(lexer.state);System.out.println("Pushstate: " +lexer.state); lexer.state=State.DEFAULT;}
         																expr 
         																{lexer.state = lexer.stack.pop(); System.err.println("Setter nå state til " +lexer.state);}
-        															  RBRACSi ;
+        															  RBRACSi! ;
 //        						expr                        			: exprSingle (COMMASi exprSingle)*;
 //									exprSingle#								: #PAA EGET#
 
-					dirElemContent              			: directConstructor | cDataSection | ElementContent | xmlEnclosedExpr;
+					dirElemContent              			: dc=directConstructor | cd=cDataSection | ec=ElementContent | xe=xmlEnclosedExpr
+                                                                -> ^(AST_DIRELEMCONTENT $dc? $cd? $ec? $xe?);
+
 //						directConstructor#						: #SE filterExpr->primaryExpr->constructor->directConstructor#
 						cDataSection							: LCDATASi CDataContents RCDATASi;
 //            				enclosedExpr                			: LBRACESi expr RBRACSi

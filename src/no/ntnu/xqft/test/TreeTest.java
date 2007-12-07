@@ -3,12 +3,10 @@
  */
 package no.ntnu.xqft.test;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
 
-import no.ntnu.xqft.parse.*;
-import org.antlr.runtime.*;
-import org.antlr.runtime.tree.*;
+import no.ntnu.xqft.parse.XQFTParser;
+import no.ntnu.xqft.parse.XQFTTree;
 
 /**
  * @author andreas
@@ -34,7 +32,8 @@ public class TreeTest extends Test {
                                      new File(inputPath)));
         
         XQFTParser.module_return result = parser.module();
-        Tree tree = (Tree)result.getTree();
+        XQFTTree tree = (XQFTTree)result.getTree();
+        
         System.out.println(tree.toStringTree());
         System.out.println("Childcount:" + tree.getChildCount());
         
