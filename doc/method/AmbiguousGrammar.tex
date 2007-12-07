@@ -26,7 +26,7 @@ Where \verb!QuotAttrContentChar! and \verb!AposAttrContentChar! is as defined ea
 \begin{quote}
 [\^{}abc] matches any Char with a value not among the characters given.
 \end{quote}
-Meaning that e.g. \verb![^"&]! equals \verb!Char - ["&]!. It is easy to see that these productions would overlap significantly, thus the lexer must be aware of the context of a incomming character to differanciate between the rules. We considered several alternatives, as discussed in the following sections.
+Meaning that e.g. \verb![^"&]! equals \verb!Char - ["&]!. It is easy to see that the characters that can be matched by these productions would overlap significantly, thus the lexer must be aware of the context of a incomming symbol to differanciate between the rules. We considered several alternatives for solving this, as discussed in the following sections.
 
 \subsection{Scan-While-Parse scanner}
 \label{sect:ambiguousgrammar:scanWhileParse}
