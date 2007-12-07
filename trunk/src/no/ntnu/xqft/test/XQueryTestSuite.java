@@ -17,7 +17,7 @@ import org.xml.sax.ext.*;
  * @author andreas
  *
  */
-public class XQueryTestSuite implements Observer {
+public class XQueryTestSuite extends Test implements Observer {
     
 
 
@@ -105,32 +105,7 @@ public class XQueryTestSuite implements Observer {
         
     }
 
-    private String getFileContents(File file) throws Exception {
-        
-        String lineSep = System.getProperty("line.separator");
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String nextLine = "";
-        StringBuffer sb = new StringBuffer();
-        while ((nextLine = br.readLine()) != null) {
-            sb.append(nextLine);
-            sb.append(lineSep);            
-        }
-        return sb.toString();
-    }
 
-    private XQFTParser getNewParser(String input) {
-        
-        CharStream cs = new ANTLRStringStream(input);
-        XQFTLexer lexer = new XQFTLexer(cs);
-        UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
-        tokens.setTokenSource(lexer);
-
-        XQFTParser parser = new XQFTParser(tokens);
-        
-        parser.setLexer(lexer);
-
-        return parser;
-    }
     
     private void print(String str) {
         System.err.println(str);
