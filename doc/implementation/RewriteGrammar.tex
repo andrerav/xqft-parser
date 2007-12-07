@@ -140,16 +140,16 @@ Explained with an example input character stream, \verb!<a id="1" z='2'>b</a>!, 
 \begin{figure}[h]
 \centering
 \begin{tabular}{ll}
-DEFAULT				& \framebox[1.0\width]{$\times$}\verb!<a id="1" z='2'>b</a>!\framebox[1.0\width]{$\times$} \\
-IN\_TAG				& \verb!<!\framebox[1.0\width]{\texttt{a}}\verb! id="1" z='2'>b</a>! \\
-IN\_APOS\_ATTRIBUTE\verb!   !	& \verb!<a id="1" z='!\framebox[1.0\width]{\texttt{2}}\verb!'>b</a>! \\
-IN\_QUOT\_ATTRIBUTE		& \verb!<a id="!\framebox[1.0\width]{\texttt{1}}\verb!" z='2'>b</a>! \\
-IN\_ELEMENT			& \verb!<a id="1" z='2'>!\framebox[1.0\width]{\texttt{b}}\verb!</a>! \\
+\verb!DEFAULT!			& \framebox[1.0\width]{$\times$}\verb!<a id="1" z='2'>b</a>!\framebox[1.0\width]{$\times$} \\
+\verb!IN_TAG!			& \verb!<!\framebox[1.0\width]{\texttt{a}}\verb! id="1" z='2'>b</a>! \\
+\verb!IN_APOS_ATTRIBUTE   !	& \verb!<a id="1" z='!\framebox[1.0\width]{\texttt{2}}\verb!'>b</a>! \\
+\verb!IN_QUOT_ATTRIBUTE!	& \verb!<a id="!\framebox[1.0\width]{\texttt{1}}\verb!" z='2'>b</a>! \\
+\verb!IN_ELEMENT!		& \verb!<a id="1" z='2'>!\framebox[1.0\width]{\texttt{b}}\verb!</a>! \\
 \end{tabular}
 \caption{An illustrated overview of the different states.}
 \label{fig:states}
 \end{figure}
-
+The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLitteral! and \verb!DirAttrValue!, while the other states are for separating characters legal in the attributes and the ones in the element. 
 
 \textbf{\LARGE //TODO:} 
 
@@ -158,7 +158,7 @@ ElementContent, Apossoppassellers etc..
 
 
 \subsection{State Transitions}
-
+\label{sect:rewriteGrammar:transitions}
 
 \textbf{\LARGE //TODO:} 
 
