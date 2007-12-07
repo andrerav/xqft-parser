@@ -40,9 +40,11 @@ piTarget    : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
 Where the original production can be interpreted as ``piTarget can be a Name, but not `XML', regardless of character casing''. The validating semantic predicate will imitate this behaviour using the method \verb!equalsIgnoreCase()!.
 
 \section{Parser Controlled State Driven Lexer}
-As we saw in section \ref{sect:ambiguousgrammar:ambigTerm}, unless we employ a scan-while-parse scanning strategy, we need to make the lexer somehow aware of the context of incomming characters to be able to correctly generate tokens. Our parser controlled state driven lexer strategy implies that the parser must directly infulence the state of the lexer, and the lexer must know what state it is in \emph{before} trying to match a token. ANTLRs default parser input \verb!TokenStream!, \verb!CommonTokenStream!, will at first peek ask the lexer to generate tokens until \verb!EOF! and place them in a buffer, meaning that the parser will be in an initial state as the lexer runs. This is not compatible with our lexer strategy, so we had to make our own \verb!TokenStream!, not buffering more than strictly needed. This method as well as how we control the state transitions, how we introduced container tokens to ease the parsing and how we reorganized the grammar to make it susceptible to states will be discussed in the following sections.
+As we saw in section \ref{sect:ambiguousgrammar:ambigTerm}, unless we employ a scan-while-parse scanning strategy, we need to make the lexer somehow aware of the context of incomming characters to be able to correctly generate tokens. Our parser controlled state driven lexer strategy implies that the parser must directly infulence the state of the lexer, and the lexer must know what state it is in \emph{before} trying to match a token. 
 
-\subsection{UnbufferedCommenTokenStream}
+ANTLRs default parser input \verb!TokenStream!, \verb!CommonTokenStream!, will at first peek ask the lexer to generate tokens until \verb!EOF! and place them in a buffer, meaning that the parser will be in an initial state as the lexer runs. This is not compatible with our lexer strategy, so we had to make our own \verb!TokenStream!, not buffering more than strictly needed. This method as well as how we control the state transitions, how we introduced container tokens to ease the parsing and how we reorganized the grammar to make it susceptible to states will be discussed in the following sections.
+
+\subsection{UnbufferedCommonTokenStream}
 For an overview of how the lexer, parser and tokenen stream is connected see section \ref{sect:antlr:parser}. ANTLRs \verb!CommonTokenStream! has a method \verb!LT(int k)! which returns the $k$th token forward from its current position (simplified):
 \begin{verbatim}
 public Token LT(int k) {
@@ -112,28 +114,37 @@ Where \verb!no! once again acts as a counter over valid tokens. The \verb!while!
 
 \subsection{Introducing the States}
 \label{sect:rewriteGrammar:introduceStates}
-Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLitteral! be addressed. By looking at where these productions are referred to (or not referred to in the case of \verb!StringLitteral!) in the W3C specified grammar, we see that it is possible to solve this ambiguousity with states (figure \ref{fig:ambigTerminalRef}).
-\begin{figure}
+Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLitteral! be addressed. Figure \ref{fig:ambigTerminalRef} shows where these productions are referred to (or not referred to in the case of \verb!StringLitteral!) in the W3C specified grammar. As we can see, all the problem terminals are in a way connected to XML markup, and consist of the characters allowed as the text in elements and the characters allowed as attribute values.
+\begin{figure}[h]
 \begin{verbatim}
-DirElemConstructor     ::= "<" QName DirAttributeList 
-                               ("/>" 
-                               | (">" DirElemContent* "</" QName ">"))
-DirAttributeList       ::= (QName "=" DirAttributeValue)*
-DirAttributeValue      ::= ('"' (EscapeQuot | QuotAttrValueContent)* '"')
-                         | ("'" (EscapeApos | AposAttrValueContent)* "'")
-QuotAttrValueContent   ::= QuotAttrContentChar
-                         | CommonContent
-AposAttrValueContent   ::= AposAttrContentChar
-                         | CommonContent
-DirElemContent         ::= ElementContentChar
-                         | CommonContent
-CommonContent          ::= "{{" | "}}" | EnclosedExpr
-EnclosedExpr           ::= "{" Expr "}"
+DirElemConst    ::= "<" QName DirAttributeList 
+                      ("/>" 
+                     |(">" DirElemContent* "</" QName ">")
+                      )
+DirAttrList     ::= (QName "=" DirAttrValue)*
+DirAttrValue    ::= ('"' (EscapeQuot|QuotAttrValCont)* '"')
+                  | ("'"(EscapeApos|AposAttrValCont)* "'")
+QuotAttrValCont ::= QuotAttrContentChar
+                  | CommonContent
+AposAttrValCont ::= AposAttrContentChar
+                  | CommonContent
+DirElemContent  ::= ElementContentChar
+                  | CommonContent
+CommonContent   ::= "{{" | "}}" | EnclosedExpr
+EnclosedExpr    ::= "{" Expr "}"
 \end{verbatim}
-\caption[Grammar reffering to amiguous terminals.]{A simplified overview of the non-terminal productions refering to the ambiguous terminals}
+\caption[Grammar reffering to amiguous terminals.]{A simplified overview of the non-terminal productions refering to the ambiguous terminals. \textbf{EscapeApos} is \textbf{''} and is used to escape the single \textbf{'} within a apostrophe enveloped construct, and the analog for the quote sign \textbf{"} is \textbf{EscapeQuot}. \textbf{Expr} is a very high-level production able to match almost any legal XQuery syntax.}
 \label{fig:ambigTerminalRef}
 \end{figure}
-Where \verb!EscapeApos! is \verb!''! and is used to escape the single \verb!'! within a apostrophe enveloped construct. \verb!EscapeQuot! is an analog for the quote sign \verb!"!. \verb!Expr! is a very high-level production able to match almost any legal XQuery syntax.
+Explained with an example input character stream, \verb!<a id="1"> b </a>!, and where \emph{X} marks the spot where the lexer is in the respective state, our five defined states are:
+\begin{description}
+\item[DEFAULT] X %\verb!<a id="1"> b </a>!
+%\item[IN_TAG] \texttt{<a \textnormal{\emph{X}} id="1"> b </a>}
+\item[IN_APOS_ATTRIBUTE] text
+\item[IN_QUOT_ATTRIBUTE]text
+\item[IN_ELEMENT]text
+\end{description}
+.
 
 \textbf{\LARGE //TODO:} 
 
