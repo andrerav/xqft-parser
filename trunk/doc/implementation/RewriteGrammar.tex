@@ -136,20 +136,20 @@ EnclosedExpr    ::= "{" Expr "}"
 \caption[Grammar reffering to amiguous terminals.]{A simplified overview of the non-terminal productions refering to the ambiguous terminals. \textbf{EscapeApos} is \textbf{''} and is used to escape the single \textbf{'} within a apostrophe enveloped construct, and the analog for the quote sign \textbf{"} is \textbf{EscapeQuot}. \textbf{Expr} is a very high-level production able to match almost any legal XQuery syntax.}
 \label{fig:ambigTerminalRef}
 \end{figure}
-Explained with an example input character stream, \verb!<a id="1"> b </a>!, and where \textbf{\Large $\times$} marks the spot where the lexer is in the respective state, our five defined states are shown in figure \ref{fig:states}.
+Explained with an example input character stream, \verb!<a id="1" z='2'>b</a>!, and where \framebox[1.0\width]{$\times$} marks the spot where the lexer is in the respective state, our five defined states are shown in figure \ref{fig:states}.
 \begin{figure}[h]
 \centering
 \begin{tabular}{ll}
-DEFAULT				& \textbf{\Large $\times$}\verb!<a id="1"> b </a>!\textbf{\Large $\times$} \\
-IN\_TAG				& \verb!<!\textbf{\Large $\times$}\verb!a id="1"> b </a>! \\
-IN\_APOS\_ATTRIBUTE\verb!   !	& \verb!<a id="1"> b </a>! \\
-IN\_QUOT\_ATTRIBUTE		& \verb!<a id="1"> b </a>! \\
-IN\_ELEMENT			& \verb!<a id="1"> b </a>! \\
+DEFAULT				& \framebox[1.0\width]{$\times$}\verb!<a id="1" z='2'>b</a>!\framebox[1.0\width]{$\times$} \\
+IN\_TAG				& \verb!<!\framebox[1.0\width]{\texttt{a}}\verb! id="1" z='2'>b</a>! \\
+IN\_APOS\_ATTRIBUTE\verb!   !	& \verb!<a id="1" z='!\framebox[1.0\width]{\texttt{2}}\verb!'>b</a>! \\
+IN\_QUOT\_ATTRIBUTE		& \verb!<a id="!\framebox[1.0\width]{\texttt{1}}\verb!" z='2'>b</a>! \\
+IN\_ELEMENT			& \verb!<a id="1" z='2'>!\framebox[1.0\width]{\texttt{b}}\verb!</a>! \\
 \end{tabular}
 \caption{An illustrated overview of the different states.}
 \label{fig:states}
 \end{figure}
-.
+
 
 \textbf{\LARGE //TODO:} 
 
