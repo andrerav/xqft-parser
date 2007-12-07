@@ -336,8 +336,9 @@ importStmt                  			: schemaImport | moduleImport;
 	moduleImport                			: IMPORT MODULE (NAMESPACE NCName EQSi)? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
 	
 varDecl                     			: DECLARE VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNSi exprSingle) | EXTERNAL);
-	qName returns [String text]			    : (nc1=NCName c=COLONSi)? nc2=NCName { $text = $nc2.text + ($c != null ? $c.text + $nc1.text : ""); };
-	typeDeclaration             			: AS sequenceType;
+	qName returns [String text]                 : nc1=NCName (c=COLONSi nc2=NCName)? { $text = $nc1.text + ($c != null ? $c.text + $nc2.text : ""); };
+
+    typeDeclaration             			: AS sequenceType;
 //		sequenceType# 							: #PAA EGET#
 //	exprSingle# 							: #PAA EGET#
 	
@@ -774,10 +775,18 @@ filterExpr                  			: primaryExpr predicateList;
                 												| APOSSi {lexer.state=State.IN_APOS_ATTRIBUTE;}
                 													(AposAttributeContent | xmlEnclosedExpr)* 
                 												  APOSSi {lexer.state=State.IN_TAG;}; 
-        					xmlEnclosedExpr                			: LBRACESi! {lexer.stack.pushState(lexer.state);System.out.println("Pushstate: " +lexer.state); lexer.state=State.DEFAULT;}
+//<<<<<<< .mine
+        					xmlEnclosedExpr                			: LBRACESi! {lexer.stack.pushState(lexer.state); lexer.state=State.DEFAULT;}
+//=======
+//        					xmlEnclosedExpr                			: LBRACESi {lexer.stack.pushState(lexer.state);System.out.println("Pushstate: " +lexer.state); lexer.state=State.DEFAULT;}
+//>>>>>>> .r232
         																expr 
-        																{lexer.state = lexer.stack.pop(); System.err.println("Setter nå state til " +lexer.state);}
-        															  RBRACSi! ;
+//<<<<<<< .mine
+        															  RBRACSi! {lexer.state = lexer.stack.pop();};
+//=======
+//        																{lexer.state = lexer.stack.pop(); System.err.println("Setter nå state til " +lexer.state);}
+//        															  RBRACSi ;
+//>>>>>>> .r232
 //        						expr                        			: exprSingle (COMMASi exprSingle)*;
 //									exprSingle#								: #PAA EGET#
 
