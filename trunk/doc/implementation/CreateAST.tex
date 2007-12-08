@@ -47,5 +47,5 @@ the AST generated for the simple arithmetic expression \verb!1+2*3-2*15!.
 \subsection{FLWOR expressions}
 fLWORExpr : (fc+=forClause | lc+=letClause)+ whereClause?
             orderByClause? RETURN exprSingle
-            -> ^(AST_FLWOR $fc* $lc* whereClause? orderByClause? exprSingle);
+            -> \^{}(AST\_FLWOR \$fc* \$lc* whereClause? orderByClause? exprSingle);
 	
