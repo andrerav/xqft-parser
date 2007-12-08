@@ -3,7 +3,7 @@ As we saw in section \ref{sect:ambiguousgrammar:ambigTerm}, unless we employ a s
 
 ANTLRs default parser input \verb!TokenStream!, \verb!CommonTokenStream!, will at first peek ask the lexer to generate tokens until \verb!EOF! and place them in a buffer, meaning that the parser will be in an initial state as the lexer runs. This is not compatible with our lexer strategy, so we had to make our own \verb!TokenStream!, not buffering more than strictly needed. This method as well as how we control the state transitions, how we introduced container tokens to ease the parsing and how we reorganized the grammar to make it susceptible to states will be discussed in the following sections.
 
-\subsection{UnbufferedCommonTokenStream}
+\subsection{Custom Made Parser Input}
 For an overview of how the lexer, parser and tokenen stream is connected see section \ref{sect:antlr:parser}. ANTLRs \verb!CommonTokenStream! has a method \verb!LT(int k)! which returns the $k$th token forward from its current position (simplified):
 \begin{verbatim}
 public Token LT(int k) {
@@ -132,20 +132,7 @@ dirAttributeValue : QUOTSi {lexer.state=IN_QUOT_ATTRIBUTE;}
 \label{fig:transitionSimple}
 \end{figure}
 
-As can be seen from figure \ref{fig:ambigTerminalRef} a \verb!DirElemConstr! can contain another \verb!DirElemConstr! by way of \verb!DirElemContent! In addition, the two types of attribute content can contain an \verb!Expr! by way of the \verb!EnclosedExpr!, which again can contain e.g. a \verb!DirElemConstr!. This means that the parser will have to somehow know which state to go back to when finished recursing these nested constructs. We chose to implement this with a simple stack in the class \verb!State!. The stack provides methods like \verb!public int pop()! and \verb!public void pushState(int state)!. Examples of how we resolved the problem with the nested state transitions is shown in figure \ref{fig:nestedTransitionExpr} and \ref{fig:nestedTransitionElement}.
-
-\begin{figure}[h!]
-\begin{verbatim}
-enclosedExpr   : LBRACESi 
-                   {lexer.stack.pushState(lexer.state); 
-                                   lexer.state=DEFAULT;}
-                   expr 
-                 RBRACSi {lexer.state = lexer.stack.pop();}
-                 ;
-\end{verbatim}
-\caption[Accommodating for nested structure of \texttt{enclosedExpr}]{Accommodating for nested structure of \texttt{enclosedExpr}.}
-\label{fig:nestedTransitionExpr}
-\end{figure}
+As can be seen from figure \ref{fig:ambigTerminalRef} by way of \verb!DirElemContent! a \verb!DirElemConstr! can contain another \verb!DirElemConstr!. In addition, the two types of attribute content can contain an \verb!Expr! by way of the \verb!EnclosedExpr!, which again can contain e.g. a \verb!DirElemConstr!. This means that the parser will have to somehow know which state to go back to when finished recursing these nested constructs. We chose to implement this with a simple stack in the class \verb!State!. The stack provides methods like \verb!public int pop()! and \verb!public void pushState(int state)!. Examples of how we resolved the problem with the nested state transitions is shown in figure \ref{fig:nestedTransitionExpr} and \ref{fig:nestedTransitionElement}.
 
 \begin{figure}[h!]
 \begin{verbatim}
@@ -170,10 +157,28 @@ dirElemConstr  : LTSi
 \label{fig:nestedTransitionElement}
 \end{figure}
 
-By using a stack the parser has knowledge of which state the lexer was in before it matched the possible nested construct. In this way we e.g. accommodate for the possiblity that a element contains other elements, which actually is not that uncommon. At the outermost element the \verb!DEFAULT! state will be pushed to the stack, and the state will be set to \verb!IN_TAG!. If it is a self-terminating tag, the state will be set back to \verb!DEFAULT! by means of poping the stack after the lexer has matched \verb!/>!. If it an element consisting of a start and end tag, the state in the lexer will be set to \verb!IN_ELEMENT! after matching \verb!>! When the parser comes upon the end of the end tag it will as in the case of the self-terminating tag set he lexer state back to \verb!DEFAULT! by means of the stack. In this way the lexer can meet a element within another, be it in the form of a self terminating or a pair of tags, and know that it will transit back to the right state after it has matched it.
+\begin{figure}[h!]
+\begin{verbatim}
+enclosedExpr   : LBRACESi 
+                   {lexer.stack.pushState(lexer.state); 
+                                   lexer.state=DEFAULT;}
+                   expr 
+                 RBRACSi {lexer.state = lexer.stack.pop();}
+                 ;
+\end{verbatim}
+\caption[Accommodating for nested structure of \texttt{enclosedExpr}]{Accommodating for nested structure of \texttt{enclosedExpr}.}
+\label{fig:nestedTransitionExpr}
+\end{figure}
+
+By using a stack the parser has knowledge of which state the lexer was in before it matched the possible nested construct. In this way we e.g. accommodate for the possiblity that a element contains other elements, which actually is not that uncommon. At the start of the tag for an outermost element the \verb!DEFAULT! state will be pushed to the stack, and the state will be set to \verb!IN_TAG!. If it is a self-terminating tag, the state will be set back to \verb!DEFAULT! by means of poping the stack after the lexer has matched \verb!/>!. If it an element consisting of a start and end tag, the state in the lexer will be set to \verb!IN_ELEMENT! after matching \verb!>! When the parser comes upon the end of the end tag it will as in the case of the self-terminating tag set he lexer state back to \verb!DEFAULT! by means of the stack. In this way the lexer can meet a element within another, be it in the form of a self terminating or a pair of tags, and know that it will transit back to the right state after it has matched it.
 
 \subsection{Reorganizing the Grammar}
 \label{sect:rewriteGrammar:reorganizing}
+
+To gain a more readable version of the grammar, all non-terminal, i.e. parser, productions were organized in a treewise fashion. Producuctions that lead to cycles were pulled out and made the root of their own tree. In this way it was readily understood which productions could have which outcome, but also easier to spot any possible non-determinisms.
+
+Even with the state transitions in place, the lexer grammar still has to be adapted to be aware of them.
+
 \textbf{\LARGE //TODO:} 
 
 Slik at state-systemet fungerer: Lage fragment av alt, TOKENSWITCH, semantiske predikat, etc.
