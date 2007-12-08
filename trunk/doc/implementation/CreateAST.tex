@@ -1,4 +1,5 @@
 \section{Creating the AST}
+\subsection{Operators and rewrite rules}
 As described in section \ref{sect:theory:antlr}, ANTLR provides a operators and
 rewrite rules for augmenting the grammar specification into generating a useable
 AST. In many cases, it is a simple matter of defining which tokens to use as
@@ -25,9 +26,12 @@ mentioned in section \ref{sect:xquery:precedence}.
 
 \begin{figure}[h]
 \begin{verbatim}
-additiveExpr : multiplicativeExpr ((PLUSSi | MINUSSi)^ multiplicativeExpr)*;
-  multiplicativeExpr : unionExpr ((STARSi | DIV | IDIV | MOD)^ unionExpr)*;
-    unionExpr : intersectExceptExpr ((UNION | PIPESi)^ intersectExceptExpr)*;
+additiveExpr : multiplicativeExpr (
+              (PLUSSi | MINUSSi)^ multiplicativeExpr)*;
+  multiplicativeExpr : unionExpr (
+                       (STARSi | DIV | IDIV | MOD)^ unionExpr)*;
+    unionExpr : intersectExceptExpr (
+                (UNION | PIPESi)^ intersectExceptExpr)*;
 \end{verbatim}
 \caption[AST root node promotion operator example]{Using the root node promotion
 operator to define structuring of expressions such as arithmetic addition and set
@@ -40,9 +44,12 @@ the AST generated for the simple arithmetic expression \verb!1+2*3-2*15!.
 
 \begin{figure}[h]
 \Tree [.{-} [.{+} 1 [.{*} 2 3  ]  ] [.{*} 2 15  ] ]
-\caption{Arithmetic AST example}
+\caption{Arithmetic AST example from the expression \texttt{1+2*3-2*15}}
 \label{tree:ast:arithmetic}
 \end{figure}
+
+In addition to the operators, rewrite rules have been used in the the more
+complex cases where simple operators were not sufficient. 
 
 \subsection{FLWOR expressions}
 fLWORExpr : (fc+=forClause | lc+=letClause)+ whereClause?
