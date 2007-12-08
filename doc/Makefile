@@ -9,3 +9,10 @@ test:
 	pdflatex Test
 	pdflatex Test
 	pdflatex Test
+	
+flwor:
+	pdflatex flowrtree
+	pdflatex flowrtree
+	pdflatex flowrtree
+	
+
