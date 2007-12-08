@@ -21,12 +21,12 @@ public class XQFTTree extends CommonTree {
 
     public String toStringTree() {
          if ( children==null || children.size()==0 ) {
-             return this.fixStringForLatex(this.toString());
+             return "\\tiny{" + this.fixStringForLatex(this.toString()) + "}";
          }
          StringBuffer buf = new StringBuffer();
          if ( !isNil() ) {
                  buf.append("[");
-             buf.append(".{" + this.fixStringForLatex(this.toString()) + "}");
+             buf.append(".{\\tiny " + this.fixStringForLatex(this.toString()) + "}");
              buf.append(' ');
          }
          for (int i = 0; children!=null && i < children.size(); i++) {
@@ -37,7 +37,7 @@ public class XQFTTree extends CommonTree {
                  buf.append(t.toStringTree());
          }
          if ( !isNil() ) {
-                 buf.append(" !\\qsetw{15pt} ] ");
+                 buf.append(" !\\qsetw{20pt} ] ");
          }
          return buf.toString();
     }

@@ -163,8 +163,13 @@ Finally, the \verb!exprSingle! rule terminates the FLWOR expression. This rule
 isa placeholder for any valid expression, and thus it carries no meaning in
 itself but rather in the sense of what is deduced from the input.
 
-Figure \ref{something} shows the AST generated for the expression 
+Figure \ref{tree:ast:flwor} shows the AST generated for the expression 
 
+\begin{figure}[h]
+\Tree [.{\tiny AST\_FLWOR} [.{\tiny AST\_FORCLAUSE} \tiny{x} [.{\tiny /} [.{\tiny /} [.{\tiny /} [.{\tiny AST\_FUNCTIONCALL} \tiny{doc} \tiny{"books.xml"} ]  \tiny{bookstore} ]  \tiny{book} ]  \tiny{title} ]  ]  [.{\tiny AST\_WHERECLAUSE} [.{\tiny /} \tiny{x} \tiny{text} \tiny{(} \tiny{)} ]  \tiny{!=} \tiny{"The Definitive ANTLR Reference"} ]  [.{\tiny AST\_ORDERBYCLAUSE} \tiny{x} ]  [.{\tiny AST\_DIRELEMCONSTRUCTOR} \tiny{elem} ]  ]
+\caption{Generated AST tree for a simple FLWOR-expression}
+\label{tree:ast:flwor}
+\end{figure}
 
 \subsection{Path expressions}
 \subsection{Function declarations}
