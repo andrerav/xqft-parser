@@ -222,6 +222,7 @@ b         : {pred2}? A;
 Predicates implicitly specify precedence among the alternatives, where an earlier specified alternative has precedence over a later one. If both \verb!pred1! and \verb!pred2! would evaluate to true in figure \ref{code:disambigSemantic}., the first \verb!A! would be matched. In the case of only the first $n-1$ non-deterministic alternatives among $n$ are covered by a semantic predicate, the $n$th alternative would be covered with a \verb!{true}?! predicate. However, if this uncovered alternative was places first, it would be covered by a predicate that is the complement of the union of the following $n-1$ predicates.
 
 \subsubsection{Gated Semantic Predicates}
+\label{sect:antlr:gate_semantic_preds}
 Gated semantic predicates are used when it is desirable to turn parts of a grammar on or off based on runtime information. The predicate will be hoisted into the decision even if the decision is deterministic by considering syntax alone. The difference between gated and disambiguating semantic predicates is that decisions use disambiguating semantic predicates only when syntax alone is insufficient to distinguish between alternatives. Figure \ref{code:gatedSemantic} shows an example of a gated semantic predicate, the resulting DFA is illustrated in figure \ref{fig:dfaGated}, showing how the predicate is hoisted even with no syntactic ambiguity.
 
 \begin{figure}[h!]
@@ -244,6 +245,7 @@ b         : {pred}?=>B;
 \end{figure}
 
 \subsection{Syntactic Predicates}
+\label{sect:antlr:syntacticPredicate}
 Syntactic predicates are similar to semantic predicates except that they specify the syntactic validity of applying an alternative rather than the semantic validity. As with the semantic predicates their syntactic counterparts alter the parse based upon information available at runtime, but the only information the syntactic predicates use are future input symbols.  Both syntactic predicates and LL(*) support arbitrary lookahead, but whereas LL(*) uses a DFA to examine the future input symbols, the predicates use a pushdown machine, making them capable of recognizing more complicated structures in the lookahead than DFAs. Syntactic predicates are especially useful to specify the precedence between to ambiguous alternatives, or when LL(*) cannot handle the grammar the way you would like to write it.
 
 When used to disambiguate between alternatives, ANTLR will try the alternatives in order. The alternative whose predicate is the first to return true, is the one chosen ("if it looks like A, it is A"). In its simplest form, syntactic predicates can be used to look ahead an arbitrarily number of symbols, to check if they match the symbols specified in the predicate. In a case like this ANTLR rewrites the predicate to a gated semantic predicate, an example of this is the grammar in figure \ref{code:syntactic} being translated to the equivalent grammar of figure \ref{code:translatedSyntactic}.

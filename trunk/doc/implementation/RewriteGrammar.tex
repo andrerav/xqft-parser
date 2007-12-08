@@ -39,7 +39,7 @@ Comment   : LXQCOMMENTSi
 Where the disambiguating semantic predicate on the second line can be understood as "if it looks like a comment, it is a comment". The gated semantic predicates on the third and fourth line guards the production from being greedy, i.e. they hide the posibility of matching a \verb!':'! if it is followed by a \verb!')'!, and \verb!'('! if it is followed by a \verb!':'!. By using \verb!$channel=HIDDEN! ANTLR will put this token in an different virtual channel than the default one, making it invisible for the parser unless explicitly asked for. 
 
 \section{Differentiating NCName and Keywords}
-
+\label{sect:rewritegrammar:keywordNCName}
 \textbf{\LARGE //TODO:} 
 
 Systemet med NCNames vs keywords. \\
