@@ -25,7 +25,7 @@ public class TreeTest extends Test {
     }
     
     protected void execute() throws Exception {
-        String inputPath = "./test/TreeTest/flwor.xq";
+        String inputPath = "./test/TreeTest/arithmetic.xq";
         XQFTParser parser 
                 = this.getNewParser(
                           this.getFileContents(
