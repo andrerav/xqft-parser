@@ -1,6 +1,6 @@
 \section{Creating the AST}
 \subsection{Operators and rewrite rules}
-As described in section \ref{sect:theory:antlr}, ANTLR provides operators and
+As described in section \ref{sect:antlr:ast}, ANTLR provides operators and
 rewrite rules for augmenting the grammar specification into generating a useable
 AST. In many cases, it is a simple matter of defining which tokens to use as
 root, and which to omit. This is done using the two basic operators \verb!hat!
@@ -128,7 +128,7 @@ one encounters one of the following:
   \item \verb!exprSingle!
 \end{itemize}
 
-The optional where-clause is trivial, but the rewrite rule adds an imaginary
+The optional where-clause is trivial. The rewrite rule adds an imaginary
 token for clarity and omits the \verb!WHERE! token, as can seen in figure
 \ref{code:ast:whereclause}.
 
@@ -140,4 +140,29 @@ whereClause : WHERE exprSingle
 \caption{AST rewrite rule for where-clauses}
 \label{code:ast:whereclause}
 \end{figure}
-                                                
+
+The orderby-clause is also a trivial case. As with the where-clause, an
+imaginary token is added for clarity, and the \verb!STABLE! token is preserved
+if it is present in the input. In this case, an alternative solution would be to
+flag the imaginary root node token as ``stable''. As described in section 
+\ref{sect:antlr:ast}, this can be done by subclassing the \verb!CommonTree! (or
+\verb!BaseTree!) classes and adding a custom tree adaptor to set such flags on
+tokens. The rewrite rule for the orderby-clause is shown in figure
+\ref{code:ast:orderbyclause}.
+
+\begin{figure}[h]
+\begin{verbatim} 
+orderByClause : (ORDER BY | STABLE ORDER BY) orderSpecList
+                -> ^(AST_ORDERBYCLAUSE STABLE? orderSpecList);
+\end{verbatim}
+\caption{AST rewrite rule for orderby-clauses}
+\label{code:ast:orderbyclause}
+\end{figure}
+
+Finally, the \verb!exprSingle! rule terminates the FLWOR expression. This rule
+isa placeholder for any valid expression, and thus it carries no meaning in
+itself but rather in the sense of what is deduced from the input.
+
+\subsection{Function declarations}
+
+\subsection{Path expressions}
