@@ -12,6 +12,9 @@ import org.antlr.runtime.tree.*;
  */
 public class XQFTTree extends CommonTree {
     
+    public static int i = 0;
+    public int my_i;
+    
     /**
      * @param t
      */
@@ -20,24 +23,28 @@ public class XQFTTree extends CommonTree {
     }
 
     public String toStringTree() {
-         if ( children==null || children.size()==0 ) {
-             return "\\tiny{" + this.fixStringForLatex(this.toString()) + "}";
+        XQFTTree.i++;
+        my_i = XQFTTree.i;
+        
+        String nodeName = "NODE" + my_i;
+        
+        if ( children==null || children.size()==0 ) {
+            return nodeName + " [label=\"" + this.toString() + "\"]\n";
+        }
+        StringBuffer buf = new StringBuffer();
+        if ( !isNil() ) {
+            buf.append(nodeName + " [label=\"" + this.toString() + "\"]\n");
+        }
+        for (int i = 0; children!=null && i < children.size(); i++) {
+            XQFTTree t = (XQFTTree) children.get(i);
+            if ( i>0 ) {
+                    buf.append(' ');
+            }
+            buf.append(t.toStringTree());
+            buf.append(nodeName + " -> " + "NODE" + t.my_i + "\n");
          }
-         StringBuffer buf = new StringBuffer();
          if ( !isNil() ) {
-                 buf.append("[");
-             buf.append(".{\\tiny " + this.fixStringForLatex(this.toString()) + "}");
-             buf.append(' ');
-         }
-         for (int i = 0; children!=null && i < children.size(); i++) {
-                 BaseTree t = (BaseTree) children.get(i);
-                 if ( i>0 ) {
-                         buf.append(' ');
-                 }
-                 buf.append(t.toStringTree());
-         }
-         if ( !isNil() ) {
-                 buf.append(" !\\qsetw{20pt} ] ");
+//                 buf.append(" !\\qsetw{20pt} ] ");
          }
          return buf.toString();
     }
