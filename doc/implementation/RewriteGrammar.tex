@@ -114,7 +114,7 @@ Where \verb!no! once again acts as a counter over valid tokens. The \verb!while!
 
 \subsection{Introducing the States}
 \label{sect:rewriteGrammar:introduceStates}
-Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLitteral! be addressed. Figure \ref{fig:ambigTerminalRef} shows where these productions are referred to (or not referred to in the case of \verb!StringLitteral!) in the W3C specified grammar. As we can see, neither of the problem terminals are ambigious when enclosed in higher level productions -- a necessity for our state driven strategy. We also see that all the problem terminals are in a way connected to XML markup, and consist of the characters allowed as the text in elements and the characters allowed as attribute values.
+Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLitteral! be addressed. Figure \ref{fig:ambigTerminalRef} shows where these productions are referred to (or not referred to in the case of \verb!StringLitteral!) in the W3C specified grammar. 
 \begin{figure}[h!]
 \begin{verbatim}
 DirElemConst    ::= "<" QName DirAttrList 
@@ -130,13 +130,16 @@ AposAttrValCont ::= AposAttrContentChar
                   | CommonContent
 DirElemContent  ::= ElementContentChar
                   | CommonContent
+                  | DirElemConst
 CommonContent   ::= "{{" | "}}" | EnclosedExpr
 EnclosedExpr    ::= "{" Expr "}"
 \end{verbatim}
 \caption[Grammar reffering to amiguous terminals.]{A simplified overview of the non-terminal productions refering to the ambiguous terminals. \texttt{EscapeApos} is \texttt{''} and is used to escape the single \texttt{'} within a apostrophe enveloped construct, and the analog for the quote sign \texttt{"} is \texttt{EscapeQuot}. \texttt{Expr} is a very high-level production able to match almost any legal XQuery syntax. Some of the production names have been shortened to match formatting.}
 \label{fig:ambigTerminalRef}
 \end{figure}
-We defined five ditinct states as shown in figure \ref{fig:states}.
+
+As we can see, neither of the problem terminals are ambigious when enclosed in higher level productions -- a necessity for our state driven strategy. We also see that all the problem terminals are in a way connected to XML markup, and consist of the characters allowed as the text in elements and the characters allowed as attribute values.
+
 \begin{figure}[h!]
 \centering
 \begin{tabular}{ll}
@@ -151,10 +154,33 @@ We defined five ditinct states as shown in figure \ref{fig:states}.
 \end{figure}
 
 
-The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLitteral! and \verb!DirAttrValue!. We see that this holds, if we compare the states with the grammar in figure \ref{fig:ambigTerminalRef}, that the only legal alternatives in the \verb!IN_TAG! state are \verb!QName! and \verb!DirAttrList! of which neither can be a \verb!StringLitteral!. By the same account we can see that neither \verb!NCName!, \verb!IntegerLitteral! nor any of the keywords are legal alternatives in the \verb!IN_APOS_ATTRIBUTE!, \verb!IN_QUOT_ATTRIBUTE! or \verb!IN_ELEMENT! states.
+Figure \ref{fig:states} shows how we defined five ditinct states. The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLitteral! and \verb!DirAttrValue!. We see that this holds, if we compare the states with the grammar in figure \ref{fig:ambigTerminalRef}, that the only legal alternatives in the \verb!IN_TAG! state are \verb!QName! and \verb!DirAttrList! of which neither can be a \verb!StringLitteral!. By the same account we can see that neither \verb!NCName!, \verb!IntegerLitteral! nor any of the keywords are legal alternatives in the \verb!IN_APOS_ATTRIBUTE!, \verb!IN_QUOT_ATTRIBUTE! or \verb!IN_ELEMENT! states. The lexer is in the \verb!DEFAULT! state when it is not in any of the other.
 
 \subsection{State Transitions}
 \label{sect:rewriteGrammar:transitions}
+Our state driven strategy requires that the parser has direct communication with the lexer. This is arranged by the method \verb!setLexer(XQFTLexer lex)! in the parser, and will have to be run before parsing can commence. The state transitions are implemented as actions (section \ref{sect:antlr:grammarSpec}) directly into the grammar spesification at their appropriate places. The transitions to \verb!IN_APOS_ATTRIBUTE! and \verb!IN_QUOT_ATTRIBUTE! are quite simple, as shown in figure \ref{fig:transitionSimple}. This figure also shows that the grammar is contracted and new productions like \verb!QuotAttributeContent! are introduced, these features will be discussed in section \ref{sect:rewriteGrammar:containerTokens}.
+\begin{figure}[h!]
+\begin{verbatim}
+dirAttributeValue : QUOTSi {lexer.state=IN_QUOT_ATTRIBUTE;}
+                      (QuotAttributeContent | enclosedExpr)* 
+                      QUOTSi {lexer.state=IN_TAG;}
+                  | APOSSi {lexer.state=IN_APOS_ATTRIBUTE;}
+                      (AposAttributeContent | enclosedExpr)* 
+                      APOSSi {lexer.state=IN_TAG;}
+                  ; 
+\end{verbatim}
+\caption[Attribute content state transitions.]{The state transitions into the attribute content states.}
+\label{fig:transitionSimple}
+\end{figure}
+
+As can be seen from figure \ref{fig:ambigTerminalRef} a \verb!DirElemConst! can contain another \verb!DirElemConst! by way of \verb!DirElemContent! In addition, the two types of attribute content can contain an \verb!Expr! by way of the \verb!EnclosedExpr!, which again can contain e.g. a \verb!DirElemConst!. This means that the parser will have to somehow know which state to go back to when finished recursing these nested constructs. We chose to implement this with a simple stack in the class \verb!State!. The stack provides methods like \verb!public int pop()! and \verb!public void pushState(int state)!. Examples of how we resolved the problem with the nested state transitions is shown in figure \ref{fig:nestedTransition}.
+
+\begin{figure}
+\begin{verbatim}
+yeye
+\end{verbatim}
+\label{fig:nestedTransition}
+\end{figure}
 
 \textbf{\LARGE //TODO:} 
 
