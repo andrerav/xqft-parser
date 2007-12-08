@@ -177,7 +177,7 @@ By using a stack the parser has knowledge of which state the lexer was in before
 
 To gain a more readable version of the grammar, all non-terminal, i.e. parser, productions were organized in a treewise fashion. Producuctions that lead to cycles were pulled out and made the root of their own tree. In this way it was readily understood which productions could have which outcome, but also easier to spot any possible non-determinisms.
 
-Even with the state transitions in place, the lexer grammar still has to be adapted to be aware of them.
+Even with the state transitions in place, the lexer grammar still has to be adapted to be aware of them. An obvious candidate for implementing this would be by gated semantic predicates (section \ref{sect:antlr:val_semantic_preds}). To be sure that the lexer will choose another alternative when a predicate would fail, and not issue a \verb!FailedSemanticPredicateException! we made a lexer production \verb!TOKENSWITCH! which takes the place of \verb!mTokens()! (section \ref{sect:antlr:lexer}), acting as the main differansiator. For this to work there can not exist any other lexer productions, making us convert all other into \verb!fragment! rules.
 
 \textbf{\LARGE //TODO:} 
 
