@@ -1,6 +1,51 @@
 \section{Creating the AST}
-\underline{\textbf{\LARGE //TODO:}}
+As described in section \ref{sect:theory:antlr}, ANTLR provides a operators and
+rewrite rules for augmenting the grammar specification into generating a useable
+AST. In many cases, it is a simple matter of defining which tokens to use as
+root, and which to omit. This is done using the two basic operators \verb!hat!
+(\^{}) and \verb!exclamation mark! (!). Figure \ref{code:ast:exoperator} shows an
+example where the exclusion operator is used to exclude the superfluous brace
+tokens from the AST in the \verb!ftWordsValue! production.
 
-hvordan gramatikken ble augmented slik at vi fikk et fint AST
+\begin{figure}[h]
+\begin{verbatim}
+ftWordsValue : literal | (LBRACESi! expr RBRACSi!);
+\end{verbatim}
+\caption[AST exclusion operator example]{Using the exclusion operator to exclude
+the superfluous brace tokens from the AST, leaving only the expression subtree}
+\label{code:ast:exoperator}
+\end{figure}
 
-\underline{\textbf{\LARGE //ODOT:}}
+Further the hat operator which is, as previously mentioned, used to promote
+tokens to be roots in a subtree was utilized to augment certain expressions into
+taking a natural hierarchial tree structure. Figure \ref{code:ast:hatoperator}
+illustrates how not only how the hat operator is used to create subtrees from
+expressions, but also how precedence is implicitly encoded into the grammar as
+mentioned in section \ref{sect:xquery:precedence}.
+
+\begin{figure}[h]
+\begin{verbatim}
+additiveExpr : multiplicativeExpr ((PLUSSi | MINUSSi)^ multiplicativeExpr)*;
+  multiplicativeExpr : unionExpr ((STARSi | DIV | IDIV | MOD)^ unionExpr)*;
+    unionExpr : intersectExceptExpr ((UNION | PIPESi)^ intersectExceptExpr)*;
+\end{verbatim}
+\caption[AST root node promotion operator example]{Using the root node promotion
+operator to define structuring of expressions such as arithmetic addition and set
+operations}
+\label{code:ast:hatoperator}
+\end{figure}
+
+This is behaviour is illustrated in figure \ref{tree:ast:arithmetic}, which is
+the AST generated for the simple arithmetic expression \verb!1+2*3-2*15!.
+
+\begin{figure}[h]
+\Tree [.{-} [.{+} 1 [.{*} 2 3  ]  ] [.{*} 2 15  ] ]
+\caption{Arithmetic AST example}
+\label{tree:ast:arithmetic}
+\end{figure}
+
+\subsection{FLWOR expressions}
+fLWORExpr : (fc+=forClause | lc+=letClause)+ whereClause?
+            orderByClause? RETURN exprSingle
+            -> ^(AST_FLWOR $fc* $lc* whereClause? orderByClause? exprSingle);
+	

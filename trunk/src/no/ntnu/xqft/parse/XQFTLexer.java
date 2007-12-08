@@ -1,8 +1,4 @@
-<<<<<<< .mine
-// $ANTLR 3.0.1 etc/XQFT.g 2007-12-07 22:28:38
-=======
-// $ANTLR 3.0.1 etc/XQFT.g 2007-12-07 22:17:59
->>>>>>> .r234
+// $ANTLR 3.0.1 etc/XQFT.g 2007-12-08 15:51:44
 
 	package no.ntnu.xqft.parse;	
 
@@ -14,179 +10,120 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 public class XQFTLexer extends Lexer {
-<<<<<<< .mine
-    public static final int NotChar=222;
-    public static final int LENDTAGSi=194;
-    public static final int QUOTSi=195;
-    public static final int END=39;
-    public static final int NOINHERIT=85;
-    public static final int LBRACESi=165;
-    public static final int INSTANCE=67;
-    public static final int CONTENT=23;
-    public static final int STOP=119;
-    public static final int LAX=72;
-    public static final int PIPESi=171;
-=======
     public static final int FUNCTION=57;
     public static final int AST_FORCLAUSE=145;
     public static final int MOD=79;
-    public static final int LPISi=210;
-    public static final int CREFHEXSi=232;
+    public static final int LPISi=211;
+    public static final int CREFHEXSi=233;
     public static final int NOT=87;
     public static final int EXCEPT=46;
     public static final int EOF=-1;
-    public static final int PragmaContents=187;
     public static final int AST_IFEXPR=153;
-    public static final int BaseChar=249;
-    public static final int Ideographic=250;
+    public static final int PragmaContents=188;
+    public static final int BaseChar=250;
+    public static final int Ideographic=251;
     public static final int DISTANCE=32;
->>>>>>> .r234
+    public static final int AST_FUNCTIONDECL=157;
     public static final int IMPORT=63;
-<<<<<<< .mine
-    public static final int APOSSi=197;
-    public static final int DBLCOLONSi=187;
-    public static final int AposAttrContentChar=225;
-    public static final int Letter=230;
-    public static final int CASTABLE=18;
-=======
-    public static final int ASSIGNSi=165;
-    public static final int CREFDECSi=231;
+    public static final int ASSIGNSi=166;
+    public static final int CREFDECSi=232;
     public static final int SENTENCE=114;
     public static final int PRECEDING=99;
     public static final int WORDS=142;
-    public static final int NumberLEX=219;
+    public static final int NumberLEX=220;
     public static final int RETURN=104;
     public static final int ELEMENT=36;
-    public static final int RPARSi=168;
+    public static final int RPARSi=169;
     public static final int EQ=43;
     public static final int AST_CASECLAUSE=152;
-    public static final int DOLLARSi=164;
->>>>>>> .r234
+    public static final int DOLLARSi=165;
     public static final int DIACRITICS=30;
-<<<<<<< .mine
-    public static final int ORDER=92;
-    public static final int RCOMMENTSi=205;
-=======
-    public static final int DBLCOLONSi=191;
+    public static final int DBLCOLONSi=192;
     public static final int CHILD=19;
     public static final int GE=58;
     public static final int STRICT=120;
     public static final int PRESERVE=101;
-    public static final int UNDERSCORESi=235;
+    public static final int UNDERSCORESi=236;
     public static final int ELSE=37;
-    public static final int RCDATASi=206;
->>>>>>> .r234
+    public static final int RCDATASi=207;
     public static final int TYPESWITCH=128;
-<<<<<<< .mine
-    public static final int MODULE=80;
-=======
     public static final int STOP=119;
     public static final int CONTENT=23;
-    public static final int S=221;
+    public static final int S=222;
     public static final int FTOR=56;
     public static final int EMPTY=41;
-    public static final int MINUSSi=174;
+    public static final int MINUSSi=175;
     public static final int INTERSECT=68;
     public static final int FTAND=52;
     public static final int LANGUAGE=71;
     public static final int LOWERCASE=77;
-    public static final int LPRAGSi=186;
+    public static final int LPRAGSi=187;
     public static final int INSENSITIVE=66;
-    public static final int APOSSi=201;
+    public static final int APOSSi=202;
     public static final int AST_TYPESWITCHEXPR=151;
-    public static final int LBRACKSi=194;
-    public static final int RSELFTERMSi=197;
+    public static final int LBRACKSi=195;
+    public static final int RSELFTERMSi=198;
     public static final int GT=60;
     public static final int END=39;
-    public static final int DoubleLiteral=185;
-    public static final int QUOTSi=199;
-    public static final int DirCommentContent=208;
-    public static final int LexLiterals=222;
+    public static final int DoubleLiteral=186;
+    public static final int QUOTSi=200;
+    public static final int DirCommentContent=209;
+    public static final int LexLiterals=223;
     public static final int OPTION=90;
-    public static final int CharRef=225;
-    public static final int Extender=239;
+    public static final int CharRef=226;
+    public static final int Extender=240;
     public static final int OCCURS=88;
     public static final int THESAURUS=123;
->>>>>>> .r234
     public static final int VERSION=134;
-<<<<<<< .mine
-    public static final int Ideographic=246;
-    public static final int DBLSLASHSi=185;
-=======
     public static final int SATISFIES=106;
-    public static final int RXQCOMMENTSi=242;
+    public static final int RXQCOMMENTSi=243;
     public static final int IDIV=61;
     public static final int ASCENDING=10;
-    public static final int ExtraChar=248;
+    public static final int ExtraChar=249;
     public static final int AT=11;
     public static final int EMPTY_SEQUENCE=42;
     public static final int AS=9;
     public static final int PARENT=97;
     public static final int CONSTRUCTION=22;
     public static final int THEN=124;
-    public static final int ATSi=193;
->>>>>>> .r234
-<<<<<<< .mine
-    public static final int EXACTLY=45;
-    public static final int FTNOT=54;
-    public static final int DECLARE=25;
-    public static final int GTSi=175;
-    public static final int TOKENSWITCH=219;
-    public static final int ElementContentChar=226;
-    public static final int OCCURS=88;
-    public static final int UNION=129;
-    public static final int STRIP=121;
-    public static final int NameChar=232;
-    public static final int PLUSSi=169;
-=======
+    public static final int ATSi=194;
     public static final int DOCUMENT=34;
-    public static final int DBLSLASHSi=189;
+    public static final int DBLSLASHSi=190;
     public static final int COLLATION=20;
-    public static final int LCOMMENTSi=207;
+    public static final int LCOMMENTSi=208;
     public static final int ANCESTOR=6;
-    public static final int AMPERSi=227;
-    public static final int CleanChar=251;
+    public static final int AMPERSi=228;
+    public static final int CleanChar=252;
     public static final int CASTABLE=18;
-    public static final int ElementContent=203;
+    public static final int ElementContent=204;
     public static final int MOST=81;
-    public static final int EQSi=162;
-    public static final int NODEBEFORESi=181;
+    public static final int EQSi=163;
     public static final int BY=14;
-    public static final int DOTSi=196;
-    public static final int NCNameChar=245;
+    public static final int NODEBEFORESi=182;
+    public static final int DOTSi=197;
+    public static final int NCNameChar=246;
     public static final int ITEM=70;
     public static final int TO=126;
     public static final int INHERIT=65;
     public static final int ANCESTOR_OR_SELF=7;
-    public static final int DOTDOTSi=192;
+    public static final int DOTDOTSi=193;
     public static final int STEMMING=118;
->>>>>>> .r234
-<<<<<<< .mine
-    public static final int AST_WHERECLAUSE=147;
-    public static final int QuotAttrContentChar=224;
-=======
     public static final int AST_WHERECLAUSE=148;
-    public static final int LTOREQSi=178;
-    public static final int NotChar=226;
-    public static final int DirPIConstructor=215;
+    public static final int LTOREQSi=179;
+    public static final int NotChar=227;
+    public static final int DirPIConstructor=216;
     public static final int TEXT=122;
     public static final int MODULE=80;
     public static final int FTNOT=54;
-    public static final int Tokens=253;
+    public static final int Tokens=254;
     public static final int ORDERED=93;
->>>>>>> .r234
     public static final int SAME=105;
-<<<<<<< .mine
-    public static final int QUESTIONSi=167;
-    public static final int AST_IFEXPR=152;
-    public static final int FTCONTAINS=53;
-=======
     public static final int UNION=129;
     public static final int FOLLOWING_SIBLING=49;
-    public static final int StringLiteral=159;
+    public static final int StringLiteral=160;
     public static final int SCHEMA=107;
-    public static final int COLONSi=166;
-    public static final int PiTarget=211;
+    public static final int COLONSi=167;
+    public static final int PiTarget=212;
     public static final int ENTIRE=40;
     public static final int INSTANCE=67;
     public static final int VALIDATE=132;
@@ -195,238 +132,78 @@ public class XQFTLexer extends Lexer {
     public static final int AST_FUNCTIONCALL=156;
     public static final int DECLARE=25;
     public static final int START=117;
-    public static final int IntegerLiteral=183;
+    public static final int IntegerLiteral=184;
     public static final int DIV=33;
-    public static final int CombiningChar=238;
->>>>>>> .r234
+    public static final int CombiningChar=239;
     public static final int DESCENDING=29;
-    public static final int AST_ORDERBYCLAUSE=146;
-    public static final int FTOPTION=55;
-    public static final int DOCUMENT_NODE=35;
-    public static final int ANCESTOR_OR_SELF=7;
-    public static final int LCDATASi=200;
-    public static final int RELATIONSHIP=103;
-    public static final int ANY=5;
-    public static final int GE=58;
-    public static final int GTOREQSi=176;
-    public static final int CREFHEXSi=228;
-    public static final int WORD=141;
-    public static final int ELSE=37;
-    public static final int SCHEMAATTRIBUTE=108;
-    public static final int SENSITIVE=112;
     public static final int SELF=111;
-<<<<<<< .mine
-    public static final int DISTANCE=32;
-    public static final int LPISi=206;
-    public static final int ExtraChar=244;
-    public static final int NODEBEFORESi=177;
-    public static final int CREFDECSi=227;
-    public static final int TEXT=122;
-    public static final int PARENT=97;
-    public static final int CombiningChar=234;
-    public static final int NCName=157;
-    public static final int SCORE=110;
-    public static final int FTOR=56;
-    public static final int PragmaLEX=213;
-    public static final int EMPTY_SEQUENCE=42;
-    public static final int EXTERNAL=47;
-    public static final int Digit=233;
-    public static final int UNDERSCORESi=231;
-    public static final int DOLLARSi=160;
-    public static final int RCDATASi=202;
-=======
-    public static final int RPRAGSi=188;
-    public static final int NEQSi=176;
->>>>>>> .r234
+    public static final int RPRAGSi=189;
+    public static final int NEQSi=177;
     public static final int CAST=17;
-<<<<<<< .mine
-    public static final int MOD=79;
-    public static final int EXCEPT=46;
-    public static final int NOPRESERVE=86;
-    public static final int OR=91;
-    public static final int S=217;
-    public static final int RPARSi=164;
-    public static final int SCHEMAELEMENT=109;
-    public static final int BY=14;
-    public static final int COLONSi=162;
-    public static final int SLASHSi=186;
-    public static final int WEIGHT=135;
-    public static final int AST_RETURNCLAUSE=148;
-    public static final int PRECEDING_SIBLING=100;
-    public static final int UPPERCASE=131;
-    public static final int AST_LETCLAUSE=145;
-=======
     public static final int SENTENCES=113;
     public static final int EXTERNAL=47;
     public static final int LT=78;
-    public static final int RBRACKSi=195;
-    public static final int QUESTIONSi=171;
-    public static final int BACKSLASHSi=247;
+    public static final int RBRACKSi=196;
+    public static final int QUESTIONSi=172;
+    public static final int BACKSLASHSi=248;
     public static final int AST_LETCLAUSE=146;
->>>>>>> .r234
-<<<<<<< .mine
-    public static final int SEMICOLONSi=156;
-=======
     public static final int CASE=16;
     public static final int ENCODING=38;
-    public static final int RCOMMENTSi=209;
+    public static final int RCOMMENTSi=210;
     public static final int DIFFERENT=31;
-    public static final int PLUSSi=173;
-    public static final int PragmaLEX=217;
+    public static final int PLUSSi=174;
+    public static final int PragmaLEX=218;
     public static final int DOCUMENT_NODE=35;
     public static final int SCHEMAATTRIBUTE=108;
-    public static final int LXQCOMMENTSi=241;
-    public static final int SEMICOLONSi=160;
->>>>>>> .r234
-<<<<<<< .mine
-    public static final int FROM=51;
-    public static final int STEMMING=118;
-    public static final int TIMES=125;
-    public static final int EMPTY=41;
-    public static final int ASCENDING=10;
-    public static final int CleanChar=247;
-    public static final int IntegerLiteral=179;
-    public static final int SENTENCES=113;
-    public static final int NE=83;
-=======
+    public static final int LXQCOMMENTSi=242;
+    public static final int SEMICOLONSi=161;
     public static final int WORD=141;
-    public static final int SHARPSi=240;
+    public static final int SHARPSi=241;
     public static final int UPPERCASE=131;
-    public static final int Comment=218;
-    public static final int Char=252;
-    public static final int Digits=243;
-    public static final int QuotAttrContentChar=228;
+    public static final int Comment=219;
+    public static final int Char=253;
+    public static final int Digits=244;
+    public static final int QuotAttrContentChar=229;
     public static final int AST_FLWOR=144;
     public static final int FTOPTION=55;
->>>>>>> .r234
-    public static final int AposAttributeContent=202;
+    public static final int AposAttributeContent=203;
     public static final int COMMENT=21;
-<<<<<<< .mine
-    public static final int MINUSSi=170;
-    public static final int NCNameChar=241;
-    public static final int ENTIRE=40;
-    public static final int WITH=139;
-    public static final int IN=64;
-    public static final int SOME=115;
-    public static final int MOST=81;
-    public static final int RETURN=104;
-    public static final int AST_FTSELECTION=153;
-    public static final int LET=75;
-    public static final int IF=62;
-    public static final int Extender=235;
-=======
     public static final int NE=83;
-    public static final int CDataSectionLEX=214;
+    public static final int CDataSectionLEX=215;
     public static final int BOUNDARYSPACE=15;
->>>>>>> .r234
     public static final int NODE=84;
-<<<<<<< .mine
-    public static final int FOR=50;
-    public static final int Tokens=249;
-    public static final int DEFAULT=26;
-    public static final int PRESERVE=101;
-    public static final int AST_FTPOSFILTER=154;
-    public static final int DirCommentContent=204;
-    public static final int LEVELS=76;
-    public static final int LPRAGSi=182;
-    public static final int COMMASi=159;
-    public static final int ATTRIBUTE=12;
-    public static final int CHILD=19;
-    public static final int Digits=239;
-    public static final int NOT=87;
-    public static final int OPTION=90;
-    public static final int ELEMENT=36;
-    public static final int Comment=214;
-    public static final int INSENSITIVE=66;
-    public static final int AS=9;
-    public static final int DOCUMENT=34;
-    public static final int ENCODING=38;
-    public static final int BOUNDARYSPACE=15;
-    public static final int TREAT=127;
-    public static final int NAMESPACE=82;
-    public static final int LXQCOMMENTSi=237;
-    public static final int LEAST=74;
-    public static final int THEN=124;
-    public static final int WORDS=142;
-    public static final int PiTarget=207;
-    public static final int CDataContents=201;
-    public static final int PARAGRAPHS=96;
-    public static final int NCNameStartChar=240;
-    public static final int QuotAttributeContent=196;
-    public static final int BASE_URI=13;
-    public static final int AND=8;
-    public static final int TO=126;
-    public static final int FUNCTION=57;
-    public static final int AST_QUANTIFIEDEXPR=149;
-    public static final int LexSigns=216;
-    public static final int LANGUAGE=71;
-    public static final int NEQSi=172;
-    public static final int LOWERCASE=77;
-    public static final int LE=73;
-    public static final int BACKSLASHSi=243;
-    public static final int SCHEMA=107;
-    public static final int CONSTRUCTION=22;
-    public static final int WILDCARDS=137;
-    public static final int STARSi=168;
-    public static final int RPRAGSi=184;
-    public static final int DOTDOTSi=188;
-    public static final int DIFFERENT=31;
-    public static final int LTOREQSi=174;
-    public static final int AST_TYPESWITCHEXPR=150;
-    public static final int INTERSECT=68;
-    public static final int AT=11;
-    public static final int AST_FORCLAUSE=144;
-=======
     public static final int AST_FTPOSFILTER=155;
-    public static final int CDataContents=205;
+    public static final int CDataContents=206;
     public static final int AST_QUANTIFIEDEXPR=150;
-    public static final int AposAttrContentChar=229;
->>>>>>> .r234
+    public static final int AposAttrContentChar=230;
     public static final int GREATEST=59;
-    public static final int DOTSi=192;
-    public static final int BaseChar=245;
-    public static final int Char=248;
-    public static final int EQ=43;
-    public static final int LT=78;
-    public static final int AST_DIRELEMCONSTRUCTOR=157;
+    public static final int WITHOUT=140;
+    public static final int EVERY=44;
+    public static final int SENSITIVE=112;
+    public static final int PROCESSING_INSTRUCTION=102;
+    public static final int WEIGHT=135;
+    public static final int AST_DIRELEMCONSTRUCTOR=158;
     public static final int OF=89;
-<<<<<<< .mine
-    public static final int WINDOW=138;
-    public static final int Name=229;
-    public static final int FOLLOWING=48;
-    public static final int CASE=16;
-    public static final int RXQCOMMENTSi=238;
-=======
-    public static final int LTSi=177;
-    public static final int NODEAFTERSi=182;
+    public static final int LTSi=178;
+    public static final int NODEAFTERSi=183;
     public static final int RELATIONSHIP=103;
     public static final int NAMESPACE=82;
-    public static final int LCDATASi=204;
-    public static final int LBRACESi=169;
+    public static final int LCDATASi=205;
+    public static final int LBRACESi=170;
     public static final int VARIABLE=133;
->>>>>>> .r234
     public static final int DESCENDANT_OR_SELF=28;
-<<<<<<< .mine
-    public static final int CDataSectionLEX=210;
-    public static final int THESAURUS=123;
-    public static final int RSELFTERMSi=193;
-    public static final int DecimalLiteral=180;
-    public static final int FTAND=52;
-    public static final int PragmaContents=183;
-    public static final int EQSi=158;
-=======
     public static final int BASE_URI=13;
     public static final int NOPRESERVE=86;
-    public static final int DirPiContents=212;
+    public static final int DirPiContents=213;
     public static final int OR=91;
-    public static final int LPARSi=167;
-    public static final int STARSi=172;
-    public static final int QuotAttributeContent=200;
+    public static final int LPARSi=168;
+    public static final int STARSi=173;
+    public static final int QuotAttributeContent=201;
     public static final int FROM=51;
-    public static final int RPISi=213;
+    public static final int RPISi=214;
     public static final int PRECEDING_SIBLING=100;
-    public static final int Letter=234;
-    public static final int NCName=161;
+    public static final int Letter=235;
+    public static final int NCName=162;
     public static final int WHERE=136;
     public static final int LAX=72;
     public static final int AST_ORDERBYCLAUSE=147;
@@ -434,107 +211,57 @@ public class XQFTLexer extends Lexer {
     public static final int ATTRIBUTE=12;
     public static final int FOR=50;
     public static final int AST_FTSELECTION=154;
-    public static final int EXCLSi=246;
+    public static final int EXCLSi=247;
     public static final int AND=8;
     public static final int FOLLOWING=48;
     public static final int FTCONTAINS=53;
     public static final int IF=62;
     public static final int SCHEMAELEMENT=109;
     public static final int IN=64;
->>>>>>> .r234
     public static final int PARAGRAPH=95;
-    public static final int DIV=33;
+    public static final int COPY_NAMESPACES=24;
+    public static final int IS=69;
+    public static final int SOME=115;
     public static final int ALL=4;
-<<<<<<< .mine
-    public static final int EXCLSi=242;
-    public static final int WHERE=136;
-    public static final int DirPIConstructor=211;
-    public static final int WITHOUT=140;
-    public static final int EVERY=44;
-=======
     public static final int STRIP=121;
     public static final int STABLE=116;
-    public static final int PIPESi=175;
+    public static final int PIPESi=176;
     public static final int WITH=139;
-    public static final int NCNameStartChar=244;
-    public static final int LENDTAGSi=198;
-    public static final int GTSi=179;
-    public static final int RBRACSi=170;
->>>>>>> .r234
+    public static final int NCNameStartChar=245;
+    public static final int LENDTAGSi=199;
+    public static final int GTSi=180;
+    public static final int RBRACSi=171;
     public static final int XQUERY=143;
-    public static final int IDIV=61;
-    public static final int SATISFIES=106;
+    public static final int EXACTLY=45;
+    public static final int DEFAULT=26;
     public static final int DESCENDANT=27;
-<<<<<<< .mine
-    public static final int ATSi=189;
-    public static final int STRICT=120;
-    public static final int RBRACKSi=191;
-    public static final int FOLLOWING_SIBLING=49;
-    public static final int STABLE=116;
-    public static final int DoubleLiteral=181;
-    public static final int START=117;
-    public static final int AMPERSi=223;
-    public static final int VALIDATE=132;
-    public static final int PRECEDING=99;
-    public static final int ORDERING=94;
-    public static final int COPY_NAMESPACES=24;
-    public static final int ASSIGNSi=161;
-=======
-    public static final int NameChar=236;
-    public static final int COMMASi=163;
-    public static final int SLASHSi=190;
-    public static final int Digit=237;
-    public static final int DecimalLiteral=184;
-    public static final int GTOREQSi=180;
-    public static final int AST_DIRELEMCONTENT=158;
->>>>>>> .r234
+    public static final int NameChar=237;
+    public static final int COMMASi=164;
+    public static final int SLASHSi=191;
+    public static final int Digit=238;
+    public static final int DecimalLiteral=185;
+    public static final int GTOREQSi=181;
+    public static final int AST_DIRELEMCONTENT=159;
     public static final int UNORDERED=130;
-    public static final int NumberLEX=215;
-    public static final int PredefinedEntityRef=220;
-    public static final int LTSi=173;
-    public static final int SENTENCE=114;
-    public static final int AST_CASECLAUSE=151;
-    public static final int INHERIT=65;
-    public static final int LexLiterals=218;
-    public static final int SHARPSi=236;
-    public static final int IS=69;
-    public static final int GT=60;
     public static final int PHRASE=98;
-<<<<<<< .mine
-    public static final int StringLiteral=155;
-    public static final int RPISi=209;
-    public static final int ITEM=70;
-    public static final int DirPiContents=208;
-    public static final int ORDERED=93;
-=======
-    public static final int TOKENSWITCH=223;
-    public static final int ElementContentChar=230;
+    public static final int TOKENSWITCH=224;
+    public static final int ElementContentChar=231;
     public static final int ANY=5;
     public static final int AST_RETURNCLAUSE=149;
     public static final int SCORE=110;
-    public static final int LexSigns=220;
+    public static final int LexSigns=221;
     public static final int ORDERING=94;
-    public static final int PredefinedEntityRef=224;
-    public static final int Name=233;
+    public static final int PredefinedEntityRef=225;
+    public static final int Name=234;
     public static final int LEAST=74;
     public static final int WINDOW=138;
     public static final int TIMES=125;
     public static final int PARAGRAPHS=96;
     public static final int LEVELS=76;
->>>>>>> .r234
-    public static final int DirCommentConstLEX=216;
-    public static final int PROCESSING_INSTRUCTION=102;
-    public static final int NODEAFTERSi=178;
-    public static final int COLLATION=20;
-    public static final int CharRef=221;
-    public static final int LPARSi=163;
-    public static final int ANCESTOR=6;
-    public static final int VARIABLE=133;
-    public static final int EOF=-1;
-    public static final int RBRACSi=166;
-    public static final int ElementContent=199;
-    public static final int LCOMMENTSi=203;
-    public static final int LBRACKSi=190;
+    public static final int DirCommentConstLEX=217;
+    public static final int TREAT=127;
+    public static final int LE=73;
+    public static final int LET=75;
 
         
         public int state = 0;
@@ -591,31 +318,18 @@ public class XQFTLexer extends Lexer {
             int _type = TOKENSWITCH;
             Token n=null;
 
-<<<<<<< .mine
-            // etc/XQFT.g:974:16: ( ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi ) )
-            // etc/XQFT.g:974:18: ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi )
-=======
-            // etc/XQFT.g:988:16: ( ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi ) )
-            // etc/XQFT.g:988:18: ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi )
->>>>>>> .r234
+            // etc/XQFT.g:989:16: ( ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi ) )
+            // etc/XQFT.g:989:18: ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi )
             {
             if ( backtracking==0 ) {
               System.out.println("State is: " + state);
             }
-<<<<<<< .mine
-            // etc/XQFT.g:974:61: ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi )
-=======
-            // etc/XQFT.g:988:61: ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi )
->>>>>>> .r234
+            // etc/XQFT.g:989:61: ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi )
             int alt1=38;
             alt1 = dfa1.predict(input);
             switch (alt1) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:975:9: {...}? =>n= CDataSectionLEX
-=======
-                    // etc/XQFT.g:989:9: {...}? =>n= CDataSectionLEX
->>>>>>> .r234
+                    // etc/XQFT.g:990:9: {...}? =>n= CDataSectionLEX
                     {
                     if ( !(state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -628,11 +342,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:977:9: {...}? =>n= DirPIConstructor
-=======
-                    // etc/XQFT.g:991:9: {...}? =>n= DirPIConstructor
->>>>>>> .r234
+                    // etc/XQFT.g:992:9: {...}? =>n= DirPIConstructor
                     {
                     if ( !(state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -645,11 +355,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 3 :
-<<<<<<< .mine
-                    // etc/XQFT.g:979:9: {...}? =>n= DirCommentConstLEX
-=======
-                    // etc/XQFT.g:993:9: {...}? =>n= DirCommentConstLEX
->>>>>>> .r234
+                    // etc/XQFT.g:994:9: {...}? =>n= DirCommentConstLEX
                     {
                     if ( !(state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -662,11 +368,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 4 :
-<<<<<<< .mine
-                    // etc/XQFT.g:981:9: {...}? =>n= LENDTAGSi
-=======
-                    // etc/XQFT.g:995:9: {...}? =>n= LENDTAGSi
->>>>>>> .r234
+                    // etc/XQFT.g:996:9: {...}? =>n= LENDTAGSi
                     {
                     if ( !(state==State.IN_ELEMENT) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -682,11 +384,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 5 :
-<<<<<<< .mine
-                    // etc/XQFT.g:983:13: {...}? =>n= ElementContent
-=======
-                    // etc/XQFT.g:997:13: {...}? =>n= ElementContent
->>>>>>> .r234
+                    // etc/XQFT.g:998:13: {...}? =>n= ElementContent
                     {
                     if ( !(state==State.IN_ELEMENT) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -702,11 +400,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 6 :
-<<<<<<< .mine
-                    // etc/XQFT.g:985:9: {...}? =>n= PragmaLEX
-=======
-                    // etc/XQFT.g:999:9: {...}? =>n= PragmaLEX
->>>>>>> .r234
+                    // etc/XQFT.g:1000:9: {...}? =>n= PragmaLEX
                     {
                     if ( !(state==State.DEFAULT) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -719,11 +413,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 7 :
-<<<<<<< .mine
-                    // etc/XQFT.g:987:9: {...}? =>n= Comment
-=======
-                    // etc/XQFT.g:1001:9: {...}? =>n= Comment
->>>>>>> .r234
+                    // etc/XQFT.g:1002:9: {...}? =>n= Comment
                     {
                     if ( !(state==State.DEFAULT) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -739,11 +429,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 8 :
-<<<<<<< .mine
-                    // etc/XQFT.g:989:9: {...}? =>n= NumberLEX
-=======
-                    // etc/XQFT.g:1003:9: {...}? =>n= NumberLEX
->>>>>>> .r234
+                    // etc/XQFT.g:1004:9: {...}? =>n= NumberLEX
                     {
                     if ( !(state==State.DEFAULT) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -759,11 +445,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 9 :
-<<<<<<< .mine
-                    // etc/XQFT.g:991:9: {...}? =>n= LexSigns
-=======
-                    // etc/XQFT.g:1005:9: {...}? =>n= LexSigns
->>>>>>> .r234
+                    // etc/XQFT.g:1006:9: {...}? =>n= LexSigns
                     {
                     if ( !(state==State.DEFAULT) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -779,11 +461,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 10 :
-<<<<<<< .mine
-                    // etc/XQFT.g:993:9: {...}? =>n= S
-=======
-                    // etc/XQFT.g:1007:9: {...}? =>n= S
->>>>>>> .r234
+                    // etc/XQFT.g:1008:9: {...}? =>n= S
                     {
                     if ( !((state==State.DEFAULT || state==State.IN_TAG)) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -799,11 +477,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 11 :
-<<<<<<< .mine
-                    // etc/XQFT.g:995:9: {...}? =>n= StringLiteral
-=======
-                    // etc/XQFT.g:1009:9: {...}? =>n= StringLiteral
->>>>>>> .r234
+                    // etc/XQFT.g:1010:9: {...}? =>n= StringLiteral
                     {
                     if ( !(state==State.DEFAULT) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -819,11 +493,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 12 :
-<<<<<<< .mine
-                    // etc/XQFT.g:997:9: {...}? =>n= LexLiterals
-=======
-                    // etc/XQFT.g:1011:9: {...}? =>n= LexLiterals
->>>>>>> .r234
+                    // etc/XQFT.g:1012:9: {...}? =>n= LexLiterals
                     {
                     if ( !((state==State.DEFAULT || state==State.IN_TAG)) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -839,11 +509,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 13 :
-<<<<<<< .mine
-                    // etc/XQFT.g:999:9: {...}? =>n= QuotAttributeContent
-=======
-                    // etc/XQFT.g:1013:9: {...}? =>n= QuotAttributeContent
->>>>>>> .r234
+                    // etc/XQFT.g:1014:9: {...}? =>n= QuotAttributeContent
                     {
                     if ( !(state==State.IN_QUOT_ATTRIBUTE) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -859,11 +525,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 14 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1001:9: {...}? =>n= AposAttributeContent
-=======
-                    // etc/XQFT.g:1015:9: {...}? =>n= AposAttributeContent
->>>>>>> .r234
+                    // etc/XQFT.g:1016:9: {...}? =>n= AposAttributeContent
                     {
                     if ( !(state==State.IN_APOS_ATTRIBUTE) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -879,11 +541,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 15 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1003:9: {...}? =>n= RSELFTERMSi
-=======
-                    // etc/XQFT.g:1017:9: {...}? =>n= RSELFTERMSi
->>>>>>> .r234
+                    // etc/XQFT.g:1018:9: {...}? =>n= RSELFTERMSi
                     {
                     if ( !(state==State.IN_TAG) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -899,11 +557,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 16 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1005:9: n= QUOTSi
-=======
-                    // etc/XQFT.g:1019:9: n= QUOTSi
->>>>>>> .r234
+                    // etc/XQFT.g:1020:9: n= QUOTSi
                     {
                     int nStart526 = getCharIndex();
                     mQUOTSi(); if (failed) return ;
@@ -915,11 +569,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 17 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1006:9: n= DOLLARSi
-=======
-                    // etc/XQFT.g:1020:9: n= DOLLARSi
->>>>>>> .r234
+                    // etc/XQFT.g:1021:9: n= DOLLARSi
                     {
                     int nStart547 = getCharIndex();
                     mDOLLARSi(); if (failed) return ;
@@ -931,11 +581,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 18 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1007:9: n= APOSSi
-=======
-                    // etc/XQFT.g:1021:9: n= APOSSi
->>>>>>> .r234
+                    // etc/XQFT.g:1022:9: n= APOSSi
                     {
                     int nStart571 = getCharIndex();
                     mAPOSSi(); if (failed) return ;
@@ -947,11 +593,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 19 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1008:9: n= LPARSi
-=======
-                    // etc/XQFT.g:1022:9: n= LPARSi
->>>>>>> .r234
+                    // etc/XQFT.g:1023:9: n= LPARSi
                     {
                     int nStart593 = getCharIndex();
                     mLPARSi(); if (failed) return ;
@@ -963,11 +605,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 20 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1009:9: n= RPARSi
-=======
-                    // etc/XQFT.g:1023:9: n= RPARSi
->>>>>>> .r234
+                    // etc/XQFT.g:1024:9: n= RPARSi
                     {
                     int nStart615 = getCharIndex();
                     mRPARSi(); if (failed) return ;
@@ -979,11 +617,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 21 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1010:9: n= STARSi
-=======
-                    // etc/XQFT.g:1024:9: n= STARSi
->>>>>>> .r234
+                    // etc/XQFT.g:1025:9: n= STARSi
                     {
                     int nStart636 = getCharIndex();
                     mSTARSi(); if (failed) return ;
@@ -995,11 +629,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 22 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1011:9: n= PLUSSi
-=======
-                    // etc/XQFT.g:1025:9: n= PLUSSi
->>>>>>> .r234
+                    // etc/XQFT.g:1026:9: n= PLUSSi
                     {
                     int nStart657 = getCharIndex();
                     mPLUSSi(); if (failed) return ;
@@ -1011,11 +641,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 23 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1012:9: n= COMMASi
-=======
-                    // etc/XQFT.g:1026:9: n= COMMASi
->>>>>>> .r234
+                    // etc/XQFT.g:1027:9: n= COMMASi
                     {
                     int nStart678 = getCharIndex();
                     mCOMMASi(); if (failed) return ;
@@ -1027,11 +653,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 24 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1013:9: n= MINUSSi
-=======
-                    // etc/XQFT.g:1027:9: n= MINUSSi
->>>>>>> .r234
+                    // etc/XQFT.g:1028:9: n= MINUSSi
                     {
                     int nStart699 = getCharIndex();
                     mMINUSSi(); if (failed) return ;
@@ -1043,11 +665,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 25 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1014:9: n= DOTSi
-=======
-                    // etc/XQFT.g:1028:9: n= DOTSi
->>>>>>> .r234
+                    // etc/XQFT.g:1029:9: n= DOTSi
                     {
                     int nStart720 = getCharIndex();
                     mDOTSi(); if (failed) return ;
@@ -1059,11 +677,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 26 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1015:9: n= SLASHSi
-=======
-                    // etc/XQFT.g:1029:9: n= SLASHSi
->>>>>>> .r234
+                    // etc/XQFT.g:1030:9: n= SLASHSi
                     {
                     int nStart741 = getCharIndex();
                     mSLASHSi(); if (failed) return ;
@@ -1075,11 +689,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 27 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1016:9: n= COLONSi
-=======
-                    // etc/XQFT.g:1030:9: n= COLONSi
->>>>>>> .r234
+                    // etc/XQFT.g:1031:9: n= COLONSi
                     {
                     int nStart762 = getCharIndex();
                     mCOLONSi(); if (failed) return ;
@@ -1091,11 +701,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 28 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1017:9: n= SEMICOLONSi
-=======
-                    // etc/XQFT.g:1031:9: n= SEMICOLONSi
->>>>>>> .r234
+                    // etc/XQFT.g:1032:9: n= SEMICOLONSi
                     {
                     int nStart783 = getCharIndex();
                     mSEMICOLONSi(); if (failed) return ;
@@ -1107,11 +713,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 29 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1018:9: n= LTSi
-=======
-                    // etc/XQFT.g:1032:9: n= LTSi
->>>>>>> .r234
+                    // etc/XQFT.g:1033:9: n= LTSi
                     {
                     int nStart803 = getCharIndex();
                     mLTSi(); if (failed) return ;
@@ -1123,11 +725,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 30 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1019:9: n= EQSi
-=======
-                    // etc/XQFT.g:1033:9: n= EQSi
->>>>>>> .r234
+                    // etc/XQFT.g:1034:9: n= EQSi
                     {
                     int nStart824 = getCharIndex();
                     mEQSi(); if (failed) return ;
@@ -1139,11 +737,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 31 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1020:9: n= GTSi
-=======
-                    // etc/XQFT.g:1034:9: n= GTSi
->>>>>>> .r234
+                    // etc/XQFT.g:1035:9: n= GTSi
                     {
                     int nStart845 = getCharIndex();
                     mGTSi(); if (failed) return ;
@@ -1155,11 +749,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 32 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1021:9: n= QUESTIONSi
-=======
-                    // etc/XQFT.g:1035:9: n= QUESTIONSi
->>>>>>> .r234
+                    // etc/XQFT.g:1036:9: n= QUESTIONSi
                     {
                     int nStart866 = getCharIndex();
                     mQUESTIONSi(); if (failed) return ;
@@ -1171,11 +761,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 33 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1022:9: n= ATSi
-=======
-                    // etc/XQFT.g:1036:9: n= ATSi
->>>>>>> .r234
+                    // etc/XQFT.g:1037:9: n= ATSi
                     {
                     int nStart886 = getCharIndex();
                     mATSi(); if (failed) return ;
@@ -1187,11 +773,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 34 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1023:9: n= LBRACKSi
-=======
-                    // etc/XQFT.g:1037:9: n= LBRACKSi
->>>>>>> .r234
+                    // etc/XQFT.g:1038:9: n= LBRACKSi
                     {
                     int nStart907 = getCharIndex();
                     mLBRACKSi(); if (failed) return ;
@@ -1203,11 +785,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 35 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1024:9: n= RBRACKSi
-=======
-                    // etc/XQFT.g:1038:9: n= RBRACKSi
->>>>>>> .r234
+                    // etc/XQFT.g:1039:9: n= RBRACKSi
                     {
                     int nStart927 = getCharIndex();
                     mRBRACKSi(); if (failed) return ;
@@ -1219,11 +797,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 36 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1025:9: n= LBRACESi
-=======
-                    // etc/XQFT.g:1039:9: n= LBRACESi
->>>>>>> .r234
+                    // etc/XQFT.g:1040:9: n= LBRACESi
                     {
                     int nStart947 = getCharIndex();
                     mLBRACESi(); if (failed) return ;
@@ -1235,11 +809,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 37 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1026:9: n= PIPESi
-=======
-                    // etc/XQFT.g:1040:9: n= PIPESi
->>>>>>> .r234
+                    // etc/XQFT.g:1041:9: n= PIPESi
                     {
                     int nStart967 = getCharIndex();
                     mPIPESi(); if (failed) return ;
@@ -1251,11 +821,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 38 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1027:9: n= RBRACSi
-=======
-                    // etc/XQFT.g:1041:9: n= RBRACSi
->>>>>>> .r234
+                    // etc/XQFT.g:1042:9: n= RBRACSi
                     {
                     int nStart988 = getCharIndex();
                     mRBRACSi(); if (failed) return ;
@@ -1285,19 +851,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start S
     public final void mS() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1031:32: ( ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+ )
-            // etc/XQFT.g:1031:34: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
-=======
-            // etc/XQFT.g:1045:32: ( ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+ )
-            // etc/XQFT.g:1045:34: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
->>>>>>> .r234
+            // etc/XQFT.g:1046:32: ( ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+ )
+            // etc/XQFT.g:1046:34: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1031:34: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
-=======
-            // etc/XQFT.g:1045:34: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
->>>>>>> .r234
+            // etc/XQFT.g:1046:34: ( '\\u0020' | '\\u0009' | '\\u000D' | '\\u000A' )+
             int cnt2=0;
             loop2:
             do {
@@ -1350,11 +907,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start StringLiteral
     public final void mStringLiteral() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1038:30: ( QUOTSi ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )* QUOTSi | APOSSi ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )* APOSSi )
-=======
-            // etc/XQFT.g:1052:30: ( QUOTSi ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )* QUOTSi | APOSSi ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )* APOSSi )
->>>>>>> .r234
+            // etc/XQFT.g:1053:30: ( QUOTSi ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )* QUOTSi | APOSSi ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )* APOSSi )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1367,28 +920,16 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-<<<<<<< .mine
-                    new NoViableAltException("1038:10: fragment StringLiteral : ( QUOTSi ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )* QUOTSi | APOSSi ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )* APOSSi );", 5, 0, input);
-=======
-                    new NoViableAltException("1052:10: fragment StringLiteral : ( QUOTSi ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )* QUOTSi | APOSSi ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )* APOSSi );", 5, 0, input);
->>>>>>> .r234
+                    new NoViableAltException("1053:10: fragment StringLiteral : ( QUOTSi ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )* QUOTSi | APOSSi ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )* APOSSi );", 5, 0, input);
 
                 throw nvae;
             }
             switch (alt5) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1038:32: QUOTSi ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )* QUOTSi
-=======
-                    // etc/XQFT.g:1052:32: QUOTSi ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )* QUOTSi
->>>>>>> .r234
+                    // etc/XQFT.g:1053:32: QUOTSi ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )* QUOTSi
                     {
                     mQUOTSi(); if (failed) return ;
-<<<<<<< .mine
-                    // etc/XQFT.g:1039:11: ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )*
-=======
-                    // etc/XQFT.g:1053:11: ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )*
->>>>>>> .r234
+                    // etc/XQFT.g:1054:11: ( PredefinedEntityRef | CharRef | {...}? => QUOTSi QUOTSi | ~ ( NotChar | QUOTSi | AMPERSi ) )*
                     loop3:
                     do {
                         int alt3=5;
@@ -1422,33 +963,21 @@ public class XQFTLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-<<<<<<< .mine
-                    	    // etc/XQFT.g:1039:12: PredefinedEntityRef
-=======
-                    	    // etc/XQFT.g:1053:12: PredefinedEntityRef
->>>>>>> .r234
+                    	    // etc/XQFT.g:1054:12: PredefinedEntityRef
                     	    {
                     	    mPredefinedEntityRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 2 :
-<<<<<<< .mine
-                    	    // etc/XQFT.g:1039:34: CharRef
-=======
-                    	    // etc/XQFT.g:1053:34: CharRef
->>>>>>> .r234
+                    	    // etc/XQFT.g:1054:34: CharRef
                     	    {
                     	    mCharRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 3 :
-<<<<<<< .mine
-                    	    // etc/XQFT.g:1039:44: {...}? => QUOTSi QUOTSi
-=======
-                    	    // etc/XQFT.g:1053:44: {...}? => QUOTSi QUOTSi
->>>>>>> .r234
+                    	    // etc/XQFT.g:1054:44: {...}? => QUOTSi QUOTSi
                     	    {
                     	    if ( !((input.LA(1)=='"' && input.LA(2)=='"')) ) {
                     	        if (backtracking>0) {failed=true; return ;}
@@ -1460,11 +989,7 @@ public class XQFTLexer extends Lexer {
                     	    }
                     	    break;
                     	case 4 :
-<<<<<<< .mine
-                    	    // etc/XQFT.g:1039:104: ~ ( NotChar | QUOTSi | AMPERSi )
-=======
-                    	    // etc/XQFT.g:1053:104: ~ ( NotChar | QUOTSi | AMPERSi )
->>>>>>> .r234
+                    	    // etc/XQFT.g:1054:104: ~ ( NotChar | QUOTSi | AMPERSi )
                     	    {
                     	    if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -1491,18 +1016,10 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1041:12: APOSSi ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )* APOSSi
-=======
-                    // etc/XQFT.g:1055:12: APOSSi ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )* APOSSi
->>>>>>> .r234
+                    // etc/XQFT.g:1056:12: APOSSi ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )* APOSSi
                     {
                     mAPOSSi(); if (failed) return ;
-<<<<<<< .mine
-                    // etc/XQFT.g:1042:11: ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )*
-=======
-                    // etc/XQFT.g:1056:11: ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )*
->>>>>>> .r234
+                    // etc/XQFT.g:1057:11: ( PredefinedEntityRef | CharRef | {...}? => APOSSi APOSSi | ~ ( NotChar | APOSSi | AMPERSi ) )*
                     loop4:
                     do {
                         int alt4=5;
@@ -1536,33 +1053,21 @@ public class XQFTLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-<<<<<<< .mine
-                    	    // etc/XQFT.g:1042:12: PredefinedEntityRef
-=======
-                    	    // etc/XQFT.g:1056:12: PredefinedEntityRef
->>>>>>> .r234
+                    	    // etc/XQFT.g:1057:12: PredefinedEntityRef
                     	    {
                     	    mPredefinedEntityRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 2 :
-<<<<<<< .mine
-                    	    // etc/XQFT.g:1042:34: CharRef
-=======
-                    	    // etc/XQFT.g:1056:34: CharRef
->>>>>>> .r234
+                    	    // etc/XQFT.g:1057:34: CharRef
                     	    {
                     	    mCharRef(); if (failed) return ;
 
                     	    }
                     	    break;
                     	case 3 :
-<<<<<<< .mine
-                    	    // etc/XQFT.g:1042:44: {...}? => APOSSi APOSSi
-=======
-                    	    // etc/XQFT.g:1056:44: {...}? => APOSSi APOSSi
->>>>>>> .r234
+                    	    // etc/XQFT.g:1057:44: {...}? => APOSSi APOSSi
                     	    {
                     	    if ( !((input.LA(1)=='\'' && input.LA(2)=='\'')) ) {
                     	        if (backtracking>0) {failed=true; return ;}
@@ -1574,11 +1079,7 @@ public class XQFTLexer extends Lexer {
                     	    }
                     	    break;
                     	case 4 :
-<<<<<<< .mine
-                    	    // etc/XQFT.g:1042:106: ~ ( NotChar | APOSSi | AMPERSi )
-=======
-                    	    // etc/XQFT.g:1056:106: ~ ( NotChar | APOSSi | AMPERSi )
->>>>>>> .r234
+                    	    // etc/XQFT.g:1057:106: ~ ( NotChar | APOSSi | AMPERSi )
                     	    {
                     	    if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFE') ) {
                     	        input.consume();
@@ -1615,19 +1116,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start QuotAttributeContent
     public final void mQuotAttributeContent() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1046:32: ( ( PredefinedEntityRef | CharRef | QuotAttrContentChar )* )
-            // etc/XQFT.g:1046:34: ( PredefinedEntityRef | CharRef | QuotAttrContentChar )*
-=======
-            // etc/XQFT.g:1060:32: ( ( PredefinedEntityRef | CharRef | QuotAttrContentChar )* )
-            // etc/XQFT.g:1060:34: ( PredefinedEntityRef | CharRef | QuotAttrContentChar )*
->>>>>>> .r234
+            // etc/XQFT.g:1061:32: ( ( PredefinedEntityRef | CharRef | QuotAttrContentChar )* )
+            // etc/XQFT.g:1061:34: ( PredefinedEntityRef | CharRef | QuotAttrContentChar )*
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1046:34: ( PredefinedEntityRef | CharRef | QuotAttrContentChar )*
-=======
-            // etc/XQFT.g:1060:34: ( PredefinedEntityRef | CharRef | QuotAttrContentChar )*
->>>>>>> .r234
+            // etc/XQFT.g:1061:34: ( PredefinedEntityRef | CharRef | QuotAttrContentChar )*
             loop6:
             do {
                 int alt6=4;
@@ -1661,33 +1153,21 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1046:35: PredefinedEntityRef
-=======
-            	    // etc/XQFT.g:1060:35: PredefinedEntityRef
->>>>>>> .r234
+            	    // etc/XQFT.g:1061:35: PredefinedEntityRef
             	    {
             	    mPredefinedEntityRef(); if (failed) return ;
 
             	    }
             	    break;
             	case 2 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1046:57: CharRef
-=======
-            	    // etc/XQFT.g:1060:57: CharRef
->>>>>>> .r234
+            	    // etc/XQFT.g:1061:57: CharRef
             	    {
             	    mCharRef(); if (failed) return ;
 
             	    }
             	    break;
             	case 3 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1046:67: QuotAttrContentChar
-=======
-            	    // etc/XQFT.g:1060:67: QuotAttrContentChar
->>>>>>> .r234
+            	    // etc/XQFT.g:1061:67: QuotAttrContentChar
             	    {
             	    mQuotAttrContentChar(); if (failed) return ;
 
@@ -1711,19 +1191,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start AposAttributeContent
     public final void mAposAttributeContent() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1047:32: ( ( PredefinedEntityRef | CharRef | AposAttrContentChar )* )
-            // etc/XQFT.g:1047:34: ( PredefinedEntityRef | CharRef | AposAttrContentChar )*
-=======
-            // etc/XQFT.g:1061:32: ( ( PredefinedEntityRef | CharRef | AposAttrContentChar )* )
-            // etc/XQFT.g:1061:34: ( PredefinedEntityRef | CharRef | AposAttrContentChar )*
->>>>>>> .r234
+            // etc/XQFT.g:1062:32: ( ( PredefinedEntityRef | CharRef | AposAttrContentChar )* )
+            // etc/XQFT.g:1062:34: ( PredefinedEntityRef | CharRef | AposAttrContentChar )*
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1047:34: ( PredefinedEntityRef | CharRef | AposAttrContentChar )*
-=======
-            // etc/XQFT.g:1061:34: ( PredefinedEntityRef | CharRef | AposAttrContentChar )*
->>>>>>> .r234
+            // etc/XQFT.g:1062:34: ( PredefinedEntityRef | CharRef | AposAttrContentChar )*
             loop7:
             do {
                 int alt7=4;
@@ -1757,33 +1228,21 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1047:35: PredefinedEntityRef
-=======
-            	    // etc/XQFT.g:1061:35: PredefinedEntityRef
->>>>>>> .r234
+            	    // etc/XQFT.g:1062:35: PredefinedEntityRef
             	    {
             	    mPredefinedEntityRef(); if (failed) return ;
 
             	    }
             	    break;
             	case 2 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1047:57: CharRef
-=======
-            	    // etc/XQFT.g:1061:57: CharRef
->>>>>>> .r234
+            	    // etc/XQFT.g:1062:57: CharRef
             	    {
             	    mCharRef(); if (failed) return ;
 
             	    }
             	    break;
             	case 3 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1047:67: AposAttrContentChar
-=======
-            	    // etc/XQFT.g:1061:67: AposAttrContentChar
->>>>>>> .r234
+            	    // etc/XQFT.g:1062:67: AposAttrContentChar
             	    {
             	    mAposAttrContentChar(); if (failed) return ;
 
@@ -1807,19 +1266,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ElementContent
     public final void mElementContent() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1048:28: ( ( PredefinedEntityRef | CharRef | ElementContentChar )* )
-            // etc/XQFT.g:1048:30: ( PredefinedEntityRef | CharRef | ElementContentChar )*
-=======
-            // etc/XQFT.g:1062:28: ( ( PredefinedEntityRef | CharRef | ElementContentChar )* )
-            // etc/XQFT.g:1062:30: ( PredefinedEntityRef | CharRef | ElementContentChar )*
->>>>>>> .r234
+            // etc/XQFT.g:1063:28: ( ( PredefinedEntityRef | CharRef | ElementContentChar )* )
+            // etc/XQFT.g:1063:30: ( PredefinedEntityRef | CharRef | ElementContentChar )*
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1048:30: ( PredefinedEntityRef | CharRef | ElementContentChar )*
-=======
-            // etc/XQFT.g:1062:30: ( PredefinedEntityRef | CharRef | ElementContentChar )*
->>>>>>> .r234
+            // etc/XQFT.g:1063:30: ( PredefinedEntityRef | CharRef | ElementContentChar )*
             loop8:
             do {
                 int alt8=4;
@@ -1850,33 +1300,21 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1048:31: PredefinedEntityRef
-=======
-            	    // etc/XQFT.g:1062:31: PredefinedEntityRef
->>>>>>> .r234
+            	    // etc/XQFT.g:1063:31: PredefinedEntityRef
             	    {
             	    mPredefinedEntityRef(); if (failed) return ;
 
             	    }
             	    break;
             	case 2 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1048:53: CharRef
-=======
-            	    // etc/XQFT.g:1062:53: CharRef
->>>>>>> .r234
+            	    // etc/XQFT.g:1063:53: CharRef
             	    {
             	    mCharRef(); if (failed) return ;
 
             	    }
             	    break;
             	case 3 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1048:63: ElementContentChar
-=======
-            	    // etc/XQFT.g:1062:63: ElementContentChar
->>>>>>> .r234
+            	    // etc/XQFT.g:1063:63: ElementContentChar
             	    {
             	    mElementContentChar(); if (failed) return ;
 
@@ -1900,20 +1338,11 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PredefinedEntityRef
     public final void mPredefinedEntityRef() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1050:30: ( AMPERSi ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi )
-            // etc/XQFT.g:1050:32: AMPERSi ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi
-=======
-            // etc/XQFT.g:1064:30: ( AMPERSi ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi )
-            // etc/XQFT.g:1064:32: AMPERSi ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi
->>>>>>> .r234
+            // etc/XQFT.g:1065:30: ( AMPERSi ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi )
+            // etc/XQFT.g:1065:32: AMPERSi ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' ) SEMICOLONSi
             {
             mAMPERSi(); if (failed) return ;
-<<<<<<< .mine
-            // etc/XQFT.g:1050:40: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )
-=======
-            // etc/XQFT.g:1064:40: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )
->>>>>>> .r234
+            // etc/XQFT.g:1065:40: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )
             int alt9=5;
             switch ( input.LA(1) ) {
             case 'l':
@@ -1939,11 +1368,7 @@ public class XQFTLexer extends Lexer {
                 else {
                     if (backtracking>0) {failed=true; return ;}
                     NoViableAltException nvae =
-<<<<<<< .mine
-                        new NoViableAltException("1050:40: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 9, 3, input);
-=======
-                        new NoViableAltException("1064:40: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 9, 3, input);
->>>>>>> .r234
+                        new NoViableAltException("1065:40: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 9, 3, input);
 
                     throw nvae;
                 }
@@ -1957,22 +1382,14 @@ public class XQFTLexer extends Lexer {
             default:
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-<<<<<<< .mine
-                    new NoViableAltException("1050:40: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 9, 0, input);
-=======
-                    new NoViableAltException("1064:40: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 9, 0, input);
->>>>>>> .r234
+                    new NoViableAltException("1065:40: ( 'lt' | 'gt' | 'amp' | 'quot' | 'apos' )", 9, 0, input);
 
                 throw nvae;
             }
 
             switch (alt9) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1050:41: 'lt'
-=======
-                    // etc/XQFT.g:1064:41: 'lt'
->>>>>>> .r234
+                    // etc/XQFT.g:1065:41: 'lt'
                     {
                     match("lt"); if (failed) return ;
 
@@ -1980,11 +1397,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1050:48: 'gt'
-=======
-                    // etc/XQFT.g:1064:48: 'gt'
->>>>>>> .r234
+                    // etc/XQFT.g:1065:48: 'gt'
                     {
                     match("gt"); if (failed) return ;
 
@@ -1992,11 +1405,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 3 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1050:55: 'amp'
-=======
-                    // etc/XQFT.g:1064:55: 'amp'
->>>>>>> .r234
+                    // etc/XQFT.g:1065:55: 'amp'
                     {
                     match("amp"); if (failed) return ;
 
@@ -2004,11 +1413,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 4 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1050:63: 'quot'
-=======
-                    // etc/XQFT.g:1064:63: 'quot'
->>>>>>> .r234
+                    // etc/XQFT.g:1065:63: 'quot'
                     {
                     match("quot"); if (failed) return ;
 
@@ -2016,11 +1421,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 5 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1050:72: 'apos'
-=======
-                    // etc/XQFT.g:1064:72: 'apos'
->>>>>>> .r234
+                    // etc/XQFT.g:1065:72: 'apos'
                     {
                     match("apos"); if (failed) return ;
 
@@ -2043,11 +1444,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CharRef
     public final void mCharRef() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1052:31: ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi )
-=======
-            // etc/XQFT.g:1066:31: ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi )
->>>>>>> .r234
+            // etc/XQFT.g:1067:31: ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2066,11 +1463,7 @@ public class XQFTLexer extends Lexer {
                     else {
                         if (backtracking>0) {failed=true; return ;}
                         NoViableAltException nvae =
-<<<<<<< .mine
-                            new NoViableAltException("1052:10: fragment CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 12, 2, input);
-=======
-                            new NoViableAltException("1066:10: fragment CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 12, 2, input);
->>>>>>> .r234
+                            new NoViableAltException("1067:10: fragment CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 12, 2, input);
 
                         throw nvae;
                     }
@@ -2078,11 +1471,7 @@ public class XQFTLexer extends Lexer {
                 else {
                     if (backtracking>0) {failed=true; return ;}
                     NoViableAltException nvae =
-<<<<<<< .mine
-                        new NoViableAltException("1052:10: fragment CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 12, 1, input);
-=======
-                        new NoViableAltException("1066:10: fragment CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 12, 1, input);
->>>>>>> .r234
+                        new NoViableAltException("1067:10: fragment CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 12, 1, input);
 
                     throw nvae;
                 }
@@ -2090,28 +1479,16 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-<<<<<<< .mine
-                    new NoViableAltException("1052:10: fragment CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 12, 0, input);
-=======
-                    new NoViableAltException("1066:10: fragment CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 12, 0, input);
->>>>>>> .r234
+                    new NoViableAltException("1067:10: fragment CharRef : ( CREFDECSi ( '0' .. '9' )+ SEMICOLONSi | CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi );", 12, 0, input);
 
                 throw nvae;
             }
             switch (alt12) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1052:33: CREFDECSi ( '0' .. '9' )+ SEMICOLONSi
-=======
-                    // etc/XQFT.g:1066:33: CREFDECSi ( '0' .. '9' )+ SEMICOLONSi
->>>>>>> .r234
+                    // etc/XQFT.g:1067:33: CREFDECSi ( '0' .. '9' )+ SEMICOLONSi
                     {
                     mCREFDECSi(); if (failed) return ;
-<<<<<<< .mine
-                    // etc/XQFT.g:1052:43: ( '0' .. '9' )+
-=======
-                    // etc/XQFT.g:1066:43: ( '0' .. '9' )+
->>>>>>> .r234
+                    // etc/XQFT.g:1067:43: ( '0' .. '9' )+
                     int cnt10=0;
                     loop10:
                     do {
@@ -2125,11 +1502,7 @@ public class XQFTLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-<<<<<<< .mine
-                    	    // etc/XQFT.g:1052:44: '0' .. '9'
-=======
-                    	    // etc/XQFT.g:1066:44: '0' .. '9'
->>>>>>> .r234
+                    	    // etc/XQFT.g:1067:44: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); if (failed) return ;
 
@@ -2151,18 +1524,10 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1053:12: CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi
-=======
-                    // etc/XQFT.g:1067:12: CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi
->>>>>>> .r234
+                    // etc/XQFT.g:1068:12: CREFHEXSi ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ SEMICOLONSi
                     {
                     mCREFHEXSi(); if (failed) return ;
-<<<<<<< .mine
-                    // etc/XQFT.g:1053:22: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
-=======
-                    // etc/XQFT.g:1067:22: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
->>>>>>> .r234
+                    // etc/XQFT.g:1068:22: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
                     int cnt11=0;
                     loop11:
                     do {
@@ -2218,13 +1583,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CREFDECSi
     public final void mCREFDECSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1054:23: ( '&#' )
-            // etc/XQFT.g:1054:25: '&#'
-=======
-            // etc/XQFT.g:1068:23: ( '&#' )
-            // etc/XQFT.g:1068:25: '&#'
->>>>>>> .r234
+            // etc/XQFT.g:1069:23: ( '&#' )
+            // etc/XQFT.g:1069:25: '&#'
             {
             match("&#"); if (failed) return ;
 
@@ -2240,13 +1600,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CREFHEXSi
     public final void mCREFHEXSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1055:23: ( '&#x' )
-            // etc/XQFT.g:1055:25: '&#x'
-=======
-            // etc/XQFT.g:1069:23: ( '&#x' )
-            // etc/XQFT.g:1069:25: '&#x'
->>>>>>> .r234
+            // etc/XQFT.g:1070:23: ( '&#x' )
+            // etc/XQFT.g:1070:25: '&#x'
             {
             match("&#x"); if (failed) return ;
 
@@ -2262,19 +1617,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ElementContentChar
     public final void mElementContentChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1067:30: ( ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) ) )
-            // etc/XQFT.g:1067:32: ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) )
-=======
-            // etc/XQFT.g:1081:30: ( ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) ) )
-            // etc/XQFT.g:1081:32: ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) )
->>>>>>> .r234
+            // etc/XQFT.g:1082:30: ( ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) ) )
+            // etc/XQFT.g:1082:32: ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) )
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1067:32: ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) )
-=======
-            // etc/XQFT.g:1081:32: ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) )
->>>>>>> .r234
+            // etc/XQFT.g:1082:32: ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) )
             int alt13=3;
             int LA13_0 = input.LA(1);
 
@@ -2290,21 +1636,13 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-<<<<<<< .mine
-                    new NoViableAltException("1067:32: ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) )", 13, 0, input);
-=======
-                    new NoViableAltException("1081:32: ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) )", 13, 0, input);
->>>>>>> .r234
+                    new NoViableAltException("1082:32: ({...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ) )", 13, 0, input);
 
                 throw nvae;
             }
             switch (alt13) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1067:33: {...}? => LBRACESi LBRACESi
-=======
-                    // etc/XQFT.g:1081:33: {...}? => LBRACESi LBRACESi
->>>>>>> .r234
+                    // etc/XQFT.g:1082:33: {...}? => LBRACESi LBRACESi
                     {
                     if ( !((input.LA(1)=='{' && input.LA(2)=='{')) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -2316,11 +1654,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1068:13: {...}? => RBRACSi RBRACSi
-=======
-                    // etc/XQFT.g:1082:13: {...}? => RBRACSi RBRACSi
->>>>>>> .r234
+                    // etc/XQFT.g:1083:13: {...}? => RBRACSi RBRACSi
                     {
                     if ( !((input.LA(1)=='}' && input.LA(2)=='}')) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -2332,11 +1666,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 3 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1069:12: ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi )
-=======
-                    // etc/XQFT.g:1083:12: ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi )
->>>>>>> .r234
+                    // etc/XQFT.g:1084:12: ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi )
                     {
                     if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFE') ) {
                         input.consume();
@@ -2367,19 +1697,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start QuotAttrContentChar
     public final void mQuotAttrContentChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1070:30: ( ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) ) )
-            // etc/XQFT.g:1070:32: ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) )
-=======
-            // etc/XQFT.g:1084:30: ( ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) ) )
-            // etc/XQFT.g:1084:32: ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) )
->>>>>>> .r234
+            // etc/XQFT.g:1085:30: ( ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) ) )
+            // etc/XQFT.g:1085:32: ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) )
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1070:32: ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) )
-=======
-            // etc/XQFT.g:1084:32: ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) )
->>>>>>> .r234
+            // etc/XQFT.g:1085:32: ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) )
             int alt14=4;
             int LA14_0 = input.LA(1);
 
@@ -2398,21 +1719,13 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-<<<<<<< .mine
-                    new NoViableAltException("1070:32: ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) )", 14, 0, input);
-=======
-                    new NoViableAltException("1084:32: ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) )", 14, 0, input);
->>>>>>> .r234
+                    new NoViableAltException("1085:32: ({...}? => QUOTSi QUOTSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi ) )", 14, 0, input);
 
                 throw nvae;
             }
             switch (alt14) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1070:33: {...}? => QUOTSi QUOTSi
-=======
-                    // etc/XQFT.g:1084:33: {...}? => QUOTSi QUOTSi
->>>>>>> .r234
+                    // etc/XQFT.g:1085:33: {...}? => QUOTSi QUOTSi
                     {
                     if ( !((input.LA(1)=='"' && input.LA(2)=='"')) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -2424,11 +1737,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1071:12: {...}? => LBRACESi LBRACESi
-=======
-                    // etc/XQFT.g:1085:12: {...}? => LBRACESi LBRACESi
->>>>>>> .r234
+                    // etc/XQFT.g:1086:12: {...}? => LBRACESi LBRACESi
                     {
                     if ( !((input.LA(1)=='{' && input.LA(2)=='{')) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -2440,11 +1749,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 3 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1072:12: {...}? => RBRACSi RBRACSi
-=======
-                    // etc/XQFT.g:1086:12: {...}? => RBRACSi RBRACSi
->>>>>>> .r234
+                    // etc/XQFT.g:1087:12: {...}? => RBRACSi RBRACSi
                     {
                     if ( !((input.LA(1)=='}' && input.LA(2)=='}')) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -2456,11 +1761,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 4 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1073:12: ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi )
-=======
-                    // etc/XQFT.g:1087:12: ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi )
->>>>>>> .r234
+                    // etc/XQFT.g:1088:12: ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi )
                     {
                     if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='%')||(input.LA(1)>='\'' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFE') ) {
                         input.consume();
@@ -2491,19 +1792,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start AposAttrContentChar
     public final void mAposAttrContentChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1074:30: ( ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) ) )
-            // etc/XQFT.g:1074:32: ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) )
-=======
-            // etc/XQFT.g:1088:30: ( ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) ) )
-            // etc/XQFT.g:1088:32: ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) )
->>>>>>> .r234
+            // etc/XQFT.g:1089:30: ( ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) ) )
+            // etc/XQFT.g:1089:32: ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) )
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1074:32: ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) )
-=======
-            // etc/XQFT.g:1088:32: ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) )
->>>>>>> .r234
+            // etc/XQFT.g:1089:32: ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) )
             int alt15=4;
             int LA15_0 = input.LA(1);
 
@@ -2522,21 +1814,13 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-<<<<<<< .mine
-                    new NoViableAltException("1074:32: ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) )", 15, 0, input);
-=======
-                    new NoViableAltException("1088:32: ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) )", 15, 0, input);
->>>>>>> .r234
+                    new NoViableAltException("1089:32: ({...}? => APOSSi APOSSi | {...}? => LBRACESi LBRACESi | {...}? => RBRACSi RBRACSi | ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi ) )", 15, 0, input);
 
                 throw nvae;
             }
             switch (alt15) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1074:33: {...}? => APOSSi APOSSi
-=======
-                    // etc/XQFT.g:1088:33: {...}? => APOSSi APOSSi
->>>>>>> .r234
+                    // etc/XQFT.g:1089:33: {...}? => APOSSi APOSSi
                     {
                     if ( !((input.LA(1)=='\'' && input.LA(2)=='\'')) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -2548,11 +1832,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1075:12: {...}? => LBRACESi LBRACESi
-=======
-                    // etc/XQFT.g:1089:12: {...}? => LBRACESi LBRACESi
->>>>>>> .r234
+                    // etc/XQFT.g:1090:12: {...}? => LBRACESi LBRACESi
                     {
                     if ( !((input.LA(1)=='{' && input.LA(2)=='{')) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -2564,11 +1844,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 3 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1076:12: {...}? => RBRACSi RBRACSi
-=======
-                    // etc/XQFT.g:1090:12: {...}? => RBRACSi RBRACSi
->>>>>>> .r234
+                    // etc/XQFT.g:1091:12: {...}? => RBRACSi RBRACSi
                     {
                     if ( !((input.LA(1)=='}' && input.LA(2)=='}')) ) {
                         if (backtracking>0) {failed=true; return ;}
@@ -2580,11 +1856,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 4 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1077:12: ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi )
-=======
-                    // etc/XQFT.g:1091:12: ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi )
->>>>>>> .r234
+                    // etc/XQFT.g:1092:12: ~ ( NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | APOSSi )
                     {
                     if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='%')||(input.LA(1)>='(' && input.LA(1)<=';')||(input.LA(1)>='=' && input.LA(1)<='z')||input.LA(1)=='|'||(input.LA(1)>='~' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFE') ) {
                         input.consume();
@@ -2615,13 +1887,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CDataSectionLEX
     public final void mCDataSectionLEX() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1081:28: ( LCDATASi CDataContents RCDATASi )
-            // etc/XQFT.g:1081:30: LCDATASi CDataContents RCDATASi
-=======
-            // etc/XQFT.g:1095:28: ( LCDATASi CDataContents RCDATASi )
-            // etc/XQFT.g:1095:30: LCDATASi CDataContents RCDATASi
->>>>>>> .r234
+            // etc/XQFT.g:1096:28: ( LCDATASi CDataContents RCDATASi )
+            // etc/XQFT.g:1096:30: LCDATASi CDataContents RCDATASi
             {
             if ( backtracking==0 ) {
               prepareSubToken();
@@ -2656,13 +1923,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LCDATASi
     public final void mLCDATASi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1084:23: ( '<![CDATA[' )
-            // etc/XQFT.g:1084:25: '<![CDATA['
-=======
-            // etc/XQFT.g:1098:23: ( '<![CDATA[' )
-            // etc/XQFT.g:1098:25: '<![CDATA['
->>>>>>> .r234
+            // etc/XQFT.g:1099:23: ( '<![CDATA[' )
+            // etc/XQFT.g:1099:25: '<![CDATA['
             {
             match("<![CDATA["); if (failed) return ;
 
@@ -2678,19 +1940,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CDataContents
     public final void mCDataContents() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1085:27: ( ({...}? => RBRACKSi | ~ ( RBRACKSi | NotChar ) )* )
-            // etc/XQFT.g:1085:29: ({...}? => RBRACKSi | ~ ( RBRACKSi | NotChar ) )*
-=======
-            // etc/XQFT.g:1099:27: ( ({...}? => RBRACKSi | ~ ( RBRACKSi | NotChar ) )* )
-            // etc/XQFT.g:1099:29: ({...}? => RBRACKSi | ~ ( RBRACKSi | NotChar ) )*
->>>>>>> .r234
+            // etc/XQFT.g:1100:27: ( ({...}? => RBRACKSi | ~ ( RBRACKSi | NotChar ) )* )
+            // etc/XQFT.g:1100:29: ({...}? => RBRACKSi | ~ ( RBRACKSi | NotChar ) )*
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1085:29: ({...}? => RBRACKSi | ~ ( RBRACKSi | NotChar ) )*
-=======
-            // etc/XQFT.g:1099:29: ({...}? => RBRACKSi | ~ ( RBRACKSi | NotChar ) )*
->>>>>>> .r234
+            // etc/XQFT.g:1100:29: ({...}? => RBRACKSi | ~ ( RBRACKSi | NotChar ) )*
             loop16:
             do {
                 int alt16=3;
@@ -2706,11 +1959,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt16) {
             	case 1 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1085:30: {...}? => RBRACKSi
-=======
-            	    // etc/XQFT.g:1099:30: {...}? => RBRACKSi
->>>>>>> .r234
+            	    // etc/XQFT.g:1100:30: {...}? => RBRACKSi
             	    {
             	    if ( !(!(input.LA(2)==']' && input.LA(3)=='>')) ) {
             	        if (backtracking>0) {failed=true; return ;}
@@ -2721,11 +1970,7 @@ public class XQFTLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1085:86: ~ ( RBRACKSi | NotChar )
-=======
-            	    // etc/XQFT.g:1099:86: ~ ( RBRACKSi | NotChar )
->>>>>>> .r234
+            	    // etc/XQFT.g:1100:86: ~ ( RBRACKSi | NotChar )
             	    {
             	    if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='\\')||(input.LA(1)>='^' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -2759,13 +2004,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start RCDATASi
     public final void mRCDATASi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1086:24: ( ']]>' )
-            // etc/XQFT.g:1086:26: ']]>'
-=======
-            // etc/XQFT.g:1100:24: ( ']]>' )
-            // etc/XQFT.g:1100:26: ']]>'
->>>>>>> .r234
+            // etc/XQFT.g:1101:24: ( ']]>' )
+            // etc/XQFT.g:1101:26: ']]>'
             {
             match("]]>"); if (failed) return ;
 
@@ -2783,13 +2023,8 @@ public class XQFTLexer extends Lexer {
         try {
             Token d=null;
 
-<<<<<<< .mine
-            // etc/XQFT.g:1089:29: ( LPISi PiTarget ( S d= DirPiContents )? RPISi )
-            // etc/XQFT.g:1089:31: LPISi PiTarget ( S d= DirPiContents )? RPISi
-=======
-            // etc/XQFT.g:1103:29: ( LPISi PiTarget ( S d= DirPiContents )? RPISi )
-            // etc/XQFT.g:1103:31: LPISi PiTarget ( S d= DirPiContents )? RPISi
->>>>>>> .r234
+            // etc/XQFT.g:1104:29: ( LPISi PiTarget ( S d= DirPiContents )? RPISi )
+            // etc/XQFT.g:1104:31: LPISi PiTarget ( S d= DirPiContents )? RPISi
             {
             if ( backtracking==0 ) {
               prepareSubToken();
@@ -2805,11 +2040,7 @@ public class XQFTLexer extends Lexer {
             if ( backtracking==0 ) {
               this.type=PiTarget; emit();
             }
-<<<<<<< .mine
-            // etc/XQFT.g:1091:15: ( S d= DirPiContents )?
-=======
-            // etc/XQFT.g:1105:15: ( S d= DirPiContents )?
->>>>>>> .r234
+            // etc/XQFT.g:1106:15: ( S d= DirPiContents )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2818,11 +2049,7 @@ public class XQFTLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1091:16: S d= DirPiContents
-=======
-                    // etc/XQFT.g:1105:16: S d= DirPiContents
->>>>>>> .r234
+                    // etc/XQFT.g:1106:16: S d= DirPiContents
                     {
                     mS(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -2859,13 +2086,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LPISi
     public final void mLPISi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1094:22: ( '<?' )
-            // etc/XQFT.g:1094:24: '<?'
-=======
-            // etc/XQFT.g:1108:22: ( '<?' )
-            // etc/XQFT.g:1108:24: '<?'
->>>>>>> .r234
+            // etc/XQFT.g:1109:22: ( '<?' )
+            // etc/XQFT.g:1109:24: '<?'
             {
             match("<?"); if (failed) return ;
 
@@ -2883,13 +2105,8 @@ public class XQFTLexer extends Lexer {
         try {
             Token n=null;
 
-<<<<<<< .mine
-            // etc/XQFT.g:1095:23: (n= Name {...}?)
-            // etc/XQFT.g:1095:25: n= Name {...}?
-=======
-            // etc/XQFT.g:1109:23: (n= Name {...}?)
-            // etc/XQFT.g:1109:25: n= Name {...}?
->>>>>>> .r234
+            // etc/XQFT.g:1110:23: (n= Name {...}?)
+            // etc/XQFT.g:1110:25: n= Name {...}?
             {
             int nStart1955 = getCharIndex();
             mName(); if (failed) return ;
@@ -2910,13 +2127,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Name
     public final void mName() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1096:25: ( ( Letter | UNDERSCORESi | COLONSi ) ( NameChar )* )
-            // etc/XQFT.g:1096:27: ( Letter | UNDERSCORESi | COLONSi ) ( NameChar )*
-=======
-            // etc/XQFT.g:1110:25: ( ( Letter | UNDERSCORESi | COLONSi ) ( NameChar )* )
-            // etc/XQFT.g:1110:27: ( Letter | UNDERSCORESi | COLONSi ) ( NameChar )*
->>>>>>> .r234
+            // etc/XQFT.g:1111:25: ( ( Letter | UNDERSCORESi | COLONSi ) ( NameChar )* )
+            // etc/XQFT.g:1111:27: ( Letter | UNDERSCORESi | COLONSi ) ( NameChar )*
             {
             if ( input.LA(1)==':'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
                 input.consume();
@@ -2929,11 +2141,7 @@ public class XQFTLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-<<<<<<< .mine
-            // etc/XQFT.g:1096:61: ( NameChar )*
-=======
-            // etc/XQFT.g:1110:61: ( NameChar )*
->>>>>>> .r234
+            // etc/XQFT.g:1111:61: ( NameChar )*
             loop18:
             do {
                 int alt18=2;
@@ -2946,11 +2154,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt18) {
             	case 1 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1096:62: NameChar
-=======
-            	    // etc/XQFT.g:1110:62: NameChar
->>>>>>> .r234
+            	    // etc/XQFT.g:1111:62: NameChar
             	    {
             	    mNameChar(); if (failed) return ;
 
@@ -2974,11 +2178,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NameChar
     public final void mNameChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1097:23: ( Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender )
-=======
-            // etc/XQFT.g:1111:23: ( Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender )
->>>>>>> .r234
+            // etc/XQFT.g:1112:23: ( Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | COLONSi | CombiningChar | Extender )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<=':')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u00B7'||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||(input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0386' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0640' && input.LA(1)<='\u0652')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u0670' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||(input.LA(1)>='\u06D5' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||(input.LA(1)>='\u093C' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0958' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E3')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09F1')||input.LA(1)=='\u0A02'||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||(input.LA(1)>='\u0ABC' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||(input.LA(1)>='\u0B3C' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||(input.LA(1)>='\u0E30' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E4E')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||(input.LA(1)>='\u0EB0' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBD')||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||input.LA(1)=='\u0EC6'||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3005'||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -3004,19 +2204,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DirPiContents
     public final void mDirPiContents() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1098:27: ( ({...}? => QUESTIONSi | ~ ( NotChar | QUESTIONSi ) )* )
-            // etc/XQFT.g:1098:29: ({...}? => QUESTIONSi | ~ ( NotChar | QUESTIONSi ) )*
-=======
-            // etc/XQFT.g:1112:27: ( ({...}? => QUESTIONSi | ~ ( NotChar | QUESTIONSi ) )* )
-            // etc/XQFT.g:1112:29: ({...}? => QUESTIONSi | ~ ( NotChar | QUESTIONSi ) )*
->>>>>>> .r234
+            // etc/XQFT.g:1113:27: ( ({...}? => QUESTIONSi | ~ ( NotChar | QUESTIONSi ) )* )
+            // etc/XQFT.g:1113:29: ({...}? => QUESTIONSi | ~ ( NotChar | QUESTIONSi ) )*
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1098:29: ({...}? => QUESTIONSi | ~ ( NotChar | QUESTIONSi ) )*
-=======
-            // etc/XQFT.g:1112:29: ({...}? => QUESTIONSi | ~ ( NotChar | QUESTIONSi ) )*
->>>>>>> .r234
+            // etc/XQFT.g:1113:29: ({...}? => QUESTIONSi | ~ ( NotChar | QUESTIONSi ) )*
             loop19:
             do {
                 int alt19=3;
@@ -3032,11 +2223,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt19) {
             	case 1 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1098:30: {...}? => QUESTIONSi
-=======
-            	    // etc/XQFT.g:1112:30: {...}? => QUESTIONSi
->>>>>>> .r234
+            	    // etc/XQFT.g:1113:30: {...}? => QUESTIONSi
             	    {
             	    if ( !((input.LA(2)!='>')) ) {
             	        if (backtracking>0) {failed=true; return ;}
@@ -3047,11 +2234,7 @@ public class XQFTLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1098:66: ~ ( NotChar | QUESTIONSi )
-=======
-            	    // etc/XQFT.g:1112:66: ~ ( NotChar | QUESTIONSi )
->>>>>>> .r234
+            	    // etc/XQFT.g:1113:66: ~ ( NotChar | QUESTIONSi )
             	    {
             	    if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='>')||(input.LA(1)>='@' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -3085,13 +2268,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start RPISi
     public final void mRPISi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1099:22: ( '?>' )
-            // etc/XQFT.g:1099:24: '?>'
-=======
-            // etc/XQFT.g:1113:22: ( '?>' )
-            // etc/XQFT.g:1113:24: '?>'
->>>>>>> .r234
+            // etc/XQFT.g:1114:22: ( '?>' )
+            // etc/XQFT.g:1114:24: '?>'
             {
             match("?>"); if (failed) return ;
 
@@ -3107,13 +2285,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DirCommentConstLEX
     public final void mDirCommentConstLEX() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1102:31: ( LCOMMENTSi DirCommentContent RCOMMENTSi )
-            // etc/XQFT.g:1102:33: LCOMMENTSi DirCommentContent RCOMMENTSi
-=======
-            // etc/XQFT.g:1116:31: ( LCOMMENTSi DirCommentContent RCOMMENTSi )
-            // etc/XQFT.g:1116:33: LCOMMENTSi DirCommentContent RCOMMENTSi
->>>>>>> .r234
+            // etc/XQFT.g:1117:31: ( LCOMMENTSi DirCommentContent RCOMMENTSi )
+            // etc/XQFT.g:1117:33: LCOMMENTSi DirCommentContent RCOMMENTSi
             {
             if ( backtracking==0 ) {
               prepareSubToken();
@@ -3148,13 +2321,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LCOMMENTSi
     public final void mLCOMMENTSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1105:25: ( '<!--' )
-            // etc/XQFT.g:1105:27: '<!--'
-=======
-            // etc/XQFT.g:1119:25: ( '<!--' )
-            // etc/XQFT.g:1119:27: '<!--'
->>>>>>> .r234
+            // etc/XQFT.g:1120:25: ( '<!--' )
+            // etc/XQFT.g:1120:27: '<!--'
             {
             match("<!--"); if (failed) return ;
 
@@ -3170,19 +2338,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DirCommentContent
     public final void mDirCommentContent() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1106:30: ( ({...}? => MINUSSi | ~ ( NotChar | MINUSSi ) )* )
-            // etc/XQFT.g:1106:32: ({...}? => MINUSSi | ~ ( NotChar | MINUSSi ) )*
-=======
-            // etc/XQFT.g:1120:30: ( ({...}? => MINUSSi | ~ ( NotChar | MINUSSi ) )* )
-            // etc/XQFT.g:1120:32: ({...}? => MINUSSi | ~ ( NotChar | MINUSSi ) )*
->>>>>>> .r234
+            // etc/XQFT.g:1121:30: ( ({...}? => MINUSSi | ~ ( NotChar | MINUSSi ) )* )
+            // etc/XQFT.g:1121:32: ({...}? => MINUSSi | ~ ( NotChar | MINUSSi ) )*
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1106:32: ({...}? => MINUSSi | ~ ( NotChar | MINUSSi ) )*
-=======
-            // etc/XQFT.g:1120:32: ({...}? => MINUSSi | ~ ( NotChar | MINUSSi ) )*
->>>>>>> .r234
+            // etc/XQFT.g:1121:32: ({...}? => MINUSSi | ~ ( NotChar | MINUSSi ) )*
             loop20:
             do {
                 int alt20=3;
@@ -3198,11 +2357,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt20) {
             	case 1 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1106:33: {...}? => MINUSSi
-=======
-            	    // etc/XQFT.g:1120:33: {...}? => MINUSSi
->>>>>>> .r234
+            	    // etc/XQFT.g:1121:33: {...}? => MINUSSi
             	    {
             	    if ( !((input.LA(2)!='-')) ) {
             	        if (backtracking>0) {failed=true; return ;}
@@ -3213,11 +2368,7 @@ public class XQFTLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1106:67: ~ ( NotChar | MINUSSi )
-=======
-            	    // etc/XQFT.g:1120:67: ~ ( NotChar | MINUSSi )
->>>>>>> .r234
+            	    // etc/XQFT.g:1121:67: ~ ( NotChar | MINUSSi )
             	    {
             	    if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -3251,13 +2402,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start RCOMMENTSi
     public final void mRCOMMENTSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1107:25: ( '-->' )
-            // etc/XQFT.g:1107:27: '-->'
-=======
-            // etc/XQFT.g:1121:25: ( '-->' )
-            // etc/XQFT.g:1121:27: '-->'
->>>>>>> .r234
+            // etc/XQFT.g:1122:25: ( '-->' )
+            // etc/XQFT.g:1122:27: '-->'
             {
             match("-->"); if (failed) return ;
 
@@ -3277,13 +2423,8 @@ public class XQFTLexer extends Lexer {
             Token n=null;
             Token p=null;
 
-<<<<<<< .mine
-            // etc/XQFT.g:1110:22: ( LPRAGSi ( S )? NCName (c= COLONSi n= NCName )? ( S p= PragmaContents )? RPRAGSi )
-            // etc/XQFT.g:1110:24: LPRAGSi ( S )? NCName (c= COLONSi n= NCName )? ( S p= PragmaContents )? RPRAGSi
-=======
-            // etc/XQFT.g:1124:22: ( LPRAGSi ( S )? NCName (c= COLONSi n= NCName )? ( S p= PragmaContents )? RPRAGSi )
-            // etc/XQFT.g:1124:24: LPRAGSi ( S )? NCName (c= COLONSi n= NCName )? ( S p= PragmaContents )? RPRAGSi
->>>>>>> .r234
+            // etc/XQFT.g:1125:22: ( LPRAGSi ( S )? NCName (c= COLONSi n= NCName )? ( S p= PragmaContents )? RPRAGSi )
+            // etc/XQFT.g:1125:24: LPRAGSi ( S )? NCName (c= COLONSi n= NCName )? ( S p= PragmaContents )? RPRAGSi
             {
             if ( backtracking==0 ) {
               prepareSubToken();
@@ -3292,11 +2433,7 @@ public class XQFTLexer extends Lexer {
             if ( backtracking==0 ) {
               this.type=LPRAGSi; emit();
             }
-<<<<<<< .mine
-            // etc/XQFT.g:1111:10: ( S )?
-=======
-            // etc/XQFT.g:1125:10: ( S )?
->>>>>>> .r234
+            // etc/XQFT.g:1126:10: ( S )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -3305,11 +2442,7 @@ public class XQFTLexer extends Lexer {
             }
             switch (alt21) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1111:10: S
-=======
-                    // etc/XQFT.g:1125:10: S
->>>>>>> .r234
+                    // etc/XQFT.g:1126:10: S
                     {
                     mS(); if (failed) return ;
 
@@ -3325,11 +2458,7 @@ public class XQFTLexer extends Lexer {
             if ( backtracking==0 ) {
               this.type=NCName; emit();
             }
-<<<<<<< .mine
-            // etc/XQFT.g:1113:10: (c= COLONSi n= NCName )?
-=======
-            // etc/XQFT.g:1127:10: (c= COLONSi n= NCName )?
->>>>>>> .r234
+            // etc/XQFT.g:1128:10: (c= COLONSi n= NCName )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -3338,11 +2467,7 @@ public class XQFTLexer extends Lexer {
             }
             switch (alt22) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1114:11: c= COLONSi n= NCName
-=======
-                    // etc/XQFT.g:1128:11: c= COLONSi n= NCName
->>>>>>> .r234
+                    // etc/XQFT.g:1129:11: c= COLONSi n= NCName
                     {
                     if ( backtracking==0 ) {
                       prepareSubToken();
@@ -3368,11 +2493,7 @@ public class XQFTLexer extends Lexer {
 
             }
 
-<<<<<<< .mine
-            // etc/XQFT.g:1117:10: ( S p= PragmaContents )?
-=======
-            // etc/XQFT.g:1131:10: ( S p= PragmaContents )?
->>>>>>> .r234
+            // etc/XQFT.g:1132:10: ( S p= PragmaContents )?
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -3381,11 +2502,7 @@ public class XQFTLexer extends Lexer {
             }
             switch (alt23) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1117:11: S p= PragmaContents
-=======
-                    // etc/XQFT.g:1131:11: S p= PragmaContents
->>>>>>> .r234
+                    // etc/XQFT.g:1132:11: S p= PragmaContents
                     {
                     mS(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -3422,13 +2539,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LPRAGSi
     public final void mLPRAGSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1121:20: ( '(#' )
-            // etc/XQFT.g:1121:22: '(#'
-=======
-            // etc/XQFT.g:1135:20: ( '(#' )
-            // etc/XQFT.g:1135:22: '(#'
->>>>>>> .r234
+            // etc/XQFT.g:1136:20: ( '(#' )
+            // etc/XQFT.g:1136:22: '(#'
             {
             match("(#"); if (failed) return ;
 
@@ -3444,19 +2556,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PragmaContents
     public final void mPragmaContents() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1122:26: ( ({...}? => SHARPSi | ~ ( NotChar | SHARPSi ) )* )
-            // etc/XQFT.g:1122:28: ({...}? => SHARPSi | ~ ( NotChar | SHARPSi ) )*
-=======
-            // etc/XQFT.g:1136:26: ( ({...}? => SHARPSi | ~ ( NotChar | SHARPSi ) )* )
-            // etc/XQFT.g:1136:28: ({...}? => SHARPSi | ~ ( NotChar | SHARPSi ) )*
->>>>>>> .r234
+            // etc/XQFT.g:1137:26: ( ({...}? => SHARPSi | ~ ( NotChar | SHARPSi ) )* )
+            // etc/XQFT.g:1137:28: ({...}? => SHARPSi | ~ ( NotChar | SHARPSi ) )*
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1122:28: ({...}? => SHARPSi | ~ ( NotChar | SHARPSi ) )*
-=======
-            // etc/XQFT.g:1136:28: ({...}? => SHARPSi | ~ ( NotChar | SHARPSi ) )*
->>>>>>> .r234
+            // etc/XQFT.g:1137:28: ({...}? => SHARPSi | ~ ( NotChar | SHARPSi ) )*
             loop24:
             do {
                 int alt24=3;
@@ -3472,11 +2575,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt24) {
             	case 1 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1122:29: {...}? => SHARPSi
-=======
-            	    // etc/XQFT.g:1136:29: {...}? => SHARPSi
->>>>>>> .r234
+            	    // etc/XQFT.g:1137:29: {...}? => SHARPSi
             	    {
             	    if ( !((input.LA(2)!=')')) ) {
             	        if (backtracking>0) {failed=true; return ;}
@@ -3487,11 +2586,7 @@ public class XQFTLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1122:63: ~ ( NotChar | SHARPSi )
-=======
-            	    // etc/XQFT.g:1136:63: ~ ( NotChar | SHARPSi )
->>>>>>> .r234
+            	    // etc/XQFT.g:1137:63: ~ ( NotChar | SHARPSi )
             	    {
             	    if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='\"')||(input.LA(1)>='$' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -3525,13 +2620,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start RPRAGSi
     public final void mRPRAGSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1123:21: ( '#)' )
-            // etc/XQFT.g:1123:23: '#)'
-=======
-            // etc/XQFT.g:1137:21: ( '#)' )
-            // etc/XQFT.g:1137:23: '#)'
->>>>>>> .r234
+            // etc/XQFT.g:1138:21: ( '#)' )
+            // etc/XQFT.g:1138:23: '#)'
             {
             match("#)"); if (failed) return ;
 
@@ -3547,20 +2637,11 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Comment
     public final void mComment() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1126:26: ( LXQCOMMENTSi ({...}? Comment | {...}? => COLONSi | {...}? => LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )* RXQCOMMENTSi )
-            // etc/XQFT.g:1126:28: LXQCOMMENTSi ({...}? Comment | {...}? => COLONSi | {...}? => LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )* RXQCOMMENTSi
-=======
-            // etc/XQFT.g:1140:26: ( LXQCOMMENTSi ({...}? Comment | {...}? => COLONSi | {...}? => LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )* RXQCOMMENTSi )
-            // etc/XQFT.g:1140:28: LXQCOMMENTSi ({...}? Comment | {...}? => COLONSi | {...}? => LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )* RXQCOMMENTSi
->>>>>>> .r234
+            // etc/XQFT.g:1141:26: ( LXQCOMMENTSi ({...}? Comment | {...}? => COLONSi | {...}? => LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )* RXQCOMMENTSi )
+            // etc/XQFT.g:1141:28: LXQCOMMENTSi ({...}? Comment | {...}? => COLONSi | {...}? => LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )* RXQCOMMENTSi
             {
             mLXQCOMMENTSi(); if (failed) return ;
-<<<<<<< .mine
-            // etc/XQFT.g:1127:9: ({...}? Comment | {...}? => COLONSi | {...}? => LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )*
-=======
-            // etc/XQFT.g:1141:9: ({...}? Comment | {...}? => COLONSi | {...}? => LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )*
->>>>>>> .r234
+            // etc/XQFT.g:1142:9: ({...}? Comment | {...}? => COLONSi | {...}? => LPARSi | ~ ( LPARSi | COLONSi | NotChar ) )*
             loop25:
             do {
                 int alt25=5;
@@ -3612,11 +2693,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt25) {
             	case 1 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1127:10: {...}? Comment
-=======
-            	    // etc/XQFT.g:1141:10: {...}? Comment
->>>>>>> .r234
+            	    // etc/XQFT.g:1142:10: {...}? Comment
             	    {
             	    if ( !((input.LA(1)=='(' && input.LA(2)==':')) ) {
             	        if (backtracking>0) {failed=true; return ;}
@@ -3627,11 +2704,7 @@ public class XQFTLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1128:11: {...}? => COLONSi
-=======
-            	    // etc/XQFT.g:1142:11: {...}? => COLONSi
->>>>>>> .r234
+            	    // etc/XQFT.g:1143:11: {...}? => COLONSi
             	    {
             	    if ( !(input.LA(2)!=')') ) {
             	        if (backtracking>0) {failed=true; return ;}
@@ -3642,11 +2715,7 @@ public class XQFTLexer extends Lexer {
             	    }
             	    break;
             	case 3 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1129:11: {...}? => LPARSi
-=======
-            	    // etc/XQFT.g:1143:11: {...}? => LPARSi
->>>>>>> .r234
+            	    // etc/XQFT.g:1144:11: {...}? => LPARSi
             	    {
             	    if ( !(input.LA(2)!=':') ) {
             	        if (backtracking>0) {failed=true; return ;}
@@ -3657,11 +2726,7 @@ public class XQFTLexer extends Lexer {
             	    }
             	    break;
             	case 4 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1130:11: ~ ( LPARSi | COLONSi | NotChar )
-=======
-            	    // etc/XQFT.g:1144:11: ~ ( LPARSi | COLONSi | NotChar )
->>>>>>> .r234
+            	    // etc/XQFT.g:1145:11: ~ ( LPARSi | COLONSi | NotChar )
             	    {
             	    if ( input.LA(1)=='\u0000'||(input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||(input.LA(1)>=' ' && input.LA(1)<='\'')||(input.LA(1)>=')' && input.LA(1)<='9')||(input.LA(1)>=';' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -3696,13 +2761,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LXQCOMMENTSi
     public final void mLXQCOMMENTSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1132:24: ( '(:' )
-            // etc/XQFT.g:1132:26: '(:'
-=======
-            // etc/XQFT.g:1146:24: ( '(:' )
-            // etc/XQFT.g:1146:26: '(:'
->>>>>>> .r234
+            // etc/XQFT.g:1147:24: ( '(:' )
+            // etc/XQFT.g:1147:26: '(:'
             {
             match("(:"); if (failed) return ;
 
@@ -3718,13 +2778,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start RXQCOMMENTSi
     public final void mRXQCOMMENTSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1133:24: ( ':)' )
-            // etc/XQFT.g:1133:26: ':)'
-=======
-            // etc/XQFT.g:1147:24: ( ':)' )
-            // etc/XQFT.g:1147:26: ':)'
->>>>>>> .r234
+            // etc/XQFT.g:1148:24: ( ':)' )
+            // etc/XQFT.g:1148:26: ':)'
             {
             match(":)"); if (failed) return ;
 
@@ -3740,20 +2795,12 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NumberLEX
     public final void mNumberLEX() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1138:24: ( ( DoubleLiteral )=> DoubleLiteral | ( DecimalLiteral )=> DecimalLiteral | ( IntegerLiteral )=> IntegerLiteral )
-=======
-            // etc/XQFT.g:1152:24: ( ( DoubleLiteral )=> DoubleLiteral | ( DecimalLiteral )=> DecimalLiteral | ( IntegerLiteral )=> IntegerLiteral )
->>>>>>> .r234
+            // etc/XQFT.g:1153:24: ( ( DoubleLiteral )=> DoubleLiteral | ( DecimalLiteral )=> DecimalLiteral | ( IntegerLiteral )=> IntegerLiteral )
             int alt26=3;
             alt26 = dfa26.predict(input);
             switch (alt26) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1138:26: ( DoubleLiteral )=> DoubleLiteral
-=======
-                    // etc/XQFT.g:1152:26: ( DoubleLiteral )=> DoubleLiteral
->>>>>>> .r234
+                    // etc/XQFT.g:1153:26: ( DoubleLiteral )=> DoubleLiteral
                     {
                     mDoubleLiteral(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -3763,11 +2810,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1139:14: ( DecimalLiteral )=> DecimalLiteral
-=======
-                    // etc/XQFT.g:1153:14: ( DecimalLiteral )=> DecimalLiteral
->>>>>>> .r234
+                    // etc/XQFT.g:1154:14: ( DecimalLiteral )=> DecimalLiteral
                     {
                     mDecimalLiteral(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -3777,11 +2820,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 3 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1140:12: ( IntegerLiteral )=> IntegerLiteral
-=======
-                    // etc/XQFT.g:1154:12: ( IntegerLiteral )=> IntegerLiteral
->>>>>>> .r234
+                    // etc/XQFT.g:1155:12: ( IntegerLiteral )=> IntegerLiteral
                     {
                     mIntegerLiteral(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -3801,13 +2840,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start IntegerLiteral
     public final void mIntegerLiteral() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1143:28: ( Digits )
-            // etc/XQFT.g:1143:30: Digits
-=======
-            // etc/XQFT.g:1157:28: ( Digits )
-            // etc/XQFT.g:1157:30: Digits
->>>>>>> .r234
+            // etc/XQFT.g:1158:28: ( Digits )
+            // etc/XQFT.g:1158:30: Digits
             {
             mDigits(); if (failed) return ;
 
@@ -3822,11 +2856,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DecimalLiteral
     public final void mDecimalLiteral() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1144:28: ( DOTSi Digits | Digits DOTSi ( '0' .. '9' )* )
-=======
-            // etc/XQFT.g:1158:28: ( DOTSi Digits | Digits DOTSi ( '0' .. '9' )* )
->>>>>>> .r234
+            // etc/XQFT.g:1159:28: ( DOTSi Digits | Digits DOTSi ( '0' .. '9' )* )
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -3839,21 +2869,13 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-<<<<<<< .mine
-                    new NoViableAltException("1144:10: fragment DecimalLiteral : ( DOTSi Digits | Digits DOTSi ( '0' .. '9' )* );", 28, 0, input);
-=======
-                    new NoViableAltException("1158:10: fragment DecimalLiteral : ( DOTSi Digits | Digits DOTSi ( '0' .. '9' )* );", 28, 0, input);
->>>>>>> .r234
+                    new NoViableAltException("1159:10: fragment DecimalLiteral : ( DOTSi Digits | Digits DOTSi ( '0' .. '9' )* );", 28, 0, input);
 
                 throw nvae;
             }
             switch (alt28) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1144:30: DOTSi Digits
-=======
-                    // etc/XQFT.g:1158:30: DOTSi Digits
->>>>>>> .r234
+                    // etc/XQFT.g:1159:30: DOTSi Digits
                     {
                     mDOTSi(); if (failed) return ;
                     mDigits(); if (failed) return ;
@@ -3861,19 +2883,11 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1145:12: Digits DOTSi ( '0' .. '9' )*
-=======
-                    // etc/XQFT.g:1159:12: Digits DOTSi ( '0' .. '9' )*
->>>>>>> .r234
+                    // etc/XQFT.g:1160:12: Digits DOTSi ( '0' .. '9' )*
                     {
                     mDigits(); if (failed) return ;
                     mDOTSi(); if (failed) return ;
-<<<<<<< .mine
-                    // etc/XQFT.g:1145:25: ( '0' .. '9' )*
-=======
-                    // etc/XQFT.g:1159:25: ( '0' .. '9' )*
->>>>>>> .r234
+                    // etc/XQFT.g:1160:25: ( '0' .. '9' )*
                     loop27:
                     do {
                         int alt27=2;
@@ -3886,11 +2900,7 @@ public class XQFTLexer extends Lexer {
 
                         switch (alt27) {
                     	case 1 :
-<<<<<<< .mine
-                    	    // etc/XQFT.g:1145:26: '0' .. '9'
-=======
-                    	    // etc/XQFT.g:1159:26: '0' .. '9'
->>>>>>> .r234
+                    	    // etc/XQFT.g:1160:26: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); if (failed) return ;
 
@@ -3916,19 +2926,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DoubleLiteral
     public final void mDoubleLiteral() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1146:27: ( ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits )
-            // etc/XQFT.g:1146:29: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits
-=======
-            // etc/XQFT.g:1160:27: ( ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits )
-            // etc/XQFT.g:1160:29: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits
->>>>>>> .r234
+            // etc/XQFT.g:1161:27: ( ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits )
+            // etc/XQFT.g:1161:29: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? ) ( 'e' | 'E' ) ( PLUSSi | MINUSSi )? Digits
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1146:29: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? )
-=======
-            // etc/XQFT.g:1160:29: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? )
->>>>>>> .r234
+            // etc/XQFT.g:1161:29: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? )
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -3941,21 +2942,13 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-<<<<<<< .mine
-                    new NoViableAltException("1146:29: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? )", 31, 0, input);
-=======
-                    new NoViableAltException("1160:29: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? )", 31, 0, input);
->>>>>>> .r234
+                    new NoViableAltException("1161:29: ( DOTSi Digits | Digits ( DOTSi ( '0' .. '9' )* )? )", 31, 0, input);
 
                 throw nvae;
             }
             switch (alt31) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1147:11: DOTSi Digits
-=======
-                    // etc/XQFT.g:1161:11: DOTSi Digits
->>>>>>> .r234
+                    // etc/XQFT.g:1162:11: DOTSi Digits
                     {
                     mDOTSi(); if (failed) return ;
                     mDigits(); if (failed) return ;
@@ -3963,18 +2956,10 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1148:13: Digits ( DOTSi ( '0' .. '9' )* )?
-=======
-                    // etc/XQFT.g:1162:13: Digits ( DOTSi ( '0' .. '9' )* )?
->>>>>>> .r234
+                    // etc/XQFT.g:1163:13: Digits ( DOTSi ( '0' .. '9' )* )?
                     {
                     mDigits(); if (failed) return ;
-<<<<<<< .mine
-                    // etc/XQFT.g:1148:20: ( DOTSi ( '0' .. '9' )* )?
-=======
-                    // etc/XQFT.g:1162:20: ( DOTSi ( '0' .. '9' )* )?
->>>>>>> .r234
+                    // etc/XQFT.g:1163:20: ( DOTSi ( '0' .. '9' )* )?
                     int alt30=2;
                     int LA30_0 = input.LA(1);
 
@@ -3983,18 +2968,10 @@ public class XQFTLexer extends Lexer {
                     }
                     switch (alt30) {
                         case 1 :
-<<<<<<< .mine
-                            // etc/XQFT.g:1148:22: DOTSi ( '0' .. '9' )*
-=======
-                            // etc/XQFT.g:1162:22: DOTSi ( '0' .. '9' )*
->>>>>>> .r234
+                            // etc/XQFT.g:1163:22: DOTSi ( '0' .. '9' )*
                             {
                             mDOTSi(); if (failed) return ;
-<<<<<<< .mine
-                            // etc/XQFT.g:1148:28: ( '0' .. '9' )*
-=======
-                            // etc/XQFT.g:1162:28: ( '0' .. '9' )*
->>>>>>> .r234
+                            // etc/XQFT.g:1163:28: ( '0' .. '9' )*
                             loop29:
                             do {
                                 int alt29=2;
@@ -4007,11 +2984,7 @@ public class XQFTLexer extends Lexer {
 
                                 switch (alt29) {
                             	case 1 :
-<<<<<<< .mine
-                            	    // etc/XQFT.g:1148:29: '0' .. '9'
-=======
-                            	    // etc/XQFT.g:1162:29: '0' .. '9'
->>>>>>> .r234
+                            	    // etc/XQFT.g:1163:29: '0' .. '9'
                             	    {
                             	    matchRange('0','9'); if (failed) return ;
 
@@ -4046,11 +3019,7 @@ public class XQFTLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-<<<<<<< .mine
-            // etc/XQFT.g:1150:22: ( PLUSSi | MINUSSi )?
-=======
-            // etc/XQFT.g:1164:22: ( PLUSSi | MINUSSi )?
->>>>>>> .r234
+            // etc/XQFT.g:1165:22: ( PLUSSi | MINUSSi )?
             int alt32=2;
             int LA32_0 = input.LA(1);
 
@@ -4091,20 +3060,11 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NCName
     public final void mNCName() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1152:33: ( NCNameStartChar ( NCNameChar )* )
-            // etc/XQFT.g:1152:35: NCNameStartChar ( NCNameChar )*
-=======
-            // etc/XQFT.g:1166:33: ( NCNameStartChar ( NCNameChar )* )
-            // etc/XQFT.g:1166:35: NCNameStartChar ( NCNameChar )*
->>>>>>> .r234
+            // etc/XQFT.g:1167:33: ( NCNameStartChar ( NCNameChar )* )
+            // etc/XQFT.g:1167:35: NCNameStartChar ( NCNameChar )*
             {
             mNCNameStartChar(); if (failed) return ;
-<<<<<<< .mine
-            // etc/XQFT.g:1152:51: ( NCNameChar )*
-=======
-            // etc/XQFT.g:1166:51: ( NCNameChar )*
->>>>>>> .r234
+            // etc/XQFT.g:1167:51: ( NCNameChar )*
             loop33:
             do {
                 int alt33=2;
@@ -4117,11 +3077,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt33) {
             	case 1 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1152:51: NCNameChar
-=======
-            	    // etc/XQFT.g:1166:51: NCNameChar
->>>>>>> .r234
+            	    // etc/XQFT.g:1167:51: NCNameChar
             	    {
             	    mNCNameChar(); if (failed) return ;
 
@@ -4145,11 +3101,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NCNameChar
     public final void mNCNameChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1153:29: ( Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | CombiningChar | Extender )
-=======
-            // etc/XQFT.g:1167:29: ( Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | CombiningChar | Extender )
->>>>>>> .r234
+            // etc/XQFT.g:1168:29: ( Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | CombiningChar | Extender )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='-' && input.LA(1)<='.')||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||input.LA(1)=='\u00B7'||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||(input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0386' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0640' && input.LA(1)<='\u0652')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u0670' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||(input.LA(1)>='\u06D5' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||(input.LA(1)>='\u093C' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0958' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E3')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09F1')||input.LA(1)=='\u0A02'||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||(input.LA(1)>='\u0ABC' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||(input.LA(1)>='\u0B3C' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||(input.LA(1)>='\u0E30' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E4E')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||(input.LA(1)>='\u0EB0' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBD')||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||input.LA(1)=='\u0EC6'||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3005'||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -4175,11 +3127,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NCNameStartChar
     public final void mNCNameStartChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1154:33: ( Letter | UNDERSCORESi )
-=======
-            // etc/XQFT.g:1168:33: ( Letter | UNDERSCORESi )
->>>>>>> .r234
+            // etc/XQFT.g:1169:33: ( Letter | UNDERSCORESi )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -4207,13 +3155,8 @@ public class XQFTLexer extends Lexer {
         try {
             Token n=null;
 
-<<<<<<< .mine
-            // etc/XQFT.g:1158:22: (n= NCName )
-            // etc/XQFT.g:1158:24: n= NCName
-=======
-            // etc/XQFT.g:1172:22: (n= NCName )
-            // etc/XQFT.g:1172:24: n= NCName
->>>>>>> .r234
+            // etc/XQFT.g:1173:22: (n= NCName )
+            // etc/XQFT.g:1173:24: n= NCName
             {
             int nStart2961 = getCharIndex();
             mNCName(); if (failed) return ;
@@ -4379,31 +3322,23 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LexSigns
     public final void mLexSigns() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1308:20: ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi )
-=======
-            // etc/XQFT.g:1322:20: ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi )
->>>>>>> .r234
+            // etc/XQFT.g:1323:20: ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi )
             int alt34=9;
             switch ( input.LA(1) ) {
             case '<':
                 {
                 int LA34_1 = input.LA(2);
 
-                if ( (LA34_1=='=') ) {
-                    alt34=2;
-                }
-                else if ( (LA34_1=='<') ) {
+                if ( (LA34_1=='<') ) {
                     alt34=1;
+                }
+                else if ( (LA34_1=='=') ) {
+                    alt34=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return ;}
                     NoViableAltException nvae =
-<<<<<<< .mine
-                        new NoViableAltException("1308:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 1, input);
-=======
-                        new NoViableAltException("1322:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 1, input);
->>>>>>> .r234
+                        new NoViableAltException("1323:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 1, input);
 
                     throw nvae;
                 }
@@ -4422,11 +3357,7 @@ public class XQFTLexer extends Lexer {
                 else {
                     if (backtracking>0) {failed=true; return ;}
                     NoViableAltException nvae =
-<<<<<<< .mine
-                        new NoViableAltException("1308:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 2, input);
-=======
-                        new NoViableAltException("1322:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 2, input);
->>>>>>> .r234
+                        new NoViableAltException("1323:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 2, input);
 
                     throw nvae;
                 }
@@ -4445,11 +3376,7 @@ public class XQFTLexer extends Lexer {
                 else {
                     if (backtracking>0) {failed=true; return ;}
                     NoViableAltException nvae =
-<<<<<<< .mine
-                        new NoViableAltException("1308:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 3, input);
-=======
-                        new NoViableAltException("1322:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 3, input);
->>>>>>> .r234
+                        new NoViableAltException("1323:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 3, input);
 
                     throw nvae;
                 }
@@ -4473,22 +3400,14 @@ public class XQFTLexer extends Lexer {
             default:
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-<<<<<<< .mine
-                    new NoViableAltException("1308:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 0, input);
-=======
-                    new NoViableAltException("1322:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 0, input);
->>>>>>> .r234
+                    new NoViableAltException("1323:10: fragment LexSigns : ( NODEBEFORESi | LTOREQSi | GTOREQSi | NODEAFTERSi | DBLCOLONSi | ASSIGNSi | DBLSLASHSi | DOTDOTSi | NEQSi );", 34, 0, input);
 
                 throw nvae;
             }
 
             switch (alt34) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1308:22: NODEBEFORESi
-=======
-                    // etc/XQFT.g:1322:22: NODEBEFORESi
->>>>>>> .r234
+                    // etc/XQFT.g:1323:22: NODEBEFORESi
                     {
                     mNODEBEFORESi(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -4498,11 +3417,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1309:9: LTOREQSi
-=======
-                    // etc/XQFT.g:1323:9: LTOREQSi
->>>>>>> .r234
+                    // etc/XQFT.g:1324:9: LTOREQSi
                     {
                     mLTOREQSi(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -4512,11 +3427,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 3 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1310:9: GTOREQSi
-=======
-                    // etc/XQFT.g:1324:9: GTOREQSi
->>>>>>> .r234
+                    // etc/XQFT.g:1325:9: GTOREQSi
                     {
                     mGTOREQSi(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -4526,11 +3437,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 4 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1311:9: NODEAFTERSi
-=======
-                    // etc/XQFT.g:1325:9: NODEAFTERSi
->>>>>>> .r234
+                    // etc/XQFT.g:1326:9: NODEAFTERSi
                     {
                     mNODEAFTERSi(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -4540,11 +3447,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 5 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1312:9: DBLCOLONSi
-=======
-                    // etc/XQFT.g:1326:9: DBLCOLONSi
->>>>>>> .r234
+                    // etc/XQFT.g:1327:9: DBLCOLONSi
                     {
                     mDBLCOLONSi(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -4554,11 +3457,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 6 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1313:9: ASSIGNSi
-=======
-                    // etc/XQFT.g:1327:9: ASSIGNSi
->>>>>>> .r234
+                    // etc/XQFT.g:1328:9: ASSIGNSi
                     {
                     mASSIGNSi(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -4568,11 +3467,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 7 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1314:9: DBLSLASHSi
-=======
-                    // etc/XQFT.g:1328:9: DBLSLASHSi
->>>>>>> .r234
+                    // etc/XQFT.g:1329:9: DBLSLASHSi
                     {
                     mDBLSLASHSi(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -4582,11 +3477,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 8 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1315:9: DOTDOTSi
-=======
-                    // etc/XQFT.g:1329:9: DOTDOTSi
->>>>>>> .r234
+                    // etc/XQFT.g:1330:9: DOTDOTSi
                     {
                     mDOTDOTSi(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -4596,11 +3487,7 @@ public class XQFTLexer extends Lexer {
                     }
                     break;
                 case 9 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1316:9: NEQSi
-=======
-                    // etc/XQFT.g:1330:9: NEQSi
->>>>>>> .r234
+                    // etc/XQFT.g:1331:9: NEQSi
                     {
                     mNEQSi(); if (failed) return ;
                     if ( backtracking==0 ) {
@@ -4620,13 +3507,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NODEBEFORESi
     public final void mNODEBEFORESi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1320:26: ( '<<' )
-            // etc/XQFT.g:1320:28: '<<'
-=======
-            // etc/XQFT.g:1334:26: ( '<<' )
-            // etc/XQFT.g:1334:28: '<<'
->>>>>>> .r234
+            // etc/XQFT.g:1335:26: ( '<<' )
+            // etc/XQFT.g:1335:28: '<<'
             {
             match("<<"); if (failed) return ;
 
@@ -4642,13 +3524,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LTOREQSi
     public final void mLTOREQSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1321:23: ( '<=' )
-            // etc/XQFT.g:1321:25: '<='
-=======
-            // etc/XQFT.g:1335:23: ( '<=' )
-            // etc/XQFT.g:1335:25: '<='
->>>>>>> .r234
+            // etc/XQFT.g:1336:23: ( '<=' )
+            // etc/XQFT.g:1336:25: '<='
             {
             match("<="); if (failed) return ;
 
@@ -4664,13 +3541,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start GTOREQSi
     public final void mGTOREQSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1322:23: ( '>=' )
-            // etc/XQFT.g:1322:25: '>='
-=======
-            // etc/XQFT.g:1336:23: ( '>=' )
-            // etc/XQFT.g:1336:25: '>='
->>>>>>> .r234
+            // etc/XQFT.g:1337:23: ( '>=' )
+            // etc/XQFT.g:1337:25: '>='
             {
             match(">="); if (failed) return ;
 
@@ -4686,13 +3558,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NODEAFTERSi
     public final void mNODEAFTERSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1323:25: ( '>>' )
-            // etc/XQFT.g:1323:27: '>>'
-=======
-            // etc/XQFT.g:1337:25: ( '>>' )
-            // etc/XQFT.g:1337:27: '>>'
->>>>>>> .r234
+            // etc/XQFT.g:1338:25: ( '>>' )
+            // etc/XQFT.g:1338:27: '>>'
             {
             match(">>"); if (failed) return ;
 
@@ -4708,13 +3575,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DBLCOLONSi
     public final void mDBLCOLONSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1324:24: ( '::' )
-            // etc/XQFT.g:1324:26: '::'
-=======
-            // etc/XQFT.g:1338:24: ( '::' )
-            // etc/XQFT.g:1338:26: '::'
->>>>>>> .r234
+            // etc/XQFT.g:1339:24: ( '::' )
+            // etc/XQFT.g:1339:26: '::'
             {
             match("::"); if (failed) return ;
 
@@ -4730,13 +3592,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ASSIGNSi
     public final void mASSIGNSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1325:23: ( ':=' )
-            // etc/XQFT.g:1325:25: ':='
-=======
-            // etc/XQFT.g:1339:23: ( ':=' )
-            // etc/XQFT.g:1339:25: ':='
->>>>>>> .r234
+            // etc/XQFT.g:1340:23: ( ':=' )
+            // etc/XQFT.g:1340:25: ':='
             {
             match(":="); if (failed) return ;
 
@@ -4752,13 +3609,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DBLSLASHSi
     public final void mDBLSLASHSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1326:24: ( '//' )
-            // etc/XQFT.g:1326:26: '//'
-=======
-            // etc/XQFT.g:1340:24: ( '//' )
-            // etc/XQFT.g:1340:26: '//'
->>>>>>> .r234
+            // etc/XQFT.g:1341:24: ( '//' )
+            // etc/XQFT.g:1341:26: '//'
             {
             match("//"); if (failed) return ;
 
@@ -4774,13 +3626,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DOTDOTSi
     public final void mDOTDOTSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1327:23: ( '..' )
-            // etc/XQFT.g:1327:25: '..'
-=======
-            // etc/XQFT.g:1341:23: ( '..' )
-            // etc/XQFT.g:1341:25: '..'
->>>>>>> .r234
+            // etc/XQFT.g:1342:23: ( '..' )
+            // etc/XQFT.g:1342:25: '..'
             {
             match(".."); if (failed) return ;
 
@@ -4796,13 +3643,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NEQSi
     public final void mNEQSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1328:21: ( '!=' )
-            // etc/XQFT.g:1328:23: '!='
-=======
-            // etc/XQFT.g:1342:21: ( '!=' )
-            // etc/XQFT.g:1342:23: '!='
->>>>>>> .r234
+            // etc/XQFT.g:1343:21: ( '!=' )
+            // etc/XQFT.g:1343:23: '!='
             {
             match("!="); if (failed) return ;
 
@@ -4818,13 +3660,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LENDTAGSi
     public final void mLENDTAGSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1330:24: ( '</' )
-            // etc/XQFT.g:1330:26: '</'
-=======
-            // etc/XQFT.g:1344:24: ( '</' )
-            // etc/XQFT.g:1344:26: '</'
->>>>>>> .r234
+            // etc/XQFT.g:1345:24: ( '</' )
+            // etc/XQFT.g:1345:26: '</'
             {
             match("</"); if (failed) return ;
 
@@ -4840,13 +3677,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start RSELFTERMSi
     public final void mRSELFTERMSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1331:25: ( '/>' )
-            // etc/XQFT.g:1331:27: '/>'
-=======
-            // etc/XQFT.g:1345:25: ( '/>' )
-            // etc/XQFT.g:1345:27: '/>'
->>>>>>> .r234
+            // etc/XQFT.g:1346:25: ( '/>' )
+            // etc/XQFT.g:1346:27: '/>'
             {
             match("/>"); if (failed) return ;
 
@@ -4862,13 +3694,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start EXCLSi
     public final void mEXCLSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1332:21: ( '!' )
-            // etc/XQFT.g:1332:23: '!'
-=======
-            // etc/XQFT.g:1346:21: ( '!' )
-            // etc/XQFT.g:1346:23: '!'
->>>>>>> .r234
+            // etc/XQFT.g:1347:21: ( '!' )
+            // etc/XQFT.g:1347:23: '!'
             {
             match('!'); if (failed) return ;
 
@@ -4883,13 +3710,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start QUOTSi
     public final void mQUOTSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1333:21: ( '\"' )
-            // etc/XQFT.g:1333:23: '\"'
-=======
-            // etc/XQFT.g:1347:21: ( '\"' )
-            // etc/XQFT.g:1347:23: '\"'
->>>>>>> .r234
+            // etc/XQFT.g:1348:21: ( '\"' )
+            // etc/XQFT.g:1348:23: '\"'
             {
             match('\"'); if (failed) return ;
 
@@ -4904,13 +3726,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SHARPSi
     public final void mSHARPSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1334:21: ( '#' )
-            // etc/XQFT.g:1334:23: '#'
-=======
-            // etc/XQFT.g:1348:21: ( '#' )
-            // etc/XQFT.g:1348:23: '#'
->>>>>>> .r234
+            // etc/XQFT.g:1349:21: ( '#' )
+            // etc/XQFT.g:1349:23: '#'
             {
             match('#'); if (failed) return ;
 
@@ -4925,13 +3742,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DOLLARSi
     public final void mDOLLARSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1335:23: ( '$' )
-            // etc/XQFT.g:1335:25: '$'
-=======
-            // etc/XQFT.g:1349:23: ( '$' )
-            // etc/XQFT.g:1349:25: '$'
->>>>>>> .r234
+            // etc/XQFT.g:1350:23: ( '$' )
+            // etc/XQFT.g:1350:25: '$'
             {
             match('$'); if (failed) return ;
 
@@ -4946,13 +3758,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start AMPERSi
     public final void mAMPERSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1336:21: ( '&' )
-            // etc/XQFT.g:1336:23: '&'
-=======
-            // etc/XQFT.g:1350:21: ( '&' )
-            // etc/XQFT.g:1350:23: '&'
->>>>>>> .r234
+            // etc/XQFT.g:1351:21: ( '&' )
+            // etc/XQFT.g:1351:23: '&'
             {
             match('&'); if (failed) return ;
 
@@ -4967,13 +3774,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start APOSSi
     public final void mAPOSSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1337:21: ( '\\'' )
-            // etc/XQFT.g:1337:23: '\\''
-=======
-            // etc/XQFT.g:1351:21: ( '\\'' )
-            // etc/XQFT.g:1351:23: '\\''
->>>>>>> .r234
+            // etc/XQFT.g:1352:21: ( '\\'' )
+            // etc/XQFT.g:1352:23: '\\''
             {
             match('\''); if (failed) return ;
 
@@ -4988,13 +3790,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LPARSi
     public final void mLPARSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1338:21: ( '(' )
-            // etc/XQFT.g:1338:23: '('
-=======
-            // etc/XQFT.g:1352:21: ( '(' )
-            // etc/XQFT.g:1352:23: '('
->>>>>>> .r234
+            // etc/XQFT.g:1353:21: ( '(' )
+            // etc/XQFT.g:1353:23: '('
             {
             match('('); if (failed) return ;
 
@@ -5009,13 +3806,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start RPARSi
     public final void mRPARSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1339:21: ( ')' )
-            // etc/XQFT.g:1339:23: ')'
-=======
-            // etc/XQFT.g:1353:21: ( ')' )
-            // etc/XQFT.g:1353:23: ')'
->>>>>>> .r234
+            // etc/XQFT.g:1354:21: ( ')' )
+            // etc/XQFT.g:1354:23: ')'
             {
             match(')'); if (failed) return ;
 
@@ -5030,13 +3822,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start STARSi
     public final void mSTARSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1340:21: ( '*' )
-            // etc/XQFT.g:1340:23: '*'
-=======
-            // etc/XQFT.g:1354:21: ( '*' )
-            // etc/XQFT.g:1354:23: '*'
->>>>>>> .r234
+            // etc/XQFT.g:1355:21: ( '*' )
+            // etc/XQFT.g:1355:23: '*'
             {
             match('*'); if (failed) return ;
 
@@ -5051,13 +3838,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PLUSSi
     public final void mPLUSSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1341:21: ( '+' )
-            // etc/XQFT.g:1341:23: '+'
-=======
-            // etc/XQFT.g:1355:21: ( '+' )
-            // etc/XQFT.g:1355:23: '+'
->>>>>>> .r234
+            // etc/XQFT.g:1356:21: ( '+' )
+            // etc/XQFT.g:1356:23: '+'
             {
             match('+'); if (failed) return ;
 
@@ -5072,13 +3854,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start COMMASi
     public final void mCOMMASi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1342:22: ( ',' )
-            // etc/XQFT.g:1342:24: ','
-=======
-            // etc/XQFT.g:1356:22: ( ',' )
-            // etc/XQFT.g:1356:24: ','
->>>>>>> .r234
+            // etc/XQFT.g:1357:22: ( ',' )
+            // etc/XQFT.g:1357:24: ','
             {
             match(','); if (failed) return ;
 
@@ -5093,13 +3870,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start MINUSSi
     public final void mMINUSSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1343:22: ( '-' )
-            // etc/XQFT.g:1343:24: '-'
-=======
-            // etc/XQFT.g:1357:22: ( '-' )
-            // etc/XQFT.g:1357:24: '-'
->>>>>>> .r234
+            // etc/XQFT.g:1358:22: ( '-' )
+            // etc/XQFT.g:1358:24: '-'
             {
             match('-'); if (failed) return ;
 
@@ -5114,13 +3886,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DOTSi
     public final void mDOTSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1344:21: ( '.' )
-            // etc/XQFT.g:1344:23: '.'
-=======
-            // etc/XQFT.g:1358:21: ( '.' )
-            // etc/XQFT.g:1358:23: '.'
->>>>>>> .r234
+            // etc/XQFT.g:1359:21: ( '.' )
+            // etc/XQFT.g:1359:23: '.'
             {
             match('.'); if (failed) return ;
 
@@ -5135,13 +3902,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SLASHSi
     public final void mSLASHSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1345:22: ( '/' )
-            // etc/XQFT.g:1345:24: '/'
-=======
-            // etc/XQFT.g:1359:22: ( '/' )
-            // etc/XQFT.g:1359:24: '/'
->>>>>>> .r234
+            // etc/XQFT.g:1360:22: ( '/' )
+            // etc/XQFT.g:1360:24: '/'
             {
             match('/'); if (failed) return ;
 
@@ -5156,13 +3918,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start COLONSi
     public final void mCOLONSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1346:22: ( ':' )
-            // etc/XQFT.g:1346:24: ':'
-=======
-            // etc/XQFT.g:1360:22: ( ':' )
-            // etc/XQFT.g:1360:24: ':'
->>>>>>> .r234
+            // etc/XQFT.g:1361:22: ( ':' )
+            // etc/XQFT.g:1361:24: ':'
             {
             match(':'); if (failed) return ;
 
@@ -5177,13 +3934,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SEMICOLONSi
     public final void mSEMICOLONSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1347:24: ( ';' )
-            // etc/XQFT.g:1347:26: ';'
-=======
-            // etc/XQFT.g:1361:24: ( ';' )
-            // etc/XQFT.g:1361:26: ';'
->>>>>>> .r234
+            // etc/XQFT.g:1362:24: ( ';' )
+            // etc/XQFT.g:1362:26: ';'
             {
             match(';'); if (failed) return ;
 
@@ -5198,13 +3950,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LTSi
     public final void mLTSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1348:20: ( '<' )
-            // etc/XQFT.g:1348:22: '<'
-=======
-            // etc/XQFT.g:1362:20: ( '<' )
-            // etc/XQFT.g:1362:22: '<'
->>>>>>> .r234
+            // etc/XQFT.g:1363:20: ( '<' )
+            // etc/XQFT.g:1363:22: '<'
             {
             match('<'); if (failed) return ;
 
@@ -5219,13 +3966,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start EQSi
     public final void mEQSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1349:20: ( '=' )
-            // etc/XQFT.g:1349:22: '='
-=======
-            // etc/XQFT.g:1363:20: ( '=' )
-            // etc/XQFT.g:1363:22: '='
->>>>>>> .r234
+            // etc/XQFT.g:1364:20: ( '=' )
+            // etc/XQFT.g:1364:22: '='
             {
             match('='); if (failed) return ;
 
@@ -5240,13 +3982,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start GTSi
     public final void mGTSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1350:20: ( '>' )
-            // etc/XQFT.g:1350:22: '>'
-=======
-            // etc/XQFT.g:1364:20: ( '>' )
-            // etc/XQFT.g:1364:22: '>'
->>>>>>> .r234
+            // etc/XQFT.g:1365:20: ( '>' )
+            // etc/XQFT.g:1365:22: '>'
             {
             match('>'); if (failed) return ;
 
@@ -5261,13 +3998,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start QUESTIONSi
     public final void mQUESTIONSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1351:24: ( '?' )
-            // etc/XQFT.g:1351:26: '?'
-=======
-            // etc/XQFT.g:1365:24: ( '?' )
-            // etc/XQFT.g:1365:26: '?'
->>>>>>> .r234
+            // etc/XQFT.g:1366:24: ( '?' )
+            // etc/XQFT.g:1366:26: '?'
             {
             match('?'); if (failed) return ;
 
@@ -5282,13 +4014,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ATSi
     public final void mATSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1352:20: ( '@' )
-            // etc/XQFT.g:1352:22: '@'
-=======
-            // etc/XQFT.g:1366:20: ( '@' )
-            // etc/XQFT.g:1366:22: '@'
->>>>>>> .r234
+            // etc/XQFT.g:1367:20: ( '@' )
+            // etc/XQFT.g:1367:22: '@'
             {
             match('@'); if (failed) return ;
 
@@ -5303,13 +4030,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LBRACKSi
     public final void mLBRACKSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1353:23: ( '[' )
-            // etc/XQFT.g:1353:25: '['
-=======
-            // etc/XQFT.g:1367:23: ( '[' )
-            // etc/XQFT.g:1367:25: '['
->>>>>>> .r234
+            // etc/XQFT.g:1368:23: ( '[' )
+            // etc/XQFT.g:1368:25: '['
             {
             match('['); if (failed) return ;
 
@@ -5324,13 +4046,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start BACKSLASHSi
     public final void mBACKSLASHSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1354:24: ( '\\\\' )
-            // etc/XQFT.g:1354:26: '\\\\'
-=======
-            // etc/XQFT.g:1368:24: ( '\\\\' )
-            // etc/XQFT.g:1368:26: '\\\\'
->>>>>>> .r234
+            // etc/XQFT.g:1369:24: ( '\\\\' )
+            // etc/XQFT.g:1369:26: '\\\\'
             {
             match('\\'); if (failed) return ;
 
@@ -5345,13 +4062,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start RBRACKSi
     public final void mRBRACKSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1355:22: ( ']' )
-            // etc/XQFT.g:1355:24: ']'
-=======
-            // etc/XQFT.g:1369:22: ( ']' )
-            // etc/XQFT.g:1369:24: ']'
->>>>>>> .r234
+            // etc/XQFT.g:1370:22: ( ']' )
+            // etc/XQFT.g:1370:24: ']'
             {
             match(']'); if (failed) return ;
 
@@ -5366,13 +4078,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start UNDERSCORESi
     public final void mUNDERSCORESi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1356:26: ( '_' )
-            // etc/XQFT.g:1356:28: '_'
-=======
-            // etc/XQFT.g:1370:26: ( '_' )
-            // etc/XQFT.g:1370:28: '_'
->>>>>>> .r234
+            // etc/XQFT.g:1371:26: ( '_' )
+            // etc/XQFT.g:1371:28: '_'
             {
             match('_'); if (failed) return ;
 
@@ -5387,13 +4094,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LBRACESi
     public final void mLBRACESi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1357:23: ( '{' )
-            // etc/XQFT.g:1357:25: '{'
-=======
-            // etc/XQFT.g:1371:23: ( '{' )
-            // etc/XQFT.g:1371:25: '{'
->>>>>>> .r234
+            // etc/XQFT.g:1372:23: ( '{' )
+            // etc/XQFT.g:1372:25: '{'
             {
             match('{'); if (failed) return ;
 
@@ -5408,13 +4110,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PIPESi
     public final void mPIPESi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1358:21: ( '|' )
-            // etc/XQFT.g:1358:23: '|'
-=======
-            // etc/XQFT.g:1372:21: ( '|' )
-            // etc/XQFT.g:1372:23: '|'
->>>>>>> .r234
+            // etc/XQFT.g:1373:21: ( '|' )
+            // etc/XQFT.g:1373:23: '|'
             {
             match('|'); if (failed) return ;
 
@@ -5429,13 +4126,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start RBRACSi
     public final void mRBRACSi() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1359:22: ( '}' )
-            // etc/XQFT.g:1359:24: '}'
-=======
-            // etc/XQFT.g:1373:22: ( '}' )
-            // etc/XQFT.g:1373:24: '}'
->>>>>>> .r234
+            // etc/XQFT.g:1374:22: ( '}' )
+            // etc/XQFT.g:1374:24: '}'
             {
             match('}'); if (failed) return ;
 
@@ -5450,13 +4142,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ALL
     public final void mALL() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1363:19: ( 'all' )
-            // etc/XQFT.g:1363:21: 'all'
-=======
-            // etc/XQFT.g:1377:19: ( 'all' )
-            // etc/XQFT.g:1377:21: 'all'
->>>>>>> .r234
+            // etc/XQFT.g:1378:19: ( 'all' )
+            // etc/XQFT.g:1378:21: 'all'
             {
             match("all"); if (failed) return ;
 
@@ -5472,13 +4159,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ANY
     public final void mANY() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1364:19: ( 'any' )
-            // etc/XQFT.g:1364:21: 'any'
-=======
-            // etc/XQFT.g:1378:19: ( 'any' )
-            // etc/XQFT.g:1378:21: 'any'
->>>>>>> .r234
+            // etc/XQFT.g:1379:19: ( 'any' )
+            // etc/XQFT.g:1379:21: 'any'
             {
             match("any"); if (failed) return ;
 
@@ -5494,13 +4176,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ANCESTOR
     public final void mANCESTOR() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1365:23: ( 'ancestor' )
-            // etc/XQFT.g:1365:25: 'ancestor'
-=======
-            // etc/XQFT.g:1379:23: ( 'ancestor' )
-            // etc/XQFT.g:1379:25: 'ancestor'
->>>>>>> .r234
+            // etc/XQFT.g:1380:23: ( 'ancestor' )
+            // etc/XQFT.g:1380:25: 'ancestor'
             {
             match("ancestor"); if (failed) return ;
 
@@ -5516,13 +4193,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ANCESTOR_OR_SELF
     public final void mANCESTOR_OR_SELF() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1366:29: ( 'ancestor-or-self' )
-            // etc/XQFT.g:1366:31: 'ancestor-or-self'
-=======
-            // etc/XQFT.g:1380:29: ( 'ancestor-or-self' )
-            // etc/XQFT.g:1380:31: 'ancestor-or-self'
->>>>>>> .r234
+            // etc/XQFT.g:1381:29: ( 'ancestor-or-self' )
+            // etc/XQFT.g:1381:31: 'ancestor-or-self'
             {
             match("ancestor-or-self"); if (failed) return ;
 
@@ -5538,13 +4210,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start AND
     public final void mAND() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1367:19: ( 'and' )
-            // etc/XQFT.g:1367:21: 'and'
-=======
-            // etc/XQFT.g:1381:19: ( 'and' )
-            // etc/XQFT.g:1381:21: 'and'
->>>>>>> .r234
+            // etc/XQFT.g:1382:19: ( 'and' )
+            // etc/XQFT.g:1382:21: 'and'
             {
             match("and"); if (failed) return ;
 
@@ -5560,13 +4227,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start AS
     public final void mAS() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1368:18: ( 'as' )
-            // etc/XQFT.g:1368:20: 'as'
-=======
-            // etc/XQFT.g:1382:18: ( 'as' )
-            // etc/XQFT.g:1382:20: 'as'
->>>>>>> .r234
+            // etc/XQFT.g:1383:18: ( 'as' )
+            // etc/XQFT.g:1383:20: 'as'
             {
             match("as"); if (failed) return ;
 
@@ -5582,13 +4244,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ASCENDING
     public final void mASCENDING() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1369:24: ( 'ascending' )
-            // etc/XQFT.g:1369:26: 'ascending'
-=======
-            // etc/XQFT.g:1383:24: ( 'ascending' )
-            // etc/XQFT.g:1383:26: 'ascending'
->>>>>>> .r234
+            // etc/XQFT.g:1384:24: ( 'ascending' )
+            // etc/XQFT.g:1384:26: 'ascending'
             {
             match("ascending"); if (failed) return ;
 
@@ -5604,13 +4261,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start AT
     public final void mAT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1370:18: ( 'at' )
-            // etc/XQFT.g:1370:20: 'at'
-=======
-            // etc/XQFT.g:1384:18: ( 'at' )
-            // etc/XQFT.g:1384:20: 'at'
->>>>>>> .r234
+            // etc/XQFT.g:1385:18: ( 'at' )
+            // etc/XQFT.g:1385:20: 'at'
             {
             match("at"); if (failed) return ;
 
@@ -5626,13 +4278,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ATTRIBUTE
     public final void mATTRIBUTE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1371:24: ( 'attribute' )
-            // etc/XQFT.g:1371:26: 'attribute'
-=======
-            // etc/XQFT.g:1385:24: ( 'attribute' )
-            // etc/XQFT.g:1385:26: 'attribute'
->>>>>>> .r234
+            // etc/XQFT.g:1386:24: ( 'attribute' )
+            // etc/XQFT.g:1386:26: 'attribute'
             {
             match("attribute"); if (failed) return ;
 
@@ -5648,13 +4295,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start BASE_URI
     public final void mBASE_URI() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1372:23: ( 'base-uri' )
-            // etc/XQFT.g:1372:25: 'base-uri'
-=======
-            // etc/XQFT.g:1386:23: ( 'base-uri' )
-            // etc/XQFT.g:1386:25: 'base-uri'
->>>>>>> .r234
+            // etc/XQFT.g:1387:23: ( 'base-uri' )
+            // etc/XQFT.g:1387:25: 'base-uri'
             {
             match("base-uri"); if (failed) return ;
 
@@ -5670,13 +4312,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start BY
     public final void mBY() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1373:18: ( 'by' )
-            // etc/XQFT.g:1373:20: 'by'
-=======
-            // etc/XQFT.g:1387:18: ( 'by' )
-            // etc/XQFT.g:1387:20: 'by'
->>>>>>> .r234
+            // etc/XQFT.g:1388:18: ( 'by' )
+            // etc/XQFT.g:1388:20: 'by'
             {
             match("by"); if (failed) return ;
 
@@ -5692,13 +4329,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start BOUNDARYSPACE
     public final void mBOUNDARYSPACE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1374:27: ( 'boundary-space' )
-            // etc/XQFT.g:1374:29: 'boundary-space'
-=======
-            // etc/XQFT.g:1388:27: ( 'boundary-space' )
-            // etc/XQFT.g:1388:29: 'boundary-space'
->>>>>>> .r234
+            // etc/XQFT.g:1389:27: ( 'boundary-space' )
+            // etc/XQFT.g:1389:29: 'boundary-space'
             {
             match("boundary-space"); if (failed) return ;
 
@@ -5714,13 +4346,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CASE
     public final void mCASE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1375:20: ( 'case' )
-            // etc/XQFT.g:1375:22: 'case'
-=======
-            // etc/XQFT.g:1389:20: ( 'case' )
-            // etc/XQFT.g:1389:22: 'case'
->>>>>>> .r234
+            // etc/XQFT.g:1390:20: ( 'case' )
+            // etc/XQFT.g:1390:22: 'case'
             {
             match("case"); if (failed) return ;
 
@@ -5736,13 +4363,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CAST
     public final void mCAST() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1376:20: ( 'cast' )
-            // etc/XQFT.g:1376:22: 'cast'
-=======
-            // etc/XQFT.g:1390:20: ( 'cast' )
-            // etc/XQFT.g:1390:22: 'cast'
->>>>>>> .r234
+            // etc/XQFT.g:1391:20: ( 'cast' )
+            // etc/XQFT.g:1391:22: 'cast'
             {
             match("cast"); if (failed) return ;
 
@@ -5758,13 +4380,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CASTABLE
     public final void mCASTABLE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1377:23: ( 'castable' )
-            // etc/XQFT.g:1377:25: 'castable'
-=======
-            // etc/XQFT.g:1391:23: ( 'castable' )
-            // etc/XQFT.g:1391:25: 'castable'
->>>>>>> .r234
+            // etc/XQFT.g:1392:23: ( 'castable' )
+            // etc/XQFT.g:1392:25: 'castable'
             {
             match("castable"); if (failed) return ;
 
@@ -5780,13 +4397,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CHILD
     public final void mCHILD() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1378:21: ( 'child' )
-            // etc/XQFT.g:1378:23: 'child'
-=======
-            // etc/XQFT.g:1392:21: ( 'child' )
-            // etc/XQFT.g:1392:23: 'child'
->>>>>>> .r234
+            // etc/XQFT.g:1393:21: ( 'child' )
+            // etc/XQFT.g:1393:23: 'child'
             {
             match("child"); if (failed) return ;
 
@@ -5802,13 +4414,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start COLLATION
     public final void mCOLLATION() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1379:24: ( 'collation' )
-            // etc/XQFT.g:1379:26: 'collation'
-=======
-            // etc/XQFT.g:1393:24: ( 'collation' )
-            // etc/XQFT.g:1393:26: 'collation'
->>>>>>> .r234
+            // etc/XQFT.g:1394:24: ( 'collation' )
+            // etc/XQFT.g:1394:26: 'collation'
             {
             match("collation"); if (failed) return ;
 
@@ -5824,13 +4431,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start COMMENT
     public final void mCOMMENT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1380:22: ( 'comment' )
-            // etc/XQFT.g:1380:24: 'comment'
-=======
-            // etc/XQFT.g:1394:22: ( 'comment' )
-            // etc/XQFT.g:1394:24: 'comment'
->>>>>>> .r234
+            // etc/XQFT.g:1395:22: ( 'comment' )
+            // etc/XQFT.g:1395:24: 'comment'
             {
             match("comment"); if (failed) return ;
 
@@ -5846,13 +4448,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CONSTRUCTION
     public final void mCONSTRUCTION() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1381:26: ( 'construction' )
-            // etc/XQFT.g:1381:28: 'construction'
-=======
-            // etc/XQFT.g:1395:26: ( 'construction' )
-            // etc/XQFT.g:1395:28: 'construction'
->>>>>>> .r234
+            // etc/XQFT.g:1396:26: ( 'construction' )
+            // etc/XQFT.g:1396:28: 'construction'
             {
             match("construction"); if (failed) return ;
 
@@ -5868,13 +4465,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CONTENT
     public final void mCONTENT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1382:22: ( 'content' )
-            // etc/XQFT.g:1382:24: 'content'
-=======
-            // etc/XQFT.g:1396:22: ( 'content' )
-            // etc/XQFT.g:1396:24: 'content'
->>>>>>> .r234
+            // etc/XQFT.g:1397:22: ( 'content' )
+            // etc/XQFT.g:1397:24: 'content'
             {
             match("content"); if (failed) return ;
 
@@ -5890,13 +4482,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start COPY_NAMESPACES
     public final void mCOPY_NAMESPACES() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1383:28: ( 'copy-namespaces' )
-            // etc/XQFT.g:1383:30: 'copy-namespaces'
-=======
-            // etc/XQFT.g:1397:28: ( 'copy-namespaces' )
-            // etc/XQFT.g:1397:30: 'copy-namespaces'
->>>>>>> .r234
+            // etc/XQFT.g:1398:28: ( 'copy-namespaces' )
+            // etc/XQFT.g:1398:30: 'copy-namespaces'
             {
             match("copy-namespaces"); if (failed) return ;
 
@@ -5912,13 +4499,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DECLARE
     public final void mDECLARE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1384:22: ( 'declare' )
-            // etc/XQFT.g:1384:24: 'declare'
-=======
-            // etc/XQFT.g:1398:22: ( 'declare' )
-            // etc/XQFT.g:1398:24: 'declare'
->>>>>>> .r234
+            // etc/XQFT.g:1399:22: ( 'declare' )
+            // etc/XQFT.g:1399:24: 'declare'
             {
             match("declare"); if (failed) return ;
 
@@ -5934,13 +4516,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DEFAULT
     public final void mDEFAULT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1385:22: ( 'default' )
-            // etc/XQFT.g:1385:24: 'default'
-=======
-            // etc/XQFT.g:1399:22: ( 'default' )
-            // etc/XQFT.g:1399:24: 'default'
->>>>>>> .r234
+            // etc/XQFT.g:1400:22: ( 'default' )
+            // etc/XQFT.g:1400:24: 'default'
             {
             match("default"); if (failed) return ;
 
@@ -5956,13 +4533,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DESCENDANT
     public final void mDESCENDANT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1386:24: ( 'descendant' )
-            // etc/XQFT.g:1386:26: 'descendant'
-=======
-            // etc/XQFT.g:1400:24: ( 'descendant' )
-            // etc/XQFT.g:1400:26: 'descendant'
->>>>>>> .r234
+            // etc/XQFT.g:1401:24: ( 'descendant' )
+            // etc/XQFT.g:1401:26: 'descendant'
             {
             match("descendant"); if (failed) return ;
 
@@ -5978,13 +4550,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DESCENDANT_OR_SELF
     public final void mDESCENDANT_OR_SELF() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1387:30: ( 'descendant-or-self' )
-            // etc/XQFT.g:1387:32: 'descendant-or-self'
-=======
-            // etc/XQFT.g:1401:30: ( 'descendant-or-self' )
-            // etc/XQFT.g:1401:32: 'descendant-or-self'
->>>>>>> .r234
+            // etc/XQFT.g:1402:30: ( 'descendant-or-self' )
+            // etc/XQFT.g:1402:32: 'descendant-or-self'
             {
             match("descendant-or-self"); if (failed) return ;
 
@@ -6000,13 +4567,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DESCENDING
     public final void mDESCENDING() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1388:24: ( 'descending' )
-            // etc/XQFT.g:1388:26: 'descending'
-=======
-            // etc/XQFT.g:1402:24: ( 'descending' )
-            // etc/XQFT.g:1402:26: 'descending'
->>>>>>> .r234
+            // etc/XQFT.g:1403:24: ( 'descending' )
+            // etc/XQFT.g:1403:26: 'descending'
             {
             match("descending"); if (failed) return ;
 
@@ -6022,13 +4584,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DIACRITICS
     public final void mDIACRITICS() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1389:24: ( 'diacritics' )
-            // etc/XQFT.g:1389:26: 'diacritics'
-=======
-            // etc/XQFT.g:1403:24: ( 'diacritics' )
-            // etc/XQFT.g:1403:26: 'diacritics'
->>>>>>> .r234
+            // etc/XQFT.g:1404:24: ( 'diacritics' )
+            // etc/XQFT.g:1404:26: 'diacritics'
             {
             match("diacritics"); if (failed) return ;
 
@@ -6044,13 +4601,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DIFFERENT
     public final void mDIFFERENT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1390:24: ( 'different' )
-            // etc/XQFT.g:1390:26: 'different'
-=======
-            // etc/XQFT.g:1404:24: ( 'different' )
-            // etc/XQFT.g:1404:26: 'different'
->>>>>>> .r234
+            // etc/XQFT.g:1405:24: ( 'different' )
+            // etc/XQFT.g:1405:26: 'different'
             {
             match("different"); if (failed) return ;
 
@@ -6066,13 +4618,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DISTANCE
     public final void mDISTANCE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1391:23: ( 'distance' )
-            // etc/XQFT.g:1391:25: 'distance'
-=======
-            // etc/XQFT.g:1405:23: ( 'distance' )
-            // etc/XQFT.g:1405:25: 'distance'
->>>>>>> .r234
+            // etc/XQFT.g:1406:23: ( 'distance' )
+            // etc/XQFT.g:1406:25: 'distance'
             {
             match("distance"); if (failed) return ;
 
@@ -6088,13 +4635,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DIV
     public final void mDIV() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1392:19: ( 'div' )
-            // etc/XQFT.g:1392:21: 'div'
-=======
-            // etc/XQFT.g:1406:19: ( 'div' )
-            // etc/XQFT.g:1406:21: 'div'
->>>>>>> .r234
+            // etc/XQFT.g:1407:19: ( 'div' )
+            // etc/XQFT.g:1407:21: 'div'
             {
             match("div"); if (failed) return ;
 
@@ -6110,13 +4652,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DOCUMENT
     public final void mDOCUMENT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1393:23: ( 'document' )
-            // etc/XQFT.g:1393:25: 'document'
-=======
-            // etc/XQFT.g:1407:23: ( 'document' )
-            // etc/XQFT.g:1407:25: 'document'
->>>>>>> .r234
+            // etc/XQFT.g:1408:23: ( 'document' )
+            // etc/XQFT.g:1408:25: 'document'
             {
             match("document"); if (failed) return ;
 
@@ -6132,13 +4669,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start DOCUMENT_NODE
     public final void mDOCUMENT_NODE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1394:27: ( 'document-node' )
-            // etc/XQFT.g:1394:29: 'document-node'
-=======
-            // etc/XQFT.g:1408:27: ( 'document-node' )
-            // etc/XQFT.g:1408:29: 'document-node'
->>>>>>> .r234
+            // etc/XQFT.g:1409:27: ( 'document-node' )
+            // etc/XQFT.g:1409:29: 'document-node'
             {
             match("document-node"); if (failed) return ;
 
@@ -6154,13 +4686,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ELEMENT
     public final void mELEMENT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1395:22: ( 'element' )
-            // etc/XQFT.g:1395:24: 'element'
-=======
-            // etc/XQFT.g:1409:22: ( 'element' )
-            // etc/XQFT.g:1409:24: 'element'
->>>>>>> .r234
+            // etc/XQFT.g:1410:22: ( 'element' )
+            // etc/XQFT.g:1410:24: 'element'
             {
             match("element"); if (failed) return ;
 
@@ -6176,13 +4703,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ELSE
     public final void mELSE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1396:20: ( 'else' )
-            // etc/XQFT.g:1396:22: 'else'
-=======
-            // etc/XQFT.g:1410:20: ( 'else' )
-            // etc/XQFT.g:1410:22: 'else'
->>>>>>> .r234
+            // etc/XQFT.g:1411:20: ( 'else' )
+            // etc/XQFT.g:1411:22: 'else'
             {
             match("else"); if (failed) return ;
 
@@ -6198,13 +4720,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ENCODING
     public final void mENCODING() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1397:23: ( 'encoding' )
-            // etc/XQFT.g:1397:25: 'encoding'
-=======
-            // etc/XQFT.g:1411:23: ( 'encoding' )
-            // etc/XQFT.g:1411:25: 'encoding'
->>>>>>> .r234
+            // etc/XQFT.g:1412:23: ( 'encoding' )
+            // etc/XQFT.g:1412:25: 'encoding'
             {
             match("encoding"); if (failed) return ;
 
@@ -6220,13 +4737,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start END
     public final void mEND() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1398:19: ( 'end' )
-            // etc/XQFT.g:1398:21: 'end'
-=======
-            // etc/XQFT.g:1412:19: ( 'end' )
-            // etc/XQFT.g:1412:21: 'end'
->>>>>>> .r234
+            // etc/XQFT.g:1413:19: ( 'end' )
+            // etc/XQFT.g:1413:21: 'end'
             {
             match("end"); if (failed) return ;
 
@@ -6242,13 +4754,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ENTIRE
     public final void mENTIRE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1399:21: ( 'entire' )
-            // etc/XQFT.g:1399:23: 'entire'
-=======
-            // etc/XQFT.g:1413:21: ( 'entire' )
-            // etc/XQFT.g:1413:23: 'entire'
->>>>>>> .r234
+            // etc/XQFT.g:1414:21: ( 'entire' )
+            // etc/XQFT.g:1414:23: 'entire'
             {
             match("entire"); if (failed) return ;
 
@@ -6264,13 +4771,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start EMPTY
     public final void mEMPTY() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1400:21: ( 'empty' )
-            // etc/XQFT.g:1400:23: 'empty'
-=======
-            // etc/XQFT.g:1414:21: ( 'empty' )
-            // etc/XQFT.g:1414:23: 'empty'
->>>>>>> .r234
+            // etc/XQFT.g:1415:21: ( 'empty' )
+            // etc/XQFT.g:1415:23: 'empty'
             {
             match("empty"); if (failed) return ;
 
@@ -6286,13 +4788,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start EMPTY_SEQUENCE
     public final void mEMPTY_SEQUENCE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1401:27: ( 'empty-sequence' )
-            // etc/XQFT.g:1401:29: 'empty-sequence'
-=======
-            // etc/XQFT.g:1415:27: ( 'empty-sequence' )
-            // etc/XQFT.g:1415:29: 'empty-sequence'
->>>>>>> .r234
+            // etc/XQFT.g:1416:27: ( 'empty-sequence' )
+            // etc/XQFT.g:1416:29: 'empty-sequence'
             {
             match("empty-sequence"); if (failed) return ;
 
@@ -6308,13 +4805,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start EQ
     public final void mEQ() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1402:18: ( 'eq' )
-            // etc/XQFT.g:1402:20: 'eq'
-=======
-            // etc/XQFT.g:1416:18: ( 'eq' )
-            // etc/XQFT.g:1416:20: 'eq'
->>>>>>> .r234
+            // etc/XQFT.g:1417:18: ( 'eq' )
+            // etc/XQFT.g:1417:20: 'eq'
             {
             match("eq"); if (failed) return ;
 
@@ -6330,13 +4822,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start EVERY
     public final void mEVERY() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1403:21: ( 'every' )
-            // etc/XQFT.g:1403:23: 'every'
-=======
-            // etc/XQFT.g:1417:21: ( 'every' )
-            // etc/XQFT.g:1417:23: 'every'
->>>>>>> .r234
+            // etc/XQFT.g:1418:21: ( 'every' )
+            // etc/XQFT.g:1418:23: 'every'
             {
             match("every"); if (failed) return ;
 
@@ -6352,13 +4839,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start EXACTLY
     public final void mEXACTLY() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1404:22: ( 'exactly' )
-            // etc/XQFT.g:1404:24: 'exactly'
-=======
-            // etc/XQFT.g:1418:22: ( 'exactly' )
-            // etc/XQFT.g:1418:24: 'exactly'
->>>>>>> .r234
+            // etc/XQFT.g:1419:22: ( 'exactly' )
+            // etc/XQFT.g:1419:24: 'exactly'
             {
             match("exactly"); if (failed) return ;
 
@@ -6374,13 +4856,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start EXCEPT
     public final void mEXCEPT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1405:21: ( 'except' )
-            // etc/XQFT.g:1405:23: 'except'
-=======
-            // etc/XQFT.g:1419:21: ( 'except' )
-            // etc/XQFT.g:1419:23: 'except'
->>>>>>> .r234
+            // etc/XQFT.g:1420:21: ( 'except' )
+            // etc/XQFT.g:1420:23: 'except'
             {
             match("except"); if (failed) return ;
 
@@ -6396,13 +4873,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start EXTERNAL
     public final void mEXTERNAL() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1406:23: ( 'external' )
-            // etc/XQFT.g:1406:25: 'external'
-=======
-            // etc/XQFT.g:1420:23: ( 'external' )
-            // etc/XQFT.g:1420:25: 'external'
->>>>>>> .r234
+            // etc/XQFT.g:1421:23: ( 'external' )
+            // etc/XQFT.g:1421:25: 'external'
             {
             match("external"); if (failed) return ;
 
@@ -6418,13 +4890,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start FOLLOWING
     public final void mFOLLOWING() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1407:24: ( 'following' )
-            // etc/XQFT.g:1407:26: 'following'
-=======
-            // etc/XQFT.g:1421:24: ( 'following' )
-            // etc/XQFT.g:1421:26: 'following'
->>>>>>> .r234
+            // etc/XQFT.g:1422:24: ( 'following' )
+            // etc/XQFT.g:1422:26: 'following'
             {
             match("following"); if (failed) return ;
 
@@ -6440,13 +4907,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start FOLLOWING_SIBLING
     public final void mFOLLOWING_SIBLING() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1408:30: ( 'following-sibling' )
-            // etc/XQFT.g:1408:32: 'following-sibling'
-=======
-            // etc/XQFT.g:1422:30: ( 'following-sibling' )
-            // etc/XQFT.g:1422:32: 'following-sibling'
->>>>>>> .r234
+            // etc/XQFT.g:1423:30: ( 'following-sibling' )
+            // etc/XQFT.g:1423:32: 'following-sibling'
             {
             match("following-sibling"); if (failed) return ;
 
@@ -6462,13 +4924,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start FOR
     public final void mFOR() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1409:19: ( 'for' )
-            // etc/XQFT.g:1409:21: 'for'
-=======
-            // etc/XQFT.g:1423:19: ( 'for' )
-            // etc/XQFT.g:1423:21: 'for'
->>>>>>> .r234
+            // etc/XQFT.g:1424:19: ( 'for' )
+            // etc/XQFT.g:1424:21: 'for'
             {
             match("for"); if (failed) return ;
 
@@ -6484,13 +4941,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start FROM
     public final void mFROM() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1410:20: ( 'from' )
-            // etc/XQFT.g:1410:22: 'from'
-=======
-            // etc/XQFT.g:1424:20: ( 'from' )
-            // etc/XQFT.g:1424:22: 'from'
->>>>>>> .r234
+            // etc/XQFT.g:1425:20: ( 'from' )
+            // etc/XQFT.g:1425:22: 'from'
             {
             match("from"); if (failed) return ;
 
@@ -6506,13 +4958,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start FTAND
     public final void mFTAND() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1411:21: ( 'ftand' )
-            // etc/XQFT.g:1411:23: 'ftand'
-=======
-            // etc/XQFT.g:1425:21: ( 'ftand' )
-            // etc/XQFT.g:1425:23: 'ftand'
->>>>>>> .r234
+            // etc/XQFT.g:1426:21: ( 'ftand' )
+            // etc/XQFT.g:1426:23: 'ftand'
             {
             match("ftand"); if (failed) return ;
 
@@ -6528,13 +4975,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start FTCONTAINS
     public final void mFTCONTAINS() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1412:24: ( 'ftcontains' )
-            // etc/XQFT.g:1412:26: 'ftcontains'
-=======
-            // etc/XQFT.g:1426:24: ( 'ftcontains' )
-            // etc/XQFT.g:1426:26: 'ftcontains'
->>>>>>> .r234
+            // etc/XQFT.g:1427:24: ( 'ftcontains' )
+            // etc/XQFT.g:1427:26: 'ftcontains'
             {
             match("ftcontains"); if (failed) return ;
 
@@ -6550,13 +4992,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start FTNOT
     public final void mFTNOT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1413:21: ( 'ftnot' )
-            // etc/XQFT.g:1413:23: 'ftnot'
-=======
-            // etc/XQFT.g:1427:21: ( 'ftnot' )
-            // etc/XQFT.g:1427:23: 'ftnot'
->>>>>>> .r234
+            // etc/XQFT.g:1428:21: ( 'ftnot' )
+            // etc/XQFT.g:1428:23: 'ftnot'
             {
             match("ftnot"); if (failed) return ;
 
@@ -6572,13 +5009,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start FTOPTION
     public final void mFTOPTION() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1414:23: ( 'ft-option' )
-            // etc/XQFT.g:1414:25: 'ft-option'
-=======
-            // etc/XQFT.g:1428:23: ( 'ft-option' )
-            // etc/XQFT.g:1428:25: 'ft-option'
->>>>>>> .r234
+            // etc/XQFT.g:1429:23: ( 'ft-option' )
+            // etc/XQFT.g:1429:25: 'ft-option'
             {
             match("ft-option"); if (failed) return ;
 
@@ -6594,13 +5026,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start FTOR
     public final void mFTOR() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1415:20: ( 'ftor' )
-            // etc/XQFT.g:1415:22: 'ftor'
-=======
-            // etc/XQFT.g:1429:20: ( 'ftor' )
-            // etc/XQFT.g:1429:22: 'ftor'
->>>>>>> .r234
+            // etc/XQFT.g:1430:20: ( 'ftor' )
+            // etc/XQFT.g:1430:22: 'ftor'
             {
             match("ftor"); if (failed) return ;
 
@@ -6616,13 +5043,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start FUNCTION
     public final void mFUNCTION() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1416:23: ( 'function' )
-            // etc/XQFT.g:1416:25: 'function'
-=======
-            // etc/XQFT.g:1430:23: ( 'function' )
-            // etc/XQFT.g:1430:25: 'function'
->>>>>>> .r234
+            // etc/XQFT.g:1431:23: ( 'function' )
+            // etc/XQFT.g:1431:25: 'function'
             {
             match("function"); if (failed) return ;
 
@@ -6638,13 +5060,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start GE
     public final void mGE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1417:18: ( 'ge' )
-            // etc/XQFT.g:1417:20: 'ge'
-=======
-            // etc/XQFT.g:1431:18: ( 'ge' )
-            // etc/XQFT.g:1431:20: 'ge'
->>>>>>> .r234
+            // etc/XQFT.g:1432:18: ( 'ge' )
+            // etc/XQFT.g:1432:20: 'ge'
             {
             match("ge"); if (failed) return ;
 
@@ -6660,13 +5077,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start GREATEST
     public final void mGREATEST() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1418:23: ( 'greatest' )
-            // etc/XQFT.g:1418:25: 'greatest'
-=======
-            // etc/XQFT.g:1432:23: ( 'greatest' )
-            // etc/XQFT.g:1432:25: 'greatest'
->>>>>>> .r234
+            // etc/XQFT.g:1433:23: ( 'greatest' )
+            // etc/XQFT.g:1433:25: 'greatest'
             {
             match("greatest"); if (failed) return ;
 
@@ -6682,13 +5094,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start GT
     public final void mGT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1419:18: ( 'gt' )
-            // etc/XQFT.g:1419:20: 'gt'
-=======
-            // etc/XQFT.g:1433:18: ( 'gt' )
-            // etc/XQFT.g:1433:20: 'gt'
->>>>>>> .r234
+            // etc/XQFT.g:1434:18: ( 'gt' )
+            // etc/XQFT.g:1434:20: 'gt'
             {
             match("gt"); if (failed) return ;
 
@@ -6704,13 +5111,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start IDIV
     public final void mIDIV() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1420:20: ( 'idiv' )
-            // etc/XQFT.g:1420:22: 'idiv'
-=======
-            // etc/XQFT.g:1434:20: ( 'idiv' )
-            // etc/XQFT.g:1434:22: 'idiv'
->>>>>>> .r234
+            // etc/XQFT.g:1435:20: ( 'idiv' )
+            // etc/XQFT.g:1435:22: 'idiv'
             {
             match("idiv"); if (failed) return ;
 
@@ -6726,13 +5128,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start IF
     public final void mIF() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1421:18: ( 'if' )
-            // etc/XQFT.g:1421:20: 'if'
-=======
-            // etc/XQFT.g:1435:18: ( 'if' )
-            // etc/XQFT.g:1435:20: 'if'
->>>>>>> .r234
+            // etc/XQFT.g:1436:18: ( 'if' )
+            // etc/XQFT.g:1436:20: 'if'
             {
             match("if"); if (failed) return ;
 
@@ -6748,13 +5145,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start IMPORT
     public final void mIMPORT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1422:21: ( 'import' )
-            // etc/XQFT.g:1422:23: 'import'
-=======
-            // etc/XQFT.g:1436:21: ( 'import' )
-            // etc/XQFT.g:1436:23: 'import'
->>>>>>> .r234
+            // etc/XQFT.g:1437:21: ( 'import' )
+            // etc/XQFT.g:1437:23: 'import'
             {
             match("import"); if (failed) return ;
 
@@ -6770,13 +5162,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start IN
     public final void mIN() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1423:18: ( 'in' )
-            // etc/XQFT.g:1423:20: 'in'
-=======
-            // etc/XQFT.g:1437:18: ( 'in' )
-            // etc/XQFT.g:1437:20: 'in'
->>>>>>> .r234
+            // etc/XQFT.g:1438:18: ( 'in' )
+            // etc/XQFT.g:1438:20: 'in'
             {
             match("in"); if (failed) return ;
 
@@ -6792,13 +5179,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start INHERIT
     public final void mINHERIT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1424:22: ( 'inherit' )
-            // etc/XQFT.g:1424:24: 'inherit'
-=======
-            // etc/XQFT.g:1438:22: ( 'inherit' )
-            // etc/XQFT.g:1438:24: 'inherit'
->>>>>>> .r234
+            // etc/XQFT.g:1439:22: ( 'inherit' )
+            // etc/XQFT.g:1439:24: 'inherit'
             {
             match("inherit"); if (failed) return ;
 
@@ -6814,13 +5196,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start INSENSITIVE
     public final void mINSENSITIVE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1425:25: ( 'insensitive' )
-            // etc/XQFT.g:1425:27: 'insensitive'
-=======
-            // etc/XQFT.g:1439:25: ( 'insensitive' )
-            // etc/XQFT.g:1439:27: 'insensitive'
->>>>>>> .r234
+            // etc/XQFT.g:1440:25: ( 'insensitive' )
+            // etc/XQFT.g:1440:27: 'insensitive'
             {
             match("insensitive"); if (failed) return ;
 
@@ -6836,13 +5213,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start INSTANCE
     public final void mINSTANCE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1426:23: ( 'instance' )
-            // etc/XQFT.g:1426:25: 'instance'
-=======
-            // etc/XQFT.g:1440:23: ( 'instance' )
-            // etc/XQFT.g:1440:25: 'instance'
->>>>>>> .r234
+            // etc/XQFT.g:1441:23: ( 'instance' )
+            // etc/XQFT.g:1441:25: 'instance'
             {
             match("instance"); if (failed) return ;
 
@@ -6858,13 +5230,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start INTERSECT
     public final void mINTERSECT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1427:24: ( 'intersect' )
-            // etc/XQFT.g:1427:26: 'intersect'
-=======
-            // etc/XQFT.g:1441:24: ( 'intersect' )
-            // etc/XQFT.g:1441:26: 'intersect'
->>>>>>> .r234
+            // etc/XQFT.g:1442:24: ( 'intersect' )
+            // etc/XQFT.g:1442:26: 'intersect'
             {
             match("intersect"); if (failed) return ;
 
@@ -6880,13 +5247,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start IS
     public final void mIS() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1428:18: ( 'is' )
-            // etc/XQFT.g:1428:20: 'is'
-=======
-            // etc/XQFT.g:1442:18: ( 'is' )
-            // etc/XQFT.g:1442:20: 'is'
->>>>>>> .r234
+            // etc/XQFT.g:1443:18: ( 'is' )
+            // etc/XQFT.g:1443:20: 'is'
             {
             match("is"); if (failed) return ;
 
@@ -6902,13 +5264,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ITEM
     public final void mITEM() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1429:20: ( 'item' )
-            // etc/XQFT.g:1429:22: 'item'
-=======
-            // etc/XQFT.g:1443:20: ( 'item' )
-            // etc/XQFT.g:1443:22: 'item'
->>>>>>> .r234
+            // etc/XQFT.g:1444:20: ( 'item' )
+            // etc/XQFT.g:1444:22: 'item'
             {
             match("item"); if (failed) return ;
 
@@ -6924,13 +5281,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LANGUAGE
     public final void mLANGUAGE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1430:23: ( 'language' )
-            // etc/XQFT.g:1430:25: 'language'
-=======
-            // etc/XQFT.g:1444:23: ( 'language' )
-            // etc/XQFT.g:1444:25: 'language'
->>>>>>> .r234
+            // etc/XQFT.g:1445:23: ( 'language' )
+            // etc/XQFT.g:1445:25: 'language'
             {
             match("language"); if (failed) return ;
 
@@ -6946,13 +5298,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LAX
     public final void mLAX() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1431:19: ( 'lax' )
-            // etc/XQFT.g:1431:21: 'lax'
-=======
-            // etc/XQFT.g:1445:19: ( 'lax' )
-            // etc/XQFT.g:1445:21: 'lax'
->>>>>>> .r234
+            // etc/XQFT.g:1446:19: ( 'lax' )
+            // etc/XQFT.g:1446:21: 'lax'
             {
             match("lax"); if (failed) return ;
 
@@ -6968,13 +5315,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LE
     public final void mLE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1432:18: ( 'le' )
-            // etc/XQFT.g:1432:20: 'le'
-=======
-            // etc/XQFT.g:1446:18: ( 'le' )
-            // etc/XQFT.g:1446:20: 'le'
->>>>>>> .r234
+            // etc/XQFT.g:1447:18: ( 'le' )
+            // etc/XQFT.g:1447:20: 'le'
             {
             match("le"); if (failed) return ;
 
@@ -6990,13 +5332,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LEAST
     public final void mLEAST() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1433:21: ( 'least' )
-            // etc/XQFT.g:1433:23: 'least'
-=======
-            // etc/XQFT.g:1447:21: ( 'least' )
-            // etc/XQFT.g:1447:23: 'least'
->>>>>>> .r234
+            // etc/XQFT.g:1448:21: ( 'least' )
+            // etc/XQFT.g:1448:23: 'least'
             {
             match("least"); if (failed) return ;
 
@@ -7012,13 +5349,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LET
     public final void mLET() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1434:19: ( 'let' )
-            // etc/XQFT.g:1434:21: 'let'
-=======
-            // etc/XQFT.g:1448:19: ( 'let' )
-            // etc/XQFT.g:1448:21: 'let'
->>>>>>> .r234
+            // etc/XQFT.g:1449:19: ( 'let' )
+            // etc/XQFT.g:1449:21: 'let'
             {
             match("let"); if (failed) return ;
 
@@ -7034,13 +5366,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LEVELS
     public final void mLEVELS() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1435:21: ( 'levels' )
-            // etc/XQFT.g:1435:23: 'levels'
-=======
-            // etc/XQFT.g:1449:21: ( 'levels' )
-            // etc/XQFT.g:1449:23: 'levels'
->>>>>>> .r234
+            // etc/XQFT.g:1450:21: ( 'levels' )
+            // etc/XQFT.g:1450:23: 'levels'
             {
             match("levels"); if (failed) return ;
 
@@ -7056,13 +5383,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LOWERCASE
     public final void mLOWERCASE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1436:24: ( 'lowercase' )
-            // etc/XQFT.g:1436:26: 'lowercase'
-=======
-            // etc/XQFT.g:1450:24: ( 'lowercase' )
-            // etc/XQFT.g:1450:26: 'lowercase'
->>>>>>> .r234
+            // etc/XQFT.g:1451:24: ( 'lowercase' )
+            // etc/XQFT.g:1451:26: 'lowercase'
             {
             match("lowercase"); if (failed) return ;
 
@@ -7078,13 +5400,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start LT
     public final void mLT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1437:18: ( 'lt' )
-            // etc/XQFT.g:1437:20: 'lt'
-=======
-            // etc/XQFT.g:1451:18: ( 'lt' )
-            // etc/XQFT.g:1451:20: 'lt'
->>>>>>> .r234
+            // etc/XQFT.g:1452:18: ( 'lt' )
+            // etc/XQFT.g:1452:20: 'lt'
             {
             match("lt"); if (failed) return ;
 
@@ -7100,13 +5417,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start MOD
     public final void mMOD() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1438:19: ( 'mod' )
-            // etc/XQFT.g:1438:21: 'mod'
-=======
-            // etc/XQFT.g:1452:19: ( 'mod' )
-            // etc/XQFT.g:1452:21: 'mod'
->>>>>>> .r234
+            // etc/XQFT.g:1453:19: ( 'mod' )
+            // etc/XQFT.g:1453:21: 'mod'
             {
             match("mod"); if (failed) return ;
 
@@ -7122,13 +5434,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start MODULE
     public final void mMODULE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1439:21: ( 'module' )
-            // etc/XQFT.g:1439:23: 'module'
-=======
-            // etc/XQFT.g:1453:21: ( 'module' )
-            // etc/XQFT.g:1453:23: 'module'
->>>>>>> .r234
+            // etc/XQFT.g:1454:21: ( 'module' )
+            // etc/XQFT.g:1454:23: 'module'
             {
             match("module"); if (failed) return ;
 
@@ -7144,13 +5451,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start MOST
     public final void mMOST() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1440:20: ( 'most' )
-            // etc/XQFT.g:1440:22: 'most'
-=======
-            // etc/XQFT.g:1454:20: ( 'most' )
-            // etc/XQFT.g:1454:22: 'most'
->>>>>>> .r234
+            // etc/XQFT.g:1455:20: ( 'most' )
+            // etc/XQFT.g:1455:22: 'most'
             {
             match("most"); if (failed) return ;
 
@@ -7166,13 +5468,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NAMESPACE
     public final void mNAMESPACE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1441:24: ( 'namespace' )
-            // etc/XQFT.g:1441:26: 'namespace'
-=======
-            // etc/XQFT.g:1455:24: ( 'namespace' )
-            // etc/XQFT.g:1455:26: 'namespace'
->>>>>>> .r234
+            // etc/XQFT.g:1456:24: ( 'namespace' )
+            // etc/XQFT.g:1456:26: 'namespace'
             {
             match("namespace"); if (failed) return ;
 
@@ -7188,13 +5485,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NE
     public final void mNE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1442:18: ( 'ne' )
-            // etc/XQFT.g:1442:20: 'ne'
-=======
-            // etc/XQFT.g:1456:18: ( 'ne' )
-            // etc/XQFT.g:1456:20: 'ne'
->>>>>>> .r234
+            // etc/XQFT.g:1457:18: ( 'ne' )
+            // etc/XQFT.g:1457:20: 'ne'
             {
             match("ne"); if (failed) return ;
 
@@ -7210,13 +5502,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NODE
     public final void mNODE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1443:20: ( 'node' )
-            // etc/XQFT.g:1443:22: 'node'
-=======
-            // etc/XQFT.g:1457:20: ( 'node' )
-            // etc/XQFT.g:1457:22: 'node'
->>>>>>> .r234
+            // etc/XQFT.g:1458:20: ( 'node' )
+            // etc/XQFT.g:1458:22: 'node'
             {
             match("node"); if (failed) return ;
 
@@ -7232,13 +5519,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NOINHERIT
     public final void mNOINHERIT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1444:24: ( 'no-inherit' )
-            // etc/XQFT.g:1444:26: 'no-inherit'
-=======
-            // etc/XQFT.g:1458:24: ( 'no-inherit' )
-            // etc/XQFT.g:1458:26: 'no-inherit'
->>>>>>> .r234
+            // etc/XQFT.g:1459:24: ( 'no-inherit' )
+            // etc/XQFT.g:1459:26: 'no-inherit'
             {
             match("no-inherit"); if (failed) return ;
 
@@ -7254,13 +5536,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NOPRESERVE
     public final void mNOPRESERVE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1445:24: ( 'no-preserve' )
-            // etc/XQFT.g:1445:26: 'no-preserve'
-=======
-            // etc/XQFT.g:1459:24: ( 'no-preserve' )
-            // etc/XQFT.g:1459:26: 'no-preserve'
->>>>>>> .r234
+            // etc/XQFT.g:1460:24: ( 'no-preserve' )
+            // etc/XQFT.g:1460:26: 'no-preserve'
             {
             match("no-preserve"); if (failed) return ;
 
@@ -7276,13 +5553,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NOT
     public final void mNOT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1446:19: ( 'not' )
-            // etc/XQFT.g:1446:21: 'not'
-=======
-            // etc/XQFT.g:1460:19: ( 'not' )
-            // etc/XQFT.g:1460:21: 'not'
->>>>>>> .r234
+            // etc/XQFT.g:1461:19: ( 'not' )
+            // etc/XQFT.g:1461:21: 'not'
             {
             match("not"); if (failed) return ;
 
@@ -7298,13 +5570,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start OCCURS
     public final void mOCCURS() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1447:21: ( 'occurs' )
-            // etc/XQFT.g:1447:23: 'occurs'
-=======
-            // etc/XQFT.g:1461:21: ( 'occurs' )
-            // etc/XQFT.g:1461:23: 'occurs'
->>>>>>> .r234
+            // etc/XQFT.g:1462:21: ( 'occurs' )
+            // etc/XQFT.g:1462:23: 'occurs'
             {
             match("occurs"); if (failed) return ;
 
@@ -7320,13 +5587,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start OF
     public final void mOF() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1448:18: ( 'of' )
-            // etc/XQFT.g:1448:20: 'of'
-=======
-            // etc/XQFT.g:1462:18: ( 'of' )
-            // etc/XQFT.g:1462:20: 'of'
->>>>>>> .r234
+            // etc/XQFT.g:1463:18: ( 'of' )
+            // etc/XQFT.g:1463:20: 'of'
             {
             match("of"); if (failed) return ;
 
@@ -7342,13 +5604,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start OPTION
     public final void mOPTION() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1449:21: ( 'option' )
-            // etc/XQFT.g:1449:23: 'option'
-=======
-            // etc/XQFT.g:1463:21: ( 'option' )
-            // etc/XQFT.g:1463:23: 'option'
->>>>>>> .r234
+            // etc/XQFT.g:1464:21: ( 'option' )
+            // etc/XQFT.g:1464:23: 'option'
             {
             match("option"); if (failed) return ;
 
@@ -7364,13 +5621,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start OR
     public final void mOR() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1450:18: ( 'or' )
-            // etc/XQFT.g:1450:20: 'or'
-=======
-            // etc/XQFT.g:1464:18: ( 'or' )
-            // etc/XQFT.g:1464:20: 'or'
->>>>>>> .r234
+            // etc/XQFT.g:1465:18: ( 'or' )
+            // etc/XQFT.g:1465:20: 'or'
             {
             match("or"); if (failed) return ;
 
@@ -7386,13 +5638,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ORDER
     public final void mORDER() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1451:21: ( 'order' )
-            // etc/XQFT.g:1451:23: 'order'
-=======
-            // etc/XQFT.g:1465:21: ( 'order' )
-            // etc/XQFT.g:1465:23: 'order'
->>>>>>> .r234
+            // etc/XQFT.g:1466:21: ( 'order' )
+            // etc/XQFT.g:1466:23: 'order'
             {
             match("order"); if (failed) return ;
 
@@ -7408,13 +5655,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ORDERED
     public final void mORDERED() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1452:22: ( 'ordered' )
-            // etc/XQFT.g:1452:24: 'ordered'
-=======
-            // etc/XQFT.g:1466:22: ( 'ordered' )
-            // etc/XQFT.g:1466:24: 'ordered'
->>>>>>> .r234
+            // etc/XQFT.g:1467:22: ( 'ordered' )
+            // etc/XQFT.g:1467:24: 'ordered'
             {
             match("ordered"); if (failed) return ;
 
@@ -7430,13 +5672,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ORDERING
     public final void mORDERING() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1453:23: ( 'ordering' )
-            // etc/XQFT.g:1453:25: 'ordering'
-=======
-            // etc/XQFT.g:1467:23: ( 'ordering' )
-            // etc/XQFT.g:1467:25: 'ordering'
->>>>>>> .r234
+            // etc/XQFT.g:1468:23: ( 'ordering' )
+            // etc/XQFT.g:1468:25: 'ordering'
             {
             match("ordering"); if (failed) return ;
 
@@ -7452,13 +5689,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PARAGRAPH
     public final void mPARAGRAPH() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1454:24: ( 'paragraph' )
-            // etc/XQFT.g:1454:26: 'paragraph'
-=======
-            // etc/XQFT.g:1468:24: ( 'paragraph' )
-            // etc/XQFT.g:1468:26: 'paragraph'
->>>>>>> .r234
+            // etc/XQFT.g:1469:24: ( 'paragraph' )
+            // etc/XQFT.g:1469:26: 'paragraph'
             {
             match("paragraph"); if (failed) return ;
 
@@ -7474,13 +5706,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PARAGRAPHS
     public final void mPARAGRAPHS() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1455:24: ( 'paragraphs' )
-            // etc/XQFT.g:1455:26: 'paragraphs'
-=======
-            // etc/XQFT.g:1469:24: ( 'paragraphs' )
-            // etc/XQFT.g:1469:26: 'paragraphs'
->>>>>>> .r234
+            // etc/XQFT.g:1470:24: ( 'paragraphs' )
+            // etc/XQFT.g:1470:26: 'paragraphs'
             {
             match("paragraphs"); if (failed) return ;
 
@@ -7496,13 +5723,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PARENT
     public final void mPARENT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1456:21: ( 'parent' )
-            // etc/XQFT.g:1456:23: 'parent'
-=======
-            // etc/XQFT.g:1470:21: ( 'parent' )
-            // etc/XQFT.g:1470:23: 'parent'
->>>>>>> .r234
+            // etc/XQFT.g:1471:21: ( 'parent' )
+            // etc/XQFT.g:1471:23: 'parent'
             {
             match("parent"); if (failed) return ;
 
@@ -7518,13 +5740,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PHRASE
     public final void mPHRASE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1457:21: ( 'phrase' )
-            // etc/XQFT.g:1457:23: 'phrase'
-=======
-            // etc/XQFT.g:1471:21: ( 'phrase' )
-            // etc/XQFT.g:1471:23: 'phrase'
->>>>>>> .r234
+            // etc/XQFT.g:1472:21: ( 'phrase' )
+            // etc/XQFT.g:1472:23: 'phrase'
             {
             match("phrase"); if (failed) return ;
 
@@ -7540,13 +5757,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PRECEDING
     public final void mPRECEDING() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1458:24: ( 'preceding' )
-            // etc/XQFT.g:1458:26: 'preceding'
-=======
-            // etc/XQFT.g:1472:24: ( 'preceding' )
-            // etc/XQFT.g:1472:26: 'preceding'
->>>>>>> .r234
+            // etc/XQFT.g:1473:24: ( 'preceding' )
+            // etc/XQFT.g:1473:26: 'preceding'
             {
             match("preceding"); if (failed) return ;
 
@@ -7562,13 +5774,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PRECEDING_SIBLING
     public final void mPRECEDING_SIBLING() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1459:30: ( 'preceding-sibling' )
-            // etc/XQFT.g:1459:32: 'preceding-sibling'
-=======
-            // etc/XQFT.g:1473:30: ( 'preceding-sibling' )
-            // etc/XQFT.g:1473:32: 'preceding-sibling'
->>>>>>> .r234
+            // etc/XQFT.g:1474:30: ( 'preceding-sibling' )
+            // etc/XQFT.g:1474:32: 'preceding-sibling'
             {
             match("preceding-sibling"); if (failed) return ;
 
@@ -7584,13 +5791,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PRESERVE
     public final void mPRESERVE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1460:23: ( 'preserve' )
-            // etc/XQFT.g:1460:25: 'preserve'
-=======
-            // etc/XQFT.g:1474:23: ( 'preserve' )
-            // etc/XQFT.g:1474:25: 'preserve'
->>>>>>> .r234
+            // etc/XQFT.g:1475:23: ( 'preserve' )
+            // etc/XQFT.g:1475:25: 'preserve'
             {
             match("preserve"); if (failed) return ;
 
@@ -7606,13 +5808,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start PROCESSING_INSTRUCTION
     public final void mPROCESSING_INSTRUCTION() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1461:33: ( 'processing-instruction' )
-            // etc/XQFT.g:1461:35: 'processing-instruction'
-=======
-            // etc/XQFT.g:1475:33: ( 'processing-instruction' )
-            // etc/XQFT.g:1475:35: 'processing-instruction'
->>>>>>> .r234
+            // etc/XQFT.g:1476:33: ( 'processing-instruction' )
+            // etc/XQFT.g:1476:35: 'processing-instruction'
             {
             match("processing-instruction"); if (failed) return ;
 
@@ -7628,13 +5825,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start RELATIONSHIP
     public final void mRELATIONSHIP() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1462:26: ( 'relationship' )
-            // etc/XQFT.g:1462:28: 'relationship'
-=======
-            // etc/XQFT.g:1476:26: ( 'relationship' )
-            // etc/XQFT.g:1476:28: 'relationship'
->>>>>>> .r234
+            // etc/XQFT.g:1477:26: ( 'relationship' )
+            // etc/XQFT.g:1477:28: 'relationship'
             {
             match("relationship"); if (failed) return ;
 
@@ -7650,13 +5842,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start RETURN
     public final void mRETURN() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1463:21: ( 'return' )
-            // etc/XQFT.g:1463:23: 'return'
-=======
-            // etc/XQFT.g:1477:21: ( 'return' )
-            // etc/XQFT.g:1477:23: 'return'
->>>>>>> .r234
+            // etc/XQFT.g:1478:21: ( 'return' )
+            // etc/XQFT.g:1478:23: 'return'
             {
             match("return"); if (failed) return ;
 
@@ -7672,13 +5859,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SAME
     public final void mSAME() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1464:20: ( 'same' )
-            // etc/XQFT.g:1464:22: 'same'
-=======
-            // etc/XQFT.g:1478:20: ( 'same' )
-            // etc/XQFT.g:1478:22: 'same'
->>>>>>> .r234
+            // etc/XQFT.g:1479:20: ( 'same' )
+            // etc/XQFT.g:1479:22: 'same'
             {
             match("same"); if (failed) return ;
 
@@ -7694,13 +5876,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SATISFIES
     public final void mSATISFIES() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1465:24: ( 'satisfies' )
-            // etc/XQFT.g:1465:26: 'satisfies'
-=======
-            // etc/XQFT.g:1479:24: ( 'satisfies' )
-            // etc/XQFT.g:1479:26: 'satisfies'
->>>>>>> .r234
+            // etc/XQFT.g:1480:24: ( 'satisfies' )
+            // etc/XQFT.g:1480:26: 'satisfies'
             {
             match("satisfies"); if (failed) return ;
 
@@ -7716,13 +5893,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SCHEMA
     public final void mSCHEMA() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1466:21: ( 'schema' )
-            // etc/XQFT.g:1466:23: 'schema'
-=======
-            // etc/XQFT.g:1480:21: ( 'schema' )
-            // etc/XQFT.g:1480:23: 'schema'
->>>>>>> .r234
+            // etc/XQFT.g:1481:21: ( 'schema' )
+            // etc/XQFT.g:1481:23: 'schema'
             {
             match("schema"); if (failed) return ;
 
@@ -7738,13 +5910,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SCHEMAATTRIBUTE
     public final void mSCHEMAATTRIBUTE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1467:28: ( 'schema-attribute' )
-            // etc/XQFT.g:1467:30: 'schema-attribute'
-=======
-            // etc/XQFT.g:1481:28: ( 'schema-attribute' )
-            // etc/XQFT.g:1481:30: 'schema-attribute'
->>>>>>> .r234
+            // etc/XQFT.g:1482:28: ( 'schema-attribute' )
+            // etc/XQFT.g:1482:30: 'schema-attribute'
             {
             match("schema-attribute"); if (failed) return ;
 
@@ -7760,13 +5927,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SCHEMAELEMENT
     public final void mSCHEMAELEMENT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1468:27: ( 'schema-element' )
-            // etc/XQFT.g:1468:29: 'schema-element'
-=======
-            // etc/XQFT.g:1482:27: ( 'schema-element' )
-            // etc/XQFT.g:1482:29: 'schema-element'
->>>>>>> .r234
+            // etc/XQFT.g:1483:27: ( 'schema-element' )
+            // etc/XQFT.g:1483:29: 'schema-element'
             {
             match("schema-element"); if (failed) return ;
 
@@ -7782,13 +5944,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SCORE
     public final void mSCORE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1469:21: ( 'score' )
-            // etc/XQFT.g:1469:23: 'score'
-=======
-            // etc/XQFT.g:1483:21: ( 'score' )
-            // etc/XQFT.g:1483:23: 'score'
->>>>>>> .r234
+            // etc/XQFT.g:1484:21: ( 'score' )
+            // etc/XQFT.g:1484:23: 'score'
             {
             match("score"); if (failed) return ;
 
@@ -7804,13 +5961,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SELF
     public final void mSELF() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1470:20: ( 'self' )
-            // etc/XQFT.g:1470:22: 'self'
-=======
-            // etc/XQFT.g:1484:20: ( 'self' )
-            // etc/XQFT.g:1484:22: 'self'
->>>>>>> .r234
+            // etc/XQFT.g:1485:20: ( 'self' )
+            // etc/XQFT.g:1485:22: 'self'
             {
             match("self"); if (failed) return ;
 
@@ -7826,13 +5978,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SENSITIVE
     public final void mSENSITIVE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1471:24: ( 'sensitive' )
-            // etc/XQFT.g:1471:26: 'sensitive'
-=======
-            // etc/XQFT.g:1485:24: ( 'sensitive' )
-            // etc/XQFT.g:1485:26: 'sensitive'
->>>>>>> .r234
+            // etc/XQFT.g:1486:24: ( 'sensitive' )
+            // etc/XQFT.g:1486:26: 'sensitive'
             {
             match("sensitive"); if (failed) return ;
 
@@ -7848,13 +5995,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SENTENCES
     public final void mSENTENCES() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1472:24: ( 'sentences' )
-            // etc/XQFT.g:1472:26: 'sentences'
-=======
-            // etc/XQFT.g:1486:24: ( 'sentences' )
-            // etc/XQFT.g:1486:26: 'sentences'
->>>>>>> .r234
+            // etc/XQFT.g:1487:24: ( 'sentences' )
+            // etc/XQFT.g:1487:26: 'sentences'
             {
             match("sentences"); if (failed) return ;
 
@@ -7870,13 +6012,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SENTENCE
     public final void mSENTENCE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1473:23: ( 'sentence' )
-            // etc/XQFT.g:1473:25: 'sentence'
-=======
-            // etc/XQFT.g:1487:23: ( 'sentence' )
-            // etc/XQFT.g:1487:25: 'sentence'
->>>>>>> .r234
+            // etc/XQFT.g:1488:23: ( 'sentence' )
+            // etc/XQFT.g:1488:25: 'sentence'
             {
             match("sentence"); if (failed) return ;
 
@@ -7892,13 +6029,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start SOME
     public final void mSOME() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1474:20: ( 'some' )
-            // etc/XQFT.g:1474:22: 'some'
-=======
-            // etc/XQFT.g:1488:20: ( 'some' )
-            // etc/XQFT.g:1488:22: 'some'
->>>>>>> .r234
+            // etc/XQFT.g:1489:20: ( 'some' )
+            // etc/XQFT.g:1489:22: 'some'
             {
             match("some"); if (failed) return ;
 
@@ -7914,13 +6046,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start STABLE
     public final void mSTABLE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1475:21: ( 'stable' )
-            // etc/XQFT.g:1475:23: 'stable'
-=======
-            // etc/XQFT.g:1489:21: ( 'stable' )
-            // etc/XQFT.g:1489:23: 'stable'
->>>>>>> .r234
+            // etc/XQFT.g:1490:21: ( 'stable' )
+            // etc/XQFT.g:1490:23: 'stable'
             {
             match("stable"); if (failed) return ;
 
@@ -7936,13 +6063,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start START
     public final void mSTART() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1476:21: ( 'start' )
-            // etc/XQFT.g:1476:23: 'start'
-=======
-            // etc/XQFT.g:1490:21: ( 'start' )
-            // etc/XQFT.g:1490:23: 'start'
->>>>>>> .r234
+            // etc/XQFT.g:1491:21: ( 'start' )
+            // etc/XQFT.g:1491:23: 'start'
             {
             match("start"); if (failed) return ;
 
@@ -7958,13 +6080,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start STEMMING
     public final void mSTEMMING() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1477:23: ( 'stemming' )
-            // etc/XQFT.g:1477:25: 'stemming'
-=======
-            // etc/XQFT.g:1491:23: ( 'stemming' )
-            // etc/XQFT.g:1491:25: 'stemming'
->>>>>>> .r234
+            // etc/XQFT.g:1492:23: ( 'stemming' )
+            // etc/XQFT.g:1492:25: 'stemming'
             {
             match("stemming"); if (failed) return ;
 
@@ -7980,13 +6097,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start STOP
     public final void mSTOP() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1478:20: ( 'stop' )
-            // etc/XQFT.g:1478:22: 'stop'
-=======
-            // etc/XQFT.g:1492:20: ( 'stop' )
-            // etc/XQFT.g:1492:22: 'stop'
->>>>>>> .r234
+            // etc/XQFT.g:1493:20: ( 'stop' )
+            // etc/XQFT.g:1493:22: 'stop'
             {
             match("stop"); if (failed) return ;
 
@@ -8002,13 +6114,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start STRICT
     public final void mSTRICT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1479:21: ( 'strict' )
-            // etc/XQFT.g:1479:23: 'strict'
-=======
-            // etc/XQFT.g:1493:21: ( 'strict' )
-            // etc/XQFT.g:1493:23: 'strict'
->>>>>>> .r234
+            // etc/XQFT.g:1494:21: ( 'strict' )
+            // etc/XQFT.g:1494:23: 'strict'
             {
             match("strict"); if (failed) return ;
 
@@ -8024,13 +6131,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start STRIP
     public final void mSTRIP() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1480:21: ( 'strip' )
-            // etc/XQFT.g:1480:23: 'strip'
-=======
-            // etc/XQFT.g:1494:21: ( 'strip' )
-            // etc/XQFT.g:1494:23: 'strip'
->>>>>>> .r234
+            // etc/XQFT.g:1495:21: ( 'strip' )
+            // etc/XQFT.g:1495:23: 'strip'
             {
             match("strip"); if (failed) return ;
 
@@ -8046,13 +6148,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start TEXT
     public final void mTEXT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1481:20: ( 'text' )
-            // etc/XQFT.g:1481:22: 'text'
-=======
-            // etc/XQFT.g:1495:20: ( 'text' )
-            // etc/XQFT.g:1495:22: 'text'
->>>>>>> .r234
+            // etc/XQFT.g:1496:20: ( 'text' )
+            // etc/XQFT.g:1496:22: 'text'
             {
             match("text"); if (failed) return ;
 
@@ -8068,13 +6165,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start THESAURUS
     public final void mTHESAURUS() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1482:24: ( 'thesaurus' )
-            // etc/XQFT.g:1482:26: 'thesaurus'
-=======
-            // etc/XQFT.g:1496:24: ( 'thesaurus' )
-            // etc/XQFT.g:1496:26: 'thesaurus'
->>>>>>> .r234
+            // etc/XQFT.g:1497:24: ( 'thesaurus' )
+            // etc/XQFT.g:1497:26: 'thesaurus'
             {
             match("thesaurus"); if (failed) return ;
 
@@ -8090,13 +6182,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start THEN
     public final void mTHEN() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1483:20: ( 'then' )
-            // etc/XQFT.g:1483:22: 'then'
-=======
-            // etc/XQFT.g:1497:20: ( 'then' )
-            // etc/XQFT.g:1497:22: 'then'
->>>>>>> .r234
+            // etc/XQFT.g:1498:20: ( 'then' )
+            // etc/XQFT.g:1498:22: 'then'
             {
             match("then"); if (failed) return ;
 
@@ -8112,13 +6199,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start TIMES
     public final void mTIMES() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1484:21: ( 'times' )
-            // etc/XQFT.g:1484:23: 'times'
-=======
-            // etc/XQFT.g:1498:21: ( 'times' )
-            // etc/XQFT.g:1498:23: 'times'
->>>>>>> .r234
+            // etc/XQFT.g:1499:21: ( 'times' )
+            // etc/XQFT.g:1499:23: 'times'
             {
             match("times"); if (failed) return ;
 
@@ -8134,13 +6216,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start TO
     public final void mTO() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1485:18: ( 'to' )
-            // etc/XQFT.g:1485:20: 'to'
-=======
-            // etc/XQFT.g:1499:18: ( 'to' )
-            // etc/XQFT.g:1499:20: 'to'
->>>>>>> .r234
+            // etc/XQFT.g:1500:18: ( 'to' )
+            // etc/XQFT.g:1500:20: 'to'
             {
             match("to"); if (failed) return ;
 
@@ -8156,13 +6233,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start TREAT
     public final void mTREAT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1486:21: ( 'treat' )
-            // etc/XQFT.g:1486:23: 'treat'
-=======
-            // etc/XQFT.g:1500:21: ( 'treat' )
-            // etc/XQFT.g:1500:23: 'treat'
->>>>>>> .r234
+            // etc/XQFT.g:1501:21: ( 'treat' )
+            // etc/XQFT.g:1501:23: 'treat'
             {
             match("treat"); if (failed) return ;
 
@@ -8178,13 +6250,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start TYPESWITCH
     public final void mTYPESWITCH() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1487:24: ( 'typeswitch' )
-            // etc/XQFT.g:1487:26: 'typeswitch'
-=======
-            // etc/XQFT.g:1501:24: ( 'typeswitch' )
-            // etc/XQFT.g:1501:26: 'typeswitch'
->>>>>>> .r234
+            // etc/XQFT.g:1502:24: ( 'typeswitch' )
+            // etc/XQFT.g:1502:26: 'typeswitch'
             {
             match("typeswitch"); if (failed) return ;
 
@@ -8200,13 +6267,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start UNION
     public final void mUNION() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1488:21: ( 'union' )
-            // etc/XQFT.g:1488:23: 'union'
-=======
-            // etc/XQFT.g:1502:21: ( 'union' )
-            // etc/XQFT.g:1502:23: 'union'
->>>>>>> .r234
+            // etc/XQFT.g:1503:21: ( 'union' )
+            // etc/XQFT.g:1503:23: 'union'
             {
             match("union"); if (failed) return ;
 
@@ -8222,13 +6284,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start UNORDERED
     public final void mUNORDERED() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1489:24: ( 'unordered' )
-            // etc/XQFT.g:1489:26: 'unordered'
-=======
-            // etc/XQFT.g:1503:24: ( 'unordered' )
-            // etc/XQFT.g:1503:26: 'unordered'
->>>>>>> .r234
+            // etc/XQFT.g:1504:24: ( 'unordered' )
+            // etc/XQFT.g:1504:26: 'unordered'
             {
             match("unordered"); if (failed) return ;
 
@@ -8244,13 +6301,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start UPPERCASE
     public final void mUPPERCASE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1490:24: ( 'uppercase' )
-            // etc/XQFT.g:1490:26: 'uppercase'
-=======
-            // etc/XQFT.g:1504:24: ( 'uppercase' )
-            // etc/XQFT.g:1504:26: 'uppercase'
->>>>>>> .r234
+            // etc/XQFT.g:1505:24: ( 'uppercase' )
+            // etc/XQFT.g:1505:26: 'uppercase'
             {
             match("uppercase"); if (failed) return ;
 
@@ -8266,13 +6318,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start VALIDATE
     public final void mVALIDATE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1491:23: ( 'validate' )
-            // etc/XQFT.g:1491:25: 'validate'
-=======
-            // etc/XQFT.g:1505:23: ( 'validate' )
-            // etc/XQFT.g:1505:25: 'validate'
->>>>>>> .r234
+            // etc/XQFT.g:1506:23: ( 'validate' )
+            // etc/XQFT.g:1506:25: 'validate'
             {
             match("validate"); if (failed) return ;
 
@@ -8288,13 +6335,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start VARIABLE
     public final void mVARIABLE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1492:23: ( 'variable' )
-            // etc/XQFT.g:1492:25: 'variable'
-=======
-            // etc/XQFT.g:1506:23: ( 'variable' )
-            // etc/XQFT.g:1506:25: 'variable'
->>>>>>> .r234
+            // etc/XQFT.g:1507:23: ( 'variable' )
+            // etc/XQFT.g:1507:25: 'variable'
             {
             match("variable"); if (failed) return ;
 
@@ -8310,13 +6352,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start VERSION
     public final void mVERSION() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1493:22: ( 'version' )
-            // etc/XQFT.g:1493:24: 'version'
-=======
-            // etc/XQFT.g:1507:22: ( 'version' )
-            // etc/XQFT.g:1507:24: 'version'
->>>>>>> .r234
+            // etc/XQFT.g:1508:22: ( 'version' )
+            // etc/XQFT.g:1508:24: 'version'
             {
             match("version"); if (failed) return ;
 
@@ -8332,13 +6369,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start WEIGHT
     public final void mWEIGHT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1494:21: ( 'weight' )
-            // etc/XQFT.g:1494:23: 'weight'
-=======
-            // etc/XQFT.g:1508:21: ( 'weight' )
-            // etc/XQFT.g:1508:23: 'weight'
->>>>>>> .r234
+            // etc/XQFT.g:1509:21: ( 'weight' )
+            // etc/XQFT.g:1509:23: 'weight'
             {
             match("weight"); if (failed) return ;
 
@@ -8354,13 +6386,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start WHERE
     public final void mWHERE() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1495:21: ( 'where' )
-            // etc/XQFT.g:1495:23: 'where'
-=======
-            // etc/XQFT.g:1509:21: ( 'where' )
-            // etc/XQFT.g:1509:23: 'where'
->>>>>>> .r234
+            // etc/XQFT.g:1510:21: ( 'where' )
+            // etc/XQFT.g:1510:23: 'where'
             {
             match("where"); if (failed) return ;
 
@@ -8376,13 +6403,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start WILDCARDS
     public final void mWILDCARDS() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1496:24: ( 'wildcards' )
-            // etc/XQFT.g:1496:26: 'wildcards'
-=======
-            // etc/XQFT.g:1510:24: ( 'wildcards' )
-            // etc/XQFT.g:1510:26: 'wildcards'
->>>>>>> .r234
+            // etc/XQFT.g:1511:24: ( 'wildcards' )
+            // etc/XQFT.g:1511:26: 'wildcards'
             {
             match("wildcards"); if (failed) return ;
 
@@ -8398,13 +6420,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start WINDOW
     public final void mWINDOW() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1497:21: ( 'window' )
-            // etc/XQFT.g:1497:23: 'window'
-=======
-            // etc/XQFT.g:1511:21: ( 'window' )
-            // etc/XQFT.g:1511:23: 'window'
->>>>>>> .r234
+            // etc/XQFT.g:1512:21: ( 'window' )
+            // etc/XQFT.g:1512:23: 'window'
             {
             match("window"); if (failed) return ;
 
@@ -8420,13 +6437,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start WITH
     public final void mWITH() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1498:20: ( 'with' )
-            // etc/XQFT.g:1498:22: 'with'
-=======
-            // etc/XQFT.g:1512:20: ( 'with' )
-            // etc/XQFT.g:1512:22: 'with'
->>>>>>> .r234
+            // etc/XQFT.g:1513:20: ( 'with' )
+            // etc/XQFT.g:1513:22: 'with'
             {
             match("with"); if (failed) return ;
 
@@ -8442,13 +6454,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start WITHOUT
     public final void mWITHOUT() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1499:22: ( 'without' )
-            // etc/XQFT.g:1499:24: 'without'
-=======
-            // etc/XQFT.g:1513:22: ( 'without' )
-            // etc/XQFT.g:1513:24: 'without'
->>>>>>> .r234
+            // etc/XQFT.g:1514:22: ( 'without' )
+            // etc/XQFT.g:1514:24: 'without'
             {
             match("without"); if (failed) return ;
 
@@ -8464,13 +6471,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start WORD
     public final void mWORD() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1500:20: ( 'word' )
-            // etc/XQFT.g:1500:22: 'word'
-=======
-            // etc/XQFT.g:1514:20: ( 'word' )
-            // etc/XQFT.g:1514:22: 'word'
->>>>>>> .r234
+            // etc/XQFT.g:1515:20: ( 'word' )
+            // etc/XQFT.g:1515:22: 'word'
             {
             match("word"); if (failed) return ;
 
@@ -8486,13 +6488,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start WORDS
     public final void mWORDS() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1501:21: ( 'words' )
-            // etc/XQFT.g:1501:23: 'words'
-=======
-            // etc/XQFT.g:1515:21: ( 'words' )
-            // etc/XQFT.g:1515:23: 'words'
->>>>>>> .r234
+            // etc/XQFT.g:1516:21: ( 'words' )
+            // etc/XQFT.g:1516:23: 'words'
             {
             match("words"); if (failed) return ;
 
@@ -8508,13 +6505,8 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start XQUERY
     public final void mXQUERY() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1502:21: ( 'xquery' )
-            // etc/XQFT.g:1502:23: 'xquery'
-=======
-            // etc/XQFT.g:1516:21: ( 'xquery' )
-            // etc/XQFT.g:1516:23: 'xquery'
->>>>>>> .r234
+            // etc/XQFT.g:1517:21: ( 'xquery' )
+            // etc/XQFT.g:1517:23: 'xquery'
             {
             match("xquery"); if (failed) return ;
 
@@ -8530,11 +6522,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start ExtraChar
     public final void mExtraChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1509:25: ( '\\u0025' | '\\u005E' | '\\u0060' | '\\u007E' .. '\\u00B6' | '\\u00B8' .. '\\u00BF' | '\\u00D7' | '\\u00F7' | '\\u0132' .. '\\u0133' | '\\u013F' .. '\\u0140' | '\\u0149' | '\\u017F' | '\\u01C4' .. '\\u01CC' | '\\u01F1' .. '\\u01F3' | '\\u01F6' .. '\\u01F9' | '\\u0218' .. '\\u024F' | '\\u02A9' .. '\\u02BA' | '\\u02C2' .. '\\u02CF' | '\\u02D2' .. '\\u02FF' | '\\u0346' .. '\\u035F' | '\\u0362' .. '\\u0385' | '\\u038B' | '\\u038D' | '\\u03A2' | '\\u03CF' | '\\u03D7' .. '\\u03D9' | '\\u03DB' | '\\u03DD' | '\\u03DF' | '\\u03E1' | '\\u03F4' .. '\\u0400' | '\\u040D' | '\\u0450' | '\\u045D' | '\\u0482' | '\\u0487' .. '\\u048F' | '\\u04C5' .. '\\u04C6' | '\\u04C9' .. '\\u04CA' | '\\u04CD' .. '\\u04CF' | '\\u04EC' .. '\\u04ED' | '\\u04F6' .. '\\u04F7' | '\\u04FA' .. '\\u0530' | '\\u0557' .. '\\u0558' | '\\u055A' .. '\\u0560' | '\\u0587' .. '\\u0590' | '\\u05A2' | '\\u05BA' | '\\u05BE' | '\\u05C0' | '\\u05C3' | '\\u05C5' .. '\\u05CF' | '\\u05EB' .. '\\u05EF' | '\\u05F3' .. '\\u0620' | '\\u063B' .. '\\u063F' | '\\u0653' .. '\\u065F' | '\\u066A' .. '\\u066F' | '\\u06B8' .. '\\u06B9' | '\\u06BF' | '\\u06CF' | '\\u06D4' | '\\u06E9' | '\\u06EE' .. '\\u06EF' | '\\u06FA' .. '\\u0900' | '\\u0904' | '\\u093A' .. '\\u093B' | '\\u094E' .. '\\u0950' | '\\u0955' .. '\\u0957' | '\\u0964' .. '\\u0965' | '\\u0970' .. '\\u0980' | '\\u0984' | '\\u098D' .. '\\u098E' | '\\u0991' .. '\\u0992' | '\\u09A9' | '\\u09B1' | '\\u09B3' .. '\\u09B5' | '\\u09BA' .. '\\u09BB' | '\\u09BD' | '\\u09C5' .. '\\u09C6' | '\\u09C9' .. '\\u09CA' | '\\u09CE' .. '\\u09D6' | '\\u09D8' .. '\\u09DB' | '\\u09DE' | '\\u09E4' .. '\\u09E5' | '\\u09F2' .. '\\u0A01' | '\\u0A03' .. '\\u0A04' | '\\u0A0B' .. '\\u0A0E' | '\\u0A11' .. '\\u0A12' | '\\u0A29' | '\\u0A31' | '\\u0A34' | '\\u0A37' | '\\u0A3A' .. '\\u0A3B' | '\\u0A3D' | '\\u0A43' .. '\\u0A46' | '\\u0A49' .. '\\u0A4A' | '\\u0A4E' .. '\\u0A58' | '\\u0A5D' | '\\u0A5F' .. '\\u0A65' | '\\u0A75' .. '\\u0A80' | '\\u0A84' | '\\u0A8C' | '\\u0A8E' | '\\u0A92' | '\\u0AA9' | '\\u0AB1' | '\\u0AB4' | '\\u0ABA' .. '\\u0ABB' | '\\u0AC6' | '\\u0ACA' | '\\u0ACE' .. '\\u0ADF' | '\\u0AE1' .. '\\u0AE5' | '\\u0AF0' .. '\\u0B00' | '\\u0B04' | '\\u0B0D' .. '\\u0B0E' | '\\u0B11' .. '\\u0B12' | '\\u0B29' | '\\u0B31' | '\\u0B34' .. '\\u0B35' | '\\u0B3A' .. '\\u0B3B' | '\\u0B44' .. '\\u0B46' | '\\u0B49' .. '\\u0B4A' | '\\u0B4E' .. '\\u0B55' | '\\u0B58' .. '\\u0B5B' | '\\u0B5E' | '\\u0B62' .. '\\u0B65' | '\\u0B70' .. '\\u0B81' | '\\u0B84' | '\\u0B8B' .. '\\u0B8D' | '\\u0B91' | '\\u0B96' .. '\\u0B98' | '\\u0B9B' | '\\u0B9D' | '\\u0BA0' .. '\\u0BA2' | '\\u0BA5' .. '\\u0BA7' | '\\u0BAB' .. '\\u0BAD' | '\\u0BB6' | '\\u0BBA' .. '\\u0BBD' | '\\u0BC3' .. '\\u0BC5' | '\\u0BC9' | '\\u0BCE' .. '\\u0BD6' | '\\u0BD8' .. '\\u0BE6' | '\\u0BF0' .. '\\u0C00' | '\\u0C04' | '\\u0C0D' | '\\u0C11' | '\\u0C29' | '\\u0C34' | '\\u0C3A' .. '\\u0C3D' | '\\u0C45' | '\\u0C49' | '\\u0C4E' .. '\\u0C54' | '\\u0C57' .. '\\u0C5F' | '\\u0C62' .. '\\u0C65' | '\\u0C70' .. '\\u0C81' | '\\u0C84' | '\\u0C8D' | '\\u0C91' | '\\u0CA9' | '\\u0CB4' | '\\u0CBA' .. '\\u0CBD' | '\\u0CC5' | '\\u0CC9' | '\\u0CCE' .. '\\u0CD4' | '\\u0CD7' .. '\\u0CDD' | '\\u0CDF' | '\\u0CE2' .. '\\u0CE5' | '\\u0CF0' .. '\\u0D01' | '\\u0D04' | '\\u0D0D' | '\\u0D11' | '\\u0D29' | '\\u0D3A' .. '\\u0D3D' | '\\u0D44' .. '\\u0D45' | '\\u0D49' | '\\u0D4E' .. '\\u0D56' | '\\u0D58' .. '\\u0D5F' | '\\u0D62' .. '\\u0D65' | '\\u0D70' .. '\\u0E00' | '\\u0E2F' | '\\u0E3B' .. '\\u0E3F' | '\\u0E4F' | '\\u0E5A' .. '\\u0E80' | '\\u0E83' | '\\u0E85' .. '\\u0E86' | '\\u0E89' | '\\u0E8B' .. '\\u0E8C' | '\\u0E8E' .. '\\u0E93' | '\\u0E98' | '\\u0EA0' | '\\u0EA4' | '\\u0EA6' | '\\u0EA8' .. '\\u0EA9' | '\\u0EAC' | '\\u0EAF' | '\\u0EBA' | '\\u0EBE' .. '\\u0EBF' | '\\u0EC5' | '\\u0EC7' | '\\u0ECE' .. '\\u0ECF' | '\\u0EDA' .. '\\u0F17' | '\\u0F1A' .. '\\u0F1F' | '\\u0F2A' .. '\\u0F34' | '\\u0F36' | '\\u0F38' | '\\u0F3A' .. '\\u0F3D' | '\\u0F48' | '\\u0F6A' .. '\\u0F70' | '\\u0F85' | '\\u0F8C' .. '\\u0F8F' | '\\u0F96' | '\\u0F98' | '\\u0FAE' .. '\\u0FB0' | '\\u0FB8' | '\\u0FBA' .. '\\u109F' | '\\u10C6' .. '\\u10CF' | '\\u10F7' .. '\\u10FF' | '\\u1101' | '\\u1104' | '\\u1108' | '\\u110A' | '\\u110D' | '\\u1113' .. '\\u113B' | '\\u113D' | '\\u113F' | '\\u1141' .. '\\u114B' | '\\u114D' | '\\u114F' | '\\u1151' .. '\\u1153' | '\\u1156' .. '\\u1158' | '\\u115A' .. '\\u115E' | '\\u1162' | '\\u1164' | '\\u1166' | '\\u1168' | '\\u116A' .. '\\u116C' | '\\u116F' .. '\\u1171' | '\\u1174' | '\\u1176' .. '\\u119D' | '\\u119F' .. '\\u11A7' | '\\u11A9' .. '\\u11AA' | '\\u11AC' .. '\\u11AD' | '\\u11B0' .. '\\u11B6' | '\\u11B9' | '\\u11BB' | '\\u11C3' .. '\\u11EA' | '\\u11EC' .. '\\u11EF' | '\\u11F1' .. '\\u11F8' | '\\u11FA' .. '\\u1DFF' | '\\u1E9C' .. '\\u1E9F' | '\\u1EFA' .. '\\u1EFF' | '\\u1F16' .. '\\u1F17' | '\\u1F1E' .. '\\u1F1F' | '\\u1F46' .. '\\u1F47' | '\\u1F4E' .. '\\u1F4F' | '\\u1F58' | '\\u1F5A' | '\\u1F5C' | '\\u1F5E' | '\\u1F7E' .. '\\u1F7F' | '\\u1FB5' | '\\u1FBD' | '\\u1FBF' .. '\\u1FC1' | '\\u1FC5' | '\\u1FCD' .. '\\u1FCF' | '\\u1FD4' .. '\\u1FD5' | '\\u1FDC' .. '\\u1FDF' | '\\u1FED' .. '\\u1FF1' | '\\u1FF5' | '\\u1FFD' .. '\\u20CF' | '\\u20DD' .. '\\u20E0' | '\\u20E2' .. '\\u2125' | '\\u2127' .. '\\u2129' | '\\u212C' .. '\\u212D' | '\\u212F' .. '\\u217F' | '\\u2183' .. '\\u3004' | '\\u3006' | '\\u3008' .. '\\u3020' | '\\u3030' | '\\u3036' .. '\\u3040' | '\\u3095' .. '\\u3098' | '\\u309B' .. '\\u309C' | '\\u309F' .. '\\u30A0' | '\\u30FB' | '\\u30FF' .. '\\u3104' | '\\u312D' .. '\\u4DFF' | '\\u9FA6' .. '\\uABFF' | '\\uD7A4' .. '\\uD7FF' | '\\uE000' .. '\\uFFFD' )
-=======
-            // etc/XQFT.g:1523:25: ( '\\u0025' | '\\u005E' | '\\u0060' | '\\u007E' .. '\\u00B6' | '\\u00B8' .. '\\u00BF' | '\\u00D7' | '\\u00F7' | '\\u0132' .. '\\u0133' | '\\u013F' .. '\\u0140' | '\\u0149' | '\\u017F' | '\\u01C4' .. '\\u01CC' | '\\u01F1' .. '\\u01F3' | '\\u01F6' .. '\\u01F9' | '\\u0218' .. '\\u024F' | '\\u02A9' .. '\\u02BA' | '\\u02C2' .. '\\u02CF' | '\\u02D2' .. '\\u02FF' | '\\u0346' .. '\\u035F' | '\\u0362' .. '\\u0385' | '\\u038B' | '\\u038D' | '\\u03A2' | '\\u03CF' | '\\u03D7' .. '\\u03D9' | '\\u03DB' | '\\u03DD' | '\\u03DF' | '\\u03E1' | '\\u03F4' .. '\\u0400' | '\\u040D' | '\\u0450' | '\\u045D' | '\\u0482' | '\\u0487' .. '\\u048F' | '\\u04C5' .. '\\u04C6' | '\\u04C9' .. '\\u04CA' | '\\u04CD' .. '\\u04CF' | '\\u04EC' .. '\\u04ED' | '\\u04F6' .. '\\u04F7' | '\\u04FA' .. '\\u0530' | '\\u0557' .. '\\u0558' | '\\u055A' .. '\\u0560' | '\\u0587' .. '\\u0590' | '\\u05A2' | '\\u05BA' | '\\u05BE' | '\\u05C0' | '\\u05C3' | '\\u05C5' .. '\\u05CF' | '\\u05EB' .. '\\u05EF' | '\\u05F3' .. '\\u0620' | '\\u063B' .. '\\u063F' | '\\u0653' .. '\\u065F' | '\\u066A' .. '\\u066F' | '\\u06B8' .. '\\u06B9' | '\\u06BF' | '\\u06CF' | '\\u06D4' | '\\u06E9' | '\\u06EE' .. '\\u06EF' | '\\u06FA' .. '\\u0900' | '\\u0904' | '\\u093A' .. '\\u093B' | '\\u094E' .. '\\u0950' | '\\u0955' .. '\\u0957' | '\\u0964' .. '\\u0965' | '\\u0970' .. '\\u0980' | '\\u0984' | '\\u098D' .. '\\u098E' | '\\u0991' .. '\\u0992' | '\\u09A9' | '\\u09B1' | '\\u09B3' .. '\\u09B5' | '\\u09BA' .. '\\u09BB' | '\\u09BD' | '\\u09C5' .. '\\u09C6' | '\\u09C9' .. '\\u09CA' | '\\u09CE' .. '\\u09D6' | '\\u09D8' .. '\\u09DB' | '\\u09DE' | '\\u09E4' .. '\\u09E5' | '\\u09F2' .. '\\u0A01' | '\\u0A03' .. '\\u0A04' | '\\u0A0B' .. '\\u0A0E' | '\\u0A11' .. '\\u0A12' | '\\u0A29' | '\\u0A31' | '\\u0A34' | '\\u0A37' | '\\u0A3A' .. '\\u0A3B' | '\\u0A3D' | '\\u0A43' .. '\\u0A46' | '\\u0A49' .. '\\u0A4A' | '\\u0A4E' .. '\\u0A58' | '\\u0A5D' | '\\u0A5F' .. '\\u0A65' | '\\u0A75' .. '\\u0A80' | '\\u0A84' | '\\u0A8C' | '\\u0A8E' | '\\u0A92' | '\\u0AA9' | '\\u0AB1' | '\\u0AB4' | '\\u0ABA' .. '\\u0ABB' | '\\u0AC6' | '\\u0ACA' | '\\u0ACE' .. '\\u0ADF' | '\\u0AE1' .. '\\u0AE5' | '\\u0AF0' .. '\\u0B00' | '\\u0B04' | '\\u0B0D' .. '\\u0B0E' | '\\u0B11' .. '\\u0B12' | '\\u0B29' | '\\u0B31' | '\\u0B34' .. '\\u0B35' | '\\u0B3A' .. '\\u0B3B' | '\\u0B44' .. '\\u0B46' | '\\u0B49' .. '\\u0B4A' | '\\u0B4E' .. '\\u0B55' | '\\u0B58' .. '\\u0B5B' | '\\u0B5E' | '\\u0B62' .. '\\u0B65' | '\\u0B70' .. '\\u0B81' | '\\u0B84' | '\\u0B8B' .. '\\u0B8D' | '\\u0B91' | '\\u0B96' .. '\\u0B98' | '\\u0B9B' | '\\u0B9D' | '\\u0BA0' .. '\\u0BA2' | '\\u0BA5' .. '\\u0BA7' | '\\u0BAB' .. '\\u0BAD' | '\\u0BB6' | '\\u0BBA' .. '\\u0BBD' | '\\u0BC3' .. '\\u0BC5' | '\\u0BC9' | '\\u0BCE' .. '\\u0BD6' | '\\u0BD8' .. '\\u0BE6' | '\\u0BF0' .. '\\u0C00' | '\\u0C04' | '\\u0C0D' | '\\u0C11' | '\\u0C29' | '\\u0C34' | '\\u0C3A' .. '\\u0C3D' | '\\u0C45' | '\\u0C49' | '\\u0C4E' .. '\\u0C54' | '\\u0C57' .. '\\u0C5F' | '\\u0C62' .. '\\u0C65' | '\\u0C70' .. '\\u0C81' | '\\u0C84' | '\\u0C8D' | '\\u0C91' | '\\u0CA9' | '\\u0CB4' | '\\u0CBA' .. '\\u0CBD' | '\\u0CC5' | '\\u0CC9' | '\\u0CCE' .. '\\u0CD4' | '\\u0CD7' .. '\\u0CDD' | '\\u0CDF' | '\\u0CE2' .. '\\u0CE5' | '\\u0CF0' .. '\\u0D01' | '\\u0D04' | '\\u0D0D' | '\\u0D11' | '\\u0D29' | '\\u0D3A' .. '\\u0D3D' | '\\u0D44' .. '\\u0D45' | '\\u0D49' | '\\u0D4E' .. '\\u0D56' | '\\u0D58' .. '\\u0D5F' | '\\u0D62' .. '\\u0D65' | '\\u0D70' .. '\\u0E00' | '\\u0E2F' | '\\u0E3B' .. '\\u0E3F' | '\\u0E4F' | '\\u0E5A' .. '\\u0E80' | '\\u0E83' | '\\u0E85' .. '\\u0E86' | '\\u0E89' | '\\u0E8B' .. '\\u0E8C' | '\\u0E8E' .. '\\u0E93' | '\\u0E98' | '\\u0EA0' | '\\u0EA4' | '\\u0EA6' | '\\u0EA8' .. '\\u0EA9' | '\\u0EAC' | '\\u0EAF' | '\\u0EBA' | '\\u0EBE' .. '\\u0EBF' | '\\u0EC5' | '\\u0EC7' | '\\u0ECE' .. '\\u0ECF' | '\\u0EDA' .. '\\u0F17' | '\\u0F1A' .. '\\u0F1F' | '\\u0F2A' .. '\\u0F34' | '\\u0F36' | '\\u0F38' | '\\u0F3A' .. '\\u0F3D' | '\\u0F48' | '\\u0F6A' .. '\\u0F70' | '\\u0F85' | '\\u0F8C' .. '\\u0F8F' | '\\u0F96' | '\\u0F98' | '\\u0FAE' .. '\\u0FB0' | '\\u0FB8' | '\\u0FBA' .. '\\u109F' | '\\u10C6' .. '\\u10CF' | '\\u10F7' .. '\\u10FF' | '\\u1101' | '\\u1104' | '\\u1108' | '\\u110A' | '\\u110D' | '\\u1113' .. '\\u113B' | '\\u113D' | '\\u113F' | '\\u1141' .. '\\u114B' | '\\u114D' | '\\u114F' | '\\u1151' .. '\\u1153' | '\\u1156' .. '\\u1158' | '\\u115A' .. '\\u115E' | '\\u1162' | '\\u1164' | '\\u1166' | '\\u1168' | '\\u116A' .. '\\u116C' | '\\u116F' .. '\\u1171' | '\\u1174' | '\\u1176' .. '\\u119D' | '\\u119F' .. '\\u11A7' | '\\u11A9' .. '\\u11AA' | '\\u11AC' .. '\\u11AD' | '\\u11B0' .. '\\u11B6' | '\\u11B9' | '\\u11BB' | '\\u11C3' .. '\\u11EA' | '\\u11EC' .. '\\u11EF' | '\\u11F1' .. '\\u11F8' | '\\u11FA' .. '\\u1DFF' | '\\u1E9C' .. '\\u1E9F' | '\\u1EFA' .. '\\u1EFF' | '\\u1F16' .. '\\u1F17' | '\\u1F1E' .. '\\u1F1F' | '\\u1F46' .. '\\u1F47' | '\\u1F4E' .. '\\u1F4F' | '\\u1F58' | '\\u1F5A' | '\\u1F5C' | '\\u1F5E' | '\\u1F7E' .. '\\u1F7F' | '\\u1FB5' | '\\u1FBD' | '\\u1FBF' .. '\\u1FC1' | '\\u1FC5' | '\\u1FCD' .. '\\u1FCF' | '\\u1FD4' .. '\\u1FD5' | '\\u1FDC' .. '\\u1FDF' | '\\u1FED' .. '\\u1FF1' | '\\u1FF5' | '\\u1FFD' .. '\\u20CF' | '\\u20DD' .. '\\u20E0' | '\\u20E2' .. '\\u2125' | '\\u2127' .. '\\u2129' | '\\u212C' .. '\\u212D' | '\\u212F' .. '\\u217F' | '\\u2183' .. '\\u3004' | '\\u3006' | '\\u3008' .. '\\u3020' | '\\u3030' | '\\u3036' .. '\\u3040' | '\\u3095' .. '\\u3098' | '\\u309B' .. '\\u309C' | '\\u309F' .. '\\u30A0' | '\\u30FB' | '\\u30FF' .. '\\u3104' | '\\u312D' .. '\\u4DFF' | '\\u9FA6' .. '\\uABFF' | '\\uD7A4' .. '\\uD7FF' | '\\uE000' .. '\\uFFFD' )
->>>>>>> .r234
+            // etc/XQFT.g:1524:25: ( '\\u0025' | '\\u005E' | '\\u0060' | '\\u007E' .. '\\u00B6' | '\\u00B8' .. '\\u00BF' | '\\u00D7' | '\\u00F7' | '\\u0132' .. '\\u0133' | '\\u013F' .. '\\u0140' | '\\u0149' | '\\u017F' | '\\u01C4' .. '\\u01CC' | '\\u01F1' .. '\\u01F3' | '\\u01F6' .. '\\u01F9' | '\\u0218' .. '\\u024F' | '\\u02A9' .. '\\u02BA' | '\\u02C2' .. '\\u02CF' | '\\u02D2' .. '\\u02FF' | '\\u0346' .. '\\u035F' | '\\u0362' .. '\\u0385' | '\\u038B' | '\\u038D' | '\\u03A2' | '\\u03CF' | '\\u03D7' .. '\\u03D9' | '\\u03DB' | '\\u03DD' | '\\u03DF' | '\\u03E1' | '\\u03F4' .. '\\u0400' | '\\u040D' | '\\u0450' | '\\u045D' | '\\u0482' | '\\u0487' .. '\\u048F' | '\\u04C5' .. '\\u04C6' | '\\u04C9' .. '\\u04CA' | '\\u04CD' .. '\\u04CF' | '\\u04EC' .. '\\u04ED' | '\\u04F6' .. '\\u04F7' | '\\u04FA' .. '\\u0530' | '\\u0557' .. '\\u0558' | '\\u055A' .. '\\u0560' | '\\u0587' .. '\\u0590' | '\\u05A2' | '\\u05BA' | '\\u05BE' | '\\u05C0' | '\\u05C3' | '\\u05C5' .. '\\u05CF' | '\\u05EB' .. '\\u05EF' | '\\u05F3' .. '\\u0620' | '\\u063B' .. '\\u063F' | '\\u0653' .. '\\u065F' | '\\u066A' .. '\\u066F' | '\\u06B8' .. '\\u06B9' | '\\u06BF' | '\\u06CF' | '\\u06D4' | '\\u06E9' | '\\u06EE' .. '\\u06EF' | '\\u06FA' .. '\\u0900' | '\\u0904' | '\\u093A' .. '\\u093B' | '\\u094E' .. '\\u0950' | '\\u0955' .. '\\u0957' | '\\u0964' .. '\\u0965' | '\\u0970' .. '\\u0980' | '\\u0984' | '\\u098D' .. '\\u098E' | '\\u0991' .. '\\u0992' | '\\u09A9' | '\\u09B1' | '\\u09B3' .. '\\u09B5' | '\\u09BA' .. '\\u09BB' | '\\u09BD' | '\\u09C5' .. '\\u09C6' | '\\u09C9' .. '\\u09CA' | '\\u09CE' .. '\\u09D6' | '\\u09D8' .. '\\u09DB' | '\\u09DE' | '\\u09E4' .. '\\u09E5' | '\\u09F2' .. '\\u0A01' | '\\u0A03' .. '\\u0A04' | '\\u0A0B' .. '\\u0A0E' | '\\u0A11' .. '\\u0A12' | '\\u0A29' | '\\u0A31' | '\\u0A34' | '\\u0A37' | '\\u0A3A' .. '\\u0A3B' | '\\u0A3D' | '\\u0A43' .. '\\u0A46' | '\\u0A49' .. '\\u0A4A' | '\\u0A4E' .. '\\u0A58' | '\\u0A5D' | '\\u0A5F' .. '\\u0A65' | '\\u0A75' .. '\\u0A80' | '\\u0A84' | '\\u0A8C' | '\\u0A8E' | '\\u0A92' | '\\u0AA9' | '\\u0AB1' | '\\u0AB4' | '\\u0ABA' .. '\\u0ABB' | '\\u0AC6' | '\\u0ACA' | '\\u0ACE' .. '\\u0ADF' | '\\u0AE1' .. '\\u0AE5' | '\\u0AF0' .. '\\u0B00' | '\\u0B04' | '\\u0B0D' .. '\\u0B0E' | '\\u0B11' .. '\\u0B12' | '\\u0B29' | '\\u0B31' | '\\u0B34' .. '\\u0B35' | '\\u0B3A' .. '\\u0B3B' | '\\u0B44' .. '\\u0B46' | '\\u0B49' .. '\\u0B4A' | '\\u0B4E' .. '\\u0B55' | '\\u0B58' .. '\\u0B5B' | '\\u0B5E' | '\\u0B62' .. '\\u0B65' | '\\u0B70' .. '\\u0B81' | '\\u0B84' | '\\u0B8B' .. '\\u0B8D' | '\\u0B91' | '\\u0B96' .. '\\u0B98' | '\\u0B9B' | '\\u0B9D' | '\\u0BA0' .. '\\u0BA2' | '\\u0BA5' .. '\\u0BA7' | '\\u0BAB' .. '\\u0BAD' | '\\u0BB6' | '\\u0BBA' .. '\\u0BBD' | '\\u0BC3' .. '\\u0BC5' | '\\u0BC9' | '\\u0BCE' .. '\\u0BD6' | '\\u0BD8' .. '\\u0BE6' | '\\u0BF0' .. '\\u0C00' | '\\u0C04' | '\\u0C0D' | '\\u0C11' | '\\u0C29' | '\\u0C34' | '\\u0C3A' .. '\\u0C3D' | '\\u0C45' | '\\u0C49' | '\\u0C4E' .. '\\u0C54' | '\\u0C57' .. '\\u0C5F' | '\\u0C62' .. '\\u0C65' | '\\u0C70' .. '\\u0C81' | '\\u0C84' | '\\u0C8D' | '\\u0C91' | '\\u0CA9' | '\\u0CB4' | '\\u0CBA' .. '\\u0CBD' | '\\u0CC5' | '\\u0CC9' | '\\u0CCE' .. '\\u0CD4' | '\\u0CD7' .. '\\u0CDD' | '\\u0CDF' | '\\u0CE2' .. '\\u0CE5' | '\\u0CF0' .. '\\u0D01' | '\\u0D04' | '\\u0D0D' | '\\u0D11' | '\\u0D29' | '\\u0D3A' .. '\\u0D3D' | '\\u0D44' .. '\\u0D45' | '\\u0D49' | '\\u0D4E' .. '\\u0D56' | '\\u0D58' .. '\\u0D5F' | '\\u0D62' .. '\\u0D65' | '\\u0D70' .. '\\u0E00' | '\\u0E2F' | '\\u0E3B' .. '\\u0E3F' | '\\u0E4F' | '\\u0E5A' .. '\\u0E80' | '\\u0E83' | '\\u0E85' .. '\\u0E86' | '\\u0E89' | '\\u0E8B' .. '\\u0E8C' | '\\u0E8E' .. '\\u0E93' | '\\u0E98' | '\\u0EA0' | '\\u0EA4' | '\\u0EA6' | '\\u0EA8' .. '\\u0EA9' | '\\u0EAC' | '\\u0EAF' | '\\u0EBA' | '\\u0EBE' .. '\\u0EBF' | '\\u0EC5' | '\\u0EC7' | '\\u0ECE' .. '\\u0ECF' | '\\u0EDA' .. '\\u0F17' | '\\u0F1A' .. '\\u0F1F' | '\\u0F2A' .. '\\u0F34' | '\\u0F36' | '\\u0F38' | '\\u0F3A' .. '\\u0F3D' | '\\u0F48' | '\\u0F6A' .. '\\u0F70' | '\\u0F85' | '\\u0F8C' .. '\\u0F8F' | '\\u0F96' | '\\u0F98' | '\\u0FAE' .. '\\u0FB0' | '\\u0FB8' | '\\u0FBA' .. '\\u109F' | '\\u10C6' .. '\\u10CF' | '\\u10F7' .. '\\u10FF' | '\\u1101' | '\\u1104' | '\\u1108' | '\\u110A' | '\\u110D' | '\\u1113' .. '\\u113B' | '\\u113D' | '\\u113F' | '\\u1141' .. '\\u114B' | '\\u114D' | '\\u114F' | '\\u1151' .. '\\u1153' | '\\u1156' .. '\\u1158' | '\\u115A' .. '\\u115E' | '\\u1162' | '\\u1164' | '\\u1166' | '\\u1168' | '\\u116A' .. '\\u116C' | '\\u116F' .. '\\u1171' | '\\u1174' | '\\u1176' .. '\\u119D' | '\\u119F' .. '\\u11A7' | '\\u11A9' .. '\\u11AA' | '\\u11AC' .. '\\u11AD' | '\\u11B0' .. '\\u11B6' | '\\u11B9' | '\\u11BB' | '\\u11C3' .. '\\u11EA' | '\\u11EC' .. '\\u11EF' | '\\u11F1' .. '\\u11F8' | '\\u11FA' .. '\\u1DFF' | '\\u1E9C' .. '\\u1E9F' | '\\u1EFA' .. '\\u1EFF' | '\\u1F16' .. '\\u1F17' | '\\u1F1E' .. '\\u1F1F' | '\\u1F46' .. '\\u1F47' | '\\u1F4E' .. '\\u1F4F' | '\\u1F58' | '\\u1F5A' | '\\u1F5C' | '\\u1F5E' | '\\u1F7E' .. '\\u1F7F' | '\\u1FB5' | '\\u1FBD' | '\\u1FBF' .. '\\u1FC1' | '\\u1FC5' | '\\u1FCD' .. '\\u1FCF' | '\\u1FD4' .. '\\u1FD5' | '\\u1FDC' .. '\\u1FDF' | '\\u1FED' .. '\\u1FF1' | '\\u1FF5' | '\\u1FFD' .. '\\u20CF' | '\\u20DD' .. '\\u20E0' | '\\u20E2' .. '\\u2125' | '\\u2127' .. '\\u2129' | '\\u212C' .. '\\u212D' | '\\u212F' .. '\\u217F' | '\\u2183' .. '\\u3004' | '\\u3006' | '\\u3008' .. '\\u3020' | '\\u3030' | '\\u3036' .. '\\u3040' | '\\u3095' .. '\\u3098' | '\\u309B' .. '\\u309C' | '\\u309F' .. '\\u30A0' | '\\u30FB' | '\\u30FF' .. '\\u3104' | '\\u312D' .. '\\u4DFF' | '\\u9FA6' .. '\\uABFF' | '\\uD7A4' .. '\\uD7FF' | '\\uE000' .. '\\uFFFD' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='%'||input.LA(1)=='^'||input.LA(1)=='`'||(input.LA(1)>='~' && input.LA(1)<='\u00B6')||(input.LA(1)>='\u00B8' && input.LA(1)<='\u00BF')||input.LA(1)=='\u00D7'||input.LA(1)=='\u00F7'||(input.LA(1)>='\u0132' && input.LA(1)<='\u0133')||(input.LA(1)>='\u013F' && input.LA(1)<='\u0140')||input.LA(1)=='\u0149'||input.LA(1)=='\u017F'||(input.LA(1)>='\u01C4' && input.LA(1)<='\u01CC')||(input.LA(1)>='\u01F1' && input.LA(1)<='\u01F3')||(input.LA(1)>='\u01F6' && input.LA(1)<='\u01F9')||(input.LA(1)>='\u0218' && input.LA(1)<='\u024F')||(input.LA(1)>='\u02A9' && input.LA(1)<='\u02BA')||(input.LA(1)>='\u02C2' && input.LA(1)<='\u02CF')||(input.LA(1)>='\u02D2' && input.LA(1)<='\u02FF')||(input.LA(1)>='\u0346' && input.LA(1)<='\u035F')||(input.LA(1)>='\u0362' && input.LA(1)<='\u0385')||input.LA(1)=='\u038B'||input.LA(1)=='\u038D'||input.LA(1)=='\u03A2'||input.LA(1)=='\u03CF'||(input.LA(1)>='\u03D7' && input.LA(1)<='\u03D9')||input.LA(1)=='\u03DB'||input.LA(1)=='\u03DD'||input.LA(1)=='\u03DF'||input.LA(1)=='\u03E1'||(input.LA(1)>='\u03F4' && input.LA(1)<='\u0400')||input.LA(1)=='\u040D'||input.LA(1)=='\u0450'||input.LA(1)=='\u045D'||input.LA(1)=='\u0482'||(input.LA(1)>='\u0487' && input.LA(1)<='\u048F')||(input.LA(1)>='\u04C5' && input.LA(1)<='\u04C6')||(input.LA(1)>='\u04C9' && input.LA(1)<='\u04CA')||(input.LA(1)>='\u04CD' && input.LA(1)<='\u04CF')||(input.LA(1)>='\u04EC' && input.LA(1)<='\u04ED')||(input.LA(1)>='\u04F6' && input.LA(1)<='\u04F7')||(input.LA(1)>='\u04FA' && input.LA(1)<='\u0530')||(input.LA(1)>='\u0557' && input.LA(1)<='\u0558')||(input.LA(1)>='\u055A' && input.LA(1)<='\u0560')||(input.LA(1)>='\u0587' && input.LA(1)<='\u0590')||input.LA(1)=='\u05A2'||input.LA(1)=='\u05BA'||input.LA(1)=='\u05BE'||input.LA(1)=='\u05C0'||input.LA(1)=='\u05C3'||(input.LA(1)>='\u05C5' && input.LA(1)<='\u05CF')||(input.LA(1)>='\u05EB' && input.LA(1)<='\u05EF')||(input.LA(1)>='\u05F3' && input.LA(1)<='\u0620')||(input.LA(1)>='\u063B' && input.LA(1)<='\u063F')||(input.LA(1)>='\u0653' && input.LA(1)<='\u065F')||(input.LA(1)>='\u066A' && input.LA(1)<='\u066F')||(input.LA(1)>='\u06B8' && input.LA(1)<='\u06B9')||input.LA(1)=='\u06BF'||input.LA(1)=='\u06CF'||input.LA(1)=='\u06D4'||input.LA(1)=='\u06E9'||(input.LA(1)>='\u06EE' && input.LA(1)<='\u06EF')||(input.LA(1)>='\u06FA' && input.LA(1)<='\u0900')||input.LA(1)=='\u0904'||(input.LA(1)>='\u093A' && input.LA(1)<='\u093B')||(input.LA(1)>='\u094E' && input.LA(1)<='\u0950')||(input.LA(1)>='\u0955' && input.LA(1)<='\u0957')||(input.LA(1)>='\u0964' && input.LA(1)<='\u0965')||(input.LA(1)>='\u0970' && input.LA(1)<='\u0980')||input.LA(1)=='\u0984'||(input.LA(1)>='\u098D' && input.LA(1)<='\u098E')||(input.LA(1)>='\u0991' && input.LA(1)<='\u0992')||input.LA(1)=='\u09A9'||input.LA(1)=='\u09B1'||(input.LA(1)>='\u09B3' && input.LA(1)<='\u09B5')||(input.LA(1)>='\u09BA' && input.LA(1)<='\u09BB')||input.LA(1)=='\u09BD'||(input.LA(1)>='\u09C5' && input.LA(1)<='\u09C6')||(input.LA(1)>='\u09C9' && input.LA(1)<='\u09CA')||(input.LA(1)>='\u09CE' && input.LA(1)<='\u09D6')||(input.LA(1)>='\u09D8' && input.LA(1)<='\u09DB')||input.LA(1)=='\u09DE'||(input.LA(1)>='\u09E4' && input.LA(1)<='\u09E5')||(input.LA(1)>='\u09F2' && input.LA(1)<='\u0A01')||(input.LA(1)>='\u0A03' && input.LA(1)<='\u0A04')||(input.LA(1)>='\u0A0B' && input.LA(1)<='\u0A0E')||(input.LA(1)>='\u0A11' && input.LA(1)<='\u0A12')||input.LA(1)=='\u0A29'||input.LA(1)=='\u0A31'||input.LA(1)=='\u0A34'||input.LA(1)=='\u0A37'||(input.LA(1)>='\u0A3A' && input.LA(1)<='\u0A3B')||input.LA(1)=='\u0A3D'||(input.LA(1)>='\u0A43' && input.LA(1)<='\u0A46')||(input.LA(1)>='\u0A49' && input.LA(1)<='\u0A4A')||(input.LA(1)>='\u0A4E' && input.LA(1)<='\u0A58')||input.LA(1)=='\u0A5D'||(input.LA(1)>='\u0A5F' && input.LA(1)<='\u0A65')||(input.LA(1)>='\u0A75' && input.LA(1)<='\u0A80')||input.LA(1)=='\u0A84'||input.LA(1)=='\u0A8C'||input.LA(1)=='\u0A8E'||input.LA(1)=='\u0A92'||input.LA(1)=='\u0AA9'||input.LA(1)=='\u0AB1'||input.LA(1)=='\u0AB4'||(input.LA(1)>='\u0ABA' && input.LA(1)<='\u0ABB')||input.LA(1)=='\u0AC6'||input.LA(1)=='\u0ACA'||(input.LA(1)>='\u0ACE' && input.LA(1)<='\u0ADF')||(input.LA(1)>='\u0AE1' && input.LA(1)<='\u0AE5')||(input.LA(1)>='\u0AF0' && input.LA(1)<='\u0B00')||input.LA(1)=='\u0B04'||(input.LA(1)>='\u0B0D' && input.LA(1)<='\u0B0E')||(input.LA(1)>='\u0B11' && input.LA(1)<='\u0B12')||input.LA(1)=='\u0B29'||input.LA(1)=='\u0B31'||(input.LA(1)>='\u0B34' && input.LA(1)<='\u0B35')||(input.LA(1)>='\u0B3A' && input.LA(1)<='\u0B3B')||(input.LA(1)>='\u0B44' && input.LA(1)<='\u0B46')||(input.LA(1)>='\u0B49' && input.LA(1)<='\u0B4A')||(input.LA(1)>='\u0B4E' && input.LA(1)<='\u0B55')||(input.LA(1)>='\u0B58' && input.LA(1)<='\u0B5B')||input.LA(1)=='\u0B5E'||(input.LA(1)>='\u0B62' && input.LA(1)<='\u0B65')||(input.LA(1)>='\u0B70' && input.LA(1)<='\u0B81')||input.LA(1)=='\u0B84'||(input.LA(1)>='\u0B8B' && input.LA(1)<='\u0B8D')||input.LA(1)=='\u0B91'||(input.LA(1)>='\u0B96' && input.LA(1)<='\u0B98')||input.LA(1)=='\u0B9B'||input.LA(1)=='\u0B9D'||(input.LA(1)>='\u0BA0' && input.LA(1)<='\u0BA2')||(input.LA(1)>='\u0BA5' && input.LA(1)<='\u0BA7')||(input.LA(1)>='\u0BAB' && input.LA(1)<='\u0BAD')||input.LA(1)=='\u0BB6'||(input.LA(1)>='\u0BBA' && input.LA(1)<='\u0BBD')||(input.LA(1)>='\u0BC3' && input.LA(1)<='\u0BC5')||input.LA(1)=='\u0BC9'||(input.LA(1)>='\u0BCE' && input.LA(1)<='\u0BD6')||(input.LA(1)>='\u0BD8' && input.LA(1)<='\u0BE6')||(input.LA(1)>='\u0BF0' && input.LA(1)<='\u0C00')||input.LA(1)=='\u0C04'||input.LA(1)=='\u0C0D'||input.LA(1)=='\u0C11'||input.LA(1)=='\u0C29'||input.LA(1)=='\u0C34'||(input.LA(1)>='\u0C3A' && input.LA(1)<='\u0C3D')||input.LA(1)=='\u0C45'||input.LA(1)=='\u0C49'||(input.LA(1)>='\u0C4E' && input.LA(1)<='\u0C54')||(input.LA(1)>='\u0C57' && input.LA(1)<='\u0C5F')||(input.LA(1)>='\u0C62' && input.LA(1)<='\u0C65')||(input.LA(1)>='\u0C70' && input.LA(1)<='\u0C81')||input.LA(1)=='\u0C84'||input.LA(1)=='\u0C8D'||input.LA(1)=='\u0C91'||input.LA(1)=='\u0CA9'||input.LA(1)=='\u0CB4'||(input.LA(1)>='\u0CBA' && input.LA(1)<='\u0CBD')||input.LA(1)=='\u0CC5'||input.LA(1)=='\u0CC9'||(input.LA(1)>='\u0CCE' && input.LA(1)<='\u0CD4')||(input.LA(1)>='\u0CD7' && input.LA(1)<='\u0CDD')||input.LA(1)=='\u0CDF'||(input.LA(1)>='\u0CE2' && input.LA(1)<='\u0CE5')||(input.LA(1)>='\u0CF0' && input.LA(1)<='\u0D01')||input.LA(1)=='\u0D04'||input.LA(1)=='\u0D0D'||input.LA(1)=='\u0D11'||input.LA(1)=='\u0D29'||(input.LA(1)>='\u0D3A' && input.LA(1)<='\u0D3D')||(input.LA(1)>='\u0D44' && input.LA(1)<='\u0D45')||input.LA(1)=='\u0D49'||(input.LA(1)>='\u0D4E' && input.LA(1)<='\u0D56')||(input.LA(1)>='\u0D58' && input.LA(1)<='\u0D5F')||(input.LA(1)>='\u0D62' && input.LA(1)<='\u0D65')||(input.LA(1)>='\u0D70' && input.LA(1)<='\u0E00')||input.LA(1)=='\u0E2F'||(input.LA(1)>='\u0E3B' && input.LA(1)<='\u0E3F')||input.LA(1)=='\u0E4F'||(input.LA(1)>='\u0E5A' && input.LA(1)<='\u0E80')||input.LA(1)=='\u0E83'||(input.LA(1)>='\u0E85' && input.LA(1)<='\u0E86')||input.LA(1)=='\u0E89'||(input.LA(1)>='\u0E8B' && input.LA(1)<='\u0E8C')||(input.LA(1)>='\u0E8E' && input.LA(1)<='\u0E93')||input.LA(1)=='\u0E98'||input.LA(1)=='\u0EA0'||input.LA(1)=='\u0EA4'||input.LA(1)=='\u0EA6'||(input.LA(1)>='\u0EA8' && input.LA(1)<='\u0EA9')||input.LA(1)=='\u0EAC'||input.LA(1)=='\u0EAF'||input.LA(1)=='\u0EBA'||(input.LA(1)>='\u0EBE' && input.LA(1)<='\u0EBF')||input.LA(1)=='\u0EC5'||input.LA(1)=='\u0EC7'||(input.LA(1)>='\u0ECE' && input.LA(1)<='\u0ECF')||(input.LA(1)>='\u0EDA' && input.LA(1)<='\u0F17')||(input.LA(1)>='\u0F1A' && input.LA(1)<='\u0F1F')||(input.LA(1)>='\u0F2A' && input.LA(1)<='\u0F34')||input.LA(1)=='\u0F36'||input.LA(1)=='\u0F38'||(input.LA(1)>='\u0F3A' && input.LA(1)<='\u0F3D')||input.LA(1)=='\u0F48'||(input.LA(1)>='\u0F6A' && input.LA(1)<='\u0F70')||input.LA(1)=='\u0F85'||(input.LA(1)>='\u0F8C' && input.LA(1)<='\u0F8F')||input.LA(1)=='\u0F96'||input.LA(1)=='\u0F98'||(input.LA(1)>='\u0FAE' && input.LA(1)<='\u0FB0')||input.LA(1)=='\u0FB8'||(input.LA(1)>='\u0FBA' && input.LA(1)<='\u109F')||(input.LA(1)>='\u10C6' && input.LA(1)<='\u10CF')||(input.LA(1)>='\u10F7' && input.LA(1)<='\u10FF')||input.LA(1)=='\u1101'||input.LA(1)=='\u1104'||input.LA(1)=='\u1108'||input.LA(1)=='\u110A'||input.LA(1)=='\u110D'||(input.LA(1)>='\u1113' && input.LA(1)<='\u113B')||input.LA(1)=='\u113D'||input.LA(1)=='\u113F'||(input.LA(1)>='\u1141' && input.LA(1)<='\u114B')||input.LA(1)=='\u114D'||input.LA(1)=='\u114F'||(input.LA(1)>='\u1151' && input.LA(1)<='\u1153')||(input.LA(1)>='\u1156' && input.LA(1)<='\u1158')||(input.LA(1)>='\u115A' && input.LA(1)<='\u115E')||input.LA(1)=='\u1162'||input.LA(1)=='\u1164'||input.LA(1)=='\u1166'||input.LA(1)=='\u1168'||(input.LA(1)>='\u116A' && input.LA(1)<='\u116C')||(input.LA(1)>='\u116F' && input.LA(1)<='\u1171')||input.LA(1)=='\u1174'||(input.LA(1)>='\u1176' && input.LA(1)<='\u119D')||(input.LA(1)>='\u119F' && input.LA(1)<='\u11A7')||(input.LA(1)>='\u11A9' && input.LA(1)<='\u11AA')||(input.LA(1)>='\u11AC' && input.LA(1)<='\u11AD')||(input.LA(1)>='\u11B0' && input.LA(1)<='\u11B6')||input.LA(1)=='\u11B9'||input.LA(1)=='\u11BB'||(input.LA(1)>='\u11C3' && input.LA(1)<='\u11EA')||(input.LA(1)>='\u11EC' && input.LA(1)<='\u11EF')||(input.LA(1)>='\u11F1' && input.LA(1)<='\u11F8')||(input.LA(1)>='\u11FA' && input.LA(1)<='\u1DFF')||(input.LA(1)>='\u1E9C' && input.LA(1)<='\u1E9F')||(input.LA(1)>='\u1EFA' && input.LA(1)<='\u1EFF')||(input.LA(1)>='\u1F16' && input.LA(1)<='\u1F17')||(input.LA(1)>='\u1F1E' && input.LA(1)<='\u1F1F')||(input.LA(1)>='\u1F46' && input.LA(1)<='\u1F47')||(input.LA(1)>='\u1F4E' && input.LA(1)<='\u1F4F')||input.LA(1)=='\u1F58'||input.LA(1)=='\u1F5A'||input.LA(1)=='\u1F5C'||input.LA(1)=='\u1F5E'||(input.LA(1)>='\u1F7E' && input.LA(1)<='\u1F7F')||input.LA(1)=='\u1FB5'||input.LA(1)=='\u1FBD'||(input.LA(1)>='\u1FBF' && input.LA(1)<='\u1FC1')||input.LA(1)=='\u1FC5'||(input.LA(1)>='\u1FCD' && input.LA(1)<='\u1FCF')||(input.LA(1)>='\u1FD4' && input.LA(1)<='\u1FD5')||(input.LA(1)>='\u1FDC' && input.LA(1)<='\u1FDF')||(input.LA(1)>='\u1FED' && input.LA(1)<='\u1FF1')||input.LA(1)=='\u1FF5'||(input.LA(1)>='\u1FFD' && input.LA(1)<='\u20CF')||(input.LA(1)>='\u20DD' && input.LA(1)<='\u20E0')||(input.LA(1)>='\u20E2' && input.LA(1)<='\u2125')||(input.LA(1)>='\u2127' && input.LA(1)<='\u2129')||(input.LA(1)>='\u212C' && input.LA(1)<='\u212D')||(input.LA(1)>='\u212F' && input.LA(1)<='\u217F')||(input.LA(1)>='\u2183' && input.LA(1)<='\u3004')||input.LA(1)=='\u3006'||(input.LA(1)>='\u3008' && input.LA(1)<='\u3020')||input.LA(1)=='\u3030'||(input.LA(1)>='\u3036' && input.LA(1)<='\u3040')||(input.LA(1)>='\u3095' && input.LA(1)<='\u3098')||(input.LA(1)>='\u309B' && input.LA(1)<='\u309C')||(input.LA(1)>='\u309F' && input.LA(1)<='\u30A0')||input.LA(1)=='\u30FB'||(input.LA(1)>='\u30FF' && input.LA(1)<='\u3104')||(input.LA(1)>='\u312D' && input.LA(1)<='\u4DFF')||(input.LA(1)>='\u9FA6' && input.LA(1)<='\uABFF')||(input.LA(1)>='\uD7A4' && input.LA(1)<='\uD7FF')||(input.LA(1)>='\uE000' && input.LA(1)<='\uFFFD') ) {
@@ -8560,11 +6548,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CleanChar
     public final void mCleanChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1511:25: ( S | BaseChar | Ideographic | CombiningChar | Extender | Digit | ExtraChar | EXCLSi | SHARPSi | DOLLARSi | LPARSi | RPARSi | STARSi | PLUSSi | COMMASi | DOTSi | SLASHSi | COLONSi | SEMICOLONSi | EQSi | GTSi | QUESTIONSi | ATSi | LBRACKSi | BACKSLASHSi | RBRACKSi | UNDERSCORESi | PIPESi )
-=======
-            // etc/XQFT.g:1525:25: ( S | BaseChar | Ideographic | CombiningChar | Extender | Digit | ExtraChar | EXCLSi | SHARPSi | DOLLARSi | LPARSi | RPARSi | STARSi | PLUSSi | COMMASi | DOTSi | SLASHSi | COLONSi | SEMICOLONSi | EQSi | GTSi | QUESTIONSi | ATSi | LBRACKSi | BACKSLASHSi | RBRACKSi | UNDERSCORESi | PIPESi )
->>>>>>> .r234
+            // etc/XQFT.g:1526:25: ( S | BaseChar | Ideographic | CombiningChar | Extender | Digit | ExtraChar | EXCLSi | SHARPSi | DOLLARSi | LPARSi | RPARSi | STARSi | PLUSSi | COMMASi | DOTSi | SLASHSi | COLONSi | SEMICOLONSi | EQSi | GTSi | QUESTIONSi | ATSi | LBRACKSi | BACKSLASHSi | RBRACKSi | UNDERSCORESi | PIPESi )
             int alt35=28;
             int LA35_0 = input.LA(1);
 
@@ -8655,318 +6639,202 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-<<<<<<< .mine
-                    new NoViableAltException("1511:10: fragment CleanChar : ( S | BaseChar | Ideographic | CombiningChar | Extender | Digit | ExtraChar | EXCLSi | SHARPSi | DOLLARSi | LPARSi | RPARSi | STARSi | PLUSSi | COMMASi | DOTSi | SLASHSi | COLONSi | SEMICOLONSi | EQSi | GTSi | QUESTIONSi | ATSi | LBRACKSi | BACKSLASHSi | RBRACKSi | UNDERSCORESi | PIPESi );", 35, 0, input);
-=======
-                    new NoViableAltException("1525:10: fragment CleanChar : ( S | BaseChar | Ideographic | CombiningChar | Extender | Digit | ExtraChar | EXCLSi | SHARPSi | DOLLARSi | LPARSi | RPARSi | STARSi | PLUSSi | COMMASi | DOTSi | SLASHSi | COLONSi | SEMICOLONSi | EQSi | GTSi | QUESTIONSi | ATSi | LBRACKSi | BACKSLASHSi | RBRACKSi | UNDERSCORESi | PIPESi );", 35, 0, input);
->>>>>>> .r234
+                    new NoViableAltException("1526:10: fragment CleanChar : ( S | BaseChar | Ideographic | CombiningChar | Extender | Digit | ExtraChar | EXCLSi | SHARPSi | DOLLARSi | LPARSi | RPARSi | STARSi | PLUSSi | COMMASi | DOTSi | SLASHSi | COLONSi | SEMICOLONSi | EQSi | GTSi | QUESTIONSi | ATSi | LBRACKSi | BACKSLASHSi | RBRACKSi | UNDERSCORESi | PIPESi );", 35, 0, input);
 
                 throw nvae;
             }
             switch (alt35) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1511:27: S
-=======
-                    // etc/XQFT.g:1525:27: S
->>>>>>> .r234
+                    // etc/XQFT.g:1526:27: S
                     {
                     mS(); if (failed) return ;
 
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1511:31: BaseChar
-=======
-                    // etc/XQFT.g:1525:31: BaseChar
->>>>>>> .r234
+                    // etc/XQFT.g:1526:31: BaseChar
                     {
                     mBaseChar(); if (failed) return ;
 
                     }
                     break;
                 case 3 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1511:42: Ideographic
-=======
-                    // etc/XQFT.g:1525:42: Ideographic
->>>>>>> .r234
+                    // etc/XQFT.g:1526:42: Ideographic
                     {
                     mIdeographic(); if (failed) return ;
 
                     }
                     break;
                 case 4 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1511:56: CombiningChar
-=======
-                    // etc/XQFT.g:1525:56: CombiningChar
->>>>>>> .r234
+                    // etc/XQFT.g:1526:56: CombiningChar
                     {
                     mCombiningChar(); if (failed) return ;
 
                     }
                     break;
                 case 5 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1511:72: Extender
-=======
-                    // etc/XQFT.g:1525:72: Extender
->>>>>>> .r234
+                    // etc/XQFT.g:1526:72: Extender
                     {
                     mExtender(); if (failed) return ;
 
                     }
                     break;
                 case 6 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1511:83: Digit
-=======
-                    // etc/XQFT.g:1525:83: Digit
->>>>>>> .r234
+                    // etc/XQFT.g:1526:83: Digit
                     {
                     mDigit(); if (failed) return ;
 
                     }
                     break;
                 case 7 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1511:91: ExtraChar
-=======
-                    // etc/XQFT.g:1525:91: ExtraChar
->>>>>>> .r234
+                    // etc/XQFT.g:1526:91: ExtraChar
                     {
                     mExtraChar(); if (failed) return ;
 
                     }
                     break;
                 case 8 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1512:13: EXCLSi
-=======
-                    // etc/XQFT.g:1526:13: EXCLSi
->>>>>>> .r234
+                    // etc/XQFT.g:1527:13: EXCLSi
                     {
                     mEXCLSi(); if (failed) return ;
 
                     }
                     break;
                 case 9 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1512:22: SHARPSi
-=======
-                    // etc/XQFT.g:1526:22: SHARPSi
->>>>>>> .r234
+                    // etc/XQFT.g:1527:22: SHARPSi
                     {
                     mSHARPSi(); if (failed) return ;
 
                     }
                     break;
                 case 10 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1512:32: DOLLARSi
-=======
-                    // etc/XQFT.g:1526:32: DOLLARSi
->>>>>>> .r234
+                    // etc/XQFT.g:1527:32: DOLLARSi
                     {
                     mDOLLARSi(); if (failed) return ;
 
                     }
                     break;
                 case 11 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1512:43: LPARSi
-=======
-                    // etc/XQFT.g:1526:43: LPARSi
->>>>>>> .r234
+                    // etc/XQFT.g:1527:43: LPARSi
                     {
                     mLPARSi(); if (failed) return ;
 
                     }
                     break;
                 case 12 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1512:52: RPARSi
-=======
-                    // etc/XQFT.g:1526:52: RPARSi
->>>>>>> .r234
+                    // etc/XQFT.g:1527:52: RPARSi
                     {
                     mRPARSi(); if (failed) return ;
 
                     }
                     break;
                 case 13 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1512:61: STARSi
-=======
-                    // etc/XQFT.g:1526:61: STARSi
->>>>>>> .r234
+                    // etc/XQFT.g:1527:61: STARSi
                     {
                     mSTARSi(); if (failed) return ;
 
                     }
                     break;
                 case 14 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1512:70: PLUSSi
-=======
-                    // etc/XQFT.g:1526:70: PLUSSi
->>>>>>> .r234
+                    // etc/XQFT.g:1527:70: PLUSSi
                     {
                     mPLUSSi(); if (failed) return ;
 
                     }
                     break;
                 case 15 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1512:79: COMMASi
-=======
-                    // etc/XQFT.g:1526:79: COMMASi
->>>>>>> .r234
+                    // etc/XQFT.g:1527:79: COMMASi
                     {
                     mCOMMASi(); if (failed) return ;
 
                     }
                     break;
                 case 16 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1513:13: DOTSi
-=======
-                    // etc/XQFT.g:1527:13: DOTSi
->>>>>>> .r234
+                    // etc/XQFT.g:1528:13: DOTSi
                     {
                     mDOTSi(); if (failed) return ;
 
                     }
                     break;
                 case 17 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1513:21: SLASHSi
-=======
-                    // etc/XQFT.g:1527:21: SLASHSi
->>>>>>> .r234
+                    // etc/XQFT.g:1528:21: SLASHSi
                     {
                     mSLASHSi(); if (failed) return ;
 
                     }
                     break;
                 case 18 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1513:31: COLONSi
-=======
-                    // etc/XQFT.g:1527:31: COLONSi
->>>>>>> .r234
+                    // etc/XQFT.g:1528:31: COLONSi
                     {
                     mCOLONSi(); if (failed) return ;
 
                     }
                     break;
                 case 19 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1513:41: SEMICOLONSi
-=======
-                    // etc/XQFT.g:1527:41: SEMICOLONSi
->>>>>>> .r234
+                    // etc/XQFT.g:1528:41: SEMICOLONSi
                     {
                     mSEMICOLONSi(); if (failed) return ;
 
                     }
                     break;
                 case 20 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1513:55: EQSi
-=======
-                    // etc/XQFT.g:1527:55: EQSi
->>>>>>> .r234
+                    // etc/XQFT.g:1528:55: EQSi
                     {
                     mEQSi(); if (failed) return ;
 
                     }
                     break;
                 case 21 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1513:62: GTSi
-=======
-                    // etc/XQFT.g:1527:62: GTSi
->>>>>>> .r234
+                    // etc/XQFT.g:1528:62: GTSi
                     {
                     mGTSi(); if (failed) return ;
 
                     }
                     break;
                 case 22 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1513:69: QUESTIONSi
-=======
-                    // etc/XQFT.g:1527:69: QUESTIONSi
->>>>>>> .r234
+                    // etc/XQFT.g:1528:69: QUESTIONSi
                     {
                     mQUESTIONSi(); if (failed) return ;
 
                     }
                     break;
                 case 23 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1513:82: ATSi
-=======
-                    // etc/XQFT.g:1527:82: ATSi
->>>>>>> .r234
+                    // etc/XQFT.g:1528:82: ATSi
                     {
                     mATSi(); if (failed) return ;
 
                     }
                     break;
                 case 24 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1514:13: LBRACKSi
-=======
-                    // etc/XQFT.g:1528:13: LBRACKSi
->>>>>>> .r234
+                    // etc/XQFT.g:1529:13: LBRACKSi
                     {
                     mLBRACKSi(); if (failed) return ;
 
                     }
                     break;
                 case 25 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1514:24: BACKSLASHSi
-=======
-                    // etc/XQFT.g:1528:24: BACKSLASHSi
->>>>>>> .r234
+                    // etc/XQFT.g:1529:24: BACKSLASHSi
                     {
                     mBACKSLASHSi(); if (failed) return ;
 
                     }
                     break;
                 case 26 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1514:38: RBRACKSi
-=======
-                    // etc/XQFT.g:1528:38: RBRACKSi
->>>>>>> .r234
+                    // etc/XQFT.g:1529:38: RBRACKSi
                     {
                     mRBRACKSi(); if (failed) return ;
 
                     }
                     break;
                 case 27 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1514:49: UNDERSCORESi
-=======
-                    // etc/XQFT.g:1528:49: UNDERSCORESi
->>>>>>> .r234
+                    // etc/XQFT.g:1529:49: UNDERSCORESi
                     {
                     mUNDERSCORESi(); if (failed) return ;
 
                     }
                     break;
                 case 28 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1514:64: PIPESi
-=======
-                    // etc/XQFT.g:1528:64: PIPESi
->>>>>>> .r234
+                    // etc/XQFT.g:1529:64: PIPESi
                     {
                     mPIPESi(); if (failed) return ;
 
@@ -8983,11 +6851,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Char
     public final void mChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1516:21: ( CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi | MINUSSi )
-=======
-            // etc/XQFT.g:1530:21: ( CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi | MINUSSi )
->>>>>>> .r234
+            // etc/XQFT.g:1531:21: ( CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi | MINUSSi )
             int alt36=8;
             int LA36_0 = input.LA(1);
 
@@ -9018,98 +6882,62 @@ public class XQFTLexer extends Lexer {
             else {
                 if (backtracking>0) {failed=true; return ;}
                 NoViableAltException nvae =
-<<<<<<< .mine
-                    new NoViableAltException("1516:10: fragment Char : ( CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi | MINUSSi );", 36, 0, input);
-=======
-                    new NoViableAltException("1530:10: fragment Char : ( CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi | MINUSSi );", 36, 0, input);
->>>>>>> .r234
+                    new NoViableAltException("1531:10: fragment Char : ( CleanChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi | APOSSi | MINUSSi );", 36, 0, input);
 
                 throw nvae;
             }
             switch (alt36) {
                 case 1 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1516:23: CleanChar
-=======
-                    // etc/XQFT.g:1530:23: CleanChar
->>>>>>> .r234
+                    // etc/XQFT.g:1531:23: CleanChar
                     {
                     mCleanChar(); if (failed) return ;
 
                     }
                     break;
                 case 2 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1516:35: LBRACESi
-=======
-                    // etc/XQFT.g:1530:35: LBRACESi
->>>>>>> .r234
+                    // etc/XQFT.g:1531:35: LBRACESi
                     {
                     mLBRACESi(); if (failed) return ;
 
                     }
                     break;
                 case 3 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1516:46: RBRACSi
-=======
-                    // etc/XQFT.g:1530:46: RBRACSi
->>>>>>> .r234
+                    // etc/XQFT.g:1531:46: RBRACSi
                     {
                     mRBRACSi(); if (failed) return ;
 
                     }
                     break;
                 case 4 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1516:56: LTSi
-=======
-                    // etc/XQFT.g:1530:56: LTSi
->>>>>>> .r234
+                    // etc/XQFT.g:1531:56: LTSi
                     {
                     mLTSi(); if (failed) return ;
 
                     }
                     break;
                 case 5 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1516:63: AMPERSi
-=======
-                    // etc/XQFT.g:1530:63: AMPERSi
->>>>>>> .r234
+                    // etc/XQFT.g:1531:63: AMPERSi
                     {
                     mAMPERSi(); if (failed) return ;
 
                     }
                     break;
                 case 6 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1516:73: QUOTSi
-=======
-                    // etc/XQFT.g:1530:73: QUOTSi
->>>>>>> .r234
+                    // etc/XQFT.g:1531:73: QUOTSi
                     {
                     mQUOTSi(); if (failed) return ;
 
                     }
                     break;
                 case 7 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1516:82: APOSSi
-=======
-                    // etc/XQFT.g:1530:82: APOSSi
->>>>>>> .r234
+                    // etc/XQFT.g:1531:82: APOSSi
                     {
                     mAPOSSi(); if (failed) return ;
 
                     }
                     break;
                 case 8 :
-<<<<<<< .mine
-                    // etc/XQFT.g:1516:91: MINUSSi
-=======
-                    // etc/XQFT.g:1530:91: MINUSSi
->>>>>>> .r234
+                    // etc/XQFT.g:1531:91: MINUSSi
                     {
                     mMINUSSi(); if (failed) return ;
 
@@ -9126,11 +6954,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start NotChar
     public final void mNotChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1517:23: ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' )
-=======
-            // etc/XQFT.g:1531:23: ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' )
->>>>>>> .r234
+            // etc/XQFT.g:1532:23: ( '\\u0001' .. '\\u0008' | '\\u000B' | '\\u000C' | '\\u000E' .. '\\u001F' | '\\uD800' .. '\\uDFFF' )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='\u0001' && input.LA(1)<='\b')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\u001F')||(input.LA(1)>='\uD800' && input.LA(1)<='\uDFFF') ) {
@@ -9156,19 +6980,10 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Digits
     public final void mDigits() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1521:33: ( ( '0' .. '9' )+ )
-            // etc/XQFT.g:1521:35: ( '0' .. '9' )+
-=======
-            // etc/XQFT.g:1535:33: ( ( '0' .. '9' )+ )
-            // etc/XQFT.g:1535:35: ( '0' .. '9' )+
->>>>>>> .r234
+            // etc/XQFT.g:1536:33: ( ( '0' .. '9' )+ )
+            // etc/XQFT.g:1536:35: ( '0' .. '9' )+
             {
-<<<<<<< .mine
-            // etc/XQFT.g:1521:35: ( '0' .. '9' )+
-=======
-            // etc/XQFT.g:1535:35: ( '0' .. '9' )+
->>>>>>> .r234
+            // etc/XQFT.g:1536:35: ( '0' .. '9' )+
             int cnt37=0;
             loop37:
             do {
@@ -9182,11 +6997,7 @@ public class XQFTLexer extends Lexer {
 
                 switch (alt37) {
             	case 1 :
-<<<<<<< .mine
-            	    // etc/XQFT.g:1521:36: '0' .. '9'
-=======
-            	    // etc/XQFT.g:1535:36: '0' .. '9'
->>>>>>> .r234
+            	    // etc/XQFT.g:1536:36: '0' .. '9'
             	    {
             	    matchRange('0','9'); if (failed) return ;
 
@@ -9215,11 +7026,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Digit
     public final void mDigit() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1523:33: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06F0' .. '\\u06F9' | '\\u0966' .. '\\u096F' | '\\u09E6' .. '\\u09EF' | '\\u0A66' .. '\\u0A6F' | '\\u0AE6' .. '\\u0AEF' | '\\u0B66' .. '\\u0B6F' | '\\u0BE7' .. '\\u0BEF' | '\\u0C66' .. '\\u0C6F' | '\\u0CE6' .. '\\u0CEF' | '\\u0D66' .. '\\u0D6F' | '\\u0E50' .. '\\u0E59' | '\\u0ED0' .. '\\u0ED9' | '\\u0F20' .. '\\u0F29' )
-=======
-            // etc/XQFT.g:1537:33: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06F0' .. '\\u06F9' | '\\u0966' .. '\\u096F' | '\\u09E6' .. '\\u09EF' | '\\u0A66' .. '\\u0A6F' | '\\u0AE6' .. '\\u0AEF' | '\\u0B66' .. '\\u0B6F' | '\\u0BE7' .. '\\u0BEF' | '\\u0C66' .. '\\u0C6F' | '\\u0CE6' .. '\\u0CEF' | '\\u0D66' .. '\\u0D6F' | '\\u0E50' .. '\\u0E59' | '\\u0ED0' .. '\\u0ED9' | '\\u0F20' .. '\\u0F29' )
->>>>>>> .r234
+            // etc/XQFT.g:1538:33: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06F0' .. '\\u06F9' | '\\u0966' .. '\\u096F' | '\\u09E6' .. '\\u09EF' | '\\u0A66' .. '\\u0A6F' | '\\u0AE6' .. '\\u0AEF' | '\\u0B66' .. '\\u0B6F' | '\\u0BE7' .. '\\u0BEF' | '\\u0C66' .. '\\u0C6F' | '\\u0CE6' .. '\\u0CEF' | '\\u0D66' .. '\\u0D6F' | '\\u0E50' .. '\\u0E59' | '\\u0ED0' .. '\\u0ED9' | '\\u0F20' .. '\\u0F29' )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09EF')||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A6F')||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u0F20' && input.LA(1)<='\u0F29') ) {
@@ -9245,11 +7052,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Letter
     public final void mLetter() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1525:23: ( BaseChar | Ideographic )
-=======
-            // etc/XQFT.g:1539:23: ( BaseChar | Ideographic )
->>>>>>> .r234
+            // etc/XQFT.g:1540:23: ( BaseChar | Ideographic )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -9275,11 +7078,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start BaseChar
     public final void mBaseChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1527:33: ( '\\u0041' .. '\\u005A' | '\\u0061' .. '\\u007A' | '\\u00C0' .. '\\u00D6' | '\\u00D8' .. '\\u00F6' | '\\u00F8' .. '\\u00FF' | '\\u0100' .. '\\u0131' | '\\u0134' .. '\\u013E' | '\\u0141' .. '\\u0148' | '\\u014A' .. '\\u017E' | '\\u0180' .. '\\u01C3' | '\\u01CD' .. '\\u01F0' | '\\u01F4' .. '\\u01F5' | '\\u01FA' .. '\\u0217' | '\\u0250' .. '\\u02A8' | '\\u02BB' .. '\\u02C1' | '\\u0386' | '\\u0388' .. '\\u038A' | '\\u038C' | '\\u038E' .. '\\u03A1' | '\\u03A3' .. '\\u03CE' | '\\u03D0' .. '\\u03D6' | '\\u03DA' | '\\u03DC' | '\\u03DE' | '\\u03E0' | '\\u03E2' .. '\\u03F3' | '\\u0401' .. '\\u040C' | '\\u040E' .. '\\u044F' | '\\u0451' .. '\\u045C' | '\\u045E' .. '\\u0481' | '\\u0490' .. '\\u04C4' | '\\u04C7' .. '\\u04C8' | '\\u04CB' .. '\\u04CC' | '\\u04D0' .. '\\u04EB' | '\\u04EE' .. '\\u04F5' | '\\u04F8' .. '\\u04F9' | '\\u0531' .. '\\u0556' | '\\u0559' | '\\u0561' .. '\\u0586' | '\\u05D0' .. '\\u05EA' | '\\u05F0' .. '\\u05F2' | '\\u0621' .. '\\u063A' | '\\u0641' .. '\\u064A' | '\\u0671' .. '\\u06B7' | '\\u06BA' .. '\\u06BE' | '\\u06C0' .. '\\u06CE' | '\\u06D0' .. '\\u06D3' | '\\u06D5' | '\\u06E5' .. '\\u06E6' | '\\u0905' .. '\\u0939' | '\\u093D' | '\\u0958' .. '\\u0961' | '\\u0985' .. '\\u098C' | '\\u098F' .. '\\u0990' | '\\u0993' .. '\\u09A8' | '\\u09AA' .. '\\u09B0' | '\\u09B2' | '\\u09B6' .. '\\u09B9' | '\\u09DC' .. '\\u09DD' | '\\u09DF' .. '\\u09E1' | '\\u09F0' .. '\\u09F1' | '\\u0A05' .. '\\u0A0A' | '\\u0A0F' .. '\\u0A10' | '\\u0A13' .. '\\u0A28' | '\\u0A2A' .. '\\u0A30' | '\\u0A32' .. '\\u0A33' | '\\u0A35' .. '\\u0A36' | '\\u0A38' .. '\\u0A39' | '\\u0A59' .. '\\u0A5C' | '\\u0A5E' | '\\u0A72' .. '\\u0A74' | '\\u0A85' .. '\\u0A8B' | '\\u0A8D' | '\\u0A8F' .. '\\u0A91' | '\\u0A93' .. '\\u0AA8' | '\\u0AAA' .. '\\u0AB0' | '\\u0AB2' .. '\\u0AB3' | '\\u0AB5' .. '\\u0AB9' | '\\u0ABD' | '\\u0AE0' | '\\u0B05' .. '\\u0B0C' | '\\u0B0F' .. '\\u0B10' | '\\u0B13' .. '\\u0B28' | '\\u0B2A' .. '\\u0B30' | '\\u0B32' .. '\\u0B33' | '\\u0B36' .. '\\u0B39' | '\\u0B3D' | '\\u0B5C' .. '\\u0B5D' | '\\u0B5F' .. '\\u0B61' | '\\u0B85' .. '\\u0B8A' | '\\u0B8E' .. '\\u0B90' | '\\u0B92' .. '\\u0B95' | '\\u0B99' .. '\\u0B9A' | '\\u0B9C' | '\\u0B9E' .. '\\u0B9F' | '\\u0BA3' .. '\\u0BA4' | '\\u0BA8' .. '\\u0BAA' | '\\u0BAE' .. '\\u0BB5' | '\\u0BB7' .. '\\u0BB9' | '\\u0C05' .. '\\u0C0C' | '\\u0C0E' .. '\\u0C10' | '\\u0C12' .. '\\u0C28' | '\\u0C2A' .. '\\u0C33' | '\\u0C35' .. '\\u0C39' | '\\u0C60' .. '\\u0C61' | '\\u0C85' .. '\\u0C8C' | '\\u0C8E' .. '\\u0C90' | '\\u0C92' .. '\\u0CA8' | '\\u0CAA' .. '\\u0CB3' | '\\u0CB5' .. '\\u0CB9' | '\\u0CDE' | '\\u0CE0' .. '\\u0CE1' | '\\u0D05' .. '\\u0D0C' | '\\u0D0E' .. '\\u0D10' | '\\u0D12' .. '\\u0D28' | '\\u0D2A' .. '\\u0D39' | '\\u0D60' .. '\\u0D61' | '\\u0E01' .. '\\u0E2E' | '\\u0E30' | '\\u0E32' .. '\\u0E33' | '\\u0E40' .. '\\u0E45' | '\\u0E81' .. '\\u0E82' | '\\u0E84' | '\\u0E87' .. '\\u0E88' | '\\u0E8A' | '\\u0E8D' | '\\u0E94' .. '\\u0E97' | '\\u0E99' .. '\\u0E9F' | '\\u0EA1' .. '\\u0EA3' | '\\u0EA5' | '\\u0EA7' | '\\u0EAA' .. '\\u0EAB' | '\\u0EAD' .. '\\u0EAE' | '\\u0EB0' | '\\u0EB2' .. '\\u0EB3' | '\\u0EBD' | '\\u0EC0' .. '\\u0EC4' | '\\u0F40' .. '\\u0F47' | '\\u0F49' .. '\\u0F69' | '\\u10A0' .. '\\u10C5' | '\\u10D0' .. '\\u10F6' | '\\u1100' | '\\u1102' .. '\\u1103' | '\\u1105' .. '\\u1107' | '\\u1109' | '\\u110B' .. '\\u110C' | '\\u110E' .. '\\u1112' | '\\u113C' | '\\u113E' | '\\u1140' | '\\u114C' | '\\u114E' | '\\u1150' | '\\u1154' .. '\\u1155' | '\\u1159' | '\\u115F' .. '\\u1161' | '\\u1163' | '\\u1165' | '\\u1167' | '\\u1169' | '\\u116D' .. '\\u116E' | '\\u1172' .. '\\u1173' | '\\u1175' | '\\u119E' | '\\u11A8' | '\\u11AB' | '\\u11AE' .. '\\u11AF' | '\\u11B7' .. '\\u11B8' | '\\u11BA' | '\\u11BC' .. '\\u11C2' | '\\u11EB' | '\\u11F0' | '\\u11F9' | '\\u1E00' .. '\\u1E9B' | '\\u1EA0' .. '\\u1EF9' | '\\u1F00' .. '\\u1F15' | '\\u1F18' .. '\\u1F1D' | '\\u1F20' .. '\\u1F45' | '\\u1F48' .. '\\u1F4D' | '\\u1F50' .. '\\u1F57' | '\\u1F59' | '\\u1F5B' | '\\u1F5D' | '\\u1F5F' .. '\\u1F7D' | '\\u1F80' .. '\\u1FB4' | '\\u1FB6' .. '\\u1FBC' | '\\u1FBE' | '\\u1FC2' .. '\\u1FC4' | '\\u1FC6' .. '\\u1FCC' | '\\u1FD0' .. '\\u1FD3' | '\\u1FD6' .. '\\u1FDB' | '\\u1FE0' .. '\\u1FEC' | '\\u1FF2' .. '\\u1FF4' | '\\u1FF6' .. '\\u1FFC' | '\\u2126' | '\\u212A' .. '\\u212B' | '\\u212E' | '\\u2180' .. '\\u2182' | '\\u3041' .. '\\u3094' | '\\u30A1' .. '\\u30FA' | '\\u3105' .. '\\u312C' | '\\uAC00' .. '\\uD7A3' )
-=======
-            // etc/XQFT.g:1541:33: ( '\\u0041' .. '\\u005A' | '\\u0061' .. '\\u007A' | '\\u00C0' .. '\\u00D6' | '\\u00D8' .. '\\u00F6' | '\\u00F8' .. '\\u00FF' | '\\u0100' .. '\\u0131' | '\\u0134' .. '\\u013E' | '\\u0141' .. '\\u0148' | '\\u014A' .. '\\u017E' | '\\u0180' .. '\\u01C3' | '\\u01CD' .. '\\u01F0' | '\\u01F4' .. '\\u01F5' | '\\u01FA' .. '\\u0217' | '\\u0250' .. '\\u02A8' | '\\u02BB' .. '\\u02C1' | '\\u0386' | '\\u0388' .. '\\u038A' | '\\u038C' | '\\u038E' .. '\\u03A1' | '\\u03A3' .. '\\u03CE' | '\\u03D0' .. '\\u03D6' | '\\u03DA' | '\\u03DC' | '\\u03DE' | '\\u03E0' | '\\u03E2' .. '\\u03F3' | '\\u0401' .. '\\u040C' | '\\u040E' .. '\\u044F' | '\\u0451' .. '\\u045C' | '\\u045E' .. '\\u0481' | '\\u0490' .. '\\u04C4' | '\\u04C7' .. '\\u04C8' | '\\u04CB' .. '\\u04CC' | '\\u04D0' .. '\\u04EB' | '\\u04EE' .. '\\u04F5' | '\\u04F8' .. '\\u04F9' | '\\u0531' .. '\\u0556' | '\\u0559' | '\\u0561' .. '\\u0586' | '\\u05D0' .. '\\u05EA' | '\\u05F0' .. '\\u05F2' | '\\u0621' .. '\\u063A' | '\\u0641' .. '\\u064A' | '\\u0671' .. '\\u06B7' | '\\u06BA' .. '\\u06BE' | '\\u06C0' .. '\\u06CE' | '\\u06D0' .. '\\u06D3' | '\\u06D5' | '\\u06E5' .. '\\u06E6' | '\\u0905' .. '\\u0939' | '\\u093D' | '\\u0958' .. '\\u0961' | '\\u0985' .. '\\u098C' | '\\u098F' .. '\\u0990' | '\\u0993' .. '\\u09A8' | '\\u09AA' .. '\\u09B0' | '\\u09B2' | '\\u09B6' .. '\\u09B9' | '\\u09DC' .. '\\u09DD' | '\\u09DF' .. '\\u09E1' | '\\u09F0' .. '\\u09F1' | '\\u0A05' .. '\\u0A0A' | '\\u0A0F' .. '\\u0A10' | '\\u0A13' .. '\\u0A28' | '\\u0A2A' .. '\\u0A30' | '\\u0A32' .. '\\u0A33' | '\\u0A35' .. '\\u0A36' | '\\u0A38' .. '\\u0A39' | '\\u0A59' .. '\\u0A5C' | '\\u0A5E' | '\\u0A72' .. '\\u0A74' | '\\u0A85' .. '\\u0A8B' | '\\u0A8D' | '\\u0A8F' .. '\\u0A91' | '\\u0A93' .. '\\u0AA8' | '\\u0AAA' .. '\\u0AB0' | '\\u0AB2' .. '\\u0AB3' | '\\u0AB5' .. '\\u0AB9' | '\\u0ABD' | '\\u0AE0' | '\\u0B05' .. '\\u0B0C' | '\\u0B0F' .. '\\u0B10' | '\\u0B13' .. '\\u0B28' | '\\u0B2A' .. '\\u0B30' | '\\u0B32' .. '\\u0B33' | '\\u0B36' .. '\\u0B39' | '\\u0B3D' | '\\u0B5C' .. '\\u0B5D' | '\\u0B5F' .. '\\u0B61' | '\\u0B85' .. '\\u0B8A' | '\\u0B8E' .. '\\u0B90' | '\\u0B92' .. '\\u0B95' | '\\u0B99' .. '\\u0B9A' | '\\u0B9C' | '\\u0B9E' .. '\\u0B9F' | '\\u0BA3' .. '\\u0BA4' | '\\u0BA8' .. '\\u0BAA' | '\\u0BAE' .. '\\u0BB5' | '\\u0BB7' .. '\\u0BB9' | '\\u0C05' .. '\\u0C0C' | '\\u0C0E' .. '\\u0C10' | '\\u0C12' .. '\\u0C28' | '\\u0C2A' .. '\\u0C33' | '\\u0C35' .. '\\u0C39' | '\\u0C60' .. '\\u0C61' | '\\u0C85' .. '\\u0C8C' | '\\u0C8E' .. '\\u0C90' | '\\u0C92' .. '\\u0CA8' | '\\u0CAA' .. '\\u0CB3' | '\\u0CB5' .. '\\u0CB9' | '\\u0CDE' | '\\u0CE0' .. '\\u0CE1' | '\\u0D05' .. '\\u0D0C' | '\\u0D0E' .. '\\u0D10' | '\\u0D12' .. '\\u0D28' | '\\u0D2A' .. '\\u0D39' | '\\u0D60' .. '\\u0D61' | '\\u0E01' .. '\\u0E2E' | '\\u0E30' | '\\u0E32' .. '\\u0E33' | '\\u0E40' .. '\\u0E45' | '\\u0E81' .. '\\u0E82' | '\\u0E84' | '\\u0E87' .. '\\u0E88' | '\\u0E8A' | '\\u0E8D' | '\\u0E94' .. '\\u0E97' | '\\u0E99' .. '\\u0E9F' | '\\u0EA1' .. '\\u0EA3' | '\\u0EA5' | '\\u0EA7' | '\\u0EAA' .. '\\u0EAB' | '\\u0EAD' .. '\\u0EAE' | '\\u0EB0' | '\\u0EB2' .. '\\u0EB3' | '\\u0EBD' | '\\u0EC0' .. '\\u0EC4' | '\\u0F40' .. '\\u0F47' | '\\u0F49' .. '\\u0F69' | '\\u10A0' .. '\\u10C5' | '\\u10D0' .. '\\u10F6' | '\\u1100' | '\\u1102' .. '\\u1103' | '\\u1105' .. '\\u1107' | '\\u1109' | '\\u110B' .. '\\u110C' | '\\u110E' .. '\\u1112' | '\\u113C' | '\\u113E' | '\\u1140' | '\\u114C' | '\\u114E' | '\\u1150' | '\\u1154' .. '\\u1155' | '\\u1159' | '\\u115F' .. '\\u1161' | '\\u1163' | '\\u1165' | '\\u1167' | '\\u1169' | '\\u116D' .. '\\u116E' | '\\u1172' .. '\\u1173' | '\\u1175' | '\\u119E' | '\\u11A8' | '\\u11AB' | '\\u11AE' .. '\\u11AF' | '\\u11B7' .. '\\u11B8' | '\\u11BA' | '\\u11BC' .. '\\u11C2' | '\\u11EB' | '\\u11F0' | '\\u11F9' | '\\u1E00' .. '\\u1E9B' | '\\u1EA0' .. '\\u1EF9' | '\\u1F00' .. '\\u1F15' | '\\u1F18' .. '\\u1F1D' | '\\u1F20' .. '\\u1F45' | '\\u1F48' .. '\\u1F4D' | '\\u1F50' .. '\\u1F57' | '\\u1F59' | '\\u1F5B' | '\\u1F5D' | '\\u1F5F' .. '\\u1F7D' | '\\u1F80' .. '\\u1FB4' | '\\u1FB6' .. '\\u1FBC' | '\\u1FBE' | '\\u1FC2' .. '\\u1FC4' | '\\u1FC6' .. '\\u1FCC' | '\\u1FD0' .. '\\u1FD3' | '\\u1FD6' .. '\\u1FDB' | '\\u1FE0' .. '\\u1FEC' | '\\u1FF2' .. '\\u1FF4' | '\\u1FF6' .. '\\u1FFC' | '\\u2126' | '\\u212A' .. '\\u212B' | '\\u212E' | '\\u2180' .. '\\u2182' | '\\u3041' .. '\\u3094' | '\\u30A1' .. '\\u30FA' | '\\u3105' .. '\\u312C' | '\\uAC00' .. '\\uD7A3' )
->>>>>>> .r234
+            // etc/XQFT.g:1542:33: ( '\\u0041' .. '\\u005A' | '\\u0061' .. '\\u007A' | '\\u00C0' .. '\\u00D6' | '\\u00D8' .. '\\u00F6' | '\\u00F8' .. '\\u00FF' | '\\u0100' .. '\\u0131' | '\\u0134' .. '\\u013E' | '\\u0141' .. '\\u0148' | '\\u014A' .. '\\u017E' | '\\u0180' .. '\\u01C3' | '\\u01CD' .. '\\u01F0' | '\\u01F4' .. '\\u01F5' | '\\u01FA' .. '\\u0217' | '\\u0250' .. '\\u02A8' | '\\u02BB' .. '\\u02C1' | '\\u0386' | '\\u0388' .. '\\u038A' | '\\u038C' | '\\u038E' .. '\\u03A1' | '\\u03A3' .. '\\u03CE' | '\\u03D0' .. '\\u03D6' | '\\u03DA' | '\\u03DC' | '\\u03DE' | '\\u03E0' | '\\u03E2' .. '\\u03F3' | '\\u0401' .. '\\u040C' | '\\u040E' .. '\\u044F' | '\\u0451' .. '\\u045C' | '\\u045E' .. '\\u0481' | '\\u0490' .. '\\u04C4' | '\\u04C7' .. '\\u04C8' | '\\u04CB' .. '\\u04CC' | '\\u04D0' .. '\\u04EB' | '\\u04EE' .. '\\u04F5' | '\\u04F8' .. '\\u04F9' | '\\u0531' .. '\\u0556' | '\\u0559' | '\\u0561' .. '\\u0586' | '\\u05D0' .. '\\u05EA' | '\\u05F0' .. '\\u05F2' | '\\u0621' .. '\\u063A' | '\\u0641' .. '\\u064A' | '\\u0671' .. '\\u06B7' | '\\u06BA' .. '\\u06BE' | '\\u06C0' .. '\\u06CE' | '\\u06D0' .. '\\u06D3' | '\\u06D5' | '\\u06E5' .. '\\u06E6' | '\\u0905' .. '\\u0939' | '\\u093D' | '\\u0958' .. '\\u0961' | '\\u0985' .. '\\u098C' | '\\u098F' .. '\\u0990' | '\\u0993' .. '\\u09A8' | '\\u09AA' .. '\\u09B0' | '\\u09B2' | '\\u09B6' .. '\\u09B9' | '\\u09DC' .. '\\u09DD' | '\\u09DF' .. '\\u09E1' | '\\u09F0' .. '\\u09F1' | '\\u0A05' .. '\\u0A0A' | '\\u0A0F' .. '\\u0A10' | '\\u0A13' .. '\\u0A28' | '\\u0A2A' .. '\\u0A30' | '\\u0A32' .. '\\u0A33' | '\\u0A35' .. '\\u0A36' | '\\u0A38' .. '\\u0A39' | '\\u0A59' .. '\\u0A5C' | '\\u0A5E' | '\\u0A72' .. '\\u0A74' | '\\u0A85' .. '\\u0A8B' | '\\u0A8D' | '\\u0A8F' .. '\\u0A91' | '\\u0A93' .. '\\u0AA8' | '\\u0AAA' .. '\\u0AB0' | '\\u0AB2' .. '\\u0AB3' | '\\u0AB5' .. '\\u0AB9' | '\\u0ABD' | '\\u0AE0' | '\\u0B05' .. '\\u0B0C' | '\\u0B0F' .. '\\u0B10' | '\\u0B13' .. '\\u0B28' | '\\u0B2A' .. '\\u0B30' | '\\u0B32' .. '\\u0B33' | '\\u0B36' .. '\\u0B39' | '\\u0B3D' | '\\u0B5C' .. '\\u0B5D' | '\\u0B5F' .. '\\u0B61' | '\\u0B85' .. '\\u0B8A' | '\\u0B8E' .. '\\u0B90' | '\\u0B92' .. '\\u0B95' | '\\u0B99' .. '\\u0B9A' | '\\u0B9C' | '\\u0B9E' .. '\\u0B9F' | '\\u0BA3' .. '\\u0BA4' | '\\u0BA8' .. '\\u0BAA' | '\\u0BAE' .. '\\u0BB5' | '\\u0BB7' .. '\\u0BB9' | '\\u0C05' .. '\\u0C0C' | '\\u0C0E' .. '\\u0C10' | '\\u0C12' .. '\\u0C28' | '\\u0C2A' .. '\\u0C33' | '\\u0C35' .. '\\u0C39' | '\\u0C60' .. '\\u0C61' | '\\u0C85' .. '\\u0C8C' | '\\u0C8E' .. '\\u0C90' | '\\u0C92' .. '\\u0CA8' | '\\u0CAA' .. '\\u0CB3' | '\\u0CB5' .. '\\u0CB9' | '\\u0CDE' | '\\u0CE0' .. '\\u0CE1' | '\\u0D05' .. '\\u0D0C' | '\\u0D0E' .. '\\u0D10' | '\\u0D12' .. '\\u0D28' | '\\u0D2A' .. '\\u0D39' | '\\u0D60' .. '\\u0D61' | '\\u0E01' .. '\\u0E2E' | '\\u0E30' | '\\u0E32' .. '\\u0E33' | '\\u0E40' .. '\\u0E45' | '\\u0E81' .. '\\u0E82' | '\\u0E84' | '\\u0E87' .. '\\u0E88' | '\\u0E8A' | '\\u0E8D' | '\\u0E94' .. '\\u0E97' | '\\u0E99' .. '\\u0E9F' | '\\u0EA1' .. '\\u0EA3' | '\\u0EA5' | '\\u0EA7' | '\\u0EAA' .. '\\u0EAB' | '\\u0EAD' .. '\\u0EAE' | '\\u0EB0' | '\\u0EB2' .. '\\u0EB3' | '\\u0EBD' | '\\u0EC0' .. '\\u0EC4' | '\\u0F40' .. '\\u0F47' | '\\u0F49' .. '\\u0F69' | '\\u10A0' .. '\\u10C5' | '\\u10D0' .. '\\u10F6' | '\\u1100' | '\\u1102' .. '\\u1103' | '\\u1105' .. '\\u1107' | '\\u1109' | '\\u110B' .. '\\u110C' | '\\u110E' .. '\\u1112' | '\\u113C' | '\\u113E' | '\\u1140' | '\\u114C' | '\\u114E' | '\\u1150' | '\\u1154' .. '\\u1155' | '\\u1159' | '\\u115F' .. '\\u1161' | '\\u1163' | '\\u1165' | '\\u1167' | '\\u1169' | '\\u116D' .. '\\u116E' | '\\u1172' .. '\\u1173' | '\\u1175' | '\\u119E' | '\\u11A8' | '\\u11AB' | '\\u11AE' .. '\\u11AF' | '\\u11B7' .. '\\u11B8' | '\\u11BA' | '\\u11BC' .. '\\u11C2' | '\\u11EB' | '\\u11F0' | '\\u11F9' | '\\u1E00' .. '\\u1E9B' | '\\u1EA0' .. '\\u1EF9' | '\\u1F00' .. '\\u1F15' | '\\u1F18' .. '\\u1F1D' | '\\u1F20' .. '\\u1F45' | '\\u1F48' .. '\\u1F4D' | '\\u1F50' .. '\\u1F57' | '\\u1F59' | '\\u1F5B' | '\\u1F5D' | '\\u1F5F' .. '\\u1F7D' | '\\u1F80' .. '\\u1FB4' | '\\u1FB6' .. '\\u1FBC' | '\\u1FBE' | '\\u1FC2' .. '\\u1FC4' | '\\u1FC6' .. '\\u1FCC' | '\\u1FD0' .. '\\u1FD3' | '\\u1FD6' .. '\\u1FDB' | '\\u1FE0' .. '\\u1FEC' | '\\u1FF2' .. '\\u1FF4' | '\\u1FF6' .. '\\u1FFC' | '\\u2126' | '\\u212A' .. '\\u212B' | '\\u212E' | '\\u2180' .. '\\u2182' | '\\u3041' .. '\\u3094' | '\\u30A1' .. '\\u30FA' | '\\u3105' .. '\\u312C' | '\\uAC00' .. '\\uD7A3' )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u0131')||(input.LA(1)>='\u0134' && input.LA(1)<='\u013E')||(input.LA(1)>='\u0141' && input.LA(1)<='\u0148')||(input.LA(1)>='\u014A' && input.LA(1)<='\u017E')||(input.LA(1)>='\u0180' && input.LA(1)<='\u01C3')||(input.LA(1)>='\u01CD' && input.LA(1)<='\u01F0')||(input.LA(1)>='\u01F4' && input.LA(1)<='\u01F5')||(input.LA(1)>='\u01FA' && input.LA(1)<='\u0217')||(input.LA(1)>='\u0250' && input.LA(1)<='\u02A8')||(input.LA(1)>='\u02BB' && input.LA(1)<='\u02C1')||input.LA(1)=='\u0386'||(input.LA(1)>='\u0388' && input.LA(1)<='\u038A')||input.LA(1)=='\u038C'||(input.LA(1)>='\u038E' && input.LA(1)<='\u03A1')||(input.LA(1)>='\u03A3' && input.LA(1)<='\u03CE')||(input.LA(1)>='\u03D0' && input.LA(1)<='\u03D6')||input.LA(1)=='\u03DA'||input.LA(1)=='\u03DC'||input.LA(1)=='\u03DE'||input.LA(1)=='\u03E0'||(input.LA(1)>='\u03E2' && input.LA(1)<='\u03F3')||(input.LA(1)>='\u0401' && input.LA(1)<='\u040C')||(input.LA(1)>='\u040E' && input.LA(1)<='\u044F')||(input.LA(1)>='\u0451' && input.LA(1)<='\u045C')||(input.LA(1)>='\u045E' && input.LA(1)<='\u0481')||(input.LA(1)>='\u0490' && input.LA(1)<='\u04C4')||(input.LA(1)>='\u04C7' && input.LA(1)<='\u04C8')||(input.LA(1)>='\u04CB' && input.LA(1)<='\u04CC')||(input.LA(1)>='\u04D0' && input.LA(1)<='\u04EB')||(input.LA(1)>='\u04EE' && input.LA(1)<='\u04F5')||(input.LA(1)>='\u04F8' && input.LA(1)<='\u04F9')||(input.LA(1)>='\u0531' && input.LA(1)<='\u0556')||input.LA(1)=='\u0559'||(input.LA(1)>='\u0561' && input.LA(1)<='\u0586')||(input.LA(1)>='\u05D0' && input.LA(1)<='\u05EA')||(input.LA(1)>='\u05F0' && input.LA(1)<='\u05F2')||(input.LA(1)>='\u0621' && input.LA(1)<='\u063A')||(input.LA(1)>='\u0641' && input.LA(1)<='\u064A')||(input.LA(1)>='\u0671' && input.LA(1)<='\u06B7')||(input.LA(1)>='\u06BA' && input.LA(1)<='\u06BE')||(input.LA(1)>='\u06C0' && input.LA(1)<='\u06CE')||(input.LA(1)>='\u06D0' && input.LA(1)<='\u06D3')||input.LA(1)=='\u06D5'||(input.LA(1)>='\u06E5' && input.LA(1)<='\u06E6')||(input.LA(1)>='\u0905' && input.LA(1)<='\u0939')||input.LA(1)=='\u093D'||(input.LA(1)>='\u0958' && input.LA(1)<='\u0961')||(input.LA(1)>='\u0985' && input.LA(1)<='\u098C')||(input.LA(1)>='\u098F' && input.LA(1)<='\u0990')||(input.LA(1)>='\u0993' && input.LA(1)<='\u09A8')||(input.LA(1)>='\u09AA' && input.LA(1)<='\u09B0')||input.LA(1)=='\u09B2'||(input.LA(1)>='\u09B6' && input.LA(1)<='\u09B9')||(input.LA(1)>='\u09DC' && input.LA(1)<='\u09DD')||(input.LA(1)>='\u09DF' && input.LA(1)<='\u09E1')||(input.LA(1)>='\u09F0' && input.LA(1)<='\u09F1')||(input.LA(1)>='\u0A05' && input.LA(1)<='\u0A0A')||(input.LA(1)>='\u0A0F' && input.LA(1)<='\u0A10')||(input.LA(1)>='\u0A13' && input.LA(1)<='\u0A28')||(input.LA(1)>='\u0A2A' && input.LA(1)<='\u0A30')||(input.LA(1)>='\u0A32' && input.LA(1)<='\u0A33')||(input.LA(1)>='\u0A35' && input.LA(1)<='\u0A36')||(input.LA(1)>='\u0A38' && input.LA(1)<='\u0A39')||(input.LA(1)>='\u0A59' && input.LA(1)<='\u0A5C')||input.LA(1)=='\u0A5E'||(input.LA(1)>='\u0A72' && input.LA(1)<='\u0A74')||(input.LA(1)>='\u0A85' && input.LA(1)<='\u0A8B')||input.LA(1)=='\u0A8D'||(input.LA(1)>='\u0A8F' && input.LA(1)<='\u0A91')||(input.LA(1)>='\u0A93' && input.LA(1)<='\u0AA8')||(input.LA(1)>='\u0AAA' && input.LA(1)<='\u0AB0')||(input.LA(1)>='\u0AB2' && input.LA(1)<='\u0AB3')||(input.LA(1)>='\u0AB5' && input.LA(1)<='\u0AB9')||input.LA(1)=='\u0ABD'||input.LA(1)=='\u0AE0'||(input.LA(1)>='\u0B05' && input.LA(1)<='\u0B0C')||(input.LA(1)>='\u0B0F' && input.LA(1)<='\u0B10')||(input.LA(1)>='\u0B13' && input.LA(1)<='\u0B28')||(input.LA(1)>='\u0B2A' && input.LA(1)<='\u0B30')||(input.LA(1)>='\u0B32' && input.LA(1)<='\u0B33')||(input.LA(1)>='\u0B36' && input.LA(1)<='\u0B39')||input.LA(1)=='\u0B3D'||(input.LA(1)>='\u0B5C' && input.LA(1)<='\u0B5D')||(input.LA(1)>='\u0B5F' && input.LA(1)<='\u0B61')||(input.LA(1)>='\u0B85' && input.LA(1)<='\u0B8A')||(input.LA(1)>='\u0B8E' && input.LA(1)<='\u0B90')||(input.LA(1)>='\u0B92' && input.LA(1)<='\u0B95')||(input.LA(1)>='\u0B99' && input.LA(1)<='\u0B9A')||input.LA(1)=='\u0B9C'||(input.LA(1)>='\u0B9E' && input.LA(1)<='\u0B9F')||(input.LA(1)>='\u0BA3' && input.LA(1)<='\u0BA4')||(input.LA(1)>='\u0BA8' && input.LA(1)<='\u0BAA')||(input.LA(1)>='\u0BAE' && input.LA(1)<='\u0BB5')||(input.LA(1)>='\u0BB7' && input.LA(1)<='\u0BB9')||(input.LA(1)>='\u0C05' && input.LA(1)<='\u0C0C')||(input.LA(1)>='\u0C0E' && input.LA(1)<='\u0C10')||(input.LA(1)>='\u0C12' && input.LA(1)<='\u0C28')||(input.LA(1)>='\u0C2A' && input.LA(1)<='\u0C33')||(input.LA(1)>='\u0C35' && input.LA(1)<='\u0C39')||(input.LA(1)>='\u0C60' && input.LA(1)<='\u0C61')||(input.LA(1)>='\u0C85' && input.LA(1)<='\u0C8C')||(input.LA(1)>='\u0C8E' && input.LA(1)<='\u0C90')||(input.LA(1)>='\u0C92' && input.LA(1)<='\u0CA8')||(input.LA(1)>='\u0CAA' && input.LA(1)<='\u0CB3')||(input.LA(1)>='\u0CB5' && input.LA(1)<='\u0CB9')||input.LA(1)=='\u0CDE'||(input.LA(1)>='\u0CE0' && input.LA(1)<='\u0CE1')||(input.LA(1)>='\u0D05' && input.LA(1)<='\u0D0C')||(input.LA(1)>='\u0D0E' && input.LA(1)<='\u0D10')||(input.LA(1)>='\u0D12' && input.LA(1)<='\u0D28')||(input.LA(1)>='\u0D2A' && input.LA(1)<='\u0D39')||(input.LA(1)>='\u0D60' && input.LA(1)<='\u0D61')||(input.LA(1)>='\u0E01' && input.LA(1)<='\u0E2E')||input.LA(1)=='\u0E30'||(input.LA(1)>='\u0E32' && input.LA(1)<='\u0E33')||(input.LA(1)>='\u0E40' && input.LA(1)<='\u0E45')||(input.LA(1)>='\u0E81' && input.LA(1)<='\u0E82')||input.LA(1)=='\u0E84'||(input.LA(1)>='\u0E87' && input.LA(1)<='\u0E88')||input.LA(1)=='\u0E8A'||input.LA(1)=='\u0E8D'||(input.LA(1)>='\u0E94' && input.LA(1)<='\u0E97')||(input.LA(1)>='\u0E99' && input.LA(1)<='\u0E9F')||(input.LA(1)>='\u0EA1' && input.LA(1)<='\u0EA3')||input.LA(1)=='\u0EA5'||input.LA(1)=='\u0EA7'||(input.LA(1)>='\u0EAA' && input.LA(1)<='\u0EAB')||(input.LA(1)>='\u0EAD' && input.LA(1)<='\u0EAE')||input.LA(1)=='\u0EB0'||(input.LA(1)>='\u0EB2' && input.LA(1)<='\u0EB3')||input.LA(1)=='\u0EBD'||(input.LA(1)>='\u0EC0' && input.LA(1)<='\u0EC4')||(input.LA(1)>='\u0F40' && input.LA(1)<='\u0F47')||(input.LA(1)>='\u0F49' && input.LA(1)<='\u0F69')||(input.LA(1)>='\u10A0' && input.LA(1)<='\u10C5')||(input.LA(1)>='\u10D0' && input.LA(1)<='\u10F6')||input.LA(1)=='\u1100'||(input.LA(1)>='\u1102' && input.LA(1)<='\u1103')||(input.LA(1)>='\u1105' && input.LA(1)<='\u1107')||input.LA(1)=='\u1109'||(input.LA(1)>='\u110B' && input.LA(1)<='\u110C')||(input.LA(1)>='\u110E' && input.LA(1)<='\u1112')||input.LA(1)=='\u113C'||input.LA(1)=='\u113E'||input.LA(1)=='\u1140'||input.LA(1)=='\u114C'||input.LA(1)=='\u114E'||input.LA(1)=='\u1150'||(input.LA(1)>='\u1154' && input.LA(1)<='\u1155')||input.LA(1)=='\u1159'||(input.LA(1)>='\u115F' && input.LA(1)<='\u1161')||input.LA(1)=='\u1163'||input.LA(1)=='\u1165'||input.LA(1)=='\u1167'||input.LA(1)=='\u1169'||(input.LA(1)>='\u116D' && input.LA(1)<='\u116E')||(input.LA(1)>='\u1172' && input.LA(1)<='\u1173')||input.LA(1)=='\u1175'||input.LA(1)=='\u119E'||input.LA(1)=='\u11A8'||input.LA(1)=='\u11AB'||(input.LA(1)>='\u11AE' && input.LA(1)<='\u11AF')||(input.LA(1)>='\u11B7' && input.LA(1)<='\u11B8')||input.LA(1)=='\u11BA'||(input.LA(1)>='\u11BC' && input.LA(1)<='\u11C2')||input.LA(1)=='\u11EB'||input.LA(1)=='\u11F0'||input.LA(1)=='\u11F9'||(input.LA(1)>='\u1E00' && input.LA(1)<='\u1E9B')||(input.LA(1)>='\u1EA0' && input.LA(1)<='\u1EF9')||(input.LA(1)>='\u1F00' && input.LA(1)<='\u1F15')||(input.LA(1)>='\u1F18' && input.LA(1)<='\u1F1D')||(input.LA(1)>='\u1F20' && input.LA(1)<='\u1F45')||(input.LA(1)>='\u1F48' && input.LA(1)<='\u1F4D')||(input.LA(1)>='\u1F50' && input.LA(1)<='\u1F57')||input.LA(1)=='\u1F59'||input.LA(1)=='\u1F5B'||input.LA(1)=='\u1F5D'||(input.LA(1)>='\u1F5F' && input.LA(1)<='\u1F7D')||(input.LA(1)>='\u1F80' && input.LA(1)<='\u1FB4')||(input.LA(1)>='\u1FB6' && input.LA(1)<='\u1FBC')||input.LA(1)=='\u1FBE'||(input.LA(1)>='\u1FC2' && input.LA(1)<='\u1FC4')||(input.LA(1)>='\u1FC6' && input.LA(1)<='\u1FCC')||(input.LA(1)>='\u1FD0' && input.LA(1)<='\u1FD3')||(input.LA(1)>='\u1FD6' && input.LA(1)<='\u1FDB')||(input.LA(1)>='\u1FE0' && input.LA(1)<='\u1FEC')||(input.LA(1)>='\u1FF2' && input.LA(1)<='\u1FF4')||(input.LA(1)>='\u1FF6' && input.LA(1)<='\u1FFC')||input.LA(1)=='\u2126'||(input.LA(1)>='\u212A' && input.LA(1)<='\u212B')||input.LA(1)=='\u212E'||(input.LA(1)>='\u2180' && input.LA(1)<='\u2182')||(input.LA(1)>='\u3041' && input.LA(1)<='\u3094')||(input.LA(1)>='\u30A1' && input.LA(1)<='\u30FA')||(input.LA(1)>='\u3105' && input.LA(1)<='\u312C')||(input.LA(1)>='\uAC00' && input.LA(1)<='\uD7A3') ) {
@@ -9305,11 +7104,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Ideographic
     public final void mIdeographic() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1529:32: ( '\\u4E00' .. '\\u9FA5' | '\\u3007' | '\\u3021' .. '\\u3029' )
-=======
-            // etc/XQFT.g:1543:32: ( '\\u4E00' .. '\\u9FA5' | '\\u3007' | '\\u3021' .. '\\u3029' )
->>>>>>> .r234
+            // etc/XQFT.g:1544:32: ( '\\u4E00' .. '\\u9FA5' | '\\u3007' | '\\u3021' .. '\\u3029' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u3007'||(input.LA(1)>='\u3021' && input.LA(1)<='\u3029')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FA5') ) {
@@ -9335,11 +7130,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start CombiningChar
     public final void mCombiningChar() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1531:33: ( '\\u0300' .. '\\u0345' | '\\u0360' .. '\\u0361' | '\\u0483' .. '\\u0486' | '\\u0591' .. '\\u05A1' | '\\u05A3' .. '\\u05B9' | '\\u05BB' .. '\\u05BD' | '\\u05BF' | '\\u05C1' .. '\\u05C2' | '\\u05C4' | '\\u064B' .. '\\u0652' | '\\u0670' | '\\u06D6' .. '\\u06DC' | '\\u06DD' .. '\\u06DF' | '\\u06E0' .. '\\u06E4' | '\\u06E7' .. '\\u06E8' | '\\u06EA' .. '\\u06ED' | '\\u0901' .. '\\u0903' | '\\u093C' | '\\u093E' .. '\\u094C' | '\\u094D' | '\\u0951' .. '\\u0954' | '\\u0962' .. '\\u0963' | '\\u0981' .. '\\u0983' | '\\u09BC' | '\\u09BE' | '\\u09BF' | '\\u09C0' .. '\\u09C4' | '\\u09C7' .. '\\u09C8' | '\\u09CB' .. '\\u09CD' | '\\u09D7' | '\\u09E2' .. '\\u09E3' | '\\u0A02' | '\\u0A3C' | '\\u0A3E' | '\\u0A3F' | '\\u0A40' .. '\\u0A42' | '\\u0A47' .. '\\u0A48' | '\\u0A4B' .. '\\u0A4D' | '\\u0A70' .. '\\u0A71' | '\\u0A81' .. '\\u0A83' | '\\u0ABC' | '\\u0ABE' .. '\\u0AC5' | '\\u0AC7' .. '\\u0AC9' | '\\u0ACB' .. '\\u0ACD' | '\\u0B01' .. '\\u0B03' | '\\u0B3C' | '\\u0B3E' .. '\\u0B43' | '\\u0B47' .. '\\u0B48' | '\\u0B4B' .. '\\u0B4D' | '\\u0B56' .. '\\u0B57' | '\\u0B82' .. '\\u0B83' | '\\u0BBE' .. '\\u0BC2' | '\\u0BC6' .. '\\u0BC8' | '\\u0BCA' .. '\\u0BCD' | '\\u0BD7' | '\\u0C01' .. '\\u0C03' | '\\u0C3E' .. '\\u0C44' | '\\u0C46' .. '\\u0C48' | '\\u0C4A' .. '\\u0C4D' | '\\u0C55' .. '\\u0C56' | '\\u0C82' .. '\\u0C83' | '\\u0CBE' .. '\\u0CC4' | '\\u0CC6' .. '\\u0CC8' | '\\u0CCA' .. '\\u0CCD' | '\\u0CD5' .. '\\u0CD6' | '\\u0D02' .. '\\u0D03' | '\\u0D3E' .. '\\u0D43' | '\\u0D46' .. '\\u0D48' | '\\u0D4A' .. '\\u0D4D' | '\\u0D57' | '\\u0E31' | '\\u0E34' .. '\\u0E3A' | '\\u0E47' .. '\\u0E4E' | '\\u0EB1' | '\\u0EB4' .. '\\u0EB9' | '\\u0EBB' .. '\\u0EBC' | '\\u0EC8' .. '\\u0ECD' | '\\u0F18' .. '\\u0F19' | '\\u0F35' | '\\u0F37' | '\\u0F39' | '\\u0F3E' | '\\u0F3F' | '\\u0F71' .. '\\u0F84' | '\\u0F86' .. '\\u0F8B' | '\\u0F90' .. '\\u0F95' | '\\u0F97' | '\\u0F99' .. '\\u0FAD' | '\\u0FB1' .. '\\u0FB7' | '\\u0FB9' | '\\u20D0' .. '\\u20DC' | '\\u20E1' | '\\u302A' .. '\\u302F' | '\\u3099' | '\\u309A' )
-=======
-            // etc/XQFT.g:1545:33: ( '\\u0300' .. '\\u0345' | '\\u0360' .. '\\u0361' | '\\u0483' .. '\\u0486' | '\\u0591' .. '\\u05A1' | '\\u05A3' .. '\\u05B9' | '\\u05BB' .. '\\u05BD' | '\\u05BF' | '\\u05C1' .. '\\u05C2' | '\\u05C4' | '\\u064B' .. '\\u0652' | '\\u0670' | '\\u06D6' .. '\\u06DC' | '\\u06DD' .. '\\u06DF' | '\\u06E0' .. '\\u06E4' | '\\u06E7' .. '\\u06E8' | '\\u06EA' .. '\\u06ED' | '\\u0901' .. '\\u0903' | '\\u093C' | '\\u093E' .. '\\u094C' | '\\u094D' | '\\u0951' .. '\\u0954' | '\\u0962' .. '\\u0963' | '\\u0981' .. '\\u0983' | '\\u09BC' | '\\u09BE' | '\\u09BF' | '\\u09C0' .. '\\u09C4' | '\\u09C7' .. '\\u09C8' | '\\u09CB' .. '\\u09CD' | '\\u09D7' | '\\u09E2' .. '\\u09E3' | '\\u0A02' | '\\u0A3C' | '\\u0A3E' | '\\u0A3F' | '\\u0A40' .. '\\u0A42' | '\\u0A47' .. '\\u0A48' | '\\u0A4B' .. '\\u0A4D' | '\\u0A70' .. '\\u0A71' | '\\u0A81' .. '\\u0A83' | '\\u0ABC' | '\\u0ABE' .. '\\u0AC5' | '\\u0AC7' .. '\\u0AC9' | '\\u0ACB' .. '\\u0ACD' | '\\u0B01' .. '\\u0B03' | '\\u0B3C' | '\\u0B3E' .. '\\u0B43' | '\\u0B47' .. '\\u0B48' | '\\u0B4B' .. '\\u0B4D' | '\\u0B56' .. '\\u0B57' | '\\u0B82' .. '\\u0B83' | '\\u0BBE' .. '\\u0BC2' | '\\u0BC6' .. '\\u0BC8' | '\\u0BCA' .. '\\u0BCD' | '\\u0BD7' | '\\u0C01' .. '\\u0C03' | '\\u0C3E' .. '\\u0C44' | '\\u0C46' .. '\\u0C48' | '\\u0C4A' .. '\\u0C4D' | '\\u0C55' .. '\\u0C56' | '\\u0C82' .. '\\u0C83' | '\\u0CBE' .. '\\u0CC4' | '\\u0CC6' .. '\\u0CC8' | '\\u0CCA' .. '\\u0CCD' | '\\u0CD5' .. '\\u0CD6' | '\\u0D02' .. '\\u0D03' | '\\u0D3E' .. '\\u0D43' | '\\u0D46' .. '\\u0D48' | '\\u0D4A' .. '\\u0D4D' | '\\u0D57' | '\\u0E31' | '\\u0E34' .. '\\u0E3A' | '\\u0E47' .. '\\u0E4E' | '\\u0EB1' | '\\u0EB4' .. '\\u0EB9' | '\\u0EBB' .. '\\u0EBC' | '\\u0EC8' .. '\\u0ECD' | '\\u0F18' .. '\\u0F19' | '\\u0F35' | '\\u0F37' | '\\u0F39' | '\\u0F3E' | '\\u0F3F' | '\\u0F71' .. '\\u0F84' | '\\u0F86' .. '\\u0F8B' | '\\u0F90' .. '\\u0F95' | '\\u0F97' | '\\u0F99' .. '\\u0FAD' | '\\u0FB1' .. '\\u0FB7' | '\\u0FB9' | '\\u20D0' .. '\\u20DC' | '\\u20E1' | '\\u302A' .. '\\u302F' | '\\u3099' | '\\u309A' )
->>>>>>> .r234
+            // etc/XQFT.g:1546:33: ( '\\u0300' .. '\\u0345' | '\\u0360' .. '\\u0361' | '\\u0483' .. '\\u0486' | '\\u0591' .. '\\u05A1' | '\\u05A3' .. '\\u05B9' | '\\u05BB' .. '\\u05BD' | '\\u05BF' | '\\u05C1' .. '\\u05C2' | '\\u05C4' | '\\u064B' .. '\\u0652' | '\\u0670' | '\\u06D6' .. '\\u06DC' | '\\u06DD' .. '\\u06DF' | '\\u06E0' .. '\\u06E4' | '\\u06E7' .. '\\u06E8' | '\\u06EA' .. '\\u06ED' | '\\u0901' .. '\\u0903' | '\\u093C' | '\\u093E' .. '\\u094C' | '\\u094D' | '\\u0951' .. '\\u0954' | '\\u0962' .. '\\u0963' | '\\u0981' .. '\\u0983' | '\\u09BC' | '\\u09BE' | '\\u09BF' | '\\u09C0' .. '\\u09C4' | '\\u09C7' .. '\\u09C8' | '\\u09CB' .. '\\u09CD' | '\\u09D7' | '\\u09E2' .. '\\u09E3' | '\\u0A02' | '\\u0A3C' | '\\u0A3E' | '\\u0A3F' | '\\u0A40' .. '\\u0A42' | '\\u0A47' .. '\\u0A48' | '\\u0A4B' .. '\\u0A4D' | '\\u0A70' .. '\\u0A71' | '\\u0A81' .. '\\u0A83' | '\\u0ABC' | '\\u0ABE' .. '\\u0AC5' | '\\u0AC7' .. '\\u0AC9' | '\\u0ACB' .. '\\u0ACD' | '\\u0B01' .. '\\u0B03' | '\\u0B3C' | '\\u0B3E' .. '\\u0B43' | '\\u0B47' .. '\\u0B48' | '\\u0B4B' .. '\\u0B4D' | '\\u0B56' .. '\\u0B57' | '\\u0B82' .. '\\u0B83' | '\\u0BBE' .. '\\u0BC2' | '\\u0BC6' .. '\\u0BC8' | '\\u0BCA' .. '\\u0BCD' | '\\u0BD7' | '\\u0C01' .. '\\u0C03' | '\\u0C3E' .. '\\u0C44' | '\\u0C46' .. '\\u0C48' | '\\u0C4A' .. '\\u0C4D' | '\\u0C55' .. '\\u0C56' | '\\u0C82' .. '\\u0C83' | '\\u0CBE' .. '\\u0CC4' | '\\u0CC6' .. '\\u0CC8' | '\\u0CCA' .. '\\u0CCD' | '\\u0CD5' .. '\\u0CD6' | '\\u0D02' .. '\\u0D03' | '\\u0D3E' .. '\\u0D43' | '\\u0D46' .. '\\u0D48' | '\\u0D4A' .. '\\u0D4D' | '\\u0D57' | '\\u0E31' | '\\u0E34' .. '\\u0E3A' | '\\u0E47' .. '\\u0E4E' | '\\u0EB1' | '\\u0EB4' .. '\\u0EB9' | '\\u0EBB' .. '\\u0EBC' | '\\u0EC8' .. '\\u0ECD' | '\\u0F18' .. '\\u0F19' | '\\u0F35' | '\\u0F37' | '\\u0F39' | '\\u0F3E' | '\\u0F3F' | '\\u0F71' .. '\\u0F84' | '\\u0F86' .. '\\u0F8B' | '\\u0F90' .. '\\u0F95' | '\\u0F97' | '\\u0F99' .. '\\u0FAD' | '\\u0FB1' .. '\\u0FB7' | '\\u0FB9' | '\\u20D0' .. '\\u20DC' | '\\u20E1' | '\\u302A' .. '\\u302F' | '\\u3099' | '\\u309A' )
             // etc/XQFT.g:
             {
             if ( (input.LA(1)>='\u0300' && input.LA(1)<='\u0345')||(input.LA(1)>='\u0360' && input.LA(1)<='\u0361')||(input.LA(1)>='\u0483' && input.LA(1)<='\u0486')||(input.LA(1)>='\u0591' && input.LA(1)<='\u05A1')||(input.LA(1)>='\u05A3' && input.LA(1)<='\u05B9')||(input.LA(1)>='\u05BB' && input.LA(1)<='\u05BD')||input.LA(1)=='\u05BF'||(input.LA(1)>='\u05C1' && input.LA(1)<='\u05C2')||input.LA(1)=='\u05C4'||(input.LA(1)>='\u064B' && input.LA(1)<='\u0652')||input.LA(1)=='\u0670'||(input.LA(1)>='\u06D6' && input.LA(1)<='\u06E4')||(input.LA(1)>='\u06E7' && input.LA(1)<='\u06E8')||(input.LA(1)>='\u06EA' && input.LA(1)<='\u06ED')||(input.LA(1)>='\u0901' && input.LA(1)<='\u0903')||input.LA(1)=='\u093C'||(input.LA(1)>='\u093E' && input.LA(1)<='\u094D')||(input.LA(1)>='\u0951' && input.LA(1)<='\u0954')||(input.LA(1)>='\u0962' && input.LA(1)<='\u0963')||(input.LA(1)>='\u0981' && input.LA(1)<='\u0983')||input.LA(1)=='\u09BC'||(input.LA(1)>='\u09BE' && input.LA(1)<='\u09C4')||(input.LA(1)>='\u09C7' && input.LA(1)<='\u09C8')||(input.LA(1)>='\u09CB' && input.LA(1)<='\u09CD')||input.LA(1)=='\u09D7'||(input.LA(1)>='\u09E2' && input.LA(1)<='\u09E3')||input.LA(1)=='\u0A02'||input.LA(1)=='\u0A3C'||(input.LA(1)>='\u0A3E' && input.LA(1)<='\u0A42')||(input.LA(1)>='\u0A47' && input.LA(1)<='\u0A48')||(input.LA(1)>='\u0A4B' && input.LA(1)<='\u0A4D')||(input.LA(1)>='\u0A70' && input.LA(1)<='\u0A71')||(input.LA(1)>='\u0A81' && input.LA(1)<='\u0A83')||input.LA(1)=='\u0ABC'||(input.LA(1)>='\u0ABE' && input.LA(1)<='\u0AC5')||(input.LA(1)>='\u0AC7' && input.LA(1)<='\u0AC9')||(input.LA(1)>='\u0ACB' && input.LA(1)<='\u0ACD')||(input.LA(1)>='\u0B01' && input.LA(1)<='\u0B03')||input.LA(1)=='\u0B3C'||(input.LA(1)>='\u0B3E' && input.LA(1)<='\u0B43')||(input.LA(1)>='\u0B47' && input.LA(1)<='\u0B48')||(input.LA(1)>='\u0B4B' && input.LA(1)<='\u0B4D')||(input.LA(1)>='\u0B56' && input.LA(1)<='\u0B57')||(input.LA(1)>='\u0B82' && input.LA(1)<='\u0B83')||(input.LA(1)>='\u0BBE' && input.LA(1)<='\u0BC2')||(input.LA(1)>='\u0BC6' && input.LA(1)<='\u0BC8')||(input.LA(1)>='\u0BCA' && input.LA(1)<='\u0BCD')||input.LA(1)=='\u0BD7'||(input.LA(1)>='\u0C01' && input.LA(1)<='\u0C03')||(input.LA(1)>='\u0C3E' && input.LA(1)<='\u0C44')||(input.LA(1)>='\u0C46' && input.LA(1)<='\u0C48')||(input.LA(1)>='\u0C4A' && input.LA(1)<='\u0C4D')||(input.LA(1)>='\u0C55' && input.LA(1)<='\u0C56')||(input.LA(1)>='\u0C82' && input.LA(1)<='\u0C83')||(input.LA(1)>='\u0CBE' && input.LA(1)<='\u0CC4')||(input.LA(1)>='\u0CC6' && input.LA(1)<='\u0CC8')||(input.LA(1)>='\u0CCA' && input.LA(1)<='\u0CCD')||(input.LA(1)>='\u0CD5' && input.LA(1)<='\u0CD6')||(input.LA(1)>='\u0D02' && input.LA(1)<='\u0D03')||(input.LA(1)>='\u0D3E' && input.LA(1)<='\u0D43')||(input.LA(1)>='\u0D46' && input.LA(1)<='\u0D48')||(input.LA(1)>='\u0D4A' && input.LA(1)<='\u0D4D')||input.LA(1)=='\u0D57'||input.LA(1)=='\u0E31'||(input.LA(1)>='\u0E34' && input.LA(1)<='\u0E3A')||(input.LA(1)>='\u0E47' && input.LA(1)<='\u0E4E')||input.LA(1)=='\u0EB1'||(input.LA(1)>='\u0EB4' && input.LA(1)<='\u0EB9')||(input.LA(1)>='\u0EBB' && input.LA(1)<='\u0EBC')||(input.LA(1)>='\u0EC8' && input.LA(1)<='\u0ECD')||(input.LA(1)>='\u0F18' && input.LA(1)<='\u0F19')||input.LA(1)=='\u0F35'||input.LA(1)=='\u0F37'||input.LA(1)=='\u0F39'||(input.LA(1)>='\u0F3E' && input.LA(1)<='\u0F3F')||(input.LA(1)>='\u0F71' && input.LA(1)<='\u0F84')||(input.LA(1)>='\u0F86' && input.LA(1)<='\u0F8B')||(input.LA(1)>='\u0F90' && input.LA(1)<='\u0F95')||input.LA(1)=='\u0F97'||(input.LA(1)>='\u0F99' && input.LA(1)<='\u0FAD')||(input.LA(1)>='\u0FB1' && input.LA(1)<='\u0FB7')||input.LA(1)=='\u0FB9'||(input.LA(1)>='\u20D0' && input.LA(1)<='\u20DC')||input.LA(1)=='\u20E1'||(input.LA(1)>='\u302A' && input.LA(1)<='\u302F')||(input.LA(1)>='\u3099' && input.LA(1)<='\u309A') ) {
@@ -9365,11 +7156,7 @@ public class XQFTLexer extends Lexer {
     // $ANTLR start Extender
     public final void mExtender() throws RecognitionException {
         try {
-<<<<<<< .mine
-            // etc/XQFT.g:1533:33: ( '\\u00B7' | '\\u02D0' | '\\u02D1' | '\\u0387' | '\\u0640' | '\\u0E46' | '\\u0EC6' | '\\u3005' | '\\u3031' .. '\\u3035' | '\\u309D' .. '\\u309E' | '\\u30FC' .. '\\u30FE' )
-=======
-            // etc/XQFT.g:1547:33: ( '\\u00B7' | '\\u02D0' | '\\u02D1' | '\\u0387' | '\\u0640' | '\\u0E46' | '\\u0EC6' | '\\u3005' | '\\u3031' .. '\\u3035' | '\\u309D' .. '\\u309E' | '\\u30FC' .. '\\u30FE' )
->>>>>>> .r234
+            // etc/XQFT.g:1548:33: ( '\\u00B7' | '\\u02D0' | '\\u02D1' | '\\u0387' | '\\u0640' | '\\u0E46' | '\\u0EC6' | '\\u3005' | '\\u3031' .. '\\u3035' | '\\u309D' .. '\\u309E' | '\\u30FC' .. '\\u30FE' )
             // etc/XQFT.g:
             {
             if ( input.LA(1)=='\u00B7'||(input.LA(1)>='\u02D0' && input.LA(1)<='\u02D1')||input.LA(1)=='\u0387'||input.LA(1)=='\u0640'||input.LA(1)=='\u0E46'||input.LA(1)=='\u0EC6'||input.LA(1)=='\u3005'||(input.LA(1)>='\u3031' && input.LA(1)<='\u3035')||(input.LA(1)>='\u309D' && input.LA(1)<='\u309E')||(input.LA(1)>='\u30FC' && input.LA(1)<='\u30FE') ) {
@@ -9405,13 +7192,8 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred1
     public final void synpred1_fragment() throws RecognitionException {   
-<<<<<<< .mine
-        // etc/XQFT.g:1138:26: ( DoubleLiteral )
-        // etc/XQFT.g:1138:27: DoubleLiteral
-=======
-        // etc/XQFT.g:1152:26: ( DoubleLiteral )
-        // etc/XQFT.g:1152:27: DoubleLiteral
->>>>>>> .r234
+        // etc/XQFT.g:1153:26: ( DoubleLiteral )
+        // etc/XQFT.g:1153:27: DoubleLiteral
         {
         mDoubleLiteral(); if (failed) return ;
 
@@ -9421,13 +7203,8 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred2
     public final void synpred2_fragment() throws RecognitionException {   
-<<<<<<< .mine
-        // etc/XQFT.g:1139:14: ( DecimalLiteral )
-        // etc/XQFT.g:1139:15: DecimalLiteral
-=======
-        // etc/XQFT.g:1153:14: ( DecimalLiteral )
-        // etc/XQFT.g:1153:15: DecimalLiteral
->>>>>>> .r234
+        // etc/XQFT.g:1154:14: ( DecimalLiteral )
+        // etc/XQFT.g:1154:15: DecimalLiteral
         {
         mDecimalLiteral(); if (failed) return ;
 
@@ -9437,13 +7214,8 @@ public class XQFTLexer extends Lexer {
 
     // $ANTLR start synpred3
     public final void synpred3_fragment() throws RecognitionException {   
-<<<<<<< .mine
-        // etc/XQFT.g:1140:12: ( IntegerLiteral )
-        // etc/XQFT.g:1140:13: IntegerLiteral
-=======
-        // etc/XQFT.g:1154:12: ( IntegerLiteral )
-        // etc/XQFT.g:1154:13: IntegerLiteral
->>>>>>> .r234
+        // etc/XQFT.g:1155:12: ( IntegerLiteral )
+        // etc/XQFT.g:1155:13: IntegerLiteral
         {
         mIntegerLiteral(); if (failed) return ;
 
@@ -9451,6 +7223,20 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end synpred3
 
+    public final boolean synpred1() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred1_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
     public final boolean synpred2() {
         backtracking++;
         int start = input.mark();
@@ -9479,51 +7265,37 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred1() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred1_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
 
 
     protected DFA1 dfa1 = new DFA1(this);
     protected DFA26 dfa26 = new DFA26(this);
     static final String DFA1_eotS =
-        "\1\6\1\43\1\uffff\1\51\1\53\146\uffff";
+        "\1\6\1\43\1\uffff\1\51\1\53\145\uffff";
     static final String DFA1_eofS =
-        "\153\uffff";
+        "\152\uffff";
     static final String DFA1_minS =
         "\1\0\1\41\1\43\1\173\1\175\1\43\1\0\1\56\1\0\1\75\1\72\1\57\1\75"+
         "\22\0\1\55\4\uffff\1\60\2\164\1\155\1\165\1\uffff\1\0\1\uffff\1"+
         "\0\21\uffff\1\0\1\uffff\1\0\21\uffff\2\60\2\73\1\160\2\157\10\uffff"+
-        "\1\60\2\0\1\73\1\163\1\164\1\0\2\73\1\uffff";
+        "\1\60\2\0\1\73\1\163\1\164\1\0\2\73";
     static final String DFA1_maxS =
         "\1\ufffe\1\77\1\161\1\173\1\175\1\72\1\0\1\71\1\0\1\76\1\75\1\76"+
         "\1\75\1\0\2\ufffe\17\0\1\133\4\uffff\1\170\2\164\1\160\1\165\1\uffff"+
         "\1\0\1\uffff\1\0\21\uffff\1\0\1\uffff\1\0\21\uffff\1\146\3\73\1"+
-        "\160\2\157\10\uffff\1\146\2\0\1\73\1\163\1\164\1\0\2\73\1\uffff";
+        "\160\2\157\10\uffff\1\146\2\0\1\73\1\163\1\164\1\0\2\73";
     static final String DFA1_acceptS =
-        "\40\uffff\1\4\1\11\1\2\1\35\5\uffff\1\44\1\uffff\1\46\1\uffff\1"+
-        "\7\1\6\1\5\1\15\1\16\1\23\1\5\1\15\1\16\1\10\1\31\1\37\1\33\1\17"+
+        "\40\uffff\1\2\1\4\1\11\1\35\5\uffff\1\44\1\uffff\1\46\1\uffff\1"+
+        "\6\1\7\1\5\1\15\1\16\1\23\1\5\1\15\1\16\1\10\1\31\1\37\1\33\1\17"+
         "\1\32\1\12\1\13\1\uffff\1\20\1\uffff\1\22\1\14\1\21\1\24\1\25\1"+
         "\26\1\27\1\30\1\34\1\36\1\40\1\41\1\42\1\43\1\45\1\3\1\1\7\uffff"+
-        "\1\5\1\15\1\16\1\5\1\15\1\16\1\15\1\16\11\uffff\1\15";
+        "\1\5\1\15\1\16\1\5\1\15\1\16\1\15\1\16\11\uffff";
     static final String DFA1_specialS =
-        "\1\50\1\23\1\10\1\5\1\6\1\53\1\0\1\20\1\11\1\7\1\40\1\64\1\27\1"+
-        "\34\1\44\1\13\1\4\1\57\1\1\1\3\1\46\1\35\1\15\1\42\1\56\1\47\1\70"+
-        "\1\22\1\41\1\63\1\36\1\32\4\uffff\1\33\1\31\1\62\1\54\1\45\1\uffff"+
-        "\1\66\1\uffff\1\37\21\uffff\1\21\1\uffff\1\60\21\uffff\1\30\1\43"+
-        "\1\26\1\14\1\52\1\51\1\67\10\uffff\1\2\1\17\1\12\1\61\1\16\1\55"+
-        "\1\24\1\65\1\25\1\uffff}>";
+        "\1\41\1\67\1\44\1\6\1\37\1\35\1\4\1\7\1\33\1\31\1\25\1\32\1\3\1"+
+        "\55\1\52\1\53\1\26\1\62\1\14\1\16\1\1\1\5\1\11\1\21\1\46\1\50\1"+
+        "\34\1\43\1\64\1\57\1\0\1\22\4\uffff\1\30\1\15\1\13\1\47\1\27\1\uffff"+
+        "\1\40\1\uffff\1\54\21\uffff\1\36\1\uffff\1\61\21\uffff\1\10\1\56"+
+        "\1\2\1\70\1\12\1\17\1\24\10\uffff\1\51\1\66\1\45\1\65\1\20\1\23"+
+        "\1\42\1\60\1\63}>";
     static final String[] DFA1_transitionS = {
             "\1\36\10\uffff\2\15\2\uffff\1\15\22\uffff\1\15\1\14\1\16\1\36"+
             "\1\21\1\36\1\2\1\17\1\5\1\22\1\23\1\24\1\25\1\26\1\7\1\13\12"+
@@ -9566,18 +7338,18 @@ public class XQFTLexer extends Lexer {
             "\2\20\2\36\1\20\121\36\3\20\u0e84\36\1\20\31\36\11\20\27\36"+
             "\124\20\14\36\132\20\12\36\50\20\u1cd3\36\u51a6\20\u0c5a\36"+
             "\u2ba4\20\134\36\u0800\uffff\u1fff\36",
-            "\1\37\15\uffff\1\40\14\uffff\2\41\1\uffff\1\42",
+            "\1\37\15\uffff\1\41\14\uffff\2\42\1\uffff\1\40",
             "\1\44\75\uffff\1\47\5\uffff\1\46\4\uffff\1\45\4\uffff\1\50",
             "\1\52",
             "\1\54",
-            "\1\56\26\uffff\1\55",
+            "\1\55\26\uffff\1\56",
             "\1\uffff",
-            "\1\41\1\uffff\12\66",
+            "\1\42\1\uffff\12\66",
             "\1\uffff",
-            "\2\41",
-            "\1\41\2\uffff\1\41",
-            "\1\41\16\uffff\1\72",
-            "\1\41",
+            "\2\42",
+            "\1\42\2\uffff\1\42",
+            "\1\42\16\uffff\1\72",
+            "\1\42",
             "\1\uffff",
             "\1\75\10\uffff\2\75\2\uffff\1\75\22\uffff\2\75\1\76\ud7dd\75"+
             "\u0800\uffff\u1fff\75",
@@ -9672,8 +7444,7 @@ public class XQFTLexer extends Lexer {
             "\1\151",
             "\1\uffff",
             "\1\143",
-            "\1\143",
-            ""
+            "\1\143"
     };
 
     static final short[] DFA1_eot = DFA.unpackEncodedString(DFA1_eotS);
@@ -9706,534 +7477,12 @@ public class XQFTLexer extends Lexer {
             this.transition = DFA1_transition;
         }
         public String getDescription() {
-<<<<<<< .mine
-            return "974:61: ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi )";
-=======
-            return "988:61: ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi )";
->>>>>>> .r234
+            return "989:61: ({...}? =>n= CDataSectionLEX | {...}? =>n= DirPIConstructor | {...}? =>n= DirCommentConstLEX | {...}? =>n= LENDTAGSi | {...}? =>n= ElementContent | {...}? =>n= PragmaLEX | {...}? =>n= Comment | {...}? =>n= NumberLEX | {...}? =>n= LexSigns | {...}? =>n= S | {...}? =>n= StringLiteral | {...}? =>n= LexLiterals | {...}? =>n= QuotAttributeContent | {...}? =>n= AposAttributeContent | {...}? =>n= RSELFTERMSi | n= QUOTSi | n= DOLLARSi | n= APOSSi | n= LPARSi | n= RPARSi | n= STARSi | n= PLUSSi | n= COMMASi | n= MINUSSi | n= DOTSi | n= SLASHSi | n= COLONSi | n= SEMICOLONSi | n= LTSi | n= EQSi | n= GTSi | n= QUESTIONSi | n= ATSi | n= LBRACKSi | n= RBRACKSi | n= LBRACESi | n= PIPESi | n= RBRACSi )";
         }
         public int specialStateTransition(int s, IntStream input) throws NoViableAltException {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA1_6 = input.LA(1);
-
-                         
-                        int index1_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 51;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 52;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 53;}
-
-                         
-                        input.seek(index1_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA1_18 = input.LA(1);
-
-                         
-                        int index1_18 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 68;}
-
-                         
-                        input.seek(index1_18);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA1_97 = input.LA(1);
-
-                         
-                        int index1_97 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_97==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 103;}
-
-                        else if ( ((LA1_97>='0' && LA1_97<='9')||(LA1_97>='A' && LA1_97<='F')||(LA1_97>='a' && LA1_97<='f')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 97;}
-
-                         
-                        input.seek(index1_97);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA1_19 = input.LA(1);
-
-                         
-                        int index1_19 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 69;}
-
-                         
-                        input.seek(index1_19);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA1_16 = input.LA(1);
-
-                         
-                        int index1_16 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 66;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_16);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA1_3 = input.LA(1);
-
-                         
-                        int index1_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_3=='{') && (((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))))) {s = 42;}
-
-                        else s = 41;
-
-                         
-                        input.seek(index1_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 6 : 
-                        int LA1_4 = input.LA(1);
-
-                         
-                        int index1_4 = input.index();
-                        input.rewind();
-                        s = -1;
-<<<<<<< .mine
-                        if ( (LA1_4=='}') && (((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))))) {s = 44;}
-=======
-                        if ( (LA1_3=='{') && (((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))))) {s = 42;}
->>>>>>> .r234
-
-                        else s = 43;
-
-                         
-                        input.seek(index1_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 7 : 
-                        int LA1_9 = input.LA(1);
-
-                         
-                        int index1_9 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( ((LA1_9>='=' && LA1_9<='>')) && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 56;}
-
-                         
-                        input.seek(index1_9);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 8 : 
-                        int LA1_2 = input.LA(1);
-
-                         
-                        int index1_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_2=='#') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 36;}
-
-                        else if ( (LA1_2=='l') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 37;}
-
-                        else if ( (LA1_2=='g') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 38;}
-
-                        else if ( (LA1_2=='a') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 39;}
-
-                        else if ( (LA1_2=='q') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 40;}
-
-                         
-                        input.seek(index1_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 9 : 
-                        int LA1_8 = input.LA(1);
-
-                         
-                        int index1_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.DEFAULT) ) {s = 54;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_8);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 10 : 
-                        int LA1_99 = input.LA(1);
-
-                         
-                        int index1_99 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_99);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 11 : 
-                        int LA1_15 = input.LA(1);
-
-                         
-                        int index1_15 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_15=='\u0000'||(LA1_15>='\t' && LA1_15<='\n')||LA1_15=='\r'||(LA1_15>=' ' && LA1_15<='&')||(LA1_15>='(' && LA1_15<='\uD7FF')||(LA1_15>='\uE000' && LA1_15<='\uFFFE')) && (state==State.DEFAULT)) {s = 61;}
-
-                        else if ( (LA1_15=='\'') && (((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||state==State.DEFAULT||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))))) {s = 64;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (true) ) {s = 65;}
-
-                         
-                        input.seek(index1_15);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 12 : 
-                        int LA1_85 = input.LA(1);
-
-                         
-                        int index1_85 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_85==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 99;}
-
-                         
-                        input.seek(index1_85);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 13 : 
-                        int LA1_22 = input.LA(1);
-
-                         
-                        int index1_22 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 72;}
-
-                         
-                        input.seek(index1_22);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 14 : 
-                        int LA1_101 = input.LA(1);
-
-                         
-                        int index1_101 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_101=='s') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 104;}
-
-                         
-                        input.seek(index1_101);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 15 : 
-                        int LA1_98 = input.LA(1);
-
-                         
-                        int index1_98 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_98);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 16 : 
-                        int LA1_7 = input.LA(1);
-
-                         
-                        int index1_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_7=='.') && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( ((LA1_7>='0' && LA1_7<='9')) && (state==State.DEFAULT)) {s = 54;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 55;}
-
-                         
-                        input.seek(index1_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 17 : 
-                        int LA1_62 = input.LA(1);
-
-                         
-                        int index1_62 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.DEFAULT) ) {s = 61;}
-
-                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))) ) {s = 95;}
-
-                         
-                        input.seek(index1_62);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 18 : 
-                        int LA1_27 = input.LA(1);
-
-                         
-                        int index1_27 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 77;}
-
-                         
-                        input.seek(index1_27);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 19 : 
-                        int LA1_1 = input.LA(1);
-
-                         
-                        int index1_1 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_1=='!') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 31;}
-
-                        else if ( (LA1_1=='/') && (state==State.IN_ELEMENT)) {s = 32;}
-
-                        else if ( ((LA1_1>='<' && LA1_1<='=')) && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( (LA1_1=='?') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 34;}
-
-                        else s = 35;
-
-                         
-                        input.seek(index1_1);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 20 : 
-                        int LA1_103 = input.LA(1);
-
-                         
-                        int index1_103 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 106;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_103);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 21 : 
-                        int LA1_105 = input.LA(1);
-
-                         
-                        int index1_105 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_105==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 99;}
-
-                         
-                        input.seek(index1_105);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 22 : 
-                        int LA1_84 = input.LA(1);
-
-                         
-                        int index1_84 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_84==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 99;}
-
-                         
-                        input.seek(index1_84);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 23 : 
-                        int LA1_12 = input.LA(1);
-
-                         
-                        int index1_12 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_12=='=') && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_12);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 24 : 
-                        int LA1_82 = input.LA(1);
-
-                         
-                        int index1_82 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( ((LA1_82>='0' && LA1_82<='9')||(LA1_82>='A' && LA1_82<='F')||(LA1_82>='a' && LA1_82<='f')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 97;}
-
-                         
-                        input.seek(index1_82);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 25 : 
-                        int LA1_37 = input.LA(1);
-
-                         
-                        int index1_37 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_37=='t') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 84;}
-
-                         
-                        input.seek(index1_37);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 26 : 
-                        int LA1_31 = input.LA(1);
-
-                         
-                        int index1_31 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_31=='-') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 80;}
-
-                        else if ( (LA1_31=='[') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 81;}
-
-                         
-                        input.seek(index1_31);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 27 : 
-                        int LA1_36 = input.LA(1);
-
-                         
-                        int index1_36 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_36=='x') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 82;}
-
-                        else if ( ((LA1_36>='0' && LA1_36<='9')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 83;}
-
-                         
-                        input.seek(index1_36);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 28 : 
-                        int LA1_13 = input.LA(1);
-
-                         
-                        int index1_13 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 60;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_13);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 29 : 
-                        int LA1_21 = input.LA(1);
-
-                         
-                        int index1_21 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 71;}
-
-                         
-                        input.seek(index1_21);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 30 : 
                         int LA1_30 = input.LA(1);
 
                          
@@ -10250,136 +7499,7 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_30);
                         if ( s>=0 ) return s;
                         break;
-                    case 31 : 
-                        int LA1_44 = input.LA(1);
-
-                         
-                        int index1_44 = input.index();
-                        input.rewind();
-                        s = -1;
-<<<<<<< .mine
-                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 92;}
-=======
-                        if ( (LA1_4=='}') && (((state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))))) {s = 44;}
->>>>>>> .r234
-
-                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 93;}
-
-                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 94;}
-
-                         
-                        input.seek(index1_44);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 32 : 
-                        int LA1_10 = input.LA(1);
-
-                         
-                        int index1_10 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_10==':'||LA1_10=='=') && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 57;}
-
-                         
-                        input.seek(index1_10);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 33 : 
-                        int LA1_28 = input.LA(1);
-
-                         
-                        int index1_28 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 78;}
-
-                         
-                        input.seek(index1_28);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 34 : 
-                        int LA1_23 = input.LA(1);
-
-                         
-                        int index1_23 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 73;}
-
-                         
-                        input.seek(index1_23);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 35 : 
-                        int LA1_83 = input.LA(1);
-
-                         
-                        int index1_83 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_83==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 98;}
-
-                        else if ( ((LA1_83>='0' && LA1_83<='9')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 83;}
-
-                         
-                        input.seek(index1_83);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 36 : 
-                        int LA1_14 = input.LA(1);
-
-                         
-                        int index1_14 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_14=='\u0000'||(LA1_14>='\t' && LA1_14<='\n')||LA1_14=='\r'||(LA1_14>=' ' && LA1_14<='!')||(LA1_14>='#' && LA1_14<='\uD7FF')||(LA1_14>='\uE000' && LA1_14<='\uFFFE')) && (state==State.DEFAULT)) {s = 61;}
-
-                        else if ( (LA1_14=='\"') && (((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||state==State.DEFAULT||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))))) {s = 62;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 63;}
-
-                         
-                        input.seek(index1_14);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 37 : 
-                        int LA1_40 = input.LA(1);
-
-                         
-                        int index1_40 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_40=='u') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 88;}
-
-                         
-                        input.seek(index1_40);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 38 : 
+                    case 1 : 
                         int LA1_20 = input.LA(1);
 
                          
@@ -10398,11 +7518,60 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_20);
                         if ( s>=0 ) return s;
                         break;
-                    case 39 : 
-                        int LA1_25 = input.LA(1);
+                    case 2 : 
+                        int LA1_84 = input.LA(1);
 
                          
-                        int index1_25 = input.index();
+                        int index1_84 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_84==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 99;}
+
+                         
+                        input.seek(index1_84);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA1_12 = input.LA(1);
+
+                         
+                        int index1_12 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_12=='=') && (state==State.DEFAULT)) {s = 34;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_12);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA1_6 = input.LA(1);
+
+                         
+                        int index1_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 51;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 52;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 53;}
+
+                         
+                        input.seek(index1_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA1_21 = input.LA(1);
+
+                         
+                        int index1_21 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 47;}
@@ -10411,13 +7580,466 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
 
-                        else if ( (true) ) {s = 75;}
+                        else if ( (true) ) {s = 71;}
 
                          
-                        input.seek(index1_25);
+                        input.seek(index1_21);
                         if ( s>=0 ) return s;
                         break;
-                    case 40 : 
+                    case 6 : 
+                        int LA1_3 = input.LA(1);
+
+                         
+                        int index1_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_3=='{') && (((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))))) {s = 42;}
+
+                        else s = 41;
+
+                         
+                        input.seek(index1_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA1_7 = input.LA(1);
+
+                         
+                        int index1_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_7=='.') && (state==State.DEFAULT)) {s = 34;}
+
+                        else if ( ((LA1_7>='0' && LA1_7<='9')) && (state==State.DEFAULT)) {s = 54;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 55;}
+
+                         
+                        input.seek(index1_7);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 8 : 
+                        int LA1_82 = input.LA(1);
+
+                         
+                        int index1_82 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((LA1_82>='0' && LA1_82<='9')||(LA1_82>='A' && LA1_82<='F')||(LA1_82>='a' && LA1_82<='f')) && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 97;}
+
+                         
+                        input.seek(index1_82);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 9 : 
+                        int LA1_22 = input.LA(1);
+
+                         
+                        int index1_22 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 72;}
+
+                         
+                        input.seek(index1_22);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 10 : 
+                        int LA1_86 = input.LA(1);
+
+                         
+                        int index1_86 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_86=='p') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 100;}
+
+                         
+                        input.seek(index1_86);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 11 : 
+                        int LA1_38 = input.LA(1);
+
+                         
+                        int index1_38 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_38=='t') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 85;}
+
+                         
+                        input.seek(index1_38);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 12 : 
+                        int LA1_18 = input.LA(1);
+
+                         
+                        int index1_18 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 68;}
+
+                         
+                        input.seek(index1_18);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 13 : 
+                        int LA1_37 = input.LA(1);
+
+                         
+                        int index1_37 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_37=='t') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 84;}
+
+                         
+                        input.seek(index1_37);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 14 : 
+                        int LA1_19 = input.LA(1);
+
+                         
+                        int index1_19 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 69;}
+
+                         
+                        input.seek(index1_19);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 15 : 
+                        int LA1_87 = input.LA(1);
+
+                         
+                        int index1_87 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_87=='o') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 101;}
+
+                         
+                        input.seek(index1_87);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 16 : 
+                        int LA1_101 = input.LA(1);
+
+                         
+                        int index1_101 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_101=='s') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 104;}
+
+                         
+                        input.seek(index1_101);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 17 : 
+                        int LA1_23 = input.LA(1);
+
+                         
+                        int index1_23 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 73;}
+
+                         
+                        input.seek(index1_23);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 18 : 
+                        int LA1_31 = input.LA(1);
+
+                         
+                        int index1_31 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_31=='-') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 80;}
+
+                        else if ( (LA1_31=='[') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 81;}
+
+                         
+                        input.seek(index1_31);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 19 : 
+                        int LA1_102 = input.LA(1);
+
+                         
+                        int index1_102 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_102=='t') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 105;}
+
+                         
+                        input.seek(index1_102);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 20 : 
+                        int LA1_88 = input.LA(1);
+
+                         
+                        int index1_88 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_88=='o') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 102;}
+
+                         
+                        input.seek(index1_88);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 21 : 
+                        int LA1_10 = input.LA(1);
+
+                         
+                        int index1_10 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_10==':'||LA1_10=='=') && (state==State.DEFAULT)) {s = 34;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 57;}
+
+                         
+                        input.seek(index1_10);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 22 : 
+                        int LA1_16 = input.LA(1);
+
+                         
+                        int index1_16 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 66;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_16);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 23 : 
+                        int LA1_40 = input.LA(1);
+
+                         
+                        int index1_40 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_40=='u') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 88;}
+
+                         
+                        input.seek(index1_40);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 24 : 
+                        int LA1_36 = input.LA(1);
+
+                         
+                        int index1_36 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_36=='x') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 82;}
+
+                        else if ( ((LA1_36>='0' && LA1_36<='9')) && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 83;}
+
+                         
+                        input.seek(index1_36);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 25 : 
+                        int LA1_9 = input.LA(1);
+
+                         
+                        int index1_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((LA1_9>='=' && LA1_9<='>')) && (state==State.DEFAULT)) {s = 34;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 56;}
+
+                         
+                        input.seek(index1_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 26 : 
+                        int LA1_11 = input.LA(1);
+
+                         
+                        int index1_11 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_11=='>') && (state==State.IN_TAG)) {s = 58;}
+
+                        else if ( (LA1_11=='/') && (state==State.DEFAULT)) {s = 34;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 59;}
+
+                         
+                        input.seek(index1_11);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 27 : 
+                        int LA1_8 = input.LA(1);
+
+                         
+                        int index1_8 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.DEFAULT) ) {s = 54;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_8);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 28 : 
+                        int LA1_26 = input.LA(1);
+
+                         
+                        int index1_26 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 76;}
+
+                         
+                        input.seek(index1_26);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 29 : 
+                        int LA1_5 = input.LA(1);
+
+                         
+                        int index1_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_5=='#') && (state==State.DEFAULT)) {s = 45;}
+
+                        else if ( (LA1_5==':') && (state==State.DEFAULT)) {s = 46;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 50;}
+
+                         
+                        input.seek(index1_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 30 : 
+                        int LA1_62 = input.LA(1);
+
+                         
+                        int index1_62 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.DEFAULT) ) {s = 61;}
+
+                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))) ) {s = 95;}
+
+                         
+                        input.seek(index1_62);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 31 : 
+                        int LA1_4 = input.LA(1);
+
+                         
+                        int index1_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_4=='}') && (((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))))) {s = 44;}
+
+                        else s = 43;
+
+                         
+                        input.seek(index1_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 32 : 
+                        int LA1_42 = input.LA(1);
+
+                         
+                        int index1_42 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 89;}
+
+                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 90;}
+
+                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 91;}
+
+                         
+                        input.seek(index1_42);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 33 : 
                         int LA1_0 = input.LA(1);
 
                          
@@ -10426,7 +8048,7 @@ public class XQFTLexer extends Lexer {
                         s = -1;
                         if ( (LA1_0=='<') ) {s = 1;}
 
-                        else if ( (LA1_0=='&') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 2;}
+                        else if ( (LA1_0=='&') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 2;}
 
                         else if ( (LA1_0=='{') ) {s = 3;}
 
@@ -10436,7 +8058,7 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (LA1_0=='.') ) {s = 7;}
 
-                        else if ( ((LA1_0>='0' && LA1_0<='9')) && ((state==State.DEFAULT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 8;}
+                        else if ( ((LA1_0>='0' && LA1_0<='9')) && ((state==State.IN_ELEMENT||state==State.DEFAULT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 8;}
 
                         else if ( (LA1_0=='>') ) {s = 9;}
 
@@ -10444,15 +8066,15 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (LA1_0=='/') ) {s = 11;}
 
-                        else if ( (LA1_0=='!') && ((state==State.DEFAULT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 12;}
+                        else if ( (LA1_0=='!') && ((state==State.IN_ELEMENT||state==State.DEFAULT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 12;}
 
-                        else if ( ((LA1_0>='\t' && LA1_0<='\n')||LA1_0=='\r'||LA1_0==' ') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT||(state==State.DEFAULT || state==State.IN_TAG)))) {s = 13;}
+                        else if ( ((LA1_0>='\t' && LA1_0<='\n')||LA1_0=='\r'||LA1_0==' ') && (((state==State.DEFAULT || state==State.IN_TAG)||state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 13;}
 
                         else if ( (LA1_0=='\"') ) {s = 14;}
 
                         else if ( (LA1_0=='\'') ) {s = 15;}
 
-                        else if ( ((LA1_0>='A' && LA1_0<='Z')||LA1_0=='_'||(LA1_0>='a' && LA1_0<='z')||(LA1_0>='\u00C0' && LA1_0<='\u00D6')||(LA1_0>='\u00D8' && LA1_0<='\u00F6')||(LA1_0>='\u00F8' && LA1_0<='\u0131')||(LA1_0>='\u0134' && LA1_0<='\u013E')||(LA1_0>='\u0141' && LA1_0<='\u0148')||(LA1_0>='\u014A' && LA1_0<='\u017E')||(LA1_0>='\u0180' && LA1_0<='\u01C3')||(LA1_0>='\u01CD' && LA1_0<='\u01F0')||(LA1_0>='\u01F4' && LA1_0<='\u01F5')||(LA1_0>='\u01FA' && LA1_0<='\u0217')||(LA1_0>='\u0250' && LA1_0<='\u02A8')||(LA1_0>='\u02BB' && LA1_0<='\u02C1')||LA1_0=='\u0386'||(LA1_0>='\u0388' && LA1_0<='\u038A')||LA1_0=='\u038C'||(LA1_0>='\u038E' && LA1_0<='\u03A1')||(LA1_0>='\u03A3' && LA1_0<='\u03CE')||(LA1_0>='\u03D0' && LA1_0<='\u03D6')||LA1_0=='\u03DA'||LA1_0=='\u03DC'||LA1_0=='\u03DE'||LA1_0=='\u03E0'||(LA1_0>='\u03E2' && LA1_0<='\u03F3')||(LA1_0>='\u0401' && LA1_0<='\u040C')||(LA1_0>='\u040E' && LA1_0<='\u044F')||(LA1_0>='\u0451' && LA1_0<='\u045C')||(LA1_0>='\u045E' && LA1_0<='\u0481')||(LA1_0>='\u0490' && LA1_0<='\u04C4')||(LA1_0>='\u04C7' && LA1_0<='\u04C8')||(LA1_0>='\u04CB' && LA1_0<='\u04CC')||(LA1_0>='\u04D0' && LA1_0<='\u04EB')||(LA1_0>='\u04EE' && LA1_0<='\u04F5')||(LA1_0>='\u04F8' && LA1_0<='\u04F9')||(LA1_0>='\u0531' && LA1_0<='\u0556')||LA1_0=='\u0559'||(LA1_0>='\u0561' && LA1_0<='\u0586')||(LA1_0>='\u05D0' && LA1_0<='\u05EA')||(LA1_0>='\u05F0' && LA1_0<='\u05F2')||(LA1_0>='\u0621' && LA1_0<='\u063A')||(LA1_0>='\u0641' && LA1_0<='\u064A')||(LA1_0>='\u0671' && LA1_0<='\u06B7')||(LA1_0>='\u06BA' && LA1_0<='\u06BE')||(LA1_0>='\u06C0' && LA1_0<='\u06CE')||(LA1_0>='\u06D0' && LA1_0<='\u06D3')||LA1_0=='\u06D5'||(LA1_0>='\u06E5' && LA1_0<='\u06E6')||(LA1_0>='\u0905' && LA1_0<='\u0939')||LA1_0=='\u093D'||(LA1_0>='\u0958' && LA1_0<='\u0961')||(LA1_0>='\u0985' && LA1_0<='\u098C')||(LA1_0>='\u098F' && LA1_0<='\u0990')||(LA1_0>='\u0993' && LA1_0<='\u09A8')||(LA1_0>='\u09AA' && LA1_0<='\u09B0')||LA1_0=='\u09B2'||(LA1_0>='\u09B6' && LA1_0<='\u09B9')||(LA1_0>='\u09DC' && LA1_0<='\u09DD')||(LA1_0>='\u09DF' && LA1_0<='\u09E1')||(LA1_0>='\u09F0' && LA1_0<='\u09F1')||(LA1_0>='\u0A05' && LA1_0<='\u0A0A')||(LA1_0>='\u0A0F' && LA1_0<='\u0A10')||(LA1_0>='\u0A13' && LA1_0<='\u0A28')||(LA1_0>='\u0A2A' && LA1_0<='\u0A30')||(LA1_0>='\u0A32' && LA1_0<='\u0A33')||(LA1_0>='\u0A35' && LA1_0<='\u0A36')||(LA1_0>='\u0A38' && LA1_0<='\u0A39')||(LA1_0>='\u0A59' && LA1_0<='\u0A5C')||LA1_0=='\u0A5E'||(LA1_0>='\u0A72' && LA1_0<='\u0A74')||(LA1_0>='\u0A85' && LA1_0<='\u0A8B')||LA1_0=='\u0A8D'||(LA1_0>='\u0A8F' && LA1_0<='\u0A91')||(LA1_0>='\u0A93' && LA1_0<='\u0AA8')||(LA1_0>='\u0AAA' && LA1_0<='\u0AB0')||(LA1_0>='\u0AB2' && LA1_0<='\u0AB3')||(LA1_0>='\u0AB5' && LA1_0<='\u0AB9')||LA1_0=='\u0ABD'||LA1_0=='\u0AE0'||(LA1_0>='\u0B05' && LA1_0<='\u0B0C')||(LA1_0>='\u0B0F' && LA1_0<='\u0B10')||(LA1_0>='\u0B13' && LA1_0<='\u0B28')||(LA1_0>='\u0B2A' && LA1_0<='\u0B30')||(LA1_0>='\u0B32' && LA1_0<='\u0B33')||(LA1_0>='\u0B36' && LA1_0<='\u0B39')||LA1_0=='\u0B3D'||(LA1_0>='\u0B5C' && LA1_0<='\u0B5D')||(LA1_0>='\u0B5F' && LA1_0<='\u0B61')||(LA1_0>='\u0B85' && LA1_0<='\u0B8A')||(LA1_0>='\u0B8E' && LA1_0<='\u0B90')||(LA1_0>='\u0B92' && LA1_0<='\u0B95')||(LA1_0>='\u0B99' && LA1_0<='\u0B9A')||LA1_0=='\u0B9C'||(LA1_0>='\u0B9E' && LA1_0<='\u0B9F')||(LA1_0>='\u0BA3' && LA1_0<='\u0BA4')||(LA1_0>='\u0BA8' && LA1_0<='\u0BAA')||(LA1_0>='\u0BAE' && LA1_0<='\u0BB5')||(LA1_0>='\u0BB7' && LA1_0<='\u0BB9')||(LA1_0>='\u0C05' && LA1_0<='\u0C0C')||(LA1_0>='\u0C0E' && LA1_0<='\u0C10')||(LA1_0>='\u0C12' && LA1_0<='\u0C28')||(LA1_0>='\u0C2A' && LA1_0<='\u0C33')||(LA1_0>='\u0C35' && LA1_0<='\u0C39')||(LA1_0>='\u0C60' && LA1_0<='\u0C61')||(LA1_0>='\u0C85' && LA1_0<='\u0C8C')||(LA1_0>='\u0C8E' && LA1_0<='\u0C90')||(LA1_0>='\u0C92' && LA1_0<='\u0CA8')||(LA1_0>='\u0CAA' && LA1_0<='\u0CB3')||(LA1_0>='\u0CB5' && LA1_0<='\u0CB9')||LA1_0=='\u0CDE'||(LA1_0>='\u0CE0' && LA1_0<='\u0CE1')||(LA1_0>='\u0D05' && LA1_0<='\u0D0C')||(LA1_0>='\u0D0E' && LA1_0<='\u0D10')||(LA1_0>='\u0D12' && LA1_0<='\u0D28')||(LA1_0>='\u0D2A' && LA1_0<='\u0D39')||(LA1_0>='\u0D60' && LA1_0<='\u0D61')||(LA1_0>='\u0E01' && LA1_0<='\u0E2E')||LA1_0=='\u0E30'||(LA1_0>='\u0E32' && LA1_0<='\u0E33')||(LA1_0>='\u0E40' && LA1_0<='\u0E45')||(LA1_0>='\u0E81' && LA1_0<='\u0E82')||LA1_0=='\u0E84'||(LA1_0>='\u0E87' && LA1_0<='\u0E88')||LA1_0=='\u0E8A'||LA1_0=='\u0E8D'||(LA1_0>='\u0E94' && LA1_0<='\u0E97')||(LA1_0>='\u0E99' && LA1_0<='\u0E9F')||(LA1_0>='\u0EA1' && LA1_0<='\u0EA3')||LA1_0=='\u0EA5'||LA1_0=='\u0EA7'||(LA1_0>='\u0EAA' && LA1_0<='\u0EAB')||(LA1_0>='\u0EAD' && LA1_0<='\u0EAE')||LA1_0=='\u0EB0'||(LA1_0>='\u0EB2' && LA1_0<='\u0EB3')||LA1_0=='\u0EBD'||(LA1_0>='\u0EC0' && LA1_0<='\u0EC4')||(LA1_0>='\u0F40' && LA1_0<='\u0F47')||(LA1_0>='\u0F49' && LA1_0<='\u0F69')||(LA1_0>='\u10A0' && LA1_0<='\u10C5')||(LA1_0>='\u10D0' && LA1_0<='\u10F6')||LA1_0=='\u1100'||(LA1_0>='\u1102' && LA1_0<='\u1103')||(LA1_0>='\u1105' && LA1_0<='\u1107')||LA1_0=='\u1109'||(LA1_0>='\u110B' && LA1_0<='\u110C')||(LA1_0>='\u110E' && LA1_0<='\u1112')||LA1_0=='\u113C'||LA1_0=='\u113E'||LA1_0=='\u1140'||LA1_0=='\u114C'||LA1_0=='\u114E'||LA1_0=='\u1150'||(LA1_0>='\u1154' && LA1_0<='\u1155')||LA1_0=='\u1159'||(LA1_0>='\u115F' && LA1_0<='\u1161')||LA1_0=='\u1163'||LA1_0=='\u1165'||LA1_0=='\u1167'||LA1_0=='\u1169'||(LA1_0>='\u116D' && LA1_0<='\u116E')||(LA1_0>='\u1172' && LA1_0<='\u1173')||LA1_0=='\u1175'||LA1_0=='\u119E'||LA1_0=='\u11A8'||LA1_0=='\u11AB'||(LA1_0>='\u11AE' && LA1_0<='\u11AF')||(LA1_0>='\u11B7' && LA1_0<='\u11B8')||LA1_0=='\u11BA'||(LA1_0>='\u11BC' && LA1_0<='\u11C2')||LA1_0=='\u11EB'||LA1_0=='\u11F0'||LA1_0=='\u11F9'||(LA1_0>='\u1E00' && LA1_0<='\u1E9B')||(LA1_0>='\u1EA0' && LA1_0<='\u1EF9')||(LA1_0>='\u1F00' && LA1_0<='\u1F15')||(LA1_0>='\u1F18' && LA1_0<='\u1F1D')||(LA1_0>='\u1F20' && LA1_0<='\u1F45')||(LA1_0>='\u1F48' && LA1_0<='\u1F4D')||(LA1_0>='\u1F50' && LA1_0<='\u1F57')||LA1_0=='\u1F59'||LA1_0=='\u1F5B'||LA1_0=='\u1F5D'||(LA1_0>='\u1F5F' && LA1_0<='\u1F7D')||(LA1_0>='\u1F80' && LA1_0<='\u1FB4')||(LA1_0>='\u1FB6' && LA1_0<='\u1FBC')||LA1_0=='\u1FBE'||(LA1_0>='\u1FC2' && LA1_0<='\u1FC4')||(LA1_0>='\u1FC6' && LA1_0<='\u1FCC')||(LA1_0>='\u1FD0' && LA1_0<='\u1FD3')||(LA1_0>='\u1FD6' && LA1_0<='\u1FDB')||(LA1_0>='\u1FE0' && LA1_0<='\u1FEC')||(LA1_0>='\u1FF2' && LA1_0<='\u1FF4')||(LA1_0>='\u1FF6' && LA1_0<='\u1FFC')||LA1_0=='\u2126'||(LA1_0>='\u212A' && LA1_0<='\u212B')||LA1_0=='\u212E'||(LA1_0>='\u2180' && LA1_0<='\u2182')||LA1_0=='\u3007'||(LA1_0>='\u3021' && LA1_0<='\u3029')||(LA1_0>='\u3041' && LA1_0<='\u3094')||(LA1_0>='\u30A1' && LA1_0<='\u30FA')||(LA1_0>='\u3105' && LA1_0<='\u312C')||(LA1_0>='\u4E00' && LA1_0<='\u9FA5')||(LA1_0>='\uAC00' && LA1_0<='\uD7A3')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT||(state==State.DEFAULT || state==State.IN_TAG)))) {s = 16;}
+                        else if ( ((LA1_0>='A' && LA1_0<='Z')||LA1_0=='_'||(LA1_0>='a' && LA1_0<='z')||(LA1_0>='\u00C0' && LA1_0<='\u00D6')||(LA1_0>='\u00D8' && LA1_0<='\u00F6')||(LA1_0>='\u00F8' && LA1_0<='\u0131')||(LA1_0>='\u0134' && LA1_0<='\u013E')||(LA1_0>='\u0141' && LA1_0<='\u0148')||(LA1_0>='\u014A' && LA1_0<='\u017E')||(LA1_0>='\u0180' && LA1_0<='\u01C3')||(LA1_0>='\u01CD' && LA1_0<='\u01F0')||(LA1_0>='\u01F4' && LA1_0<='\u01F5')||(LA1_0>='\u01FA' && LA1_0<='\u0217')||(LA1_0>='\u0250' && LA1_0<='\u02A8')||(LA1_0>='\u02BB' && LA1_0<='\u02C1')||LA1_0=='\u0386'||(LA1_0>='\u0388' && LA1_0<='\u038A')||LA1_0=='\u038C'||(LA1_0>='\u038E' && LA1_0<='\u03A1')||(LA1_0>='\u03A3' && LA1_0<='\u03CE')||(LA1_0>='\u03D0' && LA1_0<='\u03D6')||LA1_0=='\u03DA'||LA1_0=='\u03DC'||LA1_0=='\u03DE'||LA1_0=='\u03E0'||(LA1_0>='\u03E2' && LA1_0<='\u03F3')||(LA1_0>='\u0401' && LA1_0<='\u040C')||(LA1_0>='\u040E' && LA1_0<='\u044F')||(LA1_0>='\u0451' && LA1_0<='\u045C')||(LA1_0>='\u045E' && LA1_0<='\u0481')||(LA1_0>='\u0490' && LA1_0<='\u04C4')||(LA1_0>='\u04C7' && LA1_0<='\u04C8')||(LA1_0>='\u04CB' && LA1_0<='\u04CC')||(LA1_0>='\u04D0' && LA1_0<='\u04EB')||(LA1_0>='\u04EE' && LA1_0<='\u04F5')||(LA1_0>='\u04F8' && LA1_0<='\u04F9')||(LA1_0>='\u0531' && LA1_0<='\u0556')||LA1_0=='\u0559'||(LA1_0>='\u0561' && LA1_0<='\u0586')||(LA1_0>='\u05D0' && LA1_0<='\u05EA')||(LA1_0>='\u05F0' && LA1_0<='\u05F2')||(LA1_0>='\u0621' && LA1_0<='\u063A')||(LA1_0>='\u0641' && LA1_0<='\u064A')||(LA1_0>='\u0671' && LA1_0<='\u06B7')||(LA1_0>='\u06BA' && LA1_0<='\u06BE')||(LA1_0>='\u06C0' && LA1_0<='\u06CE')||(LA1_0>='\u06D0' && LA1_0<='\u06D3')||LA1_0=='\u06D5'||(LA1_0>='\u06E5' && LA1_0<='\u06E6')||(LA1_0>='\u0905' && LA1_0<='\u0939')||LA1_0=='\u093D'||(LA1_0>='\u0958' && LA1_0<='\u0961')||(LA1_0>='\u0985' && LA1_0<='\u098C')||(LA1_0>='\u098F' && LA1_0<='\u0990')||(LA1_0>='\u0993' && LA1_0<='\u09A8')||(LA1_0>='\u09AA' && LA1_0<='\u09B0')||LA1_0=='\u09B2'||(LA1_0>='\u09B6' && LA1_0<='\u09B9')||(LA1_0>='\u09DC' && LA1_0<='\u09DD')||(LA1_0>='\u09DF' && LA1_0<='\u09E1')||(LA1_0>='\u09F0' && LA1_0<='\u09F1')||(LA1_0>='\u0A05' && LA1_0<='\u0A0A')||(LA1_0>='\u0A0F' && LA1_0<='\u0A10')||(LA1_0>='\u0A13' && LA1_0<='\u0A28')||(LA1_0>='\u0A2A' && LA1_0<='\u0A30')||(LA1_0>='\u0A32' && LA1_0<='\u0A33')||(LA1_0>='\u0A35' && LA1_0<='\u0A36')||(LA1_0>='\u0A38' && LA1_0<='\u0A39')||(LA1_0>='\u0A59' && LA1_0<='\u0A5C')||LA1_0=='\u0A5E'||(LA1_0>='\u0A72' && LA1_0<='\u0A74')||(LA1_0>='\u0A85' && LA1_0<='\u0A8B')||LA1_0=='\u0A8D'||(LA1_0>='\u0A8F' && LA1_0<='\u0A91')||(LA1_0>='\u0A93' && LA1_0<='\u0AA8')||(LA1_0>='\u0AAA' && LA1_0<='\u0AB0')||(LA1_0>='\u0AB2' && LA1_0<='\u0AB3')||(LA1_0>='\u0AB5' && LA1_0<='\u0AB9')||LA1_0=='\u0ABD'||LA1_0=='\u0AE0'||(LA1_0>='\u0B05' && LA1_0<='\u0B0C')||(LA1_0>='\u0B0F' && LA1_0<='\u0B10')||(LA1_0>='\u0B13' && LA1_0<='\u0B28')||(LA1_0>='\u0B2A' && LA1_0<='\u0B30')||(LA1_0>='\u0B32' && LA1_0<='\u0B33')||(LA1_0>='\u0B36' && LA1_0<='\u0B39')||LA1_0=='\u0B3D'||(LA1_0>='\u0B5C' && LA1_0<='\u0B5D')||(LA1_0>='\u0B5F' && LA1_0<='\u0B61')||(LA1_0>='\u0B85' && LA1_0<='\u0B8A')||(LA1_0>='\u0B8E' && LA1_0<='\u0B90')||(LA1_0>='\u0B92' && LA1_0<='\u0B95')||(LA1_0>='\u0B99' && LA1_0<='\u0B9A')||LA1_0=='\u0B9C'||(LA1_0>='\u0B9E' && LA1_0<='\u0B9F')||(LA1_0>='\u0BA3' && LA1_0<='\u0BA4')||(LA1_0>='\u0BA8' && LA1_0<='\u0BAA')||(LA1_0>='\u0BAE' && LA1_0<='\u0BB5')||(LA1_0>='\u0BB7' && LA1_0<='\u0BB9')||(LA1_0>='\u0C05' && LA1_0<='\u0C0C')||(LA1_0>='\u0C0E' && LA1_0<='\u0C10')||(LA1_0>='\u0C12' && LA1_0<='\u0C28')||(LA1_0>='\u0C2A' && LA1_0<='\u0C33')||(LA1_0>='\u0C35' && LA1_0<='\u0C39')||(LA1_0>='\u0C60' && LA1_0<='\u0C61')||(LA1_0>='\u0C85' && LA1_0<='\u0C8C')||(LA1_0>='\u0C8E' && LA1_0<='\u0C90')||(LA1_0>='\u0C92' && LA1_0<='\u0CA8')||(LA1_0>='\u0CAA' && LA1_0<='\u0CB3')||(LA1_0>='\u0CB5' && LA1_0<='\u0CB9')||LA1_0=='\u0CDE'||(LA1_0>='\u0CE0' && LA1_0<='\u0CE1')||(LA1_0>='\u0D05' && LA1_0<='\u0D0C')||(LA1_0>='\u0D0E' && LA1_0<='\u0D10')||(LA1_0>='\u0D12' && LA1_0<='\u0D28')||(LA1_0>='\u0D2A' && LA1_0<='\u0D39')||(LA1_0>='\u0D60' && LA1_0<='\u0D61')||(LA1_0>='\u0E01' && LA1_0<='\u0E2E')||LA1_0=='\u0E30'||(LA1_0>='\u0E32' && LA1_0<='\u0E33')||(LA1_0>='\u0E40' && LA1_0<='\u0E45')||(LA1_0>='\u0E81' && LA1_0<='\u0E82')||LA1_0=='\u0E84'||(LA1_0>='\u0E87' && LA1_0<='\u0E88')||LA1_0=='\u0E8A'||LA1_0=='\u0E8D'||(LA1_0>='\u0E94' && LA1_0<='\u0E97')||(LA1_0>='\u0E99' && LA1_0<='\u0E9F')||(LA1_0>='\u0EA1' && LA1_0<='\u0EA3')||LA1_0=='\u0EA5'||LA1_0=='\u0EA7'||(LA1_0>='\u0EAA' && LA1_0<='\u0EAB')||(LA1_0>='\u0EAD' && LA1_0<='\u0EAE')||LA1_0=='\u0EB0'||(LA1_0>='\u0EB2' && LA1_0<='\u0EB3')||LA1_0=='\u0EBD'||(LA1_0>='\u0EC0' && LA1_0<='\u0EC4')||(LA1_0>='\u0F40' && LA1_0<='\u0F47')||(LA1_0>='\u0F49' && LA1_0<='\u0F69')||(LA1_0>='\u10A0' && LA1_0<='\u10C5')||(LA1_0>='\u10D0' && LA1_0<='\u10F6')||LA1_0=='\u1100'||(LA1_0>='\u1102' && LA1_0<='\u1103')||(LA1_0>='\u1105' && LA1_0<='\u1107')||LA1_0=='\u1109'||(LA1_0>='\u110B' && LA1_0<='\u110C')||(LA1_0>='\u110E' && LA1_0<='\u1112')||LA1_0=='\u113C'||LA1_0=='\u113E'||LA1_0=='\u1140'||LA1_0=='\u114C'||LA1_0=='\u114E'||LA1_0=='\u1150'||(LA1_0>='\u1154' && LA1_0<='\u1155')||LA1_0=='\u1159'||(LA1_0>='\u115F' && LA1_0<='\u1161')||LA1_0=='\u1163'||LA1_0=='\u1165'||LA1_0=='\u1167'||LA1_0=='\u1169'||(LA1_0>='\u116D' && LA1_0<='\u116E')||(LA1_0>='\u1172' && LA1_0<='\u1173')||LA1_0=='\u1175'||LA1_0=='\u119E'||LA1_0=='\u11A8'||LA1_0=='\u11AB'||(LA1_0>='\u11AE' && LA1_0<='\u11AF')||(LA1_0>='\u11B7' && LA1_0<='\u11B8')||LA1_0=='\u11BA'||(LA1_0>='\u11BC' && LA1_0<='\u11C2')||LA1_0=='\u11EB'||LA1_0=='\u11F0'||LA1_0=='\u11F9'||(LA1_0>='\u1E00' && LA1_0<='\u1E9B')||(LA1_0>='\u1EA0' && LA1_0<='\u1EF9')||(LA1_0>='\u1F00' && LA1_0<='\u1F15')||(LA1_0>='\u1F18' && LA1_0<='\u1F1D')||(LA1_0>='\u1F20' && LA1_0<='\u1F45')||(LA1_0>='\u1F48' && LA1_0<='\u1F4D')||(LA1_0>='\u1F50' && LA1_0<='\u1F57')||LA1_0=='\u1F59'||LA1_0=='\u1F5B'||LA1_0=='\u1F5D'||(LA1_0>='\u1F5F' && LA1_0<='\u1F7D')||(LA1_0>='\u1F80' && LA1_0<='\u1FB4')||(LA1_0>='\u1FB6' && LA1_0<='\u1FBC')||LA1_0=='\u1FBE'||(LA1_0>='\u1FC2' && LA1_0<='\u1FC4')||(LA1_0>='\u1FC6' && LA1_0<='\u1FCC')||(LA1_0>='\u1FD0' && LA1_0<='\u1FD3')||(LA1_0>='\u1FD6' && LA1_0<='\u1FDB')||(LA1_0>='\u1FE0' && LA1_0<='\u1FEC')||(LA1_0>='\u1FF2' && LA1_0<='\u1FF4')||(LA1_0>='\u1FF6' && LA1_0<='\u1FFC')||LA1_0=='\u2126'||(LA1_0>='\u212A' && LA1_0<='\u212B')||LA1_0=='\u212E'||(LA1_0>='\u2180' && LA1_0<='\u2182')||LA1_0=='\u3007'||(LA1_0>='\u3021' && LA1_0<='\u3029')||(LA1_0>='\u3041' && LA1_0<='\u3094')||(LA1_0>='\u30A1' && LA1_0<='\u30FA')||(LA1_0>='\u3105' && LA1_0<='\u312C')||(LA1_0>='\u4E00' && LA1_0<='\u9FA5')||(LA1_0>='\uAC00' && LA1_0<='\uD7A3')) && (((state==State.DEFAULT || state==State.IN_TAG)||state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 16;}
 
                         else if ( (LA1_0=='$') ) {s = 17;}
 
@@ -10480,7 +8102,7 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (LA1_0=='|') ) {s = 29;}
 
-                        else if ( (LA1_0=='\u0000'||LA1_0=='#'||LA1_0=='%'||LA1_0=='\\'||LA1_0=='^'||LA1_0=='`'||(LA1_0>='~' && LA1_0<='\u00BF')||LA1_0=='\u00D7'||LA1_0=='\u00F7'||(LA1_0>='\u0132' && LA1_0<='\u0133')||(LA1_0>='\u013F' && LA1_0<='\u0140')||LA1_0=='\u0149'||LA1_0=='\u017F'||(LA1_0>='\u01C4' && LA1_0<='\u01CC')||(LA1_0>='\u01F1' && LA1_0<='\u01F3')||(LA1_0>='\u01F6' && LA1_0<='\u01F9')||(LA1_0>='\u0218' && LA1_0<='\u024F')||(LA1_0>='\u02A9' && LA1_0<='\u02BA')||(LA1_0>='\u02C2' && LA1_0<='\u0385')||LA1_0=='\u0387'||LA1_0=='\u038B'||LA1_0=='\u038D'||LA1_0=='\u03A2'||LA1_0=='\u03CF'||(LA1_0>='\u03D7' && LA1_0<='\u03D9')||LA1_0=='\u03DB'||LA1_0=='\u03DD'||LA1_0=='\u03DF'||LA1_0=='\u03E1'||(LA1_0>='\u03F4' && LA1_0<='\u0400')||LA1_0=='\u040D'||LA1_0=='\u0450'||LA1_0=='\u045D'||(LA1_0>='\u0482' && LA1_0<='\u048F')||(LA1_0>='\u04C5' && LA1_0<='\u04C6')||(LA1_0>='\u04C9' && LA1_0<='\u04CA')||(LA1_0>='\u04CD' && LA1_0<='\u04CF')||(LA1_0>='\u04EC' && LA1_0<='\u04ED')||(LA1_0>='\u04F6' && LA1_0<='\u04F7')||(LA1_0>='\u04FA' && LA1_0<='\u0530')||(LA1_0>='\u0557' && LA1_0<='\u0558')||(LA1_0>='\u055A' && LA1_0<='\u0560')||(LA1_0>='\u0587' && LA1_0<='\u05CF')||(LA1_0>='\u05EB' && LA1_0<='\u05EF')||(LA1_0>='\u05F3' && LA1_0<='\u0620')||(LA1_0>='\u063B' && LA1_0<='\u0640')||(LA1_0>='\u064B' && LA1_0<='\u0670')||(LA1_0>='\u06B8' && LA1_0<='\u06B9')||LA1_0=='\u06BF'||LA1_0=='\u06CF'||LA1_0=='\u06D4'||(LA1_0>='\u06D6' && LA1_0<='\u06E4')||(LA1_0>='\u06E7' && LA1_0<='\u0904')||(LA1_0>='\u093A' && LA1_0<='\u093C')||(LA1_0>='\u093E' && LA1_0<='\u0957')||(LA1_0>='\u0962' && LA1_0<='\u0984')||(LA1_0>='\u098D' && LA1_0<='\u098E')||(LA1_0>='\u0991' && LA1_0<='\u0992')||LA1_0=='\u09A9'||LA1_0=='\u09B1'||(LA1_0>='\u09B3' && LA1_0<='\u09B5')||(LA1_0>='\u09BA' && LA1_0<='\u09DB')||LA1_0=='\u09DE'||(LA1_0>='\u09E2' && LA1_0<='\u09EF')||(LA1_0>='\u09F2' && LA1_0<='\u0A04')||(LA1_0>='\u0A0B' && LA1_0<='\u0A0E')||(LA1_0>='\u0A11' && LA1_0<='\u0A12')||LA1_0=='\u0A29'||LA1_0=='\u0A31'||LA1_0=='\u0A34'||LA1_0=='\u0A37'||(LA1_0>='\u0A3A' && LA1_0<='\u0A58')||LA1_0=='\u0A5D'||(LA1_0>='\u0A5F' && LA1_0<='\u0A71')||(LA1_0>='\u0A75' && LA1_0<='\u0A84')||LA1_0=='\u0A8C'||LA1_0=='\u0A8E'||LA1_0=='\u0A92'||LA1_0=='\u0AA9'||LA1_0=='\u0AB1'||LA1_0=='\u0AB4'||(LA1_0>='\u0ABA' && LA1_0<='\u0ABC')||(LA1_0>='\u0ABE' && LA1_0<='\u0ADF')||(LA1_0>='\u0AE1' && LA1_0<='\u0B04')||(LA1_0>='\u0B0D' && LA1_0<='\u0B0E')||(LA1_0>='\u0B11' && LA1_0<='\u0B12')||LA1_0=='\u0B29'||LA1_0=='\u0B31'||(LA1_0>='\u0B34' && LA1_0<='\u0B35')||(LA1_0>='\u0B3A' && LA1_0<='\u0B3C')||(LA1_0>='\u0B3E' && LA1_0<='\u0B5B')||LA1_0=='\u0B5E'||(LA1_0>='\u0B62' && LA1_0<='\u0B84')||(LA1_0>='\u0B8B' && LA1_0<='\u0B8D')||LA1_0=='\u0B91'||(LA1_0>='\u0B96' && LA1_0<='\u0B98')||LA1_0=='\u0B9B'||LA1_0=='\u0B9D'||(LA1_0>='\u0BA0' && LA1_0<='\u0BA2')||(LA1_0>='\u0BA5' && LA1_0<='\u0BA7')||(LA1_0>='\u0BAB' && LA1_0<='\u0BAD')||LA1_0=='\u0BB6'||(LA1_0>='\u0BBA' && LA1_0<='\u0C04')||LA1_0=='\u0C0D'||LA1_0=='\u0C11'||LA1_0=='\u0C29'||LA1_0=='\u0C34'||(LA1_0>='\u0C3A' && LA1_0<='\u0C5F')||(LA1_0>='\u0C62' && LA1_0<='\u0C84')||LA1_0=='\u0C8D'||LA1_0=='\u0C91'||LA1_0=='\u0CA9'||LA1_0=='\u0CB4'||(LA1_0>='\u0CBA' && LA1_0<='\u0CDD')||LA1_0=='\u0CDF'||(LA1_0>='\u0CE2' && LA1_0<='\u0D04')||LA1_0=='\u0D0D'||LA1_0=='\u0D11'||LA1_0=='\u0D29'||(LA1_0>='\u0D3A' && LA1_0<='\u0D5F')||(LA1_0>='\u0D62' && LA1_0<='\u0E00')||LA1_0=='\u0E2F'||LA1_0=='\u0E31'||(LA1_0>='\u0E34' && LA1_0<='\u0E3F')||(LA1_0>='\u0E46' && LA1_0<='\u0E80')||LA1_0=='\u0E83'||(LA1_0>='\u0E85' && LA1_0<='\u0E86')||LA1_0=='\u0E89'||(LA1_0>='\u0E8B' && LA1_0<='\u0E8C')||(LA1_0>='\u0E8E' && LA1_0<='\u0E93')||LA1_0=='\u0E98'||LA1_0=='\u0EA0'||LA1_0=='\u0EA4'||LA1_0=='\u0EA6'||(LA1_0>='\u0EA8' && LA1_0<='\u0EA9')||LA1_0=='\u0EAC'||LA1_0=='\u0EAF'||LA1_0=='\u0EB1'||(LA1_0>='\u0EB4' && LA1_0<='\u0EBC')||(LA1_0>='\u0EBE' && LA1_0<='\u0EBF')||(LA1_0>='\u0EC5' && LA1_0<='\u0F3F')||LA1_0=='\u0F48'||(LA1_0>='\u0F6A' && LA1_0<='\u109F')||(LA1_0>='\u10C6' && LA1_0<='\u10CF')||(LA1_0>='\u10F7' && LA1_0<='\u10FF')||LA1_0=='\u1101'||LA1_0=='\u1104'||LA1_0=='\u1108'||LA1_0=='\u110A'||LA1_0=='\u110D'||(LA1_0>='\u1113' && LA1_0<='\u113B')||LA1_0=='\u113D'||LA1_0=='\u113F'||(LA1_0>='\u1141' && LA1_0<='\u114B')||LA1_0=='\u114D'||LA1_0=='\u114F'||(LA1_0>='\u1151' && LA1_0<='\u1153')||(LA1_0>='\u1156' && LA1_0<='\u1158')||(LA1_0>='\u115A' && LA1_0<='\u115E')||LA1_0=='\u1162'||LA1_0=='\u1164'||LA1_0=='\u1166'||LA1_0=='\u1168'||(LA1_0>='\u116A' && LA1_0<='\u116C')||(LA1_0>='\u116F' && LA1_0<='\u1171')||LA1_0=='\u1174'||(LA1_0>='\u1176' && LA1_0<='\u119D')||(LA1_0>='\u119F' && LA1_0<='\u11A7')||(LA1_0>='\u11A9' && LA1_0<='\u11AA')||(LA1_0>='\u11AC' && LA1_0<='\u11AD')||(LA1_0>='\u11B0' && LA1_0<='\u11B6')||LA1_0=='\u11B9'||LA1_0=='\u11BB'||(LA1_0>='\u11C3' && LA1_0<='\u11EA')||(LA1_0>='\u11EC' && LA1_0<='\u11EF')||(LA1_0>='\u11F1' && LA1_0<='\u11F8')||(LA1_0>='\u11FA' && LA1_0<='\u1DFF')||(LA1_0>='\u1E9C' && LA1_0<='\u1E9F')||(LA1_0>='\u1EFA' && LA1_0<='\u1EFF')||(LA1_0>='\u1F16' && LA1_0<='\u1F17')||(LA1_0>='\u1F1E' && LA1_0<='\u1F1F')||(LA1_0>='\u1F46' && LA1_0<='\u1F47')||(LA1_0>='\u1F4E' && LA1_0<='\u1F4F')||LA1_0=='\u1F58'||LA1_0=='\u1F5A'||LA1_0=='\u1F5C'||LA1_0=='\u1F5E'||(LA1_0>='\u1F7E' && LA1_0<='\u1F7F')||LA1_0=='\u1FB5'||LA1_0=='\u1FBD'||(LA1_0>='\u1FBF' && LA1_0<='\u1FC1')||LA1_0=='\u1FC5'||(LA1_0>='\u1FCD' && LA1_0<='\u1FCF')||(LA1_0>='\u1FD4' && LA1_0<='\u1FD5')||(LA1_0>='\u1FDC' && LA1_0<='\u1FDF')||(LA1_0>='\u1FED' && LA1_0<='\u1FF1')||LA1_0=='\u1FF5'||(LA1_0>='\u1FFD' && LA1_0<='\u2125')||(LA1_0>='\u2127' && LA1_0<='\u2129')||(LA1_0>='\u212C' && LA1_0<='\u212D')||(LA1_0>='\u212F' && LA1_0<='\u217F')||(LA1_0>='\u2183' && LA1_0<='\u3006')||(LA1_0>='\u3008' && LA1_0<='\u3020')||(LA1_0>='\u302A' && LA1_0<='\u3040')||(LA1_0>='\u3095' && LA1_0<='\u30A0')||(LA1_0>='\u30FB' && LA1_0<='\u3104')||(LA1_0>='\u312D' && LA1_0<='\u4DFF')||(LA1_0>='\u9FA6' && LA1_0<='\uABFF')||(LA1_0>='\uD7A4' && LA1_0<='\uD7FF')||(LA1_0>='\uE000' && LA1_0<='\uFFFE')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 30;}
+                        else if ( (LA1_0=='\u0000'||LA1_0=='#'||LA1_0=='%'||LA1_0=='\\'||LA1_0=='^'||LA1_0=='`'||(LA1_0>='~' && LA1_0<='\u00BF')||LA1_0=='\u00D7'||LA1_0=='\u00F7'||(LA1_0>='\u0132' && LA1_0<='\u0133')||(LA1_0>='\u013F' && LA1_0<='\u0140')||LA1_0=='\u0149'||LA1_0=='\u017F'||(LA1_0>='\u01C4' && LA1_0<='\u01CC')||(LA1_0>='\u01F1' && LA1_0<='\u01F3')||(LA1_0>='\u01F6' && LA1_0<='\u01F9')||(LA1_0>='\u0218' && LA1_0<='\u024F')||(LA1_0>='\u02A9' && LA1_0<='\u02BA')||(LA1_0>='\u02C2' && LA1_0<='\u0385')||LA1_0=='\u0387'||LA1_0=='\u038B'||LA1_0=='\u038D'||LA1_0=='\u03A2'||LA1_0=='\u03CF'||(LA1_0>='\u03D7' && LA1_0<='\u03D9')||LA1_0=='\u03DB'||LA1_0=='\u03DD'||LA1_0=='\u03DF'||LA1_0=='\u03E1'||(LA1_0>='\u03F4' && LA1_0<='\u0400')||LA1_0=='\u040D'||LA1_0=='\u0450'||LA1_0=='\u045D'||(LA1_0>='\u0482' && LA1_0<='\u048F')||(LA1_0>='\u04C5' && LA1_0<='\u04C6')||(LA1_0>='\u04C9' && LA1_0<='\u04CA')||(LA1_0>='\u04CD' && LA1_0<='\u04CF')||(LA1_0>='\u04EC' && LA1_0<='\u04ED')||(LA1_0>='\u04F6' && LA1_0<='\u04F7')||(LA1_0>='\u04FA' && LA1_0<='\u0530')||(LA1_0>='\u0557' && LA1_0<='\u0558')||(LA1_0>='\u055A' && LA1_0<='\u0560')||(LA1_0>='\u0587' && LA1_0<='\u05CF')||(LA1_0>='\u05EB' && LA1_0<='\u05EF')||(LA1_0>='\u05F3' && LA1_0<='\u0620')||(LA1_0>='\u063B' && LA1_0<='\u0640')||(LA1_0>='\u064B' && LA1_0<='\u0670')||(LA1_0>='\u06B8' && LA1_0<='\u06B9')||LA1_0=='\u06BF'||LA1_0=='\u06CF'||LA1_0=='\u06D4'||(LA1_0>='\u06D6' && LA1_0<='\u06E4')||(LA1_0>='\u06E7' && LA1_0<='\u0904')||(LA1_0>='\u093A' && LA1_0<='\u093C')||(LA1_0>='\u093E' && LA1_0<='\u0957')||(LA1_0>='\u0962' && LA1_0<='\u0984')||(LA1_0>='\u098D' && LA1_0<='\u098E')||(LA1_0>='\u0991' && LA1_0<='\u0992')||LA1_0=='\u09A9'||LA1_0=='\u09B1'||(LA1_0>='\u09B3' && LA1_0<='\u09B5')||(LA1_0>='\u09BA' && LA1_0<='\u09DB')||LA1_0=='\u09DE'||(LA1_0>='\u09E2' && LA1_0<='\u09EF')||(LA1_0>='\u09F2' && LA1_0<='\u0A04')||(LA1_0>='\u0A0B' && LA1_0<='\u0A0E')||(LA1_0>='\u0A11' && LA1_0<='\u0A12')||LA1_0=='\u0A29'||LA1_0=='\u0A31'||LA1_0=='\u0A34'||LA1_0=='\u0A37'||(LA1_0>='\u0A3A' && LA1_0<='\u0A58')||LA1_0=='\u0A5D'||(LA1_0>='\u0A5F' && LA1_0<='\u0A71')||(LA1_0>='\u0A75' && LA1_0<='\u0A84')||LA1_0=='\u0A8C'||LA1_0=='\u0A8E'||LA1_0=='\u0A92'||LA1_0=='\u0AA9'||LA1_0=='\u0AB1'||LA1_0=='\u0AB4'||(LA1_0>='\u0ABA' && LA1_0<='\u0ABC')||(LA1_0>='\u0ABE' && LA1_0<='\u0ADF')||(LA1_0>='\u0AE1' && LA1_0<='\u0B04')||(LA1_0>='\u0B0D' && LA1_0<='\u0B0E')||(LA1_0>='\u0B11' && LA1_0<='\u0B12')||LA1_0=='\u0B29'||LA1_0=='\u0B31'||(LA1_0>='\u0B34' && LA1_0<='\u0B35')||(LA1_0>='\u0B3A' && LA1_0<='\u0B3C')||(LA1_0>='\u0B3E' && LA1_0<='\u0B5B')||LA1_0=='\u0B5E'||(LA1_0>='\u0B62' && LA1_0<='\u0B84')||(LA1_0>='\u0B8B' && LA1_0<='\u0B8D')||LA1_0=='\u0B91'||(LA1_0>='\u0B96' && LA1_0<='\u0B98')||LA1_0=='\u0B9B'||LA1_0=='\u0B9D'||(LA1_0>='\u0BA0' && LA1_0<='\u0BA2')||(LA1_0>='\u0BA5' && LA1_0<='\u0BA7')||(LA1_0>='\u0BAB' && LA1_0<='\u0BAD')||LA1_0=='\u0BB6'||(LA1_0>='\u0BBA' && LA1_0<='\u0C04')||LA1_0=='\u0C0D'||LA1_0=='\u0C11'||LA1_0=='\u0C29'||LA1_0=='\u0C34'||(LA1_0>='\u0C3A' && LA1_0<='\u0C5F')||(LA1_0>='\u0C62' && LA1_0<='\u0C84')||LA1_0=='\u0C8D'||LA1_0=='\u0C91'||LA1_0=='\u0CA9'||LA1_0=='\u0CB4'||(LA1_0>='\u0CBA' && LA1_0<='\u0CDD')||LA1_0=='\u0CDF'||(LA1_0>='\u0CE2' && LA1_0<='\u0D04')||LA1_0=='\u0D0D'||LA1_0=='\u0D11'||LA1_0=='\u0D29'||(LA1_0>='\u0D3A' && LA1_0<='\u0D5F')||(LA1_0>='\u0D62' && LA1_0<='\u0E00')||LA1_0=='\u0E2F'||LA1_0=='\u0E31'||(LA1_0>='\u0E34' && LA1_0<='\u0E3F')||(LA1_0>='\u0E46' && LA1_0<='\u0E80')||LA1_0=='\u0E83'||(LA1_0>='\u0E85' && LA1_0<='\u0E86')||LA1_0=='\u0E89'||(LA1_0>='\u0E8B' && LA1_0<='\u0E8C')||(LA1_0>='\u0E8E' && LA1_0<='\u0E93')||LA1_0=='\u0E98'||LA1_0=='\u0EA0'||LA1_0=='\u0EA4'||LA1_0=='\u0EA6'||(LA1_0>='\u0EA8' && LA1_0<='\u0EA9')||LA1_0=='\u0EAC'||LA1_0=='\u0EAF'||LA1_0=='\u0EB1'||(LA1_0>='\u0EB4' && LA1_0<='\u0EBC')||(LA1_0>='\u0EBE' && LA1_0<='\u0EBF')||(LA1_0>='\u0EC5' && LA1_0<='\u0F3F')||LA1_0=='\u0F48'||(LA1_0>='\u0F6A' && LA1_0<='\u109F')||(LA1_0>='\u10C6' && LA1_0<='\u10CF')||(LA1_0>='\u10F7' && LA1_0<='\u10FF')||LA1_0=='\u1101'||LA1_0=='\u1104'||LA1_0=='\u1108'||LA1_0=='\u110A'||LA1_0=='\u110D'||(LA1_0>='\u1113' && LA1_0<='\u113B')||LA1_0=='\u113D'||LA1_0=='\u113F'||(LA1_0>='\u1141' && LA1_0<='\u114B')||LA1_0=='\u114D'||LA1_0=='\u114F'||(LA1_0>='\u1151' && LA1_0<='\u1153')||(LA1_0>='\u1156' && LA1_0<='\u1158')||(LA1_0>='\u115A' && LA1_0<='\u115E')||LA1_0=='\u1162'||LA1_0=='\u1164'||LA1_0=='\u1166'||LA1_0=='\u1168'||(LA1_0>='\u116A' && LA1_0<='\u116C')||(LA1_0>='\u116F' && LA1_0<='\u1171')||LA1_0=='\u1174'||(LA1_0>='\u1176' && LA1_0<='\u119D')||(LA1_0>='\u119F' && LA1_0<='\u11A7')||(LA1_0>='\u11A9' && LA1_0<='\u11AA')||(LA1_0>='\u11AC' && LA1_0<='\u11AD')||(LA1_0>='\u11B0' && LA1_0<='\u11B6')||LA1_0=='\u11B9'||LA1_0=='\u11BB'||(LA1_0>='\u11C3' && LA1_0<='\u11EA')||(LA1_0>='\u11EC' && LA1_0<='\u11EF')||(LA1_0>='\u11F1' && LA1_0<='\u11F8')||(LA1_0>='\u11FA' && LA1_0<='\u1DFF')||(LA1_0>='\u1E9C' && LA1_0<='\u1E9F')||(LA1_0>='\u1EFA' && LA1_0<='\u1EFF')||(LA1_0>='\u1F16' && LA1_0<='\u1F17')||(LA1_0>='\u1F1E' && LA1_0<='\u1F1F')||(LA1_0>='\u1F46' && LA1_0<='\u1F47')||(LA1_0>='\u1F4E' && LA1_0<='\u1F4F')||LA1_0=='\u1F58'||LA1_0=='\u1F5A'||LA1_0=='\u1F5C'||LA1_0=='\u1F5E'||(LA1_0>='\u1F7E' && LA1_0<='\u1F7F')||LA1_0=='\u1FB5'||LA1_0=='\u1FBD'||(LA1_0>='\u1FBF' && LA1_0<='\u1FC1')||LA1_0=='\u1FC5'||(LA1_0>='\u1FCD' && LA1_0<='\u1FCF')||(LA1_0>='\u1FD4' && LA1_0<='\u1FD5')||(LA1_0>='\u1FDC' && LA1_0<='\u1FDF')||(LA1_0>='\u1FED' && LA1_0<='\u1FF1')||LA1_0=='\u1FF5'||(LA1_0>='\u1FFD' && LA1_0<='\u2125')||(LA1_0>='\u2127' && LA1_0<='\u2129')||(LA1_0>='\u212C' && LA1_0<='\u212D')||(LA1_0>='\u212F' && LA1_0<='\u217F')||(LA1_0>='\u2183' && LA1_0<='\u3006')||(LA1_0>='\u3008' && LA1_0<='\u3020')||(LA1_0>='\u302A' && LA1_0<='\u3040')||(LA1_0>='\u3095' && LA1_0<='\u30A0')||(LA1_0>='\u30FB' && LA1_0<='\u3104')||(LA1_0>='\u312D' && LA1_0<='\u4DFF')||(LA1_0>='\u9FA6' && LA1_0<='\uABFF')||(LA1_0>='\uD7A4' && LA1_0<='\uD7FF')||(LA1_0>='\uE000' && LA1_0<='\uFFFE')) && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 30;}
 
                         else s = 6;
 
@@ -10488,107 +8110,81 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_0);
                         if ( s>=0 ) return s;
                         break;
-                    case 41 : 
-                        int LA1_87 = input.LA(1);
+                    case 34 : 
+                        int LA1_103 = input.LA(1);
 
                          
-                        int index1_87 = input.index();
+                        int index1_103 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_87=='o') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 101;}
-
-                         
-                        input.seek(index1_87);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 42 : 
-                        int LA1_86 = input.LA(1);
-
-                         
-                        int index1_86 = input.index();
-                        input.rewind();
-                        s = -1;
-<<<<<<< .mine
-                        if ( (LA1_86=='p') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 100;}
-=======
-                        if ( (LA1_14=='\u0000'||(LA1_14>='\t' && LA1_14<='\n')||LA1_14=='\r'||(LA1_14>=' ' && LA1_14<='!')||(LA1_14>='#' && LA1_14<='\uD7FF')||(LA1_14>='\uE000' && LA1_14<='\uFFFE')) && (state==State.DEFAULT)) {s = 61;}
->>>>>>> .r234
-
-<<<<<<< .mine
-=======
-                        else if ( (LA1_14=='\"') && (((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||state==State.DEFAULT||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))))) {s = 62;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 63;}
-
->>>>>>> .r234
-                         
-                        input.seek(index1_86);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 43 : 
-                        int LA1_5 = input.LA(1);
-
-                         
-                        int index1_5 = input.index();
-                        input.rewind();
-                        s = -1;
-<<<<<<< .mine
-                        if ( (LA1_5==':') && (state==State.DEFAULT)) {s = 45;}
-=======
-                        if ( (LA1_15=='\u0000'||(LA1_15>='\t' && LA1_15<='\n')||LA1_15=='\r'||(LA1_15>=' ' && LA1_15<='&')||(LA1_15>='(' && LA1_15<='\uD7FF')||(LA1_15>='\uE000' && LA1_15<='\uFFFE')) && (state==State.DEFAULT)) {s = 61;}
->>>>>>> .r234
-
-<<<<<<< .mine
-                        else if ( (LA1_5=='#') && (state==State.DEFAULT)) {s = 46;}
-=======
-                        else if ( (LA1_15=='\'') && (((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||state==State.DEFAULT||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))))) {s = 64;}
->>>>>>> .r234
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
 
                         else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
 
-                        else if ( (true) ) {s = 50;}
-
                          
-                        input.seek(index1_5);
+                        input.seek(index1_103);
                         if ( s>=0 ) return s;
                         break;
-                    case 44 : 
-                        int LA1_39 = input.LA(1);
+                    case 35 : 
+                        int LA1_27 = input.LA(1);
 
                          
-                        int index1_39 = input.index();
+                        int index1_27 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_39=='m') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 86;}
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
 
-                        else if ( (LA1_39=='p') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 87;}
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 77;}
 
                          
-                        input.seek(index1_39);
+                        input.seek(index1_27);
                         if ( s>=0 ) return s;
                         break;
-                    case 45 : 
-                        int LA1_102 = input.LA(1);
+                    case 36 : 
+                        int LA1_2 = input.LA(1);
 
                          
-                        int index1_102 = input.index();
+                        int index1_2 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_102=='t') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 105;}
+                        if ( (LA1_2=='#') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 36;}
+
+                        else if ( (LA1_2=='l') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 37;}
+
+                        else if ( (LA1_2=='g') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 38;}
+
+                        else if ( (LA1_2=='a') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 39;}
+
+                        else if ( (LA1_2=='q') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 40;}
 
                          
-                        input.seek(index1_102);
+                        input.seek(index1_2);
                         if ( s>=0 ) return s;
                         break;
-                    case 46 : 
+                    case 37 : 
+                        int LA1_99 = input.LA(1);
+
+                         
+                        int index1_99 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_99);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 38 : 
                         int LA1_24 = input.LA(1);
 
                          
@@ -10607,11 +8203,26 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_24);
                         if ( s>=0 ) return s;
                         break;
-                    case 47 : 
-                        int LA1_17 = input.LA(1);
+                    case 39 : 
+                        int LA1_39 = input.LA(1);
 
                          
-                        int index1_17 = input.index();
+                        int index1_39 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_39=='m') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 86;}
+
+                        else if ( (LA1_39=='p') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 87;}
+
+                         
+                        input.seek(index1_39);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 40 : 
+                        int LA1_25 = input.LA(1);
+
+                         
+                        int index1_25 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 47;}
@@ -10620,54 +8231,121 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
 
-                        else if ( (true) ) {s = 67;}
+                        else if ( (true) ) {s = 75;}
 
                          
-                        input.seek(index1_17);
+                        input.seek(index1_25);
                         if ( s>=0 ) return s;
                         break;
-                    case 48 : 
-                        int LA1_64 = input.LA(1);
+                    case 41 : 
+                        int LA1_97 = input.LA(1);
 
                          
-                        int index1_64 = input.index();
+                        int index1_97 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (state==State.DEFAULT) ) {s = 61;}
+                        if ( (LA1_97==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 103;}
 
-                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))) ) {s = 96;}
+                        else if ( ((LA1_97>='0' && LA1_97<='9')||(LA1_97>='A' && LA1_97<='F')||(LA1_97>='a' && LA1_97<='f')) && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 97;}
 
                          
-                        input.seek(index1_64);
+                        input.seek(index1_97);
                         if ( s>=0 ) return s;
                         break;
-                    case 49 : 
-                        int LA1_100 = input.LA(1);
+                    case 42 : 
+                        int LA1_14 = input.LA(1);
 
                          
-                        int index1_100 = input.index();
+                        int index1_14 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_100==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 99;}
+                        if ( (LA1_14=='\u0000'||(LA1_14>='\t' && LA1_14<='\n')||LA1_14=='\r'||(LA1_14>=' ' && LA1_14<='!')||(LA1_14>='#' && LA1_14<='\uD7FF')||(LA1_14>='\uE000' && LA1_14<='\uFFFE')) && (state==State.DEFAULT)) {s = 61;}
+
+                        else if ( (LA1_14=='\"') && (((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||state==State.DEFAULT||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))))) {s = 62;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 63;}
 
                          
-                        input.seek(index1_100);
+                        input.seek(index1_14);
                         if ( s>=0 ) return s;
                         break;
-                    case 50 : 
-                        int LA1_38 = input.LA(1);
+                    case 43 : 
+                        int LA1_15 = input.LA(1);
 
                          
-                        int index1_38 = input.index();
+                        int index1_15 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_38=='t') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 85;}
+                        if ( (LA1_15=='\u0000'||(LA1_15>='\t' && LA1_15<='\n')||LA1_15=='\r'||(LA1_15>=' ' && LA1_15<='&')||(LA1_15>='(' && LA1_15<='\uD7FF')||(LA1_15>='\uE000' && LA1_15<='\uFFFE')) && (state==State.DEFAULT)) {s = 61;}
+
+                        else if ( (LA1_15=='\'') && (((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||state==State.DEFAULT||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))))) {s = 64;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (true) ) {s = 65;}
 
                          
-                        input.seek(index1_38);
+                        input.seek(index1_15);
                         if ( s>=0 ) return s;
                         break;
-                    case 51 : 
+                    case 44 : 
+                        int LA1_44 = input.LA(1);
+
+                         
+                        int index1_44 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 92;}
+
+                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 93;}
+
+                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 94;}
+
+                         
+                        input.seek(index1_44);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 45 : 
+                        int LA1_13 = input.LA(1);
+
+                         
+                        int index1_13 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 60;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_13);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 46 : 
+                        int LA1_83 = input.LA(1);
+
+                         
+                        int index1_83 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_83==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 98;}
+
+                        else if ( ((LA1_83>='0' && LA1_83<='9')) && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 83;}
+
+                         
+                        input.seek(index1_83);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 47 : 
                         int LA1_29 = input.LA(1);
 
                          
@@ -10686,77 +8364,39 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_29);
                         if ( s>=0 ) return s;
                         break;
-                    case 52 : 
-                        int LA1_11 = input.LA(1);
-
-                         
-                        int index1_11 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_11=='/') && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( (LA1_11=='>') && (state==State.IN_TAG)) {s = 58;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 59;}
-
-                         
-                        input.seek(index1_11);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 53 : 
+                    case 48 : 
                         int LA1_104 = input.LA(1);
 
                          
                         int index1_104 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_104==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 99;}
+                        if ( (LA1_104==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 99;}
 
                          
                         input.seek(index1_104);
                         if ( s>=0 ) return s;
                         break;
-                    case 54 : 
-                        int LA1_42 = input.LA(1);
+                    case 49 : 
+                        int LA1_64 = input.LA(1);
 
                          
-                        int index1_42 = input.index();
+                        int index1_64 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 89;}
+                        if ( (state==State.DEFAULT) ) {s = 61;}
 
-                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 90;}
-
-                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 91;}
+                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))) ) {s = 96;}
 
                          
-                        input.seek(index1_42);
+                        input.seek(index1_64);
                         if ( s>=0 ) return s;
                         break;
-                    case 55 : 
-                        int LA1_88 = input.LA(1);
+                    case 50 : 
+                        int LA1_17 = input.LA(1);
 
                          
-                        int index1_88 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_88=='o') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 102;}
-
-                         
-                        input.seek(index1_88);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 56 : 
-                        int LA1_26 = input.LA(1);
-
-                         
-                        int index1_26 = input.index();
+                        int index1_17 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 47;}
@@ -10765,10 +8405,106 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
 
-                        else if ( (true) ) {s = 76;}
+                        else if ( (true) ) {s = 67;}
 
                          
-                        input.seek(index1_26);
+                        input.seek(index1_17);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 51 : 
+                        int LA1_105 = input.LA(1);
+
+                         
+                        int index1_105 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_105==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 99;}
+
+                         
+                        input.seek(index1_105);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 52 : 
+                        int LA1_28 = input.LA(1);
+
+                         
+                        int index1_28 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 78;}
+
+                         
+                        input.seek(index1_28);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 53 : 
+                        int LA1_100 = input.LA(1);
+
+                         
+                        int index1_100 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_100==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 99;}
+
+                         
+                        input.seek(index1_100);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 54 : 
+                        int LA1_98 = input.LA(1);
+
+                         
+                        int index1_98 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_98);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 55 : 
+                        int LA1_1 = input.LA(1);
+
+                         
+                        int index1_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_1=='!') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 31;}
+
+                        else if ( (LA1_1=='?') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 32;}
+
+                        else if ( (LA1_1=='/') && (state==State.IN_ELEMENT)) {s = 33;}
+
+                        else if ( ((LA1_1>='<' && LA1_1<='=')) && (state==State.DEFAULT)) {s = 34;}
+
+                        else s = 35;
+
+                         
+                        input.seek(index1_1);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 56 : 
+                        int LA1_85 = input.LA(1);
+
+                         
+                        int index1_85 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_85==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 99;}
+
+                         
+                        input.seek(index1_85);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -10790,7 +8526,7 @@ public class XQFTLexer extends Lexer {
     static final String DFA26_acceptS =
         "\4\uffff\1\3\1\uffff\1\1\1\2\1\uffff";
     static final String DFA26_specialS =
-        "\2\uffff\1\1\1\3\1\uffff\1\0\2\uffff\1\2}>";
+        "\2\uffff\1\1\1\3\1\uffff\1\2\2\uffff\1\0}>";
     static final String[] DFA26_transitionS = {
             "\1\1\1\uffff\12\2",
             "\12\3",
@@ -10833,16 +8569,48 @@ public class XQFTLexer extends Lexer {
             this.transition = DFA26_transition;
         }
         public String getDescription() {
-<<<<<<< .mine
-            return "1138:10: fragment NumberLEX : ( ( DoubleLiteral )=> DoubleLiteral | ( DecimalLiteral )=> DecimalLiteral | ( IntegerLiteral )=> IntegerLiteral );";
-=======
-            return "1152:10: fragment NumberLEX : ( ( DoubleLiteral )=> DoubleLiteral | ( DecimalLiteral )=> DecimalLiteral | ( IntegerLiteral )=> IntegerLiteral );";
->>>>>>> .r234
+            return "1153:10: fragment NumberLEX : ( ( DoubleLiteral )=> DoubleLiteral | ( DecimalLiteral )=> DecimalLiteral | ( IntegerLiteral )=> IntegerLiteral );";
         }
         public int specialStateTransition(int s, IntStream input) throws NoViableAltException {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA26_8 = input.LA(1);
+
+                         
+                        int index26_8 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA26_8=='E'||LA26_8=='e') && (synpred1())) {s = 6;}
+
+                        else if ( ((LA26_8>='0' && LA26_8<='9')) ) {s = 8;}
+
+                        else s = 7;
+
+                         
+                        input.seek(index26_8);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA26_2 = input.LA(1);
+
+                         
+                        int index26_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((LA26_2>='0' && LA26_2<='9')) ) {s = 2;}
+
+                        else if ( (LA26_2=='.') ) {s = 5;}
+
+                        else if ( (LA26_2=='E'||LA26_2=='e') && (synpred1())) {s = 6;}
+
+                        else s = 4;
+
+                         
+                        input.seek(index26_2);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA26_5 = input.LA(1);
 
                          
@@ -10859,42 +8627,6 @@ public class XQFTLexer extends Lexer {
                         input.seek(index26_5);
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
-                        int LA26_2 = input.LA(1);
-
-                         
-                        int index26_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA26_2=='.') ) {s = 5;}
-
-                        else if ( ((LA26_2>='0' && LA26_2<='9')) ) {s = 2;}
-
-                        else if ( (LA26_2=='E'||LA26_2=='e') && (synpred1())) {s = 6;}
-
-                        else s = 4;
-
-                         
-                        input.seek(index26_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA26_8 = input.LA(1);
-
-                         
-                        int index26_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( ((LA26_8>='0' && LA26_8<='9')) ) {s = 8;}
-
-                        else if ( (LA26_8=='E'||LA26_8=='e') && (synpred1())) {s = 6;}
-
-                        else s = 7;
-
-                         
-                        input.seek(index26_8);
-                        if ( s>=0 ) return s;
-                        break;
                     case 3 : 
                         int LA26_3 = input.LA(1);
 
@@ -10902,9 +8634,9 @@ public class XQFTLexer extends Lexer {
                         int index26_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((LA26_3>='0' && LA26_3<='9')) ) {s = 3;}
+                        if ( (LA26_3=='E'||LA26_3=='e') && (synpred1())) {s = 6;}
 
-                        else if ( (LA26_3=='E'||LA26_3=='e') && (synpred1())) {s = 6;}
+                        else if ( ((LA26_3>='0' && LA26_3<='9')) ) {s = 3;}
 
                         else s = 7;
 

@@ -512,10 +512,7 @@ exprSingle                  			: fLWORExpr
 //------------------------------------------------------- ComparisonExpr -------------------------------------
 
 comparisonExpr              			: ftContainsExpr ( (valueComp | generalComp | nodeComp)^ ftContainsExpr )?;
-
-
-	ftContainsExpr              			: rangeExpr ( FTCONTAINS^ ftSelection ftIgnoreOption? )?;
-	
+	ftContainsExpr              			: rangeExpr ( FTCONTAINS^ ftSelection ftIgnoreOption? )?;	
 		rangeExpr                   			: additiveExpr ( TO^ additiveExpr )?;
 			additiveExpr                			: multiplicativeExpr ( (PLUSSi | MINUSSi)^ multiplicativeExpr )*;
 				multiplicativeExpr          			: unionExpr ( (STARSi | DIV | IDIV | MOD)^ unionExpr )*;
