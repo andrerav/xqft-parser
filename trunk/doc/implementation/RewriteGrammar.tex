@@ -117,7 +117,7 @@ Where \verb!no! once again acts as a counter over valid tokens. The \verb!while!
 Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLitteral! be addressed. Figure \ref{fig:ambigTerminalRef} shows where these productions are referred to (or not referred to in the case of \verb!StringLitteral!) in the W3C specified grammar. 
 \begin{figure}[h!]
 \begin{verbatim}
-DirElemConst    ::= "<" QName DirAttrList 
+DirElemConstr   ::= "<" QName DirAttrList 
                       ("/>" 
                      |(">" DirElemContent* "</" QName ">")
                       )
@@ -130,7 +130,7 @@ AposAttrValCont ::= AposAttrContentChar
                   | CommonContent
 DirElemContent  ::= ElementContentChar
                   | CommonContent
-                  | DirElemConst
+                  | DirElemConstr
 CommonContent   ::= "{{" | "}}" | EnclosedExpr
 EnclosedExpr    ::= "{" Expr "}"
 \end{verbatim}
@@ -138,7 +138,7 @@ EnclosedExpr    ::= "{" Expr "}"
 \label{fig:ambigTerminalRef}
 \end{figure}
 
-As we can see, neither of the problem terminals are ambigious when enclosed in higher level productions -- a necessity for our state driven strategy. We also see that all the problem terminals are in a way connected to XML markup, and consist of the characters allowed as the text in elements and the characters allowed as attribute values.
+As we can see, neither of the problem terminals are ambigious when enclosed in higher level productions -- a necessity for our state driven strategy. We also see that all the problem terminals are in a way connected to XML markup, and consist of the characters allowed as the text in elements and the characters allowed as attribute values. The \verb!DirElemConstr! production is interpreted as matching either a self-terminating tag, or a start tag followed by \verb!DirElemContent! and an end tag.
 
 \begin{figure}[h!]
 \centering
@@ -154,7 +154,7 @@ As we can see, neither of the problem terminals are ambigious when enclosed in h
 \end{figure}
 
 
-Figure \ref{fig:states} shows how we defined five ditinct states. The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLitteral! and \verb!DirAttrValue!. We see that this holds, if we compare the states with the grammar in figure \ref{fig:ambigTerminalRef}, that the only legal alternatives in the \verb!IN_TAG! state are \verb!QName! and \verb!DirAttrList! of which neither can be a \verb!StringLitteral!. By the same account we can see that neither \verb!NCName!, \verb!IntegerLitteral! nor any of the keywords are legal alternatives in the \verb!IN_APOS_ATTRIBUTE!, \verb!IN_QUOT_ATTRIBUTE! or \verb!IN_ELEMENT! states. The lexer is in the \verb!DEFAULT! state when it is not in any of the other.
+Figure \ref{fig:states} shows how we defined five distinct states. The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLitteral! and \verb!DirAttrValue!. We see that this holds, if we compare the states with the grammar in figure \ref{fig:ambigTerminalRef}, that the only legal alternatives in the \verb!IN_TAG! state are \verb!QName! and \verb!DirAttrList! of which neither can be a \verb!StringLitteral!. By the same account we can see that neither \verb!NCName!, \verb!IntegerLitteral! nor any of the keywords are legal alternatives in the \verb!IN_APOS_ATTRIBUTE!, \verb!IN_QUOT_ATTRIBUTE! or \verb!IN_ELEMENT! states. The lexer is in the \verb!DEFAULT! state when it is not in any of the other.
 
 \subsection{State Transitions}
 \label{sect:rewriteGrammar:transitions}
@@ -173,15 +173,43 @@ dirAttributeValue : QUOTSi {lexer.state=IN_QUOT_ATTRIBUTE;}
 \label{fig:transitionSimple}
 \end{figure}
 
-As can be seen from figure \ref{fig:ambigTerminalRef} a \verb!DirElemConst! can contain another \verb!DirElemConst! by way of \verb!DirElemContent! In addition, the two types of attribute content can contain an \verb!Expr! by way of the \verb!EnclosedExpr!, which again can contain e.g. a \verb!DirElemConst!. This means that the parser will have to somehow know which state to go back to when finished recursing these nested constructs. We chose to implement this with a simple stack in the class \verb!State!. The stack provides methods like \verb!public int pop()! and \verb!public void pushState(int state)!. Examples of how we resolved the problem with the nested state transitions is shown in figure \ref{fig:nestedTransition}.
+As can be seen from figure \ref{fig:ambigTerminalRef} a \verb!DirElemConstr! can contain another \verb!DirElemConstr! by way of \verb!DirElemContent! In addition, the two types of attribute content can contain an \verb!Expr! by way of the \verb!EnclosedExpr!, which again can contain e.g. a \verb!DirElemConstr!. This means that the parser will have to somehow know which state to go back to when finished recursing these nested constructs. We chose to implement this with a simple stack in the class \verb!State!. The stack provides methods like \verb!public int pop()! and \verb!public void pushState(int state)!. Examples of how we resolved the problem with the nested state transitions is shown in figure \ref{fig:nestedTransitionExpr} and \ref{fig:nestedTransitionElement}.
 
-\begin{figure}
+\begin{figure}[h!]
 \begin{verbatim}
-yeye
+enclosedExpr   : LBRACESi 
+                   {lexer.stack.pushState(lexer.state); 
+                                   lexer.state=DEFAULT;}
+                   expr 
+                 RBRACSi {lexer.state = lexer.stack.pop();}
+                 ;
 \end{verbatim}
-\label{fig:nestedTransition}
+\caption[Accommodating for nested structure of \texttt{enclosedExpr}]{Accommodating for nested structure of \texttt{enclosedExpr}.}
+\label{fig:nestedTransitionExpr}
 \end{figure}
 
+\begin{figure}[h!]
+\begin{verbatim}
+dirElemConstr  : LTSi 
+                  {lexer.stack.pushState(lexer.state); 
+                                   lexer.state=IN_TAG;}
+                 qName dirAttributeList
+                   (
+                    RSELFTERMSi
+                      {lexer.state=lexer.stack.pop();}
+                   |GTSi 
+                      {lexer.state=State.IN_ELEMENT;}
+                      dirElemContent* 
+                      LENDTAGSi 
+                      {lexer.state=IN_TAG;}
+                      qName 
+                      GTSi {lexer.state=lexer.stack.pop();}
+                  )
+                  ;
+\end{verbatim}
+\caption[Accommodating for a nested structure of \texttt{dirElemConstr}]{Accommodating for the possible nested structure of \texttt{enclosedExpr}.}
+\label{fig:nestedTransitionElement}
+\end{figure}
 \textbf{\LARGE //TODO:} 
 
 Hvordan parseren gaar over fra en state til en annen, systemet med stack.
