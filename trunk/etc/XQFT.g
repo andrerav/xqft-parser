@@ -1050,7 +1050,7 @@ fragment S                   		: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
 //---------------------------------------- StringLiteral and XML contents -------------------------------------------------------
 
 
-fragment StringLiteral	    		: QUOTSi 
+fragment StringLiteral	    		: QUOTSi
 										(PredefinedEntityRef | CharRef | {(input.LA(1)=='"' && input.LA(2)=='"')}?=> QUOTSi QUOTSi | ~(NotChar | QUOTSi|AMPERSi))* 
 										QUOTSi 
 									| APOSSi 
