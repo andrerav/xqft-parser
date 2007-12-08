@@ -170,18 +170,73 @@ enclosedExpr   : LBRACESi
 \label{fig:nestedTransitionExpr}
 \end{figure}
 
-By using a stack the parser has knowledge of which state the lexer was in before it matched the possible nested construct. In this way we e.g. accommodate for the possiblity that a element contains other elements, which actually is not that uncommon. At the start of the tag for an outermost element the \verb!DEFAULT! state will be pushed to the stack, and the state will be set to \verb!IN_TAG!. If it is a self-terminating tag, the state will be set back to \verb!DEFAULT! by means of poping the stack after the lexer has matched \verb!/>!. If it an element consisting of a start and end tag, the state in the lexer will be set to \verb!IN_ELEMENT! after matching \verb!>! When the parser comes upon the end of the end tag it will as in the case of the self-terminating tag set he lexer state back to \verb!DEFAULT! by means of the stack. In this way the lexer can meet a element within another, be it in the form of a self terminating or a pair of tags, and know that it will transit back to the right state after it has matched it.
+By using a stack the parser has knowledge of which state the lexer was in before it matched the possible nested construct. In this way we e.g. accommodate for the possiblity that a element contains other elements, which actually is not that uncommon. 
+
+At the start of the tag for an outermost element the \verb!DEFAULT! state will be pushed to the stack, and the state will be set to \verb!IN_TAG!. If it is a self-terminating tag, the state will be set back to \verb!DEFAULT! by means of poping the stack after the lexer has matched \verb!/>!. If it an element consisting of a start and end tag, the state in the lexer will be set to \verb!IN_ELEMENT! after matching \verb!>! When the parser comes upon the end of the end tag it will as in the case of the self-terminating tag set he lexer state back to \verb!DEFAULT! by means of the stack. In this way the lexer can meet a element within another, be it in the form of a self terminating or a pair of tags, and know that it will transit back to the right state after it has matched it.
 
 \subsection{Reorganizing the Grammar}
 \label{sect:rewriteGrammar:reorganizing}
 
 To gain a more readable version of the grammar, all non-terminal, i.e. parser, productions were organized in a treewise fashion. Producuctions that lead to cycles were pulled out and made the root of their own tree. In this way it was readily understood which productions could have which outcome, but also easier to spot any possible non-determinisms.
 
-Even with the state transitions in place, the lexer grammar still has to be adapted to be aware of them. An obvious candidate for implementing this would be by gated semantic predicates (section \ref{sect:antlr:val_semantic_preds}). To be sure that the lexer will choose another alternative when a predicate would fail, and not issue a \verb!FailedSemanticPredicateException! we made a lexer production \verb!TOKENSWITCH! which takes the place of \verb!mTokens()! (section \ref{sect:antlr:lexer}), acting as the main differansiator. For this to work there can not exist any other lexer productions, making us convert all other into \verb!fragment! rules.
+All keywords and symbols are explicit defined as tokens, as opposed to inline declared in the non-terminal productions. The main reason for this is that it makes it possible to control when the lexer should and should not try to match these by means of predicates. Another benefit from defining the tokens in the lexer is that error messages is much more readable this way. 
 
-\textbf{\LARGE //TODO:} 
+When defined inline ANTLR would just assign any unique name to the tokens, making it hard for humans to understand which token is refered to. The names of the tokens for keywords are just the keyword in capital letters, and with and dashes replaced by underscore, e.g. \verb!BASE_URI : 'base-uri'!. A descriptive name with the suffix \verb!Si! consitutes the token names for symbols, e.g. \verb!ASSIGNSi : ':='!.
 
-Slik at state-systemet fungerer: Lage fragment av alt, TOKENSWITCH, semantiske predikat, etc.
+Even with the state transitions in place, the lexer grammar still has to be adapted to be aware of them. An obvious candidate for implementing this would be by gated semantic predicates (section \ref{sect:antlr:gate_semantic_preds}). To be sure that the lexer will choose another rule should a predicate fail, and not issue a \verb!FailedSemanticPredicateException!, a lexer production \verb!TOKENSWITCH! with all the other lexer productions as alternatives is implemented. \verb!mTokens()! (section \ref{sect:antlr:lexer}) in a sense is replaced by \verb!TOKENSWITCH!, acting as the main differansiator. 
+
+\begin{figure}[h!]
+\begin{verbatim}
+TOKENSWITCH : {(state==IN_ELEMENT || state==DEFAULT)}?=>
+              "enclosed composites"          // emits subtokens
+              | {state==IN_ELEMENT}?=>
+              LENDTAGSi                      {$type=LENDTAGSi;}
+              | {state==IN_ELEMENT}? =>
+              ElementContent            {$type=ElementContent;} 
+              | {state==DEFAULT}?=>
+              NumberLEX	                {$type=this.tokenType;}
+              | {state==DEFAULT}?=>
+              LexSigns                  {$type=this.tokenType;}
+              | {state==DEFAULT}?=>
+              StringLiteral {$type=StringLiteral;}
+              | {(state==DEFAULT || state==IN_TAG)}?=>
+              S                     {$type=S; $channel=HIDDEN;}
+              | {(state==DEFAULT || state==IN_TAG)}?=>
+              LexLiterals               {$type=this.tokenType;} 
+              | {state==IN_QUOT_ATTRIBUTE}?=>
+              QuotAttributeContent{$type=QuotAttributeContent;}
+              | {state==IN_APOS_ATTRIBUTE}?=>
+              AposAttributeContent{$type=AposAttributeContent;}
+              | {state==IN_TAG}?=>
+              RSELFTERMSi                  {$type=RSELFTERMSi;}
+              | QUOTSi                          {$type=QUOTSi;}
+              | DOLLARSi                      {$type=DOLLARSi;}
+              | . . .
+              ;
+
+\end{verbatim}
+\caption[Overview of the \texttt{TOKENSWITCH} construct]{A simple overview of the \texttt{TOKENSWITCH} construct.}
+\label{fig:tokenswitch}
+\end{figure}
+
+For this to work all lexer rules except \verb!TOKENSWITCH! is converted to \verb!fragment! rules. A simple overview of \verb!TOKENSWITCH! can be seen in figure \ref{fig:tokenswitch}. \verb!LexLiterals! is a carrier production for all keywords as well as \verb!NCName! and will be further discussed in section \ref{sect:rewritegrammar:keywordNCName}. \verb!$type=! are used to override the way ANTLR by default sets the type of a token. Without these actions all tokens would be of the type \verb!TOKENSWITCH!.
+
+\verb!"enclosed composites"! in figure \ref{fig:tokenswitch} denotes the disjunctive form of the set of productions discussed in section \ref{sect:rewriteGrammar:enclosedComposite}. It is worth noticing that the enclosed composites does not need to set type in same way as the other alternatives. \verb!AposAttributeContent!, \verb!QuotAttributeContent! and \verb!ElementContent! are introduced productions that encompass all legal characters in attributes and elements and will be accounted for in section \ref{sect:rewriteGrammar:containerTokens}.
+
+As explained in section \ref{sect:antlr:gate_semantic_preds}, a gated semantic predicate will hide the alternative it is issued to if the predicate fails. This means that e.g. if not in the \verb!DEFAULT! state the \verb!StringLiteral! alternative would not be considered at all by the lexer. By applying such predicates on all ambiguous alternatives, the lexer would thus only see a subset of the available alternatives according to which state it is in.
+
+One reason for creating the \verb!NumberLEX! production is to gather all number related tokens under one gated semantic predicate. Another reason is to be able to disambiguate between the different types -- \verb!DoubleLiteral!, \verb!DecimalLiteral! and \verb!IntegerLiteral!. As one type is just another type with additional characters, e.g. a \verb!DecimalLiteral! is an \verb!IntegerLiteral! followed by decimals, this can easily be solved with syntactic predicates (section \ref{sect:antlr:syntacticPredicate}) as seen in figure \ref{fig:numberLex}.
+
+\begin{figure}[h!]
+\begin{verbatim}
+fragment NumberLEX : (DoubleLiteral)=>	DoubleLiteral
+                   | (DecimalLiteral)=> DecimalLiteral
+                   | IntegerLiteral
+                   ;
+\end{verbatim}
+\caption[Solving the number type ambiguousity]{Solving the number type ambiguousity in \texttt{NumberLex} with syntactic predicates}
+\label{fig:numberLex}
+\end{figure}
 
 \subsection{Container Tokens}
 \label{sect:rewriteGrammar:containerTokens}
