@@ -179,15 +179,15 @@ Even though LL(*) allows the parser to scan arbitrarily far forward for any symb
 \end{itemize}
 
 \subsubsection{Validating Semantic Predicates}
-If the expression being evaluated in a validating semantic predicate yields $false$, an exception is thrown, expressing that a semantic predicate has failed. These predicates are never included in the decision-making process. Validating semantic predicates can be very handy in cases where e.g. identifiers cannot contain a specific sequence of letters like "xml", or to check if a variable is being references before its declaration. An example of a validating semantic predicate can be seen in figure \ref{code:validateSemantic}.
+If the expression being evaluated in a validating semantic predicate yields $false$, an exception is thrown, expressing that a semantic predicate has failed. These predicates are never included in the decision-making process. Validating semantic predicates can be very handy in cases where e.g. you want to restrain the possible values a tokens can have, or to check if a variable is being referenced before its declaration. An example of a validating semantic predicate can be seen in figure \ref{code:validateSemantic}.
 
 \begin{figure}[h!]
 \begin{verbatim}
-expr    : ID {$ID.getText().equalsIgnoreCase("xml");}?
+expr    : N {Integer.parseInt($N.getText()).intValue() < 7}?
         | . . .
         ;
 \end{verbatim}
-\caption{Validating semantic predicate.}
+\caption[Validating semantic predicate.]{A Validating semantic predicate checking if the number value of \texttt{N} is less than $7$.}
 \label{code:validateSemantic}
 \end{figure}
 As can be seen from this example, a semantic predicate is simply any kind of boolean Java expression. This is a flexible solution, because the boolean expression can be wrapped in a method with boolean return type, which for example then can be placed inside a @members { } clause in the grammar file, or even as a static method in an external class. This makes it possible to add complex grammar logic without
