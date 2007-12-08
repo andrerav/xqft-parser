@@ -27,7 +27,7 @@ PartOf          ::= [^"&]
 // can be written in ANTLR syntax as:
 PartOf            : ~(NotChar | COLONSi | AMPSi);
 \end{verbatim}
-The 'dash' operator is sometimes also used like this, like in e.g. \verb!QuotAttrContentChar! but because of our introduced production \verb!QuotAttributeContent! (section \ref{sect:rewriteGrammar:introduceStates}) it is rewritten in the same way as with the enclosed expressions (section \ref{sect:rewriteGrammar:enclosedComposite}), where the operator is used to define that a very gereral production should not be greedy. 
+The 'dash' operator is sometimes also used like this, like in e.g. \verb!QuotAttrContentChar! but because of our introduced production \verb!QuotAttributeContent! (section \ref{sect:rewriteGrammar:containerTokens}) it is rewritten in the same way as with the enclosed expressions (section \ref{sect:rewriteGrammar:enclosedComposite}), where the operator is used to define that a very gereral production should not be greedy. 
 
 In \verb!piTarget! the 'dash' operator is used in a unique way, and thus needed to be treated differently:
 \begin{verbatim}
@@ -115,9 +115,9 @@ Where \verb!no! once again acts as a counter over valid tokens. The \verb!while!
 \subsection{Introducing the States}
 \label{sect:rewriteGrammar:introduceStates}
 Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLitteral! be addressed. Figure \ref{fig:ambigTerminalRef} shows where these productions are referred to (or not referred to in the case of \verb!StringLitteral!) in the W3C specified grammar. As we can see, neither of the problem terminals are ambigious when enclosed in higher level productions -- a necessity for our state driven strategy. We also see that all the problem terminals are in a way connected to XML markup, and consist of the characters allowed as the text in elements and the characters allowed as attribute values.
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{verbatim}
-DirElemConst    ::= "<" QName DirAttributeList 
+DirElemConst    ::= "<" QName DirAttrList 
                       ("/>" 
                      |(">" DirElemContent* "</" QName ">")
                       )
@@ -133,11 +133,11 @@ DirElemContent  ::= ElementContentChar
 CommonContent   ::= "{{" | "}}" | EnclosedExpr
 EnclosedExpr    ::= "{" Expr "}"
 \end{verbatim}
-\caption[Grammar reffering to amiguous terminals.]{A simplified overview of the non-terminal productions refering to the ambiguous terminals. \textbf{EscapeApos} is \textbf{''} and is used to escape the single \textbf{'} within a apostrophe enveloped construct, and the analog for the quote sign \textbf{"} is \textbf{EscapeQuot}. \textbf{Expr} is a very high-level production able to match almost any legal XQuery syntax.}
+\caption[Grammar reffering to amiguous terminals.]{A simplified overview of the non-terminal productions refering to the ambiguous terminals. \texttt{EscapeApos} is \texttt{''} and is used to escape the single \texttt{'} within a apostrophe enveloped construct, and the analog for the quote sign \texttt{"} is \texttt{EscapeQuot}. \texttt{Expr} is a very high-level production able to match almost any legal XQuery syntax. Some of the production names have been shortened to match formatting.}
 \label{fig:ambigTerminalRef}
 \end{figure}
-Explained with an example input character stream, \verb!<a id="1" z='2'>b</a>!, and where \framebox[1.0\width]{$\times$} marks the spot where the lexer is in the respective state, our five defined states are shown in figure \ref{fig:states}.
-\begin{figure}[h]
+We defined five ditinct states as shown in figure \ref{fig:states}.
+\begin{figure}[h!]
 \centering
 \begin{tabular}{ll}
 \verb!DEFAULT!			& \framebox[1.0\width]{$\times$}\verb!<a id="1" z='2'>b</a>!\framebox[1.0\width]{$\times$} \\
@@ -146,16 +146,12 @@ Explained with an example input character stream, \verb!<a id="1" z='2'>b</a>!, 
 \verb!IN_QUOT_ATTRIBUTE!	& \verb!<a id="!\framebox[1.0\width]{\texttt{1}}\verb!" z='2'>b</a>! \\
 \verb!IN_ELEMENT!		& \verb!<a id="1" z='2'>!\framebox[1.0\width]{\texttt{b}}\verb!</a>! \\
 \end{tabular}
-\caption{An illustrated overview of the different states.}
+\caption[An illustrated overview of the different states.]{An illustrated overview of the different states, Explained with an example input character stream, \texttt{<a id="1" z='2'>b</a>}, and where \framebox[1.0\width]{$\times$} marks the spot where the lexer is in the respective state.}
 \label{fig:states}
 \end{figure}
-The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLitteral! and \verb!DirAttrValue!, while the other states are for separating characters legal in the attributes and the ones in the element. 
-
-\textbf{\LARGE //TODO:} 
-
-ElementContent, Apossoppassellers etc..
 
 
+The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLitteral! and \verb!DirAttrValue!. We see that this holds, if we compare the states with the grammar in figure \ref{fig:ambigTerminalRef}, that the only legal alternatives in the \verb!IN_TAG! state are \verb!QName! and \verb!DirAttrList! of which neither can be a \verb!StringLitteral!. By the same account we can see that neither \verb!NCName!, \verb!IntegerLitteral! nor any of the keywords are legal alternatives in the \verb!IN_APOS_ATTRIBUTE!, \verb!IN_QUOT_ATTRIBUTE! or \verb!IN_ELEMENT! states.
 
 \subsection{State Transitions}
 \label{sect:rewriteGrammar:transitions}
@@ -170,6 +166,12 @@ Hvordan parseren gaar over fra en state til en annen, systemet med stack.
 
 Slik at state-systemet fungerer: Lage fragment av alt, TOKENSWITCH, semantiske predikat, etc.
 
+\subsection{Container Tokens}
+\label{sect:rewriteGrammar:containerTokens}
+
+\textbf{\LARGE //TODO:} 
+
+ElementContent, Apossoppassellers etc..
 
 \section{Enclosed Composite Lexer Productions}
 \label{sect:rewriteGrammar:enclosedComposite}
