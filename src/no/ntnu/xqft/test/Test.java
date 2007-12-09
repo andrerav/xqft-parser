@@ -19,7 +19,7 @@ import org.antlr.runtime.tree.*;
  * @author andreas
  *
  */
-abstract class Test {
+abstract public class Test {
 
     protected XQFTParser getNewParser(String input) {
         

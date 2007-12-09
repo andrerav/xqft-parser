@@ -43,7 +43,7 @@ This is behaviour is illustrated in figure \ref{tree:ast:arithmetic}, which is
 the AST generated for the simple arithmetic expression \verb!1+2*3-2*15!.
 
 \begin{figure}[h]
-\Tree [.{-} [.{+} 1 [.{*} 2 3  ]  ] [.{*} 2 15  ] ]
+ \includegraphics{img/graphs/arithmetic1}
 \caption{Arithmetic AST example from the expression \texttt{1+2*3-2*15}}
 \label{tree:ast:arithmetic}
 \end{figure}
@@ -166,7 +166,7 @@ itself but rather in the sense of what is deduced from the input.
 Figure \ref{tree:ast:flwor} shows the AST generated for the expression 
 
 \begin{figure}[h]
-\Tree [.{\tiny AST\_FLWOR} [.{\tiny AST\_FORCLAUSE} \tiny{x} [.{\tiny /} [.{\tiny /} [.{\tiny /} [.{\tiny AST\_FUNCTIONCALL} \tiny{doc} \tiny{"books.xml"} ]  \tiny{bookstore} ]  \tiny{book} ]  \tiny{title} ]  ]  [.{\tiny AST\_WHERECLAUSE} [.{\tiny /} \tiny{x} \tiny{text} \tiny{(} \tiny{)} ]  \tiny{!=} \tiny{"The Definitive ANTLR Reference"} ]  [.{\tiny AST\_ORDERBYCLAUSE} \tiny{x} ]  [.{\tiny AST\_DIRELEMCONSTRUCTOR} \tiny{elem} ]  ]
+ \includegraphics[width=1\textwidth]{img/graphs/flwor1}
 \caption{Generated AST tree for a simple FLWOR-expression}
 \label{tree:ast:flwor}
 \end{figure}

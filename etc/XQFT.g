@@ -159,6 +159,7 @@ AST_QUANTIFIEDEXPR;
 AST_TYPESWITCHEXPR;
 AST_CASECLAUSE;
 AST_IFEXPR;
+AST_PATHEXPR;
 AST_FTSELECTION;
 AST_FTPOSFILTER;
 AST_FUNCTIONCALL;
@@ -242,6 +243,9 @@ AST_DIRELEMCONTENT;
     private int tokenType = -1;										// used to pass type from fragment to fragment in LexLiterals
     private ArrayList<Token> tokens = new ArrayList<Token>();
     
+    public boolean debug = false;
+    
+    
     public void emit(Token token) {
     	this.token = token;
     	tokens.add(token);
@@ -275,6 +279,12 @@ AST_DIRELEMCONTENT;
     {
         throw e;
     }
+
+    
+    protected void print(String msg) {
+    	if (debug) System.out.println(msg);
+    }
+
 
 }
 
@@ -375,9 +385,9 @@ ftOptionDecl                			: DECLARE FTOPTION ftMatchOptions;
 
 sequenceType                			: (itemType occurrenceIndicator) => itemType occurrenceIndicator
 										| itemType
-										| EMPTY_SEQUENCE LPARSi RPARSi
+										| EMPTY_SEQUENCE LPARSi! RPARSi!
 										;
-	itemType                    			: (kindTest | (ITEM LPARSi RPARSi) | atomicType);
+	itemType                    			: (kindTest | (ITEM LPARSi! RPARSi!) | atomicType);
 		kindTest                    			: documentTest
 				                                | elementTest
                 				                | attributeTest
@@ -387,32 +397,32 @@ sequenceType                			: (itemType occurrenceIndicator) => itemType occu
 				                                | commentTest
                 				                | textTest
                                 				| anyKindTest;
-			documentTest                			: DOCUMENT_NODE LPARSi (elementTest | schemaElementTest)? RPARSi;
-				elementTest  			            	: ELEMENT LPARSi (elementNameOrWildcard (COMMASi typeName QUESTIONSi?)?)? RPARSi;                                				
+			documentTest                			: DOCUMENT_NODE LPARSi! (elementTest | schemaElementTest)? RPARSi!;
+				elementTest  			            	: ELEMENT LPARSi! (elementNameOrWildcard (COMMASi typeName QUESTIONSi?)?)? RPARSi!;
 					elementNameOrWildcard       			: elementName | STARSi;
 						elementName                 			: qName;
 					typeName                    			: qName;
-				schemaElementTest           		 	: SCHEMAELEMENT LPARSi elementDeclaration RPARSi;
+				schemaElementTest           		 	: SCHEMAELEMENT LPARSi! elementDeclaration RPARSi!;
 					elementDeclaration          			: elementName;
 //						elementName                 			: qName; 
-//			elementTest                 			: ELEMENT LPARSi (elementNameOrWildcard (COMMASi typeName QUESTIONSi?)?)? RPARSi; //DOBBELT OPP
+//			elementTest                 			: ELEMENT LPARSi! (elementNameOrWildcard (COMMASi typeName QUESTIONSi?)?)? RPARSi!; //DOBBELT OPP
 //				elementNameOrWildcard       			: elementName | STARSi; 
 //						elementName                 			: qName; 
 //				typeName                    			: qName; 
-			attributeTest               			: ATTRIBUTE LPARSi (attribNameOrWildcard (COMMASi typeName)?)? RPARSi;
+			attributeTest               			: ATTRIBUTE LPARSi! (attribNameOrWildcard (COMMASi typeName)?)? RPARSi!;
 				attribNameOrWildcard        			: attributeName | STARSi;
 					attributeName               			: qName;
 //				typeName                    			: qName;
-//			schemaElementTest           			: SCHEMAELEMENT LPARSi elementDeclaration RPARSi;
+//			schemaElementTest           			: SCHEMAELEMENT LPARSi! elementDeclaration RPARSi!;
 //				elementDeclaration          			: elementName;
 //					elementName                 			: qName; 
-			schemaAttributeTest         			: SCHEMAATTRIBUTE LPARSi attributeDeclaration RPARSi;
+			schemaAttributeTest         			: SCHEMAATTRIBUTE LPARSi! attributeDeclaration RPARSi!;
 				attributeDeclaration        			: attributeName;
 //					attributeName               			: qName;
-			piTest                      			: PROCESSING_INSTRUCTION LPARSi (NCName | StringLiteral)? RPARSi;
-			commentTest                 			: COMMENT LPARSi RPARSi;
-			textTest                    			: TEXT LPARSi RPARSi;
-			anyKindTest                 			: NODE LPARSi RPARSi;
+			piTest                      			: PROCESSING_INSTRUCTION LPARSi! (NCName | StringLiteral)? RPARSi!;
+			commentTest                 			: COMMENT LPARSi! RPARSi!;
+			textTest                    			: TEXT LPARSi! RPARSi!;
+			anyKindTest                 			: NODE LPARSi! RPARSi!;
 	occurrenceIndicator         			: QUESTIONSi | STARSi | PLUSSi; /* xgc: occurrence-indicatorsXQ */
 	
 //---------------------------------------------------------- ExprSingle ---------------------------------------------------------
@@ -533,7 +543,7 @@ comparisonExpr              			: ftContainsExpr ( (valueComp | generalComp | nod
 		
 //		ftSelection#								: #PAA EGET#
 		
-		ftIgnoreOption              			: WITHOUT CONTENT unionExpr;
+		ftIgnoreOption              			: WITHOUT^ CONTENT unionExpr;
 //			unionExpr#								: #SE DETTE -> ftContainsExpr->rangeExpr->additiveExpr->miltiplicativeExpr->unionExpr#
 
 
@@ -547,8 +557,7 @@ comparisonExpr              			: ftContainsExpr ( (valueComp | generalComp | nod
 
 //--------------------------------------------------------- FtSelection ---------------------------------------------
 
-ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?
-												-> ^(AST_FTSELECTION ftOr ftPosFilter* ^(WEIGHT rangeExpr)?);
+ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?;
 	ftOr                        			: ftAnd ( FTOR^ ftAnd )*;
 		ftAnd                       			: ftMildNot ( FTAND^ ftMildNot )*;
 			ftMildNot                   			: ftUnaryNot ( NOT^ IN! ftUnaryNot )*;
@@ -556,7 +565,7 @@ ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?
 					ftPrimaryWithOptions        			: ftPrimary ftMatchOptions?;
 					
 						ftPrimary                   			: ftWords ftTimes? 
-																| LPARSi ftSelection RPARSi 
+																| LPARSi! ftSelection RPARSi! 
 																| ftExtensionSelection
 																;
 							ftWords                     			: ftWordsValue ftAnyallOption?;
@@ -612,15 +621,15 @@ ftMatchOption               			: ftLanguageOption
 		                                | ftExtensionOption;
 		                                
 		                                	                                
-	ftLanguageOption            			: LANGUAGE StringLiteral;
+	ftLanguageOption            			: LANGUAGE^ StringLiteral;
 	
 	
-	ftWildCardOption            			: WITH WILDCARDS | WITHOUT WILDCARDS;
+	ftWildCardOption            			: WITH^ WILDCARDS | WITHOUT^ WILDCARDS;
 	
 	
-	ftThesaurusOption	        			: WITH THESAURUS (ftThesaurusID | DEFAULT)
-											| WITH THESAURUS LPARSi (ftThesaurusID | DEFAULT) (COMMASi ftThesaurusID)* RPARSi
-			                                | WITHOUT THESAURUS
+	ftThesaurusOption	        			: WITH^ THESAURUS (ftThesaurusID | DEFAULT)
+											| WITH^ THESAURUS LPARSi! (ftThesaurusID | DEFAULT) (COMMASi ftThesaurusID)* RPARSi!
+			                                | WITHOUT^ THESAURUS
 			                                ;
 		ftThesaurusID               			: AT uriLiteral (RELATIONSHIP StringLiteral)? (ftRange LEVELS)?;
 //			uriLiteral                  			: StringLiteral; 						
@@ -632,7 +641,7 @@ ftMatchOption               			: ftLanguageOption
 //				additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#
 				
 				
-	ftStemOption                			: WITH STEMMING | WITHOUT STEMMING;
+	ftStemOption                			: WITH^ STEMMING | WITHOUT^ STEMMING;
 	
 	
 	ftCaseOption                			: CASE INSENSITIVE
@@ -646,12 +655,12 @@ ftMatchOption               			: ftLanguageOption
 											| DIACRITICS SENSITIVE;	
 											
 																				
-	ftStopwordOption            			: WITH STOP WORDS ftRefOrList ftInclExclStringLiteral*
-											| WITHOUT STOP WORDS
-			                                | WITH DEFAULT STOP WORDS ftInclExclStringLiteral*
+	ftStopwordOption            			: WITH^ STOP WORDS ftRefOrList ftInclExclStringLiteral*
+											| WITHOUT^ STOP WORDS
+			                                | WITH^ DEFAULT STOP WORDS ftInclExclStringLiteral*
 			                                ;
 		ftRefOrList                 			: (AT uriLiteral)
-												| LPARSi StringLiteral (COMMASi StringLiteral)* RPARSi;
+												| LPARSi! StringLiteral (COMMASi StringLiteral)* RPARSi!;
 //			uriLiteral                  			: StringLiteral; 				//DOBBELT OPP
 		ftInclExclStringLiteral     			: (UNION | EXCEPT) ftRefOrList;
 		
@@ -671,8 +680,11 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 			
 	pathExpr                    			: {input.LA(1)=='/' && input.LA(2)=='/'}? DBLSLASHSi relativePathExpr 
 											| {input.LA(2)=='*'}? SLASHSi relativePathExpr
+                                            | SLASHSi relativePathExpr
 											| SLASHSi
-											| relativePathExpr;
+											| relativePathExpr
+											;
+
 		relativePathExpr            			: stepExpr ((SLASHSi | DBLSLASHSi)^ stepExpr)*;
 
 			stepExpr                    			: axisStep
@@ -732,7 +744,7 @@ filterExpr                  			: primaryExpr predicateList;
 //			numericLiteral              			: IntegerLiteral | DecimalLiteral | DoubleLiteral;
 		varRef                      			: DOLLARSi! varName;
 //			varName                     			: qName;
-		parenthesizedExpr           			: LPARSi! expr? RPARSi!;
+		parenthesizedExpr           			: LPARSi expr? RPARSi;
 //			expr                        			: exprSingle (COMMASi exprSingle)*;
 //				exprSingle#								: #PAA EGET#
 		contextItemExpr             			: DOTSi;
@@ -770,20 +782,23 @@ filterExpr                  			: primaryExpr predicateList;
                                                             -> ^(AST_DIRELEMCONSTRUCTOR $qn dirAttributeList dirElemContent*);
 
             		dirAttributeList            			: (qName EQSi dirAttributeValue)*; 
-            			dirAttributeValue           			: QUOTSi {lexer.state=State.IN_QUOT_ATTRIBUTE;}
+            			dirAttributeValue           			: QUOTSi! {lexer.state=State.IN_QUOT_ATTRIBUTE;}
             														(QuotAttributeContent | xmlEnclosedExpr)* 
-            													  QUOTSi {lexer.state=State.IN_TAG;}
-                												| APOSSi {lexer.state=State.IN_APOS_ATTRIBUTE;}
+            													  QUOTSi! {lexer.state=State.IN_TAG;}
+                												| APOSSi! {lexer.state=State.IN_APOS_ATTRIBUTE;}
                 													(AposAttributeContent | xmlEnclosedExpr)* 
-                												  APOSSi {lexer.state=State.IN_TAG;}; 
+                												  APOSSi! {lexer.state=State.IN_TAG;}; 
         					xmlEnclosedExpr                			: LBRACESi! {lexer.stack.pushState(lexer.state); lexer.state=State.DEFAULT;}
         																expr 
         															  RBRACSi! {lexer.state = lexer.stack.pop();};
 //        						expr                        			: exprSingle (COMMASi exprSingle)*;
 //									exprSingle#								: #PAA EGET#
 
-					dirElemContent              			: dc=directConstructor | cd=cDataSection | ec=ElementContent | xe=xmlEnclosedExpr
-                                                                -> ^(AST_DIRELEMCONTENT $dc? $cd? $ec? $xe?);
+					dirElemContent              			: dc=directConstructor-> ^(AST_DIRELEMCONTENT $dc)
+															| cd=cDataSection -> ^(AST_DIRELEMCONTENT $cd)
+															| ec=ElementContent -> ^(AST_DIRELEMCONTENT $ec)
+															| xe=xmlEnclosedExpr -> ^(AST_DIRELEMCONTENT $xe)
+															;
 
 //						directConstructor#						: #SE filterExpr->primaryExpr->constructor->directConstructor#
 						cDataSection							: LCDATASi CDataContents RCDATASi;
@@ -979,14 +994,54 @@ ncNameorKeyword							: NCName
 //---------------------------------------------------- Lexer ---------------------------------------------------
 /*
 Productions with -LEX suffix are productions with similar named parser productions. The ones in the lexer generally emits more
-than one token, and will not generate a token of it self.
+than one token, and will not generate a tokendigraph AST {
+edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=none]
+NODE1 [label="AST_DIRELEMCONSTRUCTOR"]
+NODE2 [label="ul"]
+NODE1 -> NODE2
+ NODE3 [label=""]
+NODE1 -> NODE3
+ NODE4 [label="AST_DIRELEMCONTENT"]
+NODE5 [label="AST_FLWOR"]
+NODE6 [label="AST_FORCLAUSE"]
+NODE7 [label="x"]
+NODE6 -> NODE7
+ NODE8 [label="/"]
+NODE9 [label="/"]
+NODE10 [label="/"]
+NODE11 [label="AST_FUNCTIONCALL"]
+NODE12 [label="doc"]
+NODE11 -> NODE12
+ NODE13 [label="books.xml"]
+NODE11 -> NODE13
+NODE10 -> NODE11
+ NODE14 [label="bookstore"]
+NODE10 -> NODE14
+NODE9 -> NODE10
+ NODE15 [label="book"]
+NODE9 -> NODE15
+NODE8 -> NODE9
+ NODE16 [label="title"]
+NODE8 -> NODE16
+NODE6 -> NODE8
+NODE5 -> NODE6
+ NODE17 [label="AST_ORDERBYCLAUSE"]
+NODE18 [label="x"]
+NODE17 -> NODE18
+NODE5 -> NODE17
+ NODE19 [label="AST_DIRELEMCONSTRUCTOR"]
+NODE20 [label="li"]
+NODE19 -> NODE20
+ NODE21 [label="AST_DIRELEMCONTENT"]
+NODE22 [label="AST_FLWOR"]
+NODE23 [lab of it self.
 
 Productions with a -Si suffix are productions consisting of only matching a special character or a series of special characters,
 eg. QUESTIONSi = '?' and DBLSLASHSi = '//'
 */
 
 
-TOKENSWITCH				: {System.out.println("State is: " + state);}(
+TOKENSWITCH				: {print("State is: " + state);}(
 						  {state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE}?=>
                           n=CDataSectionLEX						// emits subtokens
 						| {state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE}?=>
@@ -1040,7 +1095,7 @@ TOKENSWITCH				: {System.out.println("State is: " + state);}(
 						| n=LBRACESi							{$type=LBRACESi;}
 						| n=PIPESi								{$type=PIPESi;}
 						| n=RBRACSi								{$type=RBRACSi;})
-						{System.out.println(XQFTParser.tokenNames[$type] + " xx"+ $n.text +"xx in state: " + state);}	
+						{print(XQFTParser.tokenNames[$type] + " xx"+ $n.text +"xx in state: " + state);}	
 						;
 
 fragment S                   		: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
