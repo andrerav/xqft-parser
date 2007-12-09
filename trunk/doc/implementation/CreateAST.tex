@@ -1,4 +1,7 @@
 \section{Creating the AST}
+\emph{Note: all graphical AST examples in this section were generated using the
+actual parser with a custom method to output graphiz dot code.}
+
 \subsection{Operators and rewrite rules}
 As described in section \ref{sect:antlr:ast}, ANTLR provides operators and
 rewrite rules for augmenting the grammar specification into generating a useable
@@ -163,13 +166,23 @@ Finally, the \verb!exprSingle! rule terminates the FLWOR expression. This rule
 isa placeholder for any valid expression, and thus it carries no meaning in
 itself but rather in the sense of what is deduced from the input.
 
-Figure \ref{tree:ast:flwor} shows the AST generated for the expression 
+Figure \ref{tree:ast:flwor1} shows the AST generated for the expression in
+figure \ref{code:ast:flwor1}. This is a simple example, but it shows one way to
+build an AST for a FLWOR expression.
+
+\begin{figure}[h]
+\verbatiminput{graph_queries/flwor1.xq}
+\caption{FLWOR expression example, generates AST seen in figure \ref{code:ast:flwor1}}
+\label{code:ast:flwor1}
+\end{figure}
+
 
 \begin{figure}[h]
  \includegraphics[width=1\textwidth]{img/graphs/flwor1}
-\caption{Generated AST tree for a simple FLWOR-expression}
-\label{tree:ast:flwor}
+\caption{Generated AST tree for FLWOR-expression in figure \ref{code:ast:flwor1}}
+\label{tree:ast:flwor1}
 \end{figure}
+
 
 \subsection{Path expressions}
 \subsection{Function declarations}
