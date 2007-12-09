@@ -1,17 +1,17 @@
 \section{Enclosed Composite Lexer Productions}
 \label{sect:rewriteGrammar:enclosedComposite}
- The XQuery grammar specifies some constructs enclosed by unique symbols, such as \verb!Pragma! shown in figure \ref{fig:pragma} These rules often contain tokens that overlap with other terminals, so we would draw benefit from moving the productions to the lexer. However, this means that there will only be generated one token by such a rule, and if a later step in the parser want to extract only parts of the construct, it would have to do so manually. Our solution is to make it possible for lexer productions to emit more than one token. In this way, ambiguousities would be solved in the lexer, and the parser would still have access to all terminals it should have.
+ The XQuery grammar specifies some constructs enclosed by unique symbols, such as \verb!DirPIConstructor! shown in figure \ref{fig:pragma} These rules often contain tokens that overlap with other terminals, so we would draw benefit from moving the productions to the lexer. However, this means that there will only be generated one token by such a rule, and if a later step in the parser want to extract only parts of the construct, it would have to do so manually. Our solution is to make it possible for lexer productions to emit more than one token. In this way, ambiguousities would be solved in the lexer, and the parser would still have access to all terminals it should have.
 
 \begin{figure}[h!]
 \begin{verbatim}
-Pragma          ::= "(#" S? QName (S PragmaContents)? "#)"
-PragmaContents  ::=  (Char* - (Char* '#)' Char*))
+DirPIConstructor ::= "<?" PITarget (S DirPIContents)? "?>"
+DirPIContents    ::= (Char* - (Char* '?>' Char*))
 \end{verbatim}
 \label{fig:pragma}
-\caption[An enclosed production]{Pragma is an uniquely enclosed production. \texttt{S} denotes white space.}
+\caption[An enclosed production]{\texttt{DirPIConstructor} is an uniquely enclosed production. \texttt{S} denotes whitespace.}
 \end{figure}
 
-In addition to \verb!Pragma! the grammar specifies the other non-terminals with an enclosed content \verb!DirPIConstructor!,  \verb!DirCommentConstructor! (XML comment) and \verb!CDataSection!. \verb!Comment! (XQuery comment) has the special property of being able to be nested, but because it is a terminal itself it does not need to generate more than one token.
+In addition to \verb!DirPIConstructor! the grammar specifies the other non-terminals with an enclosed content \verb!Pragma!,  \verb!DirCommentConstructor! (XML comment) and \verb!CDataSection!. \verb!Comment! (XQuery comment) has the special property of being able to be nested, but because it is a terminal itself it does not need to generate more than one token.
 
 \subsection{Emiting More Than One Token Per Production}
 
@@ -37,7 +37,7 @@ public Token nextToken(){
   if(tokens.size() > 0)
     return tokens.remove(0);
   super.nextToken();
-  if( tokens.size()==0 )
+  if(tokens.size()==0 )
     return Token.EOF_TOKEN;
   return tokens.remove(0);
 }
@@ -48,9 +48,41 @@ public Token nextToken(){
 
 
 \subsection{PI, Pragma, XMLComment and CDATA Sections}
-\textbf{\LARGE //TODO:} 
 
-Sammensatte omhyllede lexerregler (<? noe ?>, <!-- noe --> etc)
+As previously mentioned, the XML markup features processing instructions, pragmas, comments and CDATA sections contain terminals which allowed content overlap significantly with other terminals. However, these terminals are enclosed in unique symbols, making it possible for us to declare the non-terminal rules which refer to them as lexer productions. And with the subtoken emitting functionality described in the last section, the parser will still be able to distinguish the terminals. 
+
+\begin{figure}[h!]
+\begin{verbatim}
+DirPIConstructor : {prepareSubToken();}
+                   LPISi                 {type=LPISi; emit();}
+                   {prepareSubToken();}
+                   PiTarget           {type=PiTarget; emit();}
+                   (S
+                     {prepareSubToken();}
+                     d=DirPiContents
+                     {if(d!=null){
+                                   type=DirPiContents;emit();} 
+                     } 
+                   )?
+                   {prepareSubToken();}
+                   RPISi                 {type=RPISi; emit();}
+                   ;
+    fragment LPISi           : '<?';
+    fragment DirPiContents   : (
+                               {(input.LA(2)!='>')}?=>
+                               QUESTIONSi 
+                               | ~(NotChar | QUESTIONSi)
+                               )*;
+    fragment RPISi           : '?>';
+
+\end{verbatim}
+\caption[\texttt{DirPIConstructor} emitting subtokens]{The implementation of \texttt{DirPIConstructor} with subtoken emitting capabilities.}
+\label{fig:pragmaLEX}
+\end{figure}
+
+We implemented \verb!DirPIConstructor! as shown in figure \ref{fig:pragmaLEX}. As explained in section \ref{sect:antlr:lexer} ANTLR will generate a method \verb!mDirPIConstructor! from this production, meaning that all actions described will be performed somewhere within \verb!"predict type"! of figure \ref{fig:nextToken}. There will, however, not be generated any \verb!DirPIConstructor! token because of our overridden \verb!emit(Token t)! The \verb!PiTarget! production is described in figure \ref{fig:pitargetRewritten}.
+
+Because the \verb!DirPIContents! part is optional, the lexer will have to check if it is there before emitting such a token. This rule is as seen in the figure implemented non-greedy with the help of a gated semantic predicate, and will stop matching characters as soon as it sees the end of the processing instruction -- \verb!'?>'!. \verb!S! denotes whitespace and will not be emitted, this is because of the lack of the surrounding \verb!prepareSubToken()! and \verb!emit()!.
 
 \subsection{Nested XQuery Comments}
 XQuery allows nested comments, for example:

@@ -257,8 +257,8 @@ By instituting the container tokens, our \verb!DirAttributeValue! is simplified 
 \begin{verbatim}
 QuotAttrContent : (PredefEntRef | CharRef | QuotAttrContChar)*;
 
-QuotAttrContChar:  {(input.LA(1)=='"' && input.LA(2)=='"')}?=> 
-                   QUOTSi QUOTSi
+QuotAttrContChar: {(input.LA(1)=='"' && input.LA(2)=='"')}?=> 
+                  QUOTSi QUOTSi
                   |{(input.LA(1)=='{' && input.LA(2)=='{')}?=> 
                   LBRACESi LBRACESi 
                   |{(input.LA(1)=='}' && input.LA(2)=='}')}?=> 
