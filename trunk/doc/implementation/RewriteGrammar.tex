@@ -139,17 +139,28 @@ fragment LexLiterals : n=NCName {
 
 The solution was to implement all these tokens as \verb!NCName!, with an action checking if the matched token should be one of the keywords, and in such a case change the type. This is shown in figure \ref{fig:lexLitterals}. The initial check if the lexer is in the state \verb!IN_TAG! will prohibit any keywords from occuring inside a XML tag. This manner of fixing the problem is not a preticular good one, and other solutions will be discussed in chapter \ref{sect:summary:future_work}. The reason was mainly to avoid compiler warnings from ANTLR.
 
+\section{Resolving Non-determinisms in the Parser }
+
+The W3C grammar specifies the non-terminal \verb!SequenceType! as follows:
+\begin{verbatim}
+SequenceType ::= ("empty-sequence" "(" ")")
+               | (ItemType OccurrenceIndicator?)
+\end{verbatim}
+It also specifies this extra-gramatical constraint (\cite{w3c00}, section A.1.2):
+\begin{quote}
+As written, the grammar in A XQuery Grammar is ambiguous for some forms using the '+' and '*' Kleene operators. The ambiguity is resolved as follows: these operators are tightly bound to the SequenceType expression, and have higher precedence than other uses of these symbols. Any occurrence of '+' and '*', as well as '?', following a sequence type is assumed to be an occurrence indicator.
+\end{quote}
+
+\textbf{\LARGE //TODO:} 
+
+pathExpr og itemtype occurenceindicator trengte syntaktiske predikat
+
+
 \section{Extra-grammatical Constraints}
 
 \textbf{\LARGE //TODO:} 
 
 Whitespace, leading dash etc..
-
-\section{Resolving Non-determinisms in the Parser }
-
-\textbf{\LARGE //TODO:} 
-
-pathExpr og itemtype occurenceindicator trengte syntaktiske predikat
 
 \section{Reserved Keywords}
 
