@@ -50,7 +50,7 @@ public class XQFTTree extends CommonTree {
         String nodeName = "NODE" + my_i;
         
         /* Token name for this node */
-        String tokenName = this.printTokenName ? XQFTParser.tokenNames[this.getToken().getType()]  + ": " : "";
+        String tokenName = this.printTokenName && this.getToken() != null ? XQFTParser.tokenNames[this.getToken().getType()]  + ": " : "";
         String nodeText = this.fixStringForDot(this.toString());
         
         

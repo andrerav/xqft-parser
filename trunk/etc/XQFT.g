@@ -164,6 +164,7 @@ AST_FTSELECTION;
 AST_FTPOSFILTER;
 AST_FUNCTIONCALL;
 AST_FUNCTIONDECL;
+AST_PREDICATE;
 
 AST_DIRELEMCONSTRUCTOR;
 AST_DIRELEMCONTENT;
@@ -521,7 +522,7 @@ exprSingle                  			: fLWORExpr
 
 //------------------------------------------------------- ComparisonExpr -------------------------------------
 
-comparisonExpr              			: ftContainsExpr ( (valueComp | generalComp | nodeComp)^ ftContainsExpr )?;
+comparisonExpr              			: ftContainsExpr ( (valueComp^ | generalComp^ | nodeComp^) ftContainsExpr )?;
 	ftContainsExpr              			: rangeExpr ( FTCONTAINS^ ftSelection ftIgnoreOption? )?;	
 		rangeExpr                   			: additiveExpr ( TO^ additiveExpr )?;
 			additiveExpr                			: multiplicativeExpr ( (PLUSSi | MINUSSi)^ multiplicativeExpr )*;
@@ -678,14 +679,14 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 //			exprSingle#								: #PAA EGET#
 			
 			
-	pathExpr                    			: {input.LA(1)=='/' && input.LA(2)=='/'}? DBLSLASHSi relativePathExpr 
-											| {input.LA(2)=='*'}? SLASHSi relativePathExpr
-                                            | SLASHSi relativePathExpr
-											| SLASHSi
+	pathExpr                    			: {input.LA(1)=='/' && input.LA(2)=='/'}? DBLSLASHSi^ relativePathExpr
+											| {input.LA(2)=='*'}? SLASHSi^ relativePathExpr
+                                            | SLASHSi^ relativePathExpr
+											| SLASHSi^
 											| relativePathExpr
 											;
 
-		relativePathExpr            			: stepExpr ((SLASHSi | DBLSLASHSi)^ stepExpr)*;
+		relativePathExpr            			: stepExpr ((SLASHSi^ | DBLSLASHSi^) stepExpr)*;
 
 			stepExpr                    			: axisStep
 													| filterExpr
@@ -712,10 +713,11 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 //							wildcard                    			: (STARSi COLONSi NCName) => STARSi COLONSi NCName			/* ws: explicitXQ */
 //																	| STARSi
 //                                									| NCName COLONSi STARSi; 
-					abbrevForwardStep           			: ATSi? nodeTest;                	
+					abbrevForwardStep           			: ATSi^? nodeTest;                	
                 
                 predicateList               			: predicate*;     									
-                	predicate                   			: LBRACKSi! expr RBRACKSi!;
+                	predicate                   			: LBRACKSi expr RBRACKSi
+                                                             -> ^(AST_PREDICATE expr);
 //						expr                        			: exprSingle (COMMASi exprSingle)*
 //							exprSingle#								: #PAA EGET#            									
 				
@@ -1096,7 +1098,10 @@ fragment ElementContent				: (PredefinedEntityRef | CharRef | ElementContentChar
 	fragment ElementContentChar		: ({(input.LA(1)=='{' && input.LA(2)=='{')}?=> LBRACESi LBRACESi 
 									|  {(input.LA(1)=='}' && input.LA(2)=='}')}?=> RBRACSi RBRACSi 
 									| ~(NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ));
-
+    fragment QuotAttrContentChar    : ({(input.LA(1)=='"' && input.LA(2)=='"')}?=> QUOTSi QUOTSi
+                                    | {(input.LA(1)=='{' && input.LA(2)=='{')}?=> LBRACESi LBRACESi 
+                                    | {(input.LA(1)=='}' && input.LA(2)=='}')}?=> RBRACSi RBRACSi 
+                                    | ~(NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi));
 	fragment AposAttrContentChar	: ({(input.LA(1)=='\'' && input.LA(2)=='\'')}?=> APOSSi APOSSi
 									| {(input.LA(1)=='{' && input.LA(2)=='{')}?=> LBRACESi LBRACESi 
 									| {(input.LA(1)=='}' && input.LA(2)=='}')}?=> RBRACSi RBRACSi 
