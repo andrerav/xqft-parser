@@ -28,7 +28,8 @@ PartOf            : ~(NotChar | COLONSi | AMPSi);
 \end{verbatim}
 The 'dash' operator is sometimes also used like this, like in e.g. \verb!QuotAttrContentChar! but because of our introduced production \verb!QuotAttributeContent! (section \ref{sect:rewriteGrammar:containerTokens}) it is rewritten in the same way as with the enclosed expressions (section \ref{sect:rewriteGrammar:enclosedComposite}), where the operator is used to define that a very gereral production should not be greedy. 
 
-In \verb!piTarget! the 'dash' operator is used in a unique way, and thus needed to be treated differently:
+In \verb!piTarget! the 'dash' operator is used in a unique way, and thus needed to be treated differently as can be seen in figure \ref{fig:pitargetRewritten}. In this figure the original production can be interpreted as ``piTarget can be a Name, but not `XML', regardless of character casing''. The validating semantic predicate will imitate this behaviour using the method \verb!equalsIgnoreCase()!.
+\begin{figure}[h!]
 \begin{verbatim}
 // Original production
 PiTarget    ::= Name - (('X' | 'x') ('M' | 'm') ('L' | 'l'))
@@ -36,5 +37,8 @@ PiTarget    ::= Name - (('X' | 'x') ('M' | 'm') ('L' | 'l'))
 // Rewritten production using a semantic predicate
 piTarget    : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
 \end{verbatim}
-Where the original production can be interpreted as ``piTarget can be a Name, but not `XML', regardless of character casing''. The validating semantic predicate will imitate this behaviour using the method \verb!equalsIgnoreCase()!.
+\caption[Rewrite of 'dash' operator]{\texttt{PiTarget} demanded a different rewrite approach.}
+\label{fig:pitargetRewritten}
+\end{figure}
+
 
