@@ -994,48 +994,7 @@ ncNameorKeyword							: NCName
 //---------------------------------------------------- Lexer ---------------------------------------------------
 /*
 Productions with -LEX suffix are productions with similar named parser productions. The ones in the lexer generally emits more
-than one token, and will not generate a tokendigraph AST {
-edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=none]
-NODE1 [label="AST_DIRELEMCONSTRUCTOR"]
-NODE2 [label="ul"]
-NODE1 -> NODE2
- NODE3 [label=""]
-NODE1 -> NODE3
- NODE4 [label="AST_DIRELEMCONTENT"]
-NODE5 [label="AST_FLWOR"]
-NODE6 [label="AST_FORCLAUSE"]
-NODE7 [label="x"]
-NODE6 -> NODE7
- NODE8 [label="/"]
-NODE9 [label="/"]
-NODE10 [label="/"]
-NODE11 [label="AST_FUNCTIONCALL"]
-NODE12 [label="doc"]
-NODE11 -> NODE12
- NODE13 [label="books.xml"]
-NODE11 -> NODE13
-NODE10 -> NODE11
- NODE14 [label="bookstore"]
-NODE10 -> NODE14
-NODE9 -> NODE10
- NODE15 [label="book"]
-NODE9 -> NODE15
-NODE8 -> NODE9
- NODE16 [label="title"]
-NODE8 -> NODE16
-NODE6 -> NODE8
-NODE5 -> NODE6
- NODE17 [label="AST_ORDERBYCLAUSE"]
-NODE18 [label="x"]
-NODE17 -> NODE18
-NODE5 -> NODE17
- NODE19 [label="AST_DIRELEMCONSTRUCTOR"]
-NODE20 [label="li"]
-NODE19 -> NODE20
- NODE21 [label="AST_DIRELEMCONTENT"]
-NODE22 [label="AST_FLWOR"]
-NODE23 [lab of it self.
-
+than one token, and will not generate a token of itself.
 Productions with a -Si suffix are productions consisting of only matching a special character or a series of special characters,
 eg. QUESTIONSi = '?' and DBLSLASHSi = '//'
 */
@@ -1137,7 +1096,7 @@ fragment ElementContent				: (PredefinedEntityRef | CharRef | ElementContentChar
 	fragment ElementContentChar		: ({(input.LA(1)=='{' && input.LA(2)=='{')}?=> LBRACESi LBRACESi 
 									|  {(input.LA(1)=='}' && input.LA(2)=='}')}?=> RBRACSi RBRACSi 
 									| ~(NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ));
-f
+
 	fragment AposAttrContentChar	: ({(input.LA(1)=='\'' && input.LA(2)=='\'')}?=> APOSSi APOSSi
 									| {(input.LA(1)=='{' && input.LA(2)=='{')}?=> LBRACESi LBRACESi 
 									| {(input.LA(1)=='}' && input.LA(2)=='}')}?=> RBRACSi RBRACSi 
