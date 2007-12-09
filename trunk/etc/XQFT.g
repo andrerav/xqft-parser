@@ -1082,10 +1082,7 @@ fragment ElementContent				: (PredefinedEntityRef | CharRef | ElementContentChar
 	fragment ElementContentChar		: ({(input.LA(1)=='{' && input.LA(2)=='{')}?=> LBRACESi LBRACESi 
 									|  {(input.LA(1)=='}' && input.LA(2)=='}')}?=> RBRACSi RBRACSi 
 									| ~(NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi ));
-	fragment QuotAttrContentChar	: ({(input.LA(1)=='"' && input.LA(2)=='"')}?=> QUOTSi QUOTSi
-									| {(input.LA(1)=='{' && input.LA(2)=='{')}?=> LBRACESi LBRACESi 
-									| {(input.LA(1)=='}' && input.LA(2)=='}')}?=> RBRACSi RBRACSi 
-									| ~(NotChar | LBRACESi | RBRACSi | LTSi | AMPERSi | QUOTSi));
+f
 	fragment AposAttrContentChar	: ({(input.LA(1)=='\'' && input.LA(2)=='\'')}?=> APOSSi APOSSi
 									| {(input.LA(1)=='{' && input.LA(2)=='{')}?=> LBRACESi LBRACESi 
 									| {(input.LA(1)=='}' && input.LA(2)=='}')}?=> RBRACSi RBRACSi 

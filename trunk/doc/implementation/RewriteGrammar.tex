@@ -1,15 +1,51 @@
 \section{Enclosed Composite Lexer Productions}
 \label{sect:rewriteGrammar:enclosedComposite}
-\textbf{\LARGE //TODO:} 
+ The XQuery grammar specifies some constructs enclosed by unique symbols, such as \verb!Pragma! shown in figure \ref{fig:pragma} These rules often contain tokens that overlap with other terminals, so we would draw benefit from moving the productions to the lexer. However, this means that there will only be generated one token by such a rule, and if a later step in the parser want to extract only parts of the construct, it would have to do so manually. Our solution is to make it possible for lexer productions to emit more than one token. In this way, ambiguousities would be solved in the lexer, and the parser would still have access to all terminals it should have.
 
-Regler som PI, Pragma, XMLComment and CDATA kan fanges i sin helhet i lexeren. Samme med saertilfellet XQuerykommentarer. 
+\begin{figure}[h!]
+\begin{verbatim}
+Pragma          ::= "(#" S? QName (S PragmaContents)? "#)"
+PragmaContents  ::=  (Char* - (Char* '#)' Char*))
+\end{verbatim}
+\label{fig:pragma}
+\caption[An enclosed production]{Pragma is an uniquely enclosed production. \texttt{S} denotes white space.}
+\end{figure}
 
-Fint for aa skille alternativer, men man ikke faar tak i deltokens... saa derfor ----v
+In addition to \verb!Pragma! the grammar specifies the other non-terminals with an enclosed content \verb!DirPIConstructor!,  \verb!DirCommentConstructor! (XML comment) and \verb!CDataSection!. \verb!Comment! (XQuery comment) has the special property of being able to be nested, but because it is a terminal itself it does not need to generate more than one token.
 
 \subsection{Emiting More Than One Token Per Production}
-\textbf{\LARGE //TODO:} 
 
-Omskriving av lexer for a la produksjoner avgi mer enn ett token
+As can be seen in figure \ref{fig:nextToken}, by default an ANTLR generated lexer will only emit one token per lexer production. To be able to handle multiple emitions, we introduced a buffer in the lexer out of which the parser input \verb!TokenStream! could fetch tokens. By overriding the methods \verb!nextToken()! and \verb!emit(Token t)! we accomodated for this. 
+
+As seen in figure \ref{fig:emitToken} ,our implemented \verb!emit(Token t)! will put the token \verb!t! in the buffer and set the \verb!token! variable of the lexer to \verb!t!, to block it from emitting unwanted tokens (see \verb!if(token == NULL)! in figure \ref{fig:nextToken}).
+\begin{figure}[h!]
+\begin{verbatim}
+public void emit(Token token){
+  this.token = token;
+  tokens.add(token);
+}
+\end{verbatim}
+\caption[The overridden \texttt{emit(Token t)}]{The implementation of the overriden method \texttt{emit(Token token)}}
+\label{fig:emitToken}
+\end{figure}
+
+The \verb!nextToken()! method is modified to pick tokens from the buffer, that is, if there are any there. If there are not, it will ask the lexer to make one as before, before returning the first one generated. This is shown in figure \ref{fig:newNextToken}. To be able to use the token generating capabilities of \verb!emit()! we also introduced a method \verb!prepareSubToken()! which ensures that the token will contain correct information about its position.
+
+\begin{figure}[h!]
+\begin{verbatim}
+public Token nextToken(){
+  if(tokens.size() > 0)
+    return tokens.remove(0);
+  super.nextToken();
+  if( tokens.size()==0 )
+    return Token.EOF_TOKEN;
+  return tokens.remove(0);
+}
+\end{verbatim}
+\caption[The overridden \texttt{nextToken()}]{The implementation of the overriden method \texttt{nextToken()}}
+\label{fig:newNextToken}
+\end{figure}
+
 
 \subsection{PI, Pragma, XMLComment and CDATA Sections}
 \textbf{\LARGE //TODO:} 
@@ -40,10 +76,15 @@ Where the disambiguating semantic predicate on the second line can be understood
 
 \section{Differentiating NCName and Keywords}
 \label{sect:rewritegrammar:keywordNCName}
+
+All 139 keywords and 73 symbols are explicitly defined as tokens, as opposed to inline declared in the non-terminal productions. The main reason for this is that it makes it possible to control when the lexer should and should not try to match these by means of predicates. Another benefit from defining the tokens in the lexer is that error messages is much more readable this way. 
+
+When defined inline ANTLR would just assign any unique name to the tokens, making it hard for humans to understand which token is refered to. The names of the tokens for keywords are just the keyword in capital letters, and with and dashes replaced by underscore, e.g. \verb!BASE_URI : 'base-uri'!. A descriptive name with the suffix \verb!Si! consitutes the token names for symbols, e.g. \verb!ASSIGNSi : ':='!.
+
 \textbf{\LARGE //TODO:} 
 
 Systemet med NCNames vs keywords. \\
-Husk: Keywords er uttrykt som tokens for aa sperre av for parsing og for oversiktlige feilmeldinger.
+Husk: Keywords er uttrykt som tokens for \aa sperre av for parsing og for oversiktlige feilmeldinger.
 
 \section{Extra-grammatical Constraints}
 
@@ -59,13 +100,13 @@ pathExpr og itemtype occurenceindicator trengte syntaktiske predikat
 
 \section{Reserved Keywords}
 
-\underline{\textbf{\LARGE //TODO:}} dette maa flyttes eller skrives om.
+\underline{\textbf{\LARGE //TODO:}} dette m\aa flyttes eller skrives om.
 
 A particular feature in XQuery is the lack of reserved keywords. This creates a
 series of problems when a lexer based on the verbatim grammar specification from
 the W3C is trying to recognize tokens. 
 
-vaar parser har enna reserved keywords, flytte dette til future work? \\
+v\aa r parser har enna reserved keywords, flytte dette til future work? \\
 \underline{\textbf{\LARGE //ODOT:}} 
 
 
