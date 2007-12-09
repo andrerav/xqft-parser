@@ -60,8 +60,7 @@ DirPIConstructor : {prepareSubToken();}
                    (S
                      {prepareSubToken();}
                      d=DirPiContents
-                     {if(d!=null){
-                                   type=DirPiContents;emit();} 
+                     {if(d!=null){type=DirPiContents; emit();} 
                      } 
                    )?
                    {prepareSubToken();}
@@ -69,9 +68,9 @@ DirPIConstructor : {prepareSubToken();}
                    ;
     fragment LPISi           : '<?';
     fragment DirPiContents   : (
-                               {(input.LA(2)!='>')}?=>
-                               QUESTIONSi 
-                               | ~(NotChar | QUESTIONSi)
+                                 {(input.LA(2)!='>')}?=>
+                                 QUESTIONSi 
+                                 | ~(NotChar | QUESTIONSi)
                                )*;
     fragment RPISi           : '?>';
 
@@ -113,10 +112,32 @@ All 139 keywords and 73 symbols are explicitly defined as tokens, as opposed to 
 
 When defined inline ANTLR would just assign any unique name to the tokens, making it hard for humans to understand which token is refered to. The names of the tokens for keywords are just the keyword in capital letters, and with and dashes replaced by underscore, e.g. \verb!BASE_URI : 'base-uri'!. A descriptive name with the suffix \verb!Si! consitutes the token names for symbols, e.g. \verb!ASSIGNSi : ':='!.
 
-\textbf{\LARGE //TODO:} 
+As discussed in section \ref{sect:antlr:lexer}, ANTLR will generate a lexer correctly differanciating between explicit and inplicit defined character sequences, in our case this is keywords and \verb!NCName! respectively. It acctually resolves this by ranking the explicit ones over the implicit ones, and surpressing warnings about ambiguousity. This works as the highest ranked alternative will always be chosen. But because we introduced the \verb!TOKENSWITCH! construct from figure \ref{fig:tokenswitch}, these warnings will not be surpressed. The keywords and \verb!NCName! were implemented as alternatives to the \verb!fragment! production \verb!LexLiterals! 
 
-Systemet med NCNames vs keywords. \\
-Husk: Keywords er uttrykt som tokens for \aa sperre av for parsing og for oversiktlige feilmeldinger.
+\begin{figure}[h!]
+\begin{verbatim}
+fragment LexLiterals : n=NCName {
+ if(state != State.IN_TAG){
+   if($n.getText().equals("all")) 
+     this.tokenType=ALL;
+   else if($n.getText().equals("any")) 
+     this.tokenType=ANY;
+   else if($n.getText().equals("ancestor")) 
+     this.tokenType=ANCESTOR;
+   . . .
+   . . .
+   else 
+     this.tokenType=NCName;
+   }
+  else
+   this.tokenType=NCName;
+};
+\end{verbatim}
+\caption[Differantiating keywords from \texttt{NCName}]{An implementation differantiating keywords from \texttt{NCName}}
+\label{fig:lexLitterals}
+\end{figure}
+
+The solution was to implement all these tokens as \verb!NCName!, with an action checking if the matched token should be one of the keywords, and in such a case change the type. This is shown in figure \ref{fig:lexLitterals}. The initial check if the lexer is in the state \verb!IN_TAG! will prohibit any keywords from occuring inside a XML tag. This manner of fixing the problem is not a preticular good one, and other solutions will be discussed in chapter \ref{sect:summary:future_work}. The reason was mainly to avoid compiler warnings from ANTLR.
 
 \section{Extra-grammatical Constraints}
 
