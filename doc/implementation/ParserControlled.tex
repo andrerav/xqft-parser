@@ -178,10 +178,6 @@ enclosedExpr   : LBRACESi
 
 To gain a more readable version of the grammar, all non-terminal, i.e. parser, productions were organized in a treewise fashion. Producuctions that lead to cycles were pulled out and made the root of their own tree. In this way it was readily understood which productions could have which outcome, but also easier to spot any possible non-determinisms.
 
-All 139 keywords and 73 symbols are explicitly defined as tokens, as opposed to inline declared in the non-terminal productions. The main reason for this is that it makes it possible to control when the lexer should and should not try to match these by means of predicates. Another benefit from defining the tokens in the lexer is that error messages is much more readable this way. 
-
-When defined inline ANTLR would just assign any unique name to the tokens, making it hard for humans to understand which token is refered to. The names of the tokens for keywords are just the keyword in capital letters, and with and dashes replaced by underscore, e.g. \verb!BASE_URI : 'base-uri'!. A descriptive name with the suffix \verb!Si! consitutes the token names for symbols, e.g. \verb!ASSIGNSi : ':='!.
-
 Even with the state transitions in place, the lexer grammar still has to be adapted to be aware of them. An obvious candidate for implementing this would be by gated semantic predicates (section \ref{sect:antlr:gate_semantic_preds}). To be sure that the lexer will choose another rule should a predicate fail, and not issue a \verb!FailedSemanticPredicateException!, a lexer production \verb!TOKENSWITCH! with all the other lexer productions as alternatives is implemented. \verb!mTokens()! (section \ref{sect:antlr:lexer}) in a sense is replaced by \verb!TOKENSWITCH!, acting as the main differansiator. 
 
 \begin{figure}[h!]
