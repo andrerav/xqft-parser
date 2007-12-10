@@ -50,7 +50,7 @@ public class Mein {
                         "(xs:dayTimeDuration(\"P42DT10H10M\") div xs:dayTimeDuration(\"P10DT10H10M\"))\n" +
                         "div\n" +
                         "(xs:dayTimeDuration(\"P20DT10H10M\") div xs:dayTimeDuration(\"P18DT10H10M\"))\n" +*/
-                        "13.3 + .34e4";
+                        "for $v in docz(\"left\")/get return $v";
 		CharStream cs = new ANTLRStringStream(input);
 		XQFTLexer lexer = new XQFTLexer(cs);
 		UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
@@ -65,7 +65,9 @@ public class Mein {
 			System.out.println(tok.getTokenIndex() + ": " + tok.getText() + " type: " + m.text(tok.getType()) + " charpos: " + tok.getCharPositionInLine() + " linje: " + tok.getLine());
 		}
 		*/
+        lexer.debug = true;
         XQFTParser parser = new XQFTParser(tokens);
+        parser.setTreeAdaptor(new XQFTTreeAdaptor());
         //parser.lexer = lexer;
 		parser.module();
 		System.out.println();
