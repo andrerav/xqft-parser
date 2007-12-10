@@ -1,4 +1,8 @@
 \chapter{Discussion}
+\underline{\textbf{\LARGE //TODO:}} tekst her... innledning
+
+
+husk generelt: Gjorde vi riktige valg? Ble ting som forventet? Hva hadde skjedd om vi brukte annet alternativ etc..
 
 \section{ANTLR}
 \underline{\textbf{\LARGE //TODO:}}
@@ -16,26 +20,45 @@ stolte for mye paa EBNF fra W3C, sannsynlig ment for mennesker, ikke datamaskine
 
 \underline{\textbf{\LARGE //ODOT:}}
 
+\section{Design Decisions}
+
+\underline{\textbf{\LARGE //TODO:}}
+
+Var inne paa lexer uavhengig av parser styrt av handskrevet diffus state machine basert paa w3c-artikkel
+
+Egen tokenstream forte til at gUnit og ANTLRWorks har begrenset nytteverdi
+
+\underline{\textbf{\LARGE //ODOT:}}
+
 
 \section{Test Results}
 
 \underline{\textbf{\LARGE //TODO:}}
+\begin{itemize}
+\item Testresultater, bra/dårlig
+\item
+\end{itemize}
 
 testresultater (hva var de forskjellige feilene)
 Generelt resultater vi skrev om i forrige kapittel
 
 \underline{\textbf{\LARGE //ODOT:}}
 
-\section{Generated ASTs}
+\section{AST}
 \underline{\textbf{\LARGE //TODO:}}
 
 AST'en som blir produsert vs syntakstre
+
+Generelle resultat, bra/dårlig (AST, typesjekking (bedre å gjøre på AST'en),
+symtabs (bedre å gjøre på AST'en))
 
 \underline{\textbf{\LARGE //ODOT:}}
 
 \section{Error Handling}
 \underline{\textbf{\LARGE //TODO:}}
 
+Hardkodet catching av exceptions i nextToken() begrenset muligheten for aa
+fange opp *alle* feil, men dette er mulig aa fikse (definere egne baseklasser)
 Feilhaandteringen
 
 \underline{\textbf{\LARGE //ODOT:}}
