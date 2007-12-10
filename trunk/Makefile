@@ -15,7 +15,7 @@ dotgraphs:
 jar:
 	jar cvfm ntnu-xqft.jar ./etc/default-manifest bin/*
 
-all: parser compile dotgraphs jar
+all: parser compile jar dotgraphs
 
 PITargetTest:
 	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool -Xgrtree test/PITarget/PITargetGr.g

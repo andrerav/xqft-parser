@@ -149,6 +149,7 @@ WORDS;
 XQUERY;
 
 /* Imaginary tokens */
+AST_MODULE;
 AST_FLWOR;
 AST_FORCLAUSE;
 AST_LETCLAUSE;
@@ -291,7 +292,8 @@ AST_DIRELEMCONTENT;
 
 //----------------------------------------------------- Module -------------------------------------------------------
 
-module                     				: versionDecl? (libraryModule | mainModule);
+module                     				: versionDecl? (libraryModule | mainModule)
+                                        -> ^(AST_MODULE versionDecl? libraryModule? mainModule?);
 
 	versionDecl                 			: XQUERY VERSION StringLiteral (ENCODING StringLiteral)? separator;
 		separator                   			: SEMICOLONSi;

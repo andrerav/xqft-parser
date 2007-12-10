@@ -31,13 +31,14 @@ automatically build a scope tree as the input is parsed.
 The currentScope object, which is an object of type Scope, holds one reference
 to a symbol table. The symbol table, which is a simple subclass of
 java.util.HashMap, is not capable of performing symbol lookups throughout the
-scope tree. This functionality is rather provided by the Scope class. This UML diagram
-illustrates the relationship between the Scope, SymTab, and Symbol classes:
-\clearpage
+scope tree. This functionality is rather provided by the Scope class. The UML diagram
+in figure \ref{fig:scope:uml1} illustrates the relationship between the Scope, SymTab, and Symbol
+classes. \clearpage
 \begin{figure}[!h]
   \centering
     \includegraphics[scale=0.6]{img/uml1}
   \caption{Simplified UML overview of classes related to scope and symbol table}
+  \label{fig:scope:uml1}
 \end{figure}
 
 \section{Type checking}
