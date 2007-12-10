@@ -111,8 +111,8 @@ RETURN;
 SAME;
 SATISFIES;
 SCHEMA;
-SCHEMAATTRIBUTE;
-SCHEMAELEMENT;
+SCHEMA_ATTRIBUTE;
+SCHEMA_ELEMENT;
 SCORE;
 SELF;
 SENSITIVE;
@@ -403,7 +403,7 @@ sequenceType                			: (itemType occurrenceIndicator) => itemType occu
 					elementNameOrWildcard       			: elementName | STARSi;
 						elementName                 			: qName;
 					typeName                    			: qName;
-				schemaElementTest           		 	: SCHEMAELEMENT LPARSi! elementDeclaration RPARSi!;
+				schemaElementTest           		 	: SCHEMA_ELEMENT LPARSi! elementDeclaration RPARSi!;
 					elementDeclaration          			: elementName;
 //						elementName                 			: qName; 
 //			elementTest                 			: ELEMENT LPARSi! (elementNameOrWildcard (COMMASi typeName QUESTIONSi?)?)? RPARSi!; //DOBBELT OPP
@@ -414,10 +414,10 @@ sequenceType                			: (itemType occurrenceIndicator) => itemType occu
 				attribNameOrWildcard        			: attributeName | STARSi;
 					attributeName               			: qName;
 //				typeName                    			: qName;
-//			schemaElementTest           			: SCHEMAELEMENT LPARSi! elementDeclaration RPARSi!;
+//			schemaElementTest           			: SCHEMA_ELEMENT LPARSi! elementDeclaration RPARSi!;
 //				elementDeclaration          			: elementName;
 //					elementName                 			: qName; 
-			schemaAttributeTest         			: SCHEMAATTRIBUTE LPARSi! attributeDeclaration RPARSi!;
+			schemaAttributeTest         			: SCHEMA_ATTRIBUTE LPARSi! attributeDeclaration RPARSi!;
 				attributeDeclaration        			: attributeName;
 //					attributeName               			: qName;
 			piTest                      			: PROCESSING_INSTRUCTION LPARSi! (NCName | StringLiteral)? RPARSi!;
@@ -731,13 +731,16 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 //------------------------------------------------------- FilterExpr ---------------------------------------------------------
 
 filterExpr                  			: primaryExpr predicateList;
-
-
 	primaryExpr                 			: literal 
 											| varRef 
 											| parenthesizedExpr 
 											| contextItemExpr 
-											| functionCall 
+											|{input.LA(1)!=ATTRIBUTE && input.LA(1)!=COMMENT && input.LA(1)!=DOCUMENT_NODE &&
+											  input.LA(1)!=ELEMENT && input.LA(1)!=EMPTY_SEQUENCE && input.LA(1)!=IF &&
+											  input.LA(1)!=ITEM && input.LA(1)!=NODE && input.LA(1)!=PROCESSING_INSTRUCTION &&
+											  input.LA(1)!=SCHEMA_ATTRIBUTE && input.LA(1)!=SCHEMA_ELEMENT && input.LA(1)!=TEXT &&											  
+											  input.LA(1)!=TYPESWITCH}?=> 
+											functionCall 
 											| orderedExpr 
 											| unorderedExpr 
 											| constructor;
@@ -952,8 +955,8 @@ ncNameorKeyword							: NCName
 										| SAME
 										| SATISFIES
 										| SCHEMA
-										| SCHEMAATTRIBUTE
-										| SCHEMAELEMENT
+										| SCHEMA_ATTRIBUTE
+										| SCHEMA_ELEMENT
 										| SCORE
 										| SELF
 										| SENSITIVE
@@ -1292,8 +1295,8 @@ fragment LexLiterals	: n=NCName{
 				 else if($n.getText().equals("same")) this.tokenType=SAME;
 				 else if($n.getText().equals("satisfies")) this.tokenType=SATISFIES;
 				 else if($n.getText().equals("schema")) this.tokenType=SCHEMA;
-				 else if($n.getText().equals("schema-attribute")) this.tokenType=SCHEMAATTRIBUTE;
-				 else if($n.getText().equals("schema-element")) this.tokenType=SCHEMAELEMENT;
+				 else if($n.getText().equals("schema-attribute")) this.tokenType=SCHEMA_ATTRIBUTE;
+				 else if($n.getText().equals("schema-element")) this.tokenType=SCHEMA_ELEMENT;
 				 else if($n.getText().equals("score")) this.tokenType=SCORE;
 				 else if($n.getText().equals("self")) this.tokenType=SELF;
 				 else if($n.getText().equals("sensitive")) this.tokenType=SENSITIVE;
@@ -1495,8 +1498,8 @@ fragment RETURN 				: 'return';
 fragment SAME 					: 'same';
 fragment SATISFIES 				: 'satisfies';
 fragment SCHEMA 				: 'schema';
-fragment SCHEMAATTRIBUTE 		: 'schema-attribute';
-fragment SCHEMAELEMENT 			: 'schema-element';
+fragment SCHEMA_ATTRIBUTE 		: 'schema-attribute';
+fragment SCHEMA_ELEMENT 			: 'schema-element';
 fragment SCORE 					: 'score';
 fragment SELF 					: 'self';
 fragment SENSITIVE 				: 'sensitive';
