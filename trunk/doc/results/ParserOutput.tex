@@ -1,6 +1,8 @@
 % PARSER OUTPUT
 \section{Parser output / AST}
 \label{sect:results:parser_output_ast}
+\underline{\textbf{\LARGE //TODO:}} tekst her.. Innledning..
+
 \emph{Note: all graphical AST examples in this section were generated using the
 actual parser with a custom method to output dot code for the graphviz tool. The
 tool class no.ntnu.xqft.Dot can be used to achieve this.}
@@ -10,14 +12,14 @@ Figure \ref{tree:ast:flwor1} shows the AST generated for the expression in
 figure \ref{code:ast:flwor1}. This is a simple example, but it shows one way to
 build an AST for a FLWOR expression.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \verbatiminput{graph_queries/flwor1.xq}
 \caption{FLWOR expression example, generates AST seen in figure \ref{tree:ast:flwor1}}
 \label{code:ast:flwor1}
 \end{figure}
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
  \includegraphics[width=1\textwidth]{img/graphs/flwor1}
 \caption{Generated AST tree for FLWOR-expression in figure \ref{code:ast:flwor1}}
@@ -30,13 +32,13 @@ Figure \ref{tree:ast:pathexpr} shows the AST generated for the query in figure
 single child. Included in this example is also a simple predicate expressions,
 illustrating one possible interpretation of this construct.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \verbatiminput{graph_queries/pathexpr.xq}
 \caption{FLWOR expression example, generates AST seen in figure \ref{tree:ast:pathexpr}}
 \label{code:xq:pathexpr}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
  \includegraphics[width=0.8\textwidth]{img/graphs/pathexpr}
 \caption{Generated AST tree for the path expression in figure 
@@ -50,14 +52,14 @@ As seen in figure \ref{code:ast:funcdecl1}, function declarations are aggregated
 into a root node (AST\_FUNCTIONDECL) with a function name and optionally
 parameters, type, and function body (unless declared as external).
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \verbatiminput{graph_queries/funcdecl1.xq}
 \caption{Function declaration used to generate the AST in figure
 \ref{tree:ast:funcdecl1}}
 \label{code:xq:funcdecl1}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
  \includegraphics[width=1\textwidth]{img/graphs/funcdecl1}
 \caption{Generated AST tree for the function declaration in figure \ref{tree:ast:funcdecl1}}
@@ -73,14 +75,14 @@ as \verb!without! and others) in this example can be done in several other ways.
 For example, it may be benefitial to add imaginary tokens to aggregate these
 multi-level operator tokens into one single imaginary token.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \verbatiminput{graph_queries/ftq1.xq}
 \caption{Full-text XQuery expression used to generate the AST in figure
 \ref{tree:ast:ftq1}}
 \label{code:xq:ftq1}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
  \includegraphics[width=1\textwidth]{img/graphs/ftq1}
 \caption{Generated AST tree for the full-text example in figure \ref{tree:ast:ftq1}}
