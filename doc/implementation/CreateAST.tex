@@ -1,11 +1,8 @@
 \section{Creating the AST}
-\emph{Note: all graphical AST examples in this section were generated using the
-actual parser with a custom method to output dot code for the graphviz tool. The
-tool class no.ntnu.xqft.Dot can be used to achieve this.}
 
 \subsection{Operators and rewrite rules}
 As described in section \ref{sect:antlr:ast}, ANTLR provides operators and
-rewrite rules for augmenting the grammar specification into generating a useable
+rewrite rules for augmenting the grammar specification into generating a usable
 AST. In many cases, it is a simple matter of defining which tokens to use as
 root, and which to omit. This is done using the two basic operators \verb!hat!
 (\^{}) and \verb!exclamation mark! (!). Figure \ref{code:ast:exoperator} shows an
@@ -45,6 +42,7 @@ operations}
 
 This is behaviour is illustrated in figure \ref{tree:ast:arithmetic}, which is
 the AST generated for the simple arithmetic expression \verb!1+2*3-2*15!.
+Further examples are available in section \ref{sect:results:parser_output_ast}.
 
 \begin{figure}[h]
 \centering
@@ -59,7 +57,7 @@ the cases where it is impossible to simply exclude one token, typically in
 productions that can produce lists. Figure \ref{code:ast:rewritelist}
 illustrates an example for the \verb!letClause! production, where it is only
 interesting to preserve the list of variable bindings, which can occur several
-times.
+times. This technique has been used in several productions.
 
 \begin{figure}[h]
 \begin{verbatim}
@@ -76,10 +74,10 @@ FLWOR expressions are one of the more complex constructs in XQuery, and
 naturally the AST will quickly become complex if care is not taken to include
 only the necessary tokens and substrees to preserve information.
 
-On the top level there is the \verb!flWORExpr! production rule, which a
+On the top level there is the \verb!flWORExpr! production rule, which is a
 composite of \verb!forClause!, \verb!letClause!, \verb!whereClause!, and
-\verb!exprSingle!. Figure \ref{code:ast:flwor} shows the rewrite used for this
-production. In this case, a subtree is generated with the imaginary token
+\verb!exprSingle!. Figure \ref{code:ast:flwor} shows the rewrite rule used for
+this production. In this case, a subtree is generated with the imaginary token
 \verb!AST_FLOWR! as root. The \$fc and \$lc variables are lists of
 for-clauses and/or let-clauses. These are then followed by an optional
 where-clause, and an optional orderby-clause. Finally the list of children in
@@ -90,7 +88,8 @@ after the RETURN token.
 \begin{verbatim}
 fLWORExpr : (fc+=forClause | lc+=letClause)+ whereClause?
             orderByClause? RETURN exprSingle
-    -> ^(AST_FLWOR $fc* $lc* whereClause? orderByClause? exprSingle);
+    -> ^(AST_FLWOR $fc* $lc* whereClause?
+                    orderByClause? exprSingle);
 \end{verbatim}
 \caption{AST rewrite rule for FLWOR expressions}
 \label{code:ast:flwor}
@@ -165,26 +164,8 @@ orderByClause : (ORDER BY | STABLE ORDER BY) orderSpecList
 \end{figure}
 
 Finally, the \verb!exprSingle! rule terminates the FLWOR expression. This rule
-isa placeholder for any valid expression, and thus it carries no meaning in
+is a placeholder for any valid expression, and thus it carries no meaning in
 itself but rather in the sense of what is deduced from the input.
-
-Figure \ref{tree:ast:flwor1} shows the AST generated for the expression in
-figure \ref{code:ast:flwor1}. This is a simple example, but it shows one way to
-build an AST for a FLWOR expression.
-
-\begin{figure}[h]
-\verbatiminput{graph_queries/flwor1.xq}
-\caption{FLWOR expression example, generates AST seen in figure \ref{tree:ast:flwor1}}
-\label{code:ast:flwor1}
-\end{figure}
-
-
-\begin{figure}[h]
-\centering
- \includegraphics[width=1\textwidth]{img/graphs/flwor1}
-\caption{Generated AST tree for FLWOR-expression in figure \ref{code:ast:flwor1}}
-\label{tree:ast:flwor1}
-\end{figure}
 
 
 \subsection{Path expressions}
@@ -209,24 +190,6 @@ pathExpr : DBLSLASHSi^ relativePathExpr
 \label{code:ast:pathexpr}
 \end{figure}
 
-Figure \ref{tree:xq:pathexpr} shows the AST generated for the query in figure
-\ref{tree:ast:pathexpr}. Note that the root node is a single slash with a
-single child. Included in this example is also a simple predicate expressions,
-illustrating one possible interpretation of this construct.
-
-\begin{figure}[h]
-\verbatiminput{graph_queries/pathexpr.xq}
-\caption{FLWOR expression example, generates AST seen in figure \ref{tree:ast:pathexpr}}
-\label{code:xq:pathexpr}
-\end{figure}
-
-\begin{figure}[h]
-\centering
- \includegraphics[width=0.8\textwidth]{img/graphs/pathexpr}
-\caption{Generated AST tree for the path expression in figure 
-\ref{code:xq:pathexpr}}
-\label{tree:ast:pathexpr}
-\end{figure}
 
 \subsection{Function declarations}
 Function declarations may seem like complex constructs, but in an AST these can
@@ -238,28 +201,10 @@ parameters, type, and function body as children.
 functionDecl : DECLARE FUNCTION qName LPARSi paramList? RPARSi 
               (AS sequenceType)? (enclosedExpr | EXTERNAL)
               -> ^(AST_FUNCTIONDECL qName paramList? 
-                            sequenceType? enclosedExpr? EXTERNAL?);
+                     sequenceType? enclosedExpr? EXTERNAL?);
 \end{verbatim}
 \caption{Path expression grammar with AST rewrite operators}
 \label{code:ast:funcdecl1}
-\end{figure}
-
-As seen in figure \ref{code:ast:funcdecl1}, function declarations are aggregated
-into a root node (AST\_FUNCTIONDECL) with a function name and optionally
-parameters, type, and function body (unless declared as external).
-
-\begin{figure}[h]
-\verbatiminput{graph_queries/funcdecl1.xq}
-\caption{Function declaration used to generate the AST in figure
-\ref{tree:ast:funcdecl1}}
-\label{code:xq:funcdecl1}
-\end{figure}
-
-\begin{figure}[h]
-\centering
- \includegraphics[width=1\textwidth]{img/graphs/funcdecl1}
-\caption{Generated AST tree for the function declaration in figure \ref{tree:ast:funcdecl1}}
-\label{tree:ast:funcdecl1}
 \end{figure}
 
 It is important to note that this part of the AST will quickly grow more complex
@@ -267,26 +212,25 @@ as one adds more parameters and type specifications to the function declaration.
 
 \subsection{Full-text queries}
 Full-text queries consists of a number of operators that need to be promoted and
-organized properly to be intuitive when parsing the AST. 
+organized properly to be intuitive when parsing the AST. In many cases, these
+can be rewritten simply by adding the promotion/exclusion operators. 
 
-The query in figure \ref{code:xq:ftq1} and the generated AST in figure
-\ref{tree:ast:ftq1} shows one possible interpretation of several full-text 
-operators in XQuery. In the case of \verb!ftcontains! and \verb!ftand!, this AST
-is intuitive, however the interpretation of the \verb!with! operator (as well
-as \verb!without! and others) in this example can be done in several other ways.
-For example, it may be benefitial to add imaginary tokens to aggregate these
-multi-level operator tokens into one single imaginary token.
-
-\begin{figure}[h]
-\verbatiminput{graph_queries/ftq1.xq}
-\caption{Full-text XQuery expression used to generate the AST in figure
-\ref{tree:ast:ftq1}}
-\label{code:xq:ftq1}
+\begin{figure}[h!]
+\begin{verbatim} 
+ftSelection : ftOr ftPosFilter* (WEIGHT rangeExpr)?;
+  ftOr : ftAnd ( FTOR^ ftAnd )*;
+    ftAnd : ftMildNot ( FTAND^ ftMildNot )*;
+      ftMildNot : ftUnaryNot ( NOT^ IN! ftUnaryNot )*;
+        ftUnaryNot : (FTNOT^)? ftPrimaryWithOptions;
+\end{verbatim}
+\caption{A selection of productions related to full-text queries}
+\label{code:ast:ft_op}
 \end{figure}
 
-\begin{figure}[h]
-\centering
- \includegraphics[width=1\textwidth]{img/graphs/ftq1}
-\caption{Generated AST tree for the full-text example in figure \ref{tree:ast:ftq1}}
-\label{tree:ast:ftq1}
-\end{figure}
+In figure \ref{code:ast:ft_op}, we can see how \verb!FTOR!, \verb!FTAND!, and \verb!NOT! 
+has been promoted to root nodes in full-text expressions. In the case of the
+production \verb!ftMildNot!, the token \verb!IN! is excluded. However, this
+might hinder intuivity in the AST, as the token \verb!NOT! alone may not carry
+enough meaning unless context is carefully preserved. One possible alternative
+solution would be an imaginary token as a placeholder for the ``\verb!NOT IN!''
+combination. 
