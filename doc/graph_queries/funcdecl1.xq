@@ -1,6 +1,6 @@
-declare function local:order-value($po as element(purchase-order))
-   as xs:double {
-      sum($po/order-item/(@price * @quantity))
+declare function local:order-value()
+{
+      sum(/purchase/order-item/(@price * @quantity))
 };
 
-""
+$value = local:order-value();

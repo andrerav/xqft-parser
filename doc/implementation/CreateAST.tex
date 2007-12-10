@@ -188,4 +188,105 @@ build an AST for a FLWOR expression.
 
 
 \subsection{Path expressions}
+Path expressions are rewritten using only operators to create proper tree
+structures consisting of step expressions as leaf nodes and delimiting slashes as
+root nodes. Figure \ref{code:ast:pathexpr} shows the grammar with operators in
+place. As can be seen, the forward slash tokens are promoted to root nodes,
+including in between the step expressions.
+
+\begin{figure}[h]
+\begin{verbatim} 
+pathExpr : DBLSLASHSi^ relativePathExpr
+           | {input.LA(2)==STARSi}? SLASHSi^ relativePathExpr
+           | SLASHSi^ relativePathExpr
+           | SLASHSi^
+           | relativePathExpr
+          ;
+
+  relativePathExpr : stepExpr ((SLASHSi^ | DBLSLASHSi^) stepExpr)*;
+\end{verbatim}
+\caption{Path expression grammar with AST rewrite operators}
+\label{code:ast:pathexpr}
+\end{figure}
+
+Figure \ref{tree:xq:pathexpr} shows the AST generated for the query in figure
+\ref{tree:ast:pathexpr}. Note that the root node is a single slash with a
+single child. Included in this example is also a simple predicate expressions,
+illustrating one possible interpretation of this construct.
+
+\begin{figure}[h]
+\verbatiminput{graph_queries/pathexpr.xq}
+\caption{FLWOR expression example, generates AST seen in figure \ref{tree:ast:pathexpr}}
+\label{code:xq:pathexpr}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=0.8\textwidth]{img/graphs/pathexpr}
+\caption{Generated AST tree for the path expression in figure 
+\ref{code:xq:pathexpr}}
+\label{tree:ast:pathexpr}
+\end{figure}
+
 \subsection{Function declarations}
+Function declarations may seem like complex constructs, but in an AST these can
+be represented fairly simplistic by an imaginary token, with function name, 
+parameters, type, and function body as children.
+
+\begin{figure}[h]
+\begin{verbatim} 
+functionDecl : DECLARE FUNCTION qName LPARSi paramList? RPARSi 
+              (AS sequenceType)? (enclosedExpr | EXTERNAL)
+              -> ^(AST_FUNCTIONDECL qName paramList? 
+                            sequenceType? enclosedExpr? EXTERNAL?);
+\end{verbatim}
+\caption{Path expression grammar with AST rewrite operators}
+\label{code:ast:funcdecl1}
+\end{figure}
+
+As seen in figure \ref{code:ast:funcdecl1}, function declarations are aggregated
+into a root node (AST\_FUNCTIONDECL) with a function name and optionally
+parameters, type, and function body (unless declared as external).
+
+\begin{figure}[h]
+\verbatiminput{graph_queries/funcdecl1.xq}
+\caption{Function declaration used to generate the AST in figure
+\ref{tree:ast:funcdecl1}}
+\label{code:xq:funcdecl1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=1\textwidth]{img/graphs/funcdecl1}
+\caption{Generated AST tree for the function declaration in figure \ref{tree:ast:funcdecl1}}
+\label{tree:ast:funcdecl1}
+\end{figure}
+
+It is important to note that this part of the AST will quickly grow more complex
+as one adds more parameters and type specifications to the function declaration.
+
+\subsection{Full-text queries}
+Full-text queries consists of a number of operators that need to be promoted and
+organized properly to be intuitive when parsing the AST. 
+
+The query in figure \ref{code:xq:ftq1} and the generated AST in figure
+\ref{tree:ast:ftq1} shows one possible interpretation of several full-text 
+operators in XQuery. In the case of \verb!ftcontains! and \verb!ftand!, this AST
+is intuitive, however the interpretation of the \verb!with! operator (as well
+as \verb!without! and others) in this example can be done in several other ways.
+For example, it may be benefitial to add imaginary tokens to aggregate these
+multi-level operator tokens into one single imaginary token.
+
+\begin{figure}[h]
+\verbatiminput{graph_queries/ftq1.xq}
+\caption{Full-text XQuery expression used to generate the AST in figure
+\ref{tree:ast:ftq1}}
+\label{code:xq:ftq1}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+ \includegraphics[width=1\textwidth]{img/graphs/ftq1}
+\caption{Generated AST tree for the full-text example in figure \ref{tree:ast:ftq1}}
+\label{tree:ast:ftq1}
+\end{figure}
