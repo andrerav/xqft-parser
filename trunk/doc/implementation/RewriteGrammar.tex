@@ -141,7 +141,7 @@ The solution was to implement all these tokens as \verb!NCName!, with an action 
 
 \section{Extra-grammatical Constraints}
 
-As well as the grammatical constraints specified in the EBNF grammar, W3C also specifies some extra-grammatical constrains in \cite{w3c00}. In this section we will present how we accommodated for these.
+As well as the grammatical constraints specified in the EBNF grammar, W3C also specifies some extra-grammatical constrains in \cite{w3c00}. Our parser handles many of these implicitly e.g. because of our system with states. In this section we will present how we accommodated for the rest of the constraints. 
 
 \subsection{Occurrence-indicators}
 
@@ -219,6 +219,18 @@ primaryExpr : literal
 \caption[The \texttt{PathExpr} ambiguity solved]{The \texttt{PathExpr} ambiguity solved by means of a disambiguating semantic predicate}
 \label{fig:reservedFunction}
 \end{figure}
+
+\textbf{\LARGE //TODO:} This is actually not a problem for our parser as all the reserved function names are keywords, and a function name must be a \verb!qName!, but the restriction is implemented to prepare for a future version with no reserved keywords.
+
+\subsection{ws: explicit}
+In the grammar specification some productions is marked with \verb!ws: explicit!, which have the following explanation (\cite{w3c00}, section A.2.4):
+\begin{quote}
+/* ws: explicit */ means that the EBNF notation explicitly notates, with S or otherwise, where whitespace characters are allowed. [\ldots] Comments are also not allowed in these productions.
+\end{quote} 
+
+The productions with this constraint are mainly those associated with XML markup and those we have turned into lexer rules (section \ref{sect:rewriteGrammar:enclosedComposite}). In the case of the enclosed composite rules we have explicitly specified where whitespace is allowed, as can be seen from the referring of \verb!S! in the \verb!DirPIConstructor! in figure \ref{fig:pragmaLEX}. And because these are defined as terminals they cannot contain comments (which is also terminals).
+
+In the case of the XML markup rules we blocked these from containing whitespace and by not allowing in the states the lexer must be in to process these terminals. However, we have allowed default whitespace handling in the \verb!IN_TAG! state for the sake of simplicity, which leads to the bug of allowing space in the start of a tag. This is reported in section \ref{sect:future:knownBugs}.
 
 \section{Reserved Keywords}
 

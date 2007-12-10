@@ -18,14 +18,15 @@
 		\item LL(1) tilnaerme, kan sikre at states funker for alle tilfeller, samt kanskje(!) la KeywordOrNCName bli virkelighet
 		\item automatisk gjoere om entityref og breaksymboler i container tokens (ElementContent etc)
 		\item bedre skille NCName og keywords i lexeren.
-	\end{itemize}
+	\end{itemize}	
+\end{itemize}
 
-	\item Known bugz
-	\begin{itemize}
+\section{Known Bugs}
+\label{sect:future:knownBugs}
+\begin{itemize}
 		\item prefikset funksjonskall i enclosedexpr i attributecontent bruker for mye lookahead -> oedelegger for states. Fikse med ny QName eller evt syntaktiske/semantiske predikat i parseren.
 		\item tillater WS foerst i elementtagz
+		\item tillater WS i qNamez
 	\end{itemize}
-	
-\end{itemize}
 
 \underline{\textbf{\LARGE //ODOT:}}
