@@ -1,6 +1,6 @@
 \section{Enclosed Composite Lexer Productions}
 \label{sect:rewriteGrammar:enclosedComposite}
- The XQuery grammar specifies some constructs enclosed by unique symbols, such as \verb!DirPIConstructor! shown in figure \ref{fig:pragma} These rules often contain tokens that overlap with other terminals, so we would draw benefit from moving the productions to the lexer. However, this means that there will only be generated one token by such a rule, and if a later step in the parser want to extract only parts of the construct, it would have to do so manually. Our solution is to make it possible for lexer productions to emit more than one token. In this way, ambiguousities would be solved in the lexer, and the parser would still have access to all terminals it should have.
+ The XQuery grammar specifies some constructs enclosed by unique symbols, such as \verb!DirPIConstructor! shown in figure \ref{fig:pragma} These rules often contain tokens that overlap with other terminals, so we would draw benefit from moving the productions to the lexer. However, this means that there will only be generated one token by such a rule, and if a later step in the parser want to extract only parts of the construct, it would have to do so manually. Our solution is to make it possible for lexer productions to emit more than one token. In this way, ambiguities would be solved in the lexer, and the parser would still have access to all terminals it should have.
 
 \begin{figure}[h!]
 \begin{verbatim}

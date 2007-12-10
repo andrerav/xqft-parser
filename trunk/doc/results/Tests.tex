@@ -12,16 +12,13 @@ hanging indefinitely.
 
 \subsection{Manual coverage tests}
 \label{sect:tests:manual}
-\textbf{\LARGE //TODO:} 
-
-maa oppdateres
-
 To test for standards compliance, we created a manual test harness for running
 the complete XQuery Test Suite\cite{w3c05} consisting of 12584 queries. Our
 initial tests showed a 54\% coverage (6846 queries successfully parsed). Further
 investigation revealed that out of all the errors, a total of 47\% were related
 to NCName token ambiguities. Without these errors, coverage would increase to
-76\%. Much effort was then spent on solving the remaining NCName ambiguities.
+76\%. After some effort resolving these ambiguities as well as other minor lexer
+bugs, the coverage increased to 88\%.
 
 One peculiarity about ANTLR was the fact that the nextToken() method in the base
 lexer class would catch recognition exceptions, display an error to stderr, and
@@ -32,4 +29,4 @@ several occasions on the ANTLR mailing list\cite{antlrmail}, but has not yet
 been adressed by the ANTLR developers.
 
 A proposal to a possible solution to this limitation is briefly presented in
-section \ref{sect:summary:future_work}.
+section \ref{sect:future_work:lexer_error_handling}.
