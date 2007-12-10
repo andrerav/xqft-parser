@@ -26,23 +26,6 @@ Additionally, Antlr accepts a grammar specification syntactically very close to
 the EBNF used by the W3C. This is the parser generater chosen for our project,
 based on the criteria outlined in this section.
 
-\subsection{Limitations in ANTLR}
-\subsubsection{Unicode}
-\label{sect:parserconstructanddebug:limitations}
-It is important to note, however, that ANTLR has limited support for unicode.
-In this project this implies that our parser will not accept unicode characters
-in the range from and above 0x10000. This will exclude the supplementary
-multilingual plane (SMP) range of unicode characters, as well as the
-supplementary ideographic plane (SIP) and the supplementary special-purpose
-plane (SSP). These are seldomly used, but this is an important limitation
-nonetheless. The Antlr developers have indicated that support for this unicode
-range will be added in future versions of Antlr.
-
-As a remedy for this situation it is possible to couple an external lexer with
-ANTLR which will accept unicode characters in the above mentioned character
-ranges. For the sake of simplicity this has not been further investigated nor
-implemented in this project.
-
 \section{Debugging}
 There are several approaches to debugging. Antlrworks \cite{antlrwrks00} is a
 simple tool for writing, testing and debugging Antlr grammars. The debugging
