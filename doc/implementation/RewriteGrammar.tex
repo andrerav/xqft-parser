@@ -139,7 +139,11 @@ fragment LexLiterals : n=NCName {
 
 The solution was to implement all these tokens as \verb!NCName!, with an action checking if the matched token should be one of the keywords, and in such a case change the type. This is shown in figure \ref{fig:lexLitterals}. The initial check if the lexer is in the state \verb!IN_TAG! will prohibit any keywords from occuring inside a XML tag. This manner of fixing the problem is not a preticular good one, and other solutions will be discussed in chapter \ref{sect:summary:future_work}. The reason was mainly to avoid compiler warnings from ANTLR.
 
-\section{Resolving Non-determinisms in the Parser }
+\section{Extra-grammatical Constraints}
+
+As well as the grammatical constraints specified in the EBNF grammar, W3C also specifies some extra-grammatical constrains in \cite{w3c00}. In this section we will present how we accommodated for these.
+
+\subsection{Occurrence-indicators}
 
 The W3C grammar specifies the non-terminal \verb!SequenceType! as follows:
 \begin{verbatim}
@@ -148,19 +152,73 @@ SequenceType ::= ("empty-sequence" "(" ")")
 \end{verbatim}
 It also specifies this extra-gramatical constraint (\cite{w3c00}, section A.1.2):
 \begin{quote}
-As written, the grammar in A XQuery Grammar is ambiguous for some forms using the '+' and '*' Kleene operators. The ambiguity is resolved as follows: these operators are tightly bound to the SequenceType expression, and have higher precedence than other uses of these symbols. Any occurrence of '+' and '*', as well as '?', following a sequence type is assumed to be an occurrence indicator.
+As written, the grammar in A XQuery Grammar is ambiguous for some forms using the '+' and '*' Kleene operators. The ambiguity is resolved as follows: [\ldots] Any occurrence of '+' and '*', as well as '?', following a sequence type is assumed to be an occurrence indicator. That is, a "+", "*", or "?" immediately following an ItemType must be an OccurrenceIndicator\ldots
 \end{quote}
 
-\textbf{\LARGE //TODO:} 
+This is a clasical case for a syntactic predicate (section \ref{sect:antlr:syntacticPredicate}), which can force the parser to consider a something that looks like a \verb!OccurrenceIndicator! as a \verb!OccurenceIndicator! and not e.g. a arithmetic operator. The implementation of which can be seen in figure \ref{fig:occurrenceIndicator}. The alternative with \verb!ItemType! had to be split into two more alternatives to rank the one with with the \verb!OccurenceIndicator! over the one without.
 
-pathExpr og itemtype occurenceindicator trengte syntaktiske predikat
+\begin{figure}[h!]
+\begin{verbatim}
+sequenceType : (itemType occurrenceIndicator)=> 
+               itemType occurrenceIndicator
+             | itemType
+             | EMPTY_SEQUENCE LPARSi RPARSi
+             ;
+\end{verbatim}
+\caption[The \texttt{OccurenceIndicator} ambiguity solved]{The \texttt{OccurenceIndicator} ambiguity solved by means of a syntactic predicate}
+\label{fig:occurrenceIndicator}
+\end{figure}
 
+\subsection{Leading-lone-slash}
+The constraint is expressed as follows (\cite{w3c00}, section A.1.2):
+\begin{quote}
+A single slash may appear either as a complete path expression or as the first part of a path expression in which it is followed by a RelativePathExpr, which can take the form of a NameTest ("*" or a QName). In contexts where operators like "*", "union", etc., can occur, parsers may have difficulty distinguishing operators from NameTests. [\ldots] If the token immediately following a slash is "*" or a keyword, then the slash must be the beginning, but not the entirety, of a PathExpr\ldots
+\end{quote}
 
-\section{Extra-grammatical Constraints}
+W3Cs \verb!PathExpr! is expressed like this:
+\begin{verbatim}
+PathExpr  ::= ("/" RelativePathExpr?)
+            | ("//" RelativePathExpr)
+            | RelativePathExpr
+\end{verbatim}
 
-\textbf{\LARGE //TODO:} 
+As with the \verb!occurenceIndicator! we split the alternative with the $?$ kleene operator into two explicit alternatives. By using a disambiguating semantic predicate, the parser is forced to prefer the alternative with the \verb!RelativePathExpr! over the single slash one if the following token is a \verb!*!, as shown in figure \ref{fig:leadingSlash}. The third alternative exist for all other versions of \verb!relativePathExpr! than \verb!*!.
+\begin{figure}[h!]
+\begin{verbatim}
+pathExpr    : DBLSLASHSi relativePathExpr
+            | {input.LA(2)==STARSi}? SLASHSi relativePathExpr
+            | SLASHSi relativePathExpr
+            | SLASHSi
+            | relativePathExpr
+            ;
+\end{verbatim}
+\caption[The \texttt{PathExpr} ambiguity solved]{The \texttt{PathExpr} ambiguity solved by means of a disambiguating semantic predicate}
+\label{fig:leadingSlash}
+\end{figure}
 
-Whitespace, leading dash etc..
+\textbf{\LARGE //TODO:} As our the parser at the time being still have reserved keywords, there is no need to check if the following token is \verb!union! or \verb!intersect! etc. This is discussed further in chapter \ref{sect:summary:future_work}.
+
+\subsection{Reserved-function-names}
+W3C specifies the constraint like this (\cite{w3c00}, section A.1.2):
+\begin{quote}
+Unprefixed function names spelled the same way as language keywords could make the language harder to recognize. For instance, if(foo) could be taken either as a FunctionCall or as the beginning of an IfExpr. Therefore it is not legal syntax for a user to invoke functions with unprefixed names which match any of the names in [\cite{w3c00}, section] A.3 Reserved Function Names.
+\end{quote}
+
+Where "A.3 Reserved Function Names" lists a number of names such as \verb!if!, \verb!text! and \verb!node! (thirteen in total). By using a gated syntactic predicate our parser will not be able to see the alternative for \verb!functionCall! if the name of the function is among the restricted ones as seen in figure \ref{fig:reservedFunction}.
+
+\begin{figure}[h!]
+\begin{verbatim}
+primaryExpr : literal 
+            ...
+            | {input.LA(1)!=IF && input.LA(1)!=NODE
+             && ... && input.LA(1)!=TEXT}?=>
+             functionCall 
+            ...
+            ;
+\end{verbatim}
+\caption[The \texttt{PathExpr} ambiguity solved]{The \texttt{PathExpr} ambiguity solved by means of a disambiguating semantic predicate}
+\label{fig:reservedFunction}
+\end{figure}
 
 \section{Reserved Keywords}
 
