@@ -84,9 +84,9 @@ public class XQueryTestSuite extends Test implements Observer {
         }
 
         try {
-            this.print("TRYING: " + file.getPath());
+            //this.print("TRYING: " + file.getPath());
             parser.module();
-            this.print("SUCCESS: " + file.getPath());
+            //this.print("SUCCESS: " + file.getPath());
             if (!testCase.shouldFail()) {
                 this.success++;
             }
@@ -95,7 +95,7 @@ public class XQueryTestSuite extends Test implements Observer {
         catch(Exception e) {
             // Didn't pass
             if (testCase.shouldFail()) {
-                this.print("SUCCESS: " + file.getPath());
+                //this.print("SUCCESS: " + file.getPath());
                 this.success++;
             }
             else {

@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2007-12-10 01:42:26
+// $ANTLR 3.0.1 etc/XQFT.g 2007-12-10 15:37:15
 
 	package no.ntnu.xqft.parse;
 
@@ -16,259 +16,259 @@ public class XQFTParser extends Parser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ALL", "ANY", "ANCESTOR", "ANCESTOR_OR_SELF", "AND", "AS", "ASCENDING", "AT", "ATTRIBUTE", "BASE_URI", "BY", "BOUNDARYSPACE", "CASE", "CAST", "CASTABLE", "CHILD", "COLLATION", "COMMENT", "CONSTRUCTION", "CONTENT", "COPY_NAMESPACES", "DECLARE", "DEFAULT", "DESCENDANT", "DESCENDANT_OR_SELF", "DESCENDING", "DIACRITICS", "DIFFERENT", "DISTANCE", "DIV", "DOCUMENT", "DOCUMENT_NODE", "ELEMENT", "ELSE", "ENCODING", "END", "ENTIRE", "EMPTY", "EMPTY_SEQUENCE", "EQ", "EVERY", "EXACTLY", "EXCEPT", "EXTERNAL", "FOLLOWING", "FOLLOWING_SIBLING", "FOR", "FROM", "FTAND", "FTCONTAINS", "FTNOT", "FTOPTION", "FTOR", "FUNCTION", "GE", "GREATEST", "GT", "IDIV", "IF", "IMPORT", "IN", "INHERIT", "INSENSITIVE", "INSTANCE", "INTERSECT", "IS", "ITEM", "LANGUAGE", "LAX", "LE", "LEAST", "LET", "LEVELS", "LOWERCASE", "LT", "MOD", "MODULE", "MOST", "NAMESPACE", "NE", "NODE", "NOINHERIT", "NOPRESERVE", "NOT", "OCCURS", "OF", "OPTION", "OR", "ORDER", "ORDERED", "ORDERING", "PARAGRAPH", "PARAGRAPHS", "PARENT", "PHRASE", "PRECEDING", "PRECEDING_SIBLING", "PRESERVE", "PROCESSING_INSTRUCTION", "RELATIONSHIP", "RETURN", "SAME", "SATISFIES", "SCHEMA", "SCHEMAATTRIBUTE", "SCHEMAELEMENT", "SCORE", "SELF", "SENSITIVE", "SENTENCES", "SENTENCE", "SOME", "STABLE", "START", "STEMMING", "STOP", "STRICT", "STRIP", "TEXT", "THESAURUS", "THEN", "TIMES", "TO", "TREAT", "TYPESWITCH", "UNION", "UNORDERED", "UPPERCASE", "VALIDATE", "VARIABLE", "VERSION", "WEIGHT", "WHERE", "WILDCARDS", "WINDOW", "WITH", "WITHOUT", "WORD", "WORDS", "XQUERY", "AST_FLWOR", "AST_FORCLAUSE", "AST_LETCLAUSE", "AST_ORDERBYCLAUSE", "AST_WHERECLAUSE", "AST_RETURNCLAUSE", "AST_QUANTIFIEDEXPR", "AST_TYPESWITCHEXPR", "AST_CASECLAUSE", "AST_IFEXPR", "AST_PATHEXPR", "AST_FTSELECTION", "AST_FTPOSFILTER", "AST_FUNCTIONCALL", "AST_FUNCTIONDECL", "AST_PREDICATE", "AST_DIRELEMCONSTRUCTOR", "AST_DIRELEMCONTENT", "StringLiteral", "SEMICOLONSi", "NCName", "EQSi", "COMMASi", "DOLLARSi", "ASSIGNSi", "COLONSi", "LPARSi", "RPARSi", "LBRACESi", "RBRACSi", "QUESTIONSi", "STARSi", "PLUSSi", "MINUSSi", "PIPESi", "NEQSi", "LTSi", "LTOREQSi", "GTSi", "GTOREQSi", "NODEBEFORESi", "NODEAFTERSi", "IntegerLiteral", "DecimalLiteral", "DoubleLiteral", "LPRAGSi", "PragmaContents", "RPRAGSi", "DBLSLASHSi", "SLASHSi", "DBLCOLONSi", "DOTDOTSi", "ATSi", "LBRACKSi", "RBRACKSi", "DOTSi", "RSELFTERMSi", "LENDTAGSi", "QUOTSi", "QuotAttributeContent", "APOSSi", "AposAttributeContent", "ElementContent", "LCDATASi", "CDataContents", "RCDATASi", "LCOMMENTSi", "DirCommentContent", "RCOMMENTSi", "LPISi", "PiTarget", "DirPiContents", "RPISi", "CDataSectionLEX", "DirPIConstructor", "DirCommentConstLEX", "PragmaLEX", "Comment", "NumberLEX", "LexSigns", "S", "LexLiterals", "TOKENSWITCH", "PredefinedEntityRef", "CharRef", "NotChar", "AMPERSi", "QuotAttrContentChar", "AposAttrContentChar", "ElementContentChar", "CREFDECSi", "CREFHEXSi", "Name", "Letter", "UNDERSCORESi", "NameChar", "Digit", "CombiningChar", "Extender", "SHARPSi", "LXQCOMMENTSi", "RXQCOMMENTSi", "Digits", "NCNameStartChar", "NCNameChar", "EXCLSi", "BACKSLASHSi", "ExtraChar", "BaseChar", "Ideographic", "CleanChar", "Char"
     };
-    public static final int NotChar=229;
-    public static final int LENDTAGSi=201;
-    public static final int QUOTSi=202;
-    public static final int END=39;
-    public static final int NOINHERIT=85;
-    public static final int INSTANCE=67;
-    public static final int LBRACESi=172;
-    public static final int CONTENT=23;
-    public static final int LAX=72;
-    public static final int STOP=119;
-    public static final int IMPORT=63;
-    public static final int PIPESi=178;
-    public static final int APOSSi=204;
-    public static final int AposAttrContentChar=232;
-    public static final int DBLCOLONSi=194;
-    public static final int Letter=237;
-    public static final int CASTABLE=18;
-    public static final int DIACRITICS=30;
-    public static final int ORDER=92;
-    public static final int RCOMMENTSi=212;
-    public static final int TYPESWITCH=128;
-    public static final int MODULE=80;
-    public static final int VERSION=134;
-    public static final int Ideographic=253;
-    public static final int DBLSLASHSi=192;
-    public static final int EXACTLY=45;
-    public static final int FTNOT=54;
-    public static final int DECLARE=25;
-    public static final int GTSi=182;
-    public static final int TOKENSWITCH=226;
-    public static final int ElementContentChar=233;
-    public static final int OCCURS=88;
-    public static final int UNION=129;
-    public static final int STRIP=121;
-    public static final int NameChar=239;
-    public static final int PLUSSi=176;
-    public static final int AST_WHERECLAUSE=148;
-    public static final int QuotAttrContentChar=231;
-    public static final int SAME=105;
-    public static final int FTCONTAINS=53;
-    public static final int AST_IFEXPR=153;
-    public static final int QUESTIONSi=174;
-    public static final int DESCENDING=29;
-    public static final int FTOPTION=55;
-    public static final int AST_ORDERBYCLAUSE=147;
-    public static final int DOCUMENT_NODE=35;
-    public static final int ANCESTOR_OR_SELF=7;
-    public static final int LCDATASi=207;
-    public static final int ANY=5;
-    public static final int RELATIONSHIP=103;
-    public static final int GE=58;
-    public static final int CREFHEXSi=235;
-    public static final int GTOREQSi=183;
-    public static final int ELSE=37;
-    public static final int WORD=141;
-    public static final int SCHEMAATTRIBUTE=108;
-    public static final int SENSITIVE=112;
-    public static final int SELF=111;
-    public static final int DISTANCE=32;
-    public static final int ExtraChar=251;
-    public static final int LPISi=213;
-    public static final int CREFDECSi=234;
-    public static final int NODEBEFORESi=184;
-    public static final int TEXT=122;
-    public static final int CombiningChar=241;
-    public static final int PARENT=97;
-    public static final int NCName=164;
-    public static final int FTOR=56;
-    public static final int SCORE=110;
-    public static final int PragmaLEX=220;
-    public static final int Digit=240;
-    public static final int EXTERNAL=47;
-    public static final int EMPTY_SEQUENCE=42;
-    public static final int UNDERSCORESi=238;
-    public static final int RCDATASi=209;
-    public static final int DOLLARSi=167;
-    public static final int CAST=17;
-    public static final int AST_FUNCTIONCALL=157;
+    public static final int FUNCTION=57;
+    public static final int AST_FORCLAUSE=145;
+    public static final int AST_PATHEXPR=154;
     public static final int MOD=79;
+    public static final int LPISi=213;
+    public static final int CREFHEXSi=235;
+    public static final int NOT=87;
     public static final int EXCEPT=46;
-    public static final int OR=91;
-    public static final int NOPRESERVE=86;
-    public static final int S=224;
+    public static final int EOF=-1;
+    public static final int PragmaContents=190;
+    public static final int AST_IFEXPR=153;
+    public static final int BaseChar=252;
+    public static final int Ideographic=253;
+    public static final int DISTANCE=32;
+    public static final int IMPORT=63;
+    public static final int AST_FUNCTIONDECL=158;
+    public static final int ASSIGNSi=168;
+    public static final int CREFDECSi=234;
+    public static final int SENTENCE=114;
+    public static final int PRECEDING=99;
+    public static final int WORDS=142;
+    public static final int NumberLEX=222;
+    public static final int RETURN=104;
+    public static final int ELEMENT=36;
     public static final int RPARSi=171;
-    public static final int BY=14;
-    public static final int SCHEMAELEMENT=109;
-    public static final int COLONSi=169;
-    public static final int SLASHSi=193;
-    public static final int WEIGHT=135;
-    public static final int AST_RETURNCLAUSE=149;
-    public static final int PRECEDING_SIBLING=100;
-    public static final int UPPERCASE=131;
-    public static final int AST_LETCLAUSE=146;
-    public static final int SEMICOLONSi=163;
-    public static final int FROM=51;
-    public static final int STEMMING=118;
-    public static final int TIMES=125;
+    public static final int EQ=43;
+    public static final int AST_CASECLAUSE=152;
+    public static final int DOLLARSi=167;
+    public static final int DIACRITICS=30;
+    public static final int DBLCOLONSi=194;
+    public static final int CHILD=19;
+    public static final int GE=58;
+    public static final int STRICT=120;
+    public static final int PRESERVE=101;
+    public static final int UNDERSCORESi=238;
+    public static final int ELSE=37;
+    public static final int RCDATASi=209;
+    public static final int TYPESWITCH=128;
+    public static final int STOP=119;
+    public static final int CONTENT=23;
+    public static final int S=224;
+    public static final int FTOR=56;
     public static final int EMPTY=41;
+    public static final int INTERSECT=68;
+    public static final int MINUSSi=177;
+    public static final int FTAND=52;
+    public static final int LANGUAGE=71;
+    public static final int LOWERCASE=77;
+    public static final int LPRAGSi=189;
+    public static final int INSENSITIVE=66;
+    public static final int APOSSi=204;
+    public static final int AST_TYPESWITCHEXPR=151;
+    public static final int RSELFTERMSi=200;
+    public static final int LBRACKSi=197;
+    public static final int GT=60;
+    public static final int END=39;
+    public static final int DoubleLiteral=188;
+    public static final int QUOTSi=202;
+    public static final int LexLiterals=225;
+    public static final int DirCommentContent=211;
+    public static final int CharRef=228;
+    public static final int OPTION=90;
+    public static final int Extender=242;
+    public static final int OCCURS=88;
+    public static final int THESAURUS=123;
+    public static final int SATISFIES=106;
+    public static final int VERSION=134;
+    public static final int RXQCOMMENTSi=245;
+    public static final int IDIV=61;
     public static final int ASCENDING=10;
+    public static final int ExtraChar=251;
+    public static final int AT=11;
+    public static final int AS=9;
+    public static final int EMPTY_SEQUENCE=42;
+    public static final int PARENT=97;
+    public static final int CONSTRUCTION=22;
+    public static final int ATSi=196;
+    public static final int THEN=124;
+    public static final int DBLSLASHSi=192;
+    public static final int DOCUMENT=34;
+    public static final int COLLATION=20;
+    public static final int LCOMMENTSi=210;
+    public static final int ANCESTOR=6;
+    public static final int AMPERSi=230;
     public static final int CleanChar=254;
+    public static final int ElementContent=206;
+    public static final int CASTABLE=18;
+    public static final int MOST=81;
+    public static final int AST_PREDICATE=159;
+    public static final int EQSi=165;
+    public static final int BY=14;
+    public static final int NODEBEFORESi=184;
+    public static final int DOTSi=199;
+    public static final int NCNameChar=248;
+    public static final int ITEM=70;
+    public static final int TO=126;
+    public static final int INHERIT=65;
+    public static final int ANCESTOR_OR_SELF=7;
+    public static final int DOTDOTSi=195;
+    public static final int STEMMING=118;
+    public static final int AST_WHERECLAUSE=148;
+    public static final int LTOREQSi=181;
+    public static final int NotChar=229;
+    public static final int DirPIConstructor=218;
+    public static final int TEXT=122;
+    public static final int MODULE=80;
+    public static final int FTNOT=54;
+    public static final int ORDERED=93;
+    public static final int SAME=105;
+    public static final int UNION=129;
+    public static final int FOLLOWING_SIBLING=49;
+    public static final int StringLiteral=162;
+    public static final int SCHEMA=107;
+    public static final int COLONSi=169;
+    public static final int PiTarget=214;
+    public static final int ENTIRE=40;
+    public static final int INSTANCE=67;
+    public static final int VALIDATE=132;
+    public static final int WILDCARDS=137;
+    public static final int NOINHERIT=85;
+    public static final int AST_FUNCTIONCALL=157;
+    public static final int DECLARE=25;
+    public static final int START=117;
     public static final int IntegerLiteral=186;
+    public static final int DIV=33;
+    public static final int CombiningChar=241;
+    public static final int DESCENDING=29;
+    public static final int SELF=111;
+    public static final int RPRAGSi=191;
+    public static final int NEQSi=179;
+    public static final int CAST=17;
     public static final int SENTENCES=113;
-    public static final int NE=83;
+    public static final int EXTERNAL=47;
+    public static final int LT=78;
+    public static final int RBRACKSi=198;
+    public static final int QUESTIONSi=174;
+    public static final int BACKSLASHSi=250;
+    public static final int AST_LETCLAUSE=146;
+    public static final int CASE=16;
+    public static final int ENCODING=38;
+    public static final int RCOMMENTSi=212;
+    public static final int DIFFERENT=31;
+    public static final int PLUSSi=176;
+    public static final int PragmaLEX=220;
+    public static final int DOCUMENT_NODE=35;
+    public static final int SCHEMAATTRIBUTE=108;
+    public static final int LXQCOMMENTSi=244;
+    public static final int SEMICOLONSi=163;
+    public static final int WORD=141;
+    public static final int SHARPSi=243;
+    public static final int UPPERCASE=131;
+    public static final int Comment=221;
+    public static final int Char=255;
+    public static final int Digits=246;
+    public static final int QuotAttrContentChar=231;
+    public static final int AST_FLWOR=144;
+    public static final int FTOPTION=55;
     public static final int AposAttributeContent=205;
     public static final int COMMENT=21;
-    public static final int MINUSSi=177;
-    public static final int NCNameChar=248;
-    public static final int ENTIRE=40;
-    public static final int WITH=139;
-    public static final int IN=64;
-    public static final int AST_DIRELEMCONTENT=161;
-    public static final int SOME=115;
-    public static final int MOST=81;
-    public static final int RETURN=104;
-    public static final int AST_FTSELECTION=155;
-    public static final int LET=75;
-    public static final int IF=62;
-    public static final int Extender=242;
-    public static final int NODE=84;
-    public static final int FOR=50;
-    public static final int DEFAULT=26;
-    public static final int PRESERVE=101;
-    public static final int AST_FTPOSFILTER=156;
-    public static final int DirCommentContent=211;
-    public static final int LEVELS=76;
-    public static final int LPRAGSi=189;
-    public static final int COMMASi=166;
-    public static final int ATTRIBUTE=12;
-    public static final int CHILD=19;
-    public static final int Digits=246;
-    public static final int NOT=87;
-    public static final int OPTION=90;
-    public static final int ELEMENT=36;
-    public static final int Comment=221;
-    public static final int INSENSITIVE=66;
-    public static final int AS=9;
-    public static final int DOCUMENT=34;
-    public static final int ENCODING=38;
-    public static final int BOUNDARYSPACE=15;
-    public static final int TREAT=127;
-    public static final int NAMESPACE=82;
-    public static final int LXQCOMMENTSi=244;
-    public static final int LEAST=74;
-    public static final int THEN=124;
-    public static final int WORDS=142;
-    public static final int PiTarget=214;
-    public static final int CDataContents=208;
-    public static final int PARAGRAPHS=96;
-    public static final int NCNameStartChar=247;
-    public static final int QuotAttributeContent=203;
-    public static final int BASE_URI=13;
-    public static final int AND=8;
-    public static final int TO=126;
-    public static final int FUNCTION=57;
-    public static final int AST_QUANTIFIEDEXPR=150;
-    public static final int LexSigns=223;
-    public static final int LANGUAGE=71;
-    public static final int NEQSi=179;
-    public static final int LOWERCASE=77;
-    public static final int LE=73;
-    public static final int BACKSLASHSi=250;
-    public static final int SCHEMA=107;
-    public static final int CONSTRUCTION=22;
-    public static final int RPRAGSi=191;
-    public static final int WILDCARDS=137;
-    public static final int STARSi=175;
-    public static final int DOTDOTSi=195;
-    public static final int DIFFERENT=31;
-    public static final int LTOREQSi=181;
-    public static final int AST_TYPESWITCHEXPR=151;
-    public static final int INTERSECT=68;
-    public static final int AT=11;
-    public static final int AST_FORCLAUSE=145;
-    public static final int GREATEST=59;
-    public static final int DOTSi=199;
-    public static final int BaseChar=252;
-    public static final int Char=255;
-    public static final int EQ=43;
-    public static final int AST_FLWOR=144;
-    public static final int LT=78;
-    public static final int OF=89;
-    public static final int AST_FUNCTIONDECL=158;
-    public static final int WINDOW=138;
-    public static final int Name=236;
-    public static final int FOLLOWING=48;
-    public static final int CASE=16;
-    public static final int RXQCOMMENTSi=245;
-    public static final int DESCENDANT_OR_SELF=28;
+    public static final int NE=83;
     public static final int CDataSectionLEX=217;
-    public static final int THESAURUS=123;
-    public static final int RSELFTERMSi=200;
-    public static final int FTAND=52;
-    public static final int DecimalLiteral=187;
-    public static final int PragmaContents=190;
-    public static final int DIV=33;
-    public static final int PARAGRAPH=95;
-    public static final int EQSi=165;
-    public static final int ALL=4;
-    public static final int EXCLSi=249;
-    public static final int DirPIConstructor=218;
-    public static final int WHERE=136;
+    public static final int BOUNDARYSPACE=15;
+    public static final int NODE=84;
+    public static final int AST_FTPOSFILTER=156;
+    public static final int CDataContents=208;
+    public static final int AST_QUANTIFIEDEXPR=150;
+    public static final int AposAttrContentChar=232;
+    public static final int GREATEST=59;
     public static final int WITHOUT=140;
     public static final int EVERY=44;
-    public static final int XQUERY=143;
-    public static final int IDIV=61;
-    public static final int SATISFIES=106;
-    public static final int ATSi=196;
-    public static final int DESCENDANT=27;
-    public static final int STRICT=120;
-    public static final int RBRACKSi=198;
-    public static final int FOLLOWING_SIBLING=49;
-    public static final int STABLE=116;
-    public static final int DoubleLiteral=188;
-    public static final int START=117;
-    public static final int AMPERSi=230;
-    public static final int VALIDATE=132;
-    public static final int PRECEDING=99;
-    public static final int COPY_NAMESPACES=24;
-    public static final int ORDERING=94;
-    public static final int ASSIGNSi=168;
-    public static final int UNORDERED=130;
-    public static final int NumberLEX=222;
-    public static final int PredefinedEntityRef=227;
-    public static final int LTSi=180;
-    public static final int SENTENCE=114;
-    public static final int AST_DIRELEMCONSTRUCTOR=160;
-    public static final int AST_PATHEXPR=154;
-    public static final int INHERIT=65;
-    public static final int AST_CASECLAUSE=152;
-    public static final int LexLiterals=225;
-    public static final int SHARPSi=243;
-    public static final int IS=69;
-    public static final int GT=60;
-    public static final int PHRASE=98;
-    public static final int StringLiteral=162;
-    public static final int RPISi=216;
-    public static final int DirPiContents=215;
-    public static final int ITEM=70;
-    public static final int ORDERED=93;
-    public static final int DirCommentConstLEX=219;
+    public static final int SENSITIVE=112;
     public static final int PROCESSING_INSTRUCTION=102;
+    public static final int WEIGHT=135;
+    public static final int AST_DIRELEMCONSTRUCTOR=160;
+    public static final int OF=89;
+    public static final int LTSi=180;
     public static final int NODEAFTERSi=185;
-    public static final int CharRef=228;
-    public static final int COLLATION=20;
-    public static final int LPARSi=170;
-    public static final int ANCESTOR=6;
-    public static final int AST_PREDICATE=159;
-    public static final int EOF=-1;
+    public static final int RELATIONSHIP=103;
+    public static final int NAMESPACE=82;
+    public static final int LCDATASi=207;
+    public static final int LBRACESi=172;
     public static final int VARIABLE=133;
+    public static final int DESCENDANT_OR_SELF=28;
+    public static final int BASE_URI=13;
+    public static final int NOPRESERVE=86;
+    public static final int DirPiContents=215;
+    public static final int OR=91;
+    public static final int LPARSi=170;
+    public static final int STARSi=175;
+    public static final int QuotAttributeContent=203;
+    public static final int RPISi=216;
+    public static final int FROM=51;
+    public static final int PRECEDING_SIBLING=100;
+    public static final int Letter=237;
+    public static final int NCName=164;
+    public static final int WHERE=136;
+    public static final int LAX=72;
+    public static final int AST_ORDERBYCLAUSE=147;
+    public static final int ORDER=92;
+    public static final int ATTRIBUTE=12;
+    public static final int FOR=50;
+    public static final int AST_FTSELECTION=155;
+    public static final int EXCLSi=249;
+    public static final int FOLLOWING=48;
+    public static final int AND=8;
+    public static final int FTCONTAINS=53;
+    public static final int IF=62;
+    public static final int SCHEMAELEMENT=109;
+    public static final int IN=64;
+    public static final int PARAGRAPH=95;
+    public static final int COPY_NAMESPACES=24;
+    public static final int IS=69;
+    public static final int SOME=115;
+    public static final int ALL=4;
+    public static final int STRIP=121;
+    public static final int STABLE=116;
+    public static final int PIPESi=178;
+    public static final int WITH=139;
+    public static final int NCNameStartChar=247;
+    public static final int LENDTAGSi=201;
     public static final int RBRACSi=173;
-    public static final int ElementContent=206;
-    public static final int LCOMMENTSi=210;
-    public static final int LBRACKSi=197;
+    public static final int GTSi=182;
+    public static final int XQUERY=143;
+    public static final int EXACTLY=45;
+    public static final int DEFAULT=26;
+    public static final int DESCENDANT=27;
+    public static final int NameChar=239;
+    public static final int COMMASi=166;
+    public static final int SLASHSi=193;
+    public static final int Digit=240;
+    public static final int DecimalLiteral=187;
+    public static final int GTOREQSi=183;
+    public static final int UNORDERED=130;
+    public static final int AST_DIRELEMCONTENT=161;
+    public static final int PHRASE=98;
+    public static final int TOKENSWITCH=226;
+    public static final int ElementContentChar=233;
+    public static final int ANY=5;
+    public static final int SCORE=110;
+    public static final int AST_RETURNCLAUSE=149;
+    public static final int LexSigns=223;
+    public static final int ORDERING=94;
+    public static final int PredefinedEntityRef=227;
+    public static final int Name=236;
+    public static final int LEAST=74;
+    public static final int WINDOW=138;
+    public static final int LEVELS=76;
+    public static final int PARAGRAPHS=96;
+    public static final int TIMES=125;
+    public static final int DirCommentConstLEX=219;
+    public static final int LET=75;
+    public static final int LE=73;
+    public static final int TREAT=127;
 
         public XQFTParser(TokenStream input) {
             super(input);
@@ -1082,11 +1082,11 @@ public class XQFTParser extends Parser {
             	            {
             	            int LA5_3 = input.LA(3);
 
-            	            if ( (LA5_3==ELEMENT||LA5_3==FUNCTION) ) {
-            	                alt5=1;
-            	            }
-            	            else if ( (LA5_3==COLLATION||LA5_3==ORDER) ) {
+            	            if ( (LA5_3==COLLATION||LA5_3==ORDER) ) {
             	                alt5=2;
+            	            }
+            	            else if ( (LA5_3==ELEMENT||LA5_3==FUNCTION) ) {
+            	                alt5=1;
             	            }
             	            else {
             	                if (backtracking>0) {failed=true; return retval;}
@@ -1217,11 +1217,6 @@ public class XQFTParser extends Parser {
             	            alt7=4;
             	            }
             	            break;
-            	        case OPTION:
-            	            {
-            	            alt7=3;
-            	            }
-            	            break;
             	        case VARIABLE:
             	            {
             	            alt7=1;
@@ -1230,6 +1225,11 @@ public class XQFTParser extends Parser {
             	        case FUNCTION:
             	            {
             	            alt7=2;
+            	            }
+            	            break;
+            	        case OPTION:
+            	            {
+            	            alt7=3;
             	            }
             	            break;
             	        default:
@@ -1452,9 +1452,38 @@ public class XQFTParser extends Parser {
 
             if ( (LA9_0==DECLARE) ) {
                 switch ( input.LA(2) ) {
+                case ORDERING:
+                    {
+                    alt9=5;
+                    }
+                    break;
+                case CONSTRUCTION:
+                    {
+                    alt9=4;
+                    }
+                    break;
                 case BASE_URI:
                     {
                     alt9=3;
+                    }
+                    break;
+                case DEFAULT:
+                    {
+                    int LA9_5 = input.LA(3);
+
+                    if ( (LA9_5==COLLATION) ) {
+                        alt9=2;
+                    }
+                    else if ( (LA9_5==ORDER) ) {
+                        alt9=6;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("326:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );", 9, 5, input);
+
+                        throw nvae;
+                    }
                     }
                     break;
                 case BOUNDARYSPACE:
@@ -1462,38 +1491,9 @@ public class XQFTParser extends Parser {
                     alt9=1;
                     }
                     break;
-                case ORDERING:
-                    {
-                    alt9=5;
-                    }
-                    break;
                 case COPY_NAMESPACES:
                     {
                     alt9=7;
-                    }
-                    break;
-                case DEFAULT:
-                    {
-                    int LA9_6 = input.LA(3);
-
-                    if ( (LA9_6==COLLATION) ) {
-                        alt9=2;
-                    }
-                    else if ( (LA9_6==ORDER) ) {
-                        alt9=6;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return retval;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("326:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );", 9, 6, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case CONSTRUCTION:
-                    {
-                    alt9=4;
                     }
                     break;
                 default:
@@ -2361,11 +2361,11 @@ public class XQFTParser extends Parser {
             if ( (LA10_0==IMPORT) ) {
                 int LA10_1 = input.LA(2);
 
-                if ( (LA10_1==SCHEMA) ) {
-                    alt10=1;
-                }
-                else if ( (LA10_1==MODULE) ) {
+                if ( (LA10_1==MODULE) ) {
                     alt10=2;
+                }
+                else if ( (LA10_1==SCHEMA) ) {
+                    alt10=1;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
@@ -3226,15 +3226,15 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi122_tree=null;
         XQFTTree AS123_tree=null;
         XQFTTree EXTERNAL126_tree=null;
-        RewriteRuleTokenStream stream_RPARSi=new RewriteRuleTokenStream(adaptor,"token RPARSi");
-        RewriteRuleTokenStream stream_LPARSi=new RewriteRuleTokenStream(adaptor,"token LPARSi");
-        RewriteRuleTokenStream stream_AS=new RewriteRuleTokenStream(adaptor,"token AS");
         RewriteRuleTokenStream stream_FUNCTION=new RewriteRuleTokenStream(adaptor,"token FUNCTION");
-        RewriteRuleTokenStream stream_EXTERNAL=new RewriteRuleTokenStream(adaptor,"token EXTERNAL");
+        RewriteRuleTokenStream stream_AS=new RewriteRuleTokenStream(adaptor,"token AS");
         RewriteRuleTokenStream stream_DECLARE=new RewriteRuleTokenStream(adaptor,"token DECLARE");
-        RewriteRuleSubtreeStream stream_qName=new RewriteRuleSubtreeStream(adaptor,"rule qName");
+        RewriteRuleTokenStream stream_EXTERNAL=new RewriteRuleTokenStream(adaptor,"token EXTERNAL");
+        RewriteRuleTokenStream stream_LPARSi=new RewriteRuleTokenStream(adaptor,"token LPARSi");
+        RewriteRuleTokenStream stream_RPARSi=new RewriteRuleTokenStream(adaptor,"token RPARSi");
         RewriteRuleSubtreeStream stream_paramList=new RewriteRuleSubtreeStream(adaptor,"rule paramList");
         RewriteRuleSubtreeStream stream_sequenceType=new RewriteRuleSubtreeStream(adaptor,"rule sequenceType");
+        RewriteRuleSubtreeStream stream_qName=new RewriteRuleSubtreeStream(adaptor,"rule qName");
         RewriteRuleSubtreeStream stream_enclosedExpr=new RewriteRuleSubtreeStream(adaptor,"rule enclosedExpr");
         try {
             // etc/XQFT.g:357:32: ( DECLARE FUNCTION qName LPARSi ( paramList )? RPARSi ( AS sequenceType )? ( enclosedExpr | EXTERNAL ) -> ^( AST_FUNCTIONDECL qName ( paramList )? ( sequenceType )? ( enclosedExpr )? ( EXTERNAL )? ) )
@@ -3353,7 +3353,7 @@ public class XQFTParser extends Parser {
 
 
             // AST REWRITE
-            // elements: paramList, enclosedExpr, EXTERNAL, sequenceType, qName
+            // elements: enclosedExpr, qName, EXTERNAL, sequenceType, paramList
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -3962,8 +3962,11 @@ public class XQFTParser extends Parser {
                                                                 if ( (LA27_58==RPARSi) ) {
                                                                     int LA27_30 = input.LA(15);
 
-                                                                    if ( (LA27_30==PLUSSi) ) {
-                                                                        int LA27_24 = input.LA(16);
+                                                                    if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                                        alt27=2;
+                                                                    }
+                                                                    else if ( (LA27_30==PLUSSi) ) {
+                                                                        int LA27_25 = input.LA(16);
 
                                                                         if ( (synpred1()) ) {
                                                                             alt27=1;
@@ -3974,13 +3977,10 @@ public class XQFTParser extends Parser {
                                                                         else {
                                                                             if (backtracking>0) {failed=true; return retval;}
                                                                             NoViableAltException nvae =
-                                                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                                             throw nvae;
                                                                         }
-                                                                    }
-                                                                    else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                                        alt27=2;
                                                                     }
                                                                     else if ( (LA27_30==STARSi) ) {
                                                                         int LA27_26 = input.LA(16);
@@ -4032,8 +4032,11 @@ public class XQFTParser extends Parser {
                                                             if ( (LA27_58==RPARSi) ) {
                                                                 int LA27_30 = input.LA(14);
 
-                                                                if ( (LA27_30==PLUSSi) ) {
-                                                                    int LA27_24 = input.LA(15);
+                                                                if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                                    alt27=2;
+                                                                }
+                                                                else if ( (LA27_30==PLUSSi) ) {
+                                                                    int LA27_25 = input.LA(15);
 
                                                                     if ( (synpred1()) ) {
                                                                         alt27=1;
@@ -4044,13 +4047,10 @@ public class XQFTParser extends Parser {
                                                                     else {
                                                                         if (backtracking>0) {failed=true; return retval;}
                                                                         NoViableAltException nvae =
-                                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                                         throw nvae;
                                                                     }
-                                                                }
-                                                                else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                                    alt27=2;
                                                                 }
                                                                 else if ( (LA27_30==STARSi) ) {
                                                                     int LA27_26 = input.LA(15);
@@ -4115,8 +4115,11 @@ public class XQFTParser extends Parser {
                                                         if ( (LA27_58==RPARSi) ) {
                                                             int LA27_30 = input.LA(13);
 
-                                                            if ( (LA27_30==PLUSSi) ) {
-                                                                int LA27_24 = input.LA(14);
+                                                            if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                                alt27=2;
+                                                            }
+                                                            else if ( (LA27_30==PLUSSi) ) {
+                                                                int LA27_25 = input.LA(14);
 
                                                                 if ( (synpred1()) ) {
                                                                     alt27=1;
@@ -4127,13 +4130,10 @@ public class XQFTParser extends Parser {
                                                                 else {
                                                                     if (backtracking>0) {failed=true; return retval;}
                                                                     NoViableAltException nvae =
-                                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                                     throw nvae;
                                                                 }
-                                                            }
-                                                            else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                                alt27=2;
                                                             }
                                                             else if ( (LA27_30==STARSi) ) {
                                                                 int LA27_26 = input.LA(14);
@@ -4187,8 +4187,11 @@ public class XQFTParser extends Parser {
                                                     if ( (LA27_58==RPARSi) ) {
                                                         int LA27_30 = input.LA(12);
 
-                                                        if ( (LA27_30==PLUSSi) ) {
-                                                            int LA27_24 = input.LA(13);
+                                                        if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                            alt27=2;
+                                                        }
+                                                        else if ( (LA27_30==PLUSSi) ) {
+                                                            int LA27_25 = input.LA(13);
 
                                                             if ( (synpred1()) ) {
                                                                 alt27=1;
@@ -4199,13 +4202,10 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                                 throw nvae;
                                                             }
-                                                        }
-                                                        else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                            alt27=2;
                                                         }
                                                         else if ( (LA27_30==STARSi) ) {
                                                             int LA27_26 = input.LA(13);
@@ -4267,8 +4267,11 @@ public class XQFTParser extends Parser {
                                             if ( (LA27_58==RPARSi) ) {
                                                 int LA27_30 = input.LA(10);
 
-                                                if ( (LA27_30==PLUSSi) ) {
-                                                    int LA27_24 = input.LA(11);
+                                                if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                    alt27=2;
+                                                }
+                                                else if ( (LA27_30==PLUSSi) ) {
+                                                    int LA27_25 = input.LA(11);
 
                                                     if ( (synpred1()) ) {
                                                         alt27=1;
@@ -4279,13 +4282,10 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                         throw nvae;
                                                     }
-                                                }
-                                                else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                    alt27=2;
                                                 }
                                                 else if ( (LA27_30==STARSi) ) {
                                                     int LA27_26 = input.LA(11);
@@ -4362,8 +4362,11 @@ public class XQFTParser extends Parser {
                                                         if ( (LA27_58==RPARSi) ) {
                                                             int LA27_30 = input.LA(13);
 
-                                                            if ( (LA27_30==PLUSSi) ) {
-                                                                int LA27_24 = input.LA(14);
+                                                            if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                                alt27=2;
+                                                            }
+                                                            else if ( (LA27_30==PLUSSi) ) {
+                                                                int LA27_25 = input.LA(14);
 
                                                                 if ( (synpred1()) ) {
                                                                     alt27=1;
@@ -4374,13 +4377,10 @@ public class XQFTParser extends Parser {
                                                                 else {
                                                                     if (backtracking>0) {failed=true; return retval;}
                                                                     NoViableAltException nvae =
-                                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                                     throw nvae;
                                                                 }
-                                                            }
-                                                            else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                                alt27=2;
                                                             }
                                                             else if ( (LA27_30==STARSi) ) {
                                                                 int LA27_26 = input.LA(14);
@@ -4432,8 +4432,11 @@ public class XQFTParser extends Parser {
                                                     if ( (LA27_58==RPARSi) ) {
                                                         int LA27_30 = input.LA(12);
 
-                                                        if ( (LA27_30==PLUSSi) ) {
-                                                            int LA27_24 = input.LA(13);
+                                                        if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                            alt27=2;
+                                                        }
+                                                        else if ( (LA27_30==PLUSSi) ) {
+                                                            int LA27_25 = input.LA(13);
 
                                                             if ( (synpred1()) ) {
                                                                 alt27=1;
@@ -4444,13 +4447,10 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                                 throw nvae;
                                                             }
-                                                        }
-                                                        else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                            alt27=2;
                                                         }
                                                         else if ( (LA27_30==STARSi) ) {
                                                             int LA27_26 = input.LA(13);
@@ -4515,8 +4515,11 @@ public class XQFTParser extends Parser {
                                                 if ( (LA27_58==RPARSi) ) {
                                                     int LA27_30 = input.LA(11);
 
-                                                    if ( (LA27_30==PLUSSi) ) {
-                                                        int LA27_24 = input.LA(12);
+                                                    if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                        alt27=2;
+                                                    }
+                                                    else if ( (LA27_30==PLUSSi) ) {
+                                                        int LA27_25 = input.LA(12);
 
                                                         if ( (synpred1()) ) {
                                                             alt27=1;
@@ -4527,13 +4530,10 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                             throw nvae;
                                                         }
-                                                    }
-                                                    else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                        alt27=2;
                                                     }
                                                     else if ( (LA27_30==STARSi) ) {
                                                         int LA27_26 = input.LA(12);
@@ -4587,8 +4587,11 @@ public class XQFTParser extends Parser {
                                             if ( (LA27_58==RPARSi) ) {
                                                 int LA27_30 = input.LA(10);
 
-                                                if ( (LA27_30==PLUSSi) ) {
-                                                    int LA27_24 = input.LA(11);
+                                                if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                    alt27=2;
+                                                }
+                                                else if ( (LA27_30==PLUSSi) ) {
+                                                    int LA27_25 = input.LA(11);
 
                                                     if ( (synpred1()) ) {
                                                         alt27=1;
@@ -4599,13 +4602,10 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                         throw nvae;
                                                     }
-                                                }
-                                                else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                    alt27=2;
                                                 }
                                                 else if ( (LA27_30==STARSi) ) {
                                                     int LA27_26 = input.LA(11);
@@ -4669,8 +4669,11 @@ public class XQFTParser extends Parser {
                                     if ( (LA27_58==RPARSi) ) {
                                         int LA27_30 = input.LA(8);
 
-                                        if ( (LA27_30==PLUSSi) ) {
-                                            int LA27_24 = input.LA(9);
+                                        if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                            alt27=2;
+                                        }
+                                        else if ( (LA27_30==PLUSSi) ) {
+                                            int LA27_25 = input.LA(9);
 
                                             if ( (synpred1()) ) {
                                                 alt27=1;
@@ -4681,13 +4684,10 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                 throw nvae;
                                             }
-                                        }
-                                        else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                            alt27=2;
                                         }
                                         else if ( (LA27_30==STARSi) ) {
                                             int LA27_26 = input.LA(9);
@@ -4761,8 +4761,11 @@ public class XQFTParser extends Parser {
                                                         if ( (LA27_58==RPARSi) ) {
                                                             int LA27_30 = input.LA(13);
 
-                                                            if ( (LA27_30==PLUSSi) ) {
-                                                                int LA27_24 = input.LA(14);
+                                                            if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                                alt27=2;
+                                                            }
+                                                            else if ( (LA27_30==PLUSSi) ) {
+                                                                int LA27_25 = input.LA(14);
 
                                                                 if ( (synpred1()) ) {
                                                                     alt27=1;
@@ -4773,13 +4776,10 @@ public class XQFTParser extends Parser {
                                                                 else {
                                                                     if (backtracking>0) {failed=true; return retval;}
                                                                     NoViableAltException nvae =
-                                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                                     throw nvae;
                                                                 }
-                                                            }
-                                                            else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                                alt27=2;
                                                             }
                                                             else if ( (LA27_30==STARSi) ) {
                                                                 int LA27_26 = input.LA(14);
@@ -4831,8 +4831,11 @@ public class XQFTParser extends Parser {
                                                     if ( (LA27_58==RPARSi) ) {
                                                         int LA27_30 = input.LA(12);
 
-                                                        if ( (LA27_30==PLUSSi) ) {
-                                                            int LA27_24 = input.LA(13);
+                                                        if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                            alt27=2;
+                                                        }
+                                                        else if ( (LA27_30==PLUSSi) ) {
+                                                            int LA27_25 = input.LA(13);
 
                                                             if ( (synpred1()) ) {
                                                                 alt27=1;
@@ -4843,13 +4846,10 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                                 throw nvae;
                                                             }
-                                                        }
-                                                        else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                            alt27=2;
                                                         }
                                                         else if ( (LA27_30==STARSi) ) {
                                                             int LA27_26 = input.LA(13);
@@ -4914,8 +4914,11 @@ public class XQFTParser extends Parser {
                                                 if ( (LA27_58==RPARSi) ) {
                                                     int LA27_30 = input.LA(11);
 
-                                                    if ( (LA27_30==PLUSSi) ) {
-                                                        int LA27_24 = input.LA(12);
+                                                    if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                        alt27=2;
+                                                    }
+                                                    else if ( (LA27_30==PLUSSi) ) {
+                                                        int LA27_25 = input.LA(12);
 
                                                         if ( (synpred1()) ) {
                                                             alt27=1;
@@ -4926,13 +4929,10 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                             throw nvae;
                                                         }
-                                                    }
-                                                    else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                        alt27=2;
                                                     }
                                                     else if ( (LA27_30==STARSi) ) {
                                                         int LA27_26 = input.LA(12);
@@ -4986,8 +4986,11 @@ public class XQFTParser extends Parser {
                                             if ( (LA27_58==RPARSi) ) {
                                                 int LA27_30 = input.LA(10);
 
-                                                if ( (LA27_30==PLUSSi) ) {
-                                                    int LA27_24 = input.LA(11);
+                                                if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                    alt27=2;
+                                                }
+                                                else if ( (LA27_30==PLUSSi) ) {
+                                                    int LA27_25 = input.LA(11);
 
                                                     if ( (synpred1()) ) {
                                                         alt27=1;
@@ -4998,13 +5001,10 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                         throw nvae;
                                                     }
-                                                }
-                                                else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                    alt27=2;
                                                 }
                                                 else if ( (LA27_30==STARSi) ) {
                                                     int LA27_26 = input.LA(11);
@@ -5066,8 +5066,11 @@ public class XQFTParser extends Parser {
                                     if ( (LA27_58==RPARSi) ) {
                                         int LA27_30 = input.LA(8);
 
-                                        if ( (LA27_30==PLUSSi) ) {
-                                            int LA27_24 = input.LA(9);
+                                        if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                            alt27=2;
+                                        }
+                                        else if ( (LA27_30==PLUSSi) ) {
+                                            int LA27_25 = input.LA(9);
 
                                             if ( (synpred1()) ) {
                                                 alt27=1;
@@ -5078,13 +5081,10 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                 throw nvae;
                                             }
-                                        }
-                                        else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                            alt27=2;
                                         }
                                         else if ( (LA27_30==STARSi) ) {
                                             int LA27_26 = input.LA(9);
@@ -5138,8 +5138,11 @@ public class XQFTParser extends Parser {
                                 if ( (LA27_58==RPARSi) ) {
                                     int LA27_30 = input.LA(7);
 
-                                    if ( (LA27_30==PLUSSi) ) {
-                                        int LA27_24 = input.LA(8);
+                                    if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                        alt27=2;
+                                    }
+                                    else if ( (LA27_30==PLUSSi) ) {
+                                        int LA27_25 = input.LA(8);
 
                                         if ( (synpred1()) ) {
                                             alt27=1;
@@ -5150,13 +5153,10 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                             throw nvae;
                                         }
-                                    }
-                                    else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                        alt27=2;
                                     }
                                     else if ( (LA27_30==STARSi) ) {
                                         int LA27_26 = input.LA(8);
@@ -5235,8 +5235,11 @@ public class XQFTParser extends Parser {
                                             if ( (LA27_69==RPARSi) ) {
                                                 int LA27_30 = input.LA(10);
 
-                                                if ( (LA27_30==PLUSSi) ) {
-                                                    int LA27_24 = input.LA(11);
+                                                if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                                    alt27=2;
+                                                }
+                                                else if ( (LA27_30==PLUSSi) ) {
+                                                    int LA27_25 = input.LA(11);
 
                                                     if ( (synpred1()) ) {
                                                         alt27=1;
@@ -5247,13 +5250,10 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                         throw nvae;
                                                     }
-                                                }
-                                                else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                                    alt27=2;
                                                 }
                                                 else if ( (LA27_30==STARSi) ) {
                                                     int LA27_26 = input.LA(11);
@@ -5313,8 +5313,11 @@ public class XQFTParser extends Parser {
                                     if ( (LA27_69==RPARSi) ) {
                                         int LA27_30 = input.LA(8);
 
-                                        if ( (LA27_30==PLUSSi) ) {
-                                            int LA27_24 = input.LA(9);
+                                        if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                                            alt27=2;
+                                        }
+                                        else if ( (LA27_30==PLUSSi) ) {
+                                            int LA27_25 = input.LA(9);
 
                                             if ( (synpred1()) ) {
                                                 alt27=1;
@@ -5325,13 +5328,10 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                 throw nvae;
                                             }
-                                        }
-                                        else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                                            alt27=2;
                                         }
                                         else if ( (LA27_30==STARSi) ) {
                                             int LA27_26 = input.LA(9);
@@ -5398,8 +5398,11 @@ public class XQFTParser extends Parser {
                         {
                         int LA27_30 = input.LA(4);
 
-                        if ( (LA27_30==PLUSSi) ) {
-                            int LA27_24 = input.LA(5);
+                        if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
+                            alt27=2;
+                        }
+                        else if ( (LA27_30==PLUSSi) ) {
+                            int LA27_25 = input.LA(5);
 
                             if ( (synpred1()) ) {
                                 alt27=1;
@@ -5410,13 +5413,10 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                 throw nvae;
                             }
-                        }
-                        else if ( (LA27_30==EOF||(LA27_30>=ANCESTOR && LA27_30<=AND)||(LA27_30>=ASCENDING && LA27_30<=ATTRIBUTE)||LA27_30==CASE||(LA27_30>=CHILD && LA27_30<=COMMENT)||(LA27_30>=DEFAULT && LA27_30<=DESCENDING)||(LA27_30>=DIV && LA27_30<=ELSE)||LA27_30==EMPTY||(LA27_30>=EQ && LA27_30<=EVERY)||(LA27_30>=EXCEPT && LA27_30<=FOR)||LA27_30==FTCONTAINS||LA27_30==GE||(LA27_30>=GT && LA27_30<=IF)||LA27_30==IN||(LA27_30>=INSTANCE && LA27_30<=IS)||LA27_30==LE||(LA27_30>=LET && LA27_30<=LEVELS)||(LA27_30>=LT && LA27_30<=MOD)||(LA27_30>=NE && LA27_30<=NODE)||(LA27_30>=OR && LA27_30<=ORDERED)||(LA27_30>=PARAGRAPHS && LA27_30<=PARENT)||(LA27_30>=PRECEDING && LA27_30<=PRECEDING_SIBLING)||LA27_30==PROCESSING_INSTRUCTION||LA27_30==RETURN||LA27_30==SATISFIES||(LA27_30>=SCHEMAATTRIBUTE && LA27_30<=SELF)||LA27_30==SENTENCES||(LA27_30>=SOME && LA27_30<=STABLE)||LA27_30==TEXT||(LA27_30>=TIMES && LA27_30<=TO)||(LA27_30>=TYPESWITCH && LA27_30<=UNORDERED)||LA27_30==VALIDATE||LA27_30==WHERE||LA27_30==WITHOUT||LA27_30==WORDS||(LA27_30>=StringLiteral && LA27_30<=ASSIGNSi)||(LA27_30>=LPARSi && LA27_30<=RBRACSi)||(LA27_30>=MINUSSi && LA27_30<=LPRAGSi)||(LA27_30>=DBLSLASHSi && LA27_30<=SLASHSi)||(LA27_30>=DOTDOTSi && LA27_30<=ATSi)||(LA27_30>=RBRACKSi && LA27_30<=DOTSi)||LA27_30==LCOMMENTSi||LA27_30==LPISi) ) {
-                            alt27=2;
                         }
                         else if ( (LA27_30==STARSi) ) {
                             int LA27_26 = input.LA(5);
@@ -5500,7 +5500,7 @@ public class XQFTParser extends Parser {
                                                         int LA27_33 = input.LA(12);
 
                                                         if ( (LA27_33==PLUSSi) ) {
-                                                            int LA27_24 = input.LA(13);
+                                                            int LA27_25 = input.LA(13);
 
                                                             if ( (synpred1()) ) {
                                                                 alt27=1;
@@ -5511,7 +5511,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                                 throw nvae;
                                                             }
@@ -5559,7 +5559,7 @@ public class XQFTParser extends Parser {
                                                     int LA27_33 = input.LA(11);
 
                                                     if ( (LA27_33==PLUSSi) ) {
-                                                        int LA27_24 = input.LA(12);
+                                                        int LA27_25 = input.LA(12);
 
                                                         if ( (synpred1()) ) {
                                                             alt27=1;
@@ -5570,7 +5570,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                             throw nvae;
                                                         }
@@ -5631,7 +5631,7 @@ public class XQFTParser extends Parser {
                                                 int LA27_33 = input.LA(10);
 
                                                 if ( (LA27_33==PLUSSi) ) {
-                                                    int LA27_24 = input.LA(11);
+                                                    int LA27_25 = input.LA(11);
 
                                                     if ( (synpred1()) ) {
                                                         alt27=1;
@@ -5642,7 +5642,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                         throw nvae;
                                                     }
@@ -5692,7 +5692,7 @@ public class XQFTParser extends Parser {
                                             int LA27_33 = input.LA(9);
 
                                             if ( (LA27_33==PLUSSi) ) {
-                                                int LA27_24 = input.LA(10);
+                                                int LA27_25 = input.LA(10);
 
                                                 if ( (synpred1()) ) {
                                                     alt27=1;
@@ -5703,7 +5703,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                     throw nvae;
                                                 }
@@ -5761,7 +5761,7 @@ public class XQFTParser extends Parser {
                                     int LA27_33 = input.LA(7);
 
                                     if ( (LA27_33==PLUSSi) ) {
-                                        int LA27_24 = input.LA(8);
+                                        int LA27_25 = input.LA(8);
 
                                         if ( (synpred1()) ) {
                                             alt27=1;
@@ -5772,7 +5772,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                             throw nvae;
                                         }
@@ -5845,7 +5845,7 @@ public class XQFTParser extends Parser {
                                                 int LA27_33 = input.LA(10);
 
                                                 if ( (LA27_33==PLUSSi) ) {
-                                                    int LA27_24 = input.LA(11);
+                                                    int LA27_25 = input.LA(11);
 
                                                     if ( (synpred1()) ) {
                                                         alt27=1;
@@ -5856,7 +5856,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                         throw nvae;
                                                     }
@@ -5904,7 +5904,7 @@ public class XQFTParser extends Parser {
                                             int LA27_33 = input.LA(9);
 
                                             if ( (LA27_33==PLUSSi) ) {
-                                                int LA27_24 = input.LA(10);
+                                                int LA27_25 = input.LA(10);
 
                                                 if ( (synpred1()) ) {
                                                     alt27=1;
@@ -5915,7 +5915,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                     throw nvae;
                                                 }
@@ -5976,7 +5976,7 @@ public class XQFTParser extends Parser {
                                         int LA27_33 = input.LA(8);
 
                                         if ( (LA27_33==PLUSSi) ) {
-                                            int LA27_24 = input.LA(9);
+                                            int LA27_25 = input.LA(9);
 
                                             if ( (synpred1()) ) {
                                                 alt27=1;
@@ -5987,7 +5987,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                 throw nvae;
                                             }
@@ -6037,7 +6037,7 @@ public class XQFTParser extends Parser {
                                     int LA27_33 = input.LA(7);
 
                                     if ( (LA27_33==PLUSSi) ) {
-                                        int LA27_24 = input.LA(8);
+                                        int LA27_25 = input.LA(8);
 
                                         if ( (synpred1()) ) {
                                             alt27=1;
@@ -6048,7 +6048,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                             throw nvae;
                                         }
@@ -6108,7 +6108,7 @@ public class XQFTParser extends Parser {
                             int LA27_33 = input.LA(5);
 
                             if ( (LA27_33==PLUSSi) ) {
-                                int LA27_24 = input.LA(6);
+                                int LA27_25 = input.LA(6);
 
                                 if ( (synpred1()) ) {
                                     alt27=1;
@@ -6119,7 +6119,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                     throw nvae;
                                 }
@@ -6189,7 +6189,7 @@ public class XQFTParser extends Parser {
                                                 int LA27_33 = input.LA(10);
 
                                                 if ( (LA27_33==PLUSSi) ) {
-                                                    int LA27_24 = input.LA(11);
+                                                    int LA27_25 = input.LA(11);
 
                                                     if ( (synpred1()) ) {
                                                         alt27=1;
@@ -6200,7 +6200,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                         throw nvae;
                                                     }
@@ -6248,7 +6248,7 @@ public class XQFTParser extends Parser {
                                             int LA27_33 = input.LA(9);
 
                                             if ( (LA27_33==PLUSSi) ) {
-                                                int LA27_24 = input.LA(10);
+                                                int LA27_25 = input.LA(10);
 
                                                 if ( (synpred1()) ) {
                                                     alt27=1;
@@ -6259,7 +6259,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                     throw nvae;
                                                 }
@@ -6320,7 +6320,7 @@ public class XQFTParser extends Parser {
                                         int LA27_33 = input.LA(8);
 
                                         if ( (LA27_33==PLUSSi) ) {
-                                            int LA27_24 = input.LA(9);
+                                            int LA27_25 = input.LA(9);
 
                                             if ( (synpred1()) ) {
                                                 alt27=1;
@@ -6331,7 +6331,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                 throw nvae;
                                             }
@@ -6381,7 +6381,7 @@ public class XQFTParser extends Parser {
                                     int LA27_33 = input.LA(7);
 
                                     if ( (LA27_33==PLUSSi) ) {
-                                        int LA27_24 = input.LA(8);
+                                        int LA27_25 = input.LA(8);
 
                                         if ( (synpred1()) ) {
                                             alt27=1;
@@ -6392,7 +6392,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                             throw nvae;
                                         }
@@ -6450,7 +6450,7 @@ public class XQFTParser extends Parser {
                             int LA27_33 = input.LA(5);
 
                             if ( (LA27_33==PLUSSi) ) {
-                                int LA27_24 = input.LA(6);
+                                int LA27_25 = input.LA(6);
 
                                 if ( (synpred1()) ) {
                                     alt27=1;
@@ -6461,7 +6461,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                     throw nvae;
                                 }
@@ -6511,7 +6511,7 @@ public class XQFTParser extends Parser {
                         int LA27_33 = input.LA(4);
 
                         if ( (LA27_33==PLUSSi) ) {
-                            int LA27_24 = input.LA(5);
+                            int LA27_25 = input.LA(5);
 
                             if ( (synpred1()) ) {
                                 alt27=1;
@@ -6522,7 +6522,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                 throw nvae;
                             }
@@ -6608,8 +6608,11 @@ public class XQFTParser extends Parser {
                                                 if ( (LA27_77==RPARSi) ) {
                                                     int LA27_36 = input.LA(11);
 
-                                                    if ( (LA27_36==PLUSSi) ) {
-                                                        int LA27_24 = input.LA(12);
+                                                    if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
+                                                        alt27=2;
+                                                    }
+                                                    else if ( (LA27_36==PLUSSi) ) {
+                                                        int LA27_25 = input.LA(12);
 
                                                         if ( (synpred1()) ) {
                                                             alt27=1;
@@ -6620,13 +6623,10 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                             throw nvae;
                                                         }
-                                                    }
-                                                    else if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
-                                                        alt27=2;
                                                     }
                                                     else if ( (LA27_36==STARSi) ) {
                                                         int LA27_26 = input.LA(12);
@@ -6675,8 +6675,11 @@ public class XQFTParser extends Parser {
                                         else if ( (LA27_63==RPARSi) ) {
                                             int LA27_36 = input.LA(9);
 
-                                            if ( (LA27_36==PLUSSi) ) {
-                                                int LA27_24 = input.LA(10);
+                                            if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
+                                                alt27=2;
+                                            }
+                                            else if ( (LA27_36==PLUSSi) ) {
+                                                int LA27_25 = input.LA(10);
 
                                                 if ( (synpred1()) ) {
                                                     alt27=1;
@@ -6687,13 +6690,10 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                     throw nvae;
                                                 }
-                                            }
-                                            else if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
-                                                alt27=2;
                                             }
                                             else if ( (LA27_36==STARSi) ) {
                                                 int LA27_26 = input.LA(10);
@@ -6742,8 +6742,11 @@ public class XQFTParser extends Parser {
                                 else if ( (LA27_62==RPARSi) ) {
                                     int LA27_36 = input.LA(7);
 
-                                    if ( (LA27_36==PLUSSi) ) {
-                                        int LA27_24 = input.LA(8);
+                                    if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
+                                        alt27=2;
+                                    }
+                                    else if ( (LA27_36==PLUSSi) ) {
+                                        int LA27_25 = input.LA(8);
 
                                         if ( (synpred1()) ) {
                                             alt27=1;
@@ -6754,13 +6757,10 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                             throw nvae;
                                         }
-                                    }
-                                    else if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
-                                        alt27=2;
                                     }
                                     else if ( (LA27_36==STARSi) ) {
                                         int LA27_26 = input.LA(8);
@@ -6823,8 +6823,11 @@ public class XQFTParser extends Parser {
                                         if ( (LA27_77==RPARSi) ) {
                                             int LA27_36 = input.LA(9);
 
-                                            if ( (LA27_36==PLUSSi) ) {
-                                                int LA27_24 = input.LA(10);
+                                            if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
+                                                alt27=2;
+                                            }
+                                            else if ( (LA27_36==PLUSSi) ) {
+                                                int LA27_25 = input.LA(10);
 
                                                 if ( (synpred1()) ) {
                                                     alt27=1;
@@ -6835,13 +6838,10 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                     throw nvae;
                                                 }
-                                            }
-                                            else if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
-                                                alt27=2;
                                             }
                                             else if ( (LA27_36==STARSi) ) {
                                                 int LA27_26 = input.LA(10);
@@ -6890,8 +6890,11 @@ public class XQFTParser extends Parser {
                                 else if ( (LA27_63==RPARSi) ) {
                                     int LA27_36 = input.LA(7);
 
-                                    if ( (LA27_36==PLUSSi) ) {
-                                        int LA27_24 = input.LA(8);
+                                    if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
+                                        alt27=2;
+                                    }
+                                    else if ( (LA27_36==PLUSSi) ) {
+                                        int LA27_25 = input.LA(8);
 
                                         if ( (synpred1()) ) {
                                             alt27=1;
@@ -6902,13 +6905,10 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                             throw nvae;
                                         }
-                                    }
-                                    else if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
-                                        alt27=2;
                                     }
                                     else if ( (LA27_36==STARSi) ) {
                                         int LA27_26 = input.LA(8);
@@ -6959,8 +6959,11 @@ public class XQFTParser extends Parser {
                             {
                             int LA27_36 = input.LA(5);
 
-                            if ( (LA27_36==PLUSSi) ) {
-                                int LA27_24 = input.LA(6);
+                            if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
+                                alt27=2;
+                            }
+                            else if ( (LA27_36==PLUSSi) ) {
+                                int LA27_25 = input.LA(6);
 
                                 if ( (synpred1()) ) {
                                     alt27=1;
@@ -6971,13 +6974,10 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                     throw nvae;
                                 }
-                            }
-                            else if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
-                                alt27=2;
                             }
                             else if ( (LA27_36==STARSi) ) {
                                 int LA27_26 = input.LA(6);
@@ -7037,8 +7037,11 @@ public class XQFTParser extends Parser {
                                         if ( (LA27_77==RPARSi) ) {
                                             int LA27_36 = input.LA(9);
 
-                                            if ( (LA27_36==PLUSSi) ) {
-                                                int LA27_24 = input.LA(10);
+                                            if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
+                                                alt27=2;
+                                            }
+                                            else if ( (LA27_36==PLUSSi) ) {
+                                                int LA27_25 = input.LA(10);
 
                                                 if ( (synpred1()) ) {
                                                     alt27=1;
@@ -7049,13 +7052,10 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                                     throw nvae;
                                                 }
-                                            }
-                                            else if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
-                                                alt27=2;
                                             }
                                             else if ( (LA27_36==STARSi) ) {
                                                 int LA27_26 = input.LA(10);
@@ -7104,8 +7104,11 @@ public class XQFTParser extends Parser {
                                 else if ( (LA27_63==RPARSi) ) {
                                     int LA27_36 = input.LA(7);
 
-                                    if ( (LA27_36==PLUSSi) ) {
-                                        int LA27_24 = input.LA(8);
+                                    if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
+                                        alt27=2;
+                                    }
+                                    else if ( (LA27_36==PLUSSi) ) {
+                                        int LA27_25 = input.LA(8);
 
                                         if ( (synpred1()) ) {
                                             alt27=1;
@@ -7116,13 +7119,10 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                             throw nvae;
                                         }
-                                    }
-                                    else if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
-                                        alt27=2;
                                     }
                                     else if ( (LA27_36==STARSi) ) {
                                         int LA27_26 = input.LA(8);
@@ -7171,8 +7171,11 @@ public class XQFTParser extends Parser {
                         else if ( (LA27_35==RPARSi) ) {
                             int LA27_36 = input.LA(5);
 
-                            if ( (LA27_36==PLUSSi) ) {
-                                int LA27_24 = input.LA(6);
+                            if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
+                                alt27=2;
+                            }
+                            else if ( (LA27_36==PLUSSi) ) {
+                                int LA27_25 = input.LA(6);
 
                                 if ( (synpred1()) ) {
                                     alt27=1;
@@ -7183,13 +7186,10 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                     throw nvae;
                                 }
-                            }
-                            else if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
-                                alt27=2;
                             }
                             else if ( (LA27_36==STARSi) ) {
                                 int LA27_26 = input.LA(6);
@@ -7232,8 +7232,11 @@ public class XQFTParser extends Parser {
                         {
                         int LA27_36 = input.LA(4);
 
-                        if ( (LA27_36==PLUSSi) ) {
-                            int LA27_24 = input.LA(5);
+                        if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
+                            alt27=2;
+                        }
+                        else if ( (LA27_36==PLUSSi) ) {
+                            int LA27_25 = input.LA(5);
 
                             if ( (synpred1()) ) {
                                 alt27=1;
@@ -7244,13 +7247,10 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                 throw nvae;
                             }
-                        }
-                        else if ( (LA27_36==EOF||(LA27_36>=ANCESTOR && LA27_36<=AND)||(LA27_36>=ASCENDING && LA27_36<=ATTRIBUTE)||LA27_36==CASE||(LA27_36>=CHILD && LA27_36<=COMMENT)||(LA27_36>=DEFAULT && LA27_36<=DESCENDING)||(LA27_36>=DIV && LA27_36<=ELSE)||LA27_36==EMPTY||(LA27_36>=EQ && LA27_36<=EVERY)||(LA27_36>=EXCEPT && LA27_36<=FOR)||LA27_36==FTCONTAINS||LA27_36==GE||(LA27_36>=GT && LA27_36<=IF)||LA27_36==IN||(LA27_36>=INSTANCE && LA27_36<=IS)||LA27_36==LE||(LA27_36>=LET && LA27_36<=LEVELS)||(LA27_36>=LT && LA27_36<=MOD)||(LA27_36>=NE && LA27_36<=NODE)||(LA27_36>=OR && LA27_36<=ORDERED)||(LA27_36>=PARAGRAPHS && LA27_36<=PARENT)||(LA27_36>=PRECEDING && LA27_36<=PRECEDING_SIBLING)||LA27_36==PROCESSING_INSTRUCTION||LA27_36==RETURN||LA27_36==SATISFIES||(LA27_36>=SCHEMAATTRIBUTE && LA27_36<=SELF)||LA27_36==SENTENCES||(LA27_36>=SOME && LA27_36<=STABLE)||LA27_36==TEXT||(LA27_36>=TIMES && LA27_36<=TO)||(LA27_36>=TYPESWITCH && LA27_36<=UNORDERED)||LA27_36==VALIDATE||LA27_36==WHERE||LA27_36==WITHOUT||LA27_36==WORDS||(LA27_36>=StringLiteral && LA27_36<=ASSIGNSi)||(LA27_36>=LPARSi && LA27_36<=RBRACSi)||(LA27_36>=MINUSSi && LA27_36<=LPRAGSi)||(LA27_36>=DBLSLASHSi && LA27_36<=SLASHSi)||(LA27_36>=DOTDOTSi && LA27_36<=ATSi)||(LA27_36>=RBRACKSi && LA27_36<=DOTSi)||LA27_36==LCOMMENTSi||LA27_36==LPISi) ) {
-                            alt27=2;
                         }
                         else if ( (LA27_36==STARSi) ) {
                             int LA27_26 = input.LA(5);
@@ -7318,11 +7318,8 @@ public class XQFTParser extends Parser {
                                 if ( (LA27_64==RPARSi) ) {
                                     int LA27_53 = input.LA(7);
 
-                                    if ( (LA27_53==EOF||(LA27_53>=ANCESTOR && LA27_53<=AND)||(LA27_53>=ASCENDING && LA27_53<=ATTRIBUTE)||LA27_53==CASE||(LA27_53>=CHILD && LA27_53<=COMMENT)||(LA27_53>=DEFAULT && LA27_53<=DESCENDING)||(LA27_53>=DIV && LA27_53<=ELSE)||LA27_53==EMPTY||(LA27_53>=EQ && LA27_53<=EVERY)||(LA27_53>=EXCEPT && LA27_53<=FOR)||LA27_53==FTCONTAINS||LA27_53==GE||(LA27_53>=GT && LA27_53<=IF)||LA27_53==IN||(LA27_53>=INSTANCE && LA27_53<=IS)||LA27_53==LE||(LA27_53>=LET && LA27_53<=LEVELS)||(LA27_53>=LT && LA27_53<=MOD)||(LA27_53>=NE && LA27_53<=NODE)||(LA27_53>=OR && LA27_53<=ORDERED)||(LA27_53>=PARAGRAPHS && LA27_53<=PARENT)||(LA27_53>=PRECEDING && LA27_53<=PRECEDING_SIBLING)||LA27_53==PROCESSING_INSTRUCTION||LA27_53==RETURN||LA27_53==SATISFIES||(LA27_53>=SCHEMAATTRIBUTE && LA27_53<=SELF)||LA27_53==SENTENCES||(LA27_53>=SOME && LA27_53<=STABLE)||LA27_53==TEXT||(LA27_53>=TIMES && LA27_53<=TO)||(LA27_53>=TYPESWITCH && LA27_53<=UNORDERED)||LA27_53==VALIDATE||LA27_53==WHERE||LA27_53==WITHOUT||LA27_53==WORDS||(LA27_53>=StringLiteral && LA27_53<=ASSIGNSi)||(LA27_53>=LPARSi && LA27_53<=RBRACSi)||(LA27_53>=MINUSSi && LA27_53<=LPRAGSi)||(LA27_53>=DBLSLASHSi && LA27_53<=SLASHSi)||(LA27_53>=DOTDOTSi && LA27_53<=ATSi)||(LA27_53>=RBRACKSi && LA27_53<=DOTSi)||LA27_53==LCOMMENTSi||LA27_53==LPISi) ) {
-                                        alt27=2;
-                                    }
-                                    else if ( (LA27_53==PLUSSi) ) {
-                                        int LA27_24 = input.LA(8);
+                                    if ( (LA27_53==PLUSSi) ) {
+                                        int LA27_25 = input.LA(8);
 
                                         if ( (synpred1()) ) {
                                             alt27=1;
@@ -7333,10 +7330,13 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                             throw nvae;
                                         }
+                                    }
+                                    else if ( (LA27_53==EOF||(LA27_53>=ANCESTOR && LA27_53<=AND)||(LA27_53>=ASCENDING && LA27_53<=ATTRIBUTE)||LA27_53==CASE||(LA27_53>=CHILD && LA27_53<=COMMENT)||(LA27_53>=DEFAULT && LA27_53<=DESCENDING)||(LA27_53>=DIV && LA27_53<=ELSE)||LA27_53==EMPTY||(LA27_53>=EQ && LA27_53<=EVERY)||(LA27_53>=EXCEPT && LA27_53<=FOR)||LA27_53==FTCONTAINS||LA27_53==GE||(LA27_53>=GT && LA27_53<=IF)||LA27_53==IN||(LA27_53>=INSTANCE && LA27_53<=IS)||LA27_53==LE||(LA27_53>=LET && LA27_53<=LEVELS)||(LA27_53>=LT && LA27_53<=MOD)||(LA27_53>=NE && LA27_53<=NODE)||(LA27_53>=OR && LA27_53<=ORDERED)||(LA27_53>=PARAGRAPHS && LA27_53<=PARENT)||(LA27_53>=PRECEDING && LA27_53<=PRECEDING_SIBLING)||LA27_53==PROCESSING_INSTRUCTION||LA27_53==RETURN||LA27_53==SATISFIES||(LA27_53>=SCHEMAATTRIBUTE && LA27_53<=SELF)||LA27_53==SENTENCES||(LA27_53>=SOME && LA27_53<=STABLE)||LA27_53==TEXT||(LA27_53>=TIMES && LA27_53<=TO)||(LA27_53>=TYPESWITCH && LA27_53<=UNORDERED)||LA27_53==VALIDATE||LA27_53==WHERE||LA27_53==WITHOUT||LA27_53==WORDS||(LA27_53>=StringLiteral && LA27_53<=ASSIGNSi)||(LA27_53>=LPARSi && LA27_53<=RBRACSi)||(LA27_53>=MINUSSi && LA27_53<=LPRAGSi)||(LA27_53>=DBLSLASHSi && LA27_53<=SLASHSi)||(LA27_53>=DOTDOTSi && LA27_53<=ATSi)||(LA27_53>=RBRACKSi && LA27_53<=DOTSi)||LA27_53==LCOMMENTSi||LA27_53==LPISi) ) {
+                                        alt27=2;
                                     }
                                     else if ( (LA27_53==STARSi) ) {
                                         int LA27_26 = input.LA(8);
@@ -7385,11 +7385,8 @@ public class XQFTParser extends Parser {
                         else if ( (LA27_37==RPARSi) ) {
                             int LA27_53 = input.LA(5);
 
-                            if ( (LA27_53==EOF||(LA27_53>=ANCESTOR && LA27_53<=AND)||(LA27_53>=ASCENDING && LA27_53<=ATTRIBUTE)||LA27_53==CASE||(LA27_53>=CHILD && LA27_53<=COMMENT)||(LA27_53>=DEFAULT && LA27_53<=DESCENDING)||(LA27_53>=DIV && LA27_53<=ELSE)||LA27_53==EMPTY||(LA27_53>=EQ && LA27_53<=EVERY)||(LA27_53>=EXCEPT && LA27_53<=FOR)||LA27_53==FTCONTAINS||LA27_53==GE||(LA27_53>=GT && LA27_53<=IF)||LA27_53==IN||(LA27_53>=INSTANCE && LA27_53<=IS)||LA27_53==LE||(LA27_53>=LET && LA27_53<=LEVELS)||(LA27_53>=LT && LA27_53<=MOD)||(LA27_53>=NE && LA27_53<=NODE)||(LA27_53>=OR && LA27_53<=ORDERED)||(LA27_53>=PARAGRAPHS && LA27_53<=PARENT)||(LA27_53>=PRECEDING && LA27_53<=PRECEDING_SIBLING)||LA27_53==PROCESSING_INSTRUCTION||LA27_53==RETURN||LA27_53==SATISFIES||(LA27_53>=SCHEMAATTRIBUTE && LA27_53<=SELF)||LA27_53==SENTENCES||(LA27_53>=SOME && LA27_53<=STABLE)||LA27_53==TEXT||(LA27_53>=TIMES && LA27_53<=TO)||(LA27_53>=TYPESWITCH && LA27_53<=UNORDERED)||LA27_53==VALIDATE||LA27_53==WHERE||LA27_53==WITHOUT||LA27_53==WORDS||(LA27_53>=StringLiteral && LA27_53<=ASSIGNSi)||(LA27_53>=LPARSi && LA27_53<=RBRACSi)||(LA27_53>=MINUSSi && LA27_53<=LPRAGSi)||(LA27_53>=DBLSLASHSi && LA27_53<=SLASHSi)||(LA27_53>=DOTDOTSi && LA27_53<=ATSi)||(LA27_53>=RBRACKSi && LA27_53<=DOTSi)||LA27_53==LCOMMENTSi||LA27_53==LPISi) ) {
-                                alt27=2;
-                            }
-                            else if ( (LA27_53==PLUSSi) ) {
-                                int LA27_24 = input.LA(6);
+                            if ( (LA27_53==PLUSSi) ) {
+                                int LA27_25 = input.LA(6);
 
                                 if ( (synpred1()) ) {
                                     alt27=1;
@@ -7400,10 +7397,13 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                     throw nvae;
                                 }
+                            }
+                            else if ( (LA27_53==EOF||(LA27_53>=ANCESTOR && LA27_53<=AND)||(LA27_53>=ASCENDING && LA27_53<=ATTRIBUTE)||LA27_53==CASE||(LA27_53>=CHILD && LA27_53<=COMMENT)||(LA27_53>=DEFAULT && LA27_53<=DESCENDING)||(LA27_53>=DIV && LA27_53<=ELSE)||LA27_53==EMPTY||(LA27_53>=EQ && LA27_53<=EVERY)||(LA27_53>=EXCEPT && LA27_53<=FOR)||LA27_53==FTCONTAINS||LA27_53==GE||(LA27_53>=GT && LA27_53<=IF)||LA27_53==IN||(LA27_53>=INSTANCE && LA27_53<=IS)||LA27_53==LE||(LA27_53>=LET && LA27_53<=LEVELS)||(LA27_53>=LT && LA27_53<=MOD)||(LA27_53>=NE && LA27_53<=NODE)||(LA27_53>=OR && LA27_53<=ORDERED)||(LA27_53>=PARAGRAPHS && LA27_53<=PARENT)||(LA27_53>=PRECEDING && LA27_53<=PRECEDING_SIBLING)||LA27_53==PROCESSING_INSTRUCTION||LA27_53==RETURN||LA27_53==SATISFIES||(LA27_53>=SCHEMAATTRIBUTE && LA27_53<=SELF)||LA27_53==SENTENCES||(LA27_53>=SOME && LA27_53<=STABLE)||LA27_53==TEXT||(LA27_53>=TIMES && LA27_53<=TO)||(LA27_53>=TYPESWITCH && LA27_53<=UNORDERED)||LA27_53==VALIDATE||LA27_53==WHERE||LA27_53==WITHOUT||LA27_53==WORDS||(LA27_53>=StringLiteral && LA27_53<=ASSIGNSi)||(LA27_53>=LPARSi && LA27_53<=RBRACSi)||(LA27_53>=MINUSSi && LA27_53<=LPRAGSi)||(LA27_53>=DBLSLASHSi && LA27_53<=SLASHSi)||(LA27_53>=DOTDOTSi && LA27_53<=ATSi)||(LA27_53>=RBRACKSi && LA27_53<=DOTSi)||LA27_53==LCOMMENTSi||LA27_53==LPISi) ) {
+                                alt27=2;
                             }
                             else if ( (LA27_53==STARSi) ) {
                                 int LA27_26 = input.LA(6);
@@ -7477,11 +7477,8 @@ public class XQFTParser extends Parser {
                                 if ( (LA27_65==RPARSi) ) {
                                     int LA27_55 = input.LA(7);
 
-                                    if ( (LA27_55==EOF||(LA27_55>=ANCESTOR && LA27_55<=AND)||(LA27_55>=ASCENDING && LA27_55<=ATTRIBUTE)||LA27_55==CASE||(LA27_55>=CHILD && LA27_55<=COMMENT)||(LA27_55>=DEFAULT && LA27_55<=DESCENDING)||(LA27_55>=DIV && LA27_55<=ELSE)||LA27_55==EMPTY||(LA27_55>=EQ && LA27_55<=EVERY)||(LA27_55>=EXCEPT && LA27_55<=FOR)||LA27_55==FTCONTAINS||LA27_55==GE||(LA27_55>=GT && LA27_55<=IF)||LA27_55==IN||(LA27_55>=INSTANCE && LA27_55<=IS)||LA27_55==LE||(LA27_55>=LET && LA27_55<=LEVELS)||(LA27_55>=LT && LA27_55<=MOD)||(LA27_55>=NE && LA27_55<=NODE)||(LA27_55>=OR && LA27_55<=ORDERED)||(LA27_55>=PARAGRAPHS && LA27_55<=PARENT)||(LA27_55>=PRECEDING && LA27_55<=PRECEDING_SIBLING)||LA27_55==PROCESSING_INSTRUCTION||LA27_55==RETURN||LA27_55==SATISFIES||(LA27_55>=SCHEMAATTRIBUTE && LA27_55<=SELF)||LA27_55==SENTENCES||(LA27_55>=SOME && LA27_55<=STABLE)||LA27_55==TEXT||(LA27_55>=TIMES && LA27_55<=TO)||(LA27_55>=TYPESWITCH && LA27_55<=UNORDERED)||LA27_55==VALIDATE||LA27_55==WHERE||LA27_55==WITHOUT||LA27_55==WORDS||(LA27_55>=StringLiteral && LA27_55<=ASSIGNSi)||(LA27_55>=LPARSi && LA27_55<=RBRACSi)||(LA27_55>=MINUSSi && LA27_55<=LPRAGSi)||(LA27_55>=DBLSLASHSi && LA27_55<=SLASHSi)||(LA27_55>=DOTDOTSi && LA27_55<=ATSi)||(LA27_55>=RBRACKSi && LA27_55<=DOTSi)||LA27_55==LCOMMENTSi||LA27_55==LPISi) ) {
-                                        alt27=2;
-                                    }
-                                    else if ( (LA27_55==PLUSSi) ) {
-                                        int LA27_24 = input.LA(8);
+                                    if ( (LA27_55==PLUSSi) ) {
+                                        int LA27_25 = input.LA(8);
 
                                         if ( (synpred1()) ) {
                                             alt27=1;
@@ -7492,10 +7489,13 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                             throw nvae;
                                         }
+                                    }
+                                    else if ( (LA27_55==EOF||(LA27_55>=ANCESTOR && LA27_55<=AND)||(LA27_55>=ASCENDING && LA27_55<=ATTRIBUTE)||LA27_55==CASE||(LA27_55>=CHILD && LA27_55<=COMMENT)||(LA27_55>=DEFAULT && LA27_55<=DESCENDING)||(LA27_55>=DIV && LA27_55<=ELSE)||LA27_55==EMPTY||(LA27_55>=EQ && LA27_55<=EVERY)||(LA27_55>=EXCEPT && LA27_55<=FOR)||LA27_55==FTCONTAINS||LA27_55==GE||(LA27_55>=GT && LA27_55<=IF)||LA27_55==IN||(LA27_55>=INSTANCE && LA27_55<=IS)||LA27_55==LE||(LA27_55>=LET && LA27_55<=LEVELS)||(LA27_55>=LT && LA27_55<=MOD)||(LA27_55>=NE && LA27_55<=NODE)||(LA27_55>=OR && LA27_55<=ORDERED)||(LA27_55>=PARAGRAPHS && LA27_55<=PARENT)||(LA27_55>=PRECEDING && LA27_55<=PRECEDING_SIBLING)||LA27_55==PROCESSING_INSTRUCTION||LA27_55==RETURN||LA27_55==SATISFIES||(LA27_55>=SCHEMAATTRIBUTE && LA27_55<=SELF)||LA27_55==SENTENCES||(LA27_55>=SOME && LA27_55<=STABLE)||LA27_55==TEXT||(LA27_55>=TIMES && LA27_55<=TO)||(LA27_55>=TYPESWITCH && LA27_55<=UNORDERED)||LA27_55==VALIDATE||LA27_55==WHERE||LA27_55==WITHOUT||LA27_55==WORDS||(LA27_55>=StringLiteral && LA27_55<=ASSIGNSi)||(LA27_55>=LPARSi && LA27_55<=RBRACSi)||(LA27_55>=MINUSSi && LA27_55<=LPRAGSi)||(LA27_55>=DBLSLASHSi && LA27_55<=SLASHSi)||(LA27_55>=DOTDOTSi && LA27_55<=ATSi)||(LA27_55>=RBRACKSi && LA27_55<=DOTSi)||LA27_55==LCOMMENTSi||LA27_55==LPISi) ) {
+                                        alt27=2;
                                     }
                                     else if ( (LA27_55==STARSi) ) {
                                         int LA27_26 = input.LA(8);
@@ -7544,11 +7544,8 @@ public class XQFTParser extends Parser {
                         else if ( (LA27_38==RPARSi) ) {
                             int LA27_55 = input.LA(5);
 
-                            if ( (LA27_55==EOF||(LA27_55>=ANCESTOR && LA27_55<=AND)||(LA27_55>=ASCENDING && LA27_55<=ATTRIBUTE)||LA27_55==CASE||(LA27_55>=CHILD && LA27_55<=COMMENT)||(LA27_55>=DEFAULT && LA27_55<=DESCENDING)||(LA27_55>=DIV && LA27_55<=ELSE)||LA27_55==EMPTY||(LA27_55>=EQ && LA27_55<=EVERY)||(LA27_55>=EXCEPT && LA27_55<=FOR)||LA27_55==FTCONTAINS||LA27_55==GE||(LA27_55>=GT && LA27_55<=IF)||LA27_55==IN||(LA27_55>=INSTANCE && LA27_55<=IS)||LA27_55==LE||(LA27_55>=LET && LA27_55<=LEVELS)||(LA27_55>=LT && LA27_55<=MOD)||(LA27_55>=NE && LA27_55<=NODE)||(LA27_55>=OR && LA27_55<=ORDERED)||(LA27_55>=PARAGRAPHS && LA27_55<=PARENT)||(LA27_55>=PRECEDING && LA27_55<=PRECEDING_SIBLING)||LA27_55==PROCESSING_INSTRUCTION||LA27_55==RETURN||LA27_55==SATISFIES||(LA27_55>=SCHEMAATTRIBUTE && LA27_55<=SELF)||LA27_55==SENTENCES||(LA27_55>=SOME && LA27_55<=STABLE)||LA27_55==TEXT||(LA27_55>=TIMES && LA27_55<=TO)||(LA27_55>=TYPESWITCH && LA27_55<=UNORDERED)||LA27_55==VALIDATE||LA27_55==WHERE||LA27_55==WITHOUT||LA27_55==WORDS||(LA27_55>=StringLiteral && LA27_55<=ASSIGNSi)||(LA27_55>=LPARSi && LA27_55<=RBRACSi)||(LA27_55>=MINUSSi && LA27_55<=LPRAGSi)||(LA27_55>=DBLSLASHSi && LA27_55<=SLASHSi)||(LA27_55>=DOTDOTSi && LA27_55<=ATSi)||(LA27_55>=RBRACKSi && LA27_55<=DOTSi)||LA27_55==LCOMMENTSi||LA27_55==LPISi) ) {
-                                alt27=2;
-                            }
-                            else if ( (LA27_55==PLUSSi) ) {
-                                int LA27_24 = input.LA(6);
+                            if ( (LA27_55==PLUSSi) ) {
+                                int LA27_25 = input.LA(6);
 
                                 if ( (synpred1()) ) {
                                     alt27=1;
@@ -7559,10 +7556,13 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                     throw nvae;
                                 }
+                            }
+                            else if ( (LA27_55==EOF||(LA27_55>=ANCESTOR && LA27_55<=AND)||(LA27_55>=ASCENDING && LA27_55<=ATTRIBUTE)||LA27_55==CASE||(LA27_55>=CHILD && LA27_55<=COMMENT)||(LA27_55>=DEFAULT && LA27_55<=DESCENDING)||(LA27_55>=DIV && LA27_55<=ELSE)||LA27_55==EMPTY||(LA27_55>=EQ && LA27_55<=EVERY)||(LA27_55>=EXCEPT && LA27_55<=FOR)||LA27_55==FTCONTAINS||LA27_55==GE||(LA27_55>=GT && LA27_55<=IF)||LA27_55==IN||(LA27_55>=INSTANCE && LA27_55<=IS)||LA27_55==LE||(LA27_55>=LET && LA27_55<=LEVELS)||(LA27_55>=LT && LA27_55<=MOD)||(LA27_55>=NE && LA27_55<=NODE)||(LA27_55>=OR && LA27_55<=ORDERED)||(LA27_55>=PARAGRAPHS && LA27_55<=PARENT)||(LA27_55>=PRECEDING && LA27_55<=PRECEDING_SIBLING)||LA27_55==PROCESSING_INSTRUCTION||LA27_55==RETURN||LA27_55==SATISFIES||(LA27_55>=SCHEMAATTRIBUTE && LA27_55<=SELF)||LA27_55==SENTENCES||(LA27_55>=SOME && LA27_55<=STABLE)||LA27_55==TEXT||(LA27_55>=TIMES && LA27_55<=TO)||(LA27_55>=TYPESWITCH && LA27_55<=UNORDERED)||LA27_55==VALIDATE||LA27_55==WHERE||LA27_55==WITHOUT||LA27_55==WORDS||(LA27_55>=StringLiteral && LA27_55<=ASSIGNSi)||(LA27_55>=LPARSi && LA27_55<=RBRACSi)||(LA27_55>=MINUSSi && LA27_55<=LPRAGSi)||(LA27_55>=DBLSLASHSi && LA27_55<=SLASHSi)||(LA27_55>=DOTDOTSi && LA27_55<=ATSi)||(LA27_55>=RBRACKSi && LA27_55<=DOTSi)||LA27_55==LCOMMENTSi||LA27_55==LPISi) ) {
+                                alt27=2;
                             }
                             else if ( (LA27_55==STARSi) ) {
                                 int LA27_26 = input.LA(6);
@@ -7630,8 +7630,11 @@ public class XQFTParser extends Parser {
                         if ( (LA27_39==RPARSi) ) {
                             int LA27_40 = input.LA(5);
 
-                            if ( (LA27_40==PLUSSi) ) {
-                                int LA27_24 = input.LA(6);
+                            if ( (LA27_40==EOF||(LA27_40>=ANCESTOR && LA27_40<=AND)||(LA27_40>=ASCENDING && LA27_40<=ATTRIBUTE)||LA27_40==CASE||(LA27_40>=CHILD && LA27_40<=COMMENT)||(LA27_40>=DEFAULT && LA27_40<=DESCENDING)||(LA27_40>=DIV && LA27_40<=ELSE)||LA27_40==EMPTY||(LA27_40>=EQ && LA27_40<=EVERY)||(LA27_40>=EXCEPT && LA27_40<=FOR)||LA27_40==FTCONTAINS||LA27_40==GE||(LA27_40>=GT && LA27_40<=IF)||LA27_40==IN||(LA27_40>=INSTANCE && LA27_40<=IS)||LA27_40==LE||(LA27_40>=LET && LA27_40<=LEVELS)||(LA27_40>=LT && LA27_40<=MOD)||(LA27_40>=NE && LA27_40<=NODE)||(LA27_40>=OR && LA27_40<=ORDERED)||(LA27_40>=PARAGRAPHS && LA27_40<=PARENT)||(LA27_40>=PRECEDING && LA27_40<=PRECEDING_SIBLING)||LA27_40==PROCESSING_INSTRUCTION||LA27_40==RETURN||LA27_40==SATISFIES||(LA27_40>=SCHEMAATTRIBUTE && LA27_40<=SELF)||LA27_40==SENTENCES||(LA27_40>=SOME && LA27_40<=STABLE)||LA27_40==TEXT||(LA27_40>=TIMES && LA27_40<=TO)||(LA27_40>=TYPESWITCH && LA27_40<=UNORDERED)||LA27_40==VALIDATE||LA27_40==WHERE||LA27_40==WITHOUT||LA27_40==WORDS||(LA27_40>=StringLiteral && LA27_40<=ASSIGNSi)||(LA27_40>=LPARSi && LA27_40<=RBRACSi)||(LA27_40>=MINUSSi && LA27_40<=LPRAGSi)||(LA27_40>=DBLSLASHSi && LA27_40<=SLASHSi)||(LA27_40>=DOTDOTSi && LA27_40<=ATSi)||(LA27_40>=RBRACKSi && LA27_40<=DOTSi)||LA27_40==LCOMMENTSi||LA27_40==LPISi) ) {
+                                alt27=2;
+                            }
+                            else if ( (LA27_40==PLUSSi) ) {
+                                int LA27_25 = input.LA(6);
 
                                 if ( (synpred1()) ) {
                                     alt27=1;
@@ -7642,13 +7645,10 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                     throw nvae;
                                 }
-                            }
-                            else if ( (LA27_40==EOF||(LA27_40>=ANCESTOR && LA27_40<=AND)||(LA27_40>=ASCENDING && LA27_40<=ATTRIBUTE)||LA27_40==CASE||(LA27_40>=CHILD && LA27_40<=COMMENT)||(LA27_40>=DEFAULT && LA27_40<=DESCENDING)||(LA27_40>=DIV && LA27_40<=ELSE)||LA27_40==EMPTY||(LA27_40>=EQ && LA27_40<=EVERY)||(LA27_40>=EXCEPT && LA27_40<=FOR)||LA27_40==FTCONTAINS||LA27_40==GE||(LA27_40>=GT && LA27_40<=IF)||LA27_40==IN||(LA27_40>=INSTANCE && LA27_40<=IS)||LA27_40==LE||(LA27_40>=LET && LA27_40<=LEVELS)||(LA27_40>=LT && LA27_40<=MOD)||(LA27_40>=NE && LA27_40<=NODE)||(LA27_40>=OR && LA27_40<=ORDERED)||(LA27_40>=PARAGRAPHS && LA27_40<=PARENT)||(LA27_40>=PRECEDING && LA27_40<=PRECEDING_SIBLING)||LA27_40==PROCESSING_INSTRUCTION||LA27_40==RETURN||LA27_40==SATISFIES||(LA27_40>=SCHEMAATTRIBUTE && LA27_40<=SELF)||LA27_40==SENTENCES||(LA27_40>=SOME && LA27_40<=STABLE)||LA27_40==TEXT||(LA27_40>=TIMES && LA27_40<=TO)||(LA27_40>=TYPESWITCH && LA27_40<=UNORDERED)||LA27_40==VALIDATE||LA27_40==WHERE||LA27_40==WITHOUT||LA27_40==WORDS||(LA27_40>=StringLiteral && LA27_40<=ASSIGNSi)||(LA27_40>=LPARSi && LA27_40<=RBRACSi)||(LA27_40>=MINUSSi && LA27_40<=LPRAGSi)||(LA27_40>=DBLSLASHSi && LA27_40<=SLASHSi)||(LA27_40>=DOTDOTSi && LA27_40<=ATSi)||(LA27_40>=RBRACKSi && LA27_40<=DOTSi)||LA27_40==LCOMMENTSi||LA27_40==LPISi) ) {
-                                alt27=2;
                             }
                             else if ( (LA27_40==STARSi) ) {
                                 int LA27_26 = input.LA(6);
@@ -7689,8 +7689,11 @@ public class XQFTParser extends Parser {
                     else if ( (LA27_18==RPARSi) ) {
                         int LA27_40 = input.LA(4);
 
-                        if ( (LA27_40==PLUSSi) ) {
-                            int LA27_24 = input.LA(5);
+                        if ( (LA27_40==EOF||(LA27_40>=ANCESTOR && LA27_40<=AND)||(LA27_40>=ASCENDING && LA27_40<=ATTRIBUTE)||LA27_40==CASE||(LA27_40>=CHILD && LA27_40<=COMMENT)||(LA27_40>=DEFAULT && LA27_40<=DESCENDING)||(LA27_40>=DIV && LA27_40<=ELSE)||LA27_40==EMPTY||(LA27_40>=EQ && LA27_40<=EVERY)||(LA27_40>=EXCEPT && LA27_40<=FOR)||LA27_40==FTCONTAINS||LA27_40==GE||(LA27_40>=GT && LA27_40<=IF)||LA27_40==IN||(LA27_40>=INSTANCE && LA27_40<=IS)||LA27_40==LE||(LA27_40>=LET && LA27_40<=LEVELS)||(LA27_40>=LT && LA27_40<=MOD)||(LA27_40>=NE && LA27_40<=NODE)||(LA27_40>=OR && LA27_40<=ORDERED)||(LA27_40>=PARAGRAPHS && LA27_40<=PARENT)||(LA27_40>=PRECEDING && LA27_40<=PRECEDING_SIBLING)||LA27_40==PROCESSING_INSTRUCTION||LA27_40==RETURN||LA27_40==SATISFIES||(LA27_40>=SCHEMAATTRIBUTE && LA27_40<=SELF)||LA27_40==SENTENCES||(LA27_40>=SOME && LA27_40<=STABLE)||LA27_40==TEXT||(LA27_40>=TIMES && LA27_40<=TO)||(LA27_40>=TYPESWITCH && LA27_40<=UNORDERED)||LA27_40==VALIDATE||LA27_40==WHERE||LA27_40==WITHOUT||LA27_40==WORDS||(LA27_40>=StringLiteral && LA27_40<=ASSIGNSi)||(LA27_40>=LPARSi && LA27_40<=RBRACSi)||(LA27_40>=MINUSSi && LA27_40<=LPRAGSi)||(LA27_40>=DBLSLASHSi && LA27_40<=SLASHSi)||(LA27_40>=DOTDOTSi && LA27_40<=ATSi)||(LA27_40>=RBRACKSi && LA27_40<=DOTSi)||LA27_40==LCOMMENTSi||LA27_40==LPISi) ) {
+                            alt27=2;
+                        }
+                        else if ( (LA27_40==PLUSSi) ) {
+                            int LA27_25 = input.LA(5);
 
                             if ( (synpred1()) ) {
                                 alt27=1;
@@ -7701,13 +7704,10 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                 throw nvae;
                             }
-                        }
-                        else if ( (LA27_40==EOF||(LA27_40>=ANCESTOR && LA27_40<=AND)||(LA27_40>=ASCENDING && LA27_40<=ATTRIBUTE)||LA27_40==CASE||(LA27_40>=CHILD && LA27_40<=COMMENT)||(LA27_40>=DEFAULT && LA27_40<=DESCENDING)||(LA27_40>=DIV && LA27_40<=ELSE)||LA27_40==EMPTY||(LA27_40>=EQ && LA27_40<=EVERY)||(LA27_40>=EXCEPT && LA27_40<=FOR)||LA27_40==FTCONTAINS||LA27_40==GE||(LA27_40>=GT && LA27_40<=IF)||LA27_40==IN||(LA27_40>=INSTANCE && LA27_40<=IS)||LA27_40==LE||(LA27_40>=LET && LA27_40<=LEVELS)||(LA27_40>=LT && LA27_40<=MOD)||(LA27_40>=NE && LA27_40<=NODE)||(LA27_40>=OR && LA27_40<=ORDERED)||(LA27_40>=PARAGRAPHS && LA27_40<=PARENT)||(LA27_40>=PRECEDING && LA27_40<=PRECEDING_SIBLING)||LA27_40==PROCESSING_INSTRUCTION||LA27_40==RETURN||LA27_40==SATISFIES||(LA27_40>=SCHEMAATTRIBUTE && LA27_40<=SELF)||LA27_40==SENTENCES||(LA27_40>=SOME && LA27_40<=STABLE)||LA27_40==TEXT||(LA27_40>=TIMES && LA27_40<=TO)||(LA27_40>=TYPESWITCH && LA27_40<=UNORDERED)||LA27_40==VALIDATE||LA27_40==WHERE||LA27_40==WITHOUT||LA27_40==WORDS||(LA27_40>=StringLiteral && LA27_40<=ASSIGNSi)||(LA27_40>=LPARSi && LA27_40<=RBRACSi)||(LA27_40>=MINUSSi && LA27_40<=LPRAGSi)||(LA27_40>=DBLSLASHSi && LA27_40<=SLASHSi)||(LA27_40>=DOTDOTSi && LA27_40<=ATSi)||(LA27_40>=RBRACKSi && LA27_40<=DOTSi)||LA27_40==LCOMMENTSi||LA27_40==LPISi) ) {
-                            alt27=2;
                         }
                         else if ( (LA27_40==STARSi) ) {
                             int LA27_26 = input.LA(5);
@@ -7765,7 +7765,7 @@ public class XQFTParser extends Parser {
                         int LA27_41 = input.LA(4);
 
                         if ( (LA27_41==PLUSSi) ) {
-                            int LA27_24 = input.LA(5);
+                            int LA27_25 = input.LA(5);
 
                             if ( (synpred1()) ) {
                                 alt27=1;
@@ -7776,7 +7776,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                 throw nvae;
                             }
@@ -7843,7 +7843,7 @@ public class XQFTParser extends Parser {
                             alt27=2;
                         }
                         else if ( (LA27_42==PLUSSi) ) {
-                            int LA27_24 = input.LA(5);
+                            int LA27_25 = input.LA(5);
 
                             if ( (synpred1()) ) {
                                 alt27=1;
@@ -7854,7 +7854,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                 throw nvae;
                             }
@@ -7915,7 +7915,7 @@ public class XQFTParser extends Parser {
                         int LA27_43 = input.LA(4);
 
                         if ( (LA27_43==PLUSSi) ) {
-                            int LA27_24 = input.LA(5);
+                            int LA27_25 = input.LA(5);
 
                             if ( (synpred1()) ) {
                                 alt27=1;
@@ -7926,7 +7926,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                 throw nvae;
                             }
@@ -7989,11 +7989,8 @@ public class XQFTParser extends Parser {
                     if ( (LA27_22==RPARSi) ) {
                         int LA27_44 = input.LA(4);
 
-                        if ( (LA27_44==EOF||(LA27_44>=ANCESTOR && LA27_44<=AND)||(LA27_44>=ASCENDING && LA27_44<=ATTRIBUTE)||LA27_44==CASE||(LA27_44>=CHILD && LA27_44<=COMMENT)||(LA27_44>=DEFAULT && LA27_44<=DESCENDING)||(LA27_44>=DIV && LA27_44<=ELSE)||LA27_44==EMPTY||(LA27_44>=EQ && LA27_44<=EVERY)||(LA27_44>=EXCEPT && LA27_44<=FOR)||LA27_44==FTCONTAINS||LA27_44==GE||(LA27_44>=GT && LA27_44<=IF)||LA27_44==IN||(LA27_44>=INSTANCE && LA27_44<=IS)||LA27_44==LE||(LA27_44>=LET && LA27_44<=LEVELS)||(LA27_44>=LT && LA27_44<=MOD)||(LA27_44>=NE && LA27_44<=NODE)||(LA27_44>=OR && LA27_44<=ORDERED)||(LA27_44>=PARAGRAPHS && LA27_44<=PARENT)||(LA27_44>=PRECEDING && LA27_44<=PRECEDING_SIBLING)||LA27_44==PROCESSING_INSTRUCTION||LA27_44==RETURN||LA27_44==SATISFIES||(LA27_44>=SCHEMAATTRIBUTE && LA27_44<=SELF)||LA27_44==SENTENCES||(LA27_44>=SOME && LA27_44<=STABLE)||LA27_44==TEXT||(LA27_44>=TIMES && LA27_44<=TO)||(LA27_44>=TYPESWITCH && LA27_44<=UNORDERED)||LA27_44==VALIDATE||LA27_44==WHERE||LA27_44==WITHOUT||LA27_44==WORDS||(LA27_44>=StringLiteral && LA27_44<=ASSIGNSi)||(LA27_44>=LPARSi && LA27_44<=RBRACSi)||(LA27_44>=MINUSSi && LA27_44<=LPRAGSi)||(LA27_44>=DBLSLASHSi && LA27_44<=SLASHSi)||(LA27_44>=DOTDOTSi && LA27_44<=ATSi)||(LA27_44>=RBRACKSi && LA27_44<=DOTSi)||LA27_44==LCOMMENTSi||LA27_44==LPISi) ) {
-                            alt27=2;
-                        }
-                        else if ( (LA27_44==PLUSSi) ) {
-                            int LA27_24 = input.LA(5);
+                        if ( (LA27_44==PLUSSi) ) {
+                            int LA27_25 = input.LA(5);
 
                             if ( (synpred1()) ) {
                                 alt27=1;
@@ -8004,10 +8001,13 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                 throw nvae;
                             }
+                        }
+                        else if ( (LA27_44==EOF||(LA27_44>=ANCESTOR && LA27_44<=AND)||(LA27_44>=ASCENDING && LA27_44<=ATTRIBUTE)||LA27_44==CASE||(LA27_44>=CHILD && LA27_44<=COMMENT)||(LA27_44>=DEFAULT && LA27_44<=DESCENDING)||(LA27_44>=DIV && LA27_44<=ELSE)||LA27_44==EMPTY||(LA27_44>=EQ && LA27_44<=EVERY)||(LA27_44>=EXCEPT && LA27_44<=FOR)||LA27_44==FTCONTAINS||LA27_44==GE||(LA27_44>=GT && LA27_44<=IF)||LA27_44==IN||(LA27_44>=INSTANCE && LA27_44<=IS)||LA27_44==LE||(LA27_44>=LET && LA27_44<=LEVELS)||(LA27_44>=LT && LA27_44<=MOD)||(LA27_44>=NE && LA27_44<=NODE)||(LA27_44>=OR && LA27_44<=ORDERED)||(LA27_44>=PARAGRAPHS && LA27_44<=PARENT)||(LA27_44>=PRECEDING && LA27_44<=PRECEDING_SIBLING)||LA27_44==PROCESSING_INSTRUCTION||LA27_44==RETURN||LA27_44==SATISFIES||(LA27_44>=SCHEMAATTRIBUTE && LA27_44<=SELF)||LA27_44==SENTENCES||(LA27_44>=SOME && LA27_44<=STABLE)||LA27_44==TEXT||(LA27_44>=TIMES && LA27_44<=TO)||(LA27_44>=TYPESWITCH && LA27_44<=UNORDERED)||LA27_44==VALIDATE||LA27_44==WHERE||LA27_44==WITHOUT||LA27_44==WORDS||(LA27_44>=StringLiteral && LA27_44<=ASSIGNSi)||(LA27_44>=LPARSi && LA27_44<=RBRACSi)||(LA27_44>=MINUSSi && LA27_44<=LPRAGSi)||(LA27_44>=DBLSLASHSi && LA27_44<=SLASHSi)||(LA27_44>=DOTDOTSi && LA27_44<=ATSi)||(LA27_44>=RBRACKSi && LA27_44<=DOTSi)||LA27_44==LCOMMENTSi||LA27_44==LPISi) ) {
+                            alt27=2;
                         }
                         else if ( (LA27_44==STARSi) ) {
                             int LA27_26 = input.LA(5);
@@ -8068,7 +8068,7 @@ public class XQFTParser extends Parser {
                             alt27=2;
                         }
                         else if ( (LA27_45==PLUSSi) ) {
-                            int LA27_24 = input.LA(5);
+                            int LA27_25 = input.LA(5);
 
                             if ( (synpred1()) ) {
                                 alt27=1;
@@ -8079,7 +8079,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                                 throw nvae;
                             }
@@ -8120,8 +8120,11 @@ public class XQFTParser extends Parser {
                         throw nvae;
                     }
                 }
+                else if ( (LA27_11==EOF||(LA27_11>=ANCESTOR && LA27_11<=AND)||(LA27_11>=ASCENDING && LA27_11<=ATTRIBUTE)||LA27_11==CASE||(LA27_11>=CHILD && LA27_11<=COMMENT)||(LA27_11>=DEFAULT && LA27_11<=DESCENDING)||(LA27_11>=DIV && LA27_11<=ELSE)||LA27_11==EMPTY||(LA27_11>=EQ && LA27_11<=EVERY)||(LA27_11>=EXCEPT && LA27_11<=FOR)||LA27_11==FTCONTAINS||LA27_11==GE||(LA27_11>=GT && LA27_11<=IF)||LA27_11==IN||(LA27_11>=INSTANCE && LA27_11<=IS)||LA27_11==LE||(LA27_11>=LET && LA27_11<=LEVELS)||(LA27_11>=LT && LA27_11<=MOD)||(LA27_11>=NE && LA27_11<=NODE)||(LA27_11>=OR && LA27_11<=ORDERED)||(LA27_11>=PARAGRAPHS && LA27_11<=PARENT)||(LA27_11>=PRECEDING && LA27_11<=PRECEDING_SIBLING)||LA27_11==PROCESSING_INSTRUCTION||LA27_11==RETURN||LA27_11==SATISFIES||(LA27_11>=SCHEMAATTRIBUTE && LA27_11<=SELF)||LA27_11==SENTENCES||(LA27_11>=SOME && LA27_11<=STABLE)||LA27_11==TEXT||(LA27_11>=TIMES && LA27_11<=TO)||(LA27_11>=TYPESWITCH && LA27_11<=UNORDERED)||LA27_11==VALIDATE||LA27_11==WHERE||LA27_11==WITHOUT||LA27_11==WORDS||(LA27_11>=StringLiteral && LA27_11<=ASSIGNSi)||(LA27_11>=LPARSi && LA27_11<=RBRACSi)||(LA27_11>=MINUSSi && LA27_11<=LPRAGSi)||(LA27_11>=DBLSLASHSi && LA27_11<=SLASHSi)||(LA27_11>=DOTDOTSi && LA27_11<=ATSi)||(LA27_11>=RBRACKSi && LA27_11<=DOTSi)||LA27_11==LCOMMENTSi||LA27_11==LPISi) ) {
+                    alt27=2;
+                }
                 else if ( (LA27_11==PLUSSi) ) {
-                    int LA27_24 = input.LA(3);
+                    int LA27_25 = input.LA(3);
 
                     if ( (synpred1()) ) {
                         alt27=1;
@@ -8132,13 +8135,10 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                            new NoViableAltException("387:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 25, input);
 
                         throw nvae;
                     }
-                }
-                else if ( (LA27_11==EOF||(LA27_11>=ANCESTOR && LA27_11<=AND)||(LA27_11>=ASCENDING && LA27_11<=ATTRIBUTE)||LA27_11==CASE||(LA27_11>=CHILD && LA27_11<=COMMENT)||(LA27_11>=DEFAULT && LA27_11<=DESCENDING)||(LA27_11>=DIV && LA27_11<=ELSE)||LA27_11==EMPTY||(LA27_11>=EQ && LA27_11<=EVERY)||(LA27_11>=EXCEPT && LA27_11<=FOR)||LA27_11==FTCONTAINS||LA27_11==GE||(LA27_11>=GT && LA27_11<=IF)||LA27_11==IN||(LA27_11>=INSTANCE && LA27_11<=IS)||LA27_11==LE||(LA27_11>=LET && LA27_11<=LEVELS)||(LA27_11>=LT && LA27_11<=MOD)||(LA27_11>=NE && LA27_11<=NODE)||(LA27_11>=OR && LA27_11<=ORDERED)||(LA27_11>=PARAGRAPHS && LA27_11<=PARENT)||(LA27_11>=PRECEDING && LA27_11<=PRECEDING_SIBLING)||LA27_11==PROCESSING_INSTRUCTION||LA27_11==RETURN||LA27_11==SATISFIES||(LA27_11>=SCHEMAATTRIBUTE && LA27_11<=SELF)||LA27_11==SENTENCES||(LA27_11>=SOME && LA27_11<=STABLE)||LA27_11==TEXT||(LA27_11>=TIMES && LA27_11<=TO)||(LA27_11>=TYPESWITCH && LA27_11<=UNORDERED)||LA27_11==VALIDATE||LA27_11==WHERE||LA27_11==WITHOUT||LA27_11==WORDS||(LA27_11>=StringLiteral && LA27_11<=ASSIGNSi)||(LA27_11>=LPARSi && LA27_11<=RBRACSi)||(LA27_11>=MINUSSi && LA27_11<=LPRAGSi)||(LA27_11>=DBLSLASHSi && LA27_11<=SLASHSi)||(LA27_11>=DOTDOTSi && LA27_11<=ATSi)||(LA27_11>=RBRACKSi && LA27_11<=DOTSi)||LA27_11==LCOMMENTSi||LA27_11==LPISi) ) {
-                    alt27=2;
                 }
                 else if ( (LA27_11==STARSi) ) {
                     int LA27_26 = input.LA(3);
@@ -10028,11 +10028,11 @@ public class XQFTParser extends Parser {
         RuleReturnScope lc = null;
         XQFTTree RETURN220_tree=null;
         RewriteRuleTokenStream stream_RETURN=new RewriteRuleTokenStream(adaptor,"token RETURN");
-        RewriteRuleSubtreeStream stream_letClause=new RewriteRuleSubtreeStream(adaptor,"rule letClause");
         RewriteRuleSubtreeStream stream_whereClause=new RewriteRuleSubtreeStream(adaptor,"rule whereClause");
-        RewriteRuleSubtreeStream stream_forClause=new RewriteRuleSubtreeStream(adaptor,"rule forClause");
-        RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
+        RewriteRuleSubtreeStream stream_letClause=new RewriteRuleSubtreeStream(adaptor,"rule letClause");
         RewriteRuleSubtreeStream stream_orderByClause=new RewriteRuleSubtreeStream(adaptor,"rule orderByClause");
+        RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
+        RewriteRuleSubtreeStream stream_forClause=new RewriteRuleSubtreeStream(adaptor,"rule forClause");
         try {
             // etc/XQFT.g:437:33: ( (fc+= forClause | lc+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle -> ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle ) )
             // etc/XQFT.g:437:35: (fc+= forClause | lc+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle
@@ -10147,16 +10147,16 @@ public class XQFTParser extends Parser {
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle221.getTree());
 
             // AST REWRITE
-            // elements: lc, fc, orderByClause, whereClause, exprSingle
+            // elements: orderByClause, lc, fc, exprSingle, whereClause
             // token labels: 
             // rule labels: retval
             // token list labels: 
-            // rule list labels: fc, lc
+            // rule list labels: lc, fc
             if ( backtracking==0 ) {
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
-            RewriteRuleSubtreeStream stream_fc=new RewriteRuleSubtreeStream(adaptor,"token fc",list_fc);
             RewriteRuleSubtreeStream stream_lc=new RewriteRuleSubtreeStream(adaptor,"token lc",list_lc);
+            RewriteRuleSubtreeStream stream_fc=new RewriteRuleSubtreeStream(adaptor,"token fc",list_fc);
             root_0 = (XQFTTree)adaptor.nil();
             // 438:49: -> ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle )
             {
@@ -10810,9 +10810,9 @@ public class XQFTParser extends Parser {
         XQFTTree SCORE245_tree=null;
         XQFTTree DOLLARSi246_tree=null;
         XQFTTree ASSIGNSi247_tree=null;
+        RewriteRuleTokenStream stream_SCORE=new RewriteRuleTokenStream(adaptor,"token SCORE");
         RewriteRuleTokenStream stream_DOLLARSi=new RewriteRuleTokenStream(adaptor,"token DOLLARSi");
         RewriteRuleTokenStream stream_ASSIGNSi=new RewriteRuleTokenStream(adaptor,"token ASSIGNSi");
-        RewriteRuleTokenStream stream_SCORE=new RewriteRuleTokenStream(adaptor,"token SCORE");
         RewriteRuleSubtreeStream stream_varName=new RewriteRuleSubtreeStream(adaptor,"rule varName");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         RewriteRuleSubtreeStream stream_typeDeclaration=new RewriteRuleSubtreeStream(adaptor,"rule typeDeclaration");
@@ -10908,15 +10908,15 @@ public class XQFTParser extends Parser {
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle248.getTree());
 
             // AST REWRITE
-            // elements: SCORE, v, exprSingle, typeDeclaration
+            // elements: SCORE, typeDeclaration, exprSingle, v
             // token labels: 
-            // rule labels: retval, v
+            // rule labels: v, retval
             // token list labels: 
             // rule list labels: 
             if ( backtracking==0 ) {
             retval.tree = root_0;
-            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
             RewriteRuleSubtreeStream stream_v=new RewriteRuleSubtreeStream(adaptor,"token v",v!=null?v.tree:null);
+            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
             // 458:13: -> ( SCORE )? $v ( typeDeclaration )? exprSingle
@@ -11065,8 +11065,8 @@ public class XQFTParser extends Parser {
         XQFTTree STABLE253_tree=null;
         XQFTTree ORDER254_tree=null;
         XQFTTree BY255_tree=null;
-        RewriteRuleTokenStream stream_ORDER=new RewriteRuleTokenStream(adaptor,"token ORDER");
         RewriteRuleTokenStream stream_BY=new RewriteRuleTokenStream(adaptor,"token BY");
+        RewriteRuleTokenStream stream_ORDER=new RewriteRuleTokenStream(adaptor,"token ORDER");
         RewriteRuleTokenStream stream_STABLE=new RewriteRuleTokenStream(adaptor,"token STABLE");
         RewriteRuleSubtreeStream stream_orderSpecList=new RewriteRuleSubtreeStream(adaptor,"rule orderSpecList");
         try {
@@ -11524,10 +11524,10 @@ public class XQFTParser extends Parser {
         XQFTTree EVERY268_tree=null;
         XQFTTree COMMASi270_tree=null;
         XQFTTree SATISFIES272_tree=null;
-        RewriteRuleTokenStream stream_SOME=new RewriteRuleTokenStream(adaptor,"token SOME");
-        RewriteRuleTokenStream stream_SATISFIES=new RewriteRuleTokenStream(adaptor,"token SATISFIES");
-        RewriteRuleTokenStream stream_COMMASi=new RewriteRuleTokenStream(adaptor,"token COMMASi");
         RewriteRuleTokenStream stream_EVERY=new RewriteRuleTokenStream(adaptor,"token EVERY");
+        RewriteRuleTokenStream stream_COMMASi=new RewriteRuleTokenStream(adaptor,"token COMMASi");
+        RewriteRuleTokenStream stream_SATISFIES=new RewriteRuleTokenStream(adaptor,"token SATISFIES");
+        RewriteRuleTokenStream stream_SOME=new RewriteRuleTokenStream(adaptor,"token SOME");
         RewriteRuleSubtreeStream stream_quantifiedExprTupleDef=new RewriteRuleSubtreeStream(adaptor,"rule quantifiedExprTupleDef");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
@@ -11624,7 +11624,7 @@ public class XQFTParser extends Parser {
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle273.getTree());
 
             // AST REWRITE
-            // elements: quant, quantifiedExprTupleDef, exprSingle
+            // elements: exprSingle, quantifiedExprTupleDef, quant
             // token labels: quant
             // rule labels: retval
             // token list labels: 
@@ -11747,7 +11747,7 @@ public class XQFTParser extends Parser {
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle277.getTree());
 
             // AST REWRITE
-            // elements: exprSingle, typeDeclaration, varName
+            // elements: typeDeclaration, varName, exprSingle
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -11825,15 +11825,15 @@ public class XQFTParser extends Parser {
         XQFTTree DEFAULT283_tree=null;
         XQFTTree DOLLARSi284_tree=null;
         XQFTTree RETURN286_tree=null;
+        RewriteRuleTokenStream stream_TYPESWITCH=new RewriteRuleTokenStream(adaptor,"token TYPESWITCH");
+        RewriteRuleTokenStream stream_LPARSi=new RewriteRuleTokenStream(adaptor,"token LPARSi");
+        RewriteRuleTokenStream stream_RPARSi=new RewriteRuleTokenStream(adaptor,"token RPARSi");
         RewriteRuleTokenStream stream_DOLLARSi=new RewriteRuleTokenStream(adaptor,"token DOLLARSi");
         RewriteRuleTokenStream stream_DEFAULT=new RewriteRuleTokenStream(adaptor,"token DEFAULT");
-        RewriteRuleTokenStream stream_RPARSi=new RewriteRuleTokenStream(adaptor,"token RPARSi");
-        RewriteRuleTokenStream stream_LPARSi=new RewriteRuleTokenStream(adaptor,"token LPARSi");
         RewriteRuleTokenStream stream_RETURN=new RewriteRuleTokenStream(adaptor,"token RETURN");
-        RewriteRuleTokenStream stream_TYPESWITCH=new RewriteRuleTokenStream(adaptor,"token TYPESWITCH");
-        RewriteRuleSubtreeStream stream_caseClause=new RewriteRuleSubtreeStream(adaptor,"rule caseClause");
-        RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         RewriteRuleSubtreeStream stream_varName=new RewriteRuleSubtreeStream(adaptor,"rule varName");
+        RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
+        RewriteRuleSubtreeStream stream_caseClause=new RewriteRuleSubtreeStream(adaptor,"rule caseClause");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
             // etc/XQFT.g:495:33: ( TYPESWITCH LPARSi expr RPARSi ( caseClause )+ DEFAULT ( DOLLARSi varName )? RETURN exprSingle -> ^( AST_TYPESWITCHEXPR expr ( caseClause )+ ( varName )? exprSingle ) )
@@ -11932,7 +11932,7 @@ public class XQFTParser extends Parser {
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle287.getTree());
 
             // AST REWRITE
-            // elements: exprSingle, caseClause, varName, expr
+            // elements: varName, exprSingle, caseClause, expr
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -12020,9 +12020,9 @@ public class XQFTParser extends Parser {
         XQFTTree DOLLARSi289_tree=null;
         XQFTTree AS291_tree=null;
         XQFTTree RETURN293_tree=null;
+        RewriteRuleTokenStream stream_AS=new RewriteRuleTokenStream(adaptor,"token AS");
         RewriteRuleTokenStream stream_DOLLARSi=new RewriteRuleTokenStream(adaptor,"token DOLLARSi");
         RewriteRuleTokenStream stream_CASE=new RewriteRuleTokenStream(adaptor,"token CASE");
-        RewriteRuleTokenStream stream_AS=new RewriteRuleTokenStream(adaptor,"token AS");
         RewriteRuleTokenStream stream_RETURN=new RewriteRuleTokenStream(adaptor,"token RETURN");
         RewriteRuleSubtreeStream stream_varName=new RewriteRuleSubtreeStream(adaptor,"rule varName");
         RewriteRuleSubtreeStream stream_sequenceType=new RewriteRuleSubtreeStream(adaptor,"rule sequenceType");
@@ -12081,7 +12081,7 @@ public class XQFTParser extends Parser {
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle294.getTree());
 
             // AST REWRITE
-            // elements: varName, sequenceType, exprSingle
+            // elements: exprSingle, sequenceType, varName
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -12163,11 +12163,11 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi298_tree=null;
         XQFTTree THEN299_tree=null;
         XQFTTree ELSE301_tree=null;
-        RewriteRuleTokenStream stream_THEN=new RewriteRuleTokenStream(adaptor,"token THEN");
-        RewriteRuleTokenStream stream_RPARSi=new RewriteRuleTokenStream(adaptor,"token RPARSi");
         RewriteRuleTokenStream stream_LPARSi=new RewriteRuleTokenStream(adaptor,"token LPARSi");
-        RewriteRuleTokenStream stream_ELSE=new RewriteRuleTokenStream(adaptor,"token ELSE");
+        RewriteRuleTokenStream stream_RPARSi=new RewriteRuleTokenStream(adaptor,"token RPARSi");
+        RewriteRuleTokenStream stream_THEN=new RewriteRuleTokenStream(adaptor,"token THEN");
         RewriteRuleTokenStream stream_IF=new RewriteRuleTokenStream(adaptor,"token IF");
+        RewriteRuleTokenStream stream_ELSE=new RewriteRuleTokenStream(adaptor,"token ELSE");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
@@ -12211,7 +12211,7 @@ public class XQFTParser extends Parser {
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle302.getTree());
 
             // AST REWRITE
-            // elements: exprSingle, exprSingle, expr
+            // elements: exprSingle, expr, exprSingle
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -16102,11 +16102,11 @@ public class XQFTParser extends Parser {
             if ( (LA98_0==AT) ) {
                 int LA98_1 = input.LA(2);
 
-                if ( (LA98_1==START) ) {
-                    alt98=1;
-                }
-                else if ( (LA98_1==END) ) {
+                if ( (LA98_1==END) ) {
                     alt98=2;
+                }
+                else if ( (LA98_1==START) ) {
+                    alt98=1;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
@@ -16249,11 +16249,6 @@ public class XQFTParser extends Parser {
             case WITH:
                 {
                 switch ( input.LA(2) ) {
-                case STEMMING:
-                    {
-                    alt99=4;
-                    }
-                    break;
                 case THESAURUS:
                     {
                     alt99=3;
@@ -16270,6 +16265,11 @@ public class XQFTParser extends Parser {
                     alt99=2;
                     }
                     break;
+                case STEMMING:
+                    {
+                    alt99=4;
+                    }
+                    break;
                 default:
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
@@ -16283,14 +16283,9 @@ public class XQFTParser extends Parser {
             case WITHOUT:
                 {
                 switch ( input.LA(2) ) {
-                case THESAURUS:
+                case STOP:
                     {
-                    alt99=3;
-                    }
-                    break;
-                case STEMMING:
-                    {
-                    alt99=4;
+                    alt99=7;
                     }
                     break;
                 case WILDCARDS:
@@ -16298,9 +16293,14 @@ public class XQFTParser extends Parser {
                     alt99=2;
                     }
                     break;
-                case STOP:
+                case STEMMING:
                     {
-                    alt99=7;
+                    alt99=4;
+                    }
+                    break;
+                case THESAURUS:
+                    {
+                    alt99=3;
                     }
                     break;
                 default:
@@ -18589,11 +18589,11 @@ public class XQFTParser extends Parser {
                 {
                 int LA120_5 = input.LA(2);
 
-                if ( (LA120_5==LBRACESi) ) {
-                    alt120=2;
-                }
-                else if ( (LA120_5==LPARSi) ) {
+                if ( (LA120_5==LPARSi) ) {
                     alt120=1;
+                }
+                else if ( (LA120_5==LBRACESi) ) {
+                    alt120=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
@@ -18630,14 +18630,17 @@ public class XQFTParser extends Parser {
                     {
                     int LA120_9 = input.LA(3);
 
-                    if ( (LA120_9==NCName) ) {
+                    if ( (LA120_9==STARSi) ) {
+                        alt120=1;
+                    }
+                    else if ( (LA120_9==NCName) ) {
                         int LA120_10 = input.LA(4);
 
-                        if ( (LA120_10==LPARSi) ) {
-                            alt120=2;
-                        }
-                        else if ( (LA120_10==EOF||LA120_10==AND||LA120_10==ASCENDING||(LA120_10>=CASE && LA120_10<=CASTABLE)||LA120_10==COLLATION||LA120_10==DEFAULT||LA120_10==DESCENDING||LA120_10==DIV||LA120_10==ELSE||LA120_10==EMPTY||LA120_10==EQ||LA120_10==EXCEPT||LA120_10==FOR||LA120_10==FTCONTAINS||LA120_10==GE||(LA120_10>=GT && LA120_10<=IDIV)||(LA120_10>=INSTANCE && LA120_10<=IS)||LA120_10==LE||(LA120_10>=LET && LA120_10<=LEVELS)||(LA120_10>=LT && LA120_10<=MOD)||LA120_10==NE||(LA120_10>=OR && LA120_10<=ORDER)||LA120_10==PARAGRAPHS||LA120_10==RETURN||LA120_10==SATISFIES||LA120_10==SENTENCES||LA120_10==STABLE||(LA120_10>=TIMES && LA120_10<=TREAT)||LA120_10==UNION||LA120_10==WHERE||LA120_10==WITHOUT||LA120_10==WORDS||LA120_10==SEMICOLONSi||(LA120_10>=EQSi && LA120_10<=COMMASi)||LA120_10==RPARSi||LA120_10==RBRACSi||(LA120_10>=STARSi && LA120_10<=NODEAFTERSi)||(LA120_10>=DBLSLASHSi && LA120_10<=SLASHSi)||(LA120_10>=LBRACKSi && LA120_10<=RBRACKSi)) ) {
+                        if ( (LA120_10==EOF||LA120_10==AND||LA120_10==ASCENDING||(LA120_10>=CASE && LA120_10<=CASTABLE)||LA120_10==COLLATION||LA120_10==DEFAULT||LA120_10==DESCENDING||LA120_10==DIV||LA120_10==ELSE||LA120_10==EMPTY||LA120_10==EQ||LA120_10==EXCEPT||LA120_10==FOR||LA120_10==FTCONTAINS||LA120_10==GE||(LA120_10>=GT && LA120_10<=IDIV)||(LA120_10>=INSTANCE && LA120_10<=IS)||LA120_10==LE||(LA120_10>=LET && LA120_10<=LEVELS)||(LA120_10>=LT && LA120_10<=MOD)||LA120_10==NE||(LA120_10>=OR && LA120_10<=ORDER)||LA120_10==PARAGRAPHS||LA120_10==RETURN||LA120_10==SATISFIES||LA120_10==SENTENCES||LA120_10==STABLE||(LA120_10>=TIMES && LA120_10<=TREAT)||LA120_10==UNION||LA120_10==WHERE||LA120_10==WITHOUT||LA120_10==WORDS||LA120_10==SEMICOLONSi||(LA120_10>=EQSi && LA120_10<=COMMASi)||LA120_10==RPARSi||LA120_10==RBRACSi||(LA120_10>=STARSi && LA120_10<=NODEAFTERSi)||(LA120_10>=DBLSLASHSi && LA120_10<=SLASHSi)||(LA120_10>=LBRACKSi && LA120_10<=RBRACKSi)) ) {
                             alt120=1;
+                        }
+                        else if ( (LA120_10==LPARSi) ) {
+                            alt120=2;
                         }
                         else {
                             if (backtracking>0) {failed=true; return retval;}
@@ -18646,9 +18649,6 @@ public class XQFTParser extends Parser {
 
                             throw nvae;
                         }
-                    }
-                    else if ( (LA120_9==STARSi) ) {
-                        alt120=1;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
@@ -19479,11 +19479,11 @@ public class XQFTParser extends Parser {
                 {
                 int LA126_1 = input.LA(2);
 
-                if ( (LA126_1==DBLCOLONSi) ) {
-                    alt126=1;
-                }
-                else if ( (LA126_1==LPARSi) ) {
+                if ( (LA126_1==LPARSi) ) {
                     alt126=2;
+                }
+                else if ( (LA126_1==DBLCOLONSi) ) {
+                    alt126=1;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
@@ -20445,7 +20445,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start functionCall
-    // etc/XQFT.g:753:3: functionCall : qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )+ ) ;
+    // etc/XQFT.g:753:3: functionCall : qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) ;
     public final functionCall_return functionCall() throws RecognitionException {
         functionCall_return retval = new functionCall_return();
         retval.start = input.LT(1);
@@ -20465,13 +20465,13 @@ public class XQFTParser extends Parser {
         XQFTTree LPARSi591_tree=null;
         XQFTTree COMMASi593_tree=null;
         XQFTTree RPARSi595_tree=null;
-        RewriteRuleTokenStream stream_RPARSi=new RewriteRuleTokenStream(adaptor,"token RPARSi");
-        RewriteRuleTokenStream stream_LPARSi=new RewriteRuleTokenStream(adaptor,"token LPARSi");
         RewriteRuleTokenStream stream_COMMASi=new RewriteRuleTokenStream(adaptor,"token COMMASi");
+        RewriteRuleTokenStream stream_LPARSi=new RewriteRuleTokenStream(adaptor,"token LPARSi");
+        RewriteRuleTokenStream stream_RPARSi=new RewriteRuleTokenStream(adaptor,"token RPARSi");
         RewriteRuleSubtreeStream stream_qName=new RewriteRuleSubtreeStream(adaptor,"rule qName");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
-            // etc/XQFT.g:753:34: ( qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )+ ) )
+            // etc/XQFT.g:753:34: ( qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) )
             // etc/XQFT.g:753:36: qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi
             {
             pushFollow(FOLLOW_qName_in_functionCall10077);
@@ -20554,17 +20554,15 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 756:53: -> ^( AST_FUNCTIONCALL qName ( exprSingle )+ )
+            // 756:53: -> ^( AST_FUNCTIONCALL qName ( exprSingle )* )
             {
-                // etc/XQFT.g:756:56: ^( AST_FUNCTIONCALL qName ( exprSingle )+ )
+                // etc/XQFT.g:756:56: ^( AST_FUNCTIONCALL qName ( exprSingle )* )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_FUNCTIONCALL, "AST_FUNCTIONCALL"), root_1);
 
                 adaptor.addChild(root_1, stream_qName.next());
-                if ( !(stream_exprSingle.hasNext()) ) {
-                    throw new RewriteEarlyExitException();
-                }
+                // etc/XQFT.g:756:81: ( exprSingle )*
                 while ( stream_exprSingle.hasNext() ) {
                     adaptor.addChild(root_1, stream_exprSingle.next());
 
@@ -20947,13 +20945,13 @@ public class XQFTParser extends Parser {
         XQFTTree GTSi612_tree=null;
         XQFTTree LENDTAGSi614_tree=null;
         XQFTTree GTSi616_tree=null;
-        RewriteRuleTokenStream stream_LTSi=new RewriteRuleTokenStream(adaptor,"token LTSi");
-        RewriteRuleTokenStream stream_LENDTAGSi=new RewriteRuleTokenStream(adaptor,"token LENDTAGSi");
         RewriteRuleTokenStream stream_RSELFTERMSi=new RewriteRuleTokenStream(adaptor,"token RSELFTERMSi");
+        RewriteRuleTokenStream stream_LENDTAGSi=new RewriteRuleTokenStream(adaptor,"token LENDTAGSi");
         RewriteRuleTokenStream stream_GTSi=new RewriteRuleTokenStream(adaptor,"token GTSi");
+        RewriteRuleTokenStream stream_LTSi=new RewriteRuleTokenStream(adaptor,"token LTSi");
+        RewriteRuleSubtreeStream stream_dirAttributeList=new RewriteRuleSubtreeStream(adaptor,"rule dirAttributeList");
         RewriteRuleSubtreeStream stream_qName=new RewriteRuleSubtreeStream(adaptor,"rule qName");
         RewriteRuleSubtreeStream stream_dirElemContent=new RewriteRuleSubtreeStream(adaptor,"rule dirElemContent");
-        RewriteRuleSubtreeStream stream_dirAttributeList=new RewriteRuleSubtreeStream(adaptor,"rule dirAttributeList");
         try {
             // etc/XQFT.g:772:45: ( LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi ) -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* ) )
             // etc/XQFT.g:772:47: LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )
@@ -21072,7 +21070,7 @@ public class XQFTParser extends Parser {
 
 
             // AST REWRITE
-            // elements: dirElemContent, dirAttributeList, qn
+            // elements: qn, dirElemContent, dirAttributeList
             // token labels: 
             // rule labels: qn, retval
             // token list labels: 
@@ -21490,8 +21488,8 @@ public class XQFTParser extends Parser {
 
         XQFTTree ec_tree=null;
         RewriteRuleTokenStream stream_ElementContent=new RewriteRuleTokenStream(adaptor,"token ElementContent");
-        RewriteRuleSubtreeStream stream_directConstructor=new RewriteRuleSubtreeStream(adaptor,"rule directConstructor");
         RewriteRuleSubtreeStream stream_cDataSection=new RewriteRuleSubtreeStream(adaptor,"rule cDataSection");
+        RewriteRuleSubtreeStream stream_directConstructor=new RewriteRuleSubtreeStream(adaptor,"rule directConstructor");
         RewriteRuleSubtreeStream stream_xmlEnclosedExpr=new RewriteRuleSubtreeStream(adaptor,"rule xmlEnclosedExpr");
         try {
             // etc/XQFT.g:799:37: (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) )
@@ -21579,13 +21577,13 @@ public class XQFTParser extends Parser {
                     // AST REWRITE
                     // elements: cd
                     // token labels: 
-                    // rule labels: cd, retval
+                    // rule labels: retval, cd
                     // token list labels: 
                     // rule list labels: 
                     if ( backtracking==0 ) {
                     retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_cd=new RewriteRuleSubtreeStream(adaptor,"token cd",cd!=null?cd.tree:null);
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
+                    RewriteRuleSubtreeStream stream_cd=new RewriteRuleSubtreeStream(adaptor,"token cd",cd!=null?cd.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
                     // 800:34: -> ^( AST_DIRELEMCONTENT $cd)
@@ -22797,20 +22795,6 @@ public class XQFTParser extends Parser {
     }
     // $ANTLR end synpred2
 
-    public final boolean synpred2() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred2_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
     public final boolean synpred1() {
         backtracking++;
         int start = input.mark();
@@ -22825,20 +22809,34 @@ public class XQFTParser extends Parser {
         failed=false;
         return success;
     }
+    public final boolean synpred2() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred2_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
 
 
     protected DFA117 dfa117 = new DFA117(this);
     static final String DFA117_eotS =
-        "\u00af\uffff";
+        "\u00b0\uffff";
     static final String DFA117_eofS =
-        "\2\uffff\1\4\36\uffff\1\4\144\uffff\1\4\50\uffff";
+        "\2\uffff\1\4\36\uffff\1\4\145\uffff\1\4\50\uffff";
     static final String DFA117_minS =
         "\1\6\1\uffff\1\6\2\uffff\2\6\1\u00c2\1\0\1\u00a4\1\14\1\u00aa\1"+
         "\u00a4\1\u00c2\2\u00aa\1\u00a4\3\u00aa\3\0\1\u00a4\2\0\2\u00ac\1"+
-        "\u00d3\1\u00d6\1\u00ac\2\uffff\1\10\1\14\1\u00a4\1\14\1\u00a9\1"+
-        "\0\5\u00aa\2\0\1\44\1\u00a4\1\u00a9\1\0\2\u00a4\1\u00a2\1\u00ac"+
-        "\2\0\1\u00ab\1\0\2\u00ab\1\0\2\uffff\2\0\1\u00d4\1\u00d7\1\0\1\u00a4"+
-        "\1\u00a5\2\0\11\u00aa\2\0\2\u00a6\1\0\11\u00aa\2\0\1\u00a4\1\0\2"+
+        "\u00d3\1\u00d6\1\u00ac\2\uffff\1\10\2\14\1\u00a4\1\u00a9\1\0\5\u00aa"+
+        "\2\0\1\44\1\u00a4\1\u00a9\1\0\2\u00a4\1\u00a2\1\u00ac\2\0\1\u00ab"+
+        "\1\0\2\u00ab\1\uffff\1\0\2\uffff\2\0\1\u00d4\1\u00d7\1\0\1\u00a4"+
+        "\1\u00a5\2\0\11\u00aa\2\0\11\u00aa\2\0\2\u00a6\1\0\1\u00a4\1\0\2"+
         "\uffff\2\u00aa\1\0\2\u00a6\1\0\1\u00a4\1\0\2\uffff\2\u00a9\1\u00ab"+
         "\2\0\4\uffff\1\0\2\uffff\2\0\4\uffff\1\0\1\u00d8\1\0\2\uffff\1\10"+
         "\2\0\2\uffff\25\0\2\uffff\5\0\2\uffff\4\0\2\uffff";
@@ -22847,23 +22845,23 @@ public class XQFTParser extends Parser {
         "\1\u00aa\1\u00ac\1\u00c2\2\u00aa\3\u00ac\1\u00aa\3\0\1\u00a4\2\0"+
         "\2\u00ac\1\u00d3\1\u00d6\1\u00ac\2\uffff\1\u00c8\3\u00af\1\u00ac"+
         "\1\0\5\u00aa\2\0\1\u00ab\1\u00af\1\u00ac\1\0\2\u00a4\1\u00ab\1\u00ac"+
-        "\2\0\1\u00ab\1\0\2\u00ab\1\0\2\uffff\2\0\1\u00d4\1\u00d8\1\0\1\u00af"+
-        "\1\u00a9\2\0\11\u00aa\2\0\2\u00ab\1\0\11\u00aa\2\0\1\u00a4\1\0\2"+
-        "\uffff\2\u00aa\1\0\2\u00ab\1\0\1\u00a4\1\0\2\uffff\3\u00ab\2\0\4"+
-        "\uffff\1\0\2\uffff\2\0\4\uffff\1\0\1\u00d8\1\0\2\uffff\1\u00c8\2"+
-        "\0\2\uffff\25\0\2\uffff\5\0\2\uffff\4\0\2\uffff";
+        "\2\0\1\u00ab\1\0\2\u00ab\1\uffff\1\0\2\uffff\2\0\1\u00d4\1\u00d8"+
+        "\1\0\1\u00af\1\u00a9\2\0\11\u00aa\2\0\11\u00aa\2\0\2\u00ab\1\0\1"+
+        "\u00a4\1\0\2\uffff\2\u00aa\1\0\2\u00ab\1\0\1\u00a4\1\0\2\uffff\3"+
+        "\u00ab\2\0\4\uffff\1\0\2\uffff\2\0\4\uffff\1\0\1\u00d8\1\0\2\uffff"+
+        "\1\u00c8\2\0\2\uffff\25\0\2\uffff\5\0\2\uffff\4\0\2\uffff";
     static final String DFA117_acceptS =
-        "\1\uffff\1\1\1\uffff\1\5\1\4\32\uffff\1\2\1\3\34\uffff\1\2\1\3\44"+
-        "\uffff\1\2\1\3\10\uffff\1\2\1\3\5\uffff\1\2\1\3\1\2\1\3\1\uffff"+
-        "\1\2\1\3\2\uffff\1\2\1\3\1\2\1\3\3\uffff\1\2\1\3\3\uffff\1\2\1\3"+
-        "\25\uffff\1\2\1\3\5\uffff\1\2\1\3\4\uffff\1\2\1\3";
+        "\1\uffff\1\1\1\uffff\1\5\1\4\32\uffff\1\2\1\3\33\uffff\1\2\1\uffff"+
+        "\1\2\1\3\44\uffff\1\2\1\3\10\uffff\1\2\1\3\5\uffff\1\2\1\3\1\2\1"+
+        "\3\1\uffff\1\2\1\3\2\uffff\1\2\1\3\1\2\1\3\3\uffff\1\2\1\3\3\uffff"+
+        "\1\2\1\3\25\uffff\1\2\1\3\5\uffff\1\2\1\3\4\uffff\1\2\1\3";
     static final String DFA117_specialS =
-        "\5\uffff\1\6\2\uffff\1\23\13\uffff\1\12\1\21\1\32\1\uffff\1\37\1"+
-        "\36\14\uffff\1\41\5\uffff\1\40\1\35\3\uffff\1\10\4\uffff\1\42\1"+
-        "\4\1\uffff\1\34\2\uffff\1\43\2\uffff\1\13\1\17\2\uffff\1\31\2\uffff"+
-        "\1\16\1\22\11\uffff\1\11\1\7\2\uffff\1\14\11\uffff\1\25\1\15\1\uffff"+
-        "\1\20\4\uffff\1\24\2\uffff\1\2\1\uffff\1\3\5\uffff\1\30\1\26\4\uffff"+
-        "\1\27\2\uffff\1\1\1\33\4\uffff\1\5\1\uffff\1\0\53\uffff}>";
+        "\5\uffff\1\0\2\uffff\1\13\13\uffff\1\1\1\7\1\24\1\uffff\1\10\1\35"+
+        "\14\uffff\1\5\5\uffff\1\4\1\23\3\uffff\1\41\4\uffff\1\21\1\20\1"+
+        "\uffff\1\6\3\uffff\1\22\2\uffff\1\32\1\40\2\uffff\1\34\2\uffff\1"+
+        "\17\1\3\11\uffff\1\26\1\11\11\uffff\1\43\1\15\2\uffff\1\16\1\uffff"+
+        "\1\42\4\uffff\1\25\2\uffff\1\33\1\uffff\1\30\5\uffff\1\27\1\14\4"+
+        "\uffff\1\36\2\uffff\1\31\1\37\4\uffff\1\2\1\uffff\1\12\53\uffff}>";
     static final String[] DFA117_transitionS = {
             "\2\3\4\uffff\1\3\6\uffff\1\3\1\uffff\1\3\5\uffff\2\3\5\uffff"+
             "\3\3\13\uffff\2\3\42\uffff\1\3\10\uffff\1\3\3\uffff\1\3\1\uffff"+
@@ -22899,13 +22897,13 @@ public class XQFTParser extends Parser {
             "\2\4\2\uffff\1\4\12\uffff\1\4\2\uffff\1\4",
             "\1\42",
             "\1\uffff",
-            "\1\45\5\uffff\1\43\1\uffff\1\46\25\uffff\1\44",
+            "\1\45\5\uffff\1\44\1\uffff\1\46\25\uffff\1\43",
             "\1\50\10\uffff\1\52\15\uffff\1\13\1\47\57\uffff\1\23\21\uffff"+
             "\1\51\5\uffff\1\17\1\16\14\uffff\1\53\51\uffff\1\54\12\uffff"+
             "\1\55",
             "\1\56",
             "\1\60\5\uffff\1\57\1\uffff\1\61",
-            "\1\44",
+            "\1\43",
             "\1\62",
             "\1\63",
             "\1\65\5\uffff\1\64\1\uffff\1\66",
@@ -22915,66 +22913,66 @@ public class XQFTParser extends Parser {
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
-            "\1\74",
+            "\1\75",
             "\1\uffff",
             "\1\uffff",
-            "\1\77",
             "\1\100",
             "\1\101",
             "\1\102",
             "\1\103",
+            "\1\104",
             "",
             "",
             "\1\4\1\uffff\1\4\5\uffff\3\4\1\uffff\1\4\5\uffff\1\4\2\uffff"+
             "\1\4\3\uffff\1\4\3\uffff\1\4\3\uffff\1\4\4\uffff\1\4\3\uffff"+
             "\1\4\2\uffff\1\4\7\uffff\1\4\5\uffff\2\4\6\uffff\1\4\3\uffff"+
             "\1\4\13\uffff\2\4\13\uffff\1\4\1\uffff\1\4\11\uffff\1\4\11\uffff"+
-            "\2\4\1\uffff\1\4\6\uffff\1\4\32\uffff\1\4\1\105\1\uffff\1\4"+
-            "\2\uffff\1\104\2\4\1\uffff\1\4\1\uffff\4\4\3\uffff\1\107\11"+
-            "\uffff\2\4\3\uffff\2\4\1\uffff\1\106",
-            "\1\112\10\uffff\1\116\15\uffff\1\110\1\111\57\uffff\1\120\21"+
-            "\uffff\1\115\5\uffff\1\114\1\113\14\uffff\1\117\51\uffff\1\121"+
-            "\12\uffff\1\122",
-            "\1\123\6\uffff\1\125\3\uffff\1\124",
-            "\1\130\10\uffff\1\134\15\uffff\1\126\1\127\57\uffff\1\136\21"+
-            "\uffff\1\133\5\uffff\1\132\1\131\14\uffff\1\135\51\uffff\1\137"+
-            "\12\uffff\1\140",
-            "\1\141\2\uffff\1\142",
+            "\2\4\1\uffff\1\4\6\uffff\1\4\32\uffff\1\4\1\106\1\uffff\1\4"+
+            "\2\uffff\1\105\2\4\1\uffff\1\4\1\uffff\4\4\3\uffff\1\110\11"+
+            "\uffff\2\4\3\uffff\2\4\1\uffff\1\107",
+            "\1\113\10\uffff\1\117\15\uffff\1\111\1\112\57\uffff\1\121\21"+
+            "\uffff\1\116\5\uffff\1\115\1\114\14\uffff\1\120\51\uffff\1\122"+
+            "\12\uffff\1\123",
+            "\1\126\10\uffff\1\132\15\uffff\1\124\1\125\57\uffff\1\134\21"+
+            "\uffff\1\131\5\uffff\1\130\1\127\14\uffff\1\133\51\uffff\1\135"+
+            "\12\uffff\1\136",
+            "\1\137\6\uffff\1\141\3\uffff\1\140",
+            "\1\142\2\uffff\1\143",
             "\1\uffff",
             "\1\57",
-            "\1\43",
+            "\1\44",
             "\1\64",
             "\1\70",
             "\1\72",
             "\1\uffff",
             "\1\uffff",
-            "\1\145\110\uffff\1\146\75\uffff\1\147",
-            "\1\150\6\uffff\1\152\3\uffff\1\151",
-            "\1\153\2\uffff\1\154",
+            "\1\146\110\uffff\1\147\75\uffff\1\150",
+            "\1\151\6\uffff\1\153\3\uffff\1\152",
+            "\1\154\2\uffff\1\155",
             "\1\uffff",
-            "\1\157",
             "\1\160",
-            "\1\161\1\uffff\1\161\6\uffff\1\162",
-            "\1\163",
+            "\1\161",
+            "\1\162\1\uffff\1\162\6\uffff\1\163",
+            "\1\164",
             "\1\uffff",
             "\1\uffff",
-            "\1\170",
+            "\1\171",
             "\1\uffff",
-            "\1\173",
             "\1\174",
+            "\1\175",
+            "",
             "\1\uffff",
             "",
             "",
             "\1\uffff",
             "\1\uffff",
-            "\1\u0081",
-            "\1\u0082\1\u0083",
+            "\1\u0082",
+            "\1\u0083\1\u0084",
             "\1\uffff",
-            "\1\u0086\12\uffff\1\4",
-            "\1\u0088\3\uffff\1\u0087",
+            "\1\u0087\12\uffff\1\4",
+            "\1\u0089\3\uffff\1\u0088",
             "\1\uffff",
             "\1\uffff",
-            "\1\u008b",
             "\1\u008c",
             "\1\u008d",
             "\1\u008e",
@@ -22983,11 +22981,10 @@ public class XQFTParser extends Parser {
             "\1\u0091",
             "\1\u0092",
             "\1\u0093",
+            "\1\u0094",
             "\1\uffff",
             "\1\uffff",
-            "\1\u0095\2\uffff\1\u0094\1\uffff\1\125",
-            "\1\u0095\4\uffff\1\125",
-            "\1\uffff",
+            "\1\u0095",
             "\1\u0096",
             "\1\u0097",
             "\1\u0098",
@@ -22996,35 +22993,28 @@ public class XQFTParser extends Parser {
             "\1\u009b",
             "\1\u009c",
             "\1\u009d",
-            "\1\u009e",
             "\1\uffff",
             "\1\uffff",
-            "\1\u009f",
+            "\1\u009f\2\uffff\1\u009e\1\uffff\1\141",
+            "\1\u009f\4\uffff\1\141",
+            "\1\uffff",
+            "\1\u00a0",
             "\1\uffff",
             "",
             "",
-            "\1\u00a2",
             "\1\u00a3",
+            "\1\u00a4",
             "\1\uffff",
-            "\1\u00a5\2\uffff\1\u00a4\1\uffff\1\152",
-            "\1\u00a5\4\uffff\1\152",
+            "\1\u00a6\2\uffff\1\u00a5\1\uffff\1\153",
+            "\1\u00a6\4\uffff\1\153",
             "\1\uffff",
-            "\1\u00a6",
-            "\1\uffff",
-            "",
-            "",
-            "\1\u00a9\1\uffff\1\u00aa",
-            "\1\u00ab\1\uffff\1\u00ac",
-            "\1\162",
-            "\1\uffff",
+            "\1\u00a7",
             "\1\uffff",
             "",
             "",
-            "",
-            "",
-            "\1\uffff",
-            "",
-            "",
+            "\1\u00aa\1\uffff\1\u00ab",
+            "\1\u00ac\1\uffff\1\u00ad",
+            "\1\163",
             "\1\uffff",
             "\1\uffff",
             "",
@@ -23032,7 +23022,16 @@ public class XQFTParser extends Parser {
             "",
             "",
             "\1\uffff",
-            "\1\u0083",
+            "",
+            "",
+            "\1\uffff",
+            "\1\uffff",
+            "",
+            "",
+            "",
+            "",
+            "\1\uffff",
+            "\1\u0084",
             "\1\uffff",
             "",
             "",
@@ -23040,9 +23039,9 @@ public class XQFTParser extends Parser {
             "\1\4\3\uffff\1\4\3\uffff\1\4\3\uffff\1\4\4\uffff\1\4\3\uffff"+
             "\1\4\2\uffff\1\4\7\uffff\1\4\5\uffff\2\4\6\uffff\1\4\3\uffff"+
             "\1\4\13\uffff\2\4\13\uffff\1\4\1\uffff\1\4\11\uffff\1\4\11\uffff"+
-            "\2\4\1\uffff\1\4\6\uffff\1\4\32\uffff\1\4\1\105\1\uffff\1\4"+
-            "\3\uffff\2\4\1\uffff\1\4\1\uffff\4\4\3\uffff\1\107\11\uffff"+
-            "\2\4\3\uffff\2\4\1\uffff\1\106",
+            "\2\4\1\uffff\1\4\6\uffff\1\4\32\uffff\1\4\1\106\1\uffff\1\4"+
+            "\3\uffff\2\4\1\uffff\1\4\1\uffff\4\4\3\uffff\1\110\11\uffff"+
+            "\2\4\3\uffff\2\4\1\uffff\1\107",
             "\1\uffff",
             "\1\uffff",
             "",
@@ -23121,96 +23120,6 @@ public class XQFTParser extends Parser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA117_131 = input.LA(1);
-
-                         
-                        int index117_131 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_131);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA117_123 = input.LA(1);
-
-                         
-                        int index117_123 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_123);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA117_106 = input.LA(1);
-
-                         
-                        int index117_106 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_106);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA117_108 = input.LA(1);
-
-                         
-                        int index117_108 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 167;}
-
-                        else if ( (true) ) {s = 168;}
-
-                         
-                        input.seek(index117_108);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA117_55 = input.LA(1);
-
-                         
-                        int index117_55 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 118;}
-
-                        else if ( (true) ) {s = 119;}
-
-                         
-                        input.seek(index117_55);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA117_129 = input.LA(1);
-
-                         
-                        int index117_129 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_129);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 6 : 
                         int LA117_5 = input.LA(1);
 
                          
@@ -23227,52 +23136,7 @@ public class XQFTParser extends Parser {
                         input.seek(index117_5);
                         if ( s>=0 ) return s;
                         break;
-                    case 7 : 
-                        int LA117_82 = input.LA(1);
-
-                         
-                        int index117_82 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_82);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 8 : 
-                        int LA117_49 = input.LA(1);
-
-                         
-                        int index117_49 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 109;}
-
-                        else if ( (true) ) {s = 110;}
-
-                         
-                        input.seek(index117_49);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 9 : 
-                        int LA117_81 = input.LA(1);
-
-                         
-                        int index117_81 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_81);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 10 : 
+                    case 1 : 
                         int LA117_20 = input.LA(1);
 
                          
@@ -23287,322 +23151,37 @@ public class XQFTParser extends Parser {
                         input.seek(index117_20);
                         if ( s>=0 ) return s;
                         break;
-                    case 11 : 
-                        int LA117_63 = input.LA(1);
+                    case 2 : 
+                        int LA117_130 = input.LA(1);
 
                          
-                        int index117_63 = input.index();
+                        int index117_130 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 125;}
-
-                        else if ( (true) ) {s = 126;}
-
-                         
-                        input.seek(index117_63);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 12 : 
-                        int LA117_85 = input.LA(1);
-
-                         
-                        int index117_85 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+                        if ( (input.LA(2)==STARSi) ) {s = 60;}
 
                         else if ( (true) ) {s = 32;}
 
                          
-                        input.seek(index117_85);
+                        input.seek(index117_130);
                         if ( s>=0 ) return s;
                         break;
-                    case 13 : 
-                        int LA117_96 = input.LA(1);
+                    case 3 : 
+                        int LA117_72 = input.LA(1);
 
                          
-                        int index117_96 = input.index();
+                        int index117_72 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+                        if ( (input.LA(2)==STARSi) ) {s = 138;}
 
-                        else if ( (true) ) {s = 32;}
+                        else if ( (true) ) {s = 139;}
 
                          
-                        input.seek(index117_96);
+                        input.seek(index117_72);
                         if ( s>=0 ) return s;
                         break;
-                    case 14 : 
-                        int LA117_70 = input.LA(1);
-
-                         
-                        int index117_70 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_70);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 15 : 
-                        int LA117_64 = input.LA(1);
-
-                         
-                        int index117_64 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 127;}
-
-                        else if ( (true) ) {s = 128;}
-
-                         
-                        input.seek(index117_64);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 16 : 
-                        int LA117_98 = input.LA(1);
-
-                         
-                        int index117_98 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 160;}
-
-                        else if ( (true) ) {s = 161;}
-
-                         
-                        input.seek(index117_98);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 17 : 
-                        int LA117_21 = input.LA(1);
-
-                         
-                        int index117_21 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_21);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 18 : 
-                        int LA117_71 = input.LA(1);
-
-                         
-                        int index117_71 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 137;}
-
-                        else if ( (true) ) {s = 138;}
-
-                         
-                        input.seek(index117_71);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 19 : 
-                        int LA117_8 = input.LA(1);
-
-                         
-                        int index117_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_8);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 20 : 
-                        int LA117_103 = input.LA(1);
-
-                         
-                        int index117_103 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_103);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 21 : 
-                        int LA117_95 = input.LA(1);
-
-                         
-                        int index117_95 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_95);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 22 : 
-                        int LA117_115 = input.LA(1);
-
-                         
-                        int index117_115 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 173;}
-
-                        else if ( (true) ) {s = 174;}
-
-                         
-                        input.seek(index117_115);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 23 : 
-                        int LA117_120 = input.LA(1);
-
-                         
-                        int index117_120 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_120);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 24 : 
-                        int LA117_114 = input.LA(1);
-
-                         
-                        int index117_114 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_114);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 25 : 
-                        int LA117_67 = input.LA(1);
-
-                         
-                        int index117_67 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 132;}
-
-                        else if ( (true) ) {s = 133;}
-
-                         
-                        input.seek(index117_67);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 26 : 
-                        int LA117_22 = input.LA(1);
-
-                         
-                        int index117_22 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_22);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 27 : 
-                        int LA117_124 = input.LA(1);
-
-                         
-                        int index117_124 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_124);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 28 : 
-                        int LA117_57 = input.LA(1);
-
-                         
-                        int index117_57 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 121;}
-
-                        else if ( (true) ) {s = 122;}
-
-                         
-                        input.seek(index117_57);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 29 : 
-                        int LA117_45 = input.LA(1);
-
-                         
-                        int index117_45 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_45);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 30 : 
-                        int LA117_25 = input.LA(1);
-
-                         
-                        int index117_25 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 31;}
-
-                        else if ( (true) ) {s = 32;}
-
-                         
-                        input.seek(index117_25);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 31 : 
-                        int LA117_24 = input.LA(1);
-
-                         
-                        int index117_24 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 61;}
-
-                        else if ( (true) ) {s = 62;}
-
-                         
-                        input.seek(index117_24);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 32 : 
+                    case 4 : 
                         int LA117_44 = input.LA(1);
 
                          
@@ -23617,41 +23196,71 @@ public class XQFTParser extends Parser {
                         input.seek(index117_44);
                         if ( s>=0 ) return s;
                         break;
-                    case 33 : 
+                    case 5 : 
                         int LA117_38 = input.LA(1);
 
                          
                         int index117_38 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 99;}
+                        if ( (input.LA(2)==STARSi) ) {s = 100;}
 
-                        else if ( (true) ) {s = 100;}
+                        else if ( (true) ) {s = 101;}
 
                          
                         input.seek(index117_38);
                         if ( s>=0 ) return s;
                         break;
-                    case 34 : 
-                        int LA117_54 = input.LA(1);
+                    case 6 : 
+                        int LA117_57 = input.LA(1);
 
                          
-                        int index117_54 = input.index();
+                        int index117_57 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (input.LA(2)==STARSi) ) {s = 116;}
+                        if ( (input.LA(2)==STARSi) ) {s = 122;}
 
-                        else if ( (true) ) {s = 117;}
+                        else if ( (true) ) {s = 123;}
 
                          
-                        input.seek(index117_54);
+                        input.seek(index117_57);
                         if ( s>=0 ) return s;
                         break;
-                    case 35 : 
-                        int LA117_60 = input.LA(1);
+                    case 7 : 
+                        int LA117_21 = input.LA(1);
 
                          
-                        int index117_60 = input.index();
+                        int index117_21 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 60;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_21);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 8 : 
+                        int LA117_24 = input.LA(1);
+
+                         
+                        int index117_24 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 62;}
+
+                        else if ( (true) ) {s = 63;}
+
+                         
+                        input.seek(index117_24);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 9 : 
+                        int LA117_83 = input.LA(1);
+
+                         
+                        int index117_83 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (input.LA(2)==STARSi) ) {s = 31;}
@@ -23659,7 +23268,397 @@ public class XQFTParser extends Parser {
                         else if ( (true) ) {s = 32;}
 
                          
-                        input.seek(index117_60);
+                        input.seek(index117_83);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 10 : 
+                        int LA117_132 = input.LA(1);
+
+                         
+                        int index117_132 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 60;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_132);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 11 : 
+                        int LA117_8 = input.LA(1);
+
+                         
+                        int index117_8 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_8);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 12 : 
+                        int LA117_116 = input.LA(1);
+
+                         
+                        int index117_116 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 174;}
+
+                        else if ( (true) ) {s = 175;}
+
+                         
+                        input.seek(index117_116);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 13 : 
+                        int LA117_94 = input.LA(1);
+
+                         
+                        int index117_94 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_94);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 14 : 
+                        int LA117_97 = input.LA(1);
+
+                         
+                        int index117_97 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_97);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 15 : 
+                        int LA117_71 = input.LA(1);
+
+                         
+                        int index117_71 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 60;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_71);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 16 : 
+                        int LA117_55 = input.LA(1);
+
+                         
+                        int index117_55 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 119;}
+
+                        else if ( (true) ) {s = 120;}
+
+                         
+                        input.seek(index117_55);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 17 : 
+                        int LA117_54 = input.LA(1);
+
+                         
+                        int index117_54 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 117;}
+
+                        else if ( (true) ) {s = 118;}
+
+                         
+                        input.seek(index117_54);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 18 : 
+                        int LA117_61 = input.LA(1);
+
+                         
+                        int index117_61 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 60;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_61);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 19 : 
+                        int LA117_45 = input.LA(1);
+
+                         
+                        int index117_45 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_45);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 20 : 
+                        int LA117_22 = input.LA(1);
+
+                         
+                        int index117_22 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 60;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_22);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 21 : 
+                        int LA117_104 = input.LA(1);
+
+                         
+                        int index117_104 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_104);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 22 : 
+                        int LA117_82 = input.LA(1);
+
+                         
+                        int index117_82 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_82);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 23 : 
+                        int LA117_115 = input.LA(1);
+
+                         
+                        int index117_115 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_115);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 24 : 
+                        int LA117_109 = input.LA(1);
+
+                         
+                        int index117_109 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 168;}
+
+                        else if ( (true) ) {s = 169;}
+
+                         
+                        input.seek(index117_109);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 25 : 
+                        int LA117_124 = input.LA(1);
+
+                         
+                        int index117_124 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_124);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 26 : 
+                        int LA117_64 = input.LA(1);
+
+                         
+                        int index117_64 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 126;}
+
+                        else if ( (true) ) {s = 127;}
+
+                         
+                        input.seek(index117_64);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 27 : 
+                        int LA117_107 = input.LA(1);
+
+                         
+                        int index117_107 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_107);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 28 : 
+                        int LA117_68 = input.LA(1);
+
+                         
+                        int index117_68 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 133;}
+
+                        else if ( (true) ) {s = 134;}
+
+                         
+                        input.seek(index117_68);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 29 : 
+                        int LA117_25 = input.LA(1);
+
+                         
+                        int index117_25 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 60;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_25);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 30 : 
+                        int LA117_121 = input.LA(1);
+
+                         
+                        int index117_121 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_121);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 31 : 
+                        int LA117_125 = input.LA(1);
+
+                         
+                        int index117_125 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_125);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 32 : 
+                        int LA117_65 = input.LA(1);
+
+                         
+                        int index117_65 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 128;}
+
+                        else if ( (true) ) {s = 129;}
+
+                         
+                        input.seek(index117_65);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 33 : 
+                        int LA117_49 = input.LA(1);
+
+                         
+                        int index117_49 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 110;}
+
+                        else if ( (true) ) {s = 111;}
+
+                         
+                        input.seek(index117_49);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 34 : 
+                        int LA117_99 = input.LA(1);
+
+                         
+                        int index117_99 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 161;}
+
+                        else if ( (true) ) {s = 162;}
+
+                         
+                        input.seek(index117_99);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 35 : 
+                        int LA117_93 = input.LA(1);
+
+                         
+                        int index117_93 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (input.LA(2)==STARSi) ) {s = 31;}
+
+                        else if ( (true) ) {s = 32;}
+
+                         
+                        input.seek(index117_93);
                         if ( s>=0 ) return s;
                         break;
             }

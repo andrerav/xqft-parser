@@ -753,7 +753,7 @@ filterExpr                  			: primaryExpr predicateList;
 		functionCall                			: qName LPARSi /* xgc: reserved-function-namesXQ */
 													(exprSingle (COMMASi exprSingle)*)? 
 													RPARSi
-                                                    -> ^(AST_FUNCTIONCALL qName exprSingle+);
+                                                    -> ^(AST_FUNCTIONCALL qName exprSingle*);
 
 //			exprSingle#								: #PAA EGET#
 		orderedExpr                 			: ORDERED LBRACESi! expr RBRACSi!;
