@@ -4,6 +4,11 @@
 
 husk generelt: Gjorde vi riktige valg? Ble ting som forventet? Hva hadde skjedd om vi brukte annet alternativ etc..
 
+\input{discussion/DesignDecisions}
+
+
+
+
 \section{ANTLR}
 \underline{\textbf{\LARGE //TODO:}}
 
@@ -15,18 +20,9 @@ Vi kjipa med CUP + JavaCC, skrive fra scratch?
 \section{Adapting the W3C Grammar}
 \underline{\textbf{\LARGE //TODO:}}
 
-Rett valg?
+Rett valg? Putte inn og tilpasse, eller bruke som spesifikasjon og mekke egen..
+
 stolte for mye paa EBNF fra W3C, sannsynlig ment for mennesker, ikke datamaskiner
-
-\underline{\textbf{\LARGE //ODOT:}}
-
-\section{Design Decisions}
-
-\underline{\textbf{\LARGE //TODO:}}
-
-Var inne paa lexer uavhengig av parser styrt av handskrevet diffus state machine basert paa w3c-artikkel
-
-Egen tokenstream forte til at gUnit og ANTLRWorks har begrenset nytteverdi
 
 \underline{\textbf{\LARGE //ODOT:}}
 
@@ -47,8 +43,8 @@ Egen tokenstream forte til at gUnit og ANTLRWorks har begrenset nytteverdi
 
 AST'en som blir produsert vs syntakstre
 
-Generelle resultat, bra/d\aa rlig (AST, typesjekking (bedre \aa gjøre p\aa AST'en),
-symtabs (bedre \aa gjøre p\aa AST'en))
+Generelle resultat, bra/d\aa rlig (AST, typesjekking (bedre \aa gj\o~re p\aa AST'en),
+symtabs (bedre \aa~gj\o~re p\aa AST'en))
 
 \underline{\textbf{\LARGE //ODOT:}}
 
@@ -68,7 +64,6 @@ Feilhaandteringen
 \item Skrive om dash: Validerende semantiske predikat, saa CharNotMinus etc
 \item Feil splitting Lexer vs Parser, mye feilmeldingjakt
 \item Keywords deklarert i @tokens -> vant alltid.
-
 \item NCName med syntaktiske predikat
 \end{itemize}
 
