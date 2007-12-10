@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2007-12-10 01:42:28
+// $ANTLR 3.0.1 etc/XQFT.g 2007-12-10 15:37:17
 
 	package no.ntnu.xqft.parse;	
 
@@ -10,260 +10,260 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 public class XQFTLexer extends Lexer {
-    public static final int NotChar=229;
-    public static final int LENDTAGSi=201;
-    public static final int QUOTSi=202;
-    public static final int END=39;
-    public static final int NOINHERIT=85;
-    public static final int LBRACESi=172;
-    public static final int INSTANCE=67;
-    public static final int CONTENT=23;
-    public static final int STOP=119;
-    public static final int LAX=72;
-    public static final int PIPESi=178;
-    public static final int IMPORT=63;
-    public static final int APOSSi=204;
-    public static final int DBLCOLONSi=194;
-    public static final int AposAttrContentChar=232;
-    public static final int Letter=237;
-    public static final int CASTABLE=18;
-    public static final int DIACRITICS=30;
-    public static final int ORDER=92;
-    public static final int RCOMMENTSi=212;
-    public static final int TYPESWITCH=128;
-    public static final int MODULE=80;
-    public static final int VERSION=134;
-    public static final int Ideographic=253;
-    public static final int DBLSLASHSi=192;
-    public static final int EXACTLY=45;
-    public static final int FTNOT=54;
-    public static final int DECLARE=25;
-    public static final int GTSi=182;
-    public static final int TOKENSWITCH=226;
-    public static final int ElementContentChar=233;
-    public static final int OCCURS=88;
-    public static final int UNION=129;
-    public static final int STRIP=121;
-    public static final int NameChar=239;
-    public static final int PLUSSi=176;
-    public static final int AST_WHERECLAUSE=148;
-    public static final int QuotAttrContentChar=231;
-    public static final int SAME=105;
-    public static final int QUESTIONSi=174;
-    public static final int AST_IFEXPR=153;
-    public static final int FTCONTAINS=53;
-    public static final int DESCENDING=29;
-    public static final int AST_ORDERBYCLAUSE=147;
-    public static final int FTOPTION=55;
-    public static final int DOCUMENT_NODE=35;
-    public static final int ANCESTOR_OR_SELF=7;
-    public static final int LCDATASi=207;
-    public static final int RELATIONSHIP=103;
-    public static final int ANY=5;
-    public static final int GE=58;
-    public static final int GTOREQSi=183;
-    public static final int CREFHEXSi=235;
-    public static final int WORD=141;
-    public static final int ELSE=37;
-    public static final int SCHEMAATTRIBUTE=108;
-    public static final int SENSITIVE=112;
-    public static final int SELF=111;
-    public static final int DISTANCE=32;
-    public static final int LPISi=213;
-    public static final int ExtraChar=251;
-    public static final int NODEBEFORESi=184;
-    public static final int CREFDECSi=234;
-    public static final int TEXT=122;
-    public static final int PARENT=97;
-    public static final int CombiningChar=241;
-    public static final int NCName=164;
-    public static final int SCORE=110;
-    public static final int FTOR=56;
-    public static final int PragmaLEX=220;
-    public static final int EMPTY_SEQUENCE=42;
-    public static final int EXTERNAL=47;
-    public static final int Digit=240;
-    public static final int UNDERSCORESi=238;
-    public static final int DOLLARSi=167;
-    public static final int RCDATASi=209;
-    public static final int CAST=17;
-    public static final int AST_FUNCTIONCALL=157;
+    public static final int FUNCTION=57;
+    public static final int AST_FORCLAUSE=145;
+    public static final int AST_PATHEXPR=154;
     public static final int MOD=79;
+    public static final int LPISi=213;
+    public static final int CREFHEXSi=235;
+    public static final int NOT=87;
     public static final int EXCEPT=46;
-    public static final int NOPRESERVE=86;
-    public static final int OR=91;
-    public static final int S=224;
+    public static final int EOF=-1;
+    public static final int AST_IFEXPR=153;
+    public static final int PragmaContents=190;
+    public static final int BaseChar=252;
+    public static final int Ideographic=253;
+    public static final int DISTANCE=32;
+    public static final int AST_FUNCTIONDECL=158;
+    public static final int IMPORT=63;
+    public static final int ASSIGNSi=168;
+    public static final int CREFDECSi=234;
+    public static final int SENTENCE=114;
+    public static final int PRECEDING=99;
+    public static final int WORDS=142;
+    public static final int NumberLEX=222;
+    public static final int RETURN=104;
+    public static final int ELEMENT=36;
     public static final int RPARSi=171;
-    public static final int SCHEMAELEMENT=109;
-    public static final int BY=14;
-    public static final int COLONSi=169;
-    public static final int SLASHSi=193;
-    public static final int WEIGHT=135;
-    public static final int AST_RETURNCLAUSE=149;
-    public static final int PRECEDING_SIBLING=100;
-    public static final int UPPERCASE=131;
-    public static final int AST_LETCLAUSE=146;
-    public static final int SEMICOLONSi=163;
-    public static final int FROM=51;
-    public static final int STEMMING=118;
-    public static final int TIMES=125;
+    public static final int EQ=43;
+    public static final int AST_CASECLAUSE=152;
+    public static final int DOLLARSi=167;
+    public static final int DIACRITICS=30;
+    public static final int DBLCOLONSi=194;
+    public static final int CHILD=19;
+    public static final int GE=58;
+    public static final int STRICT=120;
+    public static final int PRESERVE=101;
+    public static final int UNDERSCORESi=238;
+    public static final int ELSE=37;
+    public static final int RCDATASi=209;
+    public static final int TYPESWITCH=128;
+    public static final int STOP=119;
+    public static final int CONTENT=23;
+    public static final int S=224;
+    public static final int FTOR=56;
     public static final int EMPTY=41;
+    public static final int MINUSSi=177;
+    public static final int INTERSECT=68;
+    public static final int FTAND=52;
+    public static final int LANGUAGE=71;
+    public static final int LOWERCASE=77;
+    public static final int LPRAGSi=189;
+    public static final int INSENSITIVE=66;
+    public static final int APOSSi=204;
+    public static final int AST_TYPESWITCHEXPR=151;
+    public static final int LBRACKSi=197;
+    public static final int RSELFTERMSi=200;
+    public static final int GT=60;
+    public static final int END=39;
+    public static final int DoubleLiteral=188;
+    public static final int QUOTSi=202;
+    public static final int DirCommentContent=211;
+    public static final int LexLiterals=225;
+    public static final int OPTION=90;
+    public static final int CharRef=228;
+    public static final int Extender=242;
+    public static final int OCCURS=88;
+    public static final int THESAURUS=123;
+    public static final int VERSION=134;
+    public static final int SATISFIES=106;
+    public static final int RXQCOMMENTSi=245;
+    public static final int IDIV=61;
     public static final int ASCENDING=10;
+    public static final int ExtraChar=251;
+    public static final int AT=11;
+    public static final int EMPTY_SEQUENCE=42;
+    public static final int AS=9;
+    public static final int PARENT=97;
+    public static final int CONSTRUCTION=22;
+    public static final int THEN=124;
+    public static final int ATSi=196;
+    public static final int DOCUMENT=34;
+    public static final int DBLSLASHSi=192;
+    public static final int COLLATION=20;
+    public static final int LCOMMENTSi=210;
+    public static final int ANCESTOR=6;
+    public static final int AMPERSi=230;
     public static final int CleanChar=254;
+    public static final int CASTABLE=18;
+    public static final int ElementContent=206;
+    public static final int MOST=81;
+    public static final int AST_PREDICATE=159;
+    public static final int EQSi=165;
+    public static final int BY=14;
+    public static final int NODEBEFORESi=184;
+    public static final int DOTSi=199;
+    public static final int NCNameChar=248;
+    public static final int ITEM=70;
+    public static final int TO=126;
+    public static final int INHERIT=65;
+    public static final int ANCESTOR_OR_SELF=7;
+    public static final int DOTDOTSi=195;
+    public static final int STEMMING=118;
+    public static final int AST_WHERECLAUSE=148;
+    public static final int LTOREQSi=181;
+    public static final int NotChar=229;
+    public static final int DirPIConstructor=218;
+    public static final int TEXT=122;
+    public static final int MODULE=80;
+    public static final int FTNOT=54;
+    public static final int Tokens=256;
+    public static final int ORDERED=93;
+    public static final int SAME=105;
+    public static final int UNION=129;
+    public static final int FOLLOWING_SIBLING=49;
+    public static final int StringLiteral=162;
+    public static final int SCHEMA=107;
+    public static final int COLONSi=169;
+    public static final int PiTarget=214;
+    public static final int ENTIRE=40;
+    public static final int INSTANCE=67;
+    public static final int VALIDATE=132;
+    public static final int WILDCARDS=137;
+    public static final int NOINHERIT=85;
+    public static final int AST_FUNCTIONCALL=157;
+    public static final int DECLARE=25;
+    public static final int START=117;
     public static final int IntegerLiteral=186;
+    public static final int DIV=33;
+    public static final int CombiningChar=241;
+    public static final int DESCENDING=29;
+    public static final int SELF=111;
+    public static final int RPRAGSi=191;
+    public static final int NEQSi=179;
+    public static final int CAST=17;
     public static final int SENTENCES=113;
-    public static final int NE=83;
+    public static final int EXTERNAL=47;
+    public static final int LT=78;
+    public static final int RBRACKSi=198;
+    public static final int QUESTIONSi=174;
+    public static final int BACKSLASHSi=250;
+    public static final int AST_LETCLAUSE=146;
+    public static final int CASE=16;
+    public static final int ENCODING=38;
+    public static final int RCOMMENTSi=212;
+    public static final int DIFFERENT=31;
+    public static final int PLUSSi=176;
+    public static final int PragmaLEX=220;
+    public static final int DOCUMENT_NODE=35;
+    public static final int SCHEMAATTRIBUTE=108;
+    public static final int LXQCOMMENTSi=244;
+    public static final int SEMICOLONSi=163;
+    public static final int WORD=141;
+    public static final int SHARPSi=243;
+    public static final int UPPERCASE=131;
+    public static final int Comment=221;
+    public static final int Char=255;
+    public static final int Digits=246;
+    public static final int QuotAttrContentChar=231;
+    public static final int AST_FLWOR=144;
+    public static final int FTOPTION=55;
     public static final int AposAttributeContent=205;
     public static final int COMMENT=21;
-    public static final int MINUSSi=177;
-    public static final int NCNameChar=248;
-    public static final int ENTIRE=40;
-    public static final int WITH=139;
-    public static final int IN=64;
-    public static final int AST_DIRELEMCONTENT=161;
-    public static final int SOME=115;
-    public static final int MOST=81;
-    public static final int RETURN=104;
-    public static final int AST_FTSELECTION=155;
-    public static final int LET=75;
-    public static final int IF=62;
-    public static final int Extender=242;
-    public static final int NODE=84;
-    public static final int FOR=50;
-    public static final int Tokens=256;
-    public static final int DEFAULT=26;
-    public static final int PRESERVE=101;
-    public static final int AST_FTPOSFILTER=156;
-    public static final int DirCommentContent=211;
-    public static final int LEVELS=76;
-    public static final int LPRAGSi=189;
-    public static final int COMMASi=166;
-    public static final int ATTRIBUTE=12;
-    public static final int CHILD=19;
-    public static final int Digits=246;
-    public static final int NOT=87;
-    public static final int OPTION=90;
-    public static final int ELEMENT=36;
-    public static final int Comment=221;
-    public static final int INSENSITIVE=66;
-    public static final int AS=9;
-    public static final int DOCUMENT=34;
-    public static final int ENCODING=38;
-    public static final int BOUNDARYSPACE=15;
-    public static final int TREAT=127;
-    public static final int NAMESPACE=82;
-    public static final int LXQCOMMENTSi=244;
-    public static final int LEAST=74;
-    public static final int THEN=124;
-    public static final int WORDS=142;
-    public static final int PiTarget=214;
-    public static final int CDataContents=208;
-    public static final int PARAGRAPHS=96;
-    public static final int NCNameStartChar=247;
-    public static final int QuotAttributeContent=203;
-    public static final int BASE_URI=13;
-    public static final int AND=8;
-    public static final int TO=126;
-    public static final int FUNCTION=57;
-    public static final int AST_QUANTIFIEDEXPR=150;
-    public static final int LexSigns=223;
-    public static final int LANGUAGE=71;
-    public static final int NEQSi=179;
-    public static final int LOWERCASE=77;
-    public static final int LE=73;
-    public static final int BACKSLASHSi=250;
-    public static final int SCHEMA=107;
-    public static final int CONSTRUCTION=22;
-    public static final int RPRAGSi=191;
-    public static final int WILDCARDS=137;
-    public static final int STARSi=175;
-    public static final int DOTDOTSi=195;
-    public static final int DIFFERENT=31;
-    public static final int LTOREQSi=181;
-    public static final int AST_TYPESWITCHEXPR=151;
-    public static final int INTERSECT=68;
-    public static final int AT=11;
-    public static final int AST_FORCLAUSE=145;
-    public static final int GREATEST=59;
-    public static final int DOTSi=199;
-    public static final int BaseChar=252;
-    public static final int Char=255;
-    public static final int EQ=43;
-    public static final int AST_FLWOR=144;
-    public static final int LT=78;
-    public static final int OF=89;
-    public static final int AST_FUNCTIONDECL=158;
-    public static final int WINDOW=138;
-    public static final int Name=236;
-    public static final int FOLLOWING=48;
-    public static final int CASE=16;
-    public static final int RXQCOMMENTSi=245;
-    public static final int DESCENDANT_OR_SELF=28;
+    public static final int NE=83;
     public static final int CDataSectionLEX=217;
-    public static final int THESAURUS=123;
-    public static final int RSELFTERMSi=200;
-    public static final int DecimalLiteral=187;
-    public static final int FTAND=52;
-    public static final int PragmaContents=190;
-    public static final int EQSi=165;
-    public static final int PARAGRAPH=95;
-    public static final int DIV=33;
-    public static final int ALL=4;
-    public static final int EXCLSi=249;
-    public static final int WHERE=136;
-    public static final int DirPIConstructor=218;
+    public static final int BOUNDARYSPACE=15;
+    public static final int NODE=84;
+    public static final int AST_FTPOSFILTER=156;
+    public static final int CDataContents=208;
+    public static final int AST_QUANTIFIEDEXPR=150;
+    public static final int AposAttrContentChar=232;
+    public static final int GREATEST=59;
     public static final int WITHOUT=140;
     public static final int EVERY=44;
-    public static final int XQUERY=143;
-    public static final int IDIV=61;
-    public static final int SATISFIES=106;
-    public static final int DESCENDANT=27;
-    public static final int ATSi=196;
-    public static final int STRICT=120;
-    public static final int RBRACKSi=198;
-    public static final int FOLLOWING_SIBLING=49;
-    public static final int STABLE=116;
-    public static final int START=117;
-    public static final int DoubleLiteral=188;
-    public static final int AMPERSi=230;
-    public static final int VALIDATE=132;
-    public static final int PRECEDING=99;
-    public static final int ORDERING=94;
-    public static final int COPY_NAMESPACES=24;
-    public static final int ASSIGNSi=168;
-    public static final int UNORDERED=130;
-    public static final int NumberLEX=222;
-    public static final int PredefinedEntityRef=227;
-    public static final int LTSi=180;
-    public static final int AST_DIRELEMCONSTRUCTOR=160;
-    public static final int SENTENCE=114;
-    public static final int AST_PATHEXPR=154;
-    public static final int AST_CASECLAUSE=152;
-    public static final int INHERIT=65;
-    public static final int LexLiterals=225;
-    public static final int SHARPSi=243;
-    public static final int IS=69;
-    public static final int GT=60;
-    public static final int PHRASE=98;
-    public static final int StringLiteral=162;
-    public static final int RPISi=216;
-    public static final int ITEM=70;
-    public static final int DirPiContents=215;
-    public static final int ORDERED=93;
-    public static final int DirCommentConstLEX=219;
+    public static final int SENSITIVE=112;
     public static final int PROCESSING_INSTRUCTION=102;
+    public static final int WEIGHT=135;
+    public static final int AST_DIRELEMCONSTRUCTOR=160;
+    public static final int OF=89;
+    public static final int LTSi=180;
     public static final int NODEAFTERSi=185;
-    public static final int COLLATION=20;
-    public static final int CharRef=228;
-    public static final int LPARSi=170;
-    public static final int ANCESTOR=6;
-    public static final int AST_PREDICATE=159;
+    public static final int RELATIONSHIP=103;
+    public static final int NAMESPACE=82;
+    public static final int LCDATASi=207;
+    public static final int LBRACESi=172;
     public static final int VARIABLE=133;
-    public static final int EOF=-1;
+    public static final int DESCENDANT_OR_SELF=28;
+    public static final int BASE_URI=13;
+    public static final int NOPRESERVE=86;
+    public static final int DirPiContents=215;
+    public static final int OR=91;
+    public static final int LPARSi=170;
+    public static final int STARSi=175;
+    public static final int QuotAttributeContent=203;
+    public static final int FROM=51;
+    public static final int RPISi=216;
+    public static final int PRECEDING_SIBLING=100;
+    public static final int Letter=237;
+    public static final int NCName=164;
+    public static final int WHERE=136;
+    public static final int LAX=72;
+    public static final int AST_ORDERBYCLAUSE=147;
+    public static final int ORDER=92;
+    public static final int ATTRIBUTE=12;
+    public static final int FOR=50;
+    public static final int AST_FTSELECTION=155;
+    public static final int EXCLSi=249;
+    public static final int AND=8;
+    public static final int FOLLOWING=48;
+    public static final int FTCONTAINS=53;
+    public static final int IF=62;
+    public static final int SCHEMAELEMENT=109;
+    public static final int IN=64;
+    public static final int PARAGRAPH=95;
+    public static final int COPY_NAMESPACES=24;
+    public static final int IS=69;
+    public static final int SOME=115;
+    public static final int ALL=4;
+    public static final int STRIP=121;
+    public static final int STABLE=116;
+    public static final int PIPESi=178;
+    public static final int WITH=139;
+    public static final int NCNameStartChar=247;
+    public static final int LENDTAGSi=201;
+    public static final int GTSi=182;
     public static final int RBRACSi=173;
-    public static final int ElementContent=206;
-    public static final int LCOMMENTSi=210;
-    public static final int LBRACKSi=197;
+    public static final int XQUERY=143;
+    public static final int EXACTLY=45;
+    public static final int DEFAULT=26;
+    public static final int DESCENDANT=27;
+    public static final int NameChar=239;
+    public static final int COMMASi=166;
+    public static final int SLASHSi=193;
+    public static final int Digit=240;
+    public static final int DecimalLiteral=187;
+    public static final int GTOREQSi=183;
+    public static final int AST_DIRELEMCONTENT=161;
+    public static final int UNORDERED=130;
+    public static final int PHRASE=98;
+    public static final int TOKENSWITCH=226;
+    public static final int ElementContentChar=233;
+    public static final int ANY=5;
+    public static final int AST_RETURNCLAUSE=149;
+    public static final int SCORE=110;
+    public static final int LexSigns=223;
+    public static final int ORDERING=94;
+    public static final int PredefinedEntityRef=227;
+    public static final int Name=236;
+    public static final int LEAST=74;
+    public static final int WINDOW=138;
+    public static final int TIMES=125;
+    public static final int PARAGRAPHS=96;
+    public static final int LEVELS=76;
+    public static final int DirCommentConstLEX=219;
+    public static final int TREAT=127;
+    public static final int LE=73;
+    public static final int LET=75;
 
         
         public int state = 0;
@@ -3340,11 +3340,11 @@ public class XQFTLexer extends Lexer {
                 {
                 int LA34_1 = input.LA(2);
 
-                if ( (LA34_1=='=') ) {
-                    alt34=2;
-                }
-                else if ( (LA34_1=='<') ) {
+                if ( (LA34_1=='<') ) {
                     alt34=1;
+                }
+                else if ( (LA34_1=='=') ) {
+                    alt34=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return ;}
@@ -7234,6 +7234,20 @@ public class XQFTLexer extends Lexer {
     }
     // $ANTLR end synpred3
 
+    public final boolean synpred1() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred1_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
     public final boolean synpred2() {
         backtracking++;
         int start = input.mark();
@@ -7262,51 +7276,37 @@ public class XQFTLexer extends Lexer {
         failed=false;
         return success;
     }
-    public final boolean synpred1() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred1_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
 
 
     protected DFA1 dfa1 = new DFA1(this);
     protected DFA26 dfa26 = new DFA26(this);
     static final String DFA1_eotS =
-        "\1\6\1\43\1\uffff\1\51\1\53\146\uffff";
+        "\1\6\1\43\1\uffff\1\51\1\53\145\uffff";
     static final String DFA1_eofS =
-        "\153\uffff";
+        "\152\uffff";
     static final String DFA1_minS =
         "\1\0\1\41\1\43\1\173\1\175\1\43\1\0\1\56\1\0\1\75\1\72\1\57\1\75"+
         "\22\0\1\55\4\uffff\1\60\2\164\1\155\1\165\1\uffff\1\0\1\uffff\1"+
         "\0\21\uffff\1\0\1\uffff\1\0\21\uffff\2\60\2\73\1\160\2\157\10\uffff"+
-        "\1\60\2\0\1\73\1\163\1\164\1\0\2\73\1\uffff";
+        "\1\60\2\0\1\73\1\163\1\164\1\0\2\73";
     static final String DFA1_maxS =
         "\1\ufffe\1\77\1\161\1\173\1\175\1\72\1\0\1\71\1\0\1\76\1\75\1\76"+
         "\1\75\1\0\2\ufffe\17\0\1\133\4\uffff\1\170\2\164\1\160\1\165\1\uffff"+
         "\1\0\1\uffff\1\0\21\uffff\1\0\1\uffff\1\0\21\uffff\1\146\3\73\1"+
-        "\160\2\157\10\uffff\1\146\2\0\1\73\1\163\1\164\1\0\2\73\1\uffff";
+        "\160\2\157\10\uffff\1\146\2\0\1\73\1\163\1\164\1\0\2\73";
     static final String DFA1_acceptS =
-        "\40\uffff\1\4\1\11\1\2\1\35\5\uffff\1\44\1\uffff\1\46\1\uffff\1"+
-        "\7\1\6\1\5\1\15\1\16\1\23\1\5\1\15\1\16\1\10\1\31\1\37\1\33\1\17"+
+        "\40\uffff\1\2\1\4\1\11\1\35\5\uffff\1\44\1\uffff\1\46\1\uffff\1"+
+        "\6\1\7\1\5\1\15\1\16\1\23\1\5\1\15\1\16\1\10\1\31\1\37\1\33\1\17"+
         "\1\32\1\12\1\13\1\uffff\1\20\1\uffff\1\22\1\14\1\21\1\24\1\25\1"+
         "\26\1\27\1\30\1\34\1\36\1\40\1\41\1\42\1\43\1\45\1\3\1\1\7\uffff"+
-        "\1\5\1\15\1\16\1\5\1\15\1\16\1\15\1\16\11\uffff\1\15";
+        "\1\5\1\15\1\16\1\5\1\15\1\16\1\15\1\16\11\uffff";
     static final String DFA1_specialS =
-        "\1\50\1\23\1\10\1\5\1\6\1\53\1\0\1\20\1\11\1\7\1\40\1\64\1\27\1"+
-        "\34\1\44\1\13\1\4\1\57\1\1\1\3\1\46\1\35\1\15\1\42\1\56\1\47\1\70"+
-        "\1\22\1\41\1\63\1\36\1\32\4\uffff\1\33\1\31\1\62\1\54\1\45\1\uffff"+
-        "\1\66\1\uffff\1\37\21\uffff\1\21\1\uffff\1\60\21\uffff\1\30\1\43"+
-        "\1\26\1\14\1\52\1\51\1\67\10\uffff\1\2\1\17\1\12\1\61\1\16\1\55"+
-        "\1\24\1\65\1\25\1\uffff}>";
+        "\1\41\1\67\1\44\1\6\1\37\1\35\1\4\1\7\1\33\1\31\1\25\1\32\1\3\1"+
+        "\55\1\52\1\53\1\26\1\62\1\14\1\16\1\1\1\5\1\11\1\21\1\46\1\50\1"+
+        "\34\1\43\1\64\1\57\1\0\1\22\4\uffff\1\30\1\15\1\13\1\47\1\27\1\uffff"+
+        "\1\40\1\uffff\1\54\21\uffff\1\36\1\uffff\1\61\21\uffff\1\10\1\56"+
+        "\1\2\1\70\1\12\1\17\1\24\10\uffff\1\51\1\66\1\45\1\65\1\20\1\23"+
+        "\1\42\1\60\1\63}>";
     static final String[] DFA1_transitionS = {
             "\1\36\10\uffff\2\15\2\uffff\1\15\22\uffff\1\15\1\14\1\16\1\36"+
             "\1\21\1\36\1\2\1\17\1\5\1\22\1\23\1\24\1\25\1\26\1\7\1\13\12"+
@@ -7349,18 +7349,18 @@ public class XQFTLexer extends Lexer {
             "\2\20\2\36\1\20\121\36\3\20\u0e84\36\1\20\31\36\11\20\27\36"+
             "\124\20\14\36\132\20\12\36\50\20\u1cd3\36\u51a6\20\u0c5a\36"+
             "\u2ba4\20\134\36\u0800\uffff\u1fff\36",
-            "\1\37\15\uffff\1\40\14\uffff\2\41\1\uffff\1\42",
+            "\1\37\15\uffff\1\41\14\uffff\2\42\1\uffff\1\40",
             "\1\44\75\uffff\1\47\5\uffff\1\46\4\uffff\1\45\4\uffff\1\50",
             "\1\52",
             "\1\54",
-            "\1\56\26\uffff\1\55",
+            "\1\55\26\uffff\1\56",
             "\1\uffff",
-            "\1\41\1\uffff\12\66",
+            "\1\42\1\uffff\12\66",
             "\1\uffff",
-            "\2\41",
-            "\1\41\2\uffff\1\41",
-            "\1\41\16\uffff\1\72",
-            "\1\41",
+            "\2\42",
+            "\1\42\2\uffff\1\42",
+            "\1\42\16\uffff\1\72",
+            "\1\42",
             "\1\uffff",
             "\1\75\10\uffff\2\75\2\uffff\1\75\22\uffff\2\75\1\76\ud7dd\75"+
             "\u0800\uffff\u1fff\75",
@@ -7455,8 +7455,7 @@ public class XQFTLexer extends Lexer {
             "\1\151",
             "\1\uffff",
             "\1\143",
-            "\1\143",
-            ""
+            "\1\143"
     };
 
     static final short[] DFA1_eot = DFA.unpackEncodedString(DFA1_eotS);
@@ -7495,520 +7494,6 @@ public class XQFTLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA1_6 = input.LA(1);
-
-                         
-                        int index1_6 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 51;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 52;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 53;}
-
-                         
-                        input.seek(index1_6);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA1_18 = input.LA(1);
-
-                         
-                        int index1_18 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 68;}
-
-                         
-                        input.seek(index1_18);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA1_97 = input.LA(1);
-
-                         
-                        int index1_97 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_97==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 103;}
-
-                        else if ( ((LA1_97>='0' && LA1_97<='9')||(LA1_97>='A' && LA1_97<='F')||(LA1_97>='a' && LA1_97<='f')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 97;}
-
-                         
-                        input.seek(index1_97);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA1_19 = input.LA(1);
-
-                         
-                        int index1_19 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 69;}
-
-                         
-                        input.seek(index1_19);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA1_16 = input.LA(1);
-
-                         
-                        int index1_16 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 66;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_16);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA1_3 = input.LA(1);
-
-                         
-                        int index1_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_3=='{') && (((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))))) {s = 42;}
-
-                        else s = 41;
-
-                         
-                        input.seek(index1_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 6 : 
-                        int LA1_4 = input.LA(1);
-
-                         
-                        int index1_4 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_4=='}') && (((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))))) {s = 44;}
-
-                        else s = 43;
-
-                         
-                        input.seek(index1_4);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 7 : 
-                        int LA1_9 = input.LA(1);
-
-                         
-                        int index1_9 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( ((LA1_9>='=' && LA1_9<='>')) && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 56;}
-
-                         
-                        input.seek(index1_9);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 8 : 
-                        int LA1_2 = input.LA(1);
-
-                         
-                        int index1_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_2=='#') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 36;}
-
-                        else if ( (LA1_2=='l') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 37;}
-
-                        else if ( (LA1_2=='g') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 38;}
-
-                        else if ( (LA1_2=='a') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 39;}
-
-                        else if ( (LA1_2=='q') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 40;}
-
-                         
-                        input.seek(index1_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 9 : 
-                        int LA1_8 = input.LA(1);
-
-                         
-                        int index1_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.DEFAULT) ) {s = 54;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_8);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 10 : 
-                        int LA1_99 = input.LA(1);
-
-                         
-                        int index1_99 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_99);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 11 : 
-                        int LA1_15 = input.LA(1);
-
-                         
-                        int index1_15 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_15=='\u0000'||(LA1_15>='\t' && LA1_15<='\n')||LA1_15=='\r'||(LA1_15>=' ' && LA1_15<='&')||(LA1_15>='(' && LA1_15<='\uD7FF')||(LA1_15>='\uE000' && LA1_15<='\uFFFE')) && (state==State.DEFAULT)) {s = 61;}
-
-                        else if ( (LA1_15=='\'') && (((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||state==State.DEFAULT||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))))) {s = 64;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (true) ) {s = 65;}
-
-                         
-                        input.seek(index1_15);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 12 : 
-                        int LA1_85 = input.LA(1);
-
-                         
-                        int index1_85 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_85==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 99;}
-
-                         
-                        input.seek(index1_85);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 13 : 
-                        int LA1_22 = input.LA(1);
-
-                         
-                        int index1_22 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 72;}
-
-                         
-                        input.seek(index1_22);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 14 : 
-                        int LA1_101 = input.LA(1);
-
-                         
-                        int index1_101 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_101=='s') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 104;}
-
-                         
-                        input.seek(index1_101);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 15 : 
-                        int LA1_98 = input.LA(1);
-
-                         
-                        int index1_98 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_98);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 16 : 
-                        int LA1_7 = input.LA(1);
-
-                         
-                        int index1_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_7=='.') && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( ((LA1_7>='0' && LA1_7<='9')) && (state==State.DEFAULT)) {s = 54;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 55;}
-
-                         
-                        input.seek(index1_7);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 17 : 
-                        int LA1_62 = input.LA(1);
-
-                         
-                        int index1_62 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.DEFAULT) ) {s = 61;}
-
-                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))) ) {s = 95;}
-
-                         
-                        input.seek(index1_62);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 18 : 
-                        int LA1_27 = input.LA(1);
-
-                         
-                        int index1_27 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 77;}
-
-                         
-                        input.seek(index1_27);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 19 : 
-                        int LA1_1 = input.LA(1);
-
-                         
-                        int index1_1 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_1=='!') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 31;}
-
-                        else if ( (LA1_1=='/') && (state==State.IN_ELEMENT)) {s = 32;}
-
-                        else if ( ((LA1_1>='<' && LA1_1<='=')) && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( (LA1_1=='?') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 34;}
-
-                        else s = 35;
-
-                         
-                        input.seek(index1_1);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 20 : 
-                        int LA1_103 = input.LA(1);
-
-                         
-                        int index1_103 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 106;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_103);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 21 : 
-                        int LA1_105 = input.LA(1);
-
-                         
-                        int index1_105 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_105==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 99;}
-
-                         
-                        input.seek(index1_105);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 22 : 
-                        int LA1_84 = input.LA(1);
-
-                         
-                        int index1_84 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_84==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 99;}
-
-                         
-                        input.seek(index1_84);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 23 : 
-                        int LA1_12 = input.LA(1);
-
-                         
-                        int index1_12 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_12=='=') && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_12);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 24 : 
-                        int LA1_82 = input.LA(1);
-
-                         
-                        int index1_82 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( ((LA1_82>='0' && LA1_82<='9')||(LA1_82>='A' && LA1_82<='F')||(LA1_82>='a' && LA1_82<='f')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 97;}
-
-                         
-                        input.seek(index1_82);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 25 : 
-                        int LA1_37 = input.LA(1);
-
-                         
-                        int index1_37 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_37=='t') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 84;}
-
-                         
-                        input.seek(index1_37);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 26 : 
-                        int LA1_31 = input.LA(1);
-
-                         
-                        int index1_31 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_31=='-') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 80;}
-
-                        else if ( (LA1_31=='[') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 81;}
-
-                         
-                        input.seek(index1_31);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 27 : 
-                        int LA1_36 = input.LA(1);
-
-                         
-                        int index1_36 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_36=='x') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 82;}
-
-                        else if ( ((LA1_36>='0' && LA1_36<='9')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 83;}
-
-                         
-                        input.seek(index1_36);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 28 : 
-                        int LA1_13 = input.LA(1);
-
-                         
-                        int index1_13 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 60;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                         
-                        input.seek(index1_13);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 29 : 
-                        int LA1_21 = input.LA(1);
-
-                         
-                        int index1_21 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 71;}
-
-                         
-                        input.seek(index1_21);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 30 : 
                         int LA1_30 = input.LA(1);
 
                          
@@ -8025,132 +7510,7 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_30);
                         if ( s>=0 ) return s;
                         break;
-                    case 31 : 
-                        int LA1_44 = input.LA(1);
-
-                         
-                        int index1_44 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 92;}
-
-                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 93;}
-
-                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 94;}
-
-                         
-                        input.seek(index1_44);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 32 : 
-                        int LA1_10 = input.LA(1);
-
-                         
-                        int index1_10 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_10==':'||LA1_10=='=') && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 57;}
-
-                         
-                        input.seek(index1_10);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 33 : 
-                        int LA1_28 = input.LA(1);
-
-                         
-                        int index1_28 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 78;}
-
-                         
-                        input.seek(index1_28);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 34 : 
-                        int LA1_23 = input.LA(1);
-
-                         
-                        int index1_23 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 73;}
-
-                         
-                        input.seek(index1_23);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 35 : 
-                        int LA1_83 = input.LA(1);
-
-                         
-                        int index1_83 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_83==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 98;}
-
-                        else if ( ((LA1_83>='0' && LA1_83<='9')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 83;}
-
-                         
-                        input.seek(index1_83);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 36 : 
-                        int LA1_14 = input.LA(1);
-
-                         
-                        int index1_14 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_14=='\u0000'||(LA1_14>='\t' && LA1_14<='\n')||LA1_14=='\r'||(LA1_14>=' ' && LA1_14<='!')||(LA1_14>='#' && LA1_14<='\uD7FF')||(LA1_14>='\uE000' && LA1_14<='\uFFFE')) && (state==State.DEFAULT)) {s = 61;}
-
-                        else if ( (LA1_14=='\"') && (((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||state==State.DEFAULT||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))))) {s = 62;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 63;}
-
-                         
-                        input.seek(index1_14);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 37 : 
-                        int LA1_40 = input.LA(1);
-
-                         
-                        int index1_40 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_40=='u') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 88;}
-
-                         
-                        input.seek(index1_40);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 38 : 
+                    case 1 : 
                         int LA1_20 = input.LA(1);
 
                          
@@ -8169,11 +7529,60 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_20);
                         if ( s>=0 ) return s;
                         break;
-                    case 39 : 
-                        int LA1_25 = input.LA(1);
+                    case 2 : 
+                        int LA1_84 = input.LA(1);
 
                          
-                        int index1_25 = input.index();
+                        int index1_84 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_84==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 99;}
+
+                         
+                        input.seek(index1_84);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA1_12 = input.LA(1);
+
+                         
+                        int index1_12 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_12=='=') && (state==State.DEFAULT)) {s = 34;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_12);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA1_6 = input.LA(1);
+
+                         
+                        int index1_6 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 51;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 52;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 53;}
+
+                         
+                        input.seek(index1_6);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA1_21 = input.LA(1);
+
+                         
+                        int index1_21 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 47;}
@@ -8182,13 +7591,466 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
 
-                        else if ( (true) ) {s = 75;}
+                        else if ( (true) ) {s = 71;}
 
                          
-                        input.seek(index1_25);
+                        input.seek(index1_21);
                         if ( s>=0 ) return s;
                         break;
-                    case 40 : 
+                    case 6 : 
+                        int LA1_3 = input.LA(1);
+
+                         
+                        int index1_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_3=='{') && (((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))||(state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))))) {s = 42;}
+
+                        else s = 41;
+
+                         
+                        input.seek(index1_3);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 7 : 
+                        int LA1_7 = input.LA(1);
+
+                         
+                        int index1_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_7=='.') && (state==State.DEFAULT)) {s = 34;}
+
+                        else if ( ((LA1_7>='0' && LA1_7<='9')) && (state==State.DEFAULT)) {s = 54;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 55;}
+
+                         
+                        input.seek(index1_7);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 8 : 
+                        int LA1_82 = input.LA(1);
+
+                         
+                        int index1_82 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((LA1_82>='0' && LA1_82<='9')||(LA1_82>='A' && LA1_82<='F')||(LA1_82>='a' && LA1_82<='f')) && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 97;}
+
+                         
+                        input.seek(index1_82);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 9 : 
+                        int LA1_22 = input.LA(1);
+
+                         
+                        int index1_22 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 72;}
+
+                         
+                        input.seek(index1_22);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 10 : 
+                        int LA1_86 = input.LA(1);
+
+                         
+                        int index1_86 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_86=='p') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 100;}
+
+                         
+                        input.seek(index1_86);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 11 : 
+                        int LA1_38 = input.LA(1);
+
+                         
+                        int index1_38 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_38=='t') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 85;}
+
+                         
+                        input.seek(index1_38);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 12 : 
+                        int LA1_18 = input.LA(1);
+
+                         
+                        int index1_18 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 68;}
+
+                         
+                        input.seek(index1_18);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 13 : 
+                        int LA1_37 = input.LA(1);
+
+                         
+                        int index1_37 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_37=='t') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 84;}
+
+                         
+                        input.seek(index1_37);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 14 : 
+                        int LA1_19 = input.LA(1);
+
+                         
+                        int index1_19 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 69;}
+
+                         
+                        input.seek(index1_19);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 15 : 
+                        int LA1_87 = input.LA(1);
+
+                         
+                        int index1_87 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_87=='o') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 101;}
+
+                         
+                        input.seek(index1_87);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 16 : 
+                        int LA1_101 = input.LA(1);
+
+                         
+                        int index1_101 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_101=='s') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 104;}
+
+                         
+                        input.seek(index1_101);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 17 : 
+                        int LA1_23 = input.LA(1);
+
+                         
+                        int index1_23 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 73;}
+
+                         
+                        input.seek(index1_23);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 18 : 
+                        int LA1_31 = input.LA(1);
+
+                         
+                        int index1_31 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_31=='-') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 80;}
+
+                        else if ( (LA1_31=='[') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 81;}
+
+                         
+                        input.seek(index1_31);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 19 : 
+                        int LA1_102 = input.LA(1);
+
+                         
+                        int index1_102 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_102=='t') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 105;}
+
+                         
+                        input.seek(index1_102);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 20 : 
+                        int LA1_88 = input.LA(1);
+
+                         
+                        int index1_88 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_88=='o') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 102;}
+
+                         
+                        input.seek(index1_88);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 21 : 
+                        int LA1_10 = input.LA(1);
+
+                         
+                        int index1_10 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_10==':'||LA1_10=='=') && (state==State.DEFAULT)) {s = 34;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 57;}
+
+                         
+                        input.seek(index1_10);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 22 : 
+                        int LA1_16 = input.LA(1);
+
+                         
+                        int index1_16 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 66;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_16);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 23 : 
+                        int LA1_40 = input.LA(1);
+
+                         
+                        int index1_40 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_40=='u') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 88;}
+
+                         
+                        input.seek(index1_40);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 24 : 
+                        int LA1_36 = input.LA(1);
+
+                         
+                        int index1_36 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_36=='x') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 82;}
+
+                        else if ( ((LA1_36>='0' && LA1_36<='9')) && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 83;}
+
+                         
+                        input.seek(index1_36);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 25 : 
+                        int LA1_9 = input.LA(1);
+
+                         
+                        int index1_9 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((LA1_9>='=' && LA1_9<='>')) && (state==State.DEFAULT)) {s = 34;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 56;}
+
+                         
+                        input.seek(index1_9);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 26 : 
+                        int LA1_11 = input.LA(1);
+
+                         
+                        int index1_11 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_11=='>') && (state==State.IN_TAG)) {s = 58;}
+
+                        else if ( (LA1_11=='/') && (state==State.DEFAULT)) {s = 34;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 59;}
+
+                         
+                        input.seek(index1_11);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 27 : 
+                        int LA1_8 = input.LA(1);
+
+                         
+                        int index1_8 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.DEFAULT) ) {s = 54;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_8);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 28 : 
+                        int LA1_26 = input.LA(1);
+
+                         
+                        int index1_26 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 76;}
+
+                         
+                        input.seek(index1_26);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 29 : 
+                        int LA1_5 = input.LA(1);
+
+                         
+                        int index1_5 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_5=='#') && (state==State.DEFAULT)) {s = 45;}
+
+                        else if ( (LA1_5==':') && (state==State.DEFAULT)) {s = 46;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 50;}
+
+                         
+                        input.seek(index1_5);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 30 : 
+                        int LA1_62 = input.LA(1);
+
+                         
+                        int index1_62 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.DEFAULT) ) {s = 61;}
+
+                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))) ) {s = 95;}
+
+                         
+                        input.seek(index1_62);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 31 : 
+                        int LA1_4 = input.LA(1);
+
+                         
+                        int index1_4 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_4=='}') && (((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))))) {s = 44;}
+
+                        else s = 43;
+
+                         
+                        input.seek(index1_4);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 32 : 
+                        int LA1_42 = input.LA(1);
+
+                         
+                        int index1_42 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 89;}
+
+                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 90;}
+
+                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 91;}
+
+                         
+                        input.seek(index1_42);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 33 : 
                         int LA1_0 = input.LA(1);
 
                          
@@ -8197,7 +8059,7 @@ public class XQFTLexer extends Lexer {
                         s = -1;
                         if ( (LA1_0=='<') ) {s = 1;}
 
-                        else if ( (LA1_0=='&') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 2;}
+                        else if ( (LA1_0=='&') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 2;}
 
                         else if ( (LA1_0=='{') ) {s = 3;}
 
@@ -8207,7 +8069,7 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (LA1_0=='.') ) {s = 7;}
 
-                        else if ( ((LA1_0>='0' && LA1_0<='9')) && ((state==State.DEFAULT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 8;}
+                        else if ( ((LA1_0>='0' && LA1_0<='9')) && ((state==State.IN_ELEMENT||state==State.DEFAULT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 8;}
 
                         else if ( (LA1_0=='>') ) {s = 9;}
 
@@ -8215,15 +8077,15 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (LA1_0=='/') ) {s = 11;}
 
-                        else if ( (LA1_0=='!') && ((state==State.DEFAULT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 12;}
+                        else if ( (LA1_0=='!') && ((state==State.IN_ELEMENT||state==State.DEFAULT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 12;}
 
-                        else if ( ((LA1_0>='\t' && LA1_0<='\n')||LA1_0=='\r'||LA1_0==' ') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT||(state==State.DEFAULT || state==State.IN_TAG)))) {s = 13;}
+                        else if ( ((LA1_0>='\t' && LA1_0<='\n')||LA1_0=='\r'||LA1_0==' ') && (((state==State.DEFAULT || state==State.IN_TAG)||state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 13;}
 
                         else if ( (LA1_0=='\"') ) {s = 14;}
 
                         else if ( (LA1_0=='\'') ) {s = 15;}
 
-                        else if ( ((LA1_0>='A' && LA1_0<='Z')||LA1_0=='_'||(LA1_0>='a' && LA1_0<='z')||(LA1_0>='\u00C0' && LA1_0<='\u00D6')||(LA1_0>='\u00D8' && LA1_0<='\u00F6')||(LA1_0>='\u00F8' && LA1_0<='\u0131')||(LA1_0>='\u0134' && LA1_0<='\u013E')||(LA1_0>='\u0141' && LA1_0<='\u0148')||(LA1_0>='\u014A' && LA1_0<='\u017E')||(LA1_0>='\u0180' && LA1_0<='\u01C3')||(LA1_0>='\u01CD' && LA1_0<='\u01F0')||(LA1_0>='\u01F4' && LA1_0<='\u01F5')||(LA1_0>='\u01FA' && LA1_0<='\u0217')||(LA1_0>='\u0250' && LA1_0<='\u02A8')||(LA1_0>='\u02BB' && LA1_0<='\u02C1')||LA1_0=='\u0386'||(LA1_0>='\u0388' && LA1_0<='\u038A')||LA1_0=='\u038C'||(LA1_0>='\u038E' && LA1_0<='\u03A1')||(LA1_0>='\u03A3' && LA1_0<='\u03CE')||(LA1_0>='\u03D0' && LA1_0<='\u03D6')||LA1_0=='\u03DA'||LA1_0=='\u03DC'||LA1_0=='\u03DE'||LA1_0=='\u03E0'||(LA1_0>='\u03E2' && LA1_0<='\u03F3')||(LA1_0>='\u0401' && LA1_0<='\u040C')||(LA1_0>='\u040E' && LA1_0<='\u044F')||(LA1_0>='\u0451' && LA1_0<='\u045C')||(LA1_0>='\u045E' && LA1_0<='\u0481')||(LA1_0>='\u0490' && LA1_0<='\u04C4')||(LA1_0>='\u04C7' && LA1_0<='\u04C8')||(LA1_0>='\u04CB' && LA1_0<='\u04CC')||(LA1_0>='\u04D0' && LA1_0<='\u04EB')||(LA1_0>='\u04EE' && LA1_0<='\u04F5')||(LA1_0>='\u04F8' && LA1_0<='\u04F9')||(LA1_0>='\u0531' && LA1_0<='\u0556')||LA1_0=='\u0559'||(LA1_0>='\u0561' && LA1_0<='\u0586')||(LA1_0>='\u05D0' && LA1_0<='\u05EA')||(LA1_0>='\u05F0' && LA1_0<='\u05F2')||(LA1_0>='\u0621' && LA1_0<='\u063A')||(LA1_0>='\u0641' && LA1_0<='\u064A')||(LA1_0>='\u0671' && LA1_0<='\u06B7')||(LA1_0>='\u06BA' && LA1_0<='\u06BE')||(LA1_0>='\u06C0' && LA1_0<='\u06CE')||(LA1_0>='\u06D0' && LA1_0<='\u06D3')||LA1_0=='\u06D5'||(LA1_0>='\u06E5' && LA1_0<='\u06E6')||(LA1_0>='\u0905' && LA1_0<='\u0939')||LA1_0=='\u093D'||(LA1_0>='\u0958' && LA1_0<='\u0961')||(LA1_0>='\u0985' && LA1_0<='\u098C')||(LA1_0>='\u098F' && LA1_0<='\u0990')||(LA1_0>='\u0993' && LA1_0<='\u09A8')||(LA1_0>='\u09AA' && LA1_0<='\u09B0')||LA1_0=='\u09B2'||(LA1_0>='\u09B6' && LA1_0<='\u09B9')||(LA1_0>='\u09DC' && LA1_0<='\u09DD')||(LA1_0>='\u09DF' && LA1_0<='\u09E1')||(LA1_0>='\u09F0' && LA1_0<='\u09F1')||(LA1_0>='\u0A05' && LA1_0<='\u0A0A')||(LA1_0>='\u0A0F' && LA1_0<='\u0A10')||(LA1_0>='\u0A13' && LA1_0<='\u0A28')||(LA1_0>='\u0A2A' && LA1_0<='\u0A30')||(LA1_0>='\u0A32' && LA1_0<='\u0A33')||(LA1_0>='\u0A35' && LA1_0<='\u0A36')||(LA1_0>='\u0A38' && LA1_0<='\u0A39')||(LA1_0>='\u0A59' && LA1_0<='\u0A5C')||LA1_0=='\u0A5E'||(LA1_0>='\u0A72' && LA1_0<='\u0A74')||(LA1_0>='\u0A85' && LA1_0<='\u0A8B')||LA1_0=='\u0A8D'||(LA1_0>='\u0A8F' && LA1_0<='\u0A91')||(LA1_0>='\u0A93' && LA1_0<='\u0AA8')||(LA1_0>='\u0AAA' && LA1_0<='\u0AB0')||(LA1_0>='\u0AB2' && LA1_0<='\u0AB3')||(LA1_0>='\u0AB5' && LA1_0<='\u0AB9')||LA1_0=='\u0ABD'||LA1_0=='\u0AE0'||(LA1_0>='\u0B05' && LA1_0<='\u0B0C')||(LA1_0>='\u0B0F' && LA1_0<='\u0B10')||(LA1_0>='\u0B13' && LA1_0<='\u0B28')||(LA1_0>='\u0B2A' && LA1_0<='\u0B30')||(LA1_0>='\u0B32' && LA1_0<='\u0B33')||(LA1_0>='\u0B36' && LA1_0<='\u0B39')||LA1_0=='\u0B3D'||(LA1_0>='\u0B5C' && LA1_0<='\u0B5D')||(LA1_0>='\u0B5F' && LA1_0<='\u0B61')||(LA1_0>='\u0B85' && LA1_0<='\u0B8A')||(LA1_0>='\u0B8E' && LA1_0<='\u0B90')||(LA1_0>='\u0B92' && LA1_0<='\u0B95')||(LA1_0>='\u0B99' && LA1_0<='\u0B9A')||LA1_0=='\u0B9C'||(LA1_0>='\u0B9E' && LA1_0<='\u0B9F')||(LA1_0>='\u0BA3' && LA1_0<='\u0BA4')||(LA1_0>='\u0BA8' && LA1_0<='\u0BAA')||(LA1_0>='\u0BAE' && LA1_0<='\u0BB5')||(LA1_0>='\u0BB7' && LA1_0<='\u0BB9')||(LA1_0>='\u0C05' && LA1_0<='\u0C0C')||(LA1_0>='\u0C0E' && LA1_0<='\u0C10')||(LA1_0>='\u0C12' && LA1_0<='\u0C28')||(LA1_0>='\u0C2A' && LA1_0<='\u0C33')||(LA1_0>='\u0C35' && LA1_0<='\u0C39')||(LA1_0>='\u0C60' && LA1_0<='\u0C61')||(LA1_0>='\u0C85' && LA1_0<='\u0C8C')||(LA1_0>='\u0C8E' && LA1_0<='\u0C90')||(LA1_0>='\u0C92' && LA1_0<='\u0CA8')||(LA1_0>='\u0CAA' && LA1_0<='\u0CB3')||(LA1_0>='\u0CB5' && LA1_0<='\u0CB9')||LA1_0=='\u0CDE'||(LA1_0>='\u0CE0' && LA1_0<='\u0CE1')||(LA1_0>='\u0D05' && LA1_0<='\u0D0C')||(LA1_0>='\u0D0E' && LA1_0<='\u0D10')||(LA1_0>='\u0D12' && LA1_0<='\u0D28')||(LA1_0>='\u0D2A' && LA1_0<='\u0D39')||(LA1_0>='\u0D60' && LA1_0<='\u0D61')||(LA1_0>='\u0E01' && LA1_0<='\u0E2E')||LA1_0=='\u0E30'||(LA1_0>='\u0E32' && LA1_0<='\u0E33')||(LA1_0>='\u0E40' && LA1_0<='\u0E45')||(LA1_0>='\u0E81' && LA1_0<='\u0E82')||LA1_0=='\u0E84'||(LA1_0>='\u0E87' && LA1_0<='\u0E88')||LA1_0=='\u0E8A'||LA1_0=='\u0E8D'||(LA1_0>='\u0E94' && LA1_0<='\u0E97')||(LA1_0>='\u0E99' && LA1_0<='\u0E9F')||(LA1_0>='\u0EA1' && LA1_0<='\u0EA3')||LA1_0=='\u0EA5'||LA1_0=='\u0EA7'||(LA1_0>='\u0EAA' && LA1_0<='\u0EAB')||(LA1_0>='\u0EAD' && LA1_0<='\u0EAE')||LA1_0=='\u0EB0'||(LA1_0>='\u0EB2' && LA1_0<='\u0EB3')||LA1_0=='\u0EBD'||(LA1_0>='\u0EC0' && LA1_0<='\u0EC4')||(LA1_0>='\u0F40' && LA1_0<='\u0F47')||(LA1_0>='\u0F49' && LA1_0<='\u0F69')||(LA1_0>='\u10A0' && LA1_0<='\u10C5')||(LA1_0>='\u10D0' && LA1_0<='\u10F6')||LA1_0=='\u1100'||(LA1_0>='\u1102' && LA1_0<='\u1103')||(LA1_0>='\u1105' && LA1_0<='\u1107')||LA1_0=='\u1109'||(LA1_0>='\u110B' && LA1_0<='\u110C')||(LA1_0>='\u110E' && LA1_0<='\u1112')||LA1_0=='\u113C'||LA1_0=='\u113E'||LA1_0=='\u1140'||LA1_0=='\u114C'||LA1_0=='\u114E'||LA1_0=='\u1150'||(LA1_0>='\u1154' && LA1_0<='\u1155')||LA1_0=='\u1159'||(LA1_0>='\u115F' && LA1_0<='\u1161')||LA1_0=='\u1163'||LA1_0=='\u1165'||LA1_0=='\u1167'||LA1_0=='\u1169'||(LA1_0>='\u116D' && LA1_0<='\u116E')||(LA1_0>='\u1172' && LA1_0<='\u1173')||LA1_0=='\u1175'||LA1_0=='\u119E'||LA1_0=='\u11A8'||LA1_0=='\u11AB'||(LA1_0>='\u11AE' && LA1_0<='\u11AF')||(LA1_0>='\u11B7' && LA1_0<='\u11B8')||LA1_0=='\u11BA'||(LA1_0>='\u11BC' && LA1_0<='\u11C2')||LA1_0=='\u11EB'||LA1_0=='\u11F0'||LA1_0=='\u11F9'||(LA1_0>='\u1E00' && LA1_0<='\u1E9B')||(LA1_0>='\u1EA0' && LA1_0<='\u1EF9')||(LA1_0>='\u1F00' && LA1_0<='\u1F15')||(LA1_0>='\u1F18' && LA1_0<='\u1F1D')||(LA1_0>='\u1F20' && LA1_0<='\u1F45')||(LA1_0>='\u1F48' && LA1_0<='\u1F4D')||(LA1_0>='\u1F50' && LA1_0<='\u1F57')||LA1_0=='\u1F59'||LA1_0=='\u1F5B'||LA1_0=='\u1F5D'||(LA1_0>='\u1F5F' && LA1_0<='\u1F7D')||(LA1_0>='\u1F80' && LA1_0<='\u1FB4')||(LA1_0>='\u1FB6' && LA1_0<='\u1FBC')||LA1_0=='\u1FBE'||(LA1_0>='\u1FC2' && LA1_0<='\u1FC4')||(LA1_0>='\u1FC6' && LA1_0<='\u1FCC')||(LA1_0>='\u1FD0' && LA1_0<='\u1FD3')||(LA1_0>='\u1FD6' && LA1_0<='\u1FDB')||(LA1_0>='\u1FE0' && LA1_0<='\u1FEC')||(LA1_0>='\u1FF2' && LA1_0<='\u1FF4')||(LA1_0>='\u1FF6' && LA1_0<='\u1FFC')||LA1_0=='\u2126'||(LA1_0>='\u212A' && LA1_0<='\u212B')||LA1_0=='\u212E'||(LA1_0>='\u2180' && LA1_0<='\u2182')||LA1_0=='\u3007'||(LA1_0>='\u3021' && LA1_0<='\u3029')||(LA1_0>='\u3041' && LA1_0<='\u3094')||(LA1_0>='\u30A1' && LA1_0<='\u30FA')||(LA1_0>='\u3105' && LA1_0<='\u312C')||(LA1_0>='\u4E00' && LA1_0<='\u9FA5')||(LA1_0>='\uAC00' && LA1_0<='\uD7A3')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT||(state==State.DEFAULT || state==State.IN_TAG)))) {s = 16;}
+                        else if ( ((LA1_0>='A' && LA1_0<='Z')||LA1_0=='_'||(LA1_0>='a' && LA1_0<='z')||(LA1_0>='\u00C0' && LA1_0<='\u00D6')||(LA1_0>='\u00D8' && LA1_0<='\u00F6')||(LA1_0>='\u00F8' && LA1_0<='\u0131')||(LA1_0>='\u0134' && LA1_0<='\u013E')||(LA1_0>='\u0141' && LA1_0<='\u0148')||(LA1_0>='\u014A' && LA1_0<='\u017E')||(LA1_0>='\u0180' && LA1_0<='\u01C3')||(LA1_0>='\u01CD' && LA1_0<='\u01F0')||(LA1_0>='\u01F4' && LA1_0<='\u01F5')||(LA1_0>='\u01FA' && LA1_0<='\u0217')||(LA1_0>='\u0250' && LA1_0<='\u02A8')||(LA1_0>='\u02BB' && LA1_0<='\u02C1')||LA1_0=='\u0386'||(LA1_0>='\u0388' && LA1_0<='\u038A')||LA1_0=='\u038C'||(LA1_0>='\u038E' && LA1_0<='\u03A1')||(LA1_0>='\u03A3' && LA1_0<='\u03CE')||(LA1_0>='\u03D0' && LA1_0<='\u03D6')||LA1_0=='\u03DA'||LA1_0=='\u03DC'||LA1_0=='\u03DE'||LA1_0=='\u03E0'||(LA1_0>='\u03E2' && LA1_0<='\u03F3')||(LA1_0>='\u0401' && LA1_0<='\u040C')||(LA1_0>='\u040E' && LA1_0<='\u044F')||(LA1_0>='\u0451' && LA1_0<='\u045C')||(LA1_0>='\u045E' && LA1_0<='\u0481')||(LA1_0>='\u0490' && LA1_0<='\u04C4')||(LA1_0>='\u04C7' && LA1_0<='\u04C8')||(LA1_0>='\u04CB' && LA1_0<='\u04CC')||(LA1_0>='\u04D0' && LA1_0<='\u04EB')||(LA1_0>='\u04EE' && LA1_0<='\u04F5')||(LA1_0>='\u04F8' && LA1_0<='\u04F9')||(LA1_0>='\u0531' && LA1_0<='\u0556')||LA1_0=='\u0559'||(LA1_0>='\u0561' && LA1_0<='\u0586')||(LA1_0>='\u05D0' && LA1_0<='\u05EA')||(LA1_0>='\u05F0' && LA1_0<='\u05F2')||(LA1_0>='\u0621' && LA1_0<='\u063A')||(LA1_0>='\u0641' && LA1_0<='\u064A')||(LA1_0>='\u0671' && LA1_0<='\u06B7')||(LA1_0>='\u06BA' && LA1_0<='\u06BE')||(LA1_0>='\u06C0' && LA1_0<='\u06CE')||(LA1_0>='\u06D0' && LA1_0<='\u06D3')||LA1_0=='\u06D5'||(LA1_0>='\u06E5' && LA1_0<='\u06E6')||(LA1_0>='\u0905' && LA1_0<='\u0939')||LA1_0=='\u093D'||(LA1_0>='\u0958' && LA1_0<='\u0961')||(LA1_0>='\u0985' && LA1_0<='\u098C')||(LA1_0>='\u098F' && LA1_0<='\u0990')||(LA1_0>='\u0993' && LA1_0<='\u09A8')||(LA1_0>='\u09AA' && LA1_0<='\u09B0')||LA1_0=='\u09B2'||(LA1_0>='\u09B6' && LA1_0<='\u09B9')||(LA1_0>='\u09DC' && LA1_0<='\u09DD')||(LA1_0>='\u09DF' && LA1_0<='\u09E1')||(LA1_0>='\u09F0' && LA1_0<='\u09F1')||(LA1_0>='\u0A05' && LA1_0<='\u0A0A')||(LA1_0>='\u0A0F' && LA1_0<='\u0A10')||(LA1_0>='\u0A13' && LA1_0<='\u0A28')||(LA1_0>='\u0A2A' && LA1_0<='\u0A30')||(LA1_0>='\u0A32' && LA1_0<='\u0A33')||(LA1_0>='\u0A35' && LA1_0<='\u0A36')||(LA1_0>='\u0A38' && LA1_0<='\u0A39')||(LA1_0>='\u0A59' && LA1_0<='\u0A5C')||LA1_0=='\u0A5E'||(LA1_0>='\u0A72' && LA1_0<='\u0A74')||(LA1_0>='\u0A85' && LA1_0<='\u0A8B')||LA1_0=='\u0A8D'||(LA1_0>='\u0A8F' && LA1_0<='\u0A91')||(LA1_0>='\u0A93' && LA1_0<='\u0AA8')||(LA1_0>='\u0AAA' && LA1_0<='\u0AB0')||(LA1_0>='\u0AB2' && LA1_0<='\u0AB3')||(LA1_0>='\u0AB5' && LA1_0<='\u0AB9')||LA1_0=='\u0ABD'||LA1_0=='\u0AE0'||(LA1_0>='\u0B05' && LA1_0<='\u0B0C')||(LA1_0>='\u0B0F' && LA1_0<='\u0B10')||(LA1_0>='\u0B13' && LA1_0<='\u0B28')||(LA1_0>='\u0B2A' && LA1_0<='\u0B30')||(LA1_0>='\u0B32' && LA1_0<='\u0B33')||(LA1_0>='\u0B36' && LA1_0<='\u0B39')||LA1_0=='\u0B3D'||(LA1_0>='\u0B5C' && LA1_0<='\u0B5D')||(LA1_0>='\u0B5F' && LA1_0<='\u0B61')||(LA1_0>='\u0B85' && LA1_0<='\u0B8A')||(LA1_0>='\u0B8E' && LA1_0<='\u0B90')||(LA1_0>='\u0B92' && LA1_0<='\u0B95')||(LA1_0>='\u0B99' && LA1_0<='\u0B9A')||LA1_0=='\u0B9C'||(LA1_0>='\u0B9E' && LA1_0<='\u0B9F')||(LA1_0>='\u0BA3' && LA1_0<='\u0BA4')||(LA1_0>='\u0BA8' && LA1_0<='\u0BAA')||(LA1_0>='\u0BAE' && LA1_0<='\u0BB5')||(LA1_0>='\u0BB7' && LA1_0<='\u0BB9')||(LA1_0>='\u0C05' && LA1_0<='\u0C0C')||(LA1_0>='\u0C0E' && LA1_0<='\u0C10')||(LA1_0>='\u0C12' && LA1_0<='\u0C28')||(LA1_0>='\u0C2A' && LA1_0<='\u0C33')||(LA1_0>='\u0C35' && LA1_0<='\u0C39')||(LA1_0>='\u0C60' && LA1_0<='\u0C61')||(LA1_0>='\u0C85' && LA1_0<='\u0C8C')||(LA1_0>='\u0C8E' && LA1_0<='\u0C90')||(LA1_0>='\u0C92' && LA1_0<='\u0CA8')||(LA1_0>='\u0CAA' && LA1_0<='\u0CB3')||(LA1_0>='\u0CB5' && LA1_0<='\u0CB9')||LA1_0=='\u0CDE'||(LA1_0>='\u0CE0' && LA1_0<='\u0CE1')||(LA1_0>='\u0D05' && LA1_0<='\u0D0C')||(LA1_0>='\u0D0E' && LA1_0<='\u0D10')||(LA1_0>='\u0D12' && LA1_0<='\u0D28')||(LA1_0>='\u0D2A' && LA1_0<='\u0D39')||(LA1_0>='\u0D60' && LA1_0<='\u0D61')||(LA1_0>='\u0E01' && LA1_0<='\u0E2E')||LA1_0=='\u0E30'||(LA1_0>='\u0E32' && LA1_0<='\u0E33')||(LA1_0>='\u0E40' && LA1_0<='\u0E45')||(LA1_0>='\u0E81' && LA1_0<='\u0E82')||LA1_0=='\u0E84'||(LA1_0>='\u0E87' && LA1_0<='\u0E88')||LA1_0=='\u0E8A'||LA1_0=='\u0E8D'||(LA1_0>='\u0E94' && LA1_0<='\u0E97')||(LA1_0>='\u0E99' && LA1_0<='\u0E9F')||(LA1_0>='\u0EA1' && LA1_0<='\u0EA3')||LA1_0=='\u0EA5'||LA1_0=='\u0EA7'||(LA1_0>='\u0EAA' && LA1_0<='\u0EAB')||(LA1_0>='\u0EAD' && LA1_0<='\u0EAE')||LA1_0=='\u0EB0'||(LA1_0>='\u0EB2' && LA1_0<='\u0EB3')||LA1_0=='\u0EBD'||(LA1_0>='\u0EC0' && LA1_0<='\u0EC4')||(LA1_0>='\u0F40' && LA1_0<='\u0F47')||(LA1_0>='\u0F49' && LA1_0<='\u0F69')||(LA1_0>='\u10A0' && LA1_0<='\u10C5')||(LA1_0>='\u10D0' && LA1_0<='\u10F6')||LA1_0=='\u1100'||(LA1_0>='\u1102' && LA1_0<='\u1103')||(LA1_0>='\u1105' && LA1_0<='\u1107')||LA1_0=='\u1109'||(LA1_0>='\u110B' && LA1_0<='\u110C')||(LA1_0>='\u110E' && LA1_0<='\u1112')||LA1_0=='\u113C'||LA1_0=='\u113E'||LA1_0=='\u1140'||LA1_0=='\u114C'||LA1_0=='\u114E'||LA1_0=='\u1150'||(LA1_0>='\u1154' && LA1_0<='\u1155')||LA1_0=='\u1159'||(LA1_0>='\u115F' && LA1_0<='\u1161')||LA1_0=='\u1163'||LA1_0=='\u1165'||LA1_0=='\u1167'||LA1_0=='\u1169'||(LA1_0>='\u116D' && LA1_0<='\u116E')||(LA1_0>='\u1172' && LA1_0<='\u1173')||LA1_0=='\u1175'||LA1_0=='\u119E'||LA1_0=='\u11A8'||LA1_0=='\u11AB'||(LA1_0>='\u11AE' && LA1_0<='\u11AF')||(LA1_0>='\u11B7' && LA1_0<='\u11B8')||LA1_0=='\u11BA'||(LA1_0>='\u11BC' && LA1_0<='\u11C2')||LA1_0=='\u11EB'||LA1_0=='\u11F0'||LA1_0=='\u11F9'||(LA1_0>='\u1E00' && LA1_0<='\u1E9B')||(LA1_0>='\u1EA0' && LA1_0<='\u1EF9')||(LA1_0>='\u1F00' && LA1_0<='\u1F15')||(LA1_0>='\u1F18' && LA1_0<='\u1F1D')||(LA1_0>='\u1F20' && LA1_0<='\u1F45')||(LA1_0>='\u1F48' && LA1_0<='\u1F4D')||(LA1_0>='\u1F50' && LA1_0<='\u1F57')||LA1_0=='\u1F59'||LA1_0=='\u1F5B'||LA1_0=='\u1F5D'||(LA1_0>='\u1F5F' && LA1_0<='\u1F7D')||(LA1_0>='\u1F80' && LA1_0<='\u1FB4')||(LA1_0>='\u1FB6' && LA1_0<='\u1FBC')||LA1_0=='\u1FBE'||(LA1_0>='\u1FC2' && LA1_0<='\u1FC4')||(LA1_0>='\u1FC6' && LA1_0<='\u1FCC')||(LA1_0>='\u1FD0' && LA1_0<='\u1FD3')||(LA1_0>='\u1FD6' && LA1_0<='\u1FDB')||(LA1_0>='\u1FE0' && LA1_0<='\u1FEC')||(LA1_0>='\u1FF2' && LA1_0<='\u1FF4')||(LA1_0>='\u1FF6' && LA1_0<='\u1FFC')||LA1_0=='\u2126'||(LA1_0>='\u212A' && LA1_0<='\u212B')||LA1_0=='\u212E'||(LA1_0>='\u2180' && LA1_0<='\u2182')||LA1_0=='\u3007'||(LA1_0>='\u3021' && LA1_0<='\u3029')||(LA1_0>='\u3041' && LA1_0<='\u3094')||(LA1_0>='\u30A1' && LA1_0<='\u30FA')||(LA1_0>='\u3105' && LA1_0<='\u312C')||(LA1_0>='\u4E00' && LA1_0<='\u9FA5')||(LA1_0>='\uAC00' && LA1_0<='\uD7A3')) && (((state==State.DEFAULT || state==State.IN_TAG)||state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 16;}
 
                         else if ( (LA1_0=='$') ) {s = 17;}
 
@@ -8251,7 +8113,7 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (LA1_0=='|') ) {s = 29;}
 
-                        else if ( (LA1_0=='\u0000'||LA1_0=='#'||LA1_0=='%'||LA1_0=='\\'||LA1_0=='^'||LA1_0=='`'||(LA1_0>='~' && LA1_0<='\u00BF')||LA1_0=='\u00D7'||LA1_0=='\u00F7'||(LA1_0>='\u0132' && LA1_0<='\u0133')||(LA1_0>='\u013F' && LA1_0<='\u0140')||LA1_0=='\u0149'||LA1_0=='\u017F'||(LA1_0>='\u01C4' && LA1_0<='\u01CC')||(LA1_0>='\u01F1' && LA1_0<='\u01F3')||(LA1_0>='\u01F6' && LA1_0<='\u01F9')||(LA1_0>='\u0218' && LA1_0<='\u024F')||(LA1_0>='\u02A9' && LA1_0<='\u02BA')||(LA1_0>='\u02C2' && LA1_0<='\u0385')||LA1_0=='\u0387'||LA1_0=='\u038B'||LA1_0=='\u038D'||LA1_0=='\u03A2'||LA1_0=='\u03CF'||(LA1_0>='\u03D7' && LA1_0<='\u03D9')||LA1_0=='\u03DB'||LA1_0=='\u03DD'||LA1_0=='\u03DF'||LA1_0=='\u03E1'||(LA1_0>='\u03F4' && LA1_0<='\u0400')||LA1_0=='\u040D'||LA1_0=='\u0450'||LA1_0=='\u045D'||(LA1_0>='\u0482' && LA1_0<='\u048F')||(LA1_0>='\u04C5' && LA1_0<='\u04C6')||(LA1_0>='\u04C9' && LA1_0<='\u04CA')||(LA1_0>='\u04CD' && LA1_0<='\u04CF')||(LA1_0>='\u04EC' && LA1_0<='\u04ED')||(LA1_0>='\u04F6' && LA1_0<='\u04F7')||(LA1_0>='\u04FA' && LA1_0<='\u0530')||(LA1_0>='\u0557' && LA1_0<='\u0558')||(LA1_0>='\u055A' && LA1_0<='\u0560')||(LA1_0>='\u0587' && LA1_0<='\u05CF')||(LA1_0>='\u05EB' && LA1_0<='\u05EF')||(LA1_0>='\u05F3' && LA1_0<='\u0620')||(LA1_0>='\u063B' && LA1_0<='\u0640')||(LA1_0>='\u064B' && LA1_0<='\u0670')||(LA1_0>='\u06B8' && LA1_0<='\u06B9')||LA1_0=='\u06BF'||LA1_0=='\u06CF'||LA1_0=='\u06D4'||(LA1_0>='\u06D6' && LA1_0<='\u06E4')||(LA1_0>='\u06E7' && LA1_0<='\u0904')||(LA1_0>='\u093A' && LA1_0<='\u093C')||(LA1_0>='\u093E' && LA1_0<='\u0957')||(LA1_0>='\u0962' && LA1_0<='\u0984')||(LA1_0>='\u098D' && LA1_0<='\u098E')||(LA1_0>='\u0991' && LA1_0<='\u0992')||LA1_0=='\u09A9'||LA1_0=='\u09B1'||(LA1_0>='\u09B3' && LA1_0<='\u09B5')||(LA1_0>='\u09BA' && LA1_0<='\u09DB')||LA1_0=='\u09DE'||(LA1_0>='\u09E2' && LA1_0<='\u09EF')||(LA1_0>='\u09F2' && LA1_0<='\u0A04')||(LA1_0>='\u0A0B' && LA1_0<='\u0A0E')||(LA1_0>='\u0A11' && LA1_0<='\u0A12')||LA1_0=='\u0A29'||LA1_0=='\u0A31'||LA1_0=='\u0A34'||LA1_0=='\u0A37'||(LA1_0>='\u0A3A' && LA1_0<='\u0A58')||LA1_0=='\u0A5D'||(LA1_0>='\u0A5F' && LA1_0<='\u0A71')||(LA1_0>='\u0A75' && LA1_0<='\u0A84')||LA1_0=='\u0A8C'||LA1_0=='\u0A8E'||LA1_0=='\u0A92'||LA1_0=='\u0AA9'||LA1_0=='\u0AB1'||LA1_0=='\u0AB4'||(LA1_0>='\u0ABA' && LA1_0<='\u0ABC')||(LA1_0>='\u0ABE' && LA1_0<='\u0ADF')||(LA1_0>='\u0AE1' && LA1_0<='\u0B04')||(LA1_0>='\u0B0D' && LA1_0<='\u0B0E')||(LA1_0>='\u0B11' && LA1_0<='\u0B12')||LA1_0=='\u0B29'||LA1_0=='\u0B31'||(LA1_0>='\u0B34' && LA1_0<='\u0B35')||(LA1_0>='\u0B3A' && LA1_0<='\u0B3C')||(LA1_0>='\u0B3E' && LA1_0<='\u0B5B')||LA1_0=='\u0B5E'||(LA1_0>='\u0B62' && LA1_0<='\u0B84')||(LA1_0>='\u0B8B' && LA1_0<='\u0B8D')||LA1_0=='\u0B91'||(LA1_0>='\u0B96' && LA1_0<='\u0B98')||LA1_0=='\u0B9B'||LA1_0=='\u0B9D'||(LA1_0>='\u0BA0' && LA1_0<='\u0BA2')||(LA1_0>='\u0BA5' && LA1_0<='\u0BA7')||(LA1_0>='\u0BAB' && LA1_0<='\u0BAD')||LA1_0=='\u0BB6'||(LA1_0>='\u0BBA' && LA1_0<='\u0C04')||LA1_0=='\u0C0D'||LA1_0=='\u0C11'||LA1_0=='\u0C29'||LA1_0=='\u0C34'||(LA1_0>='\u0C3A' && LA1_0<='\u0C5F')||(LA1_0>='\u0C62' && LA1_0<='\u0C84')||LA1_0=='\u0C8D'||LA1_0=='\u0C91'||LA1_0=='\u0CA9'||LA1_0=='\u0CB4'||(LA1_0>='\u0CBA' && LA1_0<='\u0CDD')||LA1_0=='\u0CDF'||(LA1_0>='\u0CE2' && LA1_0<='\u0D04')||LA1_0=='\u0D0D'||LA1_0=='\u0D11'||LA1_0=='\u0D29'||(LA1_0>='\u0D3A' && LA1_0<='\u0D5F')||(LA1_0>='\u0D62' && LA1_0<='\u0E00')||LA1_0=='\u0E2F'||LA1_0=='\u0E31'||(LA1_0>='\u0E34' && LA1_0<='\u0E3F')||(LA1_0>='\u0E46' && LA1_0<='\u0E80')||LA1_0=='\u0E83'||(LA1_0>='\u0E85' && LA1_0<='\u0E86')||LA1_0=='\u0E89'||(LA1_0>='\u0E8B' && LA1_0<='\u0E8C')||(LA1_0>='\u0E8E' && LA1_0<='\u0E93')||LA1_0=='\u0E98'||LA1_0=='\u0EA0'||LA1_0=='\u0EA4'||LA1_0=='\u0EA6'||(LA1_0>='\u0EA8' && LA1_0<='\u0EA9')||LA1_0=='\u0EAC'||LA1_0=='\u0EAF'||LA1_0=='\u0EB1'||(LA1_0>='\u0EB4' && LA1_0<='\u0EBC')||(LA1_0>='\u0EBE' && LA1_0<='\u0EBF')||(LA1_0>='\u0EC5' && LA1_0<='\u0F3F')||LA1_0=='\u0F48'||(LA1_0>='\u0F6A' && LA1_0<='\u109F')||(LA1_0>='\u10C6' && LA1_0<='\u10CF')||(LA1_0>='\u10F7' && LA1_0<='\u10FF')||LA1_0=='\u1101'||LA1_0=='\u1104'||LA1_0=='\u1108'||LA1_0=='\u110A'||LA1_0=='\u110D'||(LA1_0>='\u1113' && LA1_0<='\u113B')||LA1_0=='\u113D'||LA1_0=='\u113F'||(LA1_0>='\u1141' && LA1_0<='\u114B')||LA1_0=='\u114D'||LA1_0=='\u114F'||(LA1_0>='\u1151' && LA1_0<='\u1153')||(LA1_0>='\u1156' && LA1_0<='\u1158')||(LA1_0>='\u115A' && LA1_0<='\u115E')||LA1_0=='\u1162'||LA1_0=='\u1164'||LA1_0=='\u1166'||LA1_0=='\u1168'||(LA1_0>='\u116A' && LA1_0<='\u116C')||(LA1_0>='\u116F' && LA1_0<='\u1171')||LA1_0=='\u1174'||(LA1_0>='\u1176' && LA1_0<='\u119D')||(LA1_0>='\u119F' && LA1_0<='\u11A7')||(LA1_0>='\u11A9' && LA1_0<='\u11AA')||(LA1_0>='\u11AC' && LA1_0<='\u11AD')||(LA1_0>='\u11B0' && LA1_0<='\u11B6')||LA1_0=='\u11B9'||LA1_0=='\u11BB'||(LA1_0>='\u11C3' && LA1_0<='\u11EA')||(LA1_0>='\u11EC' && LA1_0<='\u11EF')||(LA1_0>='\u11F1' && LA1_0<='\u11F8')||(LA1_0>='\u11FA' && LA1_0<='\u1DFF')||(LA1_0>='\u1E9C' && LA1_0<='\u1E9F')||(LA1_0>='\u1EFA' && LA1_0<='\u1EFF')||(LA1_0>='\u1F16' && LA1_0<='\u1F17')||(LA1_0>='\u1F1E' && LA1_0<='\u1F1F')||(LA1_0>='\u1F46' && LA1_0<='\u1F47')||(LA1_0>='\u1F4E' && LA1_0<='\u1F4F')||LA1_0=='\u1F58'||LA1_0=='\u1F5A'||LA1_0=='\u1F5C'||LA1_0=='\u1F5E'||(LA1_0>='\u1F7E' && LA1_0<='\u1F7F')||LA1_0=='\u1FB5'||LA1_0=='\u1FBD'||(LA1_0>='\u1FBF' && LA1_0<='\u1FC1')||LA1_0=='\u1FC5'||(LA1_0>='\u1FCD' && LA1_0<='\u1FCF')||(LA1_0>='\u1FD4' && LA1_0<='\u1FD5')||(LA1_0>='\u1FDC' && LA1_0<='\u1FDF')||(LA1_0>='\u1FED' && LA1_0<='\u1FF1')||LA1_0=='\u1FF5'||(LA1_0>='\u1FFD' && LA1_0<='\u2125')||(LA1_0>='\u2127' && LA1_0<='\u2129')||(LA1_0>='\u212C' && LA1_0<='\u212D')||(LA1_0>='\u212F' && LA1_0<='\u217F')||(LA1_0>='\u2183' && LA1_0<='\u3006')||(LA1_0>='\u3008' && LA1_0<='\u3020')||(LA1_0>='\u302A' && LA1_0<='\u3040')||(LA1_0>='\u3095' && LA1_0<='\u30A0')||(LA1_0>='\u30FB' && LA1_0<='\u3104')||(LA1_0>='\u312D' && LA1_0<='\u4DFF')||(LA1_0>='\u9FA6' && LA1_0<='\uABFF')||(LA1_0>='\uD7A4' && LA1_0<='\uD7FF')||(LA1_0>='\uE000' && LA1_0<='\uFFFE')) && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 30;}
+                        else if ( (LA1_0=='\u0000'||LA1_0=='#'||LA1_0=='%'||LA1_0=='\\'||LA1_0=='^'||LA1_0=='`'||(LA1_0>='~' && LA1_0<='\u00BF')||LA1_0=='\u00D7'||LA1_0=='\u00F7'||(LA1_0>='\u0132' && LA1_0<='\u0133')||(LA1_0>='\u013F' && LA1_0<='\u0140')||LA1_0=='\u0149'||LA1_0=='\u017F'||(LA1_0>='\u01C4' && LA1_0<='\u01CC')||(LA1_0>='\u01F1' && LA1_0<='\u01F3')||(LA1_0>='\u01F6' && LA1_0<='\u01F9')||(LA1_0>='\u0218' && LA1_0<='\u024F')||(LA1_0>='\u02A9' && LA1_0<='\u02BA')||(LA1_0>='\u02C2' && LA1_0<='\u0385')||LA1_0=='\u0387'||LA1_0=='\u038B'||LA1_0=='\u038D'||LA1_0=='\u03A2'||LA1_0=='\u03CF'||(LA1_0>='\u03D7' && LA1_0<='\u03D9')||LA1_0=='\u03DB'||LA1_0=='\u03DD'||LA1_0=='\u03DF'||LA1_0=='\u03E1'||(LA1_0>='\u03F4' && LA1_0<='\u0400')||LA1_0=='\u040D'||LA1_0=='\u0450'||LA1_0=='\u045D'||(LA1_0>='\u0482' && LA1_0<='\u048F')||(LA1_0>='\u04C5' && LA1_0<='\u04C6')||(LA1_0>='\u04C9' && LA1_0<='\u04CA')||(LA1_0>='\u04CD' && LA1_0<='\u04CF')||(LA1_0>='\u04EC' && LA1_0<='\u04ED')||(LA1_0>='\u04F6' && LA1_0<='\u04F7')||(LA1_0>='\u04FA' && LA1_0<='\u0530')||(LA1_0>='\u0557' && LA1_0<='\u0558')||(LA1_0>='\u055A' && LA1_0<='\u0560')||(LA1_0>='\u0587' && LA1_0<='\u05CF')||(LA1_0>='\u05EB' && LA1_0<='\u05EF')||(LA1_0>='\u05F3' && LA1_0<='\u0620')||(LA1_0>='\u063B' && LA1_0<='\u0640')||(LA1_0>='\u064B' && LA1_0<='\u0670')||(LA1_0>='\u06B8' && LA1_0<='\u06B9')||LA1_0=='\u06BF'||LA1_0=='\u06CF'||LA1_0=='\u06D4'||(LA1_0>='\u06D6' && LA1_0<='\u06E4')||(LA1_0>='\u06E7' && LA1_0<='\u0904')||(LA1_0>='\u093A' && LA1_0<='\u093C')||(LA1_0>='\u093E' && LA1_0<='\u0957')||(LA1_0>='\u0962' && LA1_0<='\u0984')||(LA1_0>='\u098D' && LA1_0<='\u098E')||(LA1_0>='\u0991' && LA1_0<='\u0992')||LA1_0=='\u09A9'||LA1_0=='\u09B1'||(LA1_0>='\u09B3' && LA1_0<='\u09B5')||(LA1_0>='\u09BA' && LA1_0<='\u09DB')||LA1_0=='\u09DE'||(LA1_0>='\u09E2' && LA1_0<='\u09EF')||(LA1_0>='\u09F2' && LA1_0<='\u0A04')||(LA1_0>='\u0A0B' && LA1_0<='\u0A0E')||(LA1_0>='\u0A11' && LA1_0<='\u0A12')||LA1_0=='\u0A29'||LA1_0=='\u0A31'||LA1_0=='\u0A34'||LA1_0=='\u0A37'||(LA1_0>='\u0A3A' && LA1_0<='\u0A58')||LA1_0=='\u0A5D'||(LA1_0>='\u0A5F' && LA1_0<='\u0A71')||(LA1_0>='\u0A75' && LA1_0<='\u0A84')||LA1_0=='\u0A8C'||LA1_0=='\u0A8E'||LA1_0=='\u0A92'||LA1_0=='\u0AA9'||LA1_0=='\u0AB1'||LA1_0=='\u0AB4'||(LA1_0>='\u0ABA' && LA1_0<='\u0ABC')||(LA1_0>='\u0ABE' && LA1_0<='\u0ADF')||(LA1_0>='\u0AE1' && LA1_0<='\u0B04')||(LA1_0>='\u0B0D' && LA1_0<='\u0B0E')||(LA1_0>='\u0B11' && LA1_0<='\u0B12')||LA1_0=='\u0B29'||LA1_0=='\u0B31'||(LA1_0>='\u0B34' && LA1_0<='\u0B35')||(LA1_0>='\u0B3A' && LA1_0<='\u0B3C')||(LA1_0>='\u0B3E' && LA1_0<='\u0B5B')||LA1_0=='\u0B5E'||(LA1_0>='\u0B62' && LA1_0<='\u0B84')||(LA1_0>='\u0B8B' && LA1_0<='\u0B8D')||LA1_0=='\u0B91'||(LA1_0>='\u0B96' && LA1_0<='\u0B98')||LA1_0=='\u0B9B'||LA1_0=='\u0B9D'||(LA1_0>='\u0BA0' && LA1_0<='\u0BA2')||(LA1_0>='\u0BA5' && LA1_0<='\u0BA7')||(LA1_0>='\u0BAB' && LA1_0<='\u0BAD')||LA1_0=='\u0BB6'||(LA1_0>='\u0BBA' && LA1_0<='\u0C04')||LA1_0=='\u0C0D'||LA1_0=='\u0C11'||LA1_0=='\u0C29'||LA1_0=='\u0C34'||(LA1_0>='\u0C3A' && LA1_0<='\u0C5F')||(LA1_0>='\u0C62' && LA1_0<='\u0C84')||LA1_0=='\u0C8D'||LA1_0=='\u0C91'||LA1_0=='\u0CA9'||LA1_0=='\u0CB4'||(LA1_0>='\u0CBA' && LA1_0<='\u0CDD')||LA1_0=='\u0CDF'||(LA1_0>='\u0CE2' && LA1_0<='\u0D04')||LA1_0=='\u0D0D'||LA1_0=='\u0D11'||LA1_0=='\u0D29'||(LA1_0>='\u0D3A' && LA1_0<='\u0D5F')||(LA1_0>='\u0D62' && LA1_0<='\u0E00')||LA1_0=='\u0E2F'||LA1_0=='\u0E31'||(LA1_0>='\u0E34' && LA1_0<='\u0E3F')||(LA1_0>='\u0E46' && LA1_0<='\u0E80')||LA1_0=='\u0E83'||(LA1_0>='\u0E85' && LA1_0<='\u0E86')||LA1_0=='\u0E89'||(LA1_0>='\u0E8B' && LA1_0<='\u0E8C')||(LA1_0>='\u0E8E' && LA1_0<='\u0E93')||LA1_0=='\u0E98'||LA1_0=='\u0EA0'||LA1_0=='\u0EA4'||LA1_0=='\u0EA6'||(LA1_0>='\u0EA8' && LA1_0<='\u0EA9')||LA1_0=='\u0EAC'||LA1_0=='\u0EAF'||LA1_0=='\u0EB1'||(LA1_0>='\u0EB4' && LA1_0<='\u0EBC')||(LA1_0>='\u0EBE' && LA1_0<='\u0EBF')||(LA1_0>='\u0EC5' && LA1_0<='\u0F3F')||LA1_0=='\u0F48'||(LA1_0>='\u0F6A' && LA1_0<='\u109F')||(LA1_0>='\u10C6' && LA1_0<='\u10CF')||(LA1_0>='\u10F7' && LA1_0<='\u10FF')||LA1_0=='\u1101'||LA1_0=='\u1104'||LA1_0=='\u1108'||LA1_0=='\u110A'||LA1_0=='\u110D'||(LA1_0>='\u1113' && LA1_0<='\u113B')||LA1_0=='\u113D'||LA1_0=='\u113F'||(LA1_0>='\u1141' && LA1_0<='\u114B')||LA1_0=='\u114D'||LA1_0=='\u114F'||(LA1_0>='\u1151' && LA1_0<='\u1153')||(LA1_0>='\u1156' && LA1_0<='\u1158')||(LA1_0>='\u115A' && LA1_0<='\u115E')||LA1_0=='\u1162'||LA1_0=='\u1164'||LA1_0=='\u1166'||LA1_0=='\u1168'||(LA1_0>='\u116A' && LA1_0<='\u116C')||(LA1_0>='\u116F' && LA1_0<='\u1171')||LA1_0=='\u1174'||(LA1_0>='\u1176' && LA1_0<='\u119D')||(LA1_0>='\u119F' && LA1_0<='\u11A7')||(LA1_0>='\u11A9' && LA1_0<='\u11AA')||(LA1_0>='\u11AC' && LA1_0<='\u11AD')||(LA1_0>='\u11B0' && LA1_0<='\u11B6')||LA1_0=='\u11B9'||LA1_0=='\u11BB'||(LA1_0>='\u11C3' && LA1_0<='\u11EA')||(LA1_0>='\u11EC' && LA1_0<='\u11EF')||(LA1_0>='\u11F1' && LA1_0<='\u11F8')||(LA1_0>='\u11FA' && LA1_0<='\u1DFF')||(LA1_0>='\u1E9C' && LA1_0<='\u1E9F')||(LA1_0>='\u1EFA' && LA1_0<='\u1EFF')||(LA1_0>='\u1F16' && LA1_0<='\u1F17')||(LA1_0>='\u1F1E' && LA1_0<='\u1F1F')||(LA1_0>='\u1F46' && LA1_0<='\u1F47')||(LA1_0>='\u1F4E' && LA1_0<='\u1F4F')||LA1_0=='\u1F58'||LA1_0=='\u1F5A'||LA1_0=='\u1F5C'||LA1_0=='\u1F5E'||(LA1_0>='\u1F7E' && LA1_0<='\u1F7F')||LA1_0=='\u1FB5'||LA1_0=='\u1FBD'||(LA1_0>='\u1FBF' && LA1_0<='\u1FC1')||LA1_0=='\u1FC5'||(LA1_0>='\u1FCD' && LA1_0<='\u1FCF')||(LA1_0>='\u1FD4' && LA1_0<='\u1FD5')||(LA1_0>='\u1FDC' && LA1_0<='\u1FDF')||(LA1_0>='\u1FED' && LA1_0<='\u1FF1')||LA1_0=='\u1FF5'||(LA1_0>='\u1FFD' && LA1_0<='\u2125')||(LA1_0>='\u2127' && LA1_0<='\u2129')||(LA1_0>='\u212C' && LA1_0<='\u212D')||(LA1_0>='\u212F' && LA1_0<='\u217F')||(LA1_0>='\u2183' && LA1_0<='\u3006')||(LA1_0>='\u3008' && LA1_0<='\u3020')||(LA1_0>='\u302A' && LA1_0<='\u3040')||(LA1_0>='\u3095' && LA1_0<='\u30A0')||(LA1_0>='\u30FB' && LA1_0<='\u3104')||(LA1_0>='\u312D' && LA1_0<='\u4DFF')||(LA1_0>='\u9FA6' && LA1_0<='\uABFF')||(LA1_0>='\uD7A4' && LA1_0<='\uD7FF')||(LA1_0>='\uE000' && LA1_0<='\uFFFE')) && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 30;}
 
                         else s = 6;
 
@@ -8259,84 +8121,81 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_0);
                         if ( s>=0 ) return s;
                         break;
-                    case 41 : 
-                        int LA1_87 = input.LA(1);
+                    case 34 : 
+                        int LA1_103 = input.LA(1);
 
                          
-                        int index1_87 = input.index();
+                        int index1_103 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_87=='o') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 101;}
-
-                         
-                        input.seek(index1_87);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 42 : 
-                        int LA1_86 = input.LA(1);
-
-                         
-                        int index1_86 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_86=='p') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 100;}
-
-                         
-                        input.seek(index1_86);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 43 : 
-                        int LA1_5 = input.LA(1);
-
-                         
-                        int index1_5 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_5==':') && (state==State.DEFAULT)) {s = 45;}
-
-                        else if ( (LA1_5=='#') && (state==State.DEFAULT)) {s = 46;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
 
                         else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
 
-                        else if ( (true) ) {s = 50;}
-
                          
-                        input.seek(index1_5);
+                        input.seek(index1_103);
                         if ( s>=0 ) return s;
                         break;
-                    case 44 : 
-                        int LA1_39 = input.LA(1);
+                    case 35 : 
+                        int LA1_27 = input.LA(1);
 
                          
-                        int index1_39 = input.index();
+                        int index1_27 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_39=='m') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 86;}
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
 
-                        else if ( (LA1_39=='p') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 87;}
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 77;}
 
                          
-                        input.seek(index1_39);
+                        input.seek(index1_27);
                         if ( s>=0 ) return s;
                         break;
-                    case 45 : 
-                        int LA1_102 = input.LA(1);
+                    case 36 : 
+                        int LA1_2 = input.LA(1);
 
                          
-                        int index1_102 = input.index();
+                        int index1_2 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_102=='t') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 105;}
+                        if ( (LA1_2=='#') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 36;}
+
+                        else if ( (LA1_2=='l') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 37;}
+
+                        else if ( (LA1_2=='g') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 38;}
+
+                        else if ( (LA1_2=='a') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 39;}
+
+                        else if ( (LA1_2=='q') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 40;}
 
                          
-                        input.seek(index1_102);
+                        input.seek(index1_2);
                         if ( s>=0 ) return s;
                         break;
-                    case 46 : 
+                    case 37 : 
+                        int LA1_99 = input.LA(1);
+
+                         
+                        int index1_99 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_99);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 38 : 
                         int LA1_24 = input.LA(1);
 
                          
@@ -8355,11 +8214,26 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_24);
                         if ( s>=0 ) return s;
                         break;
-                    case 47 : 
-                        int LA1_17 = input.LA(1);
+                    case 39 : 
+                        int LA1_39 = input.LA(1);
 
                          
-                        int index1_17 = input.index();
+                        int index1_39 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_39=='m') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 86;}
+
+                        else if ( (LA1_39=='p') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 87;}
+
+                         
+                        input.seek(index1_39);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 40 : 
+                        int LA1_25 = input.LA(1);
+
+                         
+                        int index1_25 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 47;}
@@ -8368,54 +8242,121 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
 
-                        else if ( (true) ) {s = 67;}
+                        else if ( (true) ) {s = 75;}
 
                          
-                        input.seek(index1_17);
+                        input.seek(index1_25);
                         if ( s>=0 ) return s;
                         break;
-                    case 48 : 
-                        int LA1_64 = input.LA(1);
+                    case 41 : 
+                        int LA1_97 = input.LA(1);
 
                          
-                        int index1_64 = input.index();
+                        int index1_97 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (state==State.DEFAULT) ) {s = 61;}
+                        if ( (LA1_97==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 103;}
 
-                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))) ) {s = 96;}
+                        else if ( ((LA1_97>='0' && LA1_97<='9')||(LA1_97>='A' && LA1_97<='F')||(LA1_97>='a' && LA1_97<='f')) && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 97;}
 
                          
-                        input.seek(index1_64);
+                        input.seek(index1_97);
                         if ( s>=0 ) return s;
                         break;
-                    case 49 : 
-                        int LA1_100 = input.LA(1);
+                    case 42 : 
+                        int LA1_14 = input.LA(1);
 
                          
-                        int index1_100 = input.index();
+                        int index1_14 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_100==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 99;}
+                        if ( (LA1_14=='\u0000'||(LA1_14>='\t' && LA1_14<='\n')||LA1_14=='\r'||(LA1_14>=' ' && LA1_14<='!')||(LA1_14>='#' && LA1_14<='\uD7FF')||(LA1_14>='\uE000' && LA1_14<='\uFFFE')) && (state==State.DEFAULT)) {s = 61;}
+
+                        else if ( (LA1_14=='\"') && (((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||state==State.DEFAULT||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))||(state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='"' && input.LA(2)=='"'))))) {s = 62;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 63;}
 
                          
-                        input.seek(index1_100);
+                        input.seek(index1_14);
                         if ( s>=0 ) return s;
                         break;
-                    case 50 : 
-                        int LA1_38 = input.LA(1);
+                    case 43 : 
+                        int LA1_15 = input.LA(1);
 
                          
-                        int index1_38 = input.index();
+                        int index1_15 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_38=='t') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 85;}
+                        if ( (LA1_15=='\u0000'||(LA1_15>='\t' && LA1_15<='\n')||LA1_15=='\r'||(LA1_15>=' ' && LA1_15<='&')||(LA1_15>='(' && LA1_15<='\uD7FF')||(LA1_15>='\uE000' && LA1_15<='\uFFFE')) && (state==State.DEFAULT)) {s = 61;}
+
+                        else if ( (LA1_15=='\'') && (((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||state==State.DEFAULT||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))||(state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))))) {s = 64;}
+
+                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (true) ) {s = 65;}
 
                          
-                        input.seek(index1_38);
+                        input.seek(index1_15);
                         if ( s>=0 ) return s;
                         break;
-                    case 51 : 
+                    case 44 : 
+                        int LA1_44 = input.LA(1);
+
+                         
+                        int index1_44 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 92;}
+
+                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 93;}
+
+                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='}' && input.LA(2)=='}'))) ) {s = 94;}
+
+                         
+                        input.seek(index1_44);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 45 : 
+                        int LA1_13 = input.LA(1);
+
+                         
+                        int index1_13 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( ((state==State.DEFAULT || state==State.IN_TAG)) ) {s = 60;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_13);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 46 : 
+                        int LA1_83 = input.LA(1);
+
+                         
+                        int index1_83 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_83==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 98;}
+
+                        else if ( ((LA1_83>='0' && LA1_83<='9')) && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 83;}
+
+                         
+                        input.seek(index1_83);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 47 : 
                         int LA1_29 = input.LA(1);
 
                          
@@ -8434,77 +8375,39 @@ public class XQFTLexer extends Lexer {
                         input.seek(index1_29);
                         if ( s>=0 ) return s;
                         break;
-                    case 52 : 
-                        int LA1_11 = input.LA(1);
-
-                         
-                        int index1_11 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_11=='/') && (state==State.DEFAULT)) {s = 33;}
-
-                        else if ( (LA1_11=='>') && (state==State.IN_TAG)) {s = 58;}
-
-                        else if ( (state==State.IN_ELEMENT) ) {s = 47;}
-
-                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
-
-                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
-
-                        else if ( (true) ) {s = 59;}
-
-                         
-                        input.seek(index1_11);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 53 : 
+                    case 48 : 
                         int LA1_104 = input.LA(1);
 
                          
                         int index1_104 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( (LA1_104==';') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 99;}
+                        if ( (LA1_104==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 99;}
 
                          
                         input.seek(index1_104);
                         if ( s>=0 ) return s;
                         break;
-                    case 54 : 
-                        int LA1_42 = input.LA(1);
+                    case 49 : 
+                        int LA1_64 = input.LA(1);
 
                          
-                        int index1_42 = input.index();
+                        int index1_64 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((state==State.IN_ELEMENT&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 89;}
+                        if ( (state==State.DEFAULT) ) {s = 61;}
 
-                        else if ( ((state==State.IN_QUOT_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 90;}
-
-                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='{' && input.LA(2)=='{'))) ) {s = 91;}
+                        else if ( ((state==State.IN_APOS_ATTRIBUTE&&(input.LA(1)=='\'' && input.LA(2)=='\''))) ) {s = 96;}
 
                          
-                        input.seek(index1_42);
+                        input.seek(index1_64);
                         if ( s>=0 ) return s;
                         break;
-                    case 55 : 
-                        int LA1_88 = input.LA(1);
+                    case 50 : 
+                        int LA1_17 = input.LA(1);
 
                          
-                        int index1_88 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA1_88=='o') && ((state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE||state==State.IN_ELEMENT))) {s = 102;}
-
-                         
-                        input.seek(index1_88);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 56 : 
-                        int LA1_26 = input.LA(1);
-
-                         
-                        int index1_26 = input.index();
+                        int index1_17 = input.index();
                         input.rewind();
                         s = -1;
                         if ( (state==State.IN_ELEMENT) ) {s = 47;}
@@ -8513,10 +8416,106 @@ public class XQFTLexer extends Lexer {
 
                         else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
 
-                        else if ( (true) ) {s = 76;}
+                        else if ( (true) ) {s = 67;}
 
                          
-                        input.seek(index1_26);
+                        input.seek(index1_17);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 51 : 
+                        int LA1_105 = input.LA(1);
+
+                         
+                        int index1_105 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_105==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 99;}
+
+                         
+                        input.seek(index1_105);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 52 : 
+                        int LA1_28 = input.LA(1);
+
+                         
+                        int index1_28 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                        else if ( (true) ) {s = 78;}
+
+                         
+                        input.seek(index1_28);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 53 : 
+                        int LA1_100 = input.LA(1);
+
+                         
+                        int index1_100 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_100==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 99;}
+
+                         
+                        input.seek(index1_100);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 54 : 
+                        int LA1_98 = input.LA(1);
+
+                         
+                        int index1_98 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (state==State.IN_ELEMENT) ) {s = 47;}
+
+                        else if ( (state==State.IN_QUOT_ATTRIBUTE) ) {s = 48;}
+
+                        else if ( (state==State.IN_APOS_ATTRIBUTE) ) {s = 49;}
+
+                         
+                        input.seek(index1_98);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 55 : 
+                        int LA1_1 = input.LA(1);
+
+                         
+                        int index1_1 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_1=='!') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 31;}
+
+                        else if ( (LA1_1=='?') && (state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE)) {s = 32;}
+
+                        else if ( (LA1_1=='/') && (state==State.IN_ELEMENT)) {s = 33;}
+
+                        else if ( ((LA1_1>='<' && LA1_1<='=')) && (state==State.DEFAULT)) {s = 34;}
+
+                        else s = 35;
+
+                         
+                        input.seek(index1_1);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 56 : 
+                        int LA1_85 = input.LA(1);
+
+                         
+                        int index1_85 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA1_85==';') && ((state==State.IN_ELEMENT||state==State.IN_QUOT_ATTRIBUTE||state==State.IN_APOS_ATTRIBUTE))) {s = 99;}
+
+                         
+                        input.seek(index1_85);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -8538,7 +8537,7 @@ public class XQFTLexer extends Lexer {
     static final String DFA26_acceptS =
         "\4\uffff\1\3\1\uffff\1\1\1\2\1\uffff";
     static final String DFA26_specialS =
-        "\2\uffff\1\1\1\3\1\uffff\1\0\2\uffff\1\2}>";
+        "\2\uffff\1\1\1\3\1\uffff\1\2\2\uffff\1\0}>";
     static final String[] DFA26_transitionS = {
             "\1\1\1\uffff\12\2",
             "\12\3",
@@ -8587,6 +8586,42 @@ public class XQFTLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA26_8 = input.LA(1);
+
+                         
+                        int index26_8 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (LA26_8=='E'||LA26_8=='e') && (synpred1())) {s = 6;}
+
+                        else if ( ((LA26_8>='0' && LA26_8<='9')) ) {s = 8;}
+
+                        else s = 7;
+
+                         
+                        input.seek(index26_8);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA26_2 = input.LA(1);
+
+                         
+                        int index26_2 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( ((LA26_2>='0' && LA26_2<='9')) ) {s = 2;}
+
+                        else if ( (LA26_2=='.') ) {s = 5;}
+
+                        else if ( (LA26_2=='E'||LA26_2=='e') && (synpred1())) {s = 6;}
+
+                        else s = 4;
+
+                         
+                        input.seek(index26_2);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA26_5 = input.LA(1);
 
                          
@@ -8603,42 +8638,6 @@ public class XQFTLexer extends Lexer {
                         input.seek(index26_5);
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
-                        int LA26_2 = input.LA(1);
-
-                         
-                        int index26_2 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (LA26_2=='.') ) {s = 5;}
-
-                        else if ( ((LA26_2>='0' && LA26_2<='9')) ) {s = 2;}
-
-                        else if ( (LA26_2=='E'||LA26_2=='e') && (synpred1())) {s = 6;}
-
-                        else s = 4;
-
-                         
-                        input.seek(index26_2);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA26_8 = input.LA(1);
-
-                         
-                        int index26_8 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( ((LA26_8>='0' && LA26_8<='9')) ) {s = 8;}
-
-                        else if ( (LA26_8=='E'||LA26_8=='e') && (synpred1())) {s = 6;}
-
-                        else s = 7;
-
-                         
-                        input.seek(index26_8);
-                        if ( s>=0 ) return s;
-                        break;
                     case 3 : 
                         int LA26_3 = input.LA(1);
 
@@ -8646,9 +8645,9 @@ public class XQFTLexer extends Lexer {
                         int index26_3 = input.index();
                         input.rewind();
                         s = -1;
-                        if ( ((LA26_3>='0' && LA26_3<='9')) ) {s = 3;}
+                        if ( (LA26_3=='E'||LA26_3=='e') && (synpred1())) {s = 6;}
 
-                        else if ( (LA26_3=='E'||LA26_3=='e') && (synpred1())) {s = 6;}
+                        else if ( ((LA26_3>='0' && LA26_3<='9')) ) {s = 3;}
 
                         else s = 7;
 
