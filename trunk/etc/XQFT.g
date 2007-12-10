@@ -679,8 +679,8 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 //			exprSingle#								: #PAA EGET#
 			
 			
-	pathExpr                    			: {input.LA(1)=='/' && input.LA(2)=='/'}? DBLSLASHSi^ relativePathExpr
-											| {input.LA(2)=='*'}? SLASHSi^ relativePathExpr
+	pathExpr                    			: /*{input.LA(1)=='/' && input.LA(2)=='/'}?*/ DBLSLASHSi^ relativePathExpr
+											| {input.LA(2)==STARSi}? SLASHSi^ relativePathExpr
                                             | SLASHSi^ relativePathExpr
 											| SLASHSi^
 											| relativePathExpr
