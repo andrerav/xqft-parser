@@ -1,6 +1,6 @@
 \section{Creating the AST}
 
-//TODO: Innledning
+\underline{\textbf{\LARGE //TODO:}} Innledning
 
 \subsection{Operators and rewrite rules}
 As described in section \ref{sect:antlr:ast}, ANTLR provides operators and
@@ -11,7 +11,7 @@ root, and which to omit. This is done using the two basic operators \verb!hat!
 example where the exclusion operator is used to exclude the superfluous brace
 tokens from the AST in the \verb!ftWordsValue! production.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{verbatim}
 ftWordsValue : literal | (LBRACESi! expr RBRACSi!);
 \end{verbatim}
@@ -27,7 +27,7 @@ illustrates how not only how the hat operator is used to create subtrees from
 expressions, but also how precedence is implicitly encoded into the grammar as
 mentioned in section \ref{sect:xquery:precedence}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{verbatim}
 additiveExpr : multiplicativeExpr (
               (PLUSSi | MINUSSi)^ multiplicativeExpr)*;
@@ -46,7 +46,7 @@ This is behaviour is illustrated in figure \ref{tree:ast:arithmetic}, which is
 the AST generated for the simple arithmetic expression \verb!1+2*3-2*15!.
 Further examples are available in section \ref{sect:results:parser_output_ast}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
  \includegraphics[width=0.5\textwidth]{img/graphs/arithmetic1}
 \caption{Arithmetic AST example from the expression \texttt{1+2*3-2*15}}
@@ -61,7 +61,7 @@ illustrates an example for the \verb!letClause! production, where it is only
 interesting to preserve the list of variable bindings, which can occur several
 times. This technique has been used in several productions.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{verbatim}
 letClause : LET varBinding (COMMASi varBinding)*
             -> ^(AST_LETCLAUSE varBinding+);
@@ -86,7 +86,7 @@ where-clause, and an optional orderby-clause. Finally the list of children in
 this subtree is terminated by an \verb!exprSingle!, denoting the expression
 after the RETURN token.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{verbatim}
 fLWORExpr : (fc+=forClause | lc+=letClause)+ whereClause?
             orderByClause? RETURN exprSingle
@@ -110,7 +110,7 @@ definitions, and the child production \verb!forClauseTupletDef! uses simple
 operators to exclude superfluous tokens. These rules can be seen in figure
 \ref{code:ast:forclause}. 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{verbatim} 
 forClause : FOR forClauseTupletDef (COMMASi forClauseTupletDef)* 
             -> ^(AST_FORCLAUSE forClauseTupletDef+);
@@ -138,7 +138,7 @@ The optional where-clause is trivial. The rewrite rule adds an imaginary
 token for clarity and omits the \verb!WHERE! token, as can seen in figure
 \ref{code:ast:whereclause}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{verbatim} 
 whereClause : WHERE exprSingle
               -> ^(AST_WHERECLAUSE exprSingle);
@@ -156,7 +156,7 @@ flag the imaginary root node token as ``stable''. As described in section
 tokens. The rewrite rule for the orderby-clause is shown in figure
 \ref{code:ast:orderbyclause}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{verbatim} 
 orderByClause : (ORDER BY | STABLE ORDER BY) orderSpecList
                 -> ^(AST_ORDERBYCLAUSE STABLE? orderSpecList);
@@ -177,7 +177,7 @@ root nodes. Figure \ref{code:ast:pathexpr} shows the grammar with operators in
 place. As can be seen, the forward slash tokens are promoted to root nodes,
 including in between the step expressions.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{verbatim} 
 pathExpr : DBLSLASHSi^ relativePathExpr
            | {input.LA(2)==STARSi}? SLASHSi^ relativePathExpr
@@ -198,7 +198,7 @@ Function declarations may seem like complex constructs, but in an AST these can
 be represented fairly simplistic by an imaginary token, with function name, 
 parameters, type, and function body as children.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{verbatim} 
 functionDecl : DECLARE FUNCTION qName LPARSi paramList? RPARSi 
               (AS sequenceType)? (enclosedExpr | EXTERNAL)
