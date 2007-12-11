@@ -6,6 +6,7 @@ husk generelt: Gjorde vi riktige valg? Ble ting som forventet? Hva hadde skjedd 
 
 \input{discussion/DesignDecisions}
 \input{discussion/AdaptW3C}
+\input{discussion/DeadEnds}
 
 
 
@@ -61,26 +62,6 @@ Hvorfor skrudde vi av default error handling? Var dette bra? Hva var kjipt da? K
 
 \underline{\textbf{\LARGE //ODOT:}}
 
-\section{Dead Ends}
-\label{sect:discussion:deadEnds}
-\underline{\textbf{\LARGE //TODO: Mads om ikke du har noen p\aa~lager?}}
 
-Hva har vi gjort som m\aa tte gj\o res om igjen?
-
-\begin{itemize}
-\item Skrive om dash: Validerende semantiske predikat, saa CharNotMinus etc
-\item Feil splitting Lexer vs Parser, mye feilmeldingjakt
-\item Keywords deklarert i @tokens -> vant alltid.
-\item NCName med syntaktiske predikat
-\end{itemize}
-
-/* Hentet fra implementation: \\
-In the grammar specified by the W3C, all the productions (terminals and
-non-terminals) all start with uppercase letters. Initially this caused some
-confusion, because this grammar naturally generated a very big lexer and a very
-small and non-functional parser. \\
-*/
-
-\underline{\textbf{\LARGE //ODOT:}}
 
 
