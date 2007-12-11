@@ -16,10 +16,9 @@ For some time we misinterpreted the W3C 'dash' operator as just a way of restric
 
 Our second attempt to rewrite the operator was to rewrite the different cases of the "dash" operator to rules inwhich the illegal characters were removed. This was done by creating a production \verb!CleanChar! which consisted of the characters sheared by all productions of interest, and then in a case by case fashion constructing new sets consisting of this new production and the missing allowed characters as alternatives. Although a better solution than the one with the validating semantic predicates, it did not support cases where the operator is used to disallow sequences of characters, leading us to understand the concept of non-greedy rules.
 
-\underline{\textbf{\LARGE //TODO: Mads}}
 \subsection{Keywords and NCName}
-Keywords deklarert i @tokens -> vant alltid.
+During our compiler error source hunt, we converted all inline occurences of tokens into explicit token declarations within a \verb!@token{! header. ANTLR gives these tokens rank over any other production, making it impossible for any other terminal to contain a character sequence that match such declarations leading us to change them into ordinary lexer productions.
 
-NCName med syntaktiske predikat
+After the introduction of the \verb!TOKENSWITCH! construct
 
 \underline{\textbf{\LARGE //TODO: Noe mer?}}
