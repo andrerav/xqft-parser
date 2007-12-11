@@ -19,6 +19,7 @@ qName             : (NCName COLONSi)? NCName;
 There is however some reasons for \emph{not} defining \verb!QName! as a terminal: by doing so, ANTLR would have generated token containing the whole \verb!QName!, meaning that e.g. if one is only interested in the localpart, one would have to manually split the text. And parser productions reffering to \verb!QName! would have to be rewritten as expecting a \verb!QName! \emph{or} a \verb!NCName!.
 
 \subsection{Rewriting the W3C 'dash' and 'hat' operators}
+\label{sect:implementation:dashOperator}
 The 'hat' operator (section \ref{sect:ambiguousgrammar:ambigTerm}) is mostly used to define legal characters by defining which are illigal. These productions can be rewritten in ANTLR syntax by using the not-operator ($\sim$) and a \verb!fragment! production rule \verb!NotChar! which is manually defined as all unicode characters (up to 0xFFFF, see section \ref{sect:parserconstructanddebug:limitations}) not allowed by the W3C defined \verb!Char!:
 \begin{verbatim}
 // The extracted part of StringLiteral:
