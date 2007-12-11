@@ -2,7 +2,7 @@ grammar XQFT;
 
 options { 
 //filter=true;
-  // k = 1;
+   //k = 2;
     output=AST;
     ASTLabelType=XQFTTree;
 } 
@@ -681,10 +681,9 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 //			exprSingle#								: #PAA EGET#
 			
 			
-	pathExpr                    			: /*{input.LA(1)=='/' && input.LA(2)=='/'}?*/ DBLSLASHSi^ relativePathExpr
-											| {input.LA(2)==STARSi}? SLASHSi^ relativePathExpr
-                                            | SLASHSi^ relativePathExpr
+	pathExpr                    			:(SLASHSi relativePathExpr)=> SLASHSi^ relativePathExpr
 											| SLASHSi^
+											| DBLSLASHSi^ relativePathExpr
 											| relativePathExpr
 											;
 
