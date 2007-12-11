@@ -7,4 +7,4 @@ An alternative to insert and adapt would be to write a grammar from scratch whil
 
 Considering the non-terminal productions, there were not many productions that would have to be adapted to fit ANTLR semantics. The adjustments came in form of introducing predicates to accommodate for the extra-gramatical constraints. In addition we rewrote some productions to reduce required parser look-ahead. \underline{\textbf{\LARGE //TODO:}} Ble det mer?
 
-However, the terminal productions had to be completly rewritten. By choosing to
+However, the terminal productions had to be completly rewritten. By choosing to write these rules from scratch in the first place, we would in all likelyhood have discovered the problem with the ambiguous terminals earlier, but at the cost of not having a parser up and running (albeit a very reduced one) until the grammar was completly finished. This would have prohibited us from working with e.g. the scoping system in parallell with the grammar.
