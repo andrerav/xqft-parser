@@ -1,20 +1,20 @@
-\section{Dead Ends}
+\section{Lessons Learned}
 \label{sect:discussion:deadEnds}
-\underline{\textbf{\LARGE //TODO: Mads}}
-
-\underline{\textbf{\LARGE //TODO:}} Ny overskrift - vi l\ae rte jo noe.
 
 During the course of this project some misconceptions of the ANTLR grammar specification semantics and the W3C XQuery specification semantics have lead to erroneous implementation of various aspects of the parser. As the lessons were learned, these errors have later been corrected and will be accounted for in the following sections.
 
 \subsection{Seperation of terminals from non-terminals }
+\underline{\textbf{\LARGE //TODO:}} Liker ikke dette avsnittet
 
-In the grammar specified by W3C the productions, both terminal and non-terminal, all start with uppercase letters. Initially this caused some confusion because this grammar generated a very big lexer and a very small and non-functional parser. 
+In the grammar specified by W3C the productions, both terminal and non-terminal, all start with uppercase letters. Initially this caused some confusion because this grammar generated a very big lexer and a very small and non-functional parser. This came across because ANTLR v3, unlike earlier ANTLR versions, separates lexer from parser productions precisely by case of the first letter in the name (section \ref{sect:implementation:separate}). And at this time we wrongfully assumed, incited by the lack of resources about newest version of the parser generator, that v3 in this matter employed the same syntax as its predecessors.
 
-Feil splitting Lexer vs Parser, mye feilmeldingjakt
+Enter the ANTLR reference book\cite{definitiveAntlr}, and the pieces started falling together. After a while of flipping rules between the parser and lexer and hunting for the source of compiler errors, we finally gained some perspective of the grammar resulting in the discovery of the ambiguous terminals problem and the correct terminal/non-terminal division.
 
 \subsection{Rewriting the 'dash' operator}
+
 Skrive om dash: Validerende semantiske predikat, saa CharNotMinus etc
 
+\underline{\textbf{\LARGE //TODO: Mads}}
 \subsection{Keywords and NCName}
 Keywords deklarert i @tokens -> vant alltid.
 
