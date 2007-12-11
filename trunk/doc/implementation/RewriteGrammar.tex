@@ -182,21 +182,19 @@ PathExpr  ::= ("/" RelativePathExpr?)
             | RelativePathExpr
 \end{verbatim}
 
-As with the \verb!occurenceIndicator! we split the alternative with the $?$ kleene operator into two explicit alternatives. By using a disambiguating semantic predicate, the parser is forced to prefer the alternative with the \verb!RelativePathExpr! over the single slash one if the following token is a \verb!*!, as shown in figure \ref{fig:leadingSlash}. The third alternative exist for all other versions of \verb!relativePathExpr! than \verb!*!.
+As with the \verb!occurenceIndicator! we split the alternative with the $?$-kleene operator into two explicit alternatives. And by using a syntactic predicate, the parser will prefer the alternative with the \verb!RelativePathExpr! over the single slash one, as seen in figure \ref{fig:leadingSlash}.
 \begin{figure}[h!]
 \begin{verbatim}
-pathExpr    : DBLSLASHSi relativePathExpr
-            | {input.LA(2)==STARSi}? SLASHSi relativePathExpr
-            | SLASHSi relativePathExpr
+pathExpr    : (SLASHSi relativePathExpr)=> 
+              SLASHSi relativePathExpr
             | SLASHSi
+            | DBLSLASHSi relativePathExpr
             | relativePathExpr
             ;
 \end{verbatim}
-\caption[The \texttt{PathExpr} ambiguity solved]{The \texttt{PathExpr} ambiguity solved by means of a disambiguating semantic predicate}
+\caption[The \texttt{PathExpr} ambiguity solved]{The \texttt{PathExpr} ambiguity solved by means of a syntactic predicate}
 \label{fig:leadingSlash}
 \end{figure}
-
-\textbf{\LARGE //TODO:} As our the parser at the time being still have reserved keywords, there is no need to check if the following token is \verb!union! or \verb!intersect! etc. This is discussed further in chapter \ref{sect:summary:future_work}.
 
 \subsection{Reserved-function-names}
 W3C specifies the constraint like this (\cite{w3c00}, section A.1.2):
