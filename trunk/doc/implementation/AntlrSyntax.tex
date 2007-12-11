@@ -1,8 +1,8 @@
 \section{ANTLR Syntax Conformity}
 The W3C(\cite{w3c00}) and ANTLR(section \ref{sect:antlr:grammarSpec}) EBNF syntax differs in multiple ways. Some of the differences are trivial, e.g. the "defined by"-operator, which in W3C syntax is denoted with \verb!::=! and in ANTLR syntax as \verb!:!. Such differences can be fixed by means of a simple symbol replacement. However, the W3C metagrammar also embodies some operators such as the 'hat' and the 'dash' operators, described in section \ref{sect:ambiguousgrammar:ambigTerm}, of which there are no complete equivalents in the ANTLR metagrammar. In addition, the W3C grammar defines some producions as terminal and other as non-terminal, but this division does not hold for all implementations.
 
-\subsection{Seperating Parser and Lexer Rules}
-
+\subsection{Separating Parser and Lexer Rules}
+\label{sect:implementation:separate}
 The ANTLR parser generator can generate parsers and lexers from a single grammar file. The distinction between terminals and non-terminals is that terminals start with \emph{uppercase} letters, and non-terminals start with \emph{lowercase} letters. Which productions to go where is highly dependant on what strategy we chose to solve the ambigious terminals problem. E.g. by defining all the ambigious terminals as non-terminals we would have solution very close to a scan-while-parse scanner (section \ref{sect:ambiguousgrammar:scanWhileParse}). Because we chose the strategy of letting the parser control the lexer's state, we vere able define a division of terminals and non-terminals very similar to the one specified by W3C. The exception is \verb!QName!, which by W3C is defined as follows:
 \begin{verbatim}
 QName           ::= PrefixedName

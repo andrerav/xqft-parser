@@ -112,7 +112,7 @@ As we can see, neither of the problem terminals are ambigious when enclosed in h
 \end{figure}
 
 
-Figure \ref{fig:states} shows how we defined five distinct states. The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLitteral! and \verb!DirAttrValue!. We see that this holds, if we compare the states with the grammar in figure \ref{fig:ambigTerminalRef}, that the only legal alternatives in the \verb!IN_TAG! state are \verb!QName! and \verb!DirAttrList! of which neither can be a \verb!StringLitteral!. By the same account we can see that neither \verb!NCName!, \verb!IntegerLitteral! nor any of the keywords are legal alternatives in the \verb!IN_APOS_ATTRIBUTE!, \verb!IN_QUOT_ATTRIBUTE! or \verb!IN_ELEMENT! states. The lexer is in the \verb!DEFAULT! state when it is not in any of the other.
+Figure \ref{fig:states} shows how we defined five distinct states. The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLitteral! and \verb!DirAttrValue! \underline{\textbf{\LARGE //TODO:}} takk eXist. We see that this holds, if we compare the states with the grammar in figure \ref{fig:ambigTerminalRef}, that the only legal alternatives in the \verb!IN_TAG! state are \verb!QName! and \verb!DirAttrList! of which neither can be a \verb!StringLitteral!. By the same account we can see that neither \verb!NCName!, \verb!IntegerLitteral! nor any of the keywords are legal alternatives in the \verb!IN_APOS_ATTRIBUTE!, \verb!IN_QUOT_ATTRIBUTE! or \verb!IN_ELEMENT! states. The lexer is in the \verb!DEFAULT! state when it is not in any of the other.
 
 \subsection{State Transitions}
 \label{sect:rewriteGrammar:transitions}
