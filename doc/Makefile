@@ -15,4 +15,6 @@ flwor:
 	pdflatex flowrtree
 	pdflatex flowrtree
 	
-
+clean:
+	find . | grep Hoved | grep -v \.tex$$ | xargs rm
+	find . | grep ~$$ | xargs rm
