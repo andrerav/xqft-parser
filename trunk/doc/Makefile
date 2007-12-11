@@ -16,5 +16,5 @@ flwor:
 	pdflatex flowrtree
 	
 clean:
-	find . | grep Hoved | grep -v \.tex$$ | xargs rm
+	find . | grep Hoved | grep -v \.tex$$ | grep -v \.pdf$$ | xargs rm
 	find . | grep ~$$ | xargs rm
