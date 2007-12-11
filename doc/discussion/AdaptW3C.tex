@@ -5,7 +5,7 @@ In the begining of this project, very inexperienced parser developers as we were
 
 An alternative to insert and adapt would be to write a grammar from scratch while keeping the semantics specified by W3C. We belive that by doing so there is a risk of over simplifying, causing latent semantics such as operator precedence to be distorted, or in worst case lost alltogether. Another negative aspect with this approach is that it does not properly utilize the work allready done, making it time consuming compared to just adapting.
 
-Considering the non-terminal productions, there were not many productions that would have to be adapted to fit ANTLR semantics. The adjustments came in form of introducing predicates to accommodate for the extra-gramatical constraints. In addition we rewrote some productions to reduce required parser look-ahead. \underline{\textbf{\LARGE //TODO:}} Ble det mer?
+Considering the non-terminal productions, there were not many productions that would have to be adapted to fit ANTLR semantics. The adjustments came in form of introducing predicates to accommodate for the extra-gramatical constraints. In addition we rewrote some productions to reduce required parser look-ahead. \underline{\textbf{\LARGE //TODO:}} Ble det mer - LL(k<3)ish, reserved keywords?
 
 However, the terminal productions had to be completly rewritten. By choosing to write these rules from scratch in the first place, we would in all likelyhood have discovered the problem with the ambiguous terminals earlier, but at the cost of not having a parser up and running (albeit a very reduced one) until the grammar was completly finished. This would have prohibited us from working with e.g. the scoping system in parallell with the grammar.
 
