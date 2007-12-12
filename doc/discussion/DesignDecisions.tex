@@ -1,6 +1,7 @@
 \section{Design Decisions}
 \label{sect:discussion:designDecisions}
 
+\subsection{Parser Controlled Lexer}
 Of the alternatives in section \ref{sect:ambiguousgrammar:ambigTerm}, we ended up, as previously mentioned, on the parser controlled state driven lexer alternative. This strategy depends upon the lexer not generating any tokens before they are needed by the parser, dealt with by our implementation of \verb!UnbufferedCommonTokenStream!. Making the lexer emit one and one token instead of processing the input as a whole, most probably leads to a slightly prolonged execution time as the runtime controll will be shunted between the parser and lexer multiple times per query parsed. Yet we do not belive that this will cause too much problems as input queries are approximated to be about one hundred lines long.\underline{\textbf{\LARGE //TODO:}} eXist (ref) har ogs\aa~ parser kontrollert lexer.
 
 The option would be to implement a pure state driven lexer. This would let the lexer operate completely autonomous, though at the cost of a much more complex control structure than is the case of the parser controlled strategy. All in all this strategy would probably not lead to any significant performance gain, but rather the oposite. In addition, as mentioned in section \ref{sect:amiguousgrammar:stateDriven}, we made a prototype with this strategy for a subset of XQuery, and decided that this would be a quite complicated task for the full version of the grammar -- a task that would result in a greater deal of time being consumed by implementing and bug-fixing.
@@ -8,3 +9,13 @@ The option would be to implement a pure state driven lexer. This would let the l
 Our grammar, by being dependant on our custom token stream, would render gUnit(section \ref{sect:method:gUnit}) and ANTLRWorks(section \ref{sect:method:debugging}) a greatly diminished utility value. This is most probably because these tools both depend on their own proprietary token stream implementation. The reducing of the unit testing capabilities were not a big loss however, as they were mended by the manual covrage tests, which in fact proved to be a simpler and more thorough way of testing our parser. 
 
 The deprication of ANTLRWorks is not such a great loss either; because of its instability, it never was the grammar editor of choice. Furthermore, the drawing of syntax diagrams -- a handy way of resolving non-determinisms in the parser -- is done during compile time, and is therefore still functional. And finally, by tricking the application with a simple hack, it can still parse input and draw the corresponding parsing tree, though not in a step-by-step manner.
+
+\subsection{State Driven Lexer}
+
+\underline{\textbf{\LARGE //TODO:}}
+
+lage lexer for haand, kan bli mindre kompleks evt -----v
+
+lage flere lexere, og skifte mellom disse naar vi naa skifter state (island grammars)
+
+\underline{\textbf{\LARGE //ODOT:}}
