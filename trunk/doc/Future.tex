@@ -2,27 +2,6 @@
 \label{sect:summary:future_work}
 \underline{\textbf{\LARGE //ODOT:}} tekst.... innledning..
 
-\input{future/TypeCheckScope}
-
-
-\section{Improving the Lexer}
-
-
-
-\subsection{Lexer Error Handling}
-\label{sect:future_work:lexer_error_handling}
-As noted in sections \ref{sect:error_handling:syntax_errors} and
-\ref{sec:impl:errorhandling}, the \verb!nextToken()! method in the lexer base class
-would ``hijack'' lexical exceptions and handle them by printing an error message
-to stderr and then attempting to recover from the error by simply consuming the
-offending character and ignoring it in the following construction of tokens. It is 
-not immediately appareant, but the \verb!nextToken()! method can not be overridden and
-forced to throw the exception onwards, due to the method signature itself which
-does not allow exceptions to be thrown. 
-
-However, one possible solution to this problem could be to override the \verb!nextToken()! method and employ the observer design pattern to allow a simple and decoupled way of flagging an exception to the parser.
-
-
 
 \section{Tree Parser and Transformation}
 \underline{\textbf{\LARGE //TODO: Andreas?}}
@@ -70,3 +49,21 @@ bedre skille NCName og keywords i lexeren.
 	\end{itemize}
 
 \underline{\textbf{\LARGE //ODOT:}}
+
+
+\section{Improving the Lexer}
+
+
+
+\subsection{Lexer Error Handling}
+\label{sect:future_work:lexer_error_handling}
+As noted in sections \ref{sect:error_handling:syntax_errors} and
+\ref{sec:impl:errorhandling}, the \verb!nextToken()! method in the lexer base class
+would ``hijack'' lexical exceptions and handle them by printing an error message
+to stderr and then attempting to recover from the error by simply consuming the
+offending character and ignoring it in the following construction of tokens. It is 
+not immediately appareant, but the \verb!nextToken()! method can not be overridden and
+forced to throw the exception onwards, due to the method signature itself which
+does not allow exceptions to be thrown. 
+
+However, one possible solution to this problem could be to override the \verb!nextToken()! method and employ the observer design pattern to allow a simple and decoupled way of flagging an exception to the parser.
