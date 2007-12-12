@@ -71,18 +71,52 @@ rule to compensate for the lack of support for occurence indicators. The LL
 example stands out as clear and readable, even more so than the W3C
 grammar specification.
 
+In the case of JFlex/CUP, building abstract syntax trees is a process that must
+be done manually by adding action code snippets to the grammar. This is
+unfortunate for several reasons - it dilutes the grammar and decreases
+readability and clarity.
+
 
 \subsubsection{JavaCC}
 JavaCC could have been a viable alternative as it produces LL(k) parsers,
-however compared to Antlr its grammar specification syntax deviated so much
-from the W3C EBNF syntax, that grammar would have had to be extensively
-rewritten.
+however compared to Antlr its grammar specification syntax deviated more
+from the W3C EBNF syntax, meaning that the grammar would have had to be
+extensively rewritten. However, JavaCC supports the same occurence indicators
+used in the XQuery grammar specification. Figure \ref{code:parsers:javacc} shows
+a grammar fragment translated to JavaCC syntax, compare to the original grammar
+in figure \ref{code:parsers:w3c}.
+
+\begin{figure}[h!]
+\begin{verbatim}
+void letClause() :
+{ }
+{
+    <LET> varBinding() (COMMA varBinding())*
+} 
+
+void varBinding()
+{ }
+{
+    (<DOLLAR> varName() typeDeclaration()? | 
+     <SCORE> <DOLLAR> varName() )
+     <ASSIGN> exprSingle()
+}
+\end{verbatim}
+\caption{ JavaCC reference grammar example }
+\label{code:parsers:javacc}
+\end{figure}
+
+For AST construction, JavaCC requires the use of preprocessor tool known as  
+JJTree. This tool will parse the grammar and insert tree building actions where
+appropriate. 
 
 \subsubsection{Antlr}
 ANTLR is a renowned tool for parser generation, and can generate LL(*) parsers.
 Additionally, Antlr accepts a grammar specification syntactically very close to
 the EBNF used by the W3C. This is the parser generater chosen for our project,
 based on the criteria outlined in this section.
+
+The details of this parser generator is outlined in chapter \ref{sect:antlr}.
 
 \section{Debugging}
 \label{sect:method:debugging}
