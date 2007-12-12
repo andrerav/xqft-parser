@@ -37,11 +37,13 @@ Our parser contains some bugs/defects that we know of, but because of lack of ti
 
 \underline{\textbf{\LARGE //TODO: Mads}}
 \begin{itemize}
-\item textbf{State Transitions} -- Our state driven lexer depends upon the parser telling it which state it is in before it generates a token. This means that in cases where the parser uses a look-ahead big enough to make the lexer cross a imaginary state border, the lexer may be in the wrong state according to the input stream (Remember, the parser is allways \emph{behind} the lexer, and "moves" \emph{after} looking ahead). ANTLR generates a parser using as small a look-ahead necessary, but in some cases this is not enough, making e.g. queries as \verb!<a>{ns:name()}</a>! fail. However, the corresponding query without the namespace prefix of the function call, or a prefixed function call outside of a \verb!{ }! does not fail. Moving the parser closer to LL(1), as mentioned in \ref{sect:future:improvements}, will solve this bug.
+\item \textbf{Late State Transitions} -- Our state driven lexer depends upon the parser telling it which state it is in before it generates a token. This means that in cases where the parser uses a look-ahead big enough to make the lexer cross a "state border", the lexer may be in the wrong state according to the input stream (remember, the parser is always \emph{behind} the lexer, and "moves" \emph{after} looking ahead). ANTLR generates a parser using as small a look-ahead necessary, but in some cases this is not enough, making e.g. queries as \verb!<a>{ns:name()}</a>! fail. However, the corresponding query without the namespace prefix, or a prefixed function call outside of a \verb!{ }! does not fail. Moving the parser closer to LL(1), as mentioned in \ref{sect:future:improvements}, will solve this bug.
 
-\item tillater WS i qNamez
+\item \textbf{Incorrect QNames} -- The parser allows whitespace between the prefix and the colon sign, and between the colon sign and the localname in XML qualified names. This can be solved by turning the non-terminal rule \verb!qName! into a terminal production.
 
-\item tillater WS foerst i elementtagz
+\item \textbf{Whitespace in Tags} -- The parser allows whitespace between the initial \verb!<! of a tag and the element name. This can be solved by introducing a new terminal production for the start-of-tag-sign (to separate it from the less-than sign) like this: \verb!TagStart : LTSi QName!, and letting this production emit subtokens (section \ref{sect:implementation:emittingMoreTokens}).
+
+
 \item \textbf{XML tag check} sjekke navn ved noesting av xml-tagger
 \item tillater multiple FTMatchOptions (lowercase uppercase case ins.)
 \item reserved keywords - i hennhold til spesifikasjonen
