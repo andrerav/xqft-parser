@@ -4,6 +4,15 @@ Instead it was decided to use tools for compiler and parser construction to
 generate a parser from the XQuery 1.0 and XPath 2.0 grammar specifications
 developed by the W3C.
 
+Some important requirements were taken into account when evaluating these
+alternatives. Specifically, the generator must:
+\begin{itemize}
+  \item generate Java source code for the parser
+  \item be able to generate LL(k) parser
+  \item be licensed liberally, either GPL or BSD, or an equivalent license
+  approved by OSI
+\end{itemize}
+
 \subsection{Evaluated alternatives}
 \label{sect:method:alternatives}
 \subsubsection{JFlex/CUP}
@@ -13,7 +22,55 @@ generate a complete parser with a separate lexical analyzer.
 
 JFlex and CUP produces only LALR parsers, and since the W3C has specified an
 LL(1) grammar for XQuery 1.0 and XPath 2.0, the combination of JFlex and CUP was
-rejected from this project.
+rejected from this project. Additionally, some basic occurence operators such as
+*,+ and ? is not supported by CUP.
+
+In the light of this decision, it is important to note that a large amount of
+work can be avoided by rejecting a LALR parser generator solution for this
+project. Consider the examples in figure \ref{code:parsers:lalr} and
+\ref{code:parsers:ll} and compare it to the reference grammar specification in
+figure \ref{code:parsers:w3c}.
+
+\begin{figure}[h!]
+\begin{verbatim}
+LetClause : "let $" LetBindings_
+LetBindings_ : VarName OptTypeDeclaration_ ":=" ExprSingle
+        | VarName OptTypeDeclaration_ ":=" ExprSingle
+        "," "$" LetBindings_
+\end{verbatim}
+\caption[LALR grammar example]{LALR grammar example from the Pathfinder project
+(see section \ref{sect:soa:pathfinder})}
+\label{code:parsers:lalr}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{verbatim}
+letClause : LET varBinding (COMMA varBinding)*
+
+varBinding : (DOLLAR varName typeDeclaration? | 
+             SCORE DOLLAR varName )
+             ASSIGN exprSingle
+\end{verbatim}
+\caption[LL grammar example]{LL grammar example, actual code used in this project}
+\label{code:parsers:ll}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{verbatim}
+LetClause ::=  (("let" "$" VarName TypeDeclaration?) 
+ 				| ("let" "score" "$"  VarName)) ":=" ExprSingle ("," 
+ 				(("$" VarName TypeDeclaration?) 
+ 				| FTScoreVar) ":=" ExprSingle)*
+\end{verbatim}
+\caption{ W3C reference grammar example }
+\label{code:parsers:w3c}
+\end{figure}
+
+Obviously, the LALR-grammar has suffered an extensive rewrite into a recursive
+rule to compensate for the lack of support for occurence indicators. The LL
+example stands out as clear and readable, even more so than the W3C
+grammar specification.
+
 
 \subsubsection{JavaCC}
 JavaCC could have been a viable alternative as it produces LL(k) parsers,
@@ -32,6 +89,14 @@ based on the criteria outlined in this section.
 There are several approaches to debugging. Antlrworks \cite{antlrwrks00} is a
 simple tool for writing, testing and debugging Antlr grammars. The debugging
 interface is useful in that it draws a realtime step-by-step parse tree as the
-input is being parsed, as well as displaying a list of parser events. ANTLRWorks also helps eliminate grammar nondeterminisms by drawing the syntax diagram associated with a grammar and highlighting nondeterministic paths. A big drawback, though, is as the grammar grows bigger, the application tends to become unstable.
+input is being parsed, as well as displaying a list of parser events.
+ANTLRWorks also helps eliminate grammar nondeterminisms by drawing the syntax
+diagram associated with a grammar and highlighting nondeterministic paths. A
+big drawback, though, is as the grammar grows bigger, the application tends to
+become unstable.    
 
-When working properly, ANTLRWorks is a great tool for debuging the parser, but no so much for the lexer. It will show the tokens returned to the parser, but no information or decision path indicating the reason for returning just that token. A more appropriate tool for such a task would be the standard debuging environment in Eclipse (\cite{eclipse}).
+When working properly, ANTLRWorks is a great tool for debuging the parser, but
+no so much for the lexer. It will show the tokens returned to the parser, but
+no information or decision path indicating the reason for returning just that
+token. A more appropriate tool for such a task would be the standard debuging
+environment in Eclipse (\cite{eclipse}).    
