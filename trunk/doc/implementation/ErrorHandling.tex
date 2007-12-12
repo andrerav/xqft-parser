@@ -1,3 +1,4 @@
+% Implementation: error handling
 \section{Error handling}
 \label{sec:impl:errorhandling}
 \begin{figure}[!h]
@@ -42,3 +43,8 @@ handling errors and instead throwing the exceptions upwards:
     }
 }
 \end{verbatim}
+
+However, some exceptions thrown by the lexer were impossible to handle - these
+were handled by the \verb!nextToken()! method in the \verb!Lexer! superclass.
+This issue has been documented in section
+\ref{sect:error_handling:syntax_errors}.
