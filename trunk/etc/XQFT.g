@@ -4,7 +4,7 @@ options {
 //filter=true;
    //k = 2;
     output=AST;
-    ASTLabelType=XQFTTree;
+    //ASTLabelType=XQFTTree;
 } 
 tokens{
 ALL;
@@ -174,11 +174,13 @@ AST_DIRELEMCONTENT;
 }
 
 @parser::header {
-	package no.ntnu.xqft.parse;
+	//package no.ntnu.xqft.parse;
+	import extra.*;
 }
 
 @lexer::header {
-	package no.ntnu.xqft.parse;	
+	//package no.ntnu.xqft.parse;	
+	import extra.*;
 }
 
 @parser::members {
@@ -186,7 +188,7 @@ AST_DIRELEMCONTENT;
 	/* Root scope */
 	//Scope currentScope = new Scope();	   // @init-ting her ogsaa
 	XQFTLexer lexer;
-/*
+
 	public void setTokenStream(TokenStream input) {
 				String inputz =  "<html> \n" +                                                   //1
                         "{ \n"+                                                         //2
@@ -211,12 +213,12 @@ AST_DIRELEMCONTENT;
 		tokenz.setTokenSource(lexer);
 		super.setTokenStream(tokenz);
  	
-	}*/
+	}
 	public void setLexer(XQFTLexer lex)
 	{
 		this.lexer=lex;
 	}
-
+/*
     protected void mismatch(IntStream input, int ttype, BitSet follow)
         throws RecognitionException
     {
@@ -228,15 +230,15 @@ AST_DIRELEMCONTENT;
     {
         throw e;
     }
-
+*/
 }
-
+/*
 @rulecatch {
     catch (RecognitionException e) {
         throw e;
     }
 }
-
+*/
 @lexer::members {
     
     public int state = 0;
