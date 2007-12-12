@@ -1,0 +1,22 @@
+\section{ANTLR}
+Rett valg?
+Vi kjipa med CUP + JFlexxx, hva skjedde med \aa~skrive for h\aa nd?
+Har ikke peiling p\aa~ CUP og JFlexxx, AST mye lettere med ANTLR? Mindre
+omskriving syntaktisk? Har de predikater der? Kunne vi l\o st statetingen p\aa~
+en annen m\aa te med CUP og Flexz?   
+
+In this project we used ANTLR to generate a parser from a grammar
+specification.As detailed in section \ref{sect:method:alternatives}, we
+evaluated several alternatives before deciding to use ANTLR. One argument for
+choosing a parser generator rather than rewriting the parser from scratch was to
+save time. In particular, considering the ambiguities in the grammar
+specification, it seems obvious that writing a parser from scratch would
+have required an order of magnitude more time. Additionally, the quality of the
+resulting parser would most likely have been questionable at best. However
+we would have had more detailed control over the code, which when seen from a
+more distant point of view, could have been benefitial with regards to
+maintanence, documentation with javadoc, and quality assurance.
+
+A major design decision was made when we decided to use a LL(k) parser rather
+than a LALR parser. This decision was discussed in section 
+\ref{sect:method:alternatives}.
