@@ -41,7 +41,7 @@ Covrage er ikke h\o yere mest sannsynlig p\aa~grunn av vi har reserved keywords,
 
 AST'en som blir produsert vs syntakstre
 
-Generelle resultat, bra/d\aa rlig (AST, typesjekking (bedre \aa~gj\o re p\aa~AST'en),
+Generelle resultat, bra/d\aa rlig (AST) \#\# typesjekking (bedre \aa~gj\o re p\aa~AST'en) -> putt i egen section i discussion -------v
 symtabs (bedre \aa~gj\o re p\aa~ AST'en))
 
 Gjorde vi riktige valg? Ble ting som forventet? Hva hadde skjedd om vi brukte alternativ m\aa te? 
@@ -63,7 +63,7 @@ Hvorfor skrudde vi av default error handling? Var dette bra? Hva var kjipt da? K
 du kan evt dra inn det du har fra future / improvements, jeg lyst til \aa~ slakte det kapittelet
 
 \textbf{sakset fra future work: litt omskriving n\oe dvendig?}
-\subsection{Lexer Error Handling}
+\subsubsection{Lexer Error Handling}
 \label{sect:future_work:lexer_error_handling}
 As noted in sections \ref{sect:error_handling:syntax_errors} and
 \ref{sec:impl:errorhandling}, the \verb!nextToken()! method in the lexer base class
@@ -83,9 +83,9 @@ However, one possible solution to this problem could be to override the \verb!ne
 
 \section{Scope andz Typecheckz}
 
-\underline{\textbf{\LARGE //TODO: Andreas}} Saksa det her fra future work... kan det bli mer diskusjon i stedet?
+\underline{\textbf{\LARGE //TODO: Andreas}} Saksa det her fra future work... kan det bli mer diskusjon i stedet? Evt ogs\aa~dele det opp i to sections...
 
-\section{Type Checking}
+\subsubsection{Type Checking}
 Currently the parser will not perform type checking on the parsed queries. This
 is an essential feature and will be necessary to implement for the parser to be
 applicable in any realistic setting. A type checking system with proper type
@@ -93,7 +93,7 @@ inference and synthesis could be a complex feature to implement in a language
 such as XQuery, and might require considerable effort, especially in quality
 assurance. 
 
-\section{Scoping and Symbol Tables on AST}
+\subsubsection{Scoping and Symbol Tables on AST}
 Currently the scoping and symbol tables are being used directly in the grammar -
 that is, during parse time. It would be benefitial to move this into being
 performed in run time, and combine with type checking functionality.
