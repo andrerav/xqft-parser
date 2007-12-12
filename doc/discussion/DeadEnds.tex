@@ -4,27 +4,4 @@ During the course of this project some misconceptions of the ANTLR grammar speci
 
 There are a great deal of syntactic and semantic differences between ANTLR v3 and its earlier versions. Online resources for v3 are quite scarce -- at least compared to its predecessors --, and incited by a lack of such, we in many cases wrongfully assumed that old tutorials and guides found would still hold value. This initially lead to a lot of hunting for the source behind compiler errors and warnings, especially in the case of seperating terminal productions from the non-terminal ones. This and other problems were settled, however, when we got hold of the book with the fitting name of "the Definitive ANTLR Reference"\cite{definitiveAntlr}.
 
-
-
-\underline{\textbf{\LARGE //TODO:}} Kommer til \aa~ skrive om dette til en generell diskusjon, ikke med oppramsing av dumme ting..
-
-
-
-\subsection{Seperation of terminals from non-terminals }
-
-In the grammar specified by W3C the productions, both terminal and non-terminal, all start with uppercase letters. Initially this caused some confusion because this grammar generated a very big lexer and a very small and non-functional parser. This came across because ANTLR v3, unlike earlier ANTLR versions, separates lexer from parser productions precisely by case of the first letter in the name (section \ref{sect:implementation:separate}). And at this time we wrongfully assumed, incited by the lack of resources about newest version of the parser generator, that v3 in this matter employed the same syntax as its predecessors.
-
-Enter the ANTLR reference book\cite{definitiveAntlr}, and the pieces started falling together. After a while of flipping rules between the parser and lexer and hunting for the source of compiler errors, we finally gained some perspective of the grammar resulting in the discovery of the ambiguous terminals problem(section \ref{sect:ambiguousgrammar:ambigTerm}) and the correct terminal/non-terminal division.
-
-\subsection{Rewriting the 'dash' operator}
-
-For some time we misinterpreted the W3C 'dash' operator as just a way of restricting allowable characters, which in a way is correct, but as mentioned in section \ref{sect:implementation:dashOperator} the underlying semantics of constructs with this symbol is to prevent a production from being greedy. This mistake lead us to first treat the lack of such an operator in the ANTLR metagrammar by introducing validating semantic predicates. These predicates would of course issue a semantic error when failed -- not return control to an overlying rule.
-
-Our second attempt to rewrite the operator was to rewrite the different cases of the "dash" operator to rules inwhich the illegal characters were removed. This was done by creating a production \verb!CleanChar! which consisted of the characters sheared by all productions of interest, and then in a case by case fashion constructing new sets consisting of this new production and the missing allowed characters as alternatives. Although a better solution than the one with the validating semantic predicates, it did not support cases where the operator is used to disallow sequences of characters, leading us to understand the concept of non-greedy rules.
-
-\subsection{Keywords and NCName}
-During our compiler error source hunt, we converted all inline occurences of tokens into explicit token declarations within a \verb!@token{! header. ANTLR gives these tokens rank over any other production, making it impossible for any other terminal to contain a character sequence that match such declarations leading us to change them into ordinary lexer productions.
-
-After the introduction of the \verb!TOKENSWITCH! construct
-
-\underline{\textbf{\LARGE //TODO: Noe mer?}}
+In the case of understanding the different types of predicates ANTLR provides, a lot of testing and inspection of the generated source code followed by reading about them in the book did the trick. This made us realize that allmost none of the dash operators could be rewritten with validating semantic predicates, as we first assumed. Only by getting to know the specification, getting an overview and understanding why it is expressed as it is, and not in a production for production fashion replace them with something that would fail or pass in the same cases as the original, did we solve such problems.
