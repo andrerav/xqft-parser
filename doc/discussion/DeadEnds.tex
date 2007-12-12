@@ -1,8 +1,14 @@
 \section{Lessons Learned}
 \label{sect:discussion:deadEnds}
+During the course of this project some misconceptions of the ANTLR grammar specification semantics and the W3C XQuery specification semantics have lead to erroneous implementation of various aspects of the parser. These errors have later been corrected and some lessons have been learned.
+
+There are a great deal of syntactic and semantic differences between ANTLR v3 and its earlier versions. Online resources for v3 are quite scarce -- at least compared to its predecessors --, and incited by a lack of such, we in many cases wrongfully assumed that old tutorials and guides found would still hold value. This initially lead to a lot of hunting for the source behind compiler errors and warnings, especially in the case of seperating terminal productions from the non-terminal ones. This and other problems were settled, however, when we got hold of the book with the fitting name of "the Definitive ANTLR Reference"\cite{definitiveAntlr}.
+
+
+
 \underline{\textbf{\LARGE //TODO:}} Kommer til \aa~ skrive om dette til en generell diskusjon, ikke med oppramsing av dumme ting..
 
-During the course of this project some misconceptions of the ANTLR grammar specification semantics and the W3C XQuery specification semantics have lead to erroneous implementation of various aspects of the parser. As the lessons were learned, these errors have later been corrected and will be accounted for in the following sections.
+
 
 \subsection{Seperation of terminals from non-terminals }
 
