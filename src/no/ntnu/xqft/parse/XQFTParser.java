@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2007-12-11 15:19:43
+// $ANTLR 3.0.1 etc/XQFT.g 2007-12-12 21:22:04
 
 	package no.ntnu.xqft.parse;
 
@@ -318,7 +318,8 @@ public class XQFTParser extends Parser {
     		tokenz.setTokenSource(lexer);
     		super.setTokenStream(tokenz);
      	
-    	}*/
+    	}
+    */
     	public void setLexer(XQFTLexer lex)
     	{
     		this.lexer=lex;
@@ -344,7 +345,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start module
-    // etc/XQFT.g:295:1: module : ( versionDecl )? ( libraryModule | mainModule ) -> ^( AST_MODULE ( versionDecl )? ( libraryModule )? ( mainModule )? ) ;
+    // etc/XQFT.g:296:1: module : ( versionDecl )? ( libraryModule | mainModule ) -> ^( AST_MODULE ( versionDecl )? ( libraryModule )? ( mainModule )? ) ;
     public final module_return module() throws RecognitionException {
         module_return retval = new module_return();
         retval.start = input.LT(1);
@@ -362,10 +363,10 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_versionDecl=new RewriteRuleSubtreeStream(adaptor,"rule versionDecl");
         RewriteRuleSubtreeStream stream_mainModule=new RewriteRuleSubtreeStream(adaptor,"rule mainModule");
         try {
-            // etc/XQFT.g:295:32: ( ( versionDecl )? ( libraryModule | mainModule ) -> ^( AST_MODULE ( versionDecl )? ( libraryModule )? ( mainModule )? ) )
-            // etc/XQFT.g:295:34: ( versionDecl )? ( libraryModule | mainModule )
+            // etc/XQFT.g:296:32: ( ( versionDecl )? ( libraryModule | mainModule ) -> ^( AST_MODULE ( versionDecl )? ( libraryModule )? ( mainModule )? ) )
+            // etc/XQFT.g:296:34: ( versionDecl )? ( libraryModule | mainModule )
             {
-            // etc/XQFT.g:295:34: ( versionDecl )?
+            // etc/XQFT.g:296:34: ( versionDecl )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -374,7 +375,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt1) {
                 case 1 :
-                    // etc/XQFT.g:295:34: versionDecl
+                    // etc/XQFT.g:296:34: versionDecl
                     {
                     pushFollow(FOLLOW_versionDecl_in_module595);
                     versionDecl1=versionDecl();
@@ -387,7 +388,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            // etc/XQFT.g:295:47: ( libraryModule | mainModule )
+            // etc/XQFT.g:296:47: ( libraryModule | mainModule )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -400,13 +401,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("295:47: ( libraryModule | mainModule )", 2, 0, input);
+                    new NoViableAltException("296:47: ( libraryModule | mainModule )", 2, 0, input);
 
                 throw nvae;
             }
             switch (alt2) {
                 case 1 :
-                    // etc/XQFT.g:295:48: libraryModule
+                    // etc/XQFT.g:296:48: libraryModule
                     {
                     pushFollow(FOLLOW_libraryModule_in_module599);
                     libraryModule2=libraryModule();
@@ -417,7 +418,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:295:64: mainModule
+                    // etc/XQFT.g:296:64: mainModule
                     {
                     pushFollow(FOLLOW_mainModule_in_module603);
                     mainModule3=mainModule();
@@ -442,26 +443,26 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 296:41: -> ^( AST_MODULE ( versionDecl )? ( libraryModule )? ( mainModule )? )
+            // 297:41: -> ^( AST_MODULE ( versionDecl )? ( libraryModule )? ( mainModule )? )
             {
-                // etc/XQFT.g:296:44: ^( AST_MODULE ( versionDecl )? ( libraryModule )? ( mainModule )? )
+                // etc/XQFT.g:297:44: ^( AST_MODULE ( versionDecl )? ( libraryModule )? ( mainModule )? )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_MODULE, "AST_MODULE"), root_1);
 
-                // etc/XQFT.g:296:57: ( versionDecl )?
+                // etc/XQFT.g:297:57: ( versionDecl )?
                 if ( stream_versionDecl.hasNext() ) {
                     adaptor.addChild(root_1, stream_versionDecl.next());
 
                 }
                 stream_versionDecl.reset();
-                // etc/XQFT.g:296:70: ( libraryModule )?
+                // etc/XQFT.g:297:70: ( libraryModule )?
                 if ( stream_libraryModule.hasNext() ) {
                     adaptor.addChild(root_1, stream_libraryModule.next());
 
                 }
                 stream_libraryModule.reset();
-                // etc/XQFT.g:296:85: ( mainModule )?
+                // etc/XQFT.g:297:85: ( mainModule )?
                 if ( stream_mainModule.hasNext() ) {
                     adaptor.addChild(root_1, stream_mainModule.next());
 
@@ -500,7 +501,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start versionDecl
-    // etc/XQFT.g:298:2: versionDecl : XQUERY VERSION StringLiteral ( ENCODING StringLiteral )? separator ;
+    // etc/XQFT.g:299:2: versionDecl : XQUERY VERSION StringLiteral ( ENCODING StringLiteral )? separator ;
     public final versionDecl_return versionDecl() throws RecognitionException {
         versionDecl_return retval = new versionDecl_return();
         retval.start = input.LT(1);
@@ -522,8 +523,8 @@ public class XQFTParser extends Parser {
         XQFTTree StringLiteral8_tree=null;
 
         try {
-            // etc/XQFT.g:298:33: ( XQUERY VERSION StringLiteral ( ENCODING StringLiteral )? separator )
-            // etc/XQFT.g:298:35: XQUERY VERSION StringLiteral ( ENCODING StringLiteral )? separator
+            // etc/XQFT.g:299:33: ( XQUERY VERSION StringLiteral ( ENCODING StringLiteral )? separator )
+            // etc/XQFT.g:299:35: XQUERY VERSION StringLiteral ( ENCODING StringLiteral )? separator
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -545,7 +546,7 @@ public class XQFTParser extends Parser {
             StringLiteral6_tree = (XQFTTree)adaptor.create(StringLiteral6);
             adaptor.addChild(root_0, StringLiteral6_tree);
             }
-            // etc/XQFT.g:298:64: ( ENCODING StringLiteral )?
+            // etc/XQFT.g:299:64: ( ENCODING StringLiteral )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -554,7 +555,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt3) {
                 case 1 :
-                    // etc/XQFT.g:298:65: ENCODING StringLiteral
+                    // etc/XQFT.g:299:65: ENCODING StringLiteral
                     {
                     ENCODING7=(Token)input.LT(1);
                     match(input,ENCODING,FOLLOW_ENCODING_in_versionDecl694); if (failed) return retval;
@@ -605,7 +606,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start separator
-    // etc/XQFT.g:299:3: separator : SEMICOLONSi ;
+    // etc/XQFT.g:300:3: separator : SEMICOLONSi ;
     public final separator_return separator() throws RecognitionException {
         separator_return retval = new separator_return();
         retval.start = input.LT(1);
@@ -617,8 +618,8 @@ public class XQFTParser extends Parser {
         XQFTTree SEMICOLONSi10_tree=null;
 
         try {
-            // etc/XQFT.g:299:34: ( SEMICOLONSi )
-            // etc/XQFT.g:299:36: SEMICOLONSi
+            // etc/XQFT.g:300:34: ( SEMICOLONSi )
+            // etc/XQFT.g:300:36: SEMICOLONSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -654,7 +655,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start libraryModule
-    // etc/XQFT.g:301:2: libraryModule : moduleDecl prolog ;
+    // etc/XQFT.g:302:2: libraryModule : moduleDecl prolog ;
     public final libraryModule_return libraryModule() throws RecognitionException {
         libraryModule_return retval = new libraryModule_return();
         retval.start = input.LT(1);
@@ -668,8 +669,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:301:33: ( moduleDecl prolog )
-            // etc/XQFT.g:301:35: moduleDecl prolog
+            // etc/XQFT.g:302:33: ( moduleDecl prolog )
+            // etc/XQFT.g:302:35: moduleDecl prolog
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -709,7 +710,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start moduleDecl
-    // etc/XQFT.g:302:3: moduleDecl : MODULE NAMESPACE NCName EQSi uriLiteral separator ;
+    // etc/XQFT.g:303:3: moduleDecl : MODULE NAMESPACE NCName EQSi uriLiteral separator ;
     public final moduleDecl_return moduleDecl() throws RecognitionException {
         moduleDecl_return retval = new moduleDecl_return();
         retval.start = input.LT(1);
@@ -731,8 +732,8 @@ public class XQFTParser extends Parser {
         XQFTTree EQSi16_tree=null;
 
         try {
-            // etc/XQFT.g:302:34: ( MODULE NAMESPACE NCName EQSi uriLiteral separator )
-            // etc/XQFT.g:302:36: MODULE NAMESPACE NCName EQSi uriLiteral separator
+            // etc/XQFT.g:303:34: ( MODULE NAMESPACE NCName EQSi uriLiteral separator )
+            // etc/XQFT.g:303:36: MODULE NAMESPACE NCName EQSi uriLiteral separator
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -796,7 +797,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start uriLiteral
-    // etc/XQFT.g:303:4: uriLiteral : StringLiteral ;
+    // etc/XQFT.g:304:4: uriLiteral : StringLiteral ;
     public final uriLiteral_return uriLiteral() throws RecognitionException {
         uriLiteral_return retval = new uriLiteral_return();
         retval.start = input.LT(1);
@@ -808,8 +809,8 @@ public class XQFTParser extends Parser {
         XQFTTree StringLiteral19_tree=null;
 
         try {
-            // etc/XQFT.g:303:35: ( StringLiteral )
-            // etc/XQFT.g:303:37: StringLiteral
+            // etc/XQFT.g:304:35: ( StringLiteral )
+            // etc/XQFT.g:304:37: StringLiteral
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -845,7 +846,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start mainModule
-    // etc/XQFT.g:306:2: mainModule : prolog queryBody ;
+    // etc/XQFT.g:307:2: mainModule : prolog queryBody ;
     public final mainModule_return mainModule() throws RecognitionException {
         mainModule_return retval = new mainModule_return();
         retval.start = input.LT(1);
@@ -859,8 +860,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:306:33: ( prolog queryBody )
-            // etc/XQFT.g:306:35: prolog queryBody
+            // etc/XQFT.g:307:33: ( prolog queryBody )
+            // etc/XQFT.g:307:35: prolog queryBody
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -900,7 +901,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start queryBody
-    // etc/XQFT.g:308:3: queryBody : expr ;
+    // etc/XQFT.g:309:3: queryBody : expr ;
     public final queryBody_return queryBody() throws RecognitionException {
         queryBody_return retval = new queryBody_return();
         retval.start = input.LT(1);
@@ -912,8 +913,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:308:34: ( expr )
-            // etc/XQFT.g:308:36: expr
+            // etc/XQFT.g:309:34: ( expr )
+            // etc/XQFT.g:309:36: expr
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -948,7 +949,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start expr
-    // etc/XQFT.g:309:4: expr : exprSingle ( COMMASi exprSingle )* -> ( exprSingle )+ ;
+    // etc/XQFT.g:310:4: expr : exprSingle ( COMMASi exprSingle )* -> ( exprSingle )+ ;
     public final expr_return expr() throws RecognitionException {
         expr_return retval = new expr_return();
         retval.start = input.LT(1);
@@ -965,15 +966,15 @@ public class XQFTParser extends Parser {
         RewriteRuleTokenStream stream_COMMASi=new RewriteRuleTokenStream(adaptor,"token COMMASi");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
-            // etc/XQFT.g:309:35: ( exprSingle ( COMMASi exprSingle )* -> ( exprSingle )+ )
-            // etc/XQFT.g:309:37: exprSingle ( COMMASi exprSingle )*
+            // etc/XQFT.g:310:35: ( exprSingle ( COMMASi exprSingle )* -> ( exprSingle )+ )
+            // etc/XQFT.g:310:37: exprSingle ( COMMASi exprSingle )*
             {
             pushFollow(FOLLOW_exprSingle_in_expr930);
             exprSingle23=exprSingle();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle23.getTree());
-            // etc/XQFT.g:309:48: ( COMMASi exprSingle )*
+            // etc/XQFT.g:310:48: ( COMMASi exprSingle )*
             loop4:
             do {
                 int alt4=2;
@@ -986,7 +987,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt4) {
             	case 1 :
-            	    // etc/XQFT.g:309:49: COMMASi exprSingle
+            	    // etc/XQFT.g:310:49: COMMASi exprSingle
             	    {
             	    COMMASi24=(Token)input.LT(1);
             	    match(input,COMMASi,FOLLOW_COMMASi_in_expr933); if (failed) return retval;
@@ -1018,7 +1019,7 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 310:57: -> ( exprSingle )+
+            // 311:57: -> ( exprSingle )+
             {
                 if ( !(stream_exprSingle.hasNext()) ) {
                     throw new RewriteEarlyExitException();
@@ -1058,7 +1059,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start prolog
-    // etc/XQFT.g:316:1: prolog : ( ( defaultNamespaceDecl | setter | namespaceDecl | importStmt ) separator )* ( ( varDecl | functionDecl | optionDecl | ftOptionDecl ) separator )* ;
+    // etc/XQFT.g:317:1: prolog : ( ( defaultNamespaceDecl | setter | namespaceDecl | importStmt ) separator )* ( ( varDecl | functionDecl | optionDecl | ftOptionDecl ) separator )* ;
     public final prolog_return prolog() throws RecognitionException {
         prolog_return retval = new prolog_return();
         retval.start = input.LT(1);
@@ -1088,12 +1089,12 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:316:32: ( ( ( defaultNamespaceDecl | setter | namespaceDecl | importStmt ) separator )* ( ( varDecl | functionDecl | optionDecl | ftOptionDecl ) separator )* )
-            // etc/XQFT.g:316:35: ( ( defaultNamespaceDecl | setter | namespaceDecl | importStmt ) separator )* ( ( varDecl | functionDecl | optionDecl | ftOptionDecl ) separator )*
+            // etc/XQFT.g:317:32: ( ( ( defaultNamespaceDecl | setter | namespaceDecl | importStmt ) separator )* ( ( varDecl | functionDecl | optionDecl | ftOptionDecl ) separator )* )
+            // etc/XQFT.g:317:35: ( ( defaultNamespaceDecl | setter | namespaceDecl | importStmt ) separator )* ( ( varDecl | functionDecl | optionDecl | ftOptionDecl ) separator )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:316:35: ( ( defaultNamespaceDecl | setter | namespaceDecl | importStmt ) separator )*
+            // etc/XQFT.g:317:35: ( ( defaultNamespaceDecl | setter | namespaceDecl | importStmt ) separator )*
             loop6:
             do {
                 int alt6=2;
@@ -1115,9 +1116,9 @@ public class XQFTParser extends Parser {
 
                 switch (alt6) {
             	case 1 :
-            	    // etc/XQFT.g:317:12: ( defaultNamespaceDecl | setter | namespaceDecl | importStmt ) separator
+            	    // etc/XQFT.g:318:12: ( defaultNamespaceDecl | setter | namespaceDecl | importStmt ) separator
             	    {
-            	    // etc/XQFT.g:317:12: ( defaultNamespaceDecl | setter | namespaceDecl | importStmt )
+            	    // etc/XQFT.g:318:12: ( defaultNamespaceDecl | setter | namespaceDecl | importStmt )
             	    int alt5=4;
             	    int LA5_0 = input.LA(1);
 
@@ -1136,7 +1137,7 @@ public class XQFTParser extends Parser {
             	            else {
             	                if (backtracking>0) {failed=true; return retval;}
             	                NoViableAltException nvae =
-            	                    new NoViableAltException("317:12: ( defaultNamespaceDecl | setter | namespaceDecl | importStmt )", 5, 3, input);
+            	                    new NoViableAltException("318:12: ( defaultNamespaceDecl | setter | namespaceDecl | importStmt )", 5, 3, input);
 
             	                throw nvae;
             	            }
@@ -1159,7 +1160,7 @@ public class XQFTParser extends Parser {
             	        default:
             	            if (backtracking>0) {failed=true; return retval;}
             	            NoViableAltException nvae =
-            	                new NoViableAltException("317:12: ( defaultNamespaceDecl | setter | namespaceDecl | importStmt )", 5, 1, input);
+            	                new NoViableAltException("318:12: ( defaultNamespaceDecl | setter | namespaceDecl | importStmt )", 5, 1, input);
 
             	            throw nvae;
             	        }
@@ -1171,13 +1172,13 @@ public class XQFTParser extends Parser {
             	    else {
             	        if (backtracking>0) {failed=true; return retval;}
             	        NoViableAltException nvae =
-            	            new NoViableAltException("317:12: ( defaultNamespaceDecl | setter | namespaceDecl | importStmt )", 5, 0, input);
+            	            new NoViableAltException("318:12: ( defaultNamespaceDecl | setter | namespaceDecl | importStmt )", 5, 0, input);
 
             	        throw nvae;
             	    }
             	    switch (alt5) {
             	        case 1 :
-            	            // etc/XQFT.g:317:13: defaultNamespaceDecl
+            	            // etc/XQFT.g:318:13: defaultNamespaceDecl
             	            {
             	            pushFollow(FOLLOW_defaultNamespaceDecl_in_prolog1062);
             	            defaultNamespaceDecl26=defaultNamespaceDecl();
@@ -1188,7 +1189,7 @@ public class XQFTParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // etc/XQFT.g:317:36: setter
+            	            // etc/XQFT.g:318:36: setter
             	            {
             	            pushFollow(FOLLOW_setter_in_prolog1066);
             	            setter27=setter();
@@ -1199,7 +1200,7 @@ public class XQFTParser extends Parser {
             	            }
             	            break;
             	        case 3 :
-            	            // etc/XQFT.g:317:45: namespaceDecl
+            	            // etc/XQFT.g:318:45: namespaceDecl
             	            {
             	            pushFollow(FOLLOW_namespaceDecl_in_prolog1070);
             	            namespaceDecl28=namespaceDecl();
@@ -1210,7 +1211,7 @@ public class XQFTParser extends Parser {
             	            }
             	            break;
             	        case 4 :
-            	            // etc/XQFT.g:317:61: importStmt
+            	            // etc/XQFT.g:318:61: importStmt
             	            {
             	            pushFollow(FOLLOW_importStmt_in_prolog1074);
             	            importStmt29=importStmt();
@@ -1236,7 +1237,7 @@ public class XQFTParser extends Parser {
                 }
             } while (true);
 
-            // etc/XQFT.g:320:12: ( ( varDecl | functionDecl | optionDecl | ftOptionDecl ) separator )*
+            // etc/XQFT.g:321:12: ( ( varDecl | functionDecl | optionDecl | ftOptionDecl ) separator )*
             loop8:
             do {
                 int alt8=2;
@@ -1249,9 +1250,9 @@ public class XQFTParser extends Parser {
 
                 switch (alt8) {
             	case 1 :
-            	    // etc/XQFT.g:321:12: ( varDecl | functionDecl | optionDecl | ftOptionDecl ) separator
+            	    // etc/XQFT.g:322:12: ( varDecl | functionDecl | optionDecl | ftOptionDecl ) separator
             	    {
-            	    // etc/XQFT.g:321:12: ( varDecl | functionDecl | optionDecl | ftOptionDecl )
+            	    // etc/XQFT.g:322:12: ( varDecl | functionDecl | optionDecl | ftOptionDecl )
             	    int alt7=4;
             	    int LA7_0 = input.LA(1);
 
@@ -1280,7 +1281,7 @@ public class XQFTParser extends Parser {
             	        default:
             	            if (backtracking>0) {failed=true; return retval;}
             	            NoViableAltException nvae =
-            	                new NoViableAltException("321:12: ( varDecl | functionDecl | optionDecl | ftOptionDecl )", 7, 1, input);
+            	                new NoViableAltException("322:12: ( varDecl | functionDecl | optionDecl | ftOptionDecl )", 7, 1, input);
 
             	            throw nvae;
             	        }
@@ -1289,13 +1290,13 @@ public class XQFTParser extends Parser {
             	    else {
             	        if (backtracking>0) {failed=true; return retval;}
             	        NoViableAltException nvae =
-            	            new NoViableAltException("321:12: ( varDecl | functionDecl | optionDecl | ftOptionDecl )", 7, 0, input);
+            	            new NoViableAltException("322:12: ( varDecl | functionDecl | optionDecl | ftOptionDecl )", 7, 0, input);
 
             	        throw nvae;
             	    }
             	    switch (alt7) {
             	        case 1 :
-            	            // etc/XQFT.g:321:13: varDecl
+            	            // etc/XQFT.g:322:13: varDecl
             	            {
             	            pushFollow(FOLLOW_varDecl_in_prolog1132);
             	            varDecl31=varDecl();
@@ -1306,7 +1307,7 @@ public class XQFTParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // etc/XQFT.g:321:23: functionDecl
+            	            // etc/XQFT.g:322:23: functionDecl
             	            {
             	            pushFollow(FOLLOW_functionDecl_in_prolog1136);
             	            functionDecl32=functionDecl();
@@ -1317,7 +1318,7 @@ public class XQFTParser extends Parser {
             	            }
             	            break;
             	        case 3 :
-            	            // etc/XQFT.g:321:38: optionDecl
+            	            // etc/XQFT.g:322:38: optionDecl
             	            {
             	            pushFollow(FOLLOW_optionDecl_in_prolog1140);
             	            optionDecl33=optionDecl();
@@ -1328,7 +1329,7 @@ public class XQFTParser extends Parser {
             	            }
             	            break;
             	        case 4 :
-            	            // etc/XQFT.g:321:51: ftOptionDecl
+            	            // etc/XQFT.g:322:51: ftOptionDecl
             	            {
             	            pushFollow(FOLLOW_ftOptionDecl_in_prolog1144);
             	            ftOptionDecl34=ftOptionDecl();
@@ -1380,7 +1381,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start defaultNamespaceDecl
-    // etc/XQFT.g:326:1: defaultNamespaceDecl : DECLARE DEFAULT ( ELEMENT | FUNCTION ) NAMESPACE uriLiteral ;
+    // etc/XQFT.g:327:1: defaultNamespaceDecl : DECLARE DEFAULT ( ELEMENT | FUNCTION ) NAMESPACE uriLiteral ;
     public final defaultNamespaceDecl_return defaultNamespaceDecl() throws RecognitionException {
         defaultNamespaceDecl_return retval = new defaultNamespaceDecl_return();
         retval.start = input.LT(1);
@@ -1400,8 +1401,8 @@ public class XQFTParser extends Parser {
         XQFTTree NAMESPACE39_tree=null;
 
         try {
-            // etc/XQFT.g:326:32: ( DECLARE DEFAULT ( ELEMENT | FUNCTION ) NAMESPACE uriLiteral )
-            // etc/XQFT.g:326:34: DECLARE DEFAULT ( ELEMENT | FUNCTION ) NAMESPACE uriLiteral
+            // etc/XQFT.g:327:32: ( DECLARE DEFAULT ( ELEMENT | FUNCTION ) NAMESPACE uriLiteral )
+            // etc/XQFT.g:327:34: DECLARE DEFAULT ( ELEMENT | FUNCTION ) NAMESPACE uriLiteral
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -1467,7 +1468,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start setter
-    // etc/XQFT.g:328:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );
+    // etc/XQFT.g:329:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );
     public final setter_return setter() throws RecognitionException {
         setter_return retval = new setter_return();
         retval.start = input.LT(1);
@@ -1491,7 +1492,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:328:32: ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl )
+            // etc/XQFT.g:329:32: ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl )
             int alt9=7;
             int LA9_0 = input.LA(1);
 
@@ -1510,7 +1511,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("328:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );", 9, 2, input);
+                            new NoViableAltException("329:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );", 9, 2, input);
 
                         throw nvae;
                     }
@@ -1544,7 +1545,7 @@ public class XQFTParser extends Parser {
                 default:
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("328:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );", 9, 1, input);
+                        new NoViableAltException("329:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );", 9, 1, input);
 
                     throw nvae;
                 }
@@ -1553,13 +1554,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("328:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );", 9, 0, input);
+                    new NoViableAltException("329:1: setter : ( boundarySpaceDecl | defaultCollationDecl | baseURIDecl | constructionDecl | orderingModeDecl | emptyOrderDecl | copyNamespacesDecl );", 9, 0, input);
 
                 throw nvae;
             }
             switch (alt9) {
                 case 1 :
-                    // etc/XQFT.g:328:34: boundarySpaceDecl
+                    // etc/XQFT.g:329:34: boundarySpaceDecl
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -1572,7 +1573,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:329:13: defaultCollationDecl
+                    // etc/XQFT.g:330:13: defaultCollationDecl
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -1585,7 +1586,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:330:13: baseURIDecl
+                    // etc/XQFT.g:331:13: baseURIDecl
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -1598,7 +1599,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:331:13: constructionDecl
+                    // etc/XQFT.g:332:13: constructionDecl
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -1611,7 +1612,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // etc/XQFT.g:332:13: orderingModeDecl
+                    // etc/XQFT.g:333:13: orderingModeDecl
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -1624,7 +1625,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // etc/XQFT.g:333:13: emptyOrderDecl
+                    // etc/XQFT.g:334:13: emptyOrderDecl
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -1637,7 +1638,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 7 :
-                    // etc/XQFT.g:334:13: copyNamespacesDecl
+                    // etc/XQFT.g:335:13: copyNamespacesDecl
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -1674,7 +1675,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start boundarySpaceDecl
-    // etc/XQFT.g:335:2: boundarySpaceDecl : DECLARE BOUNDARYSPACE ( PRESERVE | STRIP ) ;
+    // etc/XQFT.g:336:2: boundarySpaceDecl : DECLARE BOUNDARYSPACE ( PRESERVE | STRIP ) ;
     public final boundarySpaceDecl_return boundarySpaceDecl() throws RecognitionException {
         boundarySpaceDecl_return retval = new boundarySpaceDecl_return();
         retval.start = input.LT(1);
@@ -1690,8 +1691,8 @@ public class XQFTParser extends Parser {
         XQFTTree set50_tree=null;
 
         try {
-            // etc/XQFT.g:335:33: ( DECLARE BOUNDARYSPACE ( PRESERVE | STRIP ) )
-            // etc/XQFT.g:335:35: DECLARE BOUNDARYSPACE ( PRESERVE | STRIP )
+            // etc/XQFT.g:336:33: ( DECLARE BOUNDARYSPACE ( PRESERVE | STRIP ) )
+            // etc/XQFT.g:336:35: DECLARE BOUNDARYSPACE ( PRESERVE | STRIP )
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -1746,7 +1747,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start defaultCollationDecl
-    // etc/XQFT.g:336:2: defaultCollationDecl : DECLARE DEFAULT COLLATION uriLiteral ;
+    // etc/XQFT.g:337:2: defaultCollationDecl : DECLARE DEFAULT COLLATION uriLiteral ;
     public final defaultCollationDecl_return defaultCollationDecl() throws RecognitionException {
         defaultCollationDecl_return retval = new defaultCollationDecl_return();
         retval.start = input.LT(1);
@@ -1764,8 +1765,8 @@ public class XQFTParser extends Parser {
         XQFTTree COLLATION53_tree=null;
 
         try {
-            // etc/XQFT.g:336:33: ( DECLARE DEFAULT COLLATION uriLiteral )
-            // etc/XQFT.g:336:35: DECLARE DEFAULT COLLATION uriLiteral
+            // etc/XQFT.g:337:33: ( DECLARE DEFAULT COLLATION uriLiteral )
+            // etc/XQFT.g:337:35: DECLARE DEFAULT COLLATION uriLiteral
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -1818,7 +1819,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start baseURIDecl
-    // etc/XQFT.g:337:2: baseURIDecl : DECLARE BASE_URI uriLiteral ;
+    // etc/XQFT.g:338:2: baseURIDecl : DECLARE BASE_URI uriLiteral ;
     public final baseURIDecl_return baseURIDecl() throws RecognitionException {
         baseURIDecl_return retval = new baseURIDecl_return();
         retval.start = input.LT(1);
@@ -1834,8 +1835,8 @@ public class XQFTParser extends Parser {
         XQFTTree BASE_URI56_tree=null;
 
         try {
-            // etc/XQFT.g:337:33: ( DECLARE BASE_URI uriLiteral )
-            // etc/XQFT.g:337:35: DECLARE BASE_URI uriLiteral
+            // etc/XQFT.g:338:33: ( DECLARE BASE_URI uriLiteral )
+            // etc/XQFT.g:338:35: DECLARE BASE_URI uriLiteral
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -1882,7 +1883,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start constructionDecl
-    // etc/XQFT.g:338:2: constructionDecl : DECLARE CONSTRUCTION ( STRIP | PRESERVE ) ;
+    // etc/XQFT.g:339:2: constructionDecl : DECLARE CONSTRUCTION ( STRIP | PRESERVE ) ;
     public final constructionDecl_return constructionDecl() throws RecognitionException {
         constructionDecl_return retval = new constructionDecl_return();
         retval.start = input.LT(1);
@@ -1898,8 +1899,8 @@ public class XQFTParser extends Parser {
         XQFTTree set60_tree=null;
 
         try {
-            // etc/XQFT.g:338:33: ( DECLARE CONSTRUCTION ( STRIP | PRESERVE ) )
-            // etc/XQFT.g:338:35: DECLARE CONSTRUCTION ( STRIP | PRESERVE )
+            // etc/XQFT.g:339:33: ( DECLARE CONSTRUCTION ( STRIP | PRESERVE ) )
+            // etc/XQFT.g:339:35: DECLARE CONSTRUCTION ( STRIP | PRESERVE )
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -1954,7 +1955,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start orderingModeDecl
-    // etc/XQFT.g:339:2: orderingModeDecl : DECLARE ORDERING ( ORDERED | UNORDERED ) ;
+    // etc/XQFT.g:340:2: orderingModeDecl : DECLARE ORDERING ( ORDERED | UNORDERED ) ;
     public final orderingModeDecl_return orderingModeDecl() throws RecognitionException {
         orderingModeDecl_return retval = new orderingModeDecl_return();
         retval.start = input.LT(1);
@@ -1970,8 +1971,8 @@ public class XQFTParser extends Parser {
         XQFTTree set63_tree=null;
 
         try {
-            // etc/XQFT.g:339:33: ( DECLARE ORDERING ( ORDERED | UNORDERED ) )
-            // etc/XQFT.g:339:35: DECLARE ORDERING ( ORDERED | UNORDERED )
+            // etc/XQFT.g:340:33: ( DECLARE ORDERING ( ORDERED | UNORDERED ) )
+            // etc/XQFT.g:340:35: DECLARE ORDERING ( ORDERED | UNORDERED )
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -2026,7 +2027,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start emptyOrderDecl
-    // etc/XQFT.g:340:2: emptyOrderDecl : DECLARE DEFAULT ORDER EMPTY ( GREATEST | LEAST ) ;
+    // etc/XQFT.g:341:2: emptyOrderDecl : DECLARE DEFAULT ORDER EMPTY ( GREATEST | LEAST ) ;
     public final emptyOrderDecl_return emptyOrderDecl() throws RecognitionException {
         emptyOrderDecl_return retval = new emptyOrderDecl_return();
         retval.start = input.LT(1);
@@ -2046,8 +2047,8 @@ public class XQFTParser extends Parser {
         XQFTTree set68_tree=null;
 
         try {
-            // etc/XQFT.g:340:33: ( DECLARE DEFAULT ORDER EMPTY ( GREATEST | LEAST ) )
-            // etc/XQFT.g:340:35: DECLARE DEFAULT ORDER EMPTY ( GREATEST | LEAST )
+            // etc/XQFT.g:341:33: ( DECLARE DEFAULT ORDER EMPTY ( GREATEST | LEAST ) )
+            // etc/XQFT.g:341:35: DECLARE DEFAULT ORDER EMPTY ( GREATEST | LEAST )
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -2114,7 +2115,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start copyNamespacesDecl
-    // etc/XQFT.g:341:2: copyNamespacesDecl : DECLARE COPY_NAMESPACES preserveMode COMMASi inheritMode ;
+    // etc/XQFT.g:342:2: copyNamespacesDecl : DECLARE COPY_NAMESPACES preserveMode COMMASi inheritMode ;
     public final copyNamespacesDecl_return copyNamespacesDecl() throws RecognitionException {
         copyNamespacesDecl_return retval = new copyNamespacesDecl_return();
         retval.start = input.LT(1);
@@ -2134,8 +2135,8 @@ public class XQFTParser extends Parser {
         XQFTTree COMMASi72_tree=null;
 
         try {
-            // etc/XQFT.g:341:33: ( DECLARE COPY_NAMESPACES preserveMode COMMASi inheritMode )
-            // etc/XQFT.g:341:35: DECLARE COPY_NAMESPACES preserveMode COMMASi inheritMode
+            // etc/XQFT.g:342:33: ( DECLARE COPY_NAMESPACES preserveMode COMMASi inheritMode )
+            // etc/XQFT.g:342:35: DECLARE COPY_NAMESPACES preserveMode COMMASi inheritMode
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -2193,7 +2194,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start preserveMode
-    // etc/XQFT.g:342:3: preserveMode : ( PRESERVE | NOPRESERVE );
+    // etc/XQFT.g:343:3: preserveMode : ( PRESERVE | NOPRESERVE );
     public final preserveMode_return preserveMode() throws RecognitionException {
         preserveMode_return retval = new preserveMode_return();
         retval.start = input.LT(1);
@@ -2205,7 +2206,7 @@ public class XQFTParser extends Parser {
         XQFTTree set74_tree=null;
 
         try {
-            // etc/XQFT.g:342:34: ( PRESERVE | NOPRESERVE )
+            // etc/XQFT.g:343:34: ( PRESERVE | NOPRESERVE )
             // etc/XQFT.g:
             {
             root_0 = (XQFTTree)adaptor.nil();
@@ -2249,7 +2250,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start inheritMode
-    // etc/XQFT.g:343:3: inheritMode : ( INHERIT | NOINHERIT );
+    // etc/XQFT.g:344:3: inheritMode : ( INHERIT | NOINHERIT );
     public final inheritMode_return inheritMode() throws RecognitionException {
         inheritMode_return retval = new inheritMode_return();
         retval.start = input.LT(1);
@@ -2261,7 +2262,7 @@ public class XQFTParser extends Parser {
         XQFTTree set75_tree=null;
 
         try {
-            // etc/XQFT.g:343:34: ( INHERIT | NOINHERIT )
+            // etc/XQFT.g:344:34: ( INHERIT | NOINHERIT )
             // etc/XQFT.g:
             {
             root_0 = (XQFTTree)adaptor.nil();
@@ -2305,7 +2306,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start namespaceDecl
-    // etc/XQFT.g:345:1: namespaceDecl : DECLARE NAMESPACE NCName EQSi uriLiteral ;
+    // etc/XQFT.g:346:1: namespaceDecl : DECLARE NAMESPACE NCName EQSi uriLiteral ;
     public final namespaceDecl_return namespaceDecl() throws RecognitionException {
         namespaceDecl_return retval = new namespaceDecl_return();
         retval.start = input.LT(1);
@@ -2325,8 +2326,8 @@ public class XQFTParser extends Parser {
         XQFTTree EQSi79_tree=null;
 
         try {
-            // etc/XQFT.g:345:32: ( DECLARE NAMESPACE NCName EQSi uriLiteral )
-            // etc/XQFT.g:345:34: DECLARE NAMESPACE NCName EQSi uriLiteral
+            // etc/XQFT.g:346:32: ( DECLARE NAMESPACE NCName EQSi uriLiteral )
+            // etc/XQFT.g:346:34: DECLARE NAMESPACE NCName EQSi uriLiteral
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -2385,7 +2386,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start importStmt
-    // etc/XQFT.g:347:1: importStmt : ( schemaImport | moduleImport );
+    // etc/XQFT.g:348:1: importStmt : ( schemaImport | moduleImport );
     public final importStmt_return importStmt() throws RecognitionException {
         importStmt_return retval = new importStmt_return();
         retval.start = input.LT(1);
@@ -2399,7 +2400,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:347:32: ( schemaImport | moduleImport )
+            // etc/XQFT.g:348:32: ( schemaImport | moduleImport )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2415,7 +2416,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("347:1: importStmt : ( schemaImport | moduleImport );", 10, 1, input);
+                        new NoViableAltException("348:1: importStmt : ( schemaImport | moduleImport );", 10, 1, input);
 
                     throw nvae;
                 }
@@ -2423,13 +2424,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("347:1: importStmt : ( schemaImport | moduleImport );", 10, 0, input);
+                    new NoViableAltException("348:1: importStmt : ( schemaImport | moduleImport );", 10, 0, input);
 
                 throw nvae;
             }
             switch (alt10) {
                 case 1 :
-                    // etc/XQFT.g:347:34: schemaImport
+                    // etc/XQFT.g:348:34: schemaImport
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -2442,7 +2443,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:347:49: moduleImport
+                    // etc/XQFT.g:348:49: moduleImport
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -2479,7 +2480,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start schemaImport
-    // etc/XQFT.g:348:2: schemaImport : IMPORT SCHEMA ( schemaPrefix )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )? ;
+    // etc/XQFT.g:349:2: schemaImport : IMPORT SCHEMA ( schemaPrefix )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )? ;
     public final schemaImport_return schemaImport() throws RecognitionException {
         schemaImport_return retval = new schemaImport_return();
         retval.start = input.LT(1);
@@ -2505,8 +2506,8 @@ public class XQFTParser extends Parser {
         XQFTTree COMMASi89_tree=null;
 
         try {
-            // etc/XQFT.g:348:33: ( IMPORT SCHEMA ( schemaPrefix )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )? )
-            // etc/XQFT.g:348:35: IMPORT SCHEMA ( schemaPrefix )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )?
+            // etc/XQFT.g:349:33: ( IMPORT SCHEMA ( schemaPrefix )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )? )
+            // etc/XQFT.g:349:35: IMPORT SCHEMA ( schemaPrefix )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -2522,7 +2523,7 @@ public class XQFTParser extends Parser {
             SCHEMA84_tree = (XQFTTree)adaptor.create(SCHEMA84);
             adaptor.addChild(root_0, SCHEMA84_tree);
             }
-            // etc/XQFT.g:348:49: ( schemaPrefix )?
+            // etc/XQFT.g:349:49: ( schemaPrefix )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -2531,7 +2532,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt11) {
                 case 1 :
-                    // etc/XQFT.g:348:49: schemaPrefix
+                    // etc/XQFT.g:349:49: schemaPrefix
                     {
                     pushFollow(FOLLOW_schemaPrefix_in_schemaImport1705);
                     schemaPrefix85=schemaPrefix();
@@ -2549,7 +2550,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, uriLiteral86.getTree());
-            // etc/XQFT.g:348:74: ( AT uriLiteral ( COMMASi uriLiteral )* )?
+            // etc/XQFT.g:349:74: ( AT uriLiteral ( COMMASi uriLiteral )* )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2558,7 +2559,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt13) {
                 case 1 :
-                    // etc/XQFT.g:348:75: AT uriLiteral ( COMMASi uriLiteral )*
+                    // etc/XQFT.g:349:75: AT uriLiteral ( COMMASi uriLiteral )*
                     {
                     AT87=(Token)input.LT(1);
                     match(input,AT,FOLLOW_AT_in_schemaImport1711); if (failed) return retval;
@@ -2571,7 +2572,7 @@ public class XQFTParser extends Parser {
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, uriLiteral88.getTree());
-                    // etc/XQFT.g:348:89: ( COMMASi uriLiteral )*
+                    // etc/XQFT.g:349:89: ( COMMASi uriLiteral )*
                     loop12:
                     do {
                         int alt12=2;
@@ -2584,7 +2585,7 @@ public class XQFTParser extends Parser {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // etc/XQFT.g:348:90: COMMASi uriLiteral
+                    	    // etc/XQFT.g:349:90: COMMASi uriLiteral
                     	    {
                     	    COMMASi89=(Token)input.LT(1);
                     	    match(input,COMMASi,FOLLOW_COMMASi_in_schemaImport1716); if (failed) return retval;
@@ -2638,7 +2639,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start schemaPrefix
-    // etc/XQFT.g:349:3: schemaPrefix : ( ( NAMESPACE NCName EQSi ) | ( DEFAULT ELEMENT NAMESPACE ) );
+    // etc/XQFT.g:350:3: schemaPrefix : ( ( NAMESPACE NCName EQSi ) | ( DEFAULT ELEMENT NAMESPACE ) );
     public final schemaPrefix_return schemaPrefix() throws RecognitionException {
         schemaPrefix_return retval = new schemaPrefix_return();
         retval.start = input.LT(1);
@@ -2660,7 +2661,7 @@ public class XQFTParser extends Parser {
         XQFTTree NAMESPACE96_tree=null;
 
         try {
-            // etc/XQFT.g:349:34: ( ( NAMESPACE NCName EQSi ) | ( DEFAULT ELEMENT NAMESPACE ) )
+            // etc/XQFT.g:350:34: ( ( NAMESPACE NCName EQSi ) | ( DEFAULT ELEMENT NAMESPACE ) )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2673,18 +2674,18 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("349:3: schemaPrefix : ( ( NAMESPACE NCName EQSi ) | ( DEFAULT ELEMENT NAMESPACE ) );", 14, 0, input);
+                    new NoViableAltException("350:3: schemaPrefix : ( ( NAMESPACE NCName EQSi ) | ( DEFAULT ELEMENT NAMESPACE ) );", 14, 0, input);
 
                 throw nvae;
             }
             switch (alt14) {
                 case 1 :
-                    // etc/XQFT.g:349:36: ( NAMESPACE NCName EQSi )
+                    // etc/XQFT.g:350:36: ( NAMESPACE NCName EQSi )
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    // etc/XQFT.g:349:36: ( NAMESPACE NCName EQSi )
-                    // etc/XQFT.g:349:37: NAMESPACE NCName EQSi
+                    // etc/XQFT.g:350:36: ( NAMESPACE NCName EQSi )
+                    // etc/XQFT.g:350:37: NAMESPACE NCName EQSi
                     {
                     NAMESPACE91=(Token)input.LT(1);
                     match(input,NAMESPACE,FOLLOW_NAMESPACE_in_schemaPrefix1750); if (failed) return retval;
@@ -2711,12 +2712,12 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:349:62: ( DEFAULT ELEMENT NAMESPACE )
+                    // etc/XQFT.g:350:62: ( DEFAULT ELEMENT NAMESPACE )
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    // etc/XQFT.g:349:62: ( DEFAULT ELEMENT NAMESPACE )
-                    // etc/XQFT.g:349:63: DEFAULT ELEMENT NAMESPACE
+                    // etc/XQFT.g:350:62: ( DEFAULT ELEMENT NAMESPACE )
+                    // etc/XQFT.g:350:63: DEFAULT ELEMENT NAMESPACE
                     {
                     DEFAULT94=(Token)input.LT(1);
                     match(input,DEFAULT,FOLLOW_DEFAULT_in_schemaPrefix1760); if (failed) return retval;
@@ -2767,7 +2768,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start moduleImport
-    // etc/XQFT.g:350:2: moduleImport : IMPORT MODULE ( NAMESPACE NCName EQSi )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )? ;
+    // etc/XQFT.g:351:2: moduleImport : IMPORT MODULE ( NAMESPACE NCName EQSi )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )? ;
     public final moduleImport_return moduleImport() throws RecognitionException {
         moduleImport_return retval = new moduleImport_return();
         retval.start = input.LT(1);
@@ -2797,8 +2798,8 @@ public class XQFTParser extends Parser {
         XQFTTree COMMASi105_tree=null;
 
         try {
-            // etc/XQFT.g:350:33: ( IMPORT MODULE ( NAMESPACE NCName EQSi )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )? )
-            // etc/XQFT.g:350:35: IMPORT MODULE ( NAMESPACE NCName EQSi )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )?
+            // etc/XQFT.g:351:33: ( IMPORT MODULE ( NAMESPACE NCName EQSi )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )? )
+            // etc/XQFT.g:351:35: IMPORT MODULE ( NAMESPACE NCName EQSi )? uriLiteral ( AT uriLiteral ( COMMASi uriLiteral )* )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -2814,7 +2815,7 @@ public class XQFTParser extends Parser {
             MODULE98_tree = (XQFTTree)adaptor.create(MODULE98);
             adaptor.addChild(root_0, MODULE98_tree);
             }
-            // etc/XQFT.g:350:49: ( NAMESPACE NCName EQSi )?
+            // etc/XQFT.g:351:49: ( NAMESPACE NCName EQSi )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2823,7 +2824,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt15) {
                 case 1 :
-                    // etc/XQFT.g:350:50: NAMESPACE NCName EQSi
+                    // etc/XQFT.g:351:50: NAMESPACE NCName EQSi
                     {
                     NAMESPACE99=(Token)input.LT(1);
                     match(input,NAMESPACE,FOLLOW_NAMESPACE_in_moduleImport1796); if (failed) return retval;
@@ -2854,7 +2855,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, uriLiteral102.getTree());
-            // etc/XQFT.g:350:85: ( AT uriLiteral ( COMMASi uriLiteral )* )?
+            // etc/XQFT.g:351:85: ( AT uriLiteral ( COMMASi uriLiteral )* )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2863,7 +2864,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt17) {
                 case 1 :
-                    // etc/XQFT.g:350:86: AT uriLiteral ( COMMASi uriLiteral )*
+                    // etc/XQFT.g:351:86: AT uriLiteral ( COMMASi uriLiteral )*
                     {
                     AT103=(Token)input.LT(1);
                     match(input,AT,FOLLOW_AT_in_moduleImport1807); if (failed) return retval;
@@ -2876,7 +2877,7 @@ public class XQFTParser extends Parser {
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, uriLiteral104.getTree());
-                    // etc/XQFT.g:350:100: ( COMMASi uriLiteral )*
+                    // etc/XQFT.g:351:100: ( COMMASi uriLiteral )*
                     loop16:
                     do {
                         int alt16=2;
@@ -2889,7 +2890,7 @@ public class XQFTParser extends Parser {
 
                         switch (alt16) {
                     	case 1 :
-                    	    // etc/XQFT.g:350:101: COMMASi uriLiteral
+                    	    // etc/XQFT.g:351:101: COMMASi uriLiteral
                     	    {
                     	    COMMASi105=(Token)input.LT(1);
                     	    match(input,COMMASi,FOLLOW_COMMASi_in_moduleImport1812); if (failed) return retval;
@@ -2943,7 +2944,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start varDecl
-    // etc/XQFT.g:352:1: varDecl : DECLARE VARIABLE DOLLARSi qName ( typeDeclaration )? ( ( ASSIGNSi exprSingle ) | EXTERNAL ) ;
+    // etc/XQFT.g:353:1: varDecl : DECLARE VARIABLE DOLLARSi qName ( typeDeclaration )? ( ( ASSIGNSi exprSingle ) | EXTERNAL ) ;
     public final varDecl_return varDecl() throws RecognitionException {
         varDecl_return retval = new varDecl_return();
         retval.start = input.LT(1);
@@ -2969,8 +2970,8 @@ public class XQFTParser extends Parser {
         XQFTTree EXTERNAL114_tree=null;
 
         try {
-            // etc/XQFT.g:352:32: ( DECLARE VARIABLE DOLLARSi qName ( typeDeclaration )? ( ( ASSIGNSi exprSingle ) | EXTERNAL ) )
-            // etc/XQFT.g:352:34: DECLARE VARIABLE DOLLARSi qName ( typeDeclaration )? ( ( ASSIGNSi exprSingle ) | EXTERNAL )
+            // etc/XQFT.g:353:32: ( DECLARE VARIABLE DOLLARSi qName ( typeDeclaration )? ( ( ASSIGNSi exprSingle ) | EXTERNAL ) )
+            // etc/XQFT.g:353:34: DECLARE VARIABLE DOLLARSi qName ( typeDeclaration )? ( ( ASSIGNSi exprSingle ) | EXTERNAL )
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -2997,7 +2998,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, qName110.getTree());
-            // etc/XQFT.g:352:66: ( typeDeclaration )?
+            // etc/XQFT.g:353:66: ( typeDeclaration )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -3006,7 +3007,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt18) {
                 case 1 :
-                    // etc/XQFT.g:352:66: typeDeclaration
+                    // etc/XQFT.g:353:66: typeDeclaration
                     {
                     pushFollow(FOLLOW_typeDeclaration_in_varDecl1858);
                     typeDeclaration111=typeDeclaration();
@@ -3019,7 +3020,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            // etc/XQFT.g:352:83: ( ( ASSIGNSi exprSingle ) | EXTERNAL )
+            // etc/XQFT.g:353:83: ( ( ASSIGNSi exprSingle ) | EXTERNAL )
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -3032,16 +3033,16 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("352:83: ( ( ASSIGNSi exprSingle ) | EXTERNAL )", 19, 0, input);
+                    new NoViableAltException("353:83: ( ( ASSIGNSi exprSingle ) | EXTERNAL )", 19, 0, input);
 
                 throw nvae;
             }
             switch (alt19) {
                 case 1 :
-                    // etc/XQFT.g:352:84: ( ASSIGNSi exprSingle )
+                    // etc/XQFT.g:353:84: ( ASSIGNSi exprSingle )
                     {
-                    // etc/XQFT.g:352:84: ( ASSIGNSi exprSingle )
-                    // etc/XQFT.g:352:85: ASSIGNSi exprSingle
+                    // etc/XQFT.g:353:84: ( ASSIGNSi exprSingle )
+                    // etc/XQFT.g:353:85: ASSIGNSi exprSingle
                     {
                     ASSIGNSi112=(Token)input.LT(1);
                     match(input,ASSIGNSi,FOLLOW_ASSIGNSi_in_varDecl1863); if (failed) return retval;
@@ -3061,7 +3062,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:352:108: EXTERNAL
+                    // etc/XQFT.g:353:108: EXTERNAL
                     {
                     EXTERNAL114=(Token)input.LT(1);
                     match(input,EXTERNAL,FOLLOW_EXTERNAL_in_varDecl1870); if (failed) return retval;
@@ -3102,7 +3103,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start qName
-    // etc/XQFT.g:353:2: qName returns [String text] : nc1= NCName (c= COLONSi nc2= NCName )? ;
+    // etc/XQFT.g:354:2: qName returns [String text] : nc1= NCName (c= COLONSi nc2= NCName )? ;
     public final qName_return qName() throws RecognitionException {
         qName_return retval = new qName_return();
         retval.start = input.LT(1);
@@ -3118,8 +3119,8 @@ public class XQFTParser extends Parser {
         XQFTTree nc2_tree=null;
 
         try {
-            // etc/XQFT.g:353:46: (nc1= NCName (c= COLONSi nc2= NCName )? )
-            // etc/XQFT.g:353:48: nc1= NCName (c= COLONSi nc2= NCName )?
+            // etc/XQFT.g:354:46: (nc1= NCName (c= COLONSi nc2= NCName )? )
+            // etc/XQFT.g:354:48: nc1= NCName (c= COLONSi nc2= NCName )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -3129,7 +3130,7 @@ public class XQFTParser extends Parser {
             nc1_tree = (XQFTTree)adaptor.create(nc1);
             adaptor.addChild(root_0, nc1_tree);
             }
-            // etc/XQFT.g:353:59: (c= COLONSi nc2= NCName )?
+            // etc/XQFT.g:354:59: (c= COLONSi nc2= NCName )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -3138,7 +3139,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt20) {
                 case 1 :
-                    // etc/XQFT.g:353:60: c= COLONSi nc2= NCName
+                    // etc/XQFT.g:354:60: c= COLONSi nc2= NCName
                     {
                     c=(Token)input.LT(1);
                     match(input,COLONSi,FOLLOW_COLONSi_in_qName1906); if (failed) return retval;
@@ -3187,7 +3188,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start typeDeclaration
-    // etc/XQFT.g:355:5: typeDeclaration : AS sequenceType ;
+    // etc/XQFT.g:356:5: typeDeclaration : AS sequenceType ;
     public final typeDeclaration_return typeDeclaration() throws RecognitionException {
         typeDeclaration_return retval = new typeDeclaration_return();
         retval.start = input.LT(1);
@@ -3201,8 +3202,8 @@ public class XQFTParser extends Parser {
         XQFTTree AS115_tree=null;
 
         try {
-            // etc/XQFT.g:355:36: ( AS sequenceType )
-            // etc/XQFT.g:355:38: AS sequenceType
+            // etc/XQFT.g:356:36: ( AS sequenceType )
+            // etc/XQFT.g:356:38: AS sequenceType
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -3243,7 +3244,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start functionDecl
-    // etc/XQFT.g:359:1: functionDecl : DECLARE FUNCTION qName LPARSi ( paramList )? RPARSi ( AS sequenceType )? ( enclosedExpr | EXTERNAL ) -> ^( AST_FUNCTIONDECL qName ( paramList )? ( sequenceType )? ( enclosedExpr )? ( EXTERNAL )? ) ;
+    // etc/XQFT.g:360:1: functionDecl : DECLARE FUNCTION qName LPARSi ( paramList )? RPARSi ( AS sequenceType )? ( enclosedExpr | EXTERNAL ) -> ^( AST_FUNCTIONDECL qName ( paramList )? ( sequenceType )? ( enclosedExpr )? ( EXTERNAL )? ) ;
     public final functionDecl_return functionDecl() throws RecognitionException {
         functionDecl_return retval = new functionDecl_return();
         retval.start = input.LT(1);
@@ -3282,8 +3283,8 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_sequenceType=new RewriteRuleSubtreeStream(adaptor,"rule sequenceType");
         RewriteRuleSubtreeStream stream_enclosedExpr=new RewriteRuleSubtreeStream(adaptor,"rule enclosedExpr");
         try {
-            // etc/XQFT.g:359:32: ( DECLARE FUNCTION qName LPARSi ( paramList )? RPARSi ( AS sequenceType )? ( enclosedExpr | EXTERNAL ) -> ^( AST_FUNCTIONDECL qName ( paramList )? ( sequenceType )? ( enclosedExpr )? ( EXTERNAL )? ) )
-            // etc/XQFT.g:359:34: DECLARE FUNCTION qName LPARSi ( paramList )? RPARSi ( AS sequenceType )? ( enclosedExpr | EXTERNAL )
+            // etc/XQFT.g:360:32: ( DECLARE FUNCTION qName LPARSi ( paramList )? RPARSi ( AS sequenceType )? ( enclosedExpr | EXTERNAL ) -> ^( AST_FUNCTIONDECL qName ( paramList )? ( sequenceType )? ( enclosedExpr )? ( EXTERNAL )? ) )
+            // etc/XQFT.g:360:34: DECLARE FUNCTION qName LPARSi ( paramList )? RPARSi ( AS sequenceType )? ( enclosedExpr | EXTERNAL )
             {
             DECLARE117=(Token)input.LT(1);
             match(input,DECLARE,FOLLOW_DECLARE_in_functionDecl1972); if (failed) return retval;
@@ -3302,7 +3303,7 @@ public class XQFTParser extends Parser {
             match(input,LPARSi,FOLLOW_LPARSi_in_functionDecl1978); if (failed) return retval;
             if ( backtracking==0 ) stream_LPARSi.add(LPARSi120);
 
-            // etc/XQFT.g:359:64: ( paramList )?
+            // etc/XQFT.g:360:64: ( paramList )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -3311,7 +3312,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt21) {
                 case 1 :
-                    // etc/XQFT.g:359:64: paramList
+                    // etc/XQFT.g:360:64: paramList
                     {
                     pushFollow(FOLLOW_paramList_in_functionDecl1980);
                     paramList121=paramList();
@@ -3328,7 +3329,7 @@ public class XQFTParser extends Parser {
             match(input,RPARSi,FOLLOW_RPARSi_in_functionDecl1983); if (failed) return retval;
             if ( backtracking==0 ) stream_RPARSi.add(RPARSi122);
 
-            // etc/XQFT.g:360:12: ( AS sequenceType )?
+            // etc/XQFT.g:361:12: ( AS sequenceType )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -3337,7 +3338,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt22) {
                 case 1 :
-                    // etc/XQFT.g:360:13: AS sequenceType
+                    // etc/XQFT.g:361:13: AS sequenceType
                     {
                     AS123=(Token)input.LT(1);
                     match(input,AS,FOLLOW_AS_in_functionDecl1998); if (failed) return retval;
@@ -3354,7 +3355,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            // etc/XQFT.g:360:31: ( enclosedExpr | EXTERNAL )
+            // etc/XQFT.g:361:31: ( enclosedExpr | EXTERNAL )
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -3367,13 +3368,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("360:31: ( enclosedExpr | EXTERNAL )", 23, 0, input);
+                    new NoViableAltException("361:31: ( enclosedExpr | EXTERNAL )", 23, 0, input);
 
                 throw nvae;
             }
             switch (alt23) {
                 case 1 :
-                    // etc/XQFT.g:360:32: enclosedExpr
+                    // etc/XQFT.g:361:32: enclosedExpr
                     {
                     pushFollow(FOLLOW_enclosedExpr_in_functionDecl2005);
                     enclosedExpr125=enclosedExpr();
@@ -3384,7 +3385,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:360:47: EXTERNAL
+                    // etc/XQFT.g:361:47: EXTERNAL
                     {
                     EXTERNAL126=(Token)input.LT(1);
                     match(input,EXTERNAL,FOLLOW_EXTERNAL_in_functionDecl2009); if (failed) return retval;
@@ -3408,33 +3409,33 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 361:45: -> ^( AST_FUNCTIONDECL qName ( paramList )? ( sequenceType )? ( enclosedExpr )? ( EXTERNAL )? )
+            // 362:45: -> ^( AST_FUNCTIONDECL qName ( paramList )? ( sequenceType )? ( enclosedExpr )? ( EXTERNAL )? )
             {
-                // etc/XQFT.g:361:48: ^( AST_FUNCTIONDECL qName ( paramList )? ( sequenceType )? ( enclosedExpr )? ( EXTERNAL )? )
+                // etc/XQFT.g:362:48: ^( AST_FUNCTIONDECL qName ( paramList )? ( sequenceType )? ( enclosedExpr )? ( EXTERNAL )? )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_FUNCTIONDECL, "AST_FUNCTIONDECL"), root_1);
 
                 adaptor.addChild(root_1, stream_qName.next());
-                // etc/XQFT.g:361:73: ( paramList )?
+                // etc/XQFT.g:362:73: ( paramList )?
                 if ( stream_paramList.hasNext() ) {
                     adaptor.addChild(root_1, stream_paramList.next());
 
                 }
                 stream_paramList.reset();
-                // etc/XQFT.g:361:84: ( sequenceType )?
+                // etc/XQFT.g:362:84: ( sequenceType )?
                 if ( stream_sequenceType.hasNext() ) {
                     adaptor.addChild(root_1, stream_sequenceType.next());
 
                 }
                 stream_sequenceType.reset();
-                // etc/XQFT.g:361:98: ( enclosedExpr )?
+                // etc/XQFT.g:362:98: ( enclosedExpr )?
                 if ( stream_enclosedExpr.hasNext() ) {
                     adaptor.addChild(root_1, stream_enclosedExpr.next());
 
                 }
                 stream_enclosedExpr.reset();
-                // etc/XQFT.g:361:112: ( EXTERNAL )?
+                // etc/XQFT.g:362:112: ( EXTERNAL )?
                 if ( stream_EXTERNAL.hasNext() ) {
                     adaptor.addChild(root_1, stream_EXTERNAL.next());
 
@@ -3473,7 +3474,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start paramList
-    // etc/XQFT.g:364:2: paramList : param ( COMMASi param )* ;
+    // etc/XQFT.g:365:2: paramList : param ( COMMASi param )* ;
     public final paramList_return paramList() throws RecognitionException {
         paramList_return retval = new paramList_return();
         retval.start = input.LT(1);
@@ -3489,8 +3490,8 @@ public class XQFTParser extends Parser {
         XQFTTree COMMASi128_tree=null;
 
         try {
-            // etc/XQFT.g:364:33: ( param ( COMMASi param )* )
-            // etc/XQFT.g:364:35: param ( COMMASi param )*
+            // etc/XQFT.g:365:33: ( param ( COMMASi param )* )
+            // etc/XQFT.g:365:35: param ( COMMASi param )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -3499,7 +3500,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, param127.getTree());
-            // etc/XQFT.g:364:41: ( COMMASi param )*
+            // etc/XQFT.g:365:41: ( COMMASi param )*
             loop24:
             do {
                 int alt24=2;
@@ -3512,7 +3513,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt24) {
             	case 1 :
-            	    // etc/XQFT.g:364:42: COMMASi param
+            	    // etc/XQFT.g:365:42: COMMASi param
             	    {
             	    COMMASi128=(Token)input.LT(1);
             	    match(input,COMMASi,FOLLOW_COMMASi_in_paramList2108); if (failed) return retval;
@@ -3560,7 +3561,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start param
-    // etc/XQFT.g:365:3: param : DOLLARSi qName ( typeDeclaration )? ;
+    // etc/XQFT.g:366:3: param : DOLLARSi qName ( typeDeclaration )? ;
     public final param_return param() throws RecognitionException {
         param_return retval = new param_return();
         retval.start = input.LT(1);
@@ -3576,8 +3577,8 @@ public class XQFTParser extends Parser {
         XQFTTree DOLLARSi130_tree=null;
 
         try {
-            // etc/XQFT.g:365:34: ( DOLLARSi qName ( typeDeclaration )? )
-            // etc/XQFT.g:365:36: DOLLARSi qName ( typeDeclaration )?
+            // etc/XQFT.g:366:34: ( DOLLARSi qName ( typeDeclaration )? )
+            // etc/XQFT.g:366:36: DOLLARSi qName ( typeDeclaration )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -3592,7 +3593,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, qName131.getTree());
-            // etc/XQFT.g:365:51: ( typeDeclaration )?
+            // etc/XQFT.g:366:51: ( typeDeclaration )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
@@ -3601,7 +3602,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt25) {
                 case 1 :
-                    // etc/XQFT.g:365:51: typeDeclaration
+                    // etc/XQFT.g:366:51: typeDeclaration
                     {
                     pushFollow(FOLLOW_typeDeclaration_in_param2150);
                     typeDeclaration132=typeDeclaration();
@@ -3640,7 +3641,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start enclosedExpr
-    // etc/XQFT.g:371:2: enclosedExpr : LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:372:2: enclosedExpr : LBRACESi expr RBRACSi ;
     public final enclosedExpr_return enclosedExpr() throws RecognitionException {
         enclosedExpr_return retval = new enclosedExpr_return();
         retval.start = input.LT(1);
@@ -3656,8 +3657,8 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi135_tree=null;
 
         try {
-            // etc/XQFT.g:371:33: ( LBRACESi expr RBRACSi )
-            // etc/XQFT.g:372:13: LBRACESi expr RBRACSi
+            // etc/XQFT.g:372:33: ( LBRACESi expr RBRACSi )
+            // etc/XQFT.g:373:13: LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -3696,7 +3697,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start optionDecl
-    // etc/XQFT.g:380:1: optionDecl : DECLARE OPTION qName StringLiteral ;
+    // etc/XQFT.g:381:1: optionDecl : DECLARE OPTION qName StringLiteral ;
     public final optionDecl_return optionDecl() throws RecognitionException {
         optionDecl_return retval = new optionDecl_return();
         retval.start = input.LT(1);
@@ -3714,8 +3715,8 @@ public class XQFTParser extends Parser {
         XQFTTree StringLiteral139_tree=null;
 
         try {
-            // etc/XQFT.g:380:32: ( DECLARE OPTION qName StringLiteral )
-            // etc/XQFT.g:380:34: DECLARE OPTION qName StringLiteral
+            // etc/XQFT.g:381:32: ( DECLARE OPTION qName StringLiteral )
+            // etc/XQFT.g:381:34: DECLARE OPTION qName StringLiteral
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -3768,7 +3769,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftOptionDecl
-    // etc/XQFT.g:382:1: ftOptionDecl : DECLARE FTOPTION ftMatchOptions ;
+    // etc/XQFT.g:383:1: ftOptionDecl : DECLARE FTOPTION ftMatchOptions ;
     public final ftOptionDecl_return ftOptionDecl() throws RecognitionException {
         ftOptionDecl_return retval = new ftOptionDecl_return();
         retval.start = input.LT(1);
@@ -3784,8 +3785,8 @@ public class XQFTParser extends Parser {
         XQFTTree FTOPTION141_tree=null;
 
         try {
-            // etc/XQFT.g:382:32: ( DECLARE FTOPTION ftMatchOptions )
-            // etc/XQFT.g:382:34: DECLARE FTOPTION ftMatchOptions
+            // etc/XQFT.g:383:32: ( DECLARE FTOPTION ftMatchOptions )
+            // etc/XQFT.g:383:34: DECLARE FTOPTION ftMatchOptions
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -3832,7 +3833,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftMatchOptions
-    // etc/XQFT.g:383:2: ftMatchOptions : ( ftMatchOption )+ ;
+    // etc/XQFT.g:384:2: ftMatchOptions : ( ftMatchOption )+ ;
     public final ftMatchOptions_return ftMatchOptions() throws RecognitionException {
         ftMatchOptions_return retval = new ftMatchOptions_return();
         retval.start = input.LT(1);
@@ -3844,12 +3845,12 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:383:33: ( ( ftMatchOption )+ )
-            // etc/XQFT.g:383:35: ( ftMatchOption )+
+            // etc/XQFT.g:384:33: ( ( ftMatchOption )+ )
+            // etc/XQFT.g:384:35: ( ftMatchOption )+
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:383:35: ( ftMatchOption )+
+            // etc/XQFT.g:384:35: ( ftMatchOption )+
             int cnt26=0;
             loop26:
             do {
@@ -3892,7 +3893,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt26) {
             	case 1 :
-            	    // etc/XQFT.g:383:35: ftMatchOption
+            	    // etc/XQFT.g:384:35: ftMatchOption
             	    {
             	    pushFollow(FOLLOW_ftMatchOption_in_ftMatchOptions2334);
             	    ftMatchOption143=ftMatchOption();
@@ -3939,7 +3940,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start sequenceType
-    // etc/XQFT.g:389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );
+    // etc/XQFT.g:390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );
     public final sequenceType_return sequenceType() throws RecognitionException {
         sequenceType_return retval = new sequenceType_return();
         retval.start = input.LT(1);
@@ -3961,7 +3962,7 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi149_tree=null;
 
         try {
-            // etc/XQFT.g:389:32: ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi )
+            // etc/XQFT.g:390:32: ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi )
             int alt27=3;
             switch ( input.LA(1) ) {
             case DOCUMENT_NODE:
@@ -4022,7 +4023,7 @@ public class XQFTParser extends Parser {
                                                                         else {
                                                                             if (backtracking>0) {failed=true; return retval;}
                                                                             NoViableAltException nvae =
-                                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                                             throw nvae;
                                                                         }
@@ -4039,7 +4040,7 @@ public class XQFTParser extends Parser {
                                                                         else {
                                                                             if (backtracking>0) {failed=true; return retval;}
                                                                             NoViableAltException nvae =
-                                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                                             throw nvae;
                                                                         }
@@ -4050,7 +4051,7 @@ public class XQFTParser extends Parser {
                                                                     else {
                                                                         if (backtracking>0) {failed=true; return retval;}
                                                                         NoViableAltException nvae =
-                                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                                         throw nvae;
                                                                     }
@@ -4058,7 +4059,7 @@ public class XQFTParser extends Parser {
                                                                 else {
                                                                     if (backtracking>0) {failed=true; return retval;}
                                                                     NoViableAltException nvae =
-                                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                                     throw nvae;
                                                                 }
@@ -4066,7 +4067,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
 
                                                                 throw nvae;
                                                             }
@@ -4092,7 +4093,7 @@ public class XQFTParser extends Parser {
                                                                     else {
                                                                         if (backtracking>0) {failed=true; return retval;}
                                                                         NoViableAltException nvae =
-                                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                                         throw nvae;
                                                                     }
@@ -4109,7 +4110,7 @@ public class XQFTParser extends Parser {
                                                                     else {
                                                                         if (backtracking>0) {failed=true; return retval;}
                                                                         NoViableAltException nvae =
-                                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                                         throw nvae;
                                                                     }
@@ -4120,7 +4121,7 @@ public class XQFTParser extends Parser {
                                                                 else {
                                                                     if (backtracking>0) {failed=true; return retval;}
                                                                     NoViableAltException nvae =
-                                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                                     throw nvae;
                                                                 }
@@ -4128,7 +4129,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                                 throw nvae;
                                                             }
@@ -4136,7 +4137,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 80, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 80, input);
 
                                                             throw nvae;
                                                         }
@@ -4144,7 +4145,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 78, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 78, input);
 
                                                         throw nvae;
                                                     }
@@ -4175,7 +4176,7 @@ public class XQFTParser extends Parser {
                                                                 else {
                                                                     if (backtracking>0) {failed=true; return retval;}
                                                                     NoViableAltException nvae =
-                                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                                     throw nvae;
                                                                 }
@@ -4192,7 +4193,7 @@ public class XQFTParser extends Parser {
                                                                 else {
                                                                     if (backtracking>0) {failed=true; return retval;}
                                                                     NoViableAltException nvae =
-                                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                                     throw nvae;
                                                                 }
@@ -4203,7 +4204,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                                 throw nvae;
                                                             }
@@ -4211,7 +4212,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                             throw nvae;
                                                         }
@@ -4219,7 +4220,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
 
                                                         throw nvae;
                                                     }
@@ -4247,7 +4248,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                                 throw nvae;
                                                             }
@@ -4264,7 +4265,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                                 throw nvae;
                                                             }
@@ -4275,7 +4276,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                             throw nvae;
                                                         }
@@ -4283,7 +4284,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                         throw nvae;
                                                     }
@@ -4292,7 +4293,7 @@ public class XQFTParser extends Parser {
                                                 default:
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 74, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 74, input);
 
                                                     throw nvae;
                                                 }
@@ -4301,7 +4302,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 67, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 67, input);
 
                                                 throw nvae;
                                             }
@@ -4327,7 +4328,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                         throw nvae;
                                                     }
@@ -4344,7 +4345,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                         throw nvae;
                                                     }
@@ -4355,7 +4356,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                     throw nvae;
                                                 }
@@ -4363,7 +4364,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                 throw nvae;
                                             }
@@ -4371,7 +4372,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 73, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 73, input);
 
                                             throw nvae;
                                         }
@@ -4379,7 +4380,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 66, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 66, input);
 
                                         throw nvae;
                                     }
@@ -4422,7 +4423,7 @@ public class XQFTParser extends Parser {
                                                                 else {
                                                                     if (backtracking>0) {failed=true; return retval;}
                                                                     NoViableAltException nvae =
-                                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                                     throw nvae;
                                                                 }
@@ -4439,7 +4440,7 @@ public class XQFTParser extends Parser {
                                                                 else {
                                                                     if (backtracking>0) {failed=true; return retval;}
                                                                     NoViableAltException nvae =
-                                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                                     throw nvae;
                                                                 }
@@ -4450,7 +4451,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                                 throw nvae;
                                                             }
@@ -4458,7 +4459,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                             throw nvae;
                                                         }
@@ -4466,7 +4467,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
 
                                                         throw nvae;
                                                     }
@@ -4492,7 +4493,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                                 throw nvae;
                                                             }
@@ -4509,7 +4510,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                                 throw nvae;
                                                             }
@@ -4520,7 +4521,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                             throw nvae;
                                                         }
@@ -4528,7 +4529,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                         throw nvae;
                                                     }
@@ -4536,7 +4537,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 80, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 80, input);
 
                                                     throw nvae;
                                                 }
@@ -4544,7 +4545,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 78, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 78, input);
 
                                                 throw nvae;
                                             }
@@ -4575,7 +4576,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                             throw nvae;
                                                         }
@@ -4592,7 +4593,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                             throw nvae;
                                                         }
@@ -4603,7 +4604,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                         throw nvae;
                                                     }
@@ -4611,7 +4612,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                     throw nvae;
                                                 }
@@ -4619,7 +4620,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
 
                                                 throw nvae;
                                             }
@@ -4647,7 +4648,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                         throw nvae;
                                                     }
@@ -4664,7 +4665,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                         throw nvae;
                                                     }
@@ -4675,7 +4676,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                     throw nvae;
                                                 }
@@ -4683,7 +4684,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                 throw nvae;
                                             }
@@ -4692,7 +4693,7 @@ public class XQFTParser extends Parser {
                                         default:
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 74, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 74, input);
 
                                             throw nvae;
                                         }
@@ -4701,7 +4702,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 67, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 67, input);
 
                                         throw nvae;
                                     }
@@ -4729,7 +4730,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                 throw nvae;
                                             }
@@ -4746,7 +4747,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                 throw nvae;
                                             }
@@ -4757,7 +4758,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                             throw nvae;
                                         }
@@ -4765,7 +4766,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                         throw nvae;
                                     }
@@ -4774,7 +4775,7 @@ public class XQFTParser extends Parser {
                                 default:
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 56, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 56, input);
 
                                     throw nvae;
                                 }
@@ -4821,7 +4822,7 @@ public class XQFTParser extends Parser {
                                                                 else {
                                                                     if (backtracking>0) {failed=true; return retval;}
                                                                     NoViableAltException nvae =
-                                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                                     throw nvae;
                                                                 }
@@ -4838,7 +4839,7 @@ public class XQFTParser extends Parser {
                                                                 else {
                                                                     if (backtracking>0) {failed=true; return retval;}
                                                                     NoViableAltException nvae =
-                                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                                     throw nvae;
                                                                 }
@@ -4849,7 +4850,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                                 throw nvae;
                                                             }
@@ -4857,7 +4858,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                             throw nvae;
                                                         }
@@ -4865,7 +4866,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
 
                                                         throw nvae;
                                                     }
@@ -4891,7 +4892,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                                 throw nvae;
                                                             }
@@ -4908,7 +4909,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                                 throw nvae;
                                                             }
@@ -4919,7 +4920,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                             throw nvae;
                                                         }
@@ -4927,7 +4928,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                         throw nvae;
                                                     }
@@ -4935,7 +4936,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 80, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 80, input);
 
                                                     throw nvae;
                                                 }
@@ -4943,7 +4944,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 78, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 78, input);
 
                                                 throw nvae;
                                             }
@@ -4974,7 +4975,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                             throw nvae;
                                                         }
@@ -4991,7 +4992,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                             throw nvae;
                                                         }
@@ -5002,7 +5003,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                         throw nvae;
                                                     }
@@ -5010,7 +5011,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                     throw nvae;
                                                 }
@@ -5018,7 +5019,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 79, input);
 
                                                 throw nvae;
                                             }
@@ -5046,7 +5047,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                         throw nvae;
                                                     }
@@ -5063,7 +5064,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                         throw nvae;
                                                     }
@@ -5074,7 +5075,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                     throw nvae;
                                                 }
@@ -5082,7 +5083,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                                 throw nvae;
                                             }
@@ -5091,7 +5092,7 @@ public class XQFTParser extends Parser {
                                         default:
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 74, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 74, input);
 
                                             throw nvae;
                                         }
@@ -5100,7 +5101,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 67, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 67, input);
 
                                         throw nvae;
                                     }
@@ -5126,7 +5127,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                 throw nvae;
                                             }
@@ -5143,7 +5144,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                 throw nvae;
                                             }
@@ -5154,7 +5155,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                             throw nvae;
                                         }
@@ -5162,7 +5163,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                         throw nvae;
                                     }
@@ -5170,7 +5171,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 57, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 57, input);
 
                                     throw nvae;
                                 }
@@ -5198,7 +5199,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                             throw nvae;
                                         }
@@ -5215,7 +5216,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                             throw nvae;
                                         }
@@ -5226,7 +5227,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                         throw nvae;
                                     }
@@ -5234,7 +5235,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 58, input);
 
                                     throw nvae;
                                 }
@@ -5243,7 +5244,7 @@ public class XQFTParser extends Parser {
                             default:
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 46, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 46, input);
 
                                 throw nvae;
                             }
@@ -5252,7 +5253,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 28, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 28, input);
 
                             throw nvae;
                         }
@@ -5295,7 +5296,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                         throw nvae;
                                                     }
@@ -5312,7 +5313,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                         throw nvae;
                                                     }
@@ -5323,7 +5324,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                                     throw nvae;
                                                 }
@@ -5331,7 +5332,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 69, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 69, input);
 
                                                 throw nvae;
                                             }
@@ -5339,7 +5340,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 75, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 75, input);
 
                                             throw nvae;
                                         }
@@ -5347,7 +5348,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 68, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 68, input);
 
                                         throw nvae;
                                     }
@@ -5373,7 +5374,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                 throw nvae;
                                             }
@@ -5390,7 +5391,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                 throw nvae;
                                             }
@@ -5401,7 +5402,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                                             throw nvae;
                                         }
@@ -5409,7 +5410,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 69, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 69, input);
 
                                         throw nvae;
                                     }
@@ -5417,7 +5418,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 59, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 59, input);
 
                                     throw nvae;
                                 }
@@ -5425,7 +5426,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 47, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 47, input);
 
                                 throw nvae;
                             }
@@ -5433,7 +5434,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 29, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 29, input);
 
                             throw nvae;
                         }
@@ -5458,7 +5459,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                 throw nvae;
                             }
@@ -5475,7 +5476,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                 throw nvae;
                             }
@@ -5486,7 +5487,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 30, input);
 
                             throw nvae;
                         }
@@ -5495,7 +5496,7 @@ public class XQFTParser extends Parser {
                     default:
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 13, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 13, input);
 
                         throw nvae;
                     }
@@ -5504,7 +5505,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 1, input);
+                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 1, input);
 
                     throw nvae;
                 }
@@ -5556,7 +5557,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                                 throw nvae;
                                                             }
@@ -5576,7 +5577,7 @@ public class XQFTParser extends Parser {
                                                             else {
                                                                 if (backtracking>0) {failed=true; return retval;}
                                                                 NoViableAltException nvae =
-                                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                                 throw nvae;
                                                             }
@@ -5587,7 +5588,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                                             throw nvae;
                                                         }
@@ -5595,7 +5596,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
 
                                                         throw nvae;
                                                     }
@@ -5615,7 +5616,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                             throw nvae;
                                                         }
@@ -5635,7 +5636,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                             throw nvae;
                                                         }
@@ -5646,7 +5647,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                                         throw nvae;
                                                     }
@@ -5654,7 +5655,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 76, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 76, input);
 
                                                     throw nvae;
                                                 }
@@ -5662,7 +5663,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 70, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 70, input);
 
                                                 throw nvae;
                                             }
@@ -5687,7 +5688,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                         throw nvae;
                                                     }
@@ -5707,7 +5708,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                         throw nvae;
                                                     }
@@ -5718,7 +5719,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                                     throw nvae;
                                                 }
@@ -5726,7 +5727,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
 
                                                 throw nvae;
                                             }
@@ -5748,7 +5749,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                     throw nvae;
                                                 }
@@ -5768,7 +5769,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                     throw nvae;
                                                 }
@@ -5779,7 +5780,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                                 throw nvae;
                                             }
@@ -5788,7 +5789,7 @@ public class XQFTParser extends Parser {
                                         default:
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 61, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 61, input);
 
                                             throw nvae;
                                         }
@@ -5797,7 +5798,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 49, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 49, input);
 
                                         throw nvae;
                                     }
@@ -5817,7 +5818,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                             throw nvae;
                                         }
@@ -5837,7 +5838,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                             throw nvae;
                                         }
@@ -5848,7 +5849,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                         throw nvae;
                                     }
@@ -5856,7 +5857,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 60, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 60, input);
 
                                     throw nvae;
                                 }
@@ -5864,7 +5865,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 48, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 48, input);
 
                                 throw nvae;
                             }
@@ -5901,7 +5902,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                         throw nvae;
                                                     }
@@ -5921,7 +5922,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                         throw nvae;
                                                     }
@@ -5932,7 +5933,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                                     throw nvae;
                                                 }
@@ -5940,7 +5941,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
 
                                                 throw nvae;
                                             }
@@ -5960,7 +5961,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                     throw nvae;
                                                 }
@@ -5980,7 +5981,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                     throw nvae;
                                                 }
@@ -5991,7 +5992,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                                 throw nvae;
                                             }
@@ -5999,7 +6000,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 76, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 76, input);
 
                                             throw nvae;
                                         }
@@ -6007,7 +6008,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 70, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 70, input);
 
                                         throw nvae;
                                     }
@@ -6032,7 +6033,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                 throw nvae;
                                             }
@@ -6052,7 +6053,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                 throw nvae;
                                             }
@@ -6063,7 +6064,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                             throw nvae;
                                         }
@@ -6071,7 +6072,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
 
                                         throw nvae;
                                     }
@@ -6093,7 +6094,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                             throw nvae;
                                         }
@@ -6113,7 +6114,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                             throw nvae;
                                         }
@@ -6124,7 +6125,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                         throw nvae;
                                     }
@@ -6133,7 +6134,7 @@ public class XQFTParser extends Parser {
                                 default:
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 61, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 61, input);
 
                                     throw nvae;
                                 }
@@ -6142,7 +6143,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 49, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 49, input);
 
                                 throw nvae;
                             }
@@ -6164,7 +6165,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                     throw nvae;
                                 }
@@ -6184,7 +6185,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                     throw nvae;
                                 }
@@ -6195,7 +6196,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                 throw nvae;
                             }
@@ -6204,7 +6205,7 @@ public class XQFTParser extends Parser {
                         default:
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 31, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 31, input);
 
                             throw nvae;
                         }
@@ -6245,7 +6246,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                         throw nvae;
                                                     }
@@ -6265,7 +6266,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                         throw nvae;
                                                     }
@@ -6276,7 +6277,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                                     throw nvae;
                                                 }
@@ -6284,7 +6285,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
 
                                                 throw nvae;
                                             }
@@ -6304,7 +6305,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                     throw nvae;
                                                 }
@@ -6324,7 +6325,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                     throw nvae;
                                                 }
@@ -6335,7 +6336,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                                 throw nvae;
                                             }
@@ -6343,7 +6344,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 76, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 76, input);
 
                                             throw nvae;
                                         }
@@ -6351,7 +6352,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 70, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 70, input);
 
                                         throw nvae;
                                     }
@@ -6376,7 +6377,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                 throw nvae;
                                             }
@@ -6396,7 +6397,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                 throw nvae;
                                             }
@@ -6407,7 +6408,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                             throw nvae;
                                         }
@@ -6415,7 +6416,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 71, input);
 
                                         throw nvae;
                                     }
@@ -6437,7 +6438,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                             throw nvae;
                                         }
@@ -6457,7 +6458,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                             throw nvae;
                                         }
@@ -6468,7 +6469,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                         throw nvae;
                                     }
@@ -6477,7 +6478,7 @@ public class XQFTParser extends Parser {
                                 default:
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 61, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 61, input);
 
                                     throw nvae;
                                 }
@@ -6486,7 +6487,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 49, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 49, input);
 
                                 throw nvae;
                             }
@@ -6506,7 +6507,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                     throw nvae;
                                 }
@@ -6526,7 +6527,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                     throw nvae;
                                 }
@@ -6537,7 +6538,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                                 throw nvae;
                             }
@@ -6545,7 +6546,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 32, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 32, input);
 
                             throw nvae;
                         }
@@ -6567,7 +6568,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                 throw nvae;
                             }
@@ -6587,7 +6588,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                 throw nvae;
                             }
@@ -6598,7 +6599,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 33, input);
 
                             throw nvae;
                         }
@@ -6607,7 +6608,7 @@ public class XQFTParser extends Parser {
                     default:
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 14, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 14, input);
 
                         throw nvae;
                     }
@@ -6616,7 +6617,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 2, input);
+                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 2, input);
 
                     throw nvae;
                 }
@@ -6668,7 +6669,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                             throw nvae;
                                                         }
@@ -6685,7 +6686,7 @@ public class XQFTParser extends Parser {
                                                         else {
                                                             if (backtracking>0) {failed=true; return retval;}
                                                             NoViableAltException nvae =
-                                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                             throw nvae;
                                                         }
@@ -6696,7 +6697,7 @@ public class XQFTParser extends Parser {
                                                     else {
                                                         if (backtracking>0) {failed=true; return retval;}
                                                         NoViableAltException nvae =
-                                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
+                                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
 
                                                         throw nvae;
                                                     }
@@ -6704,7 +6705,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 77, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 77, input);
 
                                                     throw nvae;
                                                 }
@@ -6712,7 +6713,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 72, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 72, input);
 
                                                 throw nvae;
                                             }
@@ -6735,7 +6736,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                     throw nvae;
                                                 }
@@ -6752,7 +6753,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                     throw nvae;
                                                 }
@@ -6763,7 +6764,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
 
                                                 throw nvae;
                                             }
@@ -6771,7 +6772,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 63, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 63, input);
 
                                             throw nvae;
                                         }
@@ -6779,7 +6780,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 51, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 51, input);
 
                                         throw nvae;
                                     }
@@ -6802,7 +6803,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                             throw nvae;
                                         }
@@ -6819,7 +6820,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                             throw nvae;
                                         }
@@ -6830,7 +6831,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
 
                                         throw nvae;
                                     }
@@ -6838,7 +6839,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 62, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 62, input);
 
                                     throw nvae;
                                 }
@@ -6846,7 +6847,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 50, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 50, input);
 
                                 throw nvae;
                             }
@@ -6883,7 +6884,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                     throw nvae;
                                                 }
@@ -6900,7 +6901,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                     throw nvae;
                                                 }
@@ -6911,7 +6912,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
 
                                                 throw nvae;
                                             }
@@ -6919,7 +6920,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 77, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 77, input);
 
                                             throw nvae;
                                         }
@@ -6927,7 +6928,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 72, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 72, input);
 
                                         throw nvae;
                                     }
@@ -6950,7 +6951,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                             throw nvae;
                                         }
@@ -6967,7 +6968,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                             throw nvae;
                                         }
@@ -6978,7 +6979,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
 
                                         throw nvae;
                                     }
@@ -6986,7 +6987,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 63, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 63, input);
 
                                     throw nvae;
                                 }
@@ -6994,7 +6995,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 51, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 51, input);
 
                                 throw nvae;
                             }
@@ -7019,7 +7020,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                     throw nvae;
                                 }
@@ -7036,7 +7037,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                     throw nvae;
                                 }
@@ -7047,7 +7048,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
 
                                 throw nvae;
                             }
@@ -7056,7 +7057,7 @@ public class XQFTParser extends Parser {
                         default:
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 34, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 34, input);
 
                             throw nvae;
                         }
@@ -7097,7 +7098,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                                     throw nvae;
                                                 }
@@ -7114,7 +7115,7 @@ public class XQFTParser extends Parser {
                                                 else {
                                                     if (backtracking>0) {failed=true; return retval;}
                                                     NoViableAltException nvae =
-                                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                                     throw nvae;
                                                 }
@@ -7125,7 +7126,7 @@ public class XQFTParser extends Parser {
                                             else {
                                                 if (backtracking>0) {failed=true; return retval;}
                                                 NoViableAltException nvae =
-                                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
+                                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
 
                                                 throw nvae;
                                             }
@@ -7133,7 +7134,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 77, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 77, input);
 
                                             throw nvae;
                                         }
@@ -7141,7 +7142,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 72, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 72, input);
 
                                         throw nvae;
                                     }
@@ -7164,7 +7165,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                             throw nvae;
                                         }
@@ -7181,7 +7182,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                             throw nvae;
                                         }
@@ -7192,7 +7193,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
 
                                         throw nvae;
                                     }
@@ -7200,7 +7201,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 63, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 63, input);
 
                                     throw nvae;
                                 }
@@ -7208,7 +7209,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 51, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 51, input);
 
                                 throw nvae;
                             }
@@ -7231,7 +7232,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                     throw nvae;
                                 }
@@ -7248,7 +7249,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                     throw nvae;
                                 }
@@ -7259,7 +7260,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
 
                                 throw nvae;
                             }
@@ -7267,7 +7268,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 35, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 35, input);
 
                             throw nvae;
                         }
@@ -7292,7 +7293,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                 throw nvae;
                             }
@@ -7309,7 +7310,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                 throw nvae;
                             }
@@ -7320,7 +7321,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 36, input);
 
                             throw nvae;
                         }
@@ -7329,7 +7330,7 @@ public class XQFTParser extends Parser {
                     default:
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 15, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 15, input);
 
                         throw nvae;
                     }
@@ -7338,7 +7339,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 3, input);
+                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 3, input);
 
                     throw nvae;
                 }
@@ -7375,7 +7376,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                             throw nvae;
                                         }
@@ -7395,7 +7396,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                             throw nvae;
                                         }
@@ -7406,7 +7407,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 53, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 53, input);
 
                                         throw nvae;
                                     }
@@ -7414,7 +7415,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 64, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 64, input);
 
                                     throw nvae;
                                 }
@@ -7422,7 +7423,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 52, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 52, input);
 
                                 throw nvae;
                             }
@@ -7442,7 +7443,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                     throw nvae;
                                 }
@@ -7462,7 +7463,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                     throw nvae;
                                 }
@@ -7473,7 +7474,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 53, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 53, input);
 
                                 throw nvae;
                             }
@@ -7481,7 +7482,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 37, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 37, input);
 
                             throw nvae;
                         }
@@ -7489,7 +7490,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 16, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 16, input);
 
                         throw nvae;
                     }
@@ -7497,7 +7498,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 4, input);
+                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 4, input);
 
                     throw nvae;
                 }
@@ -7537,7 +7538,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                             throw nvae;
                                         }
@@ -7554,7 +7555,7 @@ public class XQFTParser extends Parser {
                                         else {
                                             if (backtracking>0) {failed=true; return retval;}
                                             NoViableAltException nvae =
-                                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                             throw nvae;
                                         }
@@ -7565,7 +7566,7 @@ public class XQFTParser extends Parser {
                                     else {
                                         if (backtracking>0) {failed=true; return retval;}
                                         NoViableAltException nvae =
-                                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 55, input);
+                                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 55, input);
 
                                         throw nvae;
                                     }
@@ -7573,7 +7574,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 65, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 65, input);
 
                                     throw nvae;
                                 }
@@ -7581,7 +7582,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 54, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 54, input);
 
                                 throw nvae;
                             }
@@ -7604,7 +7605,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                     throw nvae;
                                 }
@@ -7621,7 +7622,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                     throw nvae;
                                 }
@@ -7632,7 +7633,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 55, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 55, input);
 
                                 throw nvae;
                             }
@@ -7640,7 +7641,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 38, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 38, input);
 
                             throw nvae;
                         }
@@ -7648,7 +7649,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 17, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 17, input);
 
                         throw nvae;
                     }
@@ -7656,7 +7657,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 5, input);
+                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 5, input);
 
                     throw nvae;
                 }
@@ -7690,7 +7691,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                     throw nvae;
                                 }
@@ -7707,7 +7708,7 @@ public class XQFTParser extends Parser {
                                 else {
                                     if (backtracking>0) {failed=true; return retval;}
                                     NoViableAltException nvae =
-                                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                     throw nvae;
                                 }
@@ -7718,7 +7719,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 40, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 40, input);
 
                                 throw nvae;
                             }
@@ -7726,7 +7727,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 39, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 39, input);
 
                             throw nvae;
                         }
@@ -7749,7 +7750,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                 throw nvae;
                             }
@@ -7766,7 +7767,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                 throw nvae;
                             }
@@ -7777,7 +7778,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 40, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 40, input);
 
                             throw nvae;
                         }
@@ -7785,7 +7786,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 18, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 18, input);
 
                         throw nvae;
                     }
@@ -7793,7 +7794,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 6, input);
+                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 6, input);
 
                     throw nvae;
                 }
@@ -7821,7 +7822,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                 throw nvae;
                             }
@@ -7841,7 +7842,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                 throw nvae;
                             }
@@ -7852,7 +7853,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 41, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 41, input);
 
                             throw nvae;
                         }
@@ -7860,7 +7861,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 19, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 19, input);
 
                         throw nvae;
                     }
@@ -7868,7 +7869,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 7, input);
+                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 7, input);
 
                     throw nvae;
                 }
@@ -7899,7 +7900,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                 throw nvae;
                             }
@@ -7916,7 +7917,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                 throw nvae;
                             }
@@ -7927,7 +7928,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 42, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 42, input);
 
                             throw nvae;
                         }
@@ -7935,7 +7936,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 20, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 20, input);
 
                         throw nvae;
                     }
@@ -7943,7 +7944,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 8, input);
+                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 8, input);
 
                     throw nvae;
                 }
@@ -7974,7 +7975,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                 throw nvae;
                             }
@@ -7991,7 +7992,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                 throw nvae;
                             }
@@ -8002,7 +8003,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 43, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 43, input);
 
                             throw nvae;
                         }
@@ -8010,7 +8011,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 21, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 21, input);
 
                         throw nvae;
                     }
@@ -8018,7 +8019,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 9, input);
+                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 9, input);
 
                     throw nvae;
                 }
@@ -8046,7 +8047,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                 throw nvae;
                             }
@@ -8066,7 +8067,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                 throw nvae;
                             }
@@ -8077,7 +8078,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 44, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 44, input);
 
                             throw nvae;
                         }
@@ -8085,7 +8086,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 22, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 22, input);
 
                         throw nvae;
                     }
@@ -8093,7 +8094,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 10, input);
+                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 10, input);
 
                     throw nvae;
                 }
@@ -8124,7 +8125,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                                 throw nvae;
                             }
@@ -8141,7 +8142,7 @@ public class XQFTParser extends Parser {
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                                 throw nvae;
                             }
@@ -8152,7 +8153,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 45, input);
+                                new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 45, input);
 
                             throw nvae;
                         }
@@ -8160,7 +8161,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 23, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 23, input);
 
                         throw nvae;
                     }
@@ -8177,7 +8178,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 24, input);
 
                         throw nvae;
                     }
@@ -8197,7 +8198,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
+                            new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 26, input);
 
                         throw nvae;
                     }
@@ -8208,7 +8209,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 11, input);
+                        new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 11, input);
 
                     throw nvae;
                 }
@@ -8222,14 +8223,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("389:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 0, input);
+                    new NoViableAltException("390:1: sequenceType : ( ( itemType occurrenceIndicator )=> itemType occurrenceIndicator | itemType | EMPTY_SEQUENCE LPARSi RPARSi );", 27, 0, input);
 
                 throw nvae;
             }
 
             switch (alt27) {
                 case 1 :
-                    // etc/XQFT.g:389:34: ( itemType occurrenceIndicator )=> itemType occurrenceIndicator
+                    // etc/XQFT.g:390:34: ( itemType occurrenceIndicator )=> itemType occurrenceIndicator
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8247,7 +8248,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:390:13: itemType
+                    // etc/XQFT.g:391:13: itemType
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8260,7 +8261,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:391:13: EMPTY_SEQUENCE LPARSi RPARSi
+                    // etc/XQFT.g:392:13: EMPTY_SEQUENCE LPARSi RPARSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8302,7 +8303,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start itemType
-    // etc/XQFT.g:393:2: itemType : ( kindTest | ( ITEM LPARSi RPARSi ) | atomicType ) ;
+    // etc/XQFT.g:394:2: itemType : ( kindTest | ( ITEM LPARSi RPARSi ) | atomicType ) ;
     public final itemType_return itemType() throws RecognitionException {
         itemType_return retval = new itemType_return();
         retval.start = input.LT(1);
@@ -8322,12 +8323,12 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi153_tree=null;
 
         try {
-            // etc/XQFT.g:393:33: ( ( kindTest | ( ITEM LPARSi RPARSi ) | atomicType ) )
-            // etc/XQFT.g:393:35: ( kindTest | ( ITEM LPARSi RPARSi ) | atomicType )
+            // etc/XQFT.g:394:33: ( ( kindTest | ( ITEM LPARSi RPARSi ) | atomicType ) )
+            // etc/XQFT.g:394:35: ( kindTest | ( ITEM LPARSi RPARSi ) | atomicType )
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:393:35: ( kindTest | ( ITEM LPARSi RPARSi ) | atomicType )
+            // etc/XQFT.g:394:35: ( kindTest | ( ITEM LPARSi RPARSi ) | atomicType )
             int alt28=3;
             switch ( input.LA(1) ) {
             case ATTRIBUTE:
@@ -8356,14 +8357,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("393:35: ( kindTest | ( ITEM LPARSi RPARSi ) | atomicType )", 28, 0, input);
+                    new NoViableAltException("394:35: ( kindTest | ( ITEM LPARSi RPARSi ) | atomicType )", 28, 0, input);
 
                 throw nvae;
             }
 
             switch (alt28) {
                 case 1 :
-                    // etc/XQFT.g:393:36: kindTest
+                    // etc/XQFT.g:394:36: kindTest
                     {
                     pushFollow(FOLLOW_kindTest_in_itemType2464);
                     kindTest150=kindTest();
@@ -8374,10 +8375,10 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:393:47: ( ITEM LPARSi RPARSi )
+                    // etc/XQFT.g:394:47: ( ITEM LPARSi RPARSi )
                     {
-                    // etc/XQFT.g:393:47: ( ITEM LPARSi RPARSi )
-                    // etc/XQFT.g:393:48: ITEM LPARSi RPARSi
+                    // etc/XQFT.g:394:47: ( ITEM LPARSi RPARSi )
+                    // etc/XQFT.g:394:48: ITEM LPARSi RPARSi
                     {
                     ITEM151=(Token)input.LT(1);
                     match(input,ITEM,FOLLOW_ITEM_in_itemType2469); if (failed) return retval;
@@ -8396,7 +8397,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:393:72: atomicType
+                    // etc/XQFT.g:394:72: atomicType
                     {
                     pushFollow(FOLLOW_atomicType_in_itemType2480);
                     atomicType154=atomicType();
@@ -8435,7 +8436,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start kindTest
-    // etc/XQFT.g:394:3: kindTest : ( documentTest | elementTest | attributeTest | schemaElementTest | schemaAttributeTest | piTest | commentTest | textTest | anyKindTest );
+    // etc/XQFT.g:395:3: kindTest : ( documentTest | elementTest | attributeTest | schemaElementTest | schemaAttributeTest | piTest | commentTest | textTest | anyKindTest );
     public final kindTest_return kindTest() throws RecognitionException {
         kindTest_return retval = new kindTest_return();
         retval.start = input.LT(1);
@@ -8463,7 +8464,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:394:34: ( documentTest | elementTest | attributeTest | schemaElementTest | schemaAttributeTest | piTest | commentTest | textTest | anyKindTest )
+            // etc/XQFT.g:395:34: ( documentTest | elementTest | attributeTest | schemaElementTest | schemaAttributeTest | piTest | commentTest | textTest | anyKindTest )
             int alt29=9;
             switch ( input.LA(1) ) {
             case DOCUMENT_NODE:
@@ -8514,14 +8515,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("394:3: kindTest : ( documentTest | elementTest | attributeTest | schemaElementTest | schemaAttributeTest | piTest | commentTest | textTest | anyKindTest );", 29, 0, input);
+                    new NoViableAltException("395:3: kindTest : ( documentTest | elementTest | attributeTest | schemaElementTest | schemaAttributeTest | piTest | commentTest | textTest | anyKindTest );", 29, 0, input);
 
                 throw nvae;
             }
 
             switch (alt29) {
                 case 1 :
-                    // etc/XQFT.g:394:36: documentTest
+                    // etc/XQFT.g:395:36: documentTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8534,7 +8535,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:395:39: elementTest
+                    // etc/XQFT.g:396:39: elementTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8547,7 +8548,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:396:39: attributeTest
+                    // etc/XQFT.g:397:39: attributeTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8560,7 +8561,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:397:39: schemaElementTest
+                    // etc/XQFT.g:398:39: schemaElementTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8573,7 +8574,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // etc/XQFT.g:398:39: schemaAttributeTest
+                    // etc/XQFT.g:399:39: schemaAttributeTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8586,7 +8587,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // etc/XQFT.g:399:39: piTest
+                    // etc/XQFT.g:400:39: piTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8599,7 +8600,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 7 :
-                    // etc/XQFT.g:400:39: commentTest
+                    // etc/XQFT.g:401:39: commentTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8612,7 +8613,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 8 :
-                    // etc/XQFT.g:401:39: textTest
+                    // etc/XQFT.g:402:39: textTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8625,7 +8626,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 9 :
-                    // etc/XQFT.g:402:39: anyKindTest
+                    // etc/XQFT.g:403:39: anyKindTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8662,7 +8663,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start documentTest
-    // etc/XQFT.g:403:4: documentTest : DOCUMENT_NODE LPARSi ( elementTest | schemaElementTest )? RPARSi ;
+    // etc/XQFT.g:404:4: documentTest : DOCUMENT_NODE LPARSi ( elementTest | schemaElementTest )? RPARSi ;
     public final documentTest_return documentTest() throws RecognitionException {
         documentTest_return retval = new documentTest_return();
         retval.start = input.LT(1);
@@ -8682,8 +8683,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi168_tree=null;
 
         try {
-            // etc/XQFT.g:403:35: ( DOCUMENT_NODE LPARSi ( elementTest | schemaElementTest )? RPARSi )
-            // etc/XQFT.g:403:37: DOCUMENT_NODE LPARSi ( elementTest | schemaElementTest )? RPARSi
+            // etc/XQFT.g:404:35: ( DOCUMENT_NODE LPARSi ( elementTest | schemaElementTest )? RPARSi )
+            // etc/XQFT.g:404:37: DOCUMENT_NODE LPARSi ( elementTest | schemaElementTest )? RPARSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -8695,7 +8696,7 @@ public class XQFTParser extends Parser {
             }
             LPARSi165=(Token)input.LT(1);
             match(input,LPARSi,FOLLOW_LPARSi_in_documentTest2862); if (failed) return retval;
-            // etc/XQFT.g:403:59: ( elementTest | schemaElementTest )?
+            // etc/XQFT.g:404:59: ( elementTest | schemaElementTest )?
             int alt30=3;
             int LA30_0 = input.LA(1);
 
@@ -8707,7 +8708,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt30) {
                 case 1 :
-                    // etc/XQFT.g:403:60: elementTest
+                    // etc/XQFT.g:404:60: elementTest
                     {
                     pushFollow(FOLLOW_elementTest_in_documentTest2866);
                     elementTest166=elementTest();
@@ -8718,7 +8719,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:403:74: schemaElementTest
+                    // etc/XQFT.g:404:74: schemaElementTest
                     {
                     pushFollow(FOLLOW_schemaElementTest_in_documentTest2870);
                     schemaElementTest167=schemaElementTest();
@@ -8759,7 +8760,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start elementTest
-    // etc/XQFT.g:404:5: elementTest : ELEMENT LPARSi ( elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )? )? RPARSi ;
+    // etc/XQFT.g:405:5: elementTest : ELEMENT LPARSi ( elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )? )? RPARSi ;
     public final elementTest_return elementTest() throws RecognitionException {
         elementTest_return retval = new elementTest_return();
         retval.start = input.LT(1);
@@ -8783,8 +8784,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi175_tree=null;
 
         try {
-            // etc/XQFT.g:404:34: ( ELEMENT LPARSi ( elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )? )? RPARSi )
-            // etc/XQFT.g:404:36: ELEMENT LPARSi ( elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )? )? RPARSi
+            // etc/XQFT.g:405:34: ( ELEMENT LPARSi ( elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )? )? RPARSi )
+            // etc/XQFT.g:405:36: ELEMENT LPARSi ( elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )? )? RPARSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -8796,7 +8797,7 @@ public class XQFTParser extends Parser {
             }
             LPARSi170=(Token)input.LT(1);
             match(input,LPARSi,FOLLOW_LPARSi_in_elementTest2905); if (failed) return retval;
-            // etc/XQFT.g:404:52: ( elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )? )?
+            // etc/XQFT.g:405:52: ( elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )? )?
             int alt33=2;
             int LA33_0 = input.LA(1);
 
@@ -8805,14 +8806,14 @@ public class XQFTParser extends Parser {
             }
             switch (alt33) {
                 case 1 :
-                    // etc/XQFT.g:404:53: elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )?
+                    // etc/XQFT.g:405:53: elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )?
                     {
                     pushFollow(FOLLOW_elementNameOrWildcard_in_elementTest2909);
                     elementNameOrWildcard171=elementNameOrWildcard();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, elementNameOrWildcard171.getTree());
-                    // etc/XQFT.g:404:75: ( COMMASi typeName ( QUESTIONSi )? )?
+                    // etc/XQFT.g:405:75: ( COMMASi typeName ( QUESTIONSi )? )?
                     int alt32=2;
                     int LA32_0 = input.LA(1);
 
@@ -8821,7 +8822,7 @@ public class XQFTParser extends Parser {
                     }
                     switch (alt32) {
                         case 1 :
-                            // etc/XQFT.g:404:76: COMMASi typeName ( QUESTIONSi )?
+                            // etc/XQFT.g:405:76: COMMASi typeName ( QUESTIONSi )?
                             {
                             COMMASi172=(Token)input.LT(1);
                             match(input,COMMASi,FOLLOW_COMMASi_in_elementTest2912); if (failed) return retval;
@@ -8834,7 +8835,7 @@ public class XQFTParser extends Parser {
                             _fsp--;
                             if (failed) return retval;
                             if ( backtracking==0 ) adaptor.addChild(root_0, typeName173.getTree());
-                            // etc/XQFT.g:404:93: ( QUESTIONSi )?
+                            // etc/XQFT.g:405:93: ( QUESTIONSi )?
                             int alt31=2;
                             int LA31_0 = input.LA(1);
 
@@ -8843,7 +8844,7 @@ public class XQFTParser extends Parser {
                             }
                             switch (alt31) {
                                 case 1 :
-                                    // etc/XQFT.g:404:93: QUESTIONSi
+                                    // etc/XQFT.g:405:93: QUESTIONSi
                                     {
                                     QUESTIONSi174=(Token)input.LT(1);
                                     match(input,QUESTIONSi,FOLLOW_QUESTIONSi_in_elementTest2916); if (failed) return retval;
@@ -8897,7 +8898,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start elementNameOrWildcard
-    // etc/XQFT.g:405:6: elementNameOrWildcard : ( elementName | STARSi );
+    // etc/XQFT.g:406:6: elementNameOrWildcard : ( elementName | STARSi );
     public final elementNameOrWildcard_return elementNameOrWildcard() throws RecognitionException {
         elementNameOrWildcard_return retval = new elementNameOrWildcard_return();
         retval.start = input.LT(1);
@@ -8911,7 +8912,7 @@ public class XQFTParser extends Parser {
         XQFTTree STARSi177_tree=null;
 
         try {
-            // etc/XQFT.g:405:37: ( elementName | STARSi )
+            // etc/XQFT.g:406:37: ( elementName | STARSi )
             int alt34=2;
             int LA34_0 = input.LA(1);
 
@@ -8924,13 +8925,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("405:6: elementNameOrWildcard : ( elementName | STARSi );", 34, 0, input);
+                    new NoViableAltException("406:6: elementNameOrWildcard : ( elementName | STARSi );", 34, 0, input);
 
                 throw nvae;
             }
             switch (alt34) {
                 case 1 :
-                    // etc/XQFT.g:405:39: elementName
+                    // etc/XQFT.g:406:39: elementName
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8943,7 +8944,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:405:53: STARSi
+                    // etc/XQFT.g:406:53: STARSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -8981,7 +8982,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start elementName
-    // etc/XQFT.g:406:7: elementName : qName ;
+    // etc/XQFT.g:407:7: elementName : qName ;
     public final elementName_return elementName() throws RecognitionException {
         elementName_return retval = new elementName_return();
         retval.start = input.LT(1);
@@ -8993,8 +8994,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:406:38: ( qName )
-            // etc/XQFT.g:406:40: qName
+            // etc/XQFT.g:407:38: ( qName )
+            // etc/XQFT.g:407:40: qName
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9029,7 +9030,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start typeName
-    // etc/XQFT.g:407:6: typeName : qName ;
+    // etc/XQFT.g:408:6: typeName : qName ;
     public final typeName_return typeName() throws RecognitionException {
         typeName_return retval = new typeName_return();
         retval.start = input.LT(1);
@@ -9041,8 +9042,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:407:37: ( qName )
-            // etc/XQFT.g:407:39: qName
+            // etc/XQFT.g:408:37: ( qName )
+            // etc/XQFT.g:408:39: qName
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9077,7 +9078,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start schemaElementTest
-    // etc/XQFT.g:408:5: schemaElementTest : SCHEMA_ELEMENT LPARSi elementDeclaration RPARSi ;
+    // etc/XQFT.g:409:5: schemaElementTest : SCHEMA_ELEMENT LPARSi elementDeclaration RPARSi ;
     public final schemaElementTest_return schemaElementTest() throws RecognitionException {
         schemaElementTest_return retval = new schemaElementTest_return();
         retval.start = input.LT(1);
@@ -9095,8 +9096,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi183_tree=null;
 
         try {
-            // etc/XQFT.g:408:37: ( SCHEMA_ELEMENT LPARSi elementDeclaration RPARSi )
-            // etc/XQFT.g:408:39: SCHEMA_ELEMENT LPARSi elementDeclaration RPARSi
+            // etc/XQFT.g:409:37: ( SCHEMA_ELEMENT LPARSi elementDeclaration RPARSi )
+            // etc/XQFT.g:409:39: SCHEMA_ELEMENT LPARSi elementDeclaration RPARSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9141,7 +9142,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start elementDeclaration
-    // etc/XQFT.g:409:6: elementDeclaration : elementName ;
+    // etc/XQFT.g:410:6: elementDeclaration : elementName ;
     public final elementDeclaration_return elementDeclaration() throws RecognitionException {
         elementDeclaration_return retval = new elementDeclaration_return();
         retval.start = input.LT(1);
@@ -9153,8 +9154,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:409:37: ( elementName )
-            // etc/XQFT.g:409:39: elementName
+            // etc/XQFT.g:410:37: ( elementName )
+            // etc/XQFT.g:410:39: elementName
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9189,7 +9190,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start attributeTest
-    // etc/XQFT.g:415:4: attributeTest : ATTRIBUTE LPARSi ( attribNameOrWildcard ( COMMASi typeName )? )? RPARSi ;
+    // etc/XQFT.g:416:4: attributeTest : ATTRIBUTE LPARSi ( attribNameOrWildcard ( COMMASi typeName )? )? RPARSi ;
     public final attributeTest_return attributeTest() throws RecognitionException {
         attributeTest_return retval = new attributeTest_return();
         retval.start = input.LT(1);
@@ -9211,8 +9212,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi190_tree=null;
 
         try {
-            // etc/XQFT.g:415:35: ( ATTRIBUTE LPARSi ( attribNameOrWildcard ( COMMASi typeName )? )? RPARSi )
-            // etc/XQFT.g:415:37: ATTRIBUTE LPARSi ( attribNameOrWildcard ( COMMASi typeName )? )? RPARSi
+            // etc/XQFT.g:416:35: ( ATTRIBUTE LPARSi ( attribNameOrWildcard ( COMMASi typeName )? )? RPARSi )
+            // etc/XQFT.g:416:37: ATTRIBUTE LPARSi ( attribNameOrWildcard ( COMMASi typeName )? )? RPARSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9224,7 +9225,7 @@ public class XQFTParser extends Parser {
             }
             LPARSi186=(Token)input.LT(1);
             match(input,LPARSi,FOLLOW_LPARSi_in_attributeTest3106); if (failed) return retval;
-            // etc/XQFT.g:415:55: ( attribNameOrWildcard ( COMMASi typeName )? )?
+            // etc/XQFT.g:416:55: ( attribNameOrWildcard ( COMMASi typeName )? )?
             int alt36=2;
             int LA36_0 = input.LA(1);
 
@@ -9233,14 +9234,14 @@ public class XQFTParser extends Parser {
             }
             switch (alt36) {
                 case 1 :
-                    // etc/XQFT.g:415:56: attribNameOrWildcard ( COMMASi typeName )?
+                    // etc/XQFT.g:416:56: attribNameOrWildcard ( COMMASi typeName )?
                     {
                     pushFollow(FOLLOW_attribNameOrWildcard_in_attributeTest3110);
                     attribNameOrWildcard187=attribNameOrWildcard();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, attribNameOrWildcard187.getTree());
-                    // etc/XQFT.g:415:77: ( COMMASi typeName )?
+                    // etc/XQFT.g:416:77: ( COMMASi typeName )?
                     int alt35=2;
                     int LA35_0 = input.LA(1);
 
@@ -9249,7 +9250,7 @@ public class XQFTParser extends Parser {
                     }
                     switch (alt35) {
                         case 1 :
-                            // etc/XQFT.g:415:78: COMMASi typeName
+                            // etc/XQFT.g:416:78: COMMASi typeName
                             {
                             COMMASi188=(Token)input.LT(1);
                             match(input,COMMASi,FOLLOW_COMMASi_in_attributeTest3113); if (failed) return retval;
@@ -9302,7 +9303,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start attribNameOrWildcard
-    // etc/XQFT.g:416:5: attribNameOrWildcard : ( attributeName | STARSi );
+    // etc/XQFT.g:417:5: attribNameOrWildcard : ( attributeName | STARSi );
     public final attribNameOrWildcard_return attribNameOrWildcard() throws RecognitionException {
         attribNameOrWildcard_return retval = new attribNameOrWildcard_return();
         retval.start = input.LT(1);
@@ -9316,7 +9317,7 @@ public class XQFTParser extends Parser {
         XQFTTree STARSi192_tree=null;
 
         try {
-            // etc/XQFT.g:416:36: ( attributeName | STARSi )
+            // etc/XQFT.g:417:36: ( attributeName | STARSi )
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -9329,13 +9330,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("416:5: attribNameOrWildcard : ( attributeName | STARSi );", 37, 0, input);
+                    new NoViableAltException("417:5: attribNameOrWildcard : ( attributeName | STARSi );", 37, 0, input);
 
                 throw nvae;
             }
             switch (alt37) {
                 case 1 :
-                    // etc/XQFT.g:416:38: attributeName
+                    // etc/XQFT.g:417:38: attributeName
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -9348,7 +9349,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:416:54: STARSi
+                    // etc/XQFT.g:417:54: STARSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -9386,7 +9387,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start attributeName
-    // etc/XQFT.g:417:6: attributeName : qName ;
+    // etc/XQFT.g:418:6: attributeName : qName ;
     public final attributeName_return attributeName() throws RecognitionException {
         attributeName_return retval = new attributeName_return();
         retval.start = input.LT(1);
@@ -9398,8 +9399,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:417:37: ( qName )
-            // etc/XQFT.g:417:39: qName
+            // etc/XQFT.g:418:37: ( qName )
+            // etc/XQFT.g:418:39: qName
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9434,7 +9435,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start schemaAttributeTest
-    // etc/XQFT.g:422:4: schemaAttributeTest : SCHEMA_ATTRIBUTE LPARSi attributeDeclaration RPARSi ;
+    // etc/XQFT.g:423:4: schemaAttributeTest : SCHEMA_ATTRIBUTE LPARSi attributeDeclaration RPARSi ;
     public final schemaAttributeTest_return schemaAttributeTest() throws RecognitionException {
         schemaAttributeTest_return retval = new schemaAttributeTest_return();
         retval.start = input.LT(1);
@@ -9452,8 +9453,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi197_tree=null;
 
         try {
-            // etc/XQFT.g:422:35: ( SCHEMA_ATTRIBUTE LPARSi attributeDeclaration RPARSi )
-            // etc/XQFT.g:422:37: SCHEMA_ATTRIBUTE LPARSi attributeDeclaration RPARSi
+            // etc/XQFT.g:423:35: ( SCHEMA_ATTRIBUTE LPARSi attributeDeclaration RPARSi )
+            // etc/XQFT.g:423:37: SCHEMA_ATTRIBUTE LPARSi attributeDeclaration RPARSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9498,7 +9499,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start attributeDeclaration
-    // etc/XQFT.g:423:5: attributeDeclaration : attributeName ;
+    // etc/XQFT.g:424:5: attributeDeclaration : attributeName ;
     public final attributeDeclaration_return attributeDeclaration() throws RecognitionException {
         attributeDeclaration_return retval = new attributeDeclaration_return();
         retval.start = input.LT(1);
@@ -9510,8 +9511,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:423:36: ( attributeName )
-            // etc/XQFT.g:423:38: attributeName
+            // etc/XQFT.g:424:36: ( attributeName )
+            // etc/XQFT.g:424:38: attributeName
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9546,7 +9547,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start piTest
-    // etc/XQFT.g:425:4: piTest : PROCESSING_INSTRUCTION LPARSi ( NCName | StringLiteral )? RPARSi ;
+    // etc/XQFT.g:426:4: piTest : PROCESSING_INSTRUCTION LPARSi ( NCName | StringLiteral )? RPARSi ;
     public final piTest_return piTest() throws RecognitionException {
         piTest_return retval = new piTest_return();
         retval.start = input.LT(1);
@@ -9564,8 +9565,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi202_tree=null;
 
         try {
-            // etc/XQFT.g:425:35: ( PROCESSING_INSTRUCTION LPARSi ( NCName | StringLiteral )? RPARSi )
-            // etc/XQFT.g:425:37: PROCESSING_INSTRUCTION LPARSi ( NCName | StringLiteral )? RPARSi
+            // etc/XQFT.g:426:35: ( PROCESSING_INSTRUCTION LPARSi ( NCName | StringLiteral )? RPARSi )
+            // etc/XQFT.g:426:37: PROCESSING_INSTRUCTION LPARSi ( NCName | StringLiteral )? RPARSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9577,7 +9578,7 @@ public class XQFTParser extends Parser {
             }
             LPARSi200=(Token)input.LT(1);
             match(input,LPARSi,FOLLOW_LPARSi_in_piTest3267); if (failed) return retval;
-            // etc/XQFT.g:425:68: ( NCName | StringLiteral )?
+            // etc/XQFT.g:426:68: ( NCName | StringLiteral )?
             int alt38=2;
             int LA38_0 = input.LA(1);
 
@@ -9635,7 +9636,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start commentTest
-    // etc/XQFT.g:426:4: commentTest : COMMENT LPARSi RPARSi ;
+    // etc/XQFT.g:427:4: commentTest : COMMENT LPARSi RPARSi ;
     public final commentTest_return commentTest() throws RecognitionException {
         commentTest_return retval = new commentTest_return();
         retval.start = input.LT(1);
@@ -9651,8 +9652,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi205_tree=null;
 
         try {
-            // etc/XQFT.g:426:35: ( COMMENT LPARSi RPARSi )
-            // etc/XQFT.g:426:37: COMMENT LPARSi RPARSi
+            // etc/XQFT.g:427:35: ( COMMENT LPARSi RPARSi )
+            // etc/XQFT.g:427:37: COMMENT LPARSi RPARSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9692,7 +9693,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start textTest
-    // etc/XQFT.g:427:4: textTest : TEXT LPARSi RPARSi ;
+    // etc/XQFT.g:428:4: textTest : TEXT LPARSi RPARSi ;
     public final textTest_return textTest() throws RecognitionException {
         textTest_return retval = new textTest_return();
         retval.start = input.LT(1);
@@ -9708,8 +9709,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi208_tree=null;
 
         try {
-            // etc/XQFT.g:427:35: ( TEXT LPARSi RPARSi )
-            // etc/XQFT.g:427:37: TEXT LPARSi RPARSi
+            // etc/XQFT.g:428:35: ( TEXT LPARSi RPARSi )
+            // etc/XQFT.g:428:37: TEXT LPARSi RPARSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9749,7 +9750,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start anyKindTest
-    // etc/XQFT.g:428:4: anyKindTest : NODE LPARSi RPARSi ;
+    // etc/XQFT.g:429:4: anyKindTest : NODE LPARSi RPARSi ;
     public final anyKindTest_return anyKindTest() throws RecognitionException {
         anyKindTest_return retval = new anyKindTest_return();
         retval.start = input.LT(1);
@@ -9765,8 +9766,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi211_tree=null;
 
         try {
-            // etc/XQFT.g:428:35: ( NODE LPARSi RPARSi )
-            // etc/XQFT.g:428:37: NODE LPARSi RPARSi
+            // etc/XQFT.g:429:35: ( NODE LPARSi RPARSi )
+            // etc/XQFT.g:429:37: NODE LPARSi RPARSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -9806,7 +9807,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start occurrenceIndicator
-    // etc/XQFT.g:429:2: occurrenceIndicator : ( QUESTIONSi | STARSi | PLUSSi );
+    // etc/XQFT.g:430:2: occurrenceIndicator : ( QUESTIONSi | STARSi | PLUSSi );
     public final occurrenceIndicator_return occurrenceIndicator() throws RecognitionException {
         occurrenceIndicator_return retval = new occurrenceIndicator_return();
         retval.start = input.LT(1);
@@ -9818,7 +9819,7 @@ public class XQFTParser extends Parser {
         XQFTTree set212_tree=null;
 
         try {
-            // etc/XQFT.g:429:33: ( QUESTIONSi | STARSi | PLUSSi )
+            // etc/XQFT.g:430:33: ( QUESTIONSi | STARSi | PLUSSi )
             // etc/XQFT.g:
             {
             root_0 = (XQFTTree)adaptor.nil();
@@ -9862,7 +9863,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start exprSingle
-    // etc/XQFT.g:433:1: exprSingle : ( fLWORExpr | quantifiedExpr | typeswitchExpr | ifExpr | orExpr );
+    // etc/XQFT.g:434:1: exprSingle : ( fLWORExpr | quantifiedExpr | typeswitchExpr | ifExpr | orExpr );
     public final exprSingle_return exprSingle() throws RecognitionException {
         exprSingle_return retval = new exprSingle_return();
         retval.start = input.LT(1);
@@ -9882,7 +9883,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:433:32: ( fLWORExpr | quantifiedExpr | typeswitchExpr | ifExpr | orExpr )
+            // etc/XQFT.g:434:32: ( fLWORExpr | quantifiedExpr | typeswitchExpr | ifExpr | orExpr )
             int alt39=5;
             switch ( input.LA(1) ) {
             case FOR:
@@ -9957,14 +9958,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("433:1: exprSingle : ( fLWORExpr | quantifiedExpr | typeswitchExpr | ifExpr | orExpr );", 39, 0, input);
+                    new NoViableAltException("434:1: exprSingle : ( fLWORExpr | quantifiedExpr | typeswitchExpr | ifExpr | orExpr );", 39, 0, input);
 
                 throw nvae;
             }
 
             switch (alt39) {
                 case 1 :
-                    // etc/XQFT.g:433:34: fLWORExpr
+                    // etc/XQFT.g:434:34: fLWORExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -9977,7 +9978,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:434:37: quantifiedExpr
+                    // etc/XQFT.g:435:37: quantifiedExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -9990,7 +9991,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:435:37: typeswitchExpr
+                    // etc/XQFT.g:436:37: typeswitchExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -10003,7 +10004,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:436:37: ifExpr
+                    // etc/XQFT.g:437:37: ifExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -10016,7 +10017,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // etc/XQFT.g:437:37: orExpr
+                    // etc/XQFT.g:438:37: orExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -10053,7 +10054,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start fLWORExpr
-    // etc/XQFT.g:439:2: fLWORExpr : (fc+= forClause | lc+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle -> ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle ) ;
+    // etc/XQFT.g:440:2: fLWORExpr : (fc+= forClause | lc+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle -> ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle ) ;
     public final fLWORExpr_return fLWORExpr() throws RecognitionException {
         fLWORExpr_return retval = new fLWORExpr_return();
         retval.start = input.LT(1);
@@ -10079,10 +10080,10 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         RewriteRuleSubtreeStream stream_orderByClause=new RewriteRuleSubtreeStream(adaptor,"rule orderByClause");
         try {
-            // etc/XQFT.g:439:33: ( (fc+= forClause | lc+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle -> ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle ) )
-            // etc/XQFT.g:439:35: (fc+= forClause | lc+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle
+            // etc/XQFT.g:440:33: ( (fc+= forClause | lc+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle -> ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle ) )
+            // etc/XQFT.g:440:35: (fc+= forClause | lc+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle
             {
-            // etc/XQFT.g:439:35: (fc+= forClause | lc+= letClause )+
+            // etc/XQFT.g:440:35: (fc+= forClause | lc+= letClause )+
             int cnt40=0;
             loop40:
             do {
@@ -10099,7 +10100,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt40) {
             	case 1 :
-            	    // etc/XQFT.g:439:36: fc+= forClause
+            	    // etc/XQFT.g:440:36: fc+= forClause
             	    {
             	    pushFollow(FOLLOW_forClause_in_fLWORExpr3667);
             	    fc=forClause();
@@ -10113,7 +10114,7 @@ public class XQFTParser extends Parser {
             	    }
             	    break;
             	case 2 :
-            	    // etc/XQFT.g:439:52: lc+= letClause
+            	    // etc/XQFT.g:440:52: lc+= letClause
             	    {
             	    pushFollow(FOLLOW_letClause_in_fLWORExpr3673);
             	    lc=letClause();
@@ -10137,7 +10138,7 @@ public class XQFTParser extends Parser {
                 cnt40++;
             } while (true);
 
-            // etc/XQFT.g:439:68: ( whereClause )?
+            // etc/XQFT.g:440:68: ( whereClause )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
@@ -10146,7 +10147,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt41) {
                 case 1 :
-                    // etc/XQFT.g:439:68: whereClause
+                    // etc/XQFT.g:440:68: whereClause
                     {
                     pushFollow(FOLLOW_whereClause_in_fLWORExpr3677);
                     whereClause218=whereClause();
@@ -10159,7 +10160,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            // etc/XQFT.g:439:81: ( orderByClause )?
+            // etc/XQFT.g:440:81: ( orderByClause )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
@@ -10168,7 +10169,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt42) {
                 case 1 :
-                    // etc/XQFT.g:439:81: orderByClause
+                    // etc/XQFT.g:440:81: orderByClause
                     {
                     pushFollow(FOLLOW_orderByClause_in_fLWORExpr3680);
                     orderByClause219=orderByClause();
@@ -10203,32 +10204,32 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_fc=new RewriteRuleSubtreeStream(adaptor,"token fc",list_fc);
             RewriteRuleSubtreeStream stream_lc=new RewriteRuleSubtreeStream(adaptor,"token lc",list_lc);
             root_0 = (XQFTTree)adaptor.nil();
-            // 440:49: -> ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle )
+            // 441:49: -> ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle )
             {
-                // etc/XQFT.g:440:52: ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle )
+                // etc/XQFT.g:441:52: ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_FLWOR, "AST_FLWOR"), root_1);
 
-                // etc/XQFT.g:440:64: ( $fc)*
+                // etc/XQFT.g:441:64: ( $fc)*
                 while ( stream_fc.hasNext() ) {
                     adaptor.addChild(root_1, ((ParserRuleReturnScope)stream_fc.next()).getTree());
 
                 }
                 stream_fc.reset();
-                // etc/XQFT.g:440:69: ( $lc)*
+                // etc/XQFT.g:441:69: ( $lc)*
                 while ( stream_lc.hasNext() ) {
                     adaptor.addChild(root_1, ((ParserRuleReturnScope)stream_lc.next()).getTree());
 
                 }
                 stream_lc.reset();
-                // etc/XQFT.g:440:74: ( whereClause )?
+                // etc/XQFT.g:441:74: ( whereClause )?
                 if ( stream_whereClause.hasNext() ) {
                     adaptor.addChild(root_1, stream_whereClause.next());
 
                 }
                 stream_whereClause.reset();
-                // etc/XQFT.g:440:87: ( orderByClause )?
+                // etc/XQFT.g:441:87: ( orderByClause )?
                 if ( stream_orderByClause.hasNext() ) {
                     adaptor.addChild(root_1, stream_orderByClause.next());
 
@@ -10268,7 +10269,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start forClause
-    // etc/XQFT.g:442:3: forClause : FOR forClauseTupletDef ( COMMASi forClauseTupletDef )* -> ^( AST_FORCLAUSE ( forClauseTupletDef )+ ) ;
+    // etc/XQFT.g:443:3: forClause : FOR forClauseTupletDef ( COMMASi forClauseTupletDef )* -> ^( AST_FORCLAUSE ( forClauseTupletDef )+ ) ;
     public final forClause_return forClause() throws RecognitionException {
         forClause_return retval = new forClause_return();
         retval.start = input.LT(1);
@@ -10288,8 +10289,8 @@ public class XQFTParser extends Parser {
         RewriteRuleTokenStream stream_COMMASi=new RewriteRuleTokenStream(adaptor,"token COMMASi");
         RewriteRuleSubtreeStream stream_forClauseTupletDef=new RewriteRuleSubtreeStream(adaptor,"rule forClauseTupletDef");
         try {
-            // etc/XQFT.g:442:34: ( FOR forClauseTupletDef ( COMMASi forClauseTupletDef )* -> ^( AST_FORCLAUSE ( forClauseTupletDef )+ ) )
-            // etc/XQFT.g:442:36: FOR forClauseTupletDef ( COMMASi forClauseTupletDef )*
+            // etc/XQFT.g:443:34: ( FOR forClauseTupletDef ( COMMASi forClauseTupletDef )* -> ^( AST_FORCLAUSE ( forClauseTupletDef )+ ) )
+            // etc/XQFT.g:443:36: FOR forClauseTupletDef ( COMMASi forClauseTupletDef )*
             {
             FOR222=(Token)input.LT(1);
             match(input,FOR,FOLLOW_FOR_in_forClause3787); if (failed) return retval;
@@ -10300,7 +10301,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_forClauseTupletDef.add(forClauseTupletDef223.getTree());
-            // etc/XQFT.g:442:59: ( COMMASi forClauseTupletDef )*
+            // etc/XQFT.g:443:59: ( COMMASi forClauseTupletDef )*
             loop43:
             do {
                 int alt43=2;
@@ -10313,7 +10314,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt43) {
             	case 1 :
-            	    // etc/XQFT.g:442:60: COMMASi forClauseTupletDef
+            	    // etc/XQFT.g:443:60: COMMASi forClauseTupletDef
             	    {
             	    COMMASi224=(Token)input.LT(1);
             	    match(input,COMMASi,FOLLOW_COMMASi_in_forClause3792); if (failed) return retval;
@@ -10345,9 +10346,9 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 443:53: -> ^( AST_FORCLAUSE ( forClauseTupletDef )+ )
+            // 444:53: -> ^( AST_FORCLAUSE ( forClauseTupletDef )+ )
             {
-                // etc/XQFT.g:443:56: ^( AST_FORCLAUSE ( forClauseTupletDef )+ )
+                // etc/XQFT.g:444:56: ^( AST_FORCLAUSE ( forClauseTupletDef )+ )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_FORCLAUSE, "AST_FORCLAUSE"), root_1);
@@ -10393,7 +10394,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start forClauseTupletDef
-    // etc/XQFT.g:444:13: forClauseTupletDef : DOLLARSi varName ( typeDeclaration )? ( positionalVar )? ( ftScoreVar )? IN exprSingle ;
+    // etc/XQFT.g:445:13: forClauseTupletDef : DOLLARSi varName ( typeDeclaration )? ( positionalVar )? ( ftScoreVar )? IN exprSingle ;
     public final forClauseTupletDef_return forClauseTupletDef() throws RecognitionException {
         forClauseTupletDef_return retval = new forClauseTupletDef_return();
         retval.start = input.LT(1);
@@ -10417,8 +10418,8 @@ public class XQFTParser extends Parser {
         XQFTTree IN231_tree=null;
 
         try {
-            // etc/XQFT.g:444:49: ( DOLLARSi varName ( typeDeclaration )? ( positionalVar )? ( ftScoreVar )? IN exprSingle )
-            // etc/XQFT.g:444:51: DOLLARSi varName ( typeDeclaration )? ( positionalVar )? ( ftScoreVar )? IN exprSingle
+            // etc/XQFT.g:445:49: ( DOLLARSi varName ( typeDeclaration )? ( positionalVar )? ( ftScoreVar )? IN exprSingle )
+            // etc/XQFT.g:445:51: DOLLARSi varName ( typeDeclaration )? ( positionalVar )? ( ftScoreVar )? IN exprSingle
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -10429,7 +10430,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, varName227.getTree());
-            // etc/XQFT.g:444:69: ( typeDeclaration )?
+            // etc/XQFT.g:445:69: ( typeDeclaration )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
@@ -10438,7 +10439,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt44) {
                 case 1 :
-                    // etc/XQFT.g:444:69: typeDeclaration
+                    // etc/XQFT.g:445:69: typeDeclaration
                     {
                     pushFollow(FOLLOW_typeDeclaration_in_forClauseTupletDef3898);
                     typeDeclaration228=typeDeclaration();
@@ -10451,7 +10452,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            // etc/XQFT.g:444:86: ( positionalVar )?
+            // etc/XQFT.g:445:86: ( positionalVar )?
             int alt45=2;
             int LA45_0 = input.LA(1);
 
@@ -10460,7 +10461,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt45) {
                 case 1 :
-                    // etc/XQFT.g:444:86: positionalVar
+                    // etc/XQFT.g:445:86: positionalVar
                     {
                     pushFollow(FOLLOW_positionalVar_in_forClauseTupletDef3901);
                     positionalVar229=positionalVar();
@@ -10473,7 +10474,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            // etc/XQFT.g:444:101: ( ftScoreVar )?
+            // etc/XQFT.g:445:101: ( ftScoreVar )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -10482,7 +10483,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt46) {
                 case 1 :
-                    // etc/XQFT.g:444:101: ftScoreVar
+                    // etc/XQFT.g:445:101: ftScoreVar
                     {
                     pushFollow(FOLLOW_ftScoreVar_in_forClauseTupletDef3904);
                     ftScoreVar230=ftScoreVar();
@@ -10529,7 +10530,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start varName
-    // etc/XQFT.g:446:4: varName returns [String name] : qn= qName ;
+    // etc/XQFT.g:447:4: varName returns [String name] : qn= qName ;
     public final varName_return varName() throws RecognitionException {
         varName_return retval = new varName_return();
         retval.start = input.LT(1);
@@ -10541,8 +10542,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:446:43: (qn= qName )
-            // etc/XQFT.g:446:45: qn= qName
+            // etc/XQFT.g:447:43: (qn= qName )
+            // etc/XQFT.g:447:45: qn= qName
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -10580,7 +10581,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start positionalVar
-    // etc/XQFT.g:449:4: positionalVar : AT DOLLARSi varName ;
+    // etc/XQFT.g:450:4: positionalVar : AT DOLLARSi varName ;
     public final positionalVar_return positionalVar() throws RecognitionException {
         positionalVar_return retval = new positionalVar_return();
         retval.start = input.LT(1);
@@ -10596,8 +10597,8 @@ public class XQFTParser extends Parser {
         XQFTTree DOLLARSi234_tree=null;
 
         try {
-            // etc/XQFT.g:449:35: ( AT DOLLARSi varName )
-            // etc/XQFT.g:449:37: AT DOLLARSi varName
+            // etc/XQFT.g:450:35: ( AT DOLLARSi varName )
+            // etc/XQFT.g:450:37: AT DOLLARSi varName
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -10644,7 +10645,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftScoreVar
-    // etc/XQFT.g:451:4: ftScoreVar : SCORE DOLLARSi varName ;
+    // etc/XQFT.g:452:4: ftScoreVar : SCORE DOLLARSi varName ;
     public final ftScoreVar_return ftScoreVar() throws RecognitionException {
         ftScoreVar_return retval = new ftScoreVar_return();
         retval.start = input.LT(1);
@@ -10660,8 +10661,8 @@ public class XQFTParser extends Parser {
         XQFTTree DOLLARSi237_tree=null;
 
         try {
-            // etc/XQFT.g:451:35: ( SCORE DOLLARSi varName )
-            // etc/XQFT.g:451:37: SCORE DOLLARSi varName
+            // etc/XQFT.g:452:35: ( SCORE DOLLARSi varName )
+            // etc/XQFT.g:452:37: SCORE DOLLARSi varName
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -10708,7 +10709,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start letClause
-    // etc/XQFT.g:455:3: letClause : LET varBinding ( COMMASi varBinding )* -> ^( AST_LETCLAUSE ( varBinding )+ ) ;
+    // etc/XQFT.g:456:3: letClause : LET varBinding ( COMMASi varBinding )* -> ^( AST_LETCLAUSE ( varBinding )+ ) ;
     public final letClause_return letClause() throws RecognitionException {
         letClause_return retval = new letClause_return();
         retval.start = input.LT(1);
@@ -10728,8 +10729,8 @@ public class XQFTParser extends Parser {
         RewriteRuleTokenStream stream_LET=new RewriteRuleTokenStream(adaptor,"token LET");
         RewriteRuleSubtreeStream stream_varBinding=new RewriteRuleSubtreeStream(adaptor,"rule varBinding");
         try {
-            // etc/XQFT.g:455:39: ( LET varBinding ( COMMASi varBinding )* -> ^( AST_LETCLAUSE ( varBinding )+ ) )
-            // etc/XQFT.g:455:41: LET varBinding ( COMMASi varBinding )*
+            // etc/XQFT.g:456:39: ( LET varBinding ( COMMASi varBinding )* -> ^( AST_LETCLAUSE ( varBinding )+ ) )
+            // etc/XQFT.g:456:41: LET varBinding ( COMMASi varBinding )*
             {
             LET239=(Token)input.LT(1);
             match(input,LET,FOLLOW_LET_in_letClause4056); if (failed) return retval;
@@ -10740,7 +10741,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_varBinding.add(varBinding240.getTree());
-            // etc/XQFT.g:455:56: ( COMMASi varBinding )*
+            // etc/XQFT.g:456:56: ( COMMASi varBinding )*
             loop47:
             do {
                 int alt47=2;
@@ -10753,7 +10754,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt47) {
             	case 1 :
-            	    // etc/XQFT.g:455:57: COMMASi varBinding
+            	    // etc/XQFT.g:456:57: COMMASi varBinding
             	    {
             	    COMMASi241=(Token)input.LT(1);
             	    match(input,COMMASi,FOLLOW_COMMASi_in_letClause4061); if (failed) return retval;
@@ -10785,9 +10786,9 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 456:53: -> ^( AST_LETCLAUSE ( varBinding )+ )
+            // 457:53: -> ^( AST_LETCLAUSE ( varBinding )+ )
             {
-                // etc/XQFT.g:456:56: ^( AST_LETCLAUSE ( varBinding )+ )
+                // etc/XQFT.g:457:56: ^( AST_LETCLAUSE ( varBinding )+ )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_LETCLAUSE, "AST_LETCLAUSE"), root_1);
@@ -10833,7 +10834,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start varBinding
-    // etc/XQFT.g:457:3: varBinding : ( DOLLARSi v= varName ( typeDeclaration )? | SCORE DOLLARSi v= varName ) ASSIGNSi exprSingle -> ( SCORE )? $v ( typeDeclaration )? exprSingle ;
+    // etc/XQFT.g:458:3: varBinding : ( DOLLARSi v= varName ( typeDeclaration )? | SCORE DOLLARSi v= varName ) ASSIGNSi exprSingle -> ( SCORE )? $v ( typeDeclaration )? exprSingle ;
     public final varBinding_return varBinding() throws RecognitionException {
         varBinding_return retval = new varBinding_return();
         retval.start = input.LT(1);
@@ -10862,10 +10863,10 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         RewriteRuleSubtreeStream stream_typeDeclaration=new RewriteRuleSubtreeStream(adaptor,"rule typeDeclaration");
         try {
-            // etc/XQFT.g:457:14: ( ( DOLLARSi v= varName ( typeDeclaration )? | SCORE DOLLARSi v= varName ) ASSIGNSi exprSingle -> ( SCORE )? $v ( typeDeclaration )? exprSingle )
-            // etc/XQFT.g:458:4: ( DOLLARSi v= varName ( typeDeclaration )? | SCORE DOLLARSi v= varName ) ASSIGNSi exprSingle
+            // etc/XQFT.g:458:14: ( ( DOLLARSi v= varName ( typeDeclaration )? | SCORE DOLLARSi v= varName ) ASSIGNSi exprSingle -> ( SCORE )? $v ( typeDeclaration )? exprSingle )
+            // etc/XQFT.g:459:4: ( DOLLARSi v= varName ( typeDeclaration )? | SCORE DOLLARSi v= varName ) ASSIGNSi exprSingle
             {
-            // etc/XQFT.g:458:4: ( DOLLARSi v= varName ( typeDeclaration )? | SCORE DOLLARSi v= varName )
+            // etc/XQFT.g:459:4: ( DOLLARSi v= varName ( typeDeclaration )? | SCORE DOLLARSi v= varName )
             int alt49=2;
             int LA49_0 = input.LA(1);
 
@@ -10878,13 +10879,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("458:4: ( DOLLARSi v= varName ( typeDeclaration )? | SCORE DOLLARSi v= varName )", 49, 0, input);
+                    new NoViableAltException("459:4: ( DOLLARSi v= varName ( typeDeclaration )? | SCORE DOLLARSi v= varName )", 49, 0, input);
 
                 throw nvae;
             }
             switch (alt49) {
                 case 1 :
-                    // etc/XQFT.g:458:5: DOLLARSi v= varName ( typeDeclaration )?
+                    // etc/XQFT.g:459:5: DOLLARSi v= varName ( typeDeclaration )?
                     {
                     DOLLARSi243=(Token)input.LT(1);
                     match(input,DOLLARSi,FOLLOW_DOLLARSi_in_varBinding4139); if (failed) return retval;
@@ -10895,7 +10896,7 @@ public class XQFTParser extends Parser {
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) stream_varName.add(v.getTree());
-                    // etc/XQFT.g:458:24: ( typeDeclaration )?
+                    // etc/XQFT.g:459:24: ( typeDeclaration )?
                     int alt48=2;
                     int LA48_0 = input.LA(1);
 
@@ -10904,7 +10905,7 @@ public class XQFTParser extends Parser {
                     }
                     switch (alt48) {
                         case 1 :
-                            // etc/XQFT.g:458:24: typeDeclaration
+                            // etc/XQFT.g:459:24: typeDeclaration
                             {
                             pushFollow(FOLLOW_typeDeclaration_in_varBinding4145);
                             typeDeclaration244=typeDeclaration();
@@ -10921,7 +10922,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:458:43: SCORE DOLLARSi v= varName
+                    // etc/XQFT.g:459:43: SCORE DOLLARSi v= varName
                     {
                     SCORE245=(Token)input.LT(1);
                     match(input,SCORE,FOLLOW_SCORE_in_varBinding4150); if (failed) return retval;
@@ -10964,16 +10965,16 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_v=new RewriteRuleSubtreeStream(adaptor,"token v",v!=null?v.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 460:13: -> ( SCORE )? $v ( typeDeclaration )? exprSingle
+            // 461:13: -> ( SCORE )? $v ( typeDeclaration )? exprSingle
             {
-                // etc/XQFT.g:460:16: ( SCORE )?
+                // etc/XQFT.g:461:16: ( SCORE )?
                 if ( stream_SCORE.hasNext() ) {
                     adaptor.addChild(root_0, stream_SCORE.next());
 
                 }
                 stream_SCORE.reset();
                 adaptor.addChild(root_0, stream_v.next());
-                // etc/XQFT.g:460:26: ( typeDeclaration )?
+                // etc/XQFT.g:461:26: ( typeDeclaration )?
                 if ( stream_typeDeclaration.hasNext() ) {
                     adaptor.addChild(root_0, stream_typeDeclaration.next());
 
@@ -11010,7 +11011,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start whereClause
-    // etc/XQFT.g:470:3: whereClause : WHERE exprSingle -> ^( AST_WHERECLAUSE exprSingle ) ;
+    // etc/XQFT.g:471:3: whereClause : WHERE exprSingle -> ^( AST_WHERECLAUSE exprSingle ) ;
     public final whereClause_return whereClause() throws RecognitionException {
         whereClause_return retval = new whereClause_return();
         retval.start = input.LT(1);
@@ -11025,8 +11026,8 @@ public class XQFTParser extends Parser {
         RewriteRuleTokenStream stream_WHERE=new RewriteRuleTokenStream(adaptor,"token WHERE");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
-            // etc/XQFT.g:470:33: ( WHERE exprSingle -> ^( AST_WHERECLAUSE exprSingle ) )
-            // etc/XQFT.g:470:35: WHERE exprSingle
+            // etc/XQFT.g:471:33: ( WHERE exprSingle -> ^( AST_WHERECLAUSE exprSingle ) )
+            // etc/XQFT.g:471:35: WHERE exprSingle
             {
             WHERE249=(Token)input.LT(1);
             match(input,WHERE,FOLLOW_WHERE_in_whereClause4237); if (failed) return retval;
@@ -11049,9 +11050,9 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 471:49: -> ^( AST_WHERECLAUSE exprSingle )
+            // 472:49: -> ^( AST_WHERECLAUSE exprSingle )
             {
-                // etc/XQFT.g:471:52: ^( AST_WHERECLAUSE exprSingle )
+                // etc/XQFT.g:472:52: ^( AST_WHERECLAUSE exprSingle )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_WHERECLAUSE, "AST_WHERECLAUSE"), root_1);
@@ -11090,7 +11091,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start orderByClause
-    // etc/XQFT.g:474:3: orderByClause : ( ORDER BY | STABLE ORDER BY ) orderSpecList -> ^( AST_ORDERBYCLAUSE ( STABLE )? orderSpecList ) ;
+    // etc/XQFT.g:475:3: orderByClause : ( ORDER BY | STABLE ORDER BY ) orderSpecList -> ^( AST_ORDERBYCLAUSE ( STABLE )? orderSpecList ) ;
     public final orderByClause_return orderByClause() throws RecognitionException {
         orderByClause_return retval = new orderByClause_return();
         retval.start = input.LT(1);
@@ -11115,10 +11116,10 @@ public class XQFTParser extends Parser {
         RewriteRuleTokenStream stream_STABLE=new RewriteRuleTokenStream(adaptor,"token STABLE");
         RewriteRuleSubtreeStream stream_orderSpecList=new RewriteRuleSubtreeStream(adaptor,"rule orderSpecList");
         try {
-            // etc/XQFT.g:474:33: ( ( ORDER BY | STABLE ORDER BY ) orderSpecList -> ^( AST_ORDERBYCLAUSE ( STABLE )? orderSpecList ) )
-            // etc/XQFT.g:474:35: ( ORDER BY | STABLE ORDER BY ) orderSpecList
+            // etc/XQFT.g:475:33: ( ( ORDER BY | STABLE ORDER BY ) orderSpecList -> ^( AST_ORDERBYCLAUSE ( STABLE )? orderSpecList ) )
+            // etc/XQFT.g:475:35: ( ORDER BY | STABLE ORDER BY ) orderSpecList
             {
-            // etc/XQFT.g:474:35: ( ORDER BY | STABLE ORDER BY )
+            // etc/XQFT.g:475:35: ( ORDER BY | STABLE ORDER BY )
             int alt50=2;
             int LA50_0 = input.LA(1);
 
@@ -11131,13 +11132,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("474:35: ( ORDER BY | STABLE ORDER BY )", 50, 0, input);
+                    new NoViableAltException("475:35: ( ORDER BY | STABLE ORDER BY )", 50, 0, input);
 
                 throw nvae;
             }
             switch (alt50) {
                 case 1 :
-                    // etc/XQFT.g:474:36: ORDER BY
+                    // etc/XQFT.g:475:36: ORDER BY
                     {
                     ORDER251=(Token)input.LT(1);
                     match(input,ORDER,FOLLOW_ORDER_in_orderByClause4326); if (failed) return retval;
@@ -11151,7 +11152,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:474:47: STABLE ORDER BY
+                    // etc/XQFT.g:475:47: STABLE ORDER BY
                     {
                     STABLE253=(Token)input.LT(1);
                     match(input,STABLE,FOLLOW_STABLE_in_orderByClause4332); if (failed) return retval;
@@ -11188,14 +11189,14 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 475:53: -> ^( AST_ORDERBYCLAUSE ( STABLE )? orderSpecList )
+            // 476:53: -> ^( AST_ORDERBYCLAUSE ( STABLE )? orderSpecList )
             {
-                // etc/XQFT.g:475:56: ^( AST_ORDERBYCLAUSE ( STABLE )? orderSpecList )
+                // etc/XQFT.g:476:56: ^( AST_ORDERBYCLAUSE ( STABLE )? orderSpecList )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_ORDERBYCLAUSE, "AST_ORDERBYCLAUSE"), root_1);
 
-                // etc/XQFT.g:475:76: ( STABLE )?
+                // etc/XQFT.g:476:76: ( STABLE )?
                 if ( stream_STABLE.hasNext() ) {
                     adaptor.addChild(root_1, stream_STABLE.next());
 
@@ -11235,7 +11236,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start orderSpecList
-    // etc/XQFT.g:477:4: orderSpecList : orderSpec ( COMMASi orderSpec )* -> ( orderSpec )+ ;
+    // etc/XQFT.g:478:4: orderSpecList : orderSpec ( COMMASi orderSpec )* -> ( orderSpec )+ ;
     public final orderSpecList_return orderSpecList() throws RecognitionException {
         orderSpecList_return retval = new orderSpecList_return();
         retval.start = input.LT(1);
@@ -11252,15 +11253,15 @@ public class XQFTParser extends Parser {
         RewriteRuleTokenStream stream_COMMASi=new RewriteRuleTokenStream(adaptor,"token COMMASi");
         RewriteRuleSubtreeStream stream_orderSpec=new RewriteRuleSubtreeStream(adaptor,"rule orderSpec");
         try {
-            // etc/XQFT.g:477:34: ( orderSpec ( COMMASi orderSpec )* -> ( orderSpec )+ )
-            // etc/XQFT.g:477:36: orderSpec ( COMMASi orderSpec )*
+            // etc/XQFT.g:478:34: ( orderSpec ( COMMASi orderSpec )* -> ( orderSpec )+ )
+            // etc/XQFT.g:478:36: orderSpec ( COMMASi orderSpec )*
             {
             pushFollow(FOLLOW_orderSpec_in_orderSpecList4429);
             orderSpec257=orderSpec();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_orderSpec.add(orderSpec257.getTree());
-            // etc/XQFT.g:477:46: ( COMMASi orderSpec )*
+            // etc/XQFT.g:478:46: ( COMMASi orderSpec )*
             loop51:
             do {
                 int alt51=2;
@@ -11273,7 +11274,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt51) {
             	case 1 :
-            	    // etc/XQFT.g:477:47: COMMASi orderSpec
+            	    // etc/XQFT.g:478:47: COMMASi orderSpec
             	    {
             	    COMMASi258=(Token)input.LT(1);
             	    match(input,COMMASi,FOLLOW_COMMASi_in_orderSpecList4432); if (failed) return retval;
@@ -11305,7 +11306,7 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 478:53: -> ( orderSpec )+
+            // 479:53: -> ( orderSpec )+
             {
                 if ( !(stream_orderSpec.hasNext()) ) {
                     throw new RewriteEarlyExitException();
@@ -11345,7 +11346,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start orderSpec
-    // etc/XQFT.g:480:5: orderSpec : exprSingle orderModifier ;
+    // etc/XQFT.g:481:5: orderSpec : exprSingle orderModifier ;
     public final orderSpec_return orderSpec() throws RecognitionException {
         orderSpec_return retval = new orderSpec_return();
         retval.start = input.LT(1);
@@ -11359,8 +11360,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:480:35: ( exprSingle orderModifier )
-            // etc/XQFT.g:480:37: exprSingle orderModifier
+            // etc/XQFT.g:481:35: ( exprSingle orderModifier )
+            // etc/XQFT.g:481:37: exprSingle orderModifier
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -11400,7 +11401,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start orderModifier
-    // etc/XQFT.g:482:6: orderModifier : ( ASCENDING | DESCENDING )? ( EMPTY ( GREATEST | LEAST ) )? ( COLLATION uriLiteral )? ;
+    // etc/XQFT.g:483:6: orderModifier : ( ASCENDING | DESCENDING )? ( EMPTY ( GREATEST | LEAST ) )? ( COLLATION uriLiteral )? ;
     public final orderModifier_return orderModifier() throws RecognitionException {
         orderModifier_return retval = new orderModifier_return();
         retval.start = input.LT(1);
@@ -11420,12 +11421,12 @@ public class XQFTParser extends Parser {
         XQFTTree COLLATION265_tree=null;
 
         try {
-            // etc/XQFT.g:482:36: ( ( ASCENDING | DESCENDING )? ( EMPTY ( GREATEST | LEAST ) )? ( COLLATION uriLiteral )? )
-            // etc/XQFT.g:482:38: ( ASCENDING | DESCENDING )? ( EMPTY ( GREATEST | LEAST ) )? ( COLLATION uriLiteral )?
+            // etc/XQFT.g:483:36: ( ( ASCENDING | DESCENDING )? ( EMPTY ( GREATEST | LEAST ) )? ( COLLATION uriLiteral )? )
+            // etc/XQFT.g:483:38: ( ASCENDING | DESCENDING )? ( EMPTY ( GREATEST | LEAST ) )? ( COLLATION uriLiteral )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:482:38: ( ASCENDING | DESCENDING )?
+            // etc/XQFT.g:483:38: ( ASCENDING | DESCENDING )?
             int alt52=2;
             int LA52_0 = input.LA(1);
 
@@ -11455,7 +11456,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            // etc/XQFT.g:482:64: ( EMPTY ( GREATEST | LEAST ) )?
+            // etc/XQFT.g:483:64: ( EMPTY ( GREATEST | LEAST ) )?
             int alt53=2;
             int LA53_0 = input.LA(1);
 
@@ -11464,7 +11465,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt53) {
                 case 1 :
-                    // etc/XQFT.g:482:65: EMPTY ( GREATEST | LEAST )
+                    // etc/XQFT.g:483:65: EMPTY ( GREATEST | LEAST )
                     {
                     EMPTY263=(Token)input.LT(1);
                     match(input,EMPTY,FOLLOW_EMPTY_in_orderModifier4566); if (failed) return retval;
@@ -11491,7 +11492,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            // etc/XQFT.g:482:92: ( COLLATION uriLiteral )?
+            // etc/XQFT.g:483:92: ( COLLATION uriLiteral )?
             int alt54=2;
             int LA54_0 = input.LA(1);
 
@@ -11500,7 +11501,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt54) {
                 case 1 :
-                    // etc/XQFT.g:482:93: COLLATION uriLiteral
+                    // etc/XQFT.g:483:93: COLLATION uriLiteral
                     {
                     COLLATION265=(Token)input.LT(1);
                     match(input,COLLATION,FOLLOW_COLLATION_in_orderModifier4579); if (failed) return retval;
@@ -11545,7 +11546,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start quantifiedExpr
-    // etc/XQFT.g:488:2: quantifiedExpr : quant= ( SOME | EVERY ) quantifiedExprTupleDef ( COMMASi quantifiedExprTupleDef )* SATISFIES exprSingle -> ^( AST_QUANTIFIEDEXPR $quant ( quantifiedExprTupleDef )+ exprSingle ) ;
+    // etc/XQFT.g:489:2: quantifiedExpr : quant= ( SOME | EVERY ) quantifiedExprTupleDef ( COMMASi quantifiedExprTupleDef )* SATISFIES exprSingle -> ^( AST_QUANTIFIEDEXPR $quant ( quantifiedExprTupleDef )+ exprSingle ) ;
     public final quantifiedExpr_return quantifiedExpr() throws RecognitionException {
         quantifiedExpr_return retval = new quantifiedExpr_return();
         retval.start = input.LT(1);
@@ -11576,10 +11577,10 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_quantifiedExprTupleDef=new RewriteRuleSubtreeStream(adaptor,"rule quantifiedExprTupleDef");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
-            // etc/XQFT.g:488:33: (quant= ( SOME | EVERY ) quantifiedExprTupleDef ( COMMASi quantifiedExprTupleDef )* SATISFIES exprSingle -> ^( AST_QUANTIFIEDEXPR $quant ( quantifiedExprTupleDef )+ exprSingle ) )
-            // etc/XQFT.g:488:35: quant= ( SOME | EVERY ) quantifiedExprTupleDef ( COMMASi quantifiedExprTupleDef )* SATISFIES exprSingle
+            // etc/XQFT.g:489:33: (quant= ( SOME | EVERY ) quantifiedExprTupleDef ( COMMASi quantifiedExprTupleDef )* SATISFIES exprSingle -> ^( AST_QUANTIFIEDEXPR $quant ( quantifiedExprTupleDef )+ exprSingle ) )
+            // etc/XQFT.g:489:35: quant= ( SOME | EVERY ) quantifiedExprTupleDef ( COMMASi quantifiedExprTupleDef )* SATISFIES exprSingle
             {
-            // etc/XQFT.g:488:41: ( SOME | EVERY )
+            // etc/XQFT.g:489:41: ( SOME | EVERY )
             int alt55=2;
             int LA55_0 = input.LA(1);
 
@@ -11592,13 +11593,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("488:41: ( SOME | EVERY )", 55, 0, input);
+                    new NoViableAltException("489:41: ( SOME | EVERY )", 55, 0, input);
 
                 throw nvae;
             }
             switch (alt55) {
                 case 1 :
-                    // etc/XQFT.g:488:42: SOME
+                    // etc/XQFT.g:489:42: SOME
                     {
                     SOME267=(Token)input.LT(1);
                     match(input,SOME,FOLLOW_SOME_in_quantifiedExpr4619); if (failed) return retval;
@@ -11608,7 +11609,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:488:49: EVERY
+                    // etc/XQFT.g:489:49: EVERY
                     {
                     EVERY268=(Token)input.LT(1);
                     match(input,EVERY,FOLLOW_EVERY_in_quantifiedExpr4623); if (failed) return retval;
@@ -11625,7 +11626,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_quantifiedExprTupleDef.add(quantifiedExprTupleDef269.getTree());
-            // etc/XQFT.g:489:13: ( COMMASi quantifiedExprTupleDef )*
+            // etc/XQFT.g:490:13: ( COMMASi quantifiedExprTupleDef )*
             loop56:
             do {
                 int alt56=2;
@@ -11638,7 +11639,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt56) {
             	case 1 :
-            	    // etc/XQFT.g:489:14: COMMASi quantifiedExprTupleDef
+            	    // etc/XQFT.g:490:14: COMMASi quantifiedExprTupleDef
             	    {
             	    COMMASi270=(Token)input.LT(1);
             	    match(input,COMMASi,FOLLOW_COMMASi_in_quantifiedExpr4641); if (failed) return retval;
@@ -11680,9 +11681,9 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 490:49: -> ^( AST_QUANTIFIEDEXPR $quant ( quantifiedExprTupleDef )+ exprSingle )
+            // 491:49: -> ^( AST_QUANTIFIEDEXPR $quant ( quantifiedExprTupleDef )+ exprSingle )
             {
-                // etc/XQFT.g:490:52: ^( AST_QUANTIFIEDEXPR $quant ( quantifiedExprTupleDef )+ exprSingle )
+                // etc/XQFT.g:491:52: ^( AST_QUANTIFIEDEXPR $quant ( quantifiedExprTupleDef )+ exprSingle )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_QUANTIFIEDEXPR, "AST_QUANTIFIEDEXPR"), root_1);
@@ -11730,7 +11731,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start quantifiedExprTupleDef
-    // etc/XQFT.g:492:9: quantifiedExprTupleDef : DOLLARSi varName ( typeDeclaration )? exprSingle -> varName ( typeDeclaration )? exprSingle ;
+    // etc/XQFT.g:493:9: quantifiedExprTupleDef : DOLLARSi varName ( typeDeclaration )? exprSingle -> varName ( typeDeclaration )? exprSingle ;
     public final quantifiedExprTupleDef_return quantifiedExprTupleDef() throws RecognitionException {
         quantifiedExprTupleDef_return retval = new quantifiedExprTupleDef_return();
         retval.start = input.LT(1);
@@ -11751,8 +11752,8 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         RewriteRuleSubtreeStream stream_typeDeclaration=new RewriteRuleSubtreeStream(adaptor,"rule typeDeclaration");
         try {
-            // etc/XQFT.g:492:45: ( DOLLARSi varName ( typeDeclaration )? exprSingle -> varName ( typeDeclaration )? exprSingle )
-            // etc/XQFT.g:492:47: DOLLARSi varName ( typeDeclaration )? exprSingle
+            // etc/XQFT.g:493:45: ( DOLLARSi varName ( typeDeclaration )? exprSingle -> varName ( typeDeclaration )? exprSingle )
+            // etc/XQFT.g:493:47: DOLLARSi varName ( typeDeclaration )? exprSingle
             {
             DOLLARSi274=(Token)input.LT(1);
             match(input,DOLLARSi,FOLLOW_DOLLARSi_in_quantifiedExprTupleDef4740); if (failed) return retval;
@@ -11763,7 +11764,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_varName.add(varName275.getTree());
-            // etc/XQFT.g:492:64: ( typeDeclaration )?
+            // etc/XQFT.g:493:64: ( typeDeclaration )?
             int alt57=2;
             int LA57_0 = input.LA(1);
 
@@ -11772,7 +11773,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt57) {
                 case 1 :
-                    // etc/XQFT.g:492:64: typeDeclaration
+                    // etc/XQFT.g:493:64: typeDeclaration
                     {
                     pushFollow(FOLLOW_typeDeclaration_in_quantifiedExprTupleDef4744);
                     typeDeclaration276=typeDeclaration();
@@ -11802,10 +11803,10 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 493:49: -> varName ( typeDeclaration )? exprSingle
+            // 494:49: -> varName ( typeDeclaration )? exprSingle
             {
                 adaptor.addChild(root_0, stream_varName.next());
-                // etc/XQFT.g:493:60: ( typeDeclaration )?
+                // etc/XQFT.g:494:60: ( typeDeclaration )?
                 if ( stream_typeDeclaration.hasNext() ) {
                     adaptor.addChild(root_0, stream_typeDeclaration.next());
 
@@ -11842,7 +11843,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start typeswitchExpr
-    // etc/XQFT.g:497:2: typeswitchExpr : TYPESWITCH LPARSi expr RPARSi ( caseClause )+ DEFAULT ( DOLLARSi varName )? RETURN exprSingle -> ^( AST_TYPESWITCHEXPR expr ( caseClause )+ ( varName )? exprSingle ) ;
+    // etc/XQFT.g:498:2: typeswitchExpr : TYPESWITCH LPARSi expr RPARSi ( caseClause )+ DEFAULT ( DOLLARSi varName )? RETURN exprSingle -> ^( AST_TYPESWITCHEXPR expr ( caseClause )+ ( varName )? exprSingle ) ;
     public final typeswitchExpr_return typeswitchExpr() throws RecognitionException {
         typeswitchExpr_return retval = new typeswitchExpr_return();
         retval.start = input.LT(1);
@@ -11881,8 +11882,8 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_varName=new RewriteRuleSubtreeStream(adaptor,"rule varName");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
-            // etc/XQFT.g:497:33: ( TYPESWITCH LPARSi expr RPARSi ( caseClause )+ DEFAULT ( DOLLARSi varName )? RETURN exprSingle -> ^( AST_TYPESWITCHEXPR expr ( caseClause )+ ( varName )? exprSingle ) )
-            // etc/XQFT.g:497:35: TYPESWITCH LPARSi expr RPARSi ( caseClause )+ DEFAULT ( DOLLARSi varName )? RETURN exprSingle
+            // etc/XQFT.g:498:33: ( TYPESWITCH LPARSi expr RPARSi ( caseClause )+ DEFAULT ( DOLLARSi varName )? RETURN exprSingle -> ^( AST_TYPESWITCHEXPR expr ( caseClause )+ ( varName )? exprSingle ) )
+            // etc/XQFT.g:498:35: TYPESWITCH LPARSi expr RPARSi ( caseClause )+ DEFAULT ( DOLLARSi varName )? RETURN exprSingle
             {
             TYPESWITCH278=(Token)input.LT(1);
             match(input,TYPESWITCH,FOLLOW_TYPESWITCH_in_typeswitchExpr4833); if (failed) return retval;
@@ -11901,7 +11902,7 @@ public class XQFTParser extends Parser {
             match(input,RPARSi,FOLLOW_RPARSi_in_typeswitchExpr4839); if (failed) return retval;
             if ( backtracking==0 ) stream_RPARSi.add(RPARSi281);
 
-            // etc/XQFT.g:497:65: ( caseClause )+
+            // etc/XQFT.g:498:65: ( caseClause )+
             int cnt58=0;
             loop58:
             do {
@@ -11915,7 +11916,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt58) {
             	case 1 :
-            	    // etc/XQFT.g:497:65: caseClause
+            	    // etc/XQFT.g:498:65: caseClause
             	    {
             	    pushFollow(FOLLOW_caseClause_in_typeswitchExpr4841);
             	    caseClause282=caseClause();
@@ -11940,7 +11941,7 @@ public class XQFTParser extends Parser {
             match(input,DEFAULT,FOLLOW_DEFAULT_in_typeswitchExpr4857); if (failed) return retval;
             if ( backtracking==0 ) stream_DEFAULT.add(DEFAULT283);
 
-            // etc/XQFT.g:498:21: ( DOLLARSi varName )?
+            // etc/XQFT.g:499:21: ( DOLLARSi varName )?
             int alt59=2;
             int LA59_0 = input.LA(1);
 
@@ -11949,7 +11950,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt59) {
                 case 1 :
-                    // etc/XQFT.g:498:22: DOLLARSi varName
+                    // etc/XQFT.g:499:22: DOLLARSi varName
                     {
                     DOLLARSi284=(Token)input.LT(1);
                     match(input,DOLLARSi,FOLLOW_DOLLARSi_in_typeswitchExpr4860); if (failed) return retval;
@@ -11987,9 +11988,9 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 499:49: -> ^( AST_TYPESWITCHEXPR expr ( caseClause )+ ( varName )? exprSingle )
+            // 500:49: -> ^( AST_TYPESWITCHEXPR expr ( caseClause )+ ( varName )? exprSingle )
             {
-                // etc/XQFT.g:499:52: ^( AST_TYPESWITCHEXPR expr ( caseClause )+ ( varName )? exprSingle )
+                // etc/XQFT.g:500:52: ^( AST_TYPESWITCHEXPR expr ( caseClause )+ ( varName )? exprSingle )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_TYPESWITCHEXPR, "AST_TYPESWITCHEXPR"), root_1);
@@ -12003,7 +12004,7 @@ public class XQFTParser extends Parser {
 
                 }
                 stream_caseClause.reset();
-                // etc/XQFT.g:499:90: ( varName )?
+                // etc/XQFT.g:500:90: ( varName )?
                 if ( stream_varName.hasNext() ) {
                     adaptor.addChild(root_1, stream_varName.next());
 
@@ -12043,7 +12044,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start caseClause
-    // etc/XQFT.g:503:3: caseClause : CASE ( DOLLARSi varName AS )? sequenceType RETURN exprSingle -> ^( AST_CASECLAUSE ( varName )? sequenceType exprSingle ) ;
+    // etc/XQFT.g:504:3: caseClause : CASE ( DOLLARSi varName AS )? sequenceType RETURN exprSingle -> ^( AST_CASECLAUSE ( varName )? sequenceType exprSingle ) ;
     public final caseClause_return caseClause() throws RecognitionException {
         caseClause_return retval = new caseClause_return();
         retval.start = input.LT(1);
@@ -12073,14 +12074,14 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_sequenceType=new RewriteRuleSubtreeStream(adaptor,"rule sequenceType");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
-            // etc/XQFT.g:503:34: ( CASE ( DOLLARSi varName AS )? sequenceType RETURN exprSingle -> ^( AST_CASECLAUSE ( varName )? sequenceType exprSingle ) )
-            // etc/XQFT.g:503:36: CASE ( DOLLARSi varName AS )? sequenceType RETURN exprSingle
+            // etc/XQFT.g:504:34: ( CASE ( DOLLARSi varName AS )? sequenceType RETURN exprSingle -> ^( AST_CASECLAUSE ( varName )? sequenceType exprSingle ) )
+            // etc/XQFT.g:504:36: CASE ( DOLLARSi varName AS )? sequenceType RETURN exprSingle
             {
             CASE288=(Token)input.LT(1);
             match(input,CASE,FOLLOW_CASE_in_caseClause4964); if (failed) return retval;
             if ( backtracking==0 ) stream_CASE.add(CASE288);
 
-            // etc/XQFT.g:503:41: ( DOLLARSi varName AS )?
+            // etc/XQFT.g:504:41: ( DOLLARSi varName AS )?
             int alt60=2;
             int LA60_0 = input.LA(1);
 
@@ -12089,7 +12090,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt60) {
                 case 1 :
-                    // etc/XQFT.g:503:42: DOLLARSi varName AS
+                    // etc/XQFT.g:504:42: DOLLARSi varName AS
                     {
                     DOLLARSi289=(Token)input.LT(1);
                     match(input,DOLLARSi,FOLLOW_DOLLARSi_in_caseClause4967); if (failed) return retval;
@@ -12136,14 +12137,14 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 504:53: -> ^( AST_CASECLAUSE ( varName )? sequenceType exprSingle )
+            // 505:53: -> ^( AST_CASECLAUSE ( varName )? sequenceType exprSingle )
             {
-                // etc/XQFT.g:504:56: ^( AST_CASECLAUSE ( varName )? sequenceType exprSingle )
+                // etc/XQFT.g:505:56: ^( AST_CASECLAUSE ( varName )? sequenceType exprSingle )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_CASECLAUSE, "AST_CASECLAUSE"), root_1);
 
-                // etc/XQFT.g:504:73: ( varName )?
+                // etc/XQFT.g:505:73: ( varName )?
                 if ( stream_varName.hasNext() ) {
                     adaptor.addChild(root_1, stream_varName.next());
 
@@ -12184,7 +12185,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ifExpr
-    // etc/XQFT.g:512:2: ifExpr : IF LPARSi expr RPARSi THEN exprSingle ELSE exprSingle -> ^( AST_IFEXPR expr exprSingle exprSingle ) ;
+    // etc/XQFT.g:513:2: ifExpr : IF LPARSi expr RPARSi THEN exprSingle ELSE exprSingle -> ^( AST_IFEXPR expr exprSingle exprSingle ) ;
     public final ifExpr_return ifExpr() throws RecognitionException {
         ifExpr_return retval = new ifExpr_return();
         retval.start = input.LT(1);
@@ -12216,8 +12217,8 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
-            // etc/XQFT.g:512:33: ( IF LPARSi expr RPARSi THEN exprSingle ELSE exprSingle -> ^( AST_IFEXPR expr exprSingle exprSingle ) )
-            // etc/XQFT.g:512:35: IF LPARSi expr RPARSi THEN exprSingle ELSE exprSingle
+            // etc/XQFT.g:513:33: ( IF LPARSi expr RPARSi THEN exprSingle ELSE exprSingle -> ^( AST_IFEXPR expr exprSingle exprSingle ) )
+            // etc/XQFT.g:513:35: IF LPARSi expr RPARSi THEN exprSingle ELSE exprSingle
             {
             IF295=(Token)input.LT(1);
             match(input,IF,FOLLOW_IF_in_ifExpr5085); if (failed) return retval;
@@ -12266,9 +12267,9 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 513:49: -> ^( AST_IFEXPR expr exprSingle exprSingle )
+            // 514:49: -> ^( AST_IFEXPR expr exprSingle exprSingle )
             {
-                // etc/XQFT.g:513:52: ^( AST_IFEXPR expr exprSingle exprSingle )
+                // etc/XQFT.g:514:52: ^( AST_IFEXPR expr exprSingle exprSingle )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_IFEXPR, "AST_IFEXPR"), root_1);
@@ -12309,7 +12310,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start orExpr
-    // etc/XQFT.g:520:2: orExpr : andExpr ( OR andExpr )* ;
+    // etc/XQFT.g:521:2: orExpr : andExpr ( OR andExpr )* ;
     public final orExpr_return orExpr() throws RecognitionException {
         orExpr_return retval = new orExpr_return();
         retval.start = input.LT(1);
@@ -12325,8 +12326,8 @@ public class XQFTParser extends Parser {
         XQFTTree OR304_tree=null;
 
         try {
-            // etc/XQFT.g:520:33: ( andExpr ( OR andExpr )* )
-            // etc/XQFT.g:520:35: andExpr ( OR andExpr )*
+            // etc/XQFT.g:521:33: ( andExpr ( OR andExpr )* )
+            // etc/XQFT.g:521:35: andExpr ( OR andExpr )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -12335,7 +12336,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, andExpr303.getTree());
-            // etc/XQFT.g:520:43: ( OR andExpr )*
+            // etc/XQFT.g:521:43: ( OR andExpr )*
             loop61:
             do {
                 int alt61=2;
@@ -12348,7 +12349,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt61) {
             	case 1 :
-            	    // etc/XQFT.g:520:45: OR andExpr
+            	    // etc/XQFT.g:521:45: OR andExpr
             	    {
             	    OR304=(Token)input.LT(1);
             	    match(input,OR,FOLLOW_OR_in_orExpr5205); if (failed) return retval;
@@ -12396,7 +12397,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start andExpr
-    // etc/XQFT.g:521:3: andExpr : comparisonExpr ( AND comparisonExpr )* ;
+    // etc/XQFT.g:522:3: andExpr : comparisonExpr ( AND comparisonExpr )* ;
     public final andExpr_return andExpr() throws RecognitionException {
         andExpr_return retval = new andExpr_return();
         retval.start = input.LT(1);
@@ -12412,8 +12413,8 @@ public class XQFTParser extends Parser {
         XQFTTree AND307_tree=null;
 
         try {
-            // etc/XQFT.g:521:34: ( comparisonExpr ( AND comparisonExpr )* )
-            // etc/XQFT.g:521:36: comparisonExpr ( AND comparisonExpr )*
+            // etc/XQFT.g:522:34: ( comparisonExpr ( AND comparisonExpr )* )
+            // etc/XQFT.g:522:36: comparisonExpr ( AND comparisonExpr )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -12422,7 +12423,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, comparisonExpr306.getTree());
-            // etc/XQFT.g:521:51: ( AND comparisonExpr )*
+            // etc/XQFT.g:522:51: ( AND comparisonExpr )*
             loop62:
             do {
                 int alt62=2;
@@ -12435,7 +12436,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt62) {
             	case 1 :
-            	    // etc/XQFT.g:521:53: AND comparisonExpr
+            	    // etc/XQFT.g:522:53: AND comparisonExpr
             	    {
             	    AND307=(Token)input.LT(1);
             	    match(input,AND,FOLLOW_AND_in_andExpr5247); if (failed) return retval;
@@ -12483,7 +12484,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start comparisonExpr
-    // etc/XQFT.g:527:1: comparisonExpr : ftContainsExpr ( ( valueComp | generalComp | nodeComp ) ftContainsExpr )? ;
+    // etc/XQFT.g:528:1: comparisonExpr : ftContainsExpr ( ( valueComp | generalComp | nodeComp ) ftContainsExpr )? ;
     public final comparisonExpr_return comparisonExpr() throws RecognitionException {
         comparisonExpr_return retval = new comparisonExpr_return();
         retval.start = input.LT(1);
@@ -12503,8 +12504,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:527:32: ( ftContainsExpr ( ( valueComp | generalComp | nodeComp ) ftContainsExpr )? )
-            // etc/XQFT.g:527:34: ftContainsExpr ( ( valueComp | generalComp | nodeComp ) ftContainsExpr )?
+            // etc/XQFT.g:528:32: ( ftContainsExpr ( ( valueComp | generalComp | nodeComp ) ftContainsExpr )? )
+            // etc/XQFT.g:528:34: ftContainsExpr ( ( valueComp | generalComp | nodeComp ) ftContainsExpr )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -12513,7 +12514,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, ftContainsExpr309.getTree());
-            // etc/XQFT.g:527:49: ( ( valueComp | generalComp | nodeComp ) ftContainsExpr )?
+            // etc/XQFT.g:528:49: ( ( valueComp | generalComp | nodeComp ) ftContainsExpr )?
             int alt64=2;
             int LA64_0 = input.LA(1);
 
@@ -12522,9 +12523,9 @@ public class XQFTParser extends Parser {
             }
             switch (alt64) {
                 case 1 :
-                    // etc/XQFT.g:527:51: ( valueComp | generalComp | nodeComp ) ftContainsExpr
+                    // etc/XQFT.g:528:51: ( valueComp | generalComp | nodeComp ) ftContainsExpr
                     {
-                    // etc/XQFT.g:527:51: ( valueComp | generalComp | nodeComp )
+                    // etc/XQFT.g:528:51: ( valueComp | generalComp | nodeComp )
                     int alt63=3;
                     switch ( input.LA(1) ) {
                     case EQ:
@@ -12557,14 +12558,14 @@ public class XQFTParser extends Parser {
                     default:
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("527:51: ( valueComp | generalComp | nodeComp )", 63, 0, input);
+                            new NoViableAltException("528:51: ( valueComp | generalComp | nodeComp )", 63, 0, input);
 
                         throw nvae;
                     }
 
                     switch (alt63) {
                         case 1 :
-                            // etc/XQFT.g:527:52: valueComp
+                            // etc/XQFT.g:528:52: valueComp
                             {
                             pushFollow(FOLLOW_valueComp_in_comparisonExpr5289);
                             valueComp310=valueComp();
@@ -12575,7 +12576,7 @@ public class XQFTParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // etc/XQFT.g:527:65: generalComp
+                            // etc/XQFT.g:528:65: generalComp
                             {
                             pushFollow(FOLLOW_generalComp_in_comparisonExpr5294);
                             generalComp311=generalComp();
@@ -12586,7 +12587,7 @@ public class XQFTParser extends Parser {
                             }
                             break;
                         case 3 :
-                            // etc/XQFT.g:527:80: nodeComp
+                            // etc/XQFT.g:528:80: nodeComp
                             {
                             pushFollow(FOLLOW_nodeComp_in_comparisonExpr5299);
                             nodeComp312=nodeComp();
@@ -12636,7 +12637,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftContainsExpr
-    // etc/XQFT.g:528:2: ftContainsExpr : rangeExpr ( FTCONTAINS ftSelection ( ftIgnoreOption )? )? ;
+    // etc/XQFT.g:529:2: ftContainsExpr : rangeExpr ( FTCONTAINS ftSelection ( ftIgnoreOption )? )? ;
     public final ftContainsExpr_return ftContainsExpr() throws RecognitionException {
         ftContainsExpr_return retval = new ftContainsExpr_return();
         retval.start = input.LT(1);
@@ -12654,8 +12655,8 @@ public class XQFTParser extends Parser {
         XQFTTree FTCONTAINS315_tree=null;
 
         try {
-            // etc/XQFT.g:528:33: ( rangeExpr ( FTCONTAINS ftSelection ( ftIgnoreOption )? )? )
-            // etc/XQFT.g:528:35: rangeExpr ( FTCONTAINS ftSelection ( ftIgnoreOption )? )?
+            // etc/XQFT.g:529:33: ( rangeExpr ( FTCONTAINS ftSelection ( ftIgnoreOption )? )? )
+            // etc/XQFT.g:529:35: rangeExpr ( FTCONTAINS ftSelection ( ftIgnoreOption )? )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -12664,7 +12665,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, rangeExpr314.getTree());
-            // etc/XQFT.g:528:45: ( FTCONTAINS ftSelection ( ftIgnoreOption )? )?
+            // etc/XQFT.g:529:45: ( FTCONTAINS ftSelection ( ftIgnoreOption )? )?
             int alt66=2;
             int LA66_0 = input.LA(1);
 
@@ -12673,7 +12674,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt66) {
                 case 1 :
-                    // etc/XQFT.g:528:47: FTCONTAINS ftSelection ( ftIgnoreOption )?
+                    // etc/XQFT.g:529:47: FTCONTAINS ftSelection ( ftIgnoreOption )?
                     {
                     FTCONTAINS315=(Token)input.LT(1);
                     match(input,FTCONTAINS,FOLLOW_FTCONTAINS_in_ftContainsExpr5334); if (failed) return retval;
@@ -12686,7 +12687,7 @@ public class XQFTParser extends Parser {
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, ftSelection316.getTree());
-                    // etc/XQFT.g:528:71: ( ftIgnoreOption )?
+                    // etc/XQFT.g:529:71: ( ftIgnoreOption )?
                     int alt65=2;
                     int LA65_0 = input.LA(1);
 
@@ -12695,7 +12696,7 @@ public class XQFTParser extends Parser {
                     }
                     switch (alt65) {
                         case 1 :
-                            // etc/XQFT.g:528:71: ftIgnoreOption
+                            // etc/XQFT.g:529:71: ftIgnoreOption
                             {
                             pushFollow(FOLLOW_ftIgnoreOption_in_ftContainsExpr5339);
                             ftIgnoreOption317=ftIgnoreOption();
@@ -12740,7 +12741,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start rangeExpr
-    // etc/XQFT.g:529:3: rangeExpr : additiveExpr ( TO additiveExpr )? ;
+    // etc/XQFT.g:530:3: rangeExpr : additiveExpr ( TO additiveExpr )? ;
     public final rangeExpr_return rangeExpr() throws RecognitionException {
         rangeExpr_return retval = new rangeExpr_return();
         retval.start = input.LT(1);
@@ -12756,8 +12757,8 @@ public class XQFTParser extends Parser {
         XQFTTree TO319_tree=null;
 
         try {
-            // etc/XQFT.g:529:34: ( additiveExpr ( TO additiveExpr )? )
-            // etc/XQFT.g:529:36: additiveExpr ( TO additiveExpr )?
+            // etc/XQFT.g:530:34: ( additiveExpr ( TO additiveExpr )? )
+            // etc/XQFT.g:530:36: additiveExpr ( TO additiveExpr )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -12766,7 +12767,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, additiveExpr318.getTree());
-            // etc/XQFT.g:529:49: ( TO additiveExpr )?
+            // etc/XQFT.g:530:49: ( TO additiveExpr )?
             int alt67=2;
             int LA67_0 = input.LA(1);
 
@@ -12775,7 +12776,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt67) {
                 case 1 :
-                    // etc/XQFT.g:529:51: TO additiveExpr
+                    // etc/XQFT.g:530:51: TO additiveExpr
                     {
                     TO319=(Token)input.LT(1);
                     match(input,TO,FOLLOW_TO_in_rangeExpr5378); if (failed) return retval;
@@ -12820,7 +12821,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start additiveExpr
-    // etc/XQFT.g:530:4: additiveExpr : multiplicativeExpr ( ( PLUSSi | MINUSSi ) multiplicativeExpr )* ;
+    // etc/XQFT.g:531:4: additiveExpr : multiplicativeExpr ( ( PLUSSi | MINUSSi ) multiplicativeExpr )* ;
     public final additiveExpr_return additiveExpr() throws RecognitionException {
         additiveExpr_return retval = new additiveExpr_return();
         retval.start = input.LT(1);
@@ -12836,8 +12837,8 @@ public class XQFTParser extends Parser {
         XQFTTree set322_tree=null;
 
         try {
-            // etc/XQFT.g:530:35: ( multiplicativeExpr ( ( PLUSSi | MINUSSi ) multiplicativeExpr )* )
-            // etc/XQFT.g:530:37: multiplicativeExpr ( ( PLUSSi | MINUSSi ) multiplicativeExpr )*
+            // etc/XQFT.g:531:35: ( multiplicativeExpr ( ( PLUSSi | MINUSSi ) multiplicativeExpr )* )
+            // etc/XQFT.g:531:37: multiplicativeExpr ( ( PLUSSi | MINUSSi ) multiplicativeExpr )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -12846,7 +12847,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, multiplicativeExpr321.getTree());
-            // etc/XQFT.g:530:56: ( ( PLUSSi | MINUSSi ) multiplicativeExpr )*
+            // etc/XQFT.g:531:56: ( ( PLUSSi | MINUSSi ) multiplicativeExpr )*
             loop68:
             do {
                 int alt68=2;
@@ -12859,7 +12860,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt68) {
             	case 1 :
-            	    // etc/XQFT.g:530:58: ( PLUSSi | MINUSSi ) multiplicativeExpr
+            	    // etc/XQFT.g:531:58: ( PLUSSi | MINUSSi ) multiplicativeExpr
             	    {
             	    set322=(Token)input.LT(1);
             	    if ( (input.LA(1)>=PLUSSi && input.LA(1)<=MINUSSi) ) {
@@ -12914,7 +12915,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start multiplicativeExpr
-    // etc/XQFT.g:531:5: multiplicativeExpr : unionExpr ( ( STARSi | DIV | IDIV | MOD ) unionExpr )* ;
+    // etc/XQFT.g:532:5: multiplicativeExpr : unionExpr ( ( STARSi | DIV | IDIV | MOD ) unionExpr )* ;
     public final multiplicativeExpr_return multiplicativeExpr() throws RecognitionException {
         multiplicativeExpr_return retval = new multiplicativeExpr_return();
         retval.start = input.LT(1);
@@ -12930,8 +12931,8 @@ public class XQFTParser extends Parser {
         XQFTTree set325_tree=null;
 
         try {
-            // etc/XQFT.g:531:36: ( unionExpr ( ( STARSi | DIV | IDIV | MOD ) unionExpr )* )
-            // etc/XQFT.g:531:38: unionExpr ( ( STARSi | DIV | IDIV | MOD ) unionExpr )*
+            // etc/XQFT.g:532:36: ( unionExpr ( ( STARSi | DIV | IDIV | MOD ) unionExpr )* )
+            // etc/XQFT.g:532:38: unionExpr ( ( STARSi | DIV | IDIV | MOD ) unionExpr )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -12940,7 +12941,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, unionExpr324.getTree());
-            // etc/XQFT.g:531:48: ( ( STARSi | DIV | IDIV | MOD ) unionExpr )*
+            // etc/XQFT.g:532:48: ( ( STARSi | DIV | IDIV | MOD ) unionExpr )*
             loop69:
             do {
                 int alt69=2;
@@ -12953,7 +12954,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt69) {
             	case 1 :
-            	    // etc/XQFT.g:531:50: ( STARSi | DIV | IDIV | MOD ) unionExpr
+            	    // etc/XQFT.g:532:50: ( STARSi | DIV | IDIV | MOD ) unionExpr
             	    {
             	    set325=(Token)input.LT(1);
             	    if ( input.LA(1)==DIV||input.LA(1)==IDIV||input.LA(1)==MOD||input.LA(1)==STARSi ) {
@@ -13008,7 +13009,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start unionExpr
-    // etc/XQFT.g:532:6: unionExpr : intersectExceptExpr ( ( UNION | PIPESi ) intersectExceptExpr )* ;
+    // etc/XQFT.g:533:6: unionExpr : intersectExceptExpr ( ( UNION | PIPESi ) intersectExceptExpr )* ;
     public final unionExpr_return unionExpr() throws RecognitionException {
         unionExpr_return retval = new unionExpr_return();
         retval.start = input.LT(1);
@@ -13024,8 +13025,8 @@ public class XQFTParser extends Parser {
         XQFTTree set328_tree=null;
 
         try {
-            // etc/XQFT.g:532:37: ( intersectExceptExpr ( ( UNION | PIPESi ) intersectExceptExpr )* )
-            // etc/XQFT.g:532:39: intersectExceptExpr ( ( UNION | PIPESi ) intersectExceptExpr )*
+            // etc/XQFT.g:533:37: ( intersectExceptExpr ( ( UNION | PIPESi ) intersectExceptExpr )* )
+            // etc/XQFT.g:533:39: intersectExceptExpr ( ( UNION | PIPESi ) intersectExceptExpr )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -13034,7 +13035,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, intersectExceptExpr327.getTree());
-            // etc/XQFT.g:532:59: ( ( UNION | PIPESi ) intersectExceptExpr )*
+            // etc/XQFT.g:533:59: ( ( UNION | PIPESi ) intersectExceptExpr )*
             loop70:
             do {
                 int alt70=2;
@@ -13047,7 +13048,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt70) {
             	case 1 :
-            	    // etc/XQFT.g:532:61: ( UNION | PIPESi ) intersectExceptExpr
+            	    // etc/XQFT.g:533:61: ( UNION | PIPESi ) intersectExceptExpr
             	    {
             	    set328=(Token)input.LT(1);
             	    if ( input.LA(1)==UNION||input.LA(1)==PIPESi ) {
@@ -13102,7 +13103,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start intersectExceptExpr
-    // etc/XQFT.g:533:7: intersectExceptExpr : instanceofExpr ( ( INTERSECT | EXCEPT ) instanceofExpr )* ;
+    // etc/XQFT.g:534:7: intersectExceptExpr : instanceofExpr ( ( INTERSECT | EXCEPT ) instanceofExpr )* ;
     public final intersectExceptExpr_return intersectExceptExpr() throws RecognitionException {
         intersectExceptExpr_return retval = new intersectExceptExpr_return();
         retval.start = input.LT(1);
@@ -13118,8 +13119,8 @@ public class XQFTParser extends Parser {
         XQFTTree set331_tree=null;
 
         try {
-            // etc/XQFT.g:533:38: ( instanceofExpr ( ( INTERSECT | EXCEPT ) instanceofExpr )* )
-            // etc/XQFT.g:533:40: instanceofExpr ( ( INTERSECT | EXCEPT ) instanceofExpr )*
+            // etc/XQFT.g:534:38: ( instanceofExpr ( ( INTERSECT | EXCEPT ) instanceofExpr )* )
+            // etc/XQFT.g:534:40: instanceofExpr ( ( INTERSECT | EXCEPT ) instanceofExpr )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -13128,7 +13129,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, instanceofExpr330.getTree());
-            // etc/XQFT.g:533:55: ( ( INTERSECT | EXCEPT ) instanceofExpr )*
+            // etc/XQFT.g:534:55: ( ( INTERSECT | EXCEPT ) instanceofExpr )*
             loop71:
             do {
                 int alt71=2;
@@ -13141,7 +13142,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt71) {
             	case 1 :
-            	    // etc/XQFT.g:533:57: ( INTERSECT | EXCEPT ) instanceofExpr
+            	    // etc/XQFT.g:534:57: ( INTERSECT | EXCEPT ) instanceofExpr
             	    {
             	    set331=(Token)input.LT(1);
             	    if ( input.LA(1)==EXCEPT||input.LA(1)==INTERSECT ) {
@@ -13196,7 +13197,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start instanceofExpr
-    // etc/XQFT.g:534:8: instanceofExpr : treatExpr ( INSTANCE OF sequenceType )? ;
+    // etc/XQFT.g:535:8: instanceofExpr : treatExpr ( INSTANCE OF sequenceType )? ;
     public final instanceofExpr_return instanceofExpr() throws RecognitionException {
         instanceofExpr_return retval = new instanceofExpr_return();
         retval.start = input.LT(1);
@@ -13214,8 +13215,8 @@ public class XQFTParser extends Parser {
         XQFTTree OF335_tree=null;
 
         try {
-            // etc/XQFT.g:534:39: ( treatExpr ( INSTANCE OF sequenceType )? )
-            // etc/XQFT.g:534:41: treatExpr ( INSTANCE OF sequenceType )?
+            // etc/XQFT.g:535:39: ( treatExpr ( INSTANCE OF sequenceType )? )
+            // etc/XQFT.g:535:41: treatExpr ( INSTANCE OF sequenceType )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -13224,7 +13225,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, treatExpr333.getTree());
-            // etc/XQFT.g:534:51: ( INSTANCE OF sequenceType )?
+            // etc/XQFT.g:535:51: ( INSTANCE OF sequenceType )?
             int alt72=2;
             int LA72_0 = input.LA(1);
 
@@ -13233,7 +13234,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt72) {
                 case 1 :
-                    // etc/XQFT.g:534:53: INSTANCE OF sequenceType
+                    // etc/XQFT.g:535:53: INSTANCE OF sequenceType
                     {
                     INSTANCE334=(Token)input.LT(1);
                     match(input,INSTANCE,FOLLOW_INSTANCE_in_instanceofExpr5598); if (failed) return retval;
@@ -13280,7 +13281,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start treatExpr
-    // etc/XQFT.g:535:9: treatExpr : castableExpr ( TREAT AS sequenceType )? ;
+    // etc/XQFT.g:536:9: treatExpr : castableExpr ( TREAT AS sequenceType )? ;
     public final treatExpr_return treatExpr() throws RecognitionException {
         treatExpr_return retval = new treatExpr_return();
         retval.start = input.LT(1);
@@ -13298,8 +13299,8 @@ public class XQFTParser extends Parser {
         XQFTTree AS339_tree=null;
 
         try {
-            // etc/XQFT.g:535:40: ( castableExpr ( TREAT AS sequenceType )? )
-            // etc/XQFT.g:535:42: castableExpr ( TREAT AS sequenceType )?
+            // etc/XQFT.g:536:40: ( castableExpr ( TREAT AS sequenceType )? )
+            // etc/XQFT.g:536:42: castableExpr ( TREAT AS sequenceType )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -13308,7 +13309,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, castableExpr337.getTree());
-            // etc/XQFT.g:535:55: ( TREAT AS sequenceType )?
+            // etc/XQFT.g:536:55: ( TREAT AS sequenceType )?
             int alt73=2;
             int LA73_0 = input.LA(1);
 
@@ -13317,7 +13318,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt73) {
                 case 1 :
-                    // etc/XQFT.g:535:57: TREAT AS sequenceType
+                    // etc/XQFT.g:536:57: TREAT AS sequenceType
                     {
                     TREAT338=(Token)input.LT(1);
                     match(input,TREAT,FOLLOW_TREAT_in_treatExpr5647); if (failed) return retval;
@@ -13364,7 +13365,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start castableExpr
-    // etc/XQFT.g:536:10: castableExpr : castExpr ( CASTABLE AS singleType )? ;
+    // etc/XQFT.g:537:10: castableExpr : castExpr ( CASTABLE AS singleType )? ;
     public final castableExpr_return castableExpr() throws RecognitionException {
         castableExpr_return retval = new castableExpr_return();
         retval.start = input.LT(1);
@@ -13382,8 +13383,8 @@ public class XQFTParser extends Parser {
         XQFTTree AS343_tree=null;
 
         try {
-            // etc/XQFT.g:536:41: ( castExpr ( CASTABLE AS singleType )? )
-            // etc/XQFT.g:536:43: castExpr ( CASTABLE AS singleType )?
+            // etc/XQFT.g:537:41: ( castExpr ( CASTABLE AS singleType )? )
+            // etc/XQFT.g:537:43: castExpr ( CASTABLE AS singleType )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -13392,7 +13393,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, castExpr341.getTree());
-            // etc/XQFT.g:536:52: ( CASTABLE AS singleType )?
+            // etc/XQFT.g:537:52: ( CASTABLE AS singleType )?
             int alt74=2;
             int LA74_0 = input.LA(1);
 
@@ -13401,7 +13402,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt74) {
                 case 1 :
-                    // etc/XQFT.g:536:54: CASTABLE AS singleType
+                    // etc/XQFT.g:537:54: CASTABLE AS singleType
                     {
                     CASTABLE342=(Token)input.LT(1);
                     match(input,CASTABLE,FOLLOW_CASTABLE_in_castableExpr5694); if (failed) return retval;
@@ -13448,7 +13449,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start castExpr
-    // etc/XQFT.g:537:11: castExpr : unaryExpr ( CAST AS singleType )? ;
+    // etc/XQFT.g:538:11: castExpr : unaryExpr ( CAST AS singleType )? ;
     public final castExpr_return castExpr() throws RecognitionException {
         castExpr_return retval = new castExpr_return();
         retval.start = input.LT(1);
@@ -13466,8 +13467,8 @@ public class XQFTParser extends Parser {
         XQFTTree AS347_tree=null;
 
         try {
-            // etc/XQFT.g:537:42: ( unaryExpr ( CAST AS singleType )? )
-            // etc/XQFT.g:537:44: unaryExpr ( CAST AS singleType )?
+            // etc/XQFT.g:538:42: ( unaryExpr ( CAST AS singleType )? )
+            // etc/XQFT.g:538:44: unaryExpr ( CAST AS singleType )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -13476,7 +13477,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, unaryExpr345.getTree());
-            // etc/XQFT.g:537:54: ( CAST AS singleType )?
+            // etc/XQFT.g:538:54: ( CAST AS singleType )?
             int alt75=2;
             int LA75_0 = input.LA(1);
 
@@ -13485,7 +13486,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt75) {
                 case 1 :
-                    // etc/XQFT.g:537:56: CAST AS singleType
+                    // etc/XQFT.g:538:56: CAST AS singleType
                     {
                     CAST346=(Token)input.LT(1);
                     match(input,CAST,FOLLOW_CAST_in_castExpr5746); if (failed) return retval;
@@ -13532,7 +13533,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start unaryExpr
-    // etc/XQFT.g:538:12: unaryExpr : ( ( MINUSSi | PLUSSi )* ) valueExpr ;
+    // etc/XQFT.g:539:12: unaryExpr : ( ( MINUSSi | PLUSSi )* ) valueExpr ;
     public final unaryExpr_return unaryExpr() throws RecognitionException {
         unaryExpr_return retval = new unaryExpr_return();
         retval.start = input.LT(1);
@@ -13546,15 +13547,15 @@ public class XQFTParser extends Parser {
         XQFTTree set349_tree=null;
 
         try {
-            // etc/XQFT.g:538:43: ( ( ( MINUSSi | PLUSSi )* ) valueExpr )
-            // etc/XQFT.g:538:45: ( ( MINUSSi | PLUSSi )* ) valueExpr
+            // etc/XQFT.g:539:43: ( ( ( MINUSSi | PLUSSi )* ) valueExpr )
+            // etc/XQFT.g:539:45: ( ( MINUSSi | PLUSSi )* ) valueExpr
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:538:45: ( ( MINUSSi | PLUSSi )* )
-            // etc/XQFT.g:538:46: ( MINUSSi | PLUSSi )*
+            // etc/XQFT.g:539:45: ( ( MINUSSi | PLUSSi )* )
+            // etc/XQFT.g:539:46: ( MINUSSi | PLUSSi )*
             {
-            // etc/XQFT.g:538:46: ( MINUSSi | PLUSSi )*
+            // etc/XQFT.g:539:46: ( MINUSSi | PLUSSi )*
             loop76:
             do {
                 int alt76=2;
@@ -13625,7 +13626,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start singleType
-    // etc/XQFT.g:540:12: singleType : atomicType ( QUESTIONSi )? ;
+    // etc/XQFT.g:541:12: singleType : atomicType ( QUESTIONSi )? ;
     public final singleType_return singleType() throws RecognitionException {
         singleType_return retval = new singleType_return();
         retval.start = input.LT(1);
@@ -13639,8 +13640,8 @@ public class XQFTParser extends Parser {
         XQFTTree QUESTIONSi352_tree=null;
 
         try {
-            // etc/XQFT.g:540:43: ( atomicType ( QUESTIONSi )? )
-            // etc/XQFT.g:540:45: atomicType ( QUESTIONSi )?
+            // etc/XQFT.g:541:43: ( atomicType ( QUESTIONSi )? )
+            // etc/XQFT.g:541:45: atomicType ( QUESTIONSi )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -13649,7 +13650,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, atomicType351.getTree());
-            // etc/XQFT.g:540:56: ( QUESTIONSi )?
+            // etc/XQFT.g:541:56: ( QUESTIONSi )?
             int alt77=2;
             int LA77_0 = input.LA(1);
 
@@ -13658,7 +13659,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt77) {
                 case 1 :
-                    // etc/XQFT.g:540:56: QUESTIONSi
+                    // etc/XQFT.g:541:56: QUESTIONSi
                     {
                     QUESTIONSi352=(Token)input.LT(1);
                     match(input,QUESTIONSi,FOLLOW_QUESTIONSi_in_singleType5847); if (failed) return retval;
@@ -13698,7 +13699,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start atomicType
-    // etc/XQFT.g:541:13: atomicType : qName ;
+    // etc/XQFT.g:542:13: atomicType : qName ;
     public final atomicType_return atomicType() throws RecognitionException {
         atomicType_return retval = new atomicType_return();
         retval.start = input.LT(1);
@@ -13710,8 +13711,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:541:44: ( qName )
-            // etc/XQFT.g:541:46: qName
+            // etc/XQFT.g:542:44: ( qName )
+            // etc/XQFT.g:542:46: qName
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -13746,7 +13747,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftIgnoreOption
-    // etc/XQFT.g:549:3: ftIgnoreOption : WITHOUT CONTENT unionExpr ;
+    // etc/XQFT.g:550:3: ftIgnoreOption : WITHOUT CONTENT unionExpr ;
     public final ftIgnoreOption_return ftIgnoreOption() throws RecognitionException {
         ftIgnoreOption_return retval = new ftIgnoreOption_return();
         retval.start = input.LT(1);
@@ -13762,8 +13763,8 @@ public class XQFTParser extends Parser {
         XQFTTree CONTENT355_tree=null;
 
         try {
-            // etc/XQFT.g:549:34: ( WITHOUT CONTENT unionExpr )
-            // etc/XQFT.g:549:36: WITHOUT CONTENT unionExpr
+            // etc/XQFT.g:550:34: ( WITHOUT CONTENT unionExpr )
+            // etc/XQFT.g:550:36: WITHOUT CONTENT unionExpr
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -13810,7 +13811,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start valueComp
-    // etc/XQFT.g:553:2: valueComp : ( EQ | NE | LT | LE | GT | GE );
+    // etc/XQFT.g:554:2: valueComp : ( EQ | NE | LT | LE | GT | GE );
     public final valueComp_return valueComp() throws RecognitionException {
         valueComp_return retval = new valueComp_return();
         retval.start = input.LT(1);
@@ -13822,7 +13823,7 @@ public class XQFTParser extends Parser {
         XQFTTree set357_tree=null;
 
         try {
-            // etc/XQFT.g:553:33: ( EQ | NE | LT | LE | GT | GE )
+            // etc/XQFT.g:554:33: ( EQ | NE | LT | LE | GT | GE )
             // etc/XQFT.g:
             {
             root_0 = (XQFTTree)adaptor.nil();
@@ -13866,7 +13867,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start generalComp
-    // etc/XQFT.g:556:2: generalComp : ( EQSi | NEQSi | LTSi | LTOREQSi | GTSi | GTOREQSi );
+    // etc/XQFT.g:557:2: generalComp : ( EQSi | NEQSi | LTSi | LTOREQSi | GTSi | GTOREQSi );
     public final generalComp_return generalComp() throws RecognitionException {
         generalComp_return retval = new generalComp_return();
         retval.start = input.LT(1);
@@ -13878,7 +13879,7 @@ public class XQFTParser extends Parser {
         XQFTTree set358_tree=null;
 
         try {
-            // etc/XQFT.g:556:33: ( EQSi | NEQSi | LTSi | LTOREQSi | GTSi | GTOREQSi )
+            // etc/XQFT.g:557:33: ( EQSi | NEQSi | LTSi | LTOREQSi | GTSi | GTOREQSi )
             // etc/XQFT.g:
             {
             root_0 = (XQFTTree)adaptor.nil();
@@ -13922,7 +13923,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start nodeComp
-    // etc/XQFT.g:559:2: nodeComp : ( IS | NODEBEFORESi | NODEAFTERSi );
+    // etc/XQFT.g:560:2: nodeComp : ( IS | NODEBEFORESi | NODEAFTERSi );
     public final nodeComp_return nodeComp() throws RecognitionException {
         nodeComp_return retval = new nodeComp_return();
         retval.start = input.LT(1);
@@ -13934,7 +13935,7 @@ public class XQFTParser extends Parser {
         XQFTTree set359_tree=null;
 
         try {
-            // etc/XQFT.g:559:33: ( IS | NODEBEFORESi | NODEAFTERSi )
+            // etc/XQFT.g:560:33: ( IS | NODEBEFORESi | NODEAFTERSi )
             // etc/XQFT.g:
             {
             root_0 = (XQFTTree)adaptor.nil();
@@ -13978,7 +13979,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftSelection
-    // etc/XQFT.g:563:1: ftSelection : ftOr ( ftPosFilter )* ( WEIGHT rangeExpr )? ;
+    // etc/XQFT.g:564:1: ftSelection : ftOr ( ftPosFilter )* ( WEIGHT rangeExpr )? ;
     public final ftSelection_return ftSelection() throws RecognitionException {
         ftSelection_return retval = new ftSelection_return();
         retval.start = input.LT(1);
@@ -13996,8 +13997,8 @@ public class XQFTParser extends Parser {
         XQFTTree WEIGHT362_tree=null;
 
         try {
-            // etc/XQFT.g:563:32: ( ftOr ( ftPosFilter )* ( WEIGHT rangeExpr )? )
-            // etc/XQFT.g:563:34: ftOr ( ftPosFilter )* ( WEIGHT rangeExpr )?
+            // etc/XQFT.g:564:32: ( ftOr ( ftPosFilter )* ( WEIGHT rangeExpr )? )
+            // etc/XQFT.g:564:34: ftOr ( ftPosFilter )* ( WEIGHT rangeExpr )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -14006,7 +14007,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, ftOr360.getTree());
-            // etc/XQFT.g:563:39: ( ftPosFilter )*
+            // etc/XQFT.g:564:39: ( ftPosFilter )*
             loop78:
             do {
                 int alt78=2;
@@ -14019,7 +14020,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt78) {
             	case 1 :
-            	    // etc/XQFT.g:563:39: ftPosFilter
+            	    // etc/XQFT.g:564:39: ftPosFilter
             	    {
             	    pushFollow(FOLLOW_ftPosFilter_in_ftSelection6100);
             	    ftPosFilter361=ftPosFilter();
@@ -14035,7 +14036,7 @@ public class XQFTParser extends Parser {
                 }
             } while (true);
 
-            // etc/XQFT.g:563:52: ( WEIGHT rangeExpr )?
+            // etc/XQFT.g:564:52: ( WEIGHT rangeExpr )?
             int alt79=2;
             int LA79_0 = input.LA(1);
 
@@ -14044,7 +14045,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt79) {
                 case 1 :
-                    // etc/XQFT.g:563:53: WEIGHT rangeExpr
+                    // etc/XQFT.g:564:53: WEIGHT rangeExpr
                     {
                     WEIGHT362=(Token)input.LT(1);
                     match(input,WEIGHT,FOLLOW_WEIGHT_in_ftSelection6104); if (failed) return retval;
@@ -14089,7 +14090,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftOr
-    // etc/XQFT.g:564:2: ftOr : ftAnd ( FTOR ftAnd )* ;
+    // etc/XQFT.g:565:2: ftOr : ftAnd ( FTOR ftAnd )* ;
     public final ftOr_return ftOr() throws RecognitionException {
         ftOr_return retval = new ftOr_return();
         retval.start = input.LT(1);
@@ -14105,8 +14106,8 @@ public class XQFTParser extends Parser {
         XQFTTree FTOR365_tree=null;
 
         try {
-            // etc/XQFT.g:564:33: ( ftAnd ( FTOR ftAnd )* )
-            // etc/XQFT.g:564:35: ftAnd ( FTOR ftAnd )*
+            // etc/XQFT.g:565:33: ( ftAnd ( FTOR ftAnd )* )
+            // etc/XQFT.g:565:35: ftAnd ( FTOR ftAnd )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -14115,7 +14116,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, ftAnd364.getTree());
-            // etc/XQFT.g:564:41: ( FTOR ftAnd )*
+            // etc/XQFT.g:565:41: ( FTOR ftAnd )*
             loop80:
             do {
                 int alt80=2;
@@ -14128,7 +14129,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt80) {
             	case 1 :
-            	    // etc/XQFT.g:564:43: FTOR ftAnd
+            	    // etc/XQFT.g:565:43: FTOR ftAnd
             	    {
             	    FTOR365=(Token)input.LT(1);
             	    match(input,FTOR,FOLLOW_FTOR_in_ftOr6146); if (failed) return retval;
@@ -14176,7 +14177,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftAnd
-    // etc/XQFT.g:565:3: ftAnd : ftMildNot ( FTAND ftMildNot )* ;
+    // etc/XQFT.g:566:3: ftAnd : ftMildNot ( FTAND ftMildNot )* ;
     public final ftAnd_return ftAnd() throws RecognitionException {
         ftAnd_return retval = new ftAnd_return();
         retval.start = input.LT(1);
@@ -14192,8 +14193,8 @@ public class XQFTParser extends Parser {
         XQFTTree FTAND368_tree=null;
 
         try {
-            // etc/XQFT.g:565:34: ( ftMildNot ( FTAND ftMildNot )* )
-            // etc/XQFT.g:565:36: ftMildNot ( FTAND ftMildNot )*
+            // etc/XQFT.g:566:34: ( ftMildNot ( FTAND ftMildNot )* )
+            // etc/XQFT.g:566:36: ftMildNot ( FTAND ftMildNot )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -14202,7 +14203,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, ftMildNot367.getTree());
-            // etc/XQFT.g:565:46: ( FTAND ftMildNot )*
+            // etc/XQFT.g:566:46: ( FTAND ftMildNot )*
             loop81:
             do {
                 int alt81=2;
@@ -14215,7 +14216,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt81) {
             	case 1 :
-            	    // etc/XQFT.g:565:48: FTAND ftMildNot
+            	    // etc/XQFT.g:566:48: FTAND ftMildNot
             	    {
             	    FTAND368=(Token)input.LT(1);
             	    match(input,FTAND,FOLLOW_FTAND_in_ftAnd6190); if (failed) return retval;
@@ -14263,7 +14264,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftMildNot
-    // etc/XQFT.g:566:4: ftMildNot : ftUnaryNot ( NOT IN ftUnaryNot )* ;
+    // etc/XQFT.g:567:4: ftMildNot : ftUnaryNot ( NOT IN ftUnaryNot )* ;
     public final ftMildNot_return ftMildNot() throws RecognitionException {
         ftMildNot_return retval = new ftMildNot_return();
         retval.start = input.LT(1);
@@ -14281,8 +14282,8 @@ public class XQFTParser extends Parser {
         XQFTTree IN372_tree=null;
 
         try {
-            // etc/XQFT.g:566:35: ( ftUnaryNot ( NOT IN ftUnaryNot )* )
-            // etc/XQFT.g:566:37: ftUnaryNot ( NOT IN ftUnaryNot )*
+            // etc/XQFT.g:567:35: ( ftUnaryNot ( NOT IN ftUnaryNot )* )
+            // etc/XQFT.g:567:37: ftUnaryNot ( NOT IN ftUnaryNot )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -14291,7 +14292,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, ftUnaryNot370.getTree());
-            // etc/XQFT.g:566:48: ( NOT IN ftUnaryNot )*
+            // etc/XQFT.g:567:48: ( NOT IN ftUnaryNot )*
             loop82:
             do {
                 int alt82=2;
@@ -14304,7 +14305,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt82) {
             	case 1 :
-            	    // etc/XQFT.g:566:50: NOT IN ftUnaryNot
+            	    // etc/XQFT.g:567:50: NOT IN ftUnaryNot
             	    {
             	    NOT371=(Token)input.LT(1);
             	    match(input,NOT,FOLLOW_NOT_in_ftMildNot6231); if (failed) return retval;
@@ -14354,7 +14355,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftUnaryNot
-    // etc/XQFT.g:567:5: ftUnaryNot : ( FTNOT )? ftPrimaryWithOptions ;
+    // etc/XQFT.g:568:5: ftUnaryNot : ( FTNOT )? ftPrimaryWithOptions ;
     public final ftUnaryNot_return ftUnaryNot() throws RecognitionException {
         ftUnaryNot_return retval = new ftUnaryNot_return();
         retval.start = input.LT(1);
@@ -14368,12 +14369,12 @@ public class XQFTParser extends Parser {
         XQFTTree FTNOT374_tree=null;
 
         try {
-            // etc/XQFT.g:567:36: ( ( FTNOT )? ftPrimaryWithOptions )
-            // etc/XQFT.g:567:38: ( FTNOT )? ftPrimaryWithOptions
+            // etc/XQFT.g:568:36: ( ( FTNOT )? ftPrimaryWithOptions )
+            // etc/XQFT.g:568:38: ( FTNOT )? ftPrimaryWithOptions
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:567:38: ( FTNOT )?
+            // etc/XQFT.g:568:38: ( FTNOT )?
             int alt83=2;
             int LA83_0 = input.LA(1);
 
@@ -14382,7 +14383,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt83) {
                 case 1 :
-                    // etc/XQFT.g:567:39: FTNOT
+                    // etc/XQFT.g:568:39: FTNOT
                     {
                     FTNOT374=(Token)input.LT(1);
                     match(input,FTNOT,FOLLOW_FTNOT_in_ftUnaryNot6272); if (failed) return retval;
@@ -14427,7 +14428,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftPrimaryWithOptions
-    // etc/XQFT.g:568:6: ftPrimaryWithOptions : ftPrimary ( ftMatchOptions )? ;
+    // etc/XQFT.g:569:6: ftPrimaryWithOptions : ftPrimary ( ftMatchOptions )? ;
     public final ftPrimaryWithOptions_return ftPrimaryWithOptions() throws RecognitionException {
         ftPrimaryWithOptions_return retval = new ftPrimaryWithOptions_return();
         retval.start = input.LT(1);
@@ -14441,8 +14442,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:568:37: ( ftPrimary ( ftMatchOptions )? )
-            // etc/XQFT.g:568:39: ftPrimary ( ftMatchOptions )?
+            // etc/XQFT.g:569:37: ( ftPrimary ( ftMatchOptions )? )
+            // etc/XQFT.g:569:39: ftPrimary ( ftMatchOptions )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -14451,7 +14452,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, ftPrimary376.getTree());
-            // etc/XQFT.g:568:49: ( ftMatchOptions )?
+            // etc/XQFT.g:569:49: ( ftMatchOptions )?
             int alt84=2;
             switch ( input.LA(1) ) {
                 case DIACRITICS:
@@ -14486,7 +14487,7 @@ public class XQFTParser extends Parser {
 
             switch (alt84) {
                 case 1 :
-                    // etc/XQFT.g:568:49: ftMatchOptions
+                    // etc/XQFT.g:569:49: ftMatchOptions
                     {
                     pushFollow(FOLLOW_ftMatchOptions_in_ftPrimaryWithOptions6301);
                     ftMatchOptions377=ftMatchOptions();
@@ -14525,7 +14526,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftPrimary
-    // etc/XQFT.g:570:7: ftPrimary : ( ftWords ( ftTimes )? | LPARSi ftSelection RPARSi | ftExtensionSelection );
+    // etc/XQFT.g:571:7: ftPrimary : ( ftWords ( ftTimes )? | LPARSi ftSelection RPARSi | ftExtensionSelection );
     public final ftPrimary_return ftPrimary() throws RecognitionException {
         ftPrimary_return retval = new ftPrimary_return();
         retval.start = input.LT(1);
@@ -14547,7 +14548,7 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi382_tree=null;
 
         try {
-            // etc/XQFT.g:570:38: ( ftWords ( ftTimes )? | LPARSi ftSelection RPARSi | ftExtensionSelection )
+            // etc/XQFT.g:571:38: ( ftWords ( ftTimes )? | LPARSi ftSelection RPARSi | ftExtensionSelection )
             int alt86=3;
             switch ( input.LA(1) ) {
             case StringLiteral:
@@ -14572,14 +14573,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("570:7: ftPrimary : ( ftWords ( ftTimes )? | LPARSi ftSelection RPARSi | ftExtensionSelection );", 86, 0, input);
+                    new NoViableAltException("571:7: ftPrimary : ( ftWords ( ftTimes )? | LPARSi ftSelection RPARSi | ftExtensionSelection );", 86, 0, input);
 
                 throw nvae;
             }
 
             switch (alt86) {
                 case 1 :
-                    // etc/XQFT.g:570:40: ftWords ( ftTimes )?
+                    // etc/XQFT.g:571:40: ftWords ( ftTimes )?
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -14588,7 +14589,7 @@ public class XQFTParser extends Parser {
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, ftWords378.getTree());
-                    // etc/XQFT.g:570:48: ( ftTimes )?
+                    // etc/XQFT.g:571:48: ( ftTimes )?
                     int alt85=2;
                     int LA85_0 = input.LA(1);
 
@@ -14597,7 +14598,7 @@ public class XQFTParser extends Parser {
                     }
                     switch (alt85) {
                         case 1 :
-                            // etc/XQFT.g:570:48: ftTimes
+                            // etc/XQFT.g:571:48: ftTimes
                             {
                             pushFollow(FOLLOW_ftTimes_in_ftPrimary6344);
                             ftTimes379=ftTimes();
@@ -14614,7 +14615,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:571:19: LPARSi ftSelection RPARSi
+                    // etc/XQFT.g:572:19: LPARSi ftSelection RPARSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -14631,7 +14632,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:572:19: ftExtensionSelection
+                    // etc/XQFT.g:573:19: ftExtensionSelection
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -14668,7 +14669,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftWords
-    // etc/XQFT.g:574:8: ftWords : ftWordsValue ( ftAnyallOption )? ;
+    // etc/XQFT.g:575:8: ftWords : ftWordsValue ( ftAnyallOption )? ;
     public final ftWords_return ftWords() throws RecognitionException {
         ftWords_return retval = new ftWords_return();
         retval.start = input.LT(1);
@@ -14682,8 +14683,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:574:39: ( ftWordsValue ( ftAnyallOption )? )
-            // etc/XQFT.g:574:41: ftWordsValue ( ftAnyallOption )?
+            // etc/XQFT.g:575:39: ( ftWordsValue ( ftAnyallOption )? )
+            // etc/XQFT.g:575:41: ftWordsValue ( ftAnyallOption )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -14692,7 +14693,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, ftWordsValue384.getTree());
-            // etc/XQFT.g:574:54: ( ftAnyallOption )?
+            // etc/XQFT.g:575:54: ( ftAnyallOption )?
             int alt87=2;
             int LA87_0 = input.LA(1);
 
@@ -14701,7 +14702,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt87) {
                 case 1 :
-                    // etc/XQFT.g:574:54: ftAnyallOption
+                    // etc/XQFT.g:575:54: ftAnyallOption
                     {
                     pushFollow(FOLLOW_ftAnyallOption_in_ftWords6449);
                     ftAnyallOption385=ftAnyallOption();
@@ -14740,7 +14741,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftWordsValue
-    // etc/XQFT.g:575:9: ftWordsValue : ( literal | ( LBRACESi expr RBRACSi ) );
+    // etc/XQFT.g:576:9: ftWordsValue : ( literal | ( LBRACESi expr RBRACSi ) );
     public final ftWordsValue_return ftWordsValue() throws RecognitionException {
         ftWordsValue_return retval = new ftWordsValue_return();
         retval.start = input.LT(1);
@@ -14758,7 +14759,7 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi389_tree=null;
 
         try {
-            // etc/XQFT.g:575:40: ( literal | ( LBRACESi expr RBRACSi ) )
+            // etc/XQFT.g:576:40: ( literal | ( LBRACESi expr RBRACSi ) )
             int alt88=2;
             int LA88_0 = input.LA(1);
 
@@ -14771,13 +14772,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("575:9: ftWordsValue : ( literal | ( LBRACESi expr RBRACSi ) );", 88, 0, input);
+                    new NoViableAltException("576:9: ftWordsValue : ( literal | ( LBRACESi expr RBRACSi ) );", 88, 0, input);
 
                 throw nvae;
             }
             switch (alt88) {
                 case 1 :
-                    // etc/XQFT.g:575:42: literal
+                    // etc/XQFT.g:576:42: literal
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -14790,12 +14791,12 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:575:52: ( LBRACESi expr RBRACSi )
+                    // etc/XQFT.g:576:52: ( LBRACESi expr RBRACSi )
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    // etc/XQFT.g:575:52: ( LBRACESi expr RBRACSi )
-                    // etc/XQFT.g:575:53: LBRACESi expr RBRACSi
+                    // etc/XQFT.g:576:52: ( LBRACESi expr RBRACSi )
+                    // etc/XQFT.g:576:53: LBRACESi expr RBRACSi
                     {
                     LBRACESi387=(Token)input.LT(1);
                     match(input,LBRACESi,FOLLOW_LBRACESi_in_ftWordsValue6488); if (failed) return retval;
@@ -14837,7 +14838,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start literal
-    // etc/XQFT.g:576:10: literal : ( numericLiteral | StringLiteral );
+    // etc/XQFT.g:577:10: literal : ( numericLiteral | StringLiteral );
     public final literal_return literal() throws RecognitionException {
         literal_return retval = new literal_return();
         retval.start = input.LT(1);
@@ -14851,7 +14852,7 @@ public class XQFTParser extends Parser {
         XQFTTree StringLiteral391_tree=null;
 
         try {
-            // etc/XQFT.g:576:41: ( numericLiteral | StringLiteral )
+            // etc/XQFT.g:577:41: ( numericLiteral | StringLiteral )
             int alt89=2;
             int LA89_0 = input.LA(1);
 
@@ -14864,13 +14865,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("576:10: literal : ( numericLiteral | StringLiteral );", 89, 0, input);
+                    new NoViableAltException("577:10: literal : ( numericLiteral | StringLiteral );", 89, 0, input);
 
                 throw nvae;
             }
             switch (alt89) {
                 case 1 :
-                    // etc/XQFT.g:576:43: numericLiteral
+                    // etc/XQFT.g:577:43: numericLiteral
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -14883,7 +14884,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:576:60: StringLiteral
+                    // etc/XQFT.g:577:60: StringLiteral
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -14921,7 +14922,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start numericLiteral
-    // etc/XQFT.g:577:11: numericLiteral : ( IntegerLiteral | DecimalLiteral | DoubleLiteral );
+    // etc/XQFT.g:578:11: numericLiteral : ( IntegerLiteral | DecimalLiteral | DoubleLiteral );
     public final numericLiteral_return numericLiteral() throws RecognitionException {
         numericLiteral_return retval = new numericLiteral_return();
         retval.start = input.LT(1);
@@ -14933,7 +14934,7 @@ public class XQFTParser extends Parser {
         XQFTTree set392_tree=null;
 
         try {
-            // etc/XQFT.g:577:42: ( IntegerLiteral | DecimalLiteral | DoubleLiteral )
+            // etc/XQFT.g:578:42: ( IntegerLiteral | DecimalLiteral | DoubleLiteral )
             // etc/XQFT.g:
             {
             root_0 = (XQFTTree)adaptor.nil();
@@ -14977,7 +14978,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftAnyallOption
-    // etc/XQFT.g:578:9: ftAnyallOption : ( ( ANY ( WORD )? ) | ( ALL ( WORDS )? ) | PHRASE );
+    // etc/XQFT.g:579:9: ftAnyallOption : ( ( ANY ( WORD )? ) | ( ALL ( WORDS )? ) | PHRASE );
     public final ftAnyallOption_return ftAnyallOption() throws RecognitionException {
         ftAnyallOption_return retval = new ftAnyallOption_return();
         retval.start = input.LT(1);
@@ -14997,7 +14998,7 @@ public class XQFTParser extends Parser {
         XQFTTree PHRASE397_tree=null;
 
         try {
-            // etc/XQFT.g:578:40: ( ( ANY ( WORD )? ) | ( ALL ( WORDS )? ) | PHRASE )
+            // etc/XQFT.g:579:40: ( ( ANY ( WORD )? ) | ( ALL ( WORDS )? ) | PHRASE )
             int alt92=3;
             switch ( input.LA(1) ) {
             case ANY:
@@ -15018,19 +15019,19 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("578:9: ftAnyallOption : ( ( ANY ( WORD )? ) | ( ALL ( WORDS )? ) | PHRASE );", 92, 0, input);
+                    new NoViableAltException("579:9: ftAnyallOption : ( ( ANY ( WORD )? ) | ( ALL ( WORDS )? ) | PHRASE );", 92, 0, input);
 
                 throw nvae;
             }
 
             switch (alt92) {
                 case 1 :
-                    // etc/XQFT.g:578:42: ( ANY ( WORD )? )
+                    // etc/XQFT.g:579:42: ( ANY ( WORD )? )
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    // etc/XQFT.g:578:42: ( ANY ( WORD )? )
-                    // etc/XQFT.g:578:43: ANY ( WORD )?
+                    // etc/XQFT.g:579:42: ( ANY ( WORD )? )
+                    // etc/XQFT.g:579:43: ANY ( WORD )?
                     {
                     ANY393=(Token)input.LT(1);
                     match(input,ANY,FOLLOW_ANY_in_ftAnyallOption6611); if (failed) return retval;
@@ -15038,7 +15039,7 @@ public class XQFTParser extends Parser {
                     ANY393_tree = (XQFTTree)adaptor.create(ANY393);
                     adaptor.addChild(root_0, ANY393_tree);
                     }
-                    // etc/XQFT.g:578:47: ( WORD )?
+                    // etc/XQFT.g:579:47: ( WORD )?
                     int alt90=2;
                     int LA90_0 = input.LA(1);
 
@@ -15047,7 +15048,7 @@ public class XQFTParser extends Parser {
                     }
                     switch (alt90) {
                         case 1 :
-                            // etc/XQFT.g:578:47: WORD
+                            // etc/XQFT.g:579:47: WORD
                             {
                             WORD394=(Token)input.LT(1);
                             match(input,WORD,FOLLOW_WORD_in_ftAnyallOption6613); if (failed) return retval;
@@ -15068,12 +15069,12 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:578:56: ( ALL ( WORDS )? )
+                    // etc/XQFT.g:579:56: ( ALL ( WORDS )? )
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    // etc/XQFT.g:578:56: ( ALL ( WORDS )? )
-                    // etc/XQFT.g:578:57: ALL ( WORDS )?
+                    // etc/XQFT.g:579:56: ( ALL ( WORDS )? )
+                    // etc/XQFT.g:579:57: ALL ( WORDS )?
                     {
                     ALL395=(Token)input.LT(1);
                     match(input,ALL,FOLLOW_ALL_in_ftAnyallOption6620); if (failed) return retval;
@@ -15081,7 +15082,7 @@ public class XQFTParser extends Parser {
                     ALL395_tree = (XQFTTree)adaptor.create(ALL395);
                     adaptor.addChild(root_0, ALL395_tree);
                     }
-                    // etc/XQFT.g:578:61: ( WORDS )?
+                    // etc/XQFT.g:579:61: ( WORDS )?
                     int alt91=2;
                     int LA91_0 = input.LA(1);
 
@@ -15090,7 +15091,7 @@ public class XQFTParser extends Parser {
                     }
                     switch (alt91) {
                         case 1 :
-                            // etc/XQFT.g:578:61: WORDS
+                            // etc/XQFT.g:579:61: WORDS
                             {
                             WORDS396=(Token)input.LT(1);
                             match(input,WORDS,FOLLOW_WORDS_in_ftAnyallOption6622); if (failed) return retval;
@@ -15111,7 +15112,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:578:71: PHRASE
+                    // etc/XQFT.g:579:71: PHRASE
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -15149,7 +15150,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftTimes
-    // etc/XQFT.g:579:8: ftTimes : OCCURS ftRange TIMES ;
+    // etc/XQFT.g:580:8: ftTimes : OCCURS ftRange TIMES ;
     public final ftTimes_return ftTimes() throws RecognitionException {
         ftTimes_return retval = new ftTimes_return();
         retval.start = input.LT(1);
@@ -15165,8 +15166,8 @@ public class XQFTParser extends Parser {
         XQFTTree TIMES400_tree=null;
 
         try {
-            // etc/XQFT.g:579:39: ( OCCURS ftRange TIMES )
-            // etc/XQFT.g:579:41: OCCURS ftRange TIMES
+            // etc/XQFT.g:580:39: ( OCCURS ftRange TIMES )
+            // etc/XQFT.g:580:41: OCCURS ftRange TIMES
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -15205,7 +15206,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftRange
-    // etc/XQFT.g:580:9: ftRange : ( ( EXACTLY additiveExpr ) | ( AT LEAST additiveExpr ) | ( AT MOST additiveExpr ) | ( FROM additiveExpr TO additiveExpr ) );
+    // etc/XQFT.g:581:9: ftRange : ( ( EXACTLY additiveExpr ) | ( AT LEAST additiveExpr ) | ( AT MOST additiveExpr ) | ( FROM additiveExpr TO additiveExpr ) );
     public final ftRange_return ftRange() throws RecognitionException {
         ftRange_return retval = new ftRange_return();
         retval.start = input.LT(1);
@@ -15239,7 +15240,7 @@ public class XQFTParser extends Parser {
         XQFTTree TO411_tree=null;
 
         try {
-            // etc/XQFT.g:580:40: ( ( EXACTLY additiveExpr ) | ( AT LEAST additiveExpr ) | ( AT MOST additiveExpr ) | ( FROM additiveExpr TO additiveExpr ) )
+            // etc/XQFT.g:581:40: ( ( EXACTLY additiveExpr ) | ( AT LEAST additiveExpr ) | ( AT MOST additiveExpr ) | ( FROM additiveExpr TO additiveExpr ) )
             int alt93=4;
             switch ( input.LA(1) ) {
             case EXACTLY:
@@ -15260,7 +15261,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("580:9: ftRange : ( ( EXACTLY additiveExpr ) | ( AT LEAST additiveExpr ) | ( AT MOST additiveExpr ) | ( FROM additiveExpr TO additiveExpr ) );", 93, 2, input);
+                        new NoViableAltException("581:9: ftRange : ( ( EXACTLY additiveExpr ) | ( AT LEAST additiveExpr ) | ( AT MOST additiveExpr ) | ( FROM additiveExpr TO additiveExpr ) );", 93, 2, input);
 
                     throw nvae;
                 }
@@ -15274,19 +15275,19 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("580:9: ftRange : ( ( EXACTLY additiveExpr ) | ( AT LEAST additiveExpr ) | ( AT MOST additiveExpr ) | ( FROM additiveExpr TO additiveExpr ) );", 93, 0, input);
+                    new NoViableAltException("581:9: ftRange : ( ( EXACTLY additiveExpr ) | ( AT LEAST additiveExpr ) | ( AT MOST additiveExpr ) | ( FROM additiveExpr TO additiveExpr ) );", 93, 0, input);
 
                 throw nvae;
             }
 
             switch (alt93) {
                 case 1 :
-                    // etc/XQFT.g:580:42: ( EXACTLY additiveExpr )
+                    // etc/XQFT.g:581:42: ( EXACTLY additiveExpr )
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    // etc/XQFT.g:580:42: ( EXACTLY additiveExpr )
-                    // etc/XQFT.g:580:43: EXACTLY additiveExpr
+                    // etc/XQFT.g:581:42: ( EXACTLY additiveExpr )
+                    // etc/XQFT.g:581:43: EXACTLY additiveExpr
                     {
                     EXACTLY401=(Token)input.LT(1);
                     match(input,EXACTLY,FOLLOW_EXACTLY_in_ftRange6710); if (failed) return retval;
@@ -15306,12 +15307,12 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:581:39: ( AT LEAST additiveExpr )
+                    // etc/XQFT.g:582:39: ( AT LEAST additiveExpr )
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    // etc/XQFT.g:581:39: ( AT LEAST additiveExpr )
-                    // etc/XQFT.g:581:40: AT LEAST additiveExpr
+                    // etc/XQFT.g:582:39: ( AT LEAST additiveExpr )
+                    // etc/XQFT.g:582:40: AT LEAST additiveExpr
                     {
                     AT403=(Token)input.LT(1);
                     match(input,AT,FOLLOW_AT_in_ftRange6754); if (failed) return retval;
@@ -15337,12 +15338,12 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:582:40: ( AT MOST additiveExpr )
+                    // etc/XQFT.g:583:40: ( AT MOST additiveExpr )
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    // etc/XQFT.g:582:40: ( AT MOST additiveExpr )
-                    // etc/XQFT.g:582:41: AT MOST additiveExpr
+                    // etc/XQFT.g:583:40: ( AT MOST additiveExpr )
+                    // etc/XQFT.g:583:41: AT MOST additiveExpr
                     {
                     AT406=(Token)input.LT(1);
                     match(input,AT,FOLLOW_AT_in_ftRange6801); if (failed) return retval;
@@ -15368,12 +15369,12 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:583:45: ( FROM additiveExpr TO additiveExpr )
+                    // etc/XQFT.g:584:45: ( FROM additiveExpr TO additiveExpr )
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    // etc/XQFT.g:583:45: ( FROM additiveExpr TO additiveExpr )
-                    // etc/XQFT.g:583:46: FROM additiveExpr TO additiveExpr
+                    // etc/XQFT.g:584:45: ( FROM additiveExpr TO additiveExpr )
+                    // etc/XQFT.g:584:46: FROM additiveExpr TO additiveExpr
                     {
                     FROM409=(Token)input.LT(1);
                     match(input,FROM,FOLLOW_FROM_in_ftRange6853); if (failed) return retval;
@@ -15428,7 +15429,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftExtensionSelection
-    // etc/XQFT.g:586:8: ftExtensionSelection : ( pragma )+ LBRACESi ( ftSelection )? RBRACSi ;
+    // etc/XQFT.g:587:8: ftExtensionSelection : ( pragma )+ LBRACESi ( ftSelection )? RBRACSi ;
     public final ftExtensionSelection_return ftExtensionSelection() throws RecognitionException {
         ftExtensionSelection_return retval = new ftExtensionSelection_return();
         retval.start = input.LT(1);
@@ -15446,12 +15447,12 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi416_tree=null;
 
         try {
-            // etc/XQFT.g:586:39: ( ( pragma )+ LBRACESi ( ftSelection )? RBRACSi )
-            // etc/XQFT.g:586:41: ( pragma )+ LBRACESi ( ftSelection )? RBRACSi
+            // etc/XQFT.g:587:39: ( ( pragma )+ LBRACESi ( ftSelection )? RBRACSi )
+            // etc/XQFT.g:587:41: ( pragma )+ LBRACESi ( ftSelection )? RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:586:41: ( pragma )+
+            // etc/XQFT.g:587:41: ( pragma )+
             int cnt94=0;
             loop94:
             do {
@@ -15465,7 +15466,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt94) {
             	case 1 :
-            	    // etc/XQFT.g:586:41: pragma
+            	    // etc/XQFT.g:587:41: pragma
             	    {
             	    pushFollow(FOLLOW_pragma_in_ftExtensionSelection6886);
             	    pragma413=pragma();
@@ -15488,7 +15489,7 @@ public class XQFTParser extends Parser {
 
             LBRACESi414=(Token)input.LT(1);
             match(input,LBRACESi,FOLLOW_LBRACESi_in_ftExtensionSelection6889); if (failed) return retval;
-            // etc/XQFT.g:586:59: ( ftSelection )?
+            // etc/XQFT.g:587:59: ( ftSelection )?
             int alt95=2;
             int LA95_0 = input.LA(1);
 
@@ -15497,7 +15498,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt95) {
                 case 1 :
-                    // etc/XQFT.g:586:59: ftSelection
+                    // etc/XQFT.g:587:59: ftSelection
                     {
                     pushFollow(FOLLOW_ftSelection_in_ftExtensionSelection6892);
                     ftSelection415=ftSelection();
@@ -15538,7 +15539,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start pragma
-    // etc/XQFT.g:587:9: pragma : LPRAGSi qName ( PragmaContents )? RPRAGSi ;
+    // etc/XQFT.g:588:9: pragma : LPRAGSi qName ( PragmaContents )? RPRAGSi ;
     public final pragma_return pragma() throws RecognitionException {
         pragma_return retval = new pragma_return();
         retval.start = input.LT(1);
@@ -15556,8 +15557,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPRAGSi420_tree=null;
 
         try {
-            // etc/XQFT.g:587:40: ( LPRAGSi qName ( PragmaContents )? RPRAGSi )
-            // etc/XQFT.g:587:42: LPRAGSi qName ( PragmaContents )? RPRAGSi
+            // etc/XQFT.g:588:40: ( LPRAGSi qName ( PragmaContents )? RPRAGSi )
+            // etc/XQFT.g:588:42: LPRAGSi qName ( PragmaContents )? RPRAGSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -15568,7 +15569,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, qName418.getTree());
-            // etc/XQFT.g:587:57: ( PragmaContents )?
+            // etc/XQFT.g:588:57: ( PragmaContents )?
             int alt96=2;
             int LA96_0 = input.LA(1);
 
@@ -15577,7 +15578,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt96) {
                 case 1 :
-                    // etc/XQFT.g:587:57: PragmaContents
+                    // etc/XQFT.g:588:57: PragmaContents
                     {
                     PragmaContents419=(Token)input.LT(1);
                     match(input,PragmaContents,FOLLOW_PragmaContents_in_pragma6940); if (failed) return retval;
@@ -15619,7 +15620,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftPosFilter
-    // etc/XQFT.g:594:2: ftPosFilter : ( ftOrder | ftWindow | ftDistance | ftScope | ftContent );
+    // etc/XQFT.g:595:2: ftPosFilter : ( ftOrder | ftWindow | ftDistance | ftScope | ftContent );
     public final ftPosFilter_return ftPosFilter() throws RecognitionException {
         ftPosFilter_return retval = new ftPosFilter_return();
         retval.start = input.LT(1);
@@ -15639,7 +15640,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:594:33: ( ftOrder | ftWindow | ftDistance | ftScope | ftContent )
+            // etc/XQFT.g:595:33: ( ftOrder | ftWindow | ftDistance | ftScope | ftContent )
             int alt97=5;
             switch ( input.LA(1) ) {
             case ORDERED:
@@ -15672,14 +15673,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("594:2: ftPosFilter : ( ftOrder | ftWindow | ftDistance | ftScope | ftContent );", 97, 0, input);
+                    new NoViableAltException("595:2: ftPosFilter : ( ftOrder | ftWindow | ftDistance | ftScope | ftContent );", 97, 0, input);
 
                 throw nvae;
             }
 
             switch (alt97) {
                 case 1 :
-                    // etc/XQFT.g:594:35: ftOrder
+                    // etc/XQFT.g:595:35: ftOrder
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -15692,7 +15693,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:594:45: ftWindow
+                    // etc/XQFT.g:595:45: ftWindow
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -15705,7 +15706,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:594:56: ftDistance
+                    // etc/XQFT.g:595:56: ftDistance
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -15718,7 +15719,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:594:69: ftScope
+                    // etc/XQFT.g:595:69: ftScope
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -15731,7 +15732,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // etc/XQFT.g:594:79: ftContent
+                    // etc/XQFT.g:595:79: ftContent
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -15768,7 +15769,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftOrder
-    // etc/XQFT.g:595:3: ftOrder : ORDERED ;
+    // etc/XQFT.g:596:3: ftOrder : ORDERED ;
     public final ftOrder_return ftOrder() throws RecognitionException {
         ftOrder_return retval = new ftOrder_return();
         retval.start = input.LT(1);
@@ -15780,8 +15781,8 @@ public class XQFTParser extends Parser {
         XQFTTree ORDERED426_tree=null;
 
         try {
-            // etc/XQFT.g:595:34: ( ORDERED )
-            // etc/XQFT.g:595:36: ORDERED
+            // etc/XQFT.g:596:34: ( ORDERED )
+            // etc/XQFT.g:596:36: ORDERED
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -15817,7 +15818,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftWindow
-    // etc/XQFT.g:596:3: ftWindow : WINDOW additiveExpr ftUnit ;
+    // etc/XQFT.g:597:3: ftWindow : WINDOW additiveExpr ftUnit ;
     public final ftWindow_return ftWindow() throws RecognitionException {
         ftWindow_return retval = new ftWindow_return();
         retval.start = input.LT(1);
@@ -15833,8 +15834,8 @@ public class XQFTParser extends Parser {
         XQFTTree WINDOW427_tree=null;
 
         try {
-            // etc/XQFT.g:596:34: ( WINDOW additiveExpr ftUnit )
-            // etc/XQFT.g:596:36: WINDOW additiveExpr ftUnit
+            // etc/XQFT.g:597:34: ( WINDOW additiveExpr ftUnit )
+            // etc/XQFT.g:597:36: WINDOW additiveExpr ftUnit
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -15880,7 +15881,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftUnit
-    // etc/XQFT.g:598:4: ftUnit : ( WORDS | SENTENCES | PARAGRAPHS );
+    // etc/XQFT.g:599:4: ftUnit : ( WORDS | SENTENCES | PARAGRAPHS );
     public final ftUnit_return ftUnit() throws RecognitionException {
         ftUnit_return retval = new ftUnit_return();
         retval.start = input.LT(1);
@@ -15892,7 +15893,7 @@ public class XQFTParser extends Parser {
         XQFTTree set430_tree=null;
 
         try {
-            // etc/XQFT.g:598:35: ( WORDS | SENTENCES | PARAGRAPHS )
+            // etc/XQFT.g:599:35: ( WORDS | SENTENCES | PARAGRAPHS )
             // etc/XQFT.g:
             {
             root_0 = (XQFTTree)adaptor.nil();
@@ -15936,7 +15937,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftDistance
-    // etc/XQFT.g:599:3: ftDistance : DISTANCE ftRange ftUnit ;
+    // etc/XQFT.g:600:3: ftDistance : DISTANCE ftRange ftUnit ;
     public final ftDistance_return ftDistance() throws RecognitionException {
         ftDistance_return retval = new ftDistance_return();
         retval.start = input.LT(1);
@@ -15952,8 +15953,8 @@ public class XQFTParser extends Parser {
         XQFTTree DISTANCE431_tree=null;
 
         try {
-            // etc/XQFT.g:599:34: ( DISTANCE ftRange ftUnit )
-            // etc/XQFT.g:599:36: DISTANCE ftRange ftUnit
+            // etc/XQFT.g:600:34: ( DISTANCE ftRange ftUnit )
+            // etc/XQFT.g:600:36: DISTANCE ftRange ftUnit
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -15999,7 +16000,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftScope
-    // etc/XQFT.g:606:3: ftScope : ( SAME | DIFFERENT ) ftBigUnit ;
+    // etc/XQFT.g:607:3: ftScope : ( SAME | DIFFERENT ) ftBigUnit ;
     public final ftScope_return ftScope() throws RecognitionException {
         ftScope_return retval = new ftScope_return();
         retval.start = input.LT(1);
@@ -16013,8 +16014,8 @@ public class XQFTParser extends Parser {
         XQFTTree set434_tree=null;
 
         try {
-            // etc/XQFT.g:606:34: ( ( SAME | DIFFERENT ) ftBigUnit )
-            // etc/XQFT.g:606:36: ( SAME | DIFFERENT ) ftBigUnit
+            // etc/XQFT.g:607:34: ( ( SAME | DIFFERENT ) ftBigUnit )
+            // etc/XQFT.g:607:36: ( SAME | DIFFERENT ) ftBigUnit
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -16062,7 +16063,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftBigUnit
-    // etc/XQFT.g:607:4: ftBigUnit : ( SENTENCE | PARAGRAPH );
+    // etc/XQFT.g:608:4: ftBigUnit : ( SENTENCE | PARAGRAPH );
     public final ftBigUnit_return ftBigUnit() throws RecognitionException {
         ftBigUnit_return retval = new ftBigUnit_return();
         retval.start = input.LT(1);
@@ -16074,7 +16075,7 @@ public class XQFTParser extends Parser {
         XQFTTree set436_tree=null;
 
         try {
-            // etc/XQFT.g:607:35: ( SENTENCE | PARAGRAPH )
+            // etc/XQFT.g:608:35: ( SENTENCE | PARAGRAPH )
             // etc/XQFT.g:
             {
             root_0 = (XQFTTree)adaptor.nil();
@@ -16118,7 +16119,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftContent
-    // etc/XQFT.g:608:3: ftContent : ( AT START | AT END | ENTIRE CONTENT );
+    // etc/XQFT.g:609:3: ftContent : ( AT START | AT END | ENTIRE CONTENT );
     public final ftContent_return ftContent() throws RecognitionException {
         ftContent_return retval = new ftContent_return();
         retval.start = input.LT(1);
@@ -16140,7 +16141,7 @@ public class XQFTParser extends Parser {
         XQFTTree CONTENT442_tree=null;
 
         try {
-            // etc/XQFT.g:608:34: ( AT START | AT END | ENTIRE CONTENT )
+            // etc/XQFT.g:609:34: ( AT START | AT END | ENTIRE CONTENT )
             int alt98=3;
             int LA98_0 = input.LA(1);
 
@@ -16156,7 +16157,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("608:3: ftContent : ( AT START | AT END | ENTIRE CONTENT );", 98, 1, input);
+                        new NoViableAltException("609:3: ftContent : ( AT START | AT END | ENTIRE CONTENT );", 98, 1, input);
 
                     throw nvae;
                 }
@@ -16167,13 +16168,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("608:3: ftContent : ( AT START | AT END | ENTIRE CONTENT );", 98, 0, input);
+                    new NoViableAltException("609:3: ftContent : ( AT START | AT END | ENTIRE CONTENT );", 98, 0, input);
 
                 throw nvae;
             }
             switch (alt98) {
                 case 1 :
-                    // etc/XQFT.g:608:36: AT START
+                    // etc/XQFT.g:609:36: AT START
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16193,7 +16194,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:608:47: AT END
+                    // etc/XQFT.g:609:47: AT END
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16213,7 +16214,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:608:56: ENTIRE CONTENT
+                    // etc/XQFT.g:609:56: ENTIRE CONTENT
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16257,7 +16258,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftMatchOption
-    // etc/XQFT.g:617:1: ftMatchOption : ( ftLanguageOption | ftWildCardOption | ftThesaurusOption | ftStemOption | ftCaseOption | ftDiacriticsOption | ftStopwordOption | ftExtensionOption );
+    // etc/XQFT.g:618:1: ftMatchOption : ( ftLanguageOption | ftWildCardOption | ftThesaurusOption | ftStemOption | ftCaseOption | ftDiacriticsOption | ftStopwordOption | ftExtensionOption );
     public final ftMatchOption_return ftMatchOption() throws RecognitionException {
         ftMatchOption_return retval = new ftMatchOption_return();
         retval.start = input.LT(1);
@@ -16283,7 +16284,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:617:32: ( ftLanguageOption | ftWildCardOption | ftThesaurusOption | ftStemOption | ftCaseOption | ftDiacriticsOption | ftStopwordOption | ftExtensionOption )
+            // etc/XQFT.g:618:32: ( ftLanguageOption | ftWildCardOption | ftThesaurusOption | ftStemOption | ftCaseOption | ftDiacriticsOption | ftStopwordOption | ftExtensionOption )
             int alt99=8;
             switch ( input.LA(1) ) {
             case LANGUAGE:
@@ -16318,7 +16319,7 @@ public class XQFTParser extends Parser {
                 default:
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("617:1: ftMatchOption : ( ftLanguageOption | ftWildCardOption | ftThesaurusOption | ftStemOption | ftCaseOption | ftDiacriticsOption | ftStopwordOption | ftExtensionOption );", 99, 2, input);
+                        new NoViableAltException("618:1: ftMatchOption : ( ftLanguageOption | ftWildCardOption | ftThesaurusOption | ftStemOption | ftCaseOption | ftDiacriticsOption | ftStopwordOption | ftExtensionOption );", 99, 2, input);
 
                     throw nvae;
                 }
@@ -16351,7 +16352,7 @@ public class XQFTParser extends Parser {
                 default:
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("617:1: ftMatchOption : ( ftLanguageOption | ftWildCardOption | ftThesaurusOption | ftStemOption | ftCaseOption | ftDiacriticsOption | ftStopwordOption | ftExtensionOption );", 99, 3, input);
+                        new NoViableAltException("618:1: ftMatchOption : ( ftLanguageOption | ftWildCardOption | ftThesaurusOption | ftStemOption | ftCaseOption | ftDiacriticsOption | ftStopwordOption | ftExtensionOption );", 99, 3, input);
 
                     throw nvae;
                 }
@@ -16378,14 +16379,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("617:1: ftMatchOption : ( ftLanguageOption | ftWildCardOption | ftThesaurusOption | ftStemOption | ftCaseOption | ftDiacriticsOption | ftStopwordOption | ftExtensionOption );", 99, 0, input);
+                    new NoViableAltException("618:1: ftMatchOption : ( ftLanguageOption | ftWildCardOption | ftThesaurusOption | ftStemOption | ftCaseOption | ftDiacriticsOption | ftStopwordOption | ftExtensionOption );", 99, 0, input);
 
                 throw nvae;
             }
 
             switch (alt99) {
                 case 1 :
-                    // etc/XQFT.g:617:34: ftLanguageOption
+                    // etc/XQFT.g:618:34: ftLanguageOption
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16398,7 +16399,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:618:37: ftWildCardOption
+                    // etc/XQFT.g:619:37: ftWildCardOption
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16411,7 +16412,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:619:37: ftThesaurusOption
+                    // etc/XQFT.g:620:37: ftThesaurusOption
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16424,7 +16425,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:620:37: ftStemOption
+                    // etc/XQFT.g:621:37: ftStemOption
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16437,7 +16438,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // etc/XQFT.g:621:37: ftCaseOption
+                    // etc/XQFT.g:622:37: ftCaseOption
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16450,7 +16451,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // etc/XQFT.g:622:37: ftDiacriticsOption
+                    // etc/XQFT.g:623:37: ftDiacriticsOption
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16463,7 +16464,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 7 :
-                    // etc/XQFT.g:623:37: ftStopwordOption
+                    // etc/XQFT.g:624:37: ftStopwordOption
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16476,7 +16477,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 8 :
-                    // etc/XQFT.g:624:37: ftExtensionOption
+                    // etc/XQFT.g:625:37: ftExtensionOption
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16513,7 +16514,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftLanguageOption
-    // etc/XQFT.g:627:2: ftLanguageOption : LANGUAGE StringLiteral ;
+    // etc/XQFT.g:628:2: ftLanguageOption : LANGUAGE StringLiteral ;
     public final ftLanguageOption_return ftLanguageOption() throws RecognitionException {
         ftLanguageOption_return retval = new ftLanguageOption_return();
         retval.start = input.LT(1);
@@ -16527,8 +16528,8 @@ public class XQFTParser extends Parser {
         XQFTTree StringLiteral452_tree=null;
 
         try {
-            // etc/XQFT.g:627:33: ( LANGUAGE StringLiteral )
-            // etc/XQFT.g:627:35: LANGUAGE StringLiteral
+            // etc/XQFT.g:628:33: ( LANGUAGE StringLiteral )
+            // etc/XQFT.g:628:35: LANGUAGE StringLiteral
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -16570,7 +16571,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftWildCardOption
-    // etc/XQFT.g:630:2: ftWildCardOption : ( WITH WILDCARDS | WITHOUT WILDCARDS );
+    // etc/XQFT.g:631:2: ftWildCardOption : ( WITH WILDCARDS | WITHOUT WILDCARDS );
     public final ftWildCardOption_return ftWildCardOption() throws RecognitionException {
         ftWildCardOption_return retval = new ftWildCardOption_return();
         retval.start = input.LT(1);
@@ -16588,7 +16589,7 @@ public class XQFTParser extends Parser {
         XQFTTree WILDCARDS456_tree=null;
 
         try {
-            // etc/XQFT.g:630:33: ( WITH WILDCARDS | WITHOUT WILDCARDS )
+            // etc/XQFT.g:631:33: ( WITH WILDCARDS | WITHOUT WILDCARDS )
             int alt100=2;
             int LA100_0 = input.LA(1);
 
@@ -16601,13 +16602,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("630:2: ftWildCardOption : ( WITH WILDCARDS | WITHOUT WILDCARDS );", 100, 0, input);
+                    new NoViableAltException("631:2: ftWildCardOption : ( WITH WILDCARDS | WITHOUT WILDCARDS );", 100, 0, input);
 
                 throw nvae;
             }
             switch (alt100) {
                 case 1 :
-                    // etc/XQFT.g:630:35: WITH WILDCARDS
+                    // etc/XQFT.g:631:35: WITH WILDCARDS
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16627,7 +16628,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:630:53: WITHOUT WILDCARDS
+                    // etc/XQFT.g:631:53: WITHOUT WILDCARDS
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16671,7 +16672,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftThesaurusOption
-    // etc/XQFT.g:633:2: ftThesaurusOption : ( WITH THESAURUS ( ftThesaurusID | DEFAULT ) | WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi | WITHOUT THESAURUS );
+    // etc/XQFT.g:634:2: ftThesaurusOption : ( WITH THESAURUS ( ftThesaurusID | DEFAULT ) | WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi | WITHOUT THESAURUS );
     public final ftThesaurusOption_return ftThesaurusOption() throws RecognitionException {
         ftThesaurusOption_return retval = new ftThesaurusOption_return();
         retval.start = input.LT(1);
@@ -16709,7 +16710,7 @@ public class XQFTParser extends Parser {
         XQFTTree THESAURUS470_tree=null;
 
         try {
-            // etc/XQFT.g:633:31: ( WITH THESAURUS ( ftThesaurusID | DEFAULT ) | WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi | WITHOUT THESAURUS )
+            // etc/XQFT.g:634:31: ( WITH THESAURUS ( ftThesaurusID | DEFAULT ) | WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi | WITHOUT THESAURUS )
             int alt104=3;
             int LA104_0 = input.LA(1);
 
@@ -16728,7 +16729,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("633:2: ftThesaurusOption : ( WITH THESAURUS ( ftThesaurusID | DEFAULT ) | WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi | WITHOUT THESAURUS );", 104, 3, input);
+                            new NoViableAltException("634:2: ftThesaurusOption : ( WITH THESAURUS ( ftThesaurusID | DEFAULT ) | WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi | WITHOUT THESAURUS );", 104, 3, input);
 
                         throw nvae;
                     }
@@ -16736,7 +16737,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("633:2: ftThesaurusOption : ( WITH THESAURUS ( ftThesaurusID | DEFAULT ) | WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi | WITHOUT THESAURUS );", 104, 1, input);
+                        new NoViableAltException("634:2: ftThesaurusOption : ( WITH THESAURUS ( ftThesaurusID | DEFAULT ) | WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi | WITHOUT THESAURUS );", 104, 1, input);
 
                     throw nvae;
                 }
@@ -16747,13 +16748,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("633:2: ftThesaurusOption : ( WITH THESAURUS ( ftThesaurusID | DEFAULT ) | WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi | WITHOUT THESAURUS );", 104, 0, input);
+                    new NoViableAltException("634:2: ftThesaurusOption : ( WITH THESAURUS ( ftThesaurusID | DEFAULT ) | WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi | WITHOUT THESAURUS );", 104, 0, input);
 
                 throw nvae;
             }
             switch (alt104) {
                 case 1 :
-                    // etc/XQFT.g:633:33: WITH THESAURUS ( ftThesaurusID | DEFAULT )
+                    // etc/XQFT.g:634:33: WITH THESAURUS ( ftThesaurusID | DEFAULT )
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16769,7 +16770,7 @@ public class XQFTParser extends Parser {
                     THESAURUS458_tree = (XQFTTree)adaptor.create(THESAURUS458);
                     adaptor.addChild(root_0, THESAURUS458_tree);
                     }
-                    // etc/XQFT.g:633:49: ( ftThesaurusID | DEFAULT )
+                    // etc/XQFT.g:634:49: ( ftThesaurusID | DEFAULT )
                     int alt101=2;
                     int LA101_0 = input.LA(1);
 
@@ -16782,13 +16783,13 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("633:49: ( ftThesaurusID | DEFAULT )", 101, 0, input);
+                            new NoViableAltException("634:49: ( ftThesaurusID | DEFAULT )", 101, 0, input);
 
                         throw nvae;
                     }
                     switch (alt101) {
                         case 1 :
-                            // etc/XQFT.g:633:50: ftThesaurusID
+                            // etc/XQFT.g:634:50: ftThesaurusID
                             {
                             pushFollow(FOLLOW_ftThesaurusID_in_ftThesaurusOption7782);
                             ftThesaurusID459=ftThesaurusID();
@@ -16799,7 +16800,7 @@ public class XQFTParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // etc/XQFT.g:633:66: DEFAULT
+                            // etc/XQFT.g:634:66: DEFAULT
                             {
                             DEFAULT460=(Token)input.LT(1);
                             match(input,DEFAULT,FOLLOW_DEFAULT_in_ftThesaurusOption7786); if (failed) return retval;
@@ -16817,7 +16818,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:634:14: WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi
+                    // etc/XQFT.g:635:14: WITH THESAURUS LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16835,7 +16836,7 @@ public class XQFTParser extends Parser {
                     }
                     LPARSi463=(Token)input.LT(1);
                     match(input,LPARSi,FOLLOW_LPARSi_in_ftThesaurusOption7807); if (failed) return retval;
-                    // etc/XQFT.g:634:38: ( ftThesaurusID | DEFAULT )
+                    // etc/XQFT.g:635:38: ( ftThesaurusID | DEFAULT )
                     int alt102=2;
                     int LA102_0 = input.LA(1);
 
@@ -16848,13 +16849,13 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("634:38: ( ftThesaurusID | DEFAULT )", 102, 0, input);
+                            new NoViableAltException("635:38: ( ftThesaurusID | DEFAULT )", 102, 0, input);
 
                         throw nvae;
                     }
                     switch (alt102) {
                         case 1 :
-                            // etc/XQFT.g:634:39: ftThesaurusID
+                            // etc/XQFT.g:635:39: ftThesaurusID
                             {
                             pushFollow(FOLLOW_ftThesaurusID_in_ftThesaurusOption7811);
                             ftThesaurusID464=ftThesaurusID();
@@ -16865,7 +16866,7 @@ public class XQFTParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // etc/XQFT.g:634:55: DEFAULT
+                            // etc/XQFT.g:635:55: DEFAULT
                             {
                             DEFAULT465=(Token)input.LT(1);
                             match(input,DEFAULT,FOLLOW_DEFAULT_in_ftThesaurusOption7815); if (failed) return retval;
@@ -16879,7 +16880,7 @@ public class XQFTParser extends Parser {
 
                     }
 
-                    // etc/XQFT.g:634:64: ( COMMASi ftThesaurusID )*
+                    // etc/XQFT.g:635:64: ( COMMASi ftThesaurusID )*
                     loop103:
                     do {
                         int alt103=2;
@@ -16892,7 +16893,7 @@ public class XQFTParser extends Parser {
 
                         switch (alt103) {
                     	case 1 :
-                    	    // etc/XQFT.g:634:65: COMMASi ftThesaurusID
+                    	    // etc/XQFT.g:635:65: COMMASi ftThesaurusID
                     	    {
                     	    COMMASi466=(Token)input.LT(1);
                     	    match(input,COMMASi,FOLLOW_COMMASi_in_ftThesaurusOption7819); if (failed) return retval;
@@ -16920,7 +16921,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:635:38: WITHOUT THESAURUS
+                    // etc/XQFT.g:636:38: WITHOUT THESAURUS
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -16964,7 +16965,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftThesaurusID
-    // etc/XQFT.g:637:3: ftThesaurusID : AT uriLiteral ( RELATIONSHIP StringLiteral )? ( ftRange LEVELS )? ;
+    // etc/XQFT.g:638:3: ftThesaurusID : AT uriLiteral ( RELATIONSHIP StringLiteral )? ( ftRange LEVELS )? ;
     public final ftThesaurusID_return ftThesaurusID() throws RecognitionException {
         ftThesaurusID_return retval = new ftThesaurusID_return();
         retval.start = input.LT(1);
@@ -16986,8 +16987,8 @@ public class XQFTParser extends Parser {
         XQFTTree LEVELS476_tree=null;
 
         try {
-            // etc/XQFT.g:637:34: ( AT uriLiteral ( RELATIONSHIP StringLiteral )? ( ftRange LEVELS )? )
-            // etc/XQFT.g:637:36: AT uriLiteral ( RELATIONSHIP StringLiteral )? ( ftRange LEVELS )?
+            // etc/XQFT.g:638:34: ( AT uriLiteral ( RELATIONSHIP StringLiteral )? ( ftRange LEVELS )? )
+            // etc/XQFT.g:638:36: AT uriLiteral ( RELATIONSHIP StringLiteral )? ( ftRange LEVELS )?
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -17002,7 +17003,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, uriLiteral472.getTree());
-            // etc/XQFT.g:637:50: ( RELATIONSHIP StringLiteral )?
+            // etc/XQFT.g:638:50: ( RELATIONSHIP StringLiteral )?
             int alt105=2;
             int LA105_0 = input.LA(1);
 
@@ -17011,7 +17012,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt105) {
                 case 1 :
-                    // etc/XQFT.g:637:51: RELATIONSHIP StringLiteral
+                    // etc/XQFT.g:638:51: RELATIONSHIP StringLiteral
                     {
                     RELATIONSHIP473=(Token)input.LT(1);
                     match(input,RELATIONSHIP,FOLLOW_RELATIONSHIP_in_ftThesaurusID7935); if (failed) return retval;
@@ -17031,7 +17032,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            // etc/XQFT.g:637:80: ( ftRange LEVELS )?
+            // etc/XQFT.g:638:80: ( ftRange LEVELS )?
             int alt106=2;
             int LA106_0 = input.LA(1);
 
@@ -17047,7 +17048,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt106) {
                 case 1 :
-                    // etc/XQFT.g:637:81: ftRange LEVELS
+                    // etc/XQFT.g:638:81: ftRange LEVELS
                     {
                     pushFollow(FOLLOW_ftRange_in_ftThesaurusID7942);
                     ftRange475=ftRange();
@@ -17092,7 +17093,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftStemOption
-    // etc/XQFT.g:647:2: ftStemOption : ( WITH STEMMING | WITHOUT STEMMING );
+    // etc/XQFT.g:648:2: ftStemOption : ( WITH STEMMING | WITHOUT STEMMING );
     public final ftStemOption_return ftStemOption() throws RecognitionException {
         ftStemOption_return retval = new ftStemOption_return();
         retval.start = input.LT(1);
@@ -17110,7 +17111,7 @@ public class XQFTParser extends Parser {
         XQFTTree STEMMING480_tree=null;
 
         try {
-            // etc/XQFT.g:647:33: ( WITH STEMMING | WITHOUT STEMMING )
+            // etc/XQFT.g:648:33: ( WITH STEMMING | WITHOUT STEMMING )
             int alt107=2;
             int LA107_0 = input.LA(1);
 
@@ -17123,13 +17124,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("647:2: ftStemOption : ( WITH STEMMING | WITHOUT STEMMING );", 107, 0, input);
+                    new NoViableAltException("648:2: ftStemOption : ( WITH STEMMING | WITHOUT STEMMING );", 107, 0, input);
 
                 throw nvae;
             }
             switch (alt107) {
                 case 1 :
-                    // etc/XQFT.g:647:35: WITH STEMMING
+                    // etc/XQFT.g:648:35: WITH STEMMING
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17149,7 +17150,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:647:52: WITHOUT STEMMING
+                    // etc/XQFT.g:648:52: WITHOUT STEMMING
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17193,7 +17194,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftCaseOption
-    // etc/XQFT.g:650:2: ftCaseOption : ( CASE INSENSITIVE | CASE SENSITIVE | LOWERCASE | UPPERCASE );
+    // etc/XQFT.g:651:2: ftCaseOption : ( CASE INSENSITIVE | CASE SENSITIVE | LOWERCASE | UPPERCASE );
     public final ftCaseOption_return ftCaseOption() throws RecognitionException {
         ftCaseOption_return retval = new ftCaseOption_return();
         retval.start = input.LT(1);
@@ -17215,7 +17216,7 @@ public class XQFTParser extends Parser {
         XQFTTree UPPERCASE486_tree=null;
 
         try {
-            // etc/XQFT.g:650:33: ( CASE INSENSITIVE | CASE SENSITIVE | LOWERCASE | UPPERCASE )
+            // etc/XQFT.g:651:33: ( CASE INSENSITIVE | CASE SENSITIVE | LOWERCASE | UPPERCASE )
             int alt108=4;
             switch ( input.LA(1) ) {
             case CASE:
@@ -17231,7 +17232,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("650:2: ftCaseOption : ( CASE INSENSITIVE | CASE SENSITIVE | LOWERCASE | UPPERCASE );", 108, 1, input);
+                        new NoViableAltException("651:2: ftCaseOption : ( CASE INSENSITIVE | CASE SENSITIVE | LOWERCASE | UPPERCASE );", 108, 1, input);
 
                     throw nvae;
                 }
@@ -17250,14 +17251,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("650:2: ftCaseOption : ( CASE INSENSITIVE | CASE SENSITIVE | LOWERCASE | UPPERCASE );", 108, 0, input);
+                    new NoViableAltException("651:2: ftCaseOption : ( CASE INSENSITIVE | CASE SENSITIVE | LOWERCASE | UPPERCASE );", 108, 0, input);
 
                 throw nvae;
             }
 
             switch (alt108) {
                 case 1 :
-                    // etc/XQFT.g:650:35: CASE INSENSITIVE
+                    // etc/XQFT.g:651:35: CASE INSENSITIVE
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17277,7 +17278,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:651:38: CASE SENSITIVE
+                    // etc/XQFT.g:652:38: CASE SENSITIVE
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17297,7 +17298,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:652:38: LOWERCASE
+                    // etc/XQFT.g:653:38: LOWERCASE
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17311,7 +17312,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:653:38: UPPERCASE
+                    // etc/XQFT.g:654:38: UPPERCASE
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17349,7 +17350,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftDiacriticsOption
-    // etc/XQFT.g:657:2: ftDiacriticsOption : ( DIACRITICS INSENSITIVE | DIACRITICS SENSITIVE );
+    // etc/XQFT.g:658:2: ftDiacriticsOption : ( DIACRITICS INSENSITIVE | DIACRITICS SENSITIVE );
     public final ftDiacriticsOption_return ftDiacriticsOption() throws RecognitionException {
         ftDiacriticsOption_return retval = new ftDiacriticsOption_return();
         retval.start = input.LT(1);
@@ -17367,7 +17368,7 @@ public class XQFTParser extends Parser {
         XQFTTree SENSITIVE490_tree=null;
 
         try {
-            // etc/XQFT.g:657:33: ( DIACRITICS INSENSITIVE | DIACRITICS SENSITIVE )
+            // etc/XQFT.g:658:33: ( DIACRITICS INSENSITIVE | DIACRITICS SENSITIVE )
             int alt109=2;
             int LA109_0 = input.LA(1);
 
@@ -17383,7 +17384,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("657:2: ftDiacriticsOption : ( DIACRITICS INSENSITIVE | DIACRITICS SENSITIVE );", 109, 1, input);
+                        new NoViableAltException("658:2: ftDiacriticsOption : ( DIACRITICS INSENSITIVE | DIACRITICS SENSITIVE );", 109, 1, input);
 
                     throw nvae;
                 }
@@ -17391,13 +17392,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("657:2: ftDiacriticsOption : ( DIACRITICS INSENSITIVE | DIACRITICS SENSITIVE );", 109, 0, input);
+                    new NoViableAltException("658:2: ftDiacriticsOption : ( DIACRITICS INSENSITIVE | DIACRITICS SENSITIVE );", 109, 0, input);
 
                 throw nvae;
             }
             switch (alt109) {
                 case 1 :
-                    // etc/XQFT.g:657:35: DIACRITICS INSENSITIVE
+                    // etc/XQFT.g:658:35: DIACRITICS INSENSITIVE
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17417,7 +17418,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:658:14: DIACRITICS SENSITIVE
+                    // etc/XQFT.g:659:14: DIACRITICS SENSITIVE
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17461,7 +17462,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftStopwordOption
-    // etc/XQFT.g:661:2: ftStopwordOption : ( WITH STOP WORDS ftRefOrList ( ftInclExclStringLiteral )* | WITHOUT STOP WORDS | WITH DEFAULT STOP WORDS ( ftInclExclStringLiteral )* );
+    // etc/XQFT.g:662:2: ftStopwordOption : ( WITH STOP WORDS ftRefOrList ( ftInclExclStringLiteral )* | WITHOUT STOP WORDS | WITH DEFAULT STOP WORDS ( ftInclExclStringLiteral )* );
     public final ftStopwordOption_return ftStopwordOption() throws RecognitionException {
         ftStopwordOption_return retval = new ftStopwordOption_return();
         retval.start = input.LT(1);
@@ -17497,7 +17498,7 @@ public class XQFTParser extends Parser {
         XQFTTree WORDS502_tree=null;
 
         try {
-            // etc/XQFT.g:661:33: ( WITH STOP WORDS ftRefOrList ( ftInclExclStringLiteral )* | WITHOUT STOP WORDS | WITH DEFAULT STOP WORDS ( ftInclExclStringLiteral )* )
+            // etc/XQFT.g:662:33: ( WITH STOP WORDS ftRefOrList ( ftInclExclStringLiteral )* | WITHOUT STOP WORDS | WITH DEFAULT STOP WORDS ( ftInclExclStringLiteral )* )
             int alt112=3;
             int LA112_0 = input.LA(1);
 
@@ -17513,7 +17514,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("661:2: ftStopwordOption : ( WITH STOP WORDS ftRefOrList ( ftInclExclStringLiteral )* | WITHOUT STOP WORDS | WITH DEFAULT STOP WORDS ( ftInclExclStringLiteral )* );", 112, 1, input);
+                        new NoViableAltException("662:2: ftStopwordOption : ( WITH STOP WORDS ftRefOrList ( ftInclExclStringLiteral )* | WITHOUT STOP WORDS | WITH DEFAULT STOP WORDS ( ftInclExclStringLiteral )* );", 112, 1, input);
 
                     throw nvae;
                 }
@@ -17524,13 +17525,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("661:2: ftStopwordOption : ( WITH STOP WORDS ftRefOrList ( ftInclExclStringLiteral )* | WITHOUT STOP WORDS | WITH DEFAULT STOP WORDS ( ftInclExclStringLiteral )* );", 112, 0, input);
+                    new NoViableAltException("662:2: ftStopwordOption : ( WITH STOP WORDS ftRefOrList ( ftInclExclStringLiteral )* | WITHOUT STOP WORDS | WITH DEFAULT STOP WORDS ( ftInclExclStringLiteral )* );", 112, 0, input);
 
                 throw nvae;
             }
             switch (alt112) {
                 case 1 :
-                    // etc/XQFT.g:661:35: WITH STOP WORDS ftRefOrList ( ftInclExclStringLiteral )*
+                    // etc/XQFT.g:662:35: WITH STOP WORDS ftRefOrList ( ftInclExclStringLiteral )*
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17557,7 +17558,7 @@ public class XQFTParser extends Parser {
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, ftRefOrList494.getTree());
-                    // etc/XQFT.g:661:64: ( ftInclExclStringLiteral )*
+                    // etc/XQFT.g:662:64: ( ftInclExclStringLiteral )*
                     loop110:
                     do {
                         int alt110=2;
@@ -17570,7 +17571,7 @@ public class XQFTParser extends Parser {
 
                         switch (alt110) {
                     	case 1 :
-                    	    // etc/XQFT.g:661:64: ftInclExclStringLiteral
+                    	    // etc/XQFT.g:662:64: ftInclExclStringLiteral
                     	    {
                     	    pushFollow(FOLLOW_ftInclExclStringLiteral_in_ftStopwordOption8396);
                     	    ftInclExclStringLiteral495=ftInclExclStringLiteral();
@@ -17590,7 +17591,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:662:14: WITHOUT STOP WORDS
+                    // etc/XQFT.g:663:14: WITHOUT STOP WORDS
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17616,7 +17617,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:663:38: WITH DEFAULT STOP WORDS ( ftInclExclStringLiteral )*
+                    // etc/XQFT.g:664:38: WITH DEFAULT STOP WORDS ( ftInclExclStringLiteral )*
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17644,7 +17645,7 @@ public class XQFTParser extends Parser {
                     WORDS502_tree = (XQFTTree)adaptor.create(WORDS502);
                     adaptor.addChild(root_0, WORDS502_tree);
                     }
-                    // etc/XQFT.g:663:63: ( ftInclExclStringLiteral )*
+                    // etc/XQFT.g:664:63: ( ftInclExclStringLiteral )*
                     loop111:
                     do {
                         int alt111=2;
@@ -17657,7 +17658,7 @@ public class XQFTParser extends Parser {
 
                         switch (alt111) {
                     	case 1 :
-                    	    // etc/XQFT.g:663:63: ftInclExclStringLiteral
+                    	    // etc/XQFT.g:664:63: ftInclExclStringLiteral
                     	    {
                     	    pushFollow(FOLLOW_ftInclExclStringLiteral_in_ftStopwordOption8465);
                     	    ftInclExclStringLiteral503=ftInclExclStringLiteral();
@@ -17701,7 +17702,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftRefOrList
-    // etc/XQFT.g:665:3: ftRefOrList : ( ( AT uriLiteral ) | LPARSi StringLiteral ( COMMASi StringLiteral )* RPARSi );
+    // etc/XQFT.g:666:3: ftRefOrList : ( ( AT uriLiteral ) | LPARSi StringLiteral ( COMMASi StringLiteral )* RPARSi );
     public final ftRefOrList_return ftRefOrList() throws RecognitionException {
         ftRefOrList_return retval = new ftRefOrList_return();
         retval.start = input.LT(1);
@@ -17725,7 +17726,7 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi510_tree=null;
 
         try {
-            // etc/XQFT.g:665:34: ( ( AT uriLiteral ) | LPARSi StringLiteral ( COMMASi StringLiteral )* RPARSi )
+            // etc/XQFT.g:666:34: ( ( AT uriLiteral ) | LPARSi StringLiteral ( COMMASi StringLiteral )* RPARSi )
             int alt114=2;
             int LA114_0 = input.LA(1);
 
@@ -17738,18 +17739,18 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("665:3: ftRefOrList : ( ( AT uriLiteral ) | LPARSi StringLiteral ( COMMASi StringLiteral )* RPARSi );", 114, 0, input);
+                    new NoViableAltException("666:3: ftRefOrList : ( ( AT uriLiteral ) | LPARSi StringLiteral ( COMMASi StringLiteral )* RPARSi );", 114, 0, input);
 
                 throw nvae;
             }
             switch (alt114) {
                 case 1 :
-                    // etc/XQFT.g:665:36: ( AT uriLiteral )
+                    // etc/XQFT.g:666:36: ( AT uriLiteral )
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    // etc/XQFT.g:665:36: ( AT uriLiteral )
-                    // etc/XQFT.g:665:37: AT uriLiteral
+                    // etc/XQFT.g:666:36: ( AT uriLiteral )
+                    // etc/XQFT.g:666:37: AT uriLiteral
                     {
                     AT504=(Token)input.LT(1);
                     match(input,AT,FOLLOW_AT_in_ftRefOrList8531); if (failed) return retval;
@@ -17769,7 +17770,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:666:15: LPARSi StringLiteral ( COMMASi StringLiteral )* RPARSi
+                    // etc/XQFT.g:667:15: LPARSi StringLiteral ( COMMASi StringLiteral )* RPARSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -17781,7 +17782,7 @@ public class XQFTParser extends Parser {
                     StringLiteral507_tree = (XQFTTree)adaptor.create(StringLiteral507);
                     adaptor.addChild(root_0, StringLiteral507_tree);
                     }
-                    // etc/XQFT.g:666:37: ( COMMASi StringLiteral )*
+                    // etc/XQFT.g:667:37: ( COMMASi StringLiteral )*
                     loop113:
                     do {
                         int alt113=2;
@@ -17794,7 +17795,7 @@ public class XQFTParser extends Parser {
 
                         switch (alt113) {
                     	case 1 :
-                    	    // etc/XQFT.g:666:38: COMMASi StringLiteral
+                    	    // etc/XQFT.g:667:38: COMMASi StringLiteral
                     	    {
                     	    COMMASi508=(Token)input.LT(1);
                     	    match(input,COMMASi,FOLLOW_COMMASi_in_ftRefOrList8556); if (failed) return retval;
@@ -17847,7 +17848,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftInclExclStringLiteral
-    // etc/XQFT.g:668:3: ftInclExclStringLiteral : ( UNION | EXCEPT ) ftRefOrList ;
+    // etc/XQFT.g:669:3: ftInclExclStringLiteral : ( UNION | EXCEPT ) ftRefOrList ;
     public final ftInclExclStringLiteral_return ftInclExclStringLiteral() throws RecognitionException {
         ftInclExclStringLiteral_return retval = new ftInclExclStringLiteral_return();
         retval.start = input.LT(1);
@@ -17861,8 +17862,8 @@ public class XQFTParser extends Parser {
         XQFTTree set511_tree=null;
 
         try {
-            // etc/XQFT.g:668:34: ( ( UNION | EXCEPT ) ftRefOrList )
-            // etc/XQFT.g:668:36: ( UNION | EXCEPT ) ftRefOrList
+            // etc/XQFT.g:669:34: ( ( UNION | EXCEPT ) ftRefOrList )
+            // etc/XQFT.g:669:36: ( UNION | EXCEPT ) ftRefOrList
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -17910,7 +17911,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ftExtensionOption
-    // etc/XQFT.g:671:2: ftExtensionOption : OPTION qName StringLiteral ;
+    // etc/XQFT.g:672:2: ftExtensionOption : OPTION qName StringLiteral ;
     public final ftExtensionOption_return ftExtensionOption() throws RecognitionException {
         ftExtensionOption_return retval = new ftExtensionOption_return();
         retval.start = input.LT(1);
@@ -17926,8 +17927,8 @@ public class XQFTParser extends Parser {
         XQFTTree StringLiteral515_tree=null;
 
         try {
-            // etc/XQFT.g:671:33: ( OPTION qName StringLiteral )
-            // etc/XQFT.g:671:35: OPTION qName StringLiteral
+            // etc/XQFT.g:672:33: ( OPTION qName StringLiteral )
+            // etc/XQFT.g:672:35: OPTION qName StringLiteral
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -17974,7 +17975,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start valueExpr
-    // etc/XQFT.g:675:1: valueExpr : ( validateExpr | pathExpr | extensionExpr );
+    // etc/XQFT.g:676:1: valueExpr : ( validateExpr | pathExpr | extensionExpr );
     public final valueExpr_return valueExpr() throws RecognitionException {
         valueExpr_return retval = new valueExpr_return();
         retval.start = input.LT(1);
@@ -17990,7 +17991,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:675:32: ( validateExpr | pathExpr | extensionExpr )
+            // etc/XQFT.g:676:32: ( validateExpr | pathExpr | extensionExpr )
             int alt115=3;
             switch ( input.LA(1) ) {
             case VALIDATE:
@@ -18049,14 +18050,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("675:1: valueExpr : ( validateExpr | pathExpr | extensionExpr );", 115, 0, input);
+                    new NoViableAltException("676:1: valueExpr : ( validateExpr | pathExpr | extensionExpr );", 115, 0, input);
 
                 throw nvae;
             }
 
             switch (alt115) {
                 case 1 :
-                    // etc/XQFT.g:675:34: validateExpr
+                    // etc/XQFT.g:676:34: validateExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -18069,7 +18070,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:675:49: pathExpr
+                    // etc/XQFT.g:676:49: pathExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -18082,7 +18083,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:675:60: extensionExpr
+                    // etc/XQFT.g:676:60: extensionExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -18119,7 +18120,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start validateExpr
-    // etc/XQFT.g:678:2: validateExpr : VALIDATE ( validationMode )? LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:679:2: validateExpr : VALIDATE ( validationMode )? LBRACESi expr RBRACSi ;
     public final validateExpr_return validateExpr() throws RecognitionException {
         validateExpr_return retval = new validateExpr_return();
         retval.start = input.LT(1);
@@ -18139,8 +18140,8 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi523_tree=null;
 
         try {
-            // etc/XQFT.g:678:33: ( VALIDATE ( validationMode )? LBRACESi expr RBRACSi )
-            // etc/XQFT.g:678:35: VALIDATE ( validationMode )? LBRACESi expr RBRACSi
+            // etc/XQFT.g:679:33: ( VALIDATE ( validationMode )? LBRACESi expr RBRACSi )
+            // etc/XQFT.g:679:35: VALIDATE ( validationMode )? LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -18150,7 +18151,7 @@ public class XQFTParser extends Parser {
             VALIDATE519_tree = (XQFTTree)adaptor.create(VALIDATE519);
             adaptor.addChild(root_0, VALIDATE519_tree);
             }
-            // etc/XQFT.g:678:44: ( validationMode )?
+            // etc/XQFT.g:679:44: ( validationMode )?
             int alt116=2;
             int LA116_0 = input.LA(1);
 
@@ -18159,7 +18160,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt116) {
                 case 1 :
-                    // etc/XQFT.g:678:44: validationMode
+                    // etc/XQFT.g:679:44: validationMode
                     {
                     pushFollow(FOLLOW_validationMode_in_validateExpr8696);
                     validationMode520=validationMode();
@@ -18207,7 +18208,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start validationMode
-    // etc/XQFT.g:679:3: validationMode : ( LAX | STRICT );
+    // etc/XQFT.g:680:3: validationMode : ( LAX | STRICT );
     public final validationMode_return validationMode() throws RecognitionException {
         validationMode_return retval = new validationMode_return();
         retval.start = input.LT(1);
@@ -18219,7 +18220,7 @@ public class XQFTParser extends Parser {
         XQFTTree set524_tree=null;
 
         try {
-            // etc/XQFT.g:679:34: ( LAX | STRICT )
+            // etc/XQFT.g:680:34: ( LAX | STRICT )
             // etc/XQFT.g:
             {
             root_0 = (XQFTTree)adaptor.nil();
@@ -18263,7 +18264,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start pathExpr
-    // etc/XQFT.g:684:2: pathExpr : ( ( SLASHSi relativePathExpr )=> SLASHSi relativePathExpr | SLASHSi | DBLSLASHSi relativePathExpr | relativePathExpr );
+    // etc/XQFT.g:685:2: pathExpr : ( ( SLASHSi relativePathExpr )=> SLASHSi relativePathExpr | SLASHSi | DBLSLASHSi relativePathExpr | relativePathExpr );
     public final pathExpr_return pathExpr() throws RecognitionException {
         pathExpr_return retval = new pathExpr_return();
         retval.start = input.LT(1);
@@ -18285,12 +18286,12 @@ public class XQFTParser extends Parser {
         XQFTTree DBLSLASHSi528_tree=null;
 
         try {
-            // etc/XQFT.g:684:33: ( ( SLASHSi relativePathExpr )=> SLASHSi relativePathExpr | SLASHSi | DBLSLASHSi relativePathExpr | relativePathExpr )
+            // etc/XQFT.g:685:33: ( ( SLASHSi relativePathExpr )=> SLASHSi relativePathExpr | SLASHSi | DBLSLASHSi relativePathExpr | relativePathExpr )
             int alt117=4;
             alt117 = dfa117.predict(input);
             switch (alt117) {
                 case 1 :
-                    // etc/XQFT.g:684:34: ( SLASHSi relativePathExpr )=> SLASHSi relativePathExpr
+                    // etc/XQFT.g:685:34: ( SLASHSi relativePathExpr )=> SLASHSi relativePathExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -18309,7 +18310,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:685:14: SLASHSi
+                    // etc/XQFT.g:686:14: SLASHSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -18323,7 +18324,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:686:14: DBLSLASHSi relativePathExpr
+                    // etc/XQFT.g:687:14: DBLSLASHSi relativePathExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -18342,7 +18343,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:687:14: relativePathExpr
+                    // etc/XQFT.g:688:14: relativePathExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -18379,7 +18380,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start relativePathExpr
-    // etc/XQFT.g:690:3: relativePathExpr : stepExpr ( ( SLASHSi | DBLSLASHSi ) stepExpr )* ;
+    // etc/XQFT.g:691:3: relativePathExpr : stepExpr ( ( SLASHSi | DBLSLASHSi ) stepExpr )* ;
     public final relativePathExpr_return relativePathExpr() throws RecognitionException {
         relativePathExpr_return retval = new relativePathExpr_return();
         retval.start = input.LT(1);
@@ -18397,8 +18398,8 @@ public class XQFTParser extends Parser {
         XQFTTree DBLSLASHSi533_tree=null;
 
         try {
-            // etc/XQFT.g:690:34: ( stepExpr ( ( SLASHSi | DBLSLASHSi ) stepExpr )* )
-            // etc/XQFT.g:690:36: stepExpr ( ( SLASHSi | DBLSLASHSi ) stepExpr )*
+            // etc/XQFT.g:691:34: ( stepExpr ( ( SLASHSi | DBLSLASHSi ) stepExpr )* )
+            // etc/XQFT.g:691:36: stepExpr ( ( SLASHSi | DBLSLASHSi ) stepExpr )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -18407,7 +18408,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, stepExpr531.getTree());
-            // etc/XQFT.g:690:45: ( ( SLASHSi | DBLSLASHSi ) stepExpr )*
+            // etc/XQFT.g:691:45: ( ( SLASHSi | DBLSLASHSi ) stepExpr )*
             loop119:
             do {
                 int alt119=2;
@@ -18420,9 +18421,9 @@ public class XQFTParser extends Parser {
 
                 switch (alt119) {
             	case 1 :
-            	    // etc/XQFT.g:690:46: ( SLASHSi | DBLSLASHSi ) stepExpr
+            	    // etc/XQFT.g:691:46: ( SLASHSi | DBLSLASHSi ) stepExpr
             	    {
-            	    // etc/XQFT.g:690:46: ( SLASHSi | DBLSLASHSi )
+            	    // etc/XQFT.g:691:46: ( SLASHSi | DBLSLASHSi )
             	    int alt118=2;
             	    int LA118_0 = input.LA(1);
 
@@ -18435,13 +18436,13 @@ public class XQFTParser extends Parser {
             	    else {
             	        if (backtracking>0) {failed=true; return retval;}
             	        NoViableAltException nvae =
-            	            new NoViableAltException("690:46: ( SLASHSi | DBLSLASHSi )", 118, 0, input);
+            	            new NoViableAltException("691:46: ( SLASHSi | DBLSLASHSi )", 118, 0, input);
 
             	        throw nvae;
             	    }
             	    switch (alt118) {
             	        case 1 :
-            	            // etc/XQFT.g:690:47: SLASHSi
+            	            // etc/XQFT.g:691:47: SLASHSi
             	            {
             	            SLASHSi532=(Token)input.LT(1);
             	            match(input,SLASHSi,FOLLOW_SLASHSi_in_relativePathExpr8872); if (failed) return retval;
@@ -18453,7 +18454,7 @@ public class XQFTParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // etc/XQFT.g:690:58: DBLSLASHSi
+            	            // etc/XQFT.g:691:58: DBLSLASHSi
             	            {
             	            DBLSLASHSi533=(Token)input.LT(1);
             	            match(input,DBLSLASHSi,FOLLOW_DBLSLASHSi_in_relativePathExpr8877); if (failed) return retval;
@@ -18507,7 +18508,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start stepExpr
-    // etc/XQFT.g:692:4: stepExpr : ( axisStep | filterExpr );
+    // etc/XQFT.g:693:4: stepExpr : ( axisStep | filterExpr );
     public final stepExpr_return stepExpr() throws RecognitionException {
         stepExpr_return retval = new stepExpr_return();
         retval.start = input.LT(1);
@@ -18521,7 +18522,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:692:35: ( axisStep | filterExpr )
+            // etc/XQFT.g:693:35: ( axisStep | filterExpr )
             int alt120=2;
             switch ( input.LA(1) ) {
             case ANCESTOR:
@@ -18559,7 +18560,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("692:4: stepExpr : ( axisStep | filterExpr );", 120, 2, input);
+                        new NoViableAltException("693:4: stepExpr : ( axisStep | filterExpr );", 120, 2, input);
 
                     throw nvae;
                 }
@@ -18578,7 +18579,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("692:4: stepExpr : ( axisStep | filterExpr );", 120, 3, input);
+                        new NoViableAltException("693:4: stepExpr : ( axisStep | filterExpr );", 120, 3, input);
 
                     throw nvae;
                 }
@@ -18597,7 +18598,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("692:4: stepExpr : ( axisStep | filterExpr );", 120, 4, input);
+                        new NoViableAltException("693:4: stepExpr : ( axisStep | filterExpr );", 120, 4, input);
 
                     throw nvae;
                 }
@@ -18616,7 +18617,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("692:4: stepExpr : ( axisStep | filterExpr );", 120, 5, input);
+                        new NoViableAltException("693:4: stepExpr : ( axisStep | filterExpr );", 120, 5, input);
 
                     throw nvae;
                 }
@@ -18635,7 +18636,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("692:4: stepExpr : ( axisStep | filterExpr );", 120, 6, input);
+                        new NoViableAltException("693:4: stepExpr : ( axisStep | filterExpr );", 120, 6, input);
 
                     throw nvae;
                 }
@@ -18664,7 +18665,7 @@ public class XQFTParser extends Parser {
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("692:4: stepExpr : ( axisStep | filterExpr );", 120, 11, input);
+                                new NoViableAltException("693:4: stepExpr : ( axisStep | filterExpr );", 120, 11, input);
 
                             throw nvae;
                         }
@@ -18675,7 +18676,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("692:4: stepExpr : ( axisStep | filterExpr );", 120, 9, input);
+                            new NoViableAltException("693:4: stepExpr : ( axisStep | filterExpr );", 120, 9, input);
 
                         throw nvae;
                     }
@@ -18693,7 +18694,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("692:4: stepExpr : ( axisStep | filterExpr );", 120, 7, input);
+                        new NoViableAltException("693:4: stepExpr : ( axisStep | filterExpr );", 120, 7, input);
 
                     throw nvae;
                 }
@@ -18719,14 +18720,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("692:4: stepExpr : ( axisStep | filterExpr );", 120, 0, input);
+                    new NoViableAltException("693:4: stepExpr : ( axisStep | filterExpr );", 120, 0, input);
 
                 throw nvae;
             }
 
             switch (alt120) {
                 case 1 :
-                    // etc/XQFT.g:692:37: axisStep
+                    // etc/XQFT.g:693:37: axisStep
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -18739,7 +18740,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:693:16: filterExpr
+                    // etc/XQFT.g:694:16: filterExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -18776,7 +18777,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start axisStep
-    // etc/XQFT.g:696:4: axisStep : ( reverseStep | forwardStep ) predicateList ;
+    // etc/XQFT.g:697:4: axisStep : ( reverseStep | forwardStep ) predicateList ;
     public final axisStep_return axisStep() throws RecognitionException {
         axisStep_return retval = new axisStep_return();
         retval.start = input.LT(1);
@@ -18792,12 +18793,12 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:696:35: ( ( reverseStep | forwardStep ) predicateList )
-            // etc/XQFT.g:696:37: ( reverseStep | forwardStep ) predicateList
+            // etc/XQFT.g:697:35: ( ( reverseStep | forwardStep ) predicateList )
+            // etc/XQFT.g:697:37: ( reverseStep | forwardStep ) predicateList
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:696:37: ( reverseStep | forwardStep )
+            // etc/XQFT.g:697:37: ( reverseStep | forwardStep )
             int alt121=2;
             int LA121_0 = input.LA(1);
 
@@ -18810,13 +18811,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("696:37: ( reverseStep | forwardStep )", 121, 0, input);
+                    new NoViableAltException("697:37: ( reverseStep | forwardStep )", 121, 0, input);
 
                 throw nvae;
             }
             switch (alt121) {
                 case 1 :
-                    // etc/XQFT.g:696:38: reverseStep
+                    // etc/XQFT.g:697:38: reverseStep
                     {
                     pushFollow(FOLLOW_reverseStep_in_axisStep8981);
                     reverseStep537=reverseStep();
@@ -18827,7 +18828,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:696:52: forwardStep
+                    // etc/XQFT.g:697:52: forwardStep
                     {
                     pushFollow(FOLLOW_forwardStep_in_axisStep8985);
                     forwardStep538=forwardStep();
@@ -18871,7 +18872,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start reverseStep
-    // etc/XQFT.g:698:5: reverseStep : ( reverseAxis nodeTest | abbrevReverseStep );
+    // etc/XQFT.g:699:5: reverseStep : ( reverseAxis nodeTest | abbrevReverseStep );
     public final reverseStep_return reverseStep() throws RecognitionException {
         reverseStep_return retval = new reverseStep_return();
         retval.start = input.LT(1);
@@ -18887,7 +18888,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:698:36: ( reverseAxis nodeTest | abbrevReverseStep )
+            // etc/XQFT.g:699:36: ( reverseAxis nodeTest | abbrevReverseStep )
             int alt122=2;
             int LA122_0 = input.LA(1);
 
@@ -18900,13 +18901,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("698:5: reverseStep : ( reverseAxis nodeTest | abbrevReverseStep );", 122, 0, input);
+                    new NoViableAltException("699:5: reverseStep : ( reverseAxis nodeTest | abbrevReverseStep );", 122, 0, input);
 
                 throw nvae;
             }
             switch (alt122) {
                 case 1 :
-                    // etc/XQFT.g:698:38: reverseAxis nodeTest
+                    // etc/XQFT.g:699:38: reverseAxis nodeTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -18924,7 +18925,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:698:61: abbrevReverseStep
+                    // etc/XQFT.g:699:61: abbrevReverseStep
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -18961,7 +18962,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start reverseAxis
-    // etc/XQFT.g:699:6: reverseAxis : ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi ;
+    // etc/XQFT.g:700:6: reverseAxis : ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi ;
     public final reverseAxis_return reverseAxis() throws RecognitionException {
         reverseAxis_return retval = new reverseAxis_return();
         retval.start = input.LT(1);
@@ -18975,8 +18976,8 @@ public class XQFTParser extends Parser {
         XQFTTree DBLCOLONSi544_tree=null;
 
         try {
-            // etc/XQFT.g:699:37: ( ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi )
-            // etc/XQFT.g:699:39: ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi
+            // etc/XQFT.g:700:37: ( ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi )
+            // etc/XQFT.g:700:39: ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -19025,7 +19026,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start nodeTest
-    // etc/XQFT.g:700:6: nodeTest : ( kindTest | nameTest );
+    // etc/XQFT.g:701:6: nodeTest : ( kindTest | nameTest );
     public final nodeTest_return nodeTest() throws RecognitionException {
         nodeTest_return retval = new nodeTest_return();
         retval.start = input.LT(1);
@@ -19039,7 +19040,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:700:37: ( kindTest | nameTest )
+            // etc/XQFT.g:701:37: ( kindTest | nameTest )
             int alt123=2;
             int LA123_0 = input.LA(1);
 
@@ -19052,13 +19053,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("700:6: nodeTest : ( kindTest | nameTest );", 123, 0, input);
+                    new NoViableAltException("701:6: nodeTest : ( kindTest | nameTest );", 123, 0, input);
 
                 throw nvae;
             }
             switch (alt123) {
                 case 1 :
-                    // etc/XQFT.g:700:39: kindTest
+                    // etc/XQFT.g:701:39: kindTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -19071,7 +19072,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:700:50: nameTest
+                    // etc/XQFT.g:701:50: nameTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -19108,7 +19109,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start nameTest
-    // etc/XQFT.g:702:7: nameTest : ( qName | wildcard );
+    // etc/XQFT.g:703:7: nameTest : ( qName | wildcard );
     public final nameTest_return nameTest() throws RecognitionException {
         nameTest_return retval = new nameTest_return();
         retval.start = input.LT(1);
@@ -19122,7 +19123,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:702:38: ( qName | wildcard )
+            // etc/XQFT.g:703:38: ( qName | wildcard )
             int alt124=2;
             int LA124_0 = input.LA(1);
 
@@ -19141,7 +19142,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("702:7: nameTest : ( qName | wildcard );", 124, 3, input);
+                            new NoViableAltException("703:7: nameTest : ( qName | wildcard );", 124, 3, input);
 
                         throw nvae;
                     }
@@ -19152,7 +19153,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("702:7: nameTest : ( qName | wildcard );", 124, 1, input);
+                        new NoViableAltException("703:7: nameTest : ( qName | wildcard );", 124, 1, input);
 
                     throw nvae;
                 }
@@ -19163,13 +19164,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("702:7: nameTest : ( qName | wildcard );", 124, 0, input);
+                    new NoViableAltException("703:7: nameTest : ( qName | wildcard );", 124, 0, input);
 
                 throw nvae;
             }
             switch (alt124) {
                 case 1 :
-                    // etc/XQFT.g:702:40: qName
+                    // etc/XQFT.g:703:40: qName
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -19182,7 +19183,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:702:48: wildcard
+                    // etc/XQFT.g:703:48: wildcard
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -19219,7 +19220,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start wildcard
-    // etc/XQFT.g:703:8: wildcard : ( ( STARSi COLONSi NCName )=> STARSi COLONSi NCName | STARSi | NCName COLONSi STARSi );
+    // etc/XQFT.g:704:8: wildcard : ( ( STARSi COLONSi NCName )=> STARSi COLONSi NCName | STARSi | NCName COLONSi STARSi );
     public final wildcard_return wildcard() throws RecognitionException {
         wildcard_return retval = new wildcard_return();
         retval.start = input.LT(1);
@@ -19243,7 +19244,7 @@ public class XQFTParser extends Parser {
         XQFTTree STARSi555_tree=null;
 
         try {
-            // etc/XQFT.g:703:39: ( ( STARSi COLONSi NCName )=> STARSi COLONSi NCName | STARSi | NCName COLONSi STARSi )
+            // etc/XQFT.g:704:39: ( ( STARSi COLONSi NCName )=> STARSi COLONSi NCName | STARSi | NCName COLONSi STARSi )
             int alt125=3;
             int LA125_0 = input.LA(1);
 
@@ -19259,7 +19260,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("703:8: wildcard : ( ( STARSi COLONSi NCName )=> STARSi COLONSi NCName | STARSi | NCName COLONSi STARSi );", 125, 1, input);
+                        new NoViableAltException("704:8: wildcard : ( ( STARSi COLONSi NCName )=> STARSi COLONSi NCName | STARSi | NCName COLONSi STARSi );", 125, 1, input);
 
                     throw nvae;
                 }
@@ -19270,13 +19271,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("703:8: wildcard : ( ( STARSi COLONSi NCName )=> STARSi COLONSi NCName | STARSi | NCName COLONSi STARSi );", 125, 0, input);
+                    new NoViableAltException("704:8: wildcard : ( ( STARSi COLONSi NCName )=> STARSi COLONSi NCName | STARSi | NCName COLONSi STARSi );", 125, 0, input);
 
                 throw nvae;
             }
             switch (alt125) {
                 case 1 :
-                    // etc/XQFT.g:703:41: ( STARSi COLONSi NCName )=> STARSi COLONSi NCName
+                    // etc/XQFT.g:704:41: ( STARSi COLONSi NCName )=> STARSi COLONSi NCName
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -19302,7 +19303,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:704:20: STARSi
+                    // etc/XQFT.g:705:20: STARSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -19316,7 +19317,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:705:44: NCName COLONSi STARSi
+                    // etc/XQFT.g:706:44: NCName COLONSi STARSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -19366,7 +19367,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start abbrevReverseStep
-    // etc/XQFT.g:706:21: abbrevReverseStep : DOTDOTSi ;
+    // etc/XQFT.g:707:21: abbrevReverseStep : DOTDOTSi ;
     public final abbrevReverseStep_return abbrevReverseStep() throws RecognitionException {
         abbrevReverseStep_return retval = new abbrevReverseStep_return();
         retval.start = input.LT(1);
@@ -19378,8 +19379,8 @@ public class XQFTParser extends Parser {
         XQFTTree DOTDOTSi556_tree=null;
 
         try {
-            // etc/XQFT.g:706:52: ( DOTDOTSi )
-            // etc/XQFT.g:706:54: DOTDOTSi
+            // etc/XQFT.g:707:52: ( DOTDOTSi )
+            // etc/XQFT.g:707:54: DOTDOTSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -19415,7 +19416,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start forwardStep
-    // etc/XQFT.g:708:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );
+    // etc/XQFT.g:709:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );
     public final forwardStep_return forwardStep() throws RecognitionException {
         forwardStep_return retval = new forwardStep_return();
         retval.start = input.LT(1);
@@ -19431,7 +19432,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:708:48: ( forwardAxis nodeTest | abbrevForwardStep )
+            // etc/XQFT.g:709:48: ( forwardAxis nodeTest | abbrevForwardStep )
             int alt126=2;
             switch ( input.LA(1) ) {
             case ATTRIBUTE:
@@ -19447,7 +19448,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("708:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 126, 1, input);
+                        new NoViableAltException("709:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 126, 1, input);
 
                     throw nvae;
                 }
@@ -19481,14 +19482,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("708:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 126, 0, input);
+                    new NoViableAltException("709:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 126, 0, input);
 
                 throw nvae;
             }
 
             switch (alt126) {
                 case 1 :
-                    // etc/XQFT.g:708:50: forwardAxis nodeTest
+                    // etc/XQFT.g:709:50: forwardAxis nodeTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -19506,7 +19507,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:708:73: abbrevForwardStep
+                    // etc/XQFT.g:709:73: abbrevForwardStep
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -19543,7 +19544,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start forwardAxis
-    // etc/XQFT.g:709:18: forwardAxis : ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi ;
+    // etc/XQFT.g:710:18: forwardAxis : ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi ;
     public final forwardAxis_return forwardAxis() throws RecognitionException {
         forwardAxis_return retval = new forwardAxis_return();
         retval.start = input.LT(1);
@@ -19557,8 +19558,8 @@ public class XQFTParser extends Parser {
         XQFTTree DBLCOLONSi561_tree=null;
 
         try {
-            // etc/XQFT.g:709:49: ( ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi )
-            // etc/XQFT.g:709:51: ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi
+            // etc/XQFT.g:710:49: ( ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi )
+            // etc/XQFT.g:710:51: ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -19607,7 +19608,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start abbrevForwardStep
-    // etc/XQFT.g:717:6: abbrevForwardStep : ( ATSi )? nodeTest ;
+    // etc/XQFT.g:718:6: abbrevForwardStep : ( ATSi )? nodeTest ;
     public final abbrevForwardStep_return abbrevForwardStep() throws RecognitionException {
         abbrevForwardStep_return retval = new abbrevForwardStep_return();
         retval.start = input.LT(1);
@@ -19621,12 +19622,12 @@ public class XQFTParser extends Parser {
         XQFTTree ATSi562_tree=null;
 
         try {
-            // etc/XQFT.g:717:37: ( ( ATSi )? nodeTest )
-            // etc/XQFT.g:717:39: ( ATSi )? nodeTest
+            // etc/XQFT.g:718:37: ( ( ATSi )? nodeTest )
+            // etc/XQFT.g:718:39: ( ATSi )? nodeTest
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:717:43: ( ATSi )?
+            // etc/XQFT.g:718:43: ( ATSi )?
             int alt127=2;
             int LA127_0 = input.LA(1);
 
@@ -19635,7 +19636,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt127) {
                 case 1 :
-                    // etc/XQFT.g:717:43: ATSi
+                    // etc/XQFT.g:718:43: ATSi
                     {
                     ATSi562=(Token)input.LT(1);
                     match(input,ATSi,FOLLOW_ATSi_in_abbrevForwardStep9526); if (failed) return retval;
@@ -19680,7 +19681,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start predicateList
-    // etc/XQFT.g:719:17: predicateList : ( predicate )* ;
+    // etc/XQFT.g:720:17: predicateList : ( predicate )* ;
     public final predicateList_return predicateList() throws RecognitionException {
         predicateList_return retval = new predicateList_return();
         retval.start = input.LT(1);
@@ -19692,12 +19693,12 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:719:48: ( ( predicate )* )
-            // etc/XQFT.g:719:50: ( predicate )*
+            // etc/XQFT.g:720:48: ( ( predicate )* )
+            // etc/XQFT.g:720:50: ( predicate )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:719:50: ( predicate )*
+            // etc/XQFT.g:720:50: ( predicate )*
             loop128:
             do {
                 int alt128=2;
@@ -19710,7 +19711,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt128) {
             	case 1 :
-            	    // etc/XQFT.g:719:50: predicate
+            	    // etc/XQFT.g:720:50: predicate
             	    {
             	    pushFollow(FOLLOW_predicate_in_predicateList9604);
             	    predicate564=predicate();
@@ -19752,7 +19753,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start predicate
-    // etc/XQFT.g:720:18: predicate : LBRACKSi expr RBRACKSi -> ^( AST_PREDICATE expr ) ;
+    // etc/XQFT.g:721:18: predicate : LBRACKSi expr RBRACKSi -> ^( AST_PREDICATE expr ) ;
     public final predicate_return predicate() throws RecognitionException {
         predicate_return retval = new predicate_return();
         retval.start = input.LT(1);
@@ -19770,8 +19771,8 @@ public class XQFTParser extends Parser {
         RewriteRuleTokenStream stream_RBRACKSi=new RewriteRuleTokenStream(adaptor,"token RBRACKSi");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // etc/XQFT.g:720:49: ( LBRACKSi expr RBRACKSi -> ^( AST_PREDICATE expr ) )
-            // etc/XQFT.g:720:51: LBRACKSi expr RBRACKSi
+            // etc/XQFT.g:721:49: ( LBRACKSi expr RBRACKSi -> ^( AST_PREDICATE expr ) )
+            // etc/XQFT.g:721:51: LBRACKSi expr RBRACKSi
             {
             LBRACKSi565=(Token)input.LT(1);
             match(input,LBRACKSi,FOLLOW_LBRACKSi_in_predicate9664); if (failed) return retval;
@@ -19798,9 +19799,9 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 721:62: -> ^( AST_PREDICATE expr )
+            // 722:62: -> ^( AST_PREDICATE expr )
             {
-                // etc/XQFT.g:721:65: ^( AST_PREDICATE expr )
+                // etc/XQFT.g:722:65: ^( AST_PREDICATE expr )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_PREDICATE, "AST_PREDICATE"), root_1);
@@ -19839,7 +19840,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start extensionExpr
-    // etc/XQFT.g:726:5: extensionExpr : ( pragma )+ LBRACESi ( expr )? RBRACSi ;
+    // etc/XQFT.g:727:5: extensionExpr : ( pragma )+ LBRACESi ( expr )? RBRACSi ;
     public final extensionExpr_return extensionExpr() throws RecognitionException {
         extensionExpr_return retval = new extensionExpr_return();
         retval.start = input.LT(1);
@@ -19857,12 +19858,12 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi571_tree=null;
 
         try {
-            // etc/XQFT.g:726:36: ( ( pragma )+ LBRACESi ( expr )? RBRACSi )
-            // etc/XQFT.g:726:38: ( pragma )+ LBRACESi ( expr )? RBRACSi
+            // etc/XQFT.g:727:36: ( ( pragma )+ LBRACESi ( expr )? RBRACSi )
+            // etc/XQFT.g:727:38: ( pragma )+ LBRACESi ( expr )? RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:726:38: ( pragma )+
+            // etc/XQFT.g:727:38: ( pragma )+
             int cnt129=0;
             loop129:
             do {
@@ -19876,7 +19877,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt129) {
             	case 1 :
-            	    // etc/XQFT.g:726:38: pragma
+            	    // etc/XQFT.g:727:38: pragma
             	    {
             	    pushFollow(FOLLOW_pragma_in_extensionExpr9777);
             	    pragma568=pragma();
@@ -19899,7 +19900,7 @@ public class XQFTParser extends Parser {
 
             LBRACESi569=(Token)input.LT(1);
             match(input,LBRACESi,FOLLOW_LBRACESi_in_extensionExpr9780); if (failed) return retval;
-            // etc/XQFT.g:726:56: ( expr )?
+            // etc/XQFT.g:727:56: ( expr )?
             int alt130=2;
             int LA130_0 = input.LA(1);
 
@@ -19908,7 +19909,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt130) {
                 case 1 :
-                    // etc/XQFT.g:726:56: expr
+                    // etc/XQFT.g:727:56: expr
                     {
                     pushFollow(FOLLOW_expr_in_extensionExpr9783);
                     expr570=expr();
@@ -19949,7 +19950,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start filterExpr
-    // etc/XQFT.g:734:1: filterExpr : primaryExpr predicateList ;
+    // etc/XQFT.g:735:1: filterExpr : primaryExpr predicateList ;
     public final filterExpr_return filterExpr() throws RecognitionException {
         filterExpr_return retval = new filterExpr_return();
         retval.start = input.LT(1);
@@ -19963,8 +19964,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:734:32: ( primaryExpr predicateList )
-            // etc/XQFT.g:734:34: primaryExpr predicateList
+            // etc/XQFT.g:735:32: ( primaryExpr predicateList )
+            // etc/XQFT.g:735:34: primaryExpr predicateList
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -20004,7 +20005,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start primaryExpr
-    // etc/XQFT.g:735:2: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | {...}? => functionCall | orderedExpr | unorderedExpr | constructor );
+    // etc/XQFT.g:736:2: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | {...}? => functionCall | orderedExpr | unorderedExpr | constructor );
     public final primaryExpr_return primaryExpr() throws RecognitionException {
         primaryExpr_return retval = new primaryExpr_return();
         retval.start = input.LT(1);
@@ -20030,7 +20031,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:735:33: ( literal | varRef | parenthesizedExpr | contextItemExpr | {...}? => functionCall | orderedExpr | unorderedExpr | constructor )
+            // etc/XQFT.g:736:33: ( literal | varRef | parenthesizedExpr | contextItemExpr | {...}? => functionCall | orderedExpr | unorderedExpr | constructor )
             int alt131=8;
             int LA131_0 = input.LA(1);
 
@@ -20065,13 +20066,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("735:2: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | {...}? => functionCall | orderedExpr | unorderedExpr | constructor );", 131, 0, input);
+                    new NoViableAltException("736:2: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | {...}? => functionCall | orderedExpr | unorderedExpr | constructor );", 131, 0, input);
 
                 throw nvae;
             }
             switch (alt131) {
                 case 1 :
-                    // etc/XQFT.g:735:35: literal
+                    // etc/XQFT.g:736:35: literal
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20084,7 +20085,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:736:14: varRef
+                    // etc/XQFT.g:737:14: varRef
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20097,7 +20098,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:737:14: parenthesizedExpr
+                    // etc/XQFT.g:738:14: parenthesizedExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20110,7 +20111,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:738:14: contextItemExpr
+                    // etc/XQFT.g:739:14: contextItemExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20123,7 +20124,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // etc/XQFT.g:739:13: {...}? => functionCall
+                    // etc/XQFT.g:740:13: {...}? => functionCall
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20144,7 +20145,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // etc/XQFT.g:745:14: orderedExpr
+                    // etc/XQFT.g:746:14: orderedExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20157,7 +20158,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 7 :
-                    // etc/XQFT.g:746:14: unorderedExpr
+                    // etc/XQFT.g:747:14: unorderedExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20170,7 +20171,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 8 :
-                    // etc/XQFT.g:747:14: constructor
+                    // etc/XQFT.g:748:14: constructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20207,7 +20208,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start varRef
-    // etc/XQFT.g:751:3: varRef : DOLLARSi varName ;
+    // etc/XQFT.g:752:3: varRef : DOLLARSi varName ;
     public final varRef_return varRef() throws RecognitionException {
         varRef_return retval = new varRef_return();
         retval.start = input.LT(1);
@@ -20221,8 +20222,8 @@ public class XQFTParser extends Parser {
         XQFTTree DOLLARSi582_tree=null;
 
         try {
-            // etc/XQFT.g:751:34: ( DOLLARSi varName )
-            // etc/XQFT.g:751:36: DOLLARSi varName
+            // etc/XQFT.g:752:34: ( DOLLARSi varName )
+            // etc/XQFT.g:752:36: DOLLARSi varName
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -20259,7 +20260,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start parenthesizedExpr
-    // etc/XQFT.g:753:3: parenthesizedExpr : LPARSi ( expr )? RPARSi ;
+    // etc/XQFT.g:754:3: parenthesizedExpr : LPARSi ( expr )? RPARSi ;
     public final parenthesizedExpr_return parenthesizedExpr() throws RecognitionException {
         parenthesizedExpr_return retval = new parenthesizedExpr_return();
         retval.start = input.LT(1);
@@ -20275,8 +20276,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPARSi586_tree=null;
 
         try {
-            // etc/XQFT.g:753:34: ( LPARSi ( expr )? RPARSi )
-            // etc/XQFT.g:753:36: LPARSi ( expr )? RPARSi
+            // etc/XQFT.g:754:34: ( LPARSi ( expr )? RPARSi )
+            // etc/XQFT.g:754:36: LPARSi ( expr )? RPARSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -20286,7 +20287,7 @@ public class XQFTParser extends Parser {
             LPARSi584_tree = (XQFTTree)adaptor.create(LPARSi584);
             adaptor.addChild(root_0, LPARSi584_tree);
             }
-            // etc/XQFT.g:753:43: ( expr )?
+            // etc/XQFT.g:754:43: ( expr )?
             int alt132=2;
             int LA132_0 = input.LA(1);
 
@@ -20295,7 +20296,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt132) {
                 case 1 :
-                    // etc/XQFT.g:753:43: expr
+                    // etc/XQFT.g:754:43: expr
                     {
                     pushFollow(FOLLOW_expr_in_parenthesizedExpr10043);
                     expr585=expr();
@@ -20340,7 +20341,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start contextItemExpr
-    // etc/XQFT.g:756:3: contextItemExpr : DOTSi ;
+    // etc/XQFT.g:757:3: contextItemExpr : DOTSi ;
     public final contextItemExpr_return contextItemExpr() throws RecognitionException {
         contextItemExpr_return retval = new contextItemExpr_return();
         retval.start = input.LT(1);
@@ -20352,8 +20353,8 @@ public class XQFTParser extends Parser {
         XQFTTree DOTSi587_tree=null;
 
         try {
-            // etc/XQFT.g:756:34: ( DOTSi )
-            // etc/XQFT.g:756:36: DOTSi
+            // etc/XQFT.g:757:34: ( DOTSi )
+            // etc/XQFT.g:757:36: DOTSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -20389,7 +20390,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start functionCall
-    // etc/XQFT.g:757:3: functionCall : qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) ;
+    // etc/XQFT.g:758:3: functionCall : qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) ;
     public final functionCall_return functionCall() throws RecognitionException {
         functionCall_return retval = new functionCall_return();
         retval.start = input.LT(1);
@@ -20415,8 +20416,8 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_qName=new RewriteRuleSubtreeStream(adaptor,"rule qName");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
-            // etc/XQFT.g:757:34: ( qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) )
-            // etc/XQFT.g:757:36: qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi
+            // etc/XQFT.g:758:34: ( qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) )
+            // etc/XQFT.g:758:36: qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi
             {
             pushFollow(FOLLOW_qName_in_functionCall10099);
             qName588=qName();
@@ -20427,7 +20428,7 @@ public class XQFTParser extends Parser {
             match(input,LPARSi,FOLLOW_LPARSi_in_functionCall10101); if (failed) return retval;
             if ( backtracking==0 ) stream_LPARSi.add(LPARSi589);
 
-            // etc/XQFT.g:758:14: ( exprSingle ( COMMASi exprSingle )* )?
+            // etc/XQFT.g:759:14: ( exprSingle ( COMMASi exprSingle )* )?
             int alt134=2;
             int LA134_0 = input.LA(1);
 
@@ -20436,14 +20437,14 @@ public class XQFTParser extends Parser {
             }
             switch (alt134) {
                 case 1 :
-                    // etc/XQFT.g:758:15: exprSingle ( COMMASi exprSingle )*
+                    // etc/XQFT.g:759:15: exprSingle ( COMMASi exprSingle )*
                     {
                     pushFollow(FOLLOW_exprSingle_in_functionCall10119);
                     exprSingle590=exprSingle();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) stream_exprSingle.add(exprSingle590.getTree());
-                    // etc/XQFT.g:758:26: ( COMMASi exprSingle )*
+                    // etc/XQFT.g:759:26: ( COMMASi exprSingle )*
                     loop133:
                     do {
                         int alt133=2;
@@ -20456,7 +20457,7 @@ public class XQFTParser extends Parser {
 
                         switch (alt133) {
                     	case 1 :
-                    	    // etc/XQFT.g:758:27: COMMASi exprSingle
+                    	    // etc/XQFT.g:759:27: COMMASi exprSingle
                     	    {
                     	    COMMASi591=(Token)input.LT(1);
                     	    match(input,COMMASi,FOLLOW_COMMASi_in_functionCall10122); if (failed) return retval;
@@ -20498,15 +20499,15 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 760:53: -> ^( AST_FUNCTIONCALL qName ( exprSingle )* )
+            // 761:53: -> ^( AST_FUNCTIONCALL qName ( exprSingle )* )
             {
-                // etc/XQFT.g:760:56: ^( AST_FUNCTIONCALL qName ( exprSingle )* )
+                // etc/XQFT.g:761:56: ^( AST_FUNCTIONCALL qName ( exprSingle )* )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_FUNCTIONCALL, "AST_FUNCTIONCALL"), root_1);
 
                 adaptor.addChild(root_1, stream_qName.next());
-                // etc/XQFT.g:760:81: ( exprSingle )*
+                // etc/XQFT.g:761:81: ( exprSingle )*
                 while ( stream_exprSingle.hasNext() ) {
                     adaptor.addChild(root_1, stream_exprSingle.next());
 
@@ -20545,7 +20546,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start orderedExpr
-    // etc/XQFT.g:763:3: orderedExpr : ORDERED LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:764:3: orderedExpr : ORDERED LBRACESi expr RBRACSi ;
     public final orderedExpr_return orderedExpr() throws RecognitionException {
         orderedExpr_return retval = new orderedExpr_return();
         retval.start = input.LT(1);
@@ -20563,8 +20564,8 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi597_tree=null;
 
         try {
-            // etc/XQFT.g:763:34: ( ORDERED LBRACESi expr RBRACSi )
-            // etc/XQFT.g:763:36: ORDERED LBRACESi expr RBRACSi
+            // etc/XQFT.g:764:34: ( ORDERED LBRACESi expr RBRACSi )
+            // etc/XQFT.g:764:36: ORDERED LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -20609,7 +20610,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start unorderedExpr
-    // etc/XQFT.g:766:3: unorderedExpr : UNORDERED LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:767:3: unorderedExpr : UNORDERED LBRACESi expr RBRACSi ;
     public final unorderedExpr_return unorderedExpr() throws RecognitionException {
         unorderedExpr_return retval = new unorderedExpr_return();
         retval.start = input.LT(1);
@@ -20627,8 +20628,8 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi601_tree=null;
 
         try {
-            // etc/XQFT.g:766:34: ( UNORDERED LBRACESi expr RBRACSi )
-            // etc/XQFT.g:766:36: UNORDERED LBRACESi expr RBRACSi
+            // etc/XQFT.g:767:34: ( UNORDERED LBRACESi expr RBRACSi )
+            // etc/XQFT.g:767:36: UNORDERED LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -20673,7 +20674,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start constructor
-    // etc/XQFT.g:769:3: constructor : ( directConstructor | computedConstructor );
+    // etc/XQFT.g:770:3: constructor : ( directConstructor | computedConstructor );
     public final constructor_return constructor() throws RecognitionException {
         constructor_return retval = new constructor_return();
         retval.start = input.LT(1);
@@ -20687,7 +20688,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:769:34: ( directConstructor | computedConstructor )
+            // etc/XQFT.g:770:34: ( directConstructor | computedConstructor )
             int alt135=2;
             int LA135_0 = input.LA(1);
 
@@ -20700,13 +20701,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("769:3: constructor : ( directConstructor | computedConstructor );", 135, 0, input);
+                    new NoViableAltException("770:3: constructor : ( directConstructor | computedConstructor );", 135, 0, input);
 
                 throw nvae;
             }
             switch (alt135) {
                 case 1 :
-                    // etc/XQFT.g:769:36: directConstructor
+                    // etc/XQFT.g:770:36: directConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20719,7 +20720,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:769:56: computedConstructor
+                    // etc/XQFT.g:770:56: computedConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20756,7 +20757,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start directConstructor
-    // etc/XQFT.g:772:4: directConstructor : ( dirElemConstructor | dirCommentConstructor | dirPIConstructor );
+    // etc/XQFT.g:773:4: directConstructor : ( dirElemConstructor | dirCommentConstructor | dirPIConstructor );
     public final directConstructor_return directConstructor() throws RecognitionException {
         directConstructor_return retval = new directConstructor_return();
         retval.start = input.LT(1);
@@ -20772,7 +20773,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:772:35: ( dirElemConstructor | dirCommentConstructor | dirPIConstructor )
+            // etc/XQFT.g:773:35: ( dirElemConstructor | dirCommentConstructor | dirPIConstructor )
             int alt136=3;
             switch ( input.LA(1) ) {
             case LTSi:
@@ -20793,14 +20794,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("772:4: directConstructor : ( dirElemConstructor | dirCommentConstructor | dirPIConstructor );", 136, 0, input);
+                    new NoViableAltException("773:4: directConstructor : ( dirElemConstructor | dirCommentConstructor | dirPIConstructor );", 136, 0, input);
 
                 throw nvae;
             }
 
             switch (alt136) {
                 case 1 :
-                    // etc/XQFT.g:772:37: dirElemConstructor
+                    // etc/XQFT.g:773:37: dirElemConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20813,7 +20814,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:773:40: dirCommentConstructor
+                    // etc/XQFT.g:774:40: dirCommentConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20826,7 +20827,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:774:28: dirPIConstructor
+                    // etc/XQFT.g:775:28: dirPIConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -20863,7 +20864,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirElemConstructor
-    // etc/XQFT.g:776:14: dirElemConstructor : LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi ) -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* ) ;
+    // etc/XQFT.g:777:14: dirElemConstructor : LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi ) -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* ) ;
     public final dirElemConstructor_return dirElemConstructor() throws RecognitionException {
         dirElemConstructor_return retval = new dirElemConstructor_return();
         retval.start = input.LT(1);
@@ -20897,8 +20898,8 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_dirElemContent=new RewriteRuleSubtreeStream(adaptor,"rule dirElemContent");
         RewriteRuleSubtreeStream stream_dirAttributeList=new RewriteRuleSubtreeStream(adaptor,"rule dirAttributeList");
         try {
-            // etc/XQFT.g:776:45: ( LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi ) -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* ) )
-            // etc/XQFT.g:776:47: LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )
+            // etc/XQFT.g:777:45: ( LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi ) -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* ) )
+            // etc/XQFT.g:777:47: LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )
             {
             LTSi607=(Token)input.LT(1);
             match(input,LTSi,FOLLOW_LTSi_in_dirElemConstructor10484); if (failed) return retval;
@@ -20917,7 +20918,7 @@ public class XQFTParser extends Parser {
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_dirAttributeList.add(dirAttributeList608.getTree());
-            // etc/XQFT.g:778:61: ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )
+            // etc/XQFT.g:779:61: ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )
             int alt138=2;
             int LA138_0 = input.LA(1);
 
@@ -20930,13 +20931,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("778:61: ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )", 138, 0, input);
+                    new NoViableAltException("779:61: ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )", 138, 0, input);
 
                 throw nvae;
             }
             switch (alt138) {
                 case 1 :
-                    // etc/XQFT.g:778:62: RSELFTERMSi
+                    // etc/XQFT.g:779:62: RSELFTERMSi
                     {
                     RSELFTERMSi609=(Token)input.LT(1);
                     match(input,RSELFTERMSi,FOLLOW_RSELFTERMSi_in_dirElemConstructor10615); if (failed) return retval;
@@ -20949,7 +20950,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:780:34: GTSi ( dirElemContent )* LENDTAGSi qName GTSi
+                    // etc/XQFT.g:781:34: GTSi ( dirElemContent )* LENDTAGSi qName GTSi
                     {
                     GTSi610=(Token)input.LT(1);
                     match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor10716); if (failed) return retval;
@@ -20958,7 +20959,7 @@ public class XQFTParser extends Parser {
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_ELEMENT;
                     }
-                    // etc/XQFT.g:783:26: ( dirElemContent )*
+                    // etc/XQFT.g:784:26: ( dirElemContent )*
                     loop137:
                     do {
                         int alt137=2;
@@ -20971,7 +20972,7 @@ public class XQFTParser extends Parser {
 
                         switch (alt137) {
                     	case 1 :
-                    	    // etc/XQFT.g:783:26: dirElemContent
+                    	    // etc/XQFT.g:784:26: dirElemContent
                     	    {
                     	    pushFollow(FOLLOW_dirElemContent_in_dirElemConstructor10811);
                     	    dirElemContent611=dirElemContent();
@@ -21025,16 +21026,16 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 788:61: -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* )
+            // 789:61: -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* )
             {
-                // etc/XQFT.g:788:64: ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* )
+                // etc/XQFT.g:789:64: ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_DIRELEMCONSTRUCTOR, "AST_DIRELEMCONSTRUCTOR"), root_1);
 
                 adaptor.addChild(root_1, stream_qn.next());
                 adaptor.addChild(root_1, stream_dirAttributeList.next());
-                // etc/XQFT.g:788:110: ( dirElemContent )*
+                // etc/XQFT.g:789:110: ( dirElemContent )*
                 while ( stream_dirElemContent.hasNext() ) {
                     adaptor.addChild(root_1, stream_dirElemContent.next());
 
@@ -21073,7 +21074,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirAttributeList
-    // etc/XQFT.g:790:15: dirAttributeList : ( qName EQSi dirAttributeValue )* ;
+    // etc/XQFT.g:791:15: dirAttributeList : ( qName EQSi dirAttributeValue )* ;
     public final dirAttributeList_return dirAttributeList() throws RecognitionException {
         dirAttributeList_return retval = new dirAttributeList_return();
         retval.start = input.LT(1);
@@ -21089,12 +21090,12 @@ public class XQFTParser extends Parser {
         XQFTTree EQSi616_tree=null;
 
         try {
-            // etc/XQFT.g:790:46: ( ( qName EQSi dirAttributeValue )* )
-            // etc/XQFT.g:790:48: ( qName EQSi dirAttributeValue )*
+            // etc/XQFT.g:791:46: ( ( qName EQSi dirAttributeValue )* )
+            // etc/XQFT.g:791:48: ( qName EQSi dirAttributeValue )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:790:48: ( qName EQSi dirAttributeValue )*
+            // etc/XQFT.g:791:48: ( qName EQSi dirAttributeValue )*
             loop139:
             do {
                 int alt139=2;
@@ -21107,7 +21108,7 @@ public class XQFTParser extends Parser {
 
                 switch (alt139) {
             	case 1 :
-            	    // etc/XQFT.g:790:49: qName EQSi dirAttributeValue
+            	    // etc/XQFT.g:791:49: qName EQSi dirAttributeValue
             	    {
             	    pushFollow(FOLLOW_qName_in_dirAttributeList11040);
             	    qName615=qName();
@@ -21160,7 +21161,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirAttributeValue
-    // etc/XQFT.g:791:16: dirAttributeValue : ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi );
+    // etc/XQFT.g:792:16: dirAttributeValue : ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi );
     public final dirAttributeValue_return dirAttributeValue() throws RecognitionException {
         dirAttributeValue_return retval = new dirAttributeValue_return();
         retval.start = input.LT(1);
@@ -21186,7 +21187,7 @@ public class XQFTParser extends Parser {
         XQFTTree APOSSi625_tree=null;
 
         try {
-            // etc/XQFT.g:791:47: ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi )
+            // etc/XQFT.g:792:47: ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi )
             int alt142=2;
             int LA142_0 = input.LA(1);
 
@@ -21199,13 +21200,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("791:16: dirAttributeValue : ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi );", 142, 0, input);
+                    new NoViableAltException("792:16: dirAttributeValue : ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi );", 142, 0, input);
 
                 throw nvae;
             }
             switch (alt142) {
                 case 1 :
-                    // etc/XQFT.g:791:49: QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi
+                    // etc/XQFT.g:792:49: QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -21214,7 +21215,7 @@ public class XQFTParser extends Parser {
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_QUOT_ATTRIBUTE;
                     }
-                    // etc/XQFT.g:792:27: ( QuotAttributeContent | xmlEnclosedExpr )*
+                    // etc/XQFT.g:793:27: ( QuotAttributeContent | xmlEnclosedExpr )*
                     loop140:
                     do {
                         int alt140=3;
@@ -21230,7 +21231,7 @@ public class XQFTParser extends Parser {
 
                         switch (alt140) {
                     	case 1 :
-                    	    // etc/XQFT.g:792:28: QuotAttributeContent
+                    	    // etc/XQFT.g:793:28: QuotAttributeContent
                     	    {
                     	    QuotAttributeContent619=(Token)input.LT(1);
                     	    match(input,QuotAttributeContent,FOLLOW_QuotAttributeContent_in_dirAttributeValue11114); if (failed) return retval;
@@ -21242,7 +21243,7 @@ public class XQFTParser extends Parser {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // etc/XQFT.g:792:51: xmlEnclosedExpr
+                    	    // etc/XQFT.g:793:51: xmlEnclosedExpr
                     	    {
                     	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue11118);
                     	    xmlEnclosedExpr620=xmlEnclosedExpr();
@@ -21267,7 +21268,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:794:31: APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi
+                    // etc/XQFT.g:795:31: APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -21276,7 +21277,7 @@ public class XQFTParser extends Parser {
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_APOS_ATTRIBUTE;
                     }
-                    // etc/XQFT.g:795:30: ( AposAttributeContent | xmlEnclosedExpr )*
+                    // etc/XQFT.g:796:30: ( AposAttributeContent | xmlEnclosedExpr )*
                     loop141:
                     do {
                         int alt141=3;
@@ -21292,7 +21293,7 @@ public class XQFTParser extends Parser {
 
                         switch (alt141) {
                     	case 1 :
-                    	    // etc/XQFT.g:795:31: AposAttributeContent
+                    	    // etc/XQFT.g:796:31: AposAttributeContent
                     	    {
                     	    AposAttributeContent623=(Token)input.LT(1);
                     	    match(input,AposAttributeContent,FOLLOW_AposAttributeContent_in_dirAttributeValue11220); if (failed) return retval;
@@ -21304,7 +21305,7 @@ public class XQFTParser extends Parser {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // etc/XQFT.g:795:54: xmlEnclosedExpr
+                    	    // etc/XQFT.g:796:54: xmlEnclosedExpr
                     	    {
                     	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue11224);
                     	    xmlEnclosedExpr624=xmlEnclosedExpr();
@@ -21353,7 +21354,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start xmlEnclosedExpr
-    // etc/XQFT.g:797:14: xmlEnclosedExpr : LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:798:14: xmlEnclosedExpr : LBRACESi expr RBRACSi ;
     public final xmlEnclosedExpr_return xmlEnclosedExpr() throws RecognitionException {
         xmlEnclosedExpr_return retval = new xmlEnclosedExpr_return();
         retval.start = input.LT(1);
@@ -21369,8 +21370,8 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi628_tree=null;
 
         try {
-            // etc/XQFT.g:797:48: ( LBRACESi expr RBRACSi )
-            // etc/XQFT.g:797:50: LBRACESi expr RBRACSi
+            // etc/XQFT.g:798:48: ( LBRACESi expr RBRACSi )
+            // etc/XQFT.g:798:50: LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -21415,7 +21416,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirElemContent
-    // etc/XQFT.g:803:6: dirElemContent : (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) );
+    // etc/XQFT.g:804:6: dirElemContent : (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) );
     public final dirElemContent_return dirElemContent() throws RecognitionException {
         dirElemContent_return retval = new dirElemContent_return();
         retval.start = input.LT(1);
@@ -21436,7 +21437,7 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_cDataSection=new RewriteRuleSubtreeStream(adaptor,"rule cDataSection");
         RewriteRuleSubtreeStream stream_xmlEnclosedExpr=new RewriteRuleSubtreeStream(adaptor,"rule xmlEnclosedExpr");
         try {
-            // etc/XQFT.g:803:37: (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) )
+            // etc/XQFT.g:804:37: (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) )
             int alt143=4;
             switch ( input.LA(1) ) {
             case LTSi:
@@ -21464,14 +21465,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("803:6: dirElemContent : (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) );", 143, 0, input);
+                    new NoViableAltException("804:6: dirElemContent : (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) );", 143, 0, input);
 
                 throw nvae;
             }
 
             switch (alt143) {
                 case 1 :
-                    // etc/XQFT.g:803:39: dc= directConstructor
+                    // etc/XQFT.g:804:39: dc= directConstructor
                     {
                     pushFollow(FOLLOW_directConstructor_in_dirElemContent11394);
                     dc=directConstructor();
@@ -21491,9 +21492,9 @@ public class XQFTParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
-                    // 803:59: -> ^( AST_DIRELEMCONTENT $dc)
+                    // 804:59: -> ^( AST_DIRELEMCONTENT $dc)
                     {
-                        // etc/XQFT.g:803:62: ^( AST_DIRELEMCONTENT $dc)
+                        // etc/XQFT.g:804:62: ^( AST_DIRELEMCONTENT $dc)
                         {
                         XQFTTree root_1 = (XQFTTree)adaptor.nil();
                         root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_DIRELEMCONTENT, "AST_DIRELEMCONTENT"), root_1);
@@ -21510,7 +21511,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:804:18: cd= cDataSection
+                    // etc/XQFT.g:805:18: cd= cDataSection
                     {
                     pushFollow(FOLLOW_cDataSection_in_dirElemContent11423);
                     cd=cDataSection();
@@ -21530,9 +21531,9 @@ public class XQFTParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
-                    // 804:34: -> ^( AST_DIRELEMCONTENT $cd)
+                    // 805:34: -> ^( AST_DIRELEMCONTENT $cd)
                     {
-                        // etc/XQFT.g:804:37: ^( AST_DIRELEMCONTENT $cd)
+                        // etc/XQFT.g:805:37: ^( AST_DIRELEMCONTENT $cd)
                         {
                         XQFTTree root_1 = (XQFTTree)adaptor.nil();
                         root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_DIRELEMCONTENT, "AST_DIRELEMCONTENT"), root_1);
@@ -21549,7 +21550,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:805:18: ec= ElementContent
+                    // etc/XQFT.g:806:18: ec= ElementContent
                     {
                     ec=(Token)input.LT(1);
                     match(input,ElementContent,FOLLOW_ElementContent_in_dirElemContent11453); if (failed) return retval;
@@ -21568,9 +21569,9 @@ public class XQFTParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
-                    // 805:36: -> ^( AST_DIRELEMCONTENT $ec)
+                    // 806:36: -> ^( AST_DIRELEMCONTENT $ec)
                     {
-                        // etc/XQFT.g:805:39: ^( AST_DIRELEMCONTENT $ec)
+                        // etc/XQFT.g:806:39: ^( AST_DIRELEMCONTENT $ec)
                         {
                         XQFTTree root_1 = (XQFTTree)adaptor.nil();
                         root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_DIRELEMCONTENT, "AST_DIRELEMCONTENT"), root_1);
@@ -21587,7 +21588,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:806:18: xe= xmlEnclosedExpr
+                    // etc/XQFT.g:807:18: xe= xmlEnclosedExpr
                     {
                     pushFollow(FOLLOW_xmlEnclosedExpr_in_dirElemContent11483);
                     xe=xmlEnclosedExpr();
@@ -21607,9 +21608,9 @@ public class XQFTParser extends Parser {
                     RewriteRuleSubtreeStream stream_xe=new RewriteRuleSubtreeStream(adaptor,"token xe",xe!=null?xe.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
-                    // 806:37: -> ^( AST_DIRELEMCONTENT $xe)
+                    // 807:37: -> ^( AST_DIRELEMCONTENT $xe)
                     {
-                        // etc/XQFT.g:806:40: ^( AST_DIRELEMCONTENT $xe)
+                        // etc/XQFT.g:807:40: ^( AST_DIRELEMCONTENT $xe)
                         {
                         XQFTTree root_1 = (XQFTTree)adaptor.nil();
                         root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_DIRELEMCONTENT, "AST_DIRELEMCONTENT"), root_1);
@@ -21650,7 +21651,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start cDataSection
-    // etc/XQFT.g:810:7: cDataSection : LCDATASi CDataContents RCDATASi ;
+    // etc/XQFT.g:811:7: cDataSection : LCDATASi CDataContents RCDATASi ;
     public final cDataSection_return cDataSection() throws RecognitionException {
         cDataSection_return retval = new cDataSection_return();
         retval.start = input.LT(1);
@@ -21666,8 +21667,8 @@ public class XQFTParser extends Parser {
         XQFTTree RCDATASi631_tree=null;
 
         try {
-            // etc/XQFT.g:810:26: ( LCDATASi CDataContents RCDATASi )
-            // etc/XQFT.g:810:28: LCDATASi CDataContents RCDATASi
+            // etc/XQFT.g:811:26: ( LCDATASi CDataContents RCDATASi )
+            // etc/XQFT.g:811:28: LCDATASi CDataContents RCDATASi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -21715,7 +21716,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirCommentConstructor
-    // etc/XQFT.g:815:5: dirCommentConstructor : LCOMMENTSi DirCommentContent RCOMMENTSi ;
+    // etc/XQFT.g:816:5: dirCommentConstructor : LCOMMENTSi DirCommentContent RCOMMENTSi ;
     public final dirCommentConstructor_return dirCommentConstructor() throws RecognitionException {
         dirCommentConstructor_return retval = new dirCommentConstructor_return();
         retval.start = input.LT(1);
@@ -21731,8 +21732,8 @@ public class XQFTParser extends Parser {
         XQFTTree RCOMMENTSi634_tree=null;
 
         try {
-            // etc/XQFT.g:815:31: ( LCOMMENTSi DirCommentContent RCOMMENTSi )
-            // etc/XQFT.g:815:33: LCOMMENTSi DirCommentContent RCOMMENTSi
+            // etc/XQFT.g:816:31: ( LCOMMENTSi DirCommentContent RCOMMENTSi )
+            // etc/XQFT.g:816:33: LCOMMENTSi DirCommentContent RCOMMENTSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -21780,7 +21781,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirPIConstructor
-    // etc/XQFT.g:817:5: dirPIConstructor : LPISi PiTarget ( DirPiContents )? RPISi ;
+    // etc/XQFT.g:818:5: dirPIConstructor : LPISi PiTarget ( DirPiContents )? RPISi ;
     public final dirPIConstructor_return dirPIConstructor() throws RecognitionException {
         dirPIConstructor_return retval = new dirPIConstructor_return();
         retval.start = input.LT(1);
@@ -21798,8 +21799,8 @@ public class XQFTParser extends Parser {
         XQFTTree RPISi638_tree=null;
 
         try {
-            // etc/XQFT.g:817:27: ( LPISi PiTarget ( DirPiContents )? RPISi )
-            // etc/XQFT.g:817:29: LPISi PiTarget ( DirPiContents )? RPISi
+            // etc/XQFT.g:818:27: ( LPISi PiTarget ( DirPiContents )? RPISi )
+            // etc/XQFT.g:818:29: LPISi PiTarget ( DirPiContents )? RPISi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -21815,7 +21816,7 @@ public class XQFTParser extends Parser {
             PiTarget636_tree = (XQFTTree)adaptor.create(PiTarget636);
             adaptor.addChild(root_0, PiTarget636_tree);
             }
-            // etc/XQFT.g:817:44: ( DirPiContents )?
+            // etc/XQFT.g:818:44: ( DirPiContents )?
             int alt144=2;
             int LA144_0 = input.LA(1);
 
@@ -21824,7 +21825,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt144) {
                 case 1 :
-                    // etc/XQFT.g:817:44: DirPiContents
+                    // etc/XQFT.g:818:44: DirPiContents
                     {
                     DirPiContents637=(Token)input.LT(1);
                     match(input,DirPiContents,FOLLOW_DirPiContents_in_dirPIConstructor11585); if (failed) return retval;
@@ -21870,7 +21871,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start computedConstructor
-    // etc/XQFT.g:819:4: computedConstructor : ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor );
+    // etc/XQFT.g:820:4: computedConstructor : ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor );
     public final computedConstructor_return computedConstructor() throws RecognitionException {
         computedConstructor_return retval = new computedConstructor_return();
         retval.start = input.LT(1);
@@ -21892,7 +21893,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:819:35: ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor )
+            // etc/XQFT.g:820:35: ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor )
             int alt145=6;
             switch ( input.LA(1) ) {
             case DOCUMENT:
@@ -21928,14 +21929,14 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("819:4: computedConstructor : ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor );", 145, 0, input);
+                    new NoViableAltException("820:4: computedConstructor : ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor );", 145, 0, input);
 
                 throw nvae;
             }
 
             switch (alt145) {
                 case 1 :
-                    // etc/XQFT.g:819:37: compDocConstructor
+                    // etc/XQFT.g:820:37: compDocConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -21948,7 +21949,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:820:40: compElemConstructor
+                    // etc/XQFT.g:821:40: compElemConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -21961,7 +21962,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:821:40: compAttrConstructor
+                    // etc/XQFT.g:822:40: compAttrConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -21974,7 +21975,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:822:40: compTextConstructor
+                    // etc/XQFT.g:823:40: compTextConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -21987,7 +21988,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // etc/XQFT.g:823:40: compCommentConstructor
+                    // etc/XQFT.g:824:40: compCommentConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -22000,7 +22001,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // etc/XQFT.g:824:40: compPIConstructor
+                    // etc/XQFT.g:825:40: compPIConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
@@ -22037,7 +22038,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compDocConstructor
-    // etc/XQFT.g:826:5: compDocConstructor : DOCUMENT LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:827:5: compDocConstructor : DOCUMENT LBRACESi expr RBRACSi ;
     public final compDocConstructor_return compDocConstructor() throws RecognitionException {
         compDocConstructor_return retval = new compDocConstructor_return();
         retval.start = input.LT(1);
@@ -22055,8 +22056,8 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi648_tree=null;
 
         try {
-            // etc/XQFT.g:826:36: ( DOCUMENT LBRACESi expr RBRACSi )
-            // etc/XQFT.g:826:38: DOCUMENT LBRACESi expr RBRACSi
+            // etc/XQFT.g:827:36: ( DOCUMENT LBRACESi expr RBRACSi )
+            // etc/XQFT.g:827:38: DOCUMENT LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -22101,7 +22102,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compElemConstructor
-    // etc/XQFT.g:830:5: compElemConstructor : ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi ;
+    // etc/XQFT.g:831:5: compElemConstructor : ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi ;
     public final compElemConstructor_return compElemConstructor() throws RecognitionException {
         compElemConstructor_return retval = new compElemConstructor_return();
         retval.start = input.LT(1);
@@ -22127,8 +22128,8 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi656_tree=null;
 
         try {
-            // etc/XQFT.g:830:36: ( ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi )
-            // etc/XQFT.g:830:38: ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi
+            // etc/XQFT.g:831:36: ( ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi )
+            // etc/XQFT.g:831:38: ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -22138,7 +22139,7 @@ public class XQFTParser extends Parser {
             ELEMENT649_tree = (XQFTTree)adaptor.create(ELEMENT649);
             adaptor.addChild(root_0, ELEMENT649_tree);
             }
-            // etc/XQFT.g:830:46: ( qName | LBRACESi expr RBRACSi )
+            // etc/XQFT.g:831:46: ( qName | LBRACESi expr RBRACSi )
             int alt146=2;
             int LA146_0 = input.LA(1);
 
@@ -22151,13 +22152,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("830:46: ( qName | LBRACESi expr RBRACSi )", 146, 0, input);
+                    new NoViableAltException("831:46: ( qName | LBRACESi expr RBRACSi )", 146, 0, input);
 
                 throw nvae;
             }
             switch (alt146) {
                 case 1 :
-                    // etc/XQFT.g:830:47: qName
+                    // etc/XQFT.g:831:47: qName
                     {
                     pushFollow(FOLLOW_qName_in_compElemConstructor11887);
                     qName650=qName();
@@ -22168,7 +22169,7 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:830:55: LBRACESi expr RBRACSi
+                    // etc/XQFT.g:831:55: LBRACESi expr RBRACSi
                     {
                     LBRACESi651=(Token)input.LT(1);
                     match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor11891); if (failed) return retval;
@@ -22199,7 +22200,7 @@ public class XQFTParser extends Parser {
             LBRACESi654_tree = (XQFTTree)adaptor.create(LBRACESi654);
             adaptor.addChild(root_0, LBRACESi654_tree);
             }
-            // etc/XQFT.g:831:25: ( contentExpr )?
+            // etc/XQFT.g:832:25: ( contentExpr )?
             int alt147=2;
             int LA147_0 = input.LA(1);
 
@@ -22208,7 +22209,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt147) {
                 case 1 :
-                    // etc/XQFT.g:831:25: contentExpr
+                    // etc/XQFT.g:832:25: contentExpr
                     {
                     pushFollow(FOLLOW_contentExpr_in_compElemConstructor11916);
                     contentExpr655=contentExpr();
@@ -22253,7 +22254,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start contentExpr
-    // etc/XQFT.g:834:6: contentExpr : expr ;
+    // etc/XQFT.g:835:6: contentExpr : expr ;
     public final contentExpr_return contentExpr() throws RecognitionException {
         contentExpr_return retval = new contentExpr_return();
         retval.start = input.LT(1);
@@ -22265,8 +22266,8 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:834:37: ( expr )
-            // etc/XQFT.g:834:39: expr
+            // etc/XQFT.g:835:37: ( expr )
+            // etc/XQFT.g:835:39: expr
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -22301,7 +22302,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compAttrConstructor
-    // etc/XQFT.g:838:5: compAttrConstructor : ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi ;
+    // etc/XQFT.g:839:5: compAttrConstructor : ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi ;
     public final compAttrConstructor_return compAttrConstructor() throws RecognitionException {
         compAttrConstructor_return retval = new compAttrConstructor_return();
         retval.start = input.LT(1);
@@ -22327,8 +22328,8 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi665_tree=null;
 
         try {
-            // etc/XQFT.g:838:36: ( ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi )
-            // etc/XQFT.g:838:38: ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi
+            // etc/XQFT.g:839:36: ( ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi )
+            // etc/XQFT.g:839:38: ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -22338,7 +22339,7 @@ public class XQFTParser extends Parser {
             ATTRIBUTE658_tree = (XQFTTree)adaptor.create(ATTRIBUTE658);
             adaptor.addChild(root_0, ATTRIBUTE658_tree);
             }
-            // etc/XQFT.g:838:48: ( qName | ( LBRACESi expr RBRACSi ) )
+            // etc/XQFT.g:839:48: ( qName | ( LBRACESi expr RBRACSi ) )
             int alt148=2;
             int LA148_0 = input.LA(1);
 
@@ -22351,13 +22352,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("838:48: ( qName | ( LBRACESi expr RBRACSi ) )", 148, 0, input);
+                    new NoViableAltException("839:48: ( qName | ( LBRACESi expr RBRACSi ) )", 148, 0, input);
 
                 throw nvae;
             }
             switch (alt148) {
                 case 1 :
-                    // etc/XQFT.g:838:49: qName
+                    // etc/XQFT.g:839:49: qName
                     {
                     pushFollow(FOLLOW_qName_in_compAttrConstructor12000);
                     qName659=qName();
@@ -22368,10 +22369,10 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:838:57: ( LBRACESi expr RBRACSi )
+                    // etc/XQFT.g:839:57: ( LBRACESi expr RBRACSi )
                     {
-                    // etc/XQFT.g:838:57: ( LBRACESi expr RBRACSi )
-                    // etc/XQFT.g:838:58: LBRACESi expr RBRACSi
+                    // etc/XQFT.g:839:57: ( LBRACESi expr RBRACSi )
+                    // etc/XQFT.g:839:58: LBRACESi expr RBRACSi
                     {
                     LBRACESi660=(Token)input.LT(1);
                     match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor12005); if (failed) return retval;
@@ -22393,7 +22394,7 @@ public class XQFTParser extends Parser {
 
             LBRACESi663=(Token)input.LT(1);
             match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor12031); if (failed) return retval;
-            // etc/XQFT.g:839:26: ( expr )?
+            // etc/XQFT.g:840:26: ( expr )?
             int alt149=2;
             int LA149_0 = input.LA(1);
 
@@ -22402,7 +22403,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt149) {
                 case 1 :
-                    // etc/XQFT.g:839:26: expr
+                    // etc/XQFT.g:840:26: expr
                     {
                     pushFollow(FOLLOW_expr_in_compAttrConstructor12034);
                     expr664=expr();
@@ -22443,7 +22444,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compTextConstructor
-    // etc/XQFT.g:841:5: compTextConstructor : TEXT LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:842:5: compTextConstructor : TEXT LBRACESi expr RBRACSi ;
     public final compTextConstructor_return compTextConstructor() throws RecognitionException {
         compTextConstructor_return retval = new compTextConstructor_return();
         retval.start = input.LT(1);
@@ -22461,8 +22462,8 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi669_tree=null;
 
         try {
-            // etc/XQFT.g:841:36: ( TEXT LBRACESi expr RBRACSi )
-            // etc/XQFT.g:841:38: TEXT LBRACESi expr RBRACSi
+            // etc/XQFT.g:842:36: ( TEXT LBRACESi expr RBRACSi )
+            // etc/XQFT.g:842:38: TEXT LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -22507,7 +22508,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compCommentConstructor
-    // etc/XQFT.g:843:5: compCommentConstructor : COMMENT LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:844:5: compCommentConstructor : COMMENT LBRACESi expr RBRACSi ;
     public final compCommentConstructor_return compCommentConstructor() throws RecognitionException {
         compCommentConstructor_return retval = new compCommentConstructor_return();
         retval.start = input.LT(1);
@@ -22525,8 +22526,8 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi673_tree=null;
 
         try {
-            // etc/XQFT.g:843:36: ( COMMENT LBRACESi expr RBRACSi )
-            // etc/XQFT.g:843:38: COMMENT LBRACESi expr RBRACSi
+            // etc/XQFT.g:844:36: ( COMMENT LBRACESi expr RBRACSi )
+            // etc/XQFT.g:844:38: COMMENT LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -22571,7 +22572,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compPIConstructor
-    // etc/XQFT.g:845:5: compPIConstructor : PROCESSING_INSTRUCTION ( NCName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi ;
+    // etc/XQFT.g:846:5: compPIConstructor : PROCESSING_INSTRUCTION ( NCName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi ;
     public final compPIConstructor_return compPIConstructor() throws RecognitionException {
         compPIConstructor_return retval = new compPIConstructor_return();
         retval.start = input.LT(1);
@@ -22597,8 +22598,8 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi681_tree=null;
 
         try {
-            // etc/XQFT.g:845:36: ( PROCESSING_INSTRUCTION ( NCName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi )
-            // etc/XQFT.g:845:38: PROCESSING_INSTRUCTION ( NCName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi
+            // etc/XQFT.g:846:36: ( PROCESSING_INSTRUCTION ( NCName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi )
+            // etc/XQFT.g:846:38: PROCESSING_INSTRUCTION ( NCName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
@@ -22608,7 +22609,7 @@ public class XQFTParser extends Parser {
             PROCESSING_INSTRUCTION674_tree = (XQFTTree)adaptor.create(PROCESSING_INSTRUCTION674);
             adaptor.addChild(root_0, PROCESSING_INSTRUCTION674_tree);
             }
-            // etc/XQFT.g:845:61: ( NCName | ( LBRACESi expr RBRACSi ) )
+            // etc/XQFT.g:846:61: ( NCName | ( LBRACESi expr RBRACSi ) )
             int alt150=2;
             int LA150_0 = input.LA(1);
 
@@ -22621,13 +22622,13 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("845:61: ( NCName | ( LBRACESi expr RBRACSi ) )", 150, 0, input);
+                    new NoViableAltException("846:61: ( NCName | ( LBRACESi expr RBRACSi ) )", 150, 0, input);
 
                 throw nvae;
             }
             switch (alt150) {
                 case 1 :
-                    // etc/XQFT.g:845:62: NCName
+                    // etc/XQFT.g:846:62: NCName
                     {
                     NCName675=(Token)input.LT(1);
                     match(input,NCName,FOLLOW_NCName_in_compPIConstructor12146); if (failed) return retval;
@@ -22639,10 +22640,10 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:845:71: ( LBRACESi expr RBRACSi )
+                    // etc/XQFT.g:846:71: ( LBRACESi expr RBRACSi )
                     {
-                    // etc/XQFT.g:845:71: ( LBRACESi expr RBRACSi )
-                    // etc/XQFT.g:845:72: LBRACESi expr RBRACSi
+                    // etc/XQFT.g:846:71: ( LBRACESi expr RBRACSi )
+                    // etc/XQFT.g:846:72: LBRACESi expr RBRACSi
                     {
                     LBRACESi676=(Token)input.LT(1);
                     match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor12151); if (failed) return retval;
@@ -22664,7 +22665,7 @@ public class XQFTParser extends Parser {
 
             LBRACESi679=(Token)input.LT(1);
             match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor12177); if (failed) return retval;
-            // etc/XQFT.g:846:26: ( expr )?
+            // etc/XQFT.g:847:26: ( expr )?
             int alt151=2;
             int LA151_0 = input.LA(1);
 
@@ -22673,7 +22674,7 @@ public class XQFTParser extends Parser {
             }
             switch (alt151) {
                 case 1 :
-                    // etc/XQFT.g:846:26: expr
+                    // etc/XQFT.g:847:26: expr
                     {
                     pushFollow(FOLLOW_expr_in_compPIConstructor12180);
                     expr680=expr();
@@ -22710,8 +22711,8 @@ public class XQFTParser extends Parser {
 
     // $ANTLR start synpred1
     public final void synpred1_fragment() throws RecognitionException {   
-        // etc/XQFT.g:389:34: ( itemType occurrenceIndicator )
-        // etc/XQFT.g:389:35: itemType occurrenceIndicator
+        // etc/XQFT.g:390:34: ( itemType occurrenceIndicator )
+        // etc/XQFT.g:390:35: itemType occurrenceIndicator
         {
         pushFollow(FOLLOW_itemType_in_synpred12379);
         itemType();
@@ -22728,8 +22729,8 @@ public class XQFTParser extends Parser {
 
     // $ANTLR start synpred2
     public final void synpred2_fragment() throws RecognitionException {   
-        // etc/XQFT.g:684:34: ( SLASHSi relativePathExpr )
-        // etc/XQFT.g:684:35: SLASHSi relativePathExpr
+        // etc/XQFT.g:685:34: ( SLASHSi relativePathExpr )
+        // etc/XQFT.g:685:35: SLASHSi relativePathExpr
         {
         match(input,SLASHSi,FOLLOW_SLASHSi_in_synpred28774); if (failed) return ;
         pushFollow(FOLLOW_relativePathExpr_in_synpred28776);
@@ -22743,8 +22744,8 @@ public class XQFTParser extends Parser {
 
     // $ANTLR start synpred3
     public final void synpred3_fragment() throws RecognitionException {   
-        // etc/XQFT.g:703:41: ( STARSi COLONSi NCName )
-        // etc/XQFT.g:703:42: STARSi COLONSi NCName
+        // etc/XQFT.g:704:41: ( STARSi COLONSi NCName )
+        // etc/XQFT.g:704:42: STARSi COLONSi NCName
         {
         match(input,STARSi,FOLLOW_STARSi_in_synpred39195); if (failed) return ;
         match(input,COLONSi,FOLLOW_COLONSi_in_synpred39197); if (failed) return ;
@@ -23479,7 +23480,7 @@ public class XQFTParser extends Parser {
             this.transition = DFA117_transition;
         }
         public String getDescription() {
-            return "684:2: pathExpr : ( ( SLASHSi relativePathExpr )=> SLASHSi relativePathExpr | SLASHSi | DBLSLASHSi relativePathExpr | relativePathExpr );";
+            return "685:2: pathExpr : ( ( SLASHSi relativePathExpr )=> SLASHSi relativePathExpr | SLASHSi | DBLSLASHSi relativePathExpr | relativePathExpr );";
         }
         public int specialStateTransition(int s, IntStream input) throws NoViableAltException {
         	int _s = s;
