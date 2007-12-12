@@ -14,7 +14,7 @@ DirPIContents    ::= (Char* - (Char* '?>' Char*))
 In addition to \verb!DirPIConstructor! the grammar specifies the other non-terminals with an enclosed content \verb!Pragma!,  \verb!DirCommentConstructor! (XML comment) and \verb!CDataSection!. \verb!Comment! (XQuery comment) has the special property of being able to be nested, but because it is a terminal itself it does not need to generate more than one token.
 
 \subsection{Emiting More Than One Token Per Production}
-
+\label{sect:implementation:emittingMoreTokens}
 As can be seen in figure \ref{fig:nextToken}, by default an ANTLR generated lexer will only emit one token per lexer production. To be able to handle multiple emitions, we introduced a buffer in the lexer out of which the parser input \verb!TokenStream! could fetch tokens. By overriding the methods \verb!nextToken()! and \verb!emit(Token t)! we accomodated for this. 
 
 As seen in figure \ref{fig:emitToken} ,our implemented \verb!emit(Token t)! will put the token \verb!t! in the buffer and set the \verb!token! variable of the lexer to \verb!t!, to block it from emitting unwanted tokens (see \verb!if(token == NULL)! in figure \ref{fig:nextToken}).
