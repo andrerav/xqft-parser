@@ -14,7 +14,12 @@ The main part of implementing the parser was to rewrite the EBNF provided by W3C
 \section{Summary}
 In this chapter we have gone through by which means we chose to adapt the W3C XQuery Full-text specification to ANTLR syntax and semantics. We chose to adapt the specification over creating our own from scratch because the otherwise risk of missing out essential latent meaning as well as timely concerns, as discussed further in section \ref{sect:discussion:adaptW3C}.
 
-The choice of implementing the "parser controlled state driven" lexer (section \ref{sect:amiguousgrammar:parserControlled})
+By choosing to implement an "parser controlled state driven" lexer (section \ref{sect:amiguousgrammar:parserControlled}), almost all terminal productions had to be completly rewritten, and also lead to the introduction of the \verb!TOKENSWITCH! construct. This could be avoided by implementing e.g. a "scan-while-parse" type lexer, but such a lexer's corresponding parser would have been much more complex and would handle a much bigger load than that of our implementation. A more viable alternative would be the "island grammars" strategy, but because ANTLR does not support this we rejected this solution. In section \ref{sect:discussion:designDecisions} we further evaluate our choice of lexer strategy.
 
-\underline{\textbf{\LARGE //TODO:}}
-Hvorfor, hvordan, oppsummering.
+We also implemented enclosed composite lexer productions which removed a great deal of terminal ambiguities by moving the whole refering non-terminal rule into the lexer. The container tokens were introduced to lessen the strain on the parser.
+
+W3C specifies some extra-gramatical contraints for XQuery Full-text. Our parser comply with a great deal of these, however, there are still some unconformities, as discussed in section \ref{sect:future:knownBugs}.
+
+\underline{\textbf{\LARGE //TODO: Andreas}} kan du putte p\aa~ to setninger om AST implementasjon?
+
+As we now have seen how the parser was implemented, in the next chapter we will se how it performs.

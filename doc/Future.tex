@@ -5,13 +5,14 @@
 
 \section{Future Work}
 
-\subsection{Tree Parser and Transformation}
 In its current state, the parser produced throughout this project could be a good
 starting point for writing a tree parser, and eventually translating the AST
 into relational algebra for use with relational database systems. As briefly
 mentioned in section \ref{sect:discussion:ast:structuring}, ANTLR is capable of
 producing tree parsers based on AST rewrite rules. This implies that ANTLR is a
 natural choice for continued development of this parser.
+
+
 
 \section{Improvements}
 \label{sect:future:improvements}
@@ -21,7 +22,7 @@ natural choice for continued development of this parser.
 
 \item \textbf{Not State Driven Lexer} -- By employing the island grammars or manual and island grammar hybrid strategy (as discussed in section \ref{sect:discussion:stateDriven}) instead of the state driven solution our lexer utilizes to this date, lexer grammar readability and simplicity could be substantially increased. When the ANTLR framework in the future supports island grammars \footnote{\url{http://www.antlr.org/wiki/display/ANTLR3/island+grammar+formalization}} this would really be an amendment to consider. The hybrid strategy is also a good alternative, but this solution would probably lead to considerably more work.
 
-\item \textbf{Replacing Breaked Characters} -- As yet, when our parser come upon breaked characters, character references or entity references it indiscriminately validate them and move on. That is, phrases such as \verb!"abc{{}}"! in a XML attribute declaration will have the same value after it is matched by the parser, eventhough the double brackets are a way of expressing the intent of a single one. All such character replacement occurences belongs to the container lexer rules (ref. section \ref{sect:rewriteGrammar:containerTokens}). A simple solution would be update the \verb!text! attribute(ref. section \ref{sect:antlr:lexer}) of the tokens involved according to a a table where an input breaked character sequence yields the corresponding intended character.
+\item \textbf{Replacing Escaped Characters} -- As yet, when our parser come upon escaped characters, character references or entity references it indiscriminately validate them and move on. That is, phrases such as \verb!"abc{{}}"! in a XML attribute declaration will have the same value after it is matched by the parser, eventhough the double brackets are a way of expressing the intent of a single one. All such character replacement occurences belongs to the container lexer rules (ref. section \ref{sect:rewriteGrammar:containerTokens}). A simple solution would be update the \verb!text! attribute(ref. section \ref{sect:antlr:lexer}) of the tokens involved according to a a table where an input escaped character sequence yields the corresponding intended character.
 
 \item \textbf{Separating NCName and Keywords} -- Our current lexer separates NCNames from keywords by assuming that all keywords are NCNames, checking if the matched text could be a keyword and then set the type accordingly, as described in section \ref{sect:rewritegrammar:keywordNCName}. The check is implemented as a \verb!if..else if..! construct, which means a serial search for a match. A better solution would be to look it up in e.g. a hashtable. This problem will however dissapear if a island grammar solution were to be implemented, as the keyword and NCName productions would no longer need to be \verb!fragment! rules.
 
