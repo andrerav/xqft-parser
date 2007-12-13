@@ -1,14 +1,15 @@
 \section{Parser construction}
 Writing a parser from scratch was ruled out early for being too time consuming.
 Instead it was decided to use tools for compiler and parser construction to
-generate a parser from the XQuery 1.0 and XPath 2.0 grammar specifications
-developed by the W3C.
+generate a parser from the XQuery 1.0 and XPath 2.0 grammar  
+specifications\cite{w3c01} developed by the W3C.
 
 Some important requirements were taken into account when evaluating these
 alternatives. Specifically, the generator must:
 \begin{itemize}
   \item generate Java source code for the parser
-  \item be able to generate LL(k) parser
+  \item be able to generate an LL(1) (or LL(k)) parser, because the grammar  
+  specification is given by W3C in LL(1)
   \item be licensed liberally, either GPL or BSD, or an equivalent license
   approved by OSI
 \end{itemize}
