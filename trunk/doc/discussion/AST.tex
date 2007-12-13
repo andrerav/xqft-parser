@@ -73,6 +73,7 @@ is a recurring design question with regards to several other full-text
 modifiers, and will need further research for optimum AST construction.
 
 \subsection{Extendability and data flow analysis}
+\label{sect:discussion:ast:extend}
 Currently the logic for scoping and symbol table lookups are embedded in the
 grammar. It would be benefitial to have this logic removed and decoupled and
 rather develop a data flow analysis framework with the necessary facilities for
@@ -80,12 +81,3 @@ performing scoping, symbol table lookup, as well as type inference and type
 checking. The current implementation of scoping and symbol tables (described in
 section \ref{sect:impl:scoping_and_symtab}) is adequate, however adding more
 features could severly affect the readability and clarity of the grammar.
-
-Generelle resultat, bra/d\aa rlig (AST) \#\# typesjekking (bedre \aa~gj\o re
-p\aa~AST'en) -> putt i egen section i discussion -------v 
-symtabs (bedre \aa~gj\o re p\aa~ AST'en))
- * Mulighet for dataflytanalyse, typesjekking, symboltabell
-
-Gjorde vi riktige valg? Ble ting som forventet? Hva hadde skjedd om vi brukte alternativ m\aa te?
-
-\underline{\textbf{\LARGE //ODOT:}}
