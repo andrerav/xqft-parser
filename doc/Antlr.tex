@@ -309,3 +309,5 @@ implemented in this project.
 
 \section{Summary}
 In this chapter we have presented our parser generator of choice, ANTLR. With a rich set of grammar specification operators, ANTLR accepts a wide array of possible grammars. Another neat feature is that target language actions can be placed almost anywhere whitin the grammar specification, permiting very versatile solutions. But ANTLRs real power comes in the form of the LL(*) capabilities and particulary in the various forms of predicates. Predicates can among other things be used to solve ambiguities, reduce lookahead and alter parsing based on runtime information. By being an LL parser generator it produces recognizers with workings much more intuitive than e.g. an LALR parser generator would. The choice of using ANTLR as our parser generator is further discussed in section \ref{sect:discussion:antlr}.
+
+ANTLRs AST producing abilities and support of AST manipulation operators and rewrite rules greatly simplifies the task of producing such trees. This will be discussed further in section \ref{sect:discussion:ast}.
