@@ -1,16 +1,7 @@
 % Discussion / AST
 % Andreas
 \section{AST}
-TODO:
- * Rewrite rules + operators: lett a forandre, flytte rundt paa ting
- * Bygge subtraer med imaginaere noder eller tokens
- * Problematisk aa generere parser uten AST-kode naar regler+operatorer forst har
-   blitt addet
- * Problematisk med JFlex/CUP, mye arbeid
- * Tredjeparts verktoy med JavaCC
- * Expressing FLWOR, full-text, path expressions
- * Mulighet for dataflytanalyse, typesjekking, symboltabell
- 
+\subsection{Choice of structuring}
 The rewrite rules and operators (described in section
 \ref{sect:results:parser_output_ast}) made it easy to change and restructure the
 AST output from ANTLR. In a intuitive way, they were used to construct subtrees
@@ -51,11 +42,44 @@ figure \ref{tree:ast:pathexpr}) encoded as seen in figure
 \label{fig:discussion:ast:path1}
 \end{figure}
 
+This is one example of how to represent path expressions as tree structures.
+With in-order tree traversal this tree should be fairly simple to reconstruct  
+into the original path expression, as well as matching against a document object
+model, or for performing staircase joins\cite{pathfinder_staircase}. Another  
+proposed way to represent path expressions is the NoK (Next-of-Kin) tree
+structure\cite{zhang_nok}, however NoK may be better suited for simple document
+tree matching.
+
+Further, the AST generated for a FLWOR query in figure \ref{tree:ast:flwor1}
+(section \ref{sect:results:parser_output_ast}) can be represented in several
+alternative ways that may be more fitted for loop-lifted staircase
+joins\cite{pathfinder_staircase}. One such representation is
+BlossomTree\cite{zhang_blossomtree}, which is tailored for representing
+FLWOR-expressions which consists of multiple path expressions.
+
+The representation of full-text queries is also a matter of interest. The
+grammar is quite clear on operator and modifier precedence, however it may not
+be obvious how to relate some modifiers (such as 
+``\verb!with|without stemming!") to nodes. As seen in figure, we have simply
+added this modifier as a sibling to the subject node. However, it could be
+benefitial add this modifier as a child node of the subject node instead. This
+is a recurring design question with regards to several other full-text
+modifiers, and will need further research for optimum AST construction.
+
+\subsection{Extendability and data flow analysis}
+Currently the logic for scoping and symbol table lookups are embedded in the
+grammar. It would be benefitial to have this logic removed and decoupled and
+rather develop a data flow analysis framework with the necessary facilities for
+performing scoping, symbol table lookup, as well as type inference and type
+checking. The current implementation of scoping and symbol tables (described in
+section \ref{sect:impl:scoping_and_symtab}) is adequate, however adding more
+features could severly affect the readability and clarity of the grammar.
 
 Generelle resultat, bra/d\aa rlig (AST) \#\# typesjekking (bedre \aa~gj\o re
 p\aa~AST'en) -> putt i egen section i discussion -------v 
 symtabs (bedre \aa~gj\o re p\aa~ AST'en))
+ * Mulighet for dataflytanalyse, typesjekking, symboltabell
 
-Gjorde vi riktige valg? Ble ting som forventet? Hva hadde skjedd om vi brukte alternativ m\aa te? 
+Gjorde vi riktige valg? Ble ting som forventet? Hva hadde skjedd om vi brukte alternativ m\aa te?
 
 \underline{\textbf{\LARGE //ODOT:}}
