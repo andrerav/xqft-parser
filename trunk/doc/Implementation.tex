@@ -1,7 +1,7 @@
 \chapter{Implementation}
 
 
-The main part of implementing the parser was to rewrite the EBNF provided by W3C in \cite{w3c01} to conform to ANTLR's syntax and semantics. Because of the amibguous terminals described in section \ref{sect:ambiguousgrammar:ambigTerm} this was not a trivial task, and in the following chapter we will present by which means we solved this. In addition we will present other ANTLR conforformity rewrites, how we augmented the grammar to output a correct AST and finally our implementation of scoping and symbol tables.
+The main part of implementing the parser was to rewrite the EBNF provided by W3C in \cite{w3c01} to conform to ANTLR's syntax and semantics. Because of the ambiguous terminals described in section \ref{sect:ambiguousgrammar:ambigTerm} this was not a trivial task, and in the following chapter we will present by which means we solved this. In addition we will present other ANTLR conforformity rewrites, how we augmented the grammar to output a correct AST and finally our implementation of scoping and symbol tables.
 
 
 \input{implementation/AntlrSyntax}
@@ -12,5 +12,9 @@ The main part of implementing the parser was to rewrite the EBNF provided by W3C
 \input{implementation/ErrorHandling}
 
 \section{Summary}
+In this chapter we have gone through by which means we chose to adapt the W3C XQuery Full-text specification to ANTLR syntax and semantics. We chose to adapt the specification over creating our own from scratch because the otherwise risk of missing out essential latent meaning as well as timely concerns, as discussed further in section \ref{sect:discussion:adaptW3C}.
+
+The choice of implementing the "parser controlled state driven" lexer (section \ref{sect:amiguousgrammar:parserControlled})
+
 \underline{\textbf{\LARGE //TODO:}}
 Hvorfor, hvordan, oppsummering.
