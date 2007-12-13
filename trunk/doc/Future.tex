@@ -14,17 +14,20 @@ Planen er \aa~ transformere til relasjonsalgebra etterhvert, dette blir flott me
 
 \section{Improvements}
 \label{sect:future:improvements}
-\underline{\textbf{\LARGE //TODO: Mads}} 
+
 
 \begin{itemize}
+
+\item \textbf{Not State Driven Lexer} -- By employing the island grammars or manual and island grammar hybrid strategy (as discussed in section \ref{sect:discussion:stateDriven}) instead of the state driven solution our lexer utilizes to this date, lexer grammar readability and simplicity could be substantially increased. When the ANTLR framework in the future supports island grammars \footnote{\url{http://www.antlr.org/wiki/display/ANTLR3/island+grammar+formalization}} this would really be an amendment to consider. The hybrid strategy is also a good alternative, but this solution would probably lead to considerably more work.
+
+\item \textbf{Replacing Breaked Characters} -- As yet, when our parser come upon breaked characters, character references or entity references it indiscriminately validate them and move on. That is, phrases such as \verb!"abc{{}}"! in a XML attribute declaration will have the same value after it is matched by the parser, eventhough the double brackets are a way of expressing the intent of a single one. All such character replacement occurences belongs to the container lexer rules (ref. section \ref{sect:rewriteGrammar:containerTokens}). A simple solution would be update the \verb!text! attribute(ref. section \ref{sect:antlr:lexer}) of the tokens involved according to a a table where an input breaked character sequence yields the corresponding intended character.
+
+
+\item \underline{\textbf{\LARGE //TODO: Mads}} 
+
 \item \textbf{Approaching LL(1)} LL(1) tiln\ae rme, kan sikre at states funker for alle tilfeller, samt kanskje(!) la KeywordOrNCName bli virkelighet
 
-
-\item \textbf{Replace Breaked Characters}automatisk gjoere om entityref og breaksymboler i container tokens (ElementContent etc)
-
 \item \textbf{NCName andz Keywordzzz} bedre skille NCName og keywords i lexeren.
-
-\item \textbf{State greier} Island Grammars eller hybrid island grammars
 
 \end{itemize}
 

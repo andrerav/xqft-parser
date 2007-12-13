@@ -13,6 +13,7 @@ Our grammar, by being dependant on our custom token stream, would render gUnit(s
 The deprication of ANTLRWorks is not such a great loss either; because of its instability, it never was the grammar editor of choice. Furthermore, the drawing of syntax diagrams -- a handy way of resolving non-determinisms in the parser -- is done during grammar compile time, and is therefore still functional. And finally, by tricking the application with a simple hack, it can still parse input and draw the corresponding parsing tree, though not in a step-by-step manner.
 
 \subsection{State Driven Lexer}
+\label{sect:discussion:stateDriven}
 
 The states of our lexer is implemented by gated semantic predicates and the \verb!TOKENSWITCH! construct. This may have made our grammar quite complex and less easily readable. An alternative to this approach would be to write the lexer by hand. In this way we could have made a much easier state controll structure, with a more complete division between each states functionallity. But future modificatibility would be a problem, as a lot rewriting would be necessary for even the simplest change in grammar semantics.
 
