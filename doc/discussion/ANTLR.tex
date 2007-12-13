@@ -1,8 +1,5 @@
 \section{ANTLR}
 \label{sect:discussion:antlr}
-
-\underline{\textbf{\LARGE //TODO: Andreas}} Rett valg? Mindre omskriving syntaktisk? Har de predikater der? extragrammaticalconstraints..
-
 In this project we used ANTLR to generate a parser from a grammar
 specification.As detailed in section \ref{sect:method:alternatives}, we
 evaluated several alternatives before deciding to use ANTLR. One argument for
@@ -31,3 +28,8 @@ somewhat easier to implement in JFlex/CUP and JavaCC since they don't prebuffer
 the tokens in their entirety from input before they are sent to the parser. This
 problem and its solution was described in detail in section
 \ref{sect:impl:parser_controlled_state_driven_lexer}.
+
+Additionally, the support for semantic and syntactic predicates turned out to be
+a useful feature of ANTLR. These features are not present in LALR-style parser
+generators such as JFlex/CUP, however problems with ambiguity can be solved
+differently with LALR.
