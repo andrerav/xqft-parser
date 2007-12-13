@@ -1,6 +1,6 @@
 \section{Ambiguous Terminals}
 \label{sect:ambiguousgrammar:ambigTerm}
-The W3C EBNF specification of XQuery Full Text (\cite{w3c01}) defines among other these terminals (somewhat simplified):
+The W3C EBNF specification of XQuery Full Text\cite{w3c01} defines among other these terminals (somewhat simplified):
 \begin{verbatim}
 ElementContentChar       ::= Char - [{}<&]
 QuotAttrContentChar      ::= Char - ["{}<&]
@@ -37,7 +37,7 @@ A fuzzy token lexer is typicaly a simple lexer which leaves the meaning of the t
 
 \subsection{State Driven Lexer}
 \label{sect:amiguousgrammar:stateDriven}
-With this method the lexer would only sets of words when in an appropriate state. The acceptance of a word in one state may lead to a state transition. I.e. the lexical recognition would be implemented as transition tables for a push-down automata. A suggestion for such transition tables for XQuery (not Full Text) are published as W3C working draft (\cite{createTokenizer}) with the following disclaimer:
+With this method the lexer would only sets of words when in an appropriate state. The acceptance of a word in one state may lead to a state transition. I.e. the lexical recognition would be implemented as transition tables for a push-down automata. A suggestion for such transition tables for XQuery (not Full Text) are published as W3C working draft\cite{createTokenizer} with the following disclaimer:
 \begin{quote}
 The following tables were hand-constructed and have not, at the time of this writing, been exhaustively verified against all possible paths that may be legal in the XQuery and XPath EBNFs, which is to say, it is possible they contain bugs.
 \end{quote}
