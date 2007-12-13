@@ -33,26 +33,8 @@ Covrage er ikke h\o yere mest sannsynlig p\aa~grunn av vi har reserved keywords,
 
 \input{discussion/AST}
 
-
 \input{discussion/ErrorHandling}
 
-\section{Scope andz Typecheckz}
-
-\underline{\textbf{\LARGE //TODO: Andreas}} Saksa det her fra future work... kan det bli mer diskusjon i stedet? Evt ogs\aa~dele det opp i to sections...
-
-\subsubsection{Type Checking}
-Currently the parser will not perform type checking on the parsed queries. This
-is an essential feature and will be necessary to implement for the parser to be
-applicable in any realistic setting. A type checking system with proper type
-inference and synthesis could be a complex feature to implement in a language
-such as XQuery, and might require considerable effort, especially in quality
-assurance. 
-
-\subsubsection{Scoping and Symbol Tables on AST}
-Currently the scoping and symbol tables are being used directly in the grammar -
-that is, during parse time. It would be benefitial to move this into being
-performed in run time, and combine with type checking functionality.
-
-\underline{\textbf{\LARGE //ODOT:}}
+\input{discussion/ScopingAndSymbol}
 
 \input{discussion/DeadEnds}
