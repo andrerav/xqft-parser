@@ -1,16 +1,26 @@
 % State of the art, nåværende teknologi og implementasjoner
-\section{Current state of XQuery Parsers}
-\underline{\textbf{\LARGE //TODO:}} Generelt om forskningsstatus for XQuery+fulltext. Referanse for Quark eller Galatex ellerno, som du sa..
+\section{Current state of XQuery parsers}
+There has been much interest and research in XML query languages in recent
+years due to the vast amount of information stored in XML documents and the
+previously complicated interfaces for retrieving information from these documents.
+
+However these query languages have focused on structural querying and not
+content querying with possibilities of full-text matching, for example using
+linguistics (such as stemming and thesaurus).
+
+The XQuery language has been extended with full-text capabilities (as described
+in section \ref{sect:theory:xquery}), and relevant to this project is a
+collection of both full-text enabled XQuery parsers as well as regular XQuery
+parsers. This section will outline some of the most interesting implementations.
+
 \subsection{Full-text implementations}
-There exist a number of XQuery implementations, few however are extended with 
-full text capabilities. This section will briefly present some of the more 
-prominent alternatives.
 \subsubsection{Quark / TexQuery}
 \begin{figure}[!h]
   \centering
     \includegraphics[width=0.5\textwidth]{img/quark_architecture.png}
   \caption{Quark architecture}
 \end{figure}
+
 Quark is an experimental full-text search engine capable of indexing and
 querying XML documents, and it uses the TexQuery query language (see below). 
 Quark was developed as a research project at Cornell University by Jayavel 
@@ -21,12 +31,13 @@ Shanmugasundaram and his associates.
     \includegraphics[width=1\textwidth]{img/texquery_architecture.png}
   \caption{TexQuery architecture}
 \end{figure}
+
 TexQuery is a query language extending upon Xquery with added full-text search 
 capabilities. These extensions do not necessarily conform to the W3C
 recommendation, however TexQuery is an early precursor to the current W3C 
 recommendation \cite{TEXQ00}, in whose development Shanmugasundaram actively 
-participates.
-
+participates. The source code for this project is available at the Quark Project
+website\cite{quarkproject}.
 
 \subsubsection{Galatex}
 \begin{figure}[!h]
@@ -34,6 +45,7 @@ participates.
     \includegraphics[width=1\textwidth]{img/galatex_architecture.png}
   \caption{Galatex architecture}
 \end{figure}
+
 GalaTex is a complete implementation of the Xquery 1.0 and Xpath 2.0
 specifications with full-text extensions. GalaTex is an extension of Galax,
 which is a generic Xquery engine. The XQFT query is parsed and converted to an
@@ -58,6 +70,7 @@ The full-text capabilities in eXist are however limited. They are not based on
 the W3C specification, but rather on a very simplified custom set of operators
 and utility functions. The eXist documentation\cite{exist_doc} describes the
 following two operators:
+
 \begin{itemize}
   \item \emph{<node-set> \&= 'keywords'}: This operator selects nodes from the
   left-hand argument containing all of the keywords in the right-hand argument 
@@ -81,6 +94,9 @@ In it's simplicity, these are powerful extensions to vanilla XQuery, however
 linguistics such as stemming, thesaurus and diacritics are not taken into
 consideration.
 
+The source code and several other resources are available at the eXist
+website\cite{existweb}. 
+
 \subsection{Implementations sans full-text extensions}
 There are a wealth of XQuery implementations without full-text
 extensions available, in this section we will list some implementations of
@@ -97,7 +113,6 @@ At the time of writing, Saxon is the only implementation conforming 100\% to
 the W3C test suite\cite{w3ctestresults}. The same test suite was used in this
 project as a benchmark of conformance, see section \ref{sect:tests:manual}.
 
-
 \subsubsection{Pathfinder}
 \label{sect:soa:pathfinder}
 \begin{figure}[!h]
@@ -105,6 +120,7 @@ project as a benchmark of conformance, see section \ref{sect:tests:manual}.
     \includegraphics[width=0.5\textwidth]{img/pathfinder_architecture.png}
   \caption{Pathfinder architecture / development stack}
 \end{figure}
+
 The Pathfinder project is an XQuery parser running on top of relational
 database systems, namely MonetDB. The goal of the Pathfinder project is to
 investigate how relational database technology can be utilized to create a
