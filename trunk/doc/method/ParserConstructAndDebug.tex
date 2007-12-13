@@ -1,4 +1,5 @@
 \section{Parser construction}
+\label{sect:method:alternatives}
 Writing a parser from scratch was ruled out early for being too time consuming.
 Instead it was decided to use tools for compiler and parser construction to
 generate a parser from the XQuery 1.0 and XPath 2.0 grammar  
@@ -14,9 +15,9 @@ alternatives. Specifically, the generator must:
   approved by OSI
 \end{itemize}
 
-\subsection{Evaluated alternatives}
-\label{sect:method:alternatives}
-\subsubsection{JFlex/CUP}
+The alternative parser generators evaluated will be presented in the following sections.
+
+\subsection{JFlex/CUP}
 JFlex and CUP is a versatile combination consisting of JFlex which is a lexer
 generator, and CUP which is a parser generator. These tools can be interfaced to
 generate a complete parser with a separate lexical analyzer.
@@ -78,7 +79,7 @@ unfortunate for several reasons - it dilutes the grammar and decreases
 readability and clarity.
 
 
-\subsubsection{JavaCC}
+\subsection{JavaCC}
 JavaCC could have been a viable alternative as it produces LL(k) parsers,
 however compared to Antlr its grammar specification syntax deviated more
 from the W3C EBNF syntax, meaning that the grammar would have had to be
@@ -111,7 +112,7 @@ For AST construction, JavaCC requires the use of preprocessor tool known as
 JJTree. This tool will parse the grammar and insert tree building actions where
 appropriate. 
 
-\subsubsection{ANTLR}
+\subsection{ANTLR}
 ANTLR is a renowned tool for parser generation, and can generate LL(*) parsers.
 Additionally, ANTLR accepts a grammar specification syntactically very close to
 the EBNF used by the W3C. This is the parser generater chosen for our project,
