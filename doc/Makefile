@@ -1,7 +1,7 @@
 report:
 	pdflatex Hoved
 	bibtex Hoved
-	makeindex Hoved.glo -s nomencl.ist -o Hoved.gls
+	makeindex Hoved.nlo -s nomencl.ist -o Hoved.nls
 	pdflatex Hoved
 	pdflatex Hoved
 
