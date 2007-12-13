@@ -19,7 +19,6 @@ Planen er \aa~ transformere til relasjonsalgebra etterhvert, dette blir flott me
 \begin{itemize}
 \item \textbf{Approaching LL(1)} LL(1) tiln\ae rme, kan sikre at states funker for alle tilfeller, samt kanskje(!) la KeywordOrNCName bli virkelighet
 
-\item \textbf{No Reserved Keywords}  ingen reserved keywords - i hennhold til spesifikasjonen
 
 \item \textbf{Replace Breaked Characters}automatisk gjoere om entityref og breaksymboler i container tokens (ElementContent etc)
 
@@ -31,25 +30,6 @@ Planen er \aa~ transformere til relasjonsalgebra etterhvert, dette blir flott me
 
 \underline{\textbf{\LARGE //ODOT:}}Andreas, har du noe \aa~ legge til?
 
-\section{W3C Specification Unconformeties}
-\label{sect:future:knownBugs}
-Our parser contains some bugs/defects that we know of, but because of lack of time have been deprioritized:
-
-\underline{\textbf{\LARGE //TODO: Mads}}
-\begin{itemize}
-\item \textbf{Late State Transitions} -- Our state driven lexer depends upon the parser telling it which state it is in before it generates a token. This means that in cases where the parser uses a look-ahead big enough to make the lexer cross a "state border", the lexer may be in the wrong state according to the input stream (remember, the parser is always \emph{behind} the lexer, and "moves" \emph{after} looking ahead). ANTLR generates a parser using as small a look-ahead necessary, but in some cases this is not enough, making e.g. queries as \verb!<a>{ns:name()}</a>! fail. However, the corresponding query without the namespace prefix, or a prefixed function call outside of a \verb!{ }! does not fail. Moving the parser closer to LL(1), as mentioned in \ref{sect:future:improvements}, will solve this bug.
-
-\item \textbf{Incorrect QNames} -- The parser allows whitespace between the prefix and the colon sign, and between the colon sign and the localname in XML qualified names. This can be solved by turning the non-terminal rule \verb!qName! into a terminal production.
-
-\item \textbf{Whitespace in Tags} -- The parser allows whitespace between the initial \verb!<! of a tag and the element name. This can be solved by introducing a new terminal production for the start-of-tag-sign (to separate it from the less-than sign) like this: \verb!TagStart : LTSi QName!, and letting this production emit subtokens (section \ref{sect:implementation:emittingMoreTokens}).
-
-
-\item \textbf{XML tag check} sjekke navn ved noesting av xml-tagger
-\item tillater multiple FTMatchOptions (lowercase uppercase case ins.)
-\item reserved keywords - i hennhold til spesifikasjonen
-\end{itemize}
-
-\underline{\textbf{\LARGE //ODOT:}}Andreas, har du noe \aa~ legge til?
 
 
 
