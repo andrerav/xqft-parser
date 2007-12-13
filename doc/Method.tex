@@ -8,4 +8,20 @@ In this chapter we will present which choices we took before implementing our pa
 \input{method/AmbiguousGrammar}
 
 \section{Summary}
-\underline{\textbf{\LARGE //TODO:}} Konkludere litt, her viser vi tenking.
+In this chapter we outlined criteria for our parser generator, evaluated
+several alternatives, and chose one of these parser generators (ANTLR) based on
+these criteria. We also briefly presented debugging strategies using
+ANTLRWorks and/or integrated development environments.
+
+Further we presented methods for performing general unit/regression testing
+using jUnit as well as ANTLR-specific grammar unit testing using gUnit. We also
+outlined how to use the XQuery test suite to perform coverage/conformity
+benchmarking and compare our results to existing implementations.
+
+Finally we discussed the problem of ambiguous terminals in the grammar. We
+proceeded to present and evaluate a number of lexer strategies to solve this,
+and chose one solution (parser controlled state driven lexer) due to its
+intuitivity and ease of implementation.
+
+In the next chapter, we will present ANTLR (the parser generator chosen for this
+project) in more detail.
