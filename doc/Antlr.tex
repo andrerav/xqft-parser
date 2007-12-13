@@ -191,6 +191,7 @@ As can be seen from this example, a semantic predicate is simply any kind of boo
 disturbing grammar brevity, if necessary.
 
 \subsection{Disambiguating Semantic Predicates}
+\label{sect:antlr:disambiguatingSemantic}
 Disambiguating semantic predicates are hoisted into the prediction decisions of the LL(*) recognizer, but only if no decision can be made by syntax alone. There are generally two cases where these types of predicates are really useful: when a property of a token must dictate how the parser interprets it, and when a surrounding construct or some runtime information should alter how the parser matches the current construct. In most cases when a validating semantic predicate is applied, it can be transformed into a disambiguating semantic predicate. This will result in a syntax error instead of an exception if the predicate evaluates to $false$.
 
 To fully resolve a non-determinism with disambiguating semantic predicates, all alternatives that contribute to the non-determinism will have to be covered, as seen in figure \ref{code:disambigSemantic}. The DFA generated in figure \ref{code:disambigSemantic} is illustrated in figure \ref{fig:dfaDisambiguate}.
