@@ -50,7 +50,8 @@ public class Mein {
                         "(xs:dayTimeDuration(\"P42DT10H10M\") div xs:dayTimeDuration(\"P10DT10H10M\"))\n" +
                         "div\n" +
                         "(xs:dayTimeDuration(\"P20DT10H10M\") div xs:dayTimeDuration(\"P18DT10H10M\"))\n" +*/
-                        "for $v in docz(\"left\")/get return $v";
+                      //  "declare variable $x as xs:integer := 7;\n"+
+                        "<a b=\"fd\"> { for $z in doz(\"cool.txt\")/hefty return $o } </b>";
 		CharStream cs = new ANTLRStringStream(input);
 		XQFTLexer lexer = new XQFTLexer(cs);
 		UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
@@ -68,7 +69,7 @@ public class Mein {
         lexer.debug = true;
         XQFTParser parser = new XQFTParser(tokens);
         parser.setTreeAdaptor(new XQFTTreeAdaptor());
-        //parser.lexer = lexer;
+        parser.setLexer(lexer);
 		parser.module();
 		System.out.println();
 		System.out.println("done");

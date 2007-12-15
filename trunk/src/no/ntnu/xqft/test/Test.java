@@ -25,6 +25,7 @@ abstract public class Test {
         
         CharStream cs = new ANTLRStringStream(input);
         XQFTLexer lexer = new XQFTLexer(cs);
+        lexer.handleTokens = true;
         UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
         tokens.setTokenSource(lexer);
         
@@ -38,7 +39,7 @@ abstract public class Test {
     }
     
 
-    protected String getFileContents(File file) throws Exception {
+    public String getFileContents(File file) throws Exception {
         
         String lineSep = System.getProperty("line.separator");
         BufferedReader br = new BufferedReader(new FileReader(file));

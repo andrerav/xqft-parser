@@ -217,6 +217,11 @@ AST_DIRELEMCONTENT;
 	{
 		this.lexer=lex;
 	}
+	
+	public XQFTLexer getLexer()
+	{
+		return this.lexer;
+	}
 
     protected void mismatch(IntStream input, int ttype, BitSet follow)
         throws RecognitionException
@@ -247,7 +252,8 @@ AST_DIRELEMCONTENT;
     private ArrayList<Token> tokens = new ArrayList<Token>();
     
     public boolean debug = false;
-    
+    public boolean handleTokens = false;
+    public java.util.Vector<no.ntnu.xqft.test.gui.TokenHolder> tokenSet = null;
     
     public void emit(Token token) {
     	this.token = token;
@@ -284,16 +290,31 @@ AST_DIRELEMCONTENT;
     }
 
     
-    protected void print(String msg) {
-    	if (debug) System.out.println(msg);
+    protected void handle(Token tok, int type) {
+    	if (debug) 
+    	System.out.println(XQFTParser.tokenNames[type] + " xx"+ tok.getText() +"xx in state: " + state);
+    	else if(handleTokens)
+    	{
+    		if(tokenSet == null)
+    			tokenSet = new java.util.Vector<no.ntnu.xqft.test.gui.TokenHolder>();
+    		tokenSet.add(new no.ntnu.xqft.test.gui.TokenHolder(this.state, tok, type, this.tokenStartCharIndex, this.getCharIndex()-1));
+    	}
+    		
     }
+    
+    public java.util.Vector<no.ntnu.xqft.test.gui.TokenHolder> getTokenSet()
+    {
+    	return tokenSet;
+    }
+    
 
 
 }
 
 //----------------------------------------------------- Module -------------------------------------------------------
 
-module                     				: versionDecl? (libraryModule | mainModule)
+module                     				:{lexer.state = State.DEFAULT;} 				//ensure correct state if run multiple times
+										 versionDecl? (libraryModule | mainModule)
                                         -> ^(AST_MODULE versionDecl? libraryModule? mainModule?);
 
 	versionDecl                 			: XQUERY VERSION StringLiteral (ENCODING StringLiteral)? separator;
@@ -1007,7 +1028,7 @@ eg. QUESTIONSi = '?' and DBLSLASHSi = '//'
 */
 
 
-TOKENSWITCH				: {print("State is: " + state);}(
+TOKENSWITCH				: (
 						  {state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE}?=>
                           n=CDataSectionLEX						// emits subtokens
 						| {state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE}?=>
@@ -1061,7 +1082,7 @@ TOKENSWITCH				: {print("State is: " + state);}(
 						| n=LBRACESi							{$type=LBRACESi;}
 						| n=PIPESi								{$type=PIPESi;}
 						| n=RBRACSi								{$type=RBRACSi;})
-						{print(XQFTParser.tokenNames[$type] + " xx"+ $n.text +"xx in state: " + state);}	
+						{handle(n, $type);}	
 						;
 
 fragment S                   		: ('\u0020' | '\u0009' | '\u000D' | '\u000A')+;
@@ -1230,7 +1251,7 @@ fragment LexLiterals	: n=NCName{
 				 else if($n.getText().equals("encoding")) this.tokenType=ENCODING;
 				 else if($n.getText().equals("end")) this.tokenType=END;
 				 else if($n.getText().equals("entire")) this.tokenType=ENTIRE;
-				 else if($n.getText().equals("empty")) this.tokenType=EMPTY;
+//				 else if($n.getText().equals("empty")) this.tokenType=EMPTY;
 				 else if($n.getText().equals("empty-sequence")) this.tokenType=EMPTY_SEQUENCE;
 				 else if($n.getText().equals("eq")) this.tokenType=EQ;
 				 else if($n.getText().equals("every")) this.tokenType=EVERY;
@@ -1276,7 +1297,7 @@ fragment LexLiterals	: n=NCName{
 				 else if($n.getText().equals("node")) this.tokenType=NODE;
 				 else if($n.getText().equals("no-inherit")) this.tokenType=NOINHERIT;
 				 else if($n.getText().equals("no-preserve")) this.tokenType=NOPRESERVE;
-				 else if($n.getText().equals("not")) this.tokenType=NOT;
+//				 else if($n.getText().equals("not")) this.tokenType=NOT;
 				 else if($n.getText().equals("occurs")) this.tokenType=OCCURS;
 				 else if($n.getText().equals("of")) this.tokenType=OF;
 				 else if($n.getText().equals("option")) this.tokenType=OPTION;
