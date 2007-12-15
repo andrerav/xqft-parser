@@ -12,6 +12,8 @@ import org.xml.sax.*;
 import org.xml.sax.helpers.*;
 import org.xml.sax.ext.*;
 
+import no.ntnu.xqft.test.gui.ErrorReciever;
+
 
 /**
  * @author andreas
@@ -22,12 +24,19 @@ public class XQueryTestSuite extends Test implements Observer {
 
 
     protected final File baseDir  = new File(".");
-    protected final File suiteDir = new File(baseDir.getPath() + "/test/XQueryTestSuite");
-    protected final File queryDir = new File(baseDir.getPath() + "/test/XQueryTestSuite/Queries/XQuery");
+    public final File suiteDir = new File(baseDir.getPath() + "/test/XQueryTestSuite");
+    public final File queryDir = new File(baseDir.getPath() + "/test/XQueryTestSuite/Queries/XQuery");
 
     protected int success = 0;
     protected int tests = 0;
-
+    
+    // GUI needs true. false yields processing as before..
+    public boolean informGui = false;
+    private ErrorReciever errorReciever;
+    public void setErrorReciever(ErrorReciever t)
+    {
+        errorReciever = t;
+    }
     
     /**
      * @param arggghhhss!!!!
@@ -63,7 +72,7 @@ public class XQueryTestSuite extends Test implements Observer {
         
     }
     
-    private void executeTest(TestCase testCase) {
+    public void executeTest(TestCase testCase) {
         
         File file = new File(this.queryDir + "/" + testCase.getPath());
 
@@ -78,6 +87,8 @@ public class XQueryTestSuite extends Test implements Observer {
 
         try {
             parser = this.getNewParser(this.getFileContents(file));
+            if(informGui)                                                   //Lagt til
+                errorReciever.setParser(parser);
         } catch(Exception e) {
             this.print("Unable to get parser, giving up. Message was: ");
             System.exit(1);
@@ -99,7 +110,10 @@ public class XQueryTestSuite extends Test implements Observer {
                 this.success++;
             }
             else {
-                this.print("FAILURE: " + file.getPath() + "\nMessage: " + e.getClass().getCanonicalName());
+                if(!informGui)
+                    this.print("FAILURE: " + file.getPath() + "\nMessage: " + e.getClass().getCanonicalName());
+                else                                                        //Lagt til
+                    errorReciever.addErrorCase(testCase, e);
             }
         }
         
@@ -132,118 +146,4 @@ class ObservationPoint extends Observable {
     }
 }
 
-class XQTSSpecHandler extends DefaultHandler
-{
 
-    protected ObservationPoint observationPoint = new ObservationPoint();
-    
-    public XQTSSpecHandler() {
-        super();
-    }
-
-    /* (non-Javadoc)
-     * @see org.xml.sax.helpers.DefaultHandler#startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
-     */
-    @Override
-    public void startElement(String uri, String name, String qname, Attributes attrs) throws SAXException {
-        
-        boolean shouldFail = false;
-        
-        if (name.equals("test-case")) {
-            if (attrs.getValue("scenario").equals("standard")) {
-                shouldFail = false;
-            }
-            else if (attrs.getValue("scenario").equals("parse-error")) {
-                shouldFail = true;                
-            }
-            else if (attrs.getValue("scenario").equals("trivial")){
-                shouldFail = false;                                
-            }
-            else {
-                // Test case not applicable
-                return;
-            }
-            
-            /* Build path */
-            String file = attrs.getValue("name") + ".xq";
-            String filePath = attrs.getValue("FilePath");
-            String path = filePath + file;
-
-            /* Create a testcase object to pass to observers */
-            TestCase testCase = new TestCase();
-            testCase.setName(name);
-            testCase.setAttributes(attrs);
-            testCase.setPath(path);
-            testCase.setShouldFail(shouldFail);
-            
-            this.observationPoint.forceSetChanged();
-            this.observationPoint.notifyObservers(testCase);
-                        
-        }
-        
-    }
-
-    /**
-     * @return the observationPoint
-     */
-    public Observable getObservationPoint() {
-        return observationPoint;
-    }
-
-}
-
-class TestCase {
-    protected String name;
-    protected Attributes attributes;
-    protected String path;
-    protected boolean shouldFail;
-    
-    /**
-     * @return the shouldFail
-     */
-    public boolean shouldFail() {
-        return shouldFail;
-    }
-    /**
-     * @param shouldFail the shouldFail to set
-     */
-    public void setShouldFail(boolean shouldFail) {
-        this.shouldFail = shouldFail;
-    }
-    /**
-     * @return the attributes
-     */
-    public Attributes getAttributes() {
-        return attributes;
-    }
-    /**
-     * @param attributes the attributes to set
-     */
-    public void setAttributes(Attributes attributes) {
-        this.attributes = attributes;
-    }
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-    /**
-     * @return the path
-     */
-    public String getPath() {
-        return path;
-    }
-    /**
-     * @param path the path to set
-     */
-    public void setPath(String path) {
-        this.path = path;
-    }
-}
