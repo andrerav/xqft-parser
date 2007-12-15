@@ -1,4 +1,4 @@
-report: conveps
+report:
 	pdflatex Hoved
 	bibtex Hoved
 	makeindex Hoved.nlo -s nomencl.ist -o Hoved.nls
