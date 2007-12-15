@@ -751,7 +751,7 @@ filterExpr                  			: primaryExpr predicateList;
 //			numericLiteral              			: IntegerLiteral | DecimalLiteral | DoubleLiteral;
 		varRef                      			: DOLLARSi! varName;
 //			varName                     			: qName;
-		parenthesizedExpr           			: LPARSi expr? RPARSi;
+		parenthesizedExpr           			: LPARSi! expr? RPARSi!;
 //			expr                        			: exprSingle (COMMASi exprSingle)*;
 //				exprSingle#								: #PAA EGET#
 		contextItemExpr             			: DOTSi;

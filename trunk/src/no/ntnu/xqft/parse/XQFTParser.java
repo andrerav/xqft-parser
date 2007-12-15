@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2007-12-12 21:22:04
+// $ANTLR 3.0.1 etc/XQFT.g 2007-12-15 15:45:13
 
 	package no.ntnu.xqft.parse;
 
@@ -20283,11 +20283,7 @@ public class XQFTParser extends Parser {
 
             LPARSi584=(Token)input.LT(1);
             match(input,LPARSi,FOLLOW_LPARSi_in_parenthesizedExpr10041); if (failed) return retval;
-            if ( backtracking==0 ) {
-            LPARSi584_tree = (XQFTTree)adaptor.create(LPARSi584);
-            adaptor.addChild(root_0, LPARSi584_tree);
-            }
-            // etc/XQFT.g:754:43: ( expr )?
+            // etc/XQFT.g:754:44: ( expr )?
             int alt132=2;
             int LA132_0 = input.LA(1);
 
@@ -20296,9 +20292,9 @@ public class XQFTParser extends Parser {
             }
             switch (alt132) {
                 case 1 :
-                    // etc/XQFT.g:754:43: expr
+                    // etc/XQFT.g:754:44: expr
                     {
-                    pushFollow(FOLLOW_expr_in_parenthesizedExpr10043);
+                    pushFollow(FOLLOW_expr_in_parenthesizedExpr10044);
                     expr585=expr();
                     _fsp--;
                     if (failed) return retval;
@@ -20310,11 +20306,7 @@ public class XQFTParser extends Parser {
             }
 
             RPARSi586=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_parenthesizedExpr10046); if (failed) return retval;
-            if ( backtracking==0 ) {
-            RPARSi586_tree = (XQFTTree)adaptor.create(RPARSi586);
-            adaptor.addChild(root_0, RPARSi586_tree);
-            }
+            match(input,RPARSi,FOLLOW_RPARSi_in_parenthesizedExpr10047); if (failed) return retval;
 
             }
 
@@ -20359,7 +20351,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             DOTSi587=(Token)input.LT(1);
-            match(input,DOTSi,FOLLOW_DOTSi_in_contextItemExpr10072); if (failed) return retval;
+            match(input,DOTSi,FOLLOW_DOTSi_in_contextItemExpr10074); if (failed) return retval;
             if ( backtracking==0 ) {
             DOTSi587_tree = (XQFTTree)adaptor.create(DOTSi587);
             adaptor.addChild(root_0, DOTSi587_tree);
@@ -20419,13 +20411,13 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:758:34: ( qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) )
             // etc/XQFT.g:758:36: qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi
             {
-            pushFollow(FOLLOW_qName_in_functionCall10099);
+            pushFollow(FOLLOW_qName_in_functionCall10101);
             qName588=qName();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_qName.add(qName588.getTree());
             LPARSi589=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_functionCall10101); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_functionCall10103); if (failed) return retval;
             if ( backtracking==0 ) stream_LPARSi.add(LPARSi589);
 
             // etc/XQFT.g:759:14: ( exprSingle ( COMMASi exprSingle )* )?
@@ -20439,7 +20431,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:759:15: exprSingle ( COMMASi exprSingle )*
                     {
-                    pushFollow(FOLLOW_exprSingle_in_functionCall10119);
+                    pushFollow(FOLLOW_exprSingle_in_functionCall10121);
                     exprSingle590=exprSingle();
                     _fsp--;
                     if (failed) return retval;
@@ -20460,10 +20452,10 @@ public class XQFTParser extends Parser {
                     	    // etc/XQFT.g:759:27: COMMASi exprSingle
                     	    {
                     	    COMMASi591=(Token)input.LT(1);
-                    	    match(input,COMMASi,FOLLOW_COMMASi_in_functionCall10122); if (failed) return retval;
+                    	    match(input,COMMASi,FOLLOW_COMMASi_in_functionCall10124); if (failed) return retval;
                     	    if ( backtracking==0 ) stream_COMMASi.add(COMMASi591);
 
-                    	    pushFollow(FOLLOW_exprSingle_in_functionCall10124);
+                    	    pushFollow(FOLLOW_exprSingle_in_functionCall10126);
                     	    exprSingle592=exprSingle();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -20484,7 +20476,7 @@ public class XQFTParser extends Parser {
             }
 
             RPARSi593=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_functionCall10144); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_functionCall10146); if (failed) return retval;
             if ( backtracking==0 ) stream_RPARSi.add(RPARSi593);
 
 
@@ -20570,20 +20562,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             ORDERED594=(Token)input.LT(1);
-            match(input,ORDERED,FOLLOW_ORDERED_in_orderedExpr10237); if (failed) return retval;
+            match(input,ORDERED,FOLLOW_ORDERED_in_orderedExpr10239); if (failed) return retval;
             if ( backtracking==0 ) {
             ORDERED594_tree = (XQFTTree)adaptor.create(ORDERED594);
             adaptor.addChild(root_0, ORDERED594_tree);
             }
             LBRACESi595=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_orderedExpr10239); if (failed) return retval;
-            pushFollow(FOLLOW_expr_in_orderedExpr10242);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_orderedExpr10241); if (failed) return retval;
+            pushFollow(FOLLOW_expr_in_orderedExpr10244);
             expr596=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr596.getTree());
             RBRACSi597=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_orderedExpr10244); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_orderedExpr10246); if (failed) return retval;
 
             }
 
@@ -20634,20 +20626,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             UNORDERED598=(Token)input.LT(1);
-            match(input,UNORDERED,FOLLOW_UNORDERED_in_unorderedExpr10273); if (failed) return retval;
+            match(input,UNORDERED,FOLLOW_UNORDERED_in_unorderedExpr10275); if (failed) return retval;
             if ( backtracking==0 ) {
             UNORDERED598_tree = (XQFTTree)adaptor.create(UNORDERED598);
             adaptor.addChild(root_0, UNORDERED598_tree);
             }
             LBRACESi599=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_unorderedExpr10275); if (failed) return retval;
-            pushFollow(FOLLOW_expr_in_unorderedExpr10278);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_unorderedExpr10277); if (failed) return retval;
+            pushFollow(FOLLOW_expr_in_unorderedExpr10280);
             expr600=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr600.getTree());
             RBRACSi601=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_unorderedExpr10280); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_unorderedExpr10282); if (failed) return retval;
 
             }
 
@@ -20711,7 +20703,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_directConstructor_in_constructor10312);
+                    pushFollow(FOLLOW_directConstructor_in_constructor10314);
                     directConstructor602=directConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -20724,7 +20716,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_computedConstructor_in_constructor10316);
+                    pushFollow(FOLLOW_computedConstructor_in_constructor10318);
                     computedConstructor603=computedConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -20805,7 +20797,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_dirElemConstructor_in_directConstructor10356);
+                    pushFollow(FOLLOW_dirElemConstructor_in_directConstructor10358);
                     dirElemConstructor604=dirElemConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -20818,7 +20810,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_dirCommentConstructor_in_directConstructor10397);
+                    pushFollow(FOLLOW_dirCommentConstructor_in_directConstructor10399);
                     dirCommentConstructor605=dirCommentConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -20831,7 +20823,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_dirPIConstructor_in_directConstructor10426);
+                    pushFollow(FOLLOW_dirPIConstructor_in_directConstructor10428);
                     dirPIConstructor606=dirPIConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -20902,18 +20894,18 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:777:47: LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )
             {
             LTSi607=(Token)input.LT(1);
-            match(input,LTSi,FOLLOW_LTSi_in_dirElemConstructor10484); if (failed) return retval;
+            match(input,LTSi,FOLLOW_LTSi_in_dirElemConstructor10486); if (failed) return retval;
             if ( backtracking==0 ) stream_LTSi.add(LTSi607);
 
             if ( backtracking==0 ) {
               lexer.stack.pushState(lexer.state); lexer.state=State.IN_TAG;
             }
-            pushFollow(FOLLOW_qName_in_dirElemConstructor10550);
+            pushFollow(FOLLOW_qName_in_dirElemConstructor10552);
             qn=qName();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_qName.add(qn.getTree());
-            pushFollow(FOLLOW_dirAttributeList_in_dirElemConstructor10552);
+            pushFollow(FOLLOW_dirAttributeList_in_dirElemConstructor10554);
             dirAttributeList608=dirAttributeList();
             _fsp--;
             if (failed) return retval;
@@ -20940,7 +20932,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:779:62: RSELFTERMSi
                     {
                     RSELFTERMSi609=(Token)input.LT(1);
-                    match(input,RSELFTERMSi,FOLLOW_RSELFTERMSi_in_dirElemConstructor10615); if (failed) return retval;
+                    match(input,RSELFTERMSi,FOLLOW_RSELFTERMSi_in_dirElemConstructor10617); if (failed) return retval;
                     if ( backtracking==0 ) stream_RSELFTERMSi.add(RSELFTERMSi609);
 
                     if ( backtracking==0 ) {
@@ -20953,7 +20945,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:781:34: GTSi ( dirElemContent )* LENDTAGSi qName GTSi
                     {
                     GTSi610=(Token)input.LT(1);
-                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor10716); if (failed) return retval;
+                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor10718); if (failed) return retval;
                     if ( backtracking==0 ) stream_GTSi.add(GTSi610);
 
                     if ( backtracking==0 ) {
@@ -20974,7 +20966,7 @@ public class XQFTParser extends Parser {
                     	case 1 :
                     	    // etc/XQFT.g:784:26: dirElemContent
                     	    {
-                    	    pushFollow(FOLLOW_dirElemContent_in_dirElemConstructor10811);
+                    	    pushFollow(FOLLOW_dirElemContent_in_dirElemConstructor10813);
                     	    dirElemContent611=dirElemContent();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -20989,19 +20981,19 @@ public class XQFTParser extends Parser {
                     } while (true);
 
                     LENDTAGSi612=(Token)input.LT(1);
-                    match(input,LENDTAGSi,FOLLOW_LENDTAGSi_in_dirElemConstructor10840); if (failed) return retval;
+                    match(input,LENDTAGSi,FOLLOW_LENDTAGSi_in_dirElemConstructor10842); if (failed) return retval;
                     if ( backtracking==0 ) stream_LENDTAGSi.add(LENDTAGSi612);
 
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_TAG;
                     }
-                    pushFollow(FOLLOW_qName_in_dirElemConstructor10870);
+                    pushFollow(FOLLOW_qName_in_dirElemConstructor10872);
                     qName613=qName();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) stream_qName.add(qName613.getTree());
                     GTSi614=(Token)input.LT(1);
-                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor10899); if (failed) return retval;
+                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor10901); if (failed) return retval;
                     if ( backtracking==0 ) stream_GTSi.add(GTSi614);
 
                     if ( backtracking==0 ) {
@@ -21110,18 +21102,18 @@ public class XQFTParser extends Parser {
             	case 1 :
             	    // etc/XQFT.g:791:49: qName EQSi dirAttributeValue
             	    {
-            	    pushFollow(FOLLOW_qName_in_dirAttributeList11040);
+            	    pushFollow(FOLLOW_qName_in_dirAttributeList11042);
             	    qName615=qName();
             	    _fsp--;
             	    if (failed) return retval;
             	    if ( backtracking==0 ) adaptor.addChild(root_0, qName615.getTree());
             	    EQSi616=(Token)input.LT(1);
-            	    match(input,EQSi,FOLLOW_EQSi_in_dirAttributeList11042); if (failed) return retval;
+            	    match(input,EQSi,FOLLOW_EQSi_in_dirAttributeList11044); if (failed) return retval;
             	    if ( backtracking==0 ) {
             	    EQSi616_tree = (XQFTTree)adaptor.create(EQSi616);
             	    adaptor.addChild(root_0, EQSi616_tree);
             	    }
-            	    pushFollow(FOLLOW_dirAttributeValue_in_dirAttributeList11044);
+            	    pushFollow(FOLLOW_dirAttributeValue_in_dirAttributeList11046);
             	    dirAttributeValue617=dirAttributeValue();
             	    _fsp--;
             	    if (failed) return retval;
@@ -21211,7 +21203,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     QUOTSi618=(Token)input.LT(1);
-                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue11082); if (failed) return retval;
+                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue11084); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_QUOT_ATTRIBUTE;
                     }
@@ -21234,7 +21226,7 @@ public class XQFTParser extends Parser {
                     	    // etc/XQFT.g:793:28: QuotAttributeContent
                     	    {
                     	    QuotAttributeContent619=(Token)input.LT(1);
-                    	    match(input,QuotAttributeContent,FOLLOW_QuotAttributeContent_in_dirAttributeValue11114); if (failed) return retval;
+                    	    match(input,QuotAttributeContent,FOLLOW_QuotAttributeContent_in_dirAttributeValue11116); if (failed) return retval;
                     	    if ( backtracking==0 ) {
                     	    QuotAttributeContent619_tree = (XQFTTree)adaptor.create(QuotAttributeContent619);
                     	    adaptor.addChild(root_0, QuotAttributeContent619_tree);
@@ -21245,7 +21237,7 @@ public class XQFTParser extends Parser {
                     	case 2 :
                     	    // etc/XQFT.g:793:51: xmlEnclosedExpr
                     	    {
-                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue11118);
+                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue11120);
                     	    xmlEnclosedExpr620=xmlEnclosedExpr();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -21260,7 +21252,7 @@ public class XQFTParser extends Parser {
                     } while (true);
 
                     QUOTSi621=(Token)input.LT(1);
-                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue11150); if (failed) return retval;
+                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue11152); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_TAG;
                     }
@@ -21273,7 +21265,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     APOSSi622=(Token)input.LT(1);
-                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue11185); if (failed) return retval;
+                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue11187); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_APOS_ATTRIBUTE;
                     }
@@ -21296,7 +21288,7 @@ public class XQFTParser extends Parser {
                     	    // etc/XQFT.g:796:31: AposAttributeContent
                     	    {
                     	    AposAttributeContent623=(Token)input.LT(1);
-                    	    match(input,AposAttributeContent,FOLLOW_AposAttributeContent_in_dirAttributeValue11220); if (failed) return retval;
+                    	    match(input,AposAttributeContent,FOLLOW_AposAttributeContent_in_dirAttributeValue11222); if (failed) return retval;
                     	    if ( backtracking==0 ) {
                     	    AposAttributeContent623_tree = (XQFTTree)adaptor.create(AposAttributeContent623);
                     	    adaptor.addChild(root_0, AposAttributeContent623_tree);
@@ -21307,7 +21299,7 @@ public class XQFTParser extends Parser {
                     	case 2 :
                     	    // etc/XQFT.g:796:54: xmlEnclosedExpr
                     	    {
-                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue11224);
+                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue11226);
                     	    xmlEnclosedExpr624=xmlEnclosedExpr();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -21322,7 +21314,7 @@ public class XQFTParser extends Parser {
                     } while (true);
 
                     APOSSi625=(Token)input.LT(1);
-                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue11259); if (failed) return retval;
+                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue11261); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_TAG;
                     }
@@ -21376,17 +21368,17 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LBRACESi626=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_xmlEnclosedExpr11301); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_xmlEnclosedExpr11303); if (failed) return retval;
             if ( backtracking==0 ) {
               lexer.stack.pushState(lexer.state); lexer.state=State.DEFAULT;
             }
-            pushFollow(FOLLOW_expr_in_xmlEnclosedExpr11330);
+            pushFollow(FOLLOW_expr_in_xmlEnclosedExpr11332);
             expr627=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr627.getTree());
             RBRACSi628=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_xmlEnclosedExpr11358); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_xmlEnclosedExpr11360); if (failed) return retval;
             if ( backtracking==0 ) {
               lexer.state = lexer.stack.pop();
             }
@@ -21474,7 +21466,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:804:39: dc= directConstructor
                     {
-                    pushFollow(FOLLOW_directConstructor_in_dirElemContent11394);
+                    pushFollow(FOLLOW_directConstructor_in_dirElemContent11396);
                     dc=directConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -21513,7 +21505,7 @@ public class XQFTParser extends Parser {
                 case 2 :
                     // etc/XQFT.g:805:18: cd= cDataSection
                     {
-                    pushFollow(FOLLOW_cDataSection_in_dirElemContent11423);
+                    pushFollow(FOLLOW_cDataSection_in_dirElemContent11425);
                     cd=cDataSection();
                     _fsp--;
                     if (failed) return retval;
@@ -21553,7 +21545,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:806:18: ec= ElementContent
                     {
                     ec=(Token)input.LT(1);
-                    match(input,ElementContent,FOLLOW_ElementContent_in_dirElemContent11453); if (failed) return retval;
+                    match(input,ElementContent,FOLLOW_ElementContent_in_dirElemContent11455); if (failed) return retval;
                     if ( backtracking==0 ) stream_ElementContent.add(ec);
 
 
@@ -21590,7 +21582,7 @@ public class XQFTParser extends Parser {
                 case 4 :
                     // etc/XQFT.g:807:18: xe= xmlEnclosedExpr
                     {
-                    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirElemContent11483);
+                    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirElemContent11485);
                     xe=xmlEnclosedExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -21673,19 +21665,19 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LCDATASi629=(Token)input.LT(1);
-            match(input,LCDATASi,FOLLOW_LCDATASi_in_cDataSection11529); if (failed) return retval;
+            match(input,LCDATASi,FOLLOW_LCDATASi_in_cDataSection11531); if (failed) return retval;
             if ( backtracking==0 ) {
             LCDATASi629_tree = (XQFTTree)adaptor.create(LCDATASi629);
             adaptor.addChild(root_0, LCDATASi629_tree);
             }
             CDataContents630=(Token)input.LT(1);
-            match(input,CDataContents,FOLLOW_CDataContents_in_cDataSection11531); if (failed) return retval;
+            match(input,CDataContents,FOLLOW_CDataContents_in_cDataSection11533); if (failed) return retval;
             if ( backtracking==0 ) {
             CDataContents630_tree = (XQFTTree)adaptor.create(CDataContents630);
             adaptor.addChild(root_0, CDataContents630_tree);
             }
             RCDATASi631=(Token)input.LT(1);
-            match(input,RCDATASi,FOLLOW_RCDATASi_in_cDataSection11533); if (failed) return retval;
+            match(input,RCDATASi,FOLLOW_RCDATASi_in_cDataSection11535); if (failed) return retval;
             if ( backtracking==0 ) {
             RCDATASi631_tree = (XQFTTree)adaptor.create(RCDATASi631);
             adaptor.addChild(root_0, RCDATASi631_tree);
@@ -21738,19 +21730,19 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LCOMMENTSi632=(Token)input.LT(1);
-            match(input,LCOMMENTSi,FOLLOW_LCOMMENTSi_in_dirCommentConstructor11556); if (failed) return retval;
+            match(input,LCOMMENTSi,FOLLOW_LCOMMENTSi_in_dirCommentConstructor11558); if (failed) return retval;
             if ( backtracking==0 ) {
             LCOMMENTSi632_tree = (XQFTTree)adaptor.create(LCOMMENTSi632);
             adaptor.addChild(root_0, LCOMMENTSi632_tree);
             }
             DirCommentContent633=(Token)input.LT(1);
-            match(input,DirCommentContent,FOLLOW_DirCommentContent_in_dirCommentConstructor11558); if (failed) return retval;
+            match(input,DirCommentContent,FOLLOW_DirCommentContent_in_dirCommentConstructor11560); if (failed) return retval;
             if ( backtracking==0 ) {
             DirCommentContent633_tree = (XQFTTree)adaptor.create(DirCommentContent633);
             adaptor.addChild(root_0, DirCommentContent633_tree);
             }
             RCOMMENTSi634=(Token)input.LT(1);
-            match(input,RCOMMENTSi,FOLLOW_RCOMMENTSi_in_dirCommentConstructor11560); if (failed) return retval;
+            match(input,RCOMMENTSi,FOLLOW_RCOMMENTSi_in_dirCommentConstructor11562); if (failed) return retval;
             if ( backtracking==0 ) {
             RCOMMENTSi634_tree = (XQFTTree)adaptor.create(RCOMMENTSi634);
             adaptor.addChild(root_0, RCOMMENTSi634_tree);
@@ -21805,13 +21797,13 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LPISi635=(Token)input.LT(1);
-            match(input,LPISi,FOLLOW_LPISi_in_dirPIConstructor11581); if (failed) return retval;
+            match(input,LPISi,FOLLOW_LPISi_in_dirPIConstructor11583); if (failed) return retval;
             if ( backtracking==0 ) {
             LPISi635_tree = (XQFTTree)adaptor.create(LPISi635);
             adaptor.addChild(root_0, LPISi635_tree);
             }
             PiTarget636=(Token)input.LT(1);
-            match(input,PiTarget,FOLLOW_PiTarget_in_dirPIConstructor11583); if (failed) return retval;
+            match(input,PiTarget,FOLLOW_PiTarget_in_dirPIConstructor11585); if (failed) return retval;
             if ( backtracking==0 ) {
             PiTarget636_tree = (XQFTTree)adaptor.create(PiTarget636);
             adaptor.addChild(root_0, PiTarget636_tree);
@@ -21828,7 +21820,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:818:44: DirPiContents
                     {
                     DirPiContents637=(Token)input.LT(1);
-                    match(input,DirPiContents,FOLLOW_DirPiContents_in_dirPIConstructor11585); if (failed) return retval;
+                    match(input,DirPiContents,FOLLOW_DirPiContents_in_dirPIConstructor11587); if (failed) return retval;
                     if ( backtracking==0 ) {
                     DirPiContents637_tree = (XQFTTree)adaptor.create(DirPiContents637);
                     adaptor.addChild(root_0, DirPiContents637_tree);
@@ -21840,7 +21832,7 @@ public class XQFTParser extends Parser {
             }
 
             RPISi638=(Token)input.LT(1);
-            match(input,RPISi,FOLLOW_RPISi_in_dirPIConstructor11588); if (failed) return retval;
+            match(input,RPISi,FOLLOW_RPISi_in_dirPIConstructor11590); if (failed) return retval;
             if ( backtracking==0 ) {
             RPISi638_tree = (XQFTTree)adaptor.create(RPISi638);
             adaptor.addChild(root_0, RPISi638_tree);
@@ -21940,7 +21932,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compDocConstructor_in_computedConstructor11614);
+                    pushFollow(FOLLOW_compDocConstructor_in_computedConstructor11616);
                     compDocConstructor639=compDocConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -21953,7 +21945,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compElemConstructor_in_computedConstructor11655);
+                    pushFollow(FOLLOW_compElemConstructor_in_computedConstructor11657);
                     compElemConstructor640=compElemConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -21966,7 +21958,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compAttrConstructor_in_computedConstructor11696);
+                    pushFollow(FOLLOW_compAttrConstructor_in_computedConstructor11698);
                     compAttrConstructor641=compAttrConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -21979,7 +21971,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compTextConstructor_in_computedConstructor11737);
+                    pushFollow(FOLLOW_compTextConstructor_in_computedConstructor11739);
                     compTextConstructor642=compTextConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -21992,7 +21984,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compCommentConstructor_in_computedConstructor11778);
+                    pushFollow(FOLLOW_compCommentConstructor_in_computedConstructor11780);
                     compCommentConstructor643=compCommentConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -22005,7 +21997,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compPIConstructor_in_computedConstructor11819);
+                    pushFollow(FOLLOW_compPIConstructor_in_computedConstructor11821);
                     compPIConstructor644=compPIConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -22062,20 +22054,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             DOCUMENT645=(Token)input.LT(1);
-            match(input,DOCUMENT,FOLLOW_DOCUMENT_in_compDocConstructor11847); if (failed) return retval;
+            match(input,DOCUMENT,FOLLOW_DOCUMENT_in_compDocConstructor11849); if (failed) return retval;
             if ( backtracking==0 ) {
             DOCUMENT645_tree = (XQFTTree)adaptor.create(DOCUMENT645);
             adaptor.addChild(root_0, DOCUMENT645_tree);
             }
             LBRACESi646=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compDocConstructor11849); if (failed) return retval;
-            pushFollow(FOLLOW_expr_in_compDocConstructor11852);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compDocConstructor11851); if (failed) return retval;
+            pushFollow(FOLLOW_expr_in_compDocConstructor11854);
             expr647=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr647.getTree());
             RBRACSi648=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compDocConstructor11854); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compDocConstructor11856); if (failed) return retval;
 
             }
 
@@ -22134,7 +22126,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             ELEMENT649=(Token)input.LT(1);
-            match(input,ELEMENT,FOLLOW_ELEMENT_in_compElemConstructor11884); if (failed) return retval;
+            match(input,ELEMENT,FOLLOW_ELEMENT_in_compElemConstructor11886); if (failed) return retval;
             if ( backtracking==0 ) {
             ELEMENT649_tree = (XQFTTree)adaptor.create(ELEMENT649);
             adaptor.addChild(root_0, ELEMENT649_tree);
@@ -22160,7 +22152,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:831:47: qName
                     {
-                    pushFollow(FOLLOW_qName_in_compElemConstructor11887);
+                    pushFollow(FOLLOW_qName_in_compElemConstructor11889);
                     qName650=qName();
                     _fsp--;
                     if (failed) return retval;
@@ -22172,18 +22164,18 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:831:55: LBRACESi expr RBRACSi
                     {
                     LBRACESi651=(Token)input.LT(1);
-                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor11891); if (failed) return retval;
+                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor11893); if (failed) return retval;
                     if ( backtracking==0 ) {
                     LBRACESi651_tree = (XQFTTree)adaptor.create(LBRACESi651);
                     adaptor.addChild(root_0, LBRACESi651_tree);
                     }
-                    pushFollow(FOLLOW_expr_in_compElemConstructor11893);
+                    pushFollow(FOLLOW_expr_in_compElemConstructor11895);
                     expr652=expr();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, expr652.getTree());
                     RBRACSi653=(Token)input.LT(1);
-                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor11895); if (failed) return retval;
+                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor11897); if (failed) return retval;
                     if ( backtracking==0 ) {
                     RBRACSi653_tree = (XQFTTree)adaptor.create(RBRACSi653);
                     adaptor.addChild(root_0, RBRACSi653_tree);
@@ -22195,7 +22187,7 @@ public class XQFTParser extends Parser {
             }
 
             LBRACESi654=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor11914); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor11916); if (failed) return retval;
             if ( backtracking==0 ) {
             LBRACESi654_tree = (XQFTTree)adaptor.create(LBRACESi654);
             adaptor.addChild(root_0, LBRACESi654_tree);
@@ -22211,7 +22203,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:832:25: contentExpr
                     {
-                    pushFollow(FOLLOW_contentExpr_in_compElemConstructor11916);
+                    pushFollow(FOLLOW_contentExpr_in_compElemConstructor11918);
                     contentExpr655=contentExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -22223,7 +22215,7 @@ public class XQFTParser extends Parser {
             }
 
             RBRACSi656=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor11919); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor11921); if (failed) return retval;
             if ( backtracking==0 ) {
             RBRACSi656_tree = (XQFTTree)adaptor.create(RBRACSi656);
             adaptor.addChild(root_0, RBRACSi656_tree);
@@ -22271,7 +22263,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_expr_in_contentExpr11952);
+            pushFollow(FOLLOW_expr_in_contentExpr11954);
             expr657=expr();
             _fsp--;
             if (failed) return retval;
@@ -22334,7 +22326,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             ATTRIBUTE658=(Token)input.LT(1);
-            match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_compAttrConstructor11997); if (failed) return retval;
+            match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_compAttrConstructor11999); if (failed) return retval;
             if ( backtracking==0 ) {
             ATTRIBUTE658_tree = (XQFTTree)adaptor.create(ATTRIBUTE658);
             adaptor.addChild(root_0, ATTRIBUTE658_tree);
@@ -22360,7 +22352,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:839:49: qName
                     {
-                    pushFollow(FOLLOW_qName_in_compAttrConstructor12000);
+                    pushFollow(FOLLOW_qName_in_compAttrConstructor12002);
                     qName659=qName();
                     _fsp--;
                     if (failed) return retval;
@@ -22375,14 +22367,14 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:839:58: LBRACESi expr RBRACSi
                     {
                     LBRACESi660=(Token)input.LT(1);
-                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor12005); if (failed) return retval;
-                    pushFollow(FOLLOW_expr_in_compAttrConstructor12008);
+                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor12007); if (failed) return retval;
+                    pushFollow(FOLLOW_expr_in_compAttrConstructor12010);
                     expr661=expr();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, expr661.getTree());
                     RBRACSi662=(Token)input.LT(1);
-                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor12010); if (failed) return retval;
+                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor12012); if (failed) return retval;
 
                     }
 
@@ -22393,7 +22385,7 @@ public class XQFTParser extends Parser {
             }
 
             LBRACESi663=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor12031); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor12033); if (failed) return retval;
             // etc/XQFT.g:840:26: ( expr )?
             int alt149=2;
             int LA149_0 = input.LA(1);
@@ -22405,7 +22397,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:840:26: expr
                     {
-                    pushFollow(FOLLOW_expr_in_compAttrConstructor12034);
+                    pushFollow(FOLLOW_expr_in_compAttrConstructor12036);
                     expr664=expr();
                     _fsp--;
                     if (failed) return retval;
@@ -22417,7 +22409,7 @@ public class XQFTParser extends Parser {
             }
 
             RBRACSi665=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor12037); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor12039); if (failed) return retval;
 
             }
 
@@ -22468,20 +22460,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             TEXT666=(Token)input.LT(1);
-            match(input,TEXT,FOLLOW_TEXT_in_compTextConstructor12074); if (failed) return retval;
+            match(input,TEXT,FOLLOW_TEXT_in_compTextConstructor12076); if (failed) return retval;
             if ( backtracking==0 ) {
             TEXT666_tree = (XQFTTree)adaptor.create(TEXT666);
             adaptor.addChild(root_0, TEXT666_tree);
             }
             LBRACESi667=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compTextConstructor12076); if (failed) return retval;
-            pushFollow(FOLLOW_expr_in_compTextConstructor12079);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compTextConstructor12078); if (failed) return retval;
+            pushFollow(FOLLOW_expr_in_compTextConstructor12081);
             expr668=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr668.getTree());
             RBRACSi669=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compTextConstructor12081); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compTextConstructor12083); if (failed) return retval;
 
             }
 
@@ -22532,20 +22524,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             COMMENT670=(Token)input.LT(1);
-            match(input,COMMENT,FOLLOW_COMMENT_in_compCommentConstructor12106); if (failed) return retval;
+            match(input,COMMENT,FOLLOW_COMMENT_in_compCommentConstructor12108); if (failed) return retval;
             if ( backtracking==0 ) {
             COMMENT670_tree = (XQFTTree)adaptor.create(COMMENT670);
             adaptor.addChild(root_0, COMMENT670_tree);
             }
             LBRACESi671=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compCommentConstructor12108); if (failed) return retval;
-            pushFollow(FOLLOW_expr_in_compCommentConstructor12111);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compCommentConstructor12110); if (failed) return retval;
+            pushFollow(FOLLOW_expr_in_compCommentConstructor12113);
             expr672=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr672.getTree());
             RBRACSi673=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compCommentConstructor12113); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compCommentConstructor12115); if (failed) return retval;
 
             }
 
@@ -22604,7 +22596,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             PROCESSING_INSTRUCTION674=(Token)input.LT(1);
-            match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor12143); if (failed) return retval;
+            match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor12145); if (failed) return retval;
             if ( backtracking==0 ) {
             PROCESSING_INSTRUCTION674_tree = (XQFTTree)adaptor.create(PROCESSING_INSTRUCTION674);
             adaptor.addChild(root_0, PROCESSING_INSTRUCTION674_tree);
@@ -22631,7 +22623,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:846:62: NCName
                     {
                     NCName675=(Token)input.LT(1);
-                    match(input,NCName,FOLLOW_NCName_in_compPIConstructor12146); if (failed) return retval;
+                    match(input,NCName,FOLLOW_NCName_in_compPIConstructor12148); if (failed) return retval;
                     if ( backtracking==0 ) {
                     NCName675_tree = (XQFTTree)adaptor.create(NCName675);
                     adaptor.addChild(root_0, NCName675_tree);
@@ -22646,14 +22638,14 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:846:72: LBRACESi expr RBRACSi
                     {
                     LBRACESi676=(Token)input.LT(1);
-                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor12151); if (failed) return retval;
-                    pushFollow(FOLLOW_expr_in_compPIConstructor12154);
+                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor12153); if (failed) return retval;
+                    pushFollow(FOLLOW_expr_in_compPIConstructor12156);
                     expr677=expr();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, expr677.getTree());
                     RBRACSi678=(Token)input.LT(1);
-                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor12156); if (failed) return retval;
+                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor12158); if (failed) return retval;
 
                     }
 
@@ -22664,7 +22656,7 @@ public class XQFTParser extends Parser {
             }
 
             LBRACESi679=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor12177); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor12179); if (failed) return retval;
             // etc/XQFT.g:847:26: ( expr )?
             int alt151=2;
             int LA151_0 = input.LA(1);
@@ -22676,7 +22668,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:847:26: expr
                     {
-                    pushFollow(FOLLOW_expr_in_compPIConstructor12180);
+                    pushFollow(FOLLOW_expr_in_compPIConstructor12182);
                     expr680=expr();
                     _fsp--;
                     if (failed) return retval;
@@ -22688,7 +22680,7 @@ public class XQFTParser extends Parser {
             }
 
             RBRACSi681=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor12183); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor12185); if (failed) return retval;
 
             }
 
@@ -24992,108 +24984,108 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_DOLLARSi_in_varRef10015 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
     public static final BitSet FOLLOW_varName_in_varRef10018 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_LPARSi_in_parenthesizedExpr10041 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827192800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_parenthesizedExpr10043 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000100000000000L});
-    public static final BitSet FOLLOW_RPARSi_in_parenthesizedExpr10046 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOTSi_in_contextItemExpr10072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_functionCall10099 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000080000000000L});
-    public static final BitSet FOLLOW_LPARSi_in_functionCall10101 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827192800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_exprSingle_in_functionCall10119 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000108000000000L});
-    public static final BitSet FOLLOW_COMMASi_in_functionCall10122 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_exprSingle_in_functionCall10124 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000108000000000L});
-    public static final BitSet FOLLOW_RPARSi_in_functionCall10144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDERED_in_orderedExpr10237 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_orderedExpr10239 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_orderedExpr10242 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_orderedExpr10244 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UNORDERED_in_unorderedExpr10273 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_unorderedExpr10275 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_unorderedExpr10278 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_unorderedExpr10280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_directConstructor_in_constructor10312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_computedConstructor_in_constructor10316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_dirElemConstructor_in_directConstructor10356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_dirCommentConstructor_in_directConstructor10397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_dirPIConstructor_in_directConstructor10426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LTSi_in_dirElemConstructor10484 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_qName_in_dirElemConstructor10550 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0080002000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_dirAttributeList_in_dirElemConstructor10552 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0080000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_RSELFTERMSi_in_dirElemConstructor10615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor10716 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0020200000000000L,0x0000000000498400L});
-    public static final BitSet FOLLOW_dirElemContent_in_dirElemConstructor10811 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0020200000000000L,0x0000000000498400L});
-    public static final BitSet FOLLOW_LENDTAGSi_in_dirElemConstructor10840 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_qName_in_dirElemConstructor10870 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0080000000000000L});
-    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor10899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_dirAttributeList11040 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
-    public static final BitSet FOLLOW_EQSi_in_dirAttributeList11042 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000002800L});
-    public static final BitSet FOLLOW_dirAttributeValue_in_dirAttributeList11044 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue11082 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000001800L});
-    public static final BitSet FOLLOW_QuotAttributeContent_in_dirAttributeValue11114 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000001800L});
-    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue11118 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000001800L});
-    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue11150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue11185 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000006000L});
-    public static final BitSet FOLLOW_AposAttributeContent_in_dirAttributeValue11220 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000006000L});
-    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue11224 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000006000L});
-    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue11259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LBRACESi_in_xmlEnclosedExpr11301 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_xmlEnclosedExpr11330 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_xmlEnclosedExpr11358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_directConstructor_in_dirElemContent11394 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_cDataSection_in_dirElemContent11423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ElementContent_in_dirElemContent11453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirElemContent11483 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LCDATASi_in_cDataSection11529 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000020000L});
-    public static final BitSet FOLLOW_CDataContents_in_cDataSection11531 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_RCDATASi_in_cDataSection11533 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LCOMMENTSi_in_dirCommentConstructor11556 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_DirCommentContent_in_dirCommentConstructor11558 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_RCOMMENTSi_in_dirCommentConstructor11560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPISi_in_dirPIConstructor11581 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_PiTarget_in_dirPIConstructor11583 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000003000000L});
-    public static final BitSet FOLLOW_DirPiContents_in_dirPIConstructor11585 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_RPISi_in_dirPIConstructor11588 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compDocConstructor_in_computedConstructor11614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compElemConstructor_in_computedConstructor11655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compAttrConstructor_in_computedConstructor11696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compTextConstructor_in_computedConstructor11737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compCommentConstructor_in_computedConstructor11778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compPIConstructor_in_computedConstructor11819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOCUMENT_in_compDocConstructor11847 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_compDocConstructor11849 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_compDocConstructor11852 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_compDocConstructor11854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELEMENT_in_compElemConstructor11884 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000202000000000L});
-    public static final BitSet FOLLOW_qName_in_compElemConstructor11887 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor11891 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_compElemConstructor11893 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor11895 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor11914 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827492800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_contentExpr_in_compElemConstructor11916 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor11919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expr_in_contentExpr11952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ATTRIBUTE_in_compAttrConstructor11997 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000202000000000L});
-    public static final BitSet FOLLOW_qName_in_compAttrConstructor12000 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor12005 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_compAttrConstructor12008 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor12010 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor12031 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827492800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_compAttrConstructor12034 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor12037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEXT_in_compTextConstructor12074 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_compTextConstructor12076 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_compTextConstructor12079 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_compTextConstructor12081 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMENT_in_compCommentConstructor12106 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_compCommentConstructor12108 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_compCommentConstructor12111 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_compCommentConstructor12113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor12143 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000202000000000L});
-    public static final BitSet FOLLOW_NCName_in_compPIConstructor12146 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor12151 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_compPIConstructor12154 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor12156 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor12177 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827492800000015L,0x0000000000480136L});
-    public static final BitSet FOLLOW_expr_in_compPIConstructor12180 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
-    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor12183 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_parenthesizedExpr10044 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000100000000000L});
+    public static final BitSet FOLLOW_RPARSi_in_parenthesizedExpr10047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOTSi_in_contextItemExpr10074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_functionCall10101 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000080000000000L});
+    public static final BitSet FOLLOW_LPARSi_in_functionCall10103 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827192800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_exprSingle_in_functionCall10121 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000108000000000L});
+    public static final BitSet FOLLOW_COMMASi_in_functionCall10124 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_exprSingle_in_functionCall10126 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000108000000000L});
+    public static final BitSet FOLLOW_RPARSi_in_functionCall10146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDERED_in_orderedExpr10239 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_orderedExpr10241 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_expr_in_orderedExpr10244 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_orderedExpr10246 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UNORDERED_in_unorderedExpr10275 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_unorderedExpr10277 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_expr_in_unorderedExpr10280 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_unorderedExpr10282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_directConstructor_in_constructor10314 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_computedConstructor_in_constructor10318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_dirElemConstructor_in_directConstructor10358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_dirCommentConstructor_in_directConstructor10399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_dirPIConstructor_in_directConstructor10428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LTSi_in_dirElemConstructor10486 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_qName_in_dirElemConstructor10552 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0080002000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_dirAttributeList_in_dirElemConstructor10554 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0080000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_RSELFTERMSi_in_dirElemConstructor10617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor10718 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0020200000000000L,0x0000000000498400L});
+    public static final BitSet FOLLOW_dirElemContent_in_dirElemConstructor10813 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0020200000000000L,0x0000000000498400L});
+    public static final BitSet FOLLOW_LENDTAGSi_in_dirElemConstructor10842 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_qName_in_dirElemConstructor10872 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0080000000000000L});
+    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor10901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_dirAttributeList11042 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_EQSi_in_dirAttributeList11044 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000002800L});
+    public static final BitSet FOLLOW_dirAttributeValue_in_dirAttributeList11046 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue11084 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000001800L});
+    public static final BitSet FOLLOW_QuotAttributeContent_in_dirAttributeValue11116 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000001800L});
+    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue11120 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000001800L});
+    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue11152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue11187 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000006000L});
+    public static final BitSet FOLLOW_AposAttributeContent_in_dirAttributeValue11222 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000006000L});
+    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue11226 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L,0x0000000000006000L});
+    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue11261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LBRACESi_in_xmlEnclosedExpr11303 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_expr_in_xmlEnclosedExpr11332 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_xmlEnclosedExpr11360 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_directConstructor_in_dirElemContent11396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_cDataSection_in_dirElemContent11425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ElementContent_in_dirElemContent11455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirElemContent11485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LCDATASi_in_cDataSection11531 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000020000L});
+    public static final BitSet FOLLOW_CDataContents_in_cDataSection11533 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_RCDATASi_in_cDataSection11535 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LCOMMENTSi_in_dirCommentConstructor11558 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_DirCommentContent_in_dirCommentConstructor11560 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_RCOMMENTSi_in_dirCommentConstructor11562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPISi_in_dirPIConstructor11583 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_PiTarget_in_dirPIConstructor11585 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000003000000L});
+    public static final BitSet FOLLOW_DirPiContents_in_dirPIConstructor11587 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_RPISi_in_dirPIConstructor11590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compDocConstructor_in_computedConstructor11616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compElemConstructor_in_computedConstructor11657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compAttrConstructor_in_computedConstructor11698 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compTextConstructor_in_computedConstructor11739 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compCommentConstructor_in_computedConstructor11780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compPIConstructor_in_computedConstructor11821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOCUMENT_in_compDocConstructor11849 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_compDocConstructor11851 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_expr_in_compDocConstructor11854 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_compDocConstructor11856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELEMENT_in_compElemConstructor11886 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000202000000000L});
+    public static final BitSet FOLLOW_qName_in_compElemConstructor11889 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor11893 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_expr_in_compElemConstructor11895 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor11897 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor11916 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827492800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_contentExpr_in_compElemConstructor11918 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor11921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_contentExpr11954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ATTRIBUTE_in_compAttrConstructor11999 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000202000000000L});
+    public static final BitSet FOLLOW_qName_in_compAttrConstructor12002 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor12007 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_expr_in_compAttrConstructor12010 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor12012 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor12033 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827492800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_expr_in_compAttrConstructor12036 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor12039 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEXT_in_compTextConstructor12076 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_compTextConstructor12078 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_expr_in_compTextConstructor12081 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_compTextConstructor12083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMENT_in_compCommentConstructor12108 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_compCommentConstructor12110 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_expr_in_compCommentConstructor12113 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_compCommentConstructor12115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor12145 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000202000000000L});
+    public static final BitSet FOLLOW_NCName_in_compPIConstructor12148 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor12153 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827092800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_expr_in_compPIConstructor12156 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor12158 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor12179 = new BitSet(new long[]{0x4007101C182810C0L,0x0408B05A20100800L,0x7827492800000015L,0x0000000000480136L});
+    public static final BitSet FOLLOW_expr_in_compPIConstructor12182 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000400000000000L});
+    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor12185 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_itemType_in_synpred12379 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0003800000000000L});
     public static final BitSet FOLLOW_occurrenceIndicator_in_synpred12381 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_SLASHSi_in_synpred28774 = new BitSet(new long[]{0x0003001C182810C0L,0x0400B05A20100000L,0x3821092800000004L,0x0000000000480130L});
