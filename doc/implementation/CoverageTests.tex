@@ -1,0 +1,20 @@
+% Implementation / Coverage tests
+% Andreas
+\section{Manual Coverage Tests}
+The XQuery test suite supplied by W3C\cite{w3c05} consists of a number of
+XQuery query files, and a corresponding set of output files with expected
+output/result. Additionally, a central XML file describing all the tests with
+references to files and folders are also supplied.
+
+This file was parsed using a simple implementation of the reference SAX API
+from the SAX project website\cite{saxproject}. For each applicable
+test case, a new parser was instantiated and executed on the input file. If the
+parser succeeded without throwing an exception, the test was considered passed.
+This measurement of ``success'' was proposed in section \ref{sect:method:testing}.
+
+Note that by ``applicable'' it is implied only tests which could be executed in
+parse-time. That is, some tests require run-time features such as type
+checking. This premise was presented in section \ref{sect:method:testing}.
+
+The coverage was calculated by counting the number of passed tests, and
+computing the percentage.
