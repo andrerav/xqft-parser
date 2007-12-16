@@ -5,7 +5,7 @@ compile:
 
 
 parser:
-	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool -o ./tmp -Xconversiontimeout 80000000 etc/XQFT.g
+	java -Xmx800M -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool -o ./tmp -Xconversiontimeout 80000000 etc/XQFT.g
 	mv ./tmp/etc/XQFTParser.java ./src/no/ntnu/xqft/parse/XQFTParser.java
 	mv ./tmp/etc/XQFTLexer.java ./src/no/ntnu/xqft/parse/XQFTLexer.java
 
