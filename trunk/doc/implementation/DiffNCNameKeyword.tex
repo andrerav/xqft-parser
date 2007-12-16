@@ -1,0 +1,35 @@
+\section{Differentiating NCName and Keywords}
+\label{sect:rewritegrammar:keywordNCName}
+
+All 139 keywords and 73 symbols are explicitly defined as tokens, as opposed to inline declared in the non-terminal productions. The main reason for this is that it makes it possible to control when the lexer should and should not try to match these by means of predicates. Another benefit from defining the tokens in the lexer is that error messages is much more readable this way. 
+
+When defined inline ANTLR would just assign any unique name to the tokens, making it hard for humans to understand which token is refered to. The names of the tokens for keywords are just the keyword in capital letters, and with and dashes replaced by underscore, e.g. \verb!BASE_URI : 'base-uri'!. A descriptive name with the suffix \verb!Si! consitutes the token names for symbols, e.g. \verb!ASSIGNSi : ':='!.
+
+As discussed in section \ref{sect:antlr:lexer}, ANTLR will generate a lexer correctly differanciating between explicit and inplicit defined character sequences, in our case this is keywords and \verb!NCName! respectively. It acctually resolves this by ranking the explicit ones over the implicit ones, and surpressing warnings about ambiguousity. This works as the highest ranked alternative will always be chosen. But because we introduced the \verb!TOKENSWITCH! construct from figure \ref{fig:tokenswitch}, these warnings will not be surpressed. The keywords and \verb!NCName! were implemented as alternatives to the \verb!fragment! production \verb!LexLiterals! 
+
+\underline{\textbf{\LARGE //TODO}} Noe bedre... QNAME hvis den er kommet..
+
+\begin{figure}[h!]
+\begin{verbatim}
+fragment LexLiterals : n=NCName {
+ if(state != State.IN_TAG){
+   if($n.getText().equals("all")) 
+     this.tokenType=ALL;
+   else if($n.getText().equals("any")) 
+     this.tokenType=ANY;
+   else if($n.getText().equals("ancestor")) 
+     this.tokenType=ANCESTOR;
+   . . .
+   . . .
+   else 
+     this.tokenType=NCName;
+   }
+  else
+   this.tokenType=NCName;
+};
+\end{verbatim}
+\caption[Differantiating keywords from \texttt{NCName}]{An implementation differantiating keywords from \texttt{NCName}}
+\label{fig:lexLitterals}
+\end{figure}
+
+The solution was to implement all these tokens as \verb!NCName!, with an action checking if the matched token should be one of the keywords, and in such a case change the type. This is shown in figure \ref{fig:lexLitterals}. The initial check if the lexer is in the state \verb!IN_TAG! will prohibit any keywords from occuring inside a XML tag. This manner of fixing the problem is not a preticular good one, and other solutions will be discussed in chapter \ref{sect:summary:future_work}. The reason was mainly to avoid compiler warnings from ANTLR.
