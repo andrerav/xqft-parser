@@ -6,30 +6,6 @@ sometimes called ANTLR v1, and the latest version is ANTLR v3. PCCTS was
 developed by Professor Terrence Parr of the University of San Francisco, now
 the primus motor behind ANTLR.
 
-\underline{\textbf{\LARGE //TODO}} God stemning, men foler det kan passe bedre inn i kap \ref{sect:method:alternatives}. ?
-
-
-The ANTLR parser generator was chosen for this project based on the basic 
-requirements outlined in the previous chapter. We will reiterate these
-requirements here:
-\begin{itemize}
-  \item The parser generator must generate Java source code
-  \item It must be able to generate an LL(1) (or LL(k)) parser, because the
-  grammar specification is given by W3C in LL(k)
-  \item It must also be licensed liberally, either GPL or BSD, or an equivalent
-  license approved by OSI
-\end{itemize}
-ANTLR meets all of these requirements, and also adds some commodities such as a
-grammar syntax which is syntactically close to the syntax used by the W3C in
-their grammar specification\cite{w3c01}. Additionally ANTLR supports some
-interesting features such as syntactic and semantic predicates, as well as
-automatic AST (abstract syntax tree) generation. These features are described in
-detail later in this chapter, and the usage of these features has been described
-in chapter \ref{chapter:implementation}.
-
-\underline{\textbf{\LARGE //TODO}}
-
-
 ANTLR generates recursive-decent recognizers that utilizes predicated LL(*) --
 an extension to LL(k) that uses arbitrary lookahead to make decisions. LL
 parsers are often said to be more intuitive and easier for humans to read than

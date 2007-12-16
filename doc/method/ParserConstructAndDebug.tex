@@ -113,10 +113,17 @@ JJTree. This tool will parse the grammar and insert tree building actions where
 appropriate. 
 
 \subsection{ANTLR}
-ANTLR is a renowned tool for parser generation, and can generate LL(*) parsers.
-Additionally, ANTLR accepts a grammar specification syntactically very close to
-the EBNF used by the W3C. This is the parser generater chosen for our project,
-based on the criteria outlined in this section.
+ANTLR is a renowned tool for parser generation, and can generate LL(*) parsers
+(explained in the next chapter). The ANTLR parser generator was chosen for this
+project based on the basic requirements outlined previously in this section.  
+
+ANTLR meets all of these requirements, and also adds some commodities such as a
+grammar syntax which is syntactically close to the syntax used by the W3C in
+their grammar specification\cite{w3c01}. Additionally ANTLR supports some
+interesting features such as syntactic and semantic predicates, as well as
+automatic AST (abstract syntax tree) generation. These features are described in
+detail later in this chapter, and the usage of these features has been described
+in chapter \ref{chapter:implementation}.
 
 The details of this parser generator is outlined in chapter \ref{sect:antlr}.
 
