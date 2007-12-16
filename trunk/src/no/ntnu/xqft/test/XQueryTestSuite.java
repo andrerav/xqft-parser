@@ -29,6 +29,7 @@ public class XQueryTestSuite extends Test implements Observer {
 
     protected int success = 0;
     protected int tests = 0;
+    protected int failed = 0;
     
     // GUI needs true. false yields processing as before..
     public boolean informGui = false;
@@ -54,9 +55,12 @@ public class XQueryTestSuite extends Test implements Observer {
         xr.setErrorHandler(handler);
         xr.parse(new InputSource(new FileReader(new File(testSuite.suiteDir.getPath() + "/XQTSCatalog.xml"))));
 
-        double coverage = (((double)testSuite.getSuccessNum()) * 100.0) / ((double)testSuite.getTestNum());
+        double coverage = (((double)testSuite.getSuccessNum()) * (double)100.0) / ((double)testSuite.getTestNum());
+        
+        double failedpercent = ((double)testSuite.getFailedNum() * (double)100.0) / ((double)testSuite.getTestNum());
         
         System.out.println("Finished, coverage: " + coverage + "%, tests run: " + testSuite.getTestNum());
+        System.out.println("Percent failed: " + failedpercent + "%");
     
     }
     
@@ -101,6 +105,13 @@ public class XQueryTestSuite extends Test implements Observer {
             if (!testCase.shouldFail()) {
                 this.success++;
             }
+            else
+            {
+                this.failed++;
+                this.print("FAILURE: " + file.getPath() + "\nMessage: Should have failed, but did not");
+                if(informGui)
+                    errorReciever.addErrorCase(testCase, new Exception("skulle feila"));
+            }
         }
         
         catch(Exception e) {
@@ -110,9 +121,9 @@ public class XQueryTestSuite extends Test implements Observer {
                 this.success++;
             }
             else {
-                if(!informGui)
-                    this.print("FAILURE: " + file.getPath() + "\nMessage: " + e.getClass().getCanonicalName());
-                else                                                        //Lagt til
+                this.failed++;
+                this.print("FAILURE: " + file.getPath() + "\nMessage: " + e.getClass().getCanonicalName());
+                if(informGui)
                     errorReciever.addErrorCase(testCase, e);
             }
         }
@@ -137,6 +148,11 @@ public class XQueryTestSuite extends Test implements Observer {
      */
     public int getTestNum() {
         return tests;
+    }
+    
+    public int getFailedNum()
+    {
+        return failed;
     }
 }
 

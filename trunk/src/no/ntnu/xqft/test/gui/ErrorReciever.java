@@ -58,8 +58,11 @@ public class ErrorReciever {
         xr.parse(new InputSource(new FileReader(new File(testSuite.suiteDir.getPath() + "/XQTSCatalog.xml"))));
 
         double coverage = ((double)testSuite.getSuccessNum() * 100.0) / (double)testSuite.getTestNum();
+        double failedpercent = ((double)testSuite.getFailedNum() * (double)100.0) / ((double)testSuite.getTestNum());
         
         System.out.println("Finished, coverage: " + coverage + "%, tests run: " + testSuite.getTestNum());
+        System.out.println("Percent failed: " + failedpercent + "%");
+        System.out.println("Success: " + testSuite.getSuccessNum() + " + failed: " + testSuite.getFailedNum() + " = " + (testSuite.getSuccessNum() + testSuite.getFailedNum()));
         
         all = false;
     }
@@ -192,7 +195,7 @@ public class ErrorReciever {
                 fpe.predicateText+"}?";
         }
         else{
-            msg = "noe rart: " + e.getClass().getCanonicalName();
+            msg = e.getMessage() + " - " + e.getClass().getCanonicalName();
             e.printStackTrace();
         }
         return msg;
