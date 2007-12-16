@@ -30,6 +30,8 @@ public class ErrorReciever {
     TestCase last = null;
     Exception lastEx = null;
     
+    TestPanel testpanel;
+    
     int caseNo = 0;
     
     ArrayList<TestCase> testCases;
@@ -68,6 +70,7 @@ public class ErrorReciever {
         {
         testSuite.executeTest(testCases.get(caseNo));
         }
+        testpanel.updateInfo();
     }
     
     
@@ -131,10 +134,10 @@ public class ErrorReciever {
     }
     
     
-    private String getErrorMessage(Exception ve) {
+    private String getErrorMessage(Exception e) {
         String msg = null;
         
-        RecognitionException e = (RecognitionException)ve;
+       // RecognitionException e = (RecognitionException)ve;
         
         if ( e instanceof MismatchedTokenException ) {
             MismatchedTokenException mte = (MismatchedTokenException)e;
@@ -145,7 +148,7 @@ public class ErrorReciever {
             else {
                 tokenName = XQFTParser.tokenNames[mte.expecting];
             }
-            msg = "mismatched input "+getTokenErrorDisplay(e.token)+
+            msg = "mismatched input "+getTokenErrorDisplay(mte.token)+
                 " expecting "+tokenName;
         }
         else if ( e instanceof MismatchedTreeNodeException ) {
@@ -165,28 +168,32 @@ public class ErrorReciever {
             // for development, can add "decision=<<"+nvae.grammarDecisionDescription+">>"
             // and "(decision="+nvae.decisionNumber+") and
             // "state "+nvae.stateNumber
-            msg = "no viable alternative at input "+getTokenErrorDisplay(e.token);
+            msg = "no viable alternative at input "+getTokenErrorDisplay(nvae.token);
         }
         else if ( e instanceof EarlyExitException ) {
             EarlyExitException eee = (EarlyExitException)e;
             // for development, can add "(decision="+eee.decisionNumber+")"
             msg = "required (...)+ loop did not match anything at input "+
-                getTokenErrorDisplay(e.token);
+                getTokenErrorDisplay(eee.token);
         }
         else if ( e instanceof MismatchedSetException ) {
             MismatchedSetException mse = (MismatchedSetException)e;
-            msg = "mismatched input "+getTokenErrorDisplay(e.token)+
+            msg = "mismatched input "+getTokenErrorDisplay(mse.token)+
                 " expecting set "+mse.expecting;
         }
         else if ( e instanceof MismatchedNotSetException ) {
             MismatchedNotSetException mse = (MismatchedNotSetException)e;
-            msg = "mismatched input "+getTokenErrorDisplay(e.token)+
+            msg = "mismatched input "+getTokenErrorDisplay(mse.token)+
                 " expecting set "+mse.expecting;
         }
         else if ( e instanceof FailedPredicateException ) {
             FailedPredicateException fpe = (FailedPredicateException)e;
             msg = "rule "+fpe.ruleName+" failed predicate: {"+
                 fpe.predicateText+"}?";
+        }
+        else{
+            msg = "noe rart: " + e.getClass().getCanonicalName();
+            e.printStackTrace();
         }
         return msg;
     }
@@ -206,5 +213,10 @@ public class ErrorReciever {
         s = s.replaceAll("\r","\\\\r");
         s = s.replaceAll("\t","\\\\t");
         return "'"+s+"'";
+    }
+
+    public void setUpdatee(TestPanel panel) {
+        testpanel = panel;
+        
     }
 }

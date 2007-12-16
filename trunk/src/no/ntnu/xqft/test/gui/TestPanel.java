@@ -33,7 +33,7 @@ public class TestPanel extends JPanel implements ActionListener, ListSelectionLi
     public TestPanel(ErrorReciever r)
     {
         errorReciever = r;
-        
+        r.setUpdatee(this);
         this.setLayout(new BorderLayout());
                
         
@@ -86,7 +86,6 @@ public class TestPanel extends JPanel implements ActionListener, ListSelectionLi
         this.add(bottom, BorderLayout.PAGE_END);
         
         errorReciever.runTest();
-        updateInfo();
 
     }
     
@@ -96,14 +95,12 @@ public class TestPanel extends JPanel implements ActionListener, ListSelectionLi
         {
             errorReciever.next();
             errorReciever.runTest();
-            updateInfo();
         }else if(event.getSource().equals(run)){
             
         }else if(event.getSource().equals(back))
         {
             errorReciever.prev();
             errorReciever.runTest();
-            updateInfo();
         }
         else
             ;
