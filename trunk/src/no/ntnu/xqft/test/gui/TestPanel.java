@@ -63,7 +63,8 @@ public class TestPanel extends JPanel implements ActionListener, ListSelectionLi
         liste.setSize(30, 70);
         liste.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         liste.addListSelectionListener(this);
-        rightpanel.add(liste, BorderLayout.CENTER);
+        JScrollPane scrollingList = new JScrollPane(liste);
+        rightpanel.add(scrollingList, BorderLayout.CENTER);
         
         run = new JButton("run");
         run.addActionListener(this);
