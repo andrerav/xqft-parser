@@ -1,3 +1,4 @@
+% Theory / State of the art
 % State of the art, nåværende teknologi og implementasjoner
 \section{Current state of XQuery parsers}
 
@@ -52,12 +53,23 @@ website\cite{quarkproject}.
 GalaTex is a complete implementation of the Xquery 1.0 and Xpath 2.0
 specifications with full-text extensions. GalaTex is an extension of Galax,
 which is a generic Xquery engine. The XQFT query is parsed and converted to an
-equivalent XQuery query which is passed to the Galax query engine. The GalaTex
+equivalent XQuery query which is passed to the Galax query engine. This
+approach seems to be quite unique and decouples the full-text extensions from
+the standard XQuery query parser. One obvious downside about this approach is
+that the parser is still ultimately limited to standard XQuery. One consequence
+is that complex full-text queries can only be optimized by the parser as
+ordinary queries.
+
+It is important to note that Galax itself is written in the OCAML programming
+language, and the full-text parser is generated using the common Flex and Bison
+parser generator tools, which implies that this parser is compiled as a
+stand-alone C program.
+
+GalaTex is one outcome of the time and research effort invested in the Quark
+project and the TexQuery query language (see above). The GalaTex
 source code is licensed under a non-commercial license developed to AT\&{}T 
 \footnote{http://www.galaxquery.com/galatex/LICENSE} and is available at the
 GalaTex website \cite{galatex}.
-
-\underline{\textbf{\LARGE //TODO}}Bittelitt til?
 
 \subsubsection{eXist}
 \label{sect:stateOfTheArt:eXist}
@@ -114,20 +126,19 @@ website\cite{existweb}.
 There are a wealth of XQuery implementations without full-text
 extensions available, in this section we will list some implementations of
 particular interest to this project.
-\subsubsection{Saxon}
-Saxon is an open source XSLT and XQuery processor. It is being actively
-developed by Michael Kay, and is dual-licensed under the Mozilla Public License
-(MPL). Saxon is optionally available under a closed commercial license.
 
-\underline{\textbf{\LARGE //TODO}}Bittelitt til?
+\subsubsection{Saxon}
+Saxon is an open source XSLT and XQuery processor. The XQuery parser is hand
+written as a LL-style parser.
 
 Saxon conforms to the XSLT 2.0, XQuery 1.0 and XPath 2.0 recommendations
-by the W3C as of 23rd of january, 2007. 
+by the W3C as of 23rd of january, 2007. It is being actively
+developed by Michael Kay, and is dual-licensed under the Mozilla Public License
+(MPL). Saxon is optionally available under a closed commercial license.
 
 At the time of writing, Saxon is the only implementation conforming 100\% to
 the W3C test suite\cite{w3ctestresults}. The same test suite was used in this
 project as a benchmark of conformance, see section \ref{sect:tests:manual}.
-
 
 \subsubsection{Pathfinder}
 \label{sect:soa:pathfinder}

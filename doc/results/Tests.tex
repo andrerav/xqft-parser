@@ -20,6 +20,9 @@ investigation revealed that out of all the errors, a total of 47\% were related
 to a erroneous NCName and keyword differanciating implementation (see section \ref{sect:discussion:deadEnds}). Without these errors, coverage would increase to 76\%. After some effort resolving these ambiguities as well as other minor lexer
 bugs, the coverage increased to 88\%.
 
+After removing the constraint of reserved keywords (see
+\ref{sect:impl:reserved_keywords}
+
 One peculiarity about ANTLR was the fact that the nextToken() method in the base
 lexer class would catch recognition exceptions, display an error to stderr, and
 then attempt to recover from the exception. Overriding this method and handling
