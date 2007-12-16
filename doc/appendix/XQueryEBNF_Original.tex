@@ -1,4 +1,8 @@
 \chapter{EBNF for XQuery 1.0 Grammar with Full-Text extensions}
+This grammar is limited in the sense that it requires productions from XML and
+other specifications (such as XPath). For the full grammar with contextual
+links, please visit http://www.w3.org/TR/xpath-full-text-10/. 
+
 \begin{verbatim}
 [1] Module ::= VersionDecl? (LibraryModule | MainModule)
 [2] VersionDecl ::= "xquery" "version" StringLiteral 
@@ -295,9 +299,11 @@
 [176] FTWildCardOption ::= ("with" "wildcards") | ("without" "wildcards")
 [177] FTExtensionOption ::= "option" QName StringLiteral
 [178] FTIgnoreOption ::= "without" "content" UnionExpr
+\end{verbatim}
+
 
 \textbf{Terminal Symbols}
-
+\begin{verbatim}
 [179] IntegerLiteral ::= Digits
 [180] DecimalLiteral ::= ("." Digits) | (Digits "." [0-9]*)	
                          /* ws: explicitXQ */
