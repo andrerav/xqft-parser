@@ -2,7 +2,7 @@ grammar XQFT;
 
 options { 
 //filter=true;
-   //k = 2;
+   k = 2;
     output=AST;
     ASTLabelType=XQFTTree;
 } 
@@ -188,31 +188,17 @@ AST_DIRELEMCONTENT;
 	XQFTLexer lexer;
 /*
 	public void setTokenStream(TokenStream input) {
-				String inputz =  "<html> \n" +                                                   //1
-                        "{ \n"+                                                         //2
-                        "for \$act in doc(\"hamlet.xml\")//ACT\n" +                      //3
-                        "let \$speakers := distinct-values(\$act//SPEAKER)\n"+            //4
-                        "return\n"+                                                     //5
-                        "<span>\n"+                                                     //6
-                        "<h1>{ \$act/TITLE/text() }</h1>\n"+                             //7
-                        "<ul>\n"+                                                       //8
-                        "{\n"+                                                          //9
-                        "for \$speaker in \$speakers\n"+                                  //10
-                        "return <li>{ \$speaker }</li>\n"+                               //11
-                        "}\n"+                                                          //12
-                        "</ul>\n"+                                                      //13
-                        "</span>\n"+                                                    //14
-                        "}\n"+                                                          //15
-                        "</html>\n";                                                    //16
+				String inputz =  "some \$x in (1, 2) satisfies \$x + \$x = 3";
                         	CharStream cs = new ANTLRStringStream(inputz);
 		lexer = (XQFTLexer)input.getTokenSource();
 		lexer.setCharStream(cs);
 		UnbufferedCommonTokenStream tokenz = new UnbufferedCommonTokenStream();
 		tokenz.setTokenSource(lexer);
 		super.setTokenStream(tokenz);
+		setTreeAdaptor(new XQFTTreeAdaptor());
  	
-	}
-*/
+	}*/
+
 	public void setLexer(XQFTLexer lex)
 	{
 		this.lexer=lex;
@@ -314,17 +300,18 @@ AST_DIRELEMCONTENT;
 //----------------------------------------------------- Module -------------------------------------------------------
 
 module                     				:{lexer.state = State.DEFAULT;} 				//ensure correct state if run multiple times
-										 versionDecl? (libraryModule | mainModule)
+										 (versionDecl)? 
+										 (libraryModule | mainModule)
                                         -> ^(AST_MODULE versionDecl? libraryModule? mainModule?);
 
-	versionDecl                 			: XQUERY VERSION StringLiteral (ENCODING StringLiteral)? separator;
-		separator                   			: SEMICOLONSi;
+	versionDecl                 			: XQUERY VERSION StringLiteral (ENCODING StringLiteral)? SEMICOLONSi;
+
 		
 	libraryModule               			: moduleDecl prolog;
-		moduleDecl                  			: MODULE NAMESPACE NCName EQSi uriLiteral separator;
+		moduleDecl                  			: MODULE NAMESPACE ncNameorKeyword EQSi uriLiteral SEMICOLONSi;
 			uriLiteral                  			: StringLiteral;
 //		prolog# 											: #PAA EGET#
-		
+ 	
 	mainModule                  			: prolog queryBody;
 //		prolog#									: #PAA EGET#
 		queryBody                   			: expr;
@@ -335,57 +322,72 @@ module                     				:{lexer.state = State.DEFAULT;} 				//ensure corr
 
 //----------------------------------------------------- Prolog ------------------------------------------
 
-prolog                      			: 	(
-											(defaultNamespaceDecl | setter | namespaceDecl | importStmt) 
-											separator!
-											)* 
-											(
-											(varDecl | functionDecl | optionDecl | ftOptionDecl)
-											separator!
-											)*;
+prolog                      			 	
+@init{boolean start = true;}				:(	// boolean start: importStmt and setter must come before the other alternatives
+											 	(
+												 (IMPORT (SCHEMA|MODULE))=>importStmt {start}?
+												 |DECLARE (
+											 	  setter {start}?
+													|varDecl {start=false;}
+													|functionDecl {start=false;}
+													|optionDecl {start=false;}
+													|ftOptionDecl {start=false;}
+													)
+												)SEMICOLONSi
+											 )*
+											;
+											
 
+setter                      			:   DEFAULT (
+												| defaultNamespaceDecl
+												| defaultCollationDecl
+												| emptyOrderDecl
+												)
+											| namespaceDecl
+											| boundarySpaceDecl
+											| baseURIDecl 
+											| constructionDecl 
+											| orderingModeDecl 
+											| copyNamespacesDecl
+											;
+										 
+// DECLARE DEFAULT
+	defaultNamespaceDecl        			: (ELEMENT | FUNCTION) NAMESPACE uriLiteral;
+	defaultCollationDecl        			: COLLATION uriLiteral;
+	emptyOrderDecl              			: ORDER EMPTY (GREATEST | LEAST);
 
-defaultNamespaceDecl        			: DECLARE DEFAULT (ELEMENT | FUNCTION) NAMESPACE uriLiteral;
-
-setter                      			: boundarySpaceDecl 
-										| defaultCollationDecl 
-										| baseURIDecl 
-										| constructionDecl 
-										| orderingModeDecl 
-										| emptyOrderDecl 
-										| copyNamespacesDecl;
-	boundarySpaceDecl           			: DECLARE BOUNDARYSPACE (PRESERVE | STRIP);
-	defaultCollationDecl        			: DECLARE DEFAULT COLLATION uriLiteral;
-	baseURIDecl                 			: DECLARE BASE_URI uriLiteral;
-	constructionDecl            			: DECLARE CONSTRUCTION (STRIP | PRESERVE);
-	orderingModeDecl           				: DECLARE ORDERING (ORDERED | UNORDERED);
-	emptyOrderDecl              			: DECLARE DEFAULT ORDER EMPTY (GREATEST | LEAST);
-	copyNamespacesDecl          			: DECLARE COPY_NAMESPACES preserveMode COMMASi inheritMode;
+// DECLARE
+	namespaceDecl               			: NAMESPACE ncNameorKeyword EQSi uriLiteral;
+	boundarySpaceDecl           			: BOUNDARYSPACE (PRESERVE | STRIP);
+	baseURIDecl                 			: BASE_URI uriLiteral;
+	constructionDecl            			: CONSTRUCTION (STRIP | PRESERVE);
+	orderingModeDecl           				: ORDERING (ORDERED | UNORDERED);
+	copyNamespacesDecl          			: COPY_NAMESPACES preserveMode COMMASi inheritMode;
 		preserveMode                			: PRESERVE | NOPRESERVE;
 		inheritMode                 			: INHERIT | NOINHERIT;	
 		
-namespaceDecl               			: DECLARE NAMESPACE NCName EQSi uriLiteral;
 
-importStmt                  			: schemaImport | moduleImport;
-	schemaImport                			: IMPORT SCHEMA schemaPrefix? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
-		schemaPrefix                			: (NAMESPACE NCName EQSi) | (DEFAULT ELEMENT NAMESPACE);
-	moduleImport                			: IMPORT MODULE (NAMESPACE NCName EQSi)? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
+
+importStmt                  			: IMPORT (schemaImport | moduleImport);
+	schemaImport                			: SCHEMA schemaPrefix? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
+		schemaPrefix                			: (NAMESPACE ncNameorKeyword EQSi) | (DEFAULT ELEMENT NAMESPACE);
+	moduleImport                			: MODULE (NAMESPACE ncNameorKeyword EQSi)? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
 	
-varDecl                     			: DECLARE VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNSi exprSingle) | EXTERNAL);
-	qName returns [String text]                 : nc1=NCName (c=COLONSi nc2=NCName)? { $text = $nc1.text + ($c != null ? $c.text + $nc2.text : ""); };
+varDecl                     			: VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNSi exprSingle) | EXTERNAL);
+	qName returns [String text]                 : nc1=ncNameorKeyword (c=COLONSi nc2=ncNameorKeyword)? { $text = $nc1.text + ($c != null ? $c.text + $nc2.text : ""); };
 
     typeDeclaration             			: AS sequenceType;
 //		sequenceType# 							: #PAA EGET#
 //	exprSingle# 							: #PAA EGET#
 	
-functionDecl                			: DECLARE FUNCTION qName LPARSi paramList? RPARSi 
+functionDecl                			: FUNCTION qName LPARSi paramList? RPARSi 
 											(AS sequenceType)? (enclosedExpr | EXTERNAL)
                                             -> ^(AST_FUNCTIONDECL qName paramList? sequenceType? enclosedExpr? EXTERNAL?);
 
 
 	paramList                   			: param (COMMASi param)*;
 		param                       			: DOLLARSi qName typeDeclaration?;
-//			qName						 			: (NCName COLONSi)? NCName;	  
+//			qName						 			: (ncNameorKeyword COLONSi)? ncNameorKeyword;	  
 //			typeDeclaration             			: AS sequenceType;	 
 //	sequenceType# 							: #PAA EGET#
 
@@ -399,9 +401,9 @@ functionDecl                			: DECLARE FUNCTION qName LPARSi paramList? RPARSi
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
 //			exprSingle# 							: #PAA EGET#
 			
-optionDecl                  			: DECLARE OPTION qName StringLiteral;
+optionDecl                  			: OPTION qName StringLiteral;
 
-ftOptionDecl                			: DECLARE FTOPTION ftMatchOptions;
+ftOptionDecl                			: FTOPTION ftMatchOptions;
 	ftMatchOptions              			: ftMatchOption+;     					/* xgc: multiple-match-options */
 //		ftMatchOption# 							: #PAA EGET#
 	
@@ -444,18 +446,19 @@ sequenceType                			: (itemType occurrenceIndicator) => itemType occu
 			schemaAttributeTest         			: SCHEMA_ATTRIBUTE LPARSi! attributeDeclaration RPARSi!;
 				attributeDeclaration        			: attributeName;
 //					attributeName               			: qName;
-			piTest                      			: PROCESSING_INSTRUCTION LPARSi! (NCName | StringLiteral)? RPARSi!;
+			piTest                      			: PROCESSING_INSTRUCTION LPARSi! (ncNameorKeyword | StringLiteral)? RPARSi!;
 			commentTest                 			: COMMENT LPARSi! RPARSi!;
 			textTest                    			: TEXT LPARSi! RPARSi!;
 			anyKindTest                 			: NODE LPARSi! RPARSi!;
+			
 	occurrenceIndicator         			: QUESTIONSi | STARSi | PLUSSi; /* xgc: occurrence-indicatorsXQ */
 	
 //---------------------------------------------------------- ExprSingle ---------------------------------------------------------
 
-exprSingle                  			: fLWORExpr
+exprSingle                  			: (IF LPARSi)=> ifExpr
+                                		| (TYPESWITCH LPARSi) => typeswitchExpr
+										| fLWORExpr
                                 		| quantifiedExpr
-                                		| typeswitchExpr
-                                		| ifExpr
                                 		| orExpr
                                 		;
 	fLWORExpr                   			: (fc+=forClause | lc+=letClause)+ whereClause? orderByClause? RETURN exprSingle
@@ -511,7 +514,7 @@ exprSingle                  			: fLWORExpr
 												(COMMASi quantifiedExprTupleDef)* SATISFIES exprSingle
                                                 -> ^(AST_QUANTIFIEDEXPR $quant quantifiedExprTupleDef+ exprSingle);
 
-        quantifiedExprTupleDef              : DOLLARSi varName typeDeclaration? exprSingle
+        quantifiedExprTupleDef              : DOLLARSi varName typeDeclaration? IN exprSingle
                                                 -> varName typeDeclaration? exprSingle; /* TODO: Add imaginary token? */
 
 //		#SE forClause# :
@@ -522,7 +525,7 @@ exprSingle                  			: fLWORExpr
 
 //		expr                        			: exprSingle (COMMASi exprSingle)*;
 //			exprSingle# 							: #PAA EGET (DETTE)#
-		caseClause                  			: CASE (DOLLARSi varName AS)? sequenceType RETURN exprSingle
+		caseClause                  	 		: CASE (DOLLARSi varName AS)? sequenceType RETURN exprSingle
                                                     -> ^(AST_CASECLAUSE varName? sequenceType exprSingle);
 //			varName                    				: qName; 
 //			sequenceType#							: #PAA EGET#
@@ -587,31 +590,25 @@ ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?;
 		ftAnd                       			: ftMildNot ( FTAND^ ftMildNot )*;
 			ftMildNot                   			: ftUnaryNot ( NOT^ IN! ftUnaryNot )*;
 				ftUnaryNot                  			: (FTNOT^)? ftPrimaryWithOptions;
-					ftPrimaryWithOptions        			: ftPrimary ftMatchOptions?;
-					
-						ftPrimary                   			: ftWords ftTimes? 
-																| LPARSi! ftSelection RPARSi! 
-																| ftExtensionSelection
-																;
-							ftWords                     			: ftWordsValue ftAnyallOption?;
-								ftWordsValue                			: literal | (LBRACESi! expr RBRACSi!);
-									literal                     			: numericLiteral | StringLiteral;
-										numericLiteral              			: IntegerLiteral | DecimalLiteral | DoubleLiteral;
-								ftAnyallOption              			: (ANY WORD?) | (ALL WORDS?) | PHRASE;
-							ftTimes                     			: OCCURS! ftRange TIMES!;
-								ftRange                     			: (EXACTLY additiveExpr)
-                        												| (AT LEAST additiveExpr)
-                       					 								| (AT MOST additiveExpr)
-										                                | (FROM additiveExpr TO additiveExpr);
-//									additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#
+				ftPrimaryWithOptions						: ftPrimary (ftMatchOption^)*;
+					ftPrimary                   			: ftWords ftTimes? 
+															| LPARSi! ftSelection RPARSi! 
+															| ftExtensionSelection
+															;
+						ftWords                     			: ftWordsValue ftAnyallOption?;
+							ftWordsValue                			: literal | (LBRACESi! expr RBRACSi!);
+								literal                     			: numericLiteral | StringLiteral;
+									numericLiteral              			: IntegerLiteral | DecimalLiteral | DoubleLiteral;
+							ftAnyallOption              			: (ANY WORD?) | (ALL WORDS?) | PHRASE;
+						ftTimes                     			: OCCURS! ftRange TIMES!;
+							ftRange                     			: (EXACTLY additiveExpr)
+                    												| (AT (LEAST|MOST) additiveExpr)
+									                                | (FROM additiveExpr TO additiveExpr);
+//								additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#
+//						ftSelection# 							: #PAA EGET (DETTE)#
+						ftExtensionSelection        			: pragma+ LBRACESi! ftSelection? RBRACSi!;
+							pragma                      			: LPRAGSi! qName PragmaContents? RPRAGSi!;
 //							ftSelection# 							: #PAA EGET (DETTE)#
-							ftExtensionSelection        			: pragma+ LBRACESi! ftSelection? RBRACSi!;
-								pragma                      			: LPRAGSi! qName PragmaContents? RPRAGSi!;
-//								ftSelection# 							: #PAA EGET (DETTE)#
-								
-//						ftMatchOptions              			: ftMatchOption+;     						/* xgc: multiple-match-options */
-//							ftMatchOption#							: #SE EGET#
-							
 							
 	ftPosFilter                 			: ftOrder | ftWindow | ftDistance | ftScope | ftContent;
 		ftOrder                     			: ORDERED;
@@ -627,7 +624,7 @@ ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?;
 //			ftUnit                      			: WORDS | SENTENCES | PARAGRAPHS;						
 		ftScope                     			: (SAME | DIFFERENT) ftBigUnit;
 			ftBigUnit                   			: SENTENCE | PARAGRAPH;	
-		ftContent                   			: AT START | AT END | ENTIRE CONTENT;		
+		ftContent                   			: AT (START | END) | ENTIRE CONTENT;		
 		
 		
 //	rangeExpr                   			: additiveExpr ( TO additiveExpr )?;
@@ -637,61 +634,57 @@ ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?;
 //-------------------------------------------------------- ftMatchOption ------------------------------------------------------
 
 ftMatchOption               			: ftLanguageOption
-		                                | ftWildCardOption
-		                                | ftThesaurusOption
-		                                | ftStemOption
 		                                | ftCaseOption
 		                                | ftDiacriticsOption
-		                                | ftStopwordOption
-		                                | ftExtensionOption;
-		                                
-		                                	                                
+		                                | ftExtensionOption
+		                                | WITH^ (WILDCARDS
+		                                		|ftThesaurusOption
+		                                		|STEMMING
+		                                		|ftStopwordOption
+		                                		)
+		                                | WITHOUT^  (WILDCARDS
+		                                			|THESAURUS
+		                                			|STEMMING
+		                                			|STOP WORDS
+		                                			)
+		                                ;
+
 	ftLanguageOption            			: LANGUAGE^ StringLiteral;
-	
-	
-	ftWildCardOption            			: WITH^ WILDCARDS | WITHOUT^ WILDCARDS;
-	
-	
-	ftThesaurusOption	        			: WITH^ THESAURUS (ftThesaurusID | DEFAULT)
-											| WITH^ THESAURUS LPARSi! (ftThesaurusID | DEFAULT) (COMMASi ftThesaurusID)* RPARSi!
-			                                | WITHOUT^ THESAURUS
+
+	ftCaseOption                			: CASE^ (INSENSITIVE | SENSITIVE)
+			                                | LOWERCASE^
+			                                | UPPERCASE^
+			                                ;	
+			                                	 
+	ftDiacriticsOption          			: DIACRITICS^ (INSENSITIVE | SENSITIVE)
+											;
+
+	ftExtensionOption           			: OPTION^ qName StringLiteral;		
+
+// WITH / WITHOUT
+
+	ftThesaurusOption	        			: THESAURUS  (
+												 (ftThesaurusID | DEFAULT)
+												|(LPARSi! (ftThesaurusID | DEFAULT) (COMMASi ftThesaurusID)* RPARSi!)
+												)
 			                                ;
 		ftThesaurusID               			: AT uriLiteral (RELATIONSHIP StringLiteral)? (ftRange LEVELS)?;
 //			uriLiteral                  			: StringLiteral; 						
 //			ftRange                     			: (EXACTLY additiveExpr) 				
-//    												| (AT LEAST additiveExpr)				
-// 					 								| (AT MOST additiveExpr) 				
+//    												| (AT (LEAST | MOST) additiveExpr)				
 //					                                | (FROM additiveExpr TO additiveExpr)
 //					                                ;	
-//				additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#
-				
-				
-	ftStemOption                			: WITH^ STEMMING | WITHOUT^ STEMMING;
-	
-	
-	ftCaseOption                			: CASE INSENSITIVE
-			                                | CASE SENSITIVE
-			                                | LOWERCASE
-			                                | UPPERCASE
-			                                ;		  
-			                                
-			                                                              
-	ftDiacriticsOption          			: DIACRITICS INSENSITIVE
-											| DIACRITICS SENSITIVE;	
-											
-																				
-	ftStopwordOption            			: WITH^ STOP WORDS ftRefOrList ftInclExclStringLiteral*
-											| WITHOUT^ STOP WORDS
-			                                | WITH^ DEFAULT STOP WORDS ftInclExclStringLiteral*
+//				additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#		                                		                                
+													                                 	
+																
+	ftStopwordOption            			: STOP WORDS ftRefOrList ftInclExclStringLiteral*
+			                                | DEFAULT STOP WORDS ftInclExclStringLiteral*
 			                                ;
 		ftRefOrList                 			: (AT uriLiteral)
 												| LPARSi! StringLiteral (COMMASi StringLiteral)* RPARSi!;
 //			uriLiteral                  			: StringLiteral; 				//DOBBELT OPP
 		ftInclExclStringLiteral     			: (UNION | EXCEPT) ftRefOrList;
-		
-									
-	ftExtensionOption           			: OPTION qName StringLiteral;
-	
+			
 //---------------------------------------------- ValueExpr ----------------------------------------------------
 
 valueExpr                   			: validateExpr | pathExpr | extensionExpr;
@@ -711,31 +704,40 @@ valueExpr                   			: validateExpr | pathExpr | extensionExpr;
 
 		relativePathExpr            			: stepExpr ((SLASHSi^ | DBLSLASHSi^) stepExpr)*;
 
-			stepExpr                    			: axisStep
+			stepExpr                    			:
+													 ((DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT 
+													 | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT 
+													 | TEXT | NODE) LPARSi)=> 
+													 axisStep
+													| axisStep
 													| filterExpr
 													;
-//				filterExpr#								: #PAA EGET#
+//			filterExpr#								: #PAA EGET#
 			axisStep                    			: (reverseStep | forwardStep)^ predicateList;
 			
 				reverseStep                 			: reverseAxis nodeTest | abbrevReverseStep;
 					reverseAxis                 			: (PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF) DBLCOLONSi;
 					nodeTest                    			: kindTest | nameTest;
 //						kindTest#								: #SE sequenceType->itemType->kindTest#
-						nameTest                    			: qName | wildcard;
-							wildcard                    			: (STARSi COLONSi NCName) => STARSi COLONSi NCName			/* ws: explicitXQ */
+						nameTest                    			: (STARSi | ncNameorKeyword COLONSi STARSi)=>
+																  wildcard
+																| qName 
+																;
+							wildcard                    			: (STARSi COLONSi) => STARSi COLONSi ncNameorKeyword			/* ws: explicitXQ */
 																	| STARSi
-                                									| NCName COLONSi STARSi; 
+                                									| ncNameorKeyword COLONSi STARSi; 
                     abbrevReverseStep           			: DOTDOTSi;
                     
-                forwardStep                 			: forwardAxis nodeTest | abbrevForwardStep;    
+                forwardStep                 			: forwardAxis nodeTest | abbrevForwardStep
+                										  ;    
                 	forwardAxis                 			: (CHILD | DESCENDANT | ATTRIBUTE | SELF 
                 												|DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING) DBLCOLONSi;
 //					nodeTest                    			: kindTest | nameTest;
 //						kindTest#								: #SE sequenceType->itemType->kindTest#
 //						nameTest                    			: qName | wildcard;
-//							wildcard                    			: (STARSi COLONSi NCName) => STARSi COLONSi NCName			/* ws: explicitXQ */
+//							wildcard                    			: (STARSi COLONSi ncNameorKeyword) => STARSi COLONSi ncNameorKeyword			/* ws: explicitXQ */
 //																	| STARSi
-//                                									| NCName COLONSi STARSi; 
+//                                									| ncNameorKeyword COLONSi STARSi; 
 					abbrevForwardStep           			: ATSi^? nodeTest;                	
                 
                 predicateList               			: predicate*;     									
@@ -758,11 +760,11 @@ filterExpr                  			: primaryExpr predicateList;
 											| varRef 
 											| parenthesizedExpr 
 											| contextItemExpr 
-											|{input.LA(1)!=ATTRIBUTE && input.LA(1)!=COMMENT && input.LA(1)!=DOCUMENT_NODE &&
+											|/*{input.LA(1)!=ATTRIBUTE && input.LA(1)!=COMMENT && input.LA(1)!=DOCUMENT_NODE &&
 											  input.LA(1)!=ELEMENT && input.LA(1)!=EMPTY_SEQUENCE && input.LA(1)!=IF &&
 											  input.LA(1)!=ITEM && input.LA(1)!=NODE && input.LA(1)!=PROCESSING_INSTRUCTION &&
 											  input.LA(1)!=SCHEMA_ATTRIBUTE && input.LA(1)!=SCHEMA_ELEMENT && input.LA(1)!=TEXT &&											  
-											  input.LA(1)!=TYPESWITCH}?=> 
+											  input.LA(1)!=TYPESWITCH}?=> */
 											functionCall 
 											| orderedExpr 
 											| unorderedExpr 
@@ -864,7 +866,7 @@ filterExpr                  			: primaryExpr predicateList;
 				
 				compCommentConstructor      			: COMMENT LBRACESi! expr RBRACSi!;
 				
-				compPIConstructor           			: PROCESSING_INSTRUCTION (NCName | (LBRACESi! expr RBRACSi!)) 
+				compPIConstructor           			: PROCESSING_INSTRUCTION (ncNameorKeyword | (LBRACESi! expr RBRACSi!)) 
 															LBRACESi! expr? RBRACSi!;
 															
 //	predicateList               			: predicate*;
@@ -872,7 +874,7 @@ filterExpr                  			: primaryExpr predicateList;
 
 
 //-------------------------------------------------- NCName or Keyword? --------------------------------------------------
-/*
+
 ncNameorKeyword							: NCName
 										| ALL
 										| ANY
@@ -1016,7 +1018,7 @@ ncNameorKeyword							: NCName
 										| XQUERY
 										;
 					
-*/
+
 
 
 //---------------------------------------------------- Lexer ---------------------------------------------------
@@ -1035,7 +1037,7 @@ TOKENSWITCH				: (
 						  n=DirPIConstructor					// emits subtokens
 						| {state!=State.IN_TAG && state!=State.IN_QUOT_ATTRIBUTE && state!=State.IN_APOS_ATTRIBUTE}?=>
 						  n=DirCommentConstLEX					// emits subtokens
-						| {state==State.IN_ELEMENT}?=>
+						| {state==State.IN_ELEMENT || state==State.DEFAULT}?=>
 						  n=LENDTAGSi 							{$type=LENDTAGSi;}
   					  	| {state==State.IN_ELEMENT}? =>
 						  n=ElementContent						{$type=ElementContent;}	  
@@ -1251,7 +1253,7 @@ fragment LexLiterals	: n=NCName{
 				 else if($n.getText().equals("encoding")) this.tokenType=ENCODING;
 				 else if($n.getText().equals("end")) this.tokenType=END;
 				 else if($n.getText().equals("entire")) this.tokenType=ENTIRE;
-//				 else if($n.getText().equals("empty")) this.tokenType=EMPTY;
+				 else if($n.getText().equals("empty")) this.tokenType=EMPTY;
 				 else if($n.getText().equals("empty-sequence")) this.tokenType=EMPTY_SEQUENCE;
 				 else if($n.getText().equals("eq")) this.tokenType=EQ;
 				 else if($n.getText().equals("every")) this.tokenType=EVERY;
@@ -1297,7 +1299,7 @@ fragment LexLiterals	: n=NCName{
 				 else if($n.getText().equals("node")) this.tokenType=NODE;
 				 else if($n.getText().equals("no-inherit")) this.tokenType=NOINHERIT;
 				 else if($n.getText().equals("no-preserve")) this.tokenType=NOPRESERVE;
-//				 else if($n.getText().equals("not")) this.tokenType=NOT;
+				 else if($n.getText().equals("not")) this.tokenType=NOT;
 				 else if($n.getText().equals("occurs")) this.tokenType=OCCURS;
 				 else if($n.getText().equals("of")) this.tokenType=OF;
 				 else if($n.getText().equals("option")) this.tokenType=OPTION;
@@ -1354,7 +1356,8 @@ fragment LexLiterals	: n=NCName{
 				 else if($n.getText().equals("word")) this.tokenType=WORD;
 				 else if($n.getText().equals("words")) this.tokenType=WORDS;
 				 else if($n.getText().equals("xquery")) this.tokenType=XQUERY;
-				 else this.tokenType=NCName;
+				 else 
+				 	this.tokenType=NCName;
 		}
 		else
 			this.tokenType=NCName;

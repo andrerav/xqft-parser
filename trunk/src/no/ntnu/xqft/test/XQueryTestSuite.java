@@ -54,7 +54,7 @@ public class XQueryTestSuite extends Test implements Observer {
         xr.setErrorHandler(handler);
         xr.parse(new InputSource(new FileReader(new File(testSuite.suiteDir.getPath() + "/XQTSCatalog.xml"))));
 
-        int coverage = (testSuite.getSuccessNum() * 100) / testSuite.getTestNum();
+        double coverage = (((double)testSuite.getSuccessNum()) * 100.0) / ((double)testSuite.getTestNum());
         
         System.out.println("Finished, coverage: " + coverage + "%, tests run: " + testSuite.getTestNum());
     
