@@ -3,20 +3,9 @@ The W3C\cite{w3c00} and ANTLR (section \ref{sect:antlr:grammarSpec}) EBNF syntax
 
 \subsection{Separating Parser and Lexer Rules}
 \label{sect:implementation:separate}
-The ANTLR parser generator can generate parsers and lexers from a single grammar file. The distinction between terminals and non-terminals is that terminals start with \emph{uppercase} letters, and non-terminals start with \emph{lowercase} letters. Which productions to go where is highly dependant on what strategy we chose to solve the ambigious terminals problem. E.g. by defining all the ambigious terminals as non-terminals we would have solution very close to a scan-while-parse scanner (section \ref{sect:ambiguousgrammar:scanWhileParse}). Because we chose the strategy of letting the parser control the lexer's state, we vere able define a division of terminals and non-terminals very similar to the one specified by W3C. The exception is \verb!QName!, which by W3C is defined as follows:
-\begin{verbatim}
-QName           ::= PrefixedName
-                  | UnprefixedName
-PrefixedName    ::= Prefix ':' LocalPart 
-UnprefixedName  ::= LocalPart 
-Prefix          ::= NCName
-LocalPart       ::= NCName
-\end{verbatim}
-Where \verb!NCName! is another terminal, thus creating an ambiguity in the case where \verb!QName! uses the \verb!UnprefixedName! alternative. It is possible to rank the \verb!QName! production higher than the \verb!NCName! with a syntactic predicate checking if the token after \verb!NCName! is a \verb!':'!, but there is no good reason for doing so, when it can be defined as a non-terminal in this way:
-\begin{verbatim}
-qName             : (NCName COLONSi)? NCName;
-\end{verbatim}
-There is however some reasons for \emph{not} defining \verb!QName! as a terminal: by doing so, ANTLR would have generated token containing the whole \verb!QName!, meaning that e.g. if one is only interested in the localpart, one would have to manually split the text. And parser productions reffering to \verb!QName! would have to be rewritten as expecting a \verb!QName! \emph{or} a \verb!NCName!.
+The ANTLR parser generator can generate parsers and lexers from a single grammar file. The distinction between terminals and non-terminals is that terminals start with \emph{uppercase} letters, and non-terminals start with \emph{lowercase} letters. Which productions to go where is highly dependant on what strategy we chose to solve the ambigious terminals problem. E.g. by defining all the ambigious terminals as non-terminals we would have solution very close to a scan-while-parse scanner (section \ref{sect:ambiguousgrammar:scanWhileParse}). 
+
+Because we chose the strategy of letting the parser control the lexer's state, we were able to define a division of terminals from non-terminals very similar to the one specified by W3C. The exception are the introduced parser strain releaving container terminals we will see in section \ref{sect:rewriteGrammar:containerTokens}, and the enclosed composite terminals (section \ref{sect:rewriteGrammar:enclosedComposite}) which by W3C are defined as non-terminals, but were turned into lexer rules to solve ambiguities.
 
 \subsection{Rewriting the W3C 'dash' and 'hat' operators}
 \label{sect:implementation:dashOperator}
