@@ -20,6 +20,9 @@ all: parser compile jar dotgraphs
 testsuite:
 	java -Xmx1024M -cp bin:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.test.XQueryTestSuite
 
+testsuitegui:
+	java -Xmx1024M -cp bin:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.test.gui.GUIedTest  
+
 PITargetTest:
 	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool -Xgrtree test/PITarget/PITargetGr.g
 	javac -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar test/PITarget/*.java
