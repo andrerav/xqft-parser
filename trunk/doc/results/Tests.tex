@@ -27,8 +27,8 @@ After removing the constraint of reserved keywords (see section
 These results, as well as elaborations for the remaining 0.7\%, are thoroughly
 discussed in section \ref{sect:discussion:coverageResults}.
 
-One peculiarity about ANTLR was the fact that the nextToken() method in the base
-lexer class would catch recognition exceptions, display an error to stderr, and
+One peculiarity about ANTLR was the fact that the \verb!nextToken()! method in
+the base lexer class would catch recognition exceptions, display an error to stderr, and
 then attempt to recover from the exception. Overriding this method and handling
 the exception properly was not possible, since the nextToken() method is not
 able to throw any exceptions. This obvious design flaw had been discussed on
