@@ -14,12 +14,12 @@ natural choice for continued development of this parser.
 
 
 
-\underline{\textbf{\LARGE //TODO: Mads}} Ytelsestester, sammenligne, samt gj\o re ting vi skriver om i neste section...
+\underline{\textbf{\LARGE //TODO:}} Ytelsestester, sammenligne, samt gj\o re ting vi skriver om i neste section...
 
 
 \section{Improvements}
 \label{sect:future:improvements}
-\underline{\textbf{\LARGE //TODO: Mads}} tekst.... innledning..
+\underline{\textbf{\LARGE //TODO:}} tekst.... innledning..
 
 \begin{itemize}
 
@@ -29,14 +29,9 @@ natural choice for continued development of this parser.
 
 \item \textbf{Separating NCName and Keywords} -- Our current lexer separates NCNames from keywords by assuming that all keywords are NCNames, checking if the matched text could be a keyword and then set the type accordingly, as described in section \ref{sect:rewritegrammar:keywordNCName}. The check is implemented as a \verb!if..else if..! construct, which means a serial search for a match. A better solution would be to look it up in e.g. a hashtable. This problem will however dissapear if a island grammar solution were to be implemented, as the keyword and NCName productions would no longer need to be \verb!fragment! rules.
 
-
- \underline{\textbf{\LARGE //TODO: Mads}} 
-
-\item \textbf{Approaching LL(1)} LL(1) tiln\ae rme, kan sikre at states funker for alle tilfeller, samt kanskje(!) la KeywordOrNCName bli virkelighet
-
 \end{itemize}
 
-\underline{\textbf{\LARGE //TODO:}}Andreas, har du noe \aa~ legge til?
+\underline{\textbf{\LARGE //TODO:}}noe \aa~ legge til?
 
 
 
