@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2007-12-16 16:01:26
+// $ANTLR 3.0.1 etc/XQFT.g 2007-12-16 16:09:27
 
 	package no.ntnu.xqft.parse;
 
@@ -16306,7 +16306,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start stepExpr
-    // etc/XQFT.g:707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );
+    // etc/XQFT.g:707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );
     public final stepExpr_return stepExpr() throws RecognitionException {
         stepExpr_return retval = new stepExpr_return();
         retval.start = input.LT(1);
@@ -16315,14 +16315,14 @@ public class XQFTParser extends Parser {
 
         axisStep_return axisStep500 = null;
 
-        filterExpr_return filterExpr501 = null;
+        axisStep_return axisStep501 = null;
 
-        axisStep_return axisStep502 = null;
+        filterExpr_return filterExpr502 = null;
 
 
 
         try {
-            // etc/XQFT.g:707:35: ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep )
+            // etc/XQFT.g:707:35: ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr )
             int alt119=3;
             switch ( input.LA(1) ) {
             case ANCESTOR:
@@ -16334,18 +16334,18 @@ public class XQFTParser extends Parser {
                 int LA119_1 = input.LA(2);
 
                 if ( ((LA119_1>=COLONSi && LA119_1<=LPARSi)) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 1, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 1, input);
 
                     throw nvae;
                 }
@@ -16359,12 +16359,12 @@ public class XQFTParser extends Parser {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 2, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 2, input);
 
                     throw nvae;
                 }
@@ -16375,18 +16375,18 @@ public class XQFTParser extends Parser {
                 int LA119_3 = input.LA(2);
 
                 if ( ((LA119_3>=ALL && LA119_3<=XQUERY)||(LA119_3>=COLONSi && LA119_3<=LPARSi)||LA119_3==LBRACESi||LA119_3==NCName) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 3, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 3, input);
 
                     throw nvae;
                 }
@@ -16403,12 +16403,12 @@ public class XQFTParser extends Parser {
                         alt119=1;
                     }
                     else if ( (true) ) {
-                        alt119=3;
+                        alt119=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 167, input);
+                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 167, input);
 
                         throw nvae;
                     }
@@ -16422,12 +16422,12 @@ public class XQFTParser extends Parser {
                         alt119=1;
                     }
                     else if ( (true) ) {
-                        alt119=3;
+                        alt119=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 168, input);
+                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 168, input);
 
                         throw nvae;
                     }
@@ -16441,12 +16441,12 @@ public class XQFTParser extends Parser {
                         alt119=1;
                     }
                     else if ( (true) ) {
-                        alt119=3;
+                        alt119=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 169, input);
+                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 169, input);
 
                         throw nvae;
                     }
@@ -16460,12 +16460,12 @@ public class XQFTParser extends Parser {
                         alt119=1;
                     }
                     else if ( (true) ) {
-                        alt119=3;
+                        alt119=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 170, input);
+                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 170, input);
 
                         throw nvae;
                     }
@@ -16479,12 +16479,12 @@ public class XQFTParser extends Parser {
                         alt119=1;
                     }
                     else if ( (true) ) {
-                        alt119=3;
+                        alt119=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 171, input);
+                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 171, input);
 
                         throw nvae;
                     }
@@ -16498,12 +16498,12 @@ public class XQFTParser extends Parser {
                         alt119=1;
                     }
                     else if ( (true) ) {
-                        alt119=3;
+                        alt119=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 172, input);
+                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 172, input);
 
                         throw nvae;
                     }
@@ -16517,12 +16517,12 @@ public class XQFTParser extends Parser {
                         alt119=1;
                     }
                     else if ( (true) ) {
-                        alt119=3;
+                        alt119=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 173, input);
+                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 173, input);
 
                         throw nvae;
                     }
@@ -16536,12 +16536,12 @@ public class XQFTParser extends Parser {
                         alt119=1;
                     }
                     else if ( (true) ) {
-                        alt119=3;
+                        alt119=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 174, input);
+                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 174, input);
 
                         throw nvae;
                     }
@@ -16555,12 +16555,12 @@ public class XQFTParser extends Parser {
                         alt119=1;
                     }
                     else if ( (true) ) {
-                        alt119=3;
+                        alt119=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 175, input);
+                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 175, input);
 
                         throw nvae;
                     }
@@ -16574,12 +16574,12 @@ public class XQFTParser extends Parser {
                         alt119=1;
                     }
                     else if ( (true) ) {
-                        alt119=3;
+                        alt119=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 176, input);
+                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 176, input);
 
                         throw nvae;
                     }
@@ -16724,12 +16724,12 @@ public class XQFTParser extends Parser {
                         alt119=1;
                     }
                     else if ( (true) ) {
-                        alt119=3;
+                        alt119=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 177, input);
+                            new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 177, input);
 
                         throw nvae;
                     }
@@ -16738,7 +16738,7 @@ public class XQFTParser extends Parser {
                 default:
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 4, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 4, input);
 
                     throw nvae;
                 }
@@ -16750,18 +16750,18 @@ public class XQFTParser extends Parser {
                 int LA119_5 = input.LA(2);
 
                 if ( ((LA119_5>=COLONSi && LA119_5<=LPARSi)) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 5, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 5, input);
 
                     throw nvae;
                 }
@@ -16772,18 +16772,18 @@ public class XQFTParser extends Parser {
                 int LA119_6 = input.LA(2);
 
                 if ( ((LA119_6>=ALL && LA119_6<=XQUERY)||(LA119_6>=COLONSi && LA119_6<=LPARSi)||LA119_6==LBRACESi||LA119_6==NCName) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 6, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 6, input);
 
                     throw nvae;
                 }
@@ -16799,18 +16799,18 @@ public class XQFTParser extends Parser {
                 int LA119_7 = input.LA(2);
 
                 if ( ((LA119_7>=COLONSi && LA119_7<=LPARSi)) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 7, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 7, input);
 
                     throw nvae;
                 }
@@ -16821,18 +16821,18 @@ public class XQFTParser extends Parser {
                 int LA119_8 = input.LA(2);
 
                 if ( ((LA119_8>=COLONSi && LA119_8<=LPARSi)) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 8, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 8, input);
 
                     throw nvae;
                 }
@@ -16843,18 +16843,18 @@ public class XQFTParser extends Parser {
                 int LA119_9 = input.LA(2);
 
                 if ( ((LA119_9>=COLONSi && LA119_9<=LPARSi)) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 9, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 9, input);
 
                     throw nvae;
                 }
@@ -16865,18 +16865,18 @@ public class XQFTParser extends Parser {
                 int LA119_10 = input.LA(2);
 
                 if ( ((LA119_10>=ALL && LA119_10<=XQUERY)||(LA119_10>=COLONSi && LA119_10<=LPARSi)||LA119_10==LBRACESi||LA119_10==NCName) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 10, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 10, input);
 
                     throw nvae;
                 }
@@ -16887,18 +16887,18 @@ public class XQFTParser extends Parser {
                 int LA119_11 = input.LA(2);
 
                 if ( ((LA119_11>=COLONSi && LA119_11<=LPARSi)||LA119_11==LBRACESi) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 11, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 11, input);
 
                     throw nvae;
                 }
@@ -16909,18 +16909,18 @@ public class XQFTParser extends Parser {
                 int LA119_12 = input.LA(2);
 
                 if ( ((LA119_12>=COLONSi && LA119_12<=LPARSi)||LA119_12==LBRACESi) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 12, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 12, input);
 
                     throw nvae;
                 }
@@ -16931,18 +16931,18 @@ public class XQFTParser extends Parser {
                 int LA119_13 = input.LA(2);
 
                 if ( ((LA119_13>=COLONSi && LA119_13<=LPARSi)) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 13, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 13, input);
 
                     throw nvae;
                 }
@@ -16956,12 +16956,12 @@ public class XQFTParser extends Parser {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 14, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 14, input);
 
                     throw nvae;
                 }
@@ -16972,18 +16972,18 @@ public class XQFTParser extends Parser {
                 int LA119_15 = input.LA(2);
 
                 if ( ((LA119_15>=COLONSi && LA119_15<=LPARSi)||LA119_15==LBRACESi) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 15, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 15, input);
 
                     throw nvae;
                 }
@@ -17000,7 +17000,7 @@ public class XQFTParser extends Parser {
             case LCOMMENTSi:
             case LPISi:
                 {
-                alt119=2;
+                alt119=3;
                 }
                 break;
             case UNORDERED:
@@ -17008,18 +17008,18 @@ public class XQFTParser extends Parser {
                 int LA119_21 = input.LA(2);
 
                 if ( ((LA119_21>=COLONSi && LA119_21<=LPARSi)||LA119_21==LBRACESi) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 21, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 21, input);
 
                     throw nvae;
                 }
@@ -17030,18 +17030,18 @@ public class XQFTParser extends Parser {
                 int LA119_22 = input.LA(2);
 
                 if ( ((LA119_22>=COLONSi && LA119_22<=LPARSi)||LA119_22==LBRACESi) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 22, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 22, input);
 
                     throw nvae;
                 }
@@ -17169,18 +17169,18 @@ public class XQFTParser extends Parser {
                 int LA119_26 = input.LA(2);
 
                 if ( ((LA119_26>=COLONSi && LA119_26<=LPARSi)) ) {
-                    alt119=2;
+                    alt119=3;
                 }
                 else if ( (synpred6()) ) {
                     alt119=1;
                 }
                 else if ( (true) ) {
-                    alt119=3;
+                    alt119=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 26, input);
+                        new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 26, input);
 
                     throw nvae;
                 }
@@ -17189,7 +17189,7 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | filterExpr | axisStep );", 119, 0, input);
+                    new NoViableAltException("707:4: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 0, input);
 
                 throw nvae;
             }
@@ -17209,28 +17209,28 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:712:16: filterExpr
+                    // etc/XQFT.g:712:16: axisStep
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_filterExpr_in_stepExpr9097);
-                    filterExpr501=filterExpr();
+                    pushFollow(FOLLOW_axisStep_in_stepExpr9097);
+                    axisStep501=axisStep();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, filterExpr501.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, axisStep501.getTree());
 
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:713:16: axisStep
+                    // etc/XQFT.g:713:16: filterExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_axisStep_in_stepExpr9114);
-                    axisStep502=axisStep();
+                    pushFollow(FOLLOW_filterExpr_in_stepExpr9114);
+                    filterExpr502=filterExpr();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, axisStep502.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, filterExpr502.getTree());
 
                     }
                     break;
@@ -22904,8 +22904,8 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_DBLSLASHSi_in_relativePathExpr8941 = new BitSet(new long[]{0xFFFFFFFFFFFFFFF0L,0xFFFFFFFFFFFFFFFFL,0x1C1084880000FFFFL,0x0000000002240098L});
     public static final BitSet FOLLOW_stepExpr_in_relativePathExpr8945 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000003L});
     public static final BitSet FOLLOW_axisStep_in_stepExpr9080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_filterExpr_in_stepExpr9097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_axisStep_in_stepExpr9114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_axisStep_in_stepExpr9097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_filterExpr_in_stepExpr9114 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_reverseStep_in_axisStep9162 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
     public static final BitSet FOLLOW_forwardStep_in_axisStep9166 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000020L});
     public static final BitSet FOLLOW_predicateList_in_axisStep9170 = new BitSet(new long[]{0x0000000000000002L});
