@@ -374,7 +374,10 @@ importStmt                  			: IMPORT (schemaImport | moduleImport);
 	moduleImport                			: MODULE (NAMESPACE ncNameorKeyword EQSi)? uriLiteral (AT uriLiteral (COMMASi uriLiteral)*)?;
 	
 varDecl                     			: VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNSi exprSingle) | EXTERNAL);
-	qName returns [String text]                 : nc1=ncNameorKeyword (c=COLONSi nc2=ncNameorKeyword)? { $text = $nc1.text + ($c != null ? $c.text + $nc2.text : ""); };
+	qName returns [String text]                 : q=QName {$text = $q.text;}
+												| n=ncNameorKeyword {$text = $n.text;}
+												;
+//	nc1=ncNameorKeyword (c=COLONSi nc2=ncNameorKeyword)? { $text = $nc1.text + ($c != null ? $c.text + $nc2.text : ""); };
 
     typeDeclaration             			: AS sequenceType;
 //		sequenceType# 							: #PAA EGET#
@@ -510,7 +513,7 @@ exprSingle                  			: (IF LPARSi)=> ifExpr
 //		exprSingle# 						: #PAA EGET (DETTE)#
 		
 
-	quantifiedExpr              			: quant=(SOME | EVERY) quantifiedExprTupleDef
+	quantifiedExpr              			: (quant=SOME | quant=EVERY) quantifiedExprTupleDef
 												(COMMASi quantifiedExprTupleDef)* SATISFIES exprSingle
                                                 -> ^(AST_QUANTIFIEDEXPR $quant quantifiedExprTupleDef+ exprSingle);
 
@@ -1168,11 +1171,17 @@ fragment DirCommentConstLEX			: {prepareSubToken();}	LCOMMENTSi 			{this.type=LC
 
 fragment PragmaLEX			: {prepareSubToken();}	LPRAGSi					{this.type=LPRAGSi; emit();} 
 							  S? 
-							  {prepareSubToken();}	NCName					{this.type=NCName; emit();}
 							  (
-							  	{prepareSubToken();}	c=COLONSi			{if(c!=null){this.type=COLONSi; emit();}}
-							  	{prepareSubToken();}	n=NCName			{if(n!=null){this.type=NCName; emit();}}
-							  	)?
+							  {prepareSubToken();}
+							  (QName)=> 
+							   QName 	{this.type=QName; emit();}
+							  |NCName	{this.type=NCName; emit();}
+							  )
+//							  {prepareSubToken();}	NCName					{this.type=NCName; emit();}
+//							  (
+//							  	{prepareSubToken();}	c=COLONSi			{if(c!=null){this.type=COLONSi; emit();}}
+//							  	{prepareSubToken();}	n=NCName			{if(n!=null){this.type=NCName; emit();}}
+//							  	)?
 							  (S 
 							  	{prepareSubToken();}	p=PragmaContents	{if(p!=null){this.type=PragmaContents; emit();}}
 							  	)? 
@@ -1208,14 +1217,17 @@ fragment DoubleLiteral				: (
 									  ) 
 									  ('e'|'E') (PLUSSi|MINUSSi)? Digits;
 
+fragment QName						: NCName COLONSi NCName;
+
 fragment NCName              			: NCNameStartChar NCNameChar*;
 	fragment NCNameChar					   	: Letter | Digit | DOTSi | MINUSSi | UNDERSCORESi | CombiningChar | Extender;
 	fragment NCNameStartChar     			: Letter | UNDERSCORESi;
 
 
 //All keywords and NCName. Made a fragmen so they will not be matched when in ElementContent or AttributeContent.
-fragment LexLiterals	: n=NCName{
-		if(state != State.IN_TAG){
+fragment LexLiterals	: (QName)=> QName {this.tokenType=QName;}
+						| n=NCName{
+				 if(state != State.IN_TAG){
 				 if($n.getText().equals("all")) this.tokenType=ALL;
 				 else if($n.getText().equals("any")) this.tokenType=ANY;
 				 else if($n.getText().equals("ancestor")) this.tokenType=ANCESTOR;
