@@ -1,5 +1,7 @@
 # Makefile for generating lexer and parser (requires gnu binutils and, obviously, make)
 
+all: parser compile jar
+
 compile:
 	javac -sourcepath ./src -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar:lib/junit.jar -d bin `find src -name *java`
 
@@ -14,8 +16,6 @@ dotgraphs:
 
 jar:
 	jar cvfm ntnu-xqft.jar ./etc/default-manifest bin/*
-
-all: parser compile jar dotgraphs
 
 testsuite:
 	java -Xmx1024M -cp bin:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.test.XQueryTestSuite

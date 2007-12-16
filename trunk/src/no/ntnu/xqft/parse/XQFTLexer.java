@@ -1,4 +1,8 @@
+<<<<<<< .mine
+// $ANTLR 3.0.1 etc/XQFT.g 2007-12-16 19:26:19
+=======
 // $ANTLR 3.0.1 etc/XQFT.g 2007-12-16 18:19:30
+>>>>>>> .r401
 
 	package no.ntnu.xqft.parse;	
 

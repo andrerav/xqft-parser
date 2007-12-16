@@ -593,12 +593,12 @@ ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?;
 		ftAnd                       			: ftMildNot ( FTAND^ ftMildNot )*;
 			ftMildNot                   			: ftUnaryNot ( NOT^ IN! ftUnaryNot )*;
 				ftUnaryNot                  			: (FTNOT^)? ftPrimaryWithOptions;
-				ftPrimaryWithOptions						: ftPrimary (ftMatchOption^)*;
-					ftPrimary                   			: ftWords ftTimes? 
+				ftPrimaryWithOptions						: ftPrimary^ (ftMatchOption)*;
+					ftPrimary                   			: ftWords^ ftTimes? 
 															| LPARSi! ftSelection RPARSi! 
 															| ftExtensionSelection
 															;
-						ftWords                     			: ftWordsValue ftAnyallOption?;
+						ftWords                     			: ftWordsValue^ ftAnyallOption?;
 							ftWordsValue                			: literal | (LBRACESi! expr RBRACSi!);
 								literal                     			: numericLiteral | StringLiteral;
 									numericLiteral              			: IntegerLiteral | DecimalLiteral | DoubleLiteral;
