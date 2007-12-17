@@ -33,17 +33,20 @@ project. Consider the examples in figure \ref{code:parsers:lalr} and
 \ref{code:parsers:ll} and compare it to the reference grammar specification in
 figure \ref{code:parsers:w3c}.
 
+
 \begin{figure}[h!]
 \begin{verbatim}
-LetClause : "let $" LetBindings_
+LetClause    : "let $" LetBindings_
 LetBindings_ : VarName OptTypeDeclaration_ ":=" ExprSingle
-        | VarName OptTypeDeclaration_ ":=" ExprSingle
-        "," "$" LetBindings_
+             | VarName OptTypeDeclaration_ ":=" ExprSingle
+               "," "$" LetBindings_
 \end{verbatim}
 \caption[LALR grammar example]{LALR grammar example from the Pathfinder project
 (see section \ref{sect:soa:pathfinder})}
 \label{code:parsers:lalr}
 \end{figure}
+
+\underline{\textbf{\LARGE //TODO:}} kjipere eksempel og uten full-text
 
 \begin{figure}[h!]
 \begin{verbatim}
@@ -60,9 +63,9 @@ varBinding : (DOLLAR varName typeDeclaration? |
 \begin{figure}[h!]
 \begin{verbatim}
 LetClause ::=  (("let" "$" VarName TypeDeclaration?) 
- 				| ("let" "score" "$"  VarName)) ":=" ExprSingle ("," 
- 				(("$" VarName TypeDeclaration?) 
- 				| FTScoreVar) ":=" ExprSingle)*
+             | ("let" "score" "$"  VarName)) ":=" ExprSingle ("," 
+               (("$" VarName TypeDeclaration?) 
+             | FTScoreVar) ":=" ExprSingle)*
 \end{verbatim}
 \caption{ W3C reference grammar example }
 \label{code:parsers:w3c}
