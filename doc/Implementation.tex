@@ -24,8 +24,7 @@ the specification over creating our own from scratch because the otherwise risk
 of missing out essential latent meaning as well as timely concerns, as
 discussed further in section \ref{sect:discussion:adaptW3C}.    
 
-By choosing to implement an "parser controlled state driven" lexer (section
-\ref{sect:amiguousgrammar:parserControlled}), almost all terminal productions
+By choosing to implement an "parser controlled state driven" lexer, almost all terminal productions
 had to be completly rewritten, and also lead to the introduction of the
 \verb!TOKENSWITCH! construct. This could be avoided by implementing e.g. a
 "scan-while-parse" type lexer, but such a lexer's corresponding parser would
@@ -33,16 +32,20 @@ have been much more complex and would handle a much bigger load than that of
 our implementation. A more viable alternative would be the "island grammars"
 strategy, but because ANTLR does not support this we rejected this solution. In
 section \ref{sect:discussion:designDecisions} we further evaluate our choice of
-lexer strategy.         
+lexer strategy.
 
 We also implemented enclosed composite lexer productions which removed a great
 deal of terminal ambiguities by moving the whole refering non-terminal rule
 into the lexer. The container tokens were introduced to lessen the strain on
-the parser.   
+the parser.
+
+The lexer strategy we have choosen depends on the requiret parser lookahead to be held low. Because of this we employed different means of lowering it such as left factoring and augmenting productions with syntactic predicates. An ideal parser would have $k=1$, but as we will discuss in section \ref{sect:discussion:lookahead}, this is not possible for the current version of XQuery.
 
 W3C specifies some extra-gramatical contraints for XQuery Full-text. Our parser
-comply with a great deal of these, however, there are still some
+comply with a majority of these, however, there are still some
 unconformities, as discussed in section \ref{sect:future:knownBugs}.  
+
+\underline{\textbf{\LARGE //TODO:}} Litt mer hva vi har gjort, og ikke hva vi har vist i rapporten? Hvis noe er diskuterbart s\aa~ gi en liten teaser p\aa~ diskusjonen og referer til senere kap.
 
 We have described the implementation of AST rewrite rules and operators to have
 ANTLR generate a complete AST shaped after these rules and operators. We also
@@ -54,6 +57,8 @@ discovered that it was simple to add inline code in the grammar to extend the
 parser with these features, however it may seem like this is affecting
 readability and clarity of the grammar. In the next chapters this issue will be
 further examined and discussed.
+\underline{\textbf{\LARGE //ODOT:}}
+
 
 As we now have seen how the parser was implemented, in the next chapter we will
 se how it performs, in particular with regards to coverage test results, AST
