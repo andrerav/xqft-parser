@@ -63,7 +63,7 @@ W3C specifies the constraint like this (\cite{w3c00}, section A.1.2):
 Unprefixed function names spelled the same way as language keywords could make the language harder to recognize. For instance, if(foo) could be taken either as a FunctionCall or as the beginning of an IfExpr. Therefore it is not legal syntax for a user to invoke functions with unprefixed names which match any of the names in [\cite{w3c00}, section] A.3 Reserved Function Names.
 \end{quote}
 
-Where "A.3 Reserved Function Names" lists a number of names such as \verb!if!, \verb!text! and \verb!node! (thirteen in total).
+Where "A.3 Reserved Function Names" lists a number of names such as \verb!if!, \verb!text! and \verb!node! (thirteen in total). As mentioned in \ref{sect:impl:reserved_keywords} this restriction is provided to solve some non-detererminisms arising from the fact that XQuery does not have reserved keywords.
 
 \textbf{\LARGE //TODO:}
 \begin{figure}[h!]
@@ -109,5 +109,5 @@ Which is by W3C specified as follows (\cite{w3c00}, section A.1.2):
 No single alternative for FTMatchOption can be specified more than once as part of the same FTMatchOptions. For example, if the FTCaseOption "lowercase" is specified, then "uppercase" cannot also be specified as part of the same FTMatchOptions.
 \end{quote}
 
-As of yet, our parser does not accomodate this constraint as reported in section \ref{sect:future:knownBugs}.
+As of yet, our parser does not accomodate this constraint, as reported in section \ref{sect:future:knownBugs}.
 
