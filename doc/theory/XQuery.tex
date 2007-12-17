@@ -24,7 +24,7 @@ FLWOR is an integral part of XQuery, and can be compared to the select-from-wher
 \end{itemize}
 This example from \cite{styl00} illustrates the usage of FLWOR, and compares it to its SQL counterpart:
 
-\begin{verbatim}
+\begin{Verbatim}
 (: FLWOR example :)
 for $v in doc("videos.xml")//video
 where $v/year = 1999
@@ -32,7 +32,7 @@ return $v/title
 
 -- Corresponding SQL example 
 SELECT v.title FROM video v WHERE v.year = 1999
-\end{verbatim}
+\end{Verbatim}
 
 \subsection{Full text extensions}
 The Xquery 1.0  and Xpath 2.0 specifications have been extended with full text capabilities (see \cite{w3c02}), which enables the use of stemming, thesaurus, and similar tools for full-text queries. Specifically, the full-text extensions extend Xquery 1.0 and Xpath 2.0 in the following ways:

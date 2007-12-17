@@ -7,12 +7,10 @@ expressed in EBNF, our task was to run this through a parser generator,
 possibly with some syntax changes, and the job would be done. After a while of
 trying to adapt the given grammar to something ANTLR would accept, we came to
 the conclusion that W3C probably intended the specification to be read by
-humans, not by computers. Additionally, the grammar was, despite stated as such
-by the W3C, not a LL(1) grammar but rather LL(k), for some undetermined \verb!k!
-(also noted by \cite{kang_xquery_diglib}).
+humans, not by computers. 
 
 An alternative to insert and adapt would be to write a grammar from scratch while keeping the semantics specified by W3C. We belive that by doing so there is a risk of over simplifying, causing latent semantics such as operator precedence to be distorted, or in worst case lost alltogether. Another negative aspect with this approach is that it does not properly utilize the work allready done, making it time consuming compared to just adapting.
 
-Considering the non-terminal productions, there were not many productions that would have to be adapted to fit ANTLR semantics. The adjustments came in form of introducing predicates to accommodate for the extra-gramatical constraints. In addition we rewrote some productions to reduce required parser look-ahead. \underline{\textbf{\LARGE //TODO:}} Ble det mer - LL(k<3)ish, reserved keywords?
+The terminal productions had to be completly rewritten. By choosing to write these rules from scratch in the first place, we would in all likelyhood have discovered the problem with the ambiguous terminals earlier, but at the cost of not having a parser up and running (albeit a very reduced one) until the grammar was completly finished. This would have prohibited us from working with e.g. the scoping system in parallell with the grammar.
 
-However, the terminal productions had to be completly rewritten. By choosing to write these rules from scratch in the first place, we would in all likelyhood have discovered the problem with the ambiguous terminals earlier, but at the cost of not having a parser up and running (albeit a very reduced one) until the grammar was completly finished. This would have prohibited us from working with e.g. the scoping system in parallell with the grammar.
+Considering the non-terminal productions, there rewrites were not as extensive. Most of the work done on the parser grammar were in the form of left factoring and augmenting with syntactic predicates to reduce required lookahead, or acommodating for the extra-grammatical constrains. We can not see that any particular benefit would be gained from writing the non-terminal productions from scratch, compared to adapting the W3C specification.
