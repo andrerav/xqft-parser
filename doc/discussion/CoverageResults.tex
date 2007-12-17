@@ -1,0 +1,70 @@
+% Discussion / Coverage test results
+\section{Coverage Test Results}
+\label{sect:discussion:coverageResults}
+As noted in section \ref{sect:results:tests}, our coverage testing ended at 
+99.3\%. We can compare this result to official results published by W3C, with one
+important constraint: as described in section \ref{sect:method:testing}, the
+coverage tests is limited by the fact that we can only execute the set of tests
+that are applicable in parse-time (and not run-time), since our parser does not
+have a backend which produces output to be returned and compared to expected
+output. Neither is our parser capable of detecting semantics such as
+typing errors. This means that the official results from W3C include a number
+of tests that have not been run on our parser.
+
+Further, the XQuery test suite does not contain any full-text tests. So the
+full-text capabilities of our parser are left untested, leaving only the minimum
+XQuery features.
+
+As such, it is crucial to keep in mind that our test results are not directly
+comparable with official results. However, they give a fair indication of the
+parsers abilities. 
+
+\begin{figure}[h!]
+  \begin{center}
+    \begin{tabular}{ |c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | }
+      \hline
+      Anglo-DT        & BaseX           & Berkeley DB XML   & DataDirect XQuery \\ \hline
+      14630 / 100\%   & 14532 / 99.3\%  & 14566 / 99.5\%    & 14593 / 99.7\%  \\ \hline \hline
+      eXist-db        & Galax           & Qexo              & Qizx \\ \hline            
+      14544 / 99.4\%  & 14555 / 99.4\%  & 14535 / 99.3\%    & 14620 / 99.9\% \\ \hline \hline
+      Saxon-SA        & Sedna XML       & Stylus Studio     & xbird/open \\ \hline
+      14637 / 100\%   & 14459 / 98.8\%  & 14593 / 99.7\%    & 12041 / 82.3\% \\ \hline \hline
+      X-Hive/DB       & xq2xsl          & XQuantum          & \\ \hline
+      14589 / 99.7\%   & 14588 / 99.7\%  & 14378 / 98.2\%    & \\ 
+    \hline
+    \end{tabular}
+  \end{center}
+  \caption[Official XQuery test suite results]{Official XQuery test suite
+  results compiled from the test suite web site\cite{w3ctestresults}} 
+  \label{figure:table:w3c_test_results}
+\end{figure}
+
+Figure \ref{figure:table:w3c_test_results} gives a basic overview of the current
+tests results published by the W3C at the current time of writing.
+
+One interesting byproduct of the coverage tests were the utility of using it to
+find and fix previously unknown bugs quickly. As such, this test suite also
+works well as a regression test, since any improvement to the parser should
+never degrade our coverage result -- however, it is hard to tell if tests that
+previously failed would pass along with an identical amount of previously
+passed tests that would fail, leaving the coverage percentage as before even
+though the actual result was changed drastically. This kind of pitfall could be
+avoided by keeping detailed track of which tests fail and pass, and compare new
+results to old results and inspect the difference.
+
+
+\begin{itemize}
+\item Testresultater, bra/d\aa rlig
+\item testresultater (hva var de forskjellige feilene)
+\item Generelt resultater vi skrev om i forrige kapittel
+\item Resultatene maa sees relativt - vi har ikke faatt testet hele settet siden
+vi ikke kan kjore run-time tester, og vi returnerer heller ikke noe som kan
+sammenlignes med forventet resultat
+\end{itemize}
+
+W3C Unconformities delen forklarer egentlig testresultatet.
+
+Coverage er ikke h\o yere mest sannsynlig p\aa~grunn av vi har reserved
+keywords, og noen ganger ser parseren for langt frem... skal se om jeg f\aa~r
+fiksa noe av dette til helga, sp\o rs p\aa~ hvor lang vi har kommet med
+rapporten.... Covrage testene er eXtremt bra til \aa~finne bugz.
