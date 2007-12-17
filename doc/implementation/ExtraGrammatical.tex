@@ -64,6 +64,7 @@ Unprefixed function names spelled the same way as language keywords could make t
 
 Where "A.3 Reserved Function Names" lists a number of names such as \verb!if!, \verb!text! and \verb!node! (thirteen in total). By using a gated syntactic predicate our parser will not be able to see the alternative for \verb!functionCall! if the name of the function is among the restricted ones as seen in figure \ref{fig:reservedFunction}.
 
+\textbf{\LARGE //TODO:}
 \begin{figure}[h!]
 \begin{verbatim}
 primaryExpr : literal 
@@ -98,7 +99,7 @@ This constraint is specified as follows (\cite{w3c00}, section A.1.2):
 An implementation's choice to support the XML 1.0 and XML Names, or XML 1.1 and XML Names 1.1 lexical specification determines the external document from which to obtain the definition for this production[s].[\ldots] Also please note that these external productions follow the whitespace rules of their respective specifications, and not the rules of this specification,
 \end{quote}
 
-The productions refered to of interest in our case is \verb!NCName! and \verb!Char!. For both of these we have employed the 1.0 specification, as this is the one in most widespread use. However, at this date our parser yet allows inpropper whitespace in \verb!QName!, that is, tag and attribute names, aswell as inpropper nesting of tags. These violations of the constraint have quite easy fixes and are reported in section \ref{sect:future:knownBugs}.
+The productions refered to of interest in our case is \verb!NCName! and \verb!Char!. For both of these we have employed the 1.0 specification, as this is the one in most widespread use. However, at this date our parser yet allows inpropper nesting of tags. This violation of the constraint have a quite easy fix and are reported in section \ref{sect:future:knownBugs}.
 
 \subsection{Multiple Match Options}
 \label{sect:implementation:multipleMatchOptions}
