@@ -6,7 +6,7 @@ XML is a markup language and a form of data representation capable of storing da
 
 The full text extensions to Xquery 1.0 and Xpath 2.0 employs tokenisation and phrase search to provide more accurate search results, and generally giving the benefits known from modern search engines. This is also believed to provide better support for diverse languages, and more accurate search queries (see \cite{w3c02}, "Introduction").
 
-\subsection{Xpath / path expressions}
+\subsection{XPath / path expressions}
 XPath is, as well as a recommendation by the W3C \cite{w3c01}, a subset of Xquery. However XPath predates XQuery and is also limited only to path expressions, which includes axis specifiers for addressing nodes in a document as well as node tests, predicates, and arithmetic operators.
 
 Consider this trivial example, from \cite{w3s00}:
@@ -22,8 +22,9 @@ FLWOR is an integral part of XQuery, and can be compared to the select-from-wher
 \item Order by - ordering of the resulting tuples
 \item Return - not to be mistaken with return statements from imperative languages. Returning in this context is more similar to yielding known from functional programming. The return statement is executed once for every iteration
 \end{itemize}
-This example from \cite{styl00} illustrates the usage of FLWOR, and compares it to its SQL counterpart:
-
+The example in figure \ref{code:theory:flwor} from \cite{styl00} illustrates
+the usage of FLWOR, and  compares it to its SQL counterpart.
+\begin{figure}
 \begin{Verbatim}
 (: FLWOR example :)
 for $v in doc("videos.xml")//video
@@ -33,15 +34,41 @@ return $v/title
 -- Corresponding SQL example 
 SELECT v.title FROM video v WHERE v.year = 1999
 \end{Verbatim}
+\caption[Simple FLWOR example]{Simple FLWOR example with SQL counterpart}
+\label{code:theory:flwor}
+\end{figure}
 
 \subsection{Full text extensions}
-The Xquery 1.0  and Xpath 2.0 specifications have been extended with full text capabilities (see \cite{w3c02}), which enables the use of stemming, thesaurus, and similar tools for full-text queries. Specifically, the full-text extensions extend Xquery 1.0 and Xpath 2.0 in the following ways:
+The Xquery 1.0  and Xpath 2.0 specifications have been extended with full text
+capabilities (see \cite{w3c02}), which enables the use of stemming, thesaurus,
+and similar tools for full-text queries. Specifically, the full-text extensions
+extend Xquery 1.0 and Xpath 2.0 in the following ways:
 \begin{itemize}
-\item A new and essential expression, FTContainsExpr, as well as new operators such as FTOr and FTAnd
-\item The addition of score variables to FLWOR expressions, for keeping track of search result scores, also known as rank, as seen in most modern search engines
-\item Static context declarations for full-text match options to the query prologue
+\item A new and essential expression, FTContainsExpr, as well as new operators
+such as FTOr and FTAnd 
+\item The addition of score variables to FLWOR expressions, for keeping track
+of search result scores, also known as rank, as seen in most modern search
+engines 
+\item Static context declarations for full-text match options to the query
+prologue 
 \end{itemize}
-\underline{\textbf{\LARGE //TODO:}} eksempel
+
+Figure \ref{code:theory:flwor_fulltext} shows an example with a FLWOR expression
+where full-text matching is used.
+
+\begin{figure}
+\begin{Verbatim}
+for $result at $rank in
+for $book score $score in //book[title ftcontains "usability" 
+                                    && "testing" with stemming]
+order by $score descending
+return $book
+where $rank <= 10
+return $result
+\end{Verbatim}
+\caption[Simple FLWOR full-text example]{Simple FLWOR example with full-text}
+\label{code:theory:flwor_fulltext}
+\end{figure}
 
 \subsection{Precedence}
 \label{sect:xquery:precedence}
