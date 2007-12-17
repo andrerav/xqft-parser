@@ -1,10 +1,10 @@
-\chapter{The Parser Generator - ANTLR}
+\chapter[ANTLR -- The Parser Generator]{ANTLR \\ \huge -- The Parser Generator}
 \label{sect:antlr}
 ANTLR, Another Tool for Language Recognition, is a parser generator under a
 three clause BSD-license \cite{antlrorg}.  It is a successor of PCCTS,
 sometimes called ANTLR v1, and the latest version is ANTLR v3. PCCTS was
 developed by Professor Terrence Parr of the University of San Francisco, now
-the \underline{\textbf{\LARGE //TODO:}} primus motor behind ANTLR.
+the brain behind ANTLR.
 
 ANTLR generates recursive-decent recognizers that utilizes predicated LL(*) --
 an extension to LL(k) that uses arbitrary lookahead to make decisions. LL
@@ -31,11 +31,11 @@ Member methods and variables of the parser can be placed in a \verb!@members{! m
 
 Lexer productions and token names start with a capital letter, and parser productions do not. It is possible, and even common, to specify both the lexer and parser grammar in one file, thus ANTLR will determine which productions that belong to the lexer and the parser respectively by looking at the case of the first letter in the name of the production rules. An example of ANTLR grammar can be seen in figure \ref{code:simpleGrammar}. This grammar will generate a parser that recognizes input such as "John is 37 years old".
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 NAME     : ( 'a'..'z' | 'A'..'Z')+;  
 AGE      : ('1'..'9')? ('1'..'9'|'0');
 sentence :  NAME ' is ' AGE  ' years old';
-\end{verbatim}
+\end{Verbatim}
 \caption{ANTLR grammar example}
 \label{code:simpleGrammar}
 \end{figure}
@@ -84,18 +84,18 @@ When the lexer is to predict which type of token it should return (\verb!"predic
 \end{itemize}
 These rules are ranked, and ANTLR will only use as many of them needed to differanciate the alternatives. Syntactic and semantic predicates will also make an impact on the decisionmaking as seen later. Figure \ref{fig:grammarPrec} shows a grammar with ambiguous alternatives, a simplified version of the code generated can be seen in figure \ref{fig:codeGenerated} where you can see that the parser will choose \verb!AB! before \verb!A! (and thus \verb!A B!) and \verb!A! before \verb!ANY!.
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 A       : 'a';
 B       : 'b';
 AB      : 'ab';
 ANY     : ('a'..'z')+;
-\end{verbatim}
+\end{Verbatim}
 \caption{Grammar showing the precidence among rules}
 \label{fig:grammarPrec}
 \end{figure}
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 int alt = 4;
 if(LA(1) == 'a')
       if(LA(2) == 'b')
@@ -114,7 +114,7 @@ else if(LA(1) >= 'c' && LA(1) <= 'z')
       alt = 4;
 else
       throw new NoViableAltException();
-\end{verbatim}
+\end{Verbatim}
 \caption{Example of how ANTLR predicts token type.}
 \label{fig:codeGenerated}
 \end{figure}
@@ -142,9 +142,9 @@ paranthesis would be excluded from the AST, and the \verb!PLUS! token
 would be promoted to root node with two \verb!expr! children.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 sum : '('! expr PLUS^ expr ')'!;
-\end{verbatim}
+\end{Verbatim}
 \caption{Simple AST structuring operators example}
 \label{code:astOperators}
 \end{figure}
@@ -158,10 +158,10 @@ leave unwanted tokens out of the AST. Also note that variables can be used
 exactly like in grammar predicates.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 if : 'if' expr 'then' s1=stmt 'else' s2=stmt 'endif'
      -> ^(IFEXPR expr $s1 $s2);
-\end{verbatim}
+\end{Verbatim}
 \caption{Usage of simple AST rewrite rules}
 \label{code:astRewriteRules}
 \end{figure}
@@ -186,11 +186,11 @@ Even though LL(*) allows the parser to scan arbitrarily far forward for any symb
 If the expression being evaluated in a validating semantic predicate yields $false$, an exception is thrown, expressing that a semantic predicate has failed. These predicates are never included in the decision-making process. Validating semantic predicates can be very handy in cases where e.g. you want to restrain the possible values a tokens can have, or to check if a variable is being referenced before its declaration. An example of a validating semantic predicate can be seen in figure \ref{code:validateSemantic}.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 expr    : N {Integer.parseInt($N.getText()).intValue() < 7}?
         | . . .
         ;
-\end{verbatim}
+\end{Verbatim}
 \caption[Validating semantic predicate.]{A Validating semantic predicate checking if the number value of \texttt{N} is less than $7$.}
 \label{code:validateSemantic}
 \end{figure}
@@ -204,11 +204,11 @@ Disambiguating semantic predicates are hoisted into the prediction decisions of 
 To fully resolve a non-determinism with disambiguating semantic predicates, all alternatives that contribute to the non-determinism will have to be covered, as seen in figure \ref{code:disambigSemantic}. The DFA generated in figure \ref{code:disambigSemantic} is illustrated in figure \ref{fig:dfaDisambiguate}.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 expr      : {pred1}? A 
           | {pred2}? A
           ;
-\end{verbatim}
+\end{Verbatim}
 \caption{Disambiguating semantic predicates.}
 \label{code:disambigSemantic}
 \end{figure}
@@ -221,13 +221,13 @@ expr      : {pred1}? A
 \end{figure}
 As mentioned earlier, ANTLR hoists disambiguating semantic predicates into the state where the alternative prediction is made, which can be illustrated by the fact that the grammar inn figure \ref{code:disambigSemanticHoist} also yields the DFA shown in figure \ref{fig:dfaDisambiguate}. This includes only the predicates visible at the left edge of the production rule. 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 expr      : a 
           | b
           ;
 a         : {pred1}? A ;
 b         : {pred2}? A;
-\end{verbatim}
+\end{Verbatim}
 \caption{Hoisted disambiguating semantic predicates.}
 \label{code:disambigSemanticHoist}
 \end{figure}
@@ -238,13 +238,13 @@ Predicates implicitly specify precedence among the alternatives, where an earlie
 Gated semantic predicates are used when it is desirable to turn parts of a grammar on or off based on runtime information. The predicate will be hoisted into the decision even if the decision is deterministic by considering syntax alone. The difference between gated and disambiguating semantic predicates is that decisions use disambiguating semantic predicates only when syntax alone is insufficient to distinguish between alternatives. Figure \ref{code:gatedSemantic} shows an example of a gated semantic predicate, the resulting DFA is illustrated in figure \ref{fig:dfaGated}, showing how the predicate is hoisted even with no syntactic ambiguity.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 expr      : a 
           | b
           ; 
 a         : A;
 b         : {pred}?=>B;
-\end{verbatim}
+\end{Verbatim}
 \caption{Gated semantic predicate.}
 \label{code:gatedSemantic}
 \end{figure}
@@ -263,27 +263,27 @@ Syntactic predicates are similar to semantic predicates except that they specify
 When used to disambiguate between alternatives, ANTLR will try the alternatives in order. The alternative whose predicate is the first to return true, is the one chosen ("if it looks like A, it is A"). In its simplest form, syntactic predicates can be used to look ahead an arbitrarily number of symbols, to check if they match the symbols specified in the predicate. In a case like this ANTLR rewrites the predicate to a gated semantic predicate, an example of this is the grammar in figure \ref{code:syntactic} being translated to the equivalent grammar of figure \ref{code:translatedSyntactic}.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 expr      : (A)=> A 
           | B
           ; 
-\end{verbatim}
+\end{Verbatim}
 \caption{Syntactic predicate.}
 \label{code:syntactic}
 \end{figure}
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 expr      : {input.LA(1)==A}?=>A 
           | B
           ; 
-\end{verbatim}
+\end{Verbatim}
 \caption{Translated syntactic predicate}
 \label{code:translatedSyntactic}
 \end{figure}
 
 In more complex cases, syntactic predicates are implemented as disambiguating semantic predicates that invoke parser backtracking methods. These methods compare the input stream with the symbols specified in the predicate. If the stream and the symbols match, the method returns true, and the input stream is rolled back to the place where the comparing started. Such a case is exemplified by figure \ref{code:complexSyntactic}, where with an input such as "((a))" ANTLR will try the second alternative, succeed, backtrack, before telling the parser to choose this alternative.
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 expr      : (simple)=> simple ';'
           | (recur)=> recur ';'  
           | simple '!'
@@ -293,7 +293,7 @@ recur     : '(' recur ')'
           | ID
           ;
 ID        : ('a'..'z')+;
-\end{verbatim}
+\end{Verbatim}
 \caption{A syntactic predicate which may backtrack}
 \label{code:complexSyntactic}
 \end{figure}

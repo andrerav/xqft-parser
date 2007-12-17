@@ -1,0 +1,19 @@
+\section{Lookahead}
+\label{sect:discussion:lookahead}
+\underline{\textbf{\LARGE //TODO:}}
+
+The W3C claims their XQuery specification is expressed as a LL(1)-grammar\cite{createTokenizer}, as in the simplest cases can be seen with bare eyes, and also noted by \cite{kang_xquery_diglib}, this is not true. Because we chose the parser controlled strategy, our system's correctness depends on that the parser is a LL(k) parser with a small k.
+
+Additionally, the grammar was, despite stated as such
+by the W3C, not a LL(1) grammar but rather LL(k), for some undetermined \verb!k!
+(also noted by \cite{kang_xquery_diglib}).
+
+\underline{\textbf{\LARGE //TODO:}}
+\begin{verbatim}
+typeswitch($c) 
+      case $e as element() return local:copy($a)
+      case $t as text() return $t
+      case $c as comment() return $c ftcontains "host" case sensitive
+      case sensitiv:fg return $p
+      default return ()
+\end{verbatim}
