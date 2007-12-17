@@ -65,8 +65,6 @@ Unprefixed function names spelled the same way as language keywords could make t
 
 Where "A.3 Reserved Function Names" lists a number of names such as \verb!if!, \verb!text! and \verb!node! (thirteen in total). As mentioned in \ref{sect:impl:reserved_keywords} this restriction is provided to solve some non-detererminisms arising from the fact that XQuery does not have reserved keywords. The start of a function call is written as the function name followed by a \verb!(!, and the reserved function names appear in the leftmost position followed by a \verb!(! in each of their own productions. The amiguity is that in some non-terminals these productions are alternatives to the function call rule.
 
-The problem is solved by means of syntactic predicates, example of which can be seen in figure \ref{fig:reservedFunction}. These are not employed to block a function call from containing these words, as such, but rather to force the parser to choose the alternative production when confronted with the ambiguity. This is sufficient as the parser has no way to match a function call production without facing all the alternatives.
-
 \begin{figure}[h!]
 \begin{Verbatim}
 stepExpr       : (TEXT | NODE | ...) LPARSi)=> 
@@ -87,9 +85,11 @@ primaryExpr    : ...
 textTest       : TEXT LPARSi ...;
 anyKindTest    : NODE LPARSi ...;
 \end{Verbatim}
-\caption[Reserved function names diverted by syntactic predicates]{An example of forcing the parser to choose alternative production when faced with a reserved function name token. \texttt{#productions#} denotes a series of productions which all are on the leftmost end consecutively.}
+\caption[Reserved function names diverted by syntactic predicates]{An example of forcing the parser to choose alternative production when faced with a reserved function name token. \texttt{\#productions\#} denotes a series of productions which are on the leftmost edge of each other consecutively.}
 \label{fig:reservedFunction}
 \end{figure}
+
+The problem is solved by means of syntactic predicates, example of which can be seen in figure \ref{fig:reservedFunction}. These are not employed to block a function call from containing these words, as such, but rather to force the parser to choose the alternative production when confronted with the ambiguity. This is sufficient as the parser has no way to match a function call production without facing all the alternatives.
 
 The word \verb!item! is also on the list of reserved function names, but are not part of any ambiguity with function call. We belive that this may be a remainder of some earlier XQuery spesification, but have with a gated semantic predicate, to be in compliance with the constraint, blocked the word from being a function name.
 
@@ -111,7 +111,7 @@ This constraint is specified as follows (\cite{w3c00}, section A.1.2):
 An implementation's choice to support the XML 1.0 and XML Names, or XML 1.1 and XML Names 1.1 lexical specification determines the external document from which to obtain the definition for this production[s].[\ldots] Also please note that these external productions follow the whitespace rules of their respective specifications, and not the rules of this specification,
 \end{quote}
 
-The productions refered to of interest in our case is \verb!NCName! and \verb!Char!. For both of these we have employed the 1.0 specification, as this is the one in most widespread use. However, at this date our parser yet allows inpropper nesting of tags. This violation of the constraint have a quite easy fix and are reported in section \ref{sect:future:knownBugs}.
+The productions refered to of interest in our case is \verb!NCName! and \verb!Char!. For both of these we have employed the 1.0 specification, as this is the one in most widespread use. However, at this date our parser yet allows inpropper nesting of tags. This violation of the constraint have a quite easy fix and is reported in section \ref{sect:future:knownBugs}.
 
 \subsection{Multiple Match Options}
 \label{sect:implementation:multipleMatchOptions}
