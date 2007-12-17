@@ -1,11 +1,44 @@
-\section{Reserved Keywords}
+\section{Releasing Reserved Keywords}
 \label{sect:impl:reserved_keywords}
-A particular feature in XQuery is the lack of reserved keywords. This creates a series of problems when 
+A particular feature in XQuery is the lack of reserved keywords, that is, all variables, function names, name tests etc. can be named anything as long as it a valid \verb!NCName!, e.g. \verb!for! or \verb!where!. This creates a series of non-determinisms in the parser, but are mended by the W3C by restricting the allowed function names as an extra-grammatical constraint (section \ref{sect:implementation:reservedFunctionNames}).
 
+We implemented this feature by creating a non-terminal rule \verb!ncNameorKeyword! which encompasses \verb!NCName! and all the keywords as alternatives, as can be seen in figure \ref{fig:ncnNameorKeyword} . Further, we replaced all references of \verb!NCName! in the parser productions with this newly introduced production, example of which can be seen in figure \ref{fig:namespaceDeclKeywordfree}.
 
-\underline{\textbf{\LARGE //TODO:}} dette m\aa flyttes eller skrives om.
+\begin{figure}[h!]
+\begin{verbatim}
+ncNameorKeyword    : NCName
+                   | ALL
+                   | ANY
+                   | ...
+                   | XQUERY
+                   ;
+\end{verbatim}
+\label{fig:ncnNameorKeyword}
+\caption[\texttt{ncNameorKeyword} releases the reserved keywords]{A simplified representation of \texttt{ncNameorKeyword}, a non-terminal releasing the reserved keywords.}
+\end{figure}
 
+\begin{figure}[h!]
+\begin{verbatim}
+namespaceDecl      : DECLARE NAMESPACE ncNameorKeyword EQSi uriLiteral;
+\end{verbatim}
+\label{fig:namespaceDeclKeywordfree}
+\caption[Example of a production permitting keywords]{\texttt{namespaceDecl} is an example of a production which now tolerates keywords.}
+\end{figure}
 
+An alternative solution would be to not differanciate the keywords from \verb!NCName! in the first place (section \ref{sect:rewritegrammar:keywordNCName}). But by doing so, all occurrences of keywords would have to be replaced with \verb!NCName! and fitted with a gated or validating semantic predicate, rendering the grammar much more complex and less legible. This can be seen in the example of \verb!orderingModeDecl! :
+\begin{verbatim}
+// With NCNames separated from keywords in the lexer:
+orderingModeDecl   : DECLARE ORDERING (ORDERED | UNORDERED);
 
-v\aa r parser har enna reserved keywords, flytte dette til future work? \\
-\underline{\textbf{\LARGE //ODOT:}} 
+// With the differantiating performed by the parser:
+orderingModeDecl   : {input.LT(1).getText().equals("declare") && 
+                      input.LT(2).getText().equals("ordering")}=>
+                     NCName NCName
+                     n = NCName {$n.getText().equals("ordered") || 
+                                 $n.getText().equals("unordered")}?
+                   ;
+\end{verbatim}
+
+The initial gated semantic predicate would have to check both the first and the token, as this otherwise would lead to a non-determinism since the specified grammar is LL(2).
+
+Because of this lookahead restriction, however, there is one non-determinism that arise when releasing the reserved keywords that is not handled by the W3C specification in any way. The ambiguity comes in the form of the typeswitch keyword \verb!case! which can be followed by a \verb!NCName!, and the full-text match option keywords \verb!case! and \verb!sensitive! / \verb!insensitive!. This will be discussed in section \ref{sect:discussion:lookahead}.
