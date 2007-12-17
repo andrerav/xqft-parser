@@ -518,6 +518,7 @@ filterExpr : primaryExpr predicateList;
               | varRef 
               | parenthesizedExpr 
               | contextItemExpr 
+                {input.LA(1)!=ITEM}?=>
               | functionCall 
               | orderedExpr 
               | unorderedExpr 
