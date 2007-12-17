@@ -6,10 +6,10 @@ As well as the grammatical constraints specified in the EBNF grammar, W3C also s
 \label{sect:implementation:occurence}
 
 The W3C grammar specifies the non-terminal \verb!SequenceType! as follows:
-\begin{verbatim}
+\begin{Verbatim}
 SequenceType ::= ("empty-sequence" "(" ")")
                | (ItemType OccurrenceIndicator?)
-\end{verbatim}
+\end{Verbatim}
 It also specifies this extra-gramatical constraint (\cite{w3c00}, section A.1.2):
 \begin{quote}
 As written, the grammar in A XQuery Grammar is ambiguous for some forms using the '+' and '*' Kleene operators. The ambiguity is resolved as follows: [\ldots] Any occurrence of '+' and '*', as well as '?', following a sequence type is assumed to be an occurrence indicator. That is, a "+", "*", or "?" immediately following an ItemType must be an OccurrenceIndicator\ldots
@@ -18,13 +18,13 @@ As written, the grammar in A XQuery Grammar is ambiguous for some forms using th
 This is a clasical case for a syntactic predicate (section \ref{sect:antlr:syntacticPredicate}), which can force the parser to consider a something that looks like a \verb!OccurrenceIndicator! as a \verb!OccurenceIndicator! and not e.g. a arithmetic operator. The implementation of which can be seen in figure \ref{fig:occurrenceIndicator}. The alternative with \verb!ItemType! had to be split into two more alternatives to rank the one with with the \verb!OccurenceIndicator! over the one without.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 sequenceType : (itemType occurrenceIndicator)=> 
                itemType occurrenceIndicator
              | itemType
              | EMPTY_SEQUENCE LPARSi RPARSi
              ;
-\end{verbatim}
+\end{Verbatim}
 \caption[The \texttt{OccurenceIndicator} ambiguity solved]{The \texttt{OccurenceIndicator} ambiguity solved by means of a syntactic predicate}
 \label{fig:occurrenceIndicator}
 \end{figure}
@@ -36,22 +36,22 @@ A single slash may appear either as a complete path expression or as the first p
 \end{quote}
 
 W3Cs \verb!PathExpr! is expressed like this:
-\begin{verbatim}
+\begin{Verbatim}
 PathExpr  ::= ("/" RelativePathExpr?)
             | ("//" RelativePathExpr)
             | RelativePathExpr
-\end{verbatim}
+\end{Verbatim}
 
 As with the \verb!occurenceIndicator! we split the alternative with the $?$-kleene operator into two explicit alternatives. And by using a syntactic predicate, the parser will prefer the alternative with the \verb!RelativePathExpr! over the single slash one, as seen in figure \ref{fig:leadingSlash}.
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 pathExpr    : (SLASHSi relativePathExpr)=> 
               SLASHSi relativePathExpr
             | SLASHSi
             | DBLSLASHSi relativePathExpr
             | relativePathExpr
             ;
-\end{verbatim}
+\end{Verbatim}
 \caption[The \texttt{PathExpr} ambiguity solved]{The \texttt{PathExpr} ambiguity solved by means of a syntactic predicate}
 \label{fig:leadingSlash}
 \end{figure}
@@ -63,11 +63,11 @@ W3C specifies the constraint like this (\cite{w3c00}, section A.1.2):
 Unprefixed function names spelled the same way as language keywords could make the language harder to recognize. For instance, if(foo) could be taken either as a FunctionCall or as the beginning of an IfExpr. Therefore it is not legal syntax for a user to invoke functions with unprefixed names which match any of the names in [\cite{w3c00}, section] A.3 Reserved Function Names.
 \end{quote}
 
-Where "A.3 Reserved Function Names" lists a number of names such as \verb!if!, \verb!text! and \verb!node! (thirteen in total). By using a gated syntactic predicate our parser will not be able to see the alternative for \verb!functionCall! if the name of the function is among the restricted ones as seen in figure \ref{fig:reservedFunction}.
+Where "A.3 Reserved Function Names" lists a number of names such as \verb!if!, \verb!text! and \verb!node! (thirteen in total).
 
 \textbf{\LARGE //TODO:}
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 primaryExpr : literal 
             ...
             | {input.LA(1)!=IF && input.LA(1)!=NODE
@@ -75,7 +75,7 @@ primaryExpr : literal
              functionCall 
             ...
             ;
-\end{verbatim}
+\end{Verbatim}
 \caption[The \texttt{PathExpr} ambiguity solved]{The \texttt{PathExpr} ambiguity solved by means of a disambiguating semantic predicate}
 \label{fig:reservedFunction}
 \end{figure}
