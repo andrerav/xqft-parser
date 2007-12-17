@@ -63,24 +63,35 @@ W3C specifies the constraint like this (\cite{w3c00}, section A.1.2):
 Unprefixed function names spelled the same way as language keywords could make the language harder to recognize. For instance, if(foo) could be taken either as a FunctionCall or as the beginning of an IfExpr. Therefore it is not legal syntax for a user to invoke functions with unprefixed names which match any of the names in [\cite{w3c00}, section] A.3 Reserved Function Names.
 \end{quote}
 
-Where "A.3 Reserved Function Names" lists a number of names such as \verb!if!, \verb!text! and \verb!node! (thirteen in total). As mentioned in \ref{sect:impl:reserved_keywords} this restriction is provided to solve some non-detererminisms arising from the fact that XQuery does not have reserved keywords.
+Where "A.3 Reserved Function Names" lists a number of names such as \verb!if!, \verb!text! and \verb!node! (thirteen in total). As mentioned in \ref{sect:impl:reserved_keywords} this restriction is provided to solve some non-detererminisms arising from the fact that XQuery does not have reserved keywords. The start of a function call is written as the function name followed by a \verb!(!, and the reserved function names appear in the leftmost position followed by a \verb!(! in each of their own productions. The amiguity is that in some non-terminals these productions are alternatives to the function call rule.
 
-\textbf{\LARGE //TODO:}
+The problem is solved by means of syntactic predicates, example of which can be seen in figure \ref{fig:reservedFunction}. These are not employed to block a function call from containing these words, as such, but rather to force the parser to choose the alternative production when confronted with the ambiguity. This is sufficient as the parser has no way to match a function call production without facing all the alternatives.
+
 \begin{figure}[h!]
 \begin{Verbatim}
-primaryExpr : literal 
-            ...
-            | {input.LA(1)!=IF && input.LA(1)!=NODE
-             && ... && input.LA(1)!=TEXT}?=>
-             functionCall 
-            ...
-            ;
+stepExpr       : (TEXT | NODE | ...) LPARSi)=> 
+                 axisStep
+               | axisStep
+               | filterExpr
+               ;
+axisStep       : #productions# ... |...
+               | ...
+filterExpr     : primaryExpr...;
+primaryExpr    : ...
+               | {input.LA(1)!=ITEM}?=>
+                 functionCall
+               ;
+#procuctions#  : textTest
+               | anyKindTest
+               | ...
+textTest       : TEXT LPARSi ...;
+anyKindTest    : NODE LPARSi ...;
 \end{Verbatim}
-\caption[The \texttt{PathExpr} ambiguity solved]{The \texttt{PathExpr} ambiguity solved by means of a disambiguating semantic predicate}
+\caption[Reserved function names diverted by syntactic predicates]{An example of forcing the parser to choose alternative production when faced with a reserved function name token. \texttt{#productions#} denotes a series of productions which all are on the leftmost end consecutively.}
 \label{fig:reservedFunction}
 \end{figure}
 
-\textbf{\LARGE //TODO:} This is actually not a problem for our parser as all the reserved function names are keywords, and a function name must be a \verb!qName!, but the restriction is implemented to prepare for a future version with no reserved keywords.
+The word \verb!item! is also on the list of reserved function names, but are not part of any ambiguity with function call. We belive that this may be a remainder of some earlier XQuery spesification, but have with a gated semantic predicate, to be in compliance with the constraint, blocked the word from being a function name.
 
 \subsection{Whitespace Explicit}
 \label{sect:implementation:whitespace}
