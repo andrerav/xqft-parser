@@ -3,10 +3,10 @@
  The XQuery grammar specifies some constructs enclosed by unique symbols, such as \verb!DirPIConstructor! shown in figure \ref{fig:pragma} These rules often contain tokens that overlap with other terminals, so we would draw benefit from moving the productions to the lexer. However, this means that there will only be generated one token by such a rule, and if a later step in the parser want to extract only parts of the construct, it would have to do so manually. Our solution is to make it possible for lexer productions to emit more than one token. In this way, ambiguities would be solved in the lexer, and the parser would still have access to all terminals it should have.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 DirPIConstructor ::= "<?" PITarget (S DirPIContents)? "?>"
 DirPIContents    ::= (Char* - (Char* '?>' Char*))
-\end{verbatim}
+\end{Verbatim}
 \label{fig:pragma}
 \caption[An enclosed production]{\texttt{DirPIConstructor} is an uniquely enclosed production. \texttt{S} denotes whitespace.}
 \end{figure}
@@ -19,12 +19,12 @@ As can be seen in figure \ref{fig:nextToken}, by default an ANTLR generated lexe
 
 As seen in figure \ref{fig:emitToken} ,our implemented \verb!emit(Token t)! will put the token \verb!t! in the buffer and set the \verb!token! variable of the lexer to \verb!t!, to block it from emitting unwanted tokens (see \verb!if(token == NULL)! in figure \ref{fig:nextToken}).
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 public void emit(Token token){
   this.token = token;
   tokens.add(token);
 }
-\end{verbatim}
+\end{Verbatim}
 \caption[The overridden \texttt{emit(Token t)}]{The implementation of the overriden method \texttt{emit(Token token)}}
 \label{fig:emitToken}
 \end{figure}
@@ -32,7 +32,7 @@ public void emit(Token token){
 The \verb!nextToken()! method is modified to pick tokens from the buffer, that is, if there are any there. If there are not, it will ask the lexer to make one as before, before returning the first one generated. This is shown in figure \ref{fig:newNextToken}. To be able to use the token generating capabilities of \verb!emit()! we also introduced a method \verb!prepareSubToken()! which ensures that the token will contain correct information about its position.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 public Token nextToken(){
   if(tokens.size() > 0)
     return tokens.remove(0);
@@ -41,7 +41,7 @@ public Token nextToken(){
     return Token.EOF_TOKEN;
   return tokens.remove(0);
 }
-\end{verbatim}
+\end{Verbatim}
 \caption[The overridden \texttt{nextToken()}]{The implementation of the overriden method \texttt{nextToken()}}
 \label{fig:newNextToken}
 \end{figure}
@@ -52,7 +52,7 @@ public Token nextToken(){
 As previously mentioned, the XML markup features processing instructions, pragmas, comments and CDATA sections contain terminals which allowed content overlap significantly with other terminals. However, these terminals are enclosed in unique symbols, making it possible for us to declare the non-terminal rules which refer to them as lexer productions. And with the subtoken emitting functionality described in the last section, the parser will still be able to distinguish the terminals. 
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 DirPIConstructor : {prepareSubToken();}
                    LPISi                 {type=LPISi; emit();}
                    {prepareSubToken();}
@@ -73,8 +73,7 @@ DirPIConstructor : {prepareSubToken();}
                                  | ~(NotChar | QUESTIONSi)
                                )*;
     fragment RPISi           : '?>';
-
-\end{verbatim}
+\end{Verbatim}
 \caption[\texttt{DirPIConstructor} emitting subtokens]{The implementation of \texttt{DirPIConstructor} with subtoken emitting capabilities.}
 \label{fig:pragmaLEX}
 \end{figure}
@@ -85,15 +84,16 @@ Because the \verb!DirPIContents! part is optional, the lexer will have to check 
 
 \subsection{Nested XQuery Comments}
 XQuery allows nested comments, for example:
-\begin{verbatim}
+\begin{Verbatim}
 (: this is a comment (: this comment is nested :) :)
-\end{verbatim}
+\end{Verbatim}
 This is a classic problem in compiler construction, however it can be solved using standard ANTLR syntax, without resorting to custom functions/methods for consuming input and keeping track of nesting. The original EBNF as specified by W3C is as follows:
-\begin{verbatim}
+\begin{Verbatim}
 Comment ::= "(:" (CommentContents | Comment)* ":)"
-\end{verbatim}
-At first glance, this seems uncomplicated and straight forward, but this grammar needs to be rewritten to be accepted by an LL parser. A suggestion for a solution to this problem was initially found on the Antlr mailing list\footnote{http://www.antlr.org:8080/pipermail/antlr-interest/2005-July/012967.html}, and we loosly based our implementation on such an approach. This lexer rule will correctly detect and allow nested comments, and hide them from the parser:
-\begin{verbatim}   
+\end{Verbatim}
+At first glance, this seems uncomplicated and straight forward, but this grammar needs to be rewritten to be accepted by an LL parser. A suggestion for a solution to a similar problem was initially found on the Antlr mailing list\footnote{http://www.antlr.org:8080/pipermail/antlr-interest/2005-July/012967.html}, and we loosly based our implementation on such an approach. Figure \ref{fig:nestedComment} shows this lexer rule that will correctly detect and allow nested comments, and hide them from the parser.
+\begin{figure}[h!]
+\begin{Verbatim}
 Comment   : LXQCOMMENTSi 
            ({(input.LA(1)=='(' && input.LA(2)==':')}?Comment 
            | {input.LA(2)!=')'}?=>COLONSi
@@ -102,6 +102,10 @@ Comment   : LXQCOMMENTSi
             RXQCOMMENTSi; {$channel=HIDDEN;}
     fragment LXQCOMMENTSi     : '(:';
     fragment RXQCOMMENTSi     : ':)';
-\end{verbatim}
-Where the disambiguating semantic predicate on the second line can be understood as "if it looks like a comment, it is a comment". The gated semantic predicates on the third and fourth line guards the production from being greedy, i.e. they hide the posibility of matching a \verb!':'! if it is followed by a \verb!')'!, and \verb!'('! if it is followed by a \verb!':'!. By using \verb!$channel=HIDDEN! ANTLR will put this token in an different virtual channel than the default one, making it invisible for the parser unless explicitly asked for. 
+\end{Verbatim}
+\label{fig:nestedComment}
+\caption[The implementation of nested comments]{The implementation of nested comments.}
+\end{figure}
+
+In this figure the disambiguating semantic predicate on the second line can be understood as "if it looks like a comment, it is a comment". The gated semantic predicates on the third and fourth line guards the production from being greedy, i.e. they hide the posibility of matching a \verb!':'! if it is followed by a \verb!')'!, and \verb!'('! if it is followed by a \verb!':'!. By using \verb!$channel=HIDDEN! ANTLR will put this token in an different virtual channel than the default one, making it invisible for the parser unless explicitly asked for. 
 

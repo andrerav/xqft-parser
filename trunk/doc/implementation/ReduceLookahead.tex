@@ -7,7 +7,7 @@ A LL parser is often expressed as being LL($k$), where $k$ is a positive integer
 Setting \verb!k! to $1$ creates too many non-determinisms for us to mend for in a timely fashion for this project, leading us to implement a LL(2) parser. The first step in achieving this was extensive left factoring of all productions applicable. An example of this is seen in figure \ref{fig:w3cUnfactored} which shows the orginal productions as specified by W3C, and in figure \ref{fig:antlrFactored} which shows the corresponding productions as they appear in our ANTLR grammar after left factoring. It is worth noticing that a parser matching \verb!Prolog! as defined by W3C needs at least 2, and at most 3 tokens lookahead to differentiate the alternatives.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 Prolog              ::= ((...| Setter |...) ";")* 
                         ((...| FunctionDecl |...) ";")*
 Setter              ::= BoundarySpaceDecl | DefaultCollationDecl 
@@ -16,13 +16,13 @@ BoundarySpaceDecl   ::= "declare" "boundary-space" ...
 DefaultCollationDecl::= "declare" "default" "collation" ...
 EmptyOrderDecl      ::= "declare" "default" "order" ...
 FunctionDecl        ::= "declare" "function" ...
-\end{verbatim}
+\end{Verbatim}
 \label{fig:w3cUnfactored}
 \caption[\texttt{Prolog} as defined by W3C]{A simplified representation of \texttt{Prolog} as defined by W3C.}
 \end{figure}
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 prolog @init{boolean start = true;}
                     :(
                        (...
@@ -42,7 +42,7 @@ emptyOrderDecl      : ORDER ...;
 boundarySpaceDecl   : BOUNDARYSPACE ...;
 defaultCollationDecl: COLLATION ...;
 functionDecl        : FUNCTION ...;
-\end{verbatim}
+\end{Verbatim}
 \label{fig:antlrFactored}
 \caption[\texttt{Prolog} left factored.]{A simplified representation of a left factored \texttt{Prolog} as it is implemented in our ANTLR grammar.}
 \end{figure}

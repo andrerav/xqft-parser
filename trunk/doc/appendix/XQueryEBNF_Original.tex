@@ -3,7 +3,7 @@ This grammar is limited in the sense that it requires productions from XML and
 other specifications (such as XPath). For the full grammar with contextual
 links, please visit http://www.w3.org/TR/xpath-full-text-10/. 
 
-\begin{verbatim}
+\begin{Verbatim}[frame=none, fontsize=\footnotesize]
 [1] Module ::= VersionDecl? (LibraryModule | MainModule)
 [2] VersionDecl ::= "xquery" "version" StringLiteral 
                         ("encoding" StringLiteral)? Separator
@@ -299,11 +299,11 @@ links, please visit http://www.w3.org/TR/xpath-full-text-10/.
 [176] FTWildCardOption ::= ("with" "wildcards") | ("without" "wildcards")
 [177] FTExtensionOption ::= "option" QName StringLiteral
 [178] FTIgnoreOption ::= "without" "content" UnionExpr
-\end{verbatim}
+\end{Verbatim}
 
 
 \textbf{Terminal Symbols}
-\begin{verbatim}
+\begin{Verbatim}[frame=none, fontsize=\footnotesize]
 [179] IntegerLiteral ::= Digits
 [180] DecimalLiteral ::= ("." Digits) | (Digits "." [0-9]*)	
                          /* ws: explicitXQ */
@@ -334,4 +334,4 @@ links, please visit http://www.w3.org/TR/xpath-full-text-10/.
 [194] S ::= [http://www.w3.org/TR/REC-xml#NT-S] /* xgc: xml-version */
 [195] Char ::= [http://www.w3.org/TR/REC-xml#NT-Char] 
                /* xgc: xml-versionXQ */
-\end{verbatim}
+\end{Verbatim}
