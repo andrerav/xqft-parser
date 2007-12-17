@@ -45,6 +45,11 @@ om vi brukte annet alternativ etc..
 
 \section{Lookahead}
 \underline{\textbf{\LARGE //TODO:}}
+
+The W3C claims their XQuery specification is expressed as a LL(1)-grammar\cite{createTokenizer}, as in the simplest cases can be seen with bare eyes, and also noted by \cite{kang_xquery_diglib}, this is not true. Because we chose the parser controlled strategy, our system's correctness depends on that the parser is a LL(k) parser with a small k.
+
+\section{NCNames and Reserved Keywords}
+\underline{\textbf{\LARGE //TODO:}}
 \begin{verbatim}
 typeswitch($c) 
       case $e as element() return local:copy($a)
@@ -54,8 +59,6 @@ typeswitch($c)
       default return ()
 \end{verbatim}
 
-\section{NCNames and Reserved Keywords}
-\underline{\textbf{\LARGE //TODO:}}
 
 kanskje jeg skal ha noe her ogs\aa .
 

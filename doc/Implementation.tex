@@ -1,15 +1,16 @@
 \chapter{Implementation}
 \label{chapter:implementation}
 
-The main part of implementing the parser was to rewrite the EBNF provided by W3C in \cite{w3c01} to conform to ANTLR's syntax and semantics. Because of the ambiguous terminals described in section \ref{sect:ambiguousgrammar:ambigTerm} this was not a trivial task, and in the following chapter we will present by which means we solved this. In addition we will present other ANTLR conforformity rewrites, how we augmented the grammar to output a correct AST and finally our implementation of scoping and symbol tables.
+The main part of implementing the parser was to rewrite the EBNF provided by W3C in \cite{w3c01} to conform to ANTLR's syntax and semantics. Because of the ambiguous terminals described in section \ref{sect:ambiguousgrammar:ambigTerm} this was not a trivial task, and in the following chapter we will present by which means we solved this. In addition we will present other how we reduced the parser required lookahead, implemented a parser that mangages a language without reserved keywords, how we augmented the grammar to output a correct AST and finally our implementation of scoping and symbol tables.
 
 
 \input{implementation/AntlrSyntax}
 \input{implementation/DiffNCNameKeyword}
 \input{implementation/ParserControlled}
 \input{implementation/EnclosedComposite}
-\input{implementation/ReservedKeywords}
 \input{implementation/ReduceLookahead}
+\input{implementation/ReservedKeywords}
+\input{implementation/ExtraGrammatical}
 \input{implementation/CreateAST}
 \input{implementation/ScopingAndSymbol}
 \input{implementation/ErrorHandling}
