@@ -2,7 +2,7 @@
 
 \nomenclature{\textbf{DFA}}{\textbf{D}eterministic \textbf{F}inite \textbf{A}utomata. A state machine used typically to formally describe lexical analyzers. For examples see section \ref{sect:antlr:disambiguatingSemantic}.}
 
-\nomenclature{\textbf{AST}}{\textbf{A}bstract \textbf{S}yntax \textbf{T}ree. Two-dimensional trees which encode the structure, as determined by the parser, of the the input symbols. See section \ref{sect:antlr:ast}.}
+\nomenclature{\textbf{AST}}{\textbf{A}bstract \textbf{S}yntax \textbf{T}ree. A two-dimensional tree which encode the structure of the the input symbols. See section \ref{sect:antlr:ast}.}
 
 \nomenclature{\textbf{Ambiguous}}{A grammar is ambiguous if the same sequence of symbols can be interpreted in more than a single way. See section \ref{sect:ambiguousgrammar:ambigTerm}.}
 
@@ -16,9 +16,9 @@
 
 \nomenclature{\textbf{ANTLR}}{\textbf{AN}other \textbf{T}ool for \textbf{L}anguage \textbf{R}ecognition. A predicated-LL(k) parser generator that handles lexers, parsers, and tree parsers.}
 
-\nomenclature{\textbf{Syntactic predicate}}{\emph{ANTLR v3 specific}. A selective form of backtracking used to recognize language constructs that cannot be distinguished with finite look-ahead. See section \ref{sect:antlr:syntacticPredicate}.}
+\nomenclature{\textbf{Predicate, syntactic}}{\emph{ANTLR v3 specific}. A selective form of backtracking used to recognize language constructs that cannot be distinguished with finite look-ahead. See section \ref{sect:antlr:syntacticPredicate}.}
 
-\nomenclature{\textbf{Semantic predicate}}{\emph{ANTLR v3 specific}. A boolean expression used to alter the parse, or throw exceptions based upon runtime information. See section \ref{sect:antlr:semantic_preds}.}
+\nomenclature{\textbf{Predicate, semantic}}{\emph{ANTLR v3 specific}. A boolean expression used to alter the parse, or throw exceptions based upon runtime information. See section \ref{sect:antlr:semantic_preds}.}
 
 \nomenclature{\textbf{Terminal production}}{A procution that cannot be further divided (in the traditional sense. For ANTLR, see \textbf{fragment}) and generates a token. Also called lexer production. See section \ref{sect:antlr:lexer}}
 
@@ -32,7 +32,7 @@
 
 \nomenclature{\textbf{Non-greedy subrule}}{A referenced rule that will only match input until the refering rule has another alternative that can match the same input. See \textbf{greedy subrule}.}
 
-\nomenclature{\textbf{Hoisting}}{Pulling a predicate out of its enclosing rule and into the prediction expression of another rule. See \textbf{semantic predicate} and sections \ref{sect:antlr:disambiguatingSemantic} and \ref{sect:antlr:gate_semantic_preds}. }
+\nomenclature{\textbf{Hoisting}}{Pulling a predicate out of its enclosing rule and into the prediction expression of another rule. See sections \ref{sect:antlr:disambiguatingSemantic} and \ref{sect:antlr:gate_semantic_preds}. }
 
 \nomenclature{\textbf{NCName}}{A name in accordance with the XML specification of namespaces.}
 
@@ -44,4 +44,5 @@
 
 \nomenclature{\textbf{Stderr}}{ Standard error }
 
-\nomenclature{\textbf{\Large //TODO:}}{noe mer?}
+\nomenclature{\textbf{Left factoring}}{ If $A$ is a single non-terminal, and $\alpha$ , $\beta$  and $\gamma$ are strings of terminals or non- terminals, then a production rule of the form:  \begin{center} $A \rightarrow \alpha\beta \mid \alpha\gamma $ \end{center} can be left-factored into two rules of the form: \begin{center} $A \rightarrow \alpha B$\end{center} \begin{center} $ B \rightarrow \beta \mid \gamma $\end{center} See section \ref{sect:implementation:reduceLookahead}. }
+
