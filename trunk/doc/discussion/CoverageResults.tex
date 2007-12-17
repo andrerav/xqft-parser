@@ -2,12 +2,12 @@
 \section{Coverage Test Results}
 \label{sect:discussion:coverageResults}
 As noted in section \ref{sect:results:tests}, our coverage testing ended at 
-99.3\%. We can compare this result to official results published by W3C, with one
-important constraint: as described in section \ref{sect:method:testing}, the
-coverage tests is limited by the fact that we can only execute the set of tests
-that are applicable in parse-time (and not run-time), since our parser does not
-have a backend which produces output to be returned and compared to expected
-output. Neither is our parser capable of detecting semantics such as
+99.3\%. We can compare this result to official results published by W3C, with
+some  important constraints: as described in section \ref{sect:method:testing},
+the coverage tests is limited by the fact that we can only execute the set of
+tests that are applicable in parse-time (and not run-time), since our parser
+does not have a backend which produces output to be returned and compared to
+expected output. Neither is our parser capable of detecting semantics such as
 typing errors. This means that the official results from W3C include a number
 of tests that have not been run on our parser.
 
@@ -15,9 +15,14 @@ Further, the XQuery test suite does not contain any full-text tests. So the
 full-text capabilities of our parser are left untested, leaving only the minimum
 XQuery features.
 
-As such, it is crucial to keep in mind that our test results are not directly
-comparable with official results. However, they give a fair indication of the
-parsers abilities. 
+As such, it is crucial to keep in mind that \emph{our test results are not directly
+comparable with official results}. However, they give a fair indication of the
+parsers abilities, seen from a relative point of view.
+
+On a side note, the results from the \emph{parse-error} scenario tests
+(described in  section \ref{sect:method:testing}) would be directly comparable.
+However, W3C does not annotate their result summaries with associated scenarios,
+so this proved to be difficult to investigate within our given time frame.
 
 \begin{figure}[h!]
   \begin{center}
@@ -52,7 +57,8 @@ though the actual result was changed drastically. This kind of pitfall could be
 avoided by keeping detailed track of which tests fail and pass, and compare new
 results to old results and inspect the difference.
 
-
+\underline{\textbf{\LARGE //TODO:}} Mads: noe aa legge til her?
+ 
 \begin{itemize}
 \item Testresultater, bra/d\aa rlig
 \item testresultater (hva var de forskjellige feilene)
