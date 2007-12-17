@@ -35,12 +35,12 @@ figure \ref{code:parsers:w3c}.
 
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 LetClause    : "let $" LetBindings_
 LetBindings_ : VarName OptTypeDeclaration_ ":=" ExprSingle
              | VarName OptTypeDeclaration_ ":=" ExprSingle
                "," "$" LetBindings_
-\end{verbatim}
+\end{Verbatim}
 \caption[LALR grammar example]{LALR grammar example from the Pathfinder project
 (see section \ref{sect:soa:pathfinder})}
 \label{code:parsers:lalr}
@@ -49,24 +49,24 @@ LetBindings_ : VarName OptTypeDeclaration_ ":=" ExprSingle
 \underline{\textbf{\LARGE //TODO:}} kjipere eksempel og uten full-text
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 letClause : LET varBinding (COMMA varBinding)*
 
 varBinding : (DOLLAR varName typeDeclaration? | 
              SCORE DOLLAR varName )
              ASSIGN exprSingle
-\end{verbatim}
+\end{Verbatim}
 \caption[LL grammar example]{LL grammar example, actual code used in this project}
 \label{code:parsers:ll}
 \end{figure}
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 LetClause ::=  (("let" "$" VarName TypeDeclaration?) 
              | ("let" "score" "$"  VarName)) ":=" ExprSingle ("," 
                (("$" VarName TypeDeclaration?) 
              | FTScoreVar) ":=" ExprSingle)*
-\end{verbatim}
+\end{Verbatim}
 \caption{ W3C reference grammar example }
 \label{code:parsers:w3c}
 \end{figure}
@@ -92,7 +92,7 @@ a grammar fragment translated to JavaCC syntax, compare to the original grammar
 in figure \ref{code:parsers:w3c}.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 void letClause() :
 { }
 {
@@ -106,7 +106,7 @@ void varBinding()
      <SCORE> <DOLLAR> varName() )
      <ASSIGN> exprSingle()
 }
-\end{verbatim}
+\end{Verbatim}
 \caption{ JavaCC reference grammar example }
 \label{code:parsers:javacc}
 \end{figure}
