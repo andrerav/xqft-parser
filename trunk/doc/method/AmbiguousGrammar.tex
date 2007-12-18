@@ -1,7 +1,7 @@
 \section{Ambiguous Terminals}
 \label{sect:ambiguousgrammar:ambigTerm}
 The W3C EBNF specification of XQuery Full Text\cite{w3c01} defines among other these terminals (somewhat simplified):
-\begin{verbatim}
+\begin{Verbatim}
 ElementContentChar       ::= Char - [{}<&]
 QuotAttrContentChar      ::= Char - ["{}<&]
 AposAttrContentChar      ::= Char - ['{}<&]
@@ -9,19 +9,19 @@ IntegerLiteral           ::= Digits
 NCName                   ::= NCNameStartChar NCNameChar*
 NCNameChar               ::= Letter | Digit | '.' | '-' | '_'
 NCNameStartChar          ::= Letter | '_'
-\end{verbatim}
+\end{Verbatim}
 Where \verb!Char! denotes all possible legal characters in XQuery, \verb!Digits! is all possible number characters and \verb!Letter! denotes all possible letter characters. In their specification, the W3C uses a dash operator, which has the following
 semantic meaning in a grammar (\cite{w3c03}, section 6):
 \begin{quote}
 A - B: matches any string that matches A but does not match B.
 \end{quote}
 In addition, the specification contains explicit defined literals and symbols such as \verb!'for'! and \verb!'::'!, aswell as \verb!StringLitteral! which is indeed comparable with the non-terminal \verb!DirAttributeList! (credit to the eXist\cite{exist_doc}~implementation for making us aware of this ambiguity) as shown here (simplified):
-\begin{verbatim}
+\begin{Verbatim}
 DirAttributeValue        ::= ('"' (QuotAttrContentChar)* '"')
                            | ("'" (AposAttrContentChar)* "'")
 StringLiteral            ::= ('"' ([^"&])* '"') 
                            | ("'" ([^'&])* "'")
-\end{verbatim}
+\end{Verbatim}
 Where \verb!QuotAttrContentChar! and \verb!AposAttrContentChar! is as defined earlier, and the hat operator (\verb!^!) is defined as follows(\cite{w3c03}, section 6):
 \begin{quote}
 [\^{}abc] matches any Char with a value not among the characters given.

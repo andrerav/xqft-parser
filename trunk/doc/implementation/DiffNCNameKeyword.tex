@@ -6,27 +6,27 @@ All 139 keywords and 73 symbols are explicitly defined as tokens, as opposed to 
 We defined the names of the tokens for keywords as just the keyword in capital letters, and with and dashes replaced by underscore, e.g. \verb!BASE_URI : 'base-uri'!. A descriptive name with the suffix \verb!Si! consitutes the token names for symbols, e.g. \verb!ASSIGNSi : ':='!.
 
 The non-terminal productions refer both to \verb!NCName! and \verb!QName!, where W3C defines \verb!QName! as (simplified):
-\begin{verbatim}
+\begin{Verbatim}
 QName       ::= (Prefix ':')? LocalPart
 Prefix      ::= NCName
 LocalPart   ::= NCName
-\end{verbatim}
+\end{Verbatim}
 
 Which means that there is a ambiguity between the terminals \verb!QName! and \verb!NCName!, as \verb!QName! can consist of just a \verb!NCName!. This is solved by demanding that the terminal \verb!QName! contains both a prefix and a localpart, and introducing a non-terminal production \verb!qName! which also covers the unprefixed cases:
-\begin{verbatim}
+\begin{Verbatim}
 // the non-terminal
 qName       : QName
             | NCName;
 // the terminal
 QName       : NCName COLONSi NCName;
-\end{verbatim}
+\end{Verbatim}
 
 Another solution would be to just turn \verb!QName! into a non-terminal in a matter similar to the terminal specification by W3C shown earlier. But by employing our approach, we meet the requirement that no whitespace are allowed between the \verb!:!-sign and neither of the \verb!NCName! occurrences. In addition, necessary lookahead is reduced as the parser would know that it sees a \verb!qName! by only looking at a single token.
 
 As we will see in section \ref{sect:impl:parser_controlled_state_driven_lexer}, our lexer depends on a master production \verb!TOKENSWITCH!, and gated semantic predicates to control which rules are available in which states. To have a single on/off switching point all references to \verb!NCName!, \verb!QName! and the keywords is gathered under the umbrella production \verb!LexLiterals! as seen in figure \ref{fig:lexLitterals}.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 fragment LexLiterals : (QName)=> QName
                        | n=NCName {
                           if($n.getText().equals("all")) 
@@ -35,7 +35,7 @@ fragment LexLiterals : (QName)=> QName
                              ...
                           else 
                              this.tokenType=NCName; };
-\end{verbatim}
+\end{Verbatim}
 \caption[Keywords, \texttt{NCName} and \texttt{QName} gathered under \texttt{LexLiterals}]{Keywords, \texttt{NCName} and \texttt{QName} gathered under the umbrella production \texttt{LexLiterals}}
 \label{fig:lexLitterals}
 \end{figure}
