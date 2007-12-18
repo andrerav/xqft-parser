@@ -16,7 +16,7 @@ program).
 Specifically, this was done by overriding the methods \verb!mismatch()! as well as
 \verb!recoverFromMismatchedSet()!, as such:
 
-\begin{verbatim}
+\begin{Verbatim}
     protected void mismatch(IntStream input, 
                             int ttype, 
                             BitSet follow)
@@ -32,18 +32,18 @@ Specifically, this was done by overriding the methods \verb!mismatch()! as well 
     {
         throw e;
     }
-\end{verbatim}
+\end{Verbatim}
 
 Additionally, a special \verb!@rulecatch! rule had to be added to force ANTLR from
 handling errors and instead throwing the exceptions upwards:
 
-\begin{verbatim}
+\begin{Verbatim}
 @rulecatch {
     catch (RecognitionException e) {
         throw e;
     }
 }
-\end{verbatim}
+\end{Verbatim}
 
 However, some exceptions thrown by the lexer were impossible to handle - these
 were handled by the \verb!nextToken()! method in the \verb!Lexer! superclass.
