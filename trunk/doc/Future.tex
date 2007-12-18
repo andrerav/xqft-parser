@@ -1,13 +1,13 @@
-\chapter{Future Work and Improvements}
+\chapter{Future Work}
 \label{sect:summary:future_work}
 \label{chapter:future}
+\label{sect:future:improvements}
 
 Even though the outcome of this project is a fairly well-working parser
 frontend, there is still room for improvement and other future work. In this
 chapter we will summarize proposed changes to further improve the quality and
 functionality of the XQuery parser produced in this project.
 
-\section{Future Work}
 In its current state, the parser produced throughout this project could be a good
 starting point for writing a tree parser, and eventually translating the AST
 into relational algebra for use with relational database systems. As briefly
@@ -15,13 +15,13 @@ mentioned in section \ref{sect:discussion:ast:structuring}, ANTLR is capable of
 producing tree parsers based on AST rewrite rules. This implies that ANTLR is a
 natural choice for continued development of this parser.
 
-\underline{\textbf{\LARGE //TODO:}} Ytelsestester, sammenligne, samt gj\o re
-ting vi skriver om i neste section... 
+Further it would be of particular interest to benchmark the raw query execution
+performance and compare it to other similar solutions, and also compare various
+lexer strategies to let performance be a factor of consideration in the future
+when and if a new lexer strategy is to be chosen.
 
-\section{Improvements}
-\label{sect:future:improvements}
-This section 
-
+In addition to the future work just discussed, we propose the following changes
+to the current parser:
 \begin{itemize}
 \item \textbf{Not State Driven Lexer} -- By employing the island grammars or
 manual and island grammar hybrid strategy (as discussed in section
