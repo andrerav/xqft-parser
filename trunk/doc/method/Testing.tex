@@ -1,7 +1,7 @@
 % Method / Testing
 \section{Testing}
 \label{sect:method:testing}
-To improve quality insurance in this projects, it was decided to systematically
+To improve quality insurance in this project, it was decided to systematically
 write tests for new features as well as perform coverage testing for comparison
 with existing implementations. This section will outline the various test
 methods used in this project. Also see section \ref{sect:results:tests}, where
@@ -63,13 +63,13 @@ setParent() method in the scope class works as expected:
 \end{Verbatim}
 
 \subsection{Manual Coverage Tests}
-Finally, we employed manual tests for running the complete XQuery Test Suite\cite{w3c05}
-as a benchmark for XQuery compliance. Specifically, we simplified this approach
-into counting any test query accepted by the parser as passed. Since the parser
-does not generate any results from queries, it was impossible to run a
-comparison to the given expected results.
+Finally, we employed manual tests for running a subset of the XQuery Test
+Suite\cite{w3c05} as a benchmark for XQuery compliance. Specifically, we
+simplified this approach into counting any test query accepted by the parser as
+passed. Since the parser does not generate any results from queries, it was
+impossible to run a comparison to the given expected results.
 
-The test suite consists of a total of 12584 different queries with a
+The original test suite consists of a total of 12584 different queries with a
 corresponding set of expected output. These tests span a large amount of XQuery
 functionality. Out of these tests, a total of 10363 tests are applicable for
 this project. These tests are categorized as scenarios: \emph{standard}, 
