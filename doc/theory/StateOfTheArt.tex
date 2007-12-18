@@ -49,17 +49,18 @@ website\cite{quarkproject}.
     \includegraphics[width=1\textwidth]{diagrams/galatex_arch}
   \caption[GalaTex architecture]{Galatex architecture, based on architecture described on
   the GalaTex website\cite{galatex}}
+  \label{figure:galatex:arch}
 \end{figure}
 
 GalaTex is a complete implementation of the XQuery 1.0 and XPath 2.0
 specifications with full-text extensions. GalaTex is an extension of Galax,
-which is a generic XQuery engine. The XQFT query is parsed and converted to an
-equivalent XQuery query which is passed to the Galax query engine. This
-approach seems to be quite unique and decouples the full-text extensions from
-the standard XQuery parser. One obvious downside about this approach is
-that the parser is still ultimately limited to standard XQuery. One consequence
-is that complex full-text queries can only be optimized by the parser as
-ordinary queries.
+which is a generic XQuery engine. As seen in figure \ref{figure:galatex:arch}, 
+the full-text query is parsed and converted to an equivalent and ordinary XQuery
+query which is passed to the Galax query engine. This approach seems to be quite
+unique and decouples the full-text extensions from the standard XQuery parser.
+One obvious downside about this approach is that the parser is still ultimately
+limited to standard XQuery. One consequence is that complex full-text queries
+can only be optimized by the parser as ordinary queries.
 
 It is important to note that Galax itself is written in the OCAML programming
 language, and the full-text parser is generated using the common Flex and Bison
@@ -125,7 +126,7 @@ website\cite{existweb}.
 
 \subsection{Implementations Sans Full-Text Extensions}
 There are a wealth of XQuery implementations without full-text
-extensions available, in this section we will list some implementations of
+extensions available, in this section we will review some implementations of
 particular interest to this project.
 
 \subsubsection{Saxon}

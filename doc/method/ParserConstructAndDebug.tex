@@ -96,18 +96,10 @@ in figure \ref{code:parsers:w3c}.
 
 \begin{figure}[h!]
 \begin{Verbatim}
-void letClause() :
-{ }
+void expr()
+{}
 {
-    <LET> varBinding() (COMMA varBinding())*
-} 
-
-void varBinding()
-{ }
-{
-    (<DOLLAR> varName() typeDeclaration()? | 
-     <SCORE> <DOLLAR> varName() )
-     <ASSIGN> exprSingle()
+    exprSingle() (<COMMA> exprSingle())* ;
 }
 \end{Verbatim}
 \caption{ JavaCC reference grammar example }
