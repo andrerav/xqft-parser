@@ -1,11 +1,11 @@
-\chapter[ANTLR -- The Parser Generator]{ANTLR \\ \huge -- The Parser Generator}
+\chapter[ANTLR -- The Parser Generator]{ANTLR --\\\huge The Parser Generator}
 \label{sect:antlr}
 \label{chapter:antlr}
-ANTLR, Another Tool for Language Recognition, is a parser generator under a
-three clause BSD-license \cite{antlrorg}.  It is a successor of PCCTS,
+ANTLR (Another Tool for Language Recognition), is a parser generator licensed 
+under a liberal BSD-license\cite{antlrorg}.  It is a successor of PCCTS,
 sometimes called ANTLR v1, and the latest version is ANTLR v3. PCCTS was
 developed by Professor Terrence Parr of the University of San Francisco, now
-the brain behind ANTLR.
+the lead developer behind ANTLR.
 
 ANTLR generates recursive-decent recognizers that utilizes predicated LL(*) --
 an extension to LL(k) that uses arbitrary lookahead to make decisions. LL
@@ -26,7 +26,14 @@ All alternatives have a lookahead language, and if the lookahead languages of th
 
 \section{Grammar Specification}
 \label{sect:antlr:grammarSpec}
-The grammar is specified in a type of extended Backus-Naur form (EBNF), where the extension from BNF consists of the Kleene operators $?$, $ +$ and $\ast$, and the not-operator $\sim$.  In addition, ANTLR introduces some types of predicates, namely validating, hoisting and gated semantic predicates and syntactic predicates. Validating and disambiguating semantic predicates is on the form \verb!{sem. predicate}?!, gated semantic predicates is on the form \verb!{sem. predicate}?=>! and syntactic predicates is on the form \verb!(syn. pred.)=>!.
+The grammar is specified in a type of extended Backus-Naur form (EBNF), where
+the extension from BNF consists of the Kleene operators $?$, $ +$ and $\ast$,
+and the not-operator $\sim$.  In addition, ANTLR introduces some types of
+predicates, namely validating, hoisting and gated semantic predicates and
+syntactic predicates. Validating and disambiguating semantic predicates is on
+the form \verb!{sem. predicate}?!, gated semantic predicates is on the form
+\verb!{sem. predicate}?=>! and syntactic predicates is on the form 
+\verb!(syn. pred.)=>!.       
 
 Member methods and variables of the parser can be placed in a \verb!@members{! members \verb!}! construct, and the corresponding \verb!@lexer::members{! members \verb!}! for the lexer. Actions specified in the target language can be inserted at appropriate places in the production rules wrapped in \verb!{! and \verb!}!. 
 
@@ -316,8 +323,24 @@ ranges. For the sake of simplicity this has not been further investigated nor
 implemented in this project.
 
 \section{Summary}
-In this chapter we have presented our parser generator of choice, ANTLR. With a rich set of grammar specification operators, ANTLR accepts a wide array of possible grammars. Another neat feature is that target language actions can be placed almost anywhere whitin the grammar specification, permiting very versatile solutions. But ANTLRs real power comes in the form of the LL(*) capabilities and particulary in the various forms of predicates. Predicates can among other things be used to solve ambiguities, reduce lookahead and alter parsing based on runtime information. 
+We have presented our parser generator of choice, ANTLR. With a
+rich set of grammar specification operators, ANTLR accepts a wide array of
+possible grammars. Another neat feature is that target language actions can be
+placed almost anywhere whitin the grammar specification, permiting very
+versatile solutions. ANTLRs real power comes in the form of the LL(*)
+capabilities and particulary in the various forms of predicates. Predicates can
+among other things be used to solve ambiguities, reduce lookahead and alter
+parsing based on runtime information.        
 
-By being an LL parser generator it produces recognizers with workings much more intuitive than e.g. an LALR parser generator would. The choice of using ANTLR as our parser generator is further discussed in section \ref{sect:discussion:antlr}. ANTLRs AST producing abilities and support of AST manipulation operators and rewrite rules greatly simplifies the task of producing such trees. This will be further discussed in section \ref{sect:discussion:ast}.
 
-Now we have seen what ANTLR can do, we will in the next chapter take a look at how we used these capabilities in our implementation.
+By being an LL parser generator it produces recognizers with workings much more
+intuitive than e.g., an LALR parser generator would. The choice of using ANTLR
+as our parser generator is further discussed in section
+\ref{sect:discussion:antlr}. ANTLRs AST producing abilities and support of AST
+manipulation operators and rewrite rules greatly simplifies the task of
+producing such trees. This will be further discussed in section
+\ref{sect:discussion:ast}.      
+
+
+Now we have seen what ANTLR can do, we will in the next chapter take a look at
+how we used these capabilities in our implementation. 
