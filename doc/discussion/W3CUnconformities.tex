@@ -13,5 +13,7 @@ well as an outline of a potential way of accomomodating them:
 
 \item \textbf{Contradicting Match Options} (ref. section \ref{sect:implementation:multipleMatchOptions}) -- The parser allows contradicting full-text match options, in other words, expressions such as \verb!"dog" with stemming without stemming! is allowed. This can be solved by setting a flag when a class of match options is matched, and augmenting the corresponding production with a semantic predicate checking if the flag is allready set.
 
+\item \textbf{Too Liberal Whitespace Handling} -- The lexer is to liberal when handling whitespace. This means that expressions such as \verb!1idiv2! are allowed. A solution would be to not hide the whitespace tokens from the parser and explicitly define where in the non-terminal productions they are allowed. Another solution would be to at the rightmost edge equip the terminal productions with a predicate checking if the next character is a propper delimiter symbol (i.e. not a letter or number character).
+
 \end{itemize}
 

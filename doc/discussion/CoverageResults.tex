@@ -72,7 +72,4 @@ The majority of the failed test are because exceptions are caught by the lexer
 and not forwarded, leaving the parser unaware of the error (section
 \ref{sect:discussion:error_handling}). The 12 errors allowed by the parser and
 the 9 type cast errors are not syntactic errors, as such, as they are allowed
-by the W3C EBNF grammar. This test also shows that our lexer is to liberal with
-where white space can and cannot occur. The reason the tests which allowed
-illigal XML syntax and the untimely state transition failed are discussed in
-section \ref{sect:future:knownBugs}.       
+by the W3C EBNF grammar. The UTF-16 query is a query encoded in UTF-16. The W3C XQuery full-text specification does not mention any character encoding support. A review of the rest of the parser specification compliance problems can be seen in \ref{sect:future:knownBugs} 
