@@ -1,9 +1,19 @@
 \chapter{Conclusion}
 \label{chapter:conclusion}
 
-In this project we have developed a front-end parser for XQuery with support
-for full-text extensions. The parser produces a usable AST that can be easily
-modified, and is suitable for further usage.  
+In the course of this project we have investigated the current state of XQuery implementations (with and without full-text extensions) as well as XQuery as a language. In addition we have examinated and evaluated multiple parser generators suitable for a project based on our requirements, and finally chose ANTLR. Features of interest as well as limitations of this parser generator were also documented.
+The reason for choosing ANTLR was firstly because it utilizes a grammar specification syntactically close to the EBNF W3C makes use of. In addition, the parser generator supports various types of predicates and automatic abstract syntax tree generation -- features really convenient when creating more than a non-trivial recognizer. These as well as other features of interest and limitations in ANTLR were documented in this report.
+
+Rewriting the XQuery full-text specification to conform to ANTLR grammar syntax and semantics proved to be a non-trivial task. This is because the specification contains ambiguous terminals. An LL lexer capable of handling these must be aware of the context the incomming characters. We evaluated a number of different approaches to this. 
+
+After implementing a prototype state driven lexer for a subset of XQuery, we discovered that only a few states would be needed to solve the non-determinism. Additionally we found that by making the parser communicate the state to the lexer the implementation would be much less complex. To make this work we had to implement functionality in the lexer to generate tokens one by one, overriding the default ANTLR generated lexer manner of operation. A great deal of the terminal ambiuities were solved by this parser controlled state driven strategy. The reminder were solved by converting some non-terminals to enclosed composite terminals.
+
+Because of the chosen lexer strategy, a goal was to reduce required parser lookahead. This combined with
+
+In this project we have developed a front-end parser for XQuery with support for full-text extensions. The parser produces a usable AST that can be easily modified, and is suitable for further usage.
+
+
+
 
 \begin{itemize}
   \item A fairly complete XQuery full-text parser front end capable of
@@ -12,12 +22,8 @@ modified, and is suitable for further usage.
   \ref{sect:discussion:coverageResults},
   these results are not immediately comparable with officially published results
   from the W3C}
-  \item Research on the current state of XQuery implementations (with and
-  without full-text extensions) as well as XQuery as a language, and research and
-  evaluation of parser generators suitable for a project based on our requirements
-  \item Documentation of features of interest as well as limitations in the
-  ANTLR parser generator. Addditionally, research and evaluation of
-  strategies for the problems encountered
+
+
   \item A suitable XQuery full-text grammar specification for ANTLR based on the
   W3C recommendation
   \item Investigation and documentation as well as resolve for several unexpected
