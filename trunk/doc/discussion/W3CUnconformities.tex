@@ -9,7 +9,7 @@ Because of lack of time, our parser is yet not completly in accordance with the 
 
 \item \textbf{Incorrect Element Nesting} (ref. section \ref{sect:implementation:xmlVersion}) -- The parser allows inpropper nesting of elements, e.g. \verb!<a><b></a></b>!. It does, however, not allow a mismatch between the number of start tags and the number of end-tags. A simple solution to only allow correct nesting would be to push the names of a start tags to a stack, and for each end tag assure that this tags name is the same as the one pop'ed from the stack.
 
-\item \textbf{Contradicting Match Options} (ref. section \ref{sect:implementation:multipleMatchOptions}) -- The parser allows contradicting full-text match options, in other words, expressions such as \verb!"dog" with stemming without stemming! is allowed. This can be solved by rewriting the grammar: by making potentially contradicting options alternatives to a production, and an the higher level reffering rule allows only zero or one occurence \emph{per} such production.
+\item \textbf{Contradicting Match Options} (ref. section \ref{sect:implementation:multipleMatchOptions}) -- The parser allows contradicting full-text match options, in other words, expressions such as \verb!"dog" with stemming without stemming! is allowed. This can be solved by setting a flag when a class of match options is matched, and augmenting the corresponding production with a semantic predicate checking if the flag is allready set.
 
 \end{itemize}
 
