@@ -8,7 +8,13 @@ Rewriting the XQuery full-text specification to conform to ANTLR grammar syntax 
 
 After implementing a prototype state driven lexer for a subset of XQuery, we discovered that only a few states would be needed to solve the non-determinism. Additionally we found that by making the parser communicate the state to the lexer the implementation would be much less complex. To make this work we had to implement functionality in the lexer to generate tokens one by one, overriding the default ANTLR generated lexer manner of operation. A great deal of the terminal ambiuities were solved by this parser controlled state driven strategy. The reminder were solved by converting some non-terminals to enclosed composite terminals.
 
-Because of the chosen lexer strategy, a goal was to reduce required parser lookahead. This combined with
+Because of the chosen lexer strategy, a goal was to reduce required parser lookahead. A low lookahead combined with XQuery's property of being reserved keyword free created a number of non-determinsisms. These were solved by left factoring and augmenting the grammar with predicates guiding the parser.
+
+AST FLOTT kan lett brukes videre \rightarrow Grammar rewrite rules and operators to generate abstract syntax trees for XQuery full-text queries, as well as evaluation of their usefulness
+
+SCOPE AND TYPE hvis det er noe spes \aa si \rightarrow A prototype for scoping, symbol tables, and lookups in an XQuery full-text parser
+
+We implemented a test harness for executing detailed coverage tests based on the official XQuery test suite\cite{w3c05}. These tests are meant for XQuery 1.0 and not the full-text extension. We belive, however, that they are a good indicator of the degree of compliance with the W3C specificaion. The parser failed on 84 of the 12478 test queries applicable. 
 
 In this project we have developed a front-end parser for XQuery with support for full-text extensions. The parser produces a usable AST that can be easily modified, and is suitable for further usage.
 
@@ -26,16 +32,10 @@ In this project we have developed a front-end parser for XQuery with support for
 
   \item A suitable XQuery full-text grammar specification for ANTLR based on the
   W3C recommendation
-  \item Investigation and documentation as well as resolve for several unexpected
-  problems and ambiguities in the grammar
-  punktene over?
-  \item Grammar rewrite rules and operators to generate abstract
-  syntax trees for XQuery full-text queries, as well as evaluation of their
-  usefulness
-  \item A prototype for scoping, symbol tables, and lookups in an XQuery
-  full-text parser
-  \item Improved default ANTLR error handling by giving the responsibility
-  of error handling to the calling program
+
+  \item 
+  \item 
+
   \item A test harness for executing detailed coverage tests based on the
   official XQuery test suite
 \end{itemize}
