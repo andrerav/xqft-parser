@@ -58,7 +58,7 @@ results to old results and inspect the difference.
 
 Of the 12478 test queries run 84 failed. These failed test cases can be broken down as follows:
 \begin{itemize}
-\item 46 erroneous queries caught by ANTLRs default error handling in the lexer.
+\item 46 erroneous queries caught by ANTLRs default lexer error handling.
 \item 12 errors allowed by the parser
 \item 9 type cast errors
 \item 9 white space errors.
@@ -67,4 +67,4 @@ Of the 12478 test queries run 84 failed. These failed test cases can be broken d
 \item 1 UTF-16 query
 \end{itemize}
 
-The majority of the failed test are because exceptions are caught by the lexer and not forwarded, leaving the parser unaware of the error (section \ref{sect:discussion:error_handling}). The 12 errors allowed by the parser are not syntactic errors, as such, as they are allowed by the W3C EBNF grammar. This test also shows that our lexer is to liberal with where white space can occur. The reason the tests which allowed illigal XML syntax and the untimely state transition failed are discussed in section \ref{sect:future:knownBugs}.
+The majority of the failed test are because exceptions are caught by the lexer and not forwarded, leaving the parser unaware of the error (section \ref{sect:discussion:error_handling}). The 12 errors allowed by the parser and the 9 type cast errors are not syntactic errors, as such, as they are allowed by the W3C EBNF grammar. This test also shows that our lexer is to liberal with where white space can and cannot occur. The reason the tests which allowed illigal XML syntax and the untimely state transition failed are discussed in section \ref{sect:future:knownBugs}.
