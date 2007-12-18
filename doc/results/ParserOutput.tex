@@ -1,5 +1,5 @@
 % Results / Parser output
-\section{Parser output / AST}
+\section{Parser Output / AST}
 \label{sect:results:parser_output_ast}
 In this section we will present the generated AST output from the generated
 parser, and compare them to their respective queries. The results presented here
@@ -24,7 +24,7 @@ build an AST for a FLWOR expression.
 \label{tree:ast:flwor1}
 \end{figure}
 
-\subsection{Path expressions}
+\subsection{Path Expressions}
 Figure \ref{tree:ast:pathexpr} shows the AST generated for the query in figure
 \ref{tree:ast:pathexpr}. Note that the root node is a single slash with a
 single child. Included in this example is also a simple predicate expressions,
@@ -42,7 +42,7 @@ illustrating one possible interpretation of this construct.
 \label{tree:ast:pathexpr}
 \end{figure}
 
-\subsection{Function declarations}
+\subsection{Function Declarations}
 
 As seen in figure \ref{code:ast:funcdecl1}, function declarations are aggregated
 into a root node (AST\_FUNCTIONDECL) with a function name and optionally
@@ -60,7 +60,7 @@ parameters, type, and function body (unless declared as external).
 \label{tree:ast:funcdecl1}
 \end{figure}
 
-\subsection{Full-text operations}
+\subsection{Full-Text Operations}
 The query in figure \ref{code:xq:ftq1} and the generated AST in figure
 \ref{tree:ast:ftq1} shows one possible interpretation of several full-text 
 operators in XQuery. In the case of \verb!ftcontains! and \verb!ftand!, this AST
