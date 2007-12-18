@@ -1,30 +1,33 @@
 \chapter{Conclusion}
 \label{chapter:conclusion}
-Throughout this project, we have done the following:
+This project contributes:
 \begin{itemize}
-  \item Investigated the current state of XQuery implementations (with and
-  without full-text extensions) as well as XQuery as language
-  \item Researched and evaluated parser generators suitable
-  for our project based on requirements, and chosen one for this project
-  \item Examined the ANTLR parser generator in detail and documented
-  limitations and features
-  \item Researched and evaluated lexer strategies, and ultimately chosen one
-  for this project
-  \item Refactored the W3C grammar specification into a suitable grammar for
-  ANTLR
-  \item Investigated, documented and resolved several unexpected problems and
-  ambiguities in the grammar
-  \item \underline{\textbf{\LARGE //TODO:}} Mads: legge til noe spess paa de to
+  \item A fairly complete XQuery full-text parser front end capable of
+  generating abstract syntax trees and with a test coverage of
+  99.3\%\footnote{As noted and emphasized in section
+  \ref{sect:discussion:coverageResults},
+  these results are not immediately comparable with officially published results
+  from the W3C}
+  \item Research on the current state of XQuery implementations (with and
+  without full-text extensions) as well as XQuery as a language, and research and
+  evaluation of parser generators suitable for a project based on our requirements
+  \item Documentation of features of interest as well as limitations in the
+  ANTLR parser generator. Addditionally, research and evaluation of
+  strategies for the problems encountered
+  \item A suitable XQuery full-text grammar specification for ANTLR based on the
+  W3C recommendation
+  \item Investigation and documentation as well as resolve for several unexpected
+  problems and ambiguities in the grammar
   punktene over?
-  \item Added grammar rewrite rules and operators to generate proper abstract
-  syntax trees and evaluated their structure
-  \item Researched and implemented a prototype for scoping, symbol tables, and
-  lookups
-  \item Improved the default ANTLR error handling by giving the responsibility
+  \item Grammar rewrite rules and operators to generate abstract
+  syntax trees for XQuery full-text queries, as well as evaluation of their
+  usefulness
+  \item A prototype for scoping, symbol tables, and lookups in an XQuery
+  full-text parser
+  \item Improved default ANTLR error handling by giving the responsibility
   of error handling to the calling program
-  \item Developed, executed and evaluated detailed coverage tests based on the
+  \item A test harness for executing detailed coverage tests based on the
   official XQuery test suite
-  \item Proposed several improvements and suggestions for future work
 \end{itemize}
 
 
