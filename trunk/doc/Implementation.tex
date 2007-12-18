@@ -1,8 +1,14 @@
 \chapter{Implementation}
 \label{chapter:implementation}
 
-The main part of implementing the parser was to rewrite the EBNF provided by W3C in \cite{w3c01} to conform to ANTLR's syntax and semantics. Because of the ambiguous terminals described in section \ref{sect:ambiguousgrammar:ambigTerm} this was not a trivial task, and in the following chapter we will present by which means we solved this. In addition we will present other how we reduced the required parser lookahead, implemented a parser that mangages a language without reserved keywords, how we augmented the grammar to output a correct AST and finally our implementation of scoping and symbol tables.
-
+The main part of implementing the parser was to rewrite the EBNF provided by
+W3C in \cite{w3c01} to conform to ANTLR's syntax and semantics. Because of the
+ambiguous terminals described in section \ref{sect:ambiguousgrammar:ambigTerm}
+this was not a trivial task, and in the following chapter we will explain this
+was solved. Further, we will detail how we reduced the required parser
+lookahead and implemented a parser that mangages a language without reserved
+keywords. Finally, we will explain how we augmented the grammar to output a
+usable AST, and how we implemented scoping and symbol tables.
 
 \input{implementation/AntlrSyntax}
 \input{implementation/DiffNCNameKeyword}
@@ -16,13 +22,12 @@ The main part of implementing the parser was to rewrite the EBNF provided by W3C
 \input{implementation/ErrorHandling}
 \input{implementation/CoverageTests}
 
-
 \section{Summary}
-In this chapter we have gone through by which means we chose to adapt the W3C
-XQuery Full-text specification to ANTLR syntax and semantics. We chose to adapt
-the specification over creating our own from scratch because the otherwise risk
-of missing out essential latent meaning as well as timely concerns, as
-discussed further in section \ref{sect:discussion:adaptW3C}.    
+In this chapter we have explain how we adapted the W3C
+XQuery Full-text specification to ANTLR syntax and semantics. We adapted and
+modified the specification rather than creating our own from scratch. Otherwise
+we risked missing out essential latent meaning as well as keeping to planned
+time frames, as discussed further in section \ref{sect:discussion:adaptW3C}.    
 
 By choosing to implement an "parser controlled state driven" lexer, almost all
 terminal productions  had to be completly rewritten, and also lead to the
@@ -30,8 +35,8 @@ introduction of the \verb!TOKENSWITCH! construct. This could be avoided by
 implementing e.g. a "scan-while-parse" type lexer, but such a lexer's
 corresponding parser would have been much more complex and would handle a much
 bigger load than that of our implementation. A more viable alternative would be
-the "island grammars" strategy, but because ANTLR does not support this we
-rejected this solution. In section \ref{sect:discussion:designDecisions} we
+the "island grammars" strategy, but since ANTLR does not support this we
+rejected this alternative. In section \ref{sect:discussion:designDecisions} we
 further evaluate our choice of lexer strategy.
 
 We also implemented enclosed composite lexer productions which removed a great
@@ -55,12 +60,13 @@ ANTLR generate a complete AST shaped after these rules and operators. We also
 examined several XQuery constructs such as FLWOR and path expressions and how
 the AST could be generated for these.
 
-Further we have implemented symbol tables and scoping. We discovered that it was
-simple to add inline code in the grammar to extend the parser with these
-features, however it may seem like this is affecting readability and clarity of
-the grammar. In the next chapters this issue will be further examined and
-discussed.
+Further we have implemented symbol tables and scoping by adding simple action
+code to the grammar and constructing classes for representing scopes, symbol
+tables and symbols. We discovered that it was simple to add the inline action 
+code in the grammar to extend the parser with these features, however it may
+seem like this is affecting readability and clarity of the grammar. In the next
+chapters this issue will be further examined and discussed.
 
 As we now have seen how the parser was implemented, in the next chapter we will
-se how it performs, in particular with regards to coverage test results, AST
+ses how it performs, in particular with regards to coverage test results, AST
 output, and error handling.

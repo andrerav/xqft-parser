@@ -1,6 +1,8 @@
-\section{W3C Specification Unconformities}
+\section{W3C Specification Compliance Problems}
 \label{sect:future:knownBugs}
-Because of lack of time, our parser is yet not completly in accordance with the W3C XQuery Full-Text specification in some aspects. Here we present these, aswell as an outline of a potential way of accomomodating them:
+Because of lack of time, our parser is yet not completly in accordance with the
+W3C XQuery Full-Text specification in some aspects. Here we present these, as
+well as an outline of a potential way of accomomodating them: 
 
 \begin{itemize}
 \item \textbf{Late State Transitions} -- Our state driven lexer depends upon the parser telling it which state it is in before it generates a token. This means that in cases where the parser uses a look-ahead big enough to make the lexer cross a "state border", the lexer may be in the wrong state according to the input stream (remember, the parser is always \emph{behind} the lexer, and "moves" \emph{after} looking ahead). ANTLR generates a parser using as small a look-ahead necessary, but in some cases this is not enough, making e.g. queries as \verb!<a>{ns:name()}</a>! fail. However, the corresponding query without the namespace prefix, or a prefixed function call outside of a \verb!{ }! does not fail. Moving the parser closer to LL(1), as mentioned in \ref{sect:future:improvements}, will solve this bug.

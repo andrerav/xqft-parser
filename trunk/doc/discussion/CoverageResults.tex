@@ -46,7 +46,7 @@ so this proved to be difficult to investigate within our given time frame.
 Figure \ref{figure:table:w3c_test_results} gives a basic overview of the current
 tests results published by the W3C at the current time of writing.
 
-One interesting byproduct of the coverage tests were the utility of using it to
+One interesting side effect of the coverage tests were the utility of using it to
 find and fix previously unknown bugs quickly. As such, this test suite also
 works well as a regression test, since any improvement to the parser should
 never degrade our coverage result -- however, it is hard to tell if tests that
@@ -56,15 +56,23 @@ though the actual result was changed drastically. This kind of pitfall could be
 avoided by keeping detailed track of which tests fail and pass, and compare new
 results to old results and inspect the difference.
 
-Of the 12478 test queries run 84 failed. These failed test cases can be broken down as follows:
+Of the 12478 test queries run 84 failed. These failed test cases can be broken
+down as follows: 
 \begin{itemize}
 \item 46 erroneous queries caught by ANTLRs default lexer error handling.
 \item 12 errors allowed by the parser
 \item 9 type cast errors
 \item 9 white space errors.
-\item 5 XML specifiaction nonconformaties were allowed.
+\item 5 XML specification non-compliances were allowed.
 \item 2 untimely state transitions
 \item 1 UTF-16 query
 \end{itemize}
 
-The majority of the failed test are because exceptions are caught by the lexer and not forwarded, leaving the parser unaware of the error (section \ref{sect:discussion:error_handling}). The 12 errors allowed by the parser and the 9 type cast errors are not syntactic errors, as such, as they are allowed by the W3C EBNF grammar. This test also shows that our lexer is to liberal with where white space can and cannot occur. The reason the tests which allowed illigal XML syntax and the untimely state transition failed are discussed in section \ref{sect:future:knownBugs}.
+The majority of the failed test are because exceptions are caught by the lexer
+and not forwarded, leaving the parser unaware of the error (section
+\ref{sect:discussion:error_handling}). The 12 errors allowed by the parser and
+the 9 type cast errors are not syntactic errors, as such, as they are allowed
+by the W3C EBNF grammar. This test also shows that our lexer is to liberal with
+where white space can and cannot occur. The reason the tests which allowed
+illigal XML syntax and the untimely state transition failed are discussed in
+section \ref{sect:future:knownBugs}.       
