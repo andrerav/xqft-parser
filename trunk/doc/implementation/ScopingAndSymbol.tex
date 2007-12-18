@@ -7,7 +7,7 @@ enclosedExpr production rule. This makes it trivial to start a new scope at the
 beginning of a enclosedExpr, and end the scope and the end of an enclosedExpr.
 This has been implemented as follows:
 \begin{figure}[!h]
-\begin{verbatim}
+\begin{Verbatim}
 enclosedExpr : 
     LBRACESi {
         Scope parent = this.currentScope; 
@@ -19,7 +19,7 @@ enclosedExpr :
         this.currentScope = this.currentScope.getParent(); 
     }
 ;
-\end{verbatim}
+\end{Verbatim}
 \caption{Scoping logic embedded in grammar definition}
 \end{figure}
 
@@ -32,10 +32,10 @@ automatically build a scope tree as the input is parsed.
 
 The currentScope object, which is an object of type Scope, holds one reference
 to a symbol table. The symbol table, which is a simple subclass of
-java.util.HashMap, is not capable of performing symbol lookups throughout the
+\verb!java.util.HashMap!, is not capable of performing symbol lookups throughout the
 scope tree. This functionality is rather provided by the Scope class. The UML diagram
-in figure \ref{fig:scope:uml1} illustrates the relationship between the Scope, SymTab, and Symbol
-classes.
+in figure \ref{fig:scope:uml1} illustrates the relationship between the
+\verb!Scope!, \verb!SymTab!, and \verb!Symbol! classes.
 \begin{figure}[!h]
   \centering
     \includegraphics[scale=0.6]{diagrams/uml}
