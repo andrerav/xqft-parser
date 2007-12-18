@@ -56,6 +56,8 @@ problem will however disappear if a island grammar solution were to be
 implemented, as the keyword and NCName productions would no longer need to be
 \verb!fragment! rules.
 
+\item \textbf{Further Reducing of Parser Lookahead} -- At present our parser utilizes a maximum of two tokens lookahead, with the exception of some syntactic predicates. To ensure that \emph{all}, and not just a vast majority of state transitions are timely, the overall lookahead should be reduced to one.
+
 \item \textbf{Type inference and type checking} -- Currently there is no
 implemented type inference or type checking system. This would be a crucial
 feature for a complete XQuery parser.
