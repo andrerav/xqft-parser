@@ -14,9 +14,9 @@ example where the exclusion operator is used to exclude the superfluous brace
 tokens from the AST in the \verb!ftWordsValue! production.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 ftWordsValue : literal | (LBRACESi! expr RBRACSi!);
-\end{verbatim}
+\end{Verbatim}
 \caption[AST exclusion operator example]{Using the exclusion operator to exclude
 the superfluous brace tokens from the AST, leaving only the expression subtree}
 \label{code:ast:exoperator}
@@ -30,14 +30,14 @@ expressions, but also how precedence is implicitly encoded into the grammar as
 mentioned in section \ref{sect:xquery:precedence}.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 additiveExpr : multiplicativeExpr (
               (PLUSSi | MINUSSi)^ multiplicativeExpr)*;
   multiplicativeExpr : unionExpr (
                        (STARSi | DIV | IDIV | MOD)^ unionExpr)*;
     unionExpr : intersectExceptExpr (
                 (UNION | PIPESi)^ intersectExceptExpr)*;
-\end{verbatim}
+\end{Verbatim}
 \caption[AST root node promotion operator example]{Using the root node promotion
 operator to define structuring of expressions such as arithmetic addition and set
 operations}
@@ -64,10 +64,10 @@ interesting to preserve the list of variable bindings, which can occur several
 times. This technique has been used in several productions.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 letClause : LET varBinding (COMMASi varBinding)*
             -> ^(AST_LETCLAUSE varBinding+);
-\end{verbatim}
+\end{Verbatim}
 \caption[AST rewrite rule for the \texttt{letClause} production rule]{Using
 rewrite rules to conserve only a list of variable bindings in the AST}
 \label{code:ast:rewritelist}
@@ -89,12 +89,12 @@ this subtree is terminated by an \verb!exprSingle!, denoting the expression
 after the RETURN token.
 
 \begin{figure}[h!]
-\begin{verbatim}
+\begin{Verbatim}
 fLWORExpr : (fc+=forClause | lc+=letClause)+ whereClause?
             orderByClause? RETURN exprSingle
     -> ^(AST_FLWOR $fc* $lc* whereClause?
                     orderByClause? exprSingle);
-\end{verbatim}
+\end{Verbatim}
 \caption{AST rewrite rule for FLWOR expressions}
 \label{code:ast:flwor}
 \end{figure}
@@ -113,13 +113,13 @@ operators to exclude superfluous tokens. These rules can be seen in figure
 \ref{code:ast:forclause}. 
 
 \begin{figure}[h!]
-\begin{verbatim} 
+\begin{Verbatim} 
 forClause : FOR forClauseTupletDef (COMMASi forClauseTupletDef)* 
             -> ^(AST_FORCLAUSE forClauseTupletDef+);
 
   forClauseTupletDef : DOLLARSi! varName typeDeclaration? positionalVar? 
                      ftScoreVar? IN! exprSingle;
-\end{verbatim}
+\end{Verbatim}
 \caption{AST rewrite rule for for-clauses}
 \label{code:ast:forclause}
 \end{figure}
@@ -141,10 +141,10 @@ token for clarity and omits the \verb!WHERE! token, as can seen in figure
 \ref{code:ast:whereclause}.
 
 \begin{figure}[h!]
-\begin{verbatim} 
+\begin{Verbatim} 
 whereClause : WHERE exprSingle
               -> ^(AST_WHERECLAUSE exprSingle);
-\end{verbatim}
+\end{Verbatim}
 \caption{AST rewrite rule for where-clauses}
 \label{code:ast:whereclause}
 \end{figure}
@@ -159,10 +159,10 @@ tokens. The rewrite rule for the orderby-clause is shown in figure
 \ref{code:ast:orderbyclause}.
 
 \begin{figure}[h!]
-\begin{verbatim} 
+\begin{Verbatim} 
 orderByClause : (ORDER BY | STABLE ORDER BY) orderSpecList
                 -> ^(AST_ORDERBYCLAUSE STABLE? orderSpecList);
-\end{verbatim}
+\end{Verbatim}
 \caption{AST rewrite rule for orderby-clauses}
 \label{code:ast:orderbyclause}
 \end{figure}
@@ -180,7 +180,7 @@ place. As can be seen, the forward slash tokens are promoted to root nodes,
 including in between the step expressions.
 
 \begin{figure}[h!]
-\begin{verbatim} 
+\begin{Verbatim} 
 pathExpr : DBLSLASHSi^ relativePathExpr
            | {input.LA(2)==STARSi}? SLASHSi^ relativePathExpr
            | SLASHSi^ relativePathExpr
@@ -189,7 +189,7 @@ pathExpr : DBLSLASHSi^ relativePathExpr
           ;
 
   relativePathExpr : stepExpr ((SLASHSi^ | DBLSLASHSi^) stepExpr)*;
-\end{verbatim}
+\end{Verbatim}
 \caption{Path expression grammar with AST rewrite operators}
 \label{code:ast:pathexpr}
 \end{figure}
@@ -201,12 +201,12 @@ be represented fairly simplistic by an imaginary token, with function name,
 parameters, type, and function body as children.
 
 \begin{figure}[h!]
-\begin{verbatim} 
+\begin{Verbatim} 
 functionDecl : DECLARE FUNCTION qName LPARSi paramList? RPARSi 
               (AS sequenceType)? (enclosedExpr | EXTERNAL)
               -> ^(AST_FUNCTIONDECL qName paramList? 
                      sequenceType? enclosedExpr? EXTERNAL?);
-\end{verbatim}
+\end{Verbatim}
 \caption{Path expression grammar with AST rewrite operators}
 \label{code:ast:funcdecl1}
 \end{figure}
@@ -220,14 +220,14 @@ organized properly to be intuitive when parsing the AST. In many cases, these
 can be rewritten simply by adding the promotion/exclusion operators. 
 
 \begin{figure}[h!]
-\begin{verbatim} 
+\begin{Verbatim} 
 ftSelection : ftOr ftPosFilter* (WEIGHT rangeExpr)?;
   ftOr : ftAnd ( FTOR^ ftAnd )*;
     ftAnd : ftMildNot ( FTAND^ ftMildNot )*;
       ftMildNot : ftUnaryNot ( NOT^ IN! ftUnaryNot )*;
         ftUnaryNot : (FTNOT^)? ftPrimaryWithOptions;
-\end{verbatim}
-\caption{A selection of productions related to full-text queries \underline{\textbf{\LARGE //TODO:}} kan hende denne skrives om snart}
+\end{Verbatim}
+\caption{A selection of productions related to full-text queries}
 \label{code:ast:ft_op}
 \end{figure}
 
