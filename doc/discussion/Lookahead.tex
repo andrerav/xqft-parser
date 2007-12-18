@@ -8,10 +8,10 @@ The same must hold true for the full text version, as it is an extension of XQue
 
 That an XQFT parser would at least need two tokens lookahead can be
 demonstrated by the fact that a single function call is a valid query, a query
-may start with a namespace declaration, which is on the form \verb!declare
-namespace...! and that \verb!declare! is a permitted function name. There is no
-way to left factorize these productions without the risk of rendering the grammar
-complex and possibly containing redundancies.     
+may start with a namespace declaration, which is on the form 
+\verb!declare namespace...! and that \verb!declare! is a permitted function
+name. There is no way to left factorize these productions without the risk of
+rendering the grammar complex and possibly containing redundancies.     
 
 Excluding the amgiuities solved by the extra-grammatical constraints, after left factoring all productions applicable the grammar still is a minimum of LL(3). This can be seen in figure \ref{fig:notLL2}, which shows a syntacticly valid typeswitch expression according to the W3C specification. The value after a \verb!case! keyword in a typeswitch can be a \verb!NCName!, which with no reserved keywords can be the character sequence "sensitive". In this example the parser at the end of line two would not know if the tokens \verb!case! and \verb!sensitive! are full-text match options or the start of a new case clause.
 
