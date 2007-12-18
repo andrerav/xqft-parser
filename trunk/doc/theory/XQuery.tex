@@ -10,24 +10,22 @@ recommendation by the World Wide Web Consortium\cite{w3c00} (abbreviated W3C).
 This implies that XQuery is capable of querying any data structure which may be
 represented as an XML document.
 
-The full text extensions to Xquery 1.0 and Xpath 2.0 employs tokenisation and
-phrase search to provide more accurate search results, and generally giving the
+The full text extensions to XQuery 1.0 and XPath 2.0 employs tokenisation and
+phrase search to provide more accurate search results, and generally give the
 benefits known from modern search engines. This is also believed to provide
-better support for diverse languages, and more accurate search queries (see
-\cite{w3c02}, "Introduction").
+better support for diverse languages, and more accurate search queries \cite{w3c02}.
 
 \subsection{XPath / Path Expressions}
 XPath is, as well as a recommendation by the W3C \cite{w3c01}, a subset of
-Xquery. However XPath predates XQuery and is also limited only to path
+XQuery. However XPath predates XQuery and is also limited only to path
 expressions, which includes axis specifiers for addressing nodes in a document
 as well as node tests, predicates, and arithmetic operators.
 
-Consider this trivial example, from \cite{w3s00}:
-/bookstore/book[price>35]/title
+Consider this trivial example\cite{w3s00}:\verb!/bookstore/book[price>35]/title! 
 This strongly resembles a reference to a file or folder on a standard Unix file
 system, with the exception of the conditional expression enclosed within
-angular brackets. In terms of Xpath, this particular example would translate
-into "fetch all title nodes where the price attribute is higher than 35".       
+angular brackets. In terms of XPath, this particular example would translate
+into "fetch all title nodes where the price attribute is higher than 35".
 
 \subsection{FLWOR}
 FLWOR is an integral part of XQuery, and can be compared to the
@@ -59,10 +57,10 @@ SELECT v.title FROM video v WHERE v.year = 1999
 \end{figure}
 
 \subsection{Full Text Extensions}
-The Xquery 1.0  and Xpath 2.0 specifications have been extended with full text
-capabilities (see \cite{w3c02}), which enables the use of stemming, thesaurus,
-and similar tools for full-text queries. Specifically, the full-text extensions
-extend Xquery 1.0 and Xpath 2.0 in the following ways:
+The XQuery 1.0  and XPath 2.0 specifications have been extended with full text
+capabilities\cite{w3c02}, which enables the use of stemming, thesaurus,
+and similar tools in queries. Specifically, the full-text extensions
+extend XQuery 1.0 and XPath 2.0 in the following ways:
 \begin{itemize}
 \item A new and essential expression, FTContainsExpr, as well as new operators
 such as FTOr and FTAnd 
