@@ -6,7 +6,7 @@ child scopes. XQuery only allows new scopes to be defined through the
 enclosedExpr production rule. This makes it trivial to start a new scope at the
 beginning of a enclosedExpr, and end the scope and the end of an enclosedExpr.
 This has been implemented as follows:
-\begin{figure}[!h]
+\begin{figure}[h!]
 \begin{Verbatim}
 enclosedExpr : 
     LBRACESi {
@@ -36,9 +36,9 @@ to a symbol table. The symbol table, which is a simple subclass of
 scope tree. This functionality is rather provided by the Scope class. The UML diagram
 in figure \ref{fig:scope:uml1} illustrates the relationship between the
 \verb!Scope!, \verb!SymTab!, and \verb!Symbol! classes.
-\begin{figure}[!h]
+\begin{figure}[h!]
   \centering
-    \includegraphics[scale=0.6]{diagrams/uml}
+    \includegraphics[scale=0.4]{diagrams/uml}
   \caption[Scope and symtab UML diagram]{Simplified UML overview of classes related to
   scope and symbol table}
   \label{fig:scope:uml1}
