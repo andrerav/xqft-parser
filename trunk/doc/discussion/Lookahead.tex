@@ -1,19 +1,34 @@
 \section{Lookahead}
 \label{sect:discussion:lookahead}
+Originally we were under the impression, incited by the W3C source \cite{createTokenizer}, that the W3C XQuery specification, and consequently, the W3C XQuery full-text specification, were expressed as LL(1) grammars. We experienced that this could not be true, as did Kang et.al.\cite{kang_xquery_diglib}. It turns out that W3C once had argued that the grammar was LL(1), but not the corresponding full-text version \cite{grammarIsLL1}. In the newest version of the specification, LL(1), or even LL, is not mentioned at all. About the a former version of the specification claiming the XQuery grammar (not full text) to be LL(1), Michael Dyck, once a member of the W3C full-text task force \cite{dyckIsTaskForce}, expresses\cite{dyckOnList}:
+\begin{quote}
+For one thing, the grammar as defined by the EBNF is ambiguous, and no ambiguous grammar can be LL(1). [\ldots] the claim must be that the grammar as defined by the EBNF and the precedence chart is LL(1). The problem then is that LL(1)-ness isn't defined for such a grammar.
+\end{quote}
+The same must hold true for the full text version, as it is an extension of XQuery.
+
+That XQFT is at least LL(2) can be demonstrated by the fact that a single function call is a valid query, a query may start with a namespace declaration, which is on the form \verb!declare namespace...! and that \verb!declare! is a permitted function name. There is no way to left factorize these productions, if not one rendering the grammar complex and possibly containing redundancies.
+
+After left factoring all productions applicable the grammar still is a minimum of LL(3). This can be seen in figure \ref{fig:notLL2}, which shows a syntacticly valid typeswitch expression according to the W3C specification. The value after a \verb!case! keyword in a typeswitch can be a \verb!NCName!, which with no reserved keywords can be the character sequence "sensitive".
+
+\begin{figure}[h!]
+\begin{Verbatim}
+typeswitch($c) 
+   case $c as comment() return $c ftcontains "x" 
+   case sensitive return $p
+   case surname return $p ftcontains "x" case sensitive
+   default return ()
+\end{Verbatim}
+\label{fig:notLL2}
+\caption[A typeswitch shows the need for LL(3)]{An example of a typeswitch demonstrating the need for LL(3).}
+\end{figure}
+
+
+Because we chose the parser controlled strategy, our system's correctness depends on that the parser is a LL(k) parser with a small k.
+
+
 \underline{\textbf{\LARGE //TODO:}}
-
-The W3C claims their XQuery specification is expressed as a LL(1)-grammar\cite{createTokenizer}, as in the simplest cases can be seen with bare eyes, and also noted by \cite{kang_xquery_diglib}, this is not true. Because we chose the parser controlled strategy, our system's correctness depends on that the parser is a LL(k) parser with a small k.
-
 Additionally, the grammar was, despite stated as such
 by the W3C, not a LL(1) grammar but rather LL(k), for some undetermined \verb!k!
 (also noted by \cite{kang_xquery_diglib}).
 
 \underline{\textbf{\LARGE //TODO:}}
-\begin{verbatim}
-typeswitch($c) 
-      case $e as element() return local:copy($a)
-      case $t as text() return $t
-      case $c as comment() return $c ftcontains "host" case sensitive
-      case sensitiv:fg return $p
-      default return ()
-\end{verbatim}
