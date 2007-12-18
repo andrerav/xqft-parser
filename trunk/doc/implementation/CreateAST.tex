@@ -1,10 +1,10 @@
-\section{Creating the AST}
+\section{Creating The AST}
 \label{sect:impl:ast}
 In this section we will describe how abstract syntax trees (AST) are generated 
 using ANTLR based on a regular grammar specification. We will also investigate
 how to restructure the tree and define operator precedence.
 
-\subsection{Operators and rewrite rules}
+\subsection{Operators And Rewrite Rules}
 As described in section \ref{sect:antlr:ast}, ANTLR provides operators and
 rewrite rules for augmenting the grammar specification into generating a usable
 AST. In many cases, it is a simple matter of defining which tokens to use as
@@ -73,7 +73,7 @@ rewrite rules to conserve only a list of variable bindings in the AST}
 \label{code:ast:rewritelist}
 \end{figure}
 
-\subsection{FLWOR expressions}
+\subsection{FLWOR Expressions}
 FLWOR expressions are one of the more complex constructs in XQuery, and
 naturally the AST will quickly become complex if care is not taken to include
 only the necessary tokens and substrees to preserve information.
@@ -172,7 +172,7 @@ is a placeholder for any valid expression, and thus it carries no meaning in
 itself but rather in the sense of what is deduced from the input.
 
 
-\subsection{Path expressions}
+\subsection{Path Expressions}
 Path expressions are rewritten using only operators to create proper tree
 structures consisting of step expressions as leaf nodes and delimiting slashes as
 root nodes. Figure \ref{code:ast:pathexpr} shows the grammar with operators in
@@ -195,7 +195,7 @@ pathExpr : DBLSLASHSi^ relativePathExpr
 \end{figure}
 
 
-\subsection{Function declarations}
+\subsection{Function Declarations}
 Function declarations may seem like complex constructs, but in an AST these can
 be represented fairly simplistic by an imaginary token, with function name, 
 parameters, type, and function body as children.
@@ -214,7 +214,7 @@ functionDecl : DECLARE FUNCTION qName LPARSi paramList? RPARSi
 It is important to note that this part of the AST will quickly grow more complex
 as one adds more parameters and type specifications to the function declaration.
 
-\subsection{Full-text queries}
+\subsection{Full-Text Queries}
 Full-text queries consists of a number of operators that need to be promoted and
 organized properly to be intuitive when parsing the AST. In many cases, these
 can be rewritten simply by adding the promotion/exclusion operators. 
