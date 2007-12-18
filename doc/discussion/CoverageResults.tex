@@ -12,8 +12,7 @@ typing errors. This means that the official results from W3C include a number
 of tests that have not been run on our parser.
 
 Further, the XQuery test suite does not contain any full-text tests. So the
-full-text capabilities of our parser are left untested, leaving only the minimum
-XQuery features.
+full-text extension capabilities of our parser are left untested, leaving only the XQuery features.
 
 As such, it is crucial to keep in mind that \emph{our test results are not directly
 comparable with official results}. However, they give a fair indication of the
@@ -57,20 +56,15 @@ though the actual result was changed drastically. This kind of pitfall could be
 avoided by keeping detailed track of which tests fail and pass, and compare new
 results to old results and inspect the difference.
 
-\underline{\textbf{\LARGE //TODO:}} Mads: noe aa legge til her?
- 
+Of the 12478 test queries run 84 failed. These failed test cases can be broken down as follows:
 \begin{itemize}
-\item Testresultater, bra/d\aa rlig
-\item testresultater (hva var de forskjellige feilene)
-\item Generelt resultater vi skrev om i forrige kapittel
-\item Resultatene maa sees relativt - vi har ikke faatt testet hele settet siden
-vi ikke kan kjore run-time tester, og vi returnerer heller ikke noe som kan
-sammenlignes med forventet resultat
+\item 46 erroneous queries caught by ANTLRs default error handling in the lexer.
+\item 12 errors allowed by the parser
+\item 9 type cast errors
+\item 9 white space errors.
+\item 5 XML specifiaction nonconformaties were allowed.
+\item 2 untimely state transitions
+\item 1 UTF-16 query
 \end{itemize}
 
-W3C Unconformities delen forklarer egentlig testresultatet.
-
-Coverage er ikke h\o yere mest sannsynlig p\aa~grunn av vi har reserved
-keywords, og noen ganger ser parseren for langt frem... skal se om jeg f\aa~r
-fiksa noe av dette til helga, sp\o rs p\aa~ hvor lang vi har kommet med
-rapporten.... Covrage testene er eXtremt bra til \aa~finne bugz.
+The majority of the failed test are because exceptions are caught by the lexer and not forwarded, leaving the parser unaware of the error (section \ref{sect:discussion:error_handling}). The 12 errors allowed by the parser are not syntactic errors, as such, as they are allowed by the W3C EBNF grammar. This test also shows that our lexer is to liberal with where white space can occur. The reason the tests which allowed illigal XML syntax and the untimely state transition failed are discussed in section \ref{sect:future:knownBugs}.
