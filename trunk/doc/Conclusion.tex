@@ -14,43 +14,6 @@ AST FLOTT kan lett brukes videre \rightarrow Grammar rewrite rules and operators
 
 SCOPE AND TYPE hvis det er noe spes \aa si \rightarrow A prototype for scoping, symbol tables, and lookups in an XQuery full-text parser
 
-We implemented a test harness for executing detailed coverage tests based on the official XQuery test suite\cite{w3c05}. These tests are meant for XQuery 1.0 and not the full-text extension. We belive, however, that they are a good indicator of the degree of compliance with the W3C specificaion. The parser failed on 84 of the 12478 test queries applicable. 
+We implemented a test harness for executing detailed coverage tests based on the official XQuery test suite\cite{w3c05}. These tests are meant for XQuery 1.0 and not the full-text extension. We belive, however, that they are a good indicator of the degree of compliance with the W3C specificaion. The parser failed on 84 of the 12478 test queries applicable. The causes of the failed queries are accounted for, and possible solutions are presented.
 
-In this project we have developed a front-end parser for XQuery with support for full-text extensions. The parser produces a usable AST that can be easily modified, and is suitable for further usage.
-
-
-
-
-\begin{itemize}
-  \item A fairly complete XQuery full-text parser front end capable of
-  generating abstract syntax trees and with a test coverage of
-  99.3\%\footnote{As noted and emphasized in section
-  \ref{sect:discussion:coverageResults},
-  these results are not immediately comparable with officially published results
-  from the W3C}
-
-
-  \item A suitable XQuery full-text grammar specification for ANTLR based on the
-  W3C recommendation
-
-  \item 
-  \item 
-
-  \item A test harness for executing detailed coverage tests based on the
-  official XQuery test suite
-\end{itemize}
-
-
-\underline{\textbf{\LARGE //TODO:}}
-s\aa~konklusjon
-
-
-hva ble gjort for \aa ~f\aa~ opp dekningskrav hovedgrunner, litt fremtid, litt
-av alt egentlig? 
-
-Vi maa si noe om hva vi synes selv ogsaa, om vi er fornoyde osv. Vi maa ha en
-definitiv konklusjon, f.eks ``Vi har utviklet en parser av grei kvalitet som vi
-er fornoyd med'' 
--AR
-
-\underline{\textbf{\LARGE //ODOT:}}
+As as response to the task description, this project fulfills the requirements stated. We have developed a XQuery parser in Java under a BSD license. It accommodates for the full-text extensions specified by W3C. The parser is capable of generating abstract syntax trees and has a XQuery test suite test coverage of 99.3\%\footnote{As noted and emphasized in section\ref{sect:discussion:coverageResults}, these results are not immediately comparable with officially published results from the W3C}.
