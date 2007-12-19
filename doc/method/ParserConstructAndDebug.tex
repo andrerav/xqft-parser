@@ -10,12 +10,14 @@ alternatives. Specifically, the generator must:
 \begin{itemize}
   \item generate Java source code for the parser
   \item be able to generate an LL parser, because the grammar  
-  specification given by W3C is LL(k) \footnote{This can be argued, as seen in section \ref{sect:discussion:lookahead}}
+  specification given by W3C is LL(k) \footnote{This can be argued, as later 
+  seen in section \ref{sect:discussion:lookahead}}
   \item be licensed liberally, either GPL or BSD, or an equivalent license
   approved by OSI
 \end{itemize}
 
-The alternative parser generators evaluated will be presented in the following sections.
+The alternative parser generators evaluated are presented in the following
+sections.
 
 \subsection{JFlex/CUP}
 JFlex and CUP is a versatile combination consisting of JFlex which is a lexer
@@ -85,6 +87,11 @@ project\cite{pathfinderHome}}
 \label{code:parsers:lalr2}
 \end{figure}
 
+The CUP parser generator as well as the code it produces is licensed under a
+custom GPL\footnote{http://www.gnu.org/copyleft/gpl.html, also see section \ref{sect:method:licensing}
+}-compatible license. The JFlex lexer generator itself is licensed under the GPL
+license, however the code produced inherits the license of the lexer specification.
+
 \subsection{JavaCC}
 JavaCC could have been a viable alternative as it produces LL(k) parsers,
 however compared to ANTLR its grammar specification syntax deviated more
@@ -106,9 +113,13 @@ void expr()
 \label{code:parsers:javacc}
 \end{figure}
 
-For AST construction, JavaCC requires the use of preprocessor tool known as  
+For AST construction, JavaCC requires the use of a preprocessor tool known as  
 JJTree. This tool will parse the grammar and insert tree building actions where
 appropriate. 
+
+JavaCC is licensed under a BSD-style license (see section
+\ref{sect:method:licensing}).
+
 
 \subsection{ANTLR}
 ANTLR is a renowned tool for parser generation, and can generate LL(*) parsers
@@ -123,6 +134,8 @@ automatic AST (abstract syntax tree) generation. These features are described in
 detail later in chapter\ref{sect:antlr}, and the usage of these features has been described
 in chapter \ref{chapter:implementation}.
 
+ANTLR is licensed under a BSD-style license (see section
+\ref{sect:method:licensing}).
 
 \section{Debugging}
 \label{sect:method:debugging}

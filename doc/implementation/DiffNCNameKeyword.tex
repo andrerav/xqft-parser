@@ -1,9 +1,9 @@
 \section{QName, NCName and Keywords}
 \label{sect:rewritegrammar:keywordNCName}
 
-All 139 keywords and 73 symbols are explicitly defined as tokens, as opposed to being declared inline in the non-terminal productions. The main reason for this is that predicates can be employed to control when the lexer should and should not try to match these rules. Another benefit from defining the tokens in the lexer is that ANTLR compiler error messages and warnings are much more readable this way. When defined inline ANTLR would just assign any unique name to the tokens, making it hard for humans to understand which token is refered to. 
+All 139 keywords and 73 symbols are explicitly defined as tokens, as opposed to being declared inline in the non-terminal productions. The main reason for this is that predicates can be employed to control when the lexer should and should not try to match these rules. Another benefit from defining the tokens in the lexer is that ANTLR compiler error messages and warnings are much more readable this way. When defined inline ANTLR would just assign any unique name to the tokens, making it hard for humans to understand which token is referred to. 
 
-We defined the names of the tokens for keywords as the keyword in capital letters with dashes replaced by underscore, e.g. \verb!BASE_URI : 'base-uri'!. A descriptive name with the suffix \verb!Si! consitutes the token names for symbols, e.g. \verb!ASSIGNSi : ':='!.
+We defined the names of the tokens for keywords as the keyword in capital letters with dashes replaced by underscore, e.g. \verb!BASE_URI : 'base-uri'!. A descriptive name with the suffix \verb!Si! constitutes the token names for symbols, e.g. \verb!ASSIGNSi : ':='!.
 
 The non-terminal productions refer both to \verb!NCName! and \verb!QName!, where W3C defines \verb!QName! as (simplified):
 \begin{Verbatim}
@@ -42,6 +42,6 @@ fragment LexLiterals : (QName)=> QName
 
 A syntactic predicate is inserted to ensure that the lexer matches a \verb!QName! if it is possible, and not a \verb!NCName! followed by a \verb!:! and another \verb!NCName!.
 
-In section \ref{sect:antlr:lexer} we mentioned that ANTLR will generate a lexer correctly differanciating between explicit and inplicit defined character sequences, which in our case is keywords and \verb!NCName! respectively. It acctually resolves this by ranking the explicit ones over the implicit ones, and surpressing warnings about ambiguousity. This works, as the highest ranked alternative will always be chosen. But because we defined these productions as \verb!fragment! rules, the warnings are not surpressed.
+In section \ref{sect:antlr:lexer} we mentioned that ANTLR will generate a lexer correctly differentiating between explicit and implicit defined character sequences, which in our case are keywords and \verb!NCName! respectively. It actually resolves this by ranking the explicit ones over the implicit ones, and surpressing warnings about ambiguity. This works, as the highest ranked alternative will always be chosen. But because we defined these productions as \verb!fragment! rules, the warnings are not surpressed.
 
-The solution is to implement all these tokens as \verb!NCName!. An \verb!if..else if..! structure checks if the matched token should be one of the keywords, and in such a case change the type appropriately. This manner of fixing the problem is not a preticular good one, and other solutions will be discussed in section \ref{sect:future:improvements}.
+The solution is to implement all these tokens as \verb!NCName!. An \verb!if..else if..! structure checks if the matched token should be one of the keywords, and in such a case change the type appropriately. This manner of fixing the problem is not a particularly good one, and other solutions will be discussed in section \ref{sect:future:improvements}.

@@ -1,10 +1,10 @@
 \section{Parser Controlled State Driven Lexer}
 \label{sect:impl:parser_controlled_state_driven_lexer}
-As we saw in section \ref{sect:ambiguousgrammar:ambigTerm}, unless we employ a scan-while-parse scanning strategy, we need to make the lexer somehow aware of the context of incomming characters to be able to correctly generate tokens. Our parser controlled state driven lexer strategy implies that the parser must directly infulence the state of the lexer, and the lexer must know what state it is in \emph{before} trying to match a token. 
+As we saw in section \ref{sect:ambiguousgrammar:ambigTerm}, unless we employ a scan-while-parse scanning strategy, we need to make the lexer somehow aware of the context of incoming characters to be able to correctly generate tokens. Our parser controlled state driven lexer strategy implies that the parser must directly influence the state of the lexer, and the lexer must know what state it is in \emph{before} trying to match a token. 
 
 ANTLRs default parser input \verb!TokenStream!, \verb!CommonTokenStream!, will at first peek ask the lexer to generate tokens until \verb!EOF! and place them in a buffer. This means that the parser will be in an initial state as the lexer runs. As this is not compatible with our lexer strategy, we had to make our own \verb!TokenStream! that does not buffer more than is strictly needed. 
 
-This method as well as how we control the state transitions will be discussed in the following sections. Further, we will review how we introduced container tokens to ease the parsing, and how we reorganized the grammar to make it susceptible to states .
+This method as well as how we control the state transitions will be discussed in the following sections. Further, we will review how we introduced container tokens to ease the parsing, and how we reorganized the grammar to make it susceptible to states.
 
 \subsection{Custom Made Parser Input}
 For an overview of how the lexer, parser and tokenstream are connected see section \ref{sect:antlr:parser}. ANTLRs \verb!CommonTokenStream! has a method \verb!LT(int k)! which returns the $k$th token forward from its current position (simplified):
@@ -25,7 +25,7 @@ public Token LT(int k) {
       return (Token)tokens.get(i);
 }
 \end{Verbatim}
-Here \verb!p! is a pointer to the current token in the token stream and \verb!tokens! is a list of the tokens generated. The method \verb!skipOffTokenChannels(int r)! returns the position number bigger or equal to \verb!r! on which there resides a valid token, i.e. a token in the default virtual channel. The pionter \verb!p! is initialized to $-1$, thus the the first time \verb!LT(int k)! is run, it calls method \verb!fillBuffer()! (simplified):
+Here \verb!p! is a pointer to the current token in the token stream and \verb!tokens! is a list of the tokens generated. The method \verb!skipOffTokenChannels(int r)! returns the position number bigger or equal to \verb!r! on which there resides a valid token, i.e. a token in the default virtual channel. The pointer \verb!p! is initialized to $-1$, thus the the first time \verb!LT(int k)! is run, it calls method \verb!fillBuffer()! (simplified):
 \begin{Verbatim}
 protected void fillBuffer() {
    Token t = tokenSource.nextToken();
@@ -38,7 +38,7 @@ protected void fillBuffer() {
 \end{Verbatim}
 Where \verb!tokenSource! is the lexer connected. The omitted parts of the code are mainly related to virtual channel handling and other means to hide tokens from the parser. 
 
-Both of these methods had to be overridden in our \verb!CommonTokenStream! derived \verb!UnbufferedCommonTokenStream! \footnote{The name \texttt{UnbufferedCommonTokenStream} can be a bit misleading, as it does buffer all allready matched tokens -- but only as many tokens forward as necessary at any given time.}. To implement this we introduced a method \verb!fillBuffer(int k)! which fills the buffer with $k$ new \emph{valid} tokens (simplified):
+Both of these methods had to be overridden in our \verb!CommonTokenStream! derived \verb!UnbufferedCommonTokenStream! \footnote{The name \texttt{UnbufferedCommonTokenStream} can be a bit misleading, as it does buffer all already matched tokens -- but only as many tokens forward as necessary at any given time.}. To implement this we introduced a method \verb!fillBuffer(int k)! which fills the buffer with $k$ new \emph{valid} tokens (simplified):
 \begin{Verbatim}
 protected void fillBuffer(int k) 
 {
@@ -78,9 +78,9 @@ Where \verb!no! once again acts as a counter over valid tokens. The \verb!while!
 
 \subsection{Introducing the States}
 \label{sect:rewriteGrammar:introduceStates}
-Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLitteral! be addressed. 
+Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLiteral! be addressed. 
 
-Figure \ref{fig:ambigTerminalRef} shows where these productions are referred to (or not referred to in the case of \verb!StringLitteral!) in the W3C specified grammar. 
+Figure \ref{fig:ambigTerminalRef} shows where these productions are referred to (or not referred to in the case of \verb!StringLiteral!) in the W3C specified grammar. 
 \begin{figure}[h!]
 \begin{Verbatim}
 DirElemConstr   ::= "<" QName DirAttrList 
@@ -103,7 +103,7 @@ EnclosedExpr    ::= "{" Expr "}"
 \label{fig:ambigTerminalRef}
 \end{figure}
 
-As we can see, neither of the problem terminals are ambigious when enclosed in higher level productions -- a necessity for our state driven strategy. We also see that all the problem terminals are in a way connected to XML markup, and consist of the characters allowed as the text in elements and the characters allowed as attribute values. The \verb!DirElemConstr! production is interpreted as matching either a self-terminating tag, or a start tag followed by \verb!DirElemContent! and an end tag.
+As we can see, neither of the problem terminals are ambiguous when enclosed in higher level productions -- a necessity for our state driven strategy. We also see that all the problem terminals are in a way connected to XML markup, and consist of the characters allowed as the text in elements and the characters allowed as attribute values. The \verb!DirElemConstr! production is interpreted as matching either a self-terminating tag, or a start tag followed by \verb!DirElemContent! and an end tag.
 
 \begin{figure}[h!]
 \centering
@@ -119,9 +119,9 @@ As we can see, neither of the problem terminals are ambigious when enclosed in h
 \end{figure}
 
 
-Figure \ref{fig:states} shows how we defined five distinct states. The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLitteral! and \verb!DirAttrValue!. We see that this holds, if we compare the states with the grammar in figure \ref{fig:ambigTerminalRef}. The only legal alternatives in the \verb!IN_TAG! state are \verb!QName! and \verb!DirAttrList! of which neither can be a \verb!StringLitteral!. 
+Figure \ref{fig:states} shows how we defined five distinct states. The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLiteral! and \verb!DirAttrValue!. We see that this holds, if we compare the states with the grammar in figure \ref{fig:ambigTerminalRef}. The only legal alternatives in the \verb!IN_TAG! state are \verb!QName! and \verb!DirAttrList! of which neither can be a \verb!StringLiteral!. 
 
-By the same account we can see that neither \verb!NCName!, \verb!IntegerLitteral! nor any of the keywords are legal alternatives in the \verb!IN_APOS_ATTRIBUTE!, \verb!IN_QUOT_ATTRIBUTE! or \verb!IN_ELEMENT! states. The lexer is in the \verb!DEFAULT! state when it is not in any of the other.
+By the same account we can see that neither \verb!NCName!, \verb!IntegerLiteral! nor any of the keywords are legal alternatives in the \verb!IN_APOS_ATTRIBUTE!, \verb!IN_QUOT_ATTRIBUTE! or \verb!IN_ELEMENT! states. The lexer is in the \verb!DEFAULT! state when it is not in any of the other.
 
 \subsection{State Transitions}
 \label{sect:rewriteGrammar:transitions}
@@ -169,9 +169,9 @@ dirElemConstr  : LTSi
 \end{figure}
 
 
-By using a stack the parser has knowledge of which state the lexer was in before it matched the possible nested construct. In this way, the parser e.g. accommodate for the possiblity that a element contains other elements.
+By using a stack the parser has knowledge of which state the lexer was in before it matched the possible nested construct. This way, the parser e.g. accommodate for the possiblity that a element contains other elements.
 
-At the start of an XML tag for an outermost element, the \verb!DEFAULT! state will be pushed to the stack, and the state will be set to \verb!IN_TAG!. If it is a self-terminating tag, the state will be set back to \verb!DEFAULT! by means of poping the stack after the lexer has matched \verb!/>!. If it is an element consisting of a start and end tag, the state in the lexer will be set to \verb!IN_ELEMENT! after matching \verb!>!. When the parser comes upon the end of the end tag it will set the lexer state back to \verb!DEFAULT! with \verb!pop()!. In this way the lexer can meet a element within another, be it in the form of a self terminating or a pair of tags, and know that it will transit back to the right state after it has matched it.
+At the start of an XML tag for an outermost element, the \verb!DEFAULT! state will be pushed to the stack, and the state will be set to \verb!IN_TAG!. If it is a self-terminating tag, the state will be set back to \verb!DEFAULT! by means of poping the stack after the lexer has matched \verb!/>!. If it is an element consisting of a start and end tag, the state in the lexer will be set to \verb!IN_ELEMENT! after matching \verb!>!. When the parser comes upon the end of the end tag it will set the lexer state back to \verb!DEFAULT! with \verb!pop()!. This way the lexer can meet a element within another, be it in the form of a self terminating or a pair of tags, and know that it will change back to the right state after it has matched it.
 
 
 \begin{figure}[h!]
@@ -190,7 +190,7 @@ enclosedExpr   : LBRACESi
 \subsection{Reorganizing the Grammar}
 \label{sect:rewriteGrammar:reorganizing}
 
-To gain a more readable version of the grammar, all non-terminal, i.e. parser, productions are organized by writing them in a treewise fashion. Producuctions that could lead to cycles are pulled out and made the root of their own tree. In this way it was readily understood which productions could have which outcome, as well as easier to spot any possible non-determinisms.
+To gain a more readable version of the grammar, all non-terminal, i.e. parser, productions are organized by writing them in a treewise fashion. Productions that could lead to cycles are pulled out and made the root of their own tree. This way it was readily understood which productions could have which outcome, as well as easier to spot any possible non-determinisms.
 
 Even with the state transitions in place, the lexer grammar still has to be adapted to be aware of them. An obvious candidate for implementing this is by gated semantic predicates (section \ref{sect:antlr:gate_semantic_preds}). To be sure that the lexer will choose another rule should a predicate fail, and not issue a \verb!FailedSemanticPredicateException!, a lexer production \verb!TOKENSWITCH! with all the other lexer productions as alternatives is implemented. \verb!mTokens()! (section \ref{sect:antlr:lexer}) in a sense is replaced by \verb!TOKENSWITCH!, acting as the main differansiator. 
 
@@ -282,6 +282,6 @@ QuotAttrContChar: {(input.LA(1)=='"' && input.LA(2)=='"')}?=>
                   |~(NotChar | LBRACESi | RBRACSi | LTSi 
                         | AMPERSi | QUOTSi);
 \end{Verbatim}
-\caption[Example of container token]{The declaration of the container token \texttt{QuotAttributeContent}. Some names have been shortened to match formating}
+\caption[Example of container token]{The declaration of the container token \texttt{QuotAttributeContent}. Some names have been shortened to match formatting}
 \label{fig:containerToken}
 \end{figure}

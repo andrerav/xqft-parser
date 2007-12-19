@@ -29,22 +29,25 @@ piTarget: // Test piTarget rule
 \end{Verbatim}
 
 This is a complete input file for gUnit, and will automatically discover the
-classes XQFTLexer and XQFTParser in the package no.ntnu.xqft.parse. gUnit will
-then proceed to invoke the lexer with ``Xml'', ``XMl'', ``XML'', and ``XmL'' as
-input, pass the lexer to an instance of XQFTParser and execute the production
-piTarget. For all these inputs, it will assert that the parser emits an error
-(i.e it must fail to pass the test).
+classes \verb!XQFTLexer! and \verb!XQFTParser! in the package
+\verb!no.ntnu.xqft.parse!. gUnit will  then proceed to invoke the lexer with
+``Xml'', ``XMl'', ``XML'', and ``XmL'' as input, pass the lexer to an instance
+of \verb!XQFTParser! and execute the production \verb!piTarget!. For all these
+inputs, it will assert that the parser emits an error (i.e it must fail to pass
+the test).
 
 In case of a test where the parser should not fail, the syntax is as follows:
 \begin{Verbatim}
 forClause:
 	"for $a in document(\"abc.xml\")/a/b/text()" OK
 \end{Verbatim}
-Here gUnit will assert that the parser will not fail for the given inpu (i.e it
+Here gUnit will assert that the parser will not fail for the given input (i.e it
 must not fail to pass the test).
 
 gUnit is also capable of parsing abstract syntax trees built by the generated
 parser, but this feature has not been used in this project.
+
+gUnit is available at the gUnit website\cite{gunit00}.
 
 \subsection{jUnit}
 In addition to the gUnit tests for the grammar, jUnit was used to write unit tests for
@@ -60,6 +63,8 @@ setParent() method in the scope class works as expected:
         assertEquals(this.scope.getParent(), tmp);
     }
 \end{Verbatim}
+
+jUnit is available at the jUnit website\cite{junit_website}.
 
 \subsection{Manual Compliance Tests}
 Finally, we employed manual tests for running a subset of the XQuery Test
