@@ -197,29 +197,29 @@ Even with the state transitions in place, the lexer grammar still has to be adap
 \begin{figure}[h!]
 \begin{Verbatim}
 TOKENSWITCH : {(state==IN_ELEMENT || state==DEFAULT)}?=>
-              "enclosed composites"          // emits subtokens
+              "enclosed composites"  // emits subtokens
               | {state==IN_ELEMENT}?=>
-              LENDTAGSi                      {$type=LENDTAGSi;}
+              LENDTAGSi {$type=LENDTAGSi;}
               | {state==IN_ELEMENT}? =>
-              ElementContent            {$type=ElementContent;} 
+              ElementContent {$type=ElementContent;} 
               | {state==DEFAULT}?=>
-              NumberLEX	                {$type=this.tokenType;}
+              NumberLEX {$type=this.tokenType;}
               | {state==DEFAULT}?=>
-              LexSigns                  {$type=this.tokenType;}
+              LexSigns  {$type=this.tokenType;}
               | {state==DEFAULT}?=>
               StringLiteral {$type=StringLiteral;}
               | {(state==DEFAULT || state==IN_TAG)}?=>
-              S                     {$type=S; $channel=HIDDEN;}
+              S {$type=S; $channel=HIDDEN;}
               | {(state==DEFAULT || state==IN_TAG)}?=>
-              LexLiterals               {$type=this.tokenType;} 
+              LexLiterals  {$type=this.tokenType;} 
               | {state==IN_QUOT_ATTRIBUTE}?=>
               QuotAttributeContent{$type=QuotAttributeContent;}
               | {state==IN_APOS_ATTRIBUTE}?=>
               AposAttributeContent{$type=AposAttributeContent;}
               | {state==IN_TAG}?=>
-              RSELFTERMSi                  {$type=RSELFTERMSi;}
-              | QUOTSi                          {$type=QUOTSi;}
-              | DOLLARSi                      {$type=DOLLARSi;}
+              RSELFTERMSi {$type=RSELFTERMSi;}
+              | QUOTSi {$type=QUOTSi;}
+              | DOLLARSi {$type=DOLLARSi;}
               | . . .
               ;
 

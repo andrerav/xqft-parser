@@ -19,7 +19,7 @@ PartOf          ::= [^"&]
 // can be written in ANTLR syntax as:
 PartOf            : ~(NotChar | COLONSi | AMPSi);
 \end{Verbatim}
-The ``dash" operator is sometimes also used in this way, e.g. in \verb!QuotAttrContentChar!. But because of our introduced production \verb!QuotAttributeContent! (section \ref{sect:rewriteGrammar:containerTokens}), it is rewritten in the same way as with the enclosed expressions (section \ref{sect:rewriteGrammar:enclosedComposite}). Meaning that the operator is used to define that a very general production should not be greedy. 
+The ``dash" operator is also used in this way, e.g. in \verb!QuotAttrContentChar!. But because of our introduced production \verb!QuotAttributeContent! (section \ref{sect:rewriteGrammar:containerTokens}), it is rewritten in the same way as with the enclosed expressions (section \ref{sect:rewriteGrammar:enclosedComposite}). Meaning that the operator is used to define that a very general production should not be greedy. 
 
 In \verb!piTarget! the ``dash" operator is used in a unique way, and thus needed to be treated differently. This can be seen in figure \ref{fig:pitargetRewritten}. In this figure the original production can be interpreted as ``\texttt{piTarget} can be a \texttt{Name}, but not `XML', regardless of character casing''. The validating semantic predicate will imitate this behaviour using the method \verb!equalsIgnoreCase()!.
 \begin{figure}[h!]
