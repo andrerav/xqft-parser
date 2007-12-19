@@ -14,7 +14,7 @@ linguistics (such as stemming and thesaurus).
 The XQuery language has been extended with full-text capabilities (as described
 in section \ref{sect:theory:xquery}), and relevant to this project is a
 collection of both full-text enabled XQuery parsers as well as regular XQuery
-parsers. This section will outline some of the most interesting implementations.
+parsers. This section outlines some of the most interesting implementations.
 
 \subsection{Full-Text Implementations}
 \subsubsection{Quark / TexQuery}
@@ -41,7 +41,10 @@ TexQuery is a query language extending upon XQuery with added full-text search
 capabilities. These extensions do not necessarily conform to the W3C
 recommendation. TexQuery is an early precursor to the current W3C 
 recommendation \cite{TEXQ00}, in whose development Shanmugasundaram actively 
-participates. The source code for this project is available at the Quark Project
+participates. Quark/TexQuery is written in C++, however the license terms are
+not stated on the website nor in the source code itself.
+
+The source code for this project is available at the Quark Project
 website\cite{quarkproject}.
 
 \subsubsection{Galatex}
@@ -118,12 +121,13 @@ Additionally, the following functions are available:
   from the node-set that matches any which one of the regular expressions
 \end{itemize}
 
-In their simplicity, these are powerful extensions to vanilla XQuery. But
+In their simplicity, these are powerful extensions to regular XQuery. But
 linguistics such as stemming, thesaurus and diacritics are not taken into
 consideration.
 
-The source code and several other resources are available at the eXist
-website\cite{existweb}. 
+The eXist source code is written in Java and is licensed under the LGPL license
+(lesser GPL). The source code is available at the eXist website\cite{existweb}
+along with several other resources. 
 
 \subsection{Implementations Sans Full-Text Extensions}
 There are a wealth of XQuery implementations without full-text
@@ -155,10 +159,11 @@ Pathfinder\cite{pathfinderHome} is an XQuery parser constructed to run on top of
 database system, namely MonetDB. The goal of the Pathfinder project is to
 investigate how relational database technology can be utilized to create a
 scalable and efficient XQuery implementation. However, the Pathfinder project
-has, at the current time of writing, no support for full text extensions. A
-future version of Pathfinder is planned to be capable of emitting SQL code
-generated from the XQuery parse tree. This illustrates the Pathfinder systems
-capabilities of interoperating with relational database systems.
+has, at the current time of writing, no support for full text extensions. Such
+features are planned, however. A future version of Pathfinder is planned to be
+capable of emitting SQL code generated from the XQuery parse tree. This
+illustrates the Pathfinder systems capabilities of interoperating with
+relational database systems.
 
 Pathfinder is written in C, and the XQuery parser is a generated using standard
 Flex and Bison compiler generator tools.
@@ -168,3 +173,8 @@ frontends with relational databases. A number of papers have been written
 on various areas of interest in the context of Pathfinder, such as compilation
 techniques for relational targets\cite{pathfinder_comptech} and loop-lifted
 staircase joins\cite{pathfinder_staircase}.
+
+The Pathfinder source code is available at the project
+website\cite{pathfinderHome} and is licensed under a custom ``Pathfinder
+License''\footnote{http://monetdb.cwi.nl/Legal/PathfinderLicense-1.1/} which is
+derived from the Mozilla Public License\footnote{http://www.mozilla.org/MPL/MPL-1.1.html}.
