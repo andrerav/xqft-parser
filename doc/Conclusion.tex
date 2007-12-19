@@ -23,7 +23,7 @@ number of different approaches to this.
 After implementing a prototype state driven lexer for a subset of XQuery, we
 discovered that only a few states would be needed to solve the non-determinism.
 Additionally we found that by making the parser communicate the state to the
-lexer the implementation would be less complex. To make this work we had to
+lexer, the implementation would be less complex. To make this work we had to
 implement functionality in the lexer to generate tokens one by one, overriding
 the default manner of operation. A great deal of the terminal ambiguities were
 solved by this parser controlled state driven strategy. The remainding problems
@@ -36,7 +36,7 @@ left factoring and augmenting the grammar with predicates guiding the parser.
 
 Using grammar rewrite rules and rewrite operators, the parser produces an AST
 well suited for further data flow analysis and transformation. The AST can be
-structured at will simply by changing the rewrite rules and regenerating and
+structured at will, simply by changing the rewrite rules and regenerating and
 recompiling the parser.   
 
 A simplistic system for scoping and symbol tables was developed and implemented

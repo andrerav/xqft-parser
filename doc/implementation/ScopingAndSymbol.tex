@@ -26,6 +26,13 @@ enclosedExpr :
 Where \verb!this.currentScope! is a reference to the ``current'' scope in this
 context. This member variable is initiated with an empty scope when an object
 of the parser class is instantiated.
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.4]{diagrams/uml}
+  \caption[Scope and symtab UML diagram]{Simplified UML overview of classes related to
+  scope and symbol table}
+  \label{fig:scope:uml1}
+\end{figure}
 
 The implementation above (which is formatted slightly for brevity) will
 automatically build a scope tree as the input is parsed.
@@ -36,11 +43,4 @@ to a symbol table. The symbol table, which is a simple subclass of
 scope tree. This functionality is rather provided by the \verb!Scope! class. The UML diagram
 in figure \ref{fig:scope:uml1} illustrates the relationship between the
 \verb!Scope!, \verb!SymTab!, and \verb!Symbol! classes.
-\begin{figure}[h!]
-  \centering
-    \includegraphics[scale=0.4]{diagrams/uml}
-  \caption[Scope and symtab UML diagram]{Simplified UML overview of classes related to
-  scope and symbol table}
-  \label{fig:scope:uml1}
-\end{figure}
 

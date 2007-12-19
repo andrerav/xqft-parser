@@ -15,7 +15,13 @@ It also specifies this extra-gramatical constraint (\cite{w3c00}, section A.1.2)
 ``As written, the grammar in A XQuery Grammar is ambiguous for some forms using the `+' and `*' Kleene operators. The ambiguity is resolved as follows: [\ldots] a `+', `*', or `?' immediately following an ItemType must be an OccurrenceIndicator [\ldots]"
 \end{quote}
 
-This is a classical case for a syntactic predicate (section \ref{sect:antlr:syntacticPredicate}). Such predicates can force the parser to consider something that looks like a \verb!OccurrenceIndicator! as a \verb!OccurenceIndicator! -- and not e.g. a arithmetic operator. The implementation of this can be seen in figure \ref{fig:occurrenceIndicator}. The alternative with \verb!ItemType! had to be split into two alternatives to rank the one with with the \verb!OccurenceIndicator! over the one without.
+This is a classical case for a syntactic predicate (section
+\ref{sect:antlr:syntacticPredicate}). Such predicates can force the parser to
+consider something that looks like a \verb!Occurrence!-\verb!Indicator! as a
+\verb!OccurenceIndicator! -- and not e.g. a arithmetic operator. The
+implementation of this can be seen in figure \ref{fig:occurrenceIndicator}. The
+alternative with \verb!ItemType! had to be split into two alternatives to rank
+the one with with the \verb!Occurence!\verb!Indicator! over the one without.
 
 \begin{figure}[h!]
 \begin{Verbatim}
