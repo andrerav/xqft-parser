@@ -57,8 +57,6 @@ public Token nextToken(){
 
 \subsection{PI, Pragma, XMLComment and CDATA Sections}
 
-As previously mentioned, the XML markup features processing instructions, pragmas, comments and CDATA sections contain terminals which allowed content overlap significantly with other terminals. However, these terminals are enclosed in unique symbols, making it possible to declare the non-terminal rules which refer to them as lexer productions. And with the subtoken emitting functionality described in the last section, the parser will still be able to distinguish the terminals. 
-
 \begin{figure}[h!]
 \begin{Verbatim}
 DirPIConstructor : {prepareSubToken();}
@@ -85,6 +83,8 @@ DirPIConstructor : {prepareSubToken();}
 \caption[\texttt{DirPIConstructor} emitting subtokens]{The implementation of \texttt{DirPIConstructor} with subtoken emitting capabilities.}
 \label{fig:pragmaLEX}
 \end{figure}
+
+As previously mentioned, the XML markup features processing instructions, pragmas, comments and CDATA sections contain terminals which allowed content overlap significantly with other terminals. However, these terminals are enclosed in unique symbols, making it possible to declare the non-terminal rules which refer to them as lexer productions. And with the subtoken emitting functionality described in the last section, the parser will still be able to distinguish the terminals. 
 
 We implemented \verb!DirPIConstructor! as shown in figure \ref{fig:pragmaLEX}. As explained in section \ref{sect:antlr:lexer}, ANTLR will generate a method \verb!mDirPIConstructor! from this production. This implies that all actions added will be performed somewhere within \verb!"predict type"! of figure \ref{fig:nextToken}. There will, however, not be generated any \verb!DirPIConstructor! token because of our overridden \verb!emit(Token t)!.
 
