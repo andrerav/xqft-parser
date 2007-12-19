@@ -1,15 +1,15 @@
 % Discussion / Coverage test results
 \section{Coverage Test Results}
 \label{sect:discussion:coverageResults}
-As noted in section \ref{sect:results:tests}, our coverage testing ended at 
-99.3\%. We can compare this result to official results published by W3C, with
+As noted in section \ref{sect:results:tests}, our coverage testing result ended
+at 99.3\%. We can compare this result to official results published by W3C, with
 some  important constraints: as described in section \ref{sect:method:testing},
 the coverage tests is limited by the fact that we can only execute the set of
 tests that are applicable in parse-time (and not run-time), since our parser
 does not have a backend which produces output to be returned and compared to
 expected output. Neither is our parser capable of detecting semantics such as
 typing errors. This means that the official results from W3C include a number
-of tests that have not been run on our parser.
+of tests that have not and can not be run on our parser.
 
 Further, the XQuery test suite does not contain any full-text tests. So the
 full-text extension capabilities of our parser are left untested, leaving only the XQuery features.
@@ -52,9 +52,9 @@ works well as a regression test, since any improvement to the parser should
 never degrade our coverage result -- however, it is hard to tell if tests that
 previously failed would pass along with an identical amount of previously
 passed tests that would fail, leaving the coverage percentage as before even
-though the actual result was changed drastically. This kind of pitfall could be
-avoided by keeping detailed track of which tests fail and pass, and compare new
-results to old results and inspect the difference.
+though the actual result was changed drastically. This pitfall could be
+avoided by keeping detailed track of which tests that fail and pass, and compare
+new results to old results and inspect the difference.
 
 Of the 12478 test queries run 84 failed. These failed test cases can be broken
 down as follows: 
