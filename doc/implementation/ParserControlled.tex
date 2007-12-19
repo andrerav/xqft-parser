@@ -157,9 +157,10 @@ dirElemConstr  : LTSi
 \label{fig:nestedTransitionElement}
 \end{figure}
 
-By using a stack the parser has knowledge of which state the lexer was in before it matched the possible nested construct. In this way we e.g. accommodate for the possiblity that a element contains other elements, which actually is not that uncommon. 
+By using a stack the parser has knowledge of which state the lexer was in
+before it matched the possible nested construct. In this way we e.g. accommodate for the possiblity that a element contains other elements, which actually is not that uncommon. 
 
-At the start of the tag for an outermost element the \verb!DEFAULT! state will be pushed to the stack, and the state will be set to \verb!IN_TAG!. If it is a self-terminating tag, the state will be set back to \verb!DEFAULT! by means of poping the stack after the lexer has matched \verb!/>!. If it an element consisting of a start and end tag, the state in the lexer will be set to \verb!IN_ELEMENT! after matching \verb!>! When the parser comes upon the end of the end tag it will as in the case of the self-terminating tag set he lexer state back to \verb!DEFAULT! by means of the stack. In this way the lexer can meet a element within another, be it in the form of a self terminating or a pair of tags, and know that it will transit back to the right state after it has matched it.
+At the start of the tag for an outermost element the \verb!DEFAULT! state will be pushed to the stack, and the state will be set to \verb!IN_TAG!. If it is a self-terminating tag, the state will be set back to \verb!DEFAULT! by means of poping the stack after the lexer has matched \verb!/>!. If it an element consisting of a start and end tag, the state in the lexer will be set to \verb!IN_ELEMENT! after matching \verb!>! When the parser comes upon the end of the end tag it will as in the case of the self-terminating tag set he lexer state back to \verb!DEFAULT! by means of the stack. This way the lexer can meet a element within another, be it in the form of a self terminating or a pair of tags, and know that it will transit back to the right state after it has matched it.
 
 \begin{figure}[h!]
 \begin{Verbatim}
@@ -217,7 +218,8 @@ TOKENSWITCH : {(state==IN_ELEMENT || state==DEFAULT)}?=>
 
 For this to work all lexer rules except \verb!TOKENSWITCH! is converted to \verb!fragment! rules. A simple overview of \verb!TOKENSWITCH! can be seen in figure \ref{fig:tokenswitch}. \verb!LexLiterals! is a carrier production for all keywords as well as \verb!NCName! and will be further discussed in section \ref{sect:rewritegrammar:keywordNCName}. \verb!$type=! are used to override the way ANTLR by default sets the type of a token. Without these actions all tokens would be of the type \verb!TOKENSWITCH!.
 
-\verb!"enclosed composites"! in figure \ref{fig:tokenswitch} denotes the disjunctive form of the set of productions discussed in section \ref{sect:rewriteGrammar:enclosedComposite}. It is worth noticing that the enclosed composites does not need to set type in same way as the other alternatives. \verb!AposAttributeContent!, \verb!QuotAttributeContent! and \verb!ElementContent! are introduced productions that encompass all legal characters in attributes and elements and will be accounted for in section \ref{sect:rewriteGrammar:containerTokens}.
+The \verb!"enclosed composites"! in figure \ref{fig:tokenswitch} denotes the
+disjunctive form of the set of productions discussed in section \ref{sect:rewriteGrammar:enclosedComposite}. It is worth noticing that the enclosed composites does not need to set type in same way as the other alternatives. \verb!AposAttributeContent!, \verb!QuotAttributeContent! and \verb!ElementContent! are introduced productions that encompass all legal characters in attributes and elements and will be accounted for in section \ref{sect:rewriteGrammar:containerTokens}.
 
 As explained in section \ref{sect:antlr:gate_semantic_preds}, a gated semantic predicate will hide the alternative it is issued to if the predicate fails. This means that e.g. if not in the \verb!DEFAULT! state the \verb!StringLiteral! alternative would not be considered at all by the lexer. By applying such predicates on all ambiguous alternatives, the lexer would thus only see a subset of the available alternatives according to which state it is in.
 
@@ -230,13 +232,14 @@ fragment NumberLEX : (DoubleLiteral)=>	DoubleLiteral
                    | IntegerLiteral
                    ;
 \end{Verbatim}
-\caption[Solving the number type ambiguousity]{Solving the number type ambiguousity in \texttt{NumberLex} with syntactic predicates}
+\caption[Solving the number type ambiguity]{Solving the number type ambiguity in \texttt{NumberLex} with syntactic predicates}
 \label{fig:numberLex}
 \end{figure}
 
 \subsection{Container Tokens}
 \label{sect:rewriteGrammar:containerTokens}
-When it comes to attribute values and element content, the W3C grammar specifies non-terminal rules that would need match a lot of small tokens -- in the worst case one single character as in the case of e.g. \verb!ElementContentChar!. To avoid this, we implemented tokens to contain all sequencial input of this kind in the form of production rule with a non-greedy subrule for the single character terminals. 
+When it comes to attribute values and element content, the W3C grammar
+specifies non-terminal rules that would need to match a lot of small tokens -- in the worst case one single character as in the case of e.g. \verb!ElementContentChar!. To avoid this, we implemented tokens to contain all sequencial input of this kind in the form of production rule with a non-greedy subrule for the single character terminals. 
 
 \begin{figure}[h!]
 \begin{Verbatim}
@@ -250,7 +253,7 @@ DirAttributeValue  ::=('"'
 \label{fig:contractAttribute}
 \end{figure}
 
-A inlined version of the W3C specification of the quote enclosed alternative of \verb!DirAttributeValue! can be seen in figure \ref{fig:contractAttribute}. It is contracted from five productions, and as a side-note, is actually a quite good example of how the W3C grammar is bloated. \verb!EscapeQuot!, \verb!"{{"! and \verb!"}}"! are used to escape \verb!"!, \verb!"{"! and \verb!"}"! respectively. In attributes \verb!"! is escaped by \verb!""!. 
+A inlined version of the W3C specification of the quote enclosed alternative of \verb!DirAttributeValue! can be seen in figure \ref{fig:contractAttribute}. It is contracted from five productions. \verb!EscapeQuot!, \verb!"{{"! and \verb!"}}"! are used to escape \verb!"!, \verb!"{"! and \verb!"}"! respectively. In attributes \verb!"! is escaped by \verb!""!. 
 
 By instituting the container tokens, our \verb!DirAttributeValue! is simplified as shown in figure \ref{fig:transitionSimple}, and the pertaining \verb!QuotAttributeContent! is declared as in figure \ref{fig:containerToken}, where the gated semantic predicates are inserted to hinder the subrule from being greedy. Corresponding tokens \verb!AposAttributeContent! and \verb!ElementContent! are composed in a similar matter.
 

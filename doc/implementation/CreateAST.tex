@@ -58,10 +58,11 @@ Further examples are available in section \ref{sect:results:parser_output_ast}.
 In addition to the operators, rewrite rules have been used in the the more
 complex cases where simple operators were not sufficient. This is necessary in
 the cases where it is impossible to simply exclude one token, typically in
-productions that can produce lists. Figure \ref{code:ast:rewritelist}
+productions that can produce lists of matches. Figure \ref{code:ast:rewritelist}
 illustrates an example for the \verb!letClause! production, where it is only
 interesting to preserve the list of variable bindings, which can occur several
-times. This technique has been used in several productions.
+times. This technique has been used in several productions throughout the
+grammar.
 
 \begin{figure}[h!]
 \begin{Verbatim}
@@ -155,7 +156,7 @@ if it is present in the input. In this case, an alternative solution would be to
 flag the imaginary root node token as ``stable''. As described in section 
 \ref{sect:antlr:ast}, this can be done by subclassing the \verb!CommonTree! (or
 \verb!BaseTree!) classes and adding a custom tree adaptor to set such flags on
-tokens. The rewrite rule for the orderby-clause is shown in figure
+individual tokens. The rewrite rule for the orderby-clause is shown in figure
 \ref{code:ast:orderbyclause}.
 
 \begin{figure}[h!]
@@ -174,10 +175,10 @@ itself but rather in the sense of what is deduced from the input.
 
 \subsection{Path Expressions}
 Path expressions are rewritten using only operators to create proper tree
-structures consisting of step expressions as leaf nodes and delimiting slashes as
-root nodes. Figure \ref{code:ast:pathexpr} shows the grammar with operators in
-place. As can be seen, the forward slash tokens are promoted to root nodes,
-including in between the step expressions.
+structures consisting of step expressions as leaf nodes and delimiting forward 
+slashes as root nodes. Figure \ref{code:ast:pathexpr} shows the grammar with
+operators in place. As can be seen, the forward slash tokens are promoted to
+root nodes, including in between the step expressions.
 
 \begin{figure}[h!]
 \begin{Verbatim} 
