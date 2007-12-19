@@ -9,8 +9,8 @@ Some important requirements were taken into account when evaluating these
 alternatives. Specifically, the generator must:
 \begin{itemize}
   \item generate Java source code for the parser
-  \item be able to generate an LL(1) (or LL(k)) parser, because the grammar  
-  specification is given by W3C in LL(k)
+  \item be able to generate an LL parser, because the grammar  
+  specification given by W3C is LL(k) \footnote{This can be argued, as seen in section \ref{sect:discussion:lookahead}}
   \item be licensed liberally, either GPL or BSD, or an equivalent license
   approved by OSI
 \end{itemize}
@@ -23,7 +23,7 @@ generator, and CUP which is a parser generator. These tools can be interfaced to
 generate a complete parser with a separate lexical analyzer.
 
 JFlex and CUP produces only LALR parsers, and since the W3C has specified an
-LL(1) grammar for XQuery 1.0 and XPath 2.0, the combination of JFlex and CUP was
+LL grammar for XQuery 1.0 and XPath 2.0, the combination of JFlex and CUP was
 rejected from this project. Additionally, some basic occurence operators such as
 *,+ and ? is not supported by CUP.
 
@@ -39,8 +39,8 @@ Expr : ExprSingle
      | ExprSingle "," Expr
      ;
 \end{Verbatim}
-\caption[LALR grammar example]{LALR grammar example from the Pathfinder project
-(see section \ref{sect:soa:pathfinder}, slightly edited for brevity)}
+\caption[LALR grammar example]{LALR grammar example from the Pathfinder project\cite{pathfinderHome} 
+(slightly edited for brevity)}
 \label{code:parsers:lalr}
 \end{figure}
 
@@ -60,7 +60,7 @@ expr : exprSingle (COMMASi exprSingle)* ;
 \label{code:parsers:w3c}
 \end{figure}
 
-Obviously, the LALR-grammar has suffered an extensive rewrite into a recursive
+Obviously, the LALR-grammar has suffered an rewrite into a recursive
 rule to compensate for the lack of support for occurence indicators. The LL
 example stands out as clear and readable, and is similar to the example from the
 W3C specification.
@@ -81,17 +81,17 @@ Expr : ExprSingle { $$ = wire2 (p_exprseq, @$,
      | ExprSingle "," Expr { $$ = wire2 (p_exprseq, @$, $1, $3); }
 \end{Verbatim}
 \caption[LALR grammar example]{Verbatim LALR grammar example from the Pathfinder
-project (see section \ref{sect:soa:pathfinder})}
+project\cite{pathfinderHome}}
 \label{code:parsers:lalr2}
 \end{figure}
 
 \subsection{JavaCC}
 JavaCC could have been a viable alternative as it produces LL(k) parsers,
-however compared to Antlr its grammar specification syntax deviated more
+however compared to ANTLR its grammar specification syntax deviated more
 from the W3C EBNF syntax, meaning that the grammar would have had to be
-extensively rewritten. However, JavaCC supports the same occurence indicators
+even more rewritten. However, JavaCC supports the same occurence indicators
 used in the XQuery grammar specification. Figure \ref{code:parsers:javacc} shows
-a grammar fragment translated to JavaCC syntax, compare to the original grammar
+a grammar fragment translated to JavaCC syntax -- compare to the original grammar
 in figure \ref{code:parsers:w3c}.
 
 \begin{figure}[h!]
@@ -120,15 +120,14 @@ grammar syntax which is syntactically close to the syntax used by the W3C in
 their grammar specification\cite{w3c01}. Additionally ANTLR supports some
 interesting features such as syntactic and semantic predicates, as well as
 automatic AST (abstract syntax tree) generation. These features are described in
-detail later in this chapter, and the usage of these features has been described
+detail later in chapter\ref{sect:antlr}, and the usage of these features has been described
 in chapter \ref{chapter:implementation}.
 
-The details of this parser generator is outlined in chapter \ref{sect:antlr}.
 
 \section{Debugging}
 \label{sect:method:debugging}
 There are several approaches to debugging. ANTLRWorks \cite{antlrwrks00} is a
-simple tool for writing, testing and debugging Antlr grammars. The debugging
+simple tool for writing, testing and debugging ANTLR grammars. The debugging
 interface is useful in that it draws a realtime step-by-step parse tree as the
 input is being parsed, as well as displaying a list of parser events.
 ANTLRWorks also helps eliminate grammar nondeterminisms by drawing the syntax
@@ -138,6 +137,6 @@ become unstable.
 
 When working properly, ANTLRWorks is a great tool for debuging the parser, but
 no so much for the lexer. It will show the tokens returned to the parser, but
-no information or decision path indicating the reason for returning just that
+no information indicating the reason for returning just that
 token. A more appropriate tool for such a task could be debugging facilities in
 a regular integrated development environment. % Fjernet ref til eclipse her

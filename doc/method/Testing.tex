@@ -4,15 +4,14 @@
 To improve quality insurance in this project, it was decided to systematically
 write tests for new features as well as perform coverage testing for comparison
 with existing implementations. This section will outline the various test
-methods used in this project. Also see section \ref{sect:results:tests}, where
-the test results are presented.
+methods used in this project. Test results are presented in section \ref{sect:results:tests}.
 
 \subsection{gUnit}
 \label{sect:method:gUnit}
 Unit testing can be a powerful tool for asserting functionality and can be a
 helpful aid in debugging and prevention of regression errors.  For unit testing the
 grammar specification, gUnit \cite{gunit00} was employed. This tool uses a
-syntax similar to Antlr itself, however instead of defining productions, one
+syntax similar to ANTLR itself, however instead of defining productions, one
 defines a set of inputs for some rule, as well as the expected result. Consider
 this example:
 
@@ -32,7 +31,7 @@ piTarget: // Test piTarget rule
 This is a complete input file for gUnit, and will automatically discover the
 classes XQFTLexer and XQFTParser in the package no.ntnu.xqft.parse. gUnit will
 then proceed to invoke the lexer with ``Xml'', ``XMl'', ``XML'', and ``XmL'' as
-input, and pass the lexer to an instance of XQFTParser and execute the production
+input, pass the lexer to an instance of XQFTParser and execute the production
 piTarget. For all these inputs, it will assert that the parser emits an error
 (i.e it must fail to pass the test).
 
@@ -71,7 +70,7 @@ impossible to run a comparison to the given expected results.
 
 The original test suite consists of a total of 12584 different queries with a
 corresponding set of expected output. These tests span a large amount of XQuery
-functionality. Out of these tests, a total of 10363 tests are applicable for
+functionality. Out of these tests, a total of 12478 tests are applicable for
 this project. These tests are categorized as scenarios: \emph{standard}, 
 \emph{parse-error}, and \emph{trivial}. The remaining tests are only possible to
-perform in run time, and are thus not applicable for this parser at this time.
+perform against a XQuery processor, and are thus not applicable in the context of this project.

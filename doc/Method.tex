@@ -1,16 +1,13 @@
 %Relasjonsalgebra
 \chapter{Architectual Decisions}
 \label{chapter:method}
-
-In this chapter we will present the decisions we made before implementing our
-parser. We discuss the parser generator alternatives we had, how we debugged and
-tested the parser, and finally we present the problem with the ambiguous
-terminals and the alternative solutions considered to solve this.
+Because we decided to create the parser with a generator, different alternatives of such tools had to be evaluated. In this chapter we will document this process. Further, we will present other decisions we made before implementating the recognizer. This constitutes the choice of licence and means testing the system. Finally we will present the problem with the ambiguous terminals and evaluate different lexer strategies that would solve this.
 
 \input{method/ParserConstructAndDebug}
 \input{method/Testing}
-\input{method/AmbiguousGrammar}
 \input{method/Licensing}
+\input{method/AmbiguousGrammar}
+
 
 \section{Summary}
 We have now outlined the requirements for our parser generator, evaluated
@@ -26,10 +23,7 @@ benchmarking and compare our results to existing implementations.
 Further, a small collection of popular open source licenses were reviewed, and
 one (the new BSD license) was selected.
 
-Finally we discussed the problem of ambiguous terminals in the grammar. We
-proceeded to present and evaluate a number of lexer strategies to solve this,
-and chose one solution (parser controlled state driven lexer) due to its
-intuitivity and ease of implementation.
+Finally we discussed the problem of ambiguous terminals in the grammar. A number of lexer strategies to solve this were presented and evaluated. We chose the parser controlled state driven lexer due to its intuitivity and ease of implementation.
 
-The next chapter will present ANTLR (the parser generator chosen for this
-project) in more detail.
+The next chapter will present the parser generator chosen for this
+project, ANTLR, in more detail.
