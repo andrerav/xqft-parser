@@ -1,10 +1,10 @@
 % Discussion / Coverage test results
-\section{Coverage Test Results}
+\section{Compliance Test Results}
 \label{sect:discussion:coverageResults}
-As noted in section \ref{sect:results:tests}, our coverage testing result ended
+As noted in section \ref{sect:results:tests}, our compliance testing result ended
 at 99.3\%. We can compare this result to official results published by W3C, with
 some  important constraints: as described in section \ref{sect:method:testing},
-the coverage tests is limited by the fact that we can only execute the set of
+the compliance tests is limited by the fact that we can only execute the set of
 tests that are applicable in parse-time (and not run-time), since our parser
 does not have a backend which produces output to be returned and compared to
 expected output. Neither is our parser capable of detecting semantics such as
@@ -46,12 +46,12 @@ so this proved to be difficult to investigate within our given time frame.
 Figure \ref{figure:table:w3c_test_results} gives a basic overview of the current
 tests results published by the W3C at the current time of writing.
 
-One interesting side effect of the coverage tests were the utility of using it to
+One interesting side effect of the compliance tests were the utility of using it to
 find and fix previously unknown bugs quickly. As such, this test suite also
 works well as a regression test, since any improvement to the parser should
-never degrade our coverage result -- however, it is hard to tell if tests that
+never degrade our compliance result -- however, it is hard to tell if tests that
 previously failed would pass along with an identical amount of previously
-passed tests that would fail, leaving the coverage percentage as before even
+passed tests that would fail, leaving the compliance percentage as before even
 though the actual result was changed drastically. This pitfall could be
 avoided by keeping detailed track of which tests that fail and pass, and compare
 new results to old results and inspect the difference.
