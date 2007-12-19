@@ -99,21 +99,21 @@ and utility functions. The eXist documentation\cite{exist_doc} describes the
 following two operators:
 
 \begin{itemize}
-  \item \textbf{<node-set> \&= 'keywords'}: This operator selects nodes from the
+  \item \verb!<node-set> &= 'keywords'!: This operator selects nodes from the
   left-hand argument containing all of the keywords in the right-hand argument 
   in any order
-  \item \textbf{<node-set> |= 'keywords'}: This operator selects nodes from the
+  \item \verb!<node-set> |= 'keywords'!: This operator selects nodes from the
   left-hand argument containing any of the keywords in the right-hand argument
 \end{itemize}
 
 Additionally, the following functions are available:
 \begin{itemize}
-  \item \textbf{near(<node-set>, 'keywords' [, max-distance])}: Measures the 
+  \item \verb!near(<node-set>, 'keywords' [, max-distance])!: Measures the 
   distance between search terms by counting the number of words between 
   them.
-  \item \textbf{match-all(node-set, 'regexp' [, 'regexp' \ldots])}: returns
+  \item \verb!match-all(node-set, 'regexp' [, 'regexp' \ldots])!: returns
   nodes from the node-set that matches the all of the given regular expressions 
-  \item \textbf{match-any(node-set, 'regexp' [, 'regexp' \ldots])}: returns nodes
+  \item \verb!match-any(node-set, 'regexp' [, 'regexp' \ldots])!: returns nodes
   from the node-set that matches any which one of the regular expressions
 \end{itemize}
 
