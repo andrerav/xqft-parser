@@ -7,7 +7,7 @@ later been corrected and some lessons have been learned.
 
 There are a great deal of syntactic and semantic differences between ANTLR v3
 and its earlier versions. Online resources for v3 are quite scarce -- at least
-compared to its predecessors --, and incited by a lack of such, we in many
+compared to its predecessors -- and incited by a lack of such, we in many
 cases wrongfully assumed that old tutorials and guides found would still be
 relevant. This initially lead to a lot of hunting for the source behind compiler
 errors and warnings, especially in the case of separating terminal productions
@@ -19,8 +19,8 @@ In the case of understanding the different types of predicates ANTLR provides,
 a lot of testing and inspection of the generated source code followed by
 literature study was conducted. This brought about the realization that almost
 none of the dash operators could be rewritten with validating semantic
-predicates, as we first assumed. These problems were solved by getting
+predicates, as firstly assumed. These problems were solved by getting
 acquainted with the specification, getting an overview and understanding why rules
-were expressed as they were -- not in a production-for-production fashion
+were expressed as they were -- and not solved by in a production-for-production fashion
 replace them with something that would fail or pass in the same cases as the
 original.
