@@ -23,19 +23,19 @@ usable AST, and how we implemented scoping and symbol tables.
 \input{implementation/CoverageTests}
 
 \section{Summary}
-In this chapter we have explain how we adapted the W3C
-XQuery Full-text specification to ANTLR syntax and semantics. We adapted and
+In this chapter we explain how we adapted the W3C
+XQuery full-text specification to ANTLR syntax and semantics. We adapted and
 modified the specification rather than creating our own from scratch. Otherwise
-we risked missing out essential latent meaning as well as keeping to planned
+we risked missing out essential latent meaning as well as not keeping to planned
 time frames, as discussed further in section \ref{sect:discussion:adaptW3C}.    
 
 By choosing to implement an ``parser controlled state driven'' lexer, almost all
 terminal productions  had to be completly rewritten, and also lead to the
 introduction of the \verb!TOKENSWITCH! construct. This could be avoided by
-implementing e.g. a "scan-while-parse" type lexer, but such a lexers
+implementing e.g. a ``scan-while-parse" type lexer, but such a lexers
 corresponding parser would have been much more complex and would handle a much
 bigger load than that of our implementation. A more viable alternative would be
-the "island grammars" strategy, but since ANTLR does not support this natively we
+the ``island grammars" strategy, but since ANTLR does not support this natively we
 rejected this alternative. In section \ref{sect:discussion:designDecisions} we
 further discuss and evaluate our choice of lexer strategy.
 
@@ -61,11 +61,8 @@ examined several XQuery constructs such as FLWOR and path expressions and how
 the AST could be generated for these.
 
 Further we have implemented symbol tables and scoping by adding simple action
-code to the grammar and constructing classes for representing scopes, symbol
-tables and symbols. We discovered that it was simple to add the inline action 
-code in the grammar to extend the parser with these features, however it may
-seem like this is affecting readability and clarity of the grammar. In the next
-chapters this issue will be further examined and discussed.
+code to the grammar, and by constructing classes for representing scopes, symbol
+tables and symbols. Readability and clarity may be affected, however, by adding this funcionality as actions in the grammar. In the next chapters this issue will be further examined and discussed.
 
 As we now have seen how the parser was implemented, in the next chapter we will
 ses how it performs, in particular with regards to compliance test results, AST

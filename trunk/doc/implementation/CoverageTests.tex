@@ -7,10 +7,10 @@ XQuery query files, and a corresponding set of output files with expected
 output/result for queries where this applies. Additionally, a central XML file
 describing all the tests with references to files and folders are also supplied.
 
-This file was parsed using a simple implementation of the reference SAX API
+This file is parsed using a simple implementation of the reference SAX API
 from the SAX project website\cite{saxproject}. For each applicable
-test case, a new parser was instantiated and executed on the input file. If the
-parser succeeded without throwing an exception, the test was considered passed.
+test case, a new parser is instantiated and executed on the input file. If the
+parser finishes without throwing an exception on a test defined to succeed, the test is considered passed.
 This measurement of ``success'' was proposed in section \ref{sect:method:testing}.
 
 Note that by ``applicable'' it is implied only tests which could be executed in

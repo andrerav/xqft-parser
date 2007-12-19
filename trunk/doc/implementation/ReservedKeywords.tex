@@ -1,8 +1,8 @@
 \section{Releasing Reserved Keywords}
 \label{sect:impl:reserved_keywords}
-A particular feature in XQuery is the lack of reserved keywords, that is, all variables, function names, name tests etc. can be named anything as long as it a valid \verb!NCName!, e.g. \verb!for! or \verb!where!. This creates a series of non-determinisms in the parser, but are mended by the W3C by restricting the allowed function names as an extra-grammatical constraint (section \ref{sect:implementation:reservedFunctionNames}).
+A particular feature in XQuery is the lack of reserved keywords, that is, all variables, function names, name tests etc. can be named anything as long as it a valid \verb!NCName!. This creates a series of non-determinisms in the parser, but are mended by the W3C specification by restricting the allowed function names as an extra-grammatical constraint (section \ref{sect:implementation:reservedFunctionNames}).
 
-We implemented this feature by creating a non-terminal rule \verb!ncNameorKeyword! which encompasses \verb!NCName! and all the keywords as alternatives, as can be seen in figure \ref{fig:ncnNameorKeyword} . Further, we replaced all references of \verb!NCName! in the parser productions with this newly introduced production, example of which can be seen in figure \ref{fig:namespaceDeclKeywordfree}.
+This feature was implemented by creating a non-terminal \verb!ncNameorKeyword! which encompasses \verb!NCName! and all the keywords as alternatives, as can be seen in figure \ref{fig:ncnNameorKeyword} . Further, we replaced all references of \verb!NCName! in the parser productions with this newly introduced production, example of which can be seen in figure \ref{fig:namespaceDeclKeywordfree}.
 
 \begin{figure}[h!]
 \begin{Verbatim}
@@ -39,6 +39,6 @@ orderingModeDecl   : {input.LT(1).getText().equals("declare") &&
                    ;
 \end{Verbatim}
 
-The initial gated semantic predicate would have to check both the first and the token, as this otherwise would lead to a non-determinism since the specified grammar is LL(2).
+The initial gated semantic predicate would have to check both the first and the token, as this otherwise would lead to a non-determinism since the specified grammar is predicated LL(2).
 
-Because of this lookahead restriction, however, there is one non-determinism that arise when releasing the reserved keywords that is not handled by the W3C specification in any way. The ambiguity comes in the form of the typeswitch keyword \verb!case! which can be followed by a \verb!NCName!, and the full-text match option keywords \verb!case! and \verb!sensitive! / \verb!insensitive!. This will be discussed in section \ref{sect:discussion:lookahead}.
+Because of this lookahead restriction, however, there is one non-determinism that arise when releasing the reserved keywords that is not handled by the W3C specification in any way. The ambiguity comes in the form of the typeswitch keyword \verb!case! which can be followed by a \verb!NCName!, and the full-text match option keywords \verb!case! \verb!sensitive! and \verb!insensitive!. This will be discussed in section \ref{sect:discussion:lookahead}.

@@ -1,15 +1,14 @@
 \section{Creating The AST}
 \label{sect:impl:ast}
 In this section we will describe how abstract syntax trees (AST) are generated 
-using ANTLR based on a regular grammar specification. We will also investigate
-how to restructure the tree and define operator precedence.
+using ANTLR, based on a regular grammar specification. We will also investigate how to restructure the tree and define operator precedence.
 
 \subsection{Operators And Rewrite Rules}
 As described in section \ref{sect:antlr:ast}, ANTLR provides operators and
 rewrite rules for augmenting the grammar specification into generating a usable
 AST. In many cases, it is a simple matter of defining which tokens to use as
-root, and which to omit. This is done using the two basic operators \verb!hat!
-(\^{}) and \verb!exclamation mark! (!). Figure \ref{code:ast:exoperator} shows an
+root, and which to omit. This is done using the two basic operators `hat'
+(\^{}) and `exclusion' (!). Figure \ref{code:ast:exoperator} shows an
 example where the exclusion operator is used to exclude the superfluous brace
 tokens from the AST in the \verb!ftWordsValue! production.
 
@@ -22,12 +21,7 @@ the superfluous brace tokens from the AST, leaving only the expression subtree}
 \label{code:ast:exoperator}
 \end{figure}
 
-Further the hat operator which is, as previously mentioned, used to promote
-tokens to be roots in a subtree was utilized to augment certain expressions into
-taking a natural hierarchial tree structure. Figure \ref{code:ast:hatoperator}
-illustrates how not only how the hat operator is used to create subtrees from
-expressions, but also how precedence is implicitly encoded into the grammar as
-mentioned in section \ref{sect:xquery:precedence}.
+As previously mentioned, the `hat' operator which is used to promote tokens to be roots in a subtree. This was utilized to augment certain expressions into taking a natural hierarchial tree structure. Figure \ref{code:ast:hatoperator} illustrates how not only the `hat' operator is used to create subtrees from expressions, but also how precedence is implicitly encoded into the grammar (ref. section \ref{sect:xquery:precedence}).
 
 \begin{figure}[h!]
 \begin{Verbatim}
@@ -55,13 +49,12 @@ Further examples are available in section \ref{sect:results:parser_output_ast}.
 \label{tree:ast:arithmetic}
 \end{figure}
 
-In addition to the operators, rewrite rules have been used in the the more
-complex cases where simple operators were not sufficient. This is necessary in
+In the the more complex cases where simple operators is not sufficient, rewrite rules are used. This is necessary in
 the cases where it is impossible to simply exclude one token, typically in
 productions that can produce lists of matches. Figure \ref{code:ast:rewritelist}
 illustrates an example for the \verb!letClause! production, where it is only
 interesting to preserve the list of variable bindings, which can occur several
-times. This technique has been used in several productions throughout the
+times. This technique is used in several productions throughout the
 grammar.
 
 \begin{figure}[h!]
@@ -75,15 +68,10 @@ rewrite rules to conserve only a list of variable bindings in the AST}
 \end{figure}
 
 \subsection{FLWOR Expressions}
-FLWOR expressions are one of the more complex constructs in XQuery, and
-naturally the AST will quickly become complex if care is not taken to include
-only the necessary tokens and substrees to preserve information.
+FLWOR expressions are one of the more complex constructs in XQuery. Naturally, the AST will quickly become complex if care is not taken to include only the necessary tokens and substrees to preserve information. On the top level, there is the \verb!flWORExpr! production rule, which is a composite of \verb!forClause!, \verb!letClause!, \verb!whereClause!, and \verb!exprSingle!. Figure \ref{code:ast:flwor} shows the rewrite rule used for this production. 
 
-On the top level there is the \verb!flWORExpr! production rule, which is a
-composite of \verb!forClause!, \verb!letClause!, \verb!whereClause!, and
-\verb!exprSingle!. Figure \ref{code:ast:flwor} shows the rewrite rule used for
-this production. In this case, a subtree is generated with the imaginary token
-\verb!AST_FLOWR! as root. The \$fc and \$lc variables are lists of
+In this case, a subtree is generated with the imaginary token
+\verb!AST_FLOWR! as root. The \verb!$fc! and \verb!$lc! variables are lists of
 for-clauses and/or let-clauses. These are then followed by an optional
 where-clause, and an optional orderby-clause. Finally the list of children in
 this subtree is terminated by an \verb!exprSingle!, denoting the expression
@@ -109,7 +97,7 @@ emerge. This will be trivial since it is only necessary to edit the rewrite
 rule, regenerate the parser, and recompile the program.
 
 The for-clause uses the same technique for augmenting a list of tuplet
-definitions, and the child production \verb!forClauseTupletDef! uses simple
+definitions. Its child production \verb!forClauseTupletDef! uses simple
 operators to exclude superfluous tokens. These rules can be seen in figure
 \ref{code:ast:forclause}. 
 
@@ -118,8 +106,8 @@ operators to exclude superfluous tokens. These rules can be seen in figure
 forClause : FOR forClauseTupletDef (COMMASi forClauseTupletDef)* 
             -> ^(AST_FORCLAUSE forClauseTupletDef+);
 
-  forClauseTupletDef : DOLLARSi! varName typeDeclaration? positionalVar? 
-                     ftScoreVar? IN! exprSingle;
+forClauseTupletDef : DOLLARSi! varName typeDeclaration? positionVar? 
+                   ftScoreVar? IN! exprSingle;
 \end{Verbatim}
 \caption{AST rewrite rule for for-clauses}
 \label{code:ast:forclause}
@@ -152,7 +140,9 @@ whereClause : WHERE exprSingle
 
 The orderby-clause is also a trivial case. As with the where-clause, an
 imaginary token is added for clarity, and the \verb!STABLE! token is preserved
-if it is present in the input. In this case, an alternative solution would be to
+if it is present in the input. 
+
+In this case, an alternative solution would be to
 flag the imaginary root node token as ``stable''. As described in section 
 \ref{sect:antlr:ast}, this can be done by subclassing the \verb!CommonTree! (or
 \verb!BaseTree!) classes and adding a custom tree adaptor to set such flags on
@@ -170,15 +160,15 @@ orderByClause : (ORDER BY | STABLE ORDER BY) orderSpecList
 
 Finally, the \verb!exprSingle! rule terminates the FLWOR expression. This rule
 is a placeholder for any valid expression, and thus it carries no meaning in
-itself but rather in the sense of what is deduced from the input.
+itself, but rather in the sense of what is deduced from the input.
 
 
 \subsection{Path Expressions}
 Path expressions are rewritten using only operators to create proper tree
-structures consisting of step expressions as leaf nodes and delimiting forward 
+structures. These consist of step expressions as leaf nodes and delimiting forward 
 slashes as root nodes. Figure \ref{code:ast:pathexpr} shows the grammar with
 operators in place. As can be seen, the forward slash tokens are promoted to
-root nodes, including in between the step expressions.
+root nodes, including the ones in between the step expressions.
 
 \begin{figure}[h!]
 \begin{Verbatim} 
@@ -198,7 +188,7 @@ pathExpr : DBLSLASHSi^ relativePathExpr
 
 \subsection{Function Declarations}
 Function declarations may seem like complex constructs, but in an AST these can
-be represented fairly simplistic by an imaginary token, with function name, 
+be represented fairly simplistic. This is done with an imaginary token, with function name, 
 parameters, type, and function body as children.
 
 \begin{figure}[h!]

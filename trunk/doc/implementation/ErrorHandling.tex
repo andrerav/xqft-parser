@@ -5,13 +5,14 @@
   \centering
     \includegraphics[width=1\textwidth]{diagrams/exception_uml}
   \caption{ANTLR exceptions class hierarchy}
+\label{fig:antlrException}
 \end{figure}
 Error handling in ANTLR is initially done by catching exceptions and printing
 an error message to stderr. The parser will then attempt to recover from the
 error and continue parsing. This behaviour is not always desirable, so certain
 methods were overridden to allow exceptions to be thrown upwards the stack to
 the program that initiated the parser (the calling program, or top-level
-program).
+program). An overview of the posible exceptions ANTLR can throw is shown in figure \ref{fig:antlrException}.
 
 Specifically, this was done by overriding the methods \verb!mismatch()! as well as
 \verb!recoverFromMismatchedSet()!, as such:
@@ -46,6 +47,6 @@ handling errors and instead throwing the exceptions upwards:
 \end{Verbatim}
 
 However, some exceptions thrown by the lexer were impossible to handle - these
-were handled by the \verb!nextToken()! method in the \verb!Lexer! superclass.
+were handled in the \verb!nextToken()! method in the \verb!Lexer! superclass.
 This issue has been documented in section 
 \ref{sect:error_handling:syntax_errors}.
