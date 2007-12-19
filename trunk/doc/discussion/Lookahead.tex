@@ -1,19 +1,29 @@
 \section{Lookahead}
 \label{sect:discussion:lookahead}
-Originally we were under the impression, incited by the W3C source \cite{createTokenizer}, that the W3C XQuery specification, and consequently, the W3C XQuery full-text specification, were expressed as LL(1) grammars. We experienced that this could not be true, as did Kang et.al.\cite{kang_xquery_diglib}. It turns out that W3C once had argued that the grammar was LL(1), but not the corresponding full-text version \cite{grammarIsLL1}. In the newest version of the specification, LL(1), or even LL, is not mentioned at all. About the a former version of the specification claiming the XQuery grammar (not full text) to be LL(1), Michael Dyck, once a member of the W3C full-text task force \cite{dyckIsTaskForce}, expresses\cite{dyckOnList}:
+Originally we were under the impression, incited by the W3C source
+\cite{createTokenizer}, that the W3C XQuery specification, and consequently,
+the W3C XQuery full-text specification, were expressed as LL(1) grammars. We
+experienced that this could not be true, as did Kang
+et.al.\cite{kang_xquery_diglib}. It turns out that W3C once had argued that the
+grammar was LL(1), but not the corresponding full-text version
+\cite{grammarIsLL1}. In the newest version of the specification, LL(1), or even
+LL, is not mentioned at all. About the a former version of the specification, 
+Michael Dyck, once a member of the W3C full-text task force
+\cite{dyckIsTaskForce}, expresses\cite{dyckOnList}:
+
 \begin{quote}
 For one thing, the grammar as defined by the EBNF is ambiguous, and no ambiguous grammar can be LL(1). [\ldots] the claim must be that the grammar as defined by the EBNF and the precedence chart is LL(1). The problem then is that LL(1)-ness isn't defined for such a grammar.
 \end{quote}
 The same must hold true for the full text version, as it is an extension of XQuery.
 
-That an XQFT parser would at least need two tokens lookahead can be
+That an XQFT parser would at least need a two token lookahead can be
 demonstrated by the fact that a single function call is a valid query, a query
 may start with a namespace declaration, which is on the form 
 \verb!declare namespace...! and that \verb!declare! is a permitted function
 name. There is no way to left factorize these productions without the risk of
 rendering the grammar complex and possibly containing redundancies.     
 
-Excluding the amgiuities solved by the extra-grammatical constraints, after left factoring all productions applicable the grammar still is a minimum of LL(3). This can be seen in figure \ref{fig:notLL2}, which shows a syntacticly valid typeswitch expression according to the W3C specification. The value after a \verb!case! keyword in a typeswitch can be a \verb!NCName!, which with no reserved keywords can be the character sequence "sensitive". In this example the parser at the end of line two would not know if the tokens \verb!case! and \verb!sensitive! are full-text match options or the start of a new case clause.
+Excluding the ambigiuities solved by the extra-grammatical constraints, after left factoring all productions applicable the grammar still is a minimum of LL(3). This can be seen in figure \ref{fig:notLL2}, which shows a syntactically valid typeswitch expression according to the W3C specification. The value after a \verb!case! keyword in a typeswitch can be a \verb!NCName!, which with no reserved keywords can be the character sequence "sensitive". In this example the parser at the end of line two would not know if the tokens \verb!case! and \verb!sensitive! are full-text match options or the start of a new case clause.
 
 \begin{figure}[h!]
 \begin{Verbatim}
@@ -29,4 +39,5 @@ typeswitch($c)
 
 As the W3C reference test parser \cite{parserTestPage}, our parser, when parsing the typeswitch example query, would prefer the match option alternative, meaning that the query would fail.
 
-Because we chose the parser controlled strategy, our system's correctness depends on the parser utilizing as small a lookahead as possible. At its current state the maximum lookahead is $2$, with the exception of some syntactic predicates that make use of three tokens. Of the results in section \ref{sect:discussion:coverageResults} it is apparent that allmost all state transitions are timely except for some corner cases(2 of 12478). But to reach 100\% test coverage the overall lookahead will have to be reduced to $1$. 
+Because we chose the parser controlled strategy, our system's correctness
+depends on the parser utilizing as small a lookahead as possible. At its current state the maximum lookahead is $2$, with the exception of some syntactic predicates that make use of three tokens. Of the results in section \ref{sect:discussion:coverageResults} it is apparent that allmost all state transitions are timely except for some corner cases (2 of 12478). But to reach 100\% test coverage the overall lookahead will have to be reduced to $1$. 

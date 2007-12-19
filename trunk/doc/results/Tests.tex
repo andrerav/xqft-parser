@@ -1,13 +1,14 @@
 \label{sect:results:tests}
 \section{Unit tests}
+\label{sect:results:tests:unit}
 Unit testing was used solely for regression testing, so they did not directly 
 produce any results of particular interest.
 
-However, it is important to note that after adding a custom TokenStream class to
+However, it is important to note that after adding a custom \verb!TokenStream! class to
 allow the lexer to be under control of the parser, the gUnit framework was no
 longer capable of executing its test suite. The reason for this is
-incompatability with the custom TokenStream class. In the current state of
-affairs, gUnit will simply block and wait for more data, leaving the programing
+incompatability with the custom \verb!TokenStream! class. In the current state of
+affairs, gUnit will simply block and wait for more data, leaving the program
 hanging indefinitely. 
 
 \section{Manual coverage tests}
@@ -27,10 +28,10 @@ These results, as well as elaborations for the remaining 0.7\%, are thoroughly
 discussed in section \ref{sect:discussion:coverageResults}.
 
 One peculiarity about ANTLR was the fact that the \verb!nextToken()! method in
-the base lexer class would catch recognition exceptions, display an error to stderr, and
+the base lexer class would catch recognition exceptions, display an error to \verb!stderr!, and
 then attempt to recover from the exception. Overriding this method and handling
-the exception properly was not possible, since the nextToken() method is not
-able to throw any exceptions. This obvious design flaw had been discussed on
+the exception properly was not possible, since the \verb!nextToken()! method is not
+able to throw any exceptions. This design flaw had been discussed on
 several occasions on the ANTLR mailing list\cite{antlrmail}, but has not yet
 been adressed by the ANTLR developers.
 

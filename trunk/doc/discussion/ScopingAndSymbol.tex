@@ -1,20 +1,23 @@
 % Discussion / ScopingAndSymbol
 \section{Scoping, Symbol Tables, and Typechecking}
-In this section we will discuss scoping, symbol tables, and type
-checking/inference.
+Scoping and symbol tables are important for safely enabling features like
+forward references\footnote{A quick rundown on forward references can be found
+at http://en.wikipedia.org/wiki/Forward\_declaration},
+symbol management, and semantic error detection. This section will discuss the
+current implementation of scoping and symbol tables.
 
 \subsection{Scoping and Symbol Tables}
 \label{sect:discussion:scoping_and_symtab}
-Currently the scoping and symbol tables are being used directly in the grammar -
-that is, during parse time, as described in section
-\ref{sect:impl:scoping_and_symtab}. It would be benefitial to move this
+Currently the scoping and symbol table code is inlined directly in the grammar -
+and is executed during parse time, as described in section
+\ref{sect:impl:scoping_and_symtab}. It could be benefitial to move this
 functionality into being performed in run time, and combine with type checking
 functionality. This possibility was previously mentioned in section
 \ref{sect:discussion:ast:extend}.
 
 This would decouple some amount of code from the grammar, improving readability
-slightly and creating more self-contained parser with no forced semantic checks
-since this would be implemented in the AST parser instead.
+slightly and creating a more self-contained parser with no forced semantic
+checks since this would be implemented in the AST parser instead.
 
 The current implementation is adequate, but maintainability and extendability
 suffers from the constraints of being locked into a monolithic grammar file.
@@ -23,9 +26,9 @@ suffers from the constraints of being locked into a monolithic grammar file.
 Currently the parser will not perform type checking on the parsed queries. This
 is an essential feature and will be necessary to implement for the parser to be
 applicable in any realistic setting. A type checking system with proper type
-inference and synthesis could be a complex feature to implement in a language
-such as XQuery, and might require considerable effort, especially in quality
-assurance. 
+inference and synthesis (see \cite{compiler_tech}, section 6.5) could be a
+complex feature to implement in a language such as XQuery, and might require
+considerable effort, especially in quality assurance. 
 
 However, the resulting AST output from the parser (presented in section
 \ref{sect:results:parser_output_ast}) should be a solid base to improve upon by

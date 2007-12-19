@@ -59,7 +59,7 @@ tree matching.
 
 Further, the AST generated for a FLWOR query in figure \ref{tree:ast:flwor1}
 (section \ref{sect:results:parser_output_ast}) can be represented in several
-alternative ways that may be more fitted for loop-lifted staircase
+alternative ways that may be more suitable for loop-lifted staircase
 joins\cite{pathfinder_staircase}. One such representation is
 BlossomTree\cite{zhang_blossomtree}, which is tailored for representing
 FLWOR-expressions which consists of multiple path expressions.
@@ -68,10 +68,11 @@ The representation of full-text queries is also a matter of interest. The
 grammar is quite clear on operator and modifier precedence, however it may not
 be obvious how to relate some modifiers (such as 
 ``\verb!with|without stemming!") to nodes. As seen in figure, we have simply
-added this modifier as a sibling to the subject node. However, it could be
-benefitial add this modifier as a child node of the subject node instead. This
-is a recurring design question with regards to several other full-text
-modifiers, and will need further research for optimum AST construction.
+added this modifier as a child to the subject node. However, it could be
+benefitial add this modifier as a sibling or parent node of the subject node
+instead. This is a recurring design question with regards to several other
+full-text modifiers, and will need further research for optimum AST
+construction.
 
 \subsection{Extendability and Data Flow Analysis}
 \label{sect:discussion:ast:extend}

@@ -9,7 +9,7 @@ In section \ref{sec:impl:errorhandling} we described how error handling was
 implemented in the parser to make sure that all errors were handled properly by
 catching their respective exceptions and throwing them on to the top-level
 program. Contrast this to the default error handling, which will simply catch
-any exceptions and print error messages to stdout.
+any exceptions and print error messages to \verb!stdout!.
 
 Our solution is a common approach to error handling, by pushing the
 responsibility upwards until the top-level program recieves the exception and
@@ -36,12 +36,13 @@ not be overridden and forced to throw the exception onwards, due to the method
 signature itself which does not allow exceptions to be thrown. 
 
 One possible solution to this problem could be to override the
-\verb!nextToken()! method and employ the observer design pattern to allow a
-simple and decoupled way of flagging an exception to the parser. It could also
-be possible to add a new base lexer class and modify the \verb!nextToken()!
-method accordingly - however it is likely that this API change would break the
-interface to the parser base class, which would regress into a series of
-modifications to ANTLR. 
+\verb!nextToken()! method and employ the observer design
+pattern\cite{elements_of_oop} to allow a  simple and decoupled way of flagging
+an exception to the parser. It could also be possible to add a new base lexer
+class and modify the \verb!nextToken()! method accordingly - however it is
+likely that this API change would break the interface to the parser base class,
+which would regress into a series of modifications to the original ANTLR
+codebase. 
 
 This behaviour is unfortunate, as some lexer errors will be illusive and
 impossible to detect by the top-level program (which initialized the parser). 

@@ -21,17 +21,17 @@ lexer strategies to let performance be a factor of consideration in the future
 when and if a new lexer strategy is to be chosen.
 
 In addition to the future work just discussed, we propose the following changes
-to the current parser:
+to the current parser implementation:
 \begin{itemize}
 \item \textbf{Not State Driven Lexer} -- By employing the island grammars or
 manual and island grammar hybrid strategy (as discussed in section
-\ref{sect:discussion:stateDriven}) instead of the state driven solution our
-lexer utilizes to this date, lexer grammar readability and simplicity could be
+\ref{sect:discussion:stateDriven}) instead of the state driven solution the
+lexer currently utilizes, lexer grammar readability and simplicity could be
 substantially increased. When the ANTLR framework in the future supports island
 grammars
 \footnote{\url{http://www.antlr.org/wiki/display/ANTLR3/island+grammar+formalization}}
 this would really be an amendment to consider. The hybrid strategy is also a
-good alternative, but this solution would probably lead to considerably more
+good alternative, but this solution could lead to considerably more
 work.
 
 \item \textbf{Replacing Escaped Characters} -- As yet, when our parser come
