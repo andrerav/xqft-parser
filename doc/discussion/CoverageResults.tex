@@ -5,9 +5,9 @@ As noted in section \ref{sect:results:tests}, our compliance testing result ende
 at 99.3\%. We can compare this result to official results published by W3C, with
 some  important constraints: as described in section \ref{sect:method:testing},
 the compliance tests is limited by the fact that we can only execute the set of
-tests that are applicable in parse-time (and not run-time), since our parser
-does not have a backend which produces output to be returned and compared to
-expected output. Neither is our parser capable of detecting semantics such as
+tests that are applicable in parse-time (and not run-time), this is because the
+parser does not have a backend which produces output to be returned and compared
+to expected output. Neither is the parser capable of detecting semantics such as
 typing errors. This means that the official results from W3C include a number
 of tests that have not and can not be run on our parser.
 
@@ -48,8 +48,8 @@ tests results published by the W3C at the current time of writing.
 
 One interesting side effect of the compliance tests were the utility of using it to
 find and fix previously unknown bugs quickly. As such, this test suite also
-works well as a regression test, since any improvement to the parser should
-never degrade our compliance result -- however, it is hard to tell if tests that
+works as a regression test, since any improvement to the parser should
+never degrade our compliance result. However, it is hard to tell if tests that
 previously failed would pass along with an identical amount of previously
 passed tests that would fail, leaving the compliance percentage as before even
 though the actual result was changed drastically. This pitfall could be
@@ -72,4 +72,5 @@ The majority of the failed test are because exceptions are caught by the lexer
 and not forwarded, leaving the parser unaware of the error (section
 \ref{sect:discussion:error_handling}). The 12 errors allowed by the parser and
 the 9 type cast errors are not syntactic errors, as such, as they are allowed
-by the W3C EBNF grammar. The UTF-16 query is a query encoded in UTF-16. The W3C XQuery full-text specification does not mention any character encoding support. A review of the rest of the parser specification compliance problems can be seen in \ref{sect:future:knownBugs} 
+by the W3C EBNF grammar. The UTF-16 query is a query encoded in UTF-16. The W3C
+XQuery full-text specification does not mention any character encoding support. A review of the rest of the parser specification compliance problems can be seen in section \ref{sect:future:knownBugs} 
