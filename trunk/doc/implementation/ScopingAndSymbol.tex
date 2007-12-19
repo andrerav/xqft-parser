@@ -3,8 +3,8 @@
 \label{sect:impl:scoping_and_symtab}
 Scoping was implemented using a simple tree structure consisting of parent- and
 child scopes. XQuery only allows new scopes to be defined through the
-enclosedExpr production rule. This makes it trivial to start a new scope at the
-beginning of a enclosedExpr, and end the scope and the end of an enclosedExpr.
+\verb!enclosedExpr! production rule. This makes it trivial to start a new scope at the
+beginning of a \verb!enclosedExpr!, and end the scope and the end of an \verb!enclosedExpr!.
 This has been implemented as follows:
 \begin{figure}[h!]
 \begin{Verbatim}
@@ -23,17 +23,17 @@ enclosedExpr :
 \caption{Scoping logic embedded in grammar definition}
 \end{figure}
 
-Where this.currentScope is a reference to the ``current'' scope in this
+Where \verb!this.currentScope! is a reference to the ``current'' scope in this
 context. This member variable is initiated with an empty scope when an object
 of the parser class is instantiated.
 
 The implementation above (which is formatted slightly for brevity) will
 automatically build a scope tree as the input is parsed.
 
-The currentScope object, which is an object of type Scope, holds one reference
+The \verb!currentScope! object, which is an object of type \verb!Scope!, holds one reference
 to a symbol table. The symbol table, which is a simple subclass of
 \verb!java.util.HashMap!, is not capable of performing symbol lookups throughout the
-scope tree. This functionality is rather provided by the Scope class. The UML diagram
+scope tree. This functionality is rather provided by the \verb!Scope! class. The UML diagram
 in figure \ref{fig:scope:uml1} illustrates the relationship between the
 \verb!Scope!, \verb!SymTab!, and \verb!Symbol! classes.
 \begin{figure}[h!]

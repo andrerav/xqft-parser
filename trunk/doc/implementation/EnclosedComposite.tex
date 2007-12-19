@@ -1,6 +1,6 @@
 \section{Enclosed Composite Lexer Productions}
 \label{sect:rewriteGrammar:enclosedComposite}
- The XQuery grammar specifies some constructs enclosed by unique symbols, such as \verb!DirPIConstructor! shown in figure \ref{fig:pragma} These rules often contain tokens that overlap with other terminals, so we would draw benefit from moving the productions to the lexer. However, this means that there will only be generated one token by such a rule, and if a later step in the parser want to extract only parts of the construct, it would have to do so manually. Our solution is to make it possible for lexer productions to emit more than one token. In this way, ambiguities would be solved in the lexer, and the parser would still have access to all terminals it should have.
+ The XQuery grammar specifies some constructs enclosed by unique symbols, such as \verb!DirPIConstructor! shown in figure \ref{fig:pragma} These rules often contain tokens that overlap with other terminals, so we would draw benefit from moving the productions to the lexer. However, this means that there will only be generated one token by such a rule, and if a later step in the parser want to extract only parts of the construct, it would have to do so manually. Our solution is to make it possible for lexer productions to emit more than one token. In this way, ambiguities would be solved in the lexer, and the parser would still have access to all terminals it requires.
 
 \begin{figure}[h!]
 \begin{Verbatim}
@@ -15,9 +15,15 @@ In addition to \verb!DirPIConstructor! the grammar specifies the other non-termi
 
 \subsection{Emiting More Than One Token Per Production}
 \label{sect:implementation:emittingMoreTokens}
-As can be seen in figure \ref{fig:nextToken}, by default an ANTLR generated lexer will only emit one token per lexer production. To be able to handle multiple emitions, we introduced a buffer in the lexer out of which the parser input \verb!TokenStream! could fetch tokens. By overriding the methods \verb!nextToken()! and \verb!emit(Token t)! we accomodated for this. 
+As can be seen in figure \ref{fig:nextToken}, by default an ANTLR generated
+lexer will only emit one token per lexer production. To be able to handle
+multiple token emissions, we introduced a buffer in the lexer out of which the
+parser input \verb!TokenStream! could fetch tokens. By overriding the methods
+\verb!nextToken()! and \verb!emit(Token t)! we accomodated for this.  
 
-As seen in figure \ref{fig:emitToken} ,our implemented \verb!emit(Token t)! will put the token \verb!t! in the buffer and set the \verb!token! variable of the lexer to \verb!t!, to block it from emitting unwanted tokens (see \verb!if(token == NULL)! in figure \ref{fig:nextToken}).
+
+As seen in figure \ref{fig:emitToken}, our implemented \verb!emit(Token t)!
+will put the token \verb!t! in the buffer and set the \verb!token! variable of the lexer to \verb!t!, to block it from emitting unwanted tokens (see \verb!if(token == NULL)! in figure \ref{fig:nextToken}).
 \begin{figure}[h!]
 \begin{Verbatim}
 public void emit(Token token){
@@ -78,7 +84,7 @@ DirPIConstructor : {prepareSubToken();}
 \label{fig:pragmaLEX}
 \end{figure}
 
-We implemented \verb!DirPIConstructor! as shown in figure \ref{fig:pragmaLEX}. As explained in section \ref{sect:antlr:lexer} ANTLR will generate a method \verb!mDirPIConstructor! from this production, meaning that all actions described will be performed somewhere within \verb!"predict type"! of figure \ref{fig:nextToken}. There will, however, not be generated any \verb!DirPIConstructor! token because of our overridden \verb!emit(Token t)! The \verb!PiTarget! production is described in figure \ref{fig:pitargetRewritten}.
+We implemented \verb!DirPIConstructor! as shown in figure \ref{fig:pragmaLEX}. As explained in section \ref{sect:antlr:lexer} ANTLR will generate a method \verb!mDirPIConstructor! from this production, meaning that all actions described will be performed somewhere within \verb!"predict type"! of figure \ref{fig:nextToken}. There will, however, not be generated any \verb!DirPIConstructor! token because of our overridden \verb!emit(Token t)!. The \verb!PiTarget! production is described in figure \ref{fig:pitargetRewritten}.
 
 Because the \verb!DirPIContents! part is optional, the lexer will have to check if it is there before emitting such a token. This rule is as seen in the figure implemented non-greedy with the help of a gated semantic predicate, and will stop matching characters as soon as it sees the end of the processing instruction -- \verb!'?>'!. \verb!S! denotes whitespace and will not be emitted, this is because of the lack of the surrounding \verb!prepareSubToken()! and \verb!emit()!.
 
@@ -91,7 +97,8 @@ This is a classic problem in compiler construction, however it can be solved usi
 \begin{Verbatim}
 Comment ::= "(:" (CommentContents | Comment)* ":)"
 \end{Verbatim}
-At first glance, this seems uncomplicated and straight forward, but this grammar needs to be rewritten to be accepted by an LL parser. A suggestion for a solution to a similar problem was initially found on the Antlr mailing list\footnote{http://www.antlr.org:8080/pipermail/antlr-interest/2005-July/012967.html}, and we loosly based our implementation on such an approach. Figure \ref{fig:nestedComment} shows this lexer rule that will correctly detect and allow nested comments, and hide them from the parser.
+At first glance, this seems uncomplicated and straight forward, but this
+grammar needs to be rewritten to be accepted by an LL parser. A suggestion for a solution to a similar problem was initially found on the Antlr mailing list\footnote{http://www.antlr.org:8080/pipermail/antlr-interest/2005-July/012967.html}, and we loosely based our implementation on this approach. Figure \ref{fig:nestedComment} shows this lexer rule that will correctly detect and allow nested comments, and hide them from the parser.
 \begin{figure}[h!]
 \begin{Verbatim}
 Comment   : LXQCOMMENTSi 
