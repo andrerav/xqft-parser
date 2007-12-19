@@ -14,7 +14,7 @@ any exceptions and print error messages to \verb!stdout!.
 Our solution is a common approach to error handling, by pushing the
 responsibility upwards until the top-level program recieves the exception and
 can handle it gracefully. This would have been more difficult with the default
-ANTLR behaviour, which essentially hides all errors from the top-level program.
+ANTLR behaviour, which essentially hides all errors.
 
 Note however, that to achieve this we had to modify the grammar file and add
 methods to override the default behaviour (described in detail in section
@@ -25,14 +25,12 @@ fair trade-off for the improved error handling.
 \label{sect:future_work:lexer_error_handling} % TODO: fikse denne referansen?
 As noted in sections \ref{sect:error_handling:syntax_errors} and
 \ref{sec:impl:errorhandling}, the \verb!nextToken()! method in the lexer base class
-would ``hijack'' lexical exceptions and handle them by printing an error message
-to stderr and then attempting to recover from the error by simply consuming the
+will  ``hijack'' lexical exceptions and handle them by printing an error message
+to stderr. Further it attempts to recover from the error by simply consuming the
 offending character and ignoring it in the following construction of tokens.
-This corresponds to the default handling of errors in ANTLR-generated parsers,
-as noted in the previous section.
 
-However - it is not immediately appareant, but the \verb!nextToken()! method can
-not be overridden and forced to throw the exception onwards, due to the method
+However, it is not immediately appareant, but the \verb!nextToken()! method can
+not be overridden and forced to throw the exception onwards. This is due to the method
 signature itself which does not allow exceptions to be thrown. 
 
 One possible solution to this problem could be to override the
@@ -45,4 +43,4 @@ which would regress into a series of modifications to the original ANTLR
 codebase. 
 
 This behaviour is unfortunate, as some lexer errors will be illusive and
-impossible to detect by the top-level program (which initialized the parser). 
+impossible to detect by a top-level program. 

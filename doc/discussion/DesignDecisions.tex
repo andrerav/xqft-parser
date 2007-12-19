@@ -2,19 +2,19 @@
 \section{Design Decisions}
 \label{sect:discussion:designDecisions}
 
-Of the alternatives in section \ref{sect:ambiguousgrammar:ambigTerm}, we ended up, as previously mentioned, on the parser controlled state driven lexer alternative. This strategy depends upon the lexer not generating any tokens before they are needed by the parser, dealt with by our implementation of \verb!UnbufferedCommonTokenStream!, and that most terminal alternatives are augmented with semantic predicates controlling which alternatives are available in which state.
+Of the alternatives in section \ref{sect:ambiguousgrammar:ambigTerm}, we ended up, as previously mentioned, on the parser controlled state driven lexer alternative. This strategy depends upon the lexer not generating any tokens before they are needed by the parser, and that most terminal alternatives are augmented with semantic predicates controlling which alternatives are available in which state.
 
 \subsection{Parser Controlled Lexer}
 Making the lexer emit one and one token instead of processing the input as a
 whole, most probably leads to a slightly prolonged execution time as the
 runtime control will be shunted between the parser and lexer multiple times
-per query parsed. It is not believed that this will cause too much performance 
-problems as input queries are thought to be fairly short (mostly below 100
-lines). That this strategy is viable in a real world situation can be shown by
-the fact that the eXist XML database (section \ref{sect:stateOfTheArt:eXist}) in
-a manner similar to our system employs a parser controlled strategy.
-Additionally, the Pathfinder parser (section \ref{sect:soa:pathfinder})
-generates one and one token, like in this case.
+per query parsed. As input queries are thought to be fairly short (mostly below 100
+lines), tt is not believed that this will cause too much performance 
+problems. That this strategy is viable in a real world situation can be shown by
+the fact that the eXist XML database (section \ref{sect:stateOfTheArt:eXist}), in
+a manner similar to our system, employs a parser controlled strategy.
+Additionally, the Pathfinder lexer (section \ref{sect:soa:pathfinder}), as this projects lexer also
+generates one and one token.
 
 The option would be to implement a pure state driven lexer. This would let the
 lexer operate completely autonomous, though at the cost of a much more complex
@@ -55,7 +55,7 @@ But future modifiability would be a problem, as an substantial amount of
 refactoring would be necessary for even the simplest change in grammar
 semantics.
 
-Using island grammars (section \ref{sect:amiguousgrammar:islandGrammar}) would
+Using ``island grammars" (section \ref{sect:amiguousgrammar:islandGrammar}) would
 render each subgrammar very simple and readable. Simple grammars intuitively
 also generates simple recognizers, giving an additional benefit in performace
 time. Though a performace overhead would come in form of switching between the
@@ -66,4 +66,4 @@ to make this work reliably would require substantially more time and effort. If
 however ANTLR is to include this in the near future, the grammar can be easily
 altered to accomodate this.
 
-As there are only a few productions that are available per state, exept for in the \verb!DEFAULT! state, a third option would be a hybrid of island grammars and writing the lexer by hand. In this solution, a lexer rule not a member of this state would be removed from the grammar, and be replaced by corresponding handwritten lexer in the form of a method in the lexer class called by a inline action in the ANTLR grammar. The problem with this option is that much of the lexer specification would not be in form of ANTLR grammar, thus decreasing readability and ease of change. Another issue would be that the manual lexer would have to conform to the ANTLR generated lexer's manner of operation with regards to generating tokens, handling the inputstream and pointers etc., which may not be a trivial task to implement.
+As there are only a few productions that are available per state, exept for in the \verb!DEFAULT! state, a third option would be a hybrid of island grammars and writing the lexer by hand. In this solution, a lexer rule not a member of this state would be removed from the grammar, and be replaced by corresponding handwritten lexer. This lexer can be in the form of a method in the lexer class called by a inline action in the ANTLR grammar. The problem with this option is that much of the lexer specification would not be in form of ANTLR grammar, thus decreasing readability and ease of change. Another issue would be that the manual lexer would have to conform to the ANTLR generated lexer's manner of operation with regards to generating tokens, handling the inputstream and pointers etc., which may not be a trivial task to implement.
