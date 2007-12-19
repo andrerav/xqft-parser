@@ -11,8 +11,7 @@
 \usepackage{nomencl}
 \usepackage[pdftex, bookmarks=true, linkbordercolor={0.8 0.8 0.8}]{hyperref}
 \graphicspath{{./img}}
-\author{Andreas Ravnestad, Mads Nyborg}
-\title{XQuery parser}
+
 \makenomenclature
 % Different font in captions
 \newcommand{\captionfonts}{\small\itshape}
@@ -28,24 +27,73 @@
   \vskip\belowcaptionskip}
 \makeatother   % Cancel the effect of \makeatletter
 \begin{document}
+
 \input{Nomenclature}
-\maketitle
+
+
+\begin{titlepage}
+\title{Development of an XQuery full-text parser}
+\author{Andreas Ravnestad, Mads Nyborg}
+\end{titlepage}
+
+\input{Title}
+\newpage
+\pagestyle{empty}
+\mbox{}
+
 \input{Abstract}
+\newpage
+\pagestyle{empty}
+\mbox{}
+
 \input{Preface}
+\newpage
+\pagestyle{empty}
+\mbox{}
+
 \tableofcontents
+
 \listoffigures
+
 \printnomenclature
 \clearpage
+\newpage
+\pagestyle{empty}
+\mbox{}
+
 \input{Introduction}
+
 \input{Theory}
+\newpage
+\pagestyle{empty}
+\mbox{}
+
 \input{Method}
+
 \input{Antlr}
+
 \input{Implementation}
+\newpage
+\pagestyle{empty}
+\mbox{}
+
 \input{Results}
+\newpage
+\pagestyle{empty}
+\mbox{}
+
 \input{Discussion}
+\newpage
+\pagestyle{empty}
+\mbox{}
+
 \input{Conclusion}
 \input{Future}
 \input{Appendix}
+\newpage
+\pagestyle{empty}
+\mbox{}
+
 \bibliographystyle{plain}
 \bibliography{references}
 \end{document}
