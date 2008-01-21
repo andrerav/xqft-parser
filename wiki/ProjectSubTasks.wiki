@@ -1,9 +1,0 @@
-#labels Phase-Requirements
-= Task description =
-Search engines has shown a growing interest in applying full text XQuery as a a query representation. The task of this exercise is to develop an experimental XQuery parser and if possible an intermediate representation.
-
-= Project sub tasks =
- * Create a lexer for the XQuery 1.0 FT specification using JFlex ([http://xqft-parser.googlecode.com/svn/trunk/etc/xqft.lex see here])
- * Create a parser for the XQuery 1.0 FT specification using CUP
- * Build a intermediate representation (IR)
- * Transform IR into query algebrae
