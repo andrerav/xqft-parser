@@ -1,0 +1,7 @@
+#summary A list of todo items for this spring
+
+= TODO =
+  * Tree parser
+  * AST -> Relational algebra
+  * Surf internet
+  * Type checking 
