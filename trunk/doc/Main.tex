@@ -1,0 +1,89 @@
+\documentclass[a4paper, 11pt,final]{report}
+\usepackage [T1] {fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{verbatim} 
+\usepackage{fancyvrb} \fvset{frame=single, fontsize=\small}
+\usepackage{nomencl}
+\usepackage[pdftex, bookmarks=true, linkbordercolor={0.8 0.8 0.8}]{hyperref}
+\graphicspath{{./img}}
+
+\makenomenclature
+% Different font in captions
+\newcommand{\captionfonts}{\small\itshape}
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+\begin{document}
+
+\input{Nomenclature}
+
+
+\begin{titlepage}
+\title{Development of an XQuery full-text parser}
+\author{Andreas Ravnestad, Mads Nyborg}
+\end{titlepage}
+
+\input{Title}
+\newpage
+
+\mbox{}
+
+\input{Abstract}
+\newpage
+
+\mbox{}
+
+\input{Preface}
+\newpage
+
+\mbox{}
+
+\tableofcontents
+
+\listoffigures
+
+\printnomenclature
+
+
+\input{Introduction}
+
+\input{Theory}
+\newpage
+\mbox{}
+
+\input{Method}
+
+\input{Implementation}
+\newpage
+\mbox{}
+
+\input{Results}
+\newpage
+\mbox{}
+
+\input{Discussion}
+\newpage
+\mbox{}
+
+\input{Conclusion}
+\input{Future}
+\input{Appendix}
+\newpage
+\mbox{}
+
+\bibliographystyle{plain}
+\bibliography{References}
+\end{document}
