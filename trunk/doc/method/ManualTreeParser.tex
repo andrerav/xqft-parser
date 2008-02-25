@@ -1,0 +1,44 @@
+\section{Manual vs. automated tree parser construction}
+ANTLR provides a utility for automated construction of AST parsers. This
+utility requires the specification of a separate ``tree grammar''. This tree
+grammar is almost identical to the original parser grammar. Practically, the
+parser grammar can be copied verbatime, renamed, modified slightly and used as
+a tree  grammar. This process is described in detail in \cite{definitiveAntlr},
+section 8.1.
+
+This introduces a high level of redundancy. The two grammar specifications are
+required to be somewhat identical with regards to their grammar structure; that
+is,  redundant tokens can be removed. However, the rewrite rules are required to
+be identical.
+
+This creates a problem with maintainability. As the parser grammar and rewrite
+rules are not freezed at this point but rather highly subject to change, any
+changes made in the parser grammar will need to be transferred to the tree
+grammar, and vice versa. 
+
+In \cite{translators_should_use_tree_grammars}, Terence Parr argues that the
+traditional visitor
+pattern\footnote{http://en.wikipedia.org/wiki/Visitor\_pattern} only provides a
+simplistic facility for triggering events on the AST, that no tree structure
+validation is implicitly available, and that context information has to be
+passed down through the tree during the parse or by setting global variables.
+
+In another point of view strongly polar to that of Terence Parr, Andy Tripp
+argues\cite{manual_tree_walking_is_better} that manual tree parsing is
+better. He establishes the following points of argument which are of particular
+interest to this project:
+\begin{itemize}
+  \item Duplication of code and effort -- the concept of "what is a valid AST"
+  would have to be implemented in both the parser and the AST transformer phase
+  [as a rebuttal to validation of AST]
+  \item With regards to contextual information, There seems to be nothing wrong
+  with depending on the physical structure of the AST 
+  \item Defining a traditional parser in grammar is practical because the grammar
+  usually resembles the ouput AST. In the case of a tree parser proposed by Parr
+  where the grammar actually resembles the input AST, this mapping may break
+  down completely if the output is another tree structure
+\end{itemize}
+
+In particular, the last point holds a strong indication that a tree grammar
+may not be suited for this project, as this tree parser will transform the AST
+into a relational algebra tree.
