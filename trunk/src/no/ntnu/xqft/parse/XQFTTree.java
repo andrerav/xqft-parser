@@ -28,6 +28,7 @@ public class XQFTTree extends CommonTree {
     /* Prints a DOT schema for use with graphviz instead of the usual lispy
      * paranthesized structure
      */
+    /*
     public String toStringTree() {
         
         StringBuffer buf = new StringBuffer();
@@ -41,7 +42,7 @@ public class XQFTTree extends CommonTree {
         buf.append("\n}");
         
         return buf.toString();
-    }
+    }*/
     
     protected String generateNodeRel() {
         XQFTTree.i++;
@@ -52,7 +53,6 @@ public class XQFTTree extends CommonTree {
         /* Token name for this node */
         String tokenName = this.printTokenName && this.getToken() != null ? XQFTParser.tokenNames[this.getToken().getType()]  + ": " : "";
         String nodeText = this.fixStringForDot(this.toString());
-        
         
         if ( children==null || children.size()==0 ) {
             return nodeName + " [label=\"" + tokenName + nodeText + "\"]\n";

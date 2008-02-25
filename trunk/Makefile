@@ -42,6 +42,9 @@ TestLexing:
 DirComment:
 	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool test/DirCommentContents/DirComment.g
 
+ManualWalker:
+	java -Xmx1024M -cp bin:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.test.ManualWalker
+
 clean:
 	find .|grep ~$$|xargs rm -v
 	ant clean
