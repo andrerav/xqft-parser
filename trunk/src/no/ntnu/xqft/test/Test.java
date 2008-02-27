@@ -21,7 +21,7 @@ import org.antlr.runtime.tree.*;
  */
 abstract public class Test {
 
-    protected XQFTParser getNewParser(String input) {
+    public XQFTParser getNewParser(String input) {
         
         CharStream cs = new ANTLRStringStream(input);
         XQFTLexer lexer = new XQFTLexer(cs);
