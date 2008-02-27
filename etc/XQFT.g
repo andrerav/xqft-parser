@@ -679,7 +679,7 @@ filterExpr : primaryExpr predicateList;
                 | dirCommentConstructor
                 | dirPIConstructor
             ;
-                                                    
+
                 dirElemConstructor : 
                     LTSi {lexer.stack.pushState(lexer.state); lexer.state=State.IN_TAG;}
                     qn=qName dirAttributeList
@@ -718,11 +718,11 @@ filterExpr : primaryExpr predicateList;
                     ;
 
                     cDataSection : LCDATASi CDataContents RCDATASi;
-                
+
                 dirCommentConstructor : LCOMMENTSi DirCommentContent RCOMMENTSi;
-                
+
                 dirPIConstructor : LPISi PiTarget DirPiContents? RPISi;
-                
+
             computedConstructor : 
                 compDocConstructor
                 | compElemConstructor
@@ -731,15 +731,15 @@ filterExpr : primaryExpr predicateList;
                 | compCommentConstructor
                 | compPIConstructor
             ; 
-            
+
                 compDocConstructor : DOCUMENT LBRACESi! expr RBRACSi!;
-                
+
                 compElemConstructor : 
                     ELEMENT (qName | LBRACESi expr RBRACSi) 
                     LBRACESi contentExpr? RBRACSi
                 ;
                     contentExpr : expr;
-                
+
                 compAttrConstructor : 
                     ATTRIBUTE (qName | (LBRACESi! expr RBRACSi!)) 
                     LBRACESi! expr? RBRACSi!

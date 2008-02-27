@@ -22,7 +22,7 @@ import no.ntnu.xqft.test.XQueryTestSuite;
 public class TestPanel extends JPanel implements ActionListener, ListSelectionListener {
 
     
-    JButton next, back, run;
+    JButton next, back, run, runSuite;
     JTextArea tekst;
     JTextField field;
     JTextField filefield;
@@ -46,6 +46,10 @@ public class TestPanel extends JPanel implements ActionListener, ListSelectionLi
         next = new JButton("next");
         next.addActionListener(this);
         buttons.add(next, BorderLayout.LINE_END);
+        
+        runSuite = new JButton("Run TestSuite");
+        runSuite.addActionListener(this);
+        buttons.add(runSuite, BorderLayout.CENTER);
         
         this.add(buttons, BorderLayout.PAGE_START);
         
@@ -85,7 +89,9 @@ public class TestPanel extends JPanel implements ActionListener, ListSelectionLi
         
         this.add(bottom, BorderLayout.PAGE_END);
         
-        errorReciever.runTest();
+        back.setEnabled(false);
+        next.setEnabled(false);
+        //errorReciever.runTest();
 
     }
     
@@ -96,11 +102,22 @@ public class TestPanel extends JPanel implements ActionListener, ListSelectionLi
             errorReciever.next();
             errorReciever.runTest();
         }else if(event.getSource().equals(run)){
-            
+        	Vector<TokenHolder> ref = errorReciever.runQuery(tekst.getText());
+        	if(ref != null)
+        		liste.setListData(ref);
         }else if(event.getSource().equals(back))
         {
             errorReciever.prev();
             errorReciever.runTest();
+        }else if(event.getSource().equals(runSuite))
+        {
+        	try{
+        	errorReciever.runTestSuite();
+        	next.setEnabled(true);
+        	back.setEnabled(true);
+        	errorReciever.runTest();
+        	}catch(Exception e){tekst.setText("Error idet testsuite ble kjoert: " + e.getMessage());}
+
         }
         else
             ;
@@ -115,12 +132,19 @@ public class TestPanel extends JPanel implements ActionListener, ListSelectionLi
         tekst.setText(errorReciever.getQuery());
         
     }
+    
+    public void setErrorMsg(String s)
+    {
+    	field.setText(s);
+    }
 
 
     public void valueChanged(ListSelectionEvent event) {
         TokenHolder r = (TokenHolder)liste.getSelectedValue();
+        if(r != null){
         tekst.setSelectionStart(r.getStart());
         tekst.setSelectionEnd(r.getEnd()+1);
+        }
     }
     
   

@@ -42,6 +42,13 @@ public class ErrorReciever {
     
     public ErrorReciever() throws Exception
     {
+        testSuite = new XQueryTestSuite();
+        testSuite.setErrorReciever(this);
+        testSuite.informGui = true;
+    }
+    
+    public void runTestSuite() throws Exception
+    {
         testCases = new ArrayList<TestCase>();
         
         testSuite = new XQueryTestSuite();
@@ -76,7 +83,24 @@ public class ErrorReciever {
         testpanel.updateInfo();
     }
     
-    
+    public Vector<TokenHolder> runQuery(String tekst)
+    {
+        XQFTParser farser = null;
+
+        try {
+        	testpanel.setErrorMsg("waitaminute");
+            farser = testSuite.getNewParser(tekst);
+            //setParser(parser);
+            
+
+    		farser.module();
+    		testpanel.setErrorMsg("Succcccessss!!! ");
+    		return farser.getLexer().getTokenSet();
+    	}catch (Exception e) {
+			testpanel.setErrorMsg(getErrorMessage(e));
+		}
+    	return null;
+    }
           
     
 

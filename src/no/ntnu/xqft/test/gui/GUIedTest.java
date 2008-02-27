@@ -51,6 +51,7 @@ public class GUIedTest {
         
         GUIedTest test = new GUIedTest();
         ErrorReciever r = new ErrorReciever();
+        //r.runTestSuite();
         TestPanel t = new TestPanel(r);
         test.createAndShowGUI(t);
 
