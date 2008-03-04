@@ -3,7 +3,7 @@
 all: parser compile jar
 
 compile:
-	javac -sourcepath ./src -cp lib/antlr.jar\;lib/antlr2.jar\;lib/stringtemplate.jar\;lib/junit.jar -d bin `find src -name *java`
+	javac -sourcepath ./src -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar:lib/junit.jar -d bin `find src -name *java`
 
 
 parser:
@@ -43,7 +43,7 @@ DirComment:
 	java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool test/DirCommentContents/DirComment.g
 
 ManualWalkerTest:
-	java -Xmx1024M -cp bin\;lib/antlr.jar\;lib/stringtemplate.jar no.ntnu.xqft.test.ManualWalker
+	java -Xmx1024M -cp bin:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.test.ManualWalker
 
 clean:
 	find .|grep ~$$|xargs rm -v
