@@ -1,4 +1,4 @@
-package no.ntnu.xqft.relalg;
+package no.ntnu.xqft.tree;
 
 public class Param extends Operator {
     

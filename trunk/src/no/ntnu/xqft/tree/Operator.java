@@ -1,4 +1,4 @@
-package no.ntnu.xqft.relalg;
+package no.ntnu.xqft.tree;
 
 import java.util.ArrayList;
 
