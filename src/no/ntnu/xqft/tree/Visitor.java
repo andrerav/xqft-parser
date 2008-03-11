@@ -14,4 +14,6 @@ import no.ntnu.xqft.parse.*;
  */
 public interface Visitor {
     public Operator visit(XQFTTree node);
+
+    public Operator visitAST_PATHEXPR_SGL(XQFTTree tree);
 }

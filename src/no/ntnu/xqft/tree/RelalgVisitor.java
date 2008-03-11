@@ -24,5 +24,12 @@ public class RelalgVisitor implements Visitor {
         // TODO Auto-generated method stub
         return null;
     }
+    
+    public Operator visitAST_PATHEXPR_SGL(XQFTTree tree) {
+        System.out.println("AST_PATHEXPR_SGL");
+        
+        return ((XQFTTree)tree.getChild(0)).accept(this);
+        
+    }
 
 }
