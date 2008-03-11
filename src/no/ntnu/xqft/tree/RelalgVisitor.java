@@ -15,7 +15,8 @@ public class RelalgVisitor implements Visitor {
      * @see no.ntnu.xqft.tree.Visitor#visit(no.ntnu.xqft.parse.XQFTTree)
      */
     public NodeReturnType visit(XQFTTree node) {
-        // TODO Auto-generated method stub
+        
+        this.visitAllChildren(node);
         return null;
     }
     
