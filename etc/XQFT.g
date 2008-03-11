@@ -370,8 +370,8 @@ importStmt              : IMPORT (schemaImport | moduleImport);
     
 varDecl : VARIABLE DOLLARSi qName typeDeclaration? ((ASSIGNSi exprSingle) | EXTERNAL);
     qName returns [String text] : 
-        q=QName {$text = $q.text;}
-        | n=ncNameorKeyword {$text = $n.text;}
+        QName /*{$text = $q.text;}*/ 
+        | ncNameorKeyword /*{$text = $n.token.getText();}*/ 
     ;
 
 typeDeclaration : AS sequenceType;
@@ -397,15 +397,16 @@ ftOptionDecl : FTOPTION ftMatchOptions;
 
 //--------------------------------------------------------- SequenceType -----------------------------------------
 
-sequenceType : 
-    (itemType occurrenceIndicator) => itemType occurrenceIndicator
+sequenceType options{k=1;} :
+     (EMPTY_SEQUENCE LPARSi)=>EMPTY_SEQUENCE LPARSi! RPARSi!
+    |(itemType occurrenceIndicator) => itemType occurrenceIndicator
     | itemType
-    | EMPTY_SEQUENCE LPARSi! RPARSi!;
+    ;
     itemType : (kindTest | (ITEM LPARSi! RPARSi!) | atomicType);
         kindTest : documentTest
             | elementTest
             | attributeTest
-                | schemaElementTest
+            | schemaElementTest
             | schemaAttributeTest
             | piTest
             | commentTest
@@ -634,7 +635,7 @@ valueExpr : validateExpr | pathExpr | extensionExpr;
                 reverseStep : reverseAxis nodeTest | abbrevReverseStep;
                     reverseAxis : (PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF) DBLCOLONSi;
                     nodeTest : kindTest | nameTest;
-                        nameTest : 
+                        nameTest options{k=1;} : 
                             (STARSi | ncNameorKeyword COLONSi STARSi) => wildcard
                             | qName 
                         ;
@@ -768,148 +769,148 @@ filterExpr : primaryExpr predicateList;
 
 //-------------------------------------------------- NCName or Keyword? --------------------------------------------------
 
-ncNameorKeyword : 
-    NCName
-    | ALL
-    | ANY
-    | ANCESTOR
-    | ANCESTOR_OR_SELF
-    | AND
-    | AS
-    | ASCENDING
-    | AT
-    | ATTRIBUTE
-    | BASE_URI
-    | BY
-    | BOUNDARYSPACE
-    | CASE
-    | CAST
-    | CASTABLE
-    | CHILD
-    | COLLATION
-    | COMMENT
-    | CONSTRUCTION
-    | CONTENT
-    | COPY_NAMESPACES
-    | DECLARE
-    | DEFAULT
-    | DESCENDANT
-    | DESCENDANT_OR_SELF
-    | DESCENDING
-    | DIACRITICS
-    | DIFFERENT
-    | DISTANCE
-    | DIV
-    | DOCUMENT
-    | DOCUMENT_NODE
-    | ELEMENT
-    | ELSE
-    | ENCODING
-    | END
-    | ENTIRE
-    | EMPTY
-    | EMPTY_SEQUENCE
-    | EQ
-    | EVERY
-    | EXACTLY
-    | EXCEPT
-    | EXTERNAL
-    | FOLLOWING
-    | FOLLOWING_SIBLING
-    | FOR
-    | FROM
-    | FTAND
-    | FTCONTAINS
-    | FTNOT
-    | FTOPTION
-    | FTOR
-    | FUNCTION
-    | GE
-    | GREATEST
-    | GT
-    | IDIV
-    | IF
-    | IMPORT
-    | IN
-    | INHERIT
-    | INSENSITIVE
-    | INSTANCE
-    | INTERSECT
-    | IS
-    | ITEM
-    | LANGUAGE
-    | LAX
-    | LE
-    | LEAST
-    | LET
-    | LEVELS
-    | LOWERCASE
-    | LT
-    | MOD
-    | MODULE
-    | MOST
-    | NAMESPACE
-    | NE
-    | NODE
-    | NOINHERIT
-    | NOPRESERVE
-    | NOT
-    | OCCURS
-    | OF
-    | OPTION
-    | OR
-    | ORDER
-    | ORDERED
-    | ORDERING
-    | PARAGRAPH
-    | PARAGRAPHS
-    | PARENT
-    | PHRASE
-    | PRECEDING
-    | PRECEDING_SIBLING
-    | PRESERVE
-    | PROCESSING_INSTRUCTION
-    | RELATIONSHIP
-    | RETURN
-    | SAME
-    | SATISFIES
-    | SCHEMA
-    | SCHEMA_ATTRIBUTE
-    | SCHEMA_ELEMENT
-    | SCORE
-    | SELF
-    | SENSITIVE
-    | SENTENCES
-    | SENTENCE
-    | SOME
-    | STABLE
-    | START
-    | STEMMING
-    | STOP
-    | STRICT
-    | STRIP
-    | TEXT
-    | THESAURUS
-    | THEN
-    | TIMES
-    | TO
-    | TREAT
-    | TYPESWITCH
-    | UNION
-    | UNORDERED
-    | UPPERCASE
-    | VALIDATE
-    | VARIABLE
-    | VERSION
-    | WEIGHT
-    | WHERE
-    | WILDCARDS
-    | WINDOW
-    | WITH
-    | WITHOUT
-    | WORD
-    | WORDS
-    | XQUERY
+ncNameorKeyword: 
+    (a=NCName
+    | a=ALL
+    | a=ANY
+    | a=ANCESTOR
+    | a=ANCESTOR_OR_SELF
+    | a=AND
+    | a=AS
+    | a=ASCENDING
+    | a=AT
+    | a=ATTRIBUTE
+    | a=BASE_URI
+    | a=BY
+    | a=BOUNDARYSPACE
+    | a=CASE
+    | a=CAST
+    | a=CASTABLE
+    | a=CHILD
+    | a=COLLATION
+    | a=COMMENT
+    | a=CONSTRUCTION
+    | a=CONTENT
+    | a=COPY_NAMESPACES
+    | a=DECLARE
+    | a=DEFAULT
+    | a=DESCENDANT
+    | a=DESCENDANT_OR_SELF
+    | a=DESCENDING
+    | a=DIACRITICS
+    | a=DIFFERENT
+    | a=DISTANCE
+    | a=DIV
+    | a=DOCUMENT
+    | a=DOCUMENT_NODE
+    | a=ELEMENT
+    | a=ELSE
+    | a=ENCODING
+    | a=END
+    | a=ENTIRE
+    | a=EMPTY
+    | a=EMPTY_SEQUENCE
+    | a=EQ
+    | a=EVERY
+    | a=EXACTLY
+    | a=EXCEPT
+    | a=EXTERNAL
+    | a=FOLLOWING
+    | a=FOLLOWING_SIBLING
+    | a=FOR
+    | a=FROM
+    | a=FTAND
+    | a=FTCONTAINS
+    | a=FTNOT
+    | a=FTOPTION
+    | a=FTOR
+    | a=FUNCTION
+    | a=GE
+    | a=GREATEST
+    | a=GT
+    | a=IDIV
+    | a=IF
+    | a=IMPORT
+    | a=IN
+    | a=INHERIT
+    | a=INSENSITIVE
+    | a=INSTANCE
+    | a=INTERSECT
+    | a=IS
+    | a=ITEM
+    | a=LANGUAGE
+    | a=LAX
+    | a=LE
+    | a=LEAST
+    | a=LET
+    | a=LEVELS
+    | a=LOWERCASE
+    | a=LT
+    | a=MOD
+    | a=MODULE
+    | a=MOST
+    | a=NAMESPACE
+    | a=NE
+    | a=NODE
+    | a=NOINHERIT
+    | a=NOPRESERVE
+    | a=NOT
+    | a=OCCURS
+    | a=OF
+    | a=OPTION
+    | a=OR
+    | a=ORDER
+    | a=ORDERED
+    | a=ORDERING
+    | a=PARAGRAPH
+    | a=PARAGRAPHS
+    | a=PARENT
+    | a=PHRASE
+    | a=PRECEDING
+    | a=PRECEDING_SIBLING
+    | a=PRESERVE
+    | a=PROCESSING_INSTRUCTION
+    | a=RELATIONSHIP
+    | a=RETURN
+    | a=SAME
+    | a=SATISFIES
+    | a=SCHEMA
+    | a=SCHEMA_ATTRIBUTE
+    | a=SCHEMA_ELEMENT
+    | a=SCORE
+    | a=SELF
+    | a=SENSITIVE
+    | a=SENTENCES
+    | a=SENTENCE
+    | a=SOME
+    | a=STABLE
+    | a=START
+    | a=STEMMING
+    | a=STOP
+    | a=STRICT
+    | a=STRIP
+    | a=TEXT
+    | a=THESAURUS
+    | a=THEN
+    | a=TIMES
+    | a=TO
+    | a=TREAT
+    | a=TYPESWITCH
+    | a=UNION
+    | a=UNORDERED
+    | a=UPPERCASE
+    | a=VALIDATE
+    | a=VARIABLE
+    | a=VERSION
+    | a=WEIGHT
+    | a=WHERE
+    | a=WILDCARDS
+    | a=WINDOW
+    | a=WITH
+    | a=WITHOUT
+    | a=WORD
+    | a=WORDS
+    | a=XQUERY) -> NCName[$a]
 ;
 
 
