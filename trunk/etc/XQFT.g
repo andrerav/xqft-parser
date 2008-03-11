@@ -771,7 +771,7 @@ filterExpr : primaryExpr predicateList;
 
 ncNameorKeyword: 
     (a=NCName
-    | a=ALL
+    | a=ALL 
     | a=ANY
     | a=ANCESTOR
     | a=ANCESTOR_OR_SELF
