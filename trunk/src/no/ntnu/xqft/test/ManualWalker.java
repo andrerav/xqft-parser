@@ -6,7 +6,7 @@ package no.ntnu.xqft.test;
 import java.io.File;
 
 import no.ntnu.xqft.parse.*;
-import no.ntnu.xqft.relalg.*;
+import no.ntnu.xqft.tree.*;
 
 /**
  * @author andreas
