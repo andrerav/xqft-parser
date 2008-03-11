@@ -160,7 +160,12 @@ AST_QUANTIFIEDEXPR;
 AST_TYPESWITCHEXPR;
 AST_CASECLAUSE;
 AST_IFEXPR;
-AST_PATHEXPR;
+
+AST_PATHEXPR_DBL;
+AST_PATHEXPR_SGL;
+AST_PATHEXPR_REL;
+AST_STEPEXPR;
+
 AST_FTSELECTION;
 AST_FTPOSFILTER;
 AST_FUNCTIONCALL;
@@ -602,11 +607,17 @@ valueExpr : validateExpr | pathExpr | extensionExpr;
         validationMode : LAX | STRICT;
             
     pathExpr :
-        (SLASHSi relativePathExpr)=> SLASHSi^ relativePathExpr
-        | SLASHSi^
-        | DBLSLASHSi^ relativePathExpr
+         (SLASHSi relativePathExpr)=> s=SLASHSi relativePathExpr -> ^(AST_PATHEXPR_SGL[$s, "Single slash"] relativePathExpr)
+        | s=SLASHSi -> AST_PATHEXPR_SGL[$s, "Single slash"]
+        | d=DBLSLASHSi relativePathExpr -> ^(AST_PATHEXPR_DBL[$d, "Double slash"] relativePathExpr) 
         | relativePathExpr
     ;
+
+    
+
+//AST_PATHEXPR_DBL;
+//AST_PATHEXPR_SGL;
+//AST_PATHEXPR_REL;
 
         relativePathExpr : stepExpr ((SLASHSi^ | DBLSLASHSi^) stepExpr)*;
 
@@ -614,9 +625,9 @@ valueExpr : validateExpr | pathExpr | extensionExpr;
                 ((DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT 
                     | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT 
                     | TEXT | NODE) LPARSi)
-                        => axisStep
-                | axisStep
-                | filterExpr
+                        => axisStep //-> ^(AST_STEPEXPR axisStep)
+                | axisStep //-> ^(AST_STEPEXPR axisStep)
+                | filterExpr //-> ^(AST_STEPEXPR filterExpr)
             ;
 
             axisStep : (reverseStep | forwardStep)^ predicateList;
@@ -634,12 +645,12 @@ valueExpr : validateExpr | pathExpr | extensionExpr;
                             ; 
                     abbrevReverseStep : DOTDOTSi;
                     
-                forwardStep : forwardAxis nodeTest | abbrevForwardStep;    
+                forwardStep : forwardAxis^ nodeTest | abbrevForwardStep;    
                     forwardAxis : 
                         (
                             CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING
                         ) 
-                        DBLCOLONSi
+                        DBLCOLONSi!
                     ;
                     abbrevForwardStep : ATSi^? nodeTest;                    
                 

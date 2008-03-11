@@ -54,6 +54,6 @@ public class Dot extends Test {
         XQFTParser.module_return result = parser.module();
         XQFTTree tree = (XQFTTree)result.getTree();
         
-        System.out.println(tree.toStringTree());
+        System.out.println(tree.toDotStringTree());
     }
 }

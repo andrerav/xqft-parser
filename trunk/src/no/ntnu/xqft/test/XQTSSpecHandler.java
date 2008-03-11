@@ -2,7 +2,6 @@ package no.ntnu.xqft.test;
 
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
-import org.xml.sax.ext.*;
 import java.util.*;
 
 public class XQTSSpecHandler extends DefaultHandler
