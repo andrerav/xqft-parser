@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2008-03-11 18:37:08
+// $ANTLR 3.0.1 etc/XQFT.g 2008-03-11 19:52:00
 
     package no.ntnu.xqft.parse;
 
@@ -14,7 +14,7 @@ import org.antlr.runtime.tree.*;
 
 public class XQFTParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "AST_MODULE", "AST_FLWOR", "AST_FORCLAUSE", "AST_LETCLAUSE", "AST_ORDERBYCLAUSE", "AST_WHERECLAUSE", "AST_RETURNCLAUSE", "AST_QUANTIFIEDEXPR", "AST_TYPESWITCHEXPR", "AST_CASECLAUSE", "AST_IFEXPR", "AST_PATHEXPR_DBL", "AST_PATHEXPR_SGL", "AST_PATHEXPR_REL", "AST_STEPEXPR", "AST_FTSELECTION", "AST_FTPOSFILTER", "AST_FUNCTIONCALL", "AST_FUNCTIONDECL", "AST_PREDICATE", "AST_DIRELEMCONSTRUCTOR", "AST_DIRELEMCONTENT", "XQUERY", "VERSION", "StringLiteral", "ENCODING", "SEMICOLONSi", "MODULE", "NAMESPACE", "EQSi", "COMMASi", "DECLARE", "DEFAULT", "ELEMENT", "FUNCTION", "COLLATION", "ORDER", "EMPTY", "GREATEST", "LEAST", "BOUNDARYSPACE", "PRESERVE", "STRIP", "BASE_URI", "CONSTRUCTION", "ORDERING", "ORDERED", "UNORDERED", "COPY_NAMESPACES", "NOPRESERVE", "INHERIT", "NOINHERIT", "IMPORT", "SCHEMA", "AT", "VARIABLE", "DOLLARSi", "ASSIGNSi", "EXTERNAL", "QName", "AS", "LPARSi", "RPARSi", "LBRACESi", "RBRACSi", "OPTION", "FTOPTION", "EMPTY_SEQUENCE", "ITEM", "DOCUMENT_NODE", "QUESTIONSi", "STARSi", "SCHEMA_ELEMENT", "ATTRIBUTE", "SCHEMA_ATTRIBUTE", "PROCESSING_INSTRUCTION", "COMMENT", "TEXT", "NODE", "PLUSSi", "RETURN", "FOR", "IN", "SCORE", "LET", "WHERE", "BY", "STABLE", "ASCENDING", "DESCENDING", "SOME", "EVERY", "SATISFIES", "TYPESWITCH", "CASE", "IF", "THEN", "ELSE", "OR", "AND", "FTCONTAINS", "TO", "MINUSSi", "DIV", "IDIV", "MOD", "UNION", "PIPESi", "INTERSECT", "EXCEPT", "INSTANCE", "OF", "TREAT", "CASTABLE", "CAST", "WITHOUT", "CONTENT", "EQ", "NE", "LT", "LE", "GT", "GE", "NEQSi", "LTSi", "LTOREQSi", "GTSi", "GTOREQSi", "IS", "NODEBEFORESi", "NODEAFTERSi", "WEIGHT", "FTOR", "FTAND", "NOT", "FTNOT", "IntegerLiteral", "DecimalLiteral", "DoubleLiteral", "ANY", "WORD", "ALL", "WORDS", "PHRASE", "OCCURS", "TIMES", "EXACTLY", "MOST", "FROM", "LPRAGSi", "PragmaContents", "RPRAGSi", "WINDOW", "SENTENCES", "PARAGRAPHS", "DISTANCE", "SAME", "DIFFERENT", "SENTENCE", "PARAGRAPH", "START", "END", "ENTIRE", "WITH", "WILDCARDS", "STEMMING", "THESAURUS", "STOP", "LANGUAGE", "INSENSITIVE", "SENSITIVE", "LOWERCASE", "UPPERCASE", "DIACRITICS", "RELATIONSHIP", "LEVELS", "VALIDATE", "LAX", "STRICT", "SLASHSi", "DBLSLASHSi", "PARENT", "ANCESTOR", "PRECEDING_SIBLING", "PRECEDING", "ANCESTOR_OR_SELF", "DBLCOLONSi", "COLONSi", "DOTDOTSi", "CHILD", "DESCENDANT", "SELF", "DESCENDANT_OR_SELF", "FOLLOWING_SIBLING", "FOLLOWING", "ATSi", "LBRACKSi", "RBRACKSi", "DOTSi", "RSELFTERMSi", "LENDTAGSi", "QUOTSi", "QuotAttributeContent", "APOSSi", "AposAttributeContent", "ElementContent", "LCDATASi", "CDataContents", "RCDATASi", "LCOMMENTSi", "DirCommentContent", "RCOMMENTSi", "LPISi", "PiTarget", "DirPiContents", "RPISi", "DOCUMENT", "NCName", "CDataSectionLEX", "DirPIConstructor", "DirCommentConstLEX", "PragmaLEX", "Comment", "NumberLEX", "LexSigns", "S", "LexLiterals", "TOKENSWITCH", "PredefinedEntityRef", "CharRef", "NotChar", "AMPERSi", "QuotAttrContentChar", "AposAttrContentChar", "ElementContentChar", "CREFDECSi", "CREFHEXSi", "Name", "Letter", "UNDERSCORESi", "NameChar", "Digit", "CombiningChar", "Extender", "SHARPSi", "LXQCOMMENTSi", "RXQCOMMENTSi", "Digits", "NCNameStartChar", "NCNameChar", "EXCLSi", "BACKSLASHSi", "ExtraChar", "BaseChar", "Ideographic", "CleanChar", "Char"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "AST_MODULE", "AST_FLWOR", "AST_FORCLAUSE", "AST_LETCLAUSE", "AST_ORDERBYCLAUSE", "AST_WHERECLAUSE", "AST_RETURNCLAUSE", "AST_QUANTIFIEDEXPR", "AST_TYPESWITCHEXPR", "AST_CASECLAUSE", "AST_IFEXPR", "AST_PATHEXPR_DBL", "AST_PATHEXPR_SGL", "AST_PATHEXPR_REL", "AST_STEPEXPR", "AST_FTSELECTION", "AST_FTPOSFILTER", "AST_FUNCTIONCALL", "AST_FUNCTIONDECL", "AST_PREDICATE", "AST_DIRELEMCONSTRUCTOR", "AST_DIRELEMCONTENT", "XQUERY", "VERSION", "StringLiteral", "ENCODING", "SEMICOLONSi", "MODULE", "NAMESPACE", "EQSi", "COMMASi", "DECLARE", "DEFAULT", "ELEMENT", "FUNCTION", "COLLATION", "ORDER", "EMPTY", "GREATEST", "LEAST", "BOUNDARYSPACE", "PRESERVE", "STRIP", "BASE_URI", "CONSTRUCTION", "ORDERING", "ORDERED", "UNORDERED", "COPY_NAMESPACES", "NOPRESERVE", "INHERIT", "NOINHERIT", "IMPORT", "SCHEMA", "AT", "VARIABLE", "DOLLARSi", "ASSIGNSi", "EXTERNAL", "QName", "AS", "LPARSi", "RPARSi", "LBRACESi", "RBRACSi", "OPTION", "FTOPTION", "EMPTY_SEQUENCE", "ITEM", "DOCUMENT_NODE", "QUESTIONSi", "STARSi", "SCHEMA_ELEMENT", "ATTRIBUTE", "SCHEMA_ATTRIBUTE", "PROCESSING_INSTRUCTION", "COMMENT", "TEXT", "NODE", "PLUSSi", "RETURN", "FOR", "IN", "SCORE", "LET", "WHERE", "BY", "STABLE", "ASCENDING", "DESCENDING", "SOME", "EVERY", "SATISFIES", "TYPESWITCH", "CASE", "IF", "THEN", "ELSE", "OR", "AND", "FTCONTAINS", "TO", "MINUSSi", "DIV", "IDIV", "MOD", "UNION", "PIPESi", "INTERSECT", "EXCEPT", "INSTANCE", "OF", "TREAT", "CASTABLE", "CAST", "WITHOUT", "CONTENT", "EQ", "NE", "LT", "LE", "GT", "GE", "NEQSi", "LTSi", "LTOREQSi", "GTSi", "GTOREQSi", "IS", "NODEBEFORESi", "NODEAFTERSi", "WEIGHT", "FTOR", "FTAND", "NOT", "FTNOT", "IntegerLiteral", "DecimalLiteral", "DoubleLiteral", "ANY", "WORD", "ALL", "WORDS", "PHRASE", "OCCURS", "TIMES", "EXACTLY", "MOST", "FROM", "LPRAGSi", "PragmaContents", "RPRAGSi", "WINDOW", "SENTENCES", "PARAGRAPHS", "DISTANCE", "SAME", "DIFFERENT", "SENTENCE", "PARAGRAPH", "START", "END", "ENTIRE", "WITH", "WILDCARDS", "STEMMING", "THESAURUS", "STOP", "LANGUAGE", "INSENSITIVE", "SENSITIVE", "LOWERCASE", "UPPERCASE", "DIACRITICS", "RELATIONSHIP", "LEVELS", "VALIDATE", "LAX", "STRICT", "SLASHSi", "DBLSLASHSi", "DOTSi", "PARENT", "ANCESTOR", "PRECEDING_SIBLING", "PRECEDING", "ANCESTOR_OR_SELF", "DBLCOLONSi", "COLONSi", "DOTDOTSi", "CHILD", "DESCENDANT", "SELF", "DESCENDANT_OR_SELF", "FOLLOWING_SIBLING", "FOLLOWING", "ATSi", "LBRACKSi", "RBRACKSi", "RSELFTERMSi", "LENDTAGSi", "QUOTSi", "QuotAttributeContent", "APOSSi", "AposAttributeContent", "ElementContent", "LCDATASi", "CDataContents", "RCDATASi", "LCOMMENTSi", "DirCommentContent", "RCOMMENTSi", "LPISi", "PiTarget", "DirPiContents", "RPISi", "DOCUMENT", "NCName", "CDataSectionLEX", "DirPIConstructor", "DirCommentConstLEX", "PragmaLEX", "Comment", "NumberLEX", "LexSigns", "S", "LexLiterals", "TOKENSWITCH", "PredefinedEntityRef", "CharRef", "NotChar", "AMPERSi", "QuotAttrContentChar", "AposAttrContentChar", "ElementContentChar", "CREFDECSi", "CREFHEXSi", "Name", "Letter", "UNDERSCORESi", "NameChar", "Digit", "CombiningChar", "Extender", "SHARPSi", "LXQCOMMENTSi", "RXQCOMMENTSi", "Digits", "NCNameStartChar", "NCNameChar", "EXCLSi", "BACKSLASHSi", "ExtraChar", "BaseChar", "Ideographic", "CleanChar", "Char"
     };
     public static final int NotChar=234;
     public static final int LENDTAGSi=204;
@@ -30,7 +30,7 @@ public class XQFTParser extends Parser {
     public static final int PIPESi=111;
     public static final int APOSSi=207;
     public static final int AposAttrContentChar=237;
-    public static final int DBLCOLONSi=190;
+    public static final int DBLCOLONSi=191;
     public static final int Letter=242;
     public static final int ORDER=40;
     public static final int CASTABLE=117;
@@ -64,7 +64,7 @@ public class XQFTParser extends Parser {
     public static final int FTOPTION=70;
     public static final int AST_ORDERBYCLAUSE=8;
     public static final int DOCUMENT_NODE=73;
-    public static final int ANCESTOR_OR_SELF=189;
+    public static final int ANCESTOR_OR_SELF=190;
     public static final int LCDATASi=210;
     public static final int ANY=143;
     public static final int RELATIONSHIP=178;
@@ -75,7 +75,7 @@ public class XQFTParser extends Parser {
     public static final int ELSE=101;
     public static final int WORD=144;
     public static final int SENSITIVE=174;
-    public static final int SELF=195;
+    public static final int SELF=196;
     public static final int DISTANCE=159;
     public static final int ExtraChar=256;
     public static final int LPISi=216;
@@ -83,7 +83,7 @@ public class XQFTParser extends Parser {
     public static final int NODEBEFORESi=133;
     public static final int TEXT=81;
     public static final int CombiningChar=246;
-    public static final int PARENT=185;
+    public static final int PARENT=186;
     public static final int NCName=221;
     public static final int SCORE=87;
     public static final int FTOR=136;
@@ -103,13 +103,13 @@ public class XQFTParser extends Parser {
     public static final int S=229;
     public static final int RPARSi=66;
     public static final int BY=90;
-    public static final int COLONSi=191;
+    public static final int COLONSi=192;
     public static final int SCHEMA_ELEMENT=76;
     public static final int SLASHSi=183;
     public static final int WEIGHT=135;
     public static final int AST_RETURNCLAUSE=10;
+    public static final int PRECEDING_SIBLING=188;
     public static final int UPPERCASE=176;
-    public static final int PRECEDING_SIBLING=187;
     public static final int AST_LETCLAUSE=7;
     public static final int SEMICOLONSi=30;
     public static final int FROM=152;
@@ -148,7 +148,7 @@ public class XQFTParser extends Parser {
     public static final int LPRAGSi=153;
     public static final int COMMASi=34;
     public static final int ATTRIBUTE=77;
-    public static final int CHILD=193;
+    public static final int CHILD=194;
     public static final int Digits=251;
     public static final int NOT=138;
     public static final int OPTION=69;
@@ -187,7 +187,7 @@ public class XQFTParser extends Parser {
     public static final int STARSi=75;
     public static final int RPRAGSi=155;
     public static final int WILDCARDS=168;
-    public static final int DOTDOTSi=192;
+    public static final int DOTDOTSi=193;
     public static final int DIFFERENT=161;
     public static final int LTOREQSi=129;
     public static final int AST_TYPESWITCHEXPR=12;
@@ -195,7 +195,7 @@ public class XQFTParser extends Parser {
     public static final int INTERSECT=112;
     public static final int AST_FORCLAUSE=6;
     public static final int GREATEST=42;
-    public static final int DOTSi=202;
+    public static final int DOTSi=185;
     public static final int BaseChar=257;
     public static final int Char=260;
     public static final int EQ=121;
@@ -205,10 +205,10 @@ public class XQFTParser extends Parser {
     public static final int AST_FUNCTIONDECL=22;
     public static final int WINDOW=156;
     public static final int Name=241;
-    public static final int FOLLOWING=198;
+    public static final int FOLLOWING=199;
     public static final int CASE=98;
     public static final int RXQCOMMENTSi=250;
-    public static final int DESCENDANT_OR_SELF=196;
+    public static final int DESCENDANT_OR_SELF=197;
     public static final int CDataSectionLEX=222;
     public static final int THESAURUS=170;
     public static final int RSELFTERMSi=203;
@@ -228,17 +228,17 @@ public class XQFTParser extends Parser {
     public static final int XQUERY=26;
     public static final int IDIV=108;
     public static final int SATISFIES=96;
-    public static final int ATSi=199;
-    public static final int DESCENDANT=194;
+    public static final int ATSi=200;
+    public static final int DESCENDANT=195;
     public static final int STRICT=182;
-    public static final int RBRACKSi=201;
-    public static final int FOLLOWING_SIBLING=197;
+    public static final int RBRACKSi=202;
+    public static final int FOLLOWING_SIBLING=198;
     public static final int STABLE=91;
     public static final int DoubleLiteral=142;
     public static final int START=164;
     public static final int AMPERSi=235;
     public static final int VALIDATE=180;
-    public static final int PRECEDING=188;
+    public static final int PRECEDING=189;
     public static final int COPY_NAMESPACES=52;
     public static final int ORDERING=49;
     public static final int ASSIGNSi=61;
@@ -266,14 +266,14 @@ public class XQFTParser extends Parser {
     public static final int CharRef=233;
     public static final int COLLATION=39;
     public static final int LPARSi=65;
-    public static final int ANCESTOR=186;
+    public static final int ANCESTOR=187;
     public static final int AST_PREDICATE=23;
     public static final int VARIABLE=59;
     public static final int EOF=-1;
     public static final int RBRACSi=68;
     public static final int ElementContent=209;
     public static final int LCOMMENTSi=213;
-    public static final int LBRACKSi=200;
+    public static final int LBRACKSi=201;
 
         public XQFTParser(TokenStream input) {
             super(input);
@@ -411,7 +411,7 @@ public class XQFTParser extends Parser {
                     throw nvae;
                 }
             }
-            else if ( ((LA2_0>=XQUERY && LA2_0<=ENCODING)||LA2_0==NAMESPACE||(LA2_0>=DECLARE && LA2_0<=DOLLARSi)||(LA2_0>=EXTERNAL && LA2_0<=LPARSi)||(LA2_0>=OPTION && LA2_0<=DOCUMENT_NODE)||(LA2_0>=STARSi && LA2_0<=UNION)||(LA2_0>=INTERSECT && LA2_0<=GE)||LA2_0==LTSi||LA2_0==IS||(LA2_0>=WEIGHT && LA2_0<=LPRAGSi)||(LA2_0>=WINDOW && LA2_0<=ANCESTOR_OR_SELF)||(LA2_0>=DOTDOTSi && LA2_0<=ATSi)||LA2_0==DOTSi||LA2_0==LCOMMENTSi||LA2_0==LPISi||(LA2_0>=DOCUMENT && LA2_0<=NCName)) ) {
+            else if ( ((LA2_0>=XQUERY && LA2_0<=ENCODING)||LA2_0==NAMESPACE||(LA2_0>=DECLARE && LA2_0<=DOLLARSi)||(LA2_0>=EXTERNAL && LA2_0<=LPARSi)||(LA2_0>=OPTION && LA2_0<=DOCUMENT_NODE)||(LA2_0>=STARSi && LA2_0<=UNION)||(LA2_0>=INTERSECT && LA2_0<=GE)||LA2_0==LTSi||LA2_0==IS||(LA2_0>=WEIGHT && LA2_0<=LPRAGSi)||(LA2_0>=WINDOW && LA2_0<=ANCESTOR_OR_SELF)||(LA2_0>=DOTDOTSi && LA2_0<=ATSi)||LA2_0==LCOMMENTSi||LA2_0==LPISi||(LA2_0>=DOCUMENT && LA2_0<=NCName)) ) {
                 alt2=2;
             }
             else {
@@ -8723,6 +8723,7 @@ public class XQFTParser extends Parser {
             case STRICT:
             case SLASHSi:
             case DBLSLASHSi:
+            case DOTSi:
             case PARENT:
             case ANCESTOR:
             case PRECEDING_SIBLING:
@@ -8736,7 +8737,6 @@ public class XQFTParser extends Parser {
             case FOLLOWING_SIBLING:
             case FOLLOWING:
             case ATSi:
-            case DOTSi:
             case LCOMMENTSi:
             case LPISi:
             case DOCUMENT:
@@ -16581,6 +16581,7 @@ public class XQFTParser extends Parser {
             case STRICT:
             case SLASHSi:
             case DBLSLASHSi:
+            case DOTSi:
             case PARENT:
             case ANCESTOR:
             case PRECEDING_SIBLING:
@@ -16594,7 +16595,6 @@ public class XQFTParser extends Parser {
             case FOLLOWING_SIBLING:
             case FOLLOWING:
             case ATSi:
-            case DOTSi:
             case LCOMMENTSi:
             case LPISi:
             case DOCUMENT:
@@ -16825,7 +16825,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start pathExpr
-    // etc/XQFT.g:610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );
+    // etc/XQFT.g:610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );
     public final pathExpr_return pathExpr() throws RecognitionException {
         pathExpr_return retval = new pathExpr_return();
         retval.start = input.LT(1);
@@ -16847,7 +16847,7 @@ public class XQFTParser extends Parser {
         RewriteRuleTokenStream stream_SLASHSi=new RewriteRuleTokenStream(adaptor,"token SLASHSi");
         RewriteRuleSubtreeStream stream_relativePathExpr=new RewriteRuleSubtreeStream(adaptor,"rule relativePathExpr");
         try {
-            // etc/XQFT.g:610:14: ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr )
+            // etc/XQFT.g:610:14: ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr )
             int alt116=4;
             switch ( input.LA(1) ) {
             case SLASHSi:
@@ -16905,7 +16905,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 169, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 169, input);
 
                         throw nvae;
                     }
@@ -16937,7 +16937,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 175, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 175, input);
 
                         throw nvae;
                     }
@@ -16957,7 +16957,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 177, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 177, input);
 
                         throw nvae;
                     }
@@ -16986,7 +16986,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 182, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 182, input);
 
                         throw nvae;
                     }
@@ -17003,7 +17003,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 183, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 183, input);
 
                         throw nvae;
                     }
@@ -17020,7 +17020,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 184, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 184, input);
 
                         throw nvae;
                     }
@@ -17040,7 +17040,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 186, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 186, input);
 
                         throw nvae;
                     }
@@ -17069,7 +17069,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 191, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 191, input);
 
                         throw nvae;
                     }
@@ -17092,7 +17092,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 194, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 194, input);
 
                         throw nvae;
                     }
@@ -17118,7 +17118,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 198, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 198, input);
 
                         throw nvae;
                     }
@@ -17138,7 +17138,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 200, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 200, input);
 
                         throw nvae;
                     }
@@ -17164,7 +17164,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 204, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 204, input);
 
                         throw nvae;
                     }
@@ -17184,7 +17184,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 206, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 206, input);
 
                         throw nvae;
                     }
@@ -17207,7 +17207,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 209, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 209, input);
 
                         throw nvae;
                     }
@@ -17233,7 +17233,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 213, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 213, input);
 
                         throw nvae;
                     }
@@ -17256,7 +17256,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 216, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 216, input);
 
                         throw nvae;
                     }
@@ -17285,7 +17285,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 221, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 221, input);
 
                         throw nvae;
                     }
@@ -17305,7 +17305,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 223, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 223, input);
 
                         throw nvae;
                     }
@@ -17322,7 +17322,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 224, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 224, input);
 
                         throw nvae;
                     }
@@ -17354,7 +17354,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 230, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 230, input);
 
                         throw nvae;
                     }
@@ -17371,7 +17371,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 231, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 231, input);
 
                         throw nvae;
                     }
@@ -17388,7 +17388,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 232, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 232, input);
 
                         throw nvae;
                     }
@@ -17414,7 +17414,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 236, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 236, input);
 
                         throw nvae;
                     }
@@ -17434,7 +17434,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 238, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 238, input);
 
                         throw nvae;
                     }
@@ -17451,7 +17451,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 239, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 239, input);
 
                         throw nvae;
                     }
@@ -17471,7 +17471,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 241, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 241, input);
 
                         throw nvae;
                     }
@@ -17488,7 +17488,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 242, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 242, input);
 
                         throw nvae;
                     }
@@ -17514,7 +17514,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 246, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 246, input);
 
                         throw nvae;
                     }
@@ -17549,7 +17549,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 253, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 253, input);
 
                         throw nvae;
                     }
@@ -17566,7 +17566,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 254, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 254, input);
 
                         throw nvae;
                     }
@@ -17592,7 +17592,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 258, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 258, input);
 
                         throw nvae;
                     }
@@ -17624,7 +17624,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 264, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 264, input);
 
                         throw nvae;
                     }
@@ -17644,7 +17644,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 266, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 266, input);
 
                         throw nvae;
                     }
@@ -17670,7 +17670,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 270, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 270, input);
 
                         throw nvae;
                     }
@@ -17693,7 +17693,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 273, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 273, input);
 
                         throw nvae;
                     }
@@ -17731,7 +17731,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 281, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 281, input);
 
                         throw nvae;
                     }
@@ -17748,7 +17748,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 282, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 282, input);
 
                         throw nvae;
                     }
@@ -17765,7 +17765,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 283, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 283, input);
 
                         throw nvae;
                     }
@@ -17785,7 +17785,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 285, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 285, input);
 
                         throw nvae;
                     }
@@ -17820,7 +17820,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 292, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 292, input);
 
                         throw nvae;
                     }
@@ -17846,7 +17846,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 296, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 296, input);
 
                         throw nvae;
                     }
@@ -17866,7 +17866,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 298, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 298, input);
 
                         throw nvae;
                     }
@@ -17875,6 +17875,9 @@ public class XQFTParser extends Parser {
                     alt116=1;
                 }
                 else if ( (LA116_1==QName) && (synpred6())) {
+                    alt116=1;
+                }
+                else if ( (LA116_1==DOTSi) && (synpred6())) {
                     alt116=1;
                 }
                 else if ( ((LA116_1>=IntegerLiteral && LA116_1<=DoubleLiteral)) && (synpred6())) {
@@ -17889,9 +17892,6 @@ public class XQFTParser extends Parser {
                 else if ( (LA116_1==LPARSi) && (synpred6())) {
                     alt116=1;
                 }
-                else if ( (LA116_1==DOTSi) && (synpred6())) {
-                    alt116=1;
-                }
                 else if ( (LA116_1==LTSi) ) {
                     int LA116_306 = input.LA(3);
 
@@ -17904,7 +17904,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 306, input);
+                            new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 306, input);
 
                         throw nvae;
                     }
@@ -17921,7 +17921,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 1, input);
+                        new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 1, input);
 
                     throw nvae;
                 }
@@ -18069,6 +18069,7 @@ public class XQFTParser extends Parser {
             case VALIDATE:
             case LAX:
             case STRICT:
+            case DOTSi:
             case PARENT:
             case ANCESTOR:
             case PRECEDING_SIBLING:
@@ -18082,7 +18083,6 @@ public class XQFTParser extends Parser {
             case FOLLOWING_SIBLING:
             case FOLLOWING:
             case ATSi:
-            case DOTSi:
             case LCOMMENTSi:
             case LPISi:
             case DOCUMENT:
@@ -18094,7 +18094,7 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL[$s, \"Single slash\"] | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr ) | relativePathExpr );", 116, 0, input);
+                    new NoViableAltException("610:5: pathExpr : ( ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr -> ^( AST_PATHEXPR_SGL relativePathExpr ) | s= SLASHSi -> AST_PATHEXPR_SGL | d= DBLSLASHSi relativePathExpr -> ^( AST_PATHEXPR_DBL relativePathExpr ) | relativePathExpr );", 116, 0, input);
 
                 throw nvae;
             }
@@ -18124,12 +18124,12 @@ public class XQFTParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
-                    // 611:66: -> ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr )
+                    // 611:66: -> ^( AST_PATHEXPR_SGL relativePathExpr )
                     {
-                        // etc/XQFT.g:611:69: ^( AST_PATHEXPR_SGL[$s, \"Single slash\"] relativePathExpr )
+                        // etc/XQFT.g:611:69: ^( AST_PATHEXPR_SGL relativePathExpr )
                         {
                         XQFTTree root_1 = (XQFTTree)adaptor.nil();
-                        root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_PATHEXPR_SGL, s,  "Single slash"), root_1);
+                        root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_PATHEXPR_SGL, "AST_PATHEXPR_SGL"), root_1);
 
                         adaptor.addChild(root_1, stream_relativePathExpr.next());
 
@@ -18146,7 +18146,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:612:11: s= SLASHSi
                     {
                     s=(Token)input.LT(1);
-                    match(input,SLASHSi,FOLLOW_SLASHSi_in_pathExpr5643); if (failed) return retval;
+                    match(input,SLASHSi,FOLLOW_SLASHSi_in_pathExpr5642); if (failed) return retval;
                     if ( backtracking==0 ) stream_SLASHSi.add(s);
 
 
@@ -18161,9 +18161,9 @@ public class XQFTParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
-                    // 612:21: -> AST_PATHEXPR_SGL[$s, \"Single slash\"]
+                    // 612:21: -> AST_PATHEXPR_SGL
                     {
-                        adaptor.addChild(root_0, adaptor.create(AST_PATHEXPR_SGL, s,  "Single slash"));
+                        adaptor.addChild(root_0, adaptor.create(AST_PATHEXPR_SGL, "AST_PATHEXPR_SGL"));
 
                     }
 
@@ -18175,10 +18175,10 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:613:11: d= DBLSLASHSi relativePathExpr
                     {
                     d=(Token)input.LT(1);
-                    match(input,DBLSLASHSi,FOLLOW_DBLSLASHSi_in_pathExpr5662); if (failed) return retval;
+                    match(input,DBLSLASHSi,FOLLOW_DBLSLASHSi_in_pathExpr5660); if (failed) return retval;
                     if ( backtracking==0 ) stream_DBLSLASHSi.add(d);
 
-                    pushFollow(FOLLOW_relativePathExpr_in_pathExpr5664);
+                    pushFollow(FOLLOW_relativePathExpr_in_pathExpr5662);
                     relativePathExpr491=relativePathExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -18195,12 +18195,12 @@ public class XQFTParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
-                    // 613:41: -> ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr )
+                    // 613:41: -> ^( AST_PATHEXPR_DBL relativePathExpr )
                     {
-                        // etc/XQFT.g:613:44: ^( AST_PATHEXPR_DBL[$d, \"Double slash\"] relativePathExpr )
+                        // etc/XQFT.g:613:44: ^( AST_PATHEXPR_DBL relativePathExpr )
                         {
                         XQFTTree root_1 = (XQFTTree)adaptor.nil();
-                        root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_PATHEXPR_DBL, d,  "Double slash"), root_1);
+                        root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_PATHEXPR_DBL, "AST_PATHEXPR_DBL"), root_1);
 
                         adaptor.addChild(root_1, stream_relativePathExpr.next());
 
@@ -18218,7 +18218,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_relativePathExpr_in_pathExpr5686);
+                    pushFollow(FOLLOW_relativePathExpr_in_pathExpr5683);
                     relativePathExpr492=relativePathExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -18274,7 +18274,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_stepExpr_in_relativePathExpr5717);
+            pushFollow(FOLLOW_stepExpr_in_relativePathExpr5714);
             stepExpr493=stepExpr();
             _fsp--;
             if (failed) return retval;
@@ -18316,7 +18316,7 @@ public class XQFTParser extends Parser {
             	            // etc/XQFT.g:623:39: SLASHSi
             	            {
             	            SLASHSi494=(Token)input.LT(1);
-            	            match(input,SLASHSi,FOLLOW_SLASHSi_in_relativePathExpr5721); if (failed) return retval;
+            	            match(input,SLASHSi,FOLLOW_SLASHSi_in_relativePathExpr5718); if (failed) return retval;
             	            if ( backtracking==0 ) {
             	            SLASHSi494_tree = (XQFTTree)adaptor.create(SLASHSi494);
             	            root_0 = (XQFTTree)adaptor.becomeRoot(SLASHSi494_tree, root_0);
@@ -18328,7 +18328,7 @@ public class XQFTParser extends Parser {
             	            // etc/XQFT.g:623:50: DBLSLASHSi
             	            {
             	            DBLSLASHSi495=(Token)input.LT(1);
-            	            match(input,DBLSLASHSi,FOLLOW_DBLSLASHSi_in_relativePathExpr5726); if (failed) return retval;
+            	            match(input,DBLSLASHSi,FOLLOW_DBLSLASHSi_in_relativePathExpr5723); if (failed) return retval;
             	            if ( backtracking==0 ) {
             	            DBLSLASHSi495_tree = (XQFTTree)adaptor.create(DBLSLASHSi495);
             	            root_0 = (XQFTTree)adaptor.becomeRoot(DBLSLASHSi495_tree, root_0);
@@ -18339,7 +18339,7 @@ public class XQFTParser extends Parser {
 
             	    }
 
-            	    pushFollow(FOLLOW_stepExpr_in_relativePathExpr5730);
+            	    pushFollow(FOLLOW_stepExpr_in_relativePathExpr5727);
             	    stepExpr496=stepExpr();
             	    _fsp--;
             	    if (failed) return retval;
@@ -18379,7 +18379,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start stepExpr
-    // etc/XQFT.g:625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );
+    // etc/XQFT.g:625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );
     public final stepExpr_return stepExpr() throws RecognitionException {
         stepExpr_return retval = new stepExpr_return();
         retval.start = input.LT(1);
@@ -18393,9 +18393,9 @@ public class XQFTParser extends Parser {
         filterExpr_return filterExpr499 = null;
 
 
-
+        RewriteRuleSubtreeStream stream_axisStep=new RewriteRuleSubtreeStream(adaptor,"rule axisStep");
         try {
-            // etc/XQFT.g:625:22: ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr )
+            // etc/XQFT.g:625:22: ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr )
             int alt119=3;
             switch ( input.LA(1) ) {
             case ANCESTOR:
@@ -18414,7 +18414,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 1, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 1, input);
 
                     throw nvae;
                 }
@@ -18433,7 +18433,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 2, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 2, input);
 
                     throw nvae;
                 }
@@ -18455,7 +18455,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 3, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 3, input);
 
                     throw nvae;
                 }
@@ -18477,7 +18477,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 405, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 405, input);
 
                         throw nvae;
                     }
@@ -18496,7 +18496,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 406, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 406, input);
 
                         throw nvae;
                     }
@@ -18515,7 +18515,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 407, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 407, input);
 
                         throw nvae;
                     }
@@ -18534,7 +18534,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 408, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 408, input);
 
                         throw nvae;
                     }
@@ -18553,7 +18553,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 409, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 409, input);
 
                         throw nvae;
                     }
@@ -18572,7 +18572,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 410, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 410, input);
 
                         throw nvae;
                     }
@@ -18591,7 +18591,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 411, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 411, input);
 
                         throw nvae;
                     }
@@ -18610,7 +18610,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 412, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 412, input);
 
                         throw nvae;
                     }
@@ -18629,7 +18629,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 413, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 413, input);
 
                         throw nvae;
                     }
@@ -18648,7 +18648,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 414, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 414, input);
 
                         throw nvae;
                     }
@@ -18667,7 +18667,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 415, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 415, input);
 
                         throw nvae;
                     }
@@ -18686,7 +18686,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 416, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 416, input);
 
                         throw nvae;
                     }
@@ -18705,7 +18705,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 417, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 417, input);
 
                         throw nvae;
                     }
@@ -18724,7 +18724,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 418, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 418, input);
 
                         throw nvae;
                     }
@@ -18743,7 +18743,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 419, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 419, input);
 
                         throw nvae;
                     }
@@ -18762,7 +18762,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 420, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 420, input);
 
                         throw nvae;
                     }
@@ -18781,7 +18781,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 421, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 421, input);
 
                         throw nvae;
                     }
@@ -18800,7 +18800,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 422, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 422, input);
 
                         throw nvae;
                     }
@@ -18819,7 +18819,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 423, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 423, input);
 
                         throw nvae;
                     }
@@ -18838,7 +18838,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 424, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 424, input);
 
                         throw nvae;
                     }
@@ -18857,7 +18857,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 425, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 425, input);
 
                         throw nvae;
                     }
@@ -18876,7 +18876,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 426, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 426, input);
 
                         throw nvae;
                     }
@@ -18895,7 +18895,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 427, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 427, input);
 
                         throw nvae;
                     }
@@ -18914,7 +18914,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 428, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 428, input);
 
                         throw nvae;
                     }
@@ -18933,7 +18933,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 429, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 429, input);
 
                         throw nvae;
                     }
@@ -18952,7 +18952,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 430, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 430, input);
 
                         throw nvae;
                     }
@@ -18971,7 +18971,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 431, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 431, input);
 
                         throw nvae;
                     }
@@ -18990,7 +18990,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 432, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 432, input);
 
                         throw nvae;
                     }
@@ -19009,7 +19009,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 433, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 433, input);
 
                         throw nvae;
                     }
@@ -19028,7 +19028,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 434, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 434, input);
 
                         throw nvae;
                     }
@@ -19047,7 +19047,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 435, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 435, input);
 
                         throw nvae;
                     }
@@ -19066,7 +19066,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 436, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 436, input);
 
                         throw nvae;
                     }
@@ -19085,7 +19085,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 437, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 437, input);
 
                         throw nvae;
                     }
@@ -19104,7 +19104,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 438, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 438, input);
 
                         throw nvae;
                     }
@@ -19123,7 +19123,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 439, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 439, input);
 
                         throw nvae;
                     }
@@ -19142,7 +19142,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 440, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 440, input);
 
                         throw nvae;
                     }
@@ -19161,7 +19161,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 441, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 441, input);
 
                         throw nvae;
                     }
@@ -19180,7 +19180,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 442, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 442, input);
 
                         throw nvae;
                     }
@@ -19199,7 +19199,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 443, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 443, input);
 
                         throw nvae;
                     }
@@ -19218,7 +19218,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 444, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 444, input);
 
                         throw nvae;
                     }
@@ -19237,7 +19237,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 445, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 445, input);
 
                         throw nvae;
                     }
@@ -19256,7 +19256,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 446, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 446, input);
 
                         throw nvae;
                     }
@@ -19275,7 +19275,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 447, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 447, input);
 
                         throw nvae;
                     }
@@ -19294,7 +19294,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 448, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 448, input);
 
                         throw nvae;
                     }
@@ -19313,7 +19313,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 449, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 449, input);
 
                         throw nvae;
                     }
@@ -19332,7 +19332,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 450, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 450, input);
 
                         throw nvae;
                     }
@@ -19351,7 +19351,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 451, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 451, input);
 
                         throw nvae;
                     }
@@ -19370,7 +19370,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 452, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 452, input);
 
                         throw nvae;
                     }
@@ -19389,7 +19389,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 453, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 453, input);
 
                         throw nvae;
                     }
@@ -19408,7 +19408,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 454, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 454, input);
 
                         throw nvae;
                     }
@@ -19427,7 +19427,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 455, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 455, input);
 
                         throw nvae;
                     }
@@ -19446,7 +19446,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 456, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 456, input);
 
                         throw nvae;
                     }
@@ -19465,7 +19465,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 457, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 457, input);
 
                         throw nvae;
                     }
@@ -19484,7 +19484,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 458, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 458, input);
 
                         throw nvae;
                     }
@@ -19503,7 +19503,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 459, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 459, input);
 
                         throw nvae;
                     }
@@ -19522,7 +19522,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 460, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 460, input);
 
                         throw nvae;
                     }
@@ -19541,7 +19541,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 461, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 461, input);
 
                         throw nvae;
                     }
@@ -19560,7 +19560,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 462, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 462, input);
 
                         throw nvae;
                     }
@@ -19579,7 +19579,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 463, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 463, input);
 
                         throw nvae;
                     }
@@ -19598,7 +19598,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 464, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 464, input);
 
                         throw nvae;
                     }
@@ -19617,7 +19617,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 465, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 465, input);
 
                         throw nvae;
                     }
@@ -19636,7 +19636,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 466, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 466, input);
 
                         throw nvae;
                     }
@@ -19655,7 +19655,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 467, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 467, input);
 
                         throw nvae;
                     }
@@ -19674,7 +19674,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 468, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 468, input);
 
                         throw nvae;
                     }
@@ -19693,7 +19693,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 469, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 469, input);
 
                         throw nvae;
                     }
@@ -19712,7 +19712,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 470, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 470, input);
 
                         throw nvae;
                     }
@@ -19731,7 +19731,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 471, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 471, input);
 
                         throw nvae;
                     }
@@ -19750,7 +19750,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 472, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 472, input);
 
                         throw nvae;
                     }
@@ -19769,7 +19769,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 473, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 473, input);
 
                         throw nvae;
                     }
@@ -19788,7 +19788,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 474, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 474, input);
 
                         throw nvae;
                     }
@@ -19807,7 +19807,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 475, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 475, input);
 
                         throw nvae;
                     }
@@ -19826,7 +19826,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 476, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 476, input);
 
                         throw nvae;
                     }
@@ -19845,7 +19845,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 477, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 477, input);
 
                         throw nvae;
                     }
@@ -19864,7 +19864,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 478, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 478, input);
 
                         throw nvae;
                     }
@@ -19883,7 +19883,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 479, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 479, input);
 
                         throw nvae;
                     }
@@ -19902,7 +19902,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 480, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 480, input);
 
                         throw nvae;
                     }
@@ -19921,7 +19921,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 481, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 481, input);
 
                         throw nvae;
                     }
@@ -19940,7 +19940,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 482, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 482, input);
 
                         throw nvae;
                     }
@@ -19959,7 +19959,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 483, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 483, input);
 
                         throw nvae;
                     }
@@ -19978,7 +19978,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 484, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 484, input);
 
                         throw nvae;
                     }
@@ -19997,7 +19997,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 485, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 485, input);
 
                         throw nvae;
                     }
@@ -20016,7 +20016,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 486, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 486, input);
 
                         throw nvae;
                     }
@@ -20035,7 +20035,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 487, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 487, input);
 
                         throw nvae;
                     }
@@ -20054,7 +20054,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 488, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 488, input);
 
                         throw nvae;
                     }
@@ -20073,7 +20073,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 489, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 489, input);
 
                         throw nvae;
                     }
@@ -20092,7 +20092,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 490, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 490, input);
 
                         throw nvae;
                     }
@@ -20111,7 +20111,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 491, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 491, input);
 
                         throw nvae;
                     }
@@ -20130,7 +20130,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 492, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 492, input);
 
                         throw nvae;
                     }
@@ -20149,7 +20149,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 493, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 493, input);
 
                         throw nvae;
                     }
@@ -20168,7 +20168,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 494, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 494, input);
 
                         throw nvae;
                     }
@@ -20187,7 +20187,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 495, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 495, input);
 
                         throw nvae;
                     }
@@ -20206,7 +20206,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 496, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 496, input);
 
                         throw nvae;
                     }
@@ -20225,7 +20225,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 497, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 497, input);
 
                         throw nvae;
                     }
@@ -20244,7 +20244,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 498, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 498, input);
 
                         throw nvae;
                     }
@@ -20263,7 +20263,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 499, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 499, input);
 
                         throw nvae;
                     }
@@ -20282,7 +20282,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 500, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 500, input);
 
                         throw nvae;
                     }
@@ -20301,7 +20301,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 501, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 501, input);
 
                         throw nvae;
                     }
@@ -20320,7 +20320,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 502, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 502, input);
 
                         throw nvae;
                     }
@@ -20339,7 +20339,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 503, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 503, input);
 
                         throw nvae;
                     }
@@ -20358,7 +20358,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 504, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 504, input);
 
                         throw nvae;
                     }
@@ -20377,7 +20377,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 505, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 505, input);
 
                         throw nvae;
                     }
@@ -20396,7 +20396,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 506, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 506, input);
 
                         throw nvae;
                     }
@@ -20415,7 +20415,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 507, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 507, input);
 
                         throw nvae;
                     }
@@ -20434,7 +20434,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 508, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 508, input);
 
                         throw nvae;
                     }
@@ -20453,7 +20453,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 509, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 509, input);
 
                         throw nvae;
                     }
@@ -20472,7 +20472,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 510, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 510, input);
 
                         throw nvae;
                     }
@@ -20491,7 +20491,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 511, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 511, input);
 
                         throw nvae;
                     }
@@ -20510,7 +20510,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 512, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 512, input);
 
                         throw nvae;
                     }
@@ -20529,7 +20529,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 513, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 513, input);
 
                         throw nvae;
                     }
@@ -20548,7 +20548,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 514, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 514, input);
 
                         throw nvae;
                     }
@@ -20567,7 +20567,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 515, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 515, input);
 
                         throw nvae;
                     }
@@ -20586,7 +20586,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 516, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 516, input);
 
                         throw nvae;
                     }
@@ -20605,7 +20605,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 517, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 517, input);
 
                         throw nvae;
                     }
@@ -20624,7 +20624,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 518, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 518, input);
 
                         throw nvae;
                     }
@@ -20643,7 +20643,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 519, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 519, input);
 
                         throw nvae;
                     }
@@ -20662,7 +20662,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 520, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 520, input);
 
                         throw nvae;
                     }
@@ -20681,7 +20681,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 521, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 521, input);
 
                         throw nvae;
                     }
@@ -20700,7 +20700,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 522, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 522, input);
 
                         throw nvae;
                     }
@@ -20719,7 +20719,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 523, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 523, input);
 
                         throw nvae;
                     }
@@ -20738,7 +20738,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 524, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 524, input);
 
                         throw nvae;
                     }
@@ -20757,7 +20757,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 525, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 525, input);
 
                         throw nvae;
                     }
@@ -20776,7 +20776,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 526, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 526, input);
 
                         throw nvae;
                     }
@@ -20795,7 +20795,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 527, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 527, input);
 
                         throw nvae;
                     }
@@ -20814,7 +20814,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 528, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 528, input);
 
                         throw nvae;
                     }
@@ -20833,7 +20833,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 529, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 529, input);
 
                         throw nvae;
                     }
@@ -20852,7 +20852,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 530, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 530, input);
 
                         throw nvae;
                     }
@@ -20871,7 +20871,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 531, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 531, input);
 
                         throw nvae;
                     }
@@ -20890,7 +20890,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 532, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 532, input);
 
                         throw nvae;
                     }
@@ -20909,7 +20909,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 533, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 533, input);
 
                         throw nvae;
                     }
@@ -20928,7 +20928,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 534, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 534, input);
 
                         throw nvae;
                     }
@@ -20947,7 +20947,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 535, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 535, input);
 
                         throw nvae;
                     }
@@ -20966,7 +20966,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 536, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 536, input);
 
                         throw nvae;
                     }
@@ -20985,7 +20985,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 537, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 537, input);
 
                         throw nvae;
                     }
@@ -21004,7 +21004,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 538, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 538, input);
 
                         throw nvae;
                     }
@@ -21023,7 +21023,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 539, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 539, input);
 
                         throw nvae;
                     }
@@ -21042,7 +21042,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 540, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 540, input);
 
                         throw nvae;
                     }
@@ -21061,7 +21061,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 541, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 541, input);
 
                         throw nvae;
                     }
@@ -21080,7 +21080,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 542, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 542, input);
 
                         throw nvae;
                     }
@@ -21099,7 +21099,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 543, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 543, input);
 
                         throw nvae;
                     }
@@ -21118,7 +21118,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 544, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 544, input);
 
                         throw nvae;
                     }
@@ -21137,7 +21137,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 545, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 545, input);
 
                         throw nvae;
                     }
@@ -21156,7 +21156,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 546, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 546, input);
 
                         throw nvae;
                     }
@@ -21175,7 +21175,7 @@ public class XQFTParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 547, input);
+                            new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 547, input);
 
                         throw nvae;
                     }
@@ -21184,7 +21184,7 @@ public class XQFTParser extends Parser {
                 default:
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 4, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 4, input);
 
                     throw nvae;
                 }
@@ -21207,7 +21207,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 5, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 5, input);
 
                     throw nvae;
                 }
@@ -21229,7 +21229,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 6, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 6, input);
 
                     throw nvae;
                 }
@@ -21251,7 +21251,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 7, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 7, input);
 
                     throw nvae;
                 }
@@ -21273,7 +21273,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 8, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 8, input);
 
                     throw nvae;
                 }
@@ -21295,7 +21295,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 9, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 9, input);
 
                     throw nvae;
                 }
@@ -21317,7 +21317,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 10, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 10, input);
 
                     throw nvae;
                 }
@@ -21339,7 +21339,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 11, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 11, input);
 
                     throw nvae;
                 }
@@ -21361,7 +21361,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 12, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 12, input);
 
                     throw nvae;
                 }
@@ -21383,7 +21383,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 13, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 13, input);
 
                     throw nvae;
                 }
@@ -21402,7 +21402,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 14, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 14, input);
 
                     throw nvae;
                 }
@@ -21424,7 +21424,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 15, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 15, input);
 
                     throw nvae;
                 }
@@ -21446,7 +21446,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 16, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 16, input);
 
                     throw nvae;
                 }
@@ -21468,7 +21468,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 17, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 17, input);
 
                     throw nvae;
                 }
@@ -21490,7 +21490,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 18, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 18, input);
 
                     throw nvae;
                 }
@@ -21512,7 +21512,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 19, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 19, input);
 
                     throw nvae;
                 }
@@ -21534,7 +21534,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 20, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 20, input);
 
                     throw nvae;
                 }
@@ -21556,7 +21556,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 21, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 21, input);
 
                     throw nvae;
                 }
@@ -21578,7 +21578,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 22, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 22, input);
 
                     throw nvae;
                 }
@@ -21600,7 +21600,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 23, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 23, input);
 
                     throw nvae;
                 }
@@ -21622,7 +21622,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 24, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 24, input);
 
                     throw nvae;
                 }
@@ -21644,7 +21644,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 25, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 25, input);
 
                     throw nvae;
                 }
@@ -21666,7 +21666,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 26, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 26, input);
 
                     throw nvae;
                 }
@@ -21688,7 +21688,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 27, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 27, input);
 
                     throw nvae;
                 }
@@ -21710,7 +21710,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 28, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 28, input);
 
                     throw nvae;
                 }
@@ -21732,7 +21732,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 29, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 29, input);
 
                     throw nvae;
                 }
@@ -21754,7 +21754,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 30, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 30, input);
 
                     throw nvae;
                 }
@@ -21776,7 +21776,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 31, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 31, input);
 
                     throw nvae;
                 }
@@ -21798,7 +21798,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 32, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 32, input);
 
                     throw nvae;
                 }
@@ -21820,7 +21820,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 33, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 33, input);
 
                     throw nvae;
                 }
@@ -21842,7 +21842,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 34, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 34, input);
 
                     throw nvae;
                 }
@@ -21864,7 +21864,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 35, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 35, input);
 
                     throw nvae;
                 }
@@ -21886,7 +21886,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 36, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 36, input);
 
                     throw nvae;
                 }
@@ -21908,7 +21908,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 37, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 37, input);
 
                     throw nvae;
                 }
@@ -21930,7 +21930,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 38, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 38, input);
 
                     throw nvae;
                 }
@@ -21952,7 +21952,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 39, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 39, input);
 
                     throw nvae;
                 }
@@ -21974,7 +21974,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 40, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 40, input);
 
                     throw nvae;
                 }
@@ -21996,7 +21996,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 41, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 41, input);
 
                     throw nvae;
                 }
@@ -22018,7 +22018,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 42, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 42, input);
 
                     throw nvae;
                 }
@@ -22040,7 +22040,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 43, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 43, input);
 
                     throw nvae;
                 }
@@ -22062,7 +22062,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 44, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 44, input);
 
                     throw nvae;
                 }
@@ -22084,7 +22084,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 45, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 45, input);
 
                     throw nvae;
                 }
@@ -22106,7 +22106,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 46, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 46, input);
 
                     throw nvae;
                 }
@@ -22128,7 +22128,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 47, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 47, input);
 
                     throw nvae;
                 }
@@ -22150,7 +22150,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 48, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 48, input);
 
                     throw nvae;
                 }
@@ -22172,7 +22172,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 49, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 49, input);
 
                     throw nvae;
                 }
@@ -22194,7 +22194,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 50, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 50, input);
 
                     throw nvae;
                 }
@@ -22216,7 +22216,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 51, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 51, input);
 
                     throw nvae;
                 }
@@ -22238,7 +22238,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 52, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 52, input);
 
                     throw nvae;
                 }
@@ -22260,7 +22260,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 53, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 53, input);
 
                     throw nvae;
                 }
@@ -22282,7 +22282,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 54, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 54, input);
 
                     throw nvae;
                 }
@@ -22304,7 +22304,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 55, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 55, input);
 
                     throw nvae;
                 }
@@ -22326,7 +22326,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 56, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 56, input);
 
                     throw nvae;
                 }
@@ -22348,7 +22348,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 57, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 57, input);
 
                     throw nvae;
                 }
@@ -22370,7 +22370,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 58, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 58, input);
 
                     throw nvae;
                 }
@@ -22392,7 +22392,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 59, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 59, input);
 
                     throw nvae;
                 }
@@ -22414,7 +22414,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 60, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 60, input);
 
                     throw nvae;
                 }
@@ -22436,7 +22436,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 61, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 61, input);
 
                     throw nvae;
                 }
@@ -22458,7 +22458,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 62, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 62, input);
 
                     throw nvae;
                 }
@@ -22480,7 +22480,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 63, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 63, input);
 
                     throw nvae;
                 }
@@ -22502,7 +22502,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 64, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 64, input);
 
                     throw nvae;
                 }
@@ -22524,7 +22524,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 65, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 65, input);
 
                     throw nvae;
                 }
@@ -22546,7 +22546,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 66, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 66, input);
 
                     throw nvae;
                 }
@@ -22568,7 +22568,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 67, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 67, input);
 
                     throw nvae;
                 }
@@ -22590,7 +22590,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 68, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 68, input);
 
                     throw nvae;
                 }
@@ -22612,7 +22612,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 69, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 69, input);
 
                     throw nvae;
                 }
@@ -22634,7 +22634,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 70, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 70, input);
 
                     throw nvae;
                 }
@@ -22656,7 +22656,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 71, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 71, input);
 
                     throw nvae;
                 }
@@ -22678,7 +22678,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 72, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 72, input);
 
                     throw nvae;
                 }
@@ -22700,7 +22700,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 73, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 73, input);
 
                     throw nvae;
                 }
@@ -22722,7 +22722,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 74, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 74, input);
 
                     throw nvae;
                 }
@@ -22744,7 +22744,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 75, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 75, input);
 
                     throw nvae;
                 }
@@ -22766,7 +22766,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 76, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 76, input);
 
                     throw nvae;
                 }
@@ -22788,7 +22788,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 77, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 77, input);
 
                     throw nvae;
                 }
@@ -22810,7 +22810,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 78, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 78, input);
 
                     throw nvae;
                 }
@@ -22832,7 +22832,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 79, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 79, input);
 
                     throw nvae;
                 }
@@ -22854,7 +22854,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 80, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 80, input);
 
                     throw nvae;
                 }
@@ -22876,7 +22876,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 81, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 81, input);
 
                     throw nvae;
                 }
@@ -22898,7 +22898,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 82, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 82, input);
 
                     throw nvae;
                 }
@@ -22920,7 +22920,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 83, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 83, input);
 
                     throw nvae;
                 }
@@ -22942,7 +22942,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 84, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 84, input);
 
                     throw nvae;
                 }
@@ -22964,7 +22964,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 85, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 85, input);
 
                     throw nvae;
                 }
@@ -22986,7 +22986,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 86, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 86, input);
 
                     throw nvae;
                 }
@@ -23008,7 +23008,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 87, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 87, input);
 
                     throw nvae;
                 }
@@ -23030,7 +23030,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 88, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 88, input);
 
                     throw nvae;
                 }
@@ -23052,7 +23052,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 89, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 89, input);
 
                     throw nvae;
                 }
@@ -23074,7 +23074,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 90, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 90, input);
 
                     throw nvae;
                 }
@@ -23096,7 +23096,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 91, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 91, input);
 
                     throw nvae;
                 }
@@ -23118,7 +23118,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 92, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 92, input);
 
                     throw nvae;
                 }
@@ -23140,7 +23140,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 93, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 93, input);
 
                     throw nvae;
                 }
@@ -23162,7 +23162,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 94, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 94, input);
 
                     throw nvae;
                 }
@@ -23184,7 +23184,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 95, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 95, input);
 
                     throw nvae;
                 }
@@ -23206,7 +23206,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 96, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 96, input);
 
                     throw nvae;
                 }
@@ -23228,7 +23228,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 97, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 97, input);
 
                     throw nvae;
                 }
@@ -23250,7 +23250,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 98, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 98, input);
 
                     throw nvae;
                 }
@@ -23272,7 +23272,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 99, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 99, input);
 
                     throw nvae;
                 }
@@ -23294,7 +23294,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 100, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 100, input);
 
                     throw nvae;
                 }
@@ -23316,7 +23316,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 101, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 101, input);
 
                     throw nvae;
                 }
@@ -23338,7 +23338,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 102, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 102, input);
 
                     throw nvae;
                 }
@@ -23360,7 +23360,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 103, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 103, input);
 
                     throw nvae;
                 }
@@ -23382,7 +23382,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 104, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 104, input);
 
                     throw nvae;
                 }
@@ -23404,7 +23404,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 105, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 105, input);
 
                     throw nvae;
                 }
@@ -23426,7 +23426,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 106, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 106, input);
 
                     throw nvae;
                 }
@@ -23448,7 +23448,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 107, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 107, input);
 
                     throw nvae;
                 }
@@ -23470,7 +23470,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 108, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 108, input);
 
                     throw nvae;
                 }
@@ -23492,7 +23492,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 109, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 109, input);
 
                     throw nvae;
                 }
@@ -23514,7 +23514,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 110, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 110, input);
 
                     throw nvae;
                 }
@@ -23536,7 +23536,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 111, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 111, input);
 
                     throw nvae;
                 }
@@ -23558,7 +23558,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 112, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 112, input);
 
                     throw nvae;
                 }
@@ -23580,7 +23580,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 113, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 113, input);
 
                     throw nvae;
                 }
@@ -23602,7 +23602,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 114, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 114, input);
 
                     throw nvae;
                 }
@@ -23624,7 +23624,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 115, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 115, input);
 
                     throw nvae;
                 }
@@ -23646,7 +23646,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 116, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 116, input);
 
                     throw nvae;
                 }
@@ -23668,7 +23668,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 117, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 117, input);
 
                     throw nvae;
                 }
@@ -23690,7 +23690,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 118, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 118, input);
 
                     throw nvae;
                 }
@@ -23712,7 +23712,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 119, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 119, input);
 
                     throw nvae;
                 }
@@ -23734,7 +23734,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 120, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 120, input);
 
                     throw nvae;
                 }
@@ -23756,7 +23756,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 121, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 121, input);
 
                     throw nvae;
                 }
@@ -23778,7 +23778,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 122, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 122, input);
 
                     throw nvae;
                 }
@@ -23800,7 +23800,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 123, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 123, input);
 
                     throw nvae;
                 }
@@ -23822,7 +23822,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 124, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 124, input);
 
                     throw nvae;
                 }
@@ -23844,7 +23844,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 125, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 125, input);
 
                     throw nvae;
                 }
@@ -23866,7 +23866,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 126, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 126, input);
 
                     throw nvae;
                 }
@@ -23888,7 +23888,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 127, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 127, input);
 
                     throw nvae;
                 }
@@ -23910,7 +23910,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 128, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 128, input);
 
                     throw nvae;
                 }
@@ -23932,7 +23932,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 129, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 129, input);
 
                     throw nvae;
                 }
@@ -23954,7 +23954,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 130, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 130, input);
 
                     throw nvae;
                 }
@@ -23976,7 +23976,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 131, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 131, input);
 
                     throw nvae;
                 }
@@ -23998,7 +23998,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 132, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 132, input);
 
                     throw nvae;
                 }
@@ -24020,7 +24020,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 133, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 133, input);
 
                     throw nvae;
                 }
@@ -24042,7 +24042,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 134, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 134, input);
 
                     throw nvae;
                 }
@@ -24064,7 +24064,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 135, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 135, input);
 
                     throw nvae;
                 }
@@ -24086,7 +24086,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 136, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 136, input);
 
                     throw nvae;
                 }
@@ -24108,7 +24108,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 137, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 137, input);
 
                     throw nvae;
                 }
@@ -24130,7 +24130,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 138, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 138, input);
 
                     throw nvae;
                 }
@@ -24152,7 +24152,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 139, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 139, input);
 
                     throw nvae;
                 }
@@ -24174,7 +24174,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 140, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 140, input);
 
                     throw nvae;
                 }
@@ -24196,7 +24196,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 141, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 141, input);
 
                     throw nvae;
                 }
@@ -24218,7 +24218,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 142, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 142, input);
 
                     throw nvae;
                 }
@@ -24240,7 +24240,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 143, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 143, input);
 
                     throw nvae;
                 }
@@ -24262,7 +24262,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 144, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 144, input);
 
                     throw nvae;
                 }
@@ -24284,7 +24284,26 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 145, input);
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 145, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case DOTSi:
+                {
+                int LA119_146 = input.LA(2);
+
+                if ( (synpred7()) ) {
+                    alt119=1;
+                }
+                else if ( (true) ) {
+                    alt119=2;
+                }
+                else {
+                    if (backtracking>0) {failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 146, input);
 
                     throw nvae;
                 }
@@ -24297,7 +24316,6 @@ public class XQFTParser extends Parser {
             case IntegerLiteral:
             case DecimalLiteral:
             case DoubleLiteral:
-            case DOTSi:
             case LCOMMENTSi:
             case LPISi:
                 {
@@ -24307,7 +24325,7 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep | axisStep | filterExpr );", 119, 0, input);
+                    new NoViableAltException("625:13: stepExpr : ( ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep -> ^( AST_STEPEXPR axisStep ) | axisStep -> ^( AST_STEPEXPR axisStep ) | filterExpr );", 119, 0, input);
 
                 throw nvae;
             }
@@ -24316,26 +24334,76 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:626:17: ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep
                     {
-                    root_0 = (XQFTTree)adaptor.nil();
-
-                    pushFollow(FOLLOW_axisStep_in_stepExpr5876);
+                    pushFollow(FOLLOW_axisStep_in_stepExpr5873);
                     axisStep497=axisStep();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, axisStep497.getTree());
+                    if ( backtracking==0 ) stream_axisStep.add(axisStep497.getTree());
+
+                    // AST REWRITE
+                    // elements: axisStep
+                    // token labels: 
+                    // rule labels: retval
+                    // token list labels: 
+                    // rule list labels: 
+                    if ( backtracking==0 ) {
+                    retval.tree = root_0;
+                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
+
+                    root_0 = (XQFTTree)adaptor.nil();
+                    // 629:37: -> ^( AST_STEPEXPR axisStep )
+                    {
+                        // etc/XQFT.g:629:40: ^( AST_STEPEXPR axisStep )
+                        {
+                        XQFTTree root_1 = (XQFTTree)adaptor.nil();
+                        root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_STEPEXPR, "AST_STEPEXPR"), root_1);
+
+                        adaptor.addChild(root_1, stream_axisStep.next());
+
+                        adaptor.addChild(root_0, root_1);
+                        }
+
+                    }
+
+                    }
 
                     }
                     break;
                 case 2 :
                     // etc/XQFT.g:630:19: axisStep
                     {
-                    root_0 = (XQFTTree)adaptor.nil();
-
-                    pushFollow(FOLLOW_axisStep_in_stepExpr5897);
+                    pushFollow(FOLLOW_axisStep_in_stepExpr5901);
                     axisStep498=axisStep();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, axisStep498.getTree());
+                    if ( backtracking==0 ) stream_axisStep.add(axisStep498.getTree());
+
+                    // AST REWRITE
+                    // elements: axisStep
+                    // token labels: 
+                    // rule labels: retval
+                    // token list labels: 
+                    // rule list labels: 
+                    if ( backtracking==0 ) {
+                    retval.tree = root_0;
+                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
+
+                    root_0 = (XQFTTree)adaptor.nil();
+                    // 630:28: -> ^( AST_STEPEXPR axisStep )
+                    {
+                        // etc/XQFT.g:630:31: ^( AST_STEPEXPR axisStep )
+                        {
+                        XQFTTree root_1 = (XQFTTree)adaptor.nil();
+                        root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_STEPEXPR, "AST_STEPEXPR"), root_1);
+
+                        adaptor.addChild(root_1, stream_axisStep.next());
+
+                        adaptor.addChild(root_0, root_1);
+                        }
+
+                    }
+
+                    }
 
                     }
                     break;
@@ -24344,7 +24412,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_filterExpr_in_stepExpr5918);
+                    pushFollow(FOLLOW_filterExpr_in_stepExpr5929);
                     filterExpr499=filterExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -24377,7 +24445,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start axisStep
-    // etc/XQFT.g:634:13: axisStep : ( reverseStep | forwardStep ) predicateList ;
+    // etc/XQFT.g:634:13: axisStep : ( reverseStep | forwardStep | contextItemExpr ) predicateList ;
     public final axisStep_return axisStep() throws RecognitionException {
         axisStep_return retval = new axisStep_return();
         retval.start = input.LT(1);
@@ -24388,18 +24456,20 @@ public class XQFTParser extends Parser {
 
         forwardStep_return forwardStep501 = null;
 
-        predicateList_return predicateList502 = null;
+        contextItemExpr_return contextItemExpr502 = null;
+
+        predicateList_return predicateList503 = null;
 
 
 
         try {
-            // etc/XQFT.g:634:22: ( ( reverseStep | forwardStep ) predicateList )
-            // etc/XQFT.g:634:24: ( reverseStep | forwardStep ) predicateList
+            // etc/XQFT.g:634:22: ( ( reverseStep | forwardStep | contextItemExpr ) predicateList )
+            // etc/XQFT.g:634:24: ( reverseStep | forwardStep | contextItemExpr ) predicateList
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:634:24: ( reverseStep | forwardStep )
-            int alt120=2;
+            // etc/XQFT.g:634:24: ( reverseStep | forwardStep | contextItemExpr )
+            int alt120=3;
             switch ( input.LA(1) ) {
             case ANCESTOR:
                 {
@@ -24414,7 +24484,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("634:24: ( reverseStep | forwardStep )", 120, 1, input);
+                        new NoViableAltException("634:24: ( reverseStep | forwardStep | contextItemExpr )", 120, 1, input);
 
                     throw nvae;
                 }
@@ -24581,7 +24651,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("634:24: ( reverseStep | forwardStep )", 120, 18, input);
+                        new NoViableAltException("634:24: ( reverseStep | forwardStep | contextItemExpr )", 120, 18, input);
 
                     throw nvae;
                 }
@@ -24600,7 +24670,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("634:24: ( reverseStep | forwardStep )", 120, 19, input);
+                        new NoViableAltException("634:24: ( reverseStep | forwardStep | contextItemExpr )", 120, 19, input);
 
                     throw nvae;
                 }
@@ -24619,7 +24689,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("634:24: ( reverseStep | forwardStep )", 120, 104, input);
+                        new NoViableAltException("634:24: ( reverseStep | forwardStep | contextItemExpr )", 120, 104, input);
 
                     throw nvae;
                 }
@@ -24638,16 +24708,21 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("634:24: ( reverseStep | forwardStep )", 120, 106, input);
+                        new NoViableAltException("634:24: ( reverseStep | forwardStep | contextItemExpr )", 120, 106, input);
 
                     throw nvae;
                 }
                 }
                 break;
+            case DOTSi:
+                {
+                alt120=3;
+                }
+                break;
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("634:24: ( reverseStep | forwardStep )", 120, 0, input);
+                    new NoViableAltException("634:24: ( reverseStep | forwardStep | contextItemExpr )", 120, 0, input);
 
                 throw nvae;
             }
@@ -24656,7 +24731,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:634:25: reverseStep
                     {
-                    pushFollow(FOLLOW_reverseStep_in_axisStep5953);
+                    pushFollow(FOLLOW_reverseStep_in_axisStep5964);
                     reverseStep500=reverseStep();
                     _fsp--;
                     if (failed) return retval;
@@ -24667,7 +24742,7 @@ public class XQFTParser extends Parser {
                 case 2 :
                     // etc/XQFT.g:634:39: forwardStep
                     {
-                    pushFollow(FOLLOW_forwardStep_in_axisStep5957);
+                    pushFollow(FOLLOW_forwardStep_in_axisStep5968);
                     forwardStep501=forwardStep();
                     _fsp--;
                     if (failed) return retval;
@@ -24675,14 +24750,25 @@ public class XQFTParser extends Parser {
 
                     }
                     break;
+                case 3 :
+                    // etc/XQFT.g:634:53: contextItemExpr
+                    {
+                    pushFollow(FOLLOW_contextItemExpr_in_axisStep5972);
+                    contextItemExpr502=contextItemExpr();
+                    _fsp--;
+                    if (failed) return retval;
+                    if ( backtracking==0 ) adaptor.addChild(root_0, contextItemExpr502.getTree());
+
+                    }
+                    break;
 
             }
 
-            pushFollow(FOLLOW_predicateList_in_axisStep5961);
-            predicateList502=predicateList();
+            pushFollow(FOLLOW_predicateList_in_axisStep5976);
+            predicateList503=predicateList();
             _fsp--;
             if (failed) return retval;
-            if ( backtracking==0 ) adaptor.addChild(root_0, predicateList502.getTree());
+            if ( backtracking==0 ) adaptor.addChild(root_0, predicateList503.getTree());
 
             }
 
@@ -24703,29 +24789,78 @@ public class XQFTParser extends Parser {
     }
     // $ANTLR end axisStep
 
+    public static class contextItemExpr_return extends ParserRuleReturnScope {
+        XQFTTree tree;
+        public Object getTree() { return tree; }
+    };
+
+    // $ANTLR start contextItemExpr
+    // etc/XQFT.g:635:17: contextItemExpr : DOTSi ;
+    public final contextItemExpr_return contextItemExpr() throws RecognitionException {
+        contextItemExpr_return retval = new contextItemExpr_return();
+        retval.start = input.LT(1);
+
+        XQFTTree root_0 = null;
+
+        Token DOTSi504=null;
+
+        XQFTTree DOTSi504_tree=null;
+
+        try {
+            // etc/XQFT.g:635:33: ( DOTSi )
+            // etc/XQFT.g:635:35: DOTSi
+            {
+            root_0 = (XQFTTree)adaptor.nil();
+
+            DOTSi504=(Token)input.LT(1);
+            match(input,DOTSi,FOLLOW_DOTSi_in_contextItemExpr5999); if (failed) return retval;
+            if ( backtracking==0 ) {
+            DOTSi504_tree = (XQFTTree)adaptor.create(DOTSi504);
+            adaptor.addChild(root_0, DOTSi504_tree);
+            }
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            if ( backtracking==0 ) {
+                retval.tree = (XQFTTree)adaptor.rulePostProcessing(root_0);
+                adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+            }
+        }
+
+            catch (RecognitionException e) {
+                throw e;
+            }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end contextItemExpr
+
     public static class reverseStep_return extends ParserRuleReturnScope {
         XQFTTree tree;
         public Object getTree() { return tree; }
     };
 
     // $ANTLR start reverseStep
-    // etc/XQFT.g:635:17: reverseStep : ( reverseAxis nodeTest | abbrevReverseStep );
+    // etc/XQFT.g:636:17: reverseStep : ( reverseAxis nodeTest | abbrevReverseStep );
     public final reverseStep_return reverseStep() throws RecognitionException {
         reverseStep_return retval = new reverseStep_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        reverseAxis_return reverseAxis503 = null;
+        reverseAxis_return reverseAxis505 = null;
 
-        nodeTest_return nodeTest504 = null;
+        nodeTest_return nodeTest506 = null;
 
-        abbrevReverseStep_return abbrevReverseStep505 = null;
+        abbrevReverseStep_return abbrevReverseStep507 = null;
 
 
 
         try {
-            // etc/XQFT.g:635:29: ( reverseAxis nodeTest | abbrevReverseStep )
+            // etc/XQFT.g:636:29: ( reverseAxis nodeTest | abbrevReverseStep )
             int alt121=2;
             int LA121_0 = input.LA(1);
 
@@ -24738,39 +24873,39 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("635:17: reverseStep : ( reverseAxis nodeTest | abbrevReverseStep );", 121, 0, input);
+                    new NoViableAltException("636:17: reverseStep : ( reverseAxis nodeTest | abbrevReverseStep );", 121, 0, input);
 
                 throw nvae;
             }
             switch (alt121) {
                 case 1 :
-                    // etc/XQFT.g:635:31: reverseAxis nodeTest
+                    // etc/XQFT.g:636:31: reverseAxis nodeTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_reverseAxis_in_reverseStep5984);
-                    reverseAxis503=reverseAxis();
+                    pushFollow(FOLLOW_reverseAxis_in_reverseStep6022);
+                    reverseAxis505=reverseAxis();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, reverseAxis503.getTree());
-                    pushFollow(FOLLOW_nodeTest_in_reverseStep5986);
-                    nodeTest504=nodeTest();
+                    if ( backtracking==0 ) adaptor.addChild(root_0, reverseAxis505.getTree());
+                    pushFollow(FOLLOW_nodeTest_in_reverseStep6024);
+                    nodeTest506=nodeTest();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, nodeTest504.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, nodeTest506.getTree());
 
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:635:54: abbrevReverseStep
+                    // etc/XQFT.g:636:54: abbrevReverseStep
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_abbrevReverseStep_in_reverseStep5990);
-                    abbrevReverseStep505=abbrevReverseStep();
+                    pushFollow(FOLLOW_abbrevReverseStep_in_reverseStep6028);
+                    abbrevReverseStep507=abbrevReverseStep();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, abbrevReverseStep505.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, abbrevReverseStep507.getTree());
 
                     }
                     break;
@@ -24799,43 +24934,43 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start reverseAxis
-    // etc/XQFT.g:636:21: reverseAxis : ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi ;
+    // etc/XQFT.g:637:21: reverseAxis : ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi ;
     public final reverseAxis_return reverseAxis() throws RecognitionException {
         reverseAxis_return retval = new reverseAxis_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        Token set506=null;
-        Token DBLCOLONSi507=null;
+        Token set508=null;
+        Token DBLCOLONSi509=null;
 
-        XQFTTree set506_tree=null;
-        XQFTTree DBLCOLONSi507_tree=null;
+        XQFTTree set508_tree=null;
+        XQFTTree DBLCOLONSi509_tree=null;
 
         try {
-            // etc/XQFT.g:636:33: ( ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi )
-            // etc/XQFT.g:636:35: ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi
+            // etc/XQFT.g:637:33: ( ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi )
+            // etc/XQFT.g:637:35: ( PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF ) DBLCOLONSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            set506=(Token)input.LT(1);
+            set508=(Token)input.LT(1);
             if ( (input.LA(1)>=PARENT && input.LA(1)<=ANCESTOR_OR_SELF) ) {
                 input.consume();
-                if ( backtracking==0 ) adaptor.addChild(root_0, adaptor.create(set506));
+                if ( backtracking==0 ) adaptor.addChild(root_0, adaptor.create(set508));
                 errorRecovery=false;failed=false;
             }
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_reverseAxis6017);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_reverseAxis6055);    throw mse;
             }
 
-            DBLCOLONSi507=(Token)input.LT(1);
-            match(input,DBLCOLONSi,FOLLOW_DBLCOLONSi_in_reverseAxis6037); if (failed) return retval;
+            DBLCOLONSi509=(Token)input.LT(1);
+            match(input,DBLCOLONSi,FOLLOW_DBLCOLONSi_in_reverseAxis6075); if (failed) return retval;
             if ( backtracking==0 ) {
-            DBLCOLONSi507_tree = (XQFTTree)adaptor.create(DBLCOLONSi507);
-            adaptor.addChild(root_0, DBLCOLONSi507_tree);
+            DBLCOLONSi509_tree = (XQFTTree)adaptor.create(DBLCOLONSi509);
+            adaptor.addChild(root_0, DBLCOLONSi509_tree);
             }
 
             }
@@ -24863,21 +24998,21 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start nodeTest
-    // etc/XQFT.g:637:21: nodeTest : ( kindTest | nameTest );
+    // etc/XQFT.g:638:21: nodeTest : ( kindTest | nameTest );
     public final nodeTest_return nodeTest() throws RecognitionException {
         nodeTest_return retval = new nodeTest_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        kindTest_return kindTest508 = null;
+        kindTest_return kindTest510 = null;
 
-        nameTest_return nameTest509 = null;
+        nameTest_return nameTest511 = null;
 
 
 
         try {
-            // etc/XQFT.g:637:30: ( kindTest | nameTest )
+            // etc/XQFT.g:638:30: ( kindTest | nameTest )
             int alt122=2;
             switch ( input.LA(1) ) {
             case DOCUMENT_NODE:
@@ -24893,7 +25028,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("637:21: nodeTest : ( kindTest | nameTest );", 122, 1, input);
+                        new NoViableAltException("638:21: nodeTest : ( kindTest | nameTest );", 122, 1, input);
 
                     throw nvae;
                 }
@@ -24912,7 +25047,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("637:21: nodeTest : ( kindTest | nameTest );", 122, 2, input);
+                        new NoViableAltException("638:21: nodeTest : ( kindTest | nameTest );", 122, 2, input);
 
                     throw nvae;
                 }
@@ -24931,7 +25066,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("637:21: nodeTest : ( kindTest | nameTest );", 122, 3, input);
+                        new NoViableAltException("638:21: nodeTest : ( kindTest | nameTest );", 122, 3, input);
 
                     throw nvae;
                 }
@@ -24950,7 +25085,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("637:21: nodeTest : ( kindTest | nameTest );", 122, 4, input);
+                        new NoViableAltException("638:21: nodeTest : ( kindTest | nameTest );", 122, 4, input);
 
                     throw nvae;
                 }
@@ -24969,7 +25104,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("637:21: nodeTest : ( kindTest | nameTest );", 122, 5, input);
+                        new NoViableAltException("638:21: nodeTest : ( kindTest | nameTest );", 122, 5, input);
 
                     throw nvae;
                 }
@@ -24988,7 +25123,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("637:21: nodeTest : ( kindTest | nameTest );", 122, 6, input);
+                        new NoViableAltException("638:21: nodeTest : ( kindTest | nameTest );", 122, 6, input);
 
                     throw nvae;
                 }
@@ -25007,7 +25142,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("637:21: nodeTest : ( kindTest | nameTest );", 122, 7, input);
+                        new NoViableAltException("638:21: nodeTest : ( kindTest | nameTest );", 122, 7, input);
 
                     throw nvae;
                 }
@@ -25026,7 +25161,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("637:21: nodeTest : ( kindTest | nameTest );", 122, 8, input);
+                        new NoViableAltException("638:21: nodeTest : ( kindTest | nameTest );", 122, 8, input);
 
                     throw nvae;
                 }
@@ -25045,7 +25180,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("637:21: nodeTest : ( kindTest | nameTest );", 122, 9, input);
+                        new NoViableAltException("638:21: nodeTest : ( kindTest | nameTest );", 122, 9, input);
 
                     throw nvae;
                 }
@@ -25192,35 +25327,35 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("637:21: nodeTest : ( kindTest | nameTest );", 122, 0, input);
+                    new NoViableAltException("638:21: nodeTest : ( kindTest | nameTest );", 122, 0, input);
 
                 throw nvae;
             }
 
             switch (alt122) {
                 case 1 :
-                    // etc/XQFT.g:637:32: kindTest
+                    // etc/XQFT.g:638:32: kindTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_kindTest_in_nodeTest6064);
-                    kindTest508=kindTest();
+                    pushFollow(FOLLOW_kindTest_in_nodeTest6102);
+                    kindTest510=kindTest();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, kindTest508.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, kindTest510.getTree());
 
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:637:43: nameTest
+                    // etc/XQFT.g:638:43: nameTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_nameTest_in_nodeTest6068);
-                    nameTest509=nameTest();
+                    pushFollow(FOLLOW_nameTest_in_nodeTest6106);
+                    nameTest511=nameTest();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, nameTest509.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, nameTest511.getTree());
 
                     }
                     break;
@@ -25249,21 +25384,21 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start nameTest
-    // etc/XQFT.g:638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );
+    // etc/XQFT.g:639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );
     public final nameTest_return nameTest() throws RecognitionException {
         nameTest_return retval = new nameTest_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        wildcard_return wildcard510 = null;
+        wildcard_return wildcard512 = null;
 
-        qName_return qName511 = null;
+        qName_return qName513 = null;
 
 
 
         try {
-            // etc/XQFT.g:638:48: ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName )
+            // etc/XQFT.g:639:48: ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName )
             int alt123=2;
             int LA123_0 = input.LA(1);
 
@@ -25282,7 +25417,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 2, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 2, input);
 
                     throw nvae;
                 }
@@ -25299,7 +25434,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 3, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 3, input);
 
                     throw nvae;
                 }
@@ -25316,7 +25451,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 4, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 4, input);
 
                     throw nvae;
                 }
@@ -25333,7 +25468,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 5, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 5, input);
 
                     throw nvae;
                 }
@@ -25350,7 +25485,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 6, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 6, input);
 
                     throw nvae;
                 }
@@ -25367,7 +25502,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 7, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 7, input);
 
                     throw nvae;
                 }
@@ -25384,7 +25519,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 8, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 8, input);
 
                     throw nvae;
                 }
@@ -25401,7 +25536,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 9, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 9, input);
 
                     throw nvae;
                 }
@@ -25418,7 +25553,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 10, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 10, input);
 
                     throw nvae;
                 }
@@ -25435,7 +25570,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 11, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 11, input);
 
                     throw nvae;
                 }
@@ -25452,7 +25587,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 12, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 12, input);
 
                     throw nvae;
                 }
@@ -25469,7 +25604,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 13, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 13, input);
 
                     throw nvae;
                 }
@@ -25486,7 +25621,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 14, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 14, input);
 
                     throw nvae;
                 }
@@ -25503,7 +25638,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 15, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 15, input);
 
                     throw nvae;
                 }
@@ -25520,7 +25655,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 16, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 16, input);
 
                     throw nvae;
                 }
@@ -25537,7 +25672,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 17, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 17, input);
 
                     throw nvae;
                 }
@@ -25554,7 +25689,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 18, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 18, input);
 
                     throw nvae;
                 }
@@ -25571,7 +25706,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 19, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 19, input);
 
                     throw nvae;
                 }
@@ -25588,7 +25723,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 20, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 20, input);
 
                     throw nvae;
                 }
@@ -25605,7 +25740,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 21, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 21, input);
 
                     throw nvae;
                 }
@@ -25622,7 +25757,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 22, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 22, input);
 
                     throw nvae;
                 }
@@ -25639,7 +25774,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 23, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 23, input);
 
                     throw nvae;
                 }
@@ -25656,7 +25791,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 24, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 24, input);
 
                     throw nvae;
                 }
@@ -25673,7 +25808,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 25, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 25, input);
 
                     throw nvae;
                 }
@@ -25690,7 +25825,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 26, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 26, input);
 
                     throw nvae;
                 }
@@ -25707,7 +25842,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 27, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 27, input);
 
                     throw nvae;
                 }
@@ -25724,7 +25859,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 28, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 28, input);
 
                     throw nvae;
                 }
@@ -25741,7 +25876,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 29, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 29, input);
 
                     throw nvae;
                 }
@@ -25758,7 +25893,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 30, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 30, input);
 
                     throw nvae;
                 }
@@ -25775,7 +25910,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 31, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 31, input);
 
                     throw nvae;
                 }
@@ -25792,7 +25927,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 32, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 32, input);
 
                     throw nvae;
                 }
@@ -25809,7 +25944,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 33, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 33, input);
 
                     throw nvae;
                 }
@@ -25826,7 +25961,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 34, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 34, input);
 
                     throw nvae;
                 }
@@ -25843,7 +25978,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 35, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 35, input);
 
                     throw nvae;
                 }
@@ -25860,7 +25995,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 36, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 36, input);
 
                     throw nvae;
                 }
@@ -25877,7 +26012,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 37, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 37, input);
 
                     throw nvae;
                 }
@@ -25894,7 +26029,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 38, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 38, input);
 
                     throw nvae;
                 }
@@ -25911,7 +26046,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 39, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 39, input);
 
                     throw nvae;
                 }
@@ -25928,7 +26063,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 40, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 40, input);
 
                     throw nvae;
                 }
@@ -25945,7 +26080,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 41, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 41, input);
 
                     throw nvae;
                 }
@@ -25962,7 +26097,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 42, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 42, input);
 
                     throw nvae;
                 }
@@ -25979,7 +26114,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 43, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 43, input);
 
                     throw nvae;
                 }
@@ -25996,7 +26131,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 44, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 44, input);
 
                     throw nvae;
                 }
@@ -26013,7 +26148,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 45, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 45, input);
 
                     throw nvae;
                 }
@@ -26030,7 +26165,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 46, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 46, input);
 
                     throw nvae;
                 }
@@ -26047,7 +26182,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 47, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 47, input);
 
                     throw nvae;
                 }
@@ -26064,7 +26199,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 48, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 48, input);
 
                     throw nvae;
                 }
@@ -26081,7 +26216,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 49, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 49, input);
 
                     throw nvae;
                 }
@@ -26098,7 +26233,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 50, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 50, input);
 
                     throw nvae;
                 }
@@ -26115,7 +26250,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 51, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 51, input);
 
                     throw nvae;
                 }
@@ -26132,7 +26267,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 52, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 52, input);
 
                     throw nvae;
                 }
@@ -26149,7 +26284,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 53, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 53, input);
 
                     throw nvae;
                 }
@@ -26166,7 +26301,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 54, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 54, input);
 
                     throw nvae;
                 }
@@ -26183,7 +26318,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 55, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 55, input);
 
                     throw nvae;
                 }
@@ -26200,7 +26335,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 56, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 56, input);
 
                     throw nvae;
                 }
@@ -26217,7 +26352,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 57, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 57, input);
 
                     throw nvae;
                 }
@@ -26234,7 +26369,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 58, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 58, input);
 
                     throw nvae;
                 }
@@ -26251,7 +26386,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 59, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 59, input);
 
                     throw nvae;
                 }
@@ -26268,7 +26403,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 60, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 60, input);
 
                     throw nvae;
                 }
@@ -26285,7 +26420,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 61, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 61, input);
 
                     throw nvae;
                 }
@@ -26302,7 +26437,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 62, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 62, input);
 
                     throw nvae;
                 }
@@ -26319,7 +26454,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 63, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 63, input);
 
                     throw nvae;
                 }
@@ -26336,7 +26471,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 64, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 64, input);
 
                     throw nvae;
                 }
@@ -26353,7 +26488,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 65, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 65, input);
 
                     throw nvae;
                 }
@@ -26370,7 +26505,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 66, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 66, input);
 
                     throw nvae;
                 }
@@ -26387,7 +26522,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 67, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 67, input);
 
                     throw nvae;
                 }
@@ -26404,7 +26539,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 68, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 68, input);
 
                     throw nvae;
                 }
@@ -26421,7 +26556,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 69, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 69, input);
 
                     throw nvae;
                 }
@@ -26438,7 +26573,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 70, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 70, input);
 
                     throw nvae;
                 }
@@ -26455,7 +26590,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 71, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 71, input);
 
                     throw nvae;
                 }
@@ -26472,7 +26607,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 72, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 72, input);
 
                     throw nvae;
                 }
@@ -26489,7 +26624,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 73, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 73, input);
 
                     throw nvae;
                 }
@@ -26506,7 +26641,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 74, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 74, input);
 
                     throw nvae;
                 }
@@ -26523,7 +26658,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 75, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 75, input);
 
                     throw nvae;
                 }
@@ -26540,7 +26675,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 76, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 76, input);
 
                     throw nvae;
                 }
@@ -26557,7 +26692,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 77, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 77, input);
 
                     throw nvae;
                 }
@@ -26574,7 +26709,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 78, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 78, input);
 
                     throw nvae;
                 }
@@ -26591,7 +26726,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 79, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 79, input);
 
                     throw nvae;
                 }
@@ -26608,7 +26743,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 80, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 80, input);
 
                     throw nvae;
                 }
@@ -26625,7 +26760,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 81, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 81, input);
 
                     throw nvae;
                 }
@@ -26642,7 +26777,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 82, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 82, input);
 
                     throw nvae;
                 }
@@ -26659,7 +26794,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 83, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 83, input);
 
                     throw nvae;
                 }
@@ -26676,7 +26811,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 84, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 84, input);
 
                     throw nvae;
                 }
@@ -26693,7 +26828,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 85, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 85, input);
 
                     throw nvae;
                 }
@@ -26710,7 +26845,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 86, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 86, input);
 
                     throw nvae;
                 }
@@ -26727,7 +26862,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 87, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 87, input);
 
                     throw nvae;
                 }
@@ -26744,7 +26879,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 88, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 88, input);
 
                     throw nvae;
                 }
@@ -26761,7 +26896,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 89, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 89, input);
 
                     throw nvae;
                 }
@@ -26778,7 +26913,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 90, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 90, input);
 
                     throw nvae;
                 }
@@ -26795,7 +26930,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 91, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 91, input);
 
                     throw nvae;
                 }
@@ -26812,7 +26947,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 92, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 92, input);
 
                     throw nvae;
                 }
@@ -26829,7 +26964,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 93, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 93, input);
 
                     throw nvae;
                 }
@@ -26846,7 +26981,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 94, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 94, input);
 
                     throw nvae;
                 }
@@ -26863,7 +26998,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 95, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 95, input);
 
                     throw nvae;
                 }
@@ -26880,7 +27015,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 96, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 96, input);
 
                     throw nvae;
                 }
@@ -26897,7 +27032,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 97, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 97, input);
 
                     throw nvae;
                 }
@@ -26914,7 +27049,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 98, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 98, input);
 
                     throw nvae;
                 }
@@ -26931,7 +27066,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 99, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 99, input);
 
                     throw nvae;
                 }
@@ -26948,7 +27083,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 100, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 100, input);
 
                     throw nvae;
                 }
@@ -26965,7 +27100,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 101, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 101, input);
 
                     throw nvae;
                 }
@@ -26982,7 +27117,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 102, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 102, input);
 
                     throw nvae;
                 }
@@ -26999,7 +27134,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 103, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 103, input);
 
                     throw nvae;
                 }
@@ -27016,7 +27151,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 104, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 104, input);
 
                     throw nvae;
                 }
@@ -27033,7 +27168,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 105, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 105, input);
 
                     throw nvae;
                 }
@@ -27050,7 +27185,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 106, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 106, input);
 
                     throw nvae;
                 }
@@ -27067,7 +27202,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 107, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 107, input);
 
                     throw nvae;
                 }
@@ -27084,7 +27219,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 108, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 108, input);
 
                     throw nvae;
                 }
@@ -27101,7 +27236,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 109, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 109, input);
 
                     throw nvae;
                 }
@@ -27118,7 +27253,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 110, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 110, input);
 
                     throw nvae;
                 }
@@ -27135,7 +27270,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 111, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 111, input);
 
                     throw nvae;
                 }
@@ -27152,7 +27287,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 112, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 112, input);
 
                     throw nvae;
                 }
@@ -27169,7 +27304,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 113, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 113, input);
 
                     throw nvae;
                 }
@@ -27186,7 +27321,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 114, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 114, input);
 
                     throw nvae;
                 }
@@ -27203,7 +27338,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 115, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 115, input);
 
                     throw nvae;
                 }
@@ -27220,7 +27355,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 116, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 116, input);
 
                     throw nvae;
                 }
@@ -27237,7 +27372,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 117, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 117, input);
 
                     throw nvae;
                 }
@@ -27254,7 +27389,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 118, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 118, input);
 
                     throw nvae;
                 }
@@ -27271,7 +27406,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 119, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 119, input);
 
                     throw nvae;
                 }
@@ -27288,7 +27423,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 120, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 120, input);
 
                     throw nvae;
                 }
@@ -27305,7 +27440,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 121, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 121, input);
 
                     throw nvae;
                 }
@@ -27322,7 +27457,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 122, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 122, input);
 
                     throw nvae;
                 }
@@ -27339,7 +27474,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 123, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 123, input);
 
                     throw nvae;
                 }
@@ -27356,7 +27491,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 124, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 124, input);
 
                     throw nvae;
                 }
@@ -27373,7 +27508,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 125, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 125, input);
 
                     throw nvae;
                 }
@@ -27390,7 +27525,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 126, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 126, input);
 
                     throw nvae;
                 }
@@ -27407,7 +27542,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 127, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 127, input);
 
                     throw nvae;
                 }
@@ -27424,7 +27559,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 128, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 128, input);
 
                     throw nvae;
                 }
@@ -27441,7 +27576,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 129, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 129, input);
 
                     throw nvae;
                 }
@@ -27458,7 +27593,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 130, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 130, input);
 
                     throw nvae;
                 }
@@ -27475,7 +27610,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 131, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 131, input);
 
                     throw nvae;
                 }
@@ -27492,7 +27627,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 132, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 132, input);
 
                     throw nvae;
                 }
@@ -27509,7 +27644,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 133, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 133, input);
 
                     throw nvae;
                 }
@@ -27526,7 +27661,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 134, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 134, input);
 
                     throw nvae;
                 }
@@ -27543,7 +27678,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 135, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 135, input);
 
                     throw nvae;
                 }
@@ -27560,7 +27695,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 136, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 136, input);
 
                     throw nvae;
                 }
@@ -27577,7 +27712,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 137, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 137, input);
 
                     throw nvae;
                 }
@@ -27594,7 +27729,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 138, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 138, input);
 
                     throw nvae;
                 }
@@ -27611,7 +27746,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 139, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 139, input);
 
                     throw nvae;
                 }
@@ -27628,7 +27763,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 140, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 140, input);
 
                     throw nvae;
                 }
@@ -27645,7 +27780,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 141, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 141, input);
 
                     throw nvae;
                 }
@@ -27662,7 +27797,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 142, input);
+                        new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 142, input);
 
                     throw nvae;
                 }
@@ -27673,34 +27808,34 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("638:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 0, input);
+                    new NoViableAltException("639:25: nameTest options {k=1; } : ( ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard | qName );", 123, 0, input);
 
                 throw nvae;
             }
             switch (alt123) {
                 case 1 :
-                    // etc/XQFT.g:639:29: ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard
+                    // etc/XQFT.g:640:29: ( STARSi | ncNameorKeyword COLONSi STARSi )=> wildcard
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_wildcard_in_nameTest6149);
-                    wildcard510=wildcard();
+                    pushFollow(FOLLOW_wildcard_in_nameTest6187);
+                    wildcard512=wildcard();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, wildcard510.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, wildcard512.getTree());
 
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:640:31: qName
+                    // etc/XQFT.g:641:31: qName
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_qName_in_nameTest6181);
-                    qName511=qName();
+                    pushFollow(FOLLOW_qName_in_nameTest6219);
+                    qName513=qName();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, qName511.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, qName513.getTree());
 
                     }
                     break;
@@ -27729,31 +27864,31 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start wildcard
-    // etc/XQFT.g:642:29: wildcard : ( ( STARSi COLONSi )=> STARSi COLONSi ncNameorKeyword | STARSi | ncNameorKeyword COLONSi STARSi );
+    // etc/XQFT.g:643:29: wildcard : ( ( STARSi COLONSi )=> STARSi COLONSi ncNameorKeyword | STARSi | ncNameorKeyword COLONSi STARSi );
     public final wildcard_return wildcard() throws RecognitionException {
         wildcard_return retval = new wildcard_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        Token STARSi512=null;
-        Token COLONSi513=null;
-        Token STARSi515=null;
-        Token COLONSi517=null;
-        Token STARSi518=null;
-        ncNameorKeyword_return ncNameorKeyword514 = null;
-
+        Token STARSi514=null;
+        Token COLONSi515=null;
+        Token STARSi517=null;
+        Token COLONSi519=null;
+        Token STARSi520=null;
         ncNameorKeyword_return ncNameorKeyword516 = null;
 
+        ncNameorKeyword_return ncNameorKeyword518 = null;
 
-        XQFTTree STARSi512_tree=null;
-        XQFTTree COLONSi513_tree=null;
-        XQFTTree STARSi515_tree=null;
-        XQFTTree COLONSi517_tree=null;
-        XQFTTree STARSi518_tree=null;
+
+        XQFTTree STARSi514_tree=null;
+        XQFTTree COLONSi515_tree=null;
+        XQFTTree STARSi517_tree=null;
+        XQFTTree COLONSi519_tree=null;
+        XQFTTree STARSi520_tree=null;
 
         try {
-            // etc/XQFT.g:642:38: ( ( STARSi COLONSi )=> STARSi COLONSi ncNameorKeyword | STARSi | ncNameorKeyword COLONSi STARSi )
+            // etc/XQFT.g:643:38: ( ( STARSi COLONSi )=> STARSi COLONSi ncNameorKeyword | STARSi | ncNameorKeyword COLONSi STARSi )
             int alt124=3;
             int LA124_0 = input.LA(1);
 
@@ -27769,7 +27904,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("642:29: wildcard : ( ( STARSi COLONSi )=> STARSi COLONSi ncNameorKeyword | STARSi | ncNameorKeyword COLONSi STARSi );", 124, 1, input);
+                        new NoViableAltException("643:29: wildcard : ( ( STARSi COLONSi )=> STARSi COLONSi ncNameorKeyword | STARSi | ncNameorKeyword COLONSi STARSi );", 124, 1, input);
 
                     throw nvae;
                 }
@@ -27780,71 +27915,71 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("642:29: wildcard : ( ( STARSi COLONSi )=> STARSi COLONSi ncNameorKeyword | STARSi | ncNameorKeyword COLONSi STARSi );", 124, 0, input);
+                    new NoViableAltException("643:29: wildcard : ( ( STARSi COLONSi )=> STARSi COLONSi ncNameorKeyword | STARSi | ncNameorKeyword COLONSi STARSi );", 124, 0, input);
 
                 throw nvae;
             }
             switch (alt124) {
                 case 1 :
-                    // etc/XQFT.g:643:33: ( STARSi COLONSi )=> STARSi COLONSi ncNameorKeyword
+                    // etc/XQFT.g:644:33: ( STARSi COLONSi )=> STARSi COLONSi ncNameorKeyword
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    STARSi512=(Token)input.LT(1);
-                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6283); if (failed) return retval;
+                    STARSi514=(Token)input.LT(1);
+                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6321); if (failed) return retval;
                     if ( backtracking==0 ) {
-                    STARSi512_tree = (XQFTTree)adaptor.create(STARSi512);
-                    adaptor.addChild(root_0, STARSi512_tree);
+                    STARSi514_tree = (XQFTTree)adaptor.create(STARSi514);
+                    adaptor.addChild(root_0, STARSi514_tree);
                     }
-                    COLONSi513=(Token)input.LT(1);
-                    match(input,COLONSi,FOLLOW_COLONSi_in_wildcard6285); if (failed) return retval;
+                    COLONSi515=(Token)input.LT(1);
+                    match(input,COLONSi,FOLLOW_COLONSi_in_wildcard6323); if (failed) return retval;
                     if ( backtracking==0 ) {
-                    COLONSi513_tree = (XQFTTree)adaptor.create(COLONSi513);
-                    adaptor.addChild(root_0, COLONSi513_tree);
+                    COLONSi515_tree = (XQFTTree)adaptor.create(COLONSi515);
+                    adaptor.addChild(root_0, COLONSi515_tree);
                     }
-                    pushFollow(FOLLOW_ncNameorKeyword_in_wildcard6287);
-                    ncNameorKeyword514=ncNameorKeyword();
+                    pushFollow(FOLLOW_ncNameorKeyword_in_wildcard6325);
+                    ncNameorKeyword516=ncNameorKeyword();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, ncNameorKeyword514.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, ncNameorKeyword516.getTree());
 
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:644:35: STARSi
+                    // etc/XQFT.g:645:35: STARSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    STARSi515=(Token)input.LT(1);
-                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6325); if (failed) return retval;
+                    STARSi517=(Token)input.LT(1);
+                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6363); if (failed) return retval;
                     if ( backtracking==0 ) {
-                    STARSi515_tree = (XQFTTree)adaptor.create(STARSi515);
-                    adaptor.addChild(root_0, STARSi515_tree);
+                    STARSi517_tree = (XQFTTree)adaptor.create(STARSi517);
+                    adaptor.addChild(root_0, STARSi517_tree);
                     }
 
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:645:35: ncNameorKeyword COLONSi STARSi
+                    // etc/XQFT.g:646:35: ncNameorKeyword COLONSi STARSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ncNameorKeyword_in_wildcard6361);
-                    ncNameorKeyword516=ncNameorKeyword();
+                    pushFollow(FOLLOW_ncNameorKeyword_in_wildcard6399);
+                    ncNameorKeyword518=ncNameorKeyword();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, ncNameorKeyword516.getTree());
-                    COLONSi517=(Token)input.LT(1);
-                    match(input,COLONSi,FOLLOW_COLONSi_in_wildcard6363); if (failed) return retval;
+                    if ( backtracking==0 ) adaptor.addChild(root_0, ncNameorKeyword518.getTree());
+                    COLONSi519=(Token)input.LT(1);
+                    match(input,COLONSi,FOLLOW_COLONSi_in_wildcard6401); if (failed) return retval;
                     if ( backtracking==0 ) {
-                    COLONSi517_tree = (XQFTTree)adaptor.create(COLONSi517);
-                    adaptor.addChild(root_0, COLONSi517_tree);
+                    COLONSi519_tree = (XQFTTree)adaptor.create(COLONSi519);
+                    adaptor.addChild(root_0, COLONSi519_tree);
                     }
-                    STARSi518=(Token)input.LT(1);
-                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6365); if (failed) return retval;
+                    STARSi520=(Token)input.LT(1);
+                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6403); if (failed) return retval;
                     if ( backtracking==0 ) {
-                    STARSi518_tree = (XQFTTree)adaptor.create(STARSi518);
-                    adaptor.addChild(root_0, STARSi518_tree);
+                    STARSi520_tree = (XQFTTree)adaptor.create(STARSi520);
+                    adaptor.addChild(root_0, STARSi520_tree);
                     }
 
                     }
@@ -27874,28 +28009,28 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start abbrevReverseStep
-    // etc/XQFT.g:647:21: abbrevReverseStep : DOTDOTSi ;
+    // etc/XQFT.g:648:21: abbrevReverseStep : DOTDOTSi ;
     public final abbrevReverseStep_return abbrevReverseStep() throws RecognitionException {
         abbrevReverseStep_return retval = new abbrevReverseStep_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        Token DOTDOTSi519=null;
+        Token DOTDOTSi521=null;
 
-        XQFTTree DOTDOTSi519_tree=null;
+        XQFTTree DOTDOTSi521_tree=null;
 
         try {
-            // etc/XQFT.g:647:39: ( DOTDOTSi )
-            // etc/XQFT.g:647:41: DOTDOTSi
+            // etc/XQFT.g:648:39: ( DOTDOTSi )
+            // etc/XQFT.g:648:41: DOTDOTSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            DOTDOTSi519=(Token)input.LT(1);
-            match(input,DOTDOTSi,FOLLOW_DOTDOTSi_in_abbrevReverseStep6422); if (failed) return retval;
+            DOTDOTSi521=(Token)input.LT(1);
+            match(input,DOTDOTSi,FOLLOW_DOTDOTSi_in_abbrevReverseStep6460); if (failed) return retval;
             if ( backtracking==0 ) {
-            DOTDOTSi519_tree = (XQFTTree)adaptor.create(DOTDOTSi519);
-            adaptor.addChild(root_0, DOTDOTSi519_tree);
+            DOTDOTSi521_tree = (XQFTTree)adaptor.create(DOTDOTSi521);
+            adaptor.addChild(root_0, DOTDOTSi521_tree);
             }
 
             }
@@ -27923,39 +28058,39 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start forwardStep
-    // etc/XQFT.g:649:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );
+    // etc/XQFT.g:650:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );
     public final forwardStep_return forwardStep() throws RecognitionException {
         forwardStep_return retval = new forwardStep_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        forwardAxis_return forwardAxis520 = null;
+        forwardAxis_return forwardAxis522 = null;
 
-        nodeTest_return nodeTest521 = null;
+        nodeTest_return nodeTest523 = null;
 
-        abbrevForwardStep_return abbrevForwardStep522 = null;
+        abbrevForwardStep_return abbrevForwardStep524 = null;
 
 
 
         try {
-            // etc/XQFT.g:649:29: ( forwardAxis nodeTest | abbrevForwardStep )
+            // etc/XQFT.g:650:29: ( forwardAxis nodeTest | abbrevForwardStep )
             int alt125=2;
             switch ( input.LA(1) ) {
             case ATTRIBUTE:
                 {
                 int LA125_1 = input.LA(2);
 
-                if ( (LA125_1==DBLCOLONSi) ) {
-                    alt125=1;
-                }
-                else if ( (LA125_1==EOF||LA125_1==SEMICOLONSi||(LA125_1>=EQSi && LA125_1<=COMMASi)||LA125_1==DEFAULT||(LA125_1>=COLLATION && LA125_1<=EMPTY)||(LA125_1>=LPARSi && LA125_1<=RPARSi)||LA125_1==RBRACSi||LA125_1==STARSi||(LA125_1>=PLUSSi && LA125_1<=FOR)||(LA125_1>=LET && LA125_1<=WHERE)||(LA125_1>=STABLE && LA125_1<=DESCENDING)||LA125_1==SATISFIES||LA125_1==CASE||(LA125_1>=ELSE && LA125_1<=INSTANCE)||(LA125_1>=TREAT && LA125_1<=WITHOUT)||(LA125_1>=EQ && LA125_1<=NODEAFTERSi)||LA125_1==WORDS||LA125_1==TIMES||(LA125_1>=SENTENCES && LA125_1<=PARAGRAPHS)||LA125_1==LEVELS||(LA125_1>=SLASHSi && LA125_1<=DBLSLASHSi)||LA125_1==COLONSi||(LA125_1>=LBRACKSi && LA125_1<=RBRACKSi)) ) {
+                if ( (LA125_1==EOF||LA125_1==SEMICOLONSi||(LA125_1>=EQSi && LA125_1<=COMMASi)||LA125_1==DEFAULT||(LA125_1>=COLLATION && LA125_1<=EMPTY)||(LA125_1>=LPARSi && LA125_1<=RPARSi)||LA125_1==RBRACSi||LA125_1==STARSi||(LA125_1>=PLUSSi && LA125_1<=FOR)||(LA125_1>=LET && LA125_1<=WHERE)||(LA125_1>=STABLE && LA125_1<=DESCENDING)||LA125_1==SATISFIES||LA125_1==CASE||(LA125_1>=ELSE && LA125_1<=INSTANCE)||(LA125_1>=TREAT && LA125_1<=WITHOUT)||(LA125_1>=EQ && LA125_1<=NODEAFTERSi)||LA125_1==WORDS||LA125_1==TIMES||(LA125_1>=SENTENCES && LA125_1<=PARAGRAPHS)||LA125_1==LEVELS||(LA125_1>=SLASHSi && LA125_1<=DBLSLASHSi)||LA125_1==COLONSi||(LA125_1>=LBRACKSi && LA125_1<=RBRACKSi)) ) {
                     alt125=2;
+                }
+                else if ( (LA125_1==DBLCOLONSi) ) {
+                    alt125=1;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("649:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 1, input);
+                        new NoViableAltException("650:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 1, input);
 
                     throw nvae;
                 }
@@ -28115,7 +28250,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("649:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 5, input);
+                        new NoViableAltException("650:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 5, input);
 
                     throw nvae;
                 }
@@ -28134,7 +28269,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("649:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 28, input);
+                        new NoViableAltException("650:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 28, input);
 
                     throw nvae;
                 }
@@ -28153,7 +28288,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("649:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 35, input);
+                        new NoViableAltException("650:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 35, input);
 
                     throw nvae;
                 }
@@ -28172,7 +28307,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("649:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 36, input);
+                        new NoViableAltException("650:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 36, input);
 
                     throw nvae;
                 }
@@ -28191,7 +28326,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("649:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 54, input);
+                        new NoViableAltException("650:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 54, input);
 
                     throw nvae;
                 }
@@ -28210,7 +28345,7 @@ public class XQFTParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("649:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 55, input);
+                        new NoViableAltException("650:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 55, input);
 
                     throw nvae;
                 }
@@ -28219,40 +28354,40 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("649:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 0, input);
+                    new NoViableAltException("650:17: forwardStep : ( forwardAxis nodeTest | abbrevForwardStep );", 125, 0, input);
 
                 throw nvae;
             }
 
             switch (alt125) {
                 case 1 :
-                    // etc/XQFT.g:649:31: forwardAxis nodeTest
+                    // etc/XQFT.g:650:31: forwardAxis nodeTest
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_forwardAxis_in_forwardStep6466);
-                    forwardAxis520=forwardAxis();
+                    pushFollow(FOLLOW_forwardAxis_in_forwardStep6504);
+                    forwardAxis522=forwardAxis();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) root_0 = (XQFTTree)adaptor.becomeRoot(forwardAxis520.getTree(), root_0);
-                    pushFollow(FOLLOW_nodeTest_in_forwardStep6469);
-                    nodeTest521=nodeTest();
+                    if ( backtracking==0 ) root_0 = (XQFTTree)adaptor.becomeRoot(forwardAxis522.getTree(), root_0);
+                    pushFollow(FOLLOW_nodeTest_in_forwardStep6507);
+                    nodeTest523=nodeTest();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, nodeTest521.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, nodeTest523.getTree());
 
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:649:55: abbrevForwardStep
+                    // etc/XQFT.g:650:55: abbrevForwardStep
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_abbrevForwardStep_in_forwardStep6473);
-                    abbrevForwardStep522=abbrevForwardStep();
+                    pushFollow(FOLLOW_abbrevForwardStep_in_forwardStep6511);
+                    abbrevForwardStep524=abbrevForwardStep();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, abbrevForwardStep522.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, abbrevForwardStep524.getTree());
 
                     }
                     break;
@@ -28281,40 +28416,40 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start forwardAxis
-    // etc/XQFT.g:650:21: forwardAxis : ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi ;
+    // etc/XQFT.g:651:21: forwardAxis : ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi ;
     public final forwardAxis_return forwardAxis() throws RecognitionException {
         forwardAxis_return retval = new forwardAxis_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        Token set523=null;
-        Token DBLCOLONSi524=null;
+        Token set525=null;
+        Token DBLCOLONSi526=null;
 
-        XQFTTree set523_tree=null;
-        XQFTTree DBLCOLONSi524_tree=null;
+        XQFTTree set525_tree=null;
+        XQFTTree DBLCOLONSi526_tree=null;
 
         try {
-            // etc/XQFT.g:650:33: ( ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi )
-            // etc/XQFT.g:651:25: ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi
+            // etc/XQFT.g:651:33: ( ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi )
+            // etc/XQFT.g:652:25: ( CHILD | DESCENDANT | ATTRIBUTE | SELF | DESCENDANT_OR_SELF | FOLLOWING_SIBLING | FOLLOWING ) DBLCOLONSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            set523=(Token)input.LT(1);
+            set525=(Token)input.LT(1);
             if ( input.LA(1)==ATTRIBUTE||(input.LA(1)>=CHILD && input.LA(1)<=FOLLOWING) ) {
                 input.consume();
-                if ( backtracking==0 ) adaptor.addChild(root_0, adaptor.create(set523));
+                if ( backtracking==0 ) adaptor.addChild(root_0, adaptor.create(set525));
                 errorRecovery=false;failed=false;
             }
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_forwardAxis6529);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_forwardAxis6567);    throw mse;
             }
 
-            DBLCOLONSi524=(Token)input.LT(1);
-            match(input,DBLCOLONSi,FOLLOW_DBLCOLONSi_in_forwardAxis6636); if (failed) return retval;
+            DBLCOLONSi526=(Token)input.LT(1);
+            match(input,DBLCOLONSi,FOLLOW_DBLCOLONSi_in_forwardAxis6674); if (failed) return retval;
 
             }
 
@@ -28341,26 +28476,26 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start abbrevForwardStep
-    // etc/XQFT.g:656:21: abbrevForwardStep : ( ATSi )? nodeTest ;
+    // etc/XQFT.g:657:21: abbrevForwardStep : ( ATSi )? nodeTest ;
     public final abbrevForwardStep_return abbrevForwardStep() throws RecognitionException {
         abbrevForwardStep_return retval = new abbrevForwardStep_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        Token ATSi525=null;
-        nodeTest_return nodeTest526 = null;
+        Token ATSi527=null;
+        nodeTest_return nodeTest528 = null;
 
 
-        XQFTTree ATSi525_tree=null;
+        XQFTTree ATSi527_tree=null;
 
         try {
-            // etc/XQFT.g:656:39: ( ( ATSi )? nodeTest )
-            // etc/XQFT.g:656:41: ( ATSi )? nodeTest
+            // etc/XQFT.g:657:39: ( ( ATSi )? nodeTest )
+            // etc/XQFT.g:657:41: ( ATSi )? nodeTest
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:656:45: ( ATSi )?
+            // etc/XQFT.g:657:45: ( ATSi )?
             int alt126=2;
             int LA126_0 = input.LA(1);
 
@@ -28369,13 +28504,13 @@ public class XQFTParser extends Parser {
             }
             switch (alt126) {
                 case 1 :
-                    // etc/XQFT.g:656:45: ATSi
+                    // etc/XQFT.g:657:45: ATSi
                     {
-                    ATSi525=(Token)input.LT(1);
-                    match(input,ATSi,FOLLOW_ATSi_in_abbrevForwardStep6685); if (failed) return retval;
+                    ATSi527=(Token)input.LT(1);
+                    match(input,ATSi,FOLLOW_ATSi_in_abbrevForwardStep6723); if (failed) return retval;
                     if ( backtracking==0 ) {
-                    ATSi525_tree = (XQFTTree)adaptor.create(ATSi525);
-                    root_0 = (XQFTTree)adaptor.becomeRoot(ATSi525_tree, root_0);
+                    ATSi527_tree = (XQFTTree)adaptor.create(ATSi527);
+                    root_0 = (XQFTTree)adaptor.becomeRoot(ATSi527_tree, root_0);
                     }
 
                     }
@@ -28383,11 +28518,11 @@ public class XQFTParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_nodeTest_in_abbrevForwardStep6689);
-            nodeTest526=nodeTest();
+            pushFollow(FOLLOW_nodeTest_in_abbrevForwardStep6727);
+            nodeTest528=nodeTest();
             _fsp--;
             if (failed) return retval;
-            if ( backtracking==0 ) adaptor.addChild(root_0, nodeTest526.getTree());
+            if ( backtracking==0 ) adaptor.addChild(root_0, nodeTest528.getTree());
 
             }
 
@@ -28414,24 +28549,24 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start predicateList
-    // etc/XQFT.g:658:17: predicateList : ( predicate )* ;
+    // etc/XQFT.g:659:17: predicateList : ( predicate )* ;
     public final predicateList_return predicateList() throws RecognitionException {
         predicateList_return retval = new predicateList_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        predicate_return predicate527 = null;
+        predicate_return predicate529 = null;
 
 
 
         try {
-            // etc/XQFT.g:658:31: ( ( predicate )* )
-            // etc/XQFT.g:658:33: ( predicate )*
+            // etc/XQFT.g:659:31: ( ( predicate )* )
+            // etc/XQFT.g:659:33: ( predicate )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:658:33: ( predicate )*
+            // etc/XQFT.g:659:33: ( predicate )*
             loop127:
             do {
                 int alt127=2;
@@ -28444,13 +28579,13 @@ public class XQFTParser extends Parser {
 
                 switch (alt127) {
             	case 1 :
-            	    // etc/XQFT.g:658:33: predicate
+            	    // etc/XQFT.g:659:33: predicate
             	    {
-            	    pushFollow(FOLLOW_predicate_in_predicateList6749);
-            	    predicate527=predicate();
+            	    pushFollow(FOLLOW_predicate_in_predicateList6787);
+            	    predicate529=predicate();
             	    _fsp--;
             	    if (failed) return retval;
-            	    if ( backtracking==0 ) adaptor.addChild(root_0, predicate527.getTree());
+            	    if ( backtracking==0 ) adaptor.addChild(root_0, predicate529.getTree());
 
             	    }
             	    break;
@@ -28486,39 +28621,39 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start predicate
-    // etc/XQFT.g:659:21: predicate : LBRACKSi expr RBRACKSi -> ^( AST_PREDICATE expr ) ;
+    // etc/XQFT.g:660:21: predicate : LBRACKSi expr RBRACKSi -> ^( AST_PREDICATE expr ) ;
     public final predicate_return predicate() throws RecognitionException {
         predicate_return retval = new predicate_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        Token LBRACKSi528=null;
-        Token RBRACKSi530=null;
-        expr_return expr529 = null;
+        Token LBRACKSi530=null;
+        Token RBRACKSi532=null;
+        expr_return expr531 = null;
 
 
-        XQFTTree LBRACKSi528_tree=null;
-        XQFTTree RBRACKSi530_tree=null;
+        XQFTTree LBRACKSi530_tree=null;
+        XQFTTree RBRACKSi532_tree=null;
         RewriteRuleTokenStream stream_LBRACKSi=new RewriteRuleTokenStream(adaptor,"token LBRACKSi");
         RewriteRuleTokenStream stream_RBRACKSi=new RewriteRuleTokenStream(adaptor,"token RBRACKSi");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // etc/XQFT.g:659:31: ( LBRACKSi expr RBRACKSi -> ^( AST_PREDICATE expr ) )
-            // etc/XQFT.g:659:33: LBRACKSi expr RBRACKSi
+            // etc/XQFT.g:660:31: ( LBRACKSi expr RBRACKSi -> ^( AST_PREDICATE expr ) )
+            // etc/XQFT.g:660:33: LBRACKSi expr RBRACKSi
             {
-            LBRACKSi528=(Token)input.LT(1);
-            match(input,LBRACKSi,FOLLOW_LBRACKSi_in_predicate6818); if (failed) return retval;
-            if ( backtracking==0 ) stream_LBRACKSi.add(LBRACKSi528);
+            LBRACKSi530=(Token)input.LT(1);
+            match(input,LBRACKSi,FOLLOW_LBRACKSi_in_predicate6856); if (failed) return retval;
+            if ( backtracking==0 ) stream_LBRACKSi.add(LBRACKSi530);
 
-            pushFollow(FOLLOW_expr_in_predicate6820);
-            expr529=expr();
+            pushFollow(FOLLOW_expr_in_predicate6858);
+            expr531=expr();
             _fsp--;
             if (failed) return retval;
-            if ( backtracking==0 ) stream_expr.add(expr529.getTree());
-            RBRACKSi530=(Token)input.LT(1);
-            match(input,RBRACKSi,FOLLOW_RBRACKSi_in_predicate6822); if (failed) return retval;
-            if ( backtracking==0 ) stream_RBRACKSi.add(RBRACKSi530);
+            if ( backtracking==0 ) stream_expr.add(expr531.getTree());
+            RBRACKSi532=(Token)input.LT(1);
+            match(input,RBRACKSi,FOLLOW_RBRACKSi_in_predicate6860); if (failed) return retval;
+            if ( backtracking==0 ) stream_RBRACKSi.add(RBRACKSi532);
 
 
             // AST REWRITE
@@ -28532,9 +28667,9 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 660:37: -> ^( AST_PREDICATE expr )
+            // 661:37: -> ^( AST_PREDICATE expr )
             {
-                // etc/XQFT.g:660:40: ^( AST_PREDICATE expr )
+                // etc/XQFT.g:661:40: ^( AST_PREDICATE expr )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_PREDICATE, "AST_PREDICATE"), root_1);
@@ -28573,30 +28708,30 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start extensionExpr
-    // etc/XQFT.g:662:5: extensionExpr : ( pragma )+ LBRACESi ( expr )? RBRACSi ;
+    // etc/XQFT.g:663:5: extensionExpr : ( pragma )+ LBRACESi ( expr )? RBRACSi ;
     public final extensionExpr_return extensionExpr() throws RecognitionException {
         extensionExpr_return retval = new extensionExpr_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        Token LBRACESi532=null;
-        Token RBRACSi534=null;
-        pragma_return pragma531 = null;
+        Token LBRACESi534=null;
+        Token RBRACSi536=null;
+        pragma_return pragma533 = null;
 
-        expr_return expr533 = null;
+        expr_return expr535 = null;
 
 
-        XQFTTree LBRACESi532_tree=null;
-        XQFTTree RBRACSi534_tree=null;
+        XQFTTree LBRACESi534_tree=null;
+        XQFTTree RBRACSi536_tree=null;
 
         try {
-            // etc/XQFT.g:662:19: ( ( pragma )+ LBRACESi ( expr )? RBRACSi )
-            // etc/XQFT.g:662:21: ( pragma )+ LBRACESi ( expr )? RBRACSi
+            // etc/XQFT.g:663:19: ( ( pragma )+ LBRACESi ( expr )? RBRACSi )
+            // etc/XQFT.g:663:21: ( pragma )+ LBRACESi ( expr )? RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:662:21: ( pragma )+
+            // etc/XQFT.g:663:21: ( pragma )+
             int cnt128=0;
             loop128:
             do {
@@ -28610,13 +28745,13 @@ public class XQFTParser extends Parser {
 
                 switch (alt128) {
             	case 1 :
-            	    // etc/XQFT.g:662:21: pragma
+            	    // etc/XQFT.g:663:21: pragma
             	    {
-            	    pushFollow(FOLLOW_pragma_in_extensionExpr6894);
-            	    pragma531=pragma();
+            	    pushFollow(FOLLOW_pragma_in_extensionExpr6932);
+            	    pragma533=pragma();
             	    _fsp--;
             	    if (failed) return retval;
-            	    if ( backtracking==0 ) adaptor.addChild(root_0, pragma531.getTree());
+            	    if ( backtracking==0 ) adaptor.addChild(root_0, pragma533.getTree());
 
             	    }
             	    break;
@@ -28631,32 +28766,32 @@ public class XQFTParser extends Parser {
                 cnt128++;
             } while (true);
 
-            LBRACESi532=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_extensionExpr6897); if (failed) return retval;
-            // etc/XQFT.g:662:39: ( expr )?
+            LBRACESi534=(Token)input.LT(1);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_extensionExpr6935); if (failed) return retval;
+            // etc/XQFT.g:663:39: ( expr )?
             int alt129=2;
             int LA129_0 = input.LA(1);
 
-            if ( ((LA129_0>=XQUERY && LA129_0<=ENCODING)||(LA129_0>=MODULE && LA129_0<=NAMESPACE)||(LA129_0>=DECLARE && LA129_0<=DOLLARSi)||(LA129_0>=EXTERNAL && LA129_0<=LPARSi)||(LA129_0>=OPTION && LA129_0<=DOCUMENT_NODE)||(LA129_0>=STARSi && LA129_0<=UNION)||(LA129_0>=INTERSECT && LA129_0<=GE)||LA129_0==LTSi||LA129_0==IS||(LA129_0>=WEIGHT && LA129_0<=LPRAGSi)||(LA129_0>=WINDOW && LA129_0<=ANCESTOR_OR_SELF)||(LA129_0>=DOTDOTSi && LA129_0<=ATSi)||LA129_0==DOTSi||LA129_0==LCOMMENTSi||LA129_0==LPISi||(LA129_0>=DOCUMENT && LA129_0<=NCName)) ) {
+            if ( ((LA129_0>=XQUERY && LA129_0<=ENCODING)||(LA129_0>=MODULE && LA129_0<=NAMESPACE)||(LA129_0>=DECLARE && LA129_0<=DOLLARSi)||(LA129_0>=EXTERNAL && LA129_0<=LPARSi)||(LA129_0>=OPTION && LA129_0<=DOCUMENT_NODE)||(LA129_0>=STARSi && LA129_0<=UNION)||(LA129_0>=INTERSECT && LA129_0<=GE)||LA129_0==LTSi||LA129_0==IS||(LA129_0>=WEIGHT && LA129_0<=LPRAGSi)||(LA129_0>=WINDOW && LA129_0<=ANCESTOR_OR_SELF)||(LA129_0>=DOTDOTSi && LA129_0<=ATSi)||LA129_0==LCOMMENTSi||LA129_0==LPISi||(LA129_0>=DOCUMENT && LA129_0<=NCName)) ) {
                 alt129=1;
             }
             switch (alt129) {
                 case 1 :
-                    // etc/XQFT.g:662:39: expr
+                    // etc/XQFT.g:663:39: expr
                     {
-                    pushFollow(FOLLOW_expr_in_extensionExpr6900);
-                    expr533=expr();
+                    pushFollow(FOLLOW_expr_in_extensionExpr6938);
+                    expr535=expr();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, expr533.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, expr535.getTree());
 
                     }
                     break;
 
             }
 
-            RBRACSi534=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_extensionExpr6903); if (failed) return retval;
+            RBRACSi536=(Token)input.LT(1);
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_extensionExpr6941); if (failed) return retval;
 
             }
 
@@ -28683,35 +28818,35 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start filterExpr
-    // etc/XQFT.g:666:1: filterExpr : primaryExpr predicateList ;
+    // etc/XQFT.g:667:1: filterExpr : primaryExpr predicateList ;
     public final filterExpr_return filterExpr() throws RecognitionException {
         filterExpr_return retval = new filterExpr_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        primaryExpr_return primaryExpr535 = null;
+        primaryExpr_return primaryExpr537 = null;
 
-        predicateList_return predicateList536 = null;
+        predicateList_return predicateList538 = null;
 
 
 
         try {
-            // etc/XQFT.g:666:12: ( primaryExpr predicateList )
-            // etc/XQFT.g:666:14: primaryExpr predicateList
+            // etc/XQFT.g:667:12: ( primaryExpr predicateList )
+            // etc/XQFT.g:667:14: primaryExpr predicateList
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_primaryExpr_in_filterExpr6915);
-            primaryExpr535=primaryExpr();
+            pushFollow(FOLLOW_primaryExpr_in_filterExpr6953);
+            primaryExpr537=primaryExpr();
             _fsp--;
             if (failed) return retval;
-            if ( backtracking==0 ) adaptor.addChild(root_0, primaryExpr535.getTree());
-            pushFollow(FOLLOW_predicateList_in_filterExpr6917);
-            predicateList536=predicateList();
+            if ( backtracking==0 ) adaptor.addChild(root_0, primaryExpr537.getTree());
+            pushFollow(FOLLOW_predicateList_in_filterExpr6955);
+            predicateList538=predicateList();
             _fsp--;
             if (failed) return retval;
-            if ( backtracking==0 ) adaptor.addChild(root_0, predicateList536.getTree());
+            if ( backtracking==0 ) adaptor.addChild(root_0, predicateList538.getTree());
 
             }
 
@@ -28738,34 +28873,32 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start primaryExpr
-    // etc/XQFT.g:667:5: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor );
+    // etc/XQFT.g:668:5: primaryExpr : ( literal | varRef | parenthesizedExpr | functionCall | orderedExpr | unorderedExpr | constructor );
     public final primaryExpr_return primaryExpr() throws RecognitionException {
         primaryExpr_return retval = new primaryExpr_return();
         retval.start = input.LT(1);
 
         XQFTTree root_0 = null;
 
-        literal_return literal537 = null;
+        literal_return literal539 = null;
 
-        varRef_return varRef538 = null;
+        varRef_return varRef540 = null;
 
-        parenthesizedExpr_return parenthesizedExpr539 = null;
+        parenthesizedExpr_return parenthesizedExpr541 = null;
 
-        contextItemExpr_return contextItemExpr540 = null;
+        functionCall_return functionCall542 = null;
 
-        functionCall_return functionCall541 = null;
+        orderedExpr_return orderedExpr543 = null;
 
-        orderedExpr_return orderedExpr542 = null;
+        unorderedExpr_return unorderedExpr544 = null;
 
-        unorderedExpr_return unorderedExpr543 = null;
-
-        constructor_return constructor544 = null;
+        constructor_return constructor545 = null;
 
 
 
         try {
-            // etc/XQFT.g:667:17: ( literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor )
-            int alt130=8;
+            // etc/XQFT.g:668:17: ( literal | varRef | parenthesizedExpr | functionCall | orderedExpr | unorderedExpr | constructor )
+            int alt130=7;
             switch ( input.LA(1) ) {
             case StringLiteral:
             case IntegerLiteral:
@@ -28783,11 +28916,6 @@ public class XQFTParser extends Parser {
             case LPARSi:
                 {
                 alt130=3;
-                }
-                break;
-            case DOTSi:
-                {
-                alt130=4;
                 }
                 break;
             case XQUERY:
@@ -28925,23 +29053,23 @@ public class XQFTParser extends Parser {
             case FOLLOWING:
             case NCName:
                 {
-                alt130=5;
+                alt130=4;
                 }
                 break;
             case ATTRIBUTE:
                 {
-                int LA130_16 = input.LA(2);
+                int LA130_15 = input.LA(2);
 
-                if ( (LA130_16==LPARSi) ) {
-                    alt130=5;
+                if ( (LA130_15==LPARSi) ) {
+                    alt130=4;
                 }
-                else if ( ((LA130_16>=XQUERY && LA130_16<=VERSION)||LA130_16==ENCODING||(LA130_16>=MODULE && LA130_16<=NAMESPACE)||(LA130_16>=DECLARE && LA130_16<=VARIABLE)||(LA130_16>=EXTERNAL && LA130_16<=AS)||LA130_16==LBRACESi||(LA130_16>=OPTION && LA130_16<=DOCUMENT_NODE)||(LA130_16>=SCHEMA_ELEMENT && LA130_16<=NODE)||(LA130_16>=RETURN && LA130_16<=TO)||(LA130_16>=DIV && LA130_16<=UNION)||(LA130_16>=INTERSECT && LA130_16<=GE)||LA130_16==IS||(LA130_16>=WEIGHT && LA130_16<=FTNOT)||(LA130_16>=ANY && LA130_16<=FROM)||(LA130_16>=WINDOW && LA130_16<=STRICT)||(LA130_16>=PARENT && LA130_16<=ANCESTOR_OR_SELF)||(LA130_16>=CHILD && LA130_16<=FOLLOWING)||(LA130_16>=DOCUMENT && LA130_16<=NCName)) ) {
-                    alt130=8;
+                else if ( ((LA130_15>=XQUERY && LA130_15<=VERSION)||LA130_15==ENCODING||(LA130_15>=MODULE && LA130_15<=NAMESPACE)||(LA130_15>=DECLARE && LA130_15<=VARIABLE)||(LA130_15>=EXTERNAL && LA130_15<=AS)||LA130_15==LBRACESi||(LA130_15>=OPTION && LA130_15<=DOCUMENT_NODE)||(LA130_15>=SCHEMA_ELEMENT && LA130_15<=NODE)||(LA130_15>=RETURN && LA130_15<=TO)||(LA130_15>=DIV && LA130_15<=UNION)||(LA130_15>=INTERSECT && LA130_15<=GE)||LA130_15==IS||(LA130_15>=WEIGHT && LA130_15<=FTNOT)||(LA130_15>=ANY && LA130_15<=FROM)||(LA130_15>=WINDOW && LA130_15<=STRICT)||(LA130_15>=PARENT && LA130_15<=ANCESTOR_OR_SELF)||(LA130_15>=CHILD && LA130_15<=FOLLOWING)||(LA130_15>=DOCUMENT && LA130_15<=NCName)) ) {
+                    alt130=7;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("667:5: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 16, input);
+                        new NoViableAltException("668:5: primaryExpr : ( literal | varRef | parenthesizedExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 15, input);
 
                     throw nvae;
                 }
@@ -28949,18 +29077,18 @@ public class XQFTParser extends Parser {
                 break;
             case COMMENT:
                 {
-                int LA130_25 = input.LA(2);
+                int LA130_24 = input.LA(2);
 
-                if ( (LA130_25==LBRACESi) ) {
-                    alt130=8;
+                if ( (LA130_24==LBRACESi) ) {
+                    alt130=7;
                 }
-                else if ( (LA130_25==LPARSi) ) {
-                    alt130=5;
+                else if ( (LA130_24==LPARSi) ) {
+                    alt130=4;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("667:5: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 25, input);
+                        new NoViableAltException("668:5: primaryExpr : ( literal | varRef | parenthesizedExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 24, input);
 
                     throw nvae;
                 }
@@ -28968,18 +29096,18 @@ public class XQFTParser extends Parser {
                 break;
             case DOCUMENT:
                 {
-                int LA130_38 = input.LA(2);
+                int LA130_37 = input.LA(2);
 
-                if ( (LA130_38==LBRACESi) ) {
-                    alt130=8;
+                if ( (LA130_37==LBRACESi) ) {
+                    alt130=7;
                 }
-                else if ( (LA130_38==LPARSi) ) {
-                    alt130=5;
+                else if ( (LA130_37==LPARSi) ) {
+                    alt130=4;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("667:5: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 38, input);
+                        new NoViableAltException("668:5: primaryExpr : ( literal | varRef | parenthesizedExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 37, input);
 
                     throw nvae;
                 }
@@ -28987,18 +29115,18 @@ public class XQFTParser extends Parser {
                 break;
             case ELEMENT:
                 {
-                int LA130_40 = input.LA(2);
+                int LA130_39 = input.LA(2);
 
-                if ( ((LA130_40>=XQUERY && LA130_40<=VERSION)||LA130_40==ENCODING||(LA130_40>=MODULE && LA130_40<=NAMESPACE)||(LA130_40>=DECLARE && LA130_40<=VARIABLE)||(LA130_40>=EXTERNAL && LA130_40<=AS)||LA130_40==LBRACESi||(LA130_40>=OPTION && LA130_40<=DOCUMENT_NODE)||(LA130_40>=SCHEMA_ELEMENT && LA130_40<=NODE)||(LA130_40>=RETURN && LA130_40<=TO)||(LA130_40>=DIV && LA130_40<=UNION)||(LA130_40>=INTERSECT && LA130_40<=GE)||LA130_40==IS||(LA130_40>=WEIGHT && LA130_40<=FTNOT)||(LA130_40>=ANY && LA130_40<=FROM)||(LA130_40>=WINDOW && LA130_40<=STRICT)||(LA130_40>=PARENT && LA130_40<=ANCESTOR_OR_SELF)||(LA130_40>=CHILD && LA130_40<=FOLLOWING)||(LA130_40>=DOCUMENT && LA130_40<=NCName)) ) {
-                    alt130=8;
+                if ( ((LA130_39>=XQUERY && LA130_39<=VERSION)||LA130_39==ENCODING||(LA130_39>=MODULE && LA130_39<=NAMESPACE)||(LA130_39>=DECLARE && LA130_39<=VARIABLE)||(LA130_39>=EXTERNAL && LA130_39<=AS)||LA130_39==LBRACESi||(LA130_39>=OPTION && LA130_39<=DOCUMENT_NODE)||(LA130_39>=SCHEMA_ELEMENT && LA130_39<=NODE)||(LA130_39>=RETURN && LA130_39<=TO)||(LA130_39>=DIV && LA130_39<=UNION)||(LA130_39>=INTERSECT && LA130_39<=GE)||LA130_39==IS||(LA130_39>=WEIGHT && LA130_39<=FTNOT)||(LA130_39>=ANY && LA130_39<=FROM)||(LA130_39>=WINDOW && LA130_39<=STRICT)||(LA130_39>=PARENT && LA130_39<=ANCESTOR_OR_SELF)||(LA130_39>=CHILD && LA130_39<=FOLLOWING)||(LA130_39>=DOCUMENT && LA130_39<=NCName)) ) {
+                    alt130=7;
                 }
-                else if ( (LA130_40==LPARSi) ) {
-                    alt130=5;
+                else if ( (LA130_39==LPARSi) ) {
+                    alt130=4;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("667:5: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 40, input);
+                        new NoViableAltException("668:5: primaryExpr : ( literal | varRef | parenthesizedExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 39, input);
 
                     throw nvae;
                 }
@@ -29006,18 +29134,18 @@ public class XQFTParser extends Parser {
                 break;
             case ORDERED:
                 {
-                int LA130_97 = input.LA(2);
+                int LA130_96 = input.LA(2);
 
-                if ( (LA130_97==LBRACESi) ) {
-                    alt130=6;
-                }
-                else if ( (LA130_97==LPARSi) ) {
+                if ( (LA130_96==LBRACESi) ) {
                     alt130=5;
+                }
+                else if ( (LA130_96==LPARSi) ) {
+                    alt130=4;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("667:5: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 97, input);
+                        new NoViableAltException("668:5: primaryExpr : ( literal | varRef | parenthesizedExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 96, input);
 
                     throw nvae;
                 }
@@ -29025,18 +29153,18 @@ public class XQFTParser extends Parser {
                 break;
             case PROCESSING_INSTRUCTION:
                 {
-                int LA130_106 = input.LA(2);
+                int LA130_105 = input.LA(2);
 
-                if ( ((LA130_106>=XQUERY && LA130_106<=VERSION)||LA130_106==ENCODING||(LA130_106>=MODULE && LA130_106<=NAMESPACE)||(LA130_106>=DECLARE && LA130_106<=VARIABLE)||LA130_106==EXTERNAL||LA130_106==AS||LA130_106==LBRACESi||(LA130_106>=OPTION && LA130_106<=DOCUMENT_NODE)||(LA130_106>=SCHEMA_ELEMENT && LA130_106<=NODE)||(LA130_106>=RETURN && LA130_106<=TO)||(LA130_106>=DIV && LA130_106<=UNION)||(LA130_106>=INTERSECT && LA130_106<=GE)||LA130_106==IS||(LA130_106>=WEIGHT && LA130_106<=FTNOT)||(LA130_106>=ANY && LA130_106<=FROM)||(LA130_106>=WINDOW && LA130_106<=STRICT)||(LA130_106>=PARENT && LA130_106<=ANCESTOR_OR_SELF)||(LA130_106>=CHILD && LA130_106<=FOLLOWING)||(LA130_106>=DOCUMENT && LA130_106<=NCName)) ) {
-                    alt130=8;
+                if ( (LA130_105==LPARSi) ) {
+                    alt130=4;
                 }
-                else if ( (LA130_106==LPARSi) ) {
-                    alt130=5;
+                else if ( ((LA130_105>=XQUERY && LA130_105<=VERSION)||LA130_105==ENCODING||(LA130_105>=MODULE && LA130_105<=NAMESPACE)||(LA130_105>=DECLARE && LA130_105<=VARIABLE)||LA130_105==EXTERNAL||LA130_105==AS||LA130_105==LBRACESi||(LA130_105>=OPTION && LA130_105<=DOCUMENT_NODE)||(LA130_105>=SCHEMA_ELEMENT && LA130_105<=NODE)||(LA130_105>=RETURN && LA130_105<=TO)||(LA130_105>=DIV && LA130_105<=UNION)||(LA130_105>=INTERSECT && LA130_105<=GE)||LA130_105==IS||(LA130_105>=WEIGHT && LA130_105<=FTNOT)||(LA130_105>=ANY && LA130_105<=FROM)||(LA130_105>=WINDOW && LA130_105<=STRICT)||(LA130_105>=PARENT && LA130_105<=ANCESTOR_OR_SELF)||(LA130_105>=CHILD && LA130_105<=FOLLOWING)||(LA130_105>=DOCUMENT && LA130_105<=NCName)) ) {
+                    alt130=7;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("667:5: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 106, input);
+                        new NoViableAltException("668:5: primaryExpr : ( literal | varRef | parenthesizedExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 105, input);
 
                     throw nvae;
                 }
@@ -29044,18 +29172,18 @@ public class XQFTParser extends Parser {
                 break;
             case TEXT:
                 {
-                int LA130_126 = input.LA(2);
+                int LA130_125 = input.LA(2);
 
-                if ( (LA130_126==LBRACESi) ) {
-                    alt130=8;
+                if ( (LA130_125==LBRACESi) ) {
+                    alt130=7;
                 }
-                else if ( (LA130_126==LPARSi) ) {
-                    alt130=5;
+                else if ( (LA130_125==LPARSi) ) {
+                    alt130=4;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("667:5: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 126, input);
+                        new NoViableAltException("668:5: primaryExpr : ( literal | varRef | parenthesizedExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 125, input);
 
                     throw nvae;
                 }
@@ -29063,18 +29191,18 @@ public class XQFTParser extends Parser {
                 break;
             case UNORDERED:
                 {
-                int LA130_134 = input.LA(2);
+                int LA130_133 = input.LA(2);
 
-                if ( (LA130_134==LBRACESi) ) {
-                    alt130=7;
+                if ( (LA130_133==LBRACESi) ) {
+                    alt130=6;
                 }
-                else if ( (LA130_134==LPARSi) ) {
-                    alt130=5;
+                else if ( (LA130_133==LPARSi) ) {
+                    alt130=4;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("667:5: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 134, input);
+                        new NoViableAltException("668:5: primaryExpr : ( literal | varRef | parenthesizedExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 133, input);
 
                     throw nvae;
                 }
@@ -29084,119 +29212,106 @@ public class XQFTParser extends Parser {
             case LCOMMENTSi:
             case LPISi:
                 {
-                alt130=8;
+                alt130=7;
                 }
                 break;
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("667:5: primaryExpr : ( literal | varRef | parenthesizedExpr | contextItemExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 0, input);
+                    new NoViableAltException("668:5: primaryExpr : ( literal | varRef | parenthesizedExpr | functionCall | orderedExpr | unorderedExpr | constructor );", 130, 0, input);
 
                 throw nvae;
             }
 
             switch (alt130) {
                 case 1 :
-                    // etc/XQFT.g:668:9: literal
+                    // etc/XQFT.g:669:9: literal
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_literal_in_primaryExpr6937);
-                    literal537=literal();
+                    pushFollow(FOLLOW_literal_in_primaryExpr6975);
+                    literal539=literal();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, literal537.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, literal539.getTree());
 
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:669:11: varRef
+                    // etc/XQFT.g:670:11: varRef
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_varRef_in_primaryExpr6950);
-                    varRef538=varRef();
+                    pushFollow(FOLLOW_varRef_in_primaryExpr6988);
+                    varRef540=varRef();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, varRef538.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, varRef540.getTree());
 
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:670:11: parenthesizedExpr
+                    // etc/XQFT.g:671:11: parenthesizedExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_parenthesizedExpr_in_primaryExpr6963);
-                    parenthesizedExpr539=parenthesizedExpr();
+                    pushFollow(FOLLOW_parenthesizedExpr_in_primaryExpr7001);
+                    parenthesizedExpr541=parenthesizedExpr();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, parenthesizedExpr539.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, parenthesizedExpr541.getTree());
 
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:671:11: contextItemExpr
-                    {
-                    root_0 = (XQFTTree)adaptor.nil();
-
-                    pushFollow(FOLLOW_contextItemExpr_in_primaryExpr6976);
-                    contextItemExpr540=contextItemExpr();
-                    _fsp--;
-                    if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, contextItemExpr540.getTree());
-
-                    }
-                    break;
-                case 5 :
                     // etc/XQFT.g:672:11: functionCall
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_functionCall_in_primaryExpr6989);
-                    functionCall541=functionCall();
+                    pushFollow(FOLLOW_functionCall_in_primaryExpr7014);
+                    functionCall542=functionCall();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, functionCall541.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, functionCall542.getTree());
 
                     }
                     break;
-                case 6 :
+                case 5 :
                     // etc/XQFT.g:673:11: orderedExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_orderedExpr_in_primaryExpr7002);
-                    orderedExpr542=orderedExpr();
+                    pushFollow(FOLLOW_orderedExpr_in_primaryExpr7027);
+                    orderedExpr543=orderedExpr();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, orderedExpr542.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, orderedExpr543.getTree());
 
                     }
                     break;
-                case 7 :
+                case 6 :
                     // etc/XQFT.g:674:11: unorderedExpr
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_unorderedExpr_in_primaryExpr7015);
-                    unorderedExpr543=unorderedExpr();
+                    pushFollow(FOLLOW_unorderedExpr_in_primaryExpr7040);
+                    unorderedExpr544=unorderedExpr();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, unorderedExpr543.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, unorderedExpr544.getTree());
 
                     }
                     break;
-                case 8 :
+                case 7 :
                     // etc/XQFT.g:675:11: constructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_constructor_in_primaryExpr7028);
-                    constructor544=constructor();
+                    pushFollow(FOLLOW_constructor_in_primaryExpr7053);
+                    constructor545=constructor();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, constructor544.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, constructor545.getTree());
 
                     }
                     break;
@@ -29232,11 +29347,11 @@ public class XQFTParser extends Parser {
 
         XQFTTree root_0 = null;
 
-        Token DOLLARSi545=null;
-        varName_return varName546 = null;
+        Token DOLLARSi546=null;
+        varName_return varName547 = null;
 
 
-        XQFTTree DOLLARSi545_tree=null;
+        XQFTTree DOLLARSi546_tree=null;
 
         try {
             // etc/XQFT.g:677:16: ( DOLLARSi varName )
@@ -29244,13 +29359,13 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            DOLLARSi545=(Token)input.LT(1);
-            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_varRef7048); if (failed) return retval;
-            pushFollow(FOLLOW_varName_in_varRef7051);
-            varName546=varName();
+            DOLLARSi546=(Token)input.LT(1);
+            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_varRef7073); if (failed) return retval;
+            pushFollow(FOLLOW_varName_in_varRef7076);
+            varName547=varName();
             _fsp--;
             if (failed) return retval;
-            if ( backtracking==0 ) adaptor.addChild(root_0, varName546.getTree());
+            if ( backtracking==0 ) adaptor.addChild(root_0, varName547.getTree());
 
             }
 
@@ -29284,13 +29399,13 @@ public class XQFTParser extends Parser {
 
         XQFTTree root_0 = null;
 
-        Token LPARSi547=null;
-        Token RPARSi549=null;
-        expr_return expr548 = null;
+        Token LPARSi548=null;
+        Token RPARSi550=null;
+        expr_return expr549 = null;
 
 
-        XQFTTree LPARSi547_tree=null;
-        XQFTTree RPARSi549_tree=null;
+        XQFTTree LPARSi548_tree=null;
+        XQFTTree RPARSi550_tree=null;
 
         try {
             // etc/XQFT.g:678:27: ( LPARSi ( expr )? RPARSi )
@@ -29298,32 +29413,32 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            LPARSi547=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_parenthesizedExpr7066); if (failed) return retval;
+            LPARSi548=(Token)input.LT(1);
+            match(input,LPARSi,FOLLOW_LPARSi_in_parenthesizedExpr7091); if (failed) return retval;
             // etc/XQFT.g:678:37: ( expr )?
             int alt131=2;
             int LA131_0 = input.LA(1);
 
-            if ( ((LA131_0>=XQUERY && LA131_0<=ENCODING)||(LA131_0>=MODULE && LA131_0<=NAMESPACE)||(LA131_0>=DECLARE && LA131_0<=DOLLARSi)||(LA131_0>=EXTERNAL && LA131_0<=LPARSi)||(LA131_0>=OPTION && LA131_0<=DOCUMENT_NODE)||(LA131_0>=STARSi && LA131_0<=UNION)||(LA131_0>=INTERSECT && LA131_0<=GE)||LA131_0==LTSi||LA131_0==IS||(LA131_0>=WEIGHT && LA131_0<=LPRAGSi)||(LA131_0>=WINDOW && LA131_0<=ANCESTOR_OR_SELF)||(LA131_0>=DOTDOTSi && LA131_0<=ATSi)||LA131_0==DOTSi||LA131_0==LCOMMENTSi||LA131_0==LPISi||(LA131_0>=DOCUMENT && LA131_0<=NCName)) ) {
+            if ( ((LA131_0>=XQUERY && LA131_0<=ENCODING)||(LA131_0>=MODULE && LA131_0<=NAMESPACE)||(LA131_0>=DECLARE && LA131_0<=DOLLARSi)||(LA131_0>=EXTERNAL && LA131_0<=LPARSi)||(LA131_0>=OPTION && LA131_0<=DOCUMENT_NODE)||(LA131_0>=STARSi && LA131_0<=UNION)||(LA131_0>=INTERSECT && LA131_0<=GE)||LA131_0==LTSi||LA131_0==IS||(LA131_0>=WEIGHT && LA131_0<=LPRAGSi)||(LA131_0>=WINDOW && LA131_0<=ANCESTOR_OR_SELF)||(LA131_0>=DOTDOTSi && LA131_0<=ATSi)||LA131_0==LCOMMENTSi||LA131_0==LPISi||(LA131_0>=DOCUMENT && LA131_0<=NCName)) ) {
                 alt131=1;
             }
             switch (alt131) {
                 case 1 :
                     // etc/XQFT.g:678:37: expr
                     {
-                    pushFollow(FOLLOW_expr_in_parenthesizedExpr7069);
-                    expr548=expr();
+                    pushFollow(FOLLOW_expr_in_parenthesizedExpr7094);
+                    expr549=expr();
                     _fsp--;
                     if (failed) return retval;
-                    if ( backtracking==0 ) adaptor.addChild(root_0, expr548.getTree());
+                    if ( backtracking==0 ) adaptor.addChild(root_0, expr549.getTree());
 
                     }
                     break;
 
             }
 
-            RPARSi549=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_parenthesizedExpr7072); if (failed) return retval;
+            RPARSi550=(Token)input.LT(1);
+            match(input,RPARSi,FOLLOW_RPARSi_in_parenthesizedExpr7097); if (failed) return retval;
 
             }
 
@@ -29344,62 +29459,13 @@ public class XQFTParser extends Parser {
     }
     // $ANTLR end parenthesizedExpr
 
-    public static class contextItemExpr_return extends ParserRuleReturnScope {
-        XQFTTree tree;
-        public Object getTree() { return tree; }
-    };
-
-    // $ANTLR start contextItemExpr
-    // etc/XQFT.g:679:9: contextItemExpr : DOTSi ;
-    public final contextItemExpr_return contextItemExpr() throws RecognitionException {
-        contextItemExpr_return retval = new contextItemExpr_return();
-        retval.start = input.LT(1);
-
-        XQFTTree root_0 = null;
-
-        Token DOTSi550=null;
-
-        XQFTTree DOTSi550_tree=null;
-
-        try {
-            // etc/XQFT.g:679:25: ( DOTSi )
-            // etc/XQFT.g:679:27: DOTSi
-            {
-            root_0 = (XQFTTree)adaptor.nil();
-
-            DOTSi550=(Token)input.LT(1);
-            match(input,DOTSi,FOLLOW_DOTSi_in_contextItemExpr7088); if (failed) return retval;
-            if ( backtracking==0 ) {
-            DOTSi550_tree = (XQFTTree)adaptor.create(DOTSi550);
-            adaptor.addChild(root_0, DOTSi550_tree);
-            }
-
-            }
-
-            retval.stop = input.LT(-1);
-
-            if ( backtracking==0 ) {
-                retval.tree = (XQFTTree)adaptor.rulePostProcessing(root_0);
-                adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
-            }
-        }
-
-            catch (RecognitionException e) {
-                throw e;
-            }
-        finally {
-        }
-        return retval;
-    }
-    // $ANTLR end contextItemExpr
-
     public static class functionCall_return extends ParserRuleReturnScope {
         XQFTTree tree;
         public Object getTree() { return tree; }
     };
 
     // $ANTLR start functionCall
-    // etc/XQFT.g:680:9: functionCall : qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) ;
+    // etc/XQFT.g:679:9: functionCall : qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) ;
     public final functionCall_return functionCall() throws RecognitionException {
         functionCall_return retval = new functionCall_return();
         retval.start = input.LT(1);
@@ -29425,35 +29491,35 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_qName=new RewriteRuleSubtreeStream(adaptor,"rule qName");
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         try {
-            // etc/XQFT.g:680:22: ( qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) )
-            // etc/XQFT.g:681:13: qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi
+            // etc/XQFT.g:679:22: ( qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) )
+            // etc/XQFT.g:680:13: qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi
             {
-            pushFollow(FOLLOW_qName_in_functionCall7116);
+            pushFollow(FOLLOW_qName_in_functionCall7126);
             qName551=qName();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_qName.add(qName551.getTree());
             LPARSi552=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_functionCall7118); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_functionCall7128); if (failed) return retval;
             if ( backtracking==0 ) stream_LPARSi.add(LPARSi552);
 
-            // etc/XQFT.g:682:13: ( exprSingle ( COMMASi exprSingle )* )?
+            // etc/XQFT.g:681:13: ( exprSingle ( COMMASi exprSingle )* )?
             int alt133=2;
             int LA133_0 = input.LA(1);
 
-            if ( ((LA133_0>=XQUERY && LA133_0<=ENCODING)||(LA133_0>=MODULE && LA133_0<=NAMESPACE)||(LA133_0>=DECLARE && LA133_0<=DOLLARSi)||(LA133_0>=EXTERNAL && LA133_0<=LPARSi)||(LA133_0>=OPTION && LA133_0<=DOCUMENT_NODE)||(LA133_0>=STARSi && LA133_0<=UNION)||(LA133_0>=INTERSECT && LA133_0<=GE)||LA133_0==LTSi||LA133_0==IS||(LA133_0>=WEIGHT && LA133_0<=LPRAGSi)||(LA133_0>=WINDOW && LA133_0<=ANCESTOR_OR_SELF)||(LA133_0>=DOTDOTSi && LA133_0<=ATSi)||LA133_0==DOTSi||LA133_0==LCOMMENTSi||LA133_0==LPISi||(LA133_0>=DOCUMENT && LA133_0<=NCName)) ) {
+            if ( ((LA133_0>=XQUERY && LA133_0<=ENCODING)||(LA133_0>=MODULE && LA133_0<=NAMESPACE)||(LA133_0>=DECLARE && LA133_0<=DOLLARSi)||(LA133_0>=EXTERNAL && LA133_0<=LPARSi)||(LA133_0>=OPTION && LA133_0<=DOCUMENT_NODE)||(LA133_0>=STARSi && LA133_0<=UNION)||(LA133_0>=INTERSECT && LA133_0<=GE)||LA133_0==LTSi||LA133_0==IS||(LA133_0>=WEIGHT && LA133_0<=LPRAGSi)||(LA133_0>=WINDOW && LA133_0<=ANCESTOR_OR_SELF)||(LA133_0>=DOTDOTSi && LA133_0<=ATSi)||LA133_0==LCOMMENTSi||LA133_0==LPISi||(LA133_0>=DOCUMENT && LA133_0<=NCName)) ) {
                 alt133=1;
             }
             switch (alt133) {
                 case 1 :
-                    // etc/XQFT.g:682:14: exprSingle ( COMMASi exprSingle )*
+                    // etc/XQFT.g:681:14: exprSingle ( COMMASi exprSingle )*
                     {
-                    pushFollow(FOLLOW_exprSingle_in_functionCall7135);
+                    pushFollow(FOLLOW_exprSingle_in_functionCall7145);
                     exprSingle553=exprSingle();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) stream_exprSingle.add(exprSingle553.getTree());
-                    // etc/XQFT.g:682:25: ( COMMASi exprSingle )*
+                    // etc/XQFT.g:681:25: ( COMMASi exprSingle )*
                     loop132:
                     do {
                         int alt132=2;
@@ -29466,13 +29532,13 @@ public class XQFTParser extends Parser {
 
                         switch (alt132) {
                     	case 1 :
-                    	    // etc/XQFT.g:682:26: COMMASi exprSingle
+                    	    // etc/XQFT.g:681:26: COMMASi exprSingle
                     	    {
                     	    COMMASi554=(Token)input.LT(1);
-                    	    match(input,COMMASi,FOLLOW_COMMASi_in_functionCall7138); if (failed) return retval;
+                    	    match(input,COMMASi,FOLLOW_COMMASi_in_functionCall7148); if (failed) return retval;
                     	    if ( backtracking==0 ) stream_COMMASi.add(COMMASi554);
 
-                    	    pushFollow(FOLLOW_exprSingle_in_functionCall7140);
+                    	    pushFollow(FOLLOW_exprSingle_in_functionCall7150);
                     	    exprSingle555=exprSingle();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -29493,12 +29559,12 @@ public class XQFTParser extends Parser {
             }
 
             RPARSi556=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_functionCall7159); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_functionCall7169); if (failed) return retval;
             if ( backtracking==0 ) stream_RPARSi.add(RPARSi556);
 
 
             // AST REWRITE
-            // elements: exprSingle, qName
+            // elements: qName, exprSingle
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29508,15 +29574,15 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 684:17: -> ^( AST_FUNCTIONCALL qName ( exprSingle )* )
+            // 683:17: -> ^( AST_FUNCTIONCALL qName ( exprSingle )* )
             {
-                // etc/XQFT.g:684:20: ^( AST_FUNCTIONCALL qName ( exprSingle )* )
+                // etc/XQFT.g:683:20: ^( AST_FUNCTIONCALL qName ( exprSingle )* )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_FUNCTIONCALL, "AST_FUNCTIONCALL"), root_1);
 
                 adaptor.addChild(root_1, stream_qName.next());
-                // etc/XQFT.g:684:45: ( exprSingle )*
+                // etc/XQFT.g:683:45: ( exprSingle )*
                 while ( stream_exprSingle.hasNext() ) {
                     adaptor.addChild(root_1, stream_exprSingle.next());
 
@@ -29555,7 +29621,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start orderedExpr
-    // etc/XQFT.g:686:9: orderedExpr : ORDERED LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:685:9: orderedExpr : ORDERED LBRACESi expr RBRACSi ;
     public final orderedExpr_return orderedExpr() throws RecognitionException {
         orderedExpr_return retval = new orderedExpr_return();
         retval.start = input.LT(1);
@@ -29573,26 +29639,26 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi560_tree=null;
 
         try {
-            // etc/XQFT.g:686:21: ( ORDERED LBRACESi expr RBRACSi )
-            // etc/XQFT.g:686:23: ORDERED LBRACESi expr RBRACSi
+            // etc/XQFT.g:685:21: ( ORDERED LBRACESi expr RBRACSi )
+            // etc/XQFT.g:685:23: ORDERED LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             ORDERED557=(Token)input.LT(1);
-            match(input,ORDERED,FOLLOW_ORDERED_in_orderedExpr7202); if (failed) return retval;
+            match(input,ORDERED,FOLLOW_ORDERED_in_orderedExpr7212); if (failed) return retval;
             if ( backtracking==0 ) {
             ORDERED557_tree = (XQFTTree)adaptor.create(ORDERED557);
             adaptor.addChild(root_0, ORDERED557_tree);
             }
             LBRACESi558=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_orderedExpr7204); if (failed) return retval;
-            pushFollow(FOLLOW_expr_in_orderedExpr7207);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_orderedExpr7214); if (failed) return retval;
+            pushFollow(FOLLOW_expr_in_orderedExpr7217);
             expr559=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr559.getTree());
             RBRACSi560=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_orderedExpr7209); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_orderedExpr7219); if (failed) return retval;
 
             }
 
@@ -29619,7 +29685,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start unorderedExpr
-    // etc/XQFT.g:687:9: unorderedExpr : UNORDERED LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:686:9: unorderedExpr : UNORDERED LBRACESi expr RBRACSi ;
     public final unorderedExpr_return unorderedExpr() throws RecognitionException {
         unorderedExpr_return retval = new unorderedExpr_return();
         retval.start = input.LT(1);
@@ -29637,26 +29703,26 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi564_tree=null;
 
         try {
-            // etc/XQFT.g:687:23: ( UNORDERED LBRACESi expr RBRACSi )
-            // etc/XQFT.g:687:25: UNORDERED LBRACESi expr RBRACSi
+            // etc/XQFT.g:686:23: ( UNORDERED LBRACESi expr RBRACSi )
+            // etc/XQFT.g:686:25: UNORDERED LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             UNORDERED561=(Token)input.LT(1);
-            match(input,UNORDERED,FOLLOW_UNORDERED_in_unorderedExpr7225); if (failed) return retval;
+            match(input,UNORDERED,FOLLOW_UNORDERED_in_unorderedExpr7235); if (failed) return retval;
             if ( backtracking==0 ) {
             UNORDERED561_tree = (XQFTTree)adaptor.create(UNORDERED561);
             adaptor.addChild(root_0, UNORDERED561_tree);
             }
             LBRACESi562=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_unorderedExpr7227); if (failed) return retval;
-            pushFollow(FOLLOW_expr_in_unorderedExpr7230);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_unorderedExpr7237); if (failed) return retval;
+            pushFollow(FOLLOW_expr_in_unorderedExpr7240);
             expr563=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr563.getTree());
             RBRACSi564=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_unorderedExpr7232); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_unorderedExpr7242); if (failed) return retval;
 
             }
 
@@ -29683,7 +29749,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start constructor
-    // etc/XQFT.g:688:9: constructor : ( directConstructor | computedConstructor );
+    // etc/XQFT.g:687:9: constructor : ( directConstructor | computedConstructor );
     public final constructor_return constructor() throws RecognitionException {
         constructor_return retval = new constructor_return();
         retval.start = input.LT(1);
@@ -29697,7 +29763,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:688:21: ( directConstructor | computedConstructor )
+            // etc/XQFT.g:687:21: ( directConstructor | computedConstructor )
             int alt134=2;
             int LA134_0 = input.LA(1);
 
@@ -29710,17 +29776,17 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("688:9: constructor : ( directConstructor | computedConstructor );", 134, 0, input);
+                    new NoViableAltException("687:9: constructor : ( directConstructor | computedConstructor );", 134, 0, input);
 
                 throw nvae;
             }
             switch (alt134) {
                 case 1 :
-                    // etc/XQFT.g:688:23: directConstructor
+                    // etc/XQFT.g:687:23: directConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_directConstructor_in_constructor7252);
+                    pushFollow(FOLLOW_directConstructor_in_constructor7262);
                     directConstructor565=directConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -29729,11 +29795,11 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:688:43: computedConstructor
+                    // etc/XQFT.g:687:43: computedConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_computedConstructor_in_constructor7256);
+                    pushFollow(FOLLOW_computedConstructor_in_constructor7266);
                     computedConstructor566=computedConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -29766,7 +29832,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start directConstructor
-    // etc/XQFT.g:689:13: directConstructor : ( dirElemConstructor | dirCommentConstructor | dirPIConstructor );
+    // etc/XQFT.g:688:13: directConstructor : ( dirElemConstructor | dirCommentConstructor | dirPIConstructor );
     public final directConstructor_return directConstructor() throws RecognitionException {
         directConstructor_return retval = new directConstructor_return();
         retval.start = input.LT(1);
@@ -29782,7 +29848,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:689:31: ( dirElemConstructor | dirCommentConstructor | dirPIConstructor )
+            // etc/XQFT.g:688:31: ( dirElemConstructor | dirCommentConstructor | dirPIConstructor )
             int alt135=3;
             switch ( input.LA(1) ) {
             case LTSi:
@@ -29803,18 +29869,18 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("689:13: directConstructor : ( dirElemConstructor | dirCommentConstructor | dirPIConstructor );", 135, 0, input);
+                    new NoViableAltException("688:13: directConstructor : ( dirElemConstructor | dirCommentConstructor | dirPIConstructor );", 135, 0, input);
 
                 throw nvae;
             }
 
             switch (alt135) {
                 case 1 :
-                    // etc/XQFT.g:690:17: dirElemConstructor
+                    // etc/XQFT.g:689:17: dirElemConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_dirElemConstructor_in_directConstructor7296);
+                    pushFollow(FOLLOW_dirElemConstructor_in_directConstructor7306);
                     dirElemConstructor567=dirElemConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -29823,11 +29889,11 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:691:19: dirCommentConstructor
+                    // etc/XQFT.g:690:19: dirCommentConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_dirCommentConstructor_in_directConstructor7316);
+                    pushFollow(FOLLOW_dirCommentConstructor_in_directConstructor7326);
                     dirCommentConstructor568=dirCommentConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -29836,11 +29902,11 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:692:19: dirPIConstructor
+                    // etc/XQFT.g:691:19: dirPIConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_dirPIConstructor_in_directConstructor7336);
+                    pushFollow(FOLLOW_dirPIConstructor_in_directConstructor7346);
                     dirPIConstructor569=dirPIConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -29873,7 +29939,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirElemConstructor
-    // etc/XQFT.g:695:17: dirElemConstructor : LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi ) -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* ) ;
+    // etc/XQFT.g:694:17: dirElemConstructor : LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi ) -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* ) ;
     public final dirElemConstructor_return dirElemConstructor() throws RecognitionException {
         dirElemConstructor_return retval = new dirElemConstructor_return();
         retval.start = input.LT(1);
@@ -29907,27 +29973,27 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_dirElemContent=new RewriteRuleSubtreeStream(adaptor,"rule dirElemContent");
         RewriteRuleSubtreeStream stream_dirAttributeList=new RewriteRuleSubtreeStream(adaptor,"rule dirAttributeList");
         try {
-            // etc/XQFT.g:695:36: ( LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi ) -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* ) )
-            // etc/XQFT.g:696:21: LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )
+            // etc/XQFT.g:694:36: ( LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi ) -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* ) )
+            // etc/XQFT.g:695:21: LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )
             {
             LTSi570=(Token)input.LT(1);
-            match(input,LTSi,FOLLOW_LTSi_in_dirElemConstructor7394); if (failed) return retval;
+            match(input,LTSi,FOLLOW_LTSi_in_dirElemConstructor7404); if (failed) return retval;
             if ( backtracking==0 ) stream_LTSi.add(LTSi570);
 
             if ( backtracking==0 ) {
               lexer.stack.pushState(lexer.state); lexer.state=State.IN_TAG;
             }
-            pushFollow(FOLLOW_qName_in_dirElemConstructor7420);
+            pushFollow(FOLLOW_qName_in_dirElemConstructor7430);
             qn=qName();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_qName.add(qn.getTree());
-            pushFollow(FOLLOW_dirAttributeList_in_dirElemConstructor7422);
+            pushFollow(FOLLOW_dirAttributeList_in_dirElemConstructor7432);
             dirAttributeList571=dirAttributeList();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_dirAttributeList.add(dirAttributeList571.getTree());
-            // etc/XQFT.g:698:21: ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )
+            // etc/XQFT.g:697:21: ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )
             int alt137=2;
             int LA137_0 = input.LA(1);
 
@@ -29940,16 +30006,16 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("698:21: ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )", 137, 0, input);
+                    new NoViableAltException("697:21: ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )", 137, 0, input);
 
                 throw nvae;
             }
             switch (alt137) {
                 case 1 :
-                    // etc/XQFT.g:698:22: RSELFTERMSi
+                    // etc/XQFT.g:697:22: RSELFTERMSi
                     {
                     RSELFTERMSi572=(Token)input.LT(1);
-                    match(input,RSELFTERMSi,FOLLOW_RSELFTERMSi_in_dirElemConstructor7445); if (failed) return retval;
+                    match(input,RSELFTERMSi,FOLLOW_RSELFTERMSi_in_dirElemConstructor7455); if (failed) return retval;
                     if ( backtracking==0 ) stream_RSELFTERMSi.add(RSELFTERMSi572);
 
                     if ( backtracking==0 ) {
@@ -29959,16 +30025,16 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:700:24: GTSi ( dirElemContent )* LENDTAGSi qName GTSi
+                    // etc/XQFT.g:699:24: GTSi ( dirElemContent )* LENDTAGSi qName GTSi
                     {
                     GTSi573=(Token)input.LT(1);
-                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor7496); if (failed) return retval;
+                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor7506); if (failed) return retval;
                     if ( backtracking==0 ) stream_GTSi.add(GTSi573);
 
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_ELEMENT;
                     }
-                    // etc/XQFT.g:703:25: ( dirElemContent )*
+                    // etc/XQFT.g:702:25: ( dirElemContent )*
                     loop136:
                     do {
                         int alt136=2;
@@ -29981,9 +30047,9 @@ public class XQFTParser extends Parser {
 
                         switch (alt136) {
                     	case 1 :
-                    	    // etc/XQFT.g:703:25: dirElemContent
+                    	    // etc/XQFT.g:702:25: dirElemContent
                     	    {
-                    	    pushFollow(FOLLOW_dirElemContent_in_dirElemConstructor7550);
+                    	    pushFollow(FOLLOW_dirElemContent_in_dirElemConstructor7560);
                     	    dirElemContent574=dirElemContent();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -29998,19 +30064,19 @@ public class XQFTParser extends Parser {
                     } while (true);
 
                     LENDTAGSi575=(Token)input.LT(1);
-                    match(input,LENDTAGSi,FOLLOW_LENDTAGSi_in_dirElemConstructor7578); if (failed) return retval;
+                    match(input,LENDTAGSi,FOLLOW_LENDTAGSi_in_dirElemConstructor7588); if (failed) return retval;
                     if ( backtracking==0 ) stream_LENDTAGSi.add(LENDTAGSi575);
 
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_TAG;
                     }
-                    pushFollow(FOLLOW_qName_in_dirElemConstructor7610);
+                    pushFollow(FOLLOW_qName_in_dirElemConstructor7620);
                     qName576=qName();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) stream_qName.add(qName576.getTree());
                     GTSi577=(Token)input.LT(1);
-                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor7641); if (failed) return retval;
+                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor7651); if (failed) return retval;
                     if ( backtracking==0 ) stream_GTSi.add(GTSi577);
 
                     if ( backtracking==0 ) {
@@ -30024,7 +30090,7 @@ public class XQFTParser extends Parser {
 
 
             // AST REWRITE
-            // elements: qn, dirAttributeList, dirElemContent
+            // elements: dirElemContent, qn, dirAttributeList
             // token labels: 
             // rule labels: qn, retval
             // token list labels: 
@@ -30035,16 +30101,16 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 708:25: -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* )
+            // 707:25: -> ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* )
             {
-                // etc/XQFT.g:708:28: ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* )
+                // etc/XQFT.g:707:28: ^( AST_DIRELEMCONSTRUCTOR $qn dirAttributeList ( dirElemContent )* )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_DIRELEMCONSTRUCTOR, "AST_DIRELEMCONSTRUCTOR"), root_1);
 
                 adaptor.addChild(root_1, stream_qn.next());
                 adaptor.addChild(root_1, stream_dirAttributeList.next());
-                // etc/XQFT.g:708:74: ( dirElemContent )*
+                // etc/XQFT.g:707:74: ( dirElemContent )*
                 while ( stream_dirElemContent.hasNext() ) {
                     adaptor.addChild(root_1, stream_dirElemContent.next());
 
@@ -30083,7 +30149,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirAttributeList
-    // etc/XQFT.g:710:21: dirAttributeList : ( qName EQSi dirAttributeValue )* ;
+    // etc/XQFT.g:709:21: dirAttributeList : ( qName EQSi dirAttributeValue )* ;
     public final dirAttributeList_return dirAttributeList() throws RecognitionException {
         dirAttributeList_return retval = new dirAttributeList_return();
         retval.start = input.LT(1);
@@ -30099,12 +30165,12 @@ public class XQFTParser extends Parser {
         XQFTTree EQSi579_tree=null;
 
         try {
-            // etc/XQFT.g:710:38: ( ( qName EQSi dirAttributeValue )* )
-            // etc/XQFT.g:710:40: ( qName EQSi dirAttributeValue )*
+            // etc/XQFT.g:709:38: ( ( qName EQSi dirAttributeValue )* )
+            // etc/XQFT.g:709:40: ( qName EQSi dirAttributeValue )*
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            // etc/XQFT.g:710:40: ( qName EQSi dirAttributeValue )*
+            // etc/XQFT.g:709:40: ( qName EQSi dirAttributeValue )*
             loop138:
             do {
                 int alt138=2;
@@ -30117,20 +30183,20 @@ public class XQFTParser extends Parser {
 
                 switch (alt138) {
             	case 1 :
-            	    // etc/XQFT.g:710:41: qName EQSi dirAttributeValue
+            	    // etc/XQFT.g:709:41: qName EQSi dirAttributeValue
             	    {
-            	    pushFollow(FOLLOW_qName_in_dirAttributeList7740);
+            	    pushFollow(FOLLOW_qName_in_dirAttributeList7750);
             	    qName578=qName();
             	    _fsp--;
             	    if (failed) return retval;
             	    if ( backtracking==0 ) adaptor.addChild(root_0, qName578.getTree());
             	    EQSi579=(Token)input.LT(1);
-            	    match(input,EQSi,FOLLOW_EQSi_in_dirAttributeList7742); if (failed) return retval;
+            	    match(input,EQSi,FOLLOW_EQSi_in_dirAttributeList7752); if (failed) return retval;
             	    if ( backtracking==0 ) {
             	    EQSi579_tree = (XQFTTree)adaptor.create(EQSi579);
             	    adaptor.addChild(root_0, EQSi579_tree);
             	    }
-            	    pushFollow(FOLLOW_dirAttributeValue_in_dirAttributeList7744);
+            	    pushFollow(FOLLOW_dirAttributeValue_in_dirAttributeList7754);
             	    dirAttributeValue580=dirAttributeValue();
             	    _fsp--;
             	    if (failed) return retval;
@@ -30170,7 +30236,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirAttributeValue
-    // etc/XQFT.g:711:25: dirAttributeValue : ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi );
+    // etc/XQFT.g:710:25: dirAttributeValue : ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi );
     public final dirAttributeValue_return dirAttributeValue() throws RecognitionException {
         dirAttributeValue_return retval = new dirAttributeValue_return();
         retval.start = input.LT(1);
@@ -30196,7 +30262,7 @@ public class XQFTParser extends Parser {
         XQFTTree APOSSi588_tree=null;
 
         try {
-            // etc/XQFT.g:711:43: ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi )
+            // etc/XQFT.g:710:43: ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi )
             int alt141=2;
             int LA141_0 = input.LA(1);
 
@@ -30209,22 +30275,22 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("711:25: dirAttributeValue : ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi );", 141, 0, input);
+                    new NoViableAltException("710:25: dirAttributeValue : ( QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi | APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi );", 141, 0, input);
 
                 throw nvae;
             }
             switch (alt141) {
                 case 1 :
-                    // etc/XQFT.g:712:29: QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi
+                    // etc/XQFT.g:711:29: QUOTSi ( QuotAttributeContent | xmlEnclosedExpr )* QUOTSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     QUOTSi581=(Token)input.LT(1);
-                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue7807); if (failed) return retval;
+                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue7817); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_QUOT_ATTRIBUTE;
                     }
-                    // etc/XQFT.g:713:29: ( QuotAttributeContent | xmlEnclosedExpr )*
+                    // etc/XQFT.g:712:29: ( QuotAttributeContent | xmlEnclosedExpr )*
                     loop139:
                     do {
                         int alt139=3;
@@ -30240,10 +30306,10 @@ public class XQFTParser extends Parser {
 
                         switch (alt139) {
                     	case 1 :
-                    	    // etc/XQFT.g:713:30: QuotAttributeContent
+                    	    // etc/XQFT.g:712:30: QuotAttributeContent
                     	    {
                     	    QuotAttributeContent582=(Token)input.LT(1);
-                    	    match(input,QuotAttributeContent,FOLLOW_QuotAttributeContent_in_dirAttributeValue7841); if (failed) return retval;
+                    	    match(input,QuotAttributeContent,FOLLOW_QuotAttributeContent_in_dirAttributeValue7851); if (failed) return retval;
                     	    if ( backtracking==0 ) {
                     	    QuotAttributeContent582_tree = (XQFTTree)adaptor.create(QuotAttributeContent582);
                     	    adaptor.addChild(root_0, QuotAttributeContent582_tree);
@@ -30252,9 +30318,9 @@ public class XQFTParser extends Parser {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // etc/XQFT.g:713:53: xmlEnclosedExpr
+                    	    // etc/XQFT.g:712:53: xmlEnclosedExpr
                     	    {
-                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7845);
+                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7855);
                     	    xmlEnclosedExpr583=xmlEnclosedExpr();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -30269,7 +30335,7 @@ public class XQFTParser extends Parser {
                     } while (true);
 
                     QUOTSi584=(Token)input.LT(1);
-                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue7878); if (failed) return retval;
+                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue7888); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_TAG;
                     }
@@ -30277,16 +30343,16 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:715:31: APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi
+                    // etc/XQFT.g:714:31: APOSSi ( AposAttributeContent | xmlEnclosedExpr )* APOSSi
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     APOSSi585=(Token)input.LT(1);
-                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue7913); if (failed) return retval;
+                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue7923); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_APOS_ATTRIBUTE;
                     }
-                    // etc/XQFT.g:716:29: ( AposAttributeContent | xmlEnclosedExpr )*
+                    // etc/XQFT.g:715:29: ( AposAttributeContent | xmlEnclosedExpr )*
                     loop140:
                     do {
                         int alt140=3;
@@ -30302,10 +30368,10 @@ public class XQFTParser extends Parser {
 
                         switch (alt140) {
                     	case 1 :
-                    	    // etc/XQFT.g:716:30: AposAttributeContent
+                    	    // etc/XQFT.g:715:30: AposAttributeContent
                     	    {
                     	    AposAttributeContent586=(Token)input.LT(1);
-                    	    match(input,AposAttributeContent,FOLLOW_AposAttributeContent_in_dirAttributeValue7947); if (failed) return retval;
+                    	    match(input,AposAttributeContent,FOLLOW_AposAttributeContent_in_dirAttributeValue7957); if (failed) return retval;
                     	    if ( backtracking==0 ) {
                     	    AposAttributeContent586_tree = (XQFTTree)adaptor.create(AposAttributeContent586);
                     	    adaptor.addChild(root_0, AposAttributeContent586_tree);
@@ -30314,9 +30380,9 @@ public class XQFTParser extends Parser {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // etc/XQFT.g:716:53: xmlEnclosedExpr
+                    	    // etc/XQFT.g:715:53: xmlEnclosedExpr
                     	    {
-                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7951);
+                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7961);
                     	    xmlEnclosedExpr587=xmlEnclosedExpr();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -30331,7 +30397,7 @@ public class XQFTParser extends Parser {
                     } while (true);
 
                     APOSSi588=(Token)input.LT(1);
-                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue7984); if (failed) return retval;
+                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue7994); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_TAG;
                     }
@@ -30363,7 +30429,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start xmlEnclosedExpr
-    // etc/XQFT.g:719:25: xmlEnclosedExpr : LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:718:25: xmlEnclosedExpr : LBRACESi expr RBRACSi ;
     public final xmlEnclosedExpr_return xmlEnclosedExpr() throws RecognitionException {
         xmlEnclosedExpr_return retval = new xmlEnclosedExpr_return();
         retval.start = input.LT(1);
@@ -30379,23 +30445,23 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi591_tree=null;
 
         try {
-            // etc/XQFT.g:719:41: ( LBRACESi expr RBRACSi )
-            // etc/XQFT.g:720:29: LBRACESi expr RBRACSi
+            // etc/XQFT.g:718:41: ( LBRACESi expr RBRACSi )
+            // etc/XQFT.g:719:29: LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             LBRACESi589=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_xmlEnclosedExpr8073); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_xmlEnclosedExpr8083); if (failed) return retval;
             if ( backtracking==0 ) {
               lexer.stack.pushState(lexer.state); lexer.state=State.DEFAULT;
             }
-            pushFollow(FOLLOW_expr_in_xmlEnclosedExpr8111);
+            pushFollow(FOLLOW_expr_in_xmlEnclosedExpr8121);
             expr590=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr590.getTree());
             RBRACSi591=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_xmlEnclosedExpr8142); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_xmlEnclosedExpr8152); if (failed) return retval;
             if ( backtracking==0 ) {
               lexer.state = lexer.stack.pop();
             }
@@ -30425,7 +30491,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirElemContent
-    // etc/XQFT.g:725:21: dirElemContent : (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) );
+    // etc/XQFT.g:724:21: dirElemContent : (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) );
     public final dirElemContent_return dirElemContent() throws RecognitionException {
         dirElemContent_return retval = new dirElemContent_return();
         retval.start = input.LT(1);
@@ -30446,7 +30512,7 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_cDataSection=new RewriteRuleSubtreeStream(adaptor,"rule cDataSection");
         RewriteRuleSubtreeStream stream_xmlEnclosedExpr=new RewriteRuleSubtreeStream(adaptor,"rule xmlEnclosedExpr");
         try {
-            // etc/XQFT.g:725:36: (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) )
+            // etc/XQFT.g:724:36: (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) )
             int alt142=4;
             switch ( input.LA(1) ) {
             case LTSi:
@@ -30474,16 +30540,16 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("725:21: dirElemContent : (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) );", 142, 0, input);
+                    new NoViableAltException("724:21: dirElemContent : (dc= directConstructor -> ^( AST_DIRELEMCONTENT $dc) | cd= cDataSection -> ^( AST_DIRELEMCONTENT $cd) | ec= ElementContent -> ^( AST_DIRELEMCONTENT $ec) | xe= xmlEnclosedExpr -> ^( AST_DIRELEMCONTENT $xe) );", 142, 0, input);
 
                 throw nvae;
             }
 
             switch (alt142) {
                 case 1 :
-                    // etc/XQFT.g:726:25: dc= directConstructor
+                    // etc/XQFT.g:725:25: dc= directConstructor
                     {
-                    pushFollow(FOLLOW_directConstructor_in_dirElemContent8225);
+                    pushFollow(FOLLOW_directConstructor_in_dirElemContent8235);
                     dc=directConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -30501,9 +30567,9 @@ public class XQFTParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
-                    // 726:45: -> ^( AST_DIRELEMCONTENT $dc)
+                    // 725:45: -> ^( AST_DIRELEMCONTENT $dc)
                     {
-                        // etc/XQFT.g:726:48: ^( AST_DIRELEMCONTENT $dc)
+                        // etc/XQFT.g:725:48: ^( AST_DIRELEMCONTENT $dc)
                         {
                         XQFTTree root_1 = (XQFTTree)adaptor.nil();
                         root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_DIRELEMCONTENT, "AST_DIRELEMCONTENT"), root_1);
@@ -30520,9 +30586,9 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:727:27: cd= cDataSection
+                    // etc/XQFT.g:726:27: cd= cDataSection
                     {
-                    pushFollow(FOLLOW_cDataSection_in_dirElemContent8263);
+                    pushFollow(FOLLOW_cDataSection_in_dirElemContent8273);
                     cd=cDataSection();
                     _fsp--;
                     if (failed) return retval;
@@ -30540,9 +30606,9 @@ public class XQFTParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
-                    // 727:43: -> ^( AST_DIRELEMCONTENT $cd)
+                    // 726:43: -> ^( AST_DIRELEMCONTENT $cd)
                     {
-                        // etc/XQFT.g:727:46: ^( AST_DIRELEMCONTENT $cd)
+                        // etc/XQFT.g:726:46: ^( AST_DIRELEMCONTENT $cd)
                         {
                         XQFTTree root_1 = (XQFTTree)adaptor.nil();
                         root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_DIRELEMCONTENT, "AST_DIRELEMCONTENT"), root_1);
@@ -30559,10 +30625,10 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:728:27: ec= ElementContent
+                    // etc/XQFT.g:727:27: ec= ElementContent
                     {
                     ec=(Token)input.LT(1);
-                    match(input,ElementContent,FOLLOW_ElementContent_in_dirElemContent8302); if (failed) return retval;
+                    match(input,ElementContent,FOLLOW_ElementContent_in_dirElemContent8312); if (failed) return retval;
                     if ( backtracking==0 ) stream_ElementContent.add(ec);
 
 
@@ -30578,9 +30644,9 @@ public class XQFTParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
-                    // 728:45: -> ^( AST_DIRELEMCONTENT $ec)
+                    // 727:45: -> ^( AST_DIRELEMCONTENT $ec)
                     {
-                        // etc/XQFT.g:728:48: ^( AST_DIRELEMCONTENT $ec)
+                        // etc/XQFT.g:727:48: ^( AST_DIRELEMCONTENT $ec)
                         {
                         XQFTTree root_1 = (XQFTTree)adaptor.nil();
                         root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_DIRELEMCONTENT, "AST_DIRELEMCONTENT"), root_1);
@@ -30597,9 +30663,9 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:729:27: xe= xmlEnclosedExpr
+                    // etc/XQFT.g:728:27: xe= xmlEnclosedExpr
                     {
-                    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirElemContent8341);
+                    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirElemContent8351);
                     xe=xmlEnclosedExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -30617,9 +30683,9 @@ public class XQFTParser extends Parser {
                     RewriteRuleSubtreeStream stream_xe=new RewriteRuleSubtreeStream(adaptor,"token xe",xe!=null?xe.tree:null);
 
                     root_0 = (XQFTTree)adaptor.nil();
-                    // 729:46: -> ^( AST_DIRELEMCONTENT $xe)
+                    // 728:46: -> ^( AST_DIRELEMCONTENT $xe)
                     {
-                        // etc/XQFT.g:729:49: ^( AST_DIRELEMCONTENT $xe)
+                        // etc/XQFT.g:728:49: ^( AST_DIRELEMCONTENT $xe)
                         {
                         XQFTTree root_1 = (XQFTTree)adaptor.nil();
                         root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_DIRELEMCONTENT, "AST_DIRELEMCONTENT"), root_1);
@@ -30660,7 +30726,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start cDataSection
-    // etc/XQFT.g:732:21: cDataSection : LCDATASi CDataContents RCDATASi ;
+    // etc/XQFT.g:731:21: cDataSection : LCDATASi CDataContents RCDATASi ;
     public final cDataSection_return cDataSection() throws RecognitionException {
         cDataSection_return retval = new cDataSection_return();
         retval.start = input.LT(1);
@@ -30676,25 +30742,25 @@ public class XQFTParser extends Parser {
         XQFTTree RCDATASi594_tree=null;
 
         try {
-            // etc/XQFT.g:732:34: ( LCDATASi CDataContents RCDATASi )
-            // etc/XQFT.g:732:36: LCDATASi CDataContents RCDATASi
+            // etc/XQFT.g:731:34: ( LCDATASi CDataContents RCDATASi )
+            // etc/XQFT.g:731:36: LCDATASi CDataContents RCDATASi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             LCDATASi592=(Token)input.LT(1);
-            match(input,LCDATASi,FOLLOW_LCDATASi_in_cDataSection8399); if (failed) return retval;
+            match(input,LCDATASi,FOLLOW_LCDATASi_in_cDataSection8409); if (failed) return retval;
             if ( backtracking==0 ) {
             LCDATASi592_tree = (XQFTTree)adaptor.create(LCDATASi592);
             adaptor.addChild(root_0, LCDATASi592_tree);
             }
             CDataContents593=(Token)input.LT(1);
-            match(input,CDataContents,FOLLOW_CDataContents_in_cDataSection8401); if (failed) return retval;
+            match(input,CDataContents,FOLLOW_CDataContents_in_cDataSection8411); if (failed) return retval;
             if ( backtracking==0 ) {
             CDataContents593_tree = (XQFTTree)adaptor.create(CDataContents593);
             adaptor.addChild(root_0, CDataContents593_tree);
             }
             RCDATASi594=(Token)input.LT(1);
-            match(input,RCDATASi,FOLLOW_RCDATASi_in_cDataSection8403); if (failed) return retval;
+            match(input,RCDATASi,FOLLOW_RCDATASi_in_cDataSection8413); if (failed) return retval;
             if ( backtracking==0 ) {
             RCDATASi594_tree = (XQFTTree)adaptor.create(RCDATASi594);
             adaptor.addChild(root_0, RCDATASi594_tree);
@@ -30725,7 +30791,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirCommentConstructor
-    // etc/XQFT.g:734:17: dirCommentConstructor : LCOMMENTSi DirCommentContent RCOMMENTSi ;
+    // etc/XQFT.g:733:17: dirCommentConstructor : LCOMMENTSi DirCommentContent RCOMMENTSi ;
     public final dirCommentConstructor_return dirCommentConstructor() throws RecognitionException {
         dirCommentConstructor_return retval = new dirCommentConstructor_return();
         retval.start = input.LT(1);
@@ -30741,25 +30807,25 @@ public class XQFTParser extends Parser {
         XQFTTree RCOMMENTSi597_tree=null;
 
         try {
-            // etc/XQFT.g:734:39: ( LCOMMENTSi DirCommentContent RCOMMENTSi )
-            // etc/XQFT.g:734:41: LCOMMENTSi DirCommentContent RCOMMENTSi
+            // etc/XQFT.g:733:39: ( LCOMMENTSi DirCommentContent RCOMMENTSi )
+            // etc/XQFT.g:733:41: LCOMMENTSi DirCommentContent RCOMMENTSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             LCOMMENTSi595=(Token)input.LT(1);
-            match(input,LCOMMENTSi,FOLLOW_LCOMMENTSi_in_dirCommentConstructor8427); if (failed) return retval;
+            match(input,LCOMMENTSi,FOLLOW_LCOMMENTSi_in_dirCommentConstructor8437); if (failed) return retval;
             if ( backtracking==0 ) {
             LCOMMENTSi595_tree = (XQFTTree)adaptor.create(LCOMMENTSi595);
             adaptor.addChild(root_0, LCOMMENTSi595_tree);
             }
             DirCommentContent596=(Token)input.LT(1);
-            match(input,DirCommentContent,FOLLOW_DirCommentContent_in_dirCommentConstructor8429); if (failed) return retval;
+            match(input,DirCommentContent,FOLLOW_DirCommentContent_in_dirCommentConstructor8439); if (failed) return retval;
             if ( backtracking==0 ) {
             DirCommentContent596_tree = (XQFTTree)adaptor.create(DirCommentContent596);
             adaptor.addChild(root_0, DirCommentContent596_tree);
             }
             RCOMMENTSi597=(Token)input.LT(1);
-            match(input,RCOMMENTSi,FOLLOW_RCOMMENTSi_in_dirCommentConstructor8431); if (failed) return retval;
+            match(input,RCOMMENTSi,FOLLOW_RCOMMENTSi_in_dirCommentConstructor8441); if (failed) return retval;
             if ( backtracking==0 ) {
             RCOMMENTSi597_tree = (XQFTTree)adaptor.create(RCOMMENTSi597);
             adaptor.addChild(root_0, RCOMMENTSi597_tree);
@@ -30790,7 +30856,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start dirPIConstructor
-    // etc/XQFT.g:736:17: dirPIConstructor : LPISi PiTarget ( DirPiContents )? RPISi ;
+    // etc/XQFT.g:735:17: dirPIConstructor : LPISi PiTarget ( DirPiContents )? RPISi ;
     public final dirPIConstructor_return dirPIConstructor() throws RecognitionException {
         dirPIConstructor_return retval = new dirPIConstructor_return();
         retval.start = input.LT(1);
@@ -30808,24 +30874,24 @@ public class XQFTParser extends Parser {
         XQFTTree RPISi601_tree=null;
 
         try {
-            // etc/XQFT.g:736:34: ( LPISi PiTarget ( DirPiContents )? RPISi )
-            // etc/XQFT.g:736:36: LPISi PiTarget ( DirPiContents )? RPISi
+            // etc/XQFT.g:735:34: ( LPISi PiTarget ( DirPiContents )? RPISi )
+            // etc/XQFT.g:735:36: LPISi PiTarget ( DirPiContents )? RPISi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             LPISi598=(Token)input.LT(1);
-            match(input,LPISi,FOLLOW_LPISi_in_dirPIConstructor8455); if (failed) return retval;
+            match(input,LPISi,FOLLOW_LPISi_in_dirPIConstructor8465); if (failed) return retval;
             if ( backtracking==0 ) {
             LPISi598_tree = (XQFTTree)adaptor.create(LPISi598);
             adaptor.addChild(root_0, LPISi598_tree);
             }
             PiTarget599=(Token)input.LT(1);
-            match(input,PiTarget,FOLLOW_PiTarget_in_dirPIConstructor8457); if (failed) return retval;
+            match(input,PiTarget,FOLLOW_PiTarget_in_dirPIConstructor8467); if (failed) return retval;
             if ( backtracking==0 ) {
             PiTarget599_tree = (XQFTTree)adaptor.create(PiTarget599);
             adaptor.addChild(root_0, PiTarget599_tree);
             }
-            // etc/XQFT.g:736:51: ( DirPiContents )?
+            // etc/XQFT.g:735:51: ( DirPiContents )?
             int alt143=2;
             int LA143_0 = input.LA(1);
 
@@ -30834,10 +30900,10 @@ public class XQFTParser extends Parser {
             }
             switch (alt143) {
                 case 1 :
-                    // etc/XQFT.g:736:51: DirPiContents
+                    // etc/XQFT.g:735:51: DirPiContents
                     {
                     DirPiContents600=(Token)input.LT(1);
-                    match(input,DirPiContents,FOLLOW_DirPiContents_in_dirPIConstructor8459); if (failed) return retval;
+                    match(input,DirPiContents,FOLLOW_DirPiContents_in_dirPIConstructor8469); if (failed) return retval;
                     if ( backtracking==0 ) {
                     DirPiContents600_tree = (XQFTTree)adaptor.create(DirPiContents600);
                     adaptor.addChild(root_0, DirPiContents600_tree);
@@ -30849,7 +30915,7 @@ public class XQFTParser extends Parser {
             }
 
             RPISi601=(Token)input.LT(1);
-            match(input,RPISi,FOLLOW_RPISi_in_dirPIConstructor8462); if (failed) return retval;
+            match(input,RPISi,FOLLOW_RPISi_in_dirPIConstructor8472); if (failed) return retval;
             if ( backtracking==0 ) {
             RPISi601_tree = (XQFTTree)adaptor.create(RPISi601);
             adaptor.addChild(root_0, RPISi601_tree);
@@ -30880,7 +30946,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start computedConstructor
-    // etc/XQFT.g:738:13: computedConstructor : ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor );
+    // etc/XQFT.g:737:13: computedConstructor : ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor );
     public final computedConstructor_return computedConstructor() throws RecognitionException {
         computedConstructor_return retval = new computedConstructor_return();
         retval.start = input.LT(1);
@@ -30902,7 +30968,7 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:738:33: ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor )
+            // etc/XQFT.g:737:33: ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor )
             int alt144=6;
             switch ( input.LA(1) ) {
             case DOCUMENT:
@@ -30938,18 +31004,18 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("738:13: computedConstructor : ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor );", 144, 0, input);
+                    new NoViableAltException("737:13: computedConstructor : ( compDocConstructor | compElemConstructor | compAttrConstructor | compTextConstructor | compCommentConstructor | compPIConstructor );", 144, 0, input);
 
                 throw nvae;
             }
 
             switch (alt144) {
                 case 1 :
-                    // etc/XQFT.g:739:17: compDocConstructor
+                    // etc/XQFT.g:738:17: compDocConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compDocConstructor_in_computedConstructor8499);
+                    pushFollow(FOLLOW_compDocConstructor_in_computedConstructor8509);
                     compDocConstructor602=compDocConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -30958,11 +31024,11 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:740:19: compElemConstructor
+                    // etc/XQFT.g:739:19: compElemConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compElemConstructor_in_computedConstructor8519);
+                    pushFollow(FOLLOW_compElemConstructor_in_computedConstructor8529);
                     compElemConstructor603=compElemConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -30971,11 +31037,11 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:741:19: compAttrConstructor
+                    // etc/XQFT.g:740:19: compAttrConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compAttrConstructor_in_computedConstructor8539);
+                    pushFollow(FOLLOW_compAttrConstructor_in_computedConstructor8549);
                     compAttrConstructor604=compAttrConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -30984,11 +31050,11 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:742:19: compTextConstructor
+                    // etc/XQFT.g:741:19: compTextConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compTextConstructor_in_computedConstructor8559);
+                    pushFollow(FOLLOW_compTextConstructor_in_computedConstructor8569);
                     compTextConstructor605=compTextConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -30997,11 +31063,11 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // etc/XQFT.g:743:19: compCommentConstructor
+                    // etc/XQFT.g:742:19: compCommentConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compCommentConstructor_in_computedConstructor8579);
+                    pushFollow(FOLLOW_compCommentConstructor_in_computedConstructor8589);
                     compCommentConstructor606=compCommentConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -31010,11 +31076,11 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // etc/XQFT.g:744:19: compPIConstructor
+                    // etc/XQFT.g:743:19: compPIConstructor
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compPIConstructor_in_computedConstructor8599);
+                    pushFollow(FOLLOW_compPIConstructor_in_computedConstructor8609);
                     compPIConstructor607=compPIConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -31047,7 +31113,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compDocConstructor
-    // etc/XQFT.g:747:17: compDocConstructor : DOCUMENT LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:746:17: compDocConstructor : DOCUMENT LBRACESi expr RBRACSi ;
     public final compDocConstructor_return compDocConstructor() throws RecognitionException {
         compDocConstructor_return retval = new compDocConstructor_return();
         retval.start = input.LT(1);
@@ -31065,26 +31131,26 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi611_tree=null;
 
         try {
-            // etc/XQFT.g:747:36: ( DOCUMENT LBRACESi expr RBRACSi )
-            // etc/XQFT.g:747:38: DOCUMENT LBRACESi expr RBRACSi
+            // etc/XQFT.g:746:36: ( DOCUMENT LBRACESi expr RBRACSi )
+            // etc/XQFT.g:746:38: DOCUMENT LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             DOCUMENT608=(Token)input.LT(1);
-            match(input,DOCUMENT,FOLLOW_DOCUMENT_in_compDocConstructor8637); if (failed) return retval;
+            match(input,DOCUMENT,FOLLOW_DOCUMENT_in_compDocConstructor8647); if (failed) return retval;
             if ( backtracking==0 ) {
             DOCUMENT608_tree = (XQFTTree)adaptor.create(DOCUMENT608);
             adaptor.addChild(root_0, DOCUMENT608_tree);
             }
             LBRACESi609=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compDocConstructor8639); if (failed) return retval;
-            pushFollow(FOLLOW_expr_in_compDocConstructor8642);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compDocConstructor8649); if (failed) return retval;
+            pushFollow(FOLLOW_expr_in_compDocConstructor8652);
             expr610=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr610.getTree());
             RBRACSi611=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compDocConstructor8644); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compDocConstructor8654); if (failed) return retval;
 
             }
 
@@ -31111,7 +31177,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compElemConstructor
-    // etc/XQFT.g:749:17: compElemConstructor : ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi ;
+    // etc/XQFT.g:748:17: compElemConstructor : ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi ;
     public final compElemConstructor_return compElemConstructor() throws RecognitionException {
         compElemConstructor_return retval = new compElemConstructor_return();
         retval.start = input.LT(1);
@@ -31137,18 +31203,18 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi619_tree=null;
 
         try {
-            // etc/XQFT.g:749:37: ( ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi )
-            // etc/XQFT.g:750:21: ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi
+            // etc/XQFT.g:748:37: ( ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi )
+            // etc/XQFT.g:749:21: ELEMENT ( qName | LBRACESi expr RBRACSi ) LBRACESi ( contentExpr )? RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             ELEMENT612=(Token)input.LT(1);
-            match(input,ELEMENT,FOLLOW_ELEMENT_in_compElemConstructor8690); if (failed) return retval;
+            match(input,ELEMENT,FOLLOW_ELEMENT_in_compElemConstructor8700); if (failed) return retval;
             if ( backtracking==0 ) {
             ELEMENT612_tree = (XQFTTree)adaptor.create(ELEMENT612);
             adaptor.addChild(root_0, ELEMENT612_tree);
             }
-            // etc/XQFT.g:750:29: ( qName | LBRACESi expr RBRACSi )
+            // etc/XQFT.g:749:29: ( qName | LBRACESi expr RBRACSi )
             int alt145=2;
             int LA145_0 = input.LA(1);
 
@@ -31161,15 +31227,15 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("750:29: ( qName | LBRACESi expr RBRACSi )", 145, 0, input);
+                    new NoViableAltException("749:29: ( qName | LBRACESi expr RBRACSi )", 145, 0, input);
 
                 throw nvae;
             }
             switch (alt145) {
                 case 1 :
-                    // etc/XQFT.g:750:30: qName
+                    // etc/XQFT.g:749:30: qName
                     {
-                    pushFollow(FOLLOW_qName_in_compElemConstructor8693);
+                    pushFollow(FOLLOW_qName_in_compElemConstructor8703);
                     qName613=qName();
                     _fsp--;
                     if (failed) return retval;
@@ -31178,21 +31244,21 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:750:38: LBRACESi expr RBRACSi
+                    // etc/XQFT.g:749:38: LBRACESi expr RBRACSi
                     {
                     LBRACESi614=(Token)input.LT(1);
-                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor8697); if (failed) return retval;
+                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor8707); if (failed) return retval;
                     if ( backtracking==0 ) {
                     LBRACESi614_tree = (XQFTTree)adaptor.create(LBRACESi614);
                     adaptor.addChild(root_0, LBRACESi614_tree);
                     }
-                    pushFollow(FOLLOW_expr_in_compElemConstructor8699);
+                    pushFollow(FOLLOW_expr_in_compElemConstructor8709);
                     expr615=expr();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, expr615.getTree());
                     RBRACSi616=(Token)input.LT(1);
-                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor8701); if (failed) return retval;
+                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor8711); if (failed) return retval;
                     if ( backtracking==0 ) {
                     RBRACSi616_tree = (XQFTTree)adaptor.create(RBRACSi616);
                     adaptor.addChild(root_0, RBRACSi616_tree);
@@ -31204,23 +31270,23 @@ public class XQFTParser extends Parser {
             }
 
             LBRACESi617=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor8725); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor8735); if (failed) return retval;
             if ( backtracking==0 ) {
             LBRACESi617_tree = (XQFTTree)adaptor.create(LBRACESi617);
             adaptor.addChild(root_0, LBRACESi617_tree);
             }
-            // etc/XQFT.g:751:30: ( contentExpr )?
+            // etc/XQFT.g:750:30: ( contentExpr )?
             int alt146=2;
             int LA146_0 = input.LA(1);
 
-            if ( ((LA146_0>=XQUERY && LA146_0<=ENCODING)||(LA146_0>=MODULE && LA146_0<=NAMESPACE)||(LA146_0>=DECLARE && LA146_0<=DOLLARSi)||(LA146_0>=EXTERNAL && LA146_0<=LPARSi)||(LA146_0>=OPTION && LA146_0<=DOCUMENT_NODE)||(LA146_0>=STARSi && LA146_0<=UNION)||(LA146_0>=INTERSECT && LA146_0<=GE)||LA146_0==LTSi||LA146_0==IS||(LA146_0>=WEIGHT && LA146_0<=LPRAGSi)||(LA146_0>=WINDOW && LA146_0<=ANCESTOR_OR_SELF)||(LA146_0>=DOTDOTSi && LA146_0<=ATSi)||LA146_0==DOTSi||LA146_0==LCOMMENTSi||LA146_0==LPISi||(LA146_0>=DOCUMENT && LA146_0<=NCName)) ) {
+            if ( ((LA146_0>=XQUERY && LA146_0<=ENCODING)||(LA146_0>=MODULE && LA146_0<=NAMESPACE)||(LA146_0>=DECLARE && LA146_0<=DOLLARSi)||(LA146_0>=EXTERNAL && LA146_0<=LPARSi)||(LA146_0>=OPTION && LA146_0<=DOCUMENT_NODE)||(LA146_0>=STARSi && LA146_0<=UNION)||(LA146_0>=INTERSECT && LA146_0<=GE)||LA146_0==LTSi||LA146_0==IS||(LA146_0>=WEIGHT && LA146_0<=LPRAGSi)||(LA146_0>=WINDOW && LA146_0<=ANCESTOR_OR_SELF)||(LA146_0>=DOTDOTSi && LA146_0<=ATSi)||LA146_0==LCOMMENTSi||LA146_0==LPISi||(LA146_0>=DOCUMENT && LA146_0<=NCName)) ) {
                 alt146=1;
             }
             switch (alt146) {
                 case 1 :
-                    // etc/XQFT.g:751:30: contentExpr
+                    // etc/XQFT.g:750:30: contentExpr
                     {
-                    pushFollow(FOLLOW_contentExpr_in_compElemConstructor8727);
+                    pushFollow(FOLLOW_contentExpr_in_compElemConstructor8737);
                     contentExpr618=contentExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -31232,7 +31298,7 @@ public class XQFTParser extends Parser {
             }
 
             RBRACSi619=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor8730); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor8740); if (failed) return retval;
             if ( backtracking==0 ) {
             RBRACSi619_tree = (XQFTTree)adaptor.create(RBRACSi619);
             adaptor.addChild(root_0, RBRACSi619_tree);
@@ -31263,7 +31329,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start contentExpr
-    // etc/XQFT.g:753:21: contentExpr : expr ;
+    // etc/XQFT.g:752:21: contentExpr : expr ;
     public final contentExpr_return contentExpr() throws RecognitionException {
         contentExpr_return retval = new contentExpr_return();
         retval.start = input.LT(1);
@@ -31275,12 +31341,12 @@ public class XQFTParser extends Parser {
 
 
         try {
-            // etc/XQFT.g:753:33: ( expr )
-            // etc/XQFT.g:753:35: expr
+            // etc/XQFT.g:752:33: ( expr )
+            // etc/XQFT.g:752:35: expr
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_expr_in_contentExpr8774);
+            pushFollow(FOLLOW_expr_in_contentExpr8784);
             expr620=expr();
             _fsp--;
             if (failed) return retval;
@@ -31311,7 +31377,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compAttrConstructor
-    // etc/XQFT.g:755:17: compAttrConstructor : ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi ;
+    // etc/XQFT.g:754:17: compAttrConstructor : ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi ;
     public final compAttrConstructor_return compAttrConstructor() throws RecognitionException {
         compAttrConstructor_return retval = new compAttrConstructor_return();
         retval.start = input.LT(1);
@@ -31337,18 +31403,18 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi628_tree=null;
 
         try {
-            // etc/XQFT.g:755:37: ( ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi )
-            // etc/XQFT.g:756:21: ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi
+            // etc/XQFT.g:754:37: ( ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi )
+            // etc/XQFT.g:755:21: ATTRIBUTE ( qName | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             ATTRIBUTE621=(Token)input.LT(1);
-            match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_compAttrConstructor8819); if (failed) return retval;
+            match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_compAttrConstructor8829); if (failed) return retval;
             if ( backtracking==0 ) {
             ATTRIBUTE621_tree = (XQFTTree)adaptor.create(ATTRIBUTE621);
             adaptor.addChild(root_0, ATTRIBUTE621_tree);
             }
-            // etc/XQFT.g:756:31: ( qName | ( LBRACESi expr RBRACSi ) )
+            // etc/XQFT.g:755:31: ( qName | ( LBRACESi expr RBRACSi ) )
             int alt147=2;
             int LA147_0 = input.LA(1);
 
@@ -31361,15 +31427,15 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("756:31: ( qName | ( LBRACESi expr RBRACSi ) )", 147, 0, input);
+                    new NoViableAltException("755:31: ( qName | ( LBRACESi expr RBRACSi ) )", 147, 0, input);
 
                 throw nvae;
             }
             switch (alt147) {
                 case 1 :
-                    // etc/XQFT.g:756:32: qName
+                    // etc/XQFT.g:755:32: qName
                     {
-                    pushFollow(FOLLOW_qName_in_compAttrConstructor8822);
+                    pushFollow(FOLLOW_qName_in_compAttrConstructor8832);
                     qName622=qName();
                     _fsp--;
                     if (failed) return retval;
@@ -31378,20 +31444,20 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:756:40: ( LBRACESi expr RBRACSi )
+                    // etc/XQFT.g:755:40: ( LBRACESi expr RBRACSi )
                     {
-                    // etc/XQFT.g:756:40: ( LBRACESi expr RBRACSi )
-                    // etc/XQFT.g:756:41: LBRACESi expr RBRACSi
+                    // etc/XQFT.g:755:40: ( LBRACESi expr RBRACSi )
+                    // etc/XQFT.g:755:41: LBRACESi expr RBRACSi
                     {
                     LBRACESi623=(Token)input.LT(1);
-                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor8827); if (failed) return retval;
-                    pushFollow(FOLLOW_expr_in_compAttrConstructor8830);
+                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor8837); if (failed) return retval;
+                    pushFollow(FOLLOW_expr_in_compAttrConstructor8840);
                     expr624=expr();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, expr624.getTree());
                     RBRACSi625=(Token)input.LT(1);
-                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor8832); if (failed) return retval;
+                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor8842); if (failed) return retval;
 
                     }
 
@@ -31402,19 +31468,19 @@ public class XQFTParser extends Parser {
             }
 
             LBRACESi626=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor8858); if (failed) return retval;
-            // etc/XQFT.g:757:31: ( expr )?
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor8868); if (failed) return retval;
+            // etc/XQFT.g:756:31: ( expr )?
             int alt148=2;
             int LA148_0 = input.LA(1);
 
-            if ( ((LA148_0>=XQUERY && LA148_0<=ENCODING)||(LA148_0>=MODULE && LA148_0<=NAMESPACE)||(LA148_0>=DECLARE && LA148_0<=DOLLARSi)||(LA148_0>=EXTERNAL && LA148_0<=LPARSi)||(LA148_0>=OPTION && LA148_0<=DOCUMENT_NODE)||(LA148_0>=STARSi && LA148_0<=UNION)||(LA148_0>=INTERSECT && LA148_0<=GE)||LA148_0==LTSi||LA148_0==IS||(LA148_0>=WEIGHT && LA148_0<=LPRAGSi)||(LA148_0>=WINDOW && LA148_0<=ANCESTOR_OR_SELF)||(LA148_0>=DOTDOTSi && LA148_0<=ATSi)||LA148_0==DOTSi||LA148_0==LCOMMENTSi||LA148_0==LPISi||(LA148_0>=DOCUMENT && LA148_0<=NCName)) ) {
+            if ( ((LA148_0>=XQUERY && LA148_0<=ENCODING)||(LA148_0>=MODULE && LA148_0<=NAMESPACE)||(LA148_0>=DECLARE && LA148_0<=DOLLARSi)||(LA148_0>=EXTERNAL && LA148_0<=LPARSi)||(LA148_0>=OPTION && LA148_0<=DOCUMENT_NODE)||(LA148_0>=STARSi && LA148_0<=UNION)||(LA148_0>=INTERSECT && LA148_0<=GE)||LA148_0==LTSi||LA148_0==IS||(LA148_0>=WEIGHT && LA148_0<=LPRAGSi)||(LA148_0>=WINDOW && LA148_0<=ANCESTOR_OR_SELF)||(LA148_0>=DOTDOTSi && LA148_0<=ATSi)||LA148_0==LCOMMENTSi||LA148_0==LPISi||(LA148_0>=DOCUMENT && LA148_0<=NCName)) ) {
                 alt148=1;
             }
             switch (alt148) {
                 case 1 :
-                    // etc/XQFT.g:757:31: expr
+                    // etc/XQFT.g:756:31: expr
                     {
-                    pushFollow(FOLLOW_expr_in_compAttrConstructor8861);
+                    pushFollow(FOLLOW_expr_in_compAttrConstructor8871);
                     expr627=expr();
                     _fsp--;
                     if (failed) return retval;
@@ -31426,7 +31492,7 @@ public class XQFTParser extends Parser {
             }
 
             RBRACSi628=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor8864); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor8874); if (failed) return retval;
 
             }
 
@@ -31453,7 +31519,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compTextConstructor
-    // etc/XQFT.g:760:17: compTextConstructor : TEXT LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:759:17: compTextConstructor : TEXT LBRACESi expr RBRACSi ;
     public final compTextConstructor_return compTextConstructor() throws RecognitionException {
         compTextConstructor_return retval = new compTextConstructor_return();
         retval.start = input.LT(1);
@@ -31471,26 +31537,26 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi632_tree=null;
 
         try {
-            // etc/XQFT.g:760:37: ( TEXT LBRACESi expr RBRACSi )
-            // etc/XQFT.g:760:39: TEXT LBRACESi expr RBRACSi
+            // etc/XQFT.g:759:37: ( TEXT LBRACESi expr RBRACSi )
+            // etc/XQFT.g:759:39: TEXT LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             TEXT629=(Token)input.LT(1);
-            match(input,TEXT,FOLLOW_TEXT_in_compTextConstructor8907); if (failed) return retval;
+            match(input,TEXT,FOLLOW_TEXT_in_compTextConstructor8917); if (failed) return retval;
             if ( backtracking==0 ) {
             TEXT629_tree = (XQFTTree)adaptor.create(TEXT629);
             adaptor.addChild(root_0, TEXT629_tree);
             }
             LBRACESi630=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compTextConstructor8909); if (failed) return retval;
-            pushFollow(FOLLOW_expr_in_compTextConstructor8912);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compTextConstructor8919); if (failed) return retval;
+            pushFollow(FOLLOW_expr_in_compTextConstructor8922);
             expr631=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr631.getTree());
             RBRACSi632=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compTextConstructor8914); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compTextConstructor8924); if (failed) return retval;
 
             }
 
@@ -31517,7 +31583,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compCommentConstructor
-    // etc/XQFT.g:762:17: compCommentConstructor : COMMENT LBRACESi expr RBRACSi ;
+    // etc/XQFT.g:761:17: compCommentConstructor : COMMENT LBRACESi expr RBRACSi ;
     public final compCommentConstructor_return compCommentConstructor() throws RecognitionException {
         compCommentConstructor_return retval = new compCommentConstructor_return();
         retval.start = input.LT(1);
@@ -31535,26 +31601,26 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi636_tree=null;
 
         try {
-            // etc/XQFT.g:762:40: ( COMMENT LBRACESi expr RBRACSi )
-            // etc/XQFT.g:762:42: COMMENT LBRACESi expr RBRACSi
+            // etc/XQFT.g:761:40: ( COMMENT LBRACESi expr RBRACSi )
+            // etc/XQFT.g:761:42: COMMENT LBRACESi expr RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             COMMENT633=(Token)input.LT(1);
-            match(input,COMMENT,FOLLOW_COMMENT_in_compCommentConstructor8939); if (failed) return retval;
+            match(input,COMMENT,FOLLOW_COMMENT_in_compCommentConstructor8949); if (failed) return retval;
             if ( backtracking==0 ) {
             COMMENT633_tree = (XQFTTree)adaptor.create(COMMENT633);
             adaptor.addChild(root_0, COMMENT633_tree);
             }
             LBRACESi634=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compCommentConstructor8941); if (failed) return retval;
-            pushFollow(FOLLOW_expr_in_compCommentConstructor8944);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compCommentConstructor8951); if (failed) return retval;
+            pushFollow(FOLLOW_expr_in_compCommentConstructor8954);
             expr635=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, expr635.getTree());
             RBRACSi636=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compCommentConstructor8946); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compCommentConstructor8956); if (failed) return retval;
 
             }
 
@@ -31581,7 +31647,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start compPIConstructor
-    // etc/XQFT.g:764:17: compPIConstructor : PROCESSING_INSTRUCTION ( ncNameorKeyword | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi ;
+    // etc/XQFT.g:763:17: compPIConstructor : PROCESSING_INSTRUCTION ( ncNameorKeyword | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi ;
     public final compPIConstructor_return compPIConstructor() throws RecognitionException {
         compPIConstructor_return retval = new compPIConstructor_return();
         retval.start = input.LT(1);
@@ -31607,18 +31673,18 @@ public class XQFTParser extends Parser {
         XQFTTree RBRACSi644_tree=null;
 
         try {
-            // etc/XQFT.g:764:35: ( PROCESSING_INSTRUCTION ( ncNameorKeyword | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi )
-            // etc/XQFT.g:765:21: PROCESSING_INSTRUCTION ( ncNameorKeyword | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi
+            // etc/XQFT.g:763:35: ( PROCESSING_INSTRUCTION ( ncNameorKeyword | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi )
+            // etc/XQFT.g:764:21: PROCESSING_INSTRUCTION ( ncNameorKeyword | ( LBRACESi expr RBRACSi ) ) LBRACESi ( expr )? RBRACSi
             {
             root_0 = (XQFTTree)adaptor.nil();
 
             PROCESSING_INSTRUCTION637=(Token)input.LT(1);
-            match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor8992); if (failed) return retval;
+            match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor9002); if (failed) return retval;
             if ( backtracking==0 ) {
             PROCESSING_INSTRUCTION637_tree = (XQFTTree)adaptor.create(PROCESSING_INSTRUCTION637);
             adaptor.addChild(root_0, PROCESSING_INSTRUCTION637_tree);
             }
-            // etc/XQFT.g:766:25: ( ncNameorKeyword | ( LBRACESi expr RBRACSi ) )
+            // etc/XQFT.g:765:25: ( ncNameorKeyword | ( LBRACESi expr RBRACSi ) )
             int alt149=2;
             int LA149_0 = input.LA(1);
 
@@ -31631,15 +31697,15 @@ public class XQFTParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("766:25: ( ncNameorKeyword | ( LBRACESi expr RBRACSi ) )", 149, 0, input);
+                    new NoViableAltException("765:25: ( ncNameorKeyword | ( LBRACESi expr RBRACSi ) )", 149, 0, input);
 
                 throw nvae;
             }
             switch (alt149) {
                 case 1 :
-                    // etc/XQFT.g:766:26: ncNameorKeyword
+                    // etc/XQFT.g:765:26: ncNameorKeyword
                     {
-                    pushFollow(FOLLOW_ncNameorKeyword_in_compPIConstructor9020);
+                    pushFollow(FOLLOW_ncNameorKeyword_in_compPIConstructor9030);
                     ncNameorKeyword638=ncNameorKeyword();
                     _fsp--;
                     if (failed) return retval;
@@ -31648,20 +31714,20 @@ public class XQFTParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:766:44: ( LBRACESi expr RBRACSi )
+                    // etc/XQFT.g:765:44: ( LBRACESi expr RBRACSi )
                     {
-                    // etc/XQFT.g:766:44: ( LBRACESi expr RBRACSi )
-                    // etc/XQFT.g:766:45: LBRACESi expr RBRACSi
+                    // etc/XQFT.g:765:44: ( LBRACESi expr RBRACSi )
+                    // etc/XQFT.g:765:45: LBRACESi expr RBRACSi
                     {
                     LBRACESi639=(Token)input.LT(1);
-                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor9025); if (failed) return retval;
-                    pushFollow(FOLLOW_expr_in_compPIConstructor9028);
+                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor9035); if (failed) return retval;
+                    pushFollow(FOLLOW_expr_in_compPIConstructor9038);
                     expr640=expr();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, expr640.getTree());
                     RBRACSi641=(Token)input.LT(1);
-                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor9030); if (failed) return retval;
+                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor9040); if (failed) return retval;
 
                     }
 
@@ -31672,19 +31738,19 @@ public class XQFTParser extends Parser {
             }
 
             LBRACESi642=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor9056); if (failed) return retval;
-            // etc/XQFT.g:767:31: ( expr )?
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor9066); if (failed) return retval;
+            // etc/XQFT.g:766:31: ( expr )?
             int alt150=2;
             int LA150_0 = input.LA(1);
 
-            if ( ((LA150_0>=XQUERY && LA150_0<=ENCODING)||(LA150_0>=MODULE && LA150_0<=NAMESPACE)||(LA150_0>=DECLARE && LA150_0<=DOLLARSi)||(LA150_0>=EXTERNAL && LA150_0<=LPARSi)||(LA150_0>=OPTION && LA150_0<=DOCUMENT_NODE)||(LA150_0>=STARSi && LA150_0<=UNION)||(LA150_0>=INTERSECT && LA150_0<=GE)||LA150_0==LTSi||LA150_0==IS||(LA150_0>=WEIGHT && LA150_0<=LPRAGSi)||(LA150_0>=WINDOW && LA150_0<=ANCESTOR_OR_SELF)||(LA150_0>=DOTDOTSi && LA150_0<=ATSi)||LA150_0==DOTSi||LA150_0==LCOMMENTSi||LA150_0==LPISi||(LA150_0>=DOCUMENT && LA150_0<=NCName)) ) {
+            if ( ((LA150_0>=XQUERY && LA150_0<=ENCODING)||(LA150_0>=MODULE && LA150_0<=NAMESPACE)||(LA150_0>=DECLARE && LA150_0<=DOLLARSi)||(LA150_0>=EXTERNAL && LA150_0<=LPARSi)||(LA150_0>=OPTION && LA150_0<=DOCUMENT_NODE)||(LA150_0>=STARSi && LA150_0<=UNION)||(LA150_0>=INTERSECT && LA150_0<=GE)||LA150_0==LTSi||LA150_0==IS||(LA150_0>=WEIGHT && LA150_0<=LPRAGSi)||(LA150_0>=WINDOW && LA150_0<=ANCESTOR_OR_SELF)||(LA150_0>=DOTDOTSi && LA150_0<=ATSi)||LA150_0==LCOMMENTSi||LA150_0==LPISi||(LA150_0>=DOCUMENT && LA150_0<=NCName)) ) {
                 alt150=1;
             }
             switch (alt150) {
                 case 1 :
-                    // etc/XQFT.g:767:31: expr
+                    // etc/XQFT.g:766:31: expr
                     {
-                    pushFollow(FOLLOW_expr_in_compPIConstructor9059);
+                    pushFollow(FOLLOW_expr_in_compPIConstructor9069);
                     expr643=expr();
                     _fsp--;
                     if (failed) return retval;
@@ -31696,7 +31762,7 @@ public class XQFTParser extends Parser {
             }
 
             RBRACSi644=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor9062); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor9072); if (failed) return retval;
 
             }
 
@@ -31723,7 +31789,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start ncNameorKeyword
-    // etc/XQFT.g:772:1: ncNameorKeyword : (a= NCName | a= ALL | a= ANY | a= ANCESTOR | a= ANCESTOR_OR_SELF | a= AND | a= AS | a= ASCENDING | a= AT | a= ATTRIBUTE | a= BASE_URI | a= BY | a= BOUNDARYSPACE | a= CASE | a= CAST | a= CASTABLE | a= CHILD | a= COLLATION | a= COMMENT | a= CONSTRUCTION | a= CONTENT | a= COPY_NAMESPACES | a= DECLARE | a= DEFAULT | a= DESCENDANT | a= DESCENDANT_OR_SELF | a= DESCENDING | a= DIACRITICS | a= DIFFERENT | a= DISTANCE | a= DIV | a= DOCUMENT | a= DOCUMENT_NODE | a= ELEMENT | a= ELSE | a= ENCODING | a= END | a= ENTIRE | a= EMPTY | a= EMPTY_SEQUENCE | a= EQ | a= EVERY | a= EXACTLY | a= EXCEPT | a= EXTERNAL | a= FOLLOWING | a= FOLLOWING_SIBLING | a= FOR | a= FROM | a= FTAND | a= FTCONTAINS | a= FTNOT | a= FTOPTION | a= FTOR | a= FUNCTION | a= GE | a= GREATEST | a= GT | a= IDIV | a= IF | a= IMPORT | a= IN | a= INHERIT | a= INSENSITIVE | a= INSTANCE | a= INTERSECT | a= IS | a= ITEM | a= LANGUAGE | a= LAX | a= LE | a= LEAST | a= LET | a= LEVELS | a= LOWERCASE | a= LT | a= MOD | a= MODULE | a= MOST | a= NAMESPACE | a= NE | a= NODE | a= NOINHERIT | a= NOPRESERVE | a= NOT | a= OCCURS | a= OF | a= OPTION | a= OR | a= ORDER | a= ORDERED | a= ORDERING | a= PARAGRAPH | a= PARAGRAPHS | a= PARENT | a= PHRASE | a= PRECEDING | a= PRECEDING_SIBLING | a= PRESERVE | a= PROCESSING_INSTRUCTION | a= RELATIONSHIP | a= RETURN | a= SAME | a= SATISFIES | a= SCHEMA | a= SCHEMA_ATTRIBUTE | a= SCHEMA_ELEMENT | a= SCORE | a= SELF | a= SENSITIVE | a= SENTENCES | a= SENTENCE | a= SOME | a= STABLE | a= START | a= STEMMING | a= STOP | a= STRICT | a= STRIP | a= TEXT | a= THESAURUS | a= THEN | a= TIMES | a= TO | a= TREAT | a= TYPESWITCH | a= UNION | a= UNORDERED | a= UPPERCASE | a= VALIDATE | a= VARIABLE | a= VERSION | a= WEIGHT | a= WHERE | a= WILDCARDS | a= WINDOW | a= WITH | a= WITHOUT | a= WORD | a= WORDS | a= XQUERY ) -> NCName[$a, \"nazi\"] ;
+    // etc/XQFT.g:771:1: ncNameorKeyword : (a= NCName | a= ALL | a= ANY | a= ANCESTOR | a= ANCESTOR_OR_SELF | a= AND | a= AS | a= ASCENDING | a= AT | a= ATTRIBUTE | a= BASE_URI | a= BY | a= BOUNDARYSPACE | a= CASE | a= CAST | a= CASTABLE | a= CHILD | a= COLLATION | a= COMMENT | a= CONSTRUCTION | a= CONTENT | a= COPY_NAMESPACES | a= DECLARE | a= DEFAULT | a= DESCENDANT | a= DESCENDANT_OR_SELF | a= DESCENDING | a= DIACRITICS | a= DIFFERENT | a= DISTANCE | a= DIV | a= DOCUMENT | a= DOCUMENT_NODE | a= ELEMENT | a= ELSE | a= ENCODING | a= END | a= ENTIRE | a= EMPTY | a= EMPTY_SEQUENCE | a= EQ | a= EVERY | a= EXACTLY | a= EXCEPT | a= EXTERNAL | a= FOLLOWING | a= FOLLOWING_SIBLING | a= FOR | a= FROM | a= FTAND | a= FTCONTAINS | a= FTNOT | a= FTOPTION | a= FTOR | a= FUNCTION | a= GE | a= GREATEST | a= GT | a= IDIV | a= IF | a= IMPORT | a= IN | a= INHERIT | a= INSENSITIVE | a= INSTANCE | a= INTERSECT | a= IS | a= ITEM | a= LANGUAGE | a= LAX | a= LE | a= LEAST | a= LET | a= LEVELS | a= LOWERCASE | a= LT | a= MOD | a= MODULE | a= MOST | a= NAMESPACE | a= NE | a= NODE | a= NOINHERIT | a= NOPRESERVE | a= NOT | a= OCCURS | a= OF | a= OPTION | a= OR | a= ORDER | a= ORDERED | a= ORDERING | a= PARAGRAPH | a= PARAGRAPHS | a= PARENT | a= PHRASE | a= PRECEDING | a= PRECEDING_SIBLING | a= PRESERVE | a= PROCESSING_INSTRUCTION | a= RELATIONSHIP | a= RETURN | a= SAME | a= SATISFIES | a= SCHEMA | a= SCHEMA_ATTRIBUTE | a= SCHEMA_ELEMENT | a= SCORE | a= SELF | a= SENSITIVE | a= SENTENCES | a= SENTENCE | a= SOME | a= STABLE | a= START | a= STEMMING | a= STOP | a= STRICT | a= STRIP | a= TEXT | a= THESAURUS | a= THEN | a= TIMES | a= TO | a= TREAT | a= TYPESWITCH | a= UNION | a= UNORDERED | a= UPPERCASE | a= VALIDATE | a= VARIABLE | a= VERSION | a= WEIGHT | a= WHERE | a= WILDCARDS | a= WINDOW | a= WITH | a= WITHOUT | a= WORD | a= WORDS | a= XQUERY ) -> NCName[$a] ;
     public final ncNameorKeyword_return ncNameorKeyword() throws RecognitionException {
         ncNameorKeyword_return retval = new ncNameorKeyword_return();
         retval.start = input.LT(1);
@@ -31876,10 +31942,10 @@ public class XQFTParser extends Parser {
         RewriteRuleTokenStream stream_OPTION=new RewriteRuleTokenStream(adaptor,"token OPTION");
 
         try {
-            // etc/XQFT.g:772:16: ( (a= NCName | a= ALL | a= ANY | a= ANCESTOR | a= ANCESTOR_OR_SELF | a= AND | a= AS | a= ASCENDING | a= AT | a= ATTRIBUTE | a= BASE_URI | a= BY | a= BOUNDARYSPACE | a= CASE | a= CAST | a= CASTABLE | a= CHILD | a= COLLATION | a= COMMENT | a= CONSTRUCTION | a= CONTENT | a= COPY_NAMESPACES | a= DECLARE | a= DEFAULT | a= DESCENDANT | a= DESCENDANT_OR_SELF | a= DESCENDING | a= DIACRITICS | a= DIFFERENT | a= DISTANCE | a= DIV | a= DOCUMENT | a= DOCUMENT_NODE | a= ELEMENT | a= ELSE | a= ENCODING | a= END | a= ENTIRE | a= EMPTY | a= EMPTY_SEQUENCE | a= EQ | a= EVERY | a= EXACTLY | a= EXCEPT | a= EXTERNAL | a= FOLLOWING | a= FOLLOWING_SIBLING | a= FOR | a= FROM | a= FTAND | a= FTCONTAINS | a= FTNOT | a= FTOPTION | a= FTOR | a= FUNCTION | a= GE | a= GREATEST | a= GT | a= IDIV | a= IF | a= IMPORT | a= IN | a= INHERIT | a= INSENSITIVE | a= INSTANCE | a= INTERSECT | a= IS | a= ITEM | a= LANGUAGE | a= LAX | a= LE | a= LEAST | a= LET | a= LEVELS | a= LOWERCASE | a= LT | a= MOD | a= MODULE | a= MOST | a= NAMESPACE | a= NE | a= NODE | a= NOINHERIT | a= NOPRESERVE | a= NOT | a= OCCURS | a= OF | a= OPTION | a= OR | a= ORDER | a= ORDERED | a= ORDERING | a= PARAGRAPH | a= PARAGRAPHS | a= PARENT | a= PHRASE | a= PRECEDING | a= PRECEDING_SIBLING | a= PRESERVE | a= PROCESSING_INSTRUCTION | a= RELATIONSHIP | a= RETURN | a= SAME | a= SATISFIES | a= SCHEMA | a= SCHEMA_ATTRIBUTE | a= SCHEMA_ELEMENT | a= SCORE | a= SELF | a= SENSITIVE | a= SENTENCES | a= SENTENCE | a= SOME | a= STABLE | a= START | a= STEMMING | a= STOP | a= STRICT | a= STRIP | a= TEXT | a= THESAURUS | a= THEN | a= TIMES | a= TO | a= TREAT | a= TYPESWITCH | a= UNION | a= UNORDERED | a= UPPERCASE | a= VALIDATE | a= VARIABLE | a= VERSION | a= WEIGHT | a= WHERE | a= WILDCARDS | a= WINDOW | a= WITH | a= WITHOUT | a= WORD | a= WORDS | a= XQUERY ) -> NCName[$a, \"nazi\"] )
-            // etc/XQFT.g:773:5: (a= NCName | a= ALL | a= ANY | a= ANCESTOR | a= ANCESTOR_OR_SELF | a= AND | a= AS | a= ASCENDING | a= AT | a= ATTRIBUTE | a= BASE_URI | a= BY | a= BOUNDARYSPACE | a= CASE | a= CAST | a= CASTABLE | a= CHILD | a= COLLATION | a= COMMENT | a= CONSTRUCTION | a= CONTENT | a= COPY_NAMESPACES | a= DECLARE | a= DEFAULT | a= DESCENDANT | a= DESCENDANT_OR_SELF | a= DESCENDING | a= DIACRITICS | a= DIFFERENT | a= DISTANCE | a= DIV | a= DOCUMENT | a= DOCUMENT_NODE | a= ELEMENT | a= ELSE | a= ENCODING | a= END | a= ENTIRE | a= EMPTY | a= EMPTY_SEQUENCE | a= EQ | a= EVERY | a= EXACTLY | a= EXCEPT | a= EXTERNAL | a= FOLLOWING | a= FOLLOWING_SIBLING | a= FOR | a= FROM | a= FTAND | a= FTCONTAINS | a= FTNOT | a= FTOPTION | a= FTOR | a= FUNCTION | a= GE | a= GREATEST | a= GT | a= IDIV | a= IF | a= IMPORT | a= IN | a= INHERIT | a= INSENSITIVE | a= INSTANCE | a= INTERSECT | a= IS | a= ITEM | a= LANGUAGE | a= LAX | a= LE | a= LEAST | a= LET | a= LEVELS | a= LOWERCASE | a= LT | a= MOD | a= MODULE | a= MOST | a= NAMESPACE | a= NE | a= NODE | a= NOINHERIT | a= NOPRESERVE | a= NOT | a= OCCURS | a= OF | a= OPTION | a= OR | a= ORDER | a= ORDERED | a= ORDERING | a= PARAGRAPH | a= PARAGRAPHS | a= PARENT | a= PHRASE | a= PRECEDING | a= PRECEDING_SIBLING | a= PRESERVE | a= PROCESSING_INSTRUCTION | a= RELATIONSHIP | a= RETURN | a= SAME | a= SATISFIES | a= SCHEMA | a= SCHEMA_ATTRIBUTE | a= SCHEMA_ELEMENT | a= SCORE | a= SELF | a= SENSITIVE | a= SENTENCES | a= SENTENCE | a= SOME | a= STABLE | a= START | a= STEMMING | a= STOP | a= STRICT | a= STRIP | a= TEXT | a= THESAURUS | a= THEN | a= TIMES | a= TO | a= TREAT | a= TYPESWITCH | a= UNION | a= UNORDERED | a= UPPERCASE | a= VALIDATE | a= VARIABLE | a= VERSION | a= WEIGHT | a= WHERE | a= WILDCARDS | a= WINDOW | a= WITH | a= WITHOUT | a= WORD | a= WORDS | a= XQUERY )
+            // etc/XQFT.g:771:16: ( (a= NCName | a= ALL | a= ANY | a= ANCESTOR | a= ANCESTOR_OR_SELF | a= AND | a= AS | a= ASCENDING | a= AT | a= ATTRIBUTE | a= BASE_URI | a= BY | a= BOUNDARYSPACE | a= CASE | a= CAST | a= CASTABLE | a= CHILD | a= COLLATION | a= COMMENT | a= CONSTRUCTION | a= CONTENT | a= COPY_NAMESPACES | a= DECLARE | a= DEFAULT | a= DESCENDANT | a= DESCENDANT_OR_SELF | a= DESCENDING | a= DIACRITICS | a= DIFFERENT | a= DISTANCE | a= DIV | a= DOCUMENT | a= DOCUMENT_NODE | a= ELEMENT | a= ELSE | a= ENCODING | a= END | a= ENTIRE | a= EMPTY | a= EMPTY_SEQUENCE | a= EQ | a= EVERY | a= EXACTLY | a= EXCEPT | a= EXTERNAL | a= FOLLOWING | a= FOLLOWING_SIBLING | a= FOR | a= FROM | a= FTAND | a= FTCONTAINS | a= FTNOT | a= FTOPTION | a= FTOR | a= FUNCTION | a= GE | a= GREATEST | a= GT | a= IDIV | a= IF | a= IMPORT | a= IN | a= INHERIT | a= INSENSITIVE | a= INSTANCE | a= INTERSECT | a= IS | a= ITEM | a= LANGUAGE | a= LAX | a= LE | a= LEAST | a= LET | a= LEVELS | a= LOWERCASE | a= LT | a= MOD | a= MODULE | a= MOST | a= NAMESPACE | a= NE | a= NODE | a= NOINHERIT | a= NOPRESERVE | a= NOT | a= OCCURS | a= OF | a= OPTION | a= OR | a= ORDER | a= ORDERED | a= ORDERING | a= PARAGRAPH | a= PARAGRAPHS | a= PARENT | a= PHRASE | a= PRECEDING | a= PRECEDING_SIBLING | a= PRESERVE | a= PROCESSING_INSTRUCTION | a= RELATIONSHIP | a= RETURN | a= SAME | a= SATISFIES | a= SCHEMA | a= SCHEMA_ATTRIBUTE | a= SCHEMA_ELEMENT | a= SCORE | a= SELF | a= SENSITIVE | a= SENTENCES | a= SENTENCE | a= SOME | a= STABLE | a= START | a= STEMMING | a= STOP | a= STRICT | a= STRIP | a= TEXT | a= THESAURUS | a= THEN | a= TIMES | a= TO | a= TREAT | a= TYPESWITCH | a= UNION | a= UNORDERED | a= UPPERCASE | a= VALIDATE | a= VARIABLE | a= VERSION | a= WEIGHT | a= WHERE | a= WILDCARDS | a= WINDOW | a= WITH | a= WITHOUT | a= WORD | a= WORDS | a= XQUERY ) -> NCName[$a] )
+            // etc/XQFT.g:772:5: (a= NCName | a= ALL | a= ANY | a= ANCESTOR | a= ANCESTOR_OR_SELF | a= AND | a= AS | a= ASCENDING | a= AT | a= ATTRIBUTE | a= BASE_URI | a= BY | a= BOUNDARYSPACE | a= CASE | a= CAST | a= CASTABLE | a= CHILD | a= COLLATION | a= COMMENT | a= CONSTRUCTION | a= CONTENT | a= COPY_NAMESPACES | a= DECLARE | a= DEFAULT | a= DESCENDANT | a= DESCENDANT_OR_SELF | a= DESCENDING | a= DIACRITICS | a= DIFFERENT | a= DISTANCE | a= DIV | a= DOCUMENT | a= DOCUMENT_NODE | a= ELEMENT | a= ELSE | a= ENCODING | a= END | a= ENTIRE | a= EMPTY | a= EMPTY_SEQUENCE | a= EQ | a= EVERY | a= EXACTLY | a= EXCEPT | a= EXTERNAL | a= FOLLOWING | a= FOLLOWING_SIBLING | a= FOR | a= FROM | a= FTAND | a= FTCONTAINS | a= FTNOT | a= FTOPTION | a= FTOR | a= FUNCTION | a= GE | a= GREATEST | a= GT | a= IDIV | a= IF | a= IMPORT | a= IN | a= INHERIT | a= INSENSITIVE | a= INSTANCE | a= INTERSECT | a= IS | a= ITEM | a= LANGUAGE | a= LAX | a= LE | a= LEAST | a= LET | a= LEVELS | a= LOWERCASE | a= LT | a= MOD | a= MODULE | a= MOST | a= NAMESPACE | a= NE | a= NODE | a= NOINHERIT | a= NOPRESERVE | a= NOT | a= OCCURS | a= OF | a= OPTION | a= OR | a= ORDER | a= ORDERED | a= ORDERING | a= PARAGRAPH | a= PARAGRAPHS | a= PARENT | a= PHRASE | a= PRECEDING | a= PRECEDING_SIBLING | a= PRESERVE | a= PROCESSING_INSTRUCTION | a= RELATIONSHIP | a= RETURN | a= SAME | a= SATISFIES | a= SCHEMA | a= SCHEMA_ATTRIBUTE | a= SCHEMA_ELEMENT | a= SCORE | a= SELF | a= SENSITIVE | a= SENTENCES | a= SENTENCE | a= SOME | a= STABLE | a= START | a= STEMMING | a= STOP | a= STRICT | a= STRIP | a= TEXT | a= THESAURUS | a= THEN | a= TIMES | a= TO | a= TREAT | a= TYPESWITCH | a= UNION | a= UNORDERED | a= UPPERCASE | a= VALIDATE | a= VARIABLE | a= VERSION | a= WEIGHT | a= WHERE | a= WILDCARDS | a= WINDOW | a= WITH | a= WITHOUT | a= WORD | a= WORDS | a= XQUERY )
             {
-            // etc/XQFT.g:773:5: (a= NCName | a= ALL | a= ANY | a= ANCESTOR | a= ANCESTOR_OR_SELF | a= AND | a= AS | a= ASCENDING | a= AT | a= ATTRIBUTE | a= BASE_URI | a= BY | a= BOUNDARYSPACE | a= CASE | a= CAST | a= CASTABLE | a= CHILD | a= COLLATION | a= COMMENT | a= CONSTRUCTION | a= CONTENT | a= COPY_NAMESPACES | a= DECLARE | a= DEFAULT | a= DESCENDANT | a= DESCENDANT_OR_SELF | a= DESCENDING | a= DIACRITICS | a= DIFFERENT | a= DISTANCE | a= DIV | a= DOCUMENT | a= DOCUMENT_NODE | a= ELEMENT | a= ELSE | a= ENCODING | a= END | a= ENTIRE | a= EMPTY | a= EMPTY_SEQUENCE | a= EQ | a= EVERY | a= EXACTLY | a= EXCEPT | a= EXTERNAL | a= FOLLOWING | a= FOLLOWING_SIBLING | a= FOR | a= FROM | a= FTAND | a= FTCONTAINS | a= FTNOT | a= FTOPTION | a= FTOR | a= FUNCTION | a= GE | a= GREATEST | a= GT | a= IDIV | a= IF | a= IMPORT | a= IN | a= INHERIT | a= INSENSITIVE | a= INSTANCE | a= INTERSECT | a= IS | a= ITEM | a= LANGUAGE | a= LAX | a= LE | a= LEAST | a= LET | a= LEVELS | a= LOWERCASE | a= LT | a= MOD | a= MODULE | a= MOST | a= NAMESPACE | a= NE | a= NODE | a= NOINHERIT | a= NOPRESERVE | a= NOT | a= OCCURS | a= OF | a= OPTION | a= OR | a= ORDER | a= ORDERED | a= ORDERING | a= PARAGRAPH | a= PARAGRAPHS | a= PARENT | a= PHRASE | a= PRECEDING | a= PRECEDING_SIBLING | a= PRESERVE | a= PROCESSING_INSTRUCTION | a= RELATIONSHIP | a= RETURN | a= SAME | a= SATISFIES | a= SCHEMA | a= SCHEMA_ATTRIBUTE | a= SCHEMA_ELEMENT | a= SCORE | a= SELF | a= SENSITIVE | a= SENTENCES | a= SENTENCE | a= SOME | a= STABLE | a= START | a= STEMMING | a= STOP | a= STRICT | a= STRIP | a= TEXT | a= THESAURUS | a= THEN | a= TIMES | a= TO | a= TREAT | a= TYPESWITCH | a= UNION | a= UNORDERED | a= UPPERCASE | a= VALIDATE | a= VARIABLE | a= VERSION | a= WEIGHT | a= WHERE | a= WILDCARDS | a= WINDOW | a= WITH | a= WITHOUT | a= WORD | a= WORDS | a= XQUERY )
+            // etc/XQFT.g:772:5: (a= NCName | a= ALL | a= ANY | a= ANCESTOR | a= ANCESTOR_OR_SELF | a= AND | a= AS | a= ASCENDING | a= AT | a= ATTRIBUTE | a= BASE_URI | a= BY | a= BOUNDARYSPACE | a= CASE | a= CAST | a= CASTABLE | a= CHILD | a= COLLATION | a= COMMENT | a= CONSTRUCTION | a= CONTENT | a= COPY_NAMESPACES | a= DECLARE | a= DEFAULT | a= DESCENDANT | a= DESCENDANT_OR_SELF | a= DESCENDING | a= DIACRITICS | a= DIFFERENT | a= DISTANCE | a= DIV | a= DOCUMENT | a= DOCUMENT_NODE | a= ELEMENT | a= ELSE | a= ENCODING | a= END | a= ENTIRE | a= EMPTY | a= EMPTY_SEQUENCE | a= EQ | a= EVERY | a= EXACTLY | a= EXCEPT | a= EXTERNAL | a= FOLLOWING | a= FOLLOWING_SIBLING | a= FOR | a= FROM | a= FTAND | a= FTCONTAINS | a= FTNOT | a= FTOPTION | a= FTOR | a= FUNCTION | a= GE | a= GREATEST | a= GT | a= IDIV | a= IF | a= IMPORT | a= IN | a= INHERIT | a= INSENSITIVE | a= INSTANCE | a= INTERSECT | a= IS | a= ITEM | a= LANGUAGE | a= LAX | a= LE | a= LEAST | a= LET | a= LEVELS | a= LOWERCASE | a= LT | a= MOD | a= MODULE | a= MOST | a= NAMESPACE | a= NE | a= NODE | a= NOINHERIT | a= NOPRESERVE | a= NOT | a= OCCURS | a= OF | a= OPTION | a= OR | a= ORDER | a= ORDERED | a= ORDERING | a= PARAGRAPH | a= PARAGRAPHS | a= PARENT | a= PHRASE | a= PRECEDING | a= PRECEDING_SIBLING | a= PRESERVE | a= PROCESSING_INSTRUCTION | a= RELATIONSHIP | a= RETURN | a= SAME | a= SATISFIES | a= SCHEMA | a= SCHEMA_ATTRIBUTE | a= SCHEMA_ELEMENT | a= SCORE | a= SELF | a= SENSITIVE | a= SENTENCES | a= SENTENCE | a= SOME | a= STABLE | a= START | a= STEMMING | a= STOP | a= STRICT | a= STRIP | a= TEXT | a= THESAURUS | a= THEN | a= TIMES | a= TO | a= TREAT | a= TYPESWITCH | a= UNION | a= UNORDERED | a= UPPERCASE | a= VALIDATE | a= VARIABLE | a= VERSION | a= WEIGHT | a= WHERE | a= WILDCARDS | a= WINDOW | a= WITH | a= WITHOUT | a= WORD | a= WORDS | a= XQUERY )
             int alt151=141;
             switch ( input.LA(1) ) {
             case NCName:
@@ -32590,1417 +32656,1417 @@ public class XQFTParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("773:5: (a= NCName | a= ALL | a= ANY | a= ANCESTOR | a= ANCESTOR_OR_SELF | a= AND | a= AS | a= ASCENDING | a= AT | a= ATTRIBUTE | a= BASE_URI | a= BY | a= BOUNDARYSPACE | a= CASE | a= CAST | a= CASTABLE | a= CHILD | a= COLLATION | a= COMMENT | a= CONSTRUCTION | a= CONTENT | a= COPY_NAMESPACES | a= DECLARE | a= DEFAULT | a= DESCENDANT | a= DESCENDANT_OR_SELF | a= DESCENDING | a= DIACRITICS | a= DIFFERENT | a= DISTANCE | a= DIV | a= DOCUMENT | a= DOCUMENT_NODE | a= ELEMENT | a= ELSE | a= ENCODING | a= END | a= ENTIRE | a= EMPTY | a= EMPTY_SEQUENCE | a= EQ | a= EVERY | a= EXACTLY | a= EXCEPT | a= EXTERNAL | a= FOLLOWING | a= FOLLOWING_SIBLING | a= FOR | a= FROM | a= FTAND | a= FTCONTAINS | a= FTNOT | a= FTOPTION | a= FTOR | a= FUNCTION | a= GE | a= GREATEST | a= GT | a= IDIV | a= IF | a= IMPORT | a= IN | a= INHERIT | a= INSENSITIVE | a= INSTANCE | a= INTERSECT | a= IS | a= ITEM | a= LANGUAGE | a= LAX | a= LE | a= LEAST | a= LET | a= LEVELS | a= LOWERCASE | a= LT | a= MOD | a= MODULE | a= MOST | a= NAMESPACE | a= NE | a= NODE | a= NOINHERIT | a= NOPRESERVE | a= NOT | a= OCCURS | a= OF | a= OPTION | a= OR | a= ORDER | a= ORDERED | a= ORDERING | a= PARAGRAPH | a= PARAGRAPHS | a= PARENT | a= PHRASE | a= PRECEDING | a= PRECEDING_SIBLING | a= PRESERVE | a= PROCESSING_INSTRUCTION | a= RELATIONSHIP | a= RETURN | a= SAME | a= SATISFIES | a= SCHEMA | a= SCHEMA_ATTRIBUTE | a= SCHEMA_ELEMENT | a= SCORE | a= SELF | a= SENSITIVE | a= SENTENCES | a= SENTENCE | a= SOME | a= STABLE | a= START | a= STEMMING | a= STOP | a= STRICT | a= STRIP | a= TEXT | a= THESAURUS | a= THEN | a= TIMES | a= TO | a= TREAT | a= TYPESWITCH | a= UNION | a= UNORDERED | a= UPPERCASE | a= VALIDATE | a= VARIABLE | a= VERSION | a= WEIGHT | a= WHERE | a= WILDCARDS | a= WINDOW | a= WITH | a= WITHOUT | a= WORD | a= WORDS | a= XQUERY )", 151, 0, input);
+                    new NoViableAltException("772:5: (a= NCName | a= ALL | a= ANY | a= ANCESTOR | a= ANCESTOR_OR_SELF | a= AND | a= AS | a= ASCENDING | a= AT | a= ATTRIBUTE | a= BASE_URI | a= BY | a= BOUNDARYSPACE | a= CASE | a= CAST | a= CASTABLE | a= CHILD | a= COLLATION | a= COMMENT | a= CONSTRUCTION | a= CONTENT | a= COPY_NAMESPACES | a= DECLARE | a= DEFAULT | a= DESCENDANT | a= DESCENDANT_OR_SELF | a= DESCENDING | a= DIACRITICS | a= DIFFERENT | a= DISTANCE | a= DIV | a= DOCUMENT | a= DOCUMENT_NODE | a= ELEMENT | a= ELSE | a= ENCODING | a= END | a= ENTIRE | a= EMPTY | a= EMPTY_SEQUENCE | a= EQ | a= EVERY | a= EXACTLY | a= EXCEPT | a= EXTERNAL | a= FOLLOWING | a= FOLLOWING_SIBLING | a= FOR | a= FROM | a= FTAND | a= FTCONTAINS | a= FTNOT | a= FTOPTION | a= FTOR | a= FUNCTION | a= GE | a= GREATEST | a= GT | a= IDIV | a= IF | a= IMPORT | a= IN | a= INHERIT | a= INSENSITIVE | a= INSTANCE | a= INTERSECT | a= IS | a= ITEM | a= LANGUAGE | a= LAX | a= LE | a= LEAST | a= LET | a= LEVELS | a= LOWERCASE | a= LT | a= MOD | a= MODULE | a= MOST | a= NAMESPACE | a= NE | a= NODE | a= NOINHERIT | a= NOPRESERVE | a= NOT | a= OCCURS | a= OF | a= OPTION | a= OR | a= ORDER | a= ORDERED | a= ORDERING | a= PARAGRAPH | a= PARAGRAPHS | a= PARENT | a= PHRASE | a= PRECEDING | a= PRECEDING_SIBLING | a= PRESERVE | a= PROCESSING_INSTRUCTION | a= RELATIONSHIP | a= RETURN | a= SAME | a= SATISFIES | a= SCHEMA | a= SCHEMA_ATTRIBUTE | a= SCHEMA_ELEMENT | a= SCORE | a= SELF | a= SENSITIVE | a= SENTENCES | a= SENTENCE | a= SOME | a= STABLE | a= START | a= STEMMING | a= STOP | a= STRICT | a= STRIP | a= TEXT | a= THESAURUS | a= THEN | a= TIMES | a= TO | a= TREAT | a= TYPESWITCH | a= UNION | a= UNORDERED | a= UPPERCASE | a= VALIDATE | a= VARIABLE | a= VERSION | a= WEIGHT | a= WHERE | a= WILDCARDS | a= WINDOW | a= WITH | a= WITHOUT | a= WORD | a= WORDS | a= XQUERY )", 151, 0, input);
 
                 throw nvae;
             }
 
             switch (alt151) {
                 case 1 :
-                    // etc/XQFT.g:773:6: a= NCName
+                    // etc/XQFT.g:772:6: a= NCName
                     {
                     a=(Token)input.LT(1);
-                    match(input,NCName,FOLLOW_NCName_in_ncNameorKeyword9097); if (failed) return retval;
+                    match(input,NCName,FOLLOW_NCName_in_ncNameorKeyword9107); if (failed) return retval;
                     if ( backtracking==0 ) stream_NCName.add(a);
 
 
                     }
                     break;
                 case 2 :
-                    // etc/XQFT.g:774:7: a= ALL
+                    // etc/XQFT.g:773:7: a= ALL
                     {
                     a=(Token)input.LT(1);
-                    match(input,ALL,FOLLOW_ALL_in_ncNameorKeyword9107); if (failed) return retval;
+                    match(input,ALL,FOLLOW_ALL_in_ncNameorKeyword9117); if (failed) return retval;
                     if ( backtracking==0 ) stream_ALL.add(a);
 
 
                     }
                     break;
                 case 3 :
-                    // etc/XQFT.g:775:7: a= ANY
+                    // etc/XQFT.g:774:7: a= ANY
                     {
                     a=(Token)input.LT(1);
-                    match(input,ANY,FOLLOW_ANY_in_ncNameorKeyword9117); if (failed) return retval;
+                    match(input,ANY,FOLLOW_ANY_in_ncNameorKeyword9128); if (failed) return retval;
                     if ( backtracking==0 ) stream_ANY.add(a);
 
 
                     }
                     break;
                 case 4 :
-                    // etc/XQFT.g:776:7: a= ANCESTOR
+                    // etc/XQFT.g:775:7: a= ANCESTOR
                     {
                     a=(Token)input.LT(1);
-                    match(input,ANCESTOR,FOLLOW_ANCESTOR_in_ncNameorKeyword9127); if (failed) return retval;
+                    match(input,ANCESTOR,FOLLOW_ANCESTOR_in_ncNameorKeyword9138); if (failed) return retval;
                     if ( backtracking==0 ) stream_ANCESTOR.add(a);
 
 
                     }
                     break;
                 case 5 :
-                    // etc/XQFT.g:777:7: a= ANCESTOR_OR_SELF
+                    // etc/XQFT.g:776:7: a= ANCESTOR_OR_SELF
                     {
                     a=(Token)input.LT(1);
-                    match(input,ANCESTOR_OR_SELF,FOLLOW_ANCESTOR_OR_SELF_in_ncNameorKeyword9137); if (failed) return retval;
+                    match(input,ANCESTOR_OR_SELF,FOLLOW_ANCESTOR_OR_SELF_in_ncNameorKeyword9148); if (failed) return retval;
                     if ( backtracking==0 ) stream_ANCESTOR_OR_SELF.add(a);
 
 
                     }
                     break;
                 case 6 :
-                    // etc/XQFT.g:778:7: a= AND
+                    // etc/XQFT.g:777:7: a= AND
                     {
                     a=(Token)input.LT(1);
-                    match(input,AND,FOLLOW_AND_in_ncNameorKeyword9147); if (failed) return retval;
+                    match(input,AND,FOLLOW_AND_in_ncNameorKeyword9158); if (failed) return retval;
                     if ( backtracking==0 ) stream_AND.add(a);
 
 
                     }
                     break;
                 case 7 :
-                    // etc/XQFT.g:779:7: a= AS
+                    // etc/XQFT.g:778:7: a= AS
                     {
                     a=(Token)input.LT(1);
-                    match(input,AS,FOLLOW_AS_in_ncNameorKeyword9157); if (failed) return retval;
+                    match(input,AS,FOLLOW_AS_in_ncNameorKeyword9168); if (failed) return retval;
                     if ( backtracking==0 ) stream_AS.add(a);
 
 
                     }
                     break;
                 case 8 :
-                    // etc/XQFT.g:780:7: a= ASCENDING
+                    // etc/XQFT.g:779:7: a= ASCENDING
                     {
                     a=(Token)input.LT(1);
-                    match(input,ASCENDING,FOLLOW_ASCENDING_in_ncNameorKeyword9167); if (failed) return retval;
+                    match(input,ASCENDING,FOLLOW_ASCENDING_in_ncNameorKeyword9178); if (failed) return retval;
                     if ( backtracking==0 ) stream_ASCENDING.add(a);
 
 
                     }
                     break;
                 case 9 :
-                    // etc/XQFT.g:781:7: a= AT
+                    // etc/XQFT.g:780:7: a= AT
                     {
                     a=(Token)input.LT(1);
-                    match(input,AT,FOLLOW_AT_in_ncNameorKeyword9177); if (failed) return retval;
+                    match(input,AT,FOLLOW_AT_in_ncNameorKeyword9188); if (failed) return retval;
                     if ( backtracking==0 ) stream_AT.add(a);
 
 
                     }
                     break;
                 case 10 :
-                    // etc/XQFT.g:782:7: a= ATTRIBUTE
+                    // etc/XQFT.g:781:7: a= ATTRIBUTE
                     {
                     a=(Token)input.LT(1);
-                    match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_ncNameorKeyword9187); if (failed) return retval;
+                    match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_ncNameorKeyword9198); if (failed) return retval;
                     if ( backtracking==0 ) stream_ATTRIBUTE.add(a);
 
 
                     }
                     break;
                 case 11 :
-                    // etc/XQFT.g:783:7: a= BASE_URI
+                    // etc/XQFT.g:782:7: a= BASE_URI
                     {
                     a=(Token)input.LT(1);
-                    match(input,BASE_URI,FOLLOW_BASE_URI_in_ncNameorKeyword9197); if (failed) return retval;
+                    match(input,BASE_URI,FOLLOW_BASE_URI_in_ncNameorKeyword9208); if (failed) return retval;
                     if ( backtracking==0 ) stream_BASE_URI.add(a);
 
 
                     }
                     break;
                 case 12 :
-                    // etc/XQFT.g:784:7: a= BY
+                    // etc/XQFT.g:783:7: a= BY
                     {
                     a=(Token)input.LT(1);
-                    match(input,BY,FOLLOW_BY_in_ncNameorKeyword9207); if (failed) return retval;
+                    match(input,BY,FOLLOW_BY_in_ncNameorKeyword9218); if (failed) return retval;
                     if ( backtracking==0 ) stream_BY.add(a);
 
 
                     }
                     break;
                 case 13 :
-                    // etc/XQFT.g:785:7: a= BOUNDARYSPACE
+                    // etc/XQFT.g:784:7: a= BOUNDARYSPACE
                     {
                     a=(Token)input.LT(1);
-                    match(input,BOUNDARYSPACE,FOLLOW_BOUNDARYSPACE_in_ncNameorKeyword9217); if (failed) return retval;
+                    match(input,BOUNDARYSPACE,FOLLOW_BOUNDARYSPACE_in_ncNameorKeyword9228); if (failed) return retval;
                     if ( backtracking==0 ) stream_BOUNDARYSPACE.add(a);
 
 
                     }
                     break;
                 case 14 :
-                    // etc/XQFT.g:786:7: a= CASE
+                    // etc/XQFT.g:785:7: a= CASE
                     {
                     a=(Token)input.LT(1);
-                    match(input,CASE,FOLLOW_CASE_in_ncNameorKeyword9227); if (failed) return retval;
+                    match(input,CASE,FOLLOW_CASE_in_ncNameorKeyword9238); if (failed) return retval;
                     if ( backtracking==0 ) stream_CASE.add(a);
 
 
                     }
                     break;
                 case 15 :
-                    // etc/XQFT.g:787:7: a= CAST
+                    // etc/XQFT.g:786:7: a= CAST
                     {
                     a=(Token)input.LT(1);
-                    match(input,CAST,FOLLOW_CAST_in_ncNameorKeyword9237); if (failed) return retval;
+                    match(input,CAST,FOLLOW_CAST_in_ncNameorKeyword9248); if (failed) return retval;
                     if ( backtracking==0 ) stream_CAST.add(a);
 
 
                     }
                     break;
                 case 16 :
-                    // etc/XQFT.g:788:7: a= CASTABLE
+                    // etc/XQFT.g:787:7: a= CASTABLE
                     {
                     a=(Token)input.LT(1);
-                    match(input,CASTABLE,FOLLOW_CASTABLE_in_ncNameorKeyword9247); if (failed) return retval;
+                    match(input,CASTABLE,FOLLOW_CASTABLE_in_ncNameorKeyword9258); if (failed) return retval;
                     if ( backtracking==0 ) stream_CASTABLE.add(a);
 
 
                     }
                     break;
                 case 17 :
-                    // etc/XQFT.g:789:7: a= CHILD
+                    // etc/XQFT.g:788:7: a= CHILD
                     {
                     a=(Token)input.LT(1);
-                    match(input,CHILD,FOLLOW_CHILD_in_ncNameorKeyword9257); if (failed) return retval;
+                    match(input,CHILD,FOLLOW_CHILD_in_ncNameorKeyword9268); if (failed) return retval;
                     if ( backtracking==0 ) stream_CHILD.add(a);
 
 
                     }
                     break;
                 case 18 :
-                    // etc/XQFT.g:790:7: a= COLLATION
+                    // etc/XQFT.g:789:7: a= COLLATION
                     {
                     a=(Token)input.LT(1);
-                    match(input,COLLATION,FOLLOW_COLLATION_in_ncNameorKeyword9267); if (failed) return retval;
+                    match(input,COLLATION,FOLLOW_COLLATION_in_ncNameorKeyword9278); if (failed) return retval;
                     if ( backtracking==0 ) stream_COLLATION.add(a);
 
 
                     }
                     break;
                 case 19 :
-                    // etc/XQFT.g:791:7: a= COMMENT
+                    // etc/XQFT.g:790:7: a= COMMENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,COMMENT,FOLLOW_COMMENT_in_ncNameorKeyword9277); if (failed) return retval;
+                    match(input,COMMENT,FOLLOW_COMMENT_in_ncNameorKeyword9288); if (failed) return retval;
                     if ( backtracking==0 ) stream_COMMENT.add(a);
 
 
                     }
                     break;
                 case 20 :
-                    // etc/XQFT.g:792:7: a= CONSTRUCTION
+                    // etc/XQFT.g:791:7: a= CONSTRUCTION
                     {
                     a=(Token)input.LT(1);
-                    match(input,CONSTRUCTION,FOLLOW_CONSTRUCTION_in_ncNameorKeyword9287); if (failed) return retval;
+                    match(input,CONSTRUCTION,FOLLOW_CONSTRUCTION_in_ncNameorKeyword9298); if (failed) return retval;
                     if ( backtracking==0 ) stream_CONSTRUCTION.add(a);
 
 
                     }
                     break;
                 case 21 :
-                    // etc/XQFT.g:793:7: a= CONTENT
+                    // etc/XQFT.g:792:7: a= CONTENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,CONTENT,FOLLOW_CONTENT_in_ncNameorKeyword9297); if (failed) return retval;
+                    match(input,CONTENT,FOLLOW_CONTENT_in_ncNameorKeyword9308); if (failed) return retval;
                     if ( backtracking==0 ) stream_CONTENT.add(a);
 
 
                     }
                     break;
                 case 22 :
-                    // etc/XQFT.g:794:7: a= COPY_NAMESPACES
+                    // etc/XQFT.g:793:7: a= COPY_NAMESPACES
                     {
                     a=(Token)input.LT(1);
-                    match(input,COPY_NAMESPACES,FOLLOW_COPY_NAMESPACES_in_ncNameorKeyword9307); if (failed) return retval;
+                    match(input,COPY_NAMESPACES,FOLLOW_COPY_NAMESPACES_in_ncNameorKeyword9318); if (failed) return retval;
                     if ( backtracking==0 ) stream_COPY_NAMESPACES.add(a);
 
 
                     }
                     break;
                 case 23 :
-                    // etc/XQFT.g:795:7: a= DECLARE
+                    // etc/XQFT.g:794:7: a= DECLARE
                     {
                     a=(Token)input.LT(1);
-                    match(input,DECLARE,FOLLOW_DECLARE_in_ncNameorKeyword9317); if (failed) return retval;
+                    match(input,DECLARE,FOLLOW_DECLARE_in_ncNameorKeyword9328); if (failed) return retval;
                     if ( backtracking==0 ) stream_DECLARE.add(a);
 
 
                     }
                     break;
                 case 24 :
-                    // etc/XQFT.g:796:7: a= DEFAULT
+                    // etc/XQFT.g:795:7: a= DEFAULT
                     {
                     a=(Token)input.LT(1);
-                    match(input,DEFAULT,FOLLOW_DEFAULT_in_ncNameorKeyword9327); if (failed) return retval;
+                    match(input,DEFAULT,FOLLOW_DEFAULT_in_ncNameorKeyword9338); if (failed) return retval;
                     if ( backtracking==0 ) stream_DEFAULT.add(a);
 
 
                     }
                     break;
                 case 25 :
-                    // etc/XQFT.g:797:7: a= DESCENDANT
+                    // etc/XQFT.g:796:7: a= DESCENDANT
                     {
                     a=(Token)input.LT(1);
-                    match(input,DESCENDANT,FOLLOW_DESCENDANT_in_ncNameorKeyword9337); if (failed) return retval;
+                    match(input,DESCENDANT,FOLLOW_DESCENDANT_in_ncNameorKeyword9348); if (failed) return retval;
                     if ( backtracking==0 ) stream_DESCENDANT.add(a);
 
 
                     }
                     break;
                 case 26 :
-                    // etc/XQFT.g:798:7: a= DESCENDANT_OR_SELF
+                    // etc/XQFT.g:797:7: a= DESCENDANT_OR_SELF
                     {
                     a=(Token)input.LT(1);
-                    match(input,DESCENDANT_OR_SELF,FOLLOW_DESCENDANT_OR_SELF_in_ncNameorKeyword9347); if (failed) return retval;
+                    match(input,DESCENDANT_OR_SELF,FOLLOW_DESCENDANT_OR_SELF_in_ncNameorKeyword9358); if (failed) return retval;
                     if ( backtracking==0 ) stream_DESCENDANT_OR_SELF.add(a);
 
 
                     }
                     break;
                 case 27 :
-                    // etc/XQFT.g:799:7: a= DESCENDING
+                    // etc/XQFT.g:798:7: a= DESCENDING
                     {
                     a=(Token)input.LT(1);
-                    match(input,DESCENDING,FOLLOW_DESCENDING_in_ncNameorKeyword9357); if (failed) return retval;
+                    match(input,DESCENDING,FOLLOW_DESCENDING_in_ncNameorKeyword9368); if (failed) return retval;
                     if ( backtracking==0 ) stream_DESCENDING.add(a);
 
 
                     }
                     break;
                 case 28 :
-                    // etc/XQFT.g:800:7: a= DIACRITICS
+                    // etc/XQFT.g:799:7: a= DIACRITICS
                     {
                     a=(Token)input.LT(1);
-                    match(input,DIACRITICS,FOLLOW_DIACRITICS_in_ncNameorKeyword9367); if (failed) return retval;
+                    match(input,DIACRITICS,FOLLOW_DIACRITICS_in_ncNameorKeyword9378); if (failed) return retval;
                     if ( backtracking==0 ) stream_DIACRITICS.add(a);
 
 
                     }
                     break;
                 case 29 :
-                    // etc/XQFT.g:801:7: a= DIFFERENT
+                    // etc/XQFT.g:800:7: a= DIFFERENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,DIFFERENT,FOLLOW_DIFFERENT_in_ncNameorKeyword9377); if (failed) return retval;
+                    match(input,DIFFERENT,FOLLOW_DIFFERENT_in_ncNameorKeyword9388); if (failed) return retval;
                     if ( backtracking==0 ) stream_DIFFERENT.add(a);
 
 
                     }
                     break;
                 case 30 :
-                    // etc/XQFT.g:802:7: a= DISTANCE
+                    // etc/XQFT.g:801:7: a= DISTANCE
                     {
                     a=(Token)input.LT(1);
-                    match(input,DISTANCE,FOLLOW_DISTANCE_in_ncNameorKeyword9387); if (failed) return retval;
+                    match(input,DISTANCE,FOLLOW_DISTANCE_in_ncNameorKeyword9398); if (failed) return retval;
                     if ( backtracking==0 ) stream_DISTANCE.add(a);
 
 
                     }
                     break;
                 case 31 :
-                    // etc/XQFT.g:803:7: a= DIV
+                    // etc/XQFT.g:802:7: a= DIV
                     {
                     a=(Token)input.LT(1);
-                    match(input,DIV,FOLLOW_DIV_in_ncNameorKeyword9397); if (failed) return retval;
+                    match(input,DIV,FOLLOW_DIV_in_ncNameorKeyword9408); if (failed) return retval;
                     if ( backtracking==0 ) stream_DIV.add(a);
 
 
                     }
                     break;
                 case 32 :
-                    // etc/XQFT.g:804:7: a= DOCUMENT
+                    // etc/XQFT.g:803:7: a= DOCUMENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,DOCUMENT,FOLLOW_DOCUMENT_in_ncNameorKeyword9407); if (failed) return retval;
+                    match(input,DOCUMENT,FOLLOW_DOCUMENT_in_ncNameorKeyword9418); if (failed) return retval;
                     if ( backtracking==0 ) stream_DOCUMENT.add(a);
 
 
                     }
                     break;
                 case 33 :
-                    // etc/XQFT.g:805:7: a= DOCUMENT_NODE
+                    // etc/XQFT.g:804:7: a= DOCUMENT_NODE
                     {
                     a=(Token)input.LT(1);
-                    match(input,DOCUMENT_NODE,FOLLOW_DOCUMENT_NODE_in_ncNameorKeyword9417); if (failed) return retval;
+                    match(input,DOCUMENT_NODE,FOLLOW_DOCUMENT_NODE_in_ncNameorKeyword9428); if (failed) return retval;
                     if ( backtracking==0 ) stream_DOCUMENT_NODE.add(a);
 
 
                     }
                     break;
                 case 34 :
-                    // etc/XQFT.g:806:7: a= ELEMENT
+                    // etc/XQFT.g:805:7: a= ELEMENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,ELEMENT,FOLLOW_ELEMENT_in_ncNameorKeyword9427); if (failed) return retval;
+                    match(input,ELEMENT,FOLLOW_ELEMENT_in_ncNameorKeyword9438); if (failed) return retval;
                     if ( backtracking==0 ) stream_ELEMENT.add(a);
 
 
                     }
                     break;
                 case 35 :
-                    // etc/XQFT.g:807:7: a= ELSE
+                    // etc/XQFT.g:806:7: a= ELSE
                     {
                     a=(Token)input.LT(1);
-                    match(input,ELSE,FOLLOW_ELSE_in_ncNameorKeyword9437); if (failed) return retval;
+                    match(input,ELSE,FOLLOW_ELSE_in_ncNameorKeyword9448); if (failed) return retval;
                     if ( backtracking==0 ) stream_ELSE.add(a);
 
 
                     }
                     break;
                 case 36 :
-                    // etc/XQFT.g:808:7: a= ENCODING
+                    // etc/XQFT.g:807:7: a= ENCODING
                     {
                     a=(Token)input.LT(1);
-                    match(input,ENCODING,FOLLOW_ENCODING_in_ncNameorKeyword9447); if (failed) return retval;
+                    match(input,ENCODING,FOLLOW_ENCODING_in_ncNameorKeyword9458); if (failed) return retval;
                     if ( backtracking==0 ) stream_ENCODING.add(a);
 
 
                     }
                     break;
                 case 37 :
-                    // etc/XQFT.g:809:7: a= END
+                    // etc/XQFT.g:808:7: a= END
                     {
                     a=(Token)input.LT(1);
-                    match(input,END,FOLLOW_END_in_ncNameorKeyword9457); if (failed) return retval;
+                    match(input,END,FOLLOW_END_in_ncNameorKeyword9468); if (failed) return retval;
                     if ( backtracking==0 ) stream_END.add(a);
 
 
                     }
                     break;
                 case 38 :
-                    // etc/XQFT.g:810:7: a= ENTIRE
+                    // etc/XQFT.g:809:7: a= ENTIRE
                     {
                     a=(Token)input.LT(1);
-                    match(input,ENTIRE,FOLLOW_ENTIRE_in_ncNameorKeyword9467); if (failed) return retval;
+                    match(input,ENTIRE,FOLLOW_ENTIRE_in_ncNameorKeyword9478); if (failed) return retval;
                     if ( backtracking==0 ) stream_ENTIRE.add(a);
 
 
                     }
                     break;
                 case 39 :
-                    // etc/XQFT.g:811:7: a= EMPTY
+                    // etc/XQFT.g:810:7: a= EMPTY
                     {
                     a=(Token)input.LT(1);
-                    match(input,EMPTY,FOLLOW_EMPTY_in_ncNameorKeyword9477); if (failed) return retval;
+                    match(input,EMPTY,FOLLOW_EMPTY_in_ncNameorKeyword9488); if (failed) return retval;
                     if ( backtracking==0 ) stream_EMPTY.add(a);
 
 
                     }
                     break;
                 case 40 :
-                    // etc/XQFT.g:812:7: a= EMPTY_SEQUENCE
+                    // etc/XQFT.g:811:7: a= EMPTY_SEQUENCE
                     {
                     a=(Token)input.LT(1);
-                    match(input,EMPTY_SEQUENCE,FOLLOW_EMPTY_SEQUENCE_in_ncNameorKeyword9487); if (failed) return retval;
+                    match(input,EMPTY_SEQUENCE,FOLLOW_EMPTY_SEQUENCE_in_ncNameorKeyword9498); if (failed) return retval;
                     if ( backtracking==0 ) stream_EMPTY_SEQUENCE.add(a);
 
 
                     }
                     break;
                 case 41 :
-                    // etc/XQFT.g:813:7: a= EQ
+                    // etc/XQFT.g:812:7: a= EQ
                     {
                     a=(Token)input.LT(1);
-                    match(input,EQ,FOLLOW_EQ_in_ncNameorKeyword9497); if (failed) return retval;
+                    match(input,EQ,FOLLOW_EQ_in_ncNameorKeyword9508); if (failed) return retval;
                     if ( backtracking==0 ) stream_EQ.add(a);
 
 
                     }
                     break;
                 case 42 :
-                    // etc/XQFT.g:814:7: a= EVERY
+                    // etc/XQFT.g:813:7: a= EVERY
                     {
                     a=(Token)input.LT(1);
-                    match(input,EVERY,FOLLOW_EVERY_in_ncNameorKeyword9507); if (failed) return retval;
+                    match(input,EVERY,FOLLOW_EVERY_in_ncNameorKeyword9518); if (failed) return retval;
                     if ( backtracking==0 ) stream_EVERY.add(a);
 
 
                     }
                     break;
                 case 43 :
-                    // etc/XQFT.g:815:7: a= EXACTLY
+                    // etc/XQFT.g:814:7: a= EXACTLY
                     {
                     a=(Token)input.LT(1);
-                    match(input,EXACTLY,FOLLOW_EXACTLY_in_ncNameorKeyword9517); if (failed) return retval;
+                    match(input,EXACTLY,FOLLOW_EXACTLY_in_ncNameorKeyword9528); if (failed) return retval;
                     if ( backtracking==0 ) stream_EXACTLY.add(a);
 
 
                     }
                     break;
                 case 44 :
-                    // etc/XQFT.g:816:7: a= EXCEPT
+                    // etc/XQFT.g:815:7: a= EXCEPT
                     {
                     a=(Token)input.LT(1);
-                    match(input,EXCEPT,FOLLOW_EXCEPT_in_ncNameorKeyword9527); if (failed) return retval;
+                    match(input,EXCEPT,FOLLOW_EXCEPT_in_ncNameorKeyword9538); if (failed) return retval;
                     if ( backtracking==0 ) stream_EXCEPT.add(a);
 
 
                     }
                     break;
                 case 45 :
-                    // etc/XQFT.g:817:7: a= EXTERNAL
+                    // etc/XQFT.g:816:7: a= EXTERNAL
                     {
                     a=(Token)input.LT(1);
-                    match(input,EXTERNAL,FOLLOW_EXTERNAL_in_ncNameorKeyword9537); if (failed) return retval;
+                    match(input,EXTERNAL,FOLLOW_EXTERNAL_in_ncNameorKeyword9548); if (failed) return retval;
                     if ( backtracking==0 ) stream_EXTERNAL.add(a);
 
 
                     }
                     break;
                 case 46 :
-                    // etc/XQFT.g:818:7: a= FOLLOWING
+                    // etc/XQFT.g:817:7: a= FOLLOWING
                     {
                     a=(Token)input.LT(1);
-                    match(input,FOLLOWING,FOLLOW_FOLLOWING_in_ncNameorKeyword9547); if (failed) return retval;
+                    match(input,FOLLOWING,FOLLOW_FOLLOWING_in_ncNameorKeyword9558); if (failed) return retval;
                     if ( backtracking==0 ) stream_FOLLOWING.add(a);
 
 
                     }
                     break;
                 case 47 :
-                    // etc/XQFT.g:819:7: a= FOLLOWING_SIBLING
+                    // etc/XQFT.g:818:7: a= FOLLOWING_SIBLING
                     {
                     a=(Token)input.LT(1);
-                    match(input,FOLLOWING_SIBLING,FOLLOW_FOLLOWING_SIBLING_in_ncNameorKeyword9557); if (failed) return retval;
+                    match(input,FOLLOWING_SIBLING,FOLLOW_FOLLOWING_SIBLING_in_ncNameorKeyword9568); if (failed) return retval;
                     if ( backtracking==0 ) stream_FOLLOWING_SIBLING.add(a);
 
 
                     }
                     break;
                 case 48 :
-                    // etc/XQFT.g:820:7: a= FOR
+                    // etc/XQFT.g:819:7: a= FOR
                     {
                     a=(Token)input.LT(1);
-                    match(input,FOR,FOLLOW_FOR_in_ncNameorKeyword9567); if (failed) return retval;
+                    match(input,FOR,FOLLOW_FOR_in_ncNameorKeyword9578); if (failed) return retval;
                     if ( backtracking==0 ) stream_FOR.add(a);
 
 
                     }
                     break;
                 case 49 :
-                    // etc/XQFT.g:821:7: a= FROM
+                    // etc/XQFT.g:820:7: a= FROM
                     {
                     a=(Token)input.LT(1);
-                    match(input,FROM,FOLLOW_FROM_in_ncNameorKeyword9577); if (failed) return retval;
+                    match(input,FROM,FOLLOW_FROM_in_ncNameorKeyword9588); if (failed) return retval;
                     if ( backtracking==0 ) stream_FROM.add(a);
 
 
                     }
                     break;
                 case 50 :
-                    // etc/XQFT.g:822:7: a= FTAND
+                    // etc/XQFT.g:821:7: a= FTAND
                     {
                     a=(Token)input.LT(1);
-                    match(input,FTAND,FOLLOW_FTAND_in_ncNameorKeyword9587); if (failed) return retval;
+                    match(input,FTAND,FOLLOW_FTAND_in_ncNameorKeyword9598); if (failed) return retval;
                     if ( backtracking==0 ) stream_FTAND.add(a);
 
 
                     }
                     break;
                 case 51 :
-                    // etc/XQFT.g:823:7: a= FTCONTAINS
+                    // etc/XQFT.g:822:7: a= FTCONTAINS
                     {
                     a=(Token)input.LT(1);
-                    match(input,FTCONTAINS,FOLLOW_FTCONTAINS_in_ncNameorKeyword9597); if (failed) return retval;
+                    match(input,FTCONTAINS,FOLLOW_FTCONTAINS_in_ncNameorKeyword9608); if (failed) return retval;
                     if ( backtracking==0 ) stream_FTCONTAINS.add(a);
 
 
                     }
                     break;
                 case 52 :
-                    // etc/XQFT.g:824:7: a= FTNOT
+                    // etc/XQFT.g:823:7: a= FTNOT
                     {
                     a=(Token)input.LT(1);
-                    match(input,FTNOT,FOLLOW_FTNOT_in_ncNameorKeyword9607); if (failed) return retval;
+                    match(input,FTNOT,FOLLOW_FTNOT_in_ncNameorKeyword9618); if (failed) return retval;
                     if ( backtracking==0 ) stream_FTNOT.add(a);
 
 
                     }
                     break;
                 case 53 :
-                    // etc/XQFT.g:825:7: a= FTOPTION
+                    // etc/XQFT.g:824:7: a= FTOPTION
                     {
                     a=(Token)input.LT(1);
-                    match(input,FTOPTION,FOLLOW_FTOPTION_in_ncNameorKeyword9617); if (failed) return retval;
+                    match(input,FTOPTION,FOLLOW_FTOPTION_in_ncNameorKeyword9628); if (failed) return retval;
                     if ( backtracking==0 ) stream_FTOPTION.add(a);
 
 
                     }
                     break;
                 case 54 :
-                    // etc/XQFT.g:826:7: a= FTOR
+                    // etc/XQFT.g:825:7: a= FTOR
                     {
                     a=(Token)input.LT(1);
-                    match(input,FTOR,FOLLOW_FTOR_in_ncNameorKeyword9627); if (failed) return retval;
+                    match(input,FTOR,FOLLOW_FTOR_in_ncNameorKeyword9638); if (failed) return retval;
                     if ( backtracking==0 ) stream_FTOR.add(a);
 
 
                     }
                     break;
                 case 55 :
-                    // etc/XQFT.g:827:7: a= FUNCTION
+                    // etc/XQFT.g:826:7: a= FUNCTION
                     {
                     a=(Token)input.LT(1);
-                    match(input,FUNCTION,FOLLOW_FUNCTION_in_ncNameorKeyword9637); if (failed) return retval;
+                    match(input,FUNCTION,FOLLOW_FUNCTION_in_ncNameorKeyword9648); if (failed) return retval;
                     if ( backtracking==0 ) stream_FUNCTION.add(a);
 
 
                     }
                     break;
                 case 56 :
-                    // etc/XQFT.g:828:7: a= GE
+                    // etc/XQFT.g:827:7: a= GE
                     {
                     a=(Token)input.LT(1);
-                    match(input,GE,FOLLOW_GE_in_ncNameorKeyword9647); if (failed) return retval;
+                    match(input,GE,FOLLOW_GE_in_ncNameorKeyword9658); if (failed) return retval;
                     if ( backtracking==0 ) stream_GE.add(a);
 
 
                     }
                     break;
                 case 57 :
-                    // etc/XQFT.g:829:7: a= GREATEST
+                    // etc/XQFT.g:828:7: a= GREATEST
                     {
                     a=(Token)input.LT(1);
-                    match(input,GREATEST,FOLLOW_GREATEST_in_ncNameorKeyword9657); if (failed) return retval;
+                    match(input,GREATEST,FOLLOW_GREATEST_in_ncNameorKeyword9668); if (failed) return retval;
                     if ( backtracking==0 ) stream_GREATEST.add(a);
 
 
                     }
                     break;
                 case 58 :
-                    // etc/XQFT.g:830:7: a= GT
+                    // etc/XQFT.g:829:7: a= GT
                     {
                     a=(Token)input.LT(1);
-                    match(input,GT,FOLLOW_GT_in_ncNameorKeyword9667); if (failed) return retval;
+                    match(input,GT,FOLLOW_GT_in_ncNameorKeyword9678); if (failed) return retval;
                     if ( backtracking==0 ) stream_GT.add(a);
 
 
                     }
                     break;
                 case 59 :
-                    // etc/XQFT.g:831:7: a= IDIV
+                    // etc/XQFT.g:830:7: a= IDIV
                     {
                     a=(Token)input.LT(1);
-                    match(input,IDIV,FOLLOW_IDIV_in_ncNameorKeyword9677); if (failed) return retval;
+                    match(input,IDIV,FOLLOW_IDIV_in_ncNameorKeyword9688); if (failed) return retval;
                     if ( backtracking==0 ) stream_IDIV.add(a);
 
 
                     }
                     break;
                 case 60 :
-                    // etc/XQFT.g:832:7: a= IF
+                    // etc/XQFT.g:831:7: a= IF
                     {
                     a=(Token)input.LT(1);
-                    match(input,IF,FOLLOW_IF_in_ncNameorKeyword9687); if (failed) return retval;
+                    match(input,IF,FOLLOW_IF_in_ncNameorKeyword9698); if (failed) return retval;
                     if ( backtracking==0 ) stream_IF.add(a);
 
 
                     }
                     break;
                 case 61 :
-                    // etc/XQFT.g:833:7: a= IMPORT
+                    // etc/XQFT.g:832:7: a= IMPORT
                     {
                     a=(Token)input.LT(1);
-                    match(input,IMPORT,FOLLOW_IMPORT_in_ncNameorKeyword9697); if (failed) return retval;
+                    match(input,IMPORT,FOLLOW_IMPORT_in_ncNameorKeyword9708); if (failed) return retval;
                     if ( backtracking==0 ) stream_IMPORT.add(a);
 
 
                     }
                     break;
                 case 62 :
-                    // etc/XQFT.g:834:7: a= IN
+                    // etc/XQFT.g:833:7: a= IN
                     {
                     a=(Token)input.LT(1);
-                    match(input,IN,FOLLOW_IN_in_ncNameorKeyword9707); if (failed) return retval;
+                    match(input,IN,FOLLOW_IN_in_ncNameorKeyword9718); if (failed) return retval;
                     if ( backtracking==0 ) stream_IN.add(a);
 
 
                     }
                     break;
                 case 63 :
-                    // etc/XQFT.g:835:7: a= INHERIT
+                    // etc/XQFT.g:834:7: a= INHERIT
                     {
                     a=(Token)input.LT(1);
-                    match(input,INHERIT,FOLLOW_INHERIT_in_ncNameorKeyword9717); if (failed) return retval;
+                    match(input,INHERIT,FOLLOW_INHERIT_in_ncNameorKeyword9728); if (failed) return retval;
                     if ( backtracking==0 ) stream_INHERIT.add(a);
 
 
                     }
                     break;
                 case 64 :
-                    // etc/XQFT.g:836:7: a= INSENSITIVE
+                    // etc/XQFT.g:835:7: a= INSENSITIVE
                     {
                     a=(Token)input.LT(1);
-                    match(input,INSENSITIVE,FOLLOW_INSENSITIVE_in_ncNameorKeyword9727); if (failed) return retval;
+                    match(input,INSENSITIVE,FOLLOW_INSENSITIVE_in_ncNameorKeyword9738); if (failed) return retval;
                     if ( backtracking==0 ) stream_INSENSITIVE.add(a);
 
 
                     }
                     break;
                 case 65 :
-                    // etc/XQFT.g:837:7: a= INSTANCE
+                    // etc/XQFT.g:836:7: a= INSTANCE
                     {
                     a=(Token)input.LT(1);
-                    match(input,INSTANCE,FOLLOW_INSTANCE_in_ncNameorKeyword9737); if (failed) return retval;
+                    match(input,INSTANCE,FOLLOW_INSTANCE_in_ncNameorKeyword9748); if (failed) return retval;
                     if ( backtracking==0 ) stream_INSTANCE.add(a);
 
 
                     }
                     break;
                 case 66 :
-                    // etc/XQFT.g:838:7: a= INTERSECT
+                    // etc/XQFT.g:837:7: a= INTERSECT
                     {
                     a=(Token)input.LT(1);
-                    match(input,INTERSECT,FOLLOW_INTERSECT_in_ncNameorKeyword9747); if (failed) return retval;
+                    match(input,INTERSECT,FOLLOW_INTERSECT_in_ncNameorKeyword9758); if (failed) return retval;
                     if ( backtracking==0 ) stream_INTERSECT.add(a);
 
 
                     }
                     break;
                 case 67 :
-                    // etc/XQFT.g:839:7: a= IS
+                    // etc/XQFT.g:838:7: a= IS
                     {
                     a=(Token)input.LT(1);
-                    match(input,IS,FOLLOW_IS_in_ncNameorKeyword9757); if (failed) return retval;
+                    match(input,IS,FOLLOW_IS_in_ncNameorKeyword9768); if (failed) return retval;
                     if ( backtracking==0 ) stream_IS.add(a);
 
 
                     }
                     break;
                 case 68 :
-                    // etc/XQFT.g:840:7: a= ITEM
+                    // etc/XQFT.g:839:7: a= ITEM
                     {
                     a=(Token)input.LT(1);
-                    match(input,ITEM,FOLLOW_ITEM_in_ncNameorKeyword9767); if (failed) return retval;
+                    match(input,ITEM,FOLLOW_ITEM_in_ncNameorKeyword9778); if (failed) return retval;
                     if ( backtracking==0 ) stream_ITEM.add(a);
 
 
                     }
                     break;
                 case 69 :
-                    // etc/XQFT.g:841:7: a= LANGUAGE
+                    // etc/XQFT.g:840:7: a= LANGUAGE
                     {
                     a=(Token)input.LT(1);
-                    match(input,LANGUAGE,FOLLOW_LANGUAGE_in_ncNameorKeyword9777); if (failed) return retval;
+                    match(input,LANGUAGE,FOLLOW_LANGUAGE_in_ncNameorKeyword9788); if (failed) return retval;
                     if ( backtracking==0 ) stream_LANGUAGE.add(a);
 
 
                     }
                     break;
                 case 70 :
-                    // etc/XQFT.g:842:7: a= LAX
+                    // etc/XQFT.g:841:7: a= LAX
                     {
                     a=(Token)input.LT(1);
-                    match(input,LAX,FOLLOW_LAX_in_ncNameorKeyword9787); if (failed) return retval;
+                    match(input,LAX,FOLLOW_LAX_in_ncNameorKeyword9798); if (failed) return retval;
                     if ( backtracking==0 ) stream_LAX.add(a);
 
 
                     }
                     break;
                 case 71 :
-                    // etc/XQFT.g:843:7: a= LE
+                    // etc/XQFT.g:842:7: a= LE
                     {
                     a=(Token)input.LT(1);
-                    match(input,LE,FOLLOW_LE_in_ncNameorKeyword9797); if (failed) return retval;
+                    match(input,LE,FOLLOW_LE_in_ncNameorKeyword9808); if (failed) return retval;
                     if ( backtracking==0 ) stream_LE.add(a);
 
 
                     }
                     break;
                 case 72 :
-                    // etc/XQFT.g:844:7: a= LEAST
+                    // etc/XQFT.g:843:7: a= LEAST
                     {
                     a=(Token)input.LT(1);
-                    match(input,LEAST,FOLLOW_LEAST_in_ncNameorKeyword9807); if (failed) return retval;
+                    match(input,LEAST,FOLLOW_LEAST_in_ncNameorKeyword9818); if (failed) return retval;
                     if ( backtracking==0 ) stream_LEAST.add(a);
 
 
                     }
                     break;
                 case 73 :
-                    // etc/XQFT.g:845:7: a= LET
+                    // etc/XQFT.g:844:7: a= LET
                     {
                     a=(Token)input.LT(1);
-                    match(input,LET,FOLLOW_LET_in_ncNameorKeyword9817); if (failed) return retval;
+                    match(input,LET,FOLLOW_LET_in_ncNameorKeyword9828); if (failed) return retval;
                     if ( backtracking==0 ) stream_LET.add(a);
 
 
                     }
                     break;
                 case 74 :
-                    // etc/XQFT.g:846:7: a= LEVELS
+                    // etc/XQFT.g:845:7: a= LEVELS
                     {
                     a=(Token)input.LT(1);
-                    match(input,LEVELS,FOLLOW_LEVELS_in_ncNameorKeyword9827); if (failed) return retval;
+                    match(input,LEVELS,FOLLOW_LEVELS_in_ncNameorKeyword9838); if (failed) return retval;
                     if ( backtracking==0 ) stream_LEVELS.add(a);
 
 
                     }
                     break;
                 case 75 :
-                    // etc/XQFT.g:847:7: a= LOWERCASE
+                    // etc/XQFT.g:846:7: a= LOWERCASE
                     {
                     a=(Token)input.LT(1);
-                    match(input,LOWERCASE,FOLLOW_LOWERCASE_in_ncNameorKeyword9837); if (failed) return retval;
+                    match(input,LOWERCASE,FOLLOW_LOWERCASE_in_ncNameorKeyword9848); if (failed) return retval;
                     if ( backtracking==0 ) stream_LOWERCASE.add(a);
 
 
                     }
                     break;
                 case 76 :
-                    // etc/XQFT.g:848:7: a= LT
+                    // etc/XQFT.g:847:7: a= LT
                     {
                     a=(Token)input.LT(1);
-                    match(input,LT,FOLLOW_LT_in_ncNameorKeyword9847); if (failed) return retval;
+                    match(input,LT,FOLLOW_LT_in_ncNameorKeyword9858); if (failed) return retval;
                     if ( backtracking==0 ) stream_LT.add(a);
 
 
                     }
                     break;
                 case 77 :
-                    // etc/XQFT.g:849:7: a= MOD
+                    // etc/XQFT.g:848:7: a= MOD
                     {
                     a=(Token)input.LT(1);
-                    match(input,MOD,FOLLOW_MOD_in_ncNameorKeyword9857); if (failed) return retval;
+                    match(input,MOD,FOLLOW_MOD_in_ncNameorKeyword9868); if (failed) return retval;
                     if ( backtracking==0 ) stream_MOD.add(a);
 
 
                     }
                     break;
                 case 78 :
-                    // etc/XQFT.g:850:7: a= MODULE
+                    // etc/XQFT.g:849:7: a= MODULE
                     {
                     a=(Token)input.LT(1);
-                    match(input,MODULE,FOLLOW_MODULE_in_ncNameorKeyword9867); if (failed) return retval;
+                    match(input,MODULE,FOLLOW_MODULE_in_ncNameorKeyword9878); if (failed) return retval;
                     if ( backtracking==0 ) stream_MODULE.add(a);
 
 
                     }
                     break;
                 case 79 :
-                    // etc/XQFT.g:851:7: a= MOST
+                    // etc/XQFT.g:850:7: a= MOST
                     {
                     a=(Token)input.LT(1);
-                    match(input,MOST,FOLLOW_MOST_in_ncNameorKeyword9877); if (failed) return retval;
+                    match(input,MOST,FOLLOW_MOST_in_ncNameorKeyword9888); if (failed) return retval;
                     if ( backtracking==0 ) stream_MOST.add(a);
 
 
                     }
                     break;
                 case 80 :
-                    // etc/XQFT.g:852:7: a= NAMESPACE
+                    // etc/XQFT.g:851:7: a= NAMESPACE
                     {
                     a=(Token)input.LT(1);
-                    match(input,NAMESPACE,FOLLOW_NAMESPACE_in_ncNameorKeyword9887); if (failed) return retval;
+                    match(input,NAMESPACE,FOLLOW_NAMESPACE_in_ncNameorKeyword9898); if (failed) return retval;
                     if ( backtracking==0 ) stream_NAMESPACE.add(a);
 
 
                     }
                     break;
                 case 81 :
-                    // etc/XQFT.g:853:7: a= NE
+                    // etc/XQFT.g:852:7: a= NE
                     {
                     a=(Token)input.LT(1);
-                    match(input,NE,FOLLOW_NE_in_ncNameorKeyword9897); if (failed) return retval;
+                    match(input,NE,FOLLOW_NE_in_ncNameorKeyword9908); if (failed) return retval;
                     if ( backtracking==0 ) stream_NE.add(a);
 
 
                     }
                     break;
                 case 82 :
-                    // etc/XQFT.g:854:7: a= NODE
+                    // etc/XQFT.g:853:7: a= NODE
                     {
                     a=(Token)input.LT(1);
-                    match(input,NODE,FOLLOW_NODE_in_ncNameorKeyword9907); if (failed) return retval;
+                    match(input,NODE,FOLLOW_NODE_in_ncNameorKeyword9918); if (failed) return retval;
                     if ( backtracking==0 ) stream_NODE.add(a);
 
 
                     }
                     break;
                 case 83 :
-                    // etc/XQFT.g:855:7: a= NOINHERIT
+                    // etc/XQFT.g:854:7: a= NOINHERIT
                     {
                     a=(Token)input.LT(1);
-                    match(input,NOINHERIT,FOLLOW_NOINHERIT_in_ncNameorKeyword9917); if (failed) return retval;
+                    match(input,NOINHERIT,FOLLOW_NOINHERIT_in_ncNameorKeyword9928); if (failed) return retval;
                     if ( backtracking==0 ) stream_NOINHERIT.add(a);
 
 
                     }
                     break;
                 case 84 :
-                    // etc/XQFT.g:856:7: a= NOPRESERVE
+                    // etc/XQFT.g:855:7: a= NOPRESERVE
                     {
                     a=(Token)input.LT(1);
-                    match(input,NOPRESERVE,FOLLOW_NOPRESERVE_in_ncNameorKeyword9927); if (failed) return retval;
+                    match(input,NOPRESERVE,FOLLOW_NOPRESERVE_in_ncNameorKeyword9938); if (failed) return retval;
                     if ( backtracking==0 ) stream_NOPRESERVE.add(a);
 
 
                     }
                     break;
                 case 85 :
-                    // etc/XQFT.g:857:7: a= NOT
+                    // etc/XQFT.g:856:7: a= NOT
                     {
                     a=(Token)input.LT(1);
-                    match(input,NOT,FOLLOW_NOT_in_ncNameorKeyword9937); if (failed) return retval;
+                    match(input,NOT,FOLLOW_NOT_in_ncNameorKeyword9948); if (failed) return retval;
                     if ( backtracking==0 ) stream_NOT.add(a);
 
 
                     }
                     break;
                 case 86 :
-                    // etc/XQFT.g:858:7: a= OCCURS
+                    // etc/XQFT.g:857:7: a= OCCURS
                     {
                     a=(Token)input.LT(1);
-                    match(input,OCCURS,FOLLOW_OCCURS_in_ncNameorKeyword9947); if (failed) return retval;
+                    match(input,OCCURS,FOLLOW_OCCURS_in_ncNameorKeyword9958); if (failed) return retval;
                     if ( backtracking==0 ) stream_OCCURS.add(a);
 
 
                     }
                     break;
                 case 87 :
-                    // etc/XQFT.g:859:7: a= OF
+                    // etc/XQFT.g:858:7: a= OF
                     {
                     a=(Token)input.LT(1);
-                    match(input,OF,FOLLOW_OF_in_ncNameorKeyword9957); if (failed) return retval;
+                    match(input,OF,FOLLOW_OF_in_ncNameorKeyword9968); if (failed) return retval;
                     if ( backtracking==0 ) stream_OF.add(a);
 
 
                     }
                     break;
                 case 88 :
-                    // etc/XQFT.g:860:7: a= OPTION
+                    // etc/XQFT.g:859:7: a= OPTION
                     {
                     a=(Token)input.LT(1);
-                    match(input,OPTION,FOLLOW_OPTION_in_ncNameorKeyword9967); if (failed) return retval;
+                    match(input,OPTION,FOLLOW_OPTION_in_ncNameorKeyword9978); if (failed) return retval;
                     if ( backtracking==0 ) stream_OPTION.add(a);
 
 
                     }
                     break;
                 case 89 :
-                    // etc/XQFT.g:861:7: a= OR
+                    // etc/XQFT.g:860:7: a= OR
                     {
                     a=(Token)input.LT(1);
-                    match(input,OR,FOLLOW_OR_in_ncNameorKeyword9977); if (failed) return retval;
+                    match(input,OR,FOLLOW_OR_in_ncNameorKeyword9988); if (failed) return retval;
                     if ( backtracking==0 ) stream_OR.add(a);
 
 
                     }
                     break;
                 case 90 :
-                    // etc/XQFT.g:862:7: a= ORDER
+                    // etc/XQFT.g:861:7: a= ORDER
                     {
                     a=(Token)input.LT(1);
-                    match(input,ORDER,FOLLOW_ORDER_in_ncNameorKeyword9987); if (failed) return retval;
+                    match(input,ORDER,FOLLOW_ORDER_in_ncNameorKeyword9998); if (failed) return retval;
                     if ( backtracking==0 ) stream_ORDER.add(a);
 
 
                     }
                     break;
                 case 91 :
-                    // etc/XQFT.g:863:7: a= ORDERED
+                    // etc/XQFT.g:862:7: a= ORDERED
                     {
                     a=(Token)input.LT(1);
-                    match(input,ORDERED,FOLLOW_ORDERED_in_ncNameorKeyword9997); if (failed) return retval;
+                    match(input,ORDERED,FOLLOW_ORDERED_in_ncNameorKeyword10008); if (failed) return retval;
                     if ( backtracking==0 ) stream_ORDERED.add(a);
 
 
                     }
                     break;
                 case 92 :
-                    // etc/XQFT.g:864:7: a= ORDERING
+                    // etc/XQFT.g:863:7: a= ORDERING
                     {
                     a=(Token)input.LT(1);
-                    match(input,ORDERING,FOLLOW_ORDERING_in_ncNameorKeyword10007); if (failed) return retval;
+                    match(input,ORDERING,FOLLOW_ORDERING_in_ncNameorKeyword10018); if (failed) return retval;
                     if ( backtracking==0 ) stream_ORDERING.add(a);
 
 
                     }
                     break;
                 case 93 :
-                    // etc/XQFT.g:865:7: a= PARAGRAPH
+                    // etc/XQFT.g:864:7: a= PARAGRAPH
                     {
                     a=(Token)input.LT(1);
-                    match(input,PARAGRAPH,FOLLOW_PARAGRAPH_in_ncNameorKeyword10017); if (failed) return retval;
+                    match(input,PARAGRAPH,FOLLOW_PARAGRAPH_in_ncNameorKeyword10028); if (failed) return retval;
                     if ( backtracking==0 ) stream_PARAGRAPH.add(a);
 
 
                     }
                     break;
                 case 94 :
-                    // etc/XQFT.g:866:7: a= PARAGRAPHS
+                    // etc/XQFT.g:865:7: a= PARAGRAPHS
                     {
                     a=(Token)input.LT(1);
-                    match(input,PARAGRAPHS,FOLLOW_PARAGRAPHS_in_ncNameorKeyword10027); if (failed) return retval;
+                    match(input,PARAGRAPHS,FOLLOW_PARAGRAPHS_in_ncNameorKeyword10038); if (failed) return retval;
                     if ( backtracking==0 ) stream_PARAGRAPHS.add(a);
 
 
                     }
                     break;
                 case 95 :
-                    // etc/XQFT.g:867:7: a= PARENT
+                    // etc/XQFT.g:866:7: a= PARENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,PARENT,FOLLOW_PARENT_in_ncNameorKeyword10037); if (failed) return retval;
+                    match(input,PARENT,FOLLOW_PARENT_in_ncNameorKeyword10048); if (failed) return retval;
                     if ( backtracking==0 ) stream_PARENT.add(a);
 
 
                     }
                     break;
                 case 96 :
-                    // etc/XQFT.g:868:7: a= PHRASE
+                    // etc/XQFT.g:867:7: a= PHRASE
                     {
                     a=(Token)input.LT(1);
-                    match(input,PHRASE,FOLLOW_PHRASE_in_ncNameorKeyword10047); if (failed) return retval;
+                    match(input,PHRASE,FOLLOW_PHRASE_in_ncNameorKeyword10058); if (failed) return retval;
                     if ( backtracking==0 ) stream_PHRASE.add(a);
 
 
                     }
                     break;
                 case 97 :
-                    // etc/XQFT.g:869:7: a= PRECEDING
+                    // etc/XQFT.g:868:7: a= PRECEDING
                     {
                     a=(Token)input.LT(1);
-                    match(input,PRECEDING,FOLLOW_PRECEDING_in_ncNameorKeyword10057); if (failed) return retval;
+                    match(input,PRECEDING,FOLLOW_PRECEDING_in_ncNameorKeyword10068); if (failed) return retval;
                     if ( backtracking==0 ) stream_PRECEDING.add(a);
 
 
                     }
                     break;
                 case 98 :
-                    // etc/XQFT.g:870:7: a= PRECEDING_SIBLING
+                    // etc/XQFT.g:869:7: a= PRECEDING_SIBLING
                     {
                     a=(Token)input.LT(1);
-                    match(input,PRECEDING_SIBLING,FOLLOW_PRECEDING_SIBLING_in_ncNameorKeyword10067); if (failed) return retval;
+                    match(input,PRECEDING_SIBLING,FOLLOW_PRECEDING_SIBLING_in_ncNameorKeyword10078); if (failed) return retval;
                     if ( backtracking==0 ) stream_PRECEDING_SIBLING.add(a);
 
 
                     }
                     break;
                 case 99 :
-                    // etc/XQFT.g:871:7: a= PRESERVE
+                    // etc/XQFT.g:870:7: a= PRESERVE
                     {
                     a=(Token)input.LT(1);
-                    match(input,PRESERVE,FOLLOW_PRESERVE_in_ncNameorKeyword10077); if (failed) return retval;
+                    match(input,PRESERVE,FOLLOW_PRESERVE_in_ncNameorKeyword10088); if (failed) return retval;
                     if ( backtracking==0 ) stream_PRESERVE.add(a);
 
 
                     }
                     break;
                 case 100 :
-                    // etc/XQFT.g:872:7: a= PROCESSING_INSTRUCTION
+                    // etc/XQFT.g:871:7: a= PROCESSING_INSTRUCTION
                     {
                     a=(Token)input.LT(1);
-                    match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_ncNameorKeyword10087); if (failed) return retval;
+                    match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_ncNameorKeyword10098); if (failed) return retval;
                     if ( backtracking==0 ) stream_PROCESSING_INSTRUCTION.add(a);
 
 
                     }
                     break;
                 case 101 :
-                    // etc/XQFT.g:873:7: a= RELATIONSHIP
+                    // etc/XQFT.g:872:7: a= RELATIONSHIP
                     {
                     a=(Token)input.LT(1);
-                    match(input,RELATIONSHIP,FOLLOW_RELATIONSHIP_in_ncNameorKeyword10097); if (failed) return retval;
+                    match(input,RELATIONSHIP,FOLLOW_RELATIONSHIP_in_ncNameorKeyword10108); if (failed) return retval;
                     if ( backtracking==0 ) stream_RELATIONSHIP.add(a);
 
 
                     }
                     break;
                 case 102 :
-                    // etc/XQFT.g:874:7: a= RETURN
+                    // etc/XQFT.g:873:7: a= RETURN
                     {
                     a=(Token)input.LT(1);
-                    match(input,RETURN,FOLLOW_RETURN_in_ncNameorKeyword10107); if (failed) return retval;
+                    match(input,RETURN,FOLLOW_RETURN_in_ncNameorKeyword10118); if (failed) return retval;
                     if ( backtracking==0 ) stream_RETURN.add(a);
 
 
                     }
                     break;
                 case 103 :
-                    // etc/XQFT.g:875:7: a= SAME
+                    // etc/XQFT.g:874:7: a= SAME
                     {
                     a=(Token)input.LT(1);
-                    match(input,SAME,FOLLOW_SAME_in_ncNameorKeyword10117); if (failed) return retval;
+                    match(input,SAME,FOLLOW_SAME_in_ncNameorKeyword10128); if (failed) return retval;
                     if ( backtracking==0 ) stream_SAME.add(a);
 
 
                     }
                     break;
                 case 104 :
-                    // etc/XQFT.g:876:7: a= SATISFIES
+                    // etc/XQFT.g:875:7: a= SATISFIES
                     {
                     a=(Token)input.LT(1);
-                    match(input,SATISFIES,FOLLOW_SATISFIES_in_ncNameorKeyword10127); if (failed) return retval;
+                    match(input,SATISFIES,FOLLOW_SATISFIES_in_ncNameorKeyword10138); if (failed) return retval;
                     if ( backtracking==0 ) stream_SATISFIES.add(a);
 
 
                     }
                     break;
                 case 105 :
-                    // etc/XQFT.g:877:7: a= SCHEMA
+                    // etc/XQFT.g:876:7: a= SCHEMA
                     {
                     a=(Token)input.LT(1);
-                    match(input,SCHEMA,FOLLOW_SCHEMA_in_ncNameorKeyword10137); if (failed) return retval;
+                    match(input,SCHEMA,FOLLOW_SCHEMA_in_ncNameorKeyword10148); if (failed) return retval;
                     if ( backtracking==0 ) stream_SCHEMA.add(a);
 
 
                     }
                     break;
                 case 106 :
-                    // etc/XQFT.g:878:7: a= SCHEMA_ATTRIBUTE
+                    // etc/XQFT.g:877:7: a= SCHEMA_ATTRIBUTE
                     {
                     a=(Token)input.LT(1);
-                    match(input,SCHEMA_ATTRIBUTE,FOLLOW_SCHEMA_ATTRIBUTE_in_ncNameorKeyword10147); if (failed) return retval;
+                    match(input,SCHEMA_ATTRIBUTE,FOLLOW_SCHEMA_ATTRIBUTE_in_ncNameorKeyword10158); if (failed) return retval;
                     if ( backtracking==0 ) stream_SCHEMA_ATTRIBUTE.add(a);
 
 
                     }
                     break;
                 case 107 :
-                    // etc/XQFT.g:879:7: a= SCHEMA_ELEMENT
+                    // etc/XQFT.g:878:7: a= SCHEMA_ELEMENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,SCHEMA_ELEMENT,FOLLOW_SCHEMA_ELEMENT_in_ncNameorKeyword10157); if (failed) return retval;
+                    match(input,SCHEMA_ELEMENT,FOLLOW_SCHEMA_ELEMENT_in_ncNameorKeyword10168); if (failed) return retval;
                     if ( backtracking==0 ) stream_SCHEMA_ELEMENT.add(a);
 
 
                     }
                     break;
                 case 108 :
-                    // etc/XQFT.g:880:7: a= SCORE
+                    // etc/XQFT.g:879:7: a= SCORE
                     {
                     a=(Token)input.LT(1);
-                    match(input,SCORE,FOLLOW_SCORE_in_ncNameorKeyword10167); if (failed) return retval;
+                    match(input,SCORE,FOLLOW_SCORE_in_ncNameorKeyword10178); if (failed) return retval;
                     if ( backtracking==0 ) stream_SCORE.add(a);
 
 
                     }
                     break;
                 case 109 :
-                    // etc/XQFT.g:881:7: a= SELF
+                    // etc/XQFT.g:880:7: a= SELF
                     {
                     a=(Token)input.LT(1);
-                    match(input,SELF,FOLLOW_SELF_in_ncNameorKeyword10177); if (failed) return retval;
+                    match(input,SELF,FOLLOW_SELF_in_ncNameorKeyword10188); if (failed) return retval;
                     if ( backtracking==0 ) stream_SELF.add(a);
 
 
                     }
                     break;
                 case 110 :
-                    // etc/XQFT.g:882:7: a= SENSITIVE
+                    // etc/XQFT.g:881:7: a= SENSITIVE
                     {
                     a=(Token)input.LT(1);
-                    match(input,SENSITIVE,FOLLOW_SENSITIVE_in_ncNameorKeyword10187); if (failed) return retval;
+                    match(input,SENSITIVE,FOLLOW_SENSITIVE_in_ncNameorKeyword10198); if (failed) return retval;
                     if ( backtracking==0 ) stream_SENSITIVE.add(a);
 
 
                     }
                     break;
                 case 111 :
-                    // etc/XQFT.g:883:7: a= SENTENCES
+                    // etc/XQFT.g:882:7: a= SENTENCES
                     {
                     a=(Token)input.LT(1);
-                    match(input,SENTENCES,FOLLOW_SENTENCES_in_ncNameorKeyword10197); if (failed) return retval;
+                    match(input,SENTENCES,FOLLOW_SENTENCES_in_ncNameorKeyword10208); if (failed) return retval;
                     if ( backtracking==0 ) stream_SENTENCES.add(a);
 
 
                     }
                     break;
                 case 112 :
-                    // etc/XQFT.g:884:7: a= SENTENCE
+                    // etc/XQFT.g:883:7: a= SENTENCE
                     {
                     a=(Token)input.LT(1);
-                    match(input,SENTENCE,FOLLOW_SENTENCE_in_ncNameorKeyword10207); if (failed) return retval;
+                    match(input,SENTENCE,FOLLOW_SENTENCE_in_ncNameorKeyword10218); if (failed) return retval;
                     if ( backtracking==0 ) stream_SENTENCE.add(a);
 
 
                     }
                     break;
                 case 113 :
-                    // etc/XQFT.g:885:7: a= SOME
+                    // etc/XQFT.g:884:7: a= SOME
                     {
                     a=(Token)input.LT(1);
-                    match(input,SOME,FOLLOW_SOME_in_ncNameorKeyword10217); if (failed) return retval;
+                    match(input,SOME,FOLLOW_SOME_in_ncNameorKeyword10228); if (failed) return retval;
                     if ( backtracking==0 ) stream_SOME.add(a);
 
 
                     }
                     break;
                 case 114 :
-                    // etc/XQFT.g:886:7: a= STABLE
+                    // etc/XQFT.g:885:7: a= STABLE
                     {
                     a=(Token)input.LT(1);
-                    match(input,STABLE,FOLLOW_STABLE_in_ncNameorKeyword10227); if (failed) return retval;
+                    match(input,STABLE,FOLLOW_STABLE_in_ncNameorKeyword10238); if (failed) return retval;
                     if ( backtracking==0 ) stream_STABLE.add(a);
 
 
                     }
                     break;
                 case 115 :
-                    // etc/XQFT.g:887:7: a= START
+                    // etc/XQFT.g:886:7: a= START
                     {
                     a=(Token)input.LT(1);
-                    match(input,START,FOLLOW_START_in_ncNameorKeyword10237); if (failed) return retval;
+                    match(input,START,FOLLOW_START_in_ncNameorKeyword10248); if (failed) return retval;
                     if ( backtracking==0 ) stream_START.add(a);
 
 
                     }
                     break;
                 case 116 :
-                    // etc/XQFT.g:888:7: a= STEMMING
+                    // etc/XQFT.g:887:7: a= STEMMING
                     {
                     a=(Token)input.LT(1);
-                    match(input,STEMMING,FOLLOW_STEMMING_in_ncNameorKeyword10247); if (failed) return retval;
+                    match(input,STEMMING,FOLLOW_STEMMING_in_ncNameorKeyword10258); if (failed) return retval;
                     if ( backtracking==0 ) stream_STEMMING.add(a);
 
 
                     }
                     break;
                 case 117 :
-                    // etc/XQFT.g:889:7: a= STOP
+                    // etc/XQFT.g:888:7: a= STOP
                     {
                     a=(Token)input.LT(1);
-                    match(input,STOP,FOLLOW_STOP_in_ncNameorKeyword10257); if (failed) return retval;
+                    match(input,STOP,FOLLOW_STOP_in_ncNameorKeyword10268); if (failed) return retval;
                     if ( backtracking==0 ) stream_STOP.add(a);
 
 
                     }
                     break;
                 case 118 :
-                    // etc/XQFT.g:890:7: a= STRICT
+                    // etc/XQFT.g:889:7: a= STRICT
                     {
                     a=(Token)input.LT(1);
-                    match(input,STRICT,FOLLOW_STRICT_in_ncNameorKeyword10267); if (failed) return retval;
+                    match(input,STRICT,FOLLOW_STRICT_in_ncNameorKeyword10278); if (failed) return retval;
                     if ( backtracking==0 ) stream_STRICT.add(a);
 
 
                     }
                     break;
                 case 119 :
-                    // etc/XQFT.g:891:7: a= STRIP
+                    // etc/XQFT.g:890:7: a= STRIP
                     {
                     a=(Token)input.LT(1);
-                    match(input,STRIP,FOLLOW_STRIP_in_ncNameorKeyword10277); if (failed) return retval;
+                    match(input,STRIP,FOLLOW_STRIP_in_ncNameorKeyword10288); if (failed) return retval;
                     if ( backtracking==0 ) stream_STRIP.add(a);
 
 
                     }
                     break;
                 case 120 :
-                    // etc/XQFT.g:892:7: a= TEXT
+                    // etc/XQFT.g:891:7: a= TEXT
                     {
                     a=(Token)input.LT(1);
-                    match(input,TEXT,FOLLOW_TEXT_in_ncNameorKeyword10287); if (failed) return retval;
+                    match(input,TEXT,FOLLOW_TEXT_in_ncNameorKeyword10298); if (failed) return retval;
                     if ( backtracking==0 ) stream_TEXT.add(a);
 
 
                     }
                     break;
                 case 121 :
-                    // etc/XQFT.g:893:7: a= THESAURUS
+                    // etc/XQFT.g:892:7: a= THESAURUS
                     {
                     a=(Token)input.LT(1);
-                    match(input,THESAURUS,FOLLOW_THESAURUS_in_ncNameorKeyword10297); if (failed) return retval;
+                    match(input,THESAURUS,FOLLOW_THESAURUS_in_ncNameorKeyword10308); if (failed) return retval;
                     if ( backtracking==0 ) stream_THESAURUS.add(a);
 
 
                     }
                     break;
                 case 122 :
-                    // etc/XQFT.g:894:7: a= THEN
+                    // etc/XQFT.g:893:7: a= THEN
                     {
                     a=(Token)input.LT(1);
-                    match(input,THEN,FOLLOW_THEN_in_ncNameorKeyword10307); if (failed) return retval;
+                    match(input,THEN,FOLLOW_THEN_in_ncNameorKeyword10318); if (failed) return retval;
                     if ( backtracking==0 ) stream_THEN.add(a);
 
 
                     }
                     break;
                 case 123 :
-                    // etc/XQFT.g:895:7: a= TIMES
+                    // etc/XQFT.g:894:7: a= TIMES
                     {
                     a=(Token)input.LT(1);
-                    match(input,TIMES,FOLLOW_TIMES_in_ncNameorKeyword10317); if (failed) return retval;
+                    match(input,TIMES,FOLLOW_TIMES_in_ncNameorKeyword10328); if (failed) return retval;
                     if ( backtracking==0 ) stream_TIMES.add(a);
 
 
                     }
                     break;
                 case 124 :
-                    // etc/XQFT.g:896:7: a= TO
+                    // etc/XQFT.g:895:7: a= TO
                     {
                     a=(Token)input.LT(1);
-                    match(input,TO,FOLLOW_TO_in_ncNameorKeyword10327); if (failed) return retval;
+                    match(input,TO,FOLLOW_TO_in_ncNameorKeyword10338); if (failed) return retval;
                     if ( backtracking==0 ) stream_TO.add(a);
 
 
                     }
                     break;
                 case 125 :
-                    // etc/XQFT.g:897:7: a= TREAT
+                    // etc/XQFT.g:896:7: a= TREAT
                     {
                     a=(Token)input.LT(1);
-                    match(input,TREAT,FOLLOW_TREAT_in_ncNameorKeyword10337); if (failed) return retval;
+                    match(input,TREAT,FOLLOW_TREAT_in_ncNameorKeyword10348); if (failed) return retval;
                     if ( backtracking==0 ) stream_TREAT.add(a);
 
 
                     }
                     break;
                 case 126 :
-                    // etc/XQFT.g:898:7: a= TYPESWITCH
+                    // etc/XQFT.g:897:7: a= TYPESWITCH
                     {
                     a=(Token)input.LT(1);
-                    match(input,TYPESWITCH,FOLLOW_TYPESWITCH_in_ncNameorKeyword10347); if (failed) return retval;
+                    match(input,TYPESWITCH,FOLLOW_TYPESWITCH_in_ncNameorKeyword10358); if (failed) return retval;
                     if ( backtracking==0 ) stream_TYPESWITCH.add(a);
 
 
                     }
                     break;
                 case 127 :
-                    // etc/XQFT.g:899:7: a= UNION
+                    // etc/XQFT.g:898:7: a= UNION
                     {
                     a=(Token)input.LT(1);
-                    match(input,UNION,FOLLOW_UNION_in_ncNameorKeyword10357); if (failed) return retval;
+                    match(input,UNION,FOLLOW_UNION_in_ncNameorKeyword10368); if (failed) return retval;
                     if ( backtracking==0 ) stream_UNION.add(a);
 
 
                     }
                     break;
                 case 128 :
-                    // etc/XQFT.g:900:7: a= UNORDERED
+                    // etc/XQFT.g:899:7: a= UNORDERED
                     {
                     a=(Token)input.LT(1);
-                    match(input,UNORDERED,FOLLOW_UNORDERED_in_ncNameorKeyword10367); if (failed) return retval;
+                    match(input,UNORDERED,FOLLOW_UNORDERED_in_ncNameorKeyword10378); if (failed) return retval;
                     if ( backtracking==0 ) stream_UNORDERED.add(a);
 
 
                     }
                     break;
                 case 129 :
-                    // etc/XQFT.g:901:7: a= UPPERCASE
+                    // etc/XQFT.g:900:7: a= UPPERCASE
                     {
                     a=(Token)input.LT(1);
-                    match(input,UPPERCASE,FOLLOW_UPPERCASE_in_ncNameorKeyword10377); if (failed) return retval;
+                    match(input,UPPERCASE,FOLLOW_UPPERCASE_in_ncNameorKeyword10388); if (failed) return retval;
                     if ( backtracking==0 ) stream_UPPERCASE.add(a);
 
 
                     }
                     break;
                 case 130 :
-                    // etc/XQFT.g:902:7: a= VALIDATE
+                    // etc/XQFT.g:901:7: a= VALIDATE
                     {
                     a=(Token)input.LT(1);
-                    match(input,VALIDATE,FOLLOW_VALIDATE_in_ncNameorKeyword10387); if (failed) return retval;
+                    match(input,VALIDATE,FOLLOW_VALIDATE_in_ncNameorKeyword10398); if (failed) return retval;
                     if ( backtracking==0 ) stream_VALIDATE.add(a);
 
 
                     }
                     break;
                 case 131 :
-                    // etc/XQFT.g:903:7: a= VARIABLE
+                    // etc/XQFT.g:902:7: a= VARIABLE
                     {
                     a=(Token)input.LT(1);
-                    match(input,VARIABLE,FOLLOW_VARIABLE_in_ncNameorKeyword10397); if (failed) return retval;
+                    match(input,VARIABLE,FOLLOW_VARIABLE_in_ncNameorKeyword10408); if (failed) return retval;
                     if ( backtracking==0 ) stream_VARIABLE.add(a);
 
 
                     }
                     break;
                 case 132 :
-                    // etc/XQFT.g:904:7: a= VERSION
+                    // etc/XQFT.g:903:7: a= VERSION
                     {
                     a=(Token)input.LT(1);
-                    match(input,VERSION,FOLLOW_VERSION_in_ncNameorKeyword10407); if (failed) return retval;
+                    match(input,VERSION,FOLLOW_VERSION_in_ncNameorKeyword10418); if (failed) return retval;
                     if ( backtracking==0 ) stream_VERSION.add(a);
 
 
                     }
                     break;
                 case 133 :
-                    // etc/XQFT.g:905:7: a= WEIGHT
+                    // etc/XQFT.g:904:7: a= WEIGHT
                     {
                     a=(Token)input.LT(1);
-                    match(input,WEIGHT,FOLLOW_WEIGHT_in_ncNameorKeyword10417); if (failed) return retval;
+                    match(input,WEIGHT,FOLLOW_WEIGHT_in_ncNameorKeyword10428); if (failed) return retval;
                     if ( backtracking==0 ) stream_WEIGHT.add(a);
 
 
                     }
                     break;
                 case 134 :
-                    // etc/XQFT.g:906:7: a= WHERE
+                    // etc/XQFT.g:905:7: a= WHERE
                     {
                     a=(Token)input.LT(1);
-                    match(input,WHERE,FOLLOW_WHERE_in_ncNameorKeyword10427); if (failed) return retval;
+                    match(input,WHERE,FOLLOW_WHERE_in_ncNameorKeyword10438); if (failed) return retval;
                     if ( backtracking==0 ) stream_WHERE.add(a);
 
 
                     }
                     break;
                 case 135 :
-                    // etc/XQFT.g:907:7: a= WILDCARDS
+                    // etc/XQFT.g:906:7: a= WILDCARDS
                     {
                     a=(Token)input.LT(1);
-                    match(input,WILDCARDS,FOLLOW_WILDCARDS_in_ncNameorKeyword10437); if (failed) return retval;
+                    match(input,WILDCARDS,FOLLOW_WILDCARDS_in_ncNameorKeyword10448); if (failed) return retval;
                     if ( backtracking==0 ) stream_WILDCARDS.add(a);
 
 
                     }
                     break;
                 case 136 :
-                    // etc/XQFT.g:908:7: a= WINDOW
+                    // etc/XQFT.g:907:7: a= WINDOW
                     {
                     a=(Token)input.LT(1);
-                    match(input,WINDOW,FOLLOW_WINDOW_in_ncNameorKeyword10447); if (failed) return retval;
+                    match(input,WINDOW,FOLLOW_WINDOW_in_ncNameorKeyword10458); if (failed) return retval;
                     if ( backtracking==0 ) stream_WINDOW.add(a);
 
 
                     }
                     break;
                 case 137 :
-                    // etc/XQFT.g:909:7: a= WITH
+                    // etc/XQFT.g:908:7: a= WITH
                     {
                     a=(Token)input.LT(1);
-                    match(input,WITH,FOLLOW_WITH_in_ncNameorKeyword10457); if (failed) return retval;
+                    match(input,WITH,FOLLOW_WITH_in_ncNameorKeyword10468); if (failed) return retval;
                     if ( backtracking==0 ) stream_WITH.add(a);
 
 
                     }
                     break;
                 case 138 :
-                    // etc/XQFT.g:910:7: a= WITHOUT
+                    // etc/XQFT.g:909:7: a= WITHOUT
                     {
                     a=(Token)input.LT(1);
-                    match(input,WITHOUT,FOLLOW_WITHOUT_in_ncNameorKeyword10467); if (failed) return retval;
+                    match(input,WITHOUT,FOLLOW_WITHOUT_in_ncNameorKeyword10478); if (failed) return retval;
                     if ( backtracking==0 ) stream_WITHOUT.add(a);
 
 
                     }
                     break;
                 case 139 :
-                    // etc/XQFT.g:911:7: a= WORD
+                    // etc/XQFT.g:910:7: a= WORD
                     {
                     a=(Token)input.LT(1);
-                    match(input,WORD,FOLLOW_WORD_in_ncNameorKeyword10477); if (failed) return retval;
+                    match(input,WORD,FOLLOW_WORD_in_ncNameorKeyword10488); if (failed) return retval;
                     if ( backtracking==0 ) stream_WORD.add(a);
 
 
                     }
                     break;
                 case 140 :
-                    // etc/XQFT.g:912:7: a= WORDS
+                    // etc/XQFT.g:911:7: a= WORDS
                     {
                     a=(Token)input.LT(1);
-                    match(input,WORDS,FOLLOW_WORDS_in_ncNameorKeyword10487); if (failed) return retval;
+                    match(input,WORDS,FOLLOW_WORDS_in_ncNameorKeyword10498); if (failed) return retval;
                     if ( backtracking==0 ) stream_WORDS.add(a);
 
 
                     }
                     break;
                 case 141 :
-                    // etc/XQFT.g:913:7: a= XQUERY
+                    // etc/XQFT.g:912:7: a= XQUERY
                     {
                     a=(Token)input.LT(1);
-                    match(input,XQUERY,FOLLOW_XQUERY_in_ncNameorKeyword10497); if (failed) return retval;
+                    match(input,XQUERY,FOLLOW_XQUERY_in_ncNameorKeyword10508); if (failed) return retval;
                     if ( backtracking==0 ) stream_XQUERY.add(a);
 
 
@@ -34021,9 +34087,9 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 913:17: -> NCName[$a, \"nazi\"]
+            // 912:17: -> NCName[$a]
             {
-                adaptor.addChild(root_0, adaptor.create(NCName,a,  "nazi"));
+                adaptor.addChild(root_0, adaptor.create(NCName,a));
 
             }
 
@@ -34152,10 +34218,10 @@ public class XQFTParser extends Parser {
             if (backtracking>0) {failed=true; return ;}
             MismatchedSetException mse =
                 new MismatchedSetException(null,input);
-            recoverFromMismatchedSet(input,mse,FOLLOW_set_in_synpred75769);    throw mse;
+            recoverFromMismatchedSet(input,mse,FOLLOW_set_in_synpred75766);    throw mse;
         }
 
-        match(input,LPARSi,FOLLOW_LPARSi_in_synpred75847); if (failed) return ;
+        match(input,LPARSi,FOLLOW_LPARSi_in_synpred75844); if (failed) return ;
 
         }
     }
@@ -34163,7 +34229,7 @@ public class XQFTParser extends Parser {
 
     // $ANTLR start synpred8
     public final void synpred8_fragment() throws RecognitionException {   
-        // etc/XQFT.g:639:29: ( STARSi | ncNameorKeyword COLONSi STARSi )
+        // etc/XQFT.g:640:29: ( STARSi | ncNameorKeyword COLONSi STARSi )
         int alt152=2;
         int LA152_0 = input.LA(1);
 
@@ -34176,27 +34242,27 @@ public class XQFTParser extends Parser {
         else {
             if (backtracking>0) {failed=true; return ;}
             NoViableAltException nvae =
-                new NoViableAltException("639:29: synpred8 : ( STARSi | ncNameorKeyword COLONSi STARSi );", 152, 0, input);
+                new NoViableAltException("640:29: synpred8 : ( STARSi | ncNameorKeyword COLONSi STARSi );", 152, 0, input);
 
             throw nvae;
         }
         switch (alt152) {
             case 1 :
-                // etc/XQFT.g:639:30: STARSi
+                // etc/XQFT.g:640:30: STARSi
                 {
-                match(input,STARSi,FOLLOW_STARSi_in_synpred86136); if (failed) return ;
+                match(input,STARSi,FOLLOW_STARSi_in_synpred86174); if (failed) return ;
 
                 }
                 break;
             case 2 :
-                // etc/XQFT.g:639:39: ncNameorKeyword COLONSi STARSi
+                // etc/XQFT.g:640:39: ncNameorKeyword COLONSi STARSi
                 {
-                pushFollow(FOLLOW_ncNameorKeyword_in_synpred86140);
+                pushFollow(FOLLOW_ncNameorKeyword_in_synpred86178);
                 ncNameorKeyword();
                 _fsp--;
                 if (failed) return ;
-                match(input,COLONSi,FOLLOW_COLONSi_in_synpred86142); if (failed) return ;
-                match(input,STARSi,FOLLOW_STARSi_in_synpred86144); if (failed) return ;
+                match(input,COLONSi,FOLLOW_COLONSi_in_synpred86180); if (failed) return ;
+                match(input,STARSi,FOLLOW_STARSi_in_synpred86182); if (failed) return ;
 
                 }
                 break;
@@ -34206,11 +34272,11 @@ public class XQFTParser extends Parser {
 
     // $ANTLR start synpred9
     public final void synpred9_fragment() throws RecognitionException {   
-        // etc/XQFT.g:643:33: ( STARSi COLONSi )
-        // etc/XQFT.g:643:34: STARSi COLONSi
+        // etc/XQFT.g:644:33: ( STARSi COLONSi )
+        // etc/XQFT.g:644:34: STARSi COLONSi
         {
-        match(input,STARSi,FOLLOW_STARSi_in_synpred96276); if (failed) return ;
-        match(input,COLONSi,FOLLOW_COLONSi_in_synpred96278); if (failed) return ;
+        match(input,STARSi,FOLLOW_STARSi_in_synpred96314); if (failed) return ;
+        match(input,COLONSi,FOLLOW_COLONSi_in_synpred96316); if (failed) return ;
 
         }
     }
@@ -34346,7 +34412,7 @@ public class XQFTParser extends Parser {
 
  
 
-    public static final BitSet FOLLOW_versionDecl_in_module177 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_versionDecl_in_module177 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_libraryModule_in_module187 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_mainModule_in_module191 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_XQUERY_in_versionDecl224 = new BitSet(new long[]{0x0000000008000000L});
@@ -34358,17 +34424,17 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_moduleDecl_in_libraryModule248 = new BitSet(new long[]{0x0100000800000002L});
     public static final BitSet FOLLOW_prolog_in_libraryModule250 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_MODULE_in_moduleDecl265 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_NAMESPACE_in_moduleDecl267 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_NAMESPACE_in_moduleDecl267 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_ncNameorKeyword_in_moduleDecl269 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_EQSi_in_moduleDecl271 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_uriLiteral_in_moduleDecl273 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_SEMICOLONSi_in_moduleDecl275 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_StringLiteral_in_uriLiteral294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_prolog_in_mainModule306 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_prolog_in_mainModule306 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_queryBody_in_mainModule308 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_expr_in_queryBody323 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_exprSingle_in_expr342 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_COMMASi_in_expr345 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_COMMASi_in_expr345 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_expr347 = new BitSet(new long[]{0x0000000400000002L});
     public static final BitSet FOLLOW_importStmt_in_prolog446 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_DECLARE_in_prolog457 = new BitSet(new long[]{0x0813905100000000L,0x0000000000000060L});
@@ -34396,7 +34462,7 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_ORDER_in_emptyOrderDecl745 = new BitSet(new long[]{0x0000020000000000L});
     public static final BitSet FOLLOW_EMPTY_in_emptyOrderDecl747 = new BitSet(new long[]{0x00000C0000000000L});
     public static final BitSet FOLLOW_set_in_emptyOrderDecl749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NAMESPACE_in_namespaceDecl770 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_NAMESPACE_in_namespaceDecl770 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_ncNameorKeyword_in_namespaceDecl772 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_EQSi_in_namespaceDecl774 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_uriLiteral_in_namespaceDecl776 = new BitSet(new long[]{0x0000000000000002L});
@@ -34424,14 +34490,14 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_uriLiteral_in_schemaImport958 = new BitSet(new long[]{0x0000000400000002L});
     public static final BitSet FOLLOW_COMMASi_in_schemaImport961 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_uriLiteral_in_schemaImport963 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_NAMESPACE_in_schemaPrefix986 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_NAMESPACE_in_schemaPrefix986 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_ncNameorKeyword_in_schemaPrefix988 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_EQSi_in_schemaPrefix990 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_DEFAULT_in_schemaPrefix996 = new BitSet(new long[]{0x0000002000000000L});
     public static final BitSet FOLLOW_ELEMENT_in_schemaPrefix998 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_NAMESPACE_in_schemaPrefix1000 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_MODULE_in_moduleImport1019 = new BitSet(new long[]{0x0000000110000000L});
-    public static final BitSet FOLLOW_NAMESPACE_in_moduleImport1022 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_NAMESPACE_in_moduleImport1022 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_ncNameorKeyword_in_moduleImport1024 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_EQSi_in_moduleImport1026 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_uriLiteral_in_moduleImport1030 = new BitSet(new long[]{0x0400000000000002L});
@@ -34440,35 +34506,35 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_COMMASi_in_moduleImport1038 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_uriLiteral_in_moduleImport1040 = new BitSet(new long[]{0x0000000400000002L});
     public static final BitSet FOLLOW_VARIABLE_in_varDecl1056 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_DOLLARSi_in_varDecl1058 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_DOLLARSi_in_varDecl1058 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_qName_in_varDecl1060 = new BitSet(new long[]{0x6000000000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_typeDeclaration_in_varDecl1062 = new BitSet(new long[]{0x6000000000000000L});
-    public static final BitSet FOLLOW_ASSIGNSi_in_varDecl1067 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_ASSIGNSi_in_varDecl1067 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_varDecl1069 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_EXTERNAL_in_varDecl1074 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_QName_in_qName1099 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ncNameorKeyword_in_qName1114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AS_in_typeDeclaration1130 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_AS_in_typeDeclaration1130 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_sequenceType_in_typeDeclaration1132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FUNCTION_in_functionDecl1149 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_FUNCTION_in_functionDecl1149 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_qName_in_functionDecl1151 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_LPARSi_in_functionDecl1153 = new BitSet(new long[]{0x1000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_paramList_in_functionDecl1155 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_RPARSi_in_functionDecl1158 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000009L});
-    public static final BitSet FOLLOW_AS_in_functionDecl1170 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_AS_in_functionDecl1170 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_sequenceType_in_functionDecl1172 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000008L});
     public static final BitSet FOLLOW_enclosedExpr_in_functionDecl1177 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_EXTERNAL_in_functionDecl1181 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_param_in_paramList1222 = new BitSet(new long[]{0x0000000400000002L});
     public static final BitSet FOLLOW_COMMASi_in_paramList1225 = new BitSet(new long[]{0x1000000000000000L});
     public static final BitSet FOLLOW_param_in_paramList1227 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_DOLLARSi_in_param1247 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_DOLLARSi_in_param1247 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_qName_in_param1249 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
     public static final BitSet FOLLOW_typeDeclaration_in_param1251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LBRACESi_in_enclosedExpr1272 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_LBRACESi_in_enclosedExpr1272 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_expr_in_enclosedExpr1284 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
     public static final BitSet FOLLOW_RBRACSi_in_enclosedExpr1295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OPTION_in_optionDecl1309 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_OPTION_in_optionDecl1309 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_qName_in_optionDecl1311 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_StringLiteral_in_optionDecl1313 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_FTOPTION_in_ftOptionDecl1321 = new BitSet(new long[]{0x0000000000000000L,0x0080000400000020L,0x0003908000000000L});
@@ -34500,9 +34566,9 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_schemaElementTest_in_documentTest1602 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_RPARSi_in_documentTest1606 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ELEMENT_in_elementTest1630 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_elementTest1632 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7FBE5L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_LPARSi_in_elementTest1632 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7FBE5L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_elementNameOrWildcard_in_elementTest1636 = new BitSet(new long[]{0x0000000400000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_COMMASi_in_elementTest1639 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_COMMASi_in_elementTest1639 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_typeName_in_elementTest1641 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000404L});
     public static final BitSet FOLLOW_QUESTIONSi_in_elementTest1643 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_RPARSi_in_elementTest1650 = new BitSet(new long[]{0x0000000000000002L});
@@ -34511,26 +34577,26 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_qName_in_elementName1713 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_qName_in_typeName1740 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_SCHEMA_ELEMENT_in_schemaElementTest1763 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_schemaElementTest1765 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_LPARSi_in_schemaElementTest1765 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_elementDeclaration_in_schemaElementTest1768 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_RPARSi_in_schemaElementTest1770 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_elementName_in_elementDeclaration1798 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ATTRIBUTE_in_attributeTest1817 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_attributeTest1819 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7FBE5L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_LPARSi_in_attributeTest1819 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7FBE5L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_attribNameOrWildcard_in_attributeTest1823 = new BitSet(new long[]{0x0000000400000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_COMMASi_in_attributeTest1826 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_COMMASi_in_attributeTest1826 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_typeName_in_attributeTest1828 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_RPARSi_in_attributeTest1834 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_attributeName_in_attribNameOrWildcard1858 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_STARSi_in_attribNameOrWildcard1862 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_qName_in_attributeName1889 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_SCHEMA_ATTRIBUTE_in_schemaAttributeTest1908 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_schemaAttributeTest1910 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_LPARSi_in_schemaAttributeTest1910 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_attributeDeclaration_in_schemaAttributeTest1913 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_RPARSi_in_schemaAttributeTest1915 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_attributeName_in_attributeDeclaration1939 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_piTest1958 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_piTest1960 = new BitSet(new long[]{0x4FFFFFF9BC000000L,0x7FFF7BFFFFF7F3E5L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_LPARSi_in_piTest1960 = new BitSet(new long[]{0x4FFFFFF9BC000000L,0x7FFF7BFFFFF7F3E5L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_ncNameorKeyword_in_piTest1964 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_StringLiteral_in_piTest1968 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_RPARSi_in_piTest1972 = new BitSet(new long[]{0x0000000000000002L});
@@ -34553,48 +34619,48 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_letClause_in_fLWORExpr2156 = new BitSet(new long[]{0x0000010000000000L,0x000000000B300000L});
     public static final BitSet FOLLOW_whereClause_in_fLWORExpr2160 = new BitSet(new long[]{0x0000010000000000L,0x0000000008100000L});
     public static final BitSet FOLLOW_orderByClause_in_fLWORExpr2163 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_RETURN_in_fLWORExpr2166 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_RETURN_in_fLWORExpr2166 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_fLWORExpr2168 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_FOR_in_forClause2218 = new BitSet(new long[]{0x1000000000000000L});
     public static final BitSet FOLLOW_forClauseTupletDef_in_forClause2220 = new BitSet(new long[]{0x0000000400000002L});
     public static final BitSet FOLLOW_COMMASi_in_forClause2223 = new BitSet(new long[]{0x1000000000000000L});
     public static final BitSet FOLLOW_forClauseTupletDef_in_forClause2225 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_DOLLARSi_in_forClauseTupletDef2268 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_DOLLARSi_in_forClauseTupletDef2268 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_varName_in_forClauseTupletDef2271 = new BitSet(new long[]{0x0400000000000000L,0x0000000000C00001L});
     public static final BitSet FOLLOW_typeDeclaration_in_forClauseTupletDef2273 = new BitSet(new long[]{0x0400000000000000L,0x0000000000C00000L});
     public static final BitSet FOLLOW_positionalVar_in_forClauseTupletDef2276 = new BitSet(new long[]{0x0000000000000000L,0x0000000000C00000L});
     public static final BitSet FOLLOW_ftScoreVar_in_forClauseTupletDef2279 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_IN_in_forClauseTupletDef2282 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_IN_in_forClauseTupletDef2282 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_forClauseTupletDef2285 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_qName_in_varName2311 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_AT_in_positionalVar2332 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_DOLLARSi_in_positionalVar2334 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_DOLLARSi_in_positionalVar2334 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_varName_in_positionalVar2336 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_SCORE_in_ftScoreVar2355 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_DOLLARSi_in_ftScoreVar2357 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_DOLLARSi_in_ftScoreVar2357 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_varName_in_ftScoreVar2359 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_LET_in_letClause2387 = new BitSet(new long[]{0x1000000000000000L,0x0000000000800000L});
     public static final BitSet FOLLOW_varBinding_in_letClause2389 = new BitSet(new long[]{0x0000000400000002L});
     public static final BitSet FOLLOW_COMMASi_in_letClause2392 = new BitSet(new long[]{0x1000000000000000L,0x0000000000800000L});
     public static final BitSet FOLLOW_varBinding_in_letClause2394 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_DOLLARSi_in_varBinding2446 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_DOLLARSi_in_varBinding2446 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_varName_in_varBinding2450 = new BitSet(new long[]{0x2000000000000000L,0x0000000000000001L});
     public static final BitSet FOLLOW_typeDeclaration_in_varBinding2452 = new BitSet(new long[]{0x2000000000000000L});
     public static final BitSet FOLLOW_SCORE_in_varBinding2457 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_DOLLARSi_in_varBinding2459 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_DOLLARSi_in_varBinding2459 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_varName_in_varBinding2463 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_ASSIGNSi_in_varBinding2479 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_ASSIGNSi_in_varBinding2479 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_varBinding2481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WHERE_in_whereClause2531 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_WHERE_in_whereClause2531 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_whereClause2533 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ORDER_in_orderByClause2582 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_BY_in_orderByClause2584 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_BY_in_orderByClause2584 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_STABLE_in_orderByClause2588 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_ORDER_in_orderByClause2590 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_BY_in_orderByClause2592 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_BY_in_orderByClause2592 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_orderSpecList_in_orderByClause2595 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_orderSpec_in_orderSpecList2638 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_COMMASi_in_orderSpecList2641 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_COMMASi_in_orderSpecList2641 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_orderSpec_in_orderSpecList2643 = new BitSet(new long[]{0x0000000400000002L});
     public static final BitSet FOLLOW_exprSingle_in_orderSpec2690 = new BitSet(new long[]{0x0000028000000002L,0x0000000030000000L});
     public static final BitSet FOLLOW_orderModifier_in_orderSpec2692 = new BitSet(new long[]{0x0000000000000002L});
@@ -34608,98 +34674,98 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_quantifiedExprTupleDef_in_quantifiedExpr2779 = new BitSet(new long[]{0x0000000400000000L,0x0000000100000000L});
     public static final BitSet FOLLOW_COMMASi_in_quantifiedExpr2790 = new BitSet(new long[]{0x1000000000000000L});
     public static final BitSet FOLLOW_quantifiedExprTupleDef_in_quantifiedExpr2792 = new BitSet(new long[]{0x0000000400000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_SATISFIES_in_quantifiedExpr2796 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_SATISFIES_in_quantifiedExpr2796 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_quantifiedExpr2798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOLLARSi_in_quantifiedExprTupleDef2854 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_DOLLARSi_in_quantifiedExprTupleDef2854 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_varName_in_quantifiedExprTupleDef2856 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400001L});
     public static final BitSet FOLLOW_typeDeclaration_in_quantifiedExprTupleDef2858 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_IN_in_quantifiedExprTupleDef2861 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_IN_in_quantifiedExprTupleDef2861 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_quantifiedExprTupleDef2863 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_TYPESWITCH_in_typeswitchExpr2898 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_typeswitchExpr2900 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_LPARSi_in_typeswitchExpr2900 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_expr_in_typeswitchExpr2902 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_RPARSi_in_typeswitchExpr2904 = new BitSet(new long[]{0x0000000000000000L,0x0000000400000000L});
     public static final BitSet FOLLOW_caseClause_in_typeswitchExpr2906 = new BitSet(new long[]{0x0000001000000000L,0x0000000400000000L});
     public static final BitSet FOLLOW_DEFAULT_in_typeswitchExpr2918 = new BitSet(new long[]{0x1000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_DOLLARSi_in_typeswitchExpr2921 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_DOLLARSi_in_typeswitchExpr2921 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_varName_in_typeswitchExpr2923 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_RETURN_in_typeswitchExpr2927 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_RETURN_in_typeswitchExpr2927 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_typeswitchExpr2929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CASE_in_caseClause2969 = new BitSet(new long[]{0xDFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_DOLLARSi_in_caseClause2972 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_CASE_in_caseClause2969 = new BitSet(new long[]{0xDFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_DOLLARSi_in_caseClause2972 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_varName_in_caseClause2974 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_AS_in_caseClause2976 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_AS_in_caseClause2976 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_sequenceType_in_caseClause2980 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_RETURN_in_caseClause2982 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_RETURN_in_caseClause2982 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_caseClause2984 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_IF_in_ifExpr3030 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_ifExpr3032 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_LPARSi_in_ifExpr3032 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_expr_in_ifExpr3034 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_RPARSi_in_ifExpr3036 = new BitSet(new long[]{0x0000000000000000L,0x0000001000000000L});
-    public static final BitSet FOLLOW_THEN_in_ifExpr3038 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_THEN_in_ifExpr3038 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_ifExpr3040 = new BitSet(new long[]{0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_ELSE_in_ifExpr3042 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_ELSE_in_ifExpr3042 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_exprSingle_in_ifExpr3044 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_andExpr_in_orExpr3084 = new BitSet(new long[]{0x0000000000000002L,0x0000004000000000L});
-    public static final BitSet FOLLOW_OR_in_orExpr3088 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_OR_in_orExpr3088 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_andExpr_in_orExpr3091 = new BitSet(new long[]{0x0000000000000002L,0x0000004000000000L});
     public static final BitSet FOLLOW_comparisonExpr_in_andExpr3109 = new BitSet(new long[]{0x0000000000000002L,0x0000008000000000L});
-    public static final BitSet FOLLOW_AND_in_andExpr3113 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_AND_in_andExpr3113 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_comparisonExpr_in_andExpr3116 = new BitSet(new long[]{0x0000000000000002L,0x0000008000000000L});
     public static final BitSet FOLLOW_ftContainsExpr_in_comparisonExpr3129 = new BitSet(new long[]{0x0000000200000002L,0xFE00000000000000L,0x000000000000007FL});
-    public static final BitSet FOLLOW_valueComp_in_comparisonExpr3134 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_generalComp_in_comparisonExpr3139 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_nodeComp_in_comparisonExpr3144 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_valueComp_in_comparisonExpr3134 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_generalComp_in_comparisonExpr3139 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_nodeComp_in_comparisonExpr3144 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_ftContainsExpr_in_comparisonExpr3148 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rangeExpr_in_ftContainsExpr3162 = new BitSet(new long[]{0x0000000000000002L,0x0000010000000000L});
     public static final BitSet FOLLOW_FTCONTAINS_in_ftContainsExpr3166 = new BitSet(new long[]{0x0000000010000000L,0x000000000000000AL,0x0000000002007800L});
     public static final BitSet FOLLOW_ftSelection_in_ftContainsExpr3169 = new BitSet(new long[]{0x0000000000000002L,0x0080000000000000L});
     public static final BitSet FOLLOW_ftIgnoreOption_in_ftContainsExpr3171 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_additiveExpr_in_rangeExpr3194 = new BitSet(new long[]{0x0000000000000002L,0x0000020000000000L});
-    public static final BitSet FOLLOW_TO_in_rangeExpr3198 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_TO_in_rangeExpr3198 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_additiveExpr_in_rangeExpr3201 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_multiplicativeExpr_in_additiveExpr3223 = new BitSet(new long[]{0x0000000000000002L,0x0000040000080000L});
-    public static final BitSet FOLLOW_set_in_additiveExpr3227 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_set_in_additiveExpr3227 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_multiplicativeExpr_in_additiveExpr3236 = new BitSet(new long[]{0x0000000000000002L,0x0000040000080000L});
     public static final BitSet FOLLOW_unionExpr_in_multiplicativeExpr3262 = new BitSet(new long[]{0x0000000000000002L,0x0000380000000800L});
-    public static final BitSet FOLLOW_set_in_multiplicativeExpr3266 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_set_in_multiplicativeExpr3266 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_unionExpr_in_multiplicativeExpr3283 = new BitSet(new long[]{0x0000000000000002L,0x0000380000000800L});
     public static final BitSet FOLLOW_intersectExceptExpr_in_unionExpr3313 = new BitSet(new long[]{0x0000000000000002L,0x0000C00000000000L});
-    public static final BitSet FOLLOW_set_in_unionExpr3317 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_set_in_unionExpr3317 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_intersectExceptExpr_in_unionExpr3326 = new BitSet(new long[]{0x0000000000000002L,0x0000C00000000000L});
     public static final BitSet FOLLOW_instanceofExpr_in_intersectExceptExpr3360 = new BitSet(new long[]{0x0000000000000002L,0x0003000000000000L});
-    public static final BitSet FOLLOW_set_in_intersectExceptExpr3364 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_set_in_intersectExceptExpr3364 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_instanceofExpr_in_intersectExceptExpr3373 = new BitSet(new long[]{0x0000000000000002L,0x0003000000000000L});
     public static final BitSet FOLLOW_treatExpr_in_instanceofExpr3411 = new BitSet(new long[]{0x0000000000000002L,0x0004000000000000L});
     public static final BitSet FOLLOW_INSTANCE_in_instanceofExpr3415 = new BitSet(new long[]{0x0000000000000000L,0x0008000000000000L});
-    public static final BitSet FOLLOW_OF_in_instanceofExpr3418 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_OF_in_instanceofExpr3418 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_sequenceType_in_instanceofExpr3421 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_castableExpr_in_treatExpr3463 = new BitSet(new long[]{0x0000000000000002L,0x0010000000000000L});
     public static final BitSet FOLLOW_TREAT_in_treatExpr3467 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_AS_in_treatExpr3470 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_AS_in_treatExpr3470 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_sequenceType_in_treatExpr3473 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_castExpr_in_castableExpr3519 = new BitSet(new long[]{0x0000000000000002L,0x0020000000000000L});
     public static final BitSet FOLLOW_CASTABLE_in_castableExpr3523 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_AS_in_castableExpr3526 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_AS_in_castableExpr3526 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_singleType_in_castableExpr3529 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_unaryExpr_in_castExpr3579 = new BitSet(new long[]{0x0000000000000002L,0x0040000000000000L});
     public static final BitSet FOLLOW_CAST_in_castExpr3583 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_AS_in_castExpr3586 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_AS_in_castExpr3586 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_singleType_in_castExpr3589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_unaryExpr3644 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_set_in_unaryExpr3644 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_valueExpr_in_unaryExpr3655 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_atomicType_in_singleType3706 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
     public static final BitSet FOLLOW_QUESTIONSi_in_singleType3708 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_qName_in_atomicType3764 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_WITHOUT_in_ftIgnoreOption3796 = new BitSet(new long[]{0x0000000000000000L,0x0100000000000000L});
-    public static final BitSet FOLLOW_CONTENT_in_ftIgnoreOption3799 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_CONTENT_in_ftIgnoreOption3799 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_unionExpr_in_ftIgnoreOption3801 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_valueComp0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_generalComp0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_nodeComp0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ftOr_in_ftSelection3898 = new BitSet(new long[]{0x0404000000000002L,0x0000000000000000L,0x0000004390000080L});
     public static final BitSet FOLLOW_ftPosFilter_in_ftSelection3900 = new BitSet(new long[]{0x0404000000000002L,0x0000000000000000L,0x0000004390000080L});
-    public static final BitSet FOLLOW_WEIGHT_in_ftSelection3904 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_WEIGHT_in_ftSelection3904 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_rangeExpr_in_ftSelection3906 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ftAnd_in_ftOr3919 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000100L});
     public static final BitSet FOLLOW_FTOR_in_ftOr3923 = new BitSet(new long[]{0x0000000010000000L,0x000000000000000AL,0x0000000002007800L});
@@ -34724,7 +34790,7 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_ftWordsValue_in_ftWords4215 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x00000000000A8000L});
     public static final BitSet FOLLOW_ftAnyallOption_in_ftWords4218 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_literal_in_ftWordsValue4254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LBRACESi_in_ftWordsValue4259 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_LBRACESi_in_ftWordsValue4259 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_expr_in_ftWordsValue4262 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
     public static final BitSet FOLLOW_RBRACSi_in_ftWordsValue4264 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_numericLiteral_in_literal4305 = new BitSet(new long[]{0x0000000000000002L});
@@ -34738,20 +34804,20 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_OCCURS_in_ftTimes4444 = new BitSet(new long[]{0x0400000000000000L,0x0000000000000000L,0x0000000001400000L});
     public static final BitSet FOLLOW_ftRange_in_ftTimes4447 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
     public static final BitSet FOLLOW_TIMES_in_ftTimes4449 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXACTLY_in_ftRange4486 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_EXACTLY_in_ftRange4486 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_additiveExpr_in_ftRange4488 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_AT_in_ftRange4532 = new BitSet(new long[]{0x0000080000000000L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_set_in_ftRange4534 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_set_in_ftRange4534 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_additiveExpr_in_ftRange4540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FROM_in_ftRange4584 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_FROM_in_ftRange4584 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_additiveExpr_in_ftRange4586 = new BitSet(new long[]{0x0000000000000000L,0x0000020000000000L});
-    public static final BitSet FOLLOW_TO_in_ftRange4588 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_TO_in_ftRange4588 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_additiveExpr_in_ftRange4590 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_pragma_in_ftExtensionSelection4622 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000002000000L});
     public static final BitSet FOLLOW_LBRACESi_in_ftExtensionSelection4625 = new BitSet(new long[]{0x0000000010000000L,0x000000000000001AL,0x0000000002007800L});
     public static final BitSet FOLLOW_ftSelection_in_ftExtensionSelection4628 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
     public static final BitSet FOLLOW_RBRACSi_in_ftExtensionSelection4631 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPRAGSi_in_pragma4667 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_LPRAGSi_in_pragma4667 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_qName_in_pragma4670 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000000C000000L});
     public static final BitSet FOLLOW_PragmaContents_in_pragma4672 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
     public static final BitSet FOLLOW_RPRAGSi_in_pragma4675 = new BitSet(new long[]{0x0000000000000002L});
@@ -34761,7 +34827,7 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_ftScope_in_ftPosFilter4728 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ftContent_in_ftPosFilter4732 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ORDERED_in_ftOrder4747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WINDOW_in_ftWindow4762 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_WINDOW_in_ftWindow4762 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_additiveExpr_in_ftWindow4764 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000060040000L});
     public static final BitSet FOLLOW_ftUnit_in_ftWindow4766 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_ftUnit0 = new BitSet(new long[]{0x0000000000000002L});
@@ -34798,7 +34864,7 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_UPPERCASE_in_ftCaseOption5174 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_DIACRITICS_in_ftDiacriticsOption5200 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000600000000000L});
     public static final BitSet FOLLOW_set_in_ftDiacriticsOption5203 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OPTION_in_ftExtensionOption5221 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
+    public static final BitSet FOLLOW_OPTION_in_ftExtensionOption5221 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
     public static final BitSet FOLLOW_qName_in_ftExtensionOption5224 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_StringLiteral_in_ftExtensionOption5226 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_THESAURUS_in_ftThesaurusOption5255 = new BitSet(new long[]{0x0400001000000000L,0x0000000000000002L});
@@ -34838,314 +34904,314 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_extensionExpr_in_valueExpr5535 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_VALIDATE_in_validateExpr5546 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0060000000000000L});
     public static final BitSet FOLLOW_validationMode_in_validateExpr5548 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_validateExpr5551 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_LBRACESi_in_validateExpr5551 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_expr_in_validateExpr5554 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
     public static final BitSet FOLLOW_RBRACSi_in_validateExpr5556 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_validationMode0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SLASHSi_in_pathExpr5618 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7BFFFFF7FBE3L,0x3E7FFFFFF1FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_SLASHSi_in_pathExpr5618 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7BFFFFF7FBE3L,0x7E7FFFFFF1FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_relativePathExpr_in_pathExpr5620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SLASHSi_in_pathExpr5643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DBLSLASHSi_in_pathExpr5662 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7BFFFFF7FBE3L,0x3E7FFFFFF1FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_relativePathExpr_in_pathExpr5664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_relativePathExpr_in_pathExpr5686 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_stepExpr_in_relativePathExpr5717 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0180000000000000L});
-    public static final BitSet FOLLOW_SLASHSi_in_relativePathExpr5721 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7BFFFFF7FBE3L,0x3E7FFFFFF1FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_DBLSLASHSi_in_relativePathExpr5726 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7BFFFFF7FBE3L,0x3E7FFFFFF1FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_stepExpr_in_relativePathExpr5730 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0180000000000000L});
-    public static final BitSet FOLLOW_axisStep_in_stepExpr5876 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_axisStep_in_stepExpr5897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_filterExpr_in_stepExpr5918 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_reverseStep_in_axisStep5953 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_forwardStep_in_axisStep5957 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_predicateList_in_axisStep5961 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_reverseAxis_in_reverseStep5984 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7FBE1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_nodeTest_in_reverseStep5986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_abbrevReverseStep_in_reverseStep5990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_reverseAxis6017 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L});
-    public static final BitSet FOLLOW_DBLCOLONSi_in_reverseAxis6037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_kindTest_in_nodeTest6064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nameTest_in_nodeTest6068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_wildcard_in_nameTest6149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_nameTest6181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARSi_in_wildcard6283 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_COLONSi_in_wildcard6285 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_wildcard6287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARSi_in_wildcard6325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_wildcard6361 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_COLONSi_in_wildcard6363 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_STARSi_in_wildcard6365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOTDOTSi_in_abbrevReverseStep6422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_forwardAxis_in_forwardStep6466 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7FBE1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_nodeTest_in_forwardStep6469 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_abbrevForwardStep_in_forwardStep6473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_forwardAxis6529 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x4000000000000000L});
-    public static final BitSet FOLLOW_DBLCOLONSi_in_forwardAxis6636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ATSi_in_abbrevForwardStep6685 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7FBE1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_nodeTest_in_abbrevForwardStep6689 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_predicate_in_predicateList6749 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_LBRACKSi_in_predicate6818 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_predicate6820 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_RBRACKSi_in_predicate6822 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pragma_in_extensionExpr6894 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000002000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_extensionExpr6897 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBF3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_extensionExpr6900 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_extensionExpr6903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_primaryExpr_in_filterExpr6915 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_predicateList_in_filterExpr6917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_literal_in_primaryExpr6937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_varRef_in_primaryExpr6950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parenthesizedExpr_in_primaryExpr6963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_contextItemExpr_in_primaryExpr6976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_functionCall_in_primaryExpr6989 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_orderedExpr_in_primaryExpr7002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_unorderedExpr_in_primaryExpr7015 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_constructor_in_primaryExpr7028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOLLARSi_in_varRef7048 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_varName_in_varRef7051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_parenthesizedExpr7066 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE7L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_parenthesizedExpr7069 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_RPARSi_in_parenthesizedExpr7072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOTSi_in_contextItemExpr7088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_functionCall7116 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_functionCall7118 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE7L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_exprSingle_in_functionCall7135 = new BitSet(new long[]{0x0000000400000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_COMMASi_in_functionCall7138 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_exprSingle_in_functionCall7140 = new BitSet(new long[]{0x0000000400000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_RPARSi_in_functionCall7159 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDERED_in_orderedExpr7202 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_orderedExpr7204 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_orderedExpr7207 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_orderedExpr7209 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UNORDERED_in_unorderedExpr7225 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_unorderedExpr7227 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_unorderedExpr7230 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_unorderedExpr7232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_directConstructor_in_constructor7252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_computedConstructor_in_constructor7256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_dirElemConstructor_in_directConstructor7296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_dirCommentConstructor_in_directConstructor7316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_dirPIConstructor_in_directConstructor7336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LTSi_in_dirElemConstructor7394 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_qName_in_dirElemConstructor7420 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F94L,0x000000003000087EL});
-    public static final BitSet FOLLOW_dirAttributeList_in_dirElemConstructor7422 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L,0x0000000000000800L});
-    public static final BitSet FOLLOW_RSELFTERMSi_in_dirElemConstructor7445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor7496 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000001L,0x0000000001261000L});
-    public static final BitSet FOLLOW_dirElemContent_in_dirElemConstructor7550 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000001L,0x0000000001261000L});
-    public static final BitSet FOLLOW_LENDTAGSi_in_dirElemConstructor7578 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_qName_in_dirElemConstructor7610 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor7641 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_dirAttributeList7740 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_EQSi_in_dirAttributeList7742 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x000000000000A000L});
-    public static final BitSet FOLLOW_dirAttributeValue_in_dirAttributeList7744 = new BitSet(new long[]{0xCFFFFFF9AC000002L,0x7FFF7BFFFFF7F3E1L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue7807 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000006000L});
-    public static final BitSet FOLLOW_QuotAttributeContent_in_dirAttributeValue7841 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000006000L});
-    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7845 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000006000L});
-    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue7878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue7913 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000018000L});
-    public static final BitSet FOLLOW_AposAttributeContent_in_dirAttributeValue7947 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000018000L});
-    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7951 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000018000L});
-    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue7984 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LBRACESi_in_xmlEnclosedExpr8073 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_xmlEnclosedExpr8111 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_xmlEnclosedExpr8142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_directConstructor_in_dirElemContent8225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_cDataSection_in_dirElemContent8263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ElementContent_in_dirElemContent8302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirElemContent8341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LCDATASi_in_cDataSection8399 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_CDataContents_in_cDataSection8401 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_RCDATASi_in_cDataSection8403 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LCOMMENTSi_in_dirCommentConstructor8427 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_DirCommentContent_in_dirCommentConstructor8429 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_RCOMMENTSi_in_dirCommentConstructor8431 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPISi_in_dirPIConstructor8455 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_PiTarget_in_dirPIConstructor8457 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x000000000C000000L});
-    public static final BitSet FOLLOW_DirPiContents_in_dirPIConstructor8459 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_RPISi_in_dirPIConstructor8462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compDocConstructor_in_computedConstructor8499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compElemConstructor_in_computedConstructor8519 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compAttrConstructor_in_computedConstructor8539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compTextConstructor_in_computedConstructor8559 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compCommentConstructor_in_computedConstructor8579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compPIConstructor_in_computedConstructor8599 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOCUMENT_in_compDocConstructor8637 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_compDocConstructor8639 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_compDocConstructor8642 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_compDocConstructor8644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELEMENT_in_compElemConstructor8690 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E9L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_qName_in_compElemConstructor8693 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor8697 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_compElemConstructor8699 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor8701 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor8725 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBF3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_contentExpr_in_compElemConstructor8727 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor8730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expr_in_contentExpr8774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ATTRIBUTE_in_compAttrConstructor8819 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E9L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_qName_in_compAttrConstructor8822 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor8827 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_compAttrConstructor8830 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor8832 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor8858 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBF3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_compAttrConstructor8861 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor8864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEXT_in_compTextConstructor8907 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_compTextConstructor8909 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_compTextConstructor8912 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_compTextConstructor8914 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMENT_in_compCommentConstructor8939 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_compCommentConstructor8941 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_compCommentConstructor8944 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_compCommentConstructor8946 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor8992 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E9L,0x3E7FFFFFF1FF8F90L,0x000000003000007EL});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_compPIConstructor9020 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor9025 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_compPIConstructor9028 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor9030 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor9056 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBF3L,0x3FFFFFFFF3FFFF91L,0x00000000312004FFL});
-    public static final BitSet FOLLOW_expr_in_compPIConstructor9059 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor9062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NCName_in_ncNameorKeyword9097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ALL_in_ncNameorKeyword9107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ANY_in_ncNameorKeyword9117 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ANCESTOR_in_ncNameorKeyword9127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ANCESTOR_OR_SELF_in_ncNameorKeyword9137 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AND_in_ncNameorKeyword9147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AS_in_ncNameorKeyword9157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ASCENDING_in_ncNameorKeyword9167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AT_in_ncNameorKeyword9177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ATTRIBUTE_in_ncNameorKeyword9187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BASE_URI_in_ncNameorKeyword9197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BY_in_ncNameorKeyword9207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BOUNDARYSPACE_in_ncNameorKeyword9217 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CASE_in_ncNameorKeyword9227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CAST_in_ncNameorKeyword9237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CASTABLE_in_ncNameorKeyword9247 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CHILD_in_ncNameorKeyword9257 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COLLATION_in_ncNameorKeyword9267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMENT_in_ncNameorKeyword9277 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CONSTRUCTION_in_ncNameorKeyword9287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CONTENT_in_ncNameorKeyword9297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COPY_NAMESPACES_in_ncNameorKeyword9307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DECLARE_in_ncNameorKeyword9317 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFAULT_in_ncNameorKeyword9327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DESCENDANT_in_ncNameorKeyword9337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DESCENDANT_OR_SELF_in_ncNameorKeyword9347 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DESCENDING_in_ncNameorKeyword9357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIACRITICS_in_ncNameorKeyword9367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIFFERENT_in_ncNameorKeyword9377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DISTANCE_in_ncNameorKeyword9387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIV_in_ncNameorKeyword9397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOCUMENT_in_ncNameorKeyword9407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOCUMENT_NODE_in_ncNameorKeyword9417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELEMENT_in_ncNameorKeyword9427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELSE_in_ncNameorKeyword9437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ENCODING_in_ncNameorKeyword9447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_END_in_ncNameorKeyword9457 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ENTIRE_in_ncNameorKeyword9467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EMPTY_in_ncNameorKeyword9477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EMPTY_SEQUENCE_in_ncNameorKeyword9487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQ_in_ncNameorKeyword9497 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EVERY_in_ncNameorKeyword9507 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXACTLY_in_ncNameorKeyword9517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXCEPT_in_ncNameorKeyword9527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXTERNAL_in_ncNameorKeyword9537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOLLOWING_in_ncNameorKeyword9547 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOLLOWING_SIBLING_in_ncNameorKeyword9557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOR_in_ncNameorKeyword9567 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FROM_in_ncNameorKeyword9577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FTAND_in_ncNameorKeyword9587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FTCONTAINS_in_ncNameorKeyword9597 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FTNOT_in_ncNameorKeyword9607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FTOPTION_in_ncNameorKeyword9617 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FTOR_in_ncNameorKeyword9627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FUNCTION_in_ncNameorKeyword9637 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GE_in_ncNameorKeyword9647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GREATEST_in_ncNameorKeyword9657 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GT_in_ncNameorKeyword9667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDIV_in_ncNameorKeyword9677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IF_in_ncNameorKeyword9687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IMPORT_in_ncNameorKeyword9697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IN_in_ncNameorKeyword9707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INHERIT_in_ncNameorKeyword9717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INSENSITIVE_in_ncNameorKeyword9727 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INSTANCE_in_ncNameorKeyword9737 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INTERSECT_in_ncNameorKeyword9747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IS_in_ncNameorKeyword9757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ITEM_in_ncNameorKeyword9767 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LANGUAGE_in_ncNameorKeyword9777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LAX_in_ncNameorKeyword9787 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LE_in_ncNameorKeyword9797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEAST_in_ncNameorKeyword9807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LET_in_ncNameorKeyword9817 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEVELS_in_ncNameorKeyword9827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LOWERCASE_in_ncNameorKeyword9837 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LT_in_ncNameorKeyword9847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOD_in_ncNameorKeyword9857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MODULE_in_ncNameorKeyword9867 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOST_in_ncNameorKeyword9877 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NAMESPACE_in_ncNameorKeyword9887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NE_in_ncNameorKeyword9897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NODE_in_ncNameorKeyword9907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOINHERIT_in_ncNameorKeyword9917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOPRESERVE_in_ncNameorKeyword9927 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOT_in_ncNameorKeyword9937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OCCURS_in_ncNameorKeyword9947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OF_in_ncNameorKeyword9957 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OPTION_in_ncNameorKeyword9967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OR_in_ncNameorKeyword9977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDER_in_ncNameorKeyword9987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDERED_in_ncNameorKeyword9997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDERING_in_ncNameorKeyword10007 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PARAGRAPH_in_ncNameorKeyword10017 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PARAGRAPHS_in_ncNameorKeyword10027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PARENT_in_ncNameorKeyword10037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PHRASE_in_ncNameorKeyword10047 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PRECEDING_in_ncNameorKeyword10057 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PRECEDING_SIBLING_in_ncNameorKeyword10067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PRESERVE_in_ncNameorKeyword10077 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_ncNameorKeyword10087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RELATIONSHIP_in_ncNameorKeyword10097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RETURN_in_ncNameorKeyword10107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SAME_in_ncNameorKeyword10117 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SATISFIES_in_ncNameorKeyword10127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCHEMA_in_ncNameorKeyword10137 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCHEMA_ATTRIBUTE_in_ncNameorKeyword10147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCHEMA_ELEMENT_in_ncNameorKeyword10157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCORE_in_ncNameorKeyword10167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SELF_in_ncNameorKeyword10177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SENSITIVE_in_ncNameorKeyword10187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SENTENCES_in_ncNameorKeyword10197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SENTENCE_in_ncNameorKeyword10207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SOME_in_ncNameorKeyword10217 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STABLE_in_ncNameorKeyword10227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_START_in_ncNameorKeyword10237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STEMMING_in_ncNameorKeyword10247 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STOP_in_ncNameorKeyword10257 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STRICT_in_ncNameorKeyword10267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STRIP_in_ncNameorKeyword10277 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEXT_in_ncNameorKeyword10287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THESAURUS_in_ncNameorKeyword10297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THEN_in_ncNameorKeyword10307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TIMES_in_ncNameorKeyword10317 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TO_in_ncNameorKeyword10327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TREAT_in_ncNameorKeyword10337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TYPESWITCH_in_ncNameorKeyword10347 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UNION_in_ncNameorKeyword10357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UNORDERED_in_ncNameorKeyword10367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UPPERCASE_in_ncNameorKeyword10377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VALIDATE_in_ncNameorKeyword10387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VARIABLE_in_ncNameorKeyword10397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VERSION_in_ncNameorKeyword10407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WEIGHT_in_ncNameorKeyword10417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WHERE_in_ncNameorKeyword10427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WILDCARDS_in_ncNameorKeyword10437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WINDOW_in_ncNameorKeyword10447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WITH_in_ncNameorKeyword10457 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WITHOUT_in_ncNameorKeyword10467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WORD_in_ncNameorKeyword10477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WORDS_in_ncNameorKeyword10487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_XQUERY_in_ncNameorKeyword10497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SLASHSi_in_pathExpr5642 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DBLSLASHSi_in_pathExpr5660 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7BFFFFF7FBE3L,0x7E7FFFFFF1FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_relativePathExpr_in_pathExpr5662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_relativePathExpr_in_pathExpr5683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_stepExpr_in_relativePathExpr5714 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0180000000000000L});
+    public static final BitSet FOLLOW_SLASHSi_in_relativePathExpr5718 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7BFFFFF7FBE3L,0x7E7FFFFFF1FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_DBLSLASHSi_in_relativePathExpr5723 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7BFFFFF7FBE3L,0x7E7FFFFFF1FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_stepExpr_in_relativePathExpr5727 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0180000000000000L});
+    public static final BitSet FOLLOW_axisStep_in_stepExpr5873 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_axisStep_in_stepExpr5901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_filterExpr_in_stepExpr5929 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_reverseStep_in_axisStep5964 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_forwardStep_in_axisStep5968 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_contextItemExpr_in_axisStep5972 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_predicateList_in_axisStep5976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOTSi_in_contextItemExpr5999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_reverseAxis_in_reverseStep6022 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7FBE1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_nodeTest_in_reverseStep6024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_abbrevReverseStep_in_reverseStep6028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_reverseAxis6055 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x8000000000000000L});
+    public static final BitSet FOLLOW_DBLCOLONSi_in_reverseAxis6075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_kindTest_in_nodeTest6102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nameTest_in_nodeTest6106 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_wildcard_in_nameTest6187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_nameTest6219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARSi_in_wildcard6321 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_COLONSi_in_wildcard6323 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_wildcard6325 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARSi_in_wildcard6363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_wildcard6399 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_COLONSi_in_wildcard6401 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_STARSi_in_wildcard6403 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOTDOTSi_in_abbrevReverseStep6460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_forwardAxis_in_forwardStep6504 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7FBE1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_nodeTest_in_forwardStep6507 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_abbrevForwardStep_in_forwardStep6511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_forwardAxis6567 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x8000000000000000L});
+    public static final BitSet FOLLOW_DBLCOLONSi_in_forwardAxis6674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ATSi_in_abbrevForwardStep6723 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7FBE1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_nodeTest_in_abbrevForwardStep6727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_predicate_in_predicateList6787 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_LBRACKSi_in_predicate6856 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_predicate6858 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_RBRACKSi_in_predicate6860 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pragma_in_extensionExpr6932 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000002000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_extensionExpr6935 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBF3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_extensionExpr6938 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_extensionExpr6941 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_primaryExpr_in_filterExpr6953 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_predicateList_in_filterExpr6955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_literal_in_primaryExpr6975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_varRef_in_primaryExpr6988 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parenthesizedExpr_in_primaryExpr7001 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_functionCall_in_primaryExpr7014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_orderedExpr_in_primaryExpr7027 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_unorderedExpr_in_primaryExpr7040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_constructor_in_primaryExpr7053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOLLARSi_in_varRef7073 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_varName_in_varRef7076 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPARSi_in_parenthesizedExpr7091 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE7L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_parenthesizedExpr7094 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_RPARSi_in_parenthesizedExpr7097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_functionCall7126 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_LPARSi_in_functionCall7128 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE7L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_exprSingle_in_functionCall7145 = new BitSet(new long[]{0x0000000400000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_COMMASi_in_functionCall7148 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_exprSingle_in_functionCall7150 = new BitSet(new long[]{0x0000000400000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_RPARSi_in_functionCall7169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDERED_in_orderedExpr7212 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_LBRACESi_in_orderedExpr7214 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_orderedExpr7217 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_orderedExpr7219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UNORDERED_in_unorderedExpr7235 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_LBRACESi_in_unorderedExpr7237 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_unorderedExpr7240 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_unorderedExpr7242 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_directConstructor_in_constructor7262 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_computedConstructor_in_constructor7266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_dirElemConstructor_in_directConstructor7306 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_dirCommentConstructor_in_directConstructor7326 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_dirPIConstructor_in_directConstructor7346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LTSi_in_dirElemConstructor7404 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_qName_in_dirElemConstructor7430 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F94L,0x00000000300008FCL});
+    public static final BitSet FOLLOW_dirAttributeList_in_dirElemConstructor7432 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L,0x0000000000000800L});
+    public static final BitSet FOLLOW_RSELFTERMSi_in_dirElemConstructor7455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor7506 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000001L,0x0000000001261000L});
+    public static final BitSet FOLLOW_dirElemContent_in_dirElemConstructor7560 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000001L,0x0000000001261000L});
+    public static final BitSet FOLLOW_LENDTAGSi_in_dirElemConstructor7588 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_qName_in_dirElemConstructor7620 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor7651 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_dirAttributeList7750 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_EQSi_in_dirAttributeList7752 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x000000000000A000L});
+    public static final BitSet FOLLOW_dirAttributeValue_in_dirAttributeList7754 = new BitSet(new long[]{0xCFFFFFF9AC000002L,0x7FFF7BFFFFF7F3E1L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue7817 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000006000L});
+    public static final BitSet FOLLOW_QuotAttributeContent_in_dirAttributeValue7851 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000006000L});
+    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7855 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000006000L});
+    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue7888 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue7923 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000018000L});
+    public static final BitSet FOLLOW_AposAttributeContent_in_dirAttributeValue7957 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000018000L});
+    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7961 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L,0x0000000000000000L,0x0000000000018000L});
+    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue7994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LBRACESi_in_xmlEnclosedExpr8083 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_xmlEnclosedExpr8121 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_xmlEnclosedExpr8152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_directConstructor_in_dirElemContent8235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_cDataSection_in_dirElemContent8273 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ElementContent_in_dirElemContent8312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirElemContent8351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LCDATASi_in_cDataSection8409 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_CDataContents_in_cDataSection8411 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_RCDATASi_in_cDataSection8413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LCOMMENTSi_in_dirCommentConstructor8437 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_DirCommentContent_in_dirCommentConstructor8439 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_RCOMMENTSi_in_dirCommentConstructor8441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPISi_in_dirPIConstructor8465 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_PiTarget_in_dirPIConstructor8467 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x000000000C000000L});
+    public static final BitSet FOLLOW_DirPiContents_in_dirPIConstructor8469 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_RPISi_in_dirPIConstructor8472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compDocConstructor_in_computedConstructor8509 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compElemConstructor_in_computedConstructor8529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compAttrConstructor_in_computedConstructor8549 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compTextConstructor_in_computedConstructor8569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compCommentConstructor_in_computedConstructor8589 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compPIConstructor_in_computedConstructor8609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOCUMENT_in_compDocConstructor8647 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_LBRACESi_in_compDocConstructor8649 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_compDocConstructor8652 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_compDocConstructor8654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELEMENT_in_compElemConstructor8700 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E9L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_qName_in_compElemConstructor8703 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor8707 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_compElemConstructor8709 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor8711 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor8735 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBF3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_contentExpr_in_compElemConstructor8737 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor8740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_contentExpr8784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ATTRIBUTE_in_compAttrConstructor8829 = new BitSet(new long[]{0xCFFFFFF9AC000000L,0x7FFF7BFFFFF7F3E9L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_qName_in_compAttrConstructor8832 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor8837 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_compAttrConstructor8840 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor8842 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor8868 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBF3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_compAttrConstructor8871 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor8874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEXT_in_compTextConstructor8917 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_LBRACESi_in_compTextConstructor8919 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_compTextConstructor8922 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_compTextConstructor8924 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMENT_in_compCommentConstructor8949 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_LBRACESi_in_compCommentConstructor8951 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_compCommentConstructor8954 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_compCommentConstructor8956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor9002 = new BitSet(new long[]{0x4FFFFFF9AC000000L,0x7FFF7BFFFFF7F3E9L,0x7C7FFFFFF1FF8F90L,0x00000000300000FCL});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_compPIConstructor9030 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor9035 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBE3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_compPIConstructor9038 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor9040 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor9066 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7FFFFFFFFBF3L,0x7FFFFFFFF3FFFF91L,0x00000000312001FEL});
+    public static final BitSet FOLLOW_expr_in_compPIConstructor9069 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor9072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NCName_in_ncNameorKeyword9107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ALL_in_ncNameorKeyword9117 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ANY_in_ncNameorKeyword9128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ANCESTOR_in_ncNameorKeyword9138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ANCESTOR_OR_SELF_in_ncNameorKeyword9148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AND_in_ncNameorKeyword9158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AS_in_ncNameorKeyword9168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ASCENDING_in_ncNameorKeyword9178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AT_in_ncNameorKeyword9188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ATTRIBUTE_in_ncNameorKeyword9198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BASE_URI_in_ncNameorKeyword9208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BY_in_ncNameorKeyword9218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BOUNDARYSPACE_in_ncNameorKeyword9228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CASE_in_ncNameorKeyword9238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CAST_in_ncNameorKeyword9248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CASTABLE_in_ncNameorKeyword9258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CHILD_in_ncNameorKeyword9268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COLLATION_in_ncNameorKeyword9278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMENT_in_ncNameorKeyword9288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CONSTRUCTION_in_ncNameorKeyword9298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CONTENT_in_ncNameorKeyword9308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COPY_NAMESPACES_in_ncNameorKeyword9318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DECLARE_in_ncNameorKeyword9328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFAULT_in_ncNameorKeyword9338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DESCENDANT_in_ncNameorKeyword9348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DESCENDANT_OR_SELF_in_ncNameorKeyword9358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DESCENDING_in_ncNameorKeyword9368 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIACRITICS_in_ncNameorKeyword9378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIFFERENT_in_ncNameorKeyword9388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DISTANCE_in_ncNameorKeyword9398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIV_in_ncNameorKeyword9408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOCUMENT_in_ncNameorKeyword9418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOCUMENT_NODE_in_ncNameorKeyword9428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELEMENT_in_ncNameorKeyword9438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELSE_in_ncNameorKeyword9448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ENCODING_in_ncNameorKeyword9458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_END_in_ncNameorKeyword9468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ENTIRE_in_ncNameorKeyword9478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EMPTY_in_ncNameorKeyword9488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EMPTY_SEQUENCE_in_ncNameorKeyword9498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQ_in_ncNameorKeyword9508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EVERY_in_ncNameorKeyword9518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXACTLY_in_ncNameorKeyword9528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXCEPT_in_ncNameorKeyword9538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXTERNAL_in_ncNameorKeyword9548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOLLOWING_in_ncNameorKeyword9558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOLLOWING_SIBLING_in_ncNameorKeyword9568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOR_in_ncNameorKeyword9578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FROM_in_ncNameorKeyword9588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FTAND_in_ncNameorKeyword9598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FTCONTAINS_in_ncNameorKeyword9608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FTNOT_in_ncNameorKeyword9618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FTOPTION_in_ncNameorKeyword9628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FTOR_in_ncNameorKeyword9638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FUNCTION_in_ncNameorKeyword9648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GE_in_ncNameorKeyword9658 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GREATEST_in_ncNameorKeyword9668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GT_in_ncNameorKeyword9678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDIV_in_ncNameorKeyword9688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IF_in_ncNameorKeyword9698 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IMPORT_in_ncNameorKeyword9708 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IN_in_ncNameorKeyword9718 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INHERIT_in_ncNameorKeyword9728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INSENSITIVE_in_ncNameorKeyword9738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INSTANCE_in_ncNameorKeyword9748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INTERSECT_in_ncNameorKeyword9758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IS_in_ncNameorKeyword9768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ITEM_in_ncNameorKeyword9778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LANGUAGE_in_ncNameorKeyword9788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LAX_in_ncNameorKeyword9798 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LE_in_ncNameorKeyword9808 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LEAST_in_ncNameorKeyword9818 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LET_in_ncNameorKeyword9828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LEVELS_in_ncNameorKeyword9838 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LOWERCASE_in_ncNameorKeyword9848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LT_in_ncNameorKeyword9858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOD_in_ncNameorKeyword9868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MODULE_in_ncNameorKeyword9878 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOST_in_ncNameorKeyword9888 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NAMESPACE_in_ncNameorKeyword9898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NE_in_ncNameorKeyword9908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NODE_in_ncNameorKeyword9918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOINHERIT_in_ncNameorKeyword9928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOPRESERVE_in_ncNameorKeyword9938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOT_in_ncNameorKeyword9948 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OCCURS_in_ncNameorKeyword9958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OF_in_ncNameorKeyword9968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OPTION_in_ncNameorKeyword9978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OR_in_ncNameorKeyword9988 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDER_in_ncNameorKeyword9998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDERED_in_ncNameorKeyword10008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDERING_in_ncNameorKeyword10018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PARAGRAPH_in_ncNameorKeyword10028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PARAGRAPHS_in_ncNameorKeyword10038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PARENT_in_ncNameorKeyword10048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PHRASE_in_ncNameorKeyword10058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PRECEDING_in_ncNameorKeyword10068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PRECEDING_SIBLING_in_ncNameorKeyword10078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PRESERVE_in_ncNameorKeyword10088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_ncNameorKeyword10098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RELATIONSHIP_in_ncNameorKeyword10108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RETURN_in_ncNameorKeyword10118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SAME_in_ncNameorKeyword10128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SATISFIES_in_ncNameorKeyword10138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCHEMA_in_ncNameorKeyword10148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCHEMA_ATTRIBUTE_in_ncNameorKeyword10158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCHEMA_ELEMENT_in_ncNameorKeyword10168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCORE_in_ncNameorKeyword10178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SELF_in_ncNameorKeyword10188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SENSITIVE_in_ncNameorKeyword10198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SENTENCES_in_ncNameorKeyword10208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SENTENCE_in_ncNameorKeyword10218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SOME_in_ncNameorKeyword10228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STABLE_in_ncNameorKeyword10238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_START_in_ncNameorKeyword10248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STEMMING_in_ncNameorKeyword10258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STOP_in_ncNameorKeyword10268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STRICT_in_ncNameorKeyword10278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STRIP_in_ncNameorKeyword10288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEXT_in_ncNameorKeyword10298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THESAURUS_in_ncNameorKeyword10308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THEN_in_ncNameorKeyword10318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TIMES_in_ncNameorKeyword10328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TO_in_ncNameorKeyword10338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TREAT_in_ncNameorKeyword10348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TYPESWITCH_in_ncNameorKeyword10358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UNION_in_ncNameorKeyword10368 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UNORDERED_in_ncNameorKeyword10378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UPPERCASE_in_ncNameorKeyword10388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VALIDATE_in_ncNameorKeyword10398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VARIABLE_in_ncNameorKeyword10408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VERSION_in_ncNameorKeyword10418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WEIGHT_in_ncNameorKeyword10428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WHERE_in_ncNameorKeyword10438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WILDCARDS_in_ncNameorKeyword10448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WINDOW_in_ncNameorKeyword10458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WITH_in_ncNameorKeyword10468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WITHOUT_in_ncNameorKeyword10478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WORD_in_ncNameorKeyword10488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WORDS_in_ncNameorKeyword10498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_XQUERY_in_ncNameorKeyword10508 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_IMPORT_in_synpred1437 = new BitSet(new long[]{0x0200000080000000L});
     public static final BitSet FOLLOW_set_in_synpred1439 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_EMPTY_SEQUENCE_in_synpred21360 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
@@ -35156,15 +35222,15 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_LPARSi_in_synpred42091 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_TYPESWITCH_in_synpred52104 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_LPARSi_in_synpred52106 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SLASHSi_in_synpred65610 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7BFFFFF7FBE3L,0x3E7FFFFFF1FFFF91L,0x00000000312004FFL});
+    public static final BitSet FOLLOW_SLASHSi_in_synpred65610 = new BitSet(new long[]{0xDFFFFFF9BC000000L,0x7FFF7BFFFFF7FBE3L,0x7E7FFFFFF1FFFF91L,0x00000000312001FEL});
     public static final BitSet FOLLOW_relativePathExpr_in_synpred65612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_synpred75769 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_synpred75847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARSi_in_synpred86136 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_synpred86140 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_COLONSi_in_synpred86142 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_STARSi_in_synpred86144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARSi_in_synpred96276 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_COLONSi_in_synpred96278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_synpred75766 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_LPARSi_in_synpred75844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARSi_in_synpred86174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_synpred86178 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_COLONSi_in_synpred86180 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_STARSi_in_synpred86182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARSi_in_synpred96314 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_COLONSi_in_synpred96316 = new BitSet(new long[]{0x0000000000000002L});
 
 }

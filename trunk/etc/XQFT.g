@@ -608,9 +608,9 @@ valueExpr : validateExpr | pathExpr | extensionExpr;
         validationMode : LAX | STRICT;
             
     pathExpr :
-         (SLASHSi relativePathExpr)=> s=SLASHSi relativePathExpr -> ^(AST_PATHEXPR_SGL[$s, "Single slash"] relativePathExpr)
-        | s=SLASHSi -> AST_PATHEXPR_SGL[$s, "Single slash"]
-        | d=DBLSLASHSi relativePathExpr -> ^(AST_PATHEXPR_DBL[$d, "Double slash"] relativePathExpr) 
+         (SLASHSi relativePathExpr)=> s=SLASHSi relativePathExpr -> ^(AST_PATHEXPR_SGL relativePathExpr)
+        | s=SLASHSi -> AST_PATHEXPR_SGL
+        | d=DBLSLASHSi relativePathExpr -> ^(AST_PATHEXPR_DBL relativePathExpr) 
         | relativePathExpr
     ;
 
@@ -626,12 +626,13 @@ valueExpr : validateExpr | pathExpr | extensionExpr;
                 ((DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT 
                     | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT 
                     | TEXT | NODE) LPARSi)
-                        => axisStep //-> ^(AST_STEPEXPR axisStep)
-                | axisStep //-> ^(AST_STEPEXPR axisStep)
+                        => axisStep -> ^(AST_STEPEXPR axisStep)
+                | axisStep -> ^(AST_STEPEXPR axisStep)
                 | filterExpr //-> ^(AST_STEPEXPR filterExpr)
             ;
 
-            axisStep : (reverseStep | forwardStep)^ predicateList;
+            axisStep : (reverseStep | forwardStep | contextItemExpr)^ predicateList;
+                contextItemExpr : DOTSi;
                 reverseStep : reverseAxis nodeTest | abbrevReverseStep;
                     reverseAxis : (PARENT | ANCESTOR | PRECEDING_SIBLING | PRECEDING | ANCESTOR_OR_SELF) DBLCOLONSi;
                     nodeTest : kindTest | nameTest;
@@ -668,7 +669,6 @@ filterExpr : primaryExpr predicateList;
         literal 
         | varRef 
         | parenthesizedExpr 
-        | contextItemExpr 
         | functionCall 
         | orderedExpr 
         | unorderedExpr 
@@ -676,7 +676,6 @@ filterExpr : primaryExpr predicateList;
     ;
         varRef : DOLLARSi! varName;
         parenthesizedExpr : LPARSi! expr? RPARSi!;
-        contextItemExpr : DOTSi;
         functionCall : 
             qName LPARSi /* xgc: reserved-function-namesXQ */
             (exprSingle (COMMASi exprSingle)*)? 
