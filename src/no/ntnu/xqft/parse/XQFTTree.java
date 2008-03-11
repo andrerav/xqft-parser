@@ -18,14 +18,14 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Node#accept(no.ntnu.xqft.tree.Operator)
      */
-    public Operator accept(Visitor visitor) {
+    public NodeReturnType accept(Visitor visitor) {
 
         // TODO Auto-generated method stub
         switch(this.getType()) {
             case XQFTParser.AST_MODULE:
-                //return visitor.visitAST_MODULE(this);
-                System.err.println("method not implemented: visitAST_MODULE()");
-                break;
+                return visitor.visitAST_MODULE(this);
+                //System.err.println("method not implemented: visitAST_MODULE()");
+                //break;
             case XQFTParser.AST_FLWOR:
                 //return visitor.visitAST_FLWOR(this);
                 System.err.println("method not implemented: visitAST_FLWOR()");
@@ -79,9 +79,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 System.err.println("method not implemented: visitAST_PATHEXPR_REL()");
                 break;
             case XQFTParser.AST_STEPEXPR:
-                //return visitor.visitAST_STEPEXPR(this);
-                System.err.println("method not implemented: visitAST_STEPEXPR()");
-                break;
+                return visitor.visitAST_STEPEXPR(this);
+                //System.err.println("method not implemented: visitAST_STEPEXPR()");
+                //break;
             case XQFTParser.AST_FTSELECTION:
                 //return visitor.visitAST_FTSELECTION(this);
                 System.err.println("method not implemented: visitAST_FTSELECTION()");
@@ -739,9 +739,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 System.err.println("method not implemented: visitSTRICT()");
                 break;
             case XQFTParser.SLASHSi:
-                //return visitor.visitSLASHSi(this);
-                System.err.println("method not implemented: visitSLASHSi()");
-                break;
+                return visitor.visitSLASHSi(this);
+                //System.err.println("method not implemented: visitSLASHSi()");
+                //break;
             case XQFTParser.DBLSLASHSi:
                 //return visitor.visitDBLSLASHSi(this);
                 System.err.println("method not implemented: visitDBLSLASHSi()");
@@ -891,9 +891,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 System.err.println("method not implemented: visitDOCUMENT()");
                 break;
             case XQFTParser.NCName:
-                //return visitor.visitNCName(this);
-                System.err.println("method not implemented: visitNCName()");
-                break;
+                return visitor.visitNCName(this);
+                //System.err.println("method not implemented: visitNCName()");
+                //break;
             case XQFTParser.CDataSectionLEX:
                 //return visitor.visitCDataSectionLEX(this);
                 System.err.println("method not implemented: visitCDataSectionLEX()");

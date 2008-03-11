@@ -2,7 +2,7 @@ package no.ntnu.xqft.tree;
 
 import java.util.ArrayList;
 
-public class Operator {
+public class Operator extends NodeReturnType {
 
     protected String name;
 
