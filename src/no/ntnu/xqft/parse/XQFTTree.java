@@ -5,7 +5,6 @@ package no.ntnu.xqft.parse;
 
 import org.antlr.runtime.Token;
 import org.antlr.runtime.tree.*;
-import no.ntnu.xqft.parse.*;
 
 
 /**
@@ -29,7 +28,7 @@ public class XQFTTree extends CommonTree {
      * paranthesized structure
      */
     
-    public String toStringTree() {
+    public String toDotStringTree() {
         
         StringBuffer buf = new StringBuffer();
         buf.append("digraph AST {\n" +
@@ -84,5 +83,6 @@ public class XQFTTree extends CommonTree {
         str = str.replaceAll("\"", "\\\\\"");
         return str;
     }
+    
 
 }

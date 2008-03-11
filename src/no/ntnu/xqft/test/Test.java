@@ -13,7 +13,6 @@ import no.ntnu.xqft.parse.XQFTParser;
 
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
-import org.antlr.runtime.tree.*;
 
 /**
  * @author andreas

@@ -1,7 +1,5 @@
 package no.ntnu.xqft.parse;
 
-import java.util.ArrayList;
-
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.Token;

@@ -2,27 +2,24 @@ package no.ntnu.xqft.test.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import org.antlr.runtime.Token;
 
-import no.ntnu.xqft.test.TestCase;
-import no.ntnu.xqft.test.XQueryTestSuite;
 
 public class TestPanel extends JPanel implements ActionListener, ListSelectionListener {
 
     
-    JButton next, back, run, runSuite;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1530404423459215498L;
+	JButton next, back, run, runSuite;
     JTextArea tekst;
     JTextField field;
     JTextField filefield;

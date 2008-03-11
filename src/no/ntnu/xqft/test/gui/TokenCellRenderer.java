@@ -9,11 +9,14 @@ import javax.swing.ListCellRenderer;
 
 import no.ntnu.xqft.parse.XQFTParser;
 
-import org.antlr.runtime.Token;
-
 public class TokenCellRenderer extends JLabel implements ListCellRenderer {
 
-    public TokenCellRenderer(){
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1564842475890103257L;
+
+	public TokenCellRenderer(){
     setOpaque(true);
 }
     

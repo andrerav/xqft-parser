@@ -7,10 +7,8 @@ import java.io.*;
 import java.util.*;
 
 import no.ntnu.xqft.parse.*;
-import org.antlr.runtime.*;
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
-import org.xml.sax.ext.*;
 
 import no.ntnu.xqft.test.gui.ErrorReciever;
 

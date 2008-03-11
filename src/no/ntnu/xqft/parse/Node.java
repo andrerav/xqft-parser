@@ -31,7 +31,6 @@
 package no.ntnu.xqft.parse;
 
 import java.util.*;
-import java.text.*;
 
 /**
  * This class represents a node in a syntax tree, with zero or
