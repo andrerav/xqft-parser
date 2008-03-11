@@ -7,7 +7,7 @@ options {
     ASTLabelType=XQFTTree;
 } 
 tokens{
-ALL;
+/*ALL;
 ANY;
 ANCESTOR;
 ANCESTOR_OR_SELF;
@@ -146,7 +146,7 @@ WITH;
 WITHOUT;
 WORD;
 WORDS;
-XQUERY;
+XQUERY;*/
 
 /* Imaginary tokens */
 AST_MODULE;
