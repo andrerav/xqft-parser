@@ -45,6 +45,11 @@ DirComment:
 ManualWalkerTest:
 	java -Xmx1024M -cp bin:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.test.ManualWalker
 
+Mein:
+	java -Xmx1024M -cp bin:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.test.Mein
+
 clean:
 	find .|grep ~$$|xargs rm -v
 	ant clean
+
+
