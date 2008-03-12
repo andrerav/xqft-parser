@@ -4,6 +4,7 @@
 package no.ntnu.xqft.tree;
 
 import java.util.ArrayList;
+import no.ntnu.xqft.tree.param.*;
 
 /**
  * @author andreas

@@ -1,6 +1,7 @@
 package no.ntnu.xqft.tree;
 
 import java.util.ArrayList;
+import no.ntnu.xqft.tree.param.*;
 
 public abstract class Operator extends NodeReturnType {
 
