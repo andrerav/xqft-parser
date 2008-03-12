@@ -16,9 +16,11 @@ dotgraphs:
 
 jar:
 	cd bin && jar cvfm ntnu-xqft.jar ../etc/default-manifest *
-	mv ntnu-xqft.jar ../
-	cd ..
+	mv ./bin/ntnu-xqft.jar ./
 
+delParserAndLexerSource:
+	rm ./src/no/ntnu/xqft/parse/XQFTLexer.java
+	rm ./src/no/ntnu/xqft/parse/XQFTParser.java
 
 testsuite:
 	java -Xmx1024M -cp bin:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.test.XQueryTestSuite

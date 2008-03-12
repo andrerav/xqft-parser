@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 
 import no.ntnu.xqft.parse.*;
+import no.ntnu.xqft.tree.*;
 
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
@@ -94,7 +95,7 @@ public class Mein {
                         "div\n" +
                         "(xs:dayTimeDuration(\"P20DT10H10M\") div xs:dayTimeDuration(\"P18DT10H10M\"))\n" +*/
                       //  "declare variable $x as xs:integer := 7;\n"+
-                        "/a/b/tefdst()/g";
+                        "/a/b['noe']/c";
 		CharStream cs = new ANTLRStringStream(input);
 		XQFTLexer lexer = new XQFTLexer(cs);
 		UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
@@ -120,7 +121,12 @@ public class Mein {
 		System.out.println(tree.toStringTree());
 		m.skrivTilFil(tree.toDotStringTree(), "tekstNode.txt");
 		m.lagGraf("tekstNode.txt", "graf.pdf");
+
+        RelalgVisitor visitor = new RelalgVisitor();
+        visitor.visit(tree);
 		}		
+
+
 		System.out.println("done");
 
 	}

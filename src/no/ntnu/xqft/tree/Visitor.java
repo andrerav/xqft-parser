@@ -20,4 +20,6 @@ public interface Visitor {
     public NodeReturnType visitSLASHSi(XQFTTree tree);
     public NodeReturnType visitAST_STEPEXPR(XQFTTree tree);
     public NodeReturnType visitNCName(XQFTTree tree);
+
+	public NodeReturnType visitAST_PREDICATE(XQFTTree tree);
 }

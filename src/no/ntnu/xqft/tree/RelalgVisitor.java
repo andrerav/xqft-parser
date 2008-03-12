@@ -66,4 +66,9 @@ public class RelalgVisitor implements Visitor {
         }
     }
 
+	public NodeReturnType visitAST_PREDICATE(XQFTTree tree) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
