@@ -30,7 +30,6 @@ public abstract class Operator extends NodeReturnType {
         this.operators = new ArrayList<Operator>();
     }
 
-
     public String toString() {
         StringBuffer buffer = new StringBuffer();
         if (this.name == null) { 
