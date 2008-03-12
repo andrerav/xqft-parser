@@ -19,6 +19,6 @@ public class Scope extends Operator {
      */
     public Scope(ArrayList<Param> params, ArrayList<Operator> operators) {
         super(params, operators);
-        this.name = "LOOKUP";
+        this.name = "SCOPE";
     }
 }
