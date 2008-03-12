@@ -2,7 +2,7 @@ package no.ntnu.xqft.tree;
 
 import java.util.ArrayList;
 
-public class Operator extends NodeReturnType {
+public abstract class Operator extends NodeReturnType {
 
     protected String name;
 
@@ -10,32 +10,24 @@ public class Operator extends NodeReturnType {
 
     protected ArrayList<Operator> operators;
     
-    
-    
     /**
-     * Constructor
+     * Hidden constructor
+     */
+    private Operator() {
+    }
+
+    /**
+     * Protected constructor, only for subclasses
      * 
-     * @param name
      * @param params
      * @param operators
      */
-    public Operator(String name, ArrayList<Param> params, ArrayList<Operator> operators) {
-        super();
-        this.name = name;
-        this.params = params;
-        this.operators = operators;
-    }
-    
-    /**
-     * Constructor
-     */
-    public Operator() {
-        super();
+    protected Operator(ArrayList<Param> params, ArrayList<Operator> operators) {
 
+        super();
         this.params = new ArrayList<Param>();
         this.operators = new ArrayList<Operator>();
     }
-
 
 
     public String toString() {
@@ -88,13 +80,6 @@ public class Operator extends NodeReturnType {
      */
     public String getName() {
         return name;
-    }
-
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
     }
 
     /**
