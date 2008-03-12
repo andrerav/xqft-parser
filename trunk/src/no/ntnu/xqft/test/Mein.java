@@ -95,7 +95,7 @@ public class Mein {
                         "div\n" +
                         "(xs:dayTimeDuration(\"P20DT10H10M\") div xs:dayTimeDuration(\"P18DT10H10M\"))\n" +*/
                       //  "declare variable $x as xs:integer := 7;\n"+
-                        "/a/b['noe']/c";
+                        "/a['pred1']/b['pred2']/c";
 		CharStream cs = new ANTLRStringStream(input);
 		XQFTLexer lexer = new XQFTLexer(cs);
 		UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
