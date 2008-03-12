@@ -36,7 +36,7 @@ public class Lookup extends Operator {
         this.params = new ArrayList<Param>();
         this.operators = new ArrayList<Operator>();
 
-        params.add(new StringParam(term));
+        params.add(new StringLiteral(term));
     }
     
     
@@ -52,7 +52,7 @@ public class Lookup extends Operator {
         this.params = new ArrayList<Param>();
         this.operators = operators;
 
-        params.add(new StringParam(term));
+        params.add(new StringLiteral(term));
     }
 
 }
