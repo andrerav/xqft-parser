@@ -15,7 +15,10 @@ dotgraphs:
 	for i in `ls doc/graph_queries|grep \.xq$$|sed -e 's/\.xq$$//'`; do java -Xmx1024M -cp bin:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.Dot doc/graph_queries/$$i.xq|dot -Tpdf -odoc/img/graphs/$$i.pdf; done;
 
 jar:
-	jar cvfm ntnu-xqft.jar ./etc/default-manifest bin/*
+	cd bin && jar cvfm ntnu-xqft.jar ../etc/default-manifest *
+	mv ntnu-xqft.jar ../
+	cd ..
+
 
 testsuite:
 	java -Xmx1024M -cp bin:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.test.XQueryTestSuite
