@@ -5,6 +5,7 @@ package no.ntnu.xqft.tree;
 
 import java.util.ArrayList;
 
+import no.ntnu.xqft.tree.param.Name;
 import no.ntnu.xqft.tree.param.Param;
 
 /**
@@ -22,9 +23,21 @@ public class Project extends Operator {
         // TODO Auto-generated constructor stub
     }
     
-    public String toString() {
-        
-        return "";
+    public Project(String retainParameter, String[] arguments, Operator op)
+    {
+    	super(null,null);
+    	this.name = "project";
+    	
+    	params.add(new Name(retainParameter));
+    	params.add(stringToList(arguments, Param.Name));
+    	operators.add(op);
+    	
     }
+    
+    public Project(String[] arguments, Operator op)
+    {
+    	this("retain:=false", arguments, op);
+    }
+    
 
 }

@@ -3,7 +3,10 @@
  */
 package no.ntnu.xqft.tree;
 
+import java.util.Stack;
+
 import no.ntnu.xqft.parse.XQFTTree;
+import no.ntnu.xqft.tree.param.*;
 
 /**
  * @author andreas, MAAAATZ
@@ -11,18 +14,40 @@ import no.ntnu.xqft.parse.XQFTTree;
  */
 public class RelalgVisitor implements Visitor {
 
-	private String Path;
+	private Stack<String> stack;
+	private Stack<Stack> superStack;
 	
-    /* (non-Javadoc)
-     * @see no.ntnu.xqft.tree.Visitor#visit(no.ntnu.xqft.parse.XQFTTree)
-     */
+	public RelalgVisitor()
+	{
+		superStack = new Stack<Stack>();
+	}
+	
+	private void pushStackLvl(Stack<String> st)
+	{
+		superStack.push(st);
+		stack = st;
+	}
+	
+	private void popStackLvl()
+	{
+		stack = superStack.pop();
+	}
+	
+	private String getPathFromStack(Stack<String> st)
+	{
+		String retur = "";
+		while(!st.isEmpty())
+			retur = st.pop() + retur;
+		
+		return retur;
+	}
 	
 	/**
 	 * Making things beautiful
 	 */
-    private NodeReturnType acceptThis(org.antlr.runtime.tree.Tree tree) 
+    private Operator acceptThis(org.antlr.runtime.tree.Tree tree) 
     {
-    	return ((XQFTTree)tree).accept(this);
+    	return (Operator)((XQFTTree)tree).accept(this);
     }
 	
 	
@@ -50,26 +75,30 @@ public class RelalgVisitor implements Visitor {
     public NodeReturnType visitAST_PATHEXPR_SGL(XQFTTree node) {
        // System.out.println("AST_PATHEXPR_SGL");
         
-        Path = "/";
+        pushStackLvl(new Stack<String>());
+        stack.push("/");
+        
         
         Operator childPred = acceptThis(node.getChild(0)); //left
         
         //Check if path is anything (i.e. not only '/')
-        String laststep = Path.substring(Path.lastIndexOf('/')+1); //DO STACK INSTEAD, GEORGE IS FURIOUS
+        String laststep = stack.peek();
         
         Index index = new Index("valocc", new Lookup("$" + laststep));
-        Scope scope = new Scope(Path, index); //right
+        Scope scope = new Scope(getPathFromStack(stack), index); //right
         
         if(childPred == null)
         	return scope;
         else
         {
-    		MergeJoin mergeJoin = new MergeJoin("[documentId], [documentId], " +
-    				"[position, scopeLeft = left.scope, scope = right.scope, right.value]", 
-    				childPred, scope);
+        	String[] key1 = {"documentId"};
+        	String[] key2 = {"documentId"};
+        	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value]"};
+    		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, "", childPred, scope);
     		//inScope(a, b) if a has an equal but deeper path than b -> true
     		Select select = new Select("inScope(scope, scopeLeft)", mergeJoin);
-    		retur = new Project("DocumentId, position, value, scope", select); //remove extra scope field
+    		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
+    		return new Project(projectArgs, select); 					//to remove extra scope field
         	
         }
     }
@@ -81,19 +110,23 @@ public class RelalgVisitor implements Visitor {
 
         //Need to check if children are AST_STEPEXPR
         Operator leftO = acceptThis(node.getChild(0));
-        Path += "/";
+        stack.push("/");
         if(node.getChildCount() == 2)
         {
         	Operator rightO = acceptThis(node.getChild(1));
         	if(leftO != null && rightO != null)
         	{
         		//MERGE
-        		MergeJoin mergeJoin = new MergeJoin("[documentId], [documentId], " +
-        				"[position, scopeLeft = left.scope, scope = right.scope]",  //no value needed 
-        				leftO, rightO);
+        		String[] key1 = {"documentId"};
+        		String[] key2 = {"documentId"};
+        		String[] projectList = {"position", "scopeLeft = left.scope", "scope = right.scope"}; //no value needed
+        		MergeJoin mergeJoin = new MergeJoin(key1, key2 , projectList, "", leftO, rightO);
+        		
         		//inScope(a, b) if a has an equal but deeper path than b -> true
         		Select select = new Select("inScope(scope, scopeLeft)", mergeJoin);
-        		retur = new Project("DocumentId, position, scope", select);
+        		
+        		String[] projectArgs = {"DocumentId", "position", "scope"};
+        		retur = new Project(projectArgs, select);
         	}
         	else if(rightO != null)
         	{
@@ -112,7 +145,7 @@ public class RelalgVisitor implements Visitor {
     public NodeReturnType visitAST_STEPEXPR(XQFTTree node) {
         //System.out.println("AST_STEPEXPR");
         
-        Path += (XQFTString)acceptThis(node.getChild(0));
+        acceptThis(node.getChild(0));
         
         //Only one predicate at this time:
         if(node.getChildCount() > 1)
@@ -123,7 +156,8 @@ public class RelalgVisitor implements Visitor {
     
     public NodeReturnType visitNCName(XQFTTree node) {
         
-        return node.getText();
+    	stack.push(node.getText());
+        return null;
     }
     
 

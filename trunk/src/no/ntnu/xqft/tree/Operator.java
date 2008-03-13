@@ -114,5 +114,30 @@ public abstract class Operator extends NodeReturnType {
         this.operators.add(operator);
     }
     
-    
+    /**
+     * A spooky but friendly method for everlasting love.
+     * @param strings Strings to be added to list
+     * @param paramType Type of objects in the list's ArrayList
+     * @return The list
+     */
+    public List stringToList(String[] strings, int paramType)
+    {
+    	ArrayList<Param> paraList = new ArrayList<Param>();
+    	Param toBeAdded = null;
+    	for(int i = 0; i < strings.length; i++)
+    	{
+    		switch (paramType) {
+			case Param.Name:
+				toBeAdded = new Name(strings[i]);
+				break;
+			case Param.StringLiteral: //Add apostrophes?
+				toBeAdded = new StringLiteral(strings[i]);
+			default:
+				break;
+			}
+    		paraList.add(toBeAdded);
+    	}
+    	
+    	return new List(paraList);
+    }
 }
