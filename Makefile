@@ -18,6 +18,10 @@ jar:
 	cd bin && jar cvfm ntnu-xqft.jar ../etc/default-manifest *
 	mv ./bin/ntnu-xqft.jar ./
 
+madsJar:
+	cd bin && jar cvfm parserOgLexer.jar ../etc/default-manifest no/ntnu/xqft/parse/XQFT*
+	mv ./bin/parserOgLexer.jar ./
+
 delParserAndLexerSource:
 	rm ./src/no/ntnu/xqft/parse/XQFTLexer.java
 	rm ./src/no/ntnu/xqft/parse/XQFTParser.java

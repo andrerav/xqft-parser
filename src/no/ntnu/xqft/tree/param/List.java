@@ -11,6 +11,17 @@ import java.util.*;
  */
 public class List extends Param {
     
+	public List()
+	{
+		
+	}
+	
+	
+	public List(ArrayList<Param> params)
+	{
+		items = params;
+	}
+	
     private ArrayList<Param> items;
 
     /**

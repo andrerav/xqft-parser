@@ -23,10 +23,11 @@ public class Scope extends Operator {
         this.name = "SCOPE";
     }
     
-    public Scope(Name name, Operator op) {
+    public Scope(String name, Operator op) {
         super(null, null);
+        this.name = "scope";
         this.params = new ArrayList<Param>();
-        this.params.add(name);
+        this.params.add(new Name(name));
         
         this.operators = new ArrayList<Operator>();
         this.operators.add(op);
