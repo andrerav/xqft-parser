@@ -95,7 +95,7 @@ public class Mein {
                         "div\n" +
                         "(xs:dayTimeDuration(\"P20DT10H10M\") div xs:dayTimeDuration(\"P18DT10H10M\"))\n" +*/
                       //  "declare variable $x as xs:integer := 7;\n"+
-                        "/a['pred1']/b['pred2']/c";
+                        "/a[/v]/b[/g]/c";
 		CharStream cs = new ANTLRStringStream(input);
 		XQFTLexer lexer = new XQFTLexer(cs);
 		UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
@@ -122,8 +122,9 @@ public class Mein {
 		m.skrivTilFil(tree.toDotStringTree(), "tekstNode.txt");
 		m.lagGraf("tekstNode.txt", "graf.pdf");
 
-        RelalgVisitor visitor = new RelalgVisitor();
-        visitor.visit(tree);
+        no.ntnu.xqft.tree.RelalgVisitor visitor = new no.ntnu.xqft.tree.RelalgVisitor();
+        Operator top = visitor.visit(tree);
+        System.out.println(top.toPrettyString(0));
 		}		
 
 

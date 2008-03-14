@@ -42,10 +42,43 @@ public abstract class Operator extends NodeReturnType {
         return buffer.toString();
     }
     
+	public Object toPrettyString(int i) {
+		StringBuffer buffer = new StringBuffer();
+     //   if (this.name == null) { 
+       //     buffer.append(this.operatorsToString());
+       // }
+      //  else {
+            buffer.append(getIndent(i) + this.name + "(" + this.paramsToString());
+            if(!operators.isEmpty())
+            {
+            	buffer.append(";\n");											//Newline is here
+            	for(int j = 0; j < operators.size(); j++)
+            	{
+            		buffer.append(operators.get(j).toPrettyString(i + 1));
+                    if (j < operators.size()-1) {
+                        buffer.append(",\n");
+                    }
+            	}
+            }
+            buffer.append(")");
+        //}
+		return buffer.toString();
+	}
+	
+	private String getIndent(int n)
+	{
+		String retur = "";
+		for(int i = 0; i<n; i++)
+			retur += "   ";
+		
+		return retur;
+	}
+    
+    
     public String paramsToString() {
         StringBuffer buffer = new StringBuffer();
         
-        int i = 0;
+        int i = 1;
         for(Param param : this.params) {
             buffer.append(param.toString());
             
@@ -140,4 +173,6 @@ public abstract class Operator extends NodeReturnType {
     	
     	return new List(paraList);
     }
+
+
 }

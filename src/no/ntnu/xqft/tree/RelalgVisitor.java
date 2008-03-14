@@ -15,17 +15,17 @@ import no.ntnu.xqft.tree.param.*;
 public class RelalgVisitor implements Visitor {
 
 	private Stack<String> stack;
-	private Stack<Stack> superStack;
+	private Stack<Stack<String>> superStack;
 	
 	public RelalgVisitor()
 	{
-		superStack = new Stack<Stack>();
+		superStack = new Stack<Stack<String>>();
 	}
 	
-	private void pushStackLvl(Stack<String> st)
+	private void pushStackLvl()
 	{
-		superStack.push(st);
-		stack = st;
+		superStack.push(stack);
+		stack = new Stack<String>();
 	}
 	
 	private void popStackLvl()
@@ -51,10 +51,9 @@ public class RelalgVisitor implements Visitor {
     }
 	
 	
-	public NodeReturnType visit(XQFTTree node) {
+	public Operator visit(XQFTTree node) {
         
-        this.visitAllChildren(node);
-        return null;
+        return acceptThis(node);
     }
     
     protected void visitAllChildren(XQFTTree node) {
@@ -65,17 +64,16 @@ public class RelalgVisitor implements Visitor {
     
     
     public NodeReturnType visitAST_MODULE(XQFTTree node) {
-        System.out.println("AST_MODULE");
+       // System.out.println("AST_MODULE");
         
-        ((XQFTTree)node.getChild(0)).accept(this);
+        return acceptThis(node.getChild(0));
         
-        return null;
     }
     
     public NodeReturnType visitAST_PATHEXPR_SGL(XQFTTree node) {
-       // System.out.println("AST_PATHEXPR_SGL");
+       //System.out.println("AST_PATHEXPR_SGL");
         
-        pushStackLvl(new Stack<String>());
+        pushStackLvl();
         stack.push("/");
         
         
@@ -88,16 +86,20 @@ public class RelalgVisitor implements Visitor {
         Scope scope = new Scope(getPathFromStack(stack), index); //right
         
         if(childPred == null)
+        {
+        	popStackLvl();
         	return scope;
+        }
         else
         {
         	String[] key1 = {"documentId"};
         	String[] key2 = {"documentId"};
-        	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value]"};
-    		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, "", childPred, scope);
+        	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
+    		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, childPred, scope);
     		//inScope(a, b) if a has an equal but deeper path than b -> true
     		Select select = new Select("inScope(scope, scopeLeft)", mergeJoin);
     		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
+    		popStackLvl();
     		return new Project(projectArgs, select); 					//to remove extra scope field
         	
         }
@@ -132,6 +134,8 @@ public class RelalgVisitor implements Visitor {
         	{
         		retur = rightO;
         	}
+        	else
+        		retur = leftO;
         }
         else
         	retur = leftO;
@@ -162,6 +166,7 @@ public class RelalgVisitor implements Visitor {
     
 
 	public NodeReturnType visitAST_PREDICATE(XQFTTree tree) {
+		System.out.println("ASTPREDICATE");
 		return acceptThis(tree.getChild(0));
 	}
 
