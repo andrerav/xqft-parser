@@ -51,7 +51,7 @@ public class List extends Param {
         for (Param param : this.items) {
             buffer.append(param.toString());
             
-            if (i < this.items.size()) {
+            if (i < this.items.size()-1) {
                 buffer.append(',');
             }
             

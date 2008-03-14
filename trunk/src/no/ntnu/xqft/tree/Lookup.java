@@ -32,6 +32,7 @@ public class Lookup extends Operator {
     public Lookup(String term) {
         
         super(null, null);
+        this.name = "lookup";
         
         this.params = new ArrayList<Param>();
         this.operators = new ArrayList<Operator>();
