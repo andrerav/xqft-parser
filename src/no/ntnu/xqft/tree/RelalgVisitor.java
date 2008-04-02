@@ -8,6 +8,13 @@ import java.util.Stack;
 import com.sun.org.apache.xerces.internal.dom.DeepNodeListImpl;
 
 import no.ntnu.xqft.parse.XQFTTree;
+import no.ntnu.xqft.tree.operator.Index;
+import no.ntnu.xqft.tree.operator.Lookup;
+import no.ntnu.xqft.tree.operator.MergeJoin;
+import no.ntnu.xqft.tree.operator.Operator;
+import no.ntnu.xqft.tree.operator.Project;
+import no.ntnu.xqft.tree.operator.Scope;
+import no.ntnu.xqft.tree.operator.Select;
 import no.ntnu.xqft.tree.param.*;
 
 /**
@@ -137,7 +144,7 @@ public class RelalgVisitor implements Visitor {
         		
         		////////////////////////////////////////////
         		//TODO: Check if child is absolute before setting predLvl
-        		//////////////////////////////7
+        		///////////////////////////////
         		//isInScope(a, b) if a has an equal but deeper path than b -> true
         		Select select = new Select("isInScope(scope_prefix("+predLvl + ",scope), scopeLeft)", mergeJoin);
         		

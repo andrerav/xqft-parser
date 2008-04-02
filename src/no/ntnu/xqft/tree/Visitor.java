@@ -5,6 +5,7 @@ package no.ntnu.xqft.tree;
 
 import no.ntnu.xqft.tree.*;
 import no.ntnu.xqft.parse.*;
+import no.ntnu.xqft.parse.XQFTTree;
 
 
 /**
