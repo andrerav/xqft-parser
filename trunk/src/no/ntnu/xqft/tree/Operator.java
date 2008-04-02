@@ -14,8 +14,8 @@ public abstract class Operator extends NodeReturnType {
     /**
      * Hidden constructor
      */
-    private Operator() {
-    }
+    //private Operator() {
+    //}
 
     /**
      * Protected constructor, only for subclasses
