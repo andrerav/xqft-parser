@@ -9,7 +9,7 @@ import no.ntnu.xqft.parse.XQFTTree;
  * @author andreas
  *
  */
-public abstract class DefaultVisitor implements Visitor {
+public abstract class RelalgVisitor implements Visitor {
 
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visit(no.ntnu.xqft.parse.XQFTTree)

@@ -129,7 +129,7 @@ public class Mein {
 		m.skrivTilFil(tree.toDotStringTree(), "tekstNode.txt");
 		m.lagGraf("tekstNode.txt", "graf.pdf");
 
-        no.ntnu.xqft.tree.RelalgVisitor visitor = new no.ntnu.xqft.tree.RelalgVisitor();
+        no.ntnu.xqft.tree.StartVisitor visitor = new no.ntnu.xqft.tree.StartVisitor();
         Operator top = visitor.visit(tree);
         System.out.println(top.toPrettyString(0));
 		}		
