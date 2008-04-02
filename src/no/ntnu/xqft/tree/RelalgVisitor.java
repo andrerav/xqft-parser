@@ -4,6 +4,7 @@
 package no.ntnu.xqft.tree;
 
 import no.ntnu.xqft.parse.XQFTTree;
+import no.ntnu.xqft.tree.operator.Operator;
 
 /**
  * @author andreas
@@ -11,13 +12,28 @@ import no.ntnu.xqft.parse.XQFTTree;
  */
 public abstract class RelalgVisitor implements Visitor {
 
+
+    public Operator visit(XQFTTree node) {
+        
+        return acceptThis(node);
+    }
+
+    
+    /**
+     * Making things beautiful
+     */
+    protected Operator acceptThis(org.antlr.runtime.tree.Tree tree) 
+    {
+        return (Operator)((XQFTTree)tree).accept(this);
+    }    
+    
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visit(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visit(XQFTTree node) {
+    //public NodeReturnType visit(XQFTTree node) {
         // TODO Auto-generated method stub
-        return null;
-    }
+    //    return null;
+    //}
 
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_MODULE(no.ntnu.xqft.parse.XQFTTree)
