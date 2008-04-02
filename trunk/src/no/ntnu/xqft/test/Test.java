@@ -7,9 +7,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-import no.ntnu.xqft.parse.UnbufferedCommonTokenStream;
 import no.ntnu.xqft.parse.*;
-import no.ntnu.xqft.parse.XQFTParser;
 
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;

@@ -5,7 +5,10 @@ import java.util.HashMap;
 
 
 import no.ntnu.xqft.parse.*;
+import no.ntnu.xqft.parse.XQFTTree;
+import no.ntnu.xqft.parse.XQFTTreeAdaptor;
 import no.ntnu.xqft.tree.*;
+import no.ntnu.xqft.tree.operator.Operator;
 
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
@@ -20,7 +23,11 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.tree.CommonTree;
 
-
+/**
+ * Chaoz class, everything r0xx
+ * @author flassmeister
+ *
+ */
 public class Mein {
 
     HashMap<Integer,String> typer;
@@ -95,7 +102,7 @@ public class Mein {
                         "div\n" +
                         "(xs:dayTimeDuration(\"P20DT10H10M\") div xs:dayTimeDuration(\"P18DT10H10M\"))\n" +*/
                       //  "declare variable $x as xs:integer := 7;\n"+
-                        "/a[/z]/b[/g]/c";
+                        "/a[/z]/b[/y]/c";
 		CharStream cs = new ANTLRStringStream(input);
 		XQFTLexer lexer = new XQFTLexer(cs);
 		UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
@@ -118,7 +125,7 @@ public class Mein {
 		if(tre != null)
 		{
 		XQFTTree tree = (XQFTTree)tre.getTree();
-		System.out.println(tree.toStringTree());
+		System.out.println(tree.toStringTree() + "\n\n");
 		m.skrivTilFil(tree.toDotStringTree(), "tekstNode.txt");
 		m.lagGraf("tekstNode.txt", "graf.pdf");
 
@@ -128,7 +135,7 @@ public class Mein {
 		}		
 
 
-		System.out.println("done");
+		System.out.println("\ndone");
 
 	}
 	private void lagGraf(String infil, String utfil) {
