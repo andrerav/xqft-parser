@@ -21,14 +21,14 @@ import no.ntnu.xqft.tree.param.*;
  * @author andreas, MAAAATZ
  *
  */
-public class RelalgVisitor implements Visitor {
+public class StartVisitor extends RelalgVisitor {
 
 	private Stack<String> pathStack;
 	private Stack<Stack<String>> superPathStack;
 	private Stack<Integer> predScopeDepth;
 	private int predLvl;
 	
-	public RelalgVisitor()
+	public StartVisitor()
 	{
 		superPathStack = new Stack<Stack<String>>();
 		predScopeDepth = new Stack<Integer>();		
