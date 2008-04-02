@@ -27,13 +27,6 @@ public abstract class RelalgVisitor implements Visitor {
         return (Operator)((XQFTTree)tree).accept(this);
     }    
     
-    /* (non-Javadoc)
-     * @see no.ntnu.xqft.tree.Visitor#visit(no.ntnu.xqft.parse.XQFTTree)
-     */
-    //public NodeReturnType visit(XQFTTree node) {
-        // TODO Auto-generated method stub
-    //    return null;
-    //}
 
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_MODULE(no.ntnu.xqft.parse.XQFTTree)
