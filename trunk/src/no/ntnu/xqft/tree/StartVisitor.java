@@ -53,20 +53,6 @@ public class StartVisitor extends RelalgVisitor {
 		
 		return retur;
 	}
-	
-	/**
-	 * Making things beautiful
-	 */
-    private Operator acceptThis(org.antlr.runtime.tree.Tree tree) 
-    {
-    	return (Operator)((XQFTTree)tree).accept(this);
-    }
-	
-	
-	public Operator visit(XQFTTree node) {
-        
-        return acceptThis(node);
-    }
     
     protected void visitAllChildren(XQFTTree node) {
         for (int i = 0; i < node.getChildCount(); i++) {
