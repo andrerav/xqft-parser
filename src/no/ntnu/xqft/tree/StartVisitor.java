@@ -183,7 +183,10 @@ public class StartVisitor extends RelalgVisitor {
 
 	public NodeReturnType visitAST_PREDICATE(XQFTTree tree) {
 		//System.out.println("ASTPREDICATE");
-		return acceptThis(tree.getChild(0));
+        PredicateVisitor visitor = new PredicateVisitor();
+        return visitor.acceptThis(tree.getChild(0));
+        
+		//return acceptThis(tree.getChild(0));
 	}
 
 }

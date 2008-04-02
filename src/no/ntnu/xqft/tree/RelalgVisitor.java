@@ -19,7 +19,7 @@ public abstract class RelalgVisitor implements Visitor {
     }
 
     
-    /**
+    /*
      * Making things beautiful
      */
     protected Operator acceptThis(org.antlr.runtime.tree.Tree tree) 
