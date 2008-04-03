@@ -3,21 +3,44 @@
  */
 package no.ntnu.xqft.tree;
 
+import java.util.Stack;
+
 import no.ntnu.xqft.parse.XQFTTree;
 import no.ntnu.xqft.tree.operator.Operator;
 
 /**
- * @author andreas
+ * @author andreas, MaaaaaaTz 
  *
  */
 public abstract class RelalgVisitor implements Visitor {
 
+	OperatorTree relAlgTree;
+	protected Stack<String> pathStack = null;
+	protected Stack<Integer> predScopeDepth;				//TODO: ikke denne tror jeg
+	protected int predLvl;									//TODO: denne trengs
+	
+	
+	public void setRelAlgTree(OperatorTree ot)
+	{
+		relAlgTree = ot;
+	}
+	
+	public OperatorTree getRelAlgTree()
+	{
+		return relAlgTree;
+	}
+	
 
     public Operator visit(XQFTTree node) {
         
-        return acceptThis(node);
+        acceptThis(node);
+        return relAlgTree.getTree();
     }
 
+	protected void println(String s)
+	{
+		System.out.println(s);
+	}
     
     /*
      * Making things beautiful
@@ -63,8 +86,8 @@ public abstract class RelalgVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitNCName(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitNCName(XQFTTree tree) {
-        // TODO Auto-generated method stub
+    public NodeReturnType visitNCName(XQFTTree node) {
+    	pathStack.push(node.getText());
         return null;
     }
 

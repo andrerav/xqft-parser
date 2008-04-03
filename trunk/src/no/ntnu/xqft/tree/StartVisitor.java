@@ -23,27 +23,15 @@ import no.ntnu.xqft.tree.param.*;
  */
 public class StartVisitor extends RelalgVisitor {
 
-	private Stack<String> pathStack;
-	private Stack<Stack<String>> superPathStack;
-	private Stack<Integer> predScopeDepth;
-	private int predLvl;
+
 	
 	public StartVisitor()
 	{
-		superPathStack = new Stack<Stack<String>>();
-		predScopeDepth = new Stack<Integer>();		
-	}
-	
-	private void pushStackLvl()
-	{
-		superPathStack.push(pathStack);
 		pathStack = new Stack<String>();
+		predScopeDepth = new Stack<Integer>();		
+		relAlgTree = new OperatorTree();
 	}
 	
-	private void popStackLvl()
-	{
-		pathStack = superPathStack.pop();
-	}
 	
 	private String getPathFromStack(Stack<String> st)
 	{
@@ -72,8 +60,6 @@ public class StartVisitor extends RelalgVisitor {
        //System.out.println("AST_PATHEXPR_SGL");
         Operator retur;
     	
-    	
-        pushStackLvl();
         pathStack.push("/");
         predScopeDepth.push(new Integer(0));
         
@@ -87,6 +73,9 @@ public class StartVisitor extends RelalgVisitor {
         Index index = new Index("valocc", new Lookup("$" + laststep));
         Scope scope = new Scope(getPathFromStack(pathStack), index); //right
         
+        relAlgTree.insert(scope);
+        
+        /*
         if(childPred == null)
         {
         	
@@ -103,17 +92,21 @@ public class StartVisitor extends RelalgVisitor {
     		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
     		retur =  new Project(projectArgs, select); 					//to remove extra scope field
         	
-        }
-        popStackLvl();
+        }*/
         predScopeDepth.pop();
-        return retur;
+        return null;
     }
     
     public NodeReturnType visitSLASHSi(XQFTTree node) {
         //System.out.println("SLASHSi");
         
-        Operator retur = null;
-
+    	//TODO: CAN BE RELATIVE PATH EXPR!!! check check
+        acceptThis(node.getChild(0)); 
+        pathStack.push(("/"));							//Allways two children
+        acceptThis(node.getChild(1));
+        
+        
+        /*
         //Need to check if children are AST_STEPEXPR
         Operator leftO = acceptThis(node.getChild(0));
         pathStack.push("/");
@@ -149,8 +142,8 @@ public class StartVisitor extends RelalgVisitor {
         
         //this.visitAllChildren(node);
         
-        
-        return retur;
+  */      
+        return null;
     }
     
     public NodeReturnType visitAST_STEPEXPR(XQFTTree node) {
@@ -158,11 +151,11 @@ public class StartVisitor extends RelalgVisitor {
         
         acceptThis(node.getChild(0));
         
-        //Needed to common ancestor node for join with predicate
+        //Need to find the depth of scope to check for in case of a join with a predicate.
         int tmp = predScopeDepth.pop().intValue() + 1;
         predScopeDepth.push(new Integer(tmp));
         
-        //Only one predicate at this time:
+        //TODO: Only one predicate at this time:
         if(node.getChildCount() > 1)
         {
         	Operator op = acceptThis(node.getChild(1));
@@ -174,16 +167,12 @@ public class StartVisitor extends RelalgVisitor {
         return null;
     }
     
-    public NodeReturnType visitNCName(XQFTTree node) {
-        
-    	pathStack.push(node.getText());
-        return null;
-    }
     
 
 	public NodeReturnType visitAST_PREDICATE(XQFTTree tree) {
 		//System.out.println("ASTPREDICATE");
         PredicateVisitor visitor = new PredicateVisitor();
+        visitor.setRelAlgTree(relAlgTree);							//!!!
         return visitor.acceptThis(tree.getChild(0));
         
 		//return acceptThis(tree.getChild(0));

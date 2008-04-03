@@ -2,6 +2,11 @@ package no.ntnu.xqft.tree;
 
 import no.ntnu.xqft.tree.operator.Operator;
 
+/**
+ * Keeper of the rel.alg. tree, master of the augmentations. Arise my child! Warhammer +5
+ * @author flassmeister
+ *
+ */
 public class OperatorTree {
 
 	private Operator top;
