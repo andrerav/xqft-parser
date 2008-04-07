@@ -23,20 +23,32 @@ public class Project extends Operator {
         // TODO Auto-generated constructor stub
     }
     
-    public Project(String retainParameter, String[] arguments, Operator op)
+    public Project(String retainParameter, String[] arguments)
     {
     	super(null,null);
     	this.name = "project";
     	
     	params.add(new Name(retainParameter));
     	params.add(stringToList(arguments, Param.Name));
-    	operators.add(op);
     	
+    	
+    }
+    public Project(String retainParameter, String[] arguments, Operator op)
+    {
+    	this(retainParameter, arguments);
+    	operators.add(op);
+    }
+    
+    
+    public Project(String[] arguments)
+    {
+    	this("retain:=false", arguments);
     }
     
     public Project(String[] arguments, Operator op)
     {
-    	this("retain:=false", arguments, op);
+    	this(arguments);
+    	operators.add(op);
     }
     
 

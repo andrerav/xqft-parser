@@ -34,7 +34,7 @@ public class MergeJoin extends Operator {
         
     }
     
-    public MergeJoin(String[] key1, String[] key2, String[] projectList, Operator one)
+    public MergeJoin(String[] key1, String[] key2, String[] projectList)
     {
     	super(null, null);
     	
@@ -47,6 +47,12 @@ public class MergeJoin extends Operator {
     	params.add(stringToList(key2, Param.Name));
     	params.add(stringToList(projectList, Param.Name));
     	
+
+    }
+    
+    public MergeJoin(String[] key1, String[] key2, String[] projectList, Operator one)
+    {
+    	this(key1, key2, projectList);
     	operators.add(one);
     }
     
@@ -61,7 +67,8 @@ public class MergeJoin extends Operator {
      */
     public MergeJoin(String[] key1, String[] key2, String[] projectList, Operator one, Operator two)
     {
-    	this(key1, key2, projectList, one);
+    	this(key1, key2, projectList);
+    	operators.add(one);
     	operators.add(two);
     }
     

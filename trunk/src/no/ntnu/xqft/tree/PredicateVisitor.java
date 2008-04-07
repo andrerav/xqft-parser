@@ -65,7 +65,9 @@ public class PredicateVisitor extends RelalgVisitor {
 			thisIsTop = true;
 			inPathExpr = true;
 		}
-
+		
+		
+		
 			acceptThis(tree.getChild(0));
 			pathStack.push("/");
 			acceptThis(tree.getChild(1));
@@ -73,22 +75,29 @@ public class PredicateVisitor extends RelalgVisitor {
 		if(thisIsTop)
 		{
 	        String laststep = pathStack.pop();
-			
+	        
 	        Index index = new Index("valocc", new Lookup("$" + laststep));
 	        Scope scope = new Scope(getPathFromStack(pathStack), index); 	
+	        
+	        relAlgTree.insert(scope);
+	        relAlgTree.removeMark();
 	    	
         	String[] key1 = {"documentId"};
         	String[] key2 = {"documentId"};
         	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
-    		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, scope);
+    		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList);
+    		relAlgTree.insert(mergeJoin);
+    		
     		//isInScope(a, b) if a has an equal but deeper path than b -> true
-    		Select select = new Select("isInScope(scope_prefix(" + thisDepth +",scope), scopeLeft)", mergeJoin);
+    		Select select = new Select("isInScope(scope_prefix(" + thisDepth +",scope), scopeLeft)");
+    		relAlgTree.insert(select);
+    		
     		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
-    		Project project =  new Project(projectArgs, select); 					//to remove extra scope field
-	        
+    		Project project =  new Project(projectArgs); 					//to remove extra scope field
     		relAlgTree.insert(project);
+	        
     		relAlgTree.setInsertMark(mergeJoin);
-			
+	        
 			
 			inPathExpr = false;
 			
@@ -123,17 +132,24 @@ public class PredicateVisitor extends RelalgVisitor {
 	        
 	        Index index = new Index("valocc", new Lookup("$" + laststep));
 	        Scope scope = new Scope(getPathFromStack(pathStack), index); 	
+	        
+	        relAlgTree.insert(scope);
+	        relAlgTree.removeMark();
 	    	
         	String[] key1 = {"documentId"};
         	String[] key2 = {"documentId"};
         	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
-    		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, scope);
+    		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList);
+    		relAlgTree.insert(mergeJoin);
+    		
     		//isInScope(a, b) if a has an equal but deeper path than b -> true
-    		Select select = new Select("isInScope(scope_prefix(" + thisDepth +",scope), scopeLeft)", mergeJoin);
+    		Select select = new Select("isInScope(scope_prefix(" + thisDepth +",scope), scopeLeft)");
+    		relAlgTree.insert(select);
+    		
     		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
-    		Project project =  new Project(projectArgs, select); 					//to remove extra scope field
-	        
+    		Project project =  new Project(projectArgs); 					//to remove extra scope field
     		relAlgTree.insert(project);
+	        
     		relAlgTree.setInsertMark(mergeJoin);
 	        
 	        inPathExpr = false;
