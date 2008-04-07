@@ -65,25 +65,6 @@ public class StartVisitor extends RelalgVisitor {
         
         relAlgTree.insert(scope);
         
-        /*
-        if(childPred == null)
-        {
-        	
-        	retur =  scope;
-        }
-        else
-        {
-        	String[] key1 = {"documentId"};
-        	String[] key2 = {"documentId"};
-        	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
-    		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, childPred, scope);
-    		//isInScope(a, b) if a has an equal but deeper path than b -> true
-    		Select select = new Select("isInScope(scope_prefix(" + predLvl +",scope), scopeLeft)", mergeJoin);
-    		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
-    		retur =  new Project(projectArgs, select); 					//to remove extra scope field
-        	
-        }*/
-
         return null;
     }
     
@@ -94,45 +75,7 @@ public class StartVisitor extends RelalgVisitor {
         acceptThis(node.getChild(0)); 
         pathStack.push(("/"));							//Allways two children
         acceptThis(node.getChild(1));
-        
-        
-        /*
-        //Need to check if children are AST_STEPEXPR
-        Operator leftO = acceptThis(node.getChild(0));
-        pathStack.push("/");
-        if(node.getChildCount() == 2)
-        {
-        	Operator rightO = acceptThis(node.getChild(1));
-        	if(leftO != null && rightO != null)
-        	{
-        		//MERGE
-        		String[] key1 = {"documentId"};
-        		String[] key2 = {"documentId"};
-        		String[] projectList = {"position", "scopeLeft = left.scope", "scope = right.scope"}; //no value needed
-        		MergeJoin mergeJoin = new MergeJoin(key1, key2 , projectList, "", leftO, rightO);
-        		
-        		////////////////////////////////////////////
-        		//TODO: Check if child is absolute before setting predLvl
-        		///////////////////////////////
-        		//isInScope(a, b) if a has an equal but deeper path than b -> true
-        		Select select = new Select("isInScope(scope_prefix("+predLvl + ",scope), scopeLeft)", mergeJoin);
-        		
-        		String[] projectArgs = {"DocumentId", "position", "scope"};
-        		retur = new Project(projectArgs, select);
-        	}
-        	else if(rightO != null)
-        	{
-        		retur = rightO;
-        	}
-        	else
-        		retur = leftO;
-        }
-        else
-        	retur = leftO;
-        
-        //this.visitAllChildren(node);
-        
-  */      
+          
         return null;
     }
     
