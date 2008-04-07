@@ -21,11 +21,11 @@ import no.ntnu.xqft.tree.param.*;
  * @author andreas, MAAAATZ
  *
  */
-public class StartVisitor extends RelalgVisitor {
+public class PathExprVisitor extends RelalgVisitor {
 
 
 	
-	public StartVisitor()
+	public PathExprVisitor()
 	{
 		pathStack = new Stack<String>();	
 		relAlgTree = new OperatorTree();
