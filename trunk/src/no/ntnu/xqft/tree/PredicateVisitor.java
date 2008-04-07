@@ -37,6 +37,7 @@ public class PredicateVisitor extends RelalgVisitor {
 		predLvl = 0;
 		inPathExpr = true;
 		
+		pathStack.clear();			//!!
 		//parse tree
 		
 		inPathExpr = false;
