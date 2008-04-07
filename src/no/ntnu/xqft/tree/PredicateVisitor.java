@@ -14,7 +14,7 @@ import no.ntnu.xqft.tree.operator.*;
  * @author flassmeister
  *
  */
-public class PredicateVisitor extends RelalgVisitor {
+public class PredicateVisitor extends PathExprVisitor {
 
 	/**
 	 * The "depth" of this predicate in its path expression context

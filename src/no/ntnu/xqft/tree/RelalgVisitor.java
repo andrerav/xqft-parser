@@ -15,9 +15,7 @@ import no.ntnu.xqft.tree.operator.Operator;
 public abstract class RelalgVisitor implements Visitor {
 
 	OperatorTree relAlgTree;
-	protected Stack<String> pathStack = null;
-	protected int predLvl = 0;									
-	protected boolean inPathExpr = false;
+
 	
 	
 	protected void setRelAlgTree(OperatorTree ot)
@@ -25,26 +23,13 @@ public abstract class RelalgVisitor implements Visitor {
 		relAlgTree = ot;
 	}
 	
-	protected void setPathStack(Stack<String> s)
-	{
-		pathStack = s;
-	}
+
 	
 	protected OperatorTree getRelAlgTree()
 	{
 		return relAlgTree;
 	}
-	
-	protected String getPathFromStack(Stack<String> st)
-	{
-		String retur = "";
-		while(!st.isEmpty())
-			retur = st.pop() + retur;
-		if(retur.charAt(retur.length()-1) == '/')
-			retur = retur.substring(0, retur.length()-1);
-		return retur;
-	}
-	
+		
 
     public Operator visit(XQFTTree node) {
         
@@ -93,17 +78,7 @@ public abstract class RelalgVisitor implements Visitor {
 
     //TODO: this can be the top of a single step path expression
     public NodeReturnType visitAST_STEPEXPR(XQFTTree node) {
-        
-        acceptThis(node.getChild(0));
-        
-        predLvl++;									// After
-        
-        //TODO: Only one predicate at this time:
-        if(node.getChildCount() > 1)
-        {
-        	acceptThis(node.getChild(1));				//visit predicate
-        }
-        
+
         return null;
     }
     
@@ -111,7 +86,7 @@ public abstract class RelalgVisitor implements Visitor {
      * @see no.ntnu.xqft.tree.Visitor#visitNCName(no.ntnu.xqft.parse.XQFTTree)
      */
     public NodeReturnType visitNCName(XQFTTree node) {
-    	pathStack.push(node.getText());
+
         return null;
     }
 
