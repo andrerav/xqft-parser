@@ -1,0 +1,287 @@
+\section{Parser Controlled State Driven Lexer}
+\label{sect:impl:parser_controlled_state_driven_lexer}
+As we saw in section \ref{sect:ambiguousgrammar:ambigTerm}, unless we employ a scan-while-parse scanning strategy, we need to make the lexer somehow aware of the context of incoming characters to be able to correctly generate tokens. Our parser controlled state driven lexer strategy implies that the parser must directly influence the state of the lexer, and the lexer must know what state it is in \emph{before} trying to match a token. 
+
+ANTLRs default parser input \verb!TokenStream!, \verb!CommonTokenStream!, will at first peek ask the lexer to generate tokens until \verb!EOF! and place them in a buffer. This means that the parser will be in an initial state as the lexer runs. As this is not compatible with our lexer strategy, we had to make our own \verb!TokenStream! that does not buffer more than is strictly needed. 
+
+This method as well as how we control the state transitions will be discussed in the following sections. Further, we will review how we introduced container tokens to ease the parsing, and how we reorganized the grammar to make it susceptible to states.
+
+\subsection{Custom Made Parser Input}
+For an overview of how the lexer, parser and tokenstream are connected see section \ref{sect:antlr:parser}. ANTLRs \verb!CommonTokenStream! has a method \verb!LT(int k)! which returns the $k$th token forward from its current position (simplified):
+\begin{Verbatim}
+public Token LT(int k) {
+      if ( p == -1 ) {
+         fillBuffer();
+      }
+      int i = p;
+      int n = 1;
+      while ( n<k ) {
+         i = skipOffTokenChannels(i+1); // leave p on valid token
+         n++;
+      }
+      if ( i>=tokens.size() ) {
+         return Token.EOF_TOKEN;
+      }
+      return (Token)tokens.get(i);
+}
+\end{Verbatim}
+Here \verb!p! is a pointer to the current token in the token stream and \verb!tokens! is a list of the tokens generated. The method \verb!skipOffTokenChannels(int r)! returns the position number bigger or equal to \verb!r! on which there resides a valid token, i.e. a token in the default virtual channel. The pointer \verb!p! is initialized to $-1$, thus the the first time \verb!LT(int k)! is run, it calls method \verb!fillBuffer()! (simplified):
+\begin{Verbatim}
+protected void fillBuffer() {
+   Token t = tokenSource.nextToken();
+   while ( t!=null && t.getType()!=CharStream.EOF ) {
+      tokens.add(t);
+      t = tokenSource.nextToken();
+   }
+   p = skipOffTokenChannels(0);
+}
+\end{Verbatim}
+Where \verb!tokenSource! is the lexer connected. The omitted parts of the code are mainly related to virtual channel handling and other means to hide tokens from the parser. 
+
+Both of these methods had to be overridden in our \verb!CommonTokenStream! derived \verb!UnbufferedCommonTokenStream! \footnote{The name \texttt{UnbufferedCommonTokenStream} can be a bit misleading, as it does buffer all already matched tokens -- but only as many tokens forward as necessary at any given time.}. To implement this we introduced a method \verb!fillBuffer(int k)! which fills the buffer with $k$ new \emph{valid} tokens (simplified):
+\begin{Verbatim}
+protected void fillBuffer(int k) 
+{
+   int no = 0;
+   Token t = tokenSource.nextToken();
+   while (t!=null && t.getType()!=CharStream.EOF) 
+   {
+      t.setTokenIndex(tokenIndex);
+      tokens.add(t);
+      tokenIndex++;
+      if(t.getChannel()==channel)
+         if(++no == k){
+            p = skipOffTokenChannels(p);
+            break;
+         }
+      t = tokenSource.nextToken();
+   }
+}
+\end{Verbatim}
+Where \verb!channel! identifies the valid virtual channel, and the \verb!no! variable acts as a counter for valid tokens encountered. The pointer \verb!p! must be adjusted right before \verb!break! to ensure that it does not point to a hidden token. A filling of the buffer such as this, though, must only take place when there are not enough tokens generated. This lead us to insert a check in our overridden \verb!LT(int k)!, which we implemented in form of a method \verb!enoughValidLH(int k)!:
+\begin{Verbatim}
+protected boolean enoughValidLH(int k)
+{
+   int i = p;
+   int n = tokens.size();
+   int no = 0;
+   while (i<n) {
+      if(((Token)tokens.get(i)).getChannel()==channel)
+         if(++no == k)
+            return true;
+         i++;
+      }
+   return false;
+}
+\end{Verbatim}
+Where \verb!no! once again acts as a counter over valid tokens. The \verb!while! construct will iterate until enough such tokens are identified, or it reaches the end of the buffer.
+
+\subsection{Introducing the States}
+\label{sect:rewriteGrammar:introduceStates}
+Looking at the ambiguous terminals in section \ref{sect:ambiguousgrammar:ambigTerm} we found that we would need to differenciate between \verb!ElementContentChar!, \verb!QuotAttrContentChar! and \verb!AposAttrContentChar!, and between these these productions and all the other productions. In addition would the overlap between \verb!DirAttributeValue! and \verb!StringLiteral! be addressed. 
+
+Figure \ref{fig:ambigTerminalRef} shows where these productions are referred to (or not referred to in the case of \verb!StringLiteral!) in the W3C specified grammar. 
+\begin{figure}[h!]
+\begin{Verbatim}
+DirElemConstr   ::= "<" QName DirAttrList 
+                      ("/>" 
+                     |(">" DirElemContent* "</" QName ">")
+                      )
+DirAttrList     ::= (QName "=" DirAttrValue)*
+DirAttrValue    ::= ('"' QuotAttrValCont* '"')
+                  | ("'" AposAttrValCont* "'")
+QuotAttrValCont ::= QuotAttrContentChar
+                  | EnclosedExpr
+AposAttrValCont ::= AposAttrContentChar
+                  | EnclosedExpr
+DirElemContent  ::= ElementContentChar
+                  | EnclosedExpr
+                  | DirElemConstr
+EnclosedExpr    ::= "{" Expr "}"
+\end{Verbatim}
+\caption[Grammar reffering to amiguous terminals.]{A simplified overview of the non-terminal productions refering to the ambiguous terminals. \texttt{Expr} is a very high-level production able to match almost any legal XQuery syntax. Some of the production names have been shortened to match formating.}
+\label{fig:ambigTerminalRef}
+\end{figure}
+
+As we can see, neither of the problem terminals are ambiguous when enclosed in higher level productions -- a necessity for our state driven strategy. We also see that all the problem terminals are in a way connected to XML markup, and consist of the characters allowed as the text in elements and the characters allowed as attribute values. The \verb!DirElemConstr! production is interpreted as matching either a self-terminating tag, or a start tag followed by \verb!DirElemContent! and an end tag.
+
+\begin{figure}[h!]
+\centering
+\begin{tabular}{ll}
+\verb!DEFAULT!			& \framebox[1.0\width]{$\times$}\verb!<a id="1" z='2'>b</a>!\framebox[1.0\width]{$\times$} \\
+\verb!IN_TAG!			& \verb! <!\framebox[1.0\width]{\texttt{a}}\verb! id="1" z='2'>b</a>! \\
+\verb!IN_APOS_ATTRIBUTE   !	& \verb! <a id="1" z='!\framebox[1.0\width]{\texttt{2}}\verb!'>b</a>! \\
+\verb!IN_QUOT_ATTRIBUTE!	& \verb! <a id="!\framebox[1.0\width]{\texttt{1}}\verb!" z='2'>b</a>! \\
+\verb!IN_ELEMENT!		& \verb! <a id="1" z='2'>!\framebox[1.0\width]{\texttt{b}}\verb!</a>! \\
+\end{tabular}
+\caption[An illustrated overview of the different states.]{An illustrated overview of the different states, Explained with an example input character stream, \texttt{<a id="1" z='2'>b</a>}, and where \framebox[1.0\width]{$\times$} marks the spot where the lexer is in the respective state.}
+\label{fig:states}
+\end{figure}
+
+
+Figure \ref{fig:states} shows how we defined five distinct states. The \verb!IN_TAG! state exists mainly to differenciate between \verb!StringLiteral! and \verb!DirAttrValue!. We see that this holds, if we compare the states with the grammar in figure \ref{fig:ambigTerminalRef}. The only legal alternatives in the \verb!IN_TAG! state are \verb!QName! and \verb!DirAttrList! of which neither can be a \verb!StringLiteral!. 
+
+By the same account we can see that neither \verb!NCName!, \verb!IntegerLiteral! nor any of the keywords are legal alternatives in the \verb!IN_APOS_ATTRIBUTE!, \verb!IN_QUOT_ATTRIBUTE! or \verb!IN_ELEMENT! states. The lexer is in the \verb!DEFAULT! state when it is not in any of the other.
+
+\subsection{State Transitions}
+\label{sect:rewriteGrammar:transitions}
+Our state driven strategy requires that the parser has direct communication with the lexer. This is arranged by the method \verb!setLexer(XQFTLexer lex)! in the parser, and will have to be run before parsing can commence. The state transitions are implemented as actions (section \ref{sect:antlr:grammarSpec}) directly into the grammar spesification at their appropriate places. 
+
+The transitions to \verb!IN_APOS_ATTRIBUTE! and \verb!IN_QUOT_ATTRIBUTE! are quite simple, as shown in figure \ref{fig:transitionSimple}. This figure also shows that the grammar is contracted and new productions like \verb!QuotAttributeContent! are introduced. These features will be discussed in section \ref{sect:rewriteGrammar:containerTokens}.
+\begin{figure}[h!]
+\begin{Verbatim}
+dirAttributeValue : QUOTSi {lexer.state=IN_QUOT_ATTRIBUTE;}
+                      (QuotAttributeContent | enclosedExpr)* 
+                      QUOTSi {lexer.state=IN_TAG;}
+                  | APOSSi {lexer.state=IN_APOS_ATTRIBUTE;}
+                      (AposAttributeContent | enclosedExpr)* 
+                      APOSSi {lexer.state=IN_TAG;}
+                  ; 
+\end{Verbatim}
+\caption[Attribute content state transitions.]{The state transitions into the attribute content states.}
+\label{fig:transitionSimple}
+\end{figure}
+
+As can be seen from figure \ref{fig:ambigTerminalRef}, by way of \verb!DirElemContent! a \verb!DirElemConstr! can contain another \verb!DirElemConstr!. In addition, the two types of attribute content can contain an \verb!Expr! by way of the \verb!EnclosedExpr!, which again can contain e.g. a \verb!DirElemConstr!. This means that the parser will have to somehow know which state to go back to when finished recursing these nested constructs. 
+
+We chose to implement this with a simple stack in the class \verb!State!. The stack provides methods like \verb!public int pop()! and \verb!public void pushState(int state)!. Examples of how we resolved the problem with the nested state transitions is shown in figure \ref{fig:nestedTransitionElement} and \ref{fig:nestedTransitionExpr}.
+
+\begin{figure}[h!]
+\begin{Verbatim}
+dirElemConstr  : LTSi 
+                  {pushState(lexer.state);lexer.state=IN_TAG;}
+                 qName dirAttributeList
+                 (
+                   RSELFTERMSi
+                     {lexer.state=pop();}
+                  |GTSi 
+                     {lexer.state=State.IN_ELEMENT;}
+                     dirElemContent* 
+                     LENDTAGSi 
+                     {lexer.state=IN_TAG;}
+                     qName 
+                     GTSi {lexer.state=pop();}
+                 )
+                 ;
+\end{Verbatim}
+\caption[Accommodating for a nested structure of \texttt{dirElemConstr}]{Accommodating for the possible nested structure of \texttt{dirElemConstr}.}
+\label{fig:nestedTransitionElement}
+\end{figure}
+
+
+By using a stack the parser has knowledge of which state the lexer was in before it matched the possible nested construct. This way, the parser e.g. accommodate for the possiblity that a element contains other elements.
+
+At the start of an XML tag for an outermost element, the \verb!DEFAULT! state will be pushed to the stack, and the state will be set to \verb!IN_TAG!. If it is a self-terminating tag, the state will be set back to \verb!DEFAULT! by means of poping the stack after the lexer has matched \verb!/>!. If it is an element consisting of a start and end tag, the state in the lexer will be set to \verb!IN_ELEMENT! after matching \verb!>!. When the parser comes upon the end of the end tag it will set the lexer state back to \verb!DEFAULT! with \verb!pop()!. This way the lexer can meet a element within another, be it in the form of a self terminating or a pair of tags, and know that it will change back to the right state after it has matched it.
+
+
+\begin{figure}[h!]
+\begin{Verbatim}
+enclosedExpr   : LBRACESi 
+                   {pushState(lexer.state);lexer.state=DEFAULT;}
+                   expr 
+                 RBRACSi 
+                   {lexer.state = lexer.stack.pop();}
+                 ;
+\end{Verbatim}
+\caption[Accommodating for nested structure of \texttt{enclosedExpr}]{Accommodating for nested structure of \texttt{enclosedExpr}.}
+\label{fig:nestedTransitionExpr}
+\end{figure}
+
+\subsection{Reorganizing the Grammar}
+\label{sect:rewriteGrammar:reorganizing}
+
+To gain a more readable version of the grammar, all non-terminal, i.e. parser, productions are organized by writing them in a treewise fashion. Productions that could lead to cycles are pulled out and made the root of their own tree. This way it was readily understood which productions could have which outcome, as well as easier to spot any possible non-determinisms.
+
+Even with the state transitions in place, the lexer grammar still has to be adapted to be aware of them. An obvious candidate for implementing this is by gated semantic predicates (section \ref{sect:antlr:gate_semantic_preds}). To be sure that the lexer will choose another rule should a predicate fail, and not issue a \verb!FailedSemanticPredicateException!, a lexer production \verb!TOKENSWITCH! with all the other lexer productions as alternatives is implemented. \verb!mTokens()! (section \ref{sect:antlr:lexer}) in a sense is replaced by \verb!TOKENSWITCH!, acting as the main differansiator. 
+
+\begin{figure}[h!]
+\begin{Verbatim}
+TOKENSWITCH : {(state==IN_ELEMENT || state==DEFAULT)}?=>
+              "enclosed composites"  // emits subtokens
+              | {state==IN_ELEMENT}?=>
+              LENDTAGSi {$type=LENDTAGSi;}
+              | {state==IN_ELEMENT}? =>
+              ElementContent {$type=ElementContent;} 
+              | {state==DEFAULT}?=>
+              NumberLEX {$type=this.tokenType;}
+              | {state==DEFAULT}?=>
+              LexSigns  {$type=this.tokenType;}
+              | {state==DEFAULT}?=>
+              StringLiteral {$type=StringLiteral;}
+              | {(state==DEFAULT || state==IN_TAG)}?=>
+              S {$type=S; $channel=HIDDEN;}
+              | {(state==DEFAULT || state==IN_TAG)}?=>
+              LexLiterals  {$type=this.tokenType;} 
+              | {state==IN_QUOT_ATTRIBUTE}?=>
+              QuotAttributeContent{$type=QuotAttributeContent;}
+              | {state==IN_APOS_ATTRIBUTE}?=>
+              AposAttributeContent{$type=AposAttributeContent;}
+              | {state==IN_TAG}?=>
+              RSELFTERMSi {$type=RSELFTERMSi;}
+              | QUOTSi {$type=QUOTSi;}
+              | DOLLARSi {$type=DOLLARSi;}
+              | . . .
+              ;
+
+\end{Verbatim}
+\caption[Overview of the \texttt{TOKENSWITCH} construct]{A simple overview of the \texttt{TOKENSWITCH} construct.}
+\label{fig:tokenswitch}
+\end{figure}
+
+For this to work, all lexer rules except \verb!TOKENSWITCH! is converted to \verb!fragment! rules. A simple overview of \verb!TOKENSWITCH! can be seen in figure \ref{fig:tokenswitch}. Here \verb!LexLiterals! is a carrier production for all keywords and \verb!NCName!, and will be further discussed in section \ref{sect:rewritegrammar:keywordNCName}. \verb!$type=! are used to override the way ANTLR by default sets the type of a token. Without these actions all tokens would be of the type \verb!TOKENSWITCH!.
+
+The \verb!"enclosed composites"! in figure \ref{fig:tokenswitch} denotes the
+disjunctive form of the set of productions discussed in section \ref{sect:rewriteGrammar:enclosedComposite}. It is worth noting that the enclosed composites does not need to set type in same way as the other alternatives. \verb!AposAttributeContent!, \verb!QuotAttributeContent! and \verb!ElementContent! are introduced productions that encompass all legal characters in XML attributes and elements and will be accounted for in section \ref{sect:rewriteGrammar:containerTokens}.
+
+As explained in section \ref{sect:antlr:gate_semantic_preds}, a gated semantic predicate will hide the alternative it is issued to if the predicate fails. This means that e.g. if not in the \verb!DEFAULT! state, the \verb!StringLiteral! alternative would not be considered at all by the lexer. By applying such predicates on all ambiguous alternatives, the lexer would thus only see a subset of the available alternatives according to which state it is in.
+
+One reason for creating the \verb!NumberLEX! production is to gather all number related tokens under one gated semantic predicate. Another reason is to be able to disambiguate between the different types -- \verb!DoubleLiteral!, \verb!DecimalLiteral! and \verb!IntegerLiteral!. One type is just another type with additional characters, e.g. a \verb!DecimalLiteral! is an \verb!IntegerLiteral! followed by decimals. Making this easily solvable with syntactic predicates (section \ref{sect:antlr:syntacticPredicate}) as seen in figure \ref{fig:numberLex}.
+
+\begin{figure}[h!]
+\begin{Verbatim}
+fragment NumberLEX : (DoubleLiteral)=>  DoubleLiteral
+                   | (DecimalLiteral)=> DecimalLiteral
+                   | IntegerLiteral
+                   ;
+\end{Verbatim}
+\caption[Solving the number type ambiguity]{Solving the number type ambiguity in \texttt{NumberLex} with syntactic predicates}
+\label{fig:numberLex}
+\end{figure}
+
+\subsection{Container Tokens}
+\label{sect:rewriteGrammar:containerTokens}
+When it comes to attribute values and element content, the W3C grammar
+specifies non-terminal rules that would need to match a lot of small tokens -- in the worst case one single character as in the case of e.g. \verb!ElementContentChar!. To avoid this, tokens to contain all sequencial input of this kind was introduced. This was implemented in the form of production rule with a non-greedy subrule for the single character terminals. 
+
+\begin{figure}[h!]
+\begin{Verbatim}
+DirAttributeValue  ::=('"' 
+                         ( EscapeQuot | QuotAttrContentChar
+                           | PredefinedEntityRef | CharRef 
+                           | "{{" | "}}" | EnclosedExpr )* 
+                       '"')
+\end{Verbatim}
+\caption[W3Cs \texttt{DirAttributeValue} contracted]{The quote alternative of W3Cs \texttt{DirAttributeValue} contracted}
+\label{fig:contractAttribute}
+\end{figure}
+
+A inlined version of the W3C specification of the quote enclosed alternative of \verb!DirAttributeValue! can be seen in figure \ref{fig:contractAttribute}. It is contracted from five productions. \verb!EscapeQuot!, \verb!"{{"! and \verb!"}}"! are used to escape \verb!"!, \verb!"{"! and \verb!"}"! respectively. In attributes \verb!"! is escaped by \verb!""!. 
+
+By instituting the container tokens, our \verb!DirAttributeValue! is simplified as shown in figure \ref{fig:transitionSimple}, and the pertaining \verb!QuotAttributeContent! is declared as in figure \ref{fig:containerToken}. Here the gated semantic predicates are inserted to hinder the subrule from being greedy. Corresponding tokens \verb!AposAttributeContent! and \verb!ElementContent! are composed in a similar matter.
+
+\begin{figure}[h!]
+\begin{Verbatim}
+QuotAttrContent : (PredefEntRef | CharRef | QuotAttrContChar)*;
+
+QuotAttrContChar: {(input.LA(1)=='"' && input.LA(2)=='"')}?=> 
+                  QUOTSi QUOTSi
+                  |{(input.LA(1)=='{' && input.LA(2)=='{')}?=> 
+                  LBRACESi LBRACESi 
+                  |{(input.LA(1)=='}' && input.LA(2)=='}')}?=> 
+                  RBRACSi RBRACSi 
+                  |~(NotChar | LBRACESi | RBRACSi | LTSi 
+                        | AMPERSi | QUOTSi);
+\end{Verbatim}
+\caption[Example of container token]{The declaration of the container token \texttt{QuotAttributeContent}. Some names have been shortened to match formatting}
+\label{fig:containerToken}
+\end{figure}

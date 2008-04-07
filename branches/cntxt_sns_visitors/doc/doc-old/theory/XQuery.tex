@@ -1,0 +1,100 @@
+% Theory / XQUery
+% Kort utledning om XQuery
+\section{XQuery / XPath With Full Text Extensions}
+\label{sect:theory:xquery}
+XML is a markup language and a form of data representation capable of storing
+data from a vast number of diverse data sources. These data sources include
+relational databases and in particular data structures bearing a resemblance to
+trees. XQuery is primarily an XML document query language, developed as an
+recommendation by the World Wide Web Consortium\cite{w3c00} (abbreviated W3C).
+This implies that XQuery is capable of querying any data structure which may be
+represented as an XML document.
+
+The full text extensions to XQuery 1.0 and XPath 2.0 employs tokenisation,
+phrase search, and linguistics awareness to provide more accurate search
+results, and generally give the benefits known from modern search engines.
+This is also believed to provide better support for diverse languages, and more
+accurate search queries \cite{w3c02}.
+
+\subsection{XPath / Path Expressions}
+XPath is, as well as a recommendation by the W3C \cite{w3c01}, a subset of
+XQuery. However XPath predates XQuery and is also limited only to path
+expressions, which includes axis specifiers for addressing nodes in a document
+as well as node tests, predicates, and arithmetic operators.
+
+Consider this trivial example\cite{w3s00}:
+\begin{Verbatim}
+/bookstore/book[price>35]/title
+\end{Verbatim}
+This strongly resembles a reference to a file or folder on a standard Unix file
+system, with the exception of the conditional expression enclosed within
+angular brackets. In terms of XPath, this particular example would translate
+into "fetch all title nodes where the price attribute is higher than 35".
+
+\subsection{FLWOR}
+FLWOR is an integral part of XQuery, and can be compared to the
+select-from-where in SQL by a loose analogy. The abbreviation FLWOR means:
+\begin{itemize}
+\item For - imperative for-loop for iterating over tuples
+\item Let - assignment of tuples to variables
+\item Where - conditional filtering of tuples
+\item Order by - ordering of the resulting tuples
+\item Return - not to be mistaken with return statements from imperative
+languages. \verb!Return! in this context is more similar to yielding known from
+coroutines in functional programming. The return statement is executed once for
+every iteration, returning a tuple to the caller.
+\end{itemize}
+The example in figure \ref{code:theory:flwor} from \cite{styl00} illustrates
+the usage of FLWOR, and  compares it to its SQL counterpart.
+\begin{figure}
+\begin{Verbatim}
+(: FLWOR example :)
+for $v in doc("videos.xml")//video
+where $v/year = 1999
+return $v/title
+
+-- Corresponding SQL example 
+SELECT v.title FROM video v WHERE v.year = 1999
+\end{Verbatim}
+\caption[Simple FLWOR example]{Simple FLWOR example with SQL counterpart}
+\label{code:theory:flwor}
+\end{figure}
+
+\subsection{Full Text Extensions}
+The XQuery 1.0  and XPath 2.0 specifications have been extended with full text
+capabilities\cite{w3c02}, which enables the use of stemming, thesaurus,
+and similar tools in queries. Specifically, the full-text extensions
+extend XQuery 1.0 and XPath 2.0 in the following ways:
+\begin{itemize}
+\item A new and essential expression, \verb!FTContainsExpr!, as well as new operators
+such as \verb!FTOr! and \verb!FTAnd!
+\item The addition of score variables to FLWOR expressions, for keeping track
+of search result scores, also known as rank, as seen in most modern search
+engines 
+\item Static context declarations for full-text match options to the query
+prologue 
+\end{itemize}
+
+Figure \ref{code:theory:flwor_fulltext} shows an example with a FLWOR expression
+where full-text matching is used.
+
+\begin{figure}
+\begin{Verbatim}
+for $result at $rank in
+for $book score $score in //book[title ftcontains "usability" 
+                                    && "testing" with stemming]
+order by $score descending
+return $book
+where $rank <= 10
+return $result
+\end{Verbatim}
+\caption[Simple FLWOR full-text example]{Simple FLWOR example with full-text}
+\label{code:theory:flwor_fulltext}
+\end{figure}
+
+\subsection{Precedence}
+\label{sect:xquery:precedence}
+The operator precedence in XQuery 1.0 is specified implicitly in the grammar,
+according to W3C\cite{w3cprecedence}. It is important to note that operators that 
+have a lower precedence cannot be contained by operators with a higher 
+precedence.

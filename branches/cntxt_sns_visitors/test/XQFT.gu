@@ -1,0 +1,27 @@
+gunit XQFT;
+@header{package no.ntnu.xqft.parse;}
+
+forClause: // Test forClause rule
+
+	// For loop with call to document(), should pass when problems with
+	// NCName et al. are solved
+	"for $a in document(\"abc.xml\")/a/b/text()" OK // OK means the test should pass
+
+	// Malformed for loop
+	"for a in $var" FAIL // FAIL means the test should fail
+
+	// For loop with ftcontains
+	"for $b in //books
+		score $score as $b//content ftcontains \"usability && testing\"
+		where $score > 0
+		return {$b}" OK
+		
+module: // Comment tests
+	"(: This is a comment :)" OK
+	"(: This is a (: nested :) comment :)" OK
+	"(: This is a (: very (: nested :):) comment :)" OK
+	"(: This is a badly formed comment" FAIL
+	"(: This is a badly formed comment :) :)" FAIL
+	"(: This is a badly (: nested comment :)" FAIL
+	
+	

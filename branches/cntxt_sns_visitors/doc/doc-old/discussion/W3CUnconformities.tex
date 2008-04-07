@@ -1,0 +1,20 @@
+\section{W3C Specification Compliance Problems}
+\label{sect:future:knownBugs}
+The parser is yet not completly in accordance with the
+W3C XQuery Full-Text specification in some aspects. Here we present these, as
+well as an outline of a potential way of accomomodating them: 
+
+\begin{itemize}
+\item \textbf{Whitespace in Tags} (ref. section \ref{sect:implementation:whitespace}) -- The parser allows whitespace between the initial \verb!<! of a tag and the element name. This can be solved by introducing a new terminal production for the start-of-tag-sign (to separate it from the less-than sign), like this: \verb!TagStart : LTSi QName!, and letting this production emit subtokens (section \ref{sect:implementation:emittingMoreTokens}).
+
+\item \textbf{Incorrect Element Nesting} (ref. section \ref{sect:implementation:xmlVersion}) -- The parser allows improper nesting of elements, e.g. \verb!<a><b></a></b>!. It does, however, not allow a mismatch between the number of start tags and the number of end-tags. A simple solution to only allow correct nesting would be to push the names of a start tags to a stack, and for each end tag assure that this tags name is the same as the one pop'ed from the stack.
+
+\item \textbf{Contradicting Match Options} (ref. section \ref{sect:implementation:multipleMatchOptions}) -- The parser allows contradicting full-text match options, in other words, expressions such as \verb!"dog" with stemming without stemming! is allowed. This can be solved by setting a flag when a class of match options is matched, and augmenting the corresponding production with a semantic predicate checking if the flag is already set.
+
+\item \textbf{Too Liberal Whitespace Handling} -- The lexer is to liberal when handling whitespace. This means that expressions such as \verb!1idiv2! are allowed. A solution would be to not hide the whitespace tokens from the parser and explicitly define where in the non-terminal productions they are allowed. Another solution would be to at the rightmost edge equip the terminal productions with a predicate checking if the next character is a proper delimiter symbol (i.e. not a letter or number character).
+
+\item \textbf{Late State Transitions} -- Our state driven lexer depends upon
+the parser telling it which state it is in before it generates a token. This means that in cases where the parser uses a lookahead big enough to make the lexer cross a ``state border", the lexer may be in the wrong state according to the input stream (remember, the parser is always \emph{behind} the lexer, and ``moves" \emph{after} looking ahead). Moving the parser closer to LL(1), as mentioned in section \ref{sect:future:improvements}, will solve this bug.
+
+\end{itemize}
+

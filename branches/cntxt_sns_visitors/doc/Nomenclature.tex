@@ -1,0 +1,51 @@
+\renewcommand{\nomname}{Glossary}
+
+\nomenclature{\textbf{DFA}}{\textbf{D}eterministic \textbf{F}inite \textbf{A}utomata. A state machine used typically to formally describe lexical analyzers. For examples see section \ref{sect:antlr:disambiguatingSemantic}.}
+
+\nomenclature{\textbf{AST}}{\textbf{A}bstract \textbf{S}yntax \textbf{T}ree. A two-dimensional tree which encode the structure of the the input symbols. See section \ref{sect:antlr:ast}.}
+
+\nomenclature{\textbf{Ambiguous}}{A grammar is ambiguous if the same sequence of symbols can be interpreted in more than a single way. See section \ref{sect:ambiguousgrammar:ambigTerm}.}
+
+\nomenclature{\textbf{LALR}}{\textbf{L}ook \textbf{A}head \textbf{L}eft to right, \textbf{R}ightmost derivation. CUP (section \ref{sect:method:alternatives}) generates LALR parsers.}
+
+\nomenclature{\textbf{LL}}{\textbf{L}eft to right, \textbf{L}eftmost derivation. ANTLR (chapter \ref{sect:antlr}) generates LL parsers}
+
+\nomenclature{\textbf{W3C}}{\textbf{W}orld \textbf{W}ide \textbf{W}eb \textbf{C}onsortium. An international standards organization for the World Wide Web.}
+
+\nomenclature{\textbf{EBNF}}{\textbf{E}xtended \textbf{B}ackus \textbf{N}aur \textbf{F}orm. A metasyntax notation used to express context-free grammars}
+
+\nomenclature{\textbf{ANTLR}}{\textbf{AN}other \textbf{T}ool for \textbf{L}anguage \textbf{R}ecognition. A predicated-LL(k) parser generator that handles lexers, parsers, and tree parsers.}
+
+\nomenclature{\textbf{Predicate, syntactic}}{\emph{ANTLR v3 specific}. A selective form of backtracking used to recognize language constructs that cannot be distinguished with finite look-ahead. See section \ref{sect:antlr:syntacticPredicate}.}
+
+\nomenclature{\textbf{Predicate, semantic}}{\emph{ANTLR v3 specific}. A boolean expression used to alter the parse, or throw exceptions based upon runtime information. See section \ref{sect:antlr:semantic_preds}.}
+
+\nomenclature{\textbf{Terminal production}}{A production that cannot be further divided (in the traditional sense. For ANTLR, see \textbf{fragment}) and generates a token. Also called lexer production. See section \ref{sect:antlr:lexer}}
+
+\nomenclature{\textbf{Fragment}}{\emph{ANTLR v3 specific}. A fragment lexer rule does not represent a complete token, but is a helper rule referenced by another lexer rule. See section \ref{sect:antlr:lexer}.}
+
+\nomenclature{\textbf{Non-terminal production}}{A production that consists of references to other non-terminals or terminals. Also called parser production. See section \ref{sect:antlr:parser}.}
+
+\nomenclature{\textbf{Production}}{A grammar spesification rule, either terminal or non-terminal.}
+
+\nomenclature{\textbf{Greedy subrule}}{A referenced rule that will match as much input as it can. See \textbf{non-greedy subrule}.}
+
+\nomenclature{\textbf{Non-greedy subrule}}{A referenced rule that will only match input until the refering rule has another alternative that can match the same input. See \textbf{greedy subrule}.}
+
+\nomenclature{\textbf{Hoisting}}{Pulling a predicate out of its enclosing rule and into the prediction expression of another rule. See sections \ref{sect:antlr:disambiguatingSemantic} and \ref{sect:antlr:gate_semantic_preds}. }
+
+\nomenclature{\textbf{NCName}}{A name in accordance with the XML specification of namespaces.}
+
+\nomenclature{\textbf{QName}}{ A XML qualified name. On the form NCName:NCName or just NCName. See \textbf{NCName}}
+
+\nomenclature{\textbf{Non-determinism}}{ See \textbf{Ambiguous}. }
+
+\nomenclature{\textbf{Representation, Intermediate}}{ A data structure
+constructed from input to a program. A common example is compilers where source
+code is transformed into an intermediate graph structure. Also see \emph{AST}. }
+
+\nomenclature{\textbf{Left factoring}}{ If $A$ is a single non-terminal, and $\alpha$ , $\beta$  and $\gamma$ are strings of terminals or non- terminals, then a production rule of the form:  \begin{center} $A \rightarrow \alpha\beta \mid \alpha\gamma $ \end{center} can be left-factored into two rules of the form: \begin{center} $A \rightarrow \alpha B$\end{center} \begin{center} $ B \rightarrow \beta \mid \gamma $\end{center} See section \ref{sect:implementation:reduceLookahead}. }
+
+\nomenclature{\textbf{XQFT}}{XQuery 1.0 with full-text extensions}
+
+\nomenclature{\textbf{Recognizer}}{A general term for a program with the task of recognizing patterns. E.g. a parser or a lexer.}

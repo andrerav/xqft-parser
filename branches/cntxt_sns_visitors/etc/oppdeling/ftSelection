@@ -1,0 +1,56 @@
+//--------------------------------------------------------- DONE ---------------------------------------------
+
+ftSelection                 			: ftOr ftPosFilter* (WEIGHT rangeExpr)?;
+
+
+	ftOr                        			: ftAnd ( FTOR ftAnd )*;
+		ftAnd                       			: ftMildNot ( FTAND ftMildNot )*;
+			ftMildNot                   			: ftUnaryNot ( NOT IN ftUnaryNot )*;
+				ftUnaryNot                  			: (FTNOT)? ftPrimaryWithOptions;
+					ftPrimaryWithOptions        			: ftPrimary ftMatchOptions?;
+					
+						ftPrimary                   			: ftWords ftTimes? 
+																| LEFTPARENTHESISSi ftSelection RIGHTPARENTHESISSi 
+																| ftExtensionSelection
+																;
+							ftWords                     			: ftWordsValue ftAnyallOption?;
+								ftWordsValue                			: literal | (LEFTBRACESi expr RIGHTBRACESi);
+									literal                     			: numericLiteral | StringLiteral;
+										numericLiteral              			: IntegerLiteral | DecimalLiteral | DoubleLiteral;
+								ftAnyallOption              			: (ANY WORD?) | (ALL WORDS?) | PHRASE;
+							ftTimes                     			: OCCURS ftRange TIMES;
+								ftRange                     			: (EXACTLY additiveExpr)
+                        												| (AT LEAST additiveExpr)
+                       					 								| (AT MOST additiveExpr)
+										                                | (FROM additiveExpr TO additiveExpr);
+									additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#
+							ftSelection# 							: #PÅ EGET (DETTE)#
+							ftExtensionSelection        			: pragma+ LEFTBRACESi ftSelection? RIGHTBRACESi;
+								pragma                      			: LEFTPRAGMA S? qName (S pragmaContents)? RIGHTPRAGMA; /* ws: explicit */
+									pragmaContents        					: m=ZeroOrMoreChar				{ !$m.getText().contains("#") }?
+								ftSelection# 							: #PÅ EGET (DETTE)#
+								
+						ftMatchOptions              			: ftMatchOption+;     						/* xgc: multiple-match-options */
+							ftMatchOption#							: #SE EGET#
+							
+							
+	ftPosFilter                 			: ftOrder | ftWindow | ftDistance | ftScope | ftContent;
+		ftOrder                     			: ORDERED;
+		ftWindow                    			: WINDOW additiveExpr ftUnit;
+			additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#
+			ftUnit                      			: WORDS | SENTENCES | PARAGRAPHS;	
+		ftDistance                  			: DISTANCE ftRange ftUnit;
+			ftRange                     			: (EXACTLY additiveExpr)
+    												| (AT LEAST additiveExpr)
+   					 								| (AT MOST additiveExpr)
+					                                | (FROM additiveExpr TO additiveExpr);
+				additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#
+			ftUnit                      			: WORDS | SENTENCES | PARAGRAPHS;						//DOBBELT OPP
+		ftScope                     			: (SAME | DIFFERENT) ftBigUnit;
+			ftBigUnit                   			: SENTENCE | PARAGRAPH;	
+		ftContent                   			: AT START | AT END | ENTIRE CONTENT;		
+		
+		
+	rangeExpr                   			: additiveExpr ( TO additiveExpr )?;
+		additiveExpr# 							: #SE comparisonExpr (ftContainsExpr -> rangeExpr)#
+								

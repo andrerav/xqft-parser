@@ -1,0 +1,37 @@
+\section{ANTLR Syntax Conformity}
+The W3C\cite{w3c00} and ANTLR (section \ref{sect:antlr:grammarSpec}) EBNF syntax differs in multiple ways. Some of the differences are trivial, e.g. the ``defined by"-operator, which in W3C syntax is denoted with \verb!::=! and in ANTLR syntax as \verb!:!. Such differences can be fixed by means of a simple symbol replacement. However, the W3C metagrammar also embodies some operators such as the 'hat' and the 'dash' operators, described in section \ref{sect:ambiguousgrammar:ambigTerm}, of which there are no complete equivalents in the ANTLR metagrammar. In addition, the W3C grammar defines some productions as terminal and other as non-terminal, but this division does not hold for all implementations.
+
+\subsection{Separating Parser and Lexer Rules}
+\label{sect:implementation:separate}
+The ANTLR parser generator can generate parsers and lexers from a single
+grammar file. The distinction between terminals and non-terminals is that
+terminals start with \emph{uppercase} letters, and non-terminals start with
+\emph{lowercase} letters. The decision of which productions to go where is highly dependent on what strategy we chose to solve the ambigious terminals problem. For example, by defining all the ambigious terminals as non-terminals we would have a solution very close to a scan-while-parse scanner (section \ref{sect:ambiguousgrammar:scanWhileParse}). 
+
+Because we chose the strategy of letting the parser control the lexer's state, we were able to define a division of terminals from non-terminals very similar to the one specified by W3C. A exception is the introduced parser strain releaving container terminals we will see in section \ref{sect:rewriteGrammar:containerTokens}. Another is the enclosed composite terminals (section \ref{sect:rewriteGrammar:enclosedComposite}) which by W3C are defined as non-terminals, but were turned into lexer rules to solve ambiguities.
+
+\subsection{Rewriting the W3C ``dash'' and ``hat'' operators}
+\label{sect:implementation:dashOperator}
+The ``hat'' operator (section \ref{sect:ambiguousgrammar:ambigTerm}) is mostly used to define legal characters by defining which are illigal. These productions can be rewritten in ANTLR syntax by using the not-operator ($\sim$) and a \verb!fragment! production rule \verb!NotChar!, which is manually defined as all unicode characters \footnote{up to 0xFFFF, see section \ref{sect:parserconstructanddebug:limitations}} not allowed by the W3C defined \verb!Char!:
+\begin{Verbatim}
+// The extracted part of StringLiteral:
+PartOf          ::= [^"&]
+// can be written in ANTLR syntax as:
+PartOf            : ~(NotChar | COLONSi | AMPSi);
+\end{Verbatim}
+The ``dash" operator is also used in this way, e.g. in \verb!QuotAttrContentChar!. But because of our introduced production \verb!QuotAttributeContent! (section \ref{sect:rewriteGrammar:containerTokens}), it is rewritten in the same way as with the enclosed expressions (section \ref{sect:rewriteGrammar:enclosedComposite}). Meaning that the operator is used to define that a very general production should not be greedy. 
+
+In \verb!piTarget! the ``dash" operator is used in a unique way, and thus needed to be treated differently. This can be seen in figure \ref{fig:pitargetRewritten}. In this figure the original production can be interpreted as ``\texttt{piTarget} can be a \texttt{Name}, but not `XML', regardless of character casing''. The validating semantic predicate will imitate this behaviour using the method \verb!equalsIgnoreCase()!.
+\begin{figure}[h!]
+\begin{Verbatim}
+// Original production
+PiTarget    ::= Name - (('X' | 'x') ('M' | 'm') ('L' | 'l'))
+
+// Rewritten production using a semantic predicate
+piTarget    : n=Name { !$n.getText().equalsIgnoreCase("XML") }?;
+\end{Verbatim}
+\caption[Rewrite of 'dash' operator]{\texttt{PiTarget} demanded a different rewrite approach.}
+\label{fig:pitargetRewritten}
+\end{figure}
+
+

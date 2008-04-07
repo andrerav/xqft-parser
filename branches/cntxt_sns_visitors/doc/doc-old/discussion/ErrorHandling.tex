@@ -1,0 +1,46 @@
+% Discussion / ErrorHandling
+\section{Error Handling}
+\label{sect:discussion:error_handling}
+In this section we will discuss the implemented error handling in the generated
+lexer and parser classes, as well as our rationale for doing so. 
+
+\subsection{Parser Error Handling}
+In section \ref{sec:impl:errorhandling} we described how error handling was
+implemented in the parser to make sure that all errors were handled properly by
+catching their respective exceptions and throwing them on to the top-level
+program. Contrast this to the default error handling, which will simply catch
+any exceptions and print error messages to \verb!stdout!.
+
+Our solution is a common approach to error handling, by pushing the
+responsibility upwards until the top-level program recieves the exception and
+can handle it gracefully. This would have been more difficult with the default
+ANTLR behaviour, which essentially hides all errors.
+
+Note however, that to achieve this we had to modify the grammar file and add
+methods to override the default behaviour (described in detail in section
+\ref{sec:impl:errorhandling}). This cluttered the grammar somewhat, which is a
+fair trade-off for the improved error handling.
+
+\subsection{Lexer Error Handling}
+\label{sect:future_work:lexer_error_handling} % TODO: fikse denne referansen?
+As noted in sections \ref{sect:error_handling:syntax_errors} and
+\ref{sec:impl:errorhandling}, the \verb!nextToken()! method in the lexer base class
+will  ``hijack'' lexical exceptions and handle them by printing an error message
+to stderr. Further it attempts to recover from the error by simply consuming the
+offending character and ignoring it in the following construction of tokens.
+
+However, it is not immediately appareant, but the \verb!nextToken()! method can
+not be overridden and forced to throw the exception onwards. This is due to the method
+signature itself which does not allow exceptions to be thrown. 
+
+One possible solution to this problem could be to override the
+\verb!nextToken()! method and employ the observer design
+pattern\cite{elements_of_oop} to allow a  simple and decoupled way of flagging
+an exception to the parser. It could also be possible to add a new base lexer
+class and modify the \verb!nextToken()! method accordingly - however it is
+likely that this API change would break the interface to the parser base class,
+which would regress into a series of modifications to the original ANTLR
+codebase. 
+
+This behaviour is unfortunate, as some lexer errors will be illusive and
+impossible to detect by a top-level program. 

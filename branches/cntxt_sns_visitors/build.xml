@@ -1,0 +1,81 @@
+<project name="XQFT-Parser" default="dist" basedir=".">
+
+    <description>
+        Generates and compiles parser from etc/XQFT.g
+    </description>
+
+    <!-- set global properties for this build -->
+    <property name="src" location="src"/>
+    <property name="bin" location="bin"/>
+    <property name="dist"  location="dist"/>
+    <property name="etc"  location="etc"/>
+    <property name="tmp"  location="tmp"/>
+
+
+	
+    <target name="init">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${bin}"/>
+    </target>
+    
+    <target name="parser" depends="init"
+            description="Generate the parser">
+    	
+    	<exec command="java -cp lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.Tool -o ${tmp} -Xconversiontimeout 80000000 etc/XQFT.g" dir="./" />
+        <move file="${tmp}/etc/XQFTParser.java" tofile="${src}/no/ntnu/xqft/parse/XQFTParser.java" />
+        <move file="${tmp}/etc/XQFTLexer.java" tofile="${src}/no/ntnu/xqft/parse/XQFTLexer.java" />
+    </target>
+
+   <target name="compile"
+          description="compile the parser">
+        <!-- Compile the java code from ${src} into ${bin} -->
+        <javac srcdir="${src}" destdir="${bin}" >
+            <classpath>
+                <pathelement path="${classpath}"/>
+                <fileset dir="lib">
+                    <include name="**/*.jar"/>
+                </fileset>
+                <pathelement location="classes"/>
+                <dirset dir="${bin}">
+                <include name="apps/**/classes"/>
+                </dirset>
+            </classpath>
+        </javac>
+  </target>
+  
+  <target name="dist" depends="compile"
+          description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}"/>
+    
+    <!-- Put everything in ${build} into the jar file -->
+    <jar jarfile="${dist}/xqft-parser-${DSTAMP}.jar" basedir="${bin}"/>
+  </target>
+  <target name="tests">
+    <junit printsummary="yes" fork="yes" haltonfailure="yes" showoutput="yes">
+      <classpath>
+        <pathelement path="${classpath}"/>
+        <pathelement location="${bin}"/>
+        <fileset dir="lib">
+          <include name="**/*.jar"/>
+        </fileset>
+      </classpath>
+      <formatter type="plain"/>
+      <test name="no.ntnu.xqft.test.ScopeTest"/>
+    </junit>
+  </target>
+	
+  <target name="gunit" depends="init"
+	        description="Run gUnit tests">
+    <exec command="java -cp ./bin:lib/gunit.jar:lib/antlr.jar:lib/antlr2.jar:lib/stringtemplate.jar org.antlr.gunit.Interp test/XQFT.gu" dir="./" />
+  </target>	
+	
+  <target name="clean"
+          description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${bin}"/>
+    <delete dir="${dist}"/>
+  </target>
+</project>

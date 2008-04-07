@@ -1,0 +1,76 @@
+% Discussion / Coverage test results
+\section{Compliance Test Results}
+\label{sect:discussion:coverageResults}
+As noted in section \ref{sect:results:tests}, our compliance testing result ended
+at 99.3\%. We can compare this result to official results published by W3C, with
+some  important constraints: as described in section \ref{sect:method:testing},
+the compliance tests is limited by the fact that we can only execute the set of
+tests that are applicable in parse-time (and not run-time), this is because the
+parser does not have a backend which produces output to be returned and compared
+to expected output. Neither is the parser capable of detecting semantics such as
+typing errors. This means that the official results from W3C include a number
+of tests that have not and can not be run on our parser.
+
+Further, the XQuery test suite does not contain any full-text tests. So the
+full-text extension capabilities of our parser are left untested, leaving only the XQuery features.
+
+As such, it is crucial to keep in mind that \emph{our test results are not directly
+comparable with official results}. However, they give a fair indication of the
+parsers abilities, seen from a relative point of view.
+
+On a side note, the results from the \emph{parse-error} scenario tests
+(described in  section \ref{sect:method:testing}) would be directly comparable.
+However, W3C does not annotate their result summaries with associated scenarios,
+so this proved to be difficult to investigate within our given time frame.
+
+\begin{figure}[h!]
+  \begin{center}
+    \begin{tabular}{ |c | c | c | c | c | c | c | c | c | c | c | c | c | c | c | }
+      \hline
+      Anglo-DT        & BaseX           & Berkeley DB XML   & DataDirect XQuery \\ \hline
+      14630 / 100\%   & 14532 / 99.3\%  & 14566 / 99.5\%    & 14593 / 99.7\%  \\ \hline \hline
+      eXist-db        & Galax           & Qexo              & Qizx \\ \hline            
+      14544 / 99.4\%  & 14555 / 99.4\%  & 14535 / 99.3\%    & 14620 / 99.9\% \\ \hline \hline
+      Saxon-SA        & Sedna XML       & Stylus Studio     & xbird/open \\ \hline
+      14637 / 100\%   & 14459 / 98.8\%  & 14593 / 99.7\%    & 12041 / 82.3\% \\ \hline \hline
+      X-Hive/DB       & xq2xsl          & XQuantum          & \\ \hline
+      14589 / 99.7\%   & 14588 / 99.7\%  & 14378 / 98.2\%    & \\ 
+    \hline
+    \end{tabular}
+  \end{center}
+  \caption[Official XQuery test suite results]{Official XQuery test suite
+  results compiled from the test suite web site\cite{w3ctestresults}} 
+  \label{figure:table:w3c_test_results}
+\end{figure}
+
+Figure \ref{figure:table:w3c_test_results} gives a basic overview of the current
+tests results published by the W3C at the current time of writing.
+
+One interesting side effect of the compliance tests were the utility of using it to
+find and fix previously unknown bugs quickly. As such, this test suite also
+works as a regression test, since any improvement to the parser should
+never degrade our compliance result. However, it is hard to tell if tests that
+previously failed would pass along with an identical amount of previously
+passed tests that would fail, leaving the compliance percentage as before even
+though the actual result was changed drastically. This pitfall could be
+avoided by keeping detailed track of which tests that fail and pass, and compare
+new results to old results and inspect the difference.
+
+Of the 12478 test queries run 84 failed. These failed test cases can be broken
+down as follows: 
+\begin{itemize}
+\item 46 erroneous queries caught by ANTLRs default lexer error handling.
+\item 12 errors allowed by the parser
+\item 9 type cast errors
+\item 9 white space errors.
+\item 5 XML specification non-compliances were allowed.
+\item 2 untimely state transitions
+\item 1 UTF-16 query
+\end{itemize}
+
+The majority of the failed test are because exceptions are caught by the lexer
+and not forwarded, leaving the parser unaware of the error (section
+\ref{sect:discussion:error_handling}). The 12 errors allowed by the parser and
+the 9 type cast errors are not syntactic errors, as such, as they are allowed
+by the W3C EBNF grammar. The UTF-16 query is a query encoded in UTF-16. The W3C
+XQuery full-text specification does not mention any character encoding support. A review of the rest of the parser specification compliance problems can be seen in section \ref{sect:future:knownBugs} 

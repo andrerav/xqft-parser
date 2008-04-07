@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created by diasvg.py -->
+<svg width="18.950cm" height="11.100cm" viewBox="4.950 1.150 23.900 12.250"
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect x="5.000" y="2.200" width="18.850" height="10.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="5.000" y="2.200" width="18.850" height="10.000" fill="none" stroke="#000000" stroke-width="0.100" />
+<rect x="5.000" y="1.200" width="6.500" height="1.000" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="5.000" y="1.200" width="6.500" height="1.000" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="5.100" y="1.700"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+no.ntnu.xqft.parse</text>
+<rect x="12.250" y="8.500" width="3.678" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="12.250" y="8.500" width="3.678" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="14.089" y="9.500"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+SymTab</text>
+<rect x="12.250" y="9.900" width="3.678" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="12.250" y="9.900" width="3.678" height="0.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<rect x="12.250" y="10.300" width="3.678" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="12.250" y="10.300" width="3.678" height="0.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<rect x="13.628" y="7.000" width="2.850" height="1.800" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="13.628" y="7.000" width="2.850" height="1.800" fill="none" stroke="#000000" stroke-width="0.100" stroke-dasharray="0.30,0.30"/>
+<text x="13.928" y="7.643"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+K:class</text>
+<text x="13.928" y="8.285"  fill="#000000" text-anchor="start" font-size="0.80" font-family="monospace" font-style="normal" font-weight="400">
+V:class</text>
+<rect x="6.600" y="3.900" width="2.978" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="6.600" y="3.900" width="2.978" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="8.089" y="4.900"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+Scope</text>
+<rect x="6.600" y="5.300" width="2.978" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="6.600" y="5.300" width="2.978" height="0.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<rect x="6.600" y="5.700" width="2.978" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="6.600" y="5.700" width="2.978" height="0.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<rect x="19.300" y="3.450" width="3.535" height="1.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="19.300" y="3.450" width="3.535" height="1.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<text x="21.068" y="4.450"  fill="#000000" text-anchor="middle" font-size="1.00" font-family="sans" font-style="normal" font-weight="700">
+Symbol</text>
+<rect x="19.300" y="4.850" width="3.535" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="19.300" y="4.850" width="3.535" height="0.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<rect x="19.300" y="5.250" width="3.535" height="0.400" fill="#FFFFFF" stroke="none" stroke-width="0"/>
+<rect x="19.300" y="5.250" width="3.535" height="0.400" fill="none" stroke="#000000" stroke-width="0.100" />
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="12.250,9.200 8.089,9.200 8.089,7.359 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="8.089,6.100 8.329,6.800 8.089,7.500 7.849,6.800 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="8.089,6.100 8.329,6.800 8.089,7.500 7.849,6.800 "/>
+<polyline fill="none" stroke="#000000" stroke-width="0.100"  points="21.067,5.650 21.067,9.200 17.186,9.200 "/>
+<polygon fill="#FFFFFF" stroke="none" stroke-width="0.100" points="15.928,9.200 16.628,8.960 17.328,9.200 16.628,9.440 "/>
+<polygon fill="none" stroke="#000000" stroke-width="0.100"  points="15.928,9.200 16.628,8.960 17.328,9.200 16.628,9.440 "/>
+</svg>

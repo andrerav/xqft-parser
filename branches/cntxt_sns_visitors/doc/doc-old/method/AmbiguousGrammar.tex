@@ -1,0 +1,98 @@
+\section{Ambiguous Terminals}
+\label{sect:ambiguousgrammar:ambigTerm}
+The W3C EBNF specification of XQuery 1.0 with full-text extensions\cite{w3c01} defines among other these terminals (somewhat simplified):
+\begin{Verbatim}
+ElementContentChar       ::= Char - [{}<&]
+QuotAttrContentChar      ::= Char - ["{}<&]
+AposAttrContentChar      ::= Char - ['{}<&]
+IntegerLiteral           ::= Digits
+NCName                   ::= NCNameStartChar NCNameChar*
+NCNameChar               ::= Letter | Digit | '.' | '-' | '_'
+NCNameStartChar          ::= Letter | '_'
+\end{Verbatim}
+Where \verb!Char! denotes all possible legal characters in XQuery, \verb!Digits! is all possible number characters and \verb!Letter! denotes all possible letter characters. In their specification, the W3C uses a dash operator, which has the following
+semantic meaning in a grammar (\cite{w3c03}, section 6):
+\begin{quote}
+``A - B: matches any string that matches A but does not match B."
+\end{quote}
+In addition, the specification contains explicit defined literals and symbols
+such as \verb!for! and \verb!::!, as well as \verb!StringLiteral! which is
+indeed comparable with the non-terminal \verb!DirAttributeList! \footnote{worth
+noting, the eXist\cite{exist_doc}~implementation has also accounted for this
+ambiguity} as shown here (simplified):
+\begin{Verbatim}
+DirAttributeValue        ::= ('"' (QuotAttrContentChar)* '"')
+                           | ("'" (AposAttrContentChar)* "'")
+StringLiteral            ::= ('"' ([^"&])* '"') 
+                           | ("'" ([^'&])* "'")
+\end{Verbatim}
+Where \verb!QuotAttrContentChar! and \verb!AposAttrContentChar! is as defined earlier, and the hat operator (\verb!^!) is defined as follows(\cite{w3c03}, section 6):
+\begin{quote}
+``[\^{}abc] matches any Char with a value not among the characters given."
+\end{quote}
+Meaning that e.g. \verb![^"&]! equals \verb!Char - ["&]!. It is easy to see that the characters that can be matched by these productions would overlap significantly. This means that the lexer must be aware of the context of a incoming symbol to differanciate between the rules. We considered several alternatives for solving this, as discussed in the following sections.
+
+\subsection{Scan-While-Parse scanner}
+\label{sect:ambiguousgrammar:scanWhileParse}
+With a scan-while-parse strategy the parser would evaluate the character stream
+into tokens, while at the same time branching to the respective hierarchical
+context. This means essentially that there would be no lexer (it would only
+return one and one character), only a large parser. Such a parser would be
+overly complex, and would possibly suffer from performance degradations.
+
+\subsection{Fuzzy Token Lexer}
+A fuzzy token lexer is typically a simple lexer which leaves the meaning of the
+tokens somewhat ambiguous. Such a lexer may e.g. have a production
+\verb!Letters! which bundles all consecutive letter characters into tokens. The
+tokens would then be refined to their appropriate type during the context
+sensitive parsing process. Problems would occur, though, for example of the
+parser encounters a \verb!Letters! token but is expecting a token consisting of
+both letters, numbers and other symbols. The parser would then need to do the
+comlicated task of splitting and merging such tokens.    
+
+\subsection{State Driven Lexer}
+\label{sect:amiguousgrammar:stateDriven}
+With this strategy the lexer would only recognize sets of words when in an
+appropriate state. The acceptance of a word in one state may lead to a state
+transition. In other words, the lexical recognition would be implemented as
+transition tables for a push-down automata. A suggestion for such transition
+tables for XQuery (not full-text) are published as W3C working
+draft\cite{createTokenizer} with the following disclaimer:  
+
+\begin{quote}
+``The following tables were hand-constructed and have not, at the time of this writing, been exhaustively verified against all possible paths that may be legal in the XQuery and XPath EBNFs, which is to say, it is possible they contain bugs."
+\end{quote}
+We made a prototype of a state driven lexer for a subset of XQuery, leading us
+to the conclusion that it would be a cumbersome task to implement one for the
+full XQuery full-text grammar. 
+
+\subsection{Island Grammars}
+\label{sect:amiguousgrammar:islandGrammar}
+Island grammars \cite{islandGrammar} is a strategy where ambiguous parts of a
+grammar can be taken out of the main section and turned into its own
+subgrammar. This will lead to a case where the system will consist of more than
+one lexer. The parser would then, in the power of being aware of the context,
+switch between the lexers when necessary. Communication between the lexers is
+imperative, as they need to know where to start scanning in the input stream.
+ANTLR does not support island grammars by default, although there are plans
+to implement it in future versions
+\footnote{http://www.antlr.org/wiki/display/ANTLR3/island+grammar+formalization}.
+It can, though, be manually implemented. We abandoned this idea because of the
+more intuitive strategy of the parser controlled state driven lexer.
+
+\subsection{Parser Controlled State Driven Lexer}
+\label{sect:amiguousgrammar:parserControlled}
+When working with the prototype of the state driven lexer, we discovered that
+we would not need more than maybe four or five states to differentiate between
+the ambiguous terminals. A possible solution would then be to transform the
+transition tables in \cite{createTokenizer} to a system with a lot fewer states
+aswell as adding state transitions for the tokens added in the full-text
+version of XQuery. But a more comprehensible solution would be to let the
+parser be responsible for the state transitions.
+
+Depending on which state it is in, the lexer will block or promote some
+productions with the help of gated semantic predicates or disambiguating
+semantic predicates, respectively. We choose this strategy mainly because its
+intuitive and easier to implement compared to the other alternatives. A more
+thorough review of our implementation of the parser controlled state driven
+lexer is found in section \ref{sect:impl:parser_controlled_state_driven_lexer}.

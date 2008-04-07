@@ -1,0 +1,21 @@
+% ERROR HANDLING
+\pagebreak
+\section{Error Handling}
+\label{sect:error_handling:syntax_errors}
+As mentioned in section \ref{sec:impl:errorhandling}, error handling was added
+by forcing ANTLR into throwing exceptions upwards to the calling program. The
+type of exception thrown depends on the error in question. The possible
+exceptions and the type hierarchy was described in section
+\ref{sec:impl:errorhandling}.
+
+It quickly became appareant however that some of the errors in the lexer were
+not discovered by the parser, and no exceptions were thrown for these errors. The
+lexer would simply print an error message to \verb!stderr!, consume the offending
+character, and attempt recovery. This led to complications when running the
+XQuery Test Suite (see section \ref{sect:tests:manual}).
+
+This problem and proposed solutions to overcome it are discussed in section
+\ref{sect:future_work:lexer_error_handling}.
+
+
+
