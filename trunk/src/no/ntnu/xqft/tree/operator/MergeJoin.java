@@ -34,16 +34,7 @@ public class MergeJoin extends Operator {
         
     }
     
-    /**
-     * 
-     * @param key1 String array of join keys in first operator
-     * @param key2 String array of join keys in second operator
-     * @param projectList String array of names to be projected
-     * @param joinType Type of join (left, right or full)
-     * @param one First operator
-     * @param two Second operator
-     */
-    public MergeJoin(String[] key1, String[] key2, String[] projectList, Operator one, Operator two)
+    public MergeJoin(String[] key1, String[] key2, String[] projectList, Operator one)
     {
     	super(null, null);
     	
@@ -57,6 +48,20 @@ public class MergeJoin extends Operator {
     	params.add(stringToList(projectList, Param.Name));
     	
     	operators.add(one);
+    }
+    
+    /**
+     * 
+     * @param key1 String array of join keys in first operator
+     * @param key2 String array of join keys in second operator
+     * @param projectList String array of names to be projected
+     * @param joinType Type of join (left, right or full)
+     * @param one First operator
+     * @param two Second operator
+     */
+    public MergeJoin(String[] key1, String[] key2, String[] projectList, Operator one, Operator two)
+    {
+    	this(key1, key2, projectList, one);
     	operators.add(two);
     }
     

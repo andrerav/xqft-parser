@@ -6,6 +6,8 @@ package no.ntnu.xqft.tree;
 import java.util.Stack;
 
 import no.ntnu.xqft.parse.XQFTTree;
+import no.ntnu.xqft.tree.operator.*;
+
 
 /**
  * The context of beeing inside a predicate of a pathexpr. Live life to the fullest, let your dreams run free!
@@ -69,6 +71,24 @@ public class PredicateVisitor extends RelalgVisitor {
 	
 		if(thisIsTop)
 		{
+	        String laststep = pathStack.pop();
+			
+	        Index index = new Index("valocc", new Lookup("$" + laststep));
+	        Scope scope = new Scope(getPathFromStack(pathStack), index); 	
+	    	
+        	String[] key1 = {"documentId"};
+        	String[] key2 = {"documentId"};
+        	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
+    		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, scope);
+    		//isInScope(a, b) if a has an equal but deeper path than b -> true
+    		Select select = new Select("isInScope(scope_prefix(" + thisDepth +",scope), scopeLeft)", mergeJoin);
+    		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
+    		Project project =  new Project(projectArgs, select); 					//to remove extra scope field
+	        
+    		relAlgTree.insert(project);
+    		relAlgTree.setInsertMark(mergeJoin);
+			
+			
 			inPathExpr = false;
 			
 			
@@ -98,8 +118,24 @@ public class PredicateVisitor extends RelalgVisitor {
 	     
 	    if(thisIsTop) //Single step path expression
 	    {
+	        String laststep = pathStack.pop();
+	        
+	        Index index = new Index("valocc", new Lookup("$" + laststep));
+	        Scope scope = new Scope(getPathFromStack(pathStack), index); 	
 	    	
-	    	inPathExpr = false;
+        	String[] key1 = {"documentId"};
+        	String[] key2 = {"documentId"};
+        	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
+    		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, scope);
+    		//isInScope(a, b) if a has an equal but deeper path than b -> true
+    		Select select = new Select("isInScope(scope_prefix(" + thisDepth +",scope), scopeLeft)", mergeJoin);
+    		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
+    		Project project =  new Project(projectArgs, select); 					//to remove extra scope field
+	        
+    		relAlgTree.insert(project);
+    		relAlgTree.setInsertMark(mergeJoin);
+	        
+	        inPathExpr = false;
 	    }
 
         return null;

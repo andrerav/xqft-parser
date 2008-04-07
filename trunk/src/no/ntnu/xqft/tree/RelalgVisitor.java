@@ -40,7 +40,8 @@ public abstract class RelalgVisitor implements Visitor {
 		String retur = "";
 		while(!st.isEmpty())
 			retur = st.pop() + retur;
-		
+		if(retur.charAt(retur.length()-1) == '/')
+			retur = retur.substring(0, retur.length()-1);
 		return retur;
 	}
 	
