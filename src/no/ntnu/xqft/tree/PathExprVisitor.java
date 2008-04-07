@@ -85,8 +85,13 @@ public class PathExprVisitor extends RelalgVisitor {
     protected void topOfPathExpr() {
         String laststep = pathStack.pop();
         Index index = new Index("valocc", new Lookup("$" + laststep));
-        Scope scope = new Scope(getPathFromStack(pathStack), index); 
-        relAlgTree.insert(scope);
+        if(pathStack.size() > 0)
+        {
+        	Scope scope = new Scope(getPathFromStack(pathStack), index); 
+        	relAlgTree.insert(scope);
+        }
+        else
+        	relAlgTree.insert(index);
 	}
 
 	public NodeReturnType visitNCName(XQFTTree node) {
