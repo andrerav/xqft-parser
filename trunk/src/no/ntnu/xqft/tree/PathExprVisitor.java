@@ -48,6 +48,7 @@ public class PathExprVisitor extends RelalgVisitor {
 			retur = retur.substring(0, retur.length()-1);
 		return retur;
 	}
+	
     
     public NodeReturnType visitAST_MODULE(XQFTTree node) {
        // System.out.println("AST_MODULE");
@@ -57,55 +58,78 @@ public class PathExprVisitor extends RelalgVisitor {
     }
     
     public NodeReturnType visitAST_STEPEXPR(XQFTTree node) {
-        
-        acceptThis(node.getChild(0));
-        
-        predLvl++;									// After
-        
-        //TODO: Only one predicate at this time:
-        if(node.getChildCount() > 1)
-        {
-        	acceptThis(node.getChild(1));				//visit predicate
-        }
-        
+    	boolean thisIsTop = false;
+    	if(!inPathExpr)
+    	{
+    		thisIsTop = true;
+    		inPathExpr = true;
+    	}
+	        acceptThis(node.getChild(0));
+	        
+	        predLvl++;									// After
+	        
+	        //TODO: Only one predicate at this time:
+	        if(node.getChildCount() > 1)
+	        {
+	        	acceptThis(node.getChild(1));				//visit predicate
+	        }
+	     
+	    if(thisIsTop) //Single step path expression
+	    {
+	    	topOfPathExpr();
+	        inPathExpr = false;
+	    }   
         return null;
     }
     
-    public NodeReturnType visitNCName(XQFTTree node) {
+    protected void topOfPathExpr() {
+        String laststep = pathStack.pop();
+        Index index = new Index("valocc", new Lookup("$" + laststep));
+        Scope scope = new Scope(getPathFromStack(pathStack), index); 
+        relAlgTree.insert(scope);
+	}
+
+	public NodeReturnType visitNCName(XQFTTree node) {
     	pathStack.push(node.getText());
         return null;
     }
-    
-    public NodeReturnType visitAST_PATHEXPR_SGL(XQFTTree node) {
+
+
+	public NodeReturnType visitAST_PATHEXPR_SGL(XQFTTree node) {
        //System.out.println("AST_PATHEXPR_SGL");
+		inPathExpr = true;
         Operator retur;
     	
         pathStack.push("/");
         predLvl = 0;
         
-        
         Operator childPred = acceptThis(node.getChild(0)); //left
         
-        //Check if path is anything (i.e. not only '/')
-        String laststep = pathStack.pop();
-
-        
-        Index index = new Index("valocc", new Lookup("$" + laststep));
-        Scope scope = new Scope(getPathFromStack(pathStack), index); //right
-        
-        relAlgTree.insert(scope);
+        topOfPathExpr();
+        inPathExpr = false;
         
         return null;
     }
     
     public NodeReturnType visitSLASHSi(XQFTTree node) {
         //System.out.println("SLASHSi");
-        
-    	//TODO: CAN BE RELATIVE PATH EXPR!!! check check (see predicateVisitor)
-        acceptThis(node.getChild(0)); 
-        pathStack.push(("/"));							//Allways two children
-        acceptThis(node.getChild(1));
-          
+      
+		boolean thisIsTop = false;
+		if(!inPathExpr)
+		{
+			predLvl = 0;
+			thisIsTop = true;
+			inPathExpr = true;
+		}
+			acceptThis(node.getChild(0));
+			pathStack.push("/");
+			acceptThis(node.getChild(1));
+	
+		if(thisIsTop)
+		{
+			topOfPathExpr();
+			inPathExpr = false;
+		}
         return null;
     }
     
@@ -114,17 +138,15 @@ public class PathExprVisitor extends RelalgVisitor {
     
 
 	public NodeReturnType visitAST_PREDICATE(XQFTTree tree) {
-		//System.out.println("ASTPREDICATE");
-        PredicateVisitor visitor = new PredicateVisitor();
-        visitor.setDepth(predLvl);
-        visitor.setRelAlgTree(relAlgTree);							//!!!
-        
+		
         Stack<String> cpyPathStack = (Stack<String>)pathStack.clone();
         cpyPathStack.push("/");
-        visitor.setPathStack(cpyPathStack);
-        return visitor.acceptThis(tree.getChild(0));
+		
+		PredicateVisitor visitor = new PredicateVisitor(cpyPathStack, relAlgTree);
+        visitor.setDepth(predLvl);
         
-		//return acceptThis(tree.getChild(0));
+        return visitor.acceptThis(tree.getChild(0));
+
 	}
 
 }
