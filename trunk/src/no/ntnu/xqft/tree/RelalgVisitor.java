@@ -16,18 +16,32 @@ public abstract class RelalgVisitor implements Visitor {
 
 	OperatorTree relAlgTree;
 	protected Stack<String> pathStack = null;
-	protected Stack<Integer> predScopeDepth;				//TODO: ikke denne tror jeg
-	protected int predLvl;									//TODO: denne trengs
+	protected int predLvl = 0;									
+	protected boolean inPathExpr = false;
 	
 	
-	public void setRelAlgTree(OperatorTree ot)
+	protected void setRelAlgTree(OperatorTree ot)
 	{
 		relAlgTree = ot;
 	}
 	
-	public OperatorTree getRelAlgTree()
+	protected void setPathStack(Stack<String> s)
+	{
+		pathStack = s;
+	}
+	
+	protected OperatorTree getRelAlgTree()
 	{
 		return relAlgTree;
+	}
+	
+	protected String getPathFromStack(Stack<String> st)
+	{
+		String retur = "";
+		while(!st.isEmpty())
+			retur = st.pop() + retur;
+		
+		return retur;
 	}
 	
 
@@ -75,14 +89,23 @@ public abstract class RelalgVisitor implements Visitor {
         return null;
     }
 
-    /* (non-Javadoc)
-     * @see no.ntnu.xqft.tree.Visitor#visitAST_STEPEXPR(no.ntnu.xqft.parse.XQFTTree)
-     */
-    public NodeReturnType visitAST_STEPEXPR(XQFTTree tree) {
-        // TODO Auto-generated method stub
+
+    //TODO: this can be the top of a single step path expression
+    public NodeReturnType visitAST_STEPEXPR(XQFTTree node) {
+        
+        acceptThis(node.getChild(0));
+        
+        predLvl++;									// After
+        
+        //TODO: Only one predicate at this time:
+        if(node.getChildCount() > 1)
+        {
+        	acceptThis(node.getChild(1));				//visit predicate
+        }
+        
         return null;
     }
-
+    
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitNCName(no.ntnu.xqft.parse.XQFTTree)
      */
