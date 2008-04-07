@@ -23,6 +23,9 @@ import no.ntnu.xqft.tree.param.*;
  */
 public class PathExprVisitor extends RelalgVisitor {
 
+	protected Stack<String> pathStack = null;
+	protected int predLvl = 0;									
+	protected boolean inPathExpr = false;
 
 	
 	public PathExprVisitor()
@@ -31,19 +34,46 @@ public class PathExprVisitor extends RelalgVisitor {
 		relAlgTree = new OperatorTree();
 	}
 	
-    
-  /*  protected void visitAllChildren(XQFTTree node) {
-        for (int i = 0; i < node.getChildCount(); i++) {
-            ((XQFTTree)node.getChild(i)).accept(this);
-        }
-    }
-    */
+	protected void setPathStack(Stack<String> s)
+	{
+		pathStack = s;
+	}
+	
+	protected String getPathFromStack(Stack<String> st)
+	{
+		String retur = "";
+		while(!st.isEmpty())
+			retur = st.pop() + retur;
+		if(retur.charAt(retur.length()-1) == '/')
+			retur = retur.substring(0, retur.length()-1);
+		return retur;
+	}
     
     public NodeReturnType visitAST_MODULE(XQFTTree node) {
        // System.out.println("AST_MODULE");
         
         return acceptThis(node.getChild(0));
         
+    }
+    
+    public NodeReturnType visitAST_STEPEXPR(XQFTTree node) {
+        
+        acceptThis(node.getChild(0));
+        
+        predLvl++;									// After
+        
+        //TODO: Only one predicate at this time:
+        if(node.getChildCount() > 1)
+        {
+        	acceptThis(node.getChild(1));				//visit predicate
+        }
+        
+        return null;
+    }
+    
+    public NodeReturnType visitNCName(XQFTTree node) {
+    	pathStack.push(node.getText());
+        return null;
     }
     
     public NodeReturnType visitAST_PATHEXPR_SGL(XQFTTree node) {
