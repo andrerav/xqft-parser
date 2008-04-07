@@ -27,27 +27,17 @@ public class StartVisitor extends RelalgVisitor {
 	
 	public StartVisitor()
 	{
-		pathStack = new Stack<String>();
-		predScopeDepth = new Stack<Integer>();		
+		pathStack = new Stack<String>();	
 		relAlgTree = new OperatorTree();
 	}
 	
-	
-	private String getPathFromStack(Stack<String> st)
-	{
-		String retur = "";
-		while(!st.isEmpty())
-			retur = st.pop() + retur;
-		
-		return retur;
-	}
     
-    protected void visitAllChildren(XQFTTree node) {
+  /*  protected void visitAllChildren(XQFTTree node) {
         for (int i = 0; i < node.getChildCount(); i++) {
             ((XQFTTree)node.getChild(i)).accept(this);
         }
     }
-    
+    */
     
     public NodeReturnType visitAST_MODULE(XQFTTree node) {
        // System.out.println("AST_MODULE");
@@ -61,7 +51,7 @@ public class StartVisitor extends RelalgVisitor {
         Operator retur;
     	
         pathStack.push("/");
-        predScopeDepth.push(new Integer(0));
+        predLvl = 0;
         
         
         Operator childPred = acceptThis(node.getChild(0)); //left
@@ -93,14 +83,14 @@ public class StartVisitor extends RelalgVisitor {
     		retur =  new Project(projectArgs, select); 					//to remove extra scope field
         	
         }*/
-        predScopeDepth.pop();
+        //predScopeDepth.pop();
         return null;
     }
     
     public NodeReturnType visitSLASHSi(XQFTTree node) {
         //System.out.println("SLASHSi");
         
-    	//TODO: CAN BE RELATIVE PATH EXPR!!! check check
+    	//TODO: CAN BE RELATIVE PATH EXPR!!! check check (see predicateVisitor)
         acceptThis(node.getChild(0)); 
         pathStack.push(("/"));							//Allways two children
         acceptThis(node.getChild(1));
@@ -146,33 +136,16 @@ public class StartVisitor extends RelalgVisitor {
         return null;
     }
     
-    public NodeReturnType visitAST_STEPEXPR(XQFTTree node) {
-        //System.out.println("AST_STEPEXPR");
-        
-        acceptThis(node.getChild(0));
-        
-        //Need to find the depth of scope to check for in case of a join with a predicate.
-        int tmp = predScopeDepth.pop().intValue() + 1;
-        predScopeDepth.push(new Integer(tmp));
-        
-        //TODO: Only one predicate at this time:
-        if(node.getChildCount() > 1)
-        {
-        	Operator op = acceptThis(node.getChild(1));
-        	if(op!=null)
-        		predLvl = predScopeDepth.peek().intValue();
-        	return op;
-        }
-        
-        return null;
-    }
+
     
     
 
 	public NodeReturnType visitAST_PREDICATE(XQFTTree tree) {
 		//System.out.println("ASTPREDICATE");
         PredicateVisitor visitor = new PredicateVisitor();
+        visitor.setDepth(predLvl);
         visitor.setRelAlgTree(relAlgTree);							//!!!
+        visitor.setPathStack((Stack<String>)pathStack.clone());
         return visitor.acceptThis(tree.getChild(0));
         
 		//return acceptThis(tree.getChild(0));
