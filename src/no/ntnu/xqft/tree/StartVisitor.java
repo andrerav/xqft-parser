@@ -58,7 +58,7 @@ public class StartVisitor extends RelalgVisitor {
         
         //Check if path is anything (i.e. not only '/')
         String laststep = pathStack.pop();
-        pathStack.pop(); //remove last /
+
         
         Index index = new Index("valocc", new Lookup("$" + laststep));
         Scope scope = new Scope(getPathFromStack(pathStack), index); //right
@@ -83,7 +83,7 @@ public class StartVisitor extends RelalgVisitor {
     		retur =  new Project(projectArgs, select); 					//to remove extra scope field
         	
         }*/
-        //predScopeDepth.pop();
+
         return null;
     }
     
@@ -145,7 +145,10 @@ public class StartVisitor extends RelalgVisitor {
         PredicateVisitor visitor = new PredicateVisitor();
         visitor.setDepth(predLvl);
         visitor.setRelAlgTree(relAlgTree);							//!!!
-        visitor.setPathStack((Stack<String>)pathStack.clone());
+        
+        Stack<String> cpyPathStack = (Stack<String>)pathStack.clone();
+        cpyPathStack.push("/");
+        visitor.setPathStack(cpyPathStack);
         return visitor.acceptThis(tree.getChild(0));
         
 		//return acceptThis(tree.getChild(0));
