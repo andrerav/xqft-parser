@@ -165,6 +165,7 @@ AST_PATHEXPR_DBL;
 AST_PATHEXPR_SGL;
 AST_PATHEXPR_REL;
 AST_STEPEXPR;
+AST_RELATIVEPATHEXPR;
 
 AST_FTSELECTION;
 AST_FTPOSFILTER;
@@ -612,7 +613,8 @@ valueExpr : validateExpr | pathExpr | extensionExpr;
          (SLASHSi relativePathExpr)=> s=SLASHSi relativePathExpr -> ^(AST_PATHEXPR_SGL relativePathExpr)
         | s=SLASHSi -> AST_PATHEXPR_SGL
         | d=DBLSLASHSi relativePathExpr -> ^(AST_PATHEXPR_DBL relativePathExpr) 
-        | relativePathExpr
+        | relativePathExpr -> ^(AST_RELATIVEPATHEXPR relativePathExpr)
+        
     ;
 
     
