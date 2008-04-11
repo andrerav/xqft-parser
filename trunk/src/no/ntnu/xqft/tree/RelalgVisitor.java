@@ -101,15 +101,21 @@ public abstract class RelalgVisitor implements Visitor {
     
     
     public boolean exprHasContextualRelativeRef(XQFTTree node) {
+        
+        /* Yaay */
         if (node.getType() == XQFTParser.AST_RELATIVEPATHEXPR) {
             return true;
         }
+        
+        /* Aww :( */
         else {
             for(int i = 0; i < node.getChildCount(); i++) {
+ 
                 XQFTTree tmp = (XQFTTree)node.getChild(i);
                 
                 /* Skip if context changes 
-                 * (only relevant for abs pathexprs inside predicates) 
+                 * (this check should only be relevant for 
+                 * absolute pathexprs inside predicates) 
                  */
                 if (tmp.getType() == XQFTParser.AST_PREDICATE) {
                     continue;
@@ -121,7 +127,7 @@ public abstract class RelalgVisitor implements Visitor {
             }
         }
         
-        /* None found */
+        /* No relative references found in this node nor children */
         return false;
     }
 
