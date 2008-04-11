@@ -5,6 +5,7 @@ package no.ntnu.xqft.tree;
 
 import java.util.Stack;
 
+import no.ntnu.xqft.parse.XQFTParser;
 import no.ntnu.xqft.parse.XQFTTree;
 import no.ntnu.xqft.tree.operator.Operator;
 
@@ -96,6 +97,32 @@ public abstract class RelalgVisitor implements Visitor {
     public NodeReturnType visitSLASHSi(XQFTTree tree) {
         // TODO Auto-generated method stub
         return null;
+    }
+    
+    
+    public boolean exprHasContextualRelativeRef(XQFTTree node) {
+        if (node.getType() == XQFTParser.AST_RELATIVEPATHEXPR) {
+            return true;
+        }
+        else {
+            for(int i = 0; i < node.getChildCount(); i++) {
+                XQFTTree tmp = (XQFTTree)node.getChild(i);
+                
+                /* Skip if context changes 
+                 * (only relevant for abs pathexprs inside predicates) 
+                 */
+                if (tmp.getType() == XQFTParser.AST_PREDICATE) {
+                    continue;
+                }
+                
+                if (this.exprHasContextualRelativeRef(tmp)) {
+                    return true;
+                }
+            }
+        }
+        
+        /* None found */
+        return false;
     }
 
 }

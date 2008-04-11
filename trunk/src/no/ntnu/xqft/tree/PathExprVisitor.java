@@ -150,6 +150,9 @@ public class PathExprVisitor extends RelalgVisitor {
 		PredicateVisitor visitor = new PredicateVisitor(cpyPathStack, relAlgTree);
         visitor.setDepth(predLvl);
         
+        System.out.print("Has relative path expr: ");
+        System.out.println(this.exprHasContextualRelativeRef((XQFTTree)tree.getChild(0)) ? "yes" : "no");
+        
         return visitor.acceptThis(tree.getChild(0));
 
 	}
