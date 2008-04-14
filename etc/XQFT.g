@@ -659,7 +659,7 @@ valueExpr : validateExpr | pathExpr | extensionExpr;
                     ;
                     abbrevForwardStep : ATSi^? nodeTest;                    
                 
-                predicateList : predicate*;                                         
+                predicateList : p=predicate*;
                     predicate : LBRACKSi expr RBRACKSi
                                     -> ^(AST_PREDICATE expr);
                 
