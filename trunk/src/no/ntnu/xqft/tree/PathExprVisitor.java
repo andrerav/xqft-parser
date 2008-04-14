@@ -3,20 +3,14 @@
  */
 package no.ntnu.xqft.tree;
 
-import java.util.Stack;
+import java.util.*;
 
 import com.sun.org.apache.xerces.internal.dom.DeepNodeListImpl;
 
 import no.ntnu.xqft.parse.XQFTTree;
-import no.ntnu.xqft.tree.operator.Index;
-import no.ntnu.xqft.tree.operator.Lookup;
-import no.ntnu.xqft.tree.operator.MergeJoin;
-import no.ntnu.xqft.tree.operator.Operator;
-import no.ntnu.xqft.tree.operator.Project;
-import no.ntnu.xqft.tree.operator.Scope;
-import no.ntnu.xqft.tree.operator.Select;
+import no.ntnu.xqft.tree.operator.*;
 import no.ntnu.xqft.tree.param.*;
-import no.ntnu.xqft.tree.NodeReturnType;
+import no.ntnu.xqft.tree.*;
 
 /**
  * @author andreas, MAAAATZ
@@ -211,4 +205,30 @@ public class PathExprVisitor extends RelalgVisitor {
 
 	}
 
+	
+
+    /* (non-Javadoc)
+     * @see no.ntnu.xqft.tree.Visitor#visitAND(no.ntnu.xqft.parse.XQFTTree)
+     */
+    public NodeReturn visitAND(XQFTTree tree) {
+        
+        ArrayList<Operator> operators = new ArrayList<Operator>(tree.getChildCount());
+        
+        for(int i = 0; i < tree.getChildCount(); i++) {
+            NodeReturn tmp = acceptThis(tree.getChild(i));
+            Operator op = tmp.getTree();
+            operators.add(op);
+        }
+        
+        And and = new And(operators);
+        and.setType(NodeReturnType.PRED_REL); // TODO: noe riktig
+
+        return and.getTree();
+    }
+
+    public NodeReturn visitAST_RELATIVEPATHEXPR(XQFTTree tree) {
+
+        return acceptThis(tree.getChild(0));
+        //return null;
+    }
 }

@@ -4,6 +4,7 @@
 package no.ntnu.xqft.tree;
 
 import no.ntnu.xqft.parse.*;
+
 import org.antlr.runtime.*;
 
 /**
@@ -123,6 +124,20 @@ public class RewriteVisitor implements Visitor {
     public NodeReturn visitSLASHSi(XQFTTree tree) {
         this.visitAllChildren(tree);
 
+        return null;
+    }
+
+    /* (non-Javadoc)
+     * @see no.ntnu.xqft.tree.Visitor#visitAND(no.ntnu.xqft.parse.XQFTTree)
+     */
+    public NodeReturn visitAND(XQFTTree tree) {
+        this.visitAllChildren(tree);
+
+        return null;
+    }
+
+    public NodeReturn visitAST_RELATIVEPATHEXPR(XQFTTree tree) {
+        // TODO Auto-generated method stub
         return null;
     }
 
