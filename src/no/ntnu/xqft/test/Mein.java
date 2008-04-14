@@ -3,10 +3,11 @@ package no.ntnu.xqft.test;
 import java.io.*;
 import java.util.HashMap;
 
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+
 
 import no.ntnu.xqft.parse.*;
-import no.ntnu.xqft.parse.XQFTTree;
-import no.ntnu.xqft.parse.XQFTTreeAdaptor;
 import no.ntnu.xqft.tree.*;
 import no.ntnu.xqft.tree.operator.Operator;
 
@@ -97,16 +98,7 @@ public class Mein {
 	{
         Mein m = new Mein();
      //                  01234567890123456789012345678901234567890123456789
-		String input =  /*"fn:round-half-to-even(\n" +
-                        "(xs:dayTimeDuration(\"P42DT10H10M\") div xs:dayTimeDuration(\"P10DT10H10M\"))\n" +
-                        "div\n" +
-                        "(xs:dayTimeDuration(\"P20DT10H10M\") div xs:dayTimeDuration(\"P18DT10H10M\"))\n" +*/
-                      //  "declare variable $x as xs:integer := 7;\n"+
-<<<<<<< .mine
-                        "for $i in /a/b where 1 and /a/@u and /a/b/@x return $i";
-=======
-                        "/a[@c]";
->>>>>>> .r536
+		String input =  JOptionPane.showInputDialog("spørring");//"for $i in /a/b where 1 and /a/@u and /a/b/@x return $i";
 		CharStream cs = new ANTLRStringStream(input);
 		XQFTLexer lexer = new XQFTLexer(cs);
 		UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
