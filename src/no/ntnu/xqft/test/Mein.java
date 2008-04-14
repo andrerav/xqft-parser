@@ -121,12 +121,19 @@ public class Mein {
 		if(tre != null)
 		{
 		XQFTTree tree = (XQFTTree)tre.getTree();
+
+
+        /* Execute rewrite visitor on tree */
+        RewriteVisitor rwvisitor = new RewriteVisitor();
+        rwvisitor.visit(tree);
+		
 		System.out.println(tree.toStringTree() + "\n\n");
 		m.skrivTilFil(tree.toDotStringTree(), "tekstNode.txt");
 		m.lagGraf("tekstNode.txt", "graf.pdf");
-
-        no.ntnu.xqft.tree.PathExprVisitor visitor = new no.ntnu.xqft.tree.PathExprVisitor();
+		
+        PathExprVisitor visitor = new PathExprVisitor();       
         Operator top = visitor.visit(tree);
+        
         System.out.println(top.toPrettyString(0));
 		}		
 
