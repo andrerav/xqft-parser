@@ -2,10 +2,10 @@ package no.ntnu.xqft.tree.operator;
 
 import java.util.ArrayList;
 
-import no.ntnu.xqft.tree.NodeReturnType;
+import no.ntnu.xqft.tree.NodeReturn;
 import no.ntnu.xqft.tree.param.*;
 
-public abstract class Operator extends NodeReturnType {
+public abstract class Operator extends NodeReturn {
 
     protected String name;
 
@@ -143,6 +143,16 @@ public abstract class Operator extends NodeReturnType {
      */
     public void setParams(ArrayList<Param> params) {
         this.params = params;
+    }
+    
+    public void insert(Operator op)
+    {
+    	addOperator(op);
+    }
+    
+    public Operator getTree()
+    {
+    	return this;
     }
     
     public void addOperator(Operator operator) {

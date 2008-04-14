@@ -46,16 +46,16 @@ public abstract class RelalgVisitor implements Visitor {
     /*
      * Making things beautiful
      */
-    protected Operator acceptThis(org.antlr.runtime.tree.Tree tree) 
+    protected NodeReturn acceptThis(org.antlr.runtime.tree.Tree tree) 
     {
-        return (Operator)((XQFTTree)tree).accept(this);
+        return ((XQFTTree)tree).accept(this);
     }    
     
 
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_MODULE(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitAST_MODULE(XQFTTree tree) {
+    public NodeReturn visitAST_MODULE(XQFTTree tree) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -63,7 +63,7 @@ public abstract class RelalgVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_PATHEXPR_SGL(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitAST_PATHEXPR_SGL(XQFTTree tree) {
+    public NodeReturn visitAST_PATHEXPR_SGL(XQFTTree tree) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -71,14 +71,14 @@ public abstract class RelalgVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_PREDICATE(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitAST_PREDICATE(XQFTTree tree) {
+    public NodeReturn visitAST_PREDICATE(XQFTTree tree) {
         // TODO Auto-generated method stub
         return null;
     }
 
 
     //TODO: this can be the top of a single step path expression
-    public NodeReturnType visitAST_STEPEXPR(XQFTTree node) {
+    public NodeReturn visitAST_STEPEXPR(XQFTTree node) {
 
         return null;
     }
@@ -86,7 +86,7 @@ public abstract class RelalgVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitNCName(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitNCName(XQFTTree node) {
+    public NodeReturn visitNCName(XQFTTree node) {
 
         return null;
     }
@@ -94,7 +94,7 @@ public abstract class RelalgVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitSLASHSi(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitSLASHSi(XQFTTree tree) {
+    public NodeReturn visitSLASHSi(XQFTTree tree) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -104,35 +104,35 @@ public abstract class RelalgVisitor implements Visitor {
      * path reference. May be useful for predicates
      * 
      */
-    public boolean exprHasContextualRelativeRef(XQFTTree node) {
-        
-        /* Yaay */
-        if (node.getType() == XQFTParser.AST_RELATIVEPATHEXPR) {
-            return true;
-        }
-        
-        /* Aww :( */
-        else {
-            for(int i = 0; i < node.getChildCount(); i++) {
- 
-                XQFTTree tmp = (XQFTTree)node.getChild(i);
-                
-                /* Skip if context changes 
-                 * (this check should only be relevant for 
-                 * absolute pathexprs inside predicates) 
-                 */
-                if (tmp.getType() == XQFTParser.AST_PREDICATE) {
-                    continue;
-                }
-                
-                if (this.exprHasContextualRelativeRef(tmp)) {
-                    return true;
-                }
-            }
-        }
-        
-        /* No relative references found in this node nor children */
-        return false;
-    }
+//    public boolean exprHasContextualRelativeRef(XQFTTree node) {
+//        
+//        /* Yaay */
+//        if (node.getType() == XQFTParser.AST_RELATIVEPATHEXPR) {
+//            return true;
+//        }
+//        
+//        /* Aww :( */
+//        else {
+//            for(int i = 0; i < node.getChildCount(); i++) {
+// 
+//                XQFTTree tmp = (XQFTTree)node.getChild(i);
+//                
+//                /* Skip if context changes 
+//                 * (this check should only be relevant for 
+//                 * absolute pathexprs inside predicates) 
+//                 */
+//                if (tmp.getType() == XQFTParser.AST_PREDICATE) {
+//                    continue;
+//                }
+//                
+//                if (this.exprHasContextualRelativeRef(tmp)) {
+//                    return true;
+//                }
+//            }
+//        }
+//        
+//        /* No relative references found in this node nor children */
+//        return false;
+//    }
 
 }

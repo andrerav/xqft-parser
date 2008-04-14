@@ -8,7 +8,6 @@ public class GenericOperator extends Operator {
 
 	public GenericOperator(ArrayList<Param> params, ArrayList<Operator> operators) {
 		super(params, operators);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public GenericOperator(String text)

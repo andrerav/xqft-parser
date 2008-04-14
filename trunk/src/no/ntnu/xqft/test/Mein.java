@@ -134,6 +134,8 @@ public class Mein {
         PathExprVisitor visitor = new PathExprVisitor();       
         Operator top = visitor.visit(tree);
         
+        System.out.println(input + "\n");
+
         System.out.println(top.toPrettyString(0));
 		}		
 

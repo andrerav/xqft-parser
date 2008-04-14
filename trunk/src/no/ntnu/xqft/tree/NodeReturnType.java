@@ -1,31 +1,18 @@
-/**
- * 
- */
 package no.ntnu.xqft.tree;
 
 /**
- * @author andreas
+ *  Part of simple type check system.
+ * @author flassmeister
  *
  */
-public abstract class NodeReturnType {
-
-    
-    /* Is this a string literal? */
-    protected boolean stringLiteral = false;
-    
-
-    /**
-     * @return the stringLiteral
-     */
-    protected boolean isStringLiteral() {
-        return stringLiteral;
-    }
-
-    /**
-     * @param stringLiteral the stringLiteral to set
-     */
-    protected void setStringLiteral(boolean stringLiteral) {
-        this.stringLiteral = stringLiteral;
-    }    
-    
+public enum NodeReturnType {
+	NUMERIC,					// e.g. 1 or 2.34
+	LITTERAL,					// e.g. "yes"  or  'can'
+	FALSE, 						// Also empty set
+	TRUE,
+	EXPL_SET,					// Explicitly created set. e.g. (1, "a", <left/>)
+	PRED_REL,				    // Predicate value dependent on context.  
+	PRED_ABS,					// Predicate value dependent on context.
+	REL_PATHEXPR,
+	ABS_PATHEXPR,
 }
