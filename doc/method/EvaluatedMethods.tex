@@ -1,11 +1,6 @@
 \section{Evaluated methods for manual tree parsing}
 \label{sect:method:evaluated_methods}
 
-\subsection{Normalizing the syntax tree}
-Motivation: simplification
-Problem: the XQuery AST is difficult to translate directly
-Explain: convert XQuery to XQuery core
-
 \subsection{Multimethod}
 \label{sect:method:evaluated_methods}
 Motivation: one of the simplest forms of tree parsing
@@ -25,10 +20,3 @@ Explain: why return visitor instead of nodes/tree?
 skviik 1: Assume that expressions are mutable / have side-effects
 
 skviik 2: Builds tree outside instead of traditional recursive building
-
-\subsection{AST rewrites}
-Motivation: simplification
-Problem: AST does not correspond to relalg easily
-Explain: rewrite multiple predicates for a step expression to a single 
-         predicate expression with all subexpressions AND'ed together
-         
