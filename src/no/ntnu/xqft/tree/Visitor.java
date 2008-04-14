@@ -20,7 +20,10 @@ public interface Visitor {
     public NodeReturn visitAST_PATHEXPR_SGL(XQFTTree tree);
     public NodeReturn visitSLASHSi(XQFTTree tree);
     public NodeReturn visitAST_STEPEXPR(XQFTTree tree);
+    public NodeReturn visitAST_RELATIVEPATHEXPR(XQFTTree tree);
     public NodeReturn visitNCName(XQFTTree tree);
-
 	public NodeReturn visitAST_PREDICATE(XQFTTree tree);
+    public NodeReturn visitAND(XQFTTree tree);
+	
+	
 }

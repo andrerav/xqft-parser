@@ -80,6 +80,10 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 //return visitor.visitAST_PATHEXPR_REL(this);
                 System.err.println("method not implemented: visitAST_PATHEXPR_REL()");
                 break;
+            case XQFTParser.AST_RELATIVEPATHEXPR:
+                return visitor.visitAST_RELATIVEPATHEXPR(this);
+                //System.err.println("method not implemented: visitAST_PATHEXPR_REL()");
+                //break;
             case XQFTParser.AST_STEPEXPR:
                 return visitor.visitAST_STEPEXPR(this);
                 //System.err.println("method not implemented: visitAST_STEPEXPR()");
@@ -421,9 +425,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 System.err.println("method not implemented: visitOR()");
                 break;
             case XQFTParser.AND:
-                //return visitor.visitAND(this);
-                System.err.println("method not implemented: visitAND()");
-                break;
+                return visitor.visitAND(this);
+                //System.err.println("method not implemented: visitAND()");
+                //break;
             case XQFTParser.FTCONTAINS:
                 //return visitor.visitFTCONTAINS(this);
                 System.err.println("method not implemented: visitFTCONTAINS()");
