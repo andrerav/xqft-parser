@@ -99,7 +99,11 @@ public abstract class RelalgVisitor implements Visitor {
         return null;
     }
     
-    
+    /*
+     * Checks if the node or any of its children has a relative
+     * path reference. May be useful for predicates
+     * 
+     */
     public boolean exprHasContextualRelativeRef(XQFTTree node) {
         
         /* Yaay */
