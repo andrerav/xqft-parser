@@ -7,7 +7,7 @@ import no.ntnu.xqft.tree.operator.Operator;
  * @author flassmeister
  *
  */
-public class OperatorTree {
+public class OperatorTree extends NodeReturn {
 
 	private Operator top;
 	private Operator insertAt;
@@ -17,6 +17,19 @@ public class OperatorTree {
 	{
 		top = null;
 		insertAt = null;
+	}
+	
+	public OperatorTree(Operator o)
+	{
+		top = o;
+		insertAt = null;
+	}
+	
+	public OperatorTree(Operator o, NodeReturnType t)
+	{
+		top = o;
+		insertAt = null;
+		type = t;
 	}
 	
 	public Operator getTree()

@@ -8,5 +8,5 @@ package no.ntnu.xqft.tree;
  *
  */
 public interface Node {
-    public NodeReturnType accept(Visitor visitor);
+    public NodeReturn accept(Visitor visitor);
 }

@@ -19,8 +19,9 @@ public class PredicateVisitor extends PathExprVisitor {
 	/**
 	 * The "depth" of this predicate in its path expression context
 	 */
-	private int thisDepth;
+	//private int thisDepth;  			//Better with access to parent
 
+	OperatorTree axisStep = null;
 	
 	public PredicateVisitor()
 	{
@@ -28,19 +29,16 @@ public class PredicateVisitor extends PathExprVisitor {
 		relAlgTree = new OperatorTree();
 	}
 	
-	public PredicateVisitor(Stack<String> pathSt, OperatorTree opTree)
+	public PredicateVisitor(OperatorTree axis, PathExprVisitor patExprVis)
 	{
-		pathStack = pathSt;
-		relAlgTree = opTree;
+		this();
+		parent = patExprVis;
+		axisStep = axis;
 	}
 	
-	public void setDepth(int predLvl) {
-		thisDepth = predLvl;
-	}
 		
 	
-	
-    public NodeReturnType visitAST_PATHEXPR_SGL(XQFTTree node) {
+    public NodeReturn visitAST_PATHEXPR_SGL(XQFTTree node) {
 		predLvl = 0;
 		inPathExpr = true;
 		
@@ -52,35 +50,22 @@ public class PredicateVisitor extends PathExprVisitor {
     	return null;
     }
 
-	public NodeReturnType visitAST_MODULE(XQFTTree tree) {
+	public NodeReturn visitAST_MODULE(XQFTTree tree) {
 		System.err.println("Error: Visited AST_MODULE inside a predicate");
 		return null;
 	}
 
+	protected void topOfRelPathExpr()
+	{
+        pathStack = (Stack<String>)parent.pathStack.clone();
+        pathStack.push("/");
+        predLvl = parent.predLvl;
+	}
+	
+	public NodeReturn visitAST_PREDICATE(XQFTTree tree) {
+		return acceptThis(tree.getChild(0));
+	}
     
-    protected void topOfPathExpr()
-    {
-    	super.topOfPathExpr();
-    	relAlgTree.removeMark();
-    	
-    	String[] key1 = {"documentId"};
-    	String[] key2 = {"documentId"};
-    	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
-		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList);
-		relAlgTree.insert(mergeJoin);
-		
-		//isInScope(a, b) if a has an equal but deeper path than b -> true
-		Select select = new Select("isInScope(scope_prefix(" + thisDepth +",scope), scopeLeft)");
-		relAlgTree.insert(select);
-		
-		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
-		Project project =  new Project(projectArgs); 					//to remove extra scope field
-		relAlgTree.insert(project);
-        
-		relAlgTree.setInsertMark(mergeJoin);
-        
-    	
-    }
 	
 	
 }

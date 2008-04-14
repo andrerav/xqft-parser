@@ -19,7 +19,7 @@ public class RewriteVisitor implements Visitor {
      * (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_STEPEXPR(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitAST_STEPEXPR(XQFTTree node) {
+    public NodeReturn visitAST_STEPEXPR(XQFTTree node) {
 
         /* Check if step expression has more than one child 
          * (the first child is the node name, e.g a in /a[b])
@@ -78,7 +78,7 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visit(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visit(XQFTTree node) {
+    public NodeReturn visit(XQFTTree node) {
         this.visitAllChildren(node);
         return null;
     }
@@ -86,14 +86,14 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_MODULE(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitAST_MODULE(XQFTTree tree) {
+    public NodeReturn visitAST_MODULE(XQFTTree tree) {
         return null;
     }
 
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_PATHEXPR_SGL(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitAST_PATHEXPR_SGL(XQFTTree tree) {
+    public NodeReturn visitAST_PATHEXPR_SGL(XQFTTree tree) {
         this.visitAllChildren(tree);
 
         return null;
@@ -102,7 +102,7 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_PREDICATE(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitAST_PREDICATE(XQFTTree tree) {
+    public NodeReturn visitAST_PREDICATE(XQFTTree tree) {
         this.visitAllChildren(tree);
 
         return null;
@@ -111,7 +111,7 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitNCName(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitNCName(XQFTTree tree) {
+    public NodeReturn visitNCName(XQFTTree tree) {
         this.visitAllChildren(tree);
 
         return null;
@@ -120,7 +120,7 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitSLASHSi(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturnType visitSLASHSi(XQFTTree tree) {
+    public NodeReturn visitSLASHSi(XQFTTree tree) {
         this.visitAllChildren(tree);
 
         return null;
