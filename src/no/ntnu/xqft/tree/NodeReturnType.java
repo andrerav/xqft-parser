@@ -11,8 +11,8 @@ public enum NodeReturnType {
 	FALSE, 						// Also empty set
 	TRUE,
 	EXPL_SET,					// Explicitly created set. e.g. (1, "a", <left/>)
-	PRED_REL,				    // Predicate value dependent on context.  
-	PRED_ABS,					// Predicate value dependent on context.
+	TRUE_OR_FALSE,				// Evaluating this will yield true OR false  
+	TRUE_AND_FALSE,				// Evaluatiing this will yield true for some nodes false for other
 	REL_PATHEXPR,
 	ABS_PATHEXPR,
 }

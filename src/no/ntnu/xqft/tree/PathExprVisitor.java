@@ -26,25 +26,27 @@ public class PathExprVisitor extends RelalgVisitor {
 
 	
 	public PathExprVisitor()
-	{
-		pathStack = new Stack<String>();	
+	{	
 		relAlgTree = new OperatorTree();
 	}
-	
-	protected void setPathStack(Stack<String> s)
-	{
-		pathStack = s;
-	}
-	
-	protected String getPathFromStack(Stack<String> st)
+		
+	protected String getPathFromStack(Stack<String> st, int n)
 	{
 		StringBuffer retur = new StringBuffer();
 		
+		int steps = 0;
+		
 		for(int i = 0; i < st.size(); i++)
 		{
-			if(!( (i == st.size()-1) && st.elementAt(i).equals("/")))
-				retur.append(st.elementAt(i));
+			retur.append(st.elementAt(i));
+			if(!st.elementAt(i).equals("/"))
+				steps++;
+			if(steps == n)
+				break;
+
 		}
+		if(retur.charAt(retur.length()-1) == '/')
+			retur.setLength(retur.length()-1);
 		return retur.toString();
 	}
 	
@@ -57,6 +59,39 @@ public class PathExprVisitor extends RelalgVisitor {
         
     }
     
+	/**
+	 * Will be run before traversing a _RELATIVE_ path expression 
+	 *
+	 */
+	protected void startRelPathExpr() {
+		predLvl = 0;
+		inPathExpr = true;
+		pathStack = new Stack<String>();
+	}
+	
+	/**
+	 * Will be run after traversing _ANY_ path expression
+	 *
+	 */
+	protected NodeReturn endPathExpr() {
+		// TODO Auto-generated method stub
+		inPathExpr = false;
+
+		//TODO: sjekke om det virkelig er element og ikke attributt f.eks.
+		Operator returnThis = new Index("valocc", new Lookup("$" + pathStack.peek()));
+		
+		if(pathStack.size() > 2)
+			returnThis = new Scope(getPathFromStack(pathStack, predLvl-1), returnThis);
+		
+		returnThis.setType(NodeReturnType.REL_PATHEXPR);
+
+		predLvl = 0;
+		
+		return returnThis;
+	}
+    
+    
+    
     public NodeReturn visitAST_STEPEXPR(XQFTTree node) {
     	
     	NodeReturn returnThis = null;
@@ -65,68 +100,24 @@ public class PathExprVisitor extends RelalgVisitor {
     	if(!inPathExpr)
     	{
     		thisIsTop = true;
-    		inPathExpr = true;
-    		predLvl = 0;
-    		topOfRelPathExpr();
+    		startRelPathExpr();
     	}
 
-        NodeReturn firstChild = acceptThis(node.getChild(0));
-        predLvl++;									// After
-        
-        if(firstChild == null)				// Child is only NCName -> short for child::
-        {
-        	Operator ins = new Index("valocc", new Lookup("$" + pathStack.peek()));
-        	if(pathStack.size() > 2) 		// not first step (2 = "/" and first step
-        	{
-        		ins = new Scope(getPathFromStack(pathStack), ins);
-        	}
-       
-        	returnThis = new OperatorTree();
-        	returnThis.insert(ins);
-        	returnThis.setType(NodeReturnType.REL_PATHEXPR);
-        }
-        
-        // Multiple predicates will have had to be joined into one. -> this only handles the first
-        if(node.getChildCount() > 1)
-        {
-        	PredicateVisitor predVisitor = new PredicateVisitor(relAlgTree, this);
-        	NodeReturn pred = predVisitor.acceptThis(node.getChild(1));				//visit predicate
-        	switch (pred.type) {
-			case REL_PATHEXPR:
-		    	String[] key1 = {"documentId"};
-		    	String[] key2 = {"documentId"};
-		    	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
-				MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, returnThis.getTree(), pred.getTree());
+        acceptThis(node.getChild(0));
+        predLvl++;
 
-				
-				//isInScope(a, b) if a has an equal but deeper path than b -> true
-				Select select = new Select("isInScope(scope_prefix(" + predLvl +",scope), scopeLeft)", mergeJoin);
-
-				String[] projectArgs = {"DocumentId", "position", "value", "scope"};
-				returnThis =  new Project(projectArgs, select); 					//to remove extra scope field
-				break;
-				
-			default:
-				break;
-			}
-        	
-        }
 	     
 	    if(thisIsTop) //Single step path expression
 	    {
-	        inPathExpr = false;
+	    	return endPathExpr();
 	    }   
         return returnThis;
     }
     
- 
-
-	protected void topOfRelPathExpr() {
-		// do nothing. Will be overridden in predicate visitor
-	}
 
 	public NodeReturn visitNCName(XQFTTree node) {
-    	pathStack.push(node.getText());
+		if(inPathExpr)
+			pathStack.push(node.getText());
         return null;
     }
 
@@ -138,16 +129,16 @@ public class PathExprVisitor extends RelalgVisitor {
 	public NodeReturn visitAST_PATHEXPR_SGL(XQFTTree node) {
 
 		inPathExpr = true;
+		pathStack = new Stack<String>();
     	
-		pathStack.clear();
         pathStack.push("/");
         predLvl = 0;
         
-        NodeReturn returnThis = acceptThis(node.getChild(0)); 
-        returnThis.setType(NodeReturnType.ABS_PATHEXPR);
-        
+        acceptThis(node.getChild(0)); 
 
-        inPathExpr = false;
+
+        NodeReturn returnThis = endPathExpr();
+        returnThis.setType(NodeReturnType.ABS_PATHEXPR);        
         
         return returnThis;
     }
@@ -155,56 +146,27 @@ public class PathExprVisitor extends RelalgVisitor {
     public NodeReturn visitSLASHSi(XQFTTree node) {
       
 		boolean thisIsTop = false;
-		if(!inPathExpr)
+		if(!inPathExpr)								// Top of the pathExpr tree
 		{
-			predLvl = 0;
 			thisIsTop = true;
-			inPathExpr = true;
-			topOfRelPathExpr();
+			startRelPathExpr();
 		}
 
-		NodeReturn childOne = acceptThis(node.getChild(0));
+		acceptThis(node.getChild(0));
 		pathStack.push("/");
-		NodeReturn childTwo = acceptThis(node.getChild(1));
-		
-    	String[] key1 = {"documentId"};
-    	String[] key2 = {"documentId"};
-    	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
-		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, childOne.getTree(), childTwo.getTree());
-
-		
-		//isInScope(a, b) if a has an equal but deeper path than b -> true
-		Select select = new Select("isInScope(scope_prefix(" + (predLvl - 1) +",scope), scopeLeft)", mergeJoin);
-
-		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
-		Project project =  new Project(projectArgs, select); 					//to remove extra scope field
-			
+		acceptThis(node.getChild(1));
+					
 		if(thisIsTop)
 		{
-			inPathExpr = false;
+			return endPathExpr();
 		}
 		
-		return new OperatorTree(project, NodeReturnType.REL_PATHEXPR);
+		return null;
     }
-    
-
-    
-    
 
 	public NodeReturn visitAST_PREDICATE(XQFTTree tree) {
 		
 		System.err.println("TRAVERSING ERROR: visitAST_PREDICATE in PathExprVisitor");
-		
-       /* Stack<String> cpyPathStack = (Stack<String>)pathStack.clone();
-        cpyPathStack.push("/");
-		
-		PredicateVisitor visitor = new PredicateVisitor(cpyPathStack, relAlgTree);
-        visitor.setDepth(predLvl);
-        
-        System.out.print("Has relative path expr: ");
-       //System.out.println(this.exprHasContextualRelativeRef((XQFTTree)tree.getChild(0)) ? "yes" : "no");
-        
-        return visitor.acceptThis(tree.getChild(0));*/
 		return null;
 
 	}
@@ -216,17 +178,17 @@ public class PathExprVisitor extends RelalgVisitor {
      */
     public NodeReturn visitAND(XQFTTree tree) {
         
-        ArrayList<Operator> operators = new ArrayList<Operator>(tree.getChildCount());
-        
-        for(int i = 0; i < tree.getChildCount(); i++) {
-            NodeReturn tmp = acceptThis(tree.getChild(i));
-            Operator op = tmp.getTree();
-            operators.add(op);
-        }
-        
-        //And and = new And(operators);
-        //and.setType(NodeReturnType.PRED_REL); // TODO: noe riktig
-
+//        ArrayList<Operator> operators = new ArrayList<Operator>(tree.getChildCount());
+//        
+//        for(int i = 0; i < tree.getChildCount(); i++) {
+//            NodeReturn tmp = acceptThis(tree.getChild(i));
+//            Operator op = tmp.getTree();
+//            operators.add(op);
+//        }
+//        
+//        And and = new And(operators);
+//        and.setType(NodeReturnType.PRED_REL); // TODO: noe riktig
+//
 //        return and.getTree();
         return null;
     }
@@ -234,7 +196,23 @@ public class PathExprVisitor extends RelalgVisitor {
 
 
 	public NodeReturn visitSYNTH_PR_PATHEXPR(XQFTTree tree) {
-		// TODO Auto-generated method stub
-		return null;
+
+		NodeReturn pathExpr = acceptThis(tree.getChild(0));
+		NodeReturn preds = acceptThis(tree.getChild(1));
+		
+//    	String[] key1 = {"documentId"};
+//    	String[] key2 = {"documentId"};
+//    	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
+//		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, childOne.getTree(), childTwo.getTree());
+//
+//		
+//		//isInScope(a, b) if a has an equal but deeper path than b -> true
+//		Select select = new Select("isInScope(scope_prefix(" + (predLvl - 1) +",scope), scopeLeft)", mergeJoin);
+//
+//		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
+//		Project project =  new Project(projectArgs, select); 					//to remove extra scope field
+		
+		
+		return pathExpr;
 	}
 }
