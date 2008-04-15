@@ -165,7 +165,7 @@ AST_PATHEXPR_DBL;
 AST_PATHEXPR_SGL;
 AST_PATHEXPR_REL;
 AST_STEPEXPR;
-AST_RELATIVEPATHEXPR;
+AST_RELATIVEPATHEXPR; // not in use
 
 AST_FTSELECTION;
 AST_FTPOSFILTER;
@@ -173,9 +173,13 @@ AST_FUNCTIONCALL;
 AST_FUNCTIONDECL;
 AST_PREDICATE;
 
-
 AST_DIRELEMCONSTRUCTOR;
 AST_DIRELEMCONTENT;
+
+//For rewrite purposes:
+SYNTH_PR_PATHEXPR;	// predicated path expression. Predicates are moved out of the path expression and made children of this node.
+SYNTH_PR_LVL;		// which step in the pathExpr the predicate belongs to.
+
 
 
 }
@@ -613,7 +617,7 @@ valueExpr : validateExpr | pathExpr | extensionExpr;
          (SLASHSi relativePathExpr)=> s=SLASHSi relativePathExpr -> ^(AST_PATHEXPR_SGL relativePathExpr)
         | s=SLASHSi -> AST_PATHEXPR_SGL
         | d=DBLSLASHSi relativePathExpr -> ^(AST_PATHEXPR_DBL relativePathExpr) 
-        | relativePathExpr -> ^(AST_RELATIVEPATHEXPR relativePathExpr)
+        | relativePathExpr //-> ^(AST_RELATIVEPATHEXPR relativePathExpr)
         
     ;
 

@@ -130,6 +130,10 @@ public class PathExprVisitor extends RelalgVisitor {
         return null;
     }
 
+	public NodeReturn visitAST_PATHEXPR_DBL(XQFTTree tree) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	public NodeReturn visitAST_PATHEXPR_SGL(XQFTTree node) {
 
@@ -220,15 +224,17 @@ public class PathExprVisitor extends RelalgVisitor {
             operators.add(op);
         }
         
-        And and = new And(operators);
-        and.setType(NodeReturnType.PRED_REL); // TODO: noe riktig
+        //And and = new And(operators);
+        //and.setType(NodeReturnType.PRED_REL); // TODO: noe riktig
 
-        return and.getTree();
+//        return and.getTree();
+        return null;
     }
 
-    public NodeReturn visitAST_RELATIVEPATHEXPR(XQFTTree tree) {
 
-        return acceptThis(tree.getChild(0));
-        //return null;
-    }
+
+	public NodeReturn visitSYNTH_PR_PATHEXPR(XQFTTree tree) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
