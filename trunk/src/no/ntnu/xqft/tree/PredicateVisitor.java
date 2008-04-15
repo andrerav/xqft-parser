@@ -36,24 +36,6 @@ public class PredicateVisitor extends PathExprVisitor {
 		axisStep = axis;
 	}
 	
-		
-	
-    public NodeReturn visitAST_PATHEXPR_SGL(XQFTTree node) {
-		predLvl = 0;
-		inPathExpr = true;
-		
-		pathStack.clear();			//!!
-		//parse tree
-		
-		inPathExpr = false;
-
-    	return null;
-    }
-
-	public NodeReturn visitAST_MODULE(XQFTTree tree) {
-		System.err.println("Error: Visited AST_MODULE inside a predicate");
-		return null;
-	}
 
 	protected void topOfRelPathExpr()
 	{

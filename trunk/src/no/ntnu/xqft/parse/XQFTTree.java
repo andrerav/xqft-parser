@@ -24,7 +24,11 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
 
         // TODO Auto-generated method stub
         switch(this.getType()) {
-            case XQFTParser.AST_MODULE:
+	        case XQFTParser.SYNTH_PR_PATHEXPR:
+	            return visitor.visitSYNTH_PR_PATHEXPR(this);
+//	            System.err.println("method not implemented: visitSYNTH_PR_PATHEXPR");
+//	            break;
+	        case XQFTParser.AST_MODULE:
                 return visitor.visitAST_MODULE(this);
                 //System.err.println("method not implemented: visitAST_MODULE()");
                 //break;
@@ -69,9 +73,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 System.err.println("method not implemented: visitAST_IFEXPR()");
                 break;
             case XQFTParser.AST_PATHEXPR_DBL:
-                //return visitor.visitAST_PATHEXPR_DBL(this);
-                System.err.println("method not implemented: visitAST_PATHEXPR_DBL()");
-                break;
+                return visitor.visitAST_PATHEXPR_DBL(this);
+//                System.err.println("method not implemented: visitAST_PATHEXPR_DBL()");
+//                break;
             case XQFTParser.AST_PATHEXPR_SGL:
                 return visitor.visitAST_PATHEXPR_SGL(this);
                 //System.err.println("method not implemented: visitAST_PATHEXPR_SGL()");
@@ -80,10 +84,6 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 //return visitor.visitAST_PATHEXPR_REL(this);
                 System.err.println("method not implemented: visitAST_PATHEXPR_REL()");
                 break;
-            case XQFTParser.AST_RELATIVEPATHEXPR:
-                return visitor.visitAST_RELATIVEPATHEXPR(this);
-                //System.err.println("method not implemented: visitAST_PATHEXPR_REL()");
-                //break;
             case XQFTParser.AST_STEPEXPR:
                 return visitor.visitAST_STEPEXPR(this);
                 //System.err.println("method not implemented: visitAST_STEPEXPR()");
@@ -1065,6 +1065,8 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
     public static int i = 0;
     public int my_i;
     public boolean printTokenName = false;
+    
+    public int predLvl;
     
     /**
      * @param t

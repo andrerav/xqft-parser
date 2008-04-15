@@ -123,6 +123,8 @@ public class Mein {
 		XQFTTree tree = (XQFTTree)tre.getTree();
 
 
+		System.out.println("\n" + input + "\n");
+		
         /* Execute rewrite visitor on tree */
         RewriteVisitor rwvisitor = new RewriteVisitor();
         rwvisitor.visit(tree);
@@ -134,7 +136,7 @@ public class Mein {
         PathExprVisitor visitor = new PathExprVisitor();       
         Operator top = visitor.visit(tree);
         
-        System.out.println(input + "\n");
+        
 
         System.out.println(top.toPrettyString(0));
 		}		
