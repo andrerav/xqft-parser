@@ -26,6 +26,8 @@ public interface Visitor {
 	public NodeReturn visitSYNTH_PR_PATHEXPR(XQFTTree tree);
 
 	public NodeReturn visitAST_PATHEXPR_DBL(XQFTTree tree);
+
+	public NodeReturn visitSYNTH_PR_LVL(XQFTTree tree);
 	
 	
 }

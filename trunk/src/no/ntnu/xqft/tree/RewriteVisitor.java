@@ -268,4 +268,10 @@ public class RewriteVisitor implements Visitor {
 		return null;
 	}
 
+
+	public NodeReturn visitSYNTH_PR_LVL(XQFTTree tree) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
