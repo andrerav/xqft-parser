@@ -28,6 +28,8 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
 	            return visitor.visitSYNTH_PR_PATHEXPR(this);
 //	            System.err.println("method not implemented: visitSYNTH_PR_PATHEXPR");
 //	            break;
+	        case XQFTParser.SYNTH_PR_LVL:
+	        	return visitor.visitSYNTH_PR_LVL(this);
 	        case XQFTParser.AST_MODULE:
                 return visitor.visitAST_MODULE(this);
                 //System.err.println("method not implemented: visitAST_MODULE()");

@@ -16,12 +16,6 @@ import no.ntnu.xqft.tree.operator.*;
  */
 public class PredicateVisitor extends PathExprVisitor {
 
-	/**
-	 * The "depth" of this predicate in its path expression context
-	 */
-	//private int thisDepth;  			//Better with access to parent
-
-	OperatorTree axisStep = null;
 	
 	public PredicateVisitor()
 	{
@@ -29,11 +23,10 @@ public class PredicateVisitor extends PathExprVisitor {
 		relAlgTree = new OperatorTree();
 	}
 	
-	public PredicateVisitor(OperatorTree axis, PathExprVisitor patExprVis)
+	public PredicateVisitor(PathExprVisitor patExprVis)
 	{
 		this();
 		parent = patExprVis;
-		axisStep = axis;
 	}
 	
 
@@ -41,13 +34,20 @@ public class PredicateVisitor extends PathExprVisitor {
 	{
         pathStack = (Stack<String>)parent.pathStack.clone();
         pathStack.push("/");
-        predLvl = parent.predLvl;
+        inPathExpr = true;
 	}
 	
 	public NodeReturn visitAST_PREDICATE(XQFTTree tree) {
-		return acceptThis(tree.getChild(0));
+		System.err.println("TRAVERSE ERROR: visitAST_PREDICATE() in PredicateVisitor");
+		return null;
 	}
     
+	public NodeReturn visitSYNTH_PR_LVL(XQFTTree tree) {
+		predLvl = tree.predLvl;
+		NodeReturn returnThis = acceptThis(tree.getChild(0));
+		predLvl = tree.predLvl;
+		return returnThis;
+	}
 	
 	
 }

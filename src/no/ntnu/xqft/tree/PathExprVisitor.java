@@ -74,7 +74,7 @@ public class PathExprVisitor extends RelalgVisitor {
 	 *
 	 */
 	protected NodeReturn endPathExpr() {
-		// TODO Auto-generated method stub
+
 		inPathExpr = false;
 
 		//TODO: sjekke om det virkelig er element og ikke attributt f.eks.
@@ -85,7 +85,6 @@ public class PathExprVisitor extends RelalgVisitor {
 		
 		returnThis.setType(NodeReturnType.REL_PATHEXPR);
 
-		predLvl = 0;
 		
 		return returnThis;
 	}
@@ -93,8 +92,6 @@ public class PathExprVisitor extends RelalgVisitor {
     
     
     public NodeReturn visitAST_STEPEXPR(XQFTTree node) {
-    	
-    	NodeReturn returnThis = null;
     	
     	boolean thisIsTop = false;
     	if(!inPathExpr)
@@ -111,7 +108,7 @@ public class PathExprVisitor extends RelalgVisitor {
 	    {
 	    	return endPathExpr();
 	    }   
-        return returnThis;
+        return null;
     }
     
 
@@ -197,22 +194,40 @@ public class PathExprVisitor extends RelalgVisitor {
 
 	public NodeReturn visitSYNTH_PR_PATHEXPR(XQFTTree tree) {
 
+		NodeReturn returnThis = null;
+		
 		NodeReturn pathExpr = acceptThis(tree.getChild(0));
-		NodeReturn preds = acceptThis(tree.getChild(1));
+		PredicateVisitor predVisitor = new PredicateVisitor(this);
+		NodeReturn preds = predVisitor.acceptThis(tree.getChild(1));
 		
-//    	String[] key1 = {"documentId"};
-//    	String[] key2 = {"documentId"};
-//    	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
-//		MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, childOne.getTree(), childTwo.getTree());
-//
-//		
-//		//isInScope(a, b) if a has an equal but deeper path than b -> true
-//		Select select = new Select("isInScope(scope_prefix(" + (predLvl - 1) +",scope), scopeLeft)", mergeJoin);
-//
-//		String[] projectArgs = {"DocumentId", "position", "value", "scope"};
-//		Project project =  new Project(projectArgs, select); 					//to remove extra scope field
+		switch (preds.getType()) {
+		case TRUE_AND_FALSE:
+		case REL_PATHEXPR:
+	    	String[] key1 = {"documentId"};
+	    	String[] key2 = {"documentId"};
+	    	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
+			MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, pathExpr.getTree(), preds.getTree());
+
+			
+			//isInScope(a, b) if a has an equal but deeper path than b -> true
+			Select select = new Select("isInScope(scope_prefix(" + (predVisitor.predLvl -1) +",scope), scopeLeft)", mergeJoin);
+
+			String[] projectArgs = {"DocumentId", "position", "value", "scope"};
+			returnThis  =  new Project(projectArgs, select); 					//to remove extra scope field			
+			break;
+
+		default:
+			System.err.println("RETURN TYPE ERROR: in visitSYNTH_PR_PATHEXPR() in PathExprVisitor");
+			break;
+		}
+
 		
 		
-		return pathExpr;
+		return returnThis;
+	}
+
+	public NodeReturn visitSYNTH_PR_LVL(XQFTTree tree) {
+		System.err.println("TRAVERSE ERROR: visitSYNTH_PR_LVL() in PathExprVisitor");
+		return null;
 	}
 }
