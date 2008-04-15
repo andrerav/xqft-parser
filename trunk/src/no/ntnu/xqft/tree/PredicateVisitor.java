@@ -37,7 +37,7 @@ public class PredicateVisitor extends PathExprVisitor {
 	}
 	
 
-	protected void topOfRelPathExpr()
+	protected void startRelPathExpr()
 	{
         pathStack = (Stack<String>)parent.pathStack.clone();
         pathStack.push("/");
