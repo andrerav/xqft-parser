@@ -22,7 +22,7 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
      */
     public NodeReturn accept(Visitor visitor) {
 
-        // TODO Auto-generated method stub
+
         switch(this.getType()) {
 	        case XQFTParser.SYNTH_PR_PATHEXPR:
 	            return visitor.visitSYNTH_PR_PATHEXPR(this);

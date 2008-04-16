@@ -6,7 +6,6 @@ package no.ntnu.xqft.tree;
 import java.util.Stack;
 
 import no.ntnu.xqft.parse.XQFTTree;
-import no.ntnu.xqft.tree.operator.*;
 
 
 /**
@@ -18,8 +17,7 @@ public class PredicateVisitor extends PathExprVisitor {
 
 	
 	public PredicateVisitor()
-	{
-		pathStack = new Stack<String>();		
+	{	
 		relAlgTree = new OperatorTree();
 	}
 	
@@ -32,8 +30,7 @@ public class PredicateVisitor extends PathExprVisitor {
 
 	protected void startRelPathExpr()
 	{
-        pathStack = (Stack<String>)parent.pathStack.clone();
-        pathStack.push("/");
+        pathExpression = parent.pathExpression.copy(predLvl); 
         inPathExpr = true;
 	}
 	

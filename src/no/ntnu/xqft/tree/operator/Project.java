@@ -20,7 +20,7 @@ public class Project extends Operator {
      */
     public Project(ArrayList<Param> params, ArrayList<Operator> operators) {
         super(params, operators);
-        // TODO Auto-generated constructor stub
+
     }
     
     public Project(String retainParameter, String[] arguments)

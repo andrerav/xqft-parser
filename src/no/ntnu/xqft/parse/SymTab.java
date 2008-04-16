@@ -15,5 +15,10 @@ import java.util.HashMap;
  *
  */
 public class SymTab<K,V> extends HashMap<K,V> {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1472103699360987648L;
     
 }
