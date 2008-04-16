@@ -9,7 +9,12 @@ package no.ntnu.xqft.parse;
  */
 public class ParseException extends Exception {
 
-    public ParseException(String arg0) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -5028791536196754618L;
+
+	public ParseException(String arg0) {
         super(arg0);
     }
 

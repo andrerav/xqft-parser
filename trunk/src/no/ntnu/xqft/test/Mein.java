@@ -3,7 +3,6 @@ package no.ntnu.xqft.test;
 import java.io.*;
 import java.util.HashMap;
 
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 
@@ -20,9 +19,7 @@ import org.antlr.runtime.MismatchedSetException;
 import org.antlr.runtime.MismatchedTokenException;
 import org.antlr.runtime.MismatchedTreeNodeException;
 import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.Token;
-import org.antlr.runtime.tree.CommonTree;
 
 /**
  * Chaoz class, everything r0xx
@@ -148,7 +145,7 @@ public class Mein {
 	private void lagGraf(String infil, String utfil) {
 		try{//dot -Tpdf -odoc/img/graphs/$$i.pdf
 			Runtime rt = Runtime.getRuntime();
-			Process p = rt.exec("dot " + infil + " -Tpdf -o" + utfil);
+			rt.exec("dot " + infil + " -Tpdf -o" + utfil);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

@@ -6,7 +6,7 @@ package no.ntnu.xqft.tree;
 import java.util.ArrayList;
 
 import no.ntnu.xqft.parse.*;
-import no.ntnu.xqft.tree.operator.Operator;
+
 
 import org.antlr.runtime.*;
 

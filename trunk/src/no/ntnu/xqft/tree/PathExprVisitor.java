@@ -5,12 +5,10 @@ package no.ntnu.xqft.tree;
 
 import java.util.*;
 
-import com.sun.org.apache.xerces.internal.dom.DeepNodeListImpl;
 
 import no.ntnu.xqft.parse.XQFTTree;
 import no.ntnu.xqft.tree.operator.*;
-import no.ntnu.xqft.tree.param.*;
-import no.ntnu.xqft.tree.*;
+
 
 /**
  * @author andreas, MAAAATZ
@@ -20,7 +18,7 @@ public class PathExprVisitor extends RelalgVisitor {
 
 	protected PathExprVisitor parent = null;
 	
-	protected Stack<String> pathStack = null;
+	protected PathExpression pathExpression = null;
 	protected int predLvl = 0;									
 	protected boolean inPathExpr = false;
 
@@ -29,27 +27,7 @@ public class PathExprVisitor extends RelalgVisitor {
 	{	
 		relAlgTree = new OperatorTree();
 	}
-		
-	protected String getPathFromStack(Stack<String> st, int n)
-	{
-		StringBuffer retur = new StringBuffer();
-		
-		int steps = 0;
-		
-		for(int i = 0; i < st.size(); i++)
-		{
-			retur.append(st.elementAt(i));
-			if(!st.elementAt(i).equals("/"))
-				steps++;
-			if(steps == n)
-				break;
-
-		}
-		if(retur.charAt(retur.length()-1) == '/')
-			retur.setLength(retur.length()-1);
-		return retur.toString();
-	}
-	
+			
     
     public NodeReturn visitAST_MODULE(XQFTTree node) {
        // System.out.println("AST_MODULE");
@@ -66,30 +44,9 @@ public class PathExprVisitor extends RelalgVisitor {
 	protected void startRelPathExpr() {
 		predLvl = 0;
 		inPathExpr = true;
-		pathStack = new Stack<String>();
+		pathExpression = new PathExpression();
 	}
-	
-	/**
-	 * Will be run after traversing _ANY_ path expression
-	 *
-	 */
-	protected NodeReturn endPathExpr() {
-
-		inPathExpr = false;
-
-		//TODO: sjekke om det virkelig er element og ikke attributt f.eks.
-		Operator returnThis = new Index("valocc", new Lookup("$" + pathStack.peek()));
-		
-		if(pathStack.size() > 2)
-			returnThis = new Scope(getPathFromStack(pathStack, predLvl-1), returnThis);
-		
-		returnThis.setType(NodeReturnType.REL_PATHEXPR);
-
-		
-		return returnThis;
-	}
-    
-    
+	 
     
     public NodeReturn visitAST_STEPEXPR(XQFTTree node) {
     	
@@ -100,44 +57,42 @@ public class PathExprVisitor extends RelalgVisitor {
     		startRelPathExpr();
     	}
 
-        acceptThis(node.getChild(0));
+        NodeReturn child = acceptThis(node.getChild(0));
+        
+        if(child != null) // No axis direction modifier -> defaul is child::
+        	if(child.type == NodeReturnType.NCName)
+        		pathExpression.add(((TextReturn)child).getText(), PathExpression.CHILD);
         predLvl++;
 
 	     
 	    if(thisIsTop) //Single step path expression
 	    {
-	    	return endPathExpr();
+	    	return pathExpression.getRelAlg();
 	    }   
         return null;
     }
     
 
 	public NodeReturn visitNCName(XQFTTree node) {
-		if(inPathExpr)
-			pathStack.push(node.getText());
-        return null;
+        return new TextReturn(node.getText());
     }
 
 	public NodeReturn visitAST_PATHEXPR_DBL(XQFTTree tree) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub -> må være omtrent som AST_PATHEXPR_SGL
 		return null;
 	}
 
 	public NodeReturn visitAST_PATHEXPR_SGL(XQFTTree node) {
 
 		inPathExpr = true;
-		pathStack = new Stack<String>();
+		pathExpression = new PathExpression();
     	
-        pathStack.push("/");
+        pathExpression.add("/", PathExpression.ABSEXPR);
         predLvl = 0;
         
         acceptThis(node.getChild(0)); 
-
-
-        NodeReturn returnThis = endPathExpr();
-        returnThis.setType(NodeReturnType.ABS_PATHEXPR);        
-        
-        return returnThis;
+                
+        return pathExpression.getRelAlg();
     }
     
     public NodeReturn visitSLASHSi(XQFTTree node) {
@@ -150,12 +105,12 @@ public class PathExprVisitor extends RelalgVisitor {
 		}
 
 		acceptThis(node.getChild(0));
-		pathStack.push("/");
+		//TODO: noe må kanskje gjøres med slashen her... har hittil ordna det i StepExpr -> implisitt child ting
 		acceptThis(node.getChild(1));
 					
 		if(thisIsTop)
 		{
-			return endPathExpr();
+			return pathExpression.getRelAlg();
 		}
 		
 		return null;
@@ -184,7 +139,7 @@ public class PathExprVisitor extends RelalgVisitor {
 //        }
 //        
 //        And and = new And(operators);
-//        and.setType(NodeReturnType.PRED_REL); // TODO: noe riktig
+//        and.setType(NodeReturnType.PRED_REL); 
 //
 //        return and.getTree();
         return null;
@@ -203,19 +158,26 @@ public class PathExprVisitor extends RelalgVisitor {
 		switch (preds.getType()) {
 		case TRUE_AND_FALSE:
 		case REL_PATHEXPR:
+			//TODO: corner case: predicate in last step, something is wrong with isInScope()
 	    	String[] key1 = {"documentId"};
 	    	String[] key2 = {"documentId"};
 	    	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
-			MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, pathExpr.getTree(), preds.getTree());
+			MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, preds.getTree(), pathExpr.getTree());
 
 			
 			//isInScope(a, b) if a has an equal but deeper path than b -> true
-			Select select = new Select("isInScope(scope_prefix(" + (predVisitor.predLvl -1) +",scope), scopeLeft)", mergeJoin);
+			Select select = new Select("isInScope(scope_prefix(" + (predVisitor.predLvl) +",scope), scopeLeft)", mergeJoin);
 
 			String[] projectArgs = {"DocumentId", "position", "value", "scope"};
-			returnThis  =  new Project(projectArgs, select); 					//to remove extra scope field			
+			returnThis  =  new Project(projectArgs, select); 					//to remove extra scope field
+			returnThis.type = pathExpr.type;				// preds is rel, so return depends on pathExpr
 			break;
 
+		case ABS_PATHEXPR:
+		case TRUE_OR_FALSE:
+			System.out.println("absolutt predikat");
+			returnThis = pathExpr;
+			break;
 		default:
 			System.err.println("RETURN TYPE ERROR: in visitSYNTH_PR_PATHEXPR() in PathExprVisitor");
 			break;
