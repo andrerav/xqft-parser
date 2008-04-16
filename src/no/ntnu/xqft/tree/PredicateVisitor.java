@@ -30,7 +30,7 @@ public class PredicateVisitor extends PathExprVisitor {
 
 	protected void startRelPathExpr()
 	{
-        pathExpression = parent.pathExpression.copy(predLvl); 
+        pathExpression = new PathExpression(parent.pathExpression, predLvl);
         inPathExpr = true;
 	}
 	

@@ -31,25 +31,44 @@ public class PathExpression {
 
 
 	private ArrayList<Step> stepList;
+	private PathExpression parent = null;
+	private int contextLvl = 0;						//This expr is a relative expr in a predicate
+													//on step contextLvl of its parent.
 	
 	public PathExpression()
 	{
 		stepList = new ArrayList<Step>();
 	}
 	
-	public int noOfSteps()
+	public PathExpression(PathExpression parent, int inLvl)
 	{
-		return stepList.size();
+		this();
+		this.parent = parent;
+		contextLvl = inLvl;
 	}
 	
-	public PathExpression copy(int steps)
+	public int noOfSteps()
 	{
-		PathExpression p = new PathExpression();
-		for(int i = 0; i <= steps; i++)
-			p.add(stepList.get(i));
-		
-		return p;
+		int tmp = 0;
+		if(stepList.get(0).axis == ABSEXPR)
+			tmp = -1;
+		return tmp + stepList.size();
 	}
+	
+	public int getAbsContextLvl()
+	{
+		return parent != null ? contextLvl + parent.getAbsContextLvl() : contextLvl;
+	}
+	
+	
+//	public PathExpression copy(int steps)
+//	{
+//		PathExpression p = new PathExpression();
+//		for(int i = 0; i <= steps; i++)
+//			p.add(stepList.get(i));
+//		
+//		return p;
+//	}
 	
 	private void add(Step s)
 	{
@@ -62,34 +81,46 @@ public class PathExpression {
 	}
 	
 
-	
-	
-	public NodeReturn getRelAlg()
+	private String getPath(int steps)
 	{
-		//TODO: sjekk om hva steps er etc... Denne støtter bare ren child/child/child
+		StringBuffer sb;
+		if(parent != null){
+			sb = new StringBuffer(parent.getPath(contextLvl));
+			if(noOfSteps() > 1)
+				sb.append("/");
+		}
+		else
+			sb = new StringBuffer();
 		
-		StringBuffer sb = new StringBuffer();
-		for(int i = 0; i < stepList.size()-1; i++)
+		int no = 0;
+		for(int i = 0; (i < stepList.size()) && no < steps; i++)
 		{
 			switch (stepList.get(i).axis) {
 			case ABSEXPR:
 				sb.append(stepList.get(i).step);
 				break;
 			case CHILD:
+				no++;
 				sb.append(stepList.get(i).step);
-				if(i < stepList.size()-2)
+				if(no != (steps))
 					sb.append("/");
 			default:
 				break;
 			}
 		}
-		
+		return sb.toString();
+	}
+	
+	public NodeReturn getRelAlg()
+	{
+		//TODO: sjekk om hva steps er etc... Denne støtter bare ren child/child/child
+
 		Operator returnThis = new Index("valocc", new Lookup("$" + stepList.get(stepList.size()-1).step));
 		
-		if(stepList.size() > 1)
-			returnThis = new Scope(sb.toString(), returnThis);
+		if(stepList.size() > 1 || parent != null)
+			returnThis = new Scope(getPath(noOfSteps()-1), returnThis);
 		
-		if(stepList.get(0).axis != PathExpression.ABSEXPR)
+		if(stepList.get(0).axis == PathExpression.ABSEXPR)
 			returnThis.setType(NodeReturnType.ABS_PATHEXPR);
 		else
 			returnThis.setType(NodeReturnType.REL_PATHEXPR);

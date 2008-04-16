@@ -166,7 +166,7 @@ public class PathExprVisitor extends RelalgVisitor {
 
 			
 			//isInScope(a, b) if a has an equal but deeper path than b -> true
-			Select select = new Select("isInScope(scope_prefix(" + (predVisitor.predLvl) +",scope), scopeLeft)", mergeJoin);
+			Select select = new Select("isInScope(scope_prefix(" + (predVisitor.pathExpression.getAbsContextLvl()) +",scope), scopeLeft)", mergeJoin);
 
 			String[] projectArgs = {"DocumentId", "position", "value", "scope"};
 			returnThis  =  new Project(projectArgs, select); 					//to remove extra scope field
