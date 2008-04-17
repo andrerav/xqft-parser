@@ -451,7 +451,8 @@ exprSingle :
         forClause : FOR forClauseTupletDef (COMMASi forClauseTupletDef)*
             -> ^(AST_FORCLAUSE forClauseTupletDef+);
 
-            forClauseTupletDef : DOLLARSi! varName typeDeclaration? positionalVar? ftScoreVar? IN! exprSingle;
+            forClauseTupletDef : DOLLARSi varName typeDeclaration? positionalVar? ftScoreVar? IN exprSingle
+            	-> ^(DOLLARSi varName exprSingle);
 
             varName returns [String name] : qn=qName {$name = $qn.text;};
             positionalVar : AT DOLLARSi varName;
@@ -461,9 +462,9 @@ exprSingle :
             -> ^(AST_LETCLAUSE varBinding+);
 
         varBinding :
-            (DOLLARSi! v=varName typeDeclaration? | SCORE DOLLARSi v=varName )
+            (DOLLARSi v=varName typeDeclaration? | SCORE DOLLARSi v=varName )
             ASSIGNSi exprSingle
-            -> SCORE? $v typeDeclaration? exprSingle;
+            -> ^(DOLLARSi $v exprSingle);
 
         
         whereClause : WHERE exprSingle

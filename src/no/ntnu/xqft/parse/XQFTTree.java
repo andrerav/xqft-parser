@@ -35,9 +35,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 //System.err.println("method not implemented: visitAST_MODULE()");
                 //break;
             case XQFTParser.AST_FLWOR:
-                //return visitor.visitAST_FLWOR(this);
-                System.err.println("method not implemented: visitAST_FLWOR()");
-                break;
+                return visitor.visitAST_FLWOR(this);
+                //System.err.println("method not implemented: visitAST_FLWOR()");
+                //break;
             case XQFTParser.AST_FORCLAUSE:
                 //return visitor.visitAST_FORCLAUSE(this);
                 System.err.println("method not implemented: visitAST_FORCLAUSE()");

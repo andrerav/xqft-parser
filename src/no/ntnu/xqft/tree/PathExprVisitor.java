@@ -15,9 +15,6 @@ import no.ntnu.xqft.tree.operator.*;
  *
  */
 public class PathExprVisitor extends RelalgVisitor {
-
-    /* Symbol scope */
-    protected Scope scope = new Scope();
     
 	protected PathExprVisitor parent = null;
 	
@@ -248,18 +245,14 @@ public class PathExprVisitor extends RelalgVisitor {
     }
 
 
-    /**
-     * @return the scope
+    /* (non-Javadoc)
+     * @see no.ntnu.xqft.tree.Visitor#visitAST_FLWOR(no.ntnu.xqft.parse.XQFTTree)
      */
-    public Scope getScope() {
-        return scope;
+    public NodeReturn visitAST_FLWOR(XQFTTree tree) {
+        // TODO Auto-generated method stub
+        return null;
     }
-
-
-    /**
-     * @param scope the scope to set
-     */
-    public void setScope(Scope scope) {
-        this.scope = scope;
-    }
+    
+    
+    
 }

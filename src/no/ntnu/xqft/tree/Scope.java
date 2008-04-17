@@ -39,8 +39,6 @@ public class Scope {
         instance = instance.getParent();
     }
     
-    
-    
     /* Parent scope, or null if root */
     protected Scope parent = null;
 
@@ -113,7 +111,6 @@ public class Scope {
         this.symTab = symTab;
     }
 
-    
     /**
      * Define a function with a parameter list
      * 
