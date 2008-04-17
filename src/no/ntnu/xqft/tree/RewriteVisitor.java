@@ -274,4 +274,10 @@ public class RewriteVisitor implements Visitor {
 		return null;
 	}
 
+
+    public NodeReturn visitAST_FUNCTIONCALL(XQFTTree tree) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
 }

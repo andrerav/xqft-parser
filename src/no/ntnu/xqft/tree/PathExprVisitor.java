@@ -168,7 +168,7 @@ public class PathExprVisitor extends RelalgVisitor {
 			//isInScope(a, b) if a has an equal but deeper path than b -> true
 			Select select = new Select("isInScope(scope_prefix(" + (predVisitor.pathExpression.getAbsContextLvl()) +",scope), scopeLeft)", mergeJoin);
 
-			String[] projectArgs = {"DocumentId", "position", "value", "scope"};
+			String[] projectArgs = {"documentId", "position", "value", "scope"};
 			returnThis  =  new Project(projectArgs, select); 					//to remove extra scope field
 			returnThis.type = pathExpr.type;				// preds is rel, so return depends on pathExpr
 			break;
@@ -192,4 +192,41 @@ public class PathExprVisitor extends RelalgVisitor {
 		System.err.println("TRAVERSE ERROR: visitSYNTH_PR_LVL() in PathExprVisitor");
 		return null;
 	}
+	
+
+	/*
+	 * Translates a document("file.xml") function call into a select expression
+	 * to filter on document ids
+	 * 
+	 * (non-Javadoc)
+	 * @see no.ntnu.xqft.tree.Visitor#visitAST_FUNCTIONCALL(no.ntnu.xqft.parse.XQFTTree)
+	 */
+    public NodeReturn visitAST_FUNCTIONCALL(XQFTTree tree) {
+        
+        String funcname = tree.getChild(0).getText();
+        
+        /* See if this is a document() call */
+        if (funcname.equals("document")) {
+            
+            String filename = tree.getChild(1).getText();
+            
+            /* Assumes there is a internal get_docid() function which returns 
+             * the document id for a given file name in the document collection. 
+             */
+            Select select = new Select("eq(get_docid(" + filename + "), documentId)");
+            
+            /* Er dette riktig måte å gjøre det på? Ser ut til å funke så lenge 
+             * det ikke er inni et predikat 
+             */
+            if (this.relAlgTree.getTree() != null) {
+                select.addOperator(this.relAlgTree.getTree());
+                this.relAlgTree.setTree(select);
+            }
+            else {
+                this.relAlgTree.setTree(select);
+                this.relAlgTree.setInsertMark(select);
+            }
+        }
+        return null;
+    }
 }
