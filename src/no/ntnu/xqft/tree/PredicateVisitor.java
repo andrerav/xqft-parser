@@ -25,6 +25,7 @@ public class PredicateVisitor extends PathExprVisitor {
 	{
 		this();
 		parent = patExprVis;
+		this.scope.setParent(parent.getScope());
 	}
 	
 
