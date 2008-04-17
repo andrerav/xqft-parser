@@ -25,7 +25,6 @@ public class PredicateVisitor extends PathExprVisitor {
 	{
 		this();
 		parent = patExprVis;
-		this.scope.setParent(parent.getScope());
 	}
 	
 
@@ -47,5 +46,13 @@ public class PredicateVisitor extends PathExprVisitor {
 		return returnThis;
 	}
 	
+    /* (non-Javadoc)
+     * @see no.ntnu.xqft.tree.Visitor#visitAST_FLWOR(no.ntnu.xqft.parse.XQFTTree)
+     */
+    public NodeReturn visitAST_FLWOR(XQFTTree tree) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+    
 	
 }

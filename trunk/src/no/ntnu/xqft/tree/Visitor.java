@@ -21,13 +21,10 @@ public interface Visitor {
     public NodeReturn visitNCName(XQFTTree tree);
 	public NodeReturn visitAST_PREDICATE(XQFTTree tree);
     public NodeReturn visitAND(XQFTTree tree);
-
 	public NodeReturn visitSYNTH_PR_PATHEXPR(XQFTTree tree);
-
 	public NodeReturn visitAST_PATHEXPR_DBL(XQFTTree tree);
-
 	public NodeReturn visitSYNTH_PR_LVL(XQFTTree tree);
-	
     public NodeReturn visitAST_FUNCTIONCALL(XQFTTree tree);
+    public NodeReturn visitAST_FLWOR(XQFTTree tree);
 	
 }
