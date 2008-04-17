@@ -86,8 +86,7 @@ public class PathExpression {
 		StringBuffer sb;
 		if(parent != null){
 			sb = new StringBuffer(parent.getPath(contextLvl));
-			if(noOfSteps() > 1)
-				sb.append("/");
+			sb.append("/");
 		}
 		else
 			sb = new StringBuffer();
@@ -117,7 +116,7 @@ public class PathExpression {
 
 		Operator returnThis = new Index("valocc", new Lookup("$" + stepList.get(stepList.size()-1).step));
 		
-		if(stepList.size() > 1 || parent != null)
+		if(noOfSteps() > 1 || parent != null)
 			returnThis = new Scope(getPath(noOfSteps()-1), returnThis);
 		
 		if(stepList.get(0).axis == PathExpression.ABSEXPR)
