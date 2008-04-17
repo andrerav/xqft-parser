@@ -461,7 +461,7 @@ exprSingle :
             -> ^(AST_LETCLAUSE varBinding+);
 
         varBinding :
-            (DOLLARSi v=varName typeDeclaration? | SCORE DOLLARSi v=varName )
+            (DOLLARSi! v=varName typeDeclaration? | SCORE DOLLARSi v=varName )
             ASSIGNSi exprSingle
             -> SCORE? $v typeDeclaration? exprSingle;
 
@@ -681,7 +681,7 @@ filterExpr : primaryExpr predicateList;
         | unorderedExpr 
         | constructor
     ;
-        varRef : DOLLARSi! varName;
+        varRef : DOLLARSi^ varName;
         parenthesizedExpr : LPARSi! expr? RPARSi!;
         functionCall : 
             qName LPARSi /* xgc: reserved-function-namesXQ */

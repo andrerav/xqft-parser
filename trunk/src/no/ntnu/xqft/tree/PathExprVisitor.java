@@ -109,6 +109,7 @@ public class PathExprVisitor extends RelalgVisitor {
 
 		acceptThis(node.getChild(0));
 		//TODO: noe må kanskje gjøres med slashen her... har hittil ordna det i StepExpr -> implisitt child ting
+		// iallefall med dblSlash
 		acceptThis(node.getChild(1));
 					
 		if(thisIsTop)
@@ -224,7 +225,7 @@ public class PathExprVisitor extends RelalgVisitor {
         /* See if this is a document() call */
         if (funcname.equals("document")) {
             
-            String filename = tree.getChild(1).getText();
+            String filename = tree.getChild(1).getText(); //TODO: bør la den besøke barnet, og evt la det returneres. Sjekk TextReturn..
             
             /* Assumes there is a internal get_docid() function which returns 
              * the document id for a given file name in the document collection. 
