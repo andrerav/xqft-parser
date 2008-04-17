@@ -1,7 +1,7 @@
 package no.ntnu.xqft.test;
 
 import java.io.*;
-import java.util.HashMap;
+import java.util.*;
 
 import javax.swing.JOptionPane;
 
@@ -94,54 +94,65 @@ public class Mein {
 	public static void main(String[] args) throws Exception
 	{
         Mein m = new Mein();
-     //                  01234567890123456789012345678901234567890123456789
-		String input =  JOptionPane.showInputDialog("spørring");//"for $i in /a/b where 1 and /a/@u and /a/b/@x return $i";
+        String input;
+        
+        /* Check if query was given as arg */
+        if (args.length > 0) {
+            input = args[0];
+            
+            File file;
+            
+            /* If arg is a file, then read contents instead */
+            if ((file = new File(input)).exists()) {
+                Scanner scan = new Scanner(file);
+                scan.useDelimiter("\\Z"); // EOF
+                input = scan.next();
+            }
+        }
+        
+        /* Last resort */
+        else {
+            input =  JOptionPane.showInputDialog("spørring");//"for $i in /a/b where 1 and /a/@u and /a/b/@x return $i";            
+        }
+        
+        /* Create lexer */
 		CharStream cs = new ANTLRStringStream(input);
 		XQFTLexer lexer = new XQFTLexer(cs);
 		UnbufferedCommonTokenStream tokens = new UnbufferedCommonTokenStream();
-        //CommonTokenStream tokens = new CommonTokenStream();
 		tokens.setTokenSource(lexer);
-		/*
-		List hefty = tokens.getTokens();
-		int ant = hefty.size();
-		for(int i = 0; i < ant; i++)
-		{
-			Token tok = (Token)hefty.get(i);
-			System.out.println(tok.getTokenIndex() + ": " + tok.getText() + " type: " + m.text(tok.getType()) + " charpos: " + tok.getCharPositionInLine() + " linje: " + tok.getLine());
-		}
-		*/
-        //lexer.debug = true;
-        XQFTParser parser = new XQFTParser(tokens);
+
+		/* Create parser */
+		XQFTParser parser = new XQFTParser(tokens);
         parser.setTreeAdaptor(new XQFTTreeAdaptor());
         parser.setLexer(lexer);
-		XQFTParser.module_return tre = m.kjorSporring(parser);
+
+        XQFTParser.module_return tre = m.kjorSporring(parser);
+        
 		if(tre != null)
 		{
-		XQFTTree tree = (XQFTTree)tre.getTree();
-
-
-		System.out.println("\n" + input + "\n");
-		
-        /* Execute rewrite visitor on tree */
-        RewriteVisitor rwvisitor = new RewriteVisitor();
-        rwvisitor.visit(tree);
-		
-		System.out.println(tree.toStringTree() + "\n\n");
-		m.skrivTilFil(tree.toDotStringTree(), "tekstNode.txt");
-		m.lagGraf("tekstNode.txt", "graf.pdf");
-		
-        PathExprVisitor visitor = new PathExprVisitor();       
-        Operator top = visitor.visit(tree);
-        
-        
-
-        System.out.println(top.toPrettyString(0));
+    		XQFTTree tree = (XQFTTree)tre.getTree();
+    
+    		System.out.println("\n" + input + "\n");
+    		
+            /* Execute rewrite visitor on tree */
+            RewriteVisitor rwvisitor = new RewriteVisitor();
+            rwvisitor.visit(tree);
+    		
+    		System.out.println(tree.toStringTree() + "\n\n");
+    		m.skrivTilFil(tree.toDotStringTree(), "tekstNode.txt");
+    		m.lagGraf("tekstNode.txt", "graf.pdf");
+    		
+            PathExprVisitor visitor = new PathExprVisitor();       
+            Operator top = visitor.visit(tree);
+            
+            System.out.println(top.toPrettyString(0));
 		}		
 
 
 		System.out.println("\ndone");
 
 	}
+	
 	private void lagGraf(String infil, String utfil) {
 		try{//dot -Tpdf -odoc/img/graphs/$$i.pdf
 			Runtime rt = Runtime.getRuntime();
@@ -152,84 +163,82 @@ public class Mein {
 		
 	}
 
-
-
-private String getErrorMessage(Exception e) {
-    String msg = null;
-    
-   // RecognitionException e = (RecognitionException)ve;
-    
-    if ( e instanceof MismatchedTokenException ) {
-        MismatchedTokenException mte = (MismatchedTokenException)e;
-        String tokenName="<unknown>";
-        if ( mte.expecting== Token.EOF ) {
-            tokenName = "EOF";
+    private String getErrorMessage(Exception e) {
+        String msg = null;
+        
+       // RecognitionException e = (RecognitionException)ve;
+        
+        if ( e instanceof MismatchedTokenException ) {
+            MismatchedTokenException mte = (MismatchedTokenException)e;
+            String tokenName="<unknown>";
+            if ( mte.expecting== Token.EOF ) {
+                tokenName = "EOF";
+            }
+            else {
+                tokenName = XQFTParser.tokenNames[mte.expecting];
+            }
+            msg = "mismatched input "+getTokenErrorDisplay(mte.token)+
+                " expecting "+tokenName;
         }
-        else {
-            tokenName = XQFTParser.tokenNames[mte.expecting];
+        else if ( e instanceof MismatchedTreeNodeException ) {
+            MismatchedTreeNodeException mtne = (MismatchedTreeNodeException)e;
+            String tokenName="<unknown>";
+            if ( mtne.expecting==Token.EOF ) {
+                tokenName = "EOF";
+            }
+            else {
+                tokenName = XQFTParser.tokenNames[mtne.expecting];
+            }
+            msg = "mismatched tree node: "+mtne.node+
+                " expecting "+tokenName;
         }
-        msg = "mismatched input "+getTokenErrorDisplay(mte.token)+
-            " expecting "+tokenName;
-    }
-    else if ( e instanceof MismatchedTreeNodeException ) {
-        MismatchedTreeNodeException mtne = (MismatchedTreeNodeException)e;
-        String tokenName="<unknown>";
-        if ( mtne.expecting==Token.EOF ) {
-            tokenName = "EOF";
+        else if ( e instanceof NoViableAltException ) {
+            NoViableAltException nvae = (NoViableAltException)e;
+            // for development, can add "decision=<<"+nvae.grammarDecisionDescription+">>"
+            // and "(decision="+nvae.decisionNumber+") and
+            // "state "+nvae.stateNumber
+            msg = "no viable alternative at input "+getTokenErrorDisplay(nvae.token);
         }
-        else {
-            tokenName = XQFTParser.tokenNames[mtne.expecting];
+        else if ( e instanceof EarlyExitException ) {
+            EarlyExitException eee = (EarlyExitException)e;
+            // for development, can add "(decision="+eee.decisionNumber+")"
+            msg = "required (...)+ loop did not match anything at input "+
+                getTokenErrorDisplay(eee.token);
         }
-        msg = "mismatched tree node: "+mtne.node+
-            " expecting "+tokenName;
-    }
-    else if ( e instanceof NoViableAltException ) {
-        NoViableAltException nvae = (NoViableAltException)e;
-        // for development, can add "decision=<<"+nvae.grammarDecisionDescription+">>"
-        // and "(decision="+nvae.decisionNumber+") and
-        // "state "+nvae.stateNumber
-        msg = "no viable alternative at input "+getTokenErrorDisplay(nvae.token);
-    }
-    else if ( e instanceof EarlyExitException ) {
-        EarlyExitException eee = (EarlyExitException)e;
-        // for development, can add "(decision="+eee.decisionNumber+")"
-        msg = "required (...)+ loop did not match anything at input "+
-            getTokenErrorDisplay(eee.token);
-    }
-    else if ( e instanceof MismatchedSetException ) {
-        MismatchedSetException mse = (MismatchedSetException)e;
-        msg = "mismatched input "+getTokenErrorDisplay(mse.token)+
-            " expecting set "+mse.expecting;
-    }
-    else if ( e instanceof MismatchedNotSetException ) {
-        MismatchedNotSetException mse = (MismatchedNotSetException)e;
-        msg = "mismatched input "+getTokenErrorDisplay(mse.token)+
-            " expecting set "+mse.expecting;
-    }
-    else if ( e instanceof FailedPredicateException ) {
-        FailedPredicateException fpe = (FailedPredicateException)e;
-        msg = "rule "+fpe.ruleName+" failed predicate: {"+
-            fpe.predicateText+"}?";
-    }
-    else{
-        msg = e.getMessage() + " - " + e.getClass().getCanonicalName();
-        e.printStackTrace();
-    }
-    return msg;
-}
-public String getTokenErrorDisplay(Token t) {
-    String s = t.getText();
-    if ( s==null ) {
-        if ( t.getType()==Token.EOF ) {
-            s = "<EOF>";
+        else if ( e instanceof MismatchedSetException ) {
+            MismatchedSetException mse = (MismatchedSetException)e;
+            msg = "mismatched input "+getTokenErrorDisplay(mse.token)+
+                " expecting set "+mse.expecting;
         }
-        else {
-            s = "<"+t.getType()+">";
+        else if ( e instanceof MismatchedNotSetException ) {
+            MismatchedNotSetException mse = (MismatchedNotSetException)e;
+            msg = "mismatched input "+getTokenErrorDisplay(mse.token)+
+                " expecting set "+mse.expecting;
         }
+        else if ( e instanceof FailedPredicateException ) {
+            FailedPredicateException fpe = (FailedPredicateException)e;
+            msg = "rule "+fpe.ruleName+" failed predicate: {"+
+                fpe.predicateText+"}?";
+        }
+        else{
+            msg = e.getMessage() + " - " + e.getClass().getCanonicalName();
+            e.printStackTrace();
+        }
+        return msg;
     }
-    s = s.replaceAll("\n","\\\\n");
-    s = s.replaceAll("\r","\\\\r");
-    s = s.replaceAll("\t","\\\\t");
-    return "'"+s+"'";
-}
+    public String getTokenErrorDisplay(Token t) {
+        String s = t.getText();
+        if ( s==null ) {
+            if ( t.getType()==Token.EOF ) {
+                s = "<EOF>";
+            }
+            else {
+                s = "<"+t.getType()+">";
+            }
+        }
+        s = s.replaceAll("\n","\\\\n");
+        s = s.replaceAll("\r","\\\\r");
+        s = s.replaceAll("\t","\\\\t");
+        return "'"+s+"'";
+    }
 }
