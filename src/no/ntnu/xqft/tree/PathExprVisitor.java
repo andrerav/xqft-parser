@@ -270,7 +270,7 @@ public class PathExprVisitor extends RelalgVisitor {
         
         Scope.pop();
         
-        return expr.getTree();
+        return expr;
         
     }
 
@@ -285,7 +285,7 @@ public class PathExprVisitor extends RelalgVisitor {
         }
         
         else {
-            return Scope.get(key).getTree();
+            return Scope.get(key);
         }
     }
 
