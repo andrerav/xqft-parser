@@ -29,5 +29,7 @@ public interface Visitor {
 	public NodeReturn visitSYNTH_PR_LVL(XQFTTree tree);
     public NodeReturn visitAST_FUNCTIONCALL(XQFTTree tree);
     public NodeReturn visitAST_FLWOR(XQFTTree tree);
+    public NodeReturn visitDOLLARSi(XQFTTree tree);
+    public NodeReturn visitAST_FORCLAUSE(XQFTTree tree);
 	
 }

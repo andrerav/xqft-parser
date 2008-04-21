@@ -148,6 +148,7 @@ public class Mein {
             System.out.println(top.toPrettyString(0));
 		}		
 
+		System.out.println(Scope.getSymtab().toString());
 
 		System.out.println("\ndone");
 
