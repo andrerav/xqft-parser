@@ -5,6 +5,9 @@ package no.ntnu.xqft.tree;
 
 import java.util.*;
 
+import no.ntnu.xqft.tree.nodereturn.NodeReturn;
+import no.ntnu.xqft.tree.nodereturn.NodeReturnType;
+
 
 import no.ntnu.xqft.parse.XQFTTree;
 import no.ntnu.xqft.tree.operator.*;
@@ -59,10 +62,10 @@ public class PathExprVisitor extends RelalgVisitor {
 
         NodeReturn child = acceptThis(node.getChild(0));
         
-        if(child != null) // No axis direction modifier -> defaul is child::
-        	if(child.type == NodeReturnType.NCName)
-        		pathExpression.add(((TextReturn)child).getText(), PathExpression.CHILD);
-        predLvl++;
+//        if(child != null) // No axis direction modifier -> defaul is child::
+//        	if(child.type == NodeReturnType.NCName)
+//        		pathExpression.add(((TextReturn)child).getText(), PathExpression.CHILD);
+//        predLvl++;
 
 	     
 	    if(thisIsTop) //Single step path expression
@@ -74,7 +77,8 @@ public class PathExprVisitor extends RelalgVisitor {
     
 
 	public NodeReturn visitNCName(XQFTTree node) {
-        return new TextReturn(node.getText());
+//        return new TextReturn(node.getText());
+		return null;
     }
 
 	public NodeReturn visitAST_PATHEXPR_DBL(XQFTTree tree) {
@@ -157,40 +161,40 @@ public class PathExprVisitor extends RelalgVisitor {
 		switch (preds.getType()) {
 		case TRUE_AND_FALSE:
 		case REL_PATHEXPR:
-			//TODO: corner case: predicate in last step, something is wrong with isInScope(), or is it?
-	    	String[] key1 = {"documentId"};
-	    	String[] key2 = {"documentId"};
-	    	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
-			MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, preds.getTree(), pathExpr.getTree());
-
-			
-			//isInScope(a, b) if a has an equal but deeper path than b -> true
-			Select select = new Select("isInScope(scope_prefix(" + (predVisitor.pathExpression.getAbsContextLvl()) +",scopeLeft), scope)", mergeJoin);
-
-			String[] projectArgs = {"documentId", "position", "value", "scope"};
-			returnThis  =  new Project(projectArgs, select); 					//to remove extra scope field
-			returnThis.type = pathExpr.type;				// preds is rel, so return depends on pathExpr
-			break;
-
-		//abs_
-		case ABS_PATHEXPR:
-		case TRUE_OR_FALSE:
-			Group abs_group = new Group("count()", preds.getTree());
-			String[] abs_projectArgs = {"exists = ifthenelse(eq(count, 0),0,1)"};
-			Project abs_project = new Project(abs_projectArgs, abs_group);
-			
-			String[] abs_projectArgsPath = {"exists = 1", "DocumentId", "position", "value", "scope"};
-			Project abs_projectPath = new Project(abs_projectArgsPath, pathExpr.getTree());
-			
-			String[] abs_key1 = {"exists"};
-			String[] abs_key2 = {"exists"};
-			String[] abs_projectList = {"DocumentId", "position", "value", "scope"};
-			MergeJoin abs_mergeJoin = new MergeJoin(abs_key1, abs_key2, abs_projectList, abs_project, abs_projectPath);
-			
-			String[] abs_projectArgs_done = {"DocumentId", "position", "value", "scope"};
-			returnThis = new Project(abs_projectArgs_done, abs_mergeJoin);
-			returnThis.type = NodeReturnType.ABS_PATHEXPR;
-			
+//			//TODO: corner case: predicate in last step, something is wrong with isInScope(), or is it?
+//	    	String[] key1 = {"documentId"};
+//	    	String[] key2 = {"documentId"};
+//	    	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
+//			MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, preds.getTree(), pathExpr.getTree());
+//
+//			
+//			//isInScope(a, b) if a has an equal but deeper path than b -> true
+//			Select select = new Select("isInScope(scope_prefix(" + (predVisitor.pathExpression.getAbsContextLvl()) +",scopeLeft), scope)", mergeJoin);
+//
+//			String[] projectArgs = {"documentId", "position", "value", "scope"};
+//			returnThis  =  new Project(projectArgs, select); 					//to remove extra scope field
+//			returnThis.type = pathExpr.type;				// preds is rel, so return depends on pathExpr
+//			break;
+//
+//		//abs_
+//		case ABS_PATHEXPR:
+//		case TRUE_OR_FALSE:
+//			Group abs_group = new Group("count()", preds.getTree());
+//			String[] abs_projectArgs = {"exists = ifthenelse(eq(count, 0),0,1)"};
+//			Project abs_project = new Project(abs_projectArgs, abs_group);
+//			
+//			String[] abs_projectArgsPath = {"exists = 1", "DocumentId", "position", "value", "scope"};
+//			Project abs_projectPath = new Project(abs_projectArgsPath, pathExpr.getTree());
+//			
+//			String[] abs_key1 = {"exists"};
+//			String[] abs_key2 = {"exists"};
+//			String[] abs_projectList = {"DocumentId", "position", "value", "scope"};
+//			MergeJoin abs_mergeJoin = new MergeJoin(abs_key1, abs_key2, abs_projectList, abs_project, abs_projectPath);
+//			
+//			String[] abs_projectArgs_done = {"DocumentId", "position", "value", "scope"};
+//			returnThis = new Project(abs_projectArgs_done, abs_mergeJoin);
+//			returnThis.type = NodeReturnType.ABS_PATHEXPR;
+//			
 			break;
 		default:
 			System.err.println("RETURN TYPE ERROR: " + preds.getType() + " in visitSYNTH_PR_PATHEXPR() in PathExprVisitor");

@@ -3,11 +3,12 @@ package no.ntnu.xqft.tree;
 import no.ntnu.xqft.tree.operator.Operator;
 
 /**
+ * Put on hold.
  * Keeper of the rel.alg. tree, master of the augmentations. Arise my child! Warhammer +5
  * @author flassmeister
  *
  */
-public class OperatorTree extends NodeReturn {
+public class OperatorTree {
 
 	private Operator top;
 	private Operator insertAt;
@@ -25,12 +26,6 @@ public class OperatorTree extends NodeReturn {
 		insertAt = null;
 	}
 	
-	public OperatorTree(Operator o, NodeReturnType t)
-	{
-		top = o;
-		insertAt = null;
-		type = t;
-	}
 	
 	public Operator getTree()
 	{

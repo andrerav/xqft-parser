@@ -5,6 +5,8 @@ package no.ntnu.xqft.tree;
 
 import java.util.*;
 
+import no.ntnu.xqft.tree.nodereturn.NodeReturn;
+
 /**
  * Class scope
  * 

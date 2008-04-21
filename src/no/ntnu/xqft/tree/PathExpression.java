@@ -2,6 +2,9 @@ package no.ntnu.xqft.tree;
 
 import java.util.ArrayList;
 
+import no.ntnu.xqft.tree.nodereturn.NodeReturn;
+import no.ntnu.xqft.tree.nodereturn.NodeReturnType;
+
 import no.ntnu.xqft.tree.operator.Index;
 import no.ntnu.xqft.tree.operator.Lookup;
 import no.ntnu.xqft.tree.operator.Operator;
@@ -112,21 +115,23 @@ public class PathExpression {
 	
 	public NodeReturn getRelAlg()
 	{
-		//TODO: sjekk om hva steps er etc... Denne støtter bare ren child/child/child
-
-		Operator returnThis = new Index("valocc", new Lookup("$" + stepList.get(stepList.size()-1).step));
+//		//TODO: sjekk om hva steps er etc... Denne støtter bare ren child/child/child
+//
+//		Operator returnThis = new Index("valocc", new Lookup("$" + stepList.get(stepList.size()-1).step));
+//		
+//		if(noOfSteps() > 1 || parent != null)
+//			returnThis = new Scope(getPath(noOfSteps()-1), returnThis);
+//		
+//		if(stepList.get(0).axis == PathExpression.ABSEXPR)
+//			returnThis.setType(NodeReturnType.ABS_PATHEXPR);
+//		else
+//			returnThis.setType(NodeReturnType.REL_PATHEXPR);
+//		
+//		
+//		
+//		return returnThis;
 		
-		if(noOfSteps() > 1 || parent != null)
-			returnThis = new Scope(getPath(noOfSteps()-1), returnThis);
-		
-		if(stepList.get(0).axis == PathExpression.ABSEXPR)
-			returnThis.setType(NodeReturnType.ABS_PATHEXPR);
-		else
-			returnThis.setType(NodeReturnType.REL_PATHEXPR);
-		
-		
-		
-		return returnThis;
+		return null;
 	}
 	
 	

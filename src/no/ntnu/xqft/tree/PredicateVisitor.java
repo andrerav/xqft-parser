@@ -3,7 +3,8 @@
  */
 package no.ntnu.xqft.tree;
 
-import java.util.Stack;
+
+import no.ntnu.xqft.tree.nodereturn.NodeReturn;
 
 import no.ntnu.xqft.parse.XQFTTree;
 
