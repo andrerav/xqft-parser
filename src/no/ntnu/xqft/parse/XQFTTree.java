@@ -39,9 +39,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 //System.err.println("method not implemented: visitAST_FLWOR()");
                 //break;
             case XQFTParser.AST_FORCLAUSE:
-                //return visitor.visitAST_FORCLAUSE(this);
-                System.err.println("method not implemented: visitAST_FORCLAUSE()");
-                break;
+                return visitor.visitAST_FORCLAUSE(this);
+                //System.err.println("method not implemented: visitAST_FORCLAUSE()");
+                //break;
             case XQFTParser.AST_LETCLAUSE:
                 //return visitor.visitAST_LETCLAUSE(this);
                 System.err.println("method not implemented: visitAST_LETCLAUSE()");
@@ -255,9 +255,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 System.err.println("method not implemented: visitVARIABLE()");
                 break;
             case XQFTParser.DOLLARSi:
-                //return visitor.visitDOLLARSi(this);
-                System.err.println("method not implemented: visitDOLLARSi()");
-                break;
+                return visitor.visitDOLLARSi(this);
+                //System.err.println("method not implemented: visitDOLLARSi()");
+                //break;
             case XQFTParser.ASSIGNSi:
                 //return visitor.visitASSIGNSi(this);
                 System.err.println("method not implemented: visitASSIGNSi()");
