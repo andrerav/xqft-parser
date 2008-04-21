@@ -176,6 +176,8 @@ AST_PREDICATE;
 AST_DIRELEMCONSTRUCTOR;
 AST_DIRELEMCONTENT;
 
+AST_ENCLOSEDEXPR;
+
 //For rewrite purposes:
 SYNTH_PR_PATHEXPR;	// predicated path expression. Predicates are moved out of the path expression and made children of this node.
 SYNTH_PR_LVL;		// which step in the pathExpr the predicate belongs to.
@@ -391,9 +393,9 @@ functionDecl :
     paramList    : param (COMMASi param)*;
         param    : DOLLARSi qName typeDeclaration?;
     enclosedExpr : 
-        LBRACESi
-        expr 
-        RBRACSi
+        LBRACESi!
+        thisExprIsEnclosed 
+        RBRACSi!
     ;
 
 optionDecl : OPTION qName StringLiteral;
@@ -539,7 +541,7 @@ ftSelection : ftOr ftPosFilter* (WEIGHT rangeExpr)?;
                                 | ftExtensionSelection
                             ;
                         ftWords : ftWordsValue^ ftAnyallOption?;
-                            ftWordsValue : literal | (LBRACESi expr RBRACSi);
+                            ftWordsValue : literal | (LBRACESi! thisExprIsEnclosed RBRACSi!);
                                 literal : numericLiteral | StringLiteral;
                                     numericLiteral : IntegerLiteral | DecimalLiteral | DoubleLiteral;
                             ftAnyallOption : (ANY WORD?) | (ALL WORDS?) | PHRASE;
@@ -547,7 +549,7 @@ ftSelection : ftOr ftPosFilter* (WEIGHT rangeExpr)?;
                             ftRange : (EXACTLY additiveExpr)
                                       | (AT (LEAST|MOST) additiveExpr)
                                       | (FROM additiveExpr TO additiveExpr);
-                        ftExtensionSelection : pragma+ LBRACESi ftSelection? RBRACSi;
+                        ftExtensionSelection : pragma+ LBRACESi! thisFTSelectionIsEnclosed? RBRACSi!;
                             pragma : LPRAGSi! qName PragmaContents? RPRAGSi!;
                             
     ftPosFilter : ftOrder | ftWindow | ftDistance | ftScope | ftContent;
@@ -611,7 +613,7 @@ ftMatchOption :
 //---------------------------------------------- ValueExpr ----------------------------------------------------
 
 valueExpr : validateExpr | pathExpr | extensionExpr;
-    validateExpr : VALIDATE validationMode? LBRACESi expr RBRACSi;
+    validateExpr : VALIDATE validationMode? LBRACESi! thisExprIsEnclosed RBRACSi!;
         validationMode : LAX | STRICT;
             
     pathExpr :
@@ -668,7 +670,7 @@ valueExpr : validateExpr | pathExpr | extensionExpr;
                     predicate : LBRACKSi expr RBRACKSi
                                     -> ^(AST_PREDICATE expr);
                 
-    extensionExpr : pragma+ LBRACESi expr? RBRACSi; 
+    extensionExpr : pragma+ LBRACESi! thisExprIsEnclosed? RBRACSi!; 
 
 //------------------------------------------------------- FilterExpr ---------------------------------------------------------
 
@@ -690,8 +692,8 @@ filterExpr : primaryExpr predicateList;
             RPARSi
                 -> ^(AST_FUNCTIONCALL qName exprSingle*);
 
-        orderedExpr : ORDERED LBRACESi expr RBRACSi;
-        unorderedExpr : UNORDERED LBRACESi expr RBRACSi;    
+        orderedExpr : ORDERED LBRACESi! thisExprIsEnclosed RBRACSi!;
+        unorderedExpr : UNORDERED LBRACESi! thisExprIsEnclosed RBRACSi!;    
         constructor : directConstructor | computedConstructor;    
             directConstructor : 
                 dirElemConstructor
@@ -724,9 +726,9 @@ filterExpr : primaryExpr predicateList;
                             APOSSi! {lexer.state=State.IN_TAG;}
                         ; 
                         xmlEnclosedExpr : 
-                            LBRACESi {lexer.stack.pushState(lexer.state); lexer.state=State.DEFAULT;} 
-                                expr 
-                            RBRACSi {lexer.state = lexer.stack.pop();}
+                            LBRACESi! {lexer.stack.pushState(lexer.state); lexer.state=State.DEFAULT;} 
+                                thisExprIsEnclosed 
+                            RBRACSi! {lexer.state = lexer.stack.pop();}
                         ;
 
                     dirElemContent : 
@@ -751,28 +753,37 @@ filterExpr : primaryExpr predicateList;
                 | compPIConstructor
             ; 
 
-                compDocConstructor : DOCUMENT LBRACESi expr RBRACSi;
+                compDocConstructor : DOCUMENT LBRACESi! thisExprIsEnclosed RBRACSi!;
 
                 compElemConstructor : 
-                    ELEMENT (qName | LBRACESi expr RBRACSi) 
-                    LBRACESi contentExpr? RBRACSi
+                    ELEMENT (qName | LBRACESi! thisExprIsEnclosed RBRACSi!) 
+                    LBRACESi! thisExprIsEnclosed? RBRACSi!
                 ;
                     contentExpr : expr;
 
                 compAttrConstructor : 
-                    ATTRIBUTE (qName | (LBRACESi expr RBRACSi)) 
-                    LBRACESi expr? RBRACSi
+                    ATTRIBUTE (qName | (LBRACESi! thisExprIsEnclosed RBRACSi!)) 
+                    LBRACESi! expr? RBRACSi!
                  ;
 
-                compTextConstructor : TEXT LBRACESi expr RBRACSi;
+                compTextConstructor : TEXT LBRACESi! thisExprIsEnclosed RBRACSi!;
 
-                compCommentConstructor : COMMENT LBRACESi expr RBRACSi;
+                compCommentConstructor : COMMENT LBRACESi! thisExprIsEnclosed RBRACSi!;
 
                 compPIConstructor : 
                     PROCESSING_INSTRUCTION 
-                        (ncNameorKeyword | (LBRACESi expr RBRACSi)) 
-                    LBRACESi expr? RBRACSi
+                        (ncNameorKeyword | (LBRACESi! thisExprIsEnclosed RBRACSi!)) 
+                    LBRACESi! thisExprIsEnclosed? RBRACSi!
                 ;
+
+// Used for enclosed expressions
+thisExprIsEnclosed:
+	expr -> ^(AST_ENCLOSEDEXPR expr);
+
+thisFTSelectionIsEnclosed:
+	ftSelection -> ^(AST_ENCLOSEDEXPR ftSelection);
+	
+	
 
 //-------------------------------------------------- NCName or Keyword? --------------------------------------------------
 
