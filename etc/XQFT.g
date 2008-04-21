@@ -391,9 +391,9 @@ functionDecl :
     paramList    : param (COMMASi param)*;
         param    : DOLLARSi qName typeDeclaration?;
     enclosedExpr : 
-        LBRACESi! 
+        LBRACESi
         expr 
-        RBRACSi!
+        RBRACSi
     ;
 
 optionDecl : OPTION qName StringLiteral;
@@ -539,7 +539,7 @@ ftSelection : ftOr ftPosFilter* (WEIGHT rangeExpr)?;
                                 | ftExtensionSelection
                             ;
                         ftWords : ftWordsValue^ ftAnyallOption?;
-                            ftWordsValue : literal | (LBRACESi! expr RBRACSi!);
+                            ftWordsValue : literal | (LBRACESi expr RBRACSi);
                                 literal : numericLiteral | StringLiteral;
                                     numericLiteral : IntegerLiteral | DecimalLiteral | DoubleLiteral;
                             ftAnyallOption : (ANY WORD?) | (ALL WORDS?) | PHRASE;
@@ -547,7 +547,7 @@ ftSelection : ftOr ftPosFilter* (WEIGHT rangeExpr)?;
                             ftRange : (EXACTLY additiveExpr)
                                       | (AT (LEAST|MOST) additiveExpr)
                                       | (FROM additiveExpr TO additiveExpr);
-                        ftExtensionSelection : pragma+ LBRACESi! ftSelection? RBRACSi!;
+                        ftExtensionSelection : pragma+ LBRACESi ftSelection? RBRACSi;
                             pragma : LPRAGSi! qName PragmaContents? RPRAGSi!;
                             
     ftPosFilter : ftOrder | ftWindow | ftDistance | ftScope | ftContent;
@@ -611,7 +611,7 @@ ftMatchOption :
 //---------------------------------------------- ValueExpr ----------------------------------------------------
 
 valueExpr : validateExpr | pathExpr | extensionExpr;
-    validateExpr : VALIDATE validationMode? LBRACESi! expr RBRACSi!;
+    validateExpr : VALIDATE validationMode? LBRACESi expr RBRACSi;
         validationMode : LAX | STRICT;
             
     pathExpr :
@@ -668,7 +668,7 @@ valueExpr : validateExpr | pathExpr | extensionExpr;
                     predicate : LBRACKSi expr RBRACKSi
                                     -> ^(AST_PREDICATE expr);
                 
-    extensionExpr : pragma+ LBRACESi! expr? RBRACSi!; 
+    extensionExpr : pragma+ LBRACESi expr? RBRACSi; 
 
 //------------------------------------------------------- FilterExpr ---------------------------------------------------------
 
@@ -690,8 +690,8 @@ filterExpr : primaryExpr predicateList;
             RPARSi
                 -> ^(AST_FUNCTIONCALL qName exprSingle*);
 
-        orderedExpr : ORDERED LBRACESi! expr RBRACSi!;
-        unorderedExpr : UNORDERED LBRACESi! expr RBRACSi!;    
+        orderedExpr : ORDERED LBRACESi expr RBRACSi;
+        unorderedExpr : UNORDERED LBRACESi expr RBRACSi;    
         constructor : directConstructor | computedConstructor;    
             directConstructor : 
                 dirElemConstructor
@@ -724,9 +724,9 @@ filterExpr : primaryExpr predicateList;
                             APOSSi! {lexer.state=State.IN_TAG;}
                         ; 
                         xmlEnclosedExpr : 
-                            LBRACESi! {lexer.stack.pushState(lexer.state); lexer.state=State.DEFAULT;} 
+                            LBRACESi {lexer.stack.pushState(lexer.state); lexer.state=State.DEFAULT;} 
                                 expr 
-                            RBRACSi! {lexer.state = lexer.stack.pop();}
+                            RBRACSi {lexer.state = lexer.stack.pop();}
                         ;
 
                     dirElemContent : 
@@ -751,7 +751,7 @@ filterExpr : primaryExpr predicateList;
                 | compPIConstructor
             ; 
 
-                compDocConstructor : DOCUMENT LBRACESi! expr RBRACSi!;
+                compDocConstructor : DOCUMENT LBRACESi expr RBRACSi;
 
                 compElemConstructor : 
                     ELEMENT (qName | LBRACESi expr RBRACSi) 
@@ -760,18 +760,18 @@ filterExpr : primaryExpr predicateList;
                     contentExpr : expr;
 
                 compAttrConstructor : 
-                    ATTRIBUTE (qName | (LBRACESi! expr RBRACSi!)) 
-                    LBRACESi! expr? RBRACSi!
+                    ATTRIBUTE (qName | (LBRACESi expr RBRACSi)) 
+                    LBRACESi expr? RBRACSi
                  ;
 
-                compTextConstructor : TEXT LBRACESi! expr RBRACSi!;
+                compTextConstructor : TEXT LBRACESi expr RBRACSi;
 
-                compCommentConstructor : COMMENT LBRACESi! expr RBRACSi!;
+                compCommentConstructor : COMMENT LBRACESi expr RBRACSi;
 
                 compPIConstructor : 
                     PROCESSING_INSTRUCTION 
-                        (ncNameorKeyword | (LBRACESi! expr RBRACSi!)) 
-                    LBRACESi! expr? RBRACSi!
+                        (ncNameorKeyword | (LBRACESi expr RBRACSi)) 
+                    LBRACESi expr? RBRACSi
                 ;
 
 //-------------------------------------------------- NCName or Keyword? --------------------------------------------------
