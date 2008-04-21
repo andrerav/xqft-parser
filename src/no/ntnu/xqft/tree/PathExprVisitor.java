@@ -280,11 +280,14 @@ public class PathExprVisitor extends RelalgVisitor {
         
         if (tree.getChildCount() > 1) {
             TraverseReturn result = acceptThis(tree.getChild(1));
+            System.out.println("OMG SET " + key + " " + result);
             Scope.set(key, result);
             return null;
         }
         
         else {
+            System.out.println(Scope.getSymtab().toString());
+            System.out.println("OMG GET " + Scope.get(key));
             return Scope.get(key);
         }
     }
@@ -297,6 +300,18 @@ public class PathExprVisitor extends RelalgVisitor {
             acceptThis(tree.getChild(i));
         }
 
+        return null;
+    }
+
+
+    public TraverseReturn visitAST_ENCLOSEDEXPR(XQFTTree tree) {
+        
+        Scope.push();
+
+        acceptThis(tree.getChild(0));
+
+        Scope.pop();
+        
         return null;
     }
 }
