@@ -5,11 +5,11 @@ package no.ntnu.xqft.tree;
 
 import java.util.*;
 
-import no.ntnu.xqft.tree.nodereturn.NodeReturn;
-import no.ntnu.xqft.tree.nodereturn.NodeReturnType;
 
 import no.ntnu.xqft.parse.*;
 import no.ntnu.xqft.tree.operator.*;
+import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
+import no.ntnu.xqft.tree.traversereturn.TraverseReturnType;
 
 
 /**
@@ -31,10 +31,10 @@ public class PathExprVisitor extends RelalgVisitor {
 	}
 			
     
-    public NodeReturn visitAST_MODULE(XQFTTree node) {
+    public TraverseReturn visitAST_MODULE(XQFTTree node) {
        // System.out.println("AST_MODULE");
         
-        relAlgTree.insert(acceptThis(node.getChild(0)).getTree());
+        //relAlgTree.insert(acceptThis(node.getChild(0)).getTree());
         return null;
         
     }
@@ -50,7 +50,7 @@ public class PathExprVisitor extends RelalgVisitor {
 	}
 	 
     
-    public NodeReturn visitAST_STEPEXPR(XQFTTree node) {
+    public TraverseReturn visitAST_STEPEXPR(XQFTTree node) {
     	
     	boolean thisIsTop = false;
     	if(!inPathExpr)
@@ -59,7 +59,7 @@ public class PathExprVisitor extends RelalgVisitor {
     		startRelPathExpr();
     	}
 
-        NodeReturn child = acceptThis(node.getChild(0));
+        TraverseReturn child = acceptThis(node.getChild(0));
         
 //        if(child != null) // No axis direction modifier -> defaul is child::
 //        	if(child.type == NodeReturnType.NCName)
@@ -76,17 +76,17 @@ public class PathExprVisitor extends RelalgVisitor {
     }
     
 
-	public NodeReturn visitNCName(XQFTTree node) {
+	public TraverseReturn visitNCName(XQFTTree node) {
 //        return new TextReturn(node.getText());
 		return null;
     }
 
-	public NodeReturn visitAST_PATHEXPR_DBL(XQFTTree tree) {
+	public TraverseReturn visitAST_PATHEXPR_DBL(XQFTTree tree) {
 		// TODO Auto-generated method stub -> må være omtrent som AST_PATHEXPR_SGL
 		return null;
 	}
 
-	public NodeReturn visitAST_PATHEXPR_SGL(XQFTTree node) {
+	public TraverseReturn visitAST_PATHEXPR_SGL(XQFTTree node) {
 
 		inPathExpr = true;
 		pathExpression = new PathExpression();
@@ -100,7 +100,7 @@ public class PathExprVisitor extends RelalgVisitor {
         return pathExpression.getRelAlg();
     }
     
-    public NodeReturn visitSLASHSi(XQFTTree node) {
+    public TraverseReturn visitSLASHSi(XQFTTree node) {
       
 		boolean thisIsTop = false;
 		if(!inPathExpr)								// Top of the pathExpr tree
@@ -123,7 +123,7 @@ public class PathExprVisitor extends RelalgVisitor {
 		return null;
     }
 
-	public NodeReturn visitAST_PREDICATE(XQFTTree tree) {
+	public TraverseReturn visitAST_PREDICATE(XQFTTree tree) {
 		
 		System.err.println("TRAVERSING ERROR: visitAST_PREDICATE in PathExprVisitor");
 		return null;
@@ -133,7 +133,7 @@ public class PathExprVisitor extends RelalgVisitor {
 	
 
 
-    public NodeReturn visitAND(XQFTTree tree) {
+    public TraverseReturn visitAND(XQFTTree tree) {
         
 //        ArrayList<Operator> operators = new ArrayList<Operator>(tree.getChildCount());
 //        
@@ -152,13 +152,13 @@ public class PathExprVisitor extends RelalgVisitor {
 
 
 
-	public NodeReturn visitSYNTH_PR_PATHEXPR(XQFTTree tree) {
+	public TraverseReturn visitSYNTH_PR_PATHEXPR(XQFTTree tree) {
 
-		NodeReturn returnThis = null;
+		TraverseReturn returnThis = null;
 		
-		NodeReturn pathExpr = acceptThis(tree.getChild(0));
+		TraverseReturn pathExpr = acceptThis(tree.getChild(0));
 		PredicateVisitor predVisitor = new PredicateVisitor(this);
-		NodeReturn preds = predVisitor.acceptThis(tree.getChild(1));
+		TraverseReturn preds = predVisitor.acceptThis(tree.getChild(1));
 		
 		switch (preds.getType()) {
 		case TRUE_AND_FALSE:
@@ -208,7 +208,7 @@ public class PathExprVisitor extends RelalgVisitor {
 		return returnThis;
 	}
 
-	public NodeReturn visitSYNTH_PR_LVL(XQFTTree tree) {
+	public TraverseReturn visitSYNTH_PR_LVL(XQFTTree tree) {
 		System.err.println("TRAVERSE ERROR: visitSYNTH_PR_LVL() in PathExprVisitor");
 		return null;
 	}
@@ -221,7 +221,7 @@ public class PathExprVisitor extends RelalgVisitor {
 	 * (non-Javadoc)
 	 * @see no.ntnu.xqft.tree.Visitor#visitAST_FUNCTIONCALL(no.ntnu.xqft.parse.XQFTTree)
 	 */
-    public NodeReturn visitAST_FUNCTIONCALL(XQFTTree tree) {
+    public TraverseReturn visitAST_FUNCTIONCALL(XQFTTree tree) {
         
         String funcname = tree.getChild(0).getText();
         
@@ -256,7 +256,7 @@ public class PathExprVisitor extends RelalgVisitor {
      * (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_FLWOR(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturn visitAST_FLWOR(XQFTTree tree) {
+    public TraverseReturn visitAST_FLWOR(XQFTTree tree) {
         
         Scope.push();
         
@@ -266,7 +266,7 @@ public class PathExprVisitor extends RelalgVisitor {
         }
 
         /* Child count should always be >= 2. This is the return expression */
-        NodeReturn expr = acceptThis(tree.getChild(tree.getChildCount() - 1));
+        TraverseReturn expr = acceptThis(tree.getChild(tree.getChildCount() - 1));
         
         Scope.pop();
         
@@ -274,12 +274,12 @@ public class PathExprVisitor extends RelalgVisitor {
         
     }
 
-    public NodeReturn visitDOLLARSi(XQFTTree tree) {
+    public TraverseReturn visitDOLLARSi(XQFTTree tree) {
         
         String key = tree.getChild(0).getText();
         
         if (tree.getChildCount() > 1) {
-            NodeReturn result = acceptThis(tree.getChild(1));
+            TraverseReturn result = acceptThis(tree.getChild(1));
             Scope.set(key, result);
             return null;
         }
@@ -290,7 +290,7 @@ public class PathExprVisitor extends RelalgVisitor {
     }
 
 
-    public NodeReturn visitAST_FORCLAUSE(XQFTTree tree) {
+    public TraverseReturn visitAST_FORCLAUSE(XQFTTree tree) {
         
         /* Visit all children */
         for (int i = 0; i < (tree.getChildCount()); i++) {

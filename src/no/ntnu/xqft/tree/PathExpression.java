@@ -2,13 +2,13 @@ package no.ntnu.xqft.tree;
 
 import java.util.ArrayList;
 
-import no.ntnu.xqft.tree.nodereturn.NodeReturn;
-import no.ntnu.xqft.tree.nodereturn.NodeReturnType;
 
 import no.ntnu.xqft.tree.operator.Index;
 import no.ntnu.xqft.tree.operator.Lookup;
 import no.ntnu.xqft.tree.operator.Operator;
 import no.ntnu.xqft.tree.operator.Scope;
+import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
+import no.ntnu.xqft.tree.traversereturn.TraverseReturnType;
 
 /**
  * Class to hold pathexpressions as they unfold and are loved. It also generates relALG
@@ -113,7 +113,7 @@ public class PathExpression {
 		return sb.toString();
 	}
 	
-	public NodeReturn getRelAlg()
+	public TraverseReturn getRelAlg()
 	{
 //		//TODO: sjekk om hva steps er etc... Denne støtter bare ren child/child/child
 //

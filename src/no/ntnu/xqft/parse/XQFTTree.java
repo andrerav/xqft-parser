@@ -4,13 +4,12 @@
 package no.ntnu.xqft.parse;
 
 import no.ntnu.xqft.parse.XQFTParser;
-import no.ntnu.xqft.tree.nodereturn.NodeReturn;
 import no.ntnu.xqft.tree.Visitor;
 
 import org.antlr.runtime.Token;
 import org.antlr.runtime.tree.*;
 
-import no.ntnu.xqft.tree.nodereturn.NodeReturn;
+import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
 
 /**
  * @author andreas
@@ -21,7 +20,7 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Node#accept(no.ntnu.xqft.tree.Operator)
      */
-    public NodeReturn accept(Visitor visitor) {
+    public TraverseReturn accept(Visitor visitor) {
 
 
         switch(this.getType()) {

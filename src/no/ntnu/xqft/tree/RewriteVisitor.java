@@ -3,8 +3,8 @@
  */
 package no.ntnu.xqft.tree;
 
-import no.ntnu.xqft.tree.nodereturn.NodeReturn;
 import no.ntnu.xqft.tree.operator.Operator;
+import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ public class RewriteVisitor implements Visitor {
 	private boolean inPathExpr = false;
 	private int predLvl = 0;
 	
-    private NodeReturn acceptThis(org.antlr.runtime.tree.Tree tree) 
+    private TraverseReturn acceptThis(org.antlr.runtime.tree.Tree tree) 
     {
         return ((XQFTTree)tree).accept(this);
     }
@@ -72,12 +72,12 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_MODULE(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturn visitAST_MODULE(XQFTTree tree) {
+    public TraverseReturn visitAST_MODULE(XQFTTree tree) {
     	visitAllChildren(tree);
     	return null;
     }
 
-    public NodeReturn visitAST_STEPEXPR(XQFTTree node) {
+    public TraverseReturn visitAST_STEPEXPR(XQFTTree node) {
 
     	boolean thisIsTop = false;
     	if(!inPathExpr)
@@ -177,7 +177,7 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitSLASHSi(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturn visitSLASHSi(XQFTTree tree) {
+    public TraverseReturn visitSLASHSi(XQFTTree tree) {
     	boolean thisIsTop = false;
     	if(!inPathExpr)
     	{
@@ -204,7 +204,7 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_PATHEXPR_SGL(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturn visitAST_PATHEXPR_SGL(XQFTTree tree) {
+    public TraverseReturn visitAST_PATHEXPR_SGL(XQFTTree tree) {
 		inPathExpr = true;
 		predLvl = 0;
 		predicates = new ArrayList<XQFTTree>();
@@ -218,7 +218,7 @@ public class RewriteVisitor implements Visitor {
         return null;
     }
 
-	public NodeReturn visitAST_PATHEXPR_DBL(XQFTTree tree) {
+	public TraverseReturn visitAST_PATHEXPR_DBL(XQFTTree tree) {
 		inPathExpr = true;
 		predLvl = 0;
 		predicates = new ArrayList<XQFTTree>();
@@ -235,7 +235,7 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_PREDICATE(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturn visitAST_PREDICATE(XQFTTree tree) {
+    public TraverseReturn visitAST_PREDICATE(XQFTTree tree) {
         
     	RewriteVisitor rw = new RewriteVisitor();
     	rw.acceptThis(tree.getChild(0));
@@ -246,7 +246,7 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitNCName(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturn visitNCName(XQFTTree tree) {
+    public TraverseReturn visitNCName(XQFTTree tree) {
         this.visitAllChildren(tree);
 
         return null;
@@ -256,47 +256,47 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAND(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturn visitAND(XQFTTree tree) {
+    public TraverseReturn visitAND(XQFTTree tree) {
         this.visitAllChildren(tree);
 
         return null;
     }
 
-    public NodeReturn visitAST_RELATIVEPATHEXPR(XQFTTree tree) {
+    public TraverseReturn visitAST_RELATIVEPATHEXPR(XQFTTree tree) {
         // TODO Auto-generated method stub
         return null;
     }
 
-	public NodeReturn visitSYNTH_PR_PATHEXPR(XQFTTree tree) {
+	public TraverseReturn visitSYNTH_PR_PATHEXPR(XQFTTree tree) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
-	public NodeReturn visitSYNTH_PR_LVL(XQFTTree tree) {
+	public TraverseReturn visitSYNTH_PR_LVL(XQFTTree tree) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
-    public NodeReturn visitAST_FUNCTIONCALL(XQFTTree tree) {
+    public TraverseReturn visitAST_FUNCTIONCALL(XQFTTree tree) {
         // TODO Auto-generated method stub
         return null;
     }
 
-    public NodeReturn visitAST_FLWOR(XQFTTree tree) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-
-    public NodeReturn visitDOLLARSi(XQFTTree tree) {
+    public TraverseReturn visitAST_FLWOR(XQFTTree tree) {
         // TODO Auto-generated method stub
         return null;
     }
 
 
-    public NodeReturn visitAST_FORCLAUSE(XQFTTree tree) {
+    public TraverseReturn visitDOLLARSi(XQFTTree tree) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public TraverseReturn visitAST_FORCLAUSE(XQFTTree tree) {
         // TODO Auto-generated method stub
         return null;
     }
