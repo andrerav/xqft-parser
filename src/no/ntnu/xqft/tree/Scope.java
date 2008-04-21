@@ -176,4 +176,8 @@ public class Scope {
     public void setChildren(LinkedList<Scope> children) {
         this.children = children;
     }
+    
+    public static SymTab<String, NodeReturn> getSymtab() {
+        return instance.getSymTab();
+    }
 }
