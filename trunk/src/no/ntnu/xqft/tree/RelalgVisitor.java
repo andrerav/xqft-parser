@@ -3,10 +3,10 @@
  */
 package no.ntnu.xqft.tree;
 
-import no.ntnu.xqft.tree.nodereturn.NodeReturn;
 
 import no.ntnu.xqft.parse.XQFTTree;
 import no.ntnu.xqft.tree.operator.Operator;
+import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
 
 /**
  * @author andreas, MaaaaaaTz 
@@ -45,7 +45,7 @@ public abstract class RelalgVisitor implements Visitor {
     /*
      * Making things beautiful
      */
-    protected NodeReturn acceptThis(org.antlr.runtime.tree.Tree tree) 
+    protected TraverseReturn acceptThis(org.antlr.runtime.tree.Tree tree) 
     {
         return ((XQFTTree)tree).accept(this);
     }    

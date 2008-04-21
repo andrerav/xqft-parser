@@ -4,7 +4,7 @@
 package no.ntnu.xqft.tree;
 
 
-import no.ntnu.xqft.tree.nodereturn.NodeReturn;
+import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
 
 import no.ntnu.xqft.parse.XQFTTree;
 
@@ -35,14 +35,14 @@ public class PredicateVisitor extends PathExprVisitor {
         inPathExpr = true;
 	}
 	
-	public NodeReturn visitAST_PREDICATE(XQFTTree tree) {
+	public TraverseReturn visitAST_PREDICATE(XQFTTree tree) {
 		System.err.println("TRAVERSE ERROR: visitAST_PREDICATE() in PredicateVisitor");
 		return null;
 	}
     
-	public NodeReturn visitSYNTH_PR_LVL(XQFTTree tree) {
+	public TraverseReturn visitSYNTH_PR_LVL(XQFTTree tree) {
 		predLvl = tree.predLvl;
-		NodeReturn returnThis = acceptThis(tree.getChild(0));
+		TraverseReturn returnThis = acceptThis(tree.getChild(0));
 		predLvl = tree.predLvl;
 		return returnThis;
 	}
@@ -50,7 +50,7 @@ public class PredicateVisitor extends PathExprVisitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_FLWOR(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturn visitAST_FLWOR(XQFTTree tree) {
+    public TraverseReturn visitAST_FLWOR(XQFTTree tree) {
         // TODO Auto-generated method stub
         return null;
     }
