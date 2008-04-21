@@ -31,5 +31,6 @@ public interface Visitor {
     public TraverseReturn visitAST_FLWOR(XQFTTree tree);
     public TraverseReturn visitDOLLARSi(XQFTTree tree);
     public TraverseReturn visitAST_FORCLAUSE(XQFTTree tree);
+    public TraverseReturn visitAST_ENCLOSEDEXPR(XQFTTree tree);
 	
 }

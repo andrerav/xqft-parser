@@ -300,4 +300,10 @@ public class RewriteVisitor implements Visitor {
         // TODO Auto-generated method stub
         return null;
     }
+
+
+    public TraverseReturn visitAST_ENCLOSEDEXPR(XQFTTree tree) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
