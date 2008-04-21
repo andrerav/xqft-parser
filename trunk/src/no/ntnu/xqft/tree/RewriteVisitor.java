@@ -3,6 +3,9 @@
  */
 package no.ntnu.xqft.tree;
 
+import no.ntnu.xqft.tree.nodereturn.NodeReturn;
+import no.ntnu.xqft.tree.operator.Operator;
+
 import java.util.ArrayList;
 
 import no.ntnu.xqft.parse.*;
@@ -60,9 +63,10 @@ public class RewriteVisitor implements Visitor {
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visit(no.ntnu.xqft.parse.XQFTTree)
      */
-    public NodeReturn visit(XQFTTree node) {
+    public Operator visit(XQFTTree node) {
         //this.visitAllChildren(node);
-        return acceptThis(node);
+        //return acceptThis(node);
+    	return null;
     }
 
     /* (non-Javadoc)

@@ -4,12 +4,13 @@
 package no.ntnu.xqft.parse;
 
 import no.ntnu.xqft.parse.XQFTParser;
-import no.ntnu.xqft.tree.NodeReturn;
+import no.ntnu.xqft.tree.nodereturn.NodeReturn;
 import no.ntnu.xqft.tree.Visitor;
 
 import org.antlr.runtime.Token;
 import org.antlr.runtime.tree.*;
 
+import no.ntnu.xqft.tree.nodereturn.NodeReturn;
 
 /**
  * @author andreas

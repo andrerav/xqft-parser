@@ -3,6 +3,7 @@
  */
 package no.ntnu.xqft.tree;
 
+import no.ntnu.xqft.tree.nodereturn.NodeReturn;
 
 import no.ntnu.xqft.parse.XQFTTree;
 import no.ntnu.xqft.tree.operator.Operator;

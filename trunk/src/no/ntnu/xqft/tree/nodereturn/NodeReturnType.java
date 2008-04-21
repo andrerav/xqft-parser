@@ -1,4 +1,4 @@
-package no.ntnu.xqft.tree;
+package no.ntnu.xqft.tree.nodereturn;
 
 /**
  *  Part of simple type check system.

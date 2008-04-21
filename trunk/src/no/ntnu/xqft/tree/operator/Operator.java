@@ -2,10 +2,9 @@ package no.ntnu.xqft.tree.operator;
 
 import java.util.ArrayList;
 
-import no.ntnu.xqft.tree.NodeReturn;
 import no.ntnu.xqft.tree.param.*;
 
-public abstract class Operator extends NodeReturn {
+public abstract class Operator {
 
     protected String name;
 
