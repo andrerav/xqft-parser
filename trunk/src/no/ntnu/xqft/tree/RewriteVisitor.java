@@ -288,4 +288,16 @@ public class RewriteVisitor implements Visitor {
         // TODO Auto-generated method stub
         return null;
     }
+
+
+    public NodeReturn visitDOLLARSi(XQFTTree tree) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+
+    public NodeReturn visitAST_FORCLAUSE(XQFTTree tree) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }

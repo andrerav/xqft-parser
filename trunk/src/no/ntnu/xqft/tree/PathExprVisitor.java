@@ -8,8 +8,7 @@ import java.util.*;
 import no.ntnu.xqft.tree.nodereturn.NodeReturn;
 import no.ntnu.xqft.tree.nodereturn.NodeReturnType;
 
-
-import no.ntnu.xqft.parse.XQFTTree;
+import no.ntnu.xqft.parse.*;
 import no.ntnu.xqft.tree.operator.*;
 
 
@@ -70,7 +69,8 @@ public class PathExprVisitor extends RelalgVisitor {
 	     
 	    if(thisIsTop) //Single step path expression
 	    {
-	    	return pathExpression.getRelAlg();
+            inPathExpr = false;
+	        return pathExpression.getRelAlg();
 	    }   
         return null;
     }
@@ -96,6 +96,7 @@ public class PathExprVisitor extends RelalgVisitor {
         
         acceptThis(node.getChild(0)); 
                 
+        inPathExpr = false;
         return pathExpression.getRelAlg();
     }
     
@@ -112,9 +113,10 @@ public class PathExprVisitor extends RelalgVisitor {
 		//TODO: noe må kanskje gjøres med slashen her... har hittil ordna det i StepExpr -> implisitt child ting
 		// iallefall med dblSlash
 		acceptThis(node.getChild(1));
-					
+
 		if(thisIsTop)
 		{
+		    inPathExpr = false;
 			return pathExpression.getRelAlg();
 		}
 		
@@ -233,7 +235,8 @@ public class PathExprVisitor extends RelalgVisitor {
              */
             Select select = new Select("eq(get_docid(" + filename + "), documentId)");
             
-            /* Er dette riktig måte å gjøre det på? Ser ut til å funke så lenge 
+            /* 
+             * Er dette riktig måte å gjøre det på? Ser ut til å funke så lenge 
              * det ikke er inni et predikat 
              */
             if (this.relAlgTree.getTree() != null) {
@@ -249,14 +252,51 @@ public class PathExprVisitor extends RelalgVisitor {
     }
 
 
-    /* (non-Javadoc)
+    /**
+     * (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitAST_FLWOR(no.ntnu.xqft.parse.XQFTTree)
      */
     public NodeReturn visitAST_FLWOR(XQFTTree tree) {
-        // TODO Auto-generated method stub
+        
+        Scope.push();
+        
+        /* Visit all for/let/orderby/where clauses */
+        for (int i = 0; i < (tree.getChildCount() - 1); i++) {
+            acceptThis(tree.getChild(i));
+        }
+
+        /* Child count should always be >= 2. This is the return expression */
+        NodeReturn expr = acceptThis(tree.getChild(tree.getChildCount() - 1));
+        
+        Scope.pop();
+        
+        return expr.getTree();
+        
+    }
+
+    public NodeReturn visitDOLLARSi(XQFTTree tree) {
+        
+        String key = tree.getChild(0).getText();
+        
+        if (tree.getChildCount() > 1) {
+            NodeReturn result = acceptThis(tree.getChild(1));
+            Scope.set(key, result);
+            return null;
+        }
+        
+        else {
+            return Scope.get(key).getTree();
+        }
+    }
+
+
+    public NodeReturn visitAST_FORCLAUSE(XQFTTree tree) {
+        
+        /* Visit all children */
+        for (int i = 0; i < (tree.getChildCount()); i++) {
+            acceptThis(tree.getChild(i));
+        }
+
         return null;
     }
-    
-    
-    
 }
