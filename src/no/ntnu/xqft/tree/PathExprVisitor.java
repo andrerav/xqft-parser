@@ -221,7 +221,6 @@ public class PathExprVisitor extends RelalgVisitor {
         
         Scope.push();
         
-        
         TraverseReturn where = null;
         TraverseReturn orderBy = null;
         /* Visit all for/let/orderby/where clauses */
@@ -238,6 +237,7 @@ public class PathExprVisitor extends RelalgVisitor {
         TraverseReturn expr = acceptThis(tree.getChild(tree.getChildCount() - 1));
         
         Scope.pop();
+        
         if(where != null)
         	return expr.getRestricted(where, false);
         

@@ -132,7 +132,7 @@ public class Scope {
     public void setSym(String key, TraverseReturn node) {
 
         if (this.symTab.containsKey(key)) {
-            //throw new ParseException("Variable \"" + name + "\" previously declared");
+            //throw new ParseException("Variable \"" + name + "\" previously defined");
         }
         
         this.symTab.put(key, node);
@@ -176,7 +176,7 @@ public class Scope {
     public void setChildren(LinkedList<Scope> children) {
         this.children = children;
     }
-    
+
     public static SymTab<String, TraverseReturn> getSymtab() {
         return instance.getSymTab();
     }
