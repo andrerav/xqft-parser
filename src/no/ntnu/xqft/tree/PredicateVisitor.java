@@ -19,7 +19,7 @@ public class PredicateVisitor extends PathExprVisitor {
 	
 	public PredicateVisitor()
 	{	
-		relAlgTree = new OperatorTree();
+		//relAlgTree = new OperatorTree();
 	}
 	
 	public PredicateVisitor(PathExprVisitor patExprVis)

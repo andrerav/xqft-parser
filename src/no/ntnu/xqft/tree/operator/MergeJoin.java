@@ -102,4 +102,13 @@ public class MergeJoin extends Operator {
 //        
 //        return buffer.toString();
 //    }
+    
+    public MergeJoin(String args, Operator en, Operator to)
+    {
+    	super(null, null);
+    	this.name = "mergejoin";
+    	params.add(new Name(args));
+    	operators.add(en);
+    	operators.add(to);
+    }
 }

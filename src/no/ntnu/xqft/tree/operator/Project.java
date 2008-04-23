@@ -51,5 +51,13 @@ public class Project extends Operator {
     	operators.add(op);
     }
     
+    public Project(String arguments, Operator op)
+    {
+    	super(null, null);
+    	this.name = "project";
+    	params.add(new Name(arguments));
+    	operators.add(op);
+    }
+    
 
 }

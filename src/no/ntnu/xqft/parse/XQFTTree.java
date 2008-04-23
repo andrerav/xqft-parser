@@ -51,9 +51,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 System.err.println("method not implemented: visitAST_ORDERBYCLAUSE()");
                 break;
             case XQFTParser.AST_WHERECLAUSE:
-                //return visitor.visitAST_WHERECLAUSE(this);
-                System.err.println("method not implemented: visitAST_WHERECLAUSE()");
-                break;
+                return visitor.visitAST_WHERECLAUSE(this);
+                //System.err.println("method not implemented: visitAST_WHERECLAUSE()");
+                //break;
             case XQFTParser.AST_RETURNCLAUSE:
                 //return visitor.visitAST_RETURNCLAUSE(this);
                 System.err.println("method not implemented: visitAST_RETURNCLAUSE()");

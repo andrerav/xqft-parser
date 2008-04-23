@@ -3,9 +3,6 @@ package no.ntnu.xqft.test;
 import java.io.*;
 import java.util.*;
 
-import javax.swing.JOptionPane;
-
-
 import no.ntnu.xqft.parse.*;
 import no.ntnu.xqft.tree.*;
 import no.ntnu.xqft.tree.operator.Operator;
@@ -112,7 +109,7 @@ public class Mein {
         
         /* Last resort */
         else {
-            input =  JOptionPane.showInputDialog("spørring");//"for $i in /a/b where 1 and /a/@u and /a/b/@x return $i";            
+            input =  "for $i in /a[x]/b where /q return $i/hatt";            
         }
         
         /* Create lexer */

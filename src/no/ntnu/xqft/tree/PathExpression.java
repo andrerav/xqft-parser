@@ -7,8 +7,8 @@ import no.ntnu.xqft.tree.operator.Index;
 import no.ntnu.xqft.tree.operator.Lookup;
 import no.ntnu.xqft.tree.operator.Operator;
 import no.ntnu.xqft.tree.operator.Scope;
+import no.ntnu.xqft.tree.traversereturn.NodeSetReturn;
 import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
-import no.ntnu.xqft.tree.traversereturn.TraverseReturnType;
 
 /**
  * Class to hold pathexpressions as they unfold and are loved. It also generates relALG
@@ -16,6 +16,7 @@ import no.ntnu.xqft.tree.traversereturn.TraverseReturnType;
  *
  */
 public class PathExpression {
+
 	
 	public static final int ANCESTOR = 1;
 	public static final int PRECEDING_SIBLING = 2;
@@ -50,6 +51,12 @@ public class PathExpression {
 		contextLvl = inLvl;
 	}
 	
+	public void setParent(PathExpression parent, int inLvl)
+	{
+		this.parent = parent;
+		contextLvl = inLvl;
+	}
+	
 	public int noOfSteps()
 	{
 		int tmp = 0;
@@ -73,16 +80,30 @@ public class PathExpression {
 //		return p;
 //	}
 	
-	private void add(Step s)
-	{
-		stepList.add(s);
-	}
-	
 	public void add(String step, int axis)
 	{
 		stepList.add(new Step(step, axis));
 	}
 	
+	public boolean isAbsloute()
+	{
+		return stepList.get(0).axis == PathExpression.ABSEXPR;
+	}
+	
+	public String toString()
+	{
+		StringBuffer sb = new StringBuffer();
+		for(int i = 0; i < stepList.size(); i++)
+		{
+			sb.append(stepList.get(i));
+			if(!stepList.get(i).step.equals("/") && !stepList.get(i).step.equals("//"))
+				sb.append("/");
+		}
+		if(sb.lastIndexOf("/") == (sb.length() -1))
+			sb.setLength(sb.length()-1);
+		
+		return sb.toString();
+	}
 
 	private String getPath(int steps)
 	{
@@ -110,28 +131,24 @@ public class PathExpression {
 				break;
 			}
 		}
+		if(sb.lastIndexOf("/") == (sb.length() -1))
+			sb.setLength(sb.length()-1);
+		
 		return sb.toString();
 	}
 	
 	public TraverseReturn getRelAlg()
 	{
-//		//TODO: sjekk om hva steps er etc... Denne støtter bare ren child/child/child
-//
-//		Operator returnThis = new Index("valocc", new Lookup("$" + stepList.get(stepList.size()-1).step));
-//		
-//		if(noOfSteps() > 1 || parent != null)
-//			returnThis = new Scope(getPath(noOfSteps()-1), returnThis);
-//		
-//		if(stepList.get(0).axis == PathExpression.ABSEXPR)
-//			returnThis.setType(NodeReturnType.ABS_PATHEXPR);
-//		else
-//			returnThis.setType(NodeReturnType.REL_PATHEXPR);
-//		
-//		
-//		
-//		return returnThis;
+		//TODO: sjekk om hva steps er etc... Denne støtter bare ren child/child/child
+
+		Operator op = new Index("valocc", new Lookup("$" + stepList.get(stepList.size()-1).step));
 		
-		return null;
+		if(noOfSteps() > 1 || parent != null)
+			op = new Scope(getPath(noOfSteps()-1), op);
+		
+
+		return new NodeSetReturn(this, false, op);
+		
 	}
 	
 	

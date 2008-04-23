@@ -65,7 +65,7 @@ public class RewriteVisitor implements Visitor {
      */
     public Operator visit(XQFTTree node) {
         //this.visitAllChildren(node);
-        //return acceptThis(node);
+        acceptThis(node);
     	return null;
     }
 
@@ -262,48 +262,50 @@ public class RewriteVisitor implements Visitor {
         return null;
     }
 
-    public TraverseReturn visitAST_RELATIVEPATHEXPR(XQFTTree tree) {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
 	public TraverseReturn visitSYNTH_PR_PATHEXPR(XQFTTree tree) {
-		// TODO Auto-generated method stub
+		this.visitAllChildren(tree);
 		return null;
 	}
 
 
 	public TraverseReturn visitSYNTH_PR_LVL(XQFTTree tree) {
-		// TODO Auto-generated method stub
+		this.visitAllChildren(tree);
 		return null;
 	}
 
 
     public TraverseReturn visitAST_FUNCTIONCALL(XQFTTree tree) {
-        // TODO Auto-generated method stub
+        this.visitAllChildren(tree);
         return null;
     }
 
     public TraverseReturn visitAST_FLWOR(XQFTTree tree) {
-        // TODO Auto-generated method stub
+    	visitAllChildren(tree);
         return null;
     }
 
 
     public TraverseReturn visitDOLLARSi(XQFTTree tree) {
-        // TODO Auto-generated method stub
+        this.visitAllChildren(tree);
         return null;
     }
 
 
     public TraverseReturn visitAST_FORCLAUSE(XQFTTree tree) {
-        // TODO Auto-generated method stub
+        this.visitAllChildren(tree);
         return null;
     }
 
 
     public TraverseReturn visitAST_ENCLOSEDEXPR(XQFTTree tree) {
-        // TODO Auto-generated method stub
+        visitAllChildren(tree);
         return null;
     }
+
+
+	public TraverseReturn visitAST_WHERECLAUSE(XQFTTree tree) {
+		visitAllChildren(tree);
+		return null;
+	}
 }

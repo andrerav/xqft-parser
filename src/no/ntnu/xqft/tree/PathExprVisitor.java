@@ -3,13 +3,14 @@
  */
 package no.ntnu.xqft.tree;
 
-import java.util.*;
-
 
 import no.ntnu.xqft.parse.*;
-import no.ntnu.xqft.tree.operator.*;
+import no.ntnu.xqft.tree.traversereturn.NodeSetReturn;
+import no.ntnu.xqft.tree.traversereturn.TextReturn;
 import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
 import no.ntnu.xqft.tree.traversereturn.TraverseReturnType;
+import no.ntnu.xqft.tree.traversereturn.NodeSetReturn.NodeSetReturnType;
+import no.ntnu.xqft.tree.traversereturn.TextReturn.TextReturnType;
 
 
 /**
@@ -27,7 +28,7 @@ public class PathExprVisitor extends RelalgVisitor {
 	
 	public PathExprVisitor()
 	{	
-		relAlgTree = new OperatorTree();
+//		relAlgTree = new OperatorTree();
 	}
 			
     
@@ -35,7 +36,7 @@ public class PathExprVisitor extends RelalgVisitor {
        // System.out.println("AST_MODULE");
         
         //relAlgTree.insert(acceptThis(node.getChild(0)).getTree());
-        return null;
+        return acceptThis(node.getChild(0));
         
     }
     
@@ -61,24 +62,36 @@ public class PathExprVisitor extends RelalgVisitor {
 
         TraverseReturn child = acceptThis(node.getChild(0));
         
-//        if(child != null) // No axis direction modifier -> defaul is child::
-//        	if(child.type == NodeReturnType.NCName)
-//        		pathExpression.add(((TextReturn)child).getText(), PathExpression.CHILD);
-//        predLvl++;
+
+        if(child != null) // No axis direction modifier -> defaul is child::
+        {
+        	switch (child.getType()) {
+			case TEXT:
+				if(((TextReturn)child).getSubType() == TextReturnType.NCName)
+					pathExpression.add(((TextReturn)child).getText(), PathExpression.CHILD);
+				else
+					System.err.println("TYPE ERROR: Path expression contains type: " + ((TextReturn)child).getSubType());
+				break;
+
+			default:
+				break;
+			}
+        }
+        
+        predLvl++;
 
 	     
 	    if(thisIsTop) //Single step path expression
 	    {
-            inPathExpr = false;
-	        return pathExpression.getRelAlg();
+	    	return endPathExpr(null);		//no varRef can be a decendant of stepExpr
 	    }   
         return null;
     }
     
 
 	public TraverseReturn visitNCName(XQFTTree node) {
-//        return new TextReturn(node.getText());
-		return null;
+        return new TextReturn(node.getText(),TextReturnType.NCName);
+
     }
 
 	public TraverseReturn visitAST_PATHEXPR_DBL(XQFTTree tree) {
@@ -94,10 +107,9 @@ public class PathExprVisitor extends RelalgVisitor {
         pathExpression.add("/", PathExpression.ABSEXPR);
         predLvl = 0;
         
-        acceptThis(node.getChild(0)); 
+        TraverseReturn child = acceptThis(node.getChild(0)); 
                 
-        inPathExpr = false;
-        return pathExpression.getRelAlg();
+        return endPathExpr(child);
     }
     
     public TraverseReturn visitSLASHSi(XQFTTree node) {
@@ -109,19 +121,28 @@ public class PathExprVisitor extends RelalgVisitor {
 			startRelPathExpr();
 		}
 
-		acceptThis(node.getChild(0));
+		TraverseReturn child = acceptThis(node.getChild(0)); //VarRef must be left child
 		//TODO: noe må kanskje gjøres med slashen her... har hittil ordna det i StepExpr -> implisitt child ting
 		// iallefall med dblSlash
 		acceptThis(node.getChild(1));
 
 		if(thisIsTop)
 		{
-		    inPathExpr = false;
-			return pathExpression.getRelAlg();
+			return endPathExpr(child); 
 		}
 		
-		return null;
+		return child;
     }
+
+	private TraverseReturn endPathExpr(TraverseReturn child) {
+	    inPathExpr = false;
+	    TraverseReturn path = pathExpression.getRelAlg();
+	    if(child != null)
+	    	return path.getRestricted(child, false);
+	    
+	    return path;
+	}
+
 
 	public TraverseReturn visitAST_PREDICATE(XQFTTree tree) {
 		
@@ -130,82 +151,22 @@ public class PathExprVisitor extends RelalgVisitor {
 
 	}
 
-	
-
-
-    public TraverseReturn visitAND(XQFTTree tree) {
-        
-//        ArrayList<Operator> operators = new ArrayList<Operator>(tree.getChildCount());
-//        
-//        for(int i = 0; i < tree.getChildCount(); i++) {
-//            NodeReturn tmp = acceptThis(tree.getChild(i));
-//            Operator op = tmp.getTree();
-//            operators.add(op);
-//        }
-//        
-//        And and = new And(operators);
-//        and.setType(NodeReturnType.PRED_REL); 
-//
-//        return and.getTree();
-        return null;
+    public TraverseReturn visitAND(XQFTTree tree) {     
+    	TraverseReturn left = acceptThis(tree.getChild(0));
+    	TraverseReturn right = acceptThis(tree.getChild(1));
+    	
+    	return right.getRestricted(left, true);  //in case of predicates, rightmost is the one with the longest path
     }
 
 
 
 	public TraverseReturn visitSYNTH_PR_PATHEXPR(XQFTTree tree) {
-
-		TraverseReturn returnThis = null;
 		
 		TraverseReturn pathExpr = acceptThis(tree.getChild(0));
 		PredicateVisitor predVisitor = new PredicateVisitor(this);
 		TraverseReturn preds = predVisitor.acceptThis(tree.getChild(1));
 		
-		switch (preds.getType()) {
-		case TRUE_AND_FALSE:
-		case REL_PATHEXPR:
-//			//TODO: corner case: predicate in last step, something is wrong with isInScope(), or is it?
-//	    	String[] key1 = {"documentId"};
-//	    	String[] key2 = {"documentId"};
-//	    	String[] projectList = {"position" , "scopeLeft = left.scope", "scope = right.scope", "right.value"};
-//			MergeJoin mergeJoin = new MergeJoin(key1, key2, projectList, preds.getTree(), pathExpr.getTree());
-//
-//			
-//			//isInScope(a, b) if a has an equal but deeper path than b -> true
-//			Select select = new Select("isInScope(scope_prefix(" + (predVisitor.pathExpression.getAbsContextLvl()) +",scopeLeft), scope)", mergeJoin);
-//
-//			String[] projectArgs = {"documentId", "position", "value", "scope"};
-//			returnThis  =  new Project(projectArgs, select); 					//to remove extra scope field
-//			returnThis.type = pathExpr.type;				// preds is rel, so return depends on pathExpr
-//			break;
-//
-//		//abs_
-//		case ABS_PATHEXPR:
-//		case TRUE_OR_FALSE:
-//			Group abs_group = new Group("count()", preds.getTree());
-//			String[] abs_projectArgs = {"exists = ifthenelse(eq(count, 0),0,1)"};
-//			Project abs_project = new Project(abs_projectArgs, abs_group);
-//			
-//			String[] abs_projectArgsPath = {"exists = 1", "DocumentId", "position", "value", "scope"};
-//			Project abs_projectPath = new Project(abs_projectArgsPath, pathExpr.getTree());
-//			
-//			String[] abs_key1 = {"exists"};
-//			String[] abs_key2 = {"exists"};
-//			String[] abs_projectList = {"DocumentId", "position", "value", "scope"};
-//			MergeJoin abs_mergeJoin = new MergeJoin(abs_key1, abs_key2, abs_projectList, abs_project, abs_projectPath);
-//			
-//			String[] abs_projectArgs_done = {"DocumentId", "position", "value", "scope"};
-//			returnThis = new Project(abs_projectArgs_done, abs_mergeJoin);
-//			returnThis.type = NodeReturnType.ABS_PATHEXPR;
-//			
-			break;
-		default:
-			System.err.println("RETURN TYPE ERROR: " + preds.getType() + " in visitSYNTH_PR_PATHEXPR() in PathExprVisitor");
-			break;
-		}
-
-		
-		
-		return returnThis;
+		return pathExpr.getRestricted(preds, false);
 	}
 
 	public TraverseReturn visitSYNTH_PR_LVL(XQFTTree tree) {
@@ -223,32 +184,32 @@ public class PathExprVisitor extends RelalgVisitor {
 	 */
     public TraverseReturn visitAST_FUNCTIONCALL(XQFTTree tree) {
         
-        String funcname = tree.getChild(0).getText();
-        
-        /* See if this is a document() call */
-        if (funcname.equals("document")) {
-            
-            String filename = tree.getChild(1).getText(); //TODO: bør la den besøke barnet, og evt la det returneres. Sjekk TextReturn..
-            
-            /* Assumes there is a internal get_docid() function which returns 
-             * the document id for a given file name in the document collection. 
-             */
-            Select select = new Select("eq(get_docid(" + filename + "), documentId)");
-            
-            /* 
-             * Er dette riktig måte å gjøre det på? Ser ut til å funke så lenge 
-             * det ikke er inni et predikat 
-             */
-            if (this.relAlgTree.getTree() != null) {
-                select.addOperator(this.relAlgTree.getTree());
-                this.relAlgTree.setTree(select);
-            }
-            else {
-                this.relAlgTree.setTree(select);
-                this.relAlgTree.setInsertMark(select);
-            }
-        }
-        return null;
+//        String funcname = tree.getChild(0).getText();
+//        
+//        /* See if this is a document() call */
+//        if (funcname.equals("document")) {
+//            
+//            String filename = tree.getChild(1).getText(); //TODO: bør la den besøke barnet, og evt la det returneres. Sjekk TextReturn..
+//            
+//            /* Assumes there is a internal get_docid() function which returns 
+//             * the document id for a given file name in the document collection. 
+//             */
+//            Select select = new Select("eq(get_docid(" + filename + "), documentId)");
+//            
+//            /* 
+//             * Er dette riktig måte å gjøre det på? Ser ut til å funke så lenge 
+//             * det ikke er inni et predikat 
+//             */
+//            if (this.relAlgTree.getTree() != null) {
+//                select.addOperator(this.relAlgTree.getTree());
+//                this.relAlgTree.setTree(select);
+//            }
+//            else {
+//                this.relAlgTree.setTree(select);
+//                this.relAlgTree.setInsertMark(select);
+//            }
+//        }
+    	return null;
     }
 
 
@@ -260,15 +221,25 @@ public class PathExprVisitor extends RelalgVisitor {
         
         Scope.push();
         
+        
+        TraverseReturn where = null;
+        TraverseReturn orderBy = null;
         /* Visit all for/let/orderby/where clauses */
         for (int i = 0; i < (tree.getChildCount() - 1); i++) {
-            acceptThis(tree.getChild(i));
+        	if(tree.getChild(i).getType() == XQFTParser.AST_WHERECLAUSE)
+        		where = acceptThis(tree.getChild(i));
+        	else if(tree.getChild(i).getType() == XQFTParser.AST_ORDERBYCLAUSE)
+        		orderBy = acceptThis(tree.getChild(i));
+        	else
+        		acceptThis(tree.getChild(i));
         }
 
         /* Child count should always be >= 2. This is the return expression */
         TraverseReturn expr = acceptThis(tree.getChild(tree.getChildCount() - 1));
         
         Scope.pop();
+        if(where != null)
+        	return expr.getRestricted(where, false);
         
         return expr;
         
@@ -280,14 +251,21 @@ public class PathExprVisitor extends RelalgVisitor {
         
         if (tree.getChildCount() > 1) {
             TraverseReturn result = acceptThis(tree.getChild(1));
-            System.out.println("OMG SET " + key + " " + result);
+        	if(result.getType() == TraverseReturnType.NODESET)
+        	{        
+        		((NodeSetReturn)result).setSubType(NodeSetReturnType.VAR_PATH_EXPR);
+        	}       	
             Scope.set(key, result);
             return null;
         }
         
         else {
-            System.out.println(Scope.getSymtab().toString());
-            System.out.println("OMG GET " + Scope.get(key));
+        	TraverseReturn varRef = Scope.get(key);
+        	if(varRef.getType() == TraverseReturnType.NODESET)
+        	{
+        		NodeSetReturn nodeSet = (NodeSetReturn)varRef;
+        		this.pathExpression.setParent(nodeSet.getPathExpression(), nodeSet.getPathExpression().noOfSteps());
+        	}
             return Scope.get(key);
         }
     }
@@ -314,4 +292,9 @@ public class PathExprVisitor extends RelalgVisitor {
         
         return null;
     }
+
+
+	public TraverseReturn visitAST_WHERECLAUSE(XQFTTree tree) {
+		return acceptThis(tree.getChild(0));
+	}
 }
