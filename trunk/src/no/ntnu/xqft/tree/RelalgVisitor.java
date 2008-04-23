@@ -14,27 +14,26 @@ import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
  */
 public abstract class RelalgVisitor implements Visitor {
 
-	OperatorTree relAlgTree;
-
-	
-	
-	protected void setRelAlgTree(OperatorTree ot)
-	{
-		relAlgTree = ot;
-	}
-	
-
-	
-	protected OperatorTree getRelAlgTree()
-	{
-		return relAlgTree;
-	}
+//	OperatorTree relAlgTree;
+//
+//	
+//	
+//	protected void setRelAlgTree(OperatorTree ot)
+//	{
+//		relAlgTree = ot;
+//	}
+//	
+//
+//	
+//	protected OperatorTree getRelAlgTree()
+//	{
+//		return relAlgTree;
+//	}
 		
 
     public Operator visit(XQFTTree node) {
         
-        acceptThis(node);
-        return relAlgTree.getTree();
+        return acceptThis(node).getTree();
     }
 
 	protected void println(String s)

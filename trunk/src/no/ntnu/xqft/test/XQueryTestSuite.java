@@ -67,7 +67,7 @@ public class XQueryTestSuite extends Test implements Observer {
      */
     public void update(Observable handler, Object tc) {
         
-        // TODO Auto-generated method stub
+
         TestCase testCase = (TestCase)tc;
         
         this.executeTest(testCase);
