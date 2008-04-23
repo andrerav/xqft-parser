@@ -1,1 +1,29 @@
 \section{Existing implementations}
+\label{sect:existing_implementations}
+
+Poengtere at disse implementasjonene er fundamentalt annerledes siden vi jobber
+mot smaaspro indekser og ikke mot XML-traer o.l som er mer vanlig
+
+\subsection{eXist}
+eXist\cite{exist_doc} is an open source native XML database with an XQuery
+query processor. The eXist system is written in Java. This system stores native
+XML data in B-trees and paged files, and document nodes
+in persistent DOM trees\cite{exist_factsheet}. Document collections are stored
+in a hierarchical manner similar to a regular file system.
+
+eXist has a numerical indexing scheme for identification of relationships
+between nodes (parent/child, ancestor/descendant, previous/next sibling). This
+provides a structural index for element attribute nodes. In addition, eXist has
+a fulltext index for text and attribute values, and range indexes for typed
+values.
+
+Based on these provided index types, the eXist XQuery engine relies on path
+join algorithms\cite{exist_idx_drv_query} for efficient computation of node
+relationships instead of traditional tree traversals. 
+
+\subsection{Pathfinder}
+\subsection{Saxon}
+\subsection{Galatex}
+\subsection{Common traits}
+
+
