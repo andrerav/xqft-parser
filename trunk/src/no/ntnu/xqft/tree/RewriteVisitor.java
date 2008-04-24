@@ -291,8 +291,7 @@ public class RewriteVisitor implements Visitor {
             XQFTTree child = (XQFTTree)tree.deleteChild(0);
             
             
-            if (child.getType() == XQFTParser.AST_FORCLAUSE 
-                    || child.getType() == XQFTParser.AST_LETCLAUSE) {
+            if (child.getType() == XQFTParser.AST_FORCLAUSE) {
                 
                 // Find all tuple defs in clause
                 XQFTTree tupletDef;
@@ -317,8 +316,7 @@ public class RewriteVisitor implements Visitor {
         tree.addChildren(newChildren);
         
         // ---------------- Synthesize new FLWOR if necessary ------------------ 
-        if (hasSeveralClauses(tree) && (tree.getChild(0).getType() == XQFTParser.AST_FORCLAUSE 
-                || tree.getChild(0).getType() == XQFTParser.AST_LETCLAUSE)) {
+        if (hasSeveralForClauses(tree) && tree.getChild(0).getType() == XQFTParser.AST_FORCLAUSE) {
 
             XQFTTree flwor = new XQFTTree(new CommonToken(XQFTParser.AST_FLWOR, "AST_FLWOR"));
             while (tree.getChildCount() > 1) {
@@ -329,7 +327,7 @@ public class RewriteVisitor implements Visitor {
             acceptThis(flwor);
         }
         else {
-            if (hasSeveralClauses(tree)) {
+            if (hasSeveralForClauses(tree)) {
                 acceptThis(tree);
             }
             else {
@@ -340,11 +338,10 @@ public class RewriteVisitor implements Visitor {
     	return null;
     }
     
-    public boolean hasSeveralClauses(XQFTTree tree) {
+    public boolean hasSeveralForClauses(XQFTTree tree) {
         int c = 0;
         for (int i = 0; i < tree.getChildCount(); i++) {
-            if (tree.getChild(i).getType() == XQFTParser.AST_FORCLAUSE 
-                    || tree.getChild(i).getType() == XQFTParser.AST_LETCLAUSE) {
+            if (tree.getChild(i).getType() == XQFTParser.AST_FORCLAUSE) {
                 c++;
                 
                 if (c > 1) {
