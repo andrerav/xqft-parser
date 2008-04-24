@@ -6,7 +6,7 @@ package no.ntnu.xqft.tree;
 import no.ntnu.xqft.tree.operator.Operator;
 import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
 
-import java.util.ArrayList;
+import java.util.*;
 
 import no.ntnu.xqft.parse.*;
 
@@ -281,8 +281,96 @@ public class RewriteVisitor implements Visitor {
     }
 
     public TraverseReturn visitAST_FLWOR(XQFTTree tree) {
-    	visitAllChildren(tree);
+
+        
+        // --------- Convert all for clauses to have only one tuple def --------
+        
+        LinkedList<XQFTTree> newChildren = new LinkedList<XQFTTree>();
+        
+        while (tree.getChildCount() > 0) {
+            XQFTTree child = (XQFTTree)tree.deleteChild(0);
+            
+            
+            if (child.getType() == XQFTParser.AST_FORCLAUSE 
+                    || child.getType() == XQFTParser.AST_LETCLAUSE) {
+                
+                // Find all tuple defs in clause
+                XQFTTree tupletDef;
+                for (int i = 0; i < child.getChildCount(); i++) {
+                    
+                    tupletDef = (XQFTTree)child.getChild(i);
+                    
+                    // Convert tuplet def to a new clause
+                    XQFTTree clause = new XQFTTree(new CommonToken(child.getType(), child.getText()));
+                    clause.addChild(tupletDef);
+                    newChildren.add(clause);
+                }
+                
+            }
+            
+            else {
+                newChildren.add(child);
+            }
+            
+        }
+        
+        tree.addChildren(newChildren);
+        
+        // ---------------- Synthesize new FLWOR if necessary ------------------ 
+        if (hasSeveralClauses(tree) && (tree.getChild(0).getType() == XQFTParser.AST_FORCLAUSE 
+                || tree.getChild(0).getType() == XQFTParser.AST_LETCLAUSE)) {
+
+            XQFTTree flwor = new XQFTTree(new CommonToken(XQFTParser.AST_FLWOR, "AST_FLWOR"));
+            while (tree.getChildCount() > 1) {
+                flwor.addChild(tree.deleteChild(1));
+            }
+            
+            tree.addChild(flwor);
+            acceptThis(flwor);
+        }
+        else {
+            if (hasSeveralClauses(tree)) {
+                acceptThis(tree);
+            }
+            else {
+                visitAllChildren(tree);
+            }
+        }
+        
+    	return null;
+    }
+    
+    public boolean hasSeveralClauses(XQFTTree tree) {
+        int c = 0;
+        for (int i = 0; i < tree.getChildCount(); i++) {
+            if (tree.getChild(i).getType() == XQFTParser.AST_FORCLAUSE 
+                    || tree.getChild(i).getType() == XQFTParser.AST_LETCLAUSE) {
+                c++;
+                
+                if (c > 1) {
+                    return true;
+                }
+                
+            }
+        }
+        
+        return false;
+    }
+    
+    /**
+     * Converts several for/let clauses to stand-alone FLWOR expressions
+     * 
+     * @param flwor a FLWOR root node
+     * 
+     * @return an expanded FLWOR tree
+     */
+    public XQFTTree expandForClauses(XQFTTree flwor) {
+        if (flwor.getChild(0).getType() == XQFTParser.AST_FORCLAUSE || flwor.getChild(0).getType() == XQFTParser.AST_LETCLAUSE) {
+            
+        }
+        
         return null;
+        
     }
 
 
@@ -308,4 +396,10 @@ public class RewriteVisitor implements Visitor {
 		visitAllChildren(tree);
 		return null;
 	}
+
+
+    public TraverseReturn visitAST_LETCLAUSE(XQFTTree tree) {
+        visitAllChildren(tree);
+        return null;
+    }
 }

@@ -43,9 +43,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 //System.err.println("method not implemented: visitAST_FORCLAUSE()");
                 //break;
             case XQFTParser.AST_LETCLAUSE:
-                //return visitor.visitAST_LETCLAUSE(this);
-                System.err.println("method not implemented: visitAST_LETCLAUSE()");
-                break;
+                return visitor.visitAST_LETCLAUSE(this);
+                //System.err.println("method not implemented: visitAST_LETCLAUSE()");
+                //break;
             case XQFTParser.AST_ORDERBYCLAUSE:
                 //return visitor.visitAST_ORDERBYCLAUSE(this);
                 System.err.println("method not implemented: visitAST_ORDERBYCLAUSE()");
@@ -1076,7 +1076,7 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
     public XQFTTree(Token t) {
         super(t);
     }
-
+    
     /* Prints a DOT schema for use with graphviz instead of the usual lispy
      * paranthesized structure
      */
