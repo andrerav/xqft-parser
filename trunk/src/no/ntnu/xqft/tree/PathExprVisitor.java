@@ -334,4 +334,9 @@ public class PathExprVisitor extends RelalgVisitor {
 	public TraverseReturn visitAST_WHERECLAUSE(XQFTTree tree) {
 		return acceptThis(tree.getChild(0));
 	}
+
+
+    public TraverseReturn visitAST_LETCLAUSE(XQFTTree tree) {
+        return acceptThis(tree.getChild(0));
+    }
 }
