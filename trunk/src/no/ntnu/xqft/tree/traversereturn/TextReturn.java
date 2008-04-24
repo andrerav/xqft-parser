@@ -1,6 +1,7 @@
 package no.ntnu.xqft.tree.traversereturn;
 
 import no.ntnu.xqft.tree.operator.Operator;
+import no.ntnu.xqft.parse.XQFTParser;
 
 
 public class TextReturn extends TraverseReturn {
@@ -32,14 +33,14 @@ public class TextReturn extends TraverseReturn {
 	
 	public String toString()
 	{
-		return subType + ":" + text;
+		return "TextReturn:" + subType + " - " + text;
 	}
 	
 
-	public TraverseReturn getRestricted(TraverseReturn restrictBy, boolean nodeForNodeMode) {
+	public TraverseReturn getRestricted(TraverseReturn restrictBy, boolean returnLogical) {
 		
 		//TODO: gjetter, klarer ikke tenke naa
-		this.nodeForNodeMode = nodeForNodeMode;
+		this.returnLogical = returnLogical;
 		return this;
 	}
 
@@ -47,6 +48,45 @@ public class TextReturn extends TraverseReturn {
 	public Operator getTree() {
 		
 		//TODO: makeSet ting..
+		return null;
+	}
+
+	public TraverseReturn getLogical() {
+
+		//TODO: getTree() ?
+		return null;
+	}
+
+
+	public TraverseReturn getCompare(int comparator, TraverseReturn compareWith) {
+
+		switch (comparator) {
+		case XQFTParser.EQSi:
+		case XQFTParser.NEQSi:
+		case XQFTParser.LTSi:
+		case XQFTParser.LTOREQSi:
+		case XQFTParser.GTSi:
+		case XQFTParser.GTOREQSi:
+
+			
+			break;
+		case XQFTParser.EQ:
+		case XQFTParser.NE:
+		case XQFTParser.LT:
+		case XQFTParser.LE:
+		case XQFTParser.GT:
+		case XQFTParser.GE:
+			break;
+
+		case XQFTParser.IS:
+		case XQFTParser.NODEBEFORESi:
+		case XQFTParser.NODEAFTERSi:
+			break;
+			
+		default:
+			break;
+		}
+		
 		return null;
 	}
 	

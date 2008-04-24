@@ -5,6 +5,9 @@ package no.ntnu.xqft.tree;
 
 
 import no.ntnu.xqft.parse.*;
+import no.ntnu.xqft.tree.operator.MergeJoin;
+import no.ntnu.xqft.tree.operator.Project;
+import no.ntnu.xqft.tree.operator.Select;
 import no.ntnu.xqft.tree.traversereturn.NodeSetReturn;
 import no.ntnu.xqft.tree.traversereturn.TextReturn;
 import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
@@ -36,8 +39,11 @@ public class PathExprVisitor extends RelalgVisitor {
        // System.out.println("AST_MODULE");
         
         //relAlgTree.insert(acceptThis(node.getChild(0)).getTree());
-        return acceptThis(node.getChild(0));
-        
+    	TraverseReturn result = acceptThis(node.getChild(0));
+        if(result.isLogicalReturn())
+        	return result.getLogical();
+        else 
+        	return result;
     }
     
 	/**
@@ -137,10 +143,41 @@ public class PathExprVisitor extends RelalgVisitor {
 	private TraverseReturn endPathExpr(TraverseReturn child) {
 	    inPathExpr = false;
 	    TraverseReturn path = pathExpression.getRelAlg();
-	    if(child != null)
-	    	return path.getRestricted(child, false);
-	    
-	    return path;
+	    if(child != null){
+	    	switch (child.getType()) {
+			case NODESET:
+				NodeSetReturn nodeSet = (NodeSetReturn)child;
+				if(nodeSet.getSubType() == NodeSetReturnType.VAR_PATH_EXPR)
+				{
+					MergeJoin mergeJoin = new MergeJoin("[documentId], [documentId], [left.position , scope = left.scope, scopeRight = right.scope, left.value]",
+							path.getTree(), nodeSet.getTree());
+					
+					//isInScope(a, b) if a (the instance) is or is in scope b (the instance) -> true
+					Select select = new Select("isInScope(scope, scope_prefix(" + (nodeSet.getPathExpression().noOfSteps()) + ", scopeRight))", mergeJoin);
+					Project project = new Project("[documentId, position, value, scope]", select); //to remove extra scope field
+					
+					NodeSetReturn result =  new NodeSetReturn(pathExpression, false, project);
+					result.setSubType(NodeSetReturnType.VAR_PATH_EXPR);
+					
+					pathExpression = new PathExpression();
+					return result;
+				}
+				else
+					System.err.println("RETURNTYPE ERROR in endPathExpr: got " + nodeSet);
+				break;
+
+			default:
+				System.err.println("RETURNTYPE ERROR in endPathExpr: got " + child);
+				break;
+			}
+	    }
+	    else
+	    {
+	    	pathExpression = new PathExpression();
+	    	return path;
+	    }
+	    pathExpression = new PathExpression();
+	    return null;
 	}
 
 

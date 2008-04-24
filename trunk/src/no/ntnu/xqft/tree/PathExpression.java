@@ -116,23 +116,26 @@ public class PathExpression {
 			sb = new StringBuffer();
 		
 		int no = 0;
-		for(int i = 0; (i < stepList.size()) && no < steps; i++)
+		for(int i = 0; (i < stepList.size()); i++)
 		{
-			switch (stepList.get(i).axis) {
-			case ABSEXPR:
+			if(stepList.get(i).axis == ABSEXPR) {
+
 				sb.append(stepList.get(i).step);
-				break;
-			case CHILD:
+			}
+			else if(stepList.get(i).axis == CHILD)
+			{
+				if(no == steps)
+					break;
 				no++;
 				sb.append(stepList.get(i).step);
-				if(no != (steps))
-					sb.append("/");
-			default:
-				break;
+				if(no == steps)
+					break;
+				sb.append("/");
 			}
 		}
-		if(sb.lastIndexOf("/") == (sb.length() -1))
-			sb.setLength(sb.length()-1);
+		
+//		if(sb.lastIndexOf("/") > 0 && sb.lastIndexOf("/") == (sb.length() -1))
+//			sb.setLength(sb.length()-1);
 		
 		return sb.toString();
 	}
@@ -143,8 +146,8 @@ public class PathExpression {
 
 		Operator op = new Index("valocc", new Lookup("$" + stepList.get(stepList.size()-1).step));
 		
-		if(noOfSteps() > 1 || parent != null)
-			op = new Scope(getPath(noOfSteps()-1), op);
+//		if(noOfSteps() > 1 || parent != null)
+		op = new Scope(getPath(noOfSteps()- 1), op);
 		
 
 		return new NodeSetReturn(this, false, op);
