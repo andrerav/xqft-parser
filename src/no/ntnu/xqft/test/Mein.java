@@ -109,7 +109,7 @@ public class Mein {
         
         /* Last resort */
         else {
-            input =  "for $i in /a[x]/b where /q return $i/hatt";            
+            input =  "for $i in /a/b return for $y in /x/y return $i[$y]";            
         }
         
         /* Create lexer */

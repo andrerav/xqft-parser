@@ -15,7 +15,7 @@ import no.ntnu.xqft.tree.operator.Operator;
 public abstract class TraverseReturn {
 
 	protected TraverseReturnType type;
-	protected boolean nodeForNodeMode = false;
+	protected boolean returnLogical = false;
 	
 	public TraverseReturnType getType()
 	{
@@ -27,13 +27,22 @@ public abstract class TraverseReturn {
 		type = t;
 	}
 	
-	public boolean isNodeForNodeMode()
+	public boolean isLogicalReturn()
 	{
-		return nodeForNodeMode;
+		return returnLogical;
 	}
 	
 	public abstract Operator getTree();
 	
-	public abstract TraverseReturn getRestricted(TraverseReturn restrictBy, boolean nodeForNodeMode);
+	public abstract TraverseReturn getRestricted(TraverseReturn restrictBy, boolean returnLogical);
+
+	public abstract TraverseReturn getLogical();
+	
+	public abstract TraverseReturn getCompare(int comparator, TraverseReturn compareWith);
+	
+	public String toString()
+	{
+		return "TraverseReturn:" + getType();
+	}
     
 }
