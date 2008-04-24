@@ -1,5 +1,6 @@
 package no.ntnu.xqft.tree.traversereturn;
 
+import no.ntnu.xqft.tree.operator.Make;
 import no.ntnu.xqft.tree.operator.Operator;
 import no.ntnu.xqft.parse.XQFTParser;
 
@@ -47,8 +48,7 @@ public class TextReturn extends TraverseReturn {
 
 	public Operator getTree() {
 		
-		//TODO: makeSet ting..
-		return null;
+		return new Make(text);
 	}
 
 	public TraverseReturn getLogical() {

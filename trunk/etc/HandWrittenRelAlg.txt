@@ -1,0 +1,48 @@
+for $i in (1, <a\>)
+return /BOOKS/ITEM[$i]/TITLE
+
+project
+select(inscope
+mergeJoin
+	scope(/BOOKS/ITEM; lookup($TITLE)
+	project(dokid, pos, value, scope
+		select(ifThenElse(isNumber(var), scopeIndex(var, scope), ifThenElse(isEmpty(var), false, true));
+			cross(
+				scope(/BOOKS; lookup($ITEM));
+				Make(name = ["var"], [1, "<a\>")
+
+
+
+
+for $i in /BOOKS/ITEM
+return $i[1]/TITLE
+
+cross
+	scope(/BOOKS; lookup($ITEM))
+
+	project
+	select(inscope
+	mergeJoin
+		scope(/BOOKS/ITEM; lookup($TITLE))
+	
+		select(ifThenElse(isNumber(var), scopeIndex(var, scope), ifThenElse(isEmpty(var), false, true));
+			cross
+				scope(/BOOKS; lookup($ITEM))
+				Make(name=["var"], 1);
+
+
+for $i in /BOOKS/ITEM
+return $i/TITLE and /BOOKS/ITEM/LANGUAGE
+
+
+project(value = ifThenElse(isNull(exist), false, true))
+outerJoin											--> boolean return
+	scope(/BOOKS, lookup($ITEM))
+	
+	cross
+		countTrueFalse
+			scope(/BOOKS/ITEM, lookup($LANGUAGE))
+		selectInscopeETC
+			mergejoin
+				scope(/BOOKS/ITEM, lookup($TITLE))
+				scope(/BOOKS, lookup($ITEM));           //$i

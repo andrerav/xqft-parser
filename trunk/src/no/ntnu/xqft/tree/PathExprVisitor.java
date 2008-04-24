@@ -12,8 +12,10 @@ import no.ntnu.xqft.tree.traversereturn.NodeSetReturn;
 import no.ntnu.xqft.tree.traversereturn.TextReturn;
 import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
 import no.ntnu.xqft.tree.traversereturn.TraverseReturnType;
+import no.ntnu.xqft.tree.traversereturn.VarReferences;
 import no.ntnu.xqft.tree.traversereturn.NodeSetReturn.NodeSetReturnType;
 import no.ntnu.xqft.tree.traversereturn.TextReturn.TextReturnType;
+import no.ntnu.xqft.tree.traversereturn.TraverseReturn.VarType;
 
 
 /**
@@ -141,6 +143,8 @@ public class PathExprVisitor extends RelalgVisitor {
     }
 
 	private TraverseReturn endPathExpr(TraverseReturn child) {
+		TraverseReturn returnThis = null;
+		
 	    inPathExpr = false;
 	    TraverseReturn path = pathExpression.getRelAlg();
 	    if(child != null){
@@ -159,8 +163,7 @@ public class PathExprVisitor extends RelalgVisitor {
 					NodeSetReturn result =  new NodeSetReturn(pathExpression, false, project);
 					result.setSubType(NodeSetReturnType.VAR_PATH_EXPR);
 					
-					pathExpression = new PathExpression();
-					return result;
+					returnThis = result;
 				}
 				else
 					System.err.println("RETURNTYPE ERROR in endPathExpr: got " + nodeSet);
@@ -173,11 +176,11 @@ public class PathExprVisitor extends RelalgVisitor {
 	    }
 	    else
 	    {
-	    	pathExpression = new PathExpression();
-	    	return path;
+
+	    	returnThis = path;
 	    }
 	    pathExpression = new PathExpression();
-	    return null;
+	    return returnThis;
 	}
 
 
@@ -258,25 +261,50 @@ public class PathExprVisitor extends RelalgVisitor {
         
         Scope.push();
         
+        VarReferences returnVarRefs = new VarReferences();
+        
+        TraverseReturn forClause = null;
+        TraverseReturn let = null;
         TraverseReturn where = null;
         TraverseReturn orderBy = null;
         /* Visit all for/let/orderby/where clauses */
         for (int i = 0; i < (tree.getChildCount() - 1); i++) {
-        	if(tree.getChild(i).getType() == XQFTParser.AST_WHERECLAUSE)
-        		where = acceptThis(tree.getChild(i));
-        	else if(tree.getChild(i).getType() == XQFTParser.AST_ORDERBYCLAUSE)
-        		orderBy = acceptThis(tree.getChild(i));
-        	else
-        		acceptThis(tree.getChild(i));
+        	switch (tree.getChild(i).getType()) {
+			case XQFTParser.AST_FORCLAUSE:
+				forClause = acceptThis(tree.getChild(i));
+				returnVarRefs.add(forClause.getVarReferences());
+				break;
+			case XQFTParser.AST_LETCLAUSE:
+				let = acceptThis(tree.getChild(i));
+				returnVarRefs.add(let.getVarReferences());
+				break;
+			case XQFTParser.AST_WHERECLAUSE:
+				where = acceptThis(tree.getChild(i));
+				returnVarRefs.add(where.getVarReferences());				
+				break;
+			case XQFTParser.AST_ORDERBYCLAUSE:
+				orderBy = acceptThis(tree.getChild(i));
+				returnVarRefs.add(orderBy.getVarReferences());
+				break;				
+			default:
+				System.err.println("TYPE ERROR: " + XQFTParser.tokenNames[tree.getChild(i).getType()] + " found as child of FLWOR");
+				break;
+			}
+
         }
 
         /* Child count should always be >= 2. This is the return expression */
-        TraverseReturn expr = acceptThis(tree.getChild(tree.getChildCount() - 1));
+        TraverseReturn returnClause = acceptThis(tree.getChild(tree.getChildCount() - 1));
         
         Scope.pop();
         
-        if(where != null)
-        	return expr.getRestricted(where, false);
+        if(where != null){
+        	// DO WHERE THINGS
+        }
+        if(orderBy != null)
+        {
+        	//DO ORDERING
+        }
         
         return expr;
         
@@ -284,19 +312,20 @@ public class PathExprVisitor extends RelalgVisitor {
 
     public TraverseReturn visitDOLLARSi(XQFTTree tree) {
         
-        String key = tree.getChild(0).getText();
+        String key = tree.getChild(0).getText(); //TODO: acceptThis() og ta i mot TextReturn -> bedre hvis feil uttrykk ellerno
         
-        if (tree.getChildCount() > 1) {
+        if (tree.getChildCount() > 1) { 								//Its a variable declaration
             TraverseReturn result = acceptThis(tree.getChild(1));
-        	if(result.getType() == TraverseReturnType.NODESET)
-        	{        
-        		((NodeSetReturn)result).setSubType(NodeSetReturnType.VAR_PATH_EXPR);
-        	}       	
+            result.setVarType(VarType.DECLARE_VAR);						//default, let and for will be set in their ..clause node
+//        	if(result.getType() == TraverseReturnType.NODESET)
+//        	{        
+//        		((NodeSetReturn)result).setSubType(NodeSetReturnType.VAR_PATH_EXPR);
+//        	}       	
             Scope.set(key, result);
-            return null;
+            return result;
         }
         
-        else {
+        else { 												//Its a variable reference
         	TraverseReturn varRef = Scope.get(key);
         	if(varRef.getType() == TraverseReturnType.NODESET)
         	{
@@ -309,16 +338,21 @@ public class PathExprVisitor extends RelalgVisitor {
 
 
     public TraverseReturn visitAST_FORCLAUSE(XQFTTree tree) {
-        
-        /* Visit all children */
-        for (int i = 0; i < (tree.getChildCount()); i++) {
-            acceptThis(tree.getChild(i));
-        }
-
-        return null;
+    	TraverseReturn variable = acceptThis(tree.getChild(0));
+    	variable.setVarType(VarType.FOR_VAR);
+    	return variable;
     }
 
+	public TraverseReturn visitAST_LETCLAUSE(XQFTTree tree) {
+    	TraverseReturn variable = acceptThis(tree.getChild(0));
+    	variable.setVarType(VarType.LET_VAR);
+    	return variable;
+	}
 
+	public TraverseReturn visitAST_WHERECLAUSE(XQFTTree tree) {
+		return acceptThis(tree.getChild(0));
+	}
+	
     public TraverseReturn visitAST_ENCLOSEDEXPR(XQFTTree tree) {
         
         Scope.push();
@@ -331,9 +365,7 @@ public class PathExprVisitor extends RelalgVisitor {
     }
 
 
-	public TraverseReturn visitAST_WHERECLAUSE(XQFTTree tree) {
-		return acceptThis(tree.getChild(0));
-	}
+
 
 
     public TraverseReturn visitAST_LETCLAUSE(XQFTTree tree) {

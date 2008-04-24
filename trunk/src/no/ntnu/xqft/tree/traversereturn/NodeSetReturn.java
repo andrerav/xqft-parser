@@ -21,17 +21,18 @@ public class NodeSetReturn extends TraverseReturn {
 	private Operator tree;
 	private NodeSetReturnType subType;
 	
-	public NodeSetReturn(PathExpression pathExpr, boolean returnLogical)
+	public NodeSetReturn(PathExpression pathExpr, boolean returnLogical, VarReferences varRefs)
 	{
+		super(varRefs);
 		type = TraverseReturnType.NODESET;
 		pathExpression = pathExpr;
 		this.returnLogical = returnLogical;
 		subType = pathExpression.isAbsloute() ? NodeSetReturnType.ABS_PATH_EXPR : NodeSetReturnType.REL_PATH_EXPR;
 	}
 	
-	public NodeSetReturn(PathExpression pathExpr, boolean returnLogical, Operator tree)
+	public NodeSetReturn(PathExpression pathExpr, boolean returnLogical, Operator tree, VarReferences varRefs)
 	{
-		this(pathExpr, returnLogical);
+		this(pathExpr, returnLogical, varRefs);
 		this.tree = tree;
 	}
 	
