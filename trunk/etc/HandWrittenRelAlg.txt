@@ -1,48 +1,194 @@
-for $i in (1, <a\>)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+for $i in (1, <a\>, 1)
 return /BOOKS/ITEM[$i]/TITLE
 
-project
-select(inscope
-mergeJoin
-	scope(/BOOKS/ITEM; lookup($TITLE)
-	project(dokid, pos, value, scope
-		select(ifThenElse(isNumber(var), scopeIndex(var, scope), ifThenElse(isEmpty(var), false, true));
-			cross(
-				scope(/BOOKS; lookup($ITEM));
-				Make(name = ["var"], [1, "<a\>")
+    												// MERK: ingen forløkke
+mergeJoinInScope										// returverdi / join med ting etter predikat
+	scope(/BOOKS/ITEM; lookup($TITLE)                                       		// ting etter pred
+	select(ifThenElse(isNumber(var), scopeIndex(var, scope), true));			// vask med predikat
+		cross(										
+			scope(/BOOKS; lookup($ITEM));                   			// ting før pred
+			Make(name = ["var"], [1, "<a\>", "1")					// predikat / $i
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+for $i in (1, 2, 1)[. = 1]									// 1 != "1" og (<a\> == 1) -> error
+return /BOOKS/ITEM[$i]/TITLE
+
+												// MERK: ingen forløkke
+mergeJoinInScope										// returverdi / join med path etter predikat
+	scope(/BOOKS/ITEM; lookup($TITLE)                                       		// path etter predikat
+	select(ifThenElse(isNumber(var), scopeIndex(var, scope), true));			// vask med predikat
+		cross(
+			scope(/BOOKS; lookup($ITEM));                   			// path før pred
+			select(eq(l.value, r.value);						// predikat /$i    (vask med predikat)
+				cross							 
+					Make(name = ["value"], [1])				// (predikat)
+					Make(name = ["value"], ["1", "<a\>", "1")		// (før predikat)
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+for $i in (1, /BOOKS/ITEM, 2)
+return /BOOKS/ITEM[$i]/TITLE
+
+												// MERK: ingen forløkke
+mergeJoinInScope										// returverdi / join med path etter predikat
+	scope(/BOOKS/ITEM; lookup($TITLE)                                       		// path etter predikat
+	select(ifThenElse(isNumber(var), scopeIndex(var, scope), true));			// vask med predikat
+		cross(
+			scope(/BOOKS, lookup($ITEM))						// path før predikat	
+			or(									// predikat / $i
+				make(name=["value"], 1)
+				project([value]
+					scope(/BOOKS, lookup($ITEM))
+				make(name=["value"], 2)
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+for $i in /BOOKS/ITEM
+return /BOOKS/ITEM[$i]/TITLE
+
+cross(												// forløkke
+	scope(/BOOKS, lookup($ITEM))								// $i
+	mergeJoinInscope									// returverdi / join med path etter predikat
+		scope(/BOOKS/ITEM; lookup($TITLE))						// path etter predikat
+		mergeJoinExist(									// vask med predikat
+			scope(/BOOKS, lookup($ITEM))						// før predikat
+			countTrueFalse(								// ($i er absolutt path?)
+				scope(/BOOKS, lookup($ITEM))					// predikat / $i
+
+
+/* Denne ligner mye mer på den under... */							// MERK: forløkke er flyttet ned
+	mergeJoinInscope									// returverdi / join med path etter predikat
+		scope(/BOOKS/ITEM; lookup($TITLE))						// path etter predikat
+		cross(										// forløkke/ vaske med predikat
+			scope(/BOOKS, lookup($ITEM))						// før predikat
+			scope(/BOOKS, lookup($ITEM))						// predikat / $i
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+for $i in /BOOKS/ITEM/
+return /BOOKS/ITEM[$i/MAYBE]/TITLE
+												// MERK: forløkke er flyttet ned
+mergeJoinInscope										// returverdi / join med path etter predikat
+	scope(/BOOKS/ITEM; lookup($TITLE))							// path etter predikat
+	cross(											// forløkke/ vask med predikat
+		scope(/BOOKS, lookup($ITEM))							// før predikat
+		mergejoinInscope(								// predikat / join med path etter variabel	
+				scope(/BOOKS/ITEM, lookup($MAYBE)				// etter $i
+				scope(/BOOKS, lookup($ITEM))					// $i
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+----------------------------------------------------------------------------------------------------------------------
+DENNE ER UTGANGSPUNKTET YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY!!!!!!!!!!!!!!!!!!!!!!!111------------------
+--------------------------------------------------------------------------------------------------------------------------
+
+
+for $i in /BOOKS/ITEM
+return (/BOOKS/ITEM[$i/MAYBE], /BOOKS/ITEM/MAYBE)
+
+
+
+select(ifThenElse(eq(pred, 0), true, ifThenElse(and(eq(pred,1),eq(pred1,1)), true, false))
+cross(
+	project(l.dokId, l.pos, l.scope, l.value, pred1 = ifThenElse(isNull(r.value), 0, 1)
+	outerJoin(
+		scope(/BOOKS, lookup($ITEM))					// $i
+		mergejoinInscope(                               		// predikat / join med path etter variabel  
+			scope(/BOOKS/ITEM, lookup($MAYBE)                   	// etter $i
+			scope(/BOOKS, lookup($ITEM))                        	// $i
+	or(
+		project(dokID, pos, scope, value, pred=1
+			scope(/BOOKS, lookup($ITEM)	
+		project(dokID, pos, scope, value, pred=0
+			scope(/BOOKS/ITEM; lookup($MAYBE))
+	
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+for $i in /BOOKS/ITEM/
+return /BOOKS/ITEM[$i and MAYBE]
+
+
+cross(												// forløkke
+	scope(/BOOKS, lookup($ITEM))								// $i	
+	megeJoinInscope(									// returverdi / vask med predikat
+		scope(/BOOKS; lookup($ITEM))							// før predikat
+		mergeJoinExist(									// predikat / AND
+			scope(/BOOKS/ITEM, lookup($MAYBE))
+			countTrueFalseExist(
+				scope(/BOOKS, lookup($ITEM))					// $i
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 for $i in /BOOKS/ITEM
 return $i[1]/TITLE
 
-cross
-	scope(/BOOKS; lookup($ITEM))
 
-	project
-	select(inscope
-	mergeJoin
-		scope(/BOOKS/ITEM; lookup($TITLE))
-	
-		select(ifThenElse(isNumber(var), scopeIndex(var, scope), ifThenElse(isEmpty(var), false, true));
+cross												// forløkke
+	scope(/BOOKS; lookup($ITEM))								// $i
+	mergeJoinInscope									// returverdi / join med ting etter predikat
+		scope(/BOOKS/ITEM; lookup($TITLE))						// ting etter predikat
+		select(ifThenElse(isNumber(var), scopeIndex(var, scope), true));		// vask med predikat
 			cross
-				scope(/BOOKS; lookup($ITEM))
-				Make(name=["var"], 1);
+				scope(/BOOKS; lookup($ITEM))					// ting før predikat / $i
+				Make(name=["var"], 1);						// predikat
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 for $i in /BOOKS/ITEM
-return $i/TITLE and /BOOKS/ITEM/LANGUAGE
+return $i/MAYBE and /BOOKS/ITEM/LANGUAGE
 
-
+												
 project(value = ifThenElse(isNull(exist), false, true))
-outerJoin											--> boolean return
-	scope(/BOOKS, lookup($ITEM))
+outerJoin											// forløkke
+	scope(/BOOKS, lookup($ITEM))								// $i
 	
-	cross
-		countTrueFalse
+	mergeJoinExist										// returverdi / and
+		countTrueFalse									// absolutt path
 			scope(/BOOKS/ITEM, lookup($LANGUAGE))
-		selectInscopeETC
-			mergejoin
-				scope(/BOOKS/ITEM, lookup($TITLE))
-				scope(/BOOKS, lookup($ITEM));           //$i
+		mergejoinInscope								// join med path etter variabel
+			scope(/BOOKS/ITEM, lookup($MAYBE))					// etter $i
+			scope(/BOOKS, lookup($ITEM));           				// $i
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+for $i in /BOOKS/ITEM
+return /BOOKS/ITEM
+
+
+cross(												// forløkke
+	scope(/BOOKS; lookup($ITEM))								// $i
+	scope(/BOOKS; lookup($ITEM))								// returverdi / absolutt path
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/BOOKS/ITEM and /BOOKS/ITEM/LANGUAGE
+
+mergeJoinExist(											// AND
+	countTrueFalse(										// absolutt path
+		scope(/BOOKS; lookup($ITEM))
+	countTrueFalse(										// absolutt path
+		scope(/BOOKS/ITEM; lookup($LANGUAGE))
+
