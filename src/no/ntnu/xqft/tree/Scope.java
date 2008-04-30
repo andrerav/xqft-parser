@@ -4,8 +4,9 @@
 package no.ntnu.xqft.tree;
 
 import java.util.*;
-
-import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
+import no.ntnu.xqft.tree.traversereturn.*;
+import no.ntnu.xqft.tree.*;
+import no.ntnu.xqft.tree.operator.*;
 
 /**
  * Class scope
@@ -154,7 +155,20 @@ public class Scope {
         
         /* See if parent has symbol (if parent exists) */
         else if (this.parent != null && this.parent.getSym(key) != null){
-            return this.parent.getSym(key);
+
+            // qx·y ($vx ) = πiter :inner ,pos,item(qx ($vx ) (X) iter =outer map(x,x·y))
+            // map(x,x·y) = πouter :iter ,inner inner : iter ,pos (qx (ex·y ))
+
+            NodeSetReturn psym = (NodeSetReturn)this.parent.getSym(key);
+
+            Operator qx = this.parent.getSym(key).getTree();
+            Operator map = new GenericOperator("map-relation");
+            
+            Project p = new Project("[iter=inner, pos, etc]", new MergeJoin("[documentId], [documentId]", qx, map));
+            
+            NodeSetReturn result = new NodeSetReturn(psym.getPathExpression(), false, p);
+            
+            return result;
         }
         
         /* Symbol not found */

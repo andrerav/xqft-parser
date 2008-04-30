@@ -276,9 +276,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 System.err.println("method not implemented: visitAS()");
                 break;
             case XQFTParser.LPARSi:
-                //return visitor.visitLPARSi(this);
-                System.err.println("method not implemented: visitLPARSi()");
-                break;
+                return visitor.visitLPARSi(this);
+                //System.err.println("method not implemented: visitLPARSi()");
+                //break;
             case XQFTParser.RPARSi:
                 //return visitor.visitRPARSi(this);
                 System.err.println("method not implemented: visitRPARSi()");

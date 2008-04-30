@@ -323,7 +323,7 @@ module :{lexer.state = State.DEFAULT;} //ensure correct state if run multiple ti
     mainModule : prolog queryBody;
         queryBody : expr;
             expr : exprSingle (COMMASi exprSingle)* 
-    -> exprSingle+;
+                   ->exprSingle+;
 
 //----------------------------------------------------- Prolog ------------------------------------------
 
@@ -447,8 +447,8 @@ exprSingle :
     | quantifiedExpr
     | orExpr
 ;
-    fLWORExpr : (fc+=forClause | lc+=letClause)+ whereClause? orderByClause? RETURN exprSingle
-        -> ^(AST_FLWOR $fc* $lc* whereClause? orderByClause? exprSingle);
+    fLWORExpr : (c+=forClause | c+=letClause)+ whereClause? orderByClause? RETURN exprSingle
+        -> ^(AST_FLWOR $c+ whereClause? orderByClause? exprSingle);
     
         forClause : FOR forClauseTupletDef (COMMASi forClauseTupletDef)*
             -> ^(AST_FORCLAUSE forClauseTupletDef+);
@@ -685,7 +685,7 @@ filterExpr : primaryExpr predicateList;
         | constructor
     ;
         varRef : DOLLARSi^ varName;
-        parenthesizedExpr : LPARSi! expr? RPARSi!;
+        parenthesizedExpr : LPARSi^ expr? RPARSi!;
         functionCall : 
             qName LPARSi /* xgc: reserved-function-namesXQ */
             (exprSingle (COMMASi exprSingle)*)? 

@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 etc/XQFT.g 2008-04-21 20:48:09
+// $ANTLR 3.0.1 etc/XQFT.g 2008-04-28 20:25:50
 
     package no.ntnu.xqft.parse;
 
@@ -991,7 +991,7 @@ public class XQFTParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
             root_0 = (XQFTTree)adaptor.nil();
-            // 326:5: -> ( exprSingle )+
+            // 326:20: -> ( exprSingle )+
             {
                 if ( !(stream_exprSingle.hasNext()) ) {
                     throw new RewriteEarlyExitException();
@@ -1114,7 +1114,7 @@ public class XQFTParser extends Parser {
             	        case 1 :
             	            // etc/XQFT.g:334:7: ( IMPORT ( SCHEMA | MODULE ) )=> importStmt {...}?
             	            {
-            	            pushFollow(FOLLOW_importStmt_in_prolog466);
+            	            pushFollow(FOLLOW_importStmt_in_prolog480);
             	            importStmt25=importStmt();
             	            _fsp--;
             	            if (failed) return retval;
@@ -1130,7 +1130,7 @@ public class XQFTParser extends Parser {
             	            // etc/XQFT.g:335:8: DECLARE ( setter {...}? | varDecl | functionDecl | optionDecl | ftOptionDecl )
             	            {
             	            DECLARE26=(Token)input.LT(1);
-            	            match(input,DECLARE,FOLLOW_DECLARE_in_prolog477); if (failed) return retval;
+            	            match(input,DECLARE,FOLLOW_DECLARE_in_prolog491); if (failed) return retval;
             	            if ( backtracking==0 ) {
             	            DECLARE26_tree = (XQFTTree)adaptor.create(DECLARE26);
             	            adaptor.addChild(root_0, DECLARE26_tree);
@@ -1181,7 +1181,7 @@ public class XQFTParser extends Parser {
             	                case 1 :
             	                    // etc/XQFT.g:336:9: setter {...}?
             	                    {
-            	                    pushFollow(FOLLOW_setter_in_prolog489);
+            	                    pushFollow(FOLLOW_setter_in_prolog503);
             	                    setter27=setter();
             	                    _fsp--;
             	                    if (failed) return retval;
@@ -1196,7 +1196,7 @@ public class XQFTParser extends Parser {
             	                case 2 :
             	                    // etc/XQFT.g:337:10: varDecl
             	                    {
-            	                    pushFollow(FOLLOW_varDecl_in_prolog502);
+            	                    pushFollow(FOLLOW_varDecl_in_prolog516);
             	                    varDecl28=varDecl();
             	                    _fsp--;
             	                    if (failed) return retval;
@@ -1210,7 +1210,7 @@ public class XQFTParser extends Parser {
             	                case 3 :
             	                    // etc/XQFT.g:338:10: functionDecl
             	                    {
-            	                    pushFollow(FOLLOW_functionDecl_in_prolog515);
+            	                    pushFollow(FOLLOW_functionDecl_in_prolog529);
             	                    functionDecl29=functionDecl();
             	                    _fsp--;
             	                    if (failed) return retval;
@@ -1224,7 +1224,7 @@ public class XQFTParser extends Parser {
             	                case 4 :
             	                    // etc/XQFT.g:339:10: optionDecl
             	                    {
-            	                    pushFollow(FOLLOW_optionDecl_in_prolog528);
+            	                    pushFollow(FOLLOW_optionDecl_in_prolog542);
             	                    optionDecl30=optionDecl();
             	                    _fsp--;
             	                    if (failed) return retval;
@@ -1238,7 +1238,7 @@ public class XQFTParser extends Parser {
             	                case 5 :
             	                    // etc/XQFT.g:340:10: ftOptionDecl
             	                    {
-            	                    pushFollow(FOLLOW_ftOptionDecl_in_prolog541);
+            	                    pushFollow(FOLLOW_ftOptionDecl_in_prolog555);
             	                    ftOptionDecl31=ftOptionDecl();
             	                    _fsp--;
             	                    if (failed) return retval;
@@ -1259,7 +1259,7 @@ public class XQFTParser extends Parser {
             	    }
 
             	    SEMICOLONSi32=(Token)input.LT(1);
-            	    match(input,SEMICOLONSi,FOLLOW_SEMICOLONSi_in_prolog563); if (failed) return retval;
+            	    match(input,SEMICOLONSi,FOLLOW_SEMICOLONSi_in_prolog577); if (failed) return retval;
             	    if ( backtracking==0 ) {
             	    SEMICOLONSi32_tree = (XQFTTree)adaptor.create(SEMICOLONSi32);
             	    adaptor.addChild(root_0, SEMICOLONSi32_tree);
@@ -1382,7 +1382,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     DEFAULT33=(Token)input.LT(1);
-                    match(input,DEFAULT,FOLLOW_DEFAULT_in_setter585); if (failed) return retval;
+                    match(input,DEFAULT,FOLLOW_DEFAULT_in_setter599); if (failed) return retval;
                     if ( backtracking==0 ) {
                     DEFAULT33_tree = (XQFTTree)adaptor.create(DEFAULT33);
                     adaptor.addChild(root_0, DEFAULT33_tree);
@@ -1428,7 +1428,7 @@ public class XQFTParser extends Parser {
                         case 2 :
                             // etc/XQFT.g:348:15: defaultNamespaceDecl
                             {
-                            pushFollow(FOLLOW_defaultNamespaceDecl_in_setter603);
+                            pushFollow(FOLLOW_defaultNamespaceDecl_in_setter617);
                             defaultNamespaceDecl34=defaultNamespaceDecl();
                             _fsp--;
                             if (failed) return retval;
@@ -1439,7 +1439,7 @@ public class XQFTParser extends Parser {
                         case 3 :
                             // etc/XQFT.g:349:15: defaultCollationDecl
                             {
-                            pushFollow(FOLLOW_defaultCollationDecl_in_setter619);
+                            pushFollow(FOLLOW_defaultCollationDecl_in_setter633);
                             defaultCollationDecl35=defaultCollationDecl();
                             _fsp--;
                             if (failed) return retval;
@@ -1450,7 +1450,7 @@ public class XQFTParser extends Parser {
                         case 4 :
                             // etc/XQFT.g:350:15: emptyOrderDecl
                             {
-                            pushFollow(FOLLOW_emptyOrderDecl_in_setter635);
+                            pushFollow(FOLLOW_emptyOrderDecl_in_setter649);
                             emptyOrderDecl36=emptyOrderDecl();
                             _fsp--;
                             if (failed) return retval;
@@ -1469,7 +1469,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_namespaceDecl_in_setter661);
+                    pushFollow(FOLLOW_namespaceDecl_in_setter675);
                     namespaceDecl37=namespaceDecl();
                     _fsp--;
                     if (failed) return retval;
@@ -1482,7 +1482,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_boundarySpaceDecl_in_setter673);
+                    pushFollow(FOLLOW_boundarySpaceDecl_in_setter687);
                     boundarySpaceDecl38=boundarySpaceDecl();
                     _fsp--;
                     if (failed) return retval;
@@ -1495,7 +1495,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_baseURIDecl_in_setter685);
+                    pushFollow(FOLLOW_baseURIDecl_in_setter699);
                     baseURIDecl39=baseURIDecl();
                     _fsp--;
                     if (failed) return retval;
@@ -1508,7 +1508,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_constructionDecl_in_setter698);
+                    pushFollow(FOLLOW_constructionDecl_in_setter712);
                     constructionDecl40=constructionDecl();
                     _fsp--;
                     if (failed) return retval;
@@ -1521,7 +1521,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_orderingModeDecl_in_setter711);
+                    pushFollow(FOLLOW_orderingModeDecl_in_setter725);
                     orderingModeDecl41=orderingModeDecl();
                     _fsp--;
                     if (failed) return retval;
@@ -1534,7 +1534,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_copyNamespacesDecl_in_setter724);
+                    pushFollow(FOLLOW_copyNamespacesDecl_in_setter738);
                     copyNamespacesDecl42=copyNamespacesDecl();
                     _fsp--;
                     if (failed) return retval;
@@ -1598,16 +1598,16 @@ public class XQFTParser extends Parser {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_defaultNamespaceDecl733);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_defaultNamespaceDecl747);    throw mse;
             }
 
             NAMESPACE44=(Token)input.LT(1);
-            match(input,NAMESPACE,FOLLOW_NAMESPACE_in_defaultNamespaceDecl741); if (failed) return retval;
+            match(input,NAMESPACE,FOLLOW_NAMESPACE_in_defaultNamespaceDecl755); if (failed) return retval;
             if ( backtracking==0 ) {
             NAMESPACE44_tree = (XQFTTree)adaptor.create(NAMESPACE44);
             adaptor.addChild(root_0, NAMESPACE44_tree);
             }
-            pushFollow(FOLLOW_uriLiteral_in_defaultNamespaceDecl743);
+            pushFollow(FOLLOW_uriLiteral_in_defaultNamespaceDecl757);
             uriLiteral45=uriLiteral();
             _fsp--;
             if (failed) return retval;
@@ -1658,12 +1658,12 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             COLLATION46=(Token)input.LT(1);
-            match(input,COLLATION,FOLLOW_COLLATION_in_defaultCollationDecl750); if (failed) return retval;
+            match(input,COLLATION,FOLLOW_COLLATION_in_defaultCollationDecl764); if (failed) return retval;
             if ( backtracking==0 ) {
             COLLATION46_tree = (XQFTTree)adaptor.create(COLLATION46);
             adaptor.addChild(root_0, COLLATION46_tree);
             }
-            pushFollow(FOLLOW_uriLiteral_in_defaultCollationDecl752);
+            pushFollow(FOLLOW_uriLiteral_in_defaultCollationDecl766);
             uriLiteral47=uriLiteral();
             _fsp--;
             if (failed) return retval;
@@ -1716,13 +1716,13 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             ORDER48=(Token)input.LT(1);
-            match(input,ORDER,FOLLOW_ORDER_in_emptyOrderDecl765); if (failed) return retval;
+            match(input,ORDER,FOLLOW_ORDER_in_emptyOrderDecl779); if (failed) return retval;
             if ( backtracking==0 ) {
             ORDER48_tree = (XQFTTree)adaptor.create(ORDER48);
             adaptor.addChild(root_0, ORDER48_tree);
             }
             EMPTY49=(Token)input.LT(1);
-            match(input,EMPTY,FOLLOW_EMPTY_in_emptyOrderDecl767); if (failed) return retval;
+            match(input,EMPTY,FOLLOW_EMPTY_in_emptyOrderDecl781); if (failed) return retval;
             if ( backtracking==0 ) {
             EMPTY49_tree = (XQFTTree)adaptor.create(EMPTY49);
             adaptor.addChild(root_0, EMPTY49_tree);
@@ -1737,7 +1737,7 @@ public class XQFTParser extends Parser {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_emptyOrderDecl769);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_emptyOrderDecl783);    throw mse;
             }
 
 
@@ -1790,23 +1790,23 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             NAMESPACE51=(Token)input.LT(1);
-            match(input,NAMESPACE,FOLLOW_NAMESPACE_in_namespaceDecl790); if (failed) return retval;
+            match(input,NAMESPACE,FOLLOW_NAMESPACE_in_namespaceDecl804); if (failed) return retval;
             if ( backtracking==0 ) {
             NAMESPACE51_tree = (XQFTTree)adaptor.create(NAMESPACE51);
             adaptor.addChild(root_0, NAMESPACE51_tree);
             }
-            pushFollow(FOLLOW_ncNameorKeyword_in_namespaceDecl792);
+            pushFollow(FOLLOW_ncNameorKeyword_in_namespaceDecl806);
             ncNameorKeyword52=ncNameorKeyword();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, ncNameorKeyword52.getTree());
             EQSi53=(Token)input.LT(1);
-            match(input,EQSi,FOLLOW_EQSi_in_namespaceDecl794); if (failed) return retval;
+            match(input,EQSi,FOLLOW_EQSi_in_namespaceDecl808); if (failed) return retval;
             if ( backtracking==0 ) {
             EQSi53_tree = (XQFTTree)adaptor.create(EQSi53);
             adaptor.addChild(root_0, EQSi53_tree);
             }
-            pushFollow(FOLLOW_uriLiteral_in_namespaceDecl796);
+            pushFollow(FOLLOW_uriLiteral_in_namespaceDecl810);
             uriLiteral54=uriLiteral();
             _fsp--;
             if (failed) return retval;
@@ -1857,7 +1857,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             BOUNDARYSPACE55=(Token)input.LT(1);
-            match(input,BOUNDARYSPACE,FOLLOW_BOUNDARYSPACE_in_boundarySpaceDecl805); if (failed) return retval;
+            match(input,BOUNDARYSPACE,FOLLOW_BOUNDARYSPACE_in_boundarySpaceDecl819); if (failed) return retval;
             if ( backtracking==0 ) {
             BOUNDARYSPACE55_tree = (XQFTTree)adaptor.create(BOUNDARYSPACE55);
             adaptor.addChild(root_0, BOUNDARYSPACE55_tree);
@@ -1872,7 +1872,7 @@ public class XQFTParser extends Parser {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_boundarySpaceDecl807);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_boundarySpaceDecl821);    throw mse;
             }
 
 
@@ -1921,12 +1921,12 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             BASE_URI57=(Token)input.LT(1);
-            match(input,BASE_URI,FOLLOW_BASE_URI_in_baseURIDecl828); if (failed) return retval;
+            match(input,BASE_URI,FOLLOW_BASE_URI_in_baseURIDecl842); if (failed) return retval;
             if ( backtracking==0 ) {
             BASE_URI57_tree = (XQFTTree)adaptor.create(BASE_URI57);
             adaptor.addChild(root_0, BASE_URI57_tree);
             }
-            pushFollow(FOLLOW_uriLiteral_in_baseURIDecl830);
+            pushFollow(FOLLOW_uriLiteral_in_baseURIDecl844);
             uriLiteral58=uriLiteral();
             _fsp--;
             if (failed) return retval;
@@ -1977,7 +1977,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             CONSTRUCTION59=(Token)input.LT(1);
-            match(input,CONSTRUCTION,FOLLOW_CONSTRUCTION_in_constructionDecl840); if (failed) return retval;
+            match(input,CONSTRUCTION,FOLLOW_CONSTRUCTION_in_constructionDecl854); if (failed) return retval;
             if ( backtracking==0 ) {
             CONSTRUCTION59_tree = (XQFTTree)adaptor.create(CONSTRUCTION59);
             adaptor.addChild(root_0, CONSTRUCTION59_tree);
@@ -1992,7 +1992,7 @@ public class XQFTParser extends Parser {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_constructionDecl842);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_constructionDecl856);    throw mse;
             }
 
 
@@ -2041,7 +2041,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             ORDERING61=(Token)input.LT(1);
-            match(input,ORDERING,FOLLOW_ORDERING_in_orderingModeDecl858); if (failed) return retval;
+            match(input,ORDERING,FOLLOW_ORDERING_in_orderingModeDecl872); if (failed) return retval;
             if ( backtracking==0 ) {
             ORDERING61_tree = (XQFTTree)adaptor.create(ORDERING61);
             adaptor.addChild(root_0, ORDERING61_tree);
@@ -2056,7 +2056,7 @@ public class XQFTParser extends Parser {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_orderingModeDecl860);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_orderingModeDecl874);    throw mse;
             }
 
 
@@ -2109,23 +2109,23 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             COPY_NAMESPACES63=(Token)input.LT(1);
-            match(input,COPY_NAMESPACES,FOLLOW_COPY_NAMESPACES_in_copyNamespacesDecl874); if (failed) return retval;
+            match(input,COPY_NAMESPACES,FOLLOW_COPY_NAMESPACES_in_copyNamespacesDecl888); if (failed) return retval;
             if ( backtracking==0 ) {
             COPY_NAMESPACES63_tree = (XQFTTree)adaptor.create(COPY_NAMESPACES63);
             adaptor.addChild(root_0, COPY_NAMESPACES63_tree);
             }
-            pushFollow(FOLLOW_preserveMode_in_copyNamespacesDecl876);
+            pushFollow(FOLLOW_preserveMode_in_copyNamespacesDecl890);
             preserveMode64=preserveMode();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, preserveMode64.getTree());
             COMMASi65=(Token)input.LT(1);
-            match(input,COMMASi,FOLLOW_COMMASi_in_copyNamespacesDecl878); if (failed) return retval;
+            match(input,COMMASi,FOLLOW_COMMASi_in_copyNamespacesDecl892); if (failed) return retval;
             if ( backtracking==0 ) {
             COMMASi65_tree = (XQFTTree)adaptor.create(COMMASi65);
             adaptor.addChild(root_0, COMMASi65_tree);
             }
-            pushFollow(FOLLOW_inheritMode_in_copyNamespacesDecl880);
+            pushFollow(FOLLOW_inheritMode_in_copyNamespacesDecl894);
             inheritMode66=inheritMode();
             _fsp--;
             if (failed) return retval;
@@ -2290,7 +2290,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             IMPORT69=(Token)input.LT(1);
-            match(input,IMPORT,FOLLOW_IMPORT_in_importStmt942); if (failed) return retval;
+            match(input,IMPORT,FOLLOW_IMPORT_in_importStmt956); if (failed) return retval;
             if ( backtracking==0 ) {
             IMPORT69_tree = (XQFTTree)adaptor.create(IMPORT69);
             adaptor.addChild(root_0, IMPORT69_tree);
@@ -2316,7 +2316,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:374:35: schemaImport
                     {
-                    pushFollow(FOLLOW_schemaImport_in_importStmt945);
+                    pushFollow(FOLLOW_schemaImport_in_importStmt959);
                     schemaImport70=schemaImport();
                     _fsp--;
                     if (failed) return retval;
@@ -2327,7 +2327,7 @@ public class XQFTParser extends Parser {
                 case 2 :
                     // etc/XQFT.g:374:50: moduleImport
                     {
-                    pushFollow(FOLLOW_moduleImport_in_importStmt949);
+                    pushFollow(FOLLOW_moduleImport_in_importStmt963);
                     moduleImport71=moduleImport();
                     _fsp--;
                     if (failed) return retval;
@@ -2394,7 +2394,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             SCHEMA72=(Token)input.LT(1);
-            match(input,SCHEMA,FOLLOW_SCHEMA_in_schemaImport968); if (failed) return retval;
+            match(input,SCHEMA,FOLLOW_SCHEMA_in_schemaImport982); if (failed) return retval;
             if ( backtracking==0 ) {
             SCHEMA72_tree = (XQFTTree)adaptor.create(SCHEMA72);
             adaptor.addChild(root_0, SCHEMA72_tree);
@@ -2410,7 +2410,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:375:34: schemaPrefix
                     {
-                    pushFollow(FOLLOW_schemaPrefix_in_schemaImport970);
+                    pushFollow(FOLLOW_schemaPrefix_in_schemaImport984);
                     schemaPrefix73=schemaPrefix();
                     _fsp--;
                     if (failed) return retval;
@@ -2421,7 +2421,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_uriLiteral_in_schemaImport973);
+            pushFollow(FOLLOW_uriLiteral_in_schemaImport987);
             uriLiteral74=uriLiteral();
             _fsp--;
             if (failed) return retval;
@@ -2438,12 +2438,12 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:375:60: AT uriLiteral ( COMMASi uriLiteral )*
                     {
                     AT75=(Token)input.LT(1);
-                    match(input,AT,FOLLOW_AT_in_schemaImport976); if (failed) return retval;
+                    match(input,AT,FOLLOW_AT_in_schemaImport990); if (failed) return retval;
                     if ( backtracking==0 ) {
                     AT75_tree = (XQFTTree)adaptor.create(AT75);
                     adaptor.addChild(root_0, AT75_tree);
                     }
-                    pushFollow(FOLLOW_uriLiteral_in_schemaImport978);
+                    pushFollow(FOLLOW_uriLiteral_in_schemaImport992);
                     uriLiteral76=uriLiteral();
                     _fsp--;
                     if (failed) return retval;
@@ -2464,12 +2464,12 @@ public class XQFTParser extends Parser {
                     	    // etc/XQFT.g:375:75: COMMASi uriLiteral
                     	    {
                     	    COMMASi77=(Token)input.LT(1);
-                    	    match(input,COMMASi,FOLLOW_COMMASi_in_schemaImport981); if (failed) return retval;
+                    	    match(input,COMMASi,FOLLOW_COMMASi_in_schemaImport995); if (failed) return retval;
                     	    if ( backtracking==0 ) {
                     	    COMMASi77_tree = (XQFTTree)adaptor.create(COMMASi77);
                     	    adaptor.addChild(root_0, COMMASi77_tree);
                     	    }
-                    	    pushFollow(FOLLOW_uriLiteral_in_schemaImport983);
+                    	    pushFollow(FOLLOW_uriLiteral_in_schemaImport997);
                     	    uriLiteral78=uriLiteral();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -2564,18 +2564,18 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:376:28: NAMESPACE ncNameorKeyword EQSi
                     {
                     NAMESPACE79=(Token)input.LT(1);
-                    match(input,NAMESPACE,FOLLOW_NAMESPACE_in_schemaPrefix1006); if (failed) return retval;
+                    match(input,NAMESPACE,FOLLOW_NAMESPACE_in_schemaPrefix1020); if (failed) return retval;
                     if ( backtracking==0 ) {
                     NAMESPACE79_tree = (XQFTTree)adaptor.create(NAMESPACE79);
                     adaptor.addChild(root_0, NAMESPACE79_tree);
                     }
-                    pushFollow(FOLLOW_ncNameorKeyword_in_schemaPrefix1008);
+                    pushFollow(FOLLOW_ncNameorKeyword_in_schemaPrefix1022);
                     ncNameorKeyword80=ncNameorKeyword();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, ncNameorKeyword80.getTree());
                     EQSi81=(Token)input.LT(1);
-                    match(input,EQSi,FOLLOW_EQSi_in_schemaPrefix1010); if (failed) return retval;
+                    match(input,EQSi,FOLLOW_EQSi_in_schemaPrefix1024); if (failed) return retval;
                     if ( backtracking==0 ) {
                     EQSi81_tree = (XQFTTree)adaptor.create(EQSi81);
                     adaptor.addChild(root_0, EQSi81_tree);
@@ -2595,19 +2595,19 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:376:63: DEFAULT ELEMENT NAMESPACE
                     {
                     DEFAULT82=(Token)input.LT(1);
-                    match(input,DEFAULT,FOLLOW_DEFAULT_in_schemaPrefix1016); if (failed) return retval;
+                    match(input,DEFAULT,FOLLOW_DEFAULT_in_schemaPrefix1030); if (failed) return retval;
                     if ( backtracking==0 ) {
                     DEFAULT82_tree = (XQFTTree)adaptor.create(DEFAULT82);
                     adaptor.addChild(root_0, DEFAULT82_tree);
                     }
                     ELEMENT83=(Token)input.LT(1);
-                    match(input,ELEMENT,FOLLOW_ELEMENT_in_schemaPrefix1018); if (failed) return retval;
+                    match(input,ELEMENT,FOLLOW_ELEMENT_in_schemaPrefix1032); if (failed) return retval;
                     if ( backtracking==0 ) {
                     ELEMENT83_tree = (XQFTTree)adaptor.create(ELEMENT83);
                     adaptor.addChild(root_0, ELEMENT83_tree);
                     }
                     NAMESPACE84=(Token)input.LT(1);
-                    match(input,NAMESPACE,FOLLOW_NAMESPACE_in_schemaPrefix1020); if (failed) return retval;
+                    match(input,NAMESPACE,FOLLOW_NAMESPACE_in_schemaPrefix1034); if (failed) return retval;
                     if ( backtracking==0 ) {
                     NAMESPACE84_tree = (XQFTTree)adaptor.create(NAMESPACE84);
                     adaptor.addChild(root_0, NAMESPACE84_tree);
@@ -2677,7 +2677,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             MODULE85=(Token)input.LT(1);
-            match(input,MODULE,FOLLOW_MODULE_in_moduleImport1039); if (failed) return retval;
+            match(input,MODULE,FOLLOW_MODULE_in_moduleImport1053); if (failed) return retval;
             if ( backtracking==0 ) {
             MODULE85_tree = (XQFTTree)adaptor.create(MODULE85);
             adaptor.addChild(root_0, MODULE85_tree);
@@ -2694,18 +2694,18 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:377:35: NAMESPACE ncNameorKeyword EQSi
                     {
                     NAMESPACE86=(Token)input.LT(1);
-                    match(input,NAMESPACE,FOLLOW_NAMESPACE_in_moduleImport1042); if (failed) return retval;
+                    match(input,NAMESPACE,FOLLOW_NAMESPACE_in_moduleImport1056); if (failed) return retval;
                     if ( backtracking==0 ) {
                     NAMESPACE86_tree = (XQFTTree)adaptor.create(NAMESPACE86);
                     adaptor.addChild(root_0, NAMESPACE86_tree);
                     }
-                    pushFollow(FOLLOW_ncNameorKeyword_in_moduleImport1044);
+                    pushFollow(FOLLOW_ncNameorKeyword_in_moduleImport1058);
                     ncNameorKeyword87=ncNameorKeyword();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, ncNameorKeyword87.getTree());
                     EQSi88=(Token)input.LT(1);
-                    match(input,EQSi,FOLLOW_EQSi_in_moduleImport1046); if (failed) return retval;
+                    match(input,EQSi,FOLLOW_EQSi_in_moduleImport1060); if (failed) return retval;
                     if ( backtracking==0 ) {
                     EQSi88_tree = (XQFTTree)adaptor.create(EQSi88);
                     adaptor.addChild(root_0, EQSi88_tree);
@@ -2716,7 +2716,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_uriLiteral_in_moduleImport1050);
+            pushFollow(FOLLOW_uriLiteral_in_moduleImport1064);
             uriLiteral89=uriLiteral();
             _fsp--;
             if (failed) return retval;
@@ -2733,12 +2733,12 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:377:80: AT uriLiteral ( COMMASi uriLiteral )*
                     {
                     AT90=(Token)input.LT(1);
-                    match(input,AT,FOLLOW_AT_in_moduleImport1053); if (failed) return retval;
+                    match(input,AT,FOLLOW_AT_in_moduleImport1067); if (failed) return retval;
                     if ( backtracking==0 ) {
                     AT90_tree = (XQFTTree)adaptor.create(AT90);
                     adaptor.addChild(root_0, AT90_tree);
                     }
-                    pushFollow(FOLLOW_uriLiteral_in_moduleImport1055);
+                    pushFollow(FOLLOW_uriLiteral_in_moduleImport1069);
                     uriLiteral91=uriLiteral();
                     _fsp--;
                     if (failed) return retval;
@@ -2759,12 +2759,12 @@ public class XQFTParser extends Parser {
                     	    // etc/XQFT.g:377:95: COMMASi uriLiteral
                     	    {
                     	    COMMASi92=(Token)input.LT(1);
-                    	    match(input,COMMASi,FOLLOW_COMMASi_in_moduleImport1058); if (failed) return retval;
+                    	    match(input,COMMASi,FOLLOW_COMMASi_in_moduleImport1072); if (failed) return retval;
                     	    if ( backtracking==0 ) {
                     	    COMMASi92_tree = (XQFTTree)adaptor.create(COMMASi92);
                     	    adaptor.addChild(root_0, COMMASi92_tree);
                     	    }
-                    	    pushFollow(FOLLOW_uriLiteral_in_moduleImport1060);
+                    	    pushFollow(FOLLOW_uriLiteral_in_moduleImport1074);
                     	    uriLiteral93=uriLiteral();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -2840,18 +2840,18 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             VARIABLE94=(Token)input.LT(1);
-            match(input,VARIABLE,FOLLOW_VARIABLE_in_varDecl1076); if (failed) return retval;
+            match(input,VARIABLE,FOLLOW_VARIABLE_in_varDecl1090); if (failed) return retval;
             if ( backtracking==0 ) {
             VARIABLE94_tree = (XQFTTree)adaptor.create(VARIABLE94);
             adaptor.addChild(root_0, VARIABLE94_tree);
             }
             DOLLARSi95=(Token)input.LT(1);
-            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_varDecl1078); if (failed) return retval;
+            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_varDecl1092); if (failed) return retval;
             if ( backtracking==0 ) {
             DOLLARSi95_tree = (XQFTTree)adaptor.create(DOLLARSi95);
             adaptor.addChild(root_0, DOLLARSi95_tree);
             }
-            pushFollow(FOLLOW_qName_in_varDecl1080);
+            pushFollow(FOLLOW_qName_in_varDecl1094);
             qName96=qName();
             _fsp--;
             if (failed) return retval;
@@ -2867,7 +2867,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:379:35: typeDeclaration
                     {
-                    pushFollow(FOLLOW_typeDeclaration_in_varDecl1082);
+                    pushFollow(FOLLOW_typeDeclaration_in_varDecl1096);
                     typeDeclaration97=typeDeclaration();
                     _fsp--;
                     if (failed) return retval;
@@ -2903,12 +2903,12 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:379:54: ASSIGNSi exprSingle
                     {
                     ASSIGNSi98=(Token)input.LT(1);
-                    match(input,ASSIGNSi,FOLLOW_ASSIGNSi_in_varDecl1087); if (failed) return retval;
+                    match(input,ASSIGNSi,FOLLOW_ASSIGNSi_in_varDecl1101); if (failed) return retval;
                     if ( backtracking==0 ) {
                     ASSIGNSi98_tree = (XQFTTree)adaptor.create(ASSIGNSi98);
                     adaptor.addChild(root_0, ASSIGNSi98_tree);
                     }
-                    pushFollow(FOLLOW_exprSingle_in_varDecl1089);
+                    pushFollow(FOLLOW_exprSingle_in_varDecl1103);
                     exprSingle99=exprSingle();
                     _fsp--;
                     if (failed) return retval;
@@ -2923,7 +2923,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:379:77: EXTERNAL
                     {
                     EXTERNAL100=(Token)input.LT(1);
-                    match(input,EXTERNAL,FOLLOW_EXTERNAL_in_varDecl1094); if (failed) return retval;
+                    match(input,EXTERNAL,FOLLOW_EXTERNAL_in_varDecl1108); if (failed) return retval;
                     if ( backtracking==0 ) {
                     EXTERNAL100_tree = (XQFTTree)adaptor.create(EXTERNAL100);
                     adaptor.addChild(root_0, EXTERNAL100_tree);
@@ -2999,7 +2999,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     QName101=(Token)input.LT(1);
-                    match(input,QName,FOLLOW_QName_in_qName1119); if (failed) return retval;
+                    match(input,QName,FOLLOW_QName_in_qName1133); if (failed) return retval;
                     if ( backtracking==0 ) {
                     QName101_tree = (XQFTTree)adaptor.create(QName101);
                     adaptor.addChild(root_0, QName101_tree);
@@ -3012,7 +3012,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ncNameorKeyword_in_qName1134);
+                    pushFollow(FOLLOW_ncNameorKeyword_in_qName1148);
                     ncNameorKeyword102=ncNameorKeyword();
                     _fsp--;
                     if (failed) return retval;
@@ -3065,12 +3065,12 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             AS103=(Token)input.LT(1);
-            match(input,AS,FOLLOW_AS_in_typeDeclaration1150); if (failed) return retval;
+            match(input,AS,FOLLOW_AS_in_typeDeclaration1164); if (failed) return retval;
             if ( backtracking==0 ) {
             AS103_tree = (XQFTTree)adaptor.create(AS103);
             adaptor.addChild(root_0, AS103_tree);
             }
-            pushFollow(FOLLOW_sequenceType_in_typeDeclaration1152);
+            pushFollow(FOLLOW_sequenceType_in_typeDeclaration1166);
             sequenceType104=sequenceType();
             _fsp--;
             if (failed) return retval;
@@ -3141,16 +3141,16 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:388:5: FUNCTION qName LPARSi ( paramList )? RPARSi ( AS sequenceType )? ( enclosedExpr | EXTERNAL )
             {
             FUNCTION105=(Token)input.LT(1);
-            match(input,FUNCTION,FOLLOW_FUNCTION_in_functionDecl1169); if (failed) return retval;
+            match(input,FUNCTION,FOLLOW_FUNCTION_in_functionDecl1183); if (failed) return retval;
             if ( backtracking==0 ) stream_FUNCTION.add(FUNCTION105);
 
-            pushFollow(FOLLOW_qName_in_functionDecl1171);
+            pushFollow(FOLLOW_qName_in_functionDecl1185);
             qName106=qName();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_qName.add(qName106.getTree());
             LPARSi107=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_functionDecl1173); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_functionDecl1187); if (failed) return retval;
             if ( backtracking==0 ) stream_LPARSi.add(LPARSi107);
 
             // etc/XQFT.g:388:27: ( paramList )?
@@ -3164,7 +3164,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:388:27: paramList
                     {
-                    pushFollow(FOLLOW_paramList_in_functionDecl1175);
+                    pushFollow(FOLLOW_paramList_in_functionDecl1189);
                     paramList108=paramList();
                     _fsp--;
                     if (failed) return retval;
@@ -3176,7 +3176,7 @@ public class XQFTParser extends Parser {
             }
 
             RPARSi109=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_functionDecl1178); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_functionDecl1192); if (failed) return retval;
             if ( backtracking==0 ) stream_RPARSi.add(RPARSi109);
 
             // etc/XQFT.g:389:9: ( AS sequenceType )?
@@ -3191,10 +3191,10 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:389:10: AS sequenceType
                     {
                     AS110=(Token)input.LT(1);
-                    match(input,AS,FOLLOW_AS_in_functionDecl1190); if (failed) return retval;
+                    match(input,AS,FOLLOW_AS_in_functionDecl1204); if (failed) return retval;
                     if ( backtracking==0 ) stream_AS.add(AS110);
 
-                    pushFollow(FOLLOW_sequenceType_in_functionDecl1192);
+                    pushFollow(FOLLOW_sequenceType_in_functionDecl1206);
                     sequenceType111=sequenceType();
                     _fsp--;
                     if (failed) return retval;
@@ -3226,7 +3226,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:389:29: enclosedExpr
                     {
-                    pushFollow(FOLLOW_enclosedExpr_in_functionDecl1197);
+                    pushFollow(FOLLOW_enclosedExpr_in_functionDecl1211);
                     enclosedExpr112=enclosedExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -3238,7 +3238,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:389:44: EXTERNAL
                     {
                     EXTERNAL113=(Token)input.LT(1);
-                    match(input,EXTERNAL,FOLLOW_EXTERNAL_in_functionDecl1201); if (failed) return retval;
+                    match(input,EXTERNAL,FOLLOW_EXTERNAL_in_functionDecl1215); if (failed) return retval;
                     if ( backtracking==0 ) stream_EXTERNAL.add(EXTERNAL113);
 
 
@@ -3345,7 +3345,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_param_in_paramList1242);
+            pushFollow(FOLLOW_param_in_paramList1256);
             param114=param();
             _fsp--;
             if (failed) return retval;
@@ -3366,12 +3366,12 @@ public class XQFTParser extends Parser {
             	    // etc/XQFT.g:393:27: COMMASi param
             	    {
             	    COMMASi115=(Token)input.LT(1);
-            	    match(input,COMMASi,FOLLOW_COMMASi_in_paramList1245); if (failed) return retval;
+            	    match(input,COMMASi,FOLLOW_COMMASi_in_paramList1259); if (failed) return retval;
             	    if ( backtracking==0 ) {
             	    COMMASi115_tree = (XQFTTree)adaptor.create(COMMASi115);
             	    adaptor.addChild(root_0, COMMASi115_tree);
             	    }
-            	    pushFollow(FOLLOW_param_in_paramList1247);
+            	    pushFollow(FOLLOW_param_in_paramList1261);
             	    param116=param();
             	    _fsp--;
             	    if (failed) return retval;
@@ -3433,12 +3433,12 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             DOLLARSi117=(Token)input.LT(1);
-            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_param1267); if (failed) return retval;
+            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_param1281); if (failed) return retval;
             if ( backtracking==0 ) {
             DOLLARSi117_tree = (XQFTTree)adaptor.create(DOLLARSi117);
             adaptor.addChild(root_0, DOLLARSi117_tree);
             }
-            pushFollow(FOLLOW_qName_in_param1269);
+            pushFollow(FOLLOW_qName_in_param1283);
             qName118=qName();
             _fsp--;
             if (failed) return retval;
@@ -3454,7 +3454,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:394:35: typeDeclaration
                     {
-                    pushFollow(FOLLOW_typeDeclaration_in_param1271);
+                    pushFollow(FOLLOW_typeDeclaration_in_param1285);
                     typeDeclaration119=typeDeclaration();
                     _fsp--;
                     if (failed) return retval;
@@ -3513,14 +3513,14 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LBRACESi120=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_enclosedExpr1292); if (failed) return retval;
-            pushFollow(FOLLOW_thisExprIsEnclosed_in_enclosedExpr1303);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_enclosedExpr1306); if (failed) return retval;
+            pushFollow(FOLLOW_thisExprIsEnclosed_in_enclosedExpr1317);
             thisExprIsEnclosed121=thisExprIsEnclosed();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed121.getTree());
             RBRACSi122=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_enclosedExpr1314); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_enclosedExpr1328); if (failed) return retval;
 
             }
 
@@ -3569,18 +3569,18 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             OPTION123=(Token)input.LT(1);
-            match(input,OPTION,FOLLOW_OPTION_in_optionDecl1328); if (failed) return retval;
+            match(input,OPTION,FOLLOW_OPTION_in_optionDecl1342); if (failed) return retval;
             if ( backtracking==0 ) {
             OPTION123_tree = (XQFTTree)adaptor.create(OPTION123);
             adaptor.addChild(root_0, OPTION123_tree);
             }
-            pushFollow(FOLLOW_qName_in_optionDecl1330);
+            pushFollow(FOLLOW_qName_in_optionDecl1344);
             qName124=qName();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, qName124.getTree());
             StringLiteral125=(Token)input.LT(1);
-            match(input,StringLiteral,FOLLOW_StringLiteral_in_optionDecl1332); if (failed) return retval;
+            match(input,StringLiteral,FOLLOW_StringLiteral_in_optionDecl1346); if (failed) return retval;
             if ( backtracking==0 ) {
             StringLiteral125_tree = (XQFTTree)adaptor.create(StringLiteral125);
             adaptor.addChild(root_0, StringLiteral125_tree);
@@ -3631,12 +3631,12 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             FTOPTION126=(Token)input.LT(1);
-            match(input,FTOPTION,FOLLOW_FTOPTION_in_ftOptionDecl1340); if (failed) return retval;
+            match(input,FTOPTION,FOLLOW_FTOPTION_in_ftOptionDecl1354); if (failed) return retval;
             if ( backtracking==0 ) {
             FTOPTION126_tree = (XQFTTree)adaptor.create(FTOPTION126);
             adaptor.addChild(root_0, FTOPTION126_tree);
             }
-            pushFollow(FOLLOW_ftMatchOptions_in_ftOptionDecl1342);
+            pushFollow(FOLLOW_ftMatchOptions_in_ftOptionDecl1356);
             ftMatchOptions127=ftMatchOptions();
             _fsp--;
             if (failed) return retval;
@@ -3700,7 +3700,7 @@ public class XQFTParser extends Parser {
             	case 1 :
             	    // etc/XQFT.g:404:22: ftMatchOption
             	    {
-            	    pushFollow(FOLLOW_ftMatchOption_in_ftMatchOptions1353);
+            	    pushFollow(FOLLOW_ftMatchOption_in_ftMatchOptions1367);
             	    ftMatchOption128=ftMatchOption();
             	    _fsp--;
             	    if (failed) return retval;
@@ -6486,15 +6486,15 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     EMPTY_SEQUENCE129=(Token)input.LT(1);
-                    match(input,EMPTY_SEQUENCE,FOLLOW_EMPTY_SEQUENCE_in_sequenceType1384); if (failed) return retval;
+                    match(input,EMPTY_SEQUENCE,FOLLOW_EMPTY_SEQUENCE_in_sequenceType1398); if (failed) return retval;
                     if ( backtracking==0 ) {
                     EMPTY_SEQUENCE129_tree = (XQFTTree)adaptor.create(EMPTY_SEQUENCE129);
                     adaptor.addChild(root_0, EMPTY_SEQUENCE129_tree);
                     }
                     LPARSi130=(Token)input.LT(1);
-                    match(input,LPARSi,FOLLOW_LPARSi_in_sequenceType1386); if (failed) return retval;
+                    match(input,LPARSi,FOLLOW_LPARSi_in_sequenceType1400); if (failed) return retval;
                     RPARSi131=(Token)input.LT(1);
-                    match(input,RPARSi,FOLLOW_RPARSi_in_sequenceType1389); if (failed) return retval;
+                    match(input,RPARSi,FOLLOW_RPARSi_in_sequenceType1403); if (failed) return retval;
 
                     }
                     break;
@@ -6503,12 +6503,12 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_itemType_in_sequenceType1405);
+                    pushFollow(FOLLOW_itemType_in_sequenceType1419);
                     itemType132=itemType();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, itemType132.getTree());
-                    pushFollow(FOLLOW_occurrenceIndicator_in_sequenceType1407);
+                    pushFollow(FOLLOW_occurrenceIndicator_in_sequenceType1421);
                     occurrenceIndicator133=occurrenceIndicator();
                     _fsp--;
                     if (failed) return retval;
@@ -6521,7 +6521,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_itemType_in_sequenceType1415);
+                    pushFollow(FOLLOW_itemType_in_sequenceType1429);
                     itemType134=itemType();
                     _fsp--;
                     if (failed) return retval;
@@ -6920,7 +6920,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:413:17: kindTest
                     {
-                    pushFollow(FOLLOW_kindTest_in_itemType1432);
+                    pushFollow(FOLLOW_kindTest_in_itemType1446);
                     kindTest135=kindTest();
                     _fsp--;
                     if (failed) return retval;
@@ -6935,15 +6935,15 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:413:29: ITEM LPARSi RPARSi
                     {
                     ITEM136=(Token)input.LT(1);
-                    match(input,ITEM,FOLLOW_ITEM_in_itemType1437); if (failed) return retval;
+                    match(input,ITEM,FOLLOW_ITEM_in_itemType1451); if (failed) return retval;
                     if ( backtracking==0 ) {
                     ITEM136_tree = (XQFTTree)adaptor.create(ITEM136);
                     adaptor.addChild(root_0, ITEM136_tree);
                     }
                     LPARSi137=(Token)input.LT(1);
-                    match(input,LPARSi,FOLLOW_LPARSi_in_itemType1439); if (failed) return retval;
+                    match(input,LPARSi,FOLLOW_LPARSi_in_itemType1453); if (failed) return retval;
                     RPARSi138=(Token)input.LT(1);
-                    match(input,RPARSi,FOLLOW_RPARSi_in_itemType1442); if (failed) return retval;
+                    match(input,RPARSi,FOLLOW_RPARSi_in_itemType1456); if (failed) return retval;
 
                     }
 
@@ -6953,7 +6953,7 @@ public class XQFTParser extends Parser {
                 case 3 :
                     // etc/XQFT.g:413:53: atomicType
                     {
-                    pushFollow(FOLLOW_atomicType_in_itemType1448);
+                    pushFollow(FOLLOW_atomicType_in_itemType1462);
                     atomicType139=atomicType();
                     _fsp--;
                     if (failed) return retval;
@@ -7080,7 +7080,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_documentTest_in_kindTest1464);
+                    pushFollow(FOLLOW_documentTest_in_kindTest1478);
                     documentTest140=documentTest();
                     _fsp--;
                     if (failed) return retval;
@@ -7093,7 +7093,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_elementTest_in_kindTest1480);
+                    pushFollow(FOLLOW_elementTest_in_kindTest1494);
                     elementTest141=elementTest();
                     _fsp--;
                     if (failed) return retval;
@@ -7106,7 +7106,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_attributeTest_in_kindTest1496);
+                    pushFollow(FOLLOW_attributeTest_in_kindTest1510);
                     attributeTest142=attributeTest();
                     _fsp--;
                     if (failed) return retval;
@@ -7119,7 +7119,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_schemaElementTest_in_kindTest1512);
+                    pushFollow(FOLLOW_schemaElementTest_in_kindTest1526);
                     schemaElementTest143=schemaElementTest();
                     _fsp--;
                     if (failed) return retval;
@@ -7132,7 +7132,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_schemaAttributeTest_in_kindTest1528);
+                    pushFollow(FOLLOW_schemaAttributeTest_in_kindTest1542);
                     schemaAttributeTest144=schemaAttributeTest();
                     _fsp--;
                     if (failed) return retval;
@@ -7145,7 +7145,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_piTest_in_kindTest1544);
+                    pushFollow(FOLLOW_piTest_in_kindTest1558);
                     piTest145=piTest();
                     _fsp--;
                     if (failed) return retval;
@@ -7158,7 +7158,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_commentTest_in_kindTest1560);
+                    pushFollow(FOLLOW_commentTest_in_kindTest1574);
                     commentTest146=commentTest();
                     _fsp--;
                     if (failed) return retval;
@@ -7171,7 +7171,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_textTest_in_kindTest1576);
+                    pushFollow(FOLLOW_textTest_in_kindTest1590);
                     textTest147=textTest();
                     _fsp--;
                     if (failed) return retval;
@@ -7184,7 +7184,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_anyKindTest_in_kindTest1592);
+                    pushFollow(FOLLOW_anyKindTest_in_kindTest1606);
                     anyKindTest148=anyKindTest();
                     _fsp--;
                     if (failed) return retval;
@@ -7243,13 +7243,13 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             DOCUMENT_NODE149=(Token)input.LT(1);
-            match(input,DOCUMENT_NODE,FOLLOW_DOCUMENT_NODE_in_documentTest1611); if (failed) return retval;
+            match(input,DOCUMENT_NODE,FOLLOW_DOCUMENT_NODE_in_documentTest1625); if (failed) return retval;
             if ( backtracking==0 ) {
             DOCUMENT_NODE149_tree = (XQFTTree)adaptor.create(DOCUMENT_NODE149);
             adaptor.addChild(root_0, DOCUMENT_NODE149_tree);
             }
             LPARSi150=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_documentTest1613); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_documentTest1627); if (failed) return retval;
             // etc/XQFT.g:423:50: ( elementTest | schemaElementTest )?
             int alt30=3;
             int LA30_0 = input.LA(1);
@@ -7264,7 +7264,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:423:51: elementTest
                     {
-                    pushFollow(FOLLOW_elementTest_in_documentTest1617);
+                    pushFollow(FOLLOW_elementTest_in_documentTest1631);
                     elementTest151=elementTest();
                     _fsp--;
                     if (failed) return retval;
@@ -7275,7 +7275,7 @@ public class XQFTParser extends Parser {
                 case 2 :
                     // etc/XQFT.g:423:65: schemaElementTest
                     {
-                    pushFollow(FOLLOW_schemaElementTest_in_documentTest1621);
+                    pushFollow(FOLLOW_schemaElementTest_in_documentTest1635);
                     schemaElementTest152=schemaElementTest();
                     _fsp--;
                     if (failed) return retval;
@@ -7287,7 +7287,7 @@ public class XQFTParser extends Parser {
             }
 
             RPARSi153=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_documentTest1625); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_documentTest1639); if (failed) return retval;
 
             }
 
@@ -7344,13 +7344,13 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             ELEMENT154=(Token)input.LT(1);
-            match(input,ELEMENT,FOLLOW_ELEMENT_in_elementTest1649); if (failed) return retval;
+            match(input,ELEMENT,FOLLOW_ELEMENT_in_elementTest1663); if (failed) return retval;
             if ( backtracking==0 ) {
             ELEMENT154_tree = (XQFTTree)adaptor.create(ELEMENT154);
             adaptor.addChild(root_0, ELEMENT154_tree);
             }
             LPARSi155=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_elementTest1651); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_elementTest1665); if (failed) return retval;
             // etc/XQFT.g:424:47: ( elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )? )?
             int alt33=2;
             int LA33_0 = input.LA(1);
@@ -7362,7 +7362,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:424:48: elementNameOrWildcard ( COMMASi typeName ( QUESTIONSi )? )?
                     {
-                    pushFollow(FOLLOW_elementNameOrWildcard_in_elementTest1655);
+                    pushFollow(FOLLOW_elementNameOrWildcard_in_elementTest1669);
                     elementNameOrWildcard156=elementNameOrWildcard();
                     _fsp--;
                     if (failed) return retval;
@@ -7379,12 +7379,12 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:424:71: COMMASi typeName ( QUESTIONSi )?
                             {
                             COMMASi157=(Token)input.LT(1);
-                            match(input,COMMASi,FOLLOW_COMMASi_in_elementTest1658); if (failed) return retval;
+                            match(input,COMMASi,FOLLOW_COMMASi_in_elementTest1672); if (failed) return retval;
                             if ( backtracking==0 ) {
                             COMMASi157_tree = (XQFTTree)adaptor.create(COMMASi157);
                             adaptor.addChild(root_0, COMMASi157_tree);
                             }
-                            pushFollow(FOLLOW_typeName_in_elementTest1660);
+                            pushFollow(FOLLOW_typeName_in_elementTest1674);
                             typeName158=typeName();
                             _fsp--;
                             if (failed) return retval;
@@ -7401,7 +7401,7 @@ public class XQFTParser extends Parser {
                                     // etc/XQFT.g:424:88: QUESTIONSi
                                     {
                                     QUESTIONSi159=(Token)input.LT(1);
-                                    match(input,QUESTIONSi,FOLLOW_QUESTIONSi_in_elementTest1662); if (failed) return retval;
+                                    match(input,QUESTIONSi,FOLLOW_QUESTIONSi_in_elementTest1676); if (failed) return retval;
                                     if ( backtracking==0 ) {
                                     QUESTIONSi159_tree = (XQFTTree)adaptor.create(QUESTIONSi159);
                                     adaptor.addChild(root_0, QUESTIONSi159_tree);
@@ -7425,7 +7425,7 @@ public class XQFTParser extends Parser {
             }
 
             RPARSi160=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_elementTest1669); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_elementTest1683); if (failed) return retval;
 
             }
 
@@ -7489,7 +7489,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_elementName_in_elementNameOrWildcard1697);
+                    pushFollow(FOLLOW_elementName_in_elementNameOrWildcard1711);
                     elementName161=elementName();
                     _fsp--;
                     if (failed) return retval;
@@ -7503,7 +7503,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     STARSi162=(Token)input.LT(1);
-                    match(input,STARSi,FOLLOW_STARSi_in_elementNameOrWildcard1701); if (failed) return retval;
+                    match(input,STARSi,FOLLOW_STARSi_in_elementNameOrWildcard1715); if (failed) return retval;
                     if ( backtracking==0 ) {
                     STARSi162_tree = (XQFTTree)adaptor.create(STARSi162);
                     adaptor.addChild(root_0, STARSi162_tree);
@@ -7553,7 +7553,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_qName_in_elementName1732);
+            pushFollow(FOLLOW_qName_in_elementName1746);
             qName163=qName();
             _fsp--;
             if (failed) return retval;
@@ -7601,7 +7601,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_qName_in_typeName1759);
+            pushFollow(FOLLOW_qName_in_typeName1773);
             qName164=qName();
             _fsp--;
             if (failed) return retval;
@@ -7656,20 +7656,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             SCHEMA_ELEMENT165=(Token)input.LT(1);
-            match(input,SCHEMA_ELEMENT,FOLLOW_SCHEMA_ELEMENT_in_schemaElementTest1782); if (failed) return retval;
+            match(input,SCHEMA_ELEMENT,FOLLOW_SCHEMA_ELEMENT_in_schemaElementTest1796); if (failed) return retval;
             if ( backtracking==0 ) {
             SCHEMA_ELEMENT165_tree = (XQFTTree)adaptor.create(SCHEMA_ELEMENT165);
             adaptor.addChild(root_0, SCHEMA_ELEMENT165_tree);
             }
             LPARSi166=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_schemaElementTest1784); if (failed) return retval;
-            pushFollow(FOLLOW_elementDeclaration_in_schemaElementTest1787);
+            match(input,LPARSi,FOLLOW_LPARSi_in_schemaElementTest1798); if (failed) return retval;
+            pushFollow(FOLLOW_elementDeclaration_in_schemaElementTest1801);
             elementDeclaration167=elementDeclaration();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, elementDeclaration167.getTree());
             RPARSi168=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_schemaElementTest1789); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_schemaElementTest1803); if (failed) return retval;
 
             }
 
@@ -7713,7 +7713,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_elementName_in_elementDeclaration1817);
+            pushFollow(FOLLOW_elementName_in_elementDeclaration1831);
             elementName169=elementName();
             _fsp--;
             if (failed) return retval;
@@ -7772,13 +7772,13 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             ATTRIBUTE170=(Token)input.LT(1);
-            match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_attributeTest1836); if (failed) return retval;
+            match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_attributeTest1850); if (failed) return retval;
             if ( backtracking==0 ) {
             ATTRIBUTE170_tree = (XQFTTree)adaptor.create(ATTRIBUTE170);
             adaptor.addChild(root_0, ATTRIBUTE170_tree);
             }
             LPARSi171=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_attributeTest1838); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_attributeTest1852); if (failed) return retval;
             // etc/XQFT.g:430:47: ( attribNameOrWildcard ( COMMASi typeName )? )?
             int alt36=2;
             int LA36_0 = input.LA(1);
@@ -7790,7 +7790,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:430:48: attribNameOrWildcard ( COMMASi typeName )?
                     {
-                    pushFollow(FOLLOW_attribNameOrWildcard_in_attributeTest1842);
+                    pushFollow(FOLLOW_attribNameOrWildcard_in_attributeTest1856);
                     attribNameOrWildcard172=attribNameOrWildcard();
                     _fsp--;
                     if (failed) return retval;
@@ -7807,12 +7807,12 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:430:70: COMMASi typeName
                             {
                             COMMASi173=(Token)input.LT(1);
-                            match(input,COMMASi,FOLLOW_COMMASi_in_attributeTest1845); if (failed) return retval;
+                            match(input,COMMASi,FOLLOW_COMMASi_in_attributeTest1859); if (failed) return retval;
                             if ( backtracking==0 ) {
                             COMMASi173_tree = (XQFTTree)adaptor.create(COMMASi173);
                             adaptor.addChild(root_0, COMMASi173_tree);
                             }
-                            pushFollow(FOLLOW_typeName_in_attributeTest1847);
+                            pushFollow(FOLLOW_typeName_in_attributeTest1861);
                             typeName174=typeName();
                             _fsp--;
                             if (failed) return retval;
@@ -7830,7 +7830,7 @@ public class XQFTParser extends Parser {
             }
 
             RPARSi175=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_attributeTest1853); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_attributeTest1867); if (failed) return retval;
 
             }
 
@@ -7894,7 +7894,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_attributeName_in_attribNameOrWildcard1877);
+                    pushFollow(FOLLOW_attributeName_in_attribNameOrWildcard1891);
                     attributeName176=attributeName();
                     _fsp--;
                     if (failed) return retval;
@@ -7908,7 +7908,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     STARSi177=(Token)input.LT(1);
-                    match(input,STARSi,FOLLOW_STARSi_in_attribNameOrWildcard1881); if (failed) return retval;
+                    match(input,STARSi,FOLLOW_STARSi_in_attribNameOrWildcard1895); if (failed) return retval;
                     if ( backtracking==0 ) {
                     STARSi177_tree = (XQFTTree)adaptor.create(STARSi177);
                     adaptor.addChild(root_0, STARSi177_tree);
@@ -7958,7 +7958,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_qName_in_attributeName1908);
+            pushFollow(FOLLOW_qName_in_attributeName1922);
             qName178=qName();
             _fsp--;
             if (failed) return retval;
@@ -8013,20 +8013,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             SCHEMA_ATTRIBUTE179=(Token)input.LT(1);
-            match(input,SCHEMA_ATTRIBUTE,FOLLOW_SCHEMA_ATTRIBUTE_in_schemaAttributeTest1927); if (failed) return retval;
+            match(input,SCHEMA_ATTRIBUTE,FOLLOW_SCHEMA_ATTRIBUTE_in_schemaAttributeTest1941); if (failed) return retval;
             if ( backtracking==0 ) {
             SCHEMA_ATTRIBUTE179_tree = (XQFTTree)adaptor.create(SCHEMA_ATTRIBUTE179);
             adaptor.addChild(root_0, SCHEMA_ATTRIBUTE179_tree);
             }
             LPARSi180=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_schemaAttributeTest1929); if (failed) return retval;
-            pushFollow(FOLLOW_attributeDeclaration_in_schemaAttributeTest1932);
+            match(input,LPARSi,FOLLOW_LPARSi_in_schemaAttributeTest1943); if (failed) return retval;
+            pushFollow(FOLLOW_attributeDeclaration_in_schemaAttributeTest1946);
             attributeDeclaration181=attributeDeclaration();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, attributeDeclaration181.getTree());
             RPARSi182=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_schemaAttributeTest1934); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_schemaAttributeTest1948); if (failed) return retval;
 
             }
 
@@ -8070,7 +8070,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_attributeName_in_attributeDeclaration1958);
+            pushFollow(FOLLOW_attributeName_in_attributeDeclaration1972);
             attributeName183=attributeName();
             _fsp--;
             if (failed) return retval;
@@ -8127,13 +8127,13 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             PROCESSING_INSTRUCTION184=(Token)input.LT(1);
-            match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_piTest1977); if (failed) return retval;
+            match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_piTest1991); if (failed) return retval;
             if ( backtracking==0 ) {
             PROCESSING_INSTRUCTION184_tree = (XQFTTree)adaptor.create(PROCESSING_INSTRUCTION184);
             adaptor.addChild(root_0, PROCESSING_INSTRUCTION184_tree);
             }
             LPARSi185=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_piTest1979); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_piTest1993); if (failed) return retval;
             // etc/XQFT.g:435:53: ( ncNameorKeyword | StringLiteral )?
             int alt38=3;
             int LA38_0 = input.LA(1);
@@ -8148,7 +8148,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:435:54: ncNameorKeyword
                     {
-                    pushFollow(FOLLOW_ncNameorKeyword_in_piTest1983);
+                    pushFollow(FOLLOW_ncNameorKeyword_in_piTest1997);
                     ncNameorKeyword186=ncNameorKeyword();
                     _fsp--;
                     if (failed) return retval;
@@ -8160,7 +8160,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:435:72: StringLiteral
                     {
                     StringLiteral187=(Token)input.LT(1);
-                    match(input,StringLiteral,FOLLOW_StringLiteral_in_piTest1987); if (failed) return retval;
+                    match(input,StringLiteral,FOLLOW_StringLiteral_in_piTest2001); if (failed) return retval;
                     if ( backtracking==0 ) {
                     StringLiteral187_tree = (XQFTTree)adaptor.create(StringLiteral187);
                     adaptor.addChild(root_0, StringLiteral187_tree);
@@ -8172,7 +8172,7 @@ public class XQFTParser extends Parser {
             }
 
             RPARSi188=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_piTest1991); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_piTest2005); if (failed) return retval;
 
             }
 
@@ -8221,15 +8221,15 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             COMMENT189=(Token)input.LT(1);
-            match(input,COMMENT,FOLLOW_COMMENT_in_commentTest2011); if (failed) return retval;
+            match(input,COMMENT,FOLLOW_COMMENT_in_commentTest2025); if (failed) return retval;
             if ( backtracking==0 ) {
             COMMENT189_tree = (XQFTTree)adaptor.create(COMMENT189);
             adaptor.addChild(root_0, COMMENT189_tree);
             }
             LPARSi190=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_commentTest2013); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_commentTest2027); if (failed) return retval;
             RPARSi191=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_commentTest2016); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_commentTest2030); if (failed) return retval;
 
             }
 
@@ -8278,15 +8278,15 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             TEXT192=(Token)input.LT(1);
-            match(input,TEXT,FOLLOW_TEXT_in_textTest2036); if (failed) return retval;
+            match(input,TEXT,FOLLOW_TEXT_in_textTest2050); if (failed) return retval;
             if ( backtracking==0 ) {
             TEXT192_tree = (XQFTTree)adaptor.create(TEXT192);
             adaptor.addChild(root_0, TEXT192_tree);
             }
             LPARSi193=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_textTest2038); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_textTest2052); if (failed) return retval;
             RPARSi194=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_textTest2041); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_textTest2055); if (failed) return retval;
 
             }
 
@@ -8335,15 +8335,15 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             NODE195=(Token)input.LT(1);
-            match(input,NODE,FOLLOW_NODE_in_anyKindTest2061); if (failed) return retval;
+            match(input,NODE,FOLLOW_NODE_in_anyKindTest2075); if (failed) return retval;
             if ( backtracking==0 ) {
             NODE195_tree = (XQFTTree)adaptor.create(NODE195);
             adaptor.addChild(root_0, NODE195_tree);
             }
             LPARSi196=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_anyKindTest2063); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_anyKindTest2077); if (failed) return retval;
             RPARSi197=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_anyKindTest2066); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_anyKindTest2080); if (failed) return retval;
 
             }
 
@@ -8763,7 +8763,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ifExpr_in_exprSingle2114);
+                    pushFollow(FOLLOW_ifExpr_in_exprSingle2128);
                     ifExpr199=ifExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -8776,7 +8776,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_typeswitchExpr_in_exprSingle2130);
+                    pushFollow(FOLLOW_typeswitchExpr_in_exprSingle2144);
                     typeswitchExpr200=typeswitchExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -8789,7 +8789,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_fLWORExpr_in_exprSingle2138);
+                    pushFollow(FOLLOW_fLWORExpr_in_exprSingle2152);
                     fLWORExpr201=fLWORExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -8802,7 +8802,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_quantifiedExpr_in_exprSingle2146);
+                    pushFollow(FOLLOW_quantifiedExpr_in_exprSingle2160);
                     quantifiedExpr202=quantifiedExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -8815,7 +8815,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_orExpr_in_exprSingle2154);
+                    pushFollow(FOLLOW_orExpr_in_exprSingle2168);
                     orExpr203=orExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -8848,7 +8848,7 @@ public class XQFTParser extends Parser {
     };
 
     // $ANTLR start fLWORExpr
-    // etc/XQFT.g:450:5: fLWORExpr : (fc+= forClause | lc+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle -> ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle ) ;
+    // etc/XQFT.g:450:5: fLWORExpr : (c+= forClause | c+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle -> ^( AST_FLWOR ( $c)+ ( whereClause )? ( orderByClause )? exprSingle ) ;
     public final fLWORExpr_return fLWORExpr() throws RecognitionException {
         fLWORExpr_return retval = new fLWORExpr_return();
         retval.start = input.LT(1);
@@ -8856,16 +8856,14 @@ public class XQFTParser extends Parser {
         XQFTTree root_0 = null;
 
         Token RETURN206=null;
-        List list_fc=null;
-        List list_lc=null;
+        List list_c=null;
         whereClause_return whereClause204 = null;
 
         orderByClause_return orderByClause205 = null;
 
         exprSingle_return exprSingle207 = null;
 
-        RuleReturnScope fc = null;
-        RuleReturnScope lc = null;
+        RuleReturnScope c = null;
         XQFTTree RETURN206_tree=null;
         RewriteRuleTokenStream stream_RETURN=new RewriteRuleTokenStream(adaptor,"token RETURN");
         RewriteRuleSubtreeStream stream_letClause=new RewriteRuleSubtreeStream(adaptor,"rule letClause");
@@ -8874,10 +8872,10 @@ public class XQFTParser extends Parser {
         RewriteRuleSubtreeStream stream_exprSingle=new RewriteRuleSubtreeStream(adaptor,"rule exprSingle");
         RewriteRuleSubtreeStream stream_orderByClause=new RewriteRuleSubtreeStream(adaptor,"rule orderByClause");
         try {
-            // etc/XQFT.g:450:15: ( (fc+= forClause | lc+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle -> ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle ) )
-            // etc/XQFT.g:450:17: (fc+= forClause | lc+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle
+            // etc/XQFT.g:450:15: ( (c+= forClause | c+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle -> ^( AST_FLWOR ( $c)+ ( whereClause )? ( orderByClause )? exprSingle ) )
+            // etc/XQFT.g:450:17: (c+= forClause | c+= letClause )+ ( whereClause )? ( orderByClause )? RETURN exprSingle
             {
-            // etc/XQFT.g:450:17: (fc+= forClause | lc+= letClause )+
+            // etc/XQFT.g:450:17: (c+= forClause | c+= letClause )+
             int cnt40=0;
             loop40:
             do {
@@ -8894,29 +8892,29 @@ public class XQFTParser extends Parser {
 
                 switch (alt40) {
             	case 1 :
-            	    // etc/XQFT.g:450:18: fc+= forClause
+            	    // etc/XQFT.g:450:18: c+= forClause
             	    {
-            	    pushFollow(FOLLOW_forClause_in_fLWORExpr2169);
-            	    fc=forClause();
+            	    pushFollow(FOLLOW_forClause_in_fLWORExpr2183);
+            	    c=forClause();
             	    _fsp--;
             	    if (failed) return retval;
-            	    if ( backtracking==0 ) stream_forClause.add(fc.getTree());
-            	    if (list_fc==null) list_fc=new ArrayList();
-            	    list_fc.add(fc);
+            	    if ( backtracking==0 ) stream_forClause.add(c.getTree());
+            	    if (list_c==null) list_c=new ArrayList();
+            	    list_c.add(c);
 
 
             	    }
             	    break;
             	case 2 :
-            	    // etc/XQFT.g:450:34: lc+= letClause
+            	    // etc/XQFT.g:450:33: c+= letClause
             	    {
-            	    pushFollow(FOLLOW_letClause_in_fLWORExpr2175);
-            	    lc=letClause();
+            	    pushFollow(FOLLOW_letClause_in_fLWORExpr2189);
+            	    c=letClause();
             	    _fsp--;
             	    if (failed) return retval;
-            	    if ( backtracking==0 ) stream_letClause.add(lc.getTree());
-            	    if (list_lc==null) list_lc=new ArrayList();
-            	    list_lc.add(lc);
+            	    if ( backtracking==0 ) stream_letClause.add(c.getTree());
+            	    if (list_c==null) list_c=new ArrayList();
+            	    list_c.add(c);
 
 
             	    }
@@ -8932,7 +8930,7 @@ public class XQFTParser extends Parser {
                 cnt40++;
             } while (true);
 
-            // etc/XQFT.g:450:50: ( whereClause )?
+            // etc/XQFT.g:450:48: ( whereClause )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
@@ -8941,9 +8939,9 @@ public class XQFTParser extends Parser {
             }
             switch (alt41) {
                 case 1 :
-                    // etc/XQFT.g:450:50: whereClause
+                    // etc/XQFT.g:450:48: whereClause
                     {
-                    pushFollow(FOLLOW_whereClause_in_fLWORExpr2179);
+                    pushFollow(FOLLOW_whereClause_in_fLWORExpr2193);
                     whereClause204=whereClause();
                     _fsp--;
                     if (failed) return retval;
@@ -8954,7 +8952,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            // etc/XQFT.g:450:63: ( orderByClause )?
+            // etc/XQFT.g:450:61: ( orderByClause )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
@@ -8963,9 +8961,9 @@ public class XQFTParser extends Parser {
             }
             switch (alt42) {
                 case 1 :
-                    // etc/XQFT.g:450:63: orderByClause
+                    // etc/XQFT.g:450:61: orderByClause
                     {
-                    pushFollow(FOLLOW_orderByClause_in_fLWORExpr2182);
+                    pushFollow(FOLLOW_orderByClause_in_fLWORExpr2196);
                     orderByClause205=orderByClause();
                     _fsp--;
                     if (failed) return retval;
@@ -8977,53 +8975,48 @@ public class XQFTParser extends Parser {
             }
 
             RETURN206=(Token)input.LT(1);
-            match(input,RETURN,FOLLOW_RETURN_in_fLWORExpr2185); if (failed) return retval;
+            match(input,RETURN,FOLLOW_RETURN_in_fLWORExpr2199); if (failed) return retval;
             if ( backtracking==0 ) stream_RETURN.add(RETURN206);
 
-            pushFollow(FOLLOW_exprSingle_in_fLWORExpr2187);
+            pushFollow(FOLLOW_exprSingle_in_fLWORExpr2201);
             exprSingle207=exprSingle();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle207.getTree());
 
             // AST REWRITE
-            // elements: exprSingle, lc, fc, whereClause, orderByClause
+            // elements: whereClause, c, orderByClause, exprSingle
             // token labels: 
             // rule labels: retval
             // token list labels: 
-            // rule list labels: fc, lc
+            // rule list labels: c
             if ( backtracking==0 ) {
             retval.tree = root_0;
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
-            RewriteRuleSubtreeStream stream_fc=new RewriteRuleSubtreeStream(adaptor,"token fc",list_fc);
-            RewriteRuleSubtreeStream stream_lc=new RewriteRuleSubtreeStream(adaptor,"token lc",list_lc);
+            RewriteRuleSubtreeStream stream_c=new RewriteRuleSubtreeStream(adaptor,"token c",list_c);
             root_0 = (XQFTTree)adaptor.nil();
-            // 451:9: -> ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle )
+            // 451:9: -> ^( AST_FLWOR ( $c)+ ( whereClause )? ( orderByClause )? exprSingle )
             {
-                // etc/XQFT.g:451:12: ^( AST_FLWOR ( $fc)* ( $lc)* ( whereClause )? ( orderByClause )? exprSingle )
+                // etc/XQFT.g:451:12: ^( AST_FLWOR ( $c)+ ( whereClause )? ( orderByClause )? exprSingle )
                 {
                 XQFTTree root_1 = (XQFTTree)adaptor.nil();
                 root_1 = (XQFTTree)adaptor.becomeRoot(adaptor.create(AST_FLWOR, "AST_FLWOR"), root_1);
 
-                // etc/XQFT.g:451:24: ( $fc)*
-                while ( stream_fc.hasNext() ) {
-                    adaptor.addChild(root_1, ((ParserRuleReturnScope)stream_fc.next()).getTree());
+                if ( !(stream_c.hasNext()) ) {
+                    throw new RewriteEarlyExitException();
+                }
+                while ( stream_c.hasNext() ) {
+                    adaptor.addChild(root_1, ((ParserRuleReturnScope)stream_c.next()).getTree());
 
                 }
-                stream_fc.reset();
-                // etc/XQFT.g:451:29: ( $lc)*
-                while ( stream_lc.hasNext() ) {
-                    adaptor.addChild(root_1, ((ParserRuleReturnScope)stream_lc.next()).getTree());
-
-                }
-                stream_lc.reset();
-                // etc/XQFT.g:451:34: ( whereClause )?
+                stream_c.reset();
+                // etc/XQFT.g:451:28: ( whereClause )?
                 if ( stream_whereClause.hasNext() ) {
                     adaptor.addChild(root_1, stream_whereClause.next());
 
                 }
                 stream_whereClause.reset();
-                // etc/XQFT.g:451:47: ( orderByClause )?
+                // etc/XQFT.g:451:41: ( orderByClause )?
                 if ( stream_orderByClause.hasNext() ) {
                     adaptor.addChild(root_1, stream_orderByClause.next());
 
@@ -9087,10 +9080,10 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:453:21: FOR forClauseTupletDef ( COMMASi forClauseTupletDef )*
             {
             FOR208=(Token)input.LT(1);
-            match(input,FOR,FOLLOW_FOR_in_forClause2237); if (failed) return retval;
+            match(input,FOR,FOLLOW_FOR_in_forClause2247); if (failed) return retval;
             if ( backtracking==0 ) stream_FOR.add(FOR208);
 
-            pushFollow(FOLLOW_forClauseTupletDef_in_forClause2239);
+            pushFollow(FOLLOW_forClauseTupletDef_in_forClause2249);
             forClauseTupletDef209=forClauseTupletDef();
             _fsp--;
             if (failed) return retval;
@@ -9111,10 +9104,10 @@ public class XQFTParser extends Parser {
             	    // etc/XQFT.g:453:45: COMMASi forClauseTupletDef
             	    {
             	    COMMASi210=(Token)input.LT(1);
-            	    match(input,COMMASi,FOLLOW_COMMASi_in_forClause2242); if (failed) return retval;
+            	    match(input,COMMASi,FOLLOW_COMMASi_in_forClause2252); if (failed) return retval;
             	    if ( backtracking==0 ) stream_COMMASi.add(COMMASi210);
 
-            	    pushFollow(FOLLOW_forClauseTupletDef_in_forClause2244);
+            	    pushFollow(FOLLOW_forClauseTupletDef_in_forClause2254);
             	    forClauseTupletDef211=forClauseTupletDef();
             	    _fsp--;
             	    if (failed) return retval;
@@ -9222,10 +9215,10 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:456:34: DOLLARSi varName ( typeDeclaration )? ( positionalVar )? ( ftScoreVar )? IN exprSingle
             {
             DOLLARSi212=(Token)input.LT(1);
-            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_forClauseTupletDef2287); if (failed) return retval;
+            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_forClauseTupletDef2297); if (failed) return retval;
             if ( backtracking==0 ) stream_DOLLARSi.add(DOLLARSi212);
 
-            pushFollow(FOLLOW_varName_in_forClauseTupletDef2289);
+            pushFollow(FOLLOW_varName_in_forClauseTupletDef2299);
             varName213=varName();
             _fsp--;
             if (failed) return retval;
@@ -9241,7 +9234,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:456:51: typeDeclaration
                     {
-                    pushFollow(FOLLOW_typeDeclaration_in_forClauseTupletDef2291);
+                    pushFollow(FOLLOW_typeDeclaration_in_forClauseTupletDef2301);
                     typeDeclaration214=typeDeclaration();
                     _fsp--;
                     if (failed) return retval;
@@ -9263,7 +9256,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:456:68: positionalVar
                     {
-                    pushFollow(FOLLOW_positionalVar_in_forClauseTupletDef2294);
+                    pushFollow(FOLLOW_positionalVar_in_forClauseTupletDef2304);
                     positionalVar215=positionalVar();
                     _fsp--;
                     if (failed) return retval;
@@ -9285,7 +9278,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:456:83: ftScoreVar
                     {
-                    pushFollow(FOLLOW_ftScoreVar_in_forClauseTupletDef2297);
+                    pushFollow(FOLLOW_ftScoreVar_in_forClauseTupletDef2307);
                     ftScoreVar216=ftScoreVar();
                     _fsp--;
                     if (failed) return retval;
@@ -9297,17 +9290,17 @@ public class XQFTParser extends Parser {
             }
 
             IN217=(Token)input.LT(1);
-            match(input,IN,FOLLOW_IN_in_forClauseTupletDef2300); if (failed) return retval;
+            match(input,IN,FOLLOW_IN_in_forClauseTupletDef2310); if (failed) return retval;
             if ( backtracking==0 ) stream_IN.add(IN217);
 
-            pushFollow(FOLLOW_exprSingle_in_forClauseTupletDef2302);
+            pushFollow(FOLLOW_exprSingle_in_forClauseTupletDef2312);
             exprSingle218=exprSingle();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle218.getTree());
 
             // AST REWRITE
-            // elements: varName, exprSingle, DOLLARSi
+            // elements: exprSingle, DOLLARSi, varName
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -9377,7 +9370,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_qName_in_varName2351);
+            pushFollow(FOLLOW_qName_in_varName2361);
             qn=qName();
             _fsp--;
             if (failed) return retval;
@@ -9433,18 +9426,18 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             AT219=(Token)input.LT(1);
-            match(input,AT,FOLLOW_AT_in_positionalVar2372); if (failed) return retval;
+            match(input,AT,FOLLOW_AT_in_positionalVar2382); if (failed) return retval;
             if ( backtracking==0 ) {
             AT219_tree = (XQFTTree)adaptor.create(AT219);
             adaptor.addChild(root_0, AT219_tree);
             }
             DOLLARSi220=(Token)input.LT(1);
-            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_positionalVar2374); if (failed) return retval;
+            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_positionalVar2384); if (failed) return retval;
             if ( backtracking==0 ) {
             DOLLARSi220_tree = (XQFTTree)adaptor.create(DOLLARSi220);
             adaptor.addChild(root_0, DOLLARSi220_tree);
             }
-            pushFollow(FOLLOW_varName_in_positionalVar2376);
+            pushFollow(FOLLOW_varName_in_positionalVar2386);
             varName221=varName();
             _fsp--;
             if (failed) return retval;
@@ -9497,18 +9490,18 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             SCORE222=(Token)input.LT(1);
-            match(input,SCORE,FOLLOW_SCORE_in_ftScoreVar2395); if (failed) return retval;
+            match(input,SCORE,FOLLOW_SCORE_in_ftScoreVar2405); if (failed) return retval;
             if ( backtracking==0 ) {
             SCORE222_tree = (XQFTTree)adaptor.create(SCORE222);
             adaptor.addChild(root_0, SCORE222_tree);
             }
             DOLLARSi223=(Token)input.LT(1);
-            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_ftScoreVar2397); if (failed) return retval;
+            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_ftScoreVar2407); if (failed) return retval;
             if ( backtracking==0 ) {
             DOLLARSi223_tree = (XQFTTree)adaptor.create(DOLLARSi223);
             adaptor.addChild(root_0, DOLLARSi223_tree);
             }
-            pushFollow(FOLLOW_varName_in_ftScoreVar2399);
+            pushFollow(FOLLOW_varName_in_ftScoreVar2409);
             varName224=varName();
             _fsp--;
             if (failed) return retval;
@@ -9563,10 +9556,10 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:463:21: LET varBinding ( COMMASi varBinding )*
             {
             LET225=(Token)input.LT(1);
-            match(input,LET,FOLLOW_LET_in_letClause2427); if (failed) return retval;
+            match(input,LET,FOLLOW_LET_in_letClause2437); if (failed) return retval;
             if ( backtracking==0 ) stream_LET.add(LET225);
 
-            pushFollow(FOLLOW_varBinding_in_letClause2429);
+            pushFollow(FOLLOW_varBinding_in_letClause2439);
             varBinding226=varBinding();
             _fsp--;
             if (failed) return retval;
@@ -9587,10 +9580,10 @@ public class XQFTParser extends Parser {
             	    // etc/XQFT.g:463:37: COMMASi varBinding
             	    {
             	    COMMASi227=(Token)input.LT(1);
-            	    match(input,COMMASi,FOLLOW_COMMASi_in_letClause2432); if (failed) return retval;
+            	    match(input,COMMASi,FOLLOW_COMMASi_in_letClause2442); if (failed) return retval;
             	    if ( backtracking==0 ) stream_COMMASi.add(COMMASi227);
 
-            	    pushFollow(FOLLOW_varBinding_in_letClause2434);
+            	    pushFollow(FOLLOW_varBinding_in_letClause2444);
             	    varBinding228=varBinding();
             	    _fsp--;
             	    if (failed) return retval;
@@ -9718,10 +9711,10 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:467:14: DOLLARSi v= varName ( typeDeclaration )?
                     {
                     DOLLARSi229=(Token)input.LT(1);
-                    match(input,DOLLARSi,FOLLOW_DOLLARSi_in_varBinding2486); if (failed) return retval;
+                    match(input,DOLLARSi,FOLLOW_DOLLARSi_in_varBinding2496); if (failed) return retval;
                     if ( backtracking==0 ) stream_DOLLARSi.add(DOLLARSi229);
 
-                    pushFollow(FOLLOW_varName_in_varBinding2490);
+                    pushFollow(FOLLOW_varName_in_varBinding2500);
                     v=varName();
                     _fsp--;
                     if (failed) return retval;
@@ -9737,7 +9730,7 @@ public class XQFTParser extends Parser {
                         case 1 :
                             // etc/XQFT.g:467:33: typeDeclaration
                             {
-                            pushFollow(FOLLOW_typeDeclaration_in_varBinding2492);
+                            pushFollow(FOLLOW_typeDeclaration_in_varBinding2502);
                             typeDeclaration230=typeDeclaration();
                             _fsp--;
                             if (failed) return retval;
@@ -9755,14 +9748,14 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:467:52: SCORE DOLLARSi v= varName
                     {
                     SCORE231=(Token)input.LT(1);
-                    match(input,SCORE,FOLLOW_SCORE_in_varBinding2497); if (failed) return retval;
+                    match(input,SCORE,FOLLOW_SCORE_in_varBinding2507); if (failed) return retval;
                     if ( backtracking==0 ) stream_SCORE.add(SCORE231);
 
                     DOLLARSi232=(Token)input.LT(1);
-                    match(input,DOLLARSi,FOLLOW_DOLLARSi_in_varBinding2499); if (failed) return retval;
+                    match(input,DOLLARSi,FOLLOW_DOLLARSi_in_varBinding2509); if (failed) return retval;
                     if ( backtracking==0 ) stream_DOLLARSi.add(DOLLARSi232);
 
-                    pushFollow(FOLLOW_varName_in_varBinding2503);
+                    pushFollow(FOLLOW_varName_in_varBinding2513);
                     v=varName();
                     _fsp--;
                     if (failed) return retval;
@@ -9774,17 +9767,17 @@ public class XQFTParser extends Parser {
             }
 
             ASSIGNSi233=(Token)input.LT(1);
-            match(input,ASSIGNSi,FOLLOW_ASSIGNSi_in_varBinding2519); if (failed) return retval;
+            match(input,ASSIGNSi,FOLLOW_ASSIGNSi_in_varBinding2529); if (failed) return retval;
             if ( backtracking==0 ) stream_ASSIGNSi.add(ASSIGNSi233);
 
-            pushFollow(FOLLOW_exprSingle_in_varBinding2521);
+            pushFollow(FOLLOW_exprSingle_in_varBinding2531);
             exprSingle234=exprSingle();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle234.getTree());
 
             // AST REWRITE
-            // elements: DOLLARSi, exprSingle, v
+            // elements: v, DOLLARSi, exprSingle
             // token labels: 
             // rule labels: retval, v
             // token list labels: 
@@ -9856,10 +9849,10 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:472:23: WHERE exprSingle
             {
             WHERE235=(Token)input.LT(1);
-            match(input,WHERE,FOLLOW_WHERE_in_whereClause2569); if (failed) return retval;
+            match(input,WHERE,FOLLOW_WHERE_in_whereClause2579); if (failed) return retval;
             if ( backtracking==0 ) stream_WHERE.add(WHERE235);
 
-            pushFollow(FOLLOW_exprSingle_in_whereClause2571);
+            pushFollow(FOLLOW_exprSingle_in_whereClause2581);
             exprSingle236=exprSingle();
             _fsp--;
             if (failed) return retval;
@@ -9967,11 +9960,11 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:475:26: ORDER BY
                     {
                     ORDER237=(Token)input.LT(1);
-                    match(input,ORDER,FOLLOW_ORDER_in_orderByClause2620); if (failed) return retval;
+                    match(input,ORDER,FOLLOW_ORDER_in_orderByClause2630); if (failed) return retval;
                     if ( backtracking==0 ) stream_ORDER.add(ORDER237);
 
                     BY238=(Token)input.LT(1);
-                    match(input,BY,FOLLOW_BY_in_orderByClause2622); if (failed) return retval;
+                    match(input,BY,FOLLOW_BY_in_orderByClause2632); if (failed) return retval;
                     if ( backtracking==0 ) stream_BY.add(BY238);
 
 
@@ -9981,15 +9974,15 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:475:37: STABLE ORDER BY
                     {
                     STABLE239=(Token)input.LT(1);
-                    match(input,STABLE,FOLLOW_STABLE_in_orderByClause2626); if (failed) return retval;
+                    match(input,STABLE,FOLLOW_STABLE_in_orderByClause2636); if (failed) return retval;
                     if ( backtracking==0 ) stream_STABLE.add(STABLE239);
 
                     ORDER240=(Token)input.LT(1);
-                    match(input,ORDER,FOLLOW_ORDER_in_orderByClause2628); if (failed) return retval;
+                    match(input,ORDER,FOLLOW_ORDER_in_orderByClause2638); if (failed) return retval;
                     if ( backtracking==0 ) stream_ORDER.add(ORDER240);
 
                     BY241=(Token)input.LT(1);
-                    match(input,BY,FOLLOW_BY_in_orderByClause2630); if (failed) return retval;
+                    match(input,BY,FOLLOW_BY_in_orderByClause2640); if (failed) return retval;
                     if ( backtracking==0 ) stream_BY.add(BY241);
 
 
@@ -9998,7 +9991,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_orderSpecList_in_orderByClause2633);
+            pushFollow(FOLLOW_orderSpecList_in_orderByClause2643);
             orderSpecList242=orderSpecList();
             _fsp--;
             if (failed) return retval;
@@ -10082,7 +10075,7 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:478:27: ( orderSpec ( COMMASi orderSpec )* -> ( orderSpec )+ )
             // etc/XQFT.g:478:29: orderSpec ( COMMASi orderSpec )*
             {
-            pushFollow(FOLLOW_orderSpec_in_orderSpecList2676);
+            pushFollow(FOLLOW_orderSpec_in_orderSpecList2686);
             orderSpec243=orderSpec();
             _fsp--;
             if (failed) return retval;
@@ -10103,10 +10096,10 @@ public class XQFTParser extends Parser {
             	    // etc/XQFT.g:478:40: COMMASi orderSpec
             	    {
             	    COMMASi244=(Token)input.LT(1);
-            	    match(input,COMMASi,FOLLOW_COMMASi_in_orderSpecList2679); if (failed) return retval;
+            	    match(input,COMMASi,FOLLOW_COMMASi_in_orderSpecList2689); if (failed) return retval;
             	    if ( backtracking==0 ) stream_COMMASi.add(COMMASi244);
 
-            	    pushFollow(FOLLOW_orderSpec_in_orderSpecList2681);
+            	    pushFollow(FOLLOW_orderSpec_in_orderSpecList2691);
             	    orderSpec245=orderSpec();
             	    _fsp--;
             	    if (failed) return retval;
@@ -10191,12 +10184,12 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_exprSingle_in_orderSpec2728);
+            pushFollow(FOLLOW_exprSingle_in_orderSpec2738);
             exprSingle246=exprSingle();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, exprSingle246.getTree());
-            pushFollow(FOLLOW_orderModifier_in_orderSpec2730);
+            pushFollow(FOLLOW_orderModifier_in_orderSpec2740);
             orderModifier247=orderModifier();
             _fsp--;
             if (failed) return retval;
@@ -10273,7 +10266,7 @@ public class XQFTParser extends Parser {
                         if (backtracking>0) {failed=true; return retval;}
                         MismatchedSetException mse =
                             new MismatchedSetException(null,input);
-                        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_orderModifier2757);    throw mse;
+                        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_orderModifier2767);    throw mse;
                     }
 
 
@@ -10294,7 +10287,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:482:64: EMPTY ( GREATEST | LEAST )
                     {
                     EMPTY249=(Token)input.LT(1);
-                    match(input,EMPTY,FOLLOW_EMPTY_in_orderModifier2767); if (failed) return retval;
+                    match(input,EMPTY,FOLLOW_EMPTY_in_orderModifier2777); if (failed) return retval;
                     if ( backtracking==0 ) {
                     EMPTY249_tree = (XQFTTree)adaptor.create(EMPTY249);
                     adaptor.addChild(root_0, EMPTY249_tree);
@@ -10309,7 +10302,7 @@ public class XQFTParser extends Parser {
                         if (backtracking>0) {failed=true; return retval;}
                         MismatchedSetException mse =
                             new MismatchedSetException(null,input);
-                        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_orderModifier2769);    throw mse;
+                        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_orderModifier2779);    throw mse;
                     }
 
 
@@ -10330,12 +10323,12 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:482:92: COLLATION uriLiteral
                     {
                     COLLATION251=(Token)input.LT(1);
-                    match(input,COLLATION,FOLLOW_COLLATION_in_orderModifier2780); if (failed) return retval;
+                    match(input,COLLATION,FOLLOW_COLLATION_in_orderModifier2790); if (failed) return retval;
                     if ( backtracking==0 ) {
                     COLLATION251_tree = (XQFTTree)adaptor.create(COLLATION251);
                     adaptor.addChild(root_0, COLLATION251_tree);
                     }
-                    pushFollow(FOLLOW_uriLiteral_in_orderModifier2782);
+                    pushFollow(FOLLOW_uriLiteral_in_orderModifier2792);
                     uriLiteral252=uriLiteral();
                     _fsp--;
                     if (failed) return retval;
@@ -10424,7 +10417,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:485:10: quant= SOME
                     {
                     quant=(Token)input.LT(1);
-                    match(input,SOME,FOLLOW_SOME_in_quantifiedExpr2808); if (failed) return retval;
+                    match(input,SOME,FOLLOW_SOME_in_quantifiedExpr2818); if (failed) return retval;
                     if ( backtracking==0 ) stream_SOME.add(quant);
 
 
@@ -10434,7 +10427,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:485:23: quant= EVERY
                     {
                     quant=(Token)input.LT(1);
-                    match(input,EVERY,FOLLOW_EVERY_in_quantifiedExpr2814); if (failed) return retval;
+                    match(input,EVERY,FOLLOW_EVERY_in_quantifiedExpr2824); if (failed) return retval;
                     if ( backtracking==0 ) stream_EVERY.add(quant);
 
 
@@ -10443,7 +10436,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_quantifiedExprTupleDef_in_quantifiedExpr2817);
+            pushFollow(FOLLOW_quantifiedExprTupleDef_in_quantifiedExpr2827);
             quantifiedExprTupleDef253=quantifiedExprTupleDef();
             _fsp--;
             if (failed) return retval;
@@ -10464,10 +10457,10 @@ public class XQFTParser extends Parser {
             	    // etc/XQFT.g:486:10: COMMASi quantifiedExprTupleDef
             	    {
             	    COMMASi254=(Token)input.LT(1);
-            	    match(input,COMMASi,FOLLOW_COMMASi_in_quantifiedExpr2828); if (failed) return retval;
+            	    match(input,COMMASi,FOLLOW_COMMASi_in_quantifiedExpr2838); if (failed) return retval;
             	    if ( backtracking==0 ) stream_COMMASi.add(COMMASi254);
 
-            	    pushFollow(FOLLOW_quantifiedExprTupleDef_in_quantifiedExpr2830);
+            	    pushFollow(FOLLOW_quantifiedExprTupleDef_in_quantifiedExpr2840);
             	    quantifiedExprTupleDef255=quantifiedExprTupleDef();
             	    _fsp--;
             	    if (failed) return retval;
@@ -10482,17 +10475,17 @@ public class XQFTParser extends Parser {
             } while (true);
 
             SATISFIES256=(Token)input.LT(1);
-            match(input,SATISFIES,FOLLOW_SATISFIES_in_quantifiedExpr2834); if (failed) return retval;
+            match(input,SATISFIES,FOLLOW_SATISFIES_in_quantifiedExpr2844); if (failed) return retval;
             if ( backtracking==0 ) stream_SATISFIES.add(SATISFIES256);
 
-            pushFollow(FOLLOW_exprSingle_in_quantifiedExpr2836);
+            pushFollow(FOLLOW_exprSingle_in_quantifiedExpr2846);
             exprSingle257=exprSingle();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle257.getTree());
 
             // AST REWRITE
-            // elements: exprSingle, quant, quantifiedExprTupleDef
+            // elements: quantifiedExprTupleDef, quant, exprSingle
             // token labels: quant
             // rule labels: retval
             // token list labels: 
@@ -10581,10 +10574,10 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:491:13: DOLLARSi varName ( typeDeclaration )? IN exprSingle
             {
             DOLLARSi258=(Token)input.LT(1);
-            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_quantifiedExprTupleDef2892); if (failed) return retval;
+            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_quantifiedExprTupleDef2902); if (failed) return retval;
             if ( backtracking==0 ) stream_DOLLARSi.add(DOLLARSi258);
 
-            pushFollow(FOLLOW_varName_in_quantifiedExprTupleDef2894);
+            pushFollow(FOLLOW_varName_in_quantifiedExprTupleDef2904);
             varName259=varName();
             _fsp--;
             if (failed) return retval;
@@ -10600,7 +10593,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:491:30: typeDeclaration
                     {
-                    pushFollow(FOLLOW_typeDeclaration_in_quantifiedExprTupleDef2896);
+                    pushFollow(FOLLOW_typeDeclaration_in_quantifiedExprTupleDef2906);
                     typeDeclaration260=typeDeclaration();
                     _fsp--;
                     if (failed) return retval;
@@ -10612,17 +10605,17 @@ public class XQFTParser extends Parser {
             }
 
             IN261=(Token)input.LT(1);
-            match(input,IN,FOLLOW_IN_in_quantifiedExprTupleDef2899); if (failed) return retval;
+            match(input,IN,FOLLOW_IN_in_quantifiedExprTupleDef2909); if (failed) return retval;
             if ( backtracking==0 ) stream_IN.add(IN261);
 
-            pushFollow(FOLLOW_exprSingle_in_quantifiedExprTupleDef2901);
+            pushFollow(FOLLOW_exprSingle_in_quantifiedExprTupleDef2911);
             exprSingle262=exprSingle();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle262.getTree());
 
             // AST REWRITE
-            // elements: varName, typeDeclaration, exprSingle
+            // elements: typeDeclaration, exprSingle, varName
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -10715,20 +10708,20 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:494:22: TYPESWITCH LPARSi expr RPARSi ( caseClause )+ DEFAULT ( DOLLARSi varName )? RETURN exprSingle
             {
             TYPESWITCH263=(Token)input.LT(1);
-            match(input,TYPESWITCH,FOLLOW_TYPESWITCH_in_typeswitchExpr2936); if (failed) return retval;
+            match(input,TYPESWITCH,FOLLOW_TYPESWITCH_in_typeswitchExpr2946); if (failed) return retval;
             if ( backtracking==0 ) stream_TYPESWITCH.add(TYPESWITCH263);
 
             LPARSi264=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_typeswitchExpr2938); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_typeswitchExpr2948); if (failed) return retval;
             if ( backtracking==0 ) stream_LPARSi.add(LPARSi264);
 
-            pushFollow(FOLLOW_expr_in_typeswitchExpr2940);
+            pushFollow(FOLLOW_expr_in_typeswitchExpr2950);
             expr265=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_expr.add(expr265.getTree());
             RPARSi266=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_typeswitchExpr2942); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_typeswitchExpr2952); if (failed) return retval;
             if ( backtracking==0 ) stream_RPARSi.add(RPARSi266);
 
             // etc/XQFT.g:494:52: ( caseClause )+
@@ -10747,7 +10740,7 @@ public class XQFTParser extends Parser {
             	case 1 :
             	    // etc/XQFT.g:494:52: caseClause
             	    {
-            	    pushFollow(FOLLOW_caseClause_in_typeswitchExpr2944);
+            	    pushFollow(FOLLOW_caseClause_in_typeswitchExpr2954);
             	    caseClause267=caseClause();
             	    _fsp--;
             	    if (failed) return retval;
@@ -10767,7 +10760,7 @@ public class XQFTParser extends Parser {
             } while (true);
 
             DEFAULT268=(Token)input.LT(1);
-            match(input,DEFAULT,FOLLOW_DEFAULT_in_typeswitchExpr2956); if (failed) return retval;
+            match(input,DEFAULT,FOLLOW_DEFAULT_in_typeswitchExpr2966); if (failed) return retval;
             if ( backtracking==0 ) stream_DEFAULT.add(DEFAULT268);
 
             // etc/XQFT.g:495:17: ( DOLLARSi varName )?
@@ -10782,10 +10775,10 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:495:18: DOLLARSi varName
                     {
                     DOLLARSi269=(Token)input.LT(1);
-                    match(input,DOLLARSi,FOLLOW_DOLLARSi_in_typeswitchExpr2959); if (failed) return retval;
+                    match(input,DOLLARSi,FOLLOW_DOLLARSi_in_typeswitchExpr2969); if (failed) return retval;
                     if ( backtracking==0 ) stream_DOLLARSi.add(DOLLARSi269);
 
-                    pushFollow(FOLLOW_varName_in_typeswitchExpr2961);
+                    pushFollow(FOLLOW_varName_in_typeswitchExpr2971);
                     varName270=varName();
                     _fsp--;
                     if (failed) return retval;
@@ -10797,17 +10790,17 @@ public class XQFTParser extends Parser {
             }
 
             RETURN271=(Token)input.LT(1);
-            match(input,RETURN,FOLLOW_RETURN_in_typeswitchExpr2965); if (failed) return retval;
+            match(input,RETURN,FOLLOW_RETURN_in_typeswitchExpr2975); if (failed) return retval;
             if ( backtracking==0 ) stream_RETURN.add(RETURN271);
 
-            pushFollow(FOLLOW_exprSingle_in_typeswitchExpr2967);
+            pushFollow(FOLLOW_exprSingle_in_typeswitchExpr2977);
             exprSingle272=exprSingle();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle272.getTree());
 
             // AST REWRITE
-            // elements: exprSingle, varName, expr, caseClause
+            // elements: expr, exprSingle, caseClause, varName
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -10907,7 +10900,7 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:498:22: CASE ( DOLLARSi varName AS )? sequenceType RETURN exprSingle
             {
             CASE273=(Token)input.LT(1);
-            match(input,CASE,FOLLOW_CASE_in_caseClause3007); if (failed) return retval;
+            match(input,CASE,FOLLOW_CASE_in_caseClause3017); if (failed) return retval;
             if ( backtracking==0 ) stream_CASE.add(CASE273);
 
             // etc/XQFT.g:498:27: ( DOLLARSi varName AS )?
@@ -10922,16 +10915,16 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:498:28: DOLLARSi varName AS
                     {
                     DOLLARSi274=(Token)input.LT(1);
-                    match(input,DOLLARSi,FOLLOW_DOLLARSi_in_caseClause3010); if (failed) return retval;
+                    match(input,DOLLARSi,FOLLOW_DOLLARSi_in_caseClause3020); if (failed) return retval;
                     if ( backtracking==0 ) stream_DOLLARSi.add(DOLLARSi274);
 
-                    pushFollow(FOLLOW_varName_in_caseClause3012);
+                    pushFollow(FOLLOW_varName_in_caseClause3022);
                     varName275=varName();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) stream_varName.add(varName275.getTree());
                     AS276=(Token)input.LT(1);
-                    match(input,AS,FOLLOW_AS_in_caseClause3014); if (failed) return retval;
+                    match(input,AS,FOLLOW_AS_in_caseClause3024); if (failed) return retval;
                     if ( backtracking==0 ) stream_AS.add(AS276);
 
 
@@ -10940,23 +10933,23 @@ public class XQFTParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_sequenceType_in_caseClause3018);
+            pushFollow(FOLLOW_sequenceType_in_caseClause3028);
             sequenceType277=sequenceType();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_sequenceType.add(sequenceType277.getTree());
             RETURN278=(Token)input.LT(1);
-            match(input,RETURN,FOLLOW_RETURN_in_caseClause3020); if (failed) return retval;
+            match(input,RETURN,FOLLOW_RETURN_in_caseClause3030); if (failed) return retval;
             if ( backtracking==0 ) stream_RETURN.add(RETURN278);
 
-            pushFollow(FOLLOW_exprSingle_in_caseClause3022);
+            pushFollow(FOLLOW_exprSingle_in_caseClause3032);
             exprSingle279=exprSingle();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle279.getTree());
 
             // AST REWRITE
-            // elements: varName, exprSingle, sequenceType
+            // elements: sequenceType, varName, exprSingle
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -11050,43 +11043,43 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:502:14: IF LPARSi expr RPARSi THEN exprSingle ELSE exprSingle
             {
             IF280=(Token)input.LT(1);
-            match(input,IF,FOLLOW_IF_in_ifExpr3068); if (failed) return retval;
+            match(input,IF,FOLLOW_IF_in_ifExpr3078); if (failed) return retval;
             if ( backtracking==0 ) stream_IF.add(IF280);
 
             LPARSi281=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_ifExpr3070); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_ifExpr3080); if (failed) return retval;
             if ( backtracking==0 ) stream_LPARSi.add(LPARSi281);
 
-            pushFollow(FOLLOW_expr_in_ifExpr3072);
+            pushFollow(FOLLOW_expr_in_ifExpr3082);
             expr282=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_expr.add(expr282.getTree());
             RPARSi283=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_ifExpr3074); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_ifExpr3084); if (failed) return retval;
             if ( backtracking==0 ) stream_RPARSi.add(RPARSi283);
 
             THEN284=(Token)input.LT(1);
-            match(input,THEN,FOLLOW_THEN_in_ifExpr3076); if (failed) return retval;
+            match(input,THEN,FOLLOW_THEN_in_ifExpr3086); if (failed) return retval;
             if ( backtracking==0 ) stream_THEN.add(THEN284);
 
-            pushFollow(FOLLOW_exprSingle_in_ifExpr3078);
+            pushFollow(FOLLOW_exprSingle_in_ifExpr3088);
             exprSingle285=exprSingle();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle285.getTree());
             ELSE286=(Token)input.LT(1);
-            match(input,ELSE,FOLLOW_ELSE_in_ifExpr3080); if (failed) return retval;
+            match(input,ELSE,FOLLOW_ELSE_in_ifExpr3090); if (failed) return retval;
             if ( backtracking==0 ) stream_ELSE.add(ELSE286);
 
-            pushFollow(FOLLOW_exprSingle_in_ifExpr3082);
+            pushFollow(FOLLOW_exprSingle_in_ifExpr3092);
             exprSingle287=exprSingle();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_exprSingle.add(exprSingle287.getTree());
 
             // AST REWRITE
-            // elements: exprSingle, exprSingle, expr
+            // elements: expr, exprSingle, exprSingle
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -11160,7 +11153,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_andExpr_in_orExpr3122);
+            pushFollow(FOLLOW_andExpr_in_orExpr3132);
             andExpr288=andExpr();
             _fsp--;
             if (failed) return retval;
@@ -11181,12 +11174,12 @@ public class XQFTParser extends Parser {
             	    // etc/XQFT.g:505:24: OR andExpr
             	    {
             	    OR289=(Token)input.LT(1);
-            	    match(input,OR,FOLLOW_OR_in_orExpr3126); if (failed) return retval;
+            	    match(input,OR,FOLLOW_OR_in_orExpr3136); if (failed) return retval;
             	    if ( backtracking==0 ) {
             	    OR289_tree = (XQFTTree)adaptor.create(OR289);
             	    root_0 = (XQFTTree)adaptor.becomeRoot(OR289_tree, root_0);
             	    }
-            	    pushFollow(FOLLOW_andExpr_in_orExpr3129);
+            	    pushFollow(FOLLOW_andExpr_in_orExpr3139);
             	    andExpr290=andExpr();
             	    _fsp--;
             	    if (failed) return retval;
@@ -11247,7 +11240,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_comparisonExpr_in_andExpr3147);
+            pushFollow(FOLLOW_comparisonExpr_in_andExpr3157);
             comparisonExpr291=comparisonExpr();
             _fsp--;
             if (failed) return retval;
@@ -11268,12 +11261,12 @@ public class XQFTParser extends Parser {
             	    // etc/XQFT.g:506:36: AND comparisonExpr
             	    {
             	    AND292=(Token)input.LT(1);
-            	    match(input,AND,FOLLOW_AND_in_andExpr3151); if (failed) return retval;
+            	    match(input,AND,FOLLOW_AND_in_andExpr3161); if (failed) return retval;
             	    if ( backtracking==0 ) {
             	    AND292_tree = (XQFTTree)adaptor.create(AND292);
             	    root_0 = (XQFTTree)adaptor.becomeRoot(AND292_tree, root_0);
             	    }
-            	    pushFollow(FOLLOW_comparisonExpr_in_andExpr3154);
+            	    pushFollow(FOLLOW_comparisonExpr_in_andExpr3164);
             	    comparisonExpr293=comparisonExpr();
             	    _fsp--;
             	    if (failed) return retval;
@@ -11338,7 +11331,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_ftContainsExpr_in_comparisonExpr3167);
+            pushFollow(FOLLOW_ftContainsExpr_in_comparisonExpr3177);
             ftContainsExpr294=ftContainsExpr();
             _fsp--;
             if (failed) return retval;
@@ -11396,7 +11389,7 @@ public class XQFTParser extends Parser {
                         case 1 :
                             // etc/XQFT.g:510:36: valueComp
                             {
-                            pushFollow(FOLLOW_valueComp_in_comparisonExpr3172);
+                            pushFollow(FOLLOW_valueComp_in_comparisonExpr3182);
                             valueComp295=valueComp();
                             _fsp--;
                             if (failed) return retval;
@@ -11407,7 +11400,7 @@ public class XQFTParser extends Parser {
                         case 2 :
                             // etc/XQFT.g:510:49: generalComp
                             {
-                            pushFollow(FOLLOW_generalComp_in_comparisonExpr3177);
+                            pushFollow(FOLLOW_generalComp_in_comparisonExpr3187);
                             generalComp296=generalComp();
                             _fsp--;
                             if (failed) return retval;
@@ -11418,7 +11411,7 @@ public class XQFTParser extends Parser {
                         case 3 :
                             // etc/XQFT.g:510:64: nodeComp
                             {
-                            pushFollow(FOLLOW_nodeComp_in_comparisonExpr3182);
+                            pushFollow(FOLLOW_nodeComp_in_comparisonExpr3192);
                             nodeComp297=nodeComp();
                             _fsp--;
                             if (failed) return retval;
@@ -11429,7 +11422,7 @@ public class XQFTParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_ftContainsExpr_in_comparisonExpr3186);
+                    pushFollow(FOLLOW_ftContainsExpr_in_comparisonExpr3196);
                     ftContainsExpr298=ftContainsExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -11489,7 +11482,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_rangeExpr_in_ftContainsExpr3200);
+            pushFollow(FOLLOW_rangeExpr_in_ftContainsExpr3210);
             rangeExpr299=rangeExpr();
             _fsp--;
             if (failed) return retval;
@@ -11506,12 +11499,12 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:511:34: FTCONTAINS ftSelection ( ftIgnoreOption )?
                     {
                     FTCONTAINS300=(Token)input.LT(1);
-                    match(input,FTCONTAINS,FOLLOW_FTCONTAINS_in_ftContainsExpr3204); if (failed) return retval;
+                    match(input,FTCONTAINS,FOLLOW_FTCONTAINS_in_ftContainsExpr3214); if (failed) return retval;
                     if ( backtracking==0 ) {
                     FTCONTAINS300_tree = (XQFTTree)adaptor.create(FTCONTAINS300);
                     root_0 = (XQFTTree)adaptor.becomeRoot(FTCONTAINS300_tree, root_0);
                     }
-                    pushFollow(FOLLOW_ftSelection_in_ftContainsExpr3207);
+                    pushFollow(FOLLOW_ftSelection_in_ftContainsExpr3217);
                     ftSelection301=ftSelection();
                     _fsp--;
                     if (failed) return retval;
@@ -11527,7 +11520,7 @@ public class XQFTParser extends Parser {
                         case 1 :
                             // etc/XQFT.g:511:58: ftIgnoreOption
                             {
-                            pushFollow(FOLLOW_ftIgnoreOption_in_ftContainsExpr3209);
+                            pushFollow(FOLLOW_ftIgnoreOption_in_ftContainsExpr3219);
                             ftIgnoreOption302=ftIgnoreOption();
                             _fsp--;
                             if (failed) return retval;
@@ -11591,7 +11584,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_additiveExpr_in_rangeExpr3232);
+            pushFollow(FOLLOW_additiveExpr_in_rangeExpr3242);
             additiveExpr303=additiveExpr();
             _fsp--;
             if (failed) return retval;
@@ -11608,12 +11601,12 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:512:36: TO additiveExpr
                     {
                     TO304=(Token)input.LT(1);
-                    match(input,TO,FOLLOW_TO_in_rangeExpr3236); if (failed) return retval;
+                    match(input,TO,FOLLOW_TO_in_rangeExpr3246); if (failed) return retval;
                     if ( backtracking==0 ) {
                     TO304_tree = (XQFTTree)adaptor.create(TO304);
                     root_0 = (XQFTTree)adaptor.becomeRoot(TO304_tree, root_0);
                     }
-                    pushFollow(FOLLOW_additiveExpr_in_rangeExpr3239);
+                    pushFollow(FOLLOW_additiveExpr_in_rangeExpr3249);
                     additiveExpr305=additiveExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -11671,7 +11664,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_multiplicativeExpr_in_additiveExpr3261);
+            pushFollow(FOLLOW_multiplicativeExpr_in_additiveExpr3271);
             multiplicativeExpr306=multiplicativeExpr();
             _fsp--;
             if (failed) return retval;
@@ -11701,10 +11694,10 @@ public class XQFTParser extends Parser {
             	        if (backtracking>0) {failed=true; return retval;}
             	        MismatchedSetException mse =
             	            new MismatchedSetException(null,input);
-            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_additiveExpr3265);    throw mse;
+            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_additiveExpr3275);    throw mse;
             	    }
 
-            	    pushFollow(FOLLOW_multiplicativeExpr_in_additiveExpr3274);
+            	    pushFollow(FOLLOW_multiplicativeExpr_in_additiveExpr3284);
             	    multiplicativeExpr308=multiplicativeExpr();
             	    _fsp--;
             	    if (failed) return retval;
@@ -11765,7 +11758,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_unionExpr_in_multiplicativeExpr3300);
+            pushFollow(FOLLOW_unionExpr_in_multiplicativeExpr3310);
             unionExpr309=unionExpr();
             _fsp--;
             if (failed) return retval;
@@ -11795,10 +11788,10 @@ public class XQFTParser extends Parser {
             	        if (backtracking>0) {failed=true; return retval;}
             	        MismatchedSetException mse =
             	            new MismatchedSetException(null,input);
-            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_multiplicativeExpr3304);    throw mse;
+            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_multiplicativeExpr3314);    throw mse;
             	    }
 
-            	    pushFollow(FOLLOW_unionExpr_in_multiplicativeExpr3321);
+            	    pushFollow(FOLLOW_unionExpr_in_multiplicativeExpr3331);
             	    unionExpr311=unionExpr();
             	    _fsp--;
             	    if (failed) return retval;
@@ -11859,7 +11852,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_intersectExceptExpr_in_unionExpr3351);
+            pushFollow(FOLLOW_intersectExceptExpr_in_unionExpr3361);
             intersectExceptExpr312=intersectExceptExpr();
             _fsp--;
             if (failed) return retval;
@@ -11889,10 +11882,10 @@ public class XQFTParser extends Parser {
             	        if (backtracking>0) {failed=true; return retval;}
             	        MismatchedSetException mse =
             	            new MismatchedSetException(null,input);
-            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_unionExpr3355);    throw mse;
+            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_unionExpr3365);    throw mse;
             	    }
 
-            	    pushFollow(FOLLOW_intersectExceptExpr_in_unionExpr3364);
+            	    pushFollow(FOLLOW_intersectExceptExpr_in_unionExpr3374);
             	    intersectExceptExpr314=intersectExceptExpr();
             	    _fsp--;
             	    if (failed) return retval;
@@ -11953,7 +11946,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_instanceofExpr_in_intersectExceptExpr3398);
+            pushFollow(FOLLOW_instanceofExpr_in_intersectExceptExpr3408);
             instanceofExpr315=instanceofExpr();
             _fsp--;
             if (failed) return retval;
@@ -11983,10 +11976,10 @@ public class XQFTParser extends Parser {
             	        if (backtracking>0) {failed=true; return retval;}
             	        MismatchedSetException mse =
             	            new MismatchedSetException(null,input);
-            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_intersectExceptExpr3402);    throw mse;
+            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_intersectExceptExpr3412);    throw mse;
             	    }
 
-            	    pushFollow(FOLLOW_instanceofExpr_in_intersectExceptExpr3411);
+            	    pushFollow(FOLLOW_instanceofExpr_in_intersectExceptExpr3421);
             	    instanceofExpr317=instanceofExpr();
             	    _fsp--;
             	    if (failed) return retval;
@@ -12049,7 +12042,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_treatExpr_in_instanceofExpr3449);
+            pushFollow(FOLLOW_treatExpr_in_instanceofExpr3459);
             treatExpr318=treatExpr();
             _fsp--;
             if (failed) return retval;
@@ -12066,14 +12059,14 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:517:58: INSTANCE OF sequenceType
                     {
                     INSTANCE319=(Token)input.LT(1);
-                    match(input,INSTANCE,FOLLOW_INSTANCE_in_instanceofExpr3453); if (failed) return retval;
+                    match(input,INSTANCE,FOLLOW_INSTANCE_in_instanceofExpr3463); if (failed) return retval;
                     if ( backtracking==0 ) {
                     INSTANCE319_tree = (XQFTTree)adaptor.create(INSTANCE319);
                     root_0 = (XQFTTree)adaptor.becomeRoot(INSTANCE319_tree, root_0);
                     }
                     OF320=(Token)input.LT(1);
-                    match(input,OF,FOLLOW_OF_in_instanceofExpr3456); if (failed) return retval;
-                    pushFollow(FOLLOW_sequenceType_in_instanceofExpr3459);
+                    match(input,OF,FOLLOW_OF_in_instanceofExpr3466); if (failed) return retval;
+                    pushFollow(FOLLOW_sequenceType_in_instanceofExpr3469);
                     sequenceType321=sequenceType();
                     _fsp--;
                     if (failed) return retval;
@@ -12133,7 +12126,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_castableExpr_in_treatExpr3501);
+            pushFollow(FOLLOW_castableExpr_in_treatExpr3511);
             castableExpr322=castableExpr();
             _fsp--;
             if (failed) return retval;
@@ -12150,14 +12143,14 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:518:60: TREAT AS sequenceType
                     {
                     TREAT323=(Token)input.LT(1);
-                    match(input,TREAT,FOLLOW_TREAT_in_treatExpr3505); if (failed) return retval;
+                    match(input,TREAT,FOLLOW_TREAT_in_treatExpr3515); if (failed) return retval;
                     if ( backtracking==0 ) {
                     TREAT323_tree = (XQFTTree)adaptor.create(TREAT323);
                     root_0 = (XQFTTree)adaptor.becomeRoot(TREAT323_tree, root_0);
                     }
                     AS324=(Token)input.LT(1);
-                    match(input,AS,FOLLOW_AS_in_treatExpr3508); if (failed) return retval;
-                    pushFollow(FOLLOW_sequenceType_in_treatExpr3511);
+                    match(input,AS,FOLLOW_AS_in_treatExpr3518); if (failed) return retval;
+                    pushFollow(FOLLOW_sequenceType_in_treatExpr3521);
                     sequenceType325=sequenceType();
                     _fsp--;
                     if (failed) return retval;
@@ -12217,7 +12210,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_castExpr_in_castableExpr3557);
+            pushFollow(FOLLOW_castExpr_in_castableExpr3567);
             castExpr326=castExpr();
             _fsp--;
             if (failed) return retval;
@@ -12234,14 +12227,14 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:519:63: CASTABLE AS singleType
                     {
                     CASTABLE327=(Token)input.LT(1);
-                    match(input,CASTABLE,FOLLOW_CASTABLE_in_castableExpr3561); if (failed) return retval;
+                    match(input,CASTABLE,FOLLOW_CASTABLE_in_castableExpr3571); if (failed) return retval;
                     if ( backtracking==0 ) {
                     CASTABLE327_tree = (XQFTTree)adaptor.create(CASTABLE327);
                     root_0 = (XQFTTree)adaptor.becomeRoot(CASTABLE327_tree, root_0);
                     }
                     AS328=(Token)input.LT(1);
-                    match(input,AS,FOLLOW_AS_in_castableExpr3564); if (failed) return retval;
-                    pushFollow(FOLLOW_singleType_in_castableExpr3567);
+                    match(input,AS,FOLLOW_AS_in_castableExpr3574); if (failed) return retval;
+                    pushFollow(FOLLOW_singleType_in_castableExpr3577);
                     singleType329=singleType();
                     _fsp--;
                     if (failed) return retval;
@@ -12301,7 +12294,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_unaryExpr_in_castExpr3617);
+            pushFollow(FOLLOW_unaryExpr_in_castExpr3627);
             unaryExpr330=unaryExpr();
             _fsp--;
             if (failed) return retval;
@@ -12318,14 +12311,14 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:520:64: CAST AS singleType
                     {
                     CAST331=(Token)input.LT(1);
-                    match(input,CAST,FOLLOW_CAST_in_castExpr3621); if (failed) return retval;
+                    match(input,CAST,FOLLOW_CAST_in_castExpr3631); if (failed) return retval;
                     if ( backtracking==0 ) {
                     CAST331_tree = (XQFTTree)adaptor.create(CAST331);
                     root_0 = (XQFTTree)adaptor.becomeRoot(CAST331_tree, root_0);
                     }
                     AS332=(Token)input.LT(1);
-                    match(input,AS,FOLLOW_AS_in_castExpr3624); if (failed) return retval;
-                    pushFollow(FOLLOW_singleType_in_castExpr3627);
+                    match(input,AS,FOLLOW_AS_in_castExpr3634); if (failed) return retval;
+                    pushFollow(FOLLOW_singleType_in_castExpr3637);
                     singleType333=singleType();
                     _fsp--;
                     if (failed) return retval;
@@ -12409,7 +12402,7 @@ public class XQFTParser extends Parser {
             	        if (backtracking>0) {failed=true; return retval;}
             	        MismatchedSetException mse =
             	            new MismatchedSetException(null,input);
-            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_unaryExpr3682);    throw mse;
+            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_unaryExpr3692);    throw mse;
             	    }
 
 
@@ -12424,7 +12417,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_valueExpr_in_unaryExpr3693);
+            pushFollow(FOLLOW_valueExpr_in_unaryExpr3703);
             valueExpr335=valueExpr();
             _fsp--;
             if (failed) return retval;
@@ -12474,7 +12467,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_atomicType_in_singleType3744);
+            pushFollow(FOLLOW_atomicType_in_singleType3754);
             atomicType336=atomicType();
             _fsp--;
             if (failed) return retval;
@@ -12491,7 +12484,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:522:69: QUESTIONSi
                     {
                     QUESTIONSi337=(Token)input.LT(1);
-                    match(input,QUESTIONSi,FOLLOW_QUESTIONSi_in_singleType3746); if (failed) return retval;
+                    match(input,QUESTIONSi,FOLLOW_QUESTIONSi_in_singleType3756); if (failed) return retval;
                     if ( backtracking==0 ) {
                     QUESTIONSi337_tree = (XQFTTree)adaptor.create(QUESTIONSi337);
                     adaptor.addChild(root_0, QUESTIONSi337_tree);
@@ -12545,7 +12538,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_qName_in_atomicType3802);
+            pushFollow(FOLLOW_qName_in_atomicType3812);
             qName338=qName();
             _fsp--;
             if (failed) return retval;
@@ -12598,18 +12591,18 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             WITHOUT339=(Token)input.LT(1);
-            match(input,WITHOUT,FOLLOW_WITHOUT_in_ftIgnoreOption3834); if (failed) return retval;
+            match(input,WITHOUT,FOLLOW_WITHOUT_in_ftIgnoreOption3844); if (failed) return retval;
             if ( backtracking==0 ) {
             WITHOUT339_tree = (XQFTTree)adaptor.create(WITHOUT339);
             root_0 = (XQFTTree)adaptor.becomeRoot(WITHOUT339_tree, root_0);
             }
             CONTENT340=(Token)input.LT(1);
-            match(input,CONTENT,FOLLOW_CONTENT_in_ftIgnoreOption3837); if (failed) return retval;
+            match(input,CONTENT,FOLLOW_CONTENT_in_ftIgnoreOption3847); if (failed) return retval;
             if ( backtracking==0 ) {
             CONTENT340_tree = (XQFTTree)adaptor.create(CONTENT340);
             adaptor.addChild(root_0, CONTENT340_tree);
             }
-            pushFollow(FOLLOW_unionExpr_in_ftIgnoreOption3839);
+            pushFollow(FOLLOW_unionExpr_in_ftIgnoreOption3849);
             unionExpr341=unionExpr();
             _fsp--;
             if (failed) return retval;
@@ -12831,7 +12824,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_ftOr_in_ftSelection3936);
+            pushFollow(FOLLOW_ftOr_in_ftSelection3946);
             ftOr345=ftOr();
             _fsp--;
             if (failed) return retval;
@@ -12851,7 +12844,7 @@ public class XQFTParser extends Parser {
             	case 1 :
             	    // etc/XQFT.g:533:20: ftPosFilter
             	    {
-            	    pushFollow(FOLLOW_ftPosFilter_in_ftSelection3938);
+            	    pushFollow(FOLLOW_ftPosFilter_in_ftSelection3948);
             	    ftPosFilter346=ftPosFilter();
             	    _fsp--;
             	    if (failed) return retval;
@@ -12877,12 +12870,12 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:533:34: WEIGHT rangeExpr
                     {
                     WEIGHT347=(Token)input.LT(1);
-                    match(input,WEIGHT,FOLLOW_WEIGHT_in_ftSelection3942); if (failed) return retval;
+                    match(input,WEIGHT,FOLLOW_WEIGHT_in_ftSelection3952); if (failed) return retval;
                     if ( backtracking==0 ) {
                     WEIGHT347_tree = (XQFTTree)adaptor.create(WEIGHT347);
                     adaptor.addChild(root_0, WEIGHT347_tree);
                     }
-                    pushFollow(FOLLOW_rangeExpr_in_ftSelection3944);
+                    pushFollow(FOLLOW_rangeExpr_in_ftSelection3954);
                     rangeExpr348=rangeExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -12940,7 +12933,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_ftAnd_in_ftOr3957);
+            pushFollow(FOLLOW_ftAnd_in_ftOr3967);
             ftAnd349=ftAnd();
             _fsp--;
             if (failed) return retval;
@@ -12961,12 +12954,12 @@ public class XQFTParser extends Parser {
             	    // etc/XQFT.g:534:20: FTOR ftAnd
             	    {
             	    FTOR350=(Token)input.LT(1);
-            	    match(input,FTOR,FOLLOW_FTOR_in_ftOr3961); if (failed) return retval;
+            	    match(input,FTOR,FOLLOW_FTOR_in_ftOr3971); if (failed) return retval;
             	    if ( backtracking==0 ) {
             	    FTOR350_tree = (XQFTTree)adaptor.create(FTOR350);
             	    root_0 = (XQFTTree)adaptor.becomeRoot(FTOR350_tree, root_0);
             	    }
-            	    pushFollow(FOLLOW_ftAnd_in_ftOr3964);
+            	    pushFollow(FOLLOW_ftAnd_in_ftOr3974);
             	    ftAnd351=ftAnd();
             	    _fsp--;
             	    if (failed) return retval;
@@ -13027,7 +13020,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_ftMildNot_in_ftAnd3982);
+            pushFollow(FOLLOW_ftMildNot_in_ftAnd3992);
             ftMildNot352=ftMildNot();
             _fsp--;
             if (failed) return retval;
@@ -13048,12 +13041,12 @@ public class XQFTParser extends Parser {
             	    // etc/XQFT.g:535:29: FTAND ftMildNot
             	    {
             	    FTAND353=(Token)input.LT(1);
-            	    match(input,FTAND,FOLLOW_FTAND_in_ftAnd3986); if (failed) return retval;
+            	    match(input,FTAND,FOLLOW_FTAND_in_ftAnd3996); if (failed) return retval;
             	    if ( backtracking==0 ) {
             	    FTAND353_tree = (XQFTTree)adaptor.create(FTAND353);
             	    root_0 = (XQFTTree)adaptor.becomeRoot(FTAND353_tree, root_0);
             	    }
-            	    pushFollow(FOLLOW_ftMildNot_in_ftAnd3989);
+            	    pushFollow(FOLLOW_ftMildNot_in_ftAnd3999);
             	    ftMildNot354=ftMildNot();
             	    _fsp--;
             	    if (failed) return retval;
@@ -13116,7 +13109,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_ftUnaryNot_in_ftMildNot4011);
+            pushFollow(FOLLOW_ftUnaryNot_in_ftMildNot4021);
             ftUnaryNot355=ftUnaryNot();
             _fsp--;
             if (failed) return retval;
@@ -13137,14 +13130,14 @@ public class XQFTParser extends Parser {
             	    // etc/XQFT.g:536:38: NOT IN ftUnaryNot
             	    {
             	    NOT356=(Token)input.LT(1);
-            	    match(input,NOT,FOLLOW_NOT_in_ftMildNot4015); if (failed) return retval;
+            	    match(input,NOT,FOLLOW_NOT_in_ftMildNot4025); if (failed) return retval;
             	    if ( backtracking==0 ) {
             	    NOT356_tree = (XQFTTree)adaptor.create(NOT356);
             	    root_0 = (XQFTTree)adaptor.becomeRoot(NOT356_tree, root_0);
             	    }
             	    IN357=(Token)input.LT(1);
-            	    match(input,IN,FOLLOW_IN_in_ftMildNot4018); if (failed) return retval;
-            	    pushFollow(FOLLOW_ftUnaryNot_in_ftMildNot4021);
+            	    match(input,IN,FOLLOW_IN_in_ftMildNot4028); if (failed) return retval;
+            	    pushFollow(FOLLOW_ftUnaryNot_in_ftMildNot4031);
             	    ftUnaryNot358=ftUnaryNot();
             	    _fsp--;
             	    if (failed) return retval;
@@ -13215,7 +13208,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:537:31: FTNOT
                     {
                     FTNOT359=(Token)input.LT(1);
-                    match(input,FTNOT,FOLLOW_FTNOT_in_ftUnaryNot4048); if (failed) return retval;
+                    match(input,FTNOT,FOLLOW_FTNOT_in_ftUnaryNot4058); if (failed) return retval;
                     if ( backtracking==0 ) {
                     FTNOT359_tree = (XQFTTree)adaptor.create(FTNOT359);
                     root_0 = (XQFTTree)adaptor.becomeRoot(FTNOT359_tree, root_0);
@@ -13226,7 +13219,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_ftPrimaryWithOptions_in_ftUnaryNot4053);
+            pushFollow(FOLLOW_ftPrimaryWithOptions_in_ftUnaryNot4063);
             ftPrimaryWithOptions360=ftPrimaryWithOptions();
             _fsp--;
             if (failed) return retval;
@@ -13276,7 +13269,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_ftPrimary_in_ftPrimaryWithOptions4076);
+            pushFollow(FOLLOW_ftPrimary_in_ftPrimaryWithOptions4086);
             ftPrimary361=ftPrimary();
             _fsp--;
             if (failed) return retval;
@@ -13328,7 +13321,7 @@ public class XQFTParser extends Parser {
             	case 1 :
             	    // etc/XQFT.g:538:52: ftMatchOption
             	    {
-            	    pushFollow(FOLLOW_ftMatchOption_in_ftPrimaryWithOptions4080);
+            	    pushFollow(FOLLOW_ftMatchOption_in_ftPrimaryWithOptions4090);
             	    ftMatchOption362=ftMatchOption();
             	    _fsp--;
             	    if (failed) return retval;
@@ -13426,7 +13419,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ftWords_in_ftPrimary4109);
+                    pushFollow(FOLLOW_ftWords_in_ftPrimary4119);
                     ftWords363=ftWords();
                     _fsp--;
                     if (failed) return retval;
@@ -13442,7 +13435,7 @@ public class XQFTParser extends Parser {
                         case 1 :
                             // etc/XQFT.g:539:42: ftTimes
                             {
-                            pushFollow(FOLLOW_ftTimes_in_ftPrimary4112);
+                            pushFollow(FOLLOW_ftTimes_in_ftPrimary4122);
                             ftTimes364=ftTimes();
                             _fsp--;
                             if (failed) return retval;
@@ -13462,14 +13455,14 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     LPARSi365=(Token)input.LT(1);
-                    match(input,LPARSi,FOLLOW_LPARSi_in_ftPrimary4150); if (failed) return retval;
-                    pushFollow(FOLLOW_ftSelection_in_ftPrimary4153);
+                    match(input,LPARSi,FOLLOW_LPARSi_in_ftPrimary4160); if (failed) return retval;
+                    pushFollow(FOLLOW_ftSelection_in_ftPrimary4163);
                     ftSelection366=ftSelection();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, ftSelection366.getTree());
                     RPARSi367=(Token)input.LT(1);
-                    match(input,RPARSi,FOLLOW_RPARSi_in_ftPrimary4155); if (failed) return retval;
+                    match(input,RPARSi,FOLLOW_RPARSi_in_ftPrimary4165); if (failed) return retval;
 
                     }
                     break;
@@ -13478,7 +13471,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ftExtensionSelection_in_ftPrimary4193);
+                    pushFollow(FOLLOW_ftExtensionSelection_in_ftPrimary4203);
                     ftExtensionSelection368=ftExtensionSelection();
                     _fsp--;
                     if (failed) return retval;
@@ -13530,7 +13523,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_ftWordsValue_in_ftWords4253);
+            pushFollow(FOLLOW_ftWordsValue_in_ftWords4263);
             ftWordsValue369=ftWordsValue();
             _fsp--;
             if (failed) return retval;
@@ -13546,7 +13539,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:543:49: ftAnyallOption
                     {
-                    pushFollow(FOLLOW_ftAnyallOption_in_ftWords4256);
+                    pushFollow(FOLLOW_ftAnyallOption_in_ftWords4266);
                     ftAnyallOption370=ftAnyallOption();
                     _fsp--;
                     if (failed) return retval;
@@ -13624,7 +13617,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_literal_in_ftWordsValue4292);
+                    pushFollow(FOLLOW_literal_in_ftWordsValue4302);
                     literal371=literal();
                     _fsp--;
                     if (failed) return retval;
@@ -13641,14 +13634,14 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:544:55: LBRACESi thisExprIsEnclosed RBRACSi
                     {
                     LBRACESi372=(Token)input.LT(1);
-                    match(input,LBRACESi,FOLLOW_LBRACESi_in_ftWordsValue4297); if (failed) return retval;
-                    pushFollow(FOLLOW_thisExprIsEnclosed_in_ftWordsValue4300);
+                    match(input,LBRACESi,FOLLOW_LBRACESi_in_ftWordsValue4307); if (failed) return retval;
+                    pushFollow(FOLLOW_thisExprIsEnclosed_in_ftWordsValue4310);
                     thisExprIsEnclosed373=thisExprIsEnclosed();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed373.getTree());
                     RBRACSi374=(Token)input.LT(1);
-                    match(input,RBRACSi,FOLLOW_RBRACSi_in_ftWordsValue4302); if (failed) return retval;
+                    match(input,RBRACSi,FOLLOW_RBRACSi_in_ftWordsValue4312); if (failed) return retval;
 
                     }
 
@@ -13717,7 +13710,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_numericLiteral_in_literal4343);
+                    pushFollow(FOLLOW_numericLiteral_in_literal4353);
                     numericLiteral375=numericLiteral();
                     _fsp--;
                     if (failed) return retval;
@@ -13731,7 +13724,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     StringLiteral376=(Token)input.LT(1);
-                    match(input,StringLiteral,FOLLOW_StringLiteral_in_literal4347); if (failed) return retval;
+                    match(input,StringLiteral,FOLLOW_StringLiteral_in_literal4357); if (failed) return retval;
                     if ( backtracking==0 ) {
                     StringLiteral376_tree = (XQFTTree)adaptor.create(StringLiteral376);
                     adaptor.addChild(root_0, StringLiteral376_tree);
@@ -13876,7 +13869,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:547:47: ANY ( WORD )?
                     {
                     ANY378=(Token)input.LT(1);
-                    match(input,ANY,FOLLOW_ANY_in_ftAnyallOption4434); if (failed) return retval;
+                    match(input,ANY,FOLLOW_ANY_in_ftAnyallOption4444); if (failed) return retval;
                     if ( backtracking==0 ) {
                     ANY378_tree = (XQFTTree)adaptor.create(ANY378);
                     adaptor.addChild(root_0, ANY378_tree);
@@ -13893,7 +13886,7 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:547:51: WORD
                             {
                             WORD379=(Token)input.LT(1);
-                            match(input,WORD,FOLLOW_WORD_in_ftAnyallOption4436); if (failed) return retval;
+                            match(input,WORD,FOLLOW_WORD_in_ftAnyallOption4446); if (failed) return retval;
                             if ( backtracking==0 ) {
                             WORD379_tree = (XQFTTree)adaptor.create(WORD379);
                             adaptor.addChild(root_0, WORD379_tree);
@@ -13919,7 +13912,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:547:61: ALL ( WORDS )?
                     {
                     ALL380=(Token)input.LT(1);
-                    match(input,ALL,FOLLOW_ALL_in_ftAnyallOption4443); if (failed) return retval;
+                    match(input,ALL,FOLLOW_ALL_in_ftAnyallOption4453); if (failed) return retval;
                     if ( backtracking==0 ) {
                     ALL380_tree = (XQFTTree)adaptor.create(ALL380);
                     adaptor.addChild(root_0, ALL380_tree);
@@ -13936,7 +13929,7 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:547:65: WORDS
                             {
                             WORDS381=(Token)input.LT(1);
-                            match(input,WORDS,FOLLOW_WORDS_in_ftAnyallOption4445); if (failed) return retval;
+                            match(input,WORDS,FOLLOW_WORDS_in_ftAnyallOption4455); if (failed) return retval;
                             if ( backtracking==0 ) {
                             WORDS381_tree = (XQFTTree)adaptor.create(WORDS381);
                             adaptor.addChild(root_0, WORDS381_tree);
@@ -13959,7 +13952,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     PHRASE382=(Token)input.LT(1);
-                    match(input,PHRASE,FOLLOW_PHRASE_in_ftAnyallOption4451); if (failed) return retval;
+                    match(input,PHRASE,FOLLOW_PHRASE_in_ftAnyallOption4461); if (failed) return retval;
                     if ( backtracking==0 ) {
                     PHRASE382_tree = (XQFTTree)adaptor.create(PHRASE382);
                     adaptor.addChild(root_0, PHRASE382_tree);
@@ -14014,14 +14007,14 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             OCCURS383=(Token)input.LT(1);
-            match(input,OCCURS,FOLLOW_OCCURS_in_ftTimes4482); if (failed) return retval;
-            pushFollow(FOLLOW_ftRange_in_ftTimes4485);
+            match(input,OCCURS,FOLLOW_OCCURS_in_ftTimes4492); if (failed) return retval;
+            pushFollow(FOLLOW_ftRange_in_ftTimes4495);
             ftRange384=ftRange();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, ftRange384.getTree());
             TIMES385=(Token)input.LT(1);
-            match(input,TIMES,FOLLOW_TIMES_in_ftTimes4487); if (failed) return retval;
+            match(input,TIMES,FOLLOW_TIMES_in_ftTimes4497); if (failed) return retval;
 
             }
 
@@ -14112,12 +14105,12 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:549:40: EXACTLY additiveExpr
                     {
                     EXACTLY386=(Token)input.LT(1);
-                    match(input,EXACTLY,FOLLOW_EXACTLY_in_ftRange4524); if (failed) return retval;
+                    match(input,EXACTLY,FOLLOW_EXACTLY_in_ftRange4534); if (failed) return retval;
                     if ( backtracking==0 ) {
                     EXACTLY386_tree = (XQFTTree)adaptor.create(EXACTLY386);
                     adaptor.addChild(root_0, EXACTLY386_tree);
                     }
-                    pushFollow(FOLLOW_additiveExpr_in_ftRange4526);
+                    pushFollow(FOLLOW_additiveExpr_in_ftRange4536);
                     additiveExpr387=additiveExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -14137,7 +14130,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:550:42: AT ( LEAST | MOST ) additiveExpr
                     {
                     AT388=(Token)input.LT(1);
-                    match(input,AT,FOLLOW_AT_in_ftRange4570); if (failed) return retval;
+                    match(input,AT,FOLLOW_AT_in_ftRange4580); if (failed) return retval;
                     if ( backtracking==0 ) {
                     AT388_tree = (XQFTTree)adaptor.create(AT388);
                     adaptor.addChild(root_0, AT388_tree);
@@ -14152,10 +14145,10 @@ public class XQFTParser extends Parser {
                         if (backtracking>0) {failed=true; return retval;}
                         MismatchedSetException mse =
                             new MismatchedSetException(null,input);
-                        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftRange4572);    throw mse;
+                        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftRange4582);    throw mse;
                     }
 
-                    pushFollow(FOLLOW_additiveExpr_in_ftRange4578);
+                    pushFollow(FOLLOW_additiveExpr_in_ftRange4588);
                     additiveExpr390=additiveExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -14175,23 +14168,23 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:551:42: FROM additiveExpr TO additiveExpr
                     {
                     FROM391=(Token)input.LT(1);
-                    match(input,FROM,FOLLOW_FROM_in_ftRange4622); if (failed) return retval;
+                    match(input,FROM,FOLLOW_FROM_in_ftRange4632); if (failed) return retval;
                     if ( backtracking==0 ) {
                     FROM391_tree = (XQFTTree)adaptor.create(FROM391);
                     adaptor.addChild(root_0, FROM391_tree);
                     }
-                    pushFollow(FOLLOW_additiveExpr_in_ftRange4624);
+                    pushFollow(FOLLOW_additiveExpr_in_ftRange4634);
                     additiveExpr392=additiveExpr();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, additiveExpr392.getTree());
                     TO393=(Token)input.LT(1);
-                    match(input,TO,FOLLOW_TO_in_ftRange4626); if (failed) return retval;
+                    match(input,TO,FOLLOW_TO_in_ftRange4636); if (failed) return retval;
                     if ( backtracking==0 ) {
                     TO393_tree = (XQFTTree)adaptor.create(TO393);
                     adaptor.addChild(root_0, TO393_tree);
                     }
-                    pushFollow(FOLLOW_additiveExpr_in_ftRange4628);
+                    pushFollow(FOLLOW_additiveExpr_in_ftRange4638);
                     additiveExpr394=additiveExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -14266,7 +14259,7 @@ public class XQFTParser extends Parser {
             	case 1 :
             	    // etc/XQFT.g:552:48: pragma
             	    {
-            	    pushFollow(FOLLOW_pragma_in_ftExtensionSelection4660);
+            	    pushFollow(FOLLOW_pragma_in_ftExtensionSelection4670);
             	    pragma395=pragma();
             	    _fsp--;
             	    if (failed) return retval;
@@ -14286,7 +14279,7 @@ public class XQFTParser extends Parser {
             } while (true);
 
             LBRACESi396=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_ftExtensionSelection4663); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_ftExtensionSelection4673); if (failed) return retval;
             // etc/XQFT.g:552:66: ( thisFTSelectionIsEnclosed )?
             int alt95=2;
             int LA95_0 = input.LA(1);
@@ -14298,7 +14291,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:552:66: thisFTSelectionIsEnclosed
                     {
-                    pushFollow(FOLLOW_thisFTSelectionIsEnclosed_in_ftExtensionSelection4666);
+                    pushFollow(FOLLOW_thisFTSelectionIsEnclosed_in_ftExtensionSelection4676);
                     thisFTSelectionIsEnclosed397=thisFTSelectionIsEnclosed();
                     _fsp--;
                     if (failed) return retval;
@@ -14310,7 +14303,7 @@ public class XQFTParser extends Parser {
             }
 
             RBRACSi398=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_ftExtensionSelection4669); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_ftExtensionSelection4679); if (failed) return retval;
 
             }
 
@@ -14361,8 +14354,8 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LPRAGSi399=(Token)input.LT(1);
-            match(input,LPRAGSi,FOLLOW_LPRAGSi_in_pragma4705); if (failed) return retval;
-            pushFollow(FOLLOW_qName_in_pragma4708);
+            match(input,LPRAGSi,FOLLOW_LPRAGSi_in_pragma4715); if (failed) return retval;
+            pushFollow(FOLLOW_qName_in_pragma4718);
             qName400=qName();
             _fsp--;
             if (failed) return retval;
@@ -14379,7 +14372,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:553:53: PragmaContents
                     {
                     PragmaContents401=(Token)input.LT(1);
-                    match(input,PragmaContents,FOLLOW_PragmaContents_in_pragma4710); if (failed) return retval;
+                    match(input,PragmaContents,FOLLOW_PragmaContents_in_pragma4720); if (failed) return retval;
                     if ( backtracking==0 ) {
                     PragmaContents401_tree = (XQFTTree)adaptor.create(PragmaContents401);
                     adaptor.addChild(root_0, PragmaContents401_tree);
@@ -14391,7 +14384,7 @@ public class XQFTParser extends Parser {
             }
 
             RPRAGSi402=(Token)input.LT(1);
-            match(input,RPRAGSi,FOLLOW_RPRAGSi_in_pragma4713); if (failed) return retval;
+            match(input,RPRAGSi,FOLLOW_RPRAGSi_in_pragma4723); if (failed) return retval;
 
             }
 
@@ -14482,7 +14475,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ftOrder_in_ftPosFilter4754);
+                    pushFollow(FOLLOW_ftOrder_in_ftPosFilter4764);
                     ftOrder403=ftOrder();
                     _fsp--;
                     if (failed) return retval;
@@ -14495,7 +14488,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ftWindow_in_ftPosFilter4758);
+                    pushFollow(FOLLOW_ftWindow_in_ftPosFilter4768);
                     ftWindow404=ftWindow();
                     _fsp--;
                     if (failed) return retval;
@@ -14508,7 +14501,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ftDistance_in_ftPosFilter4762);
+                    pushFollow(FOLLOW_ftDistance_in_ftPosFilter4772);
                     ftDistance405=ftDistance();
                     _fsp--;
                     if (failed) return retval;
@@ -14521,7 +14514,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ftScope_in_ftPosFilter4766);
+                    pushFollow(FOLLOW_ftScope_in_ftPosFilter4776);
                     ftScope406=ftScope();
                     _fsp--;
                     if (failed) return retval;
@@ -14534,7 +14527,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ftContent_in_ftPosFilter4770);
+                    pushFollow(FOLLOW_ftContent_in_ftPosFilter4780);
                     ftContent407=ftContent();
                     _fsp--;
                     if (failed) return retval;
@@ -14585,7 +14578,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             ORDERED408=(Token)input.LT(1);
-            match(input,ORDERED,FOLLOW_ORDERED_in_ftOrder4785); if (failed) return retval;
+            match(input,ORDERED,FOLLOW_ORDERED_in_ftOrder4795); if (failed) return retval;
             if ( backtracking==0 ) {
             ORDERED408_tree = (XQFTTree)adaptor.create(ORDERED408);
             adaptor.addChild(root_0, ORDERED408_tree);
@@ -14638,17 +14631,17 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             WINDOW409=(Token)input.LT(1);
-            match(input,WINDOW,FOLLOW_WINDOW_in_ftWindow4800); if (failed) return retval;
+            match(input,WINDOW,FOLLOW_WINDOW_in_ftWindow4810); if (failed) return retval;
             if ( backtracking==0 ) {
             WINDOW409_tree = (XQFTTree)adaptor.create(WINDOW409);
             adaptor.addChild(root_0, WINDOW409_tree);
             }
-            pushFollow(FOLLOW_additiveExpr_in_ftWindow4802);
+            pushFollow(FOLLOW_additiveExpr_in_ftWindow4812);
             additiveExpr410=additiveExpr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, additiveExpr410.getTree());
-            pushFollow(FOLLOW_ftUnit_in_ftWindow4804);
+            pushFollow(FOLLOW_ftUnit_in_ftWindow4814);
             ftUnit411=ftUnit();
             _fsp--;
             if (failed) return retval;
@@ -14757,17 +14750,17 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             DISTANCE413=(Token)input.LT(1);
-            match(input,DISTANCE,FOLLOW_DISTANCE_in_ftDistance4850); if (failed) return retval;
+            match(input,DISTANCE,FOLLOW_DISTANCE_in_ftDistance4860); if (failed) return retval;
             if ( backtracking==0 ) {
             DISTANCE413_tree = (XQFTTree)adaptor.create(DISTANCE413);
             adaptor.addChild(root_0, DISTANCE413_tree);
             }
-            pushFollow(FOLLOW_ftRange_in_ftDistance4852);
+            pushFollow(FOLLOW_ftRange_in_ftDistance4862);
             ftRange414=ftRange();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, ftRange414.getTree());
-            pushFollow(FOLLOW_ftUnit_in_ftDistance4854);
+            pushFollow(FOLLOW_ftUnit_in_ftDistance4864);
             ftUnit415=ftUnit();
             _fsp--;
             if (failed) return retval;
@@ -14827,10 +14820,10 @@ public class XQFTParser extends Parser {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftScope4869);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftScope4879);    throw mse;
             }
 
-            pushFollow(FOLLOW_ftBigUnit_in_ftScope4877);
+            pushFollow(FOLLOW_ftBigUnit_in_ftScope4887);
             ftBigUnit417=ftBigUnit();
             _fsp--;
             if (failed) return retval;
@@ -14959,7 +14952,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     AT419=(Token)input.LT(1);
-                    match(input,AT,FOLLOW_AT_in_ftContent4919); if (failed) return retval;
+                    match(input,AT,FOLLOW_AT_in_ftContent4929); if (failed) return retval;
                     if ( backtracking==0 ) {
                     AT419_tree = (XQFTTree)adaptor.create(AT419);
                     adaptor.addChild(root_0, AT419_tree);
@@ -14974,7 +14967,7 @@ public class XQFTParser extends Parser {
                         if (backtracking>0) {failed=true; return retval;}
                         MismatchedSetException mse =
                             new MismatchedSetException(null,input);
-                        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftContent4921);    throw mse;
+                        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftContent4931);    throw mse;
                     }
 
 
@@ -14986,13 +14979,13 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     ENTIRE421=(Token)input.LT(1);
-                    match(input,ENTIRE,FOLLOW_ENTIRE_in_ftContent4931); if (failed) return retval;
+                    match(input,ENTIRE,FOLLOW_ENTIRE_in_ftContent4941); if (failed) return retval;
                     if ( backtracking==0 ) {
                     ENTIRE421_tree = (XQFTTree)adaptor.create(ENTIRE421);
                     adaptor.addChild(root_0, ENTIRE421_tree);
                     }
                     CONTENT422=(Token)input.LT(1);
-                    match(input,CONTENT,FOLLOW_CONTENT_in_ftContent4933); if (failed) return retval;
+                    match(input,CONTENT,FOLLOW_CONTENT_in_ftContent4943); if (failed) return retval;
                     if ( backtracking==0 ) {
                     CONTENT422_tree = (XQFTTree)adaptor.create(CONTENT422);
                     adaptor.addChild(root_0, CONTENT422_tree);
@@ -15114,7 +15107,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ftLanguageOption_in_ftMatchOption4956);
+                    pushFollow(FOLLOW_ftLanguageOption_in_ftMatchOption4966);
                     ftLanguageOption423=ftLanguageOption();
                     _fsp--;
                     if (failed) return retval;
@@ -15127,7 +15120,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ftCaseOption_in_ftMatchOption4964);
+                    pushFollow(FOLLOW_ftCaseOption_in_ftMatchOption4974);
                     ftCaseOption424=ftCaseOption();
                     _fsp--;
                     if (failed) return retval;
@@ -15140,7 +15133,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ftDiacriticsOption_in_ftMatchOption4972);
+                    pushFollow(FOLLOW_ftDiacriticsOption_in_ftMatchOption4982);
                     ftDiacriticsOption425=ftDiacriticsOption();
                     _fsp--;
                     if (failed) return retval;
@@ -15153,7 +15146,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ftExtensionOption_in_ftMatchOption4980);
+                    pushFollow(FOLLOW_ftExtensionOption_in_ftMatchOption4990);
                     ftExtensionOption426=ftExtensionOption();
                     _fsp--;
                     if (failed) return retval;
@@ -15167,7 +15160,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     WITH427=(Token)input.LT(1);
-                    match(input,WITH,FOLLOW_WITH_in_ftMatchOption4988); if (failed) return retval;
+                    match(input,WITH,FOLLOW_WITH_in_ftMatchOption4998); if (failed) return retval;
                     if ( backtracking==0 ) {
                     WITH427_tree = (XQFTTree)adaptor.create(WITH427);
                     root_0 = (XQFTTree)adaptor.becomeRoot(WITH427_tree, root_0);
@@ -15209,7 +15202,7 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:571:14: WILDCARDS
                             {
                             WILDCARDS428=(Token)input.LT(1);
-                            match(input,WILDCARDS,FOLLOW_WILDCARDS_in_ftMatchOption4992); if (failed) return retval;
+                            match(input,WILDCARDS,FOLLOW_WILDCARDS_in_ftMatchOption5002); if (failed) return retval;
                             if ( backtracking==0 ) {
                             WILDCARDS428_tree = (XQFTTree)adaptor.create(WILDCARDS428);
                             adaptor.addChild(root_0, WILDCARDS428_tree);
@@ -15220,7 +15213,7 @@ public class XQFTParser extends Parser {
                         case 2 :
                             // etc/XQFT.g:572:14: ftThesaurusOption
                             {
-                            pushFollow(FOLLOW_ftThesaurusOption_in_ftMatchOption5007);
+                            pushFollow(FOLLOW_ftThesaurusOption_in_ftMatchOption5017);
                             ftThesaurusOption429=ftThesaurusOption();
                             _fsp--;
                             if (failed) return retval;
@@ -15232,7 +15225,7 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:573:14: STEMMING
                             {
                             STEMMING430=(Token)input.LT(1);
-                            match(input,STEMMING,FOLLOW_STEMMING_in_ftMatchOption5022); if (failed) return retval;
+                            match(input,STEMMING,FOLLOW_STEMMING_in_ftMatchOption5032); if (failed) return retval;
                             if ( backtracking==0 ) {
                             STEMMING430_tree = (XQFTTree)adaptor.create(STEMMING430);
                             adaptor.addChild(root_0, STEMMING430_tree);
@@ -15243,7 +15236,7 @@ public class XQFTParser extends Parser {
                         case 4 :
                             // etc/XQFT.g:574:14: ftStopwordOption
                             {
-                            pushFollow(FOLLOW_ftStopwordOption_in_ftMatchOption5037);
+                            pushFollow(FOLLOW_ftStopwordOption_in_ftMatchOption5047);
                             ftStopwordOption431=ftStopwordOption();
                             _fsp--;
                             if (failed) return retval;
@@ -15263,7 +15256,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     WITHOUT432=(Token)input.LT(1);
-                    match(input,WITHOUT,FOLLOW_WITHOUT_in_ftMatchOption5059); if (failed) return retval;
+                    match(input,WITHOUT,FOLLOW_WITHOUT_in_ftMatchOption5069); if (failed) return retval;
                     if ( backtracking==0 ) {
                     WITHOUT432_tree = (XQFTTree)adaptor.create(WITHOUT432);
                     root_0 = (XQFTTree)adaptor.becomeRoot(WITHOUT432_tree, root_0);
@@ -15304,7 +15297,7 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:576:18: WILDCARDS
                             {
                             WILDCARDS433=(Token)input.LT(1);
-                            match(input,WILDCARDS,FOLLOW_WILDCARDS_in_ftMatchOption5064); if (failed) return retval;
+                            match(input,WILDCARDS,FOLLOW_WILDCARDS_in_ftMatchOption5074); if (failed) return retval;
                             if ( backtracking==0 ) {
                             WILDCARDS433_tree = (XQFTTree)adaptor.create(WILDCARDS433);
                             adaptor.addChild(root_0, WILDCARDS433_tree);
@@ -15316,7 +15309,7 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:577:18: THESAURUS
                             {
                             THESAURUS434=(Token)input.LT(1);
-                            match(input,THESAURUS,FOLLOW_THESAURUS_in_ftMatchOption5083); if (failed) return retval;
+                            match(input,THESAURUS,FOLLOW_THESAURUS_in_ftMatchOption5093); if (failed) return retval;
                             if ( backtracking==0 ) {
                             THESAURUS434_tree = (XQFTTree)adaptor.create(THESAURUS434);
                             adaptor.addChild(root_0, THESAURUS434_tree);
@@ -15328,7 +15321,7 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:578:18: STEMMING
                             {
                             STEMMING435=(Token)input.LT(1);
-                            match(input,STEMMING,FOLLOW_STEMMING_in_ftMatchOption5102); if (failed) return retval;
+                            match(input,STEMMING,FOLLOW_STEMMING_in_ftMatchOption5112); if (failed) return retval;
                             if ( backtracking==0 ) {
                             STEMMING435_tree = (XQFTTree)adaptor.create(STEMMING435);
                             adaptor.addChild(root_0, STEMMING435_tree);
@@ -15340,13 +15333,13 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:579:18: STOP WORDS
                             {
                             STOP436=(Token)input.LT(1);
-                            match(input,STOP,FOLLOW_STOP_in_ftMatchOption5121); if (failed) return retval;
+                            match(input,STOP,FOLLOW_STOP_in_ftMatchOption5131); if (failed) return retval;
                             if ( backtracking==0 ) {
                             STOP436_tree = (XQFTTree)adaptor.create(STOP436);
                             adaptor.addChild(root_0, STOP436_tree);
                             }
                             WORDS437=(Token)input.LT(1);
-                            match(input,WORDS,FOLLOW_WORDS_in_ftMatchOption5123); if (failed) return retval;
+                            match(input,WORDS,FOLLOW_WORDS_in_ftMatchOption5133); if (failed) return retval;
                             if ( backtracking==0 ) {
                             WORDS437_tree = (XQFTTree)adaptor.create(WORDS437);
                             adaptor.addChild(root_0, WORDS437_tree);
@@ -15405,13 +15398,13 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LANGUAGE438=(Token)input.LT(1);
-            match(input,LANGUAGE,FOLLOW_LANGUAGE_in_ftLanguageOption5154); if (failed) return retval;
+            match(input,LANGUAGE,FOLLOW_LANGUAGE_in_ftLanguageOption5164); if (failed) return retval;
             if ( backtracking==0 ) {
             LANGUAGE438_tree = (XQFTTree)adaptor.create(LANGUAGE438);
             root_0 = (XQFTTree)adaptor.becomeRoot(LANGUAGE438_tree, root_0);
             }
             StringLiteral439=(Token)input.LT(1);
-            match(input,StringLiteral,FOLLOW_StringLiteral_in_ftLanguageOption5157); if (failed) return retval;
+            match(input,StringLiteral,FOLLOW_StringLiteral_in_ftLanguageOption5167); if (failed) return retval;
             if ( backtracking==0 ) {
             StringLiteral439_tree = (XQFTTree)adaptor.create(StringLiteral439);
             adaptor.addChild(root_0, StringLiteral439_tree);
@@ -15493,7 +15486,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     CASE440=(Token)input.LT(1);
-                    match(input,CASE,FOLLOW_CASE_in_ftCaseOption5178); if (failed) return retval;
+                    match(input,CASE,FOLLOW_CASE_in_ftCaseOption5188); if (failed) return retval;
                     if ( backtracking==0 ) {
                     CASE440_tree = (XQFTTree)adaptor.create(CASE440);
                     root_0 = (XQFTTree)adaptor.becomeRoot(CASE440_tree, root_0);
@@ -15508,7 +15501,7 @@ public class XQFTParser extends Parser {
                         if (backtracking>0) {failed=true; return retval;}
                         MismatchedSetException mse =
                             new MismatchedSetException(null,input);
-                        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftCaseOption5181);    throw mse;
+                        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftCaseOption5191);    throw mse;
                     }
 
 
@@ -15520,7 +15513,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     LOWERCASE442=(Token)input.LT(1);
-                    match(input,LOWERCASE,FOLLOW_LOWERCASE_in_ftCaseOption5199); if (failed) return retval;
+                    match(input,LOWERCASE,FOLLOW_LOWERCASE_in_ftCaseOption5209); if (failed) return retval;
                     if ( backtracking==0 ) {
                     LOWERCASE442_tree = (XQFTTree)adaptor.create(LOWERCASE442);
                     root_0 = (XQFTTree)adaptor.becomeRoot(LOWERCASE442_tree, root_0);
@@ -15534,7 +15527,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     UPPERCASE443=(Token)input.LT(1);
-                    match(input,UPPERCASE,FOLLOW_UPPERCASE_in_ftCaseOption5212); if (failed) return retval;
+                    match(input,UPPERCASE,FOLLOW_UPPERCASE_in_ftCaseOption5222); if (failed) return retval;
                     if ( backtracking==0 ) {
                     UPPERCASE443_tree = (XQFTTree)adaptor.create(UPPERCASE443);
                     root_0 = (XQFTTree)adaptor.becomeRoot(UPPERCASE443_tree, root_0);
@@ -15587,7 +15580,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             DIACRITICS444=(Token)input.LT(1);
-            match(input,DIACRITICS,FOLLOW_DIACRITICS_in_ftDiacriticsOption5238); if (failed) return retval;
+            match(input,DIACRITICS,FOLLOW_DIACRITICS_in_ftDiacriticsOption5248); if (failed) return retval;
             if ( backtracking==0 ) {
             DIACRITICS444_tree = (XQFTTree)adaptor.create(DIACRITICS444);
             root_0 = (XQFTTree)adaptor.becomeRoot(DIACRITICS444_tree, root_0);
@@ -15602,7 +15595,7 @@ public class XQFTParser extends Parser {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftDiacriticsOption5241);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftDiacriticsOption5251);    throw mse;
             }
 
 
@@ -15653,18 +15646,18 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             OPTION446=(Token)input.LT(1);
-            match(input,OPTION,FOLLOW_OPTION_in_ftExtensionOption5259); if (failed) return retval;
+            match(input,OPTION,FOLLOW_OPTION_in_ftExtensionOption5269); if (failed) return retval;
             if ( backtracking==0 ) {
             OPTION446_tree = (XQFTTree)adaptor.create(OPTION446);
             root_0 = (XQFTTree)adaptor.becomeRoot(OPTION446_tree, root_0);
             }
-            pushFollow(FOLLOW_qName_in_ftExtensionOption5262);
+            pushFollow(FOLLOW_qName_in_ftExtensionOption5272);
             qName447=qName();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, qName447.getTree());
             StringLiteral448=(Token)input.LT(1);
-            match(input,StringLiteral,FOLLOW_StringLiteral_in_ftExtensionOption5264); if (failed) return retval;
+            match(input,StringLiteral,FOLLOW_StringLiteral_in_ftExtensionOption5274); if (failed) return retval;
             if ( backtracking==0 ) {
             StringLiteral448_tree = (XQFTTree)adaptor.create(StringLiteral448);
             adaptor.addChild(root_0, StringLiteral448_tree);
@@ -15729,7 +15722,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             THESAURUS449=(Token)input.LT(1);
-            match(input,THESAURUS,FOLLOW_THESAURUS_in_ftThesaurusOption5293); if (failed) return retval;
+            match(input,THESAURUS,FOLLOW_THESAURUS_in_ftThesaurusOption5303); if (failed) return retval;
             if ( backtracking==0 ) {
             THESAURUS449_tree = (XQFTTree)adaptor.create(THESAURUS449);
             adaptor.addChild(root_0, THESAURUS449_tree);
@@ -15776,7 +15769,7 @@ public class XQFTParser extends Parser {
                         case 1 :
                             // etc/XQFT.g:597:14: ftThesaurusID
                             {
-                            pushFollow(FOLLOW_ftThesaurusID_in_ftThesaurusOption5311);
+                            pushFollow(FOLLOW_ftThesaurusID_in_ftThesaurusOption5321);
                             ftThesaurusID450=ftThesaurusID();
                             _fsp--;
                             if (failed) return retval;
@@ -15788,7 +15781,7 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:597:30: DEFAULT
                             {
                             DEFAULT451=(Token)input.LT(1);
-                            match(input,DEFAULT,FOLLOW_DEFAULT_in_ftThesaurusOption5315); if (failed) return retval;
+                            match(input,DEFAULT,FOLLOW_DEFAULT_in_ftThesaurusOption5325); if (failed) return retval;
                             if ( backtracking==0 ) {
                             DEFAULT451_tree = (XQFTTree)adaptor.create(DEFAULT451);
                             adaptor.addChild(root_0, DEFAULT451_tree);
@@ -15809,7 +15802,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:598:15: LPARSi ( ftThesaurusID | DEFAULT ) ( COMMASi ftThesaurusID )* RPARSi
                     {
                     LPARSi452=(Token)input.LT(1);
-                    match(input,LPARSi,FOLLOW_LPARSi_in_ftThesaurusOption5332); if (failed) return retval;
+                    match(input,LPARSi,FOLLOW_LPARSi_in_ftThesaurusOption5342); if (failed) return retval;
                     // etc/XQFT.g:598:23: ( ftThesaurusID | DEFAULT )
                     int alt104=2;
                     int LA104_0 = input.LA(1);
@@ -15831,7 +15824,7 @@ public class XQFTParser extends Parser {
                         case 1 :
                             // etc/XQFT.g:598:24: ftThesaurusID
                             {
-                            pushFollow(FOLLOW_ftThesaurusID_in_ftThesaurusOption5336);
+                            pushFollow(FOLLOW_ftThesaurusID_in_ftThesaurusOption5346);
                             ftThesaurusID453=ftThesaurusID();
                             _fsp--;
                             if (failed) return retval;
@@ -15843,7 +15836,7 @@ public class XQFTParser extends Parser {
                             // etc/XQFT.g:598:40: DEFAULT
                             {
                             DEFAULT454=(Token)input.LT(1);
-                            match(input,DEFAULT,FOLLOW_DEFAULT_in_ftThesaurusOption5340); if (failed) return retval;
+                            match(input,DEFAULT,FOLLOW_DEFAULT_in_ftThesaurusOption5350); if (failed) return retval;
                             if ( backtracking==0 ) {
                             DEFAULT454_tree = (XQFTTree)adaptor.create(DEFAULT454);
                             adaptor.addChild(root_0, DEFAULT454_tree);
@@ -15870,12 +15863,12 @@ public class XQFTParser extends Parser {
                     	    // etc/XQFT.g:598:50: COMMASi ftThesaurusID
                     	    {
                     	    COMMASi455=(Token)input.LT(1);
-                    	    match(input,COMMASi,FOLLOW_COMMASi_in_ftThesaurusOption5344); if (failed) return retval;
+                    	    match(input,COMMASi,FOLLOW_COMMASi_in_ftThesaurusOption5354); if (failed) return retval;
                     	    if ( backtracking==0 ) {
                     	    COMMASi455_tree = (XQFTTree)adaptor.create(COMMASi455);
                     	    adaptor.addChild(root_0, COMMASi455_tree);
                     	    }
-                    	    pushFollow(FOLLOW_ftThesaurusID_in_ftThesaurusOption5346);
+                    	    pushFollow(FOLLOW_ftThesaurusID_in_ftThesaurusOption5356);
                     	    ftThesaurusID456=ftThesaurusID();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -15890,7 +15883,7 @@ public class XQFTParser extends Parser {
                     } while (true);
 
                     RPARSi457=(Token)input.LT(1);
-                    match(input,RPARSi,FOLLOW_RPARSi_in_ftThesaurusOption5350); if (failed) return retval;
+                    match(input,RPARSi,FOLLOW_RPARSi_in_ftThesaurusOption5360); if (failed) return retval;
 
                     }
 
@@ -15954,12 +15947,12 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             AT458=(Token)input.LT(1);
-            match(input,AT,FOLLOW_AT_in_ftThesaurusID5382); if (failed) return retval;
+            match(input,AT,FOLLOW_AT_in_ftThesaurusID5392); if (failed) return retval;
             if ( backtracking==0 ) {
             AT458_tree = (XQFTTree)adaptor.create(AT458);
             adaptor.addChild(root_0, AT458_tree);
             }
-            pushFollow(FOLLOW_uriLiteral_in_ftThesaurusID5384);
+            pushFollow(FOLLOW_uriLiteral_in_ftThesaurusID5394);
             uriLiteral459=uriLiteral();
             _fsp--;
             if (failed) return retval;
@@ -15976,13 +15969,13 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:601:40: RELATIONSHIP StringLiteral
                     {
                     RELATIONSHIP460=(Token)input.LT(1);
-                    match(input,RELATIONSHIP,FOLLOW_RELATIONSHIP_in_ftThesaurusID5387); if (failed) return retval;
+                    match(input,RELATIONSHIP,FOLLOW_RELATIONSHIP_in_ftThesaurusID5397); if (failed) return retval;
                     if ( backtracking==0 ) {
                     RELATIONSHIP460_tree = (XQFTTree)adaptor.create(RELATIONSHIP460);
                     adaptor.addChild(root_0, RELATIONSHIP460_tree);
                     }
                     StringLiteral461=(Token)input.LT(1);
-                    match(input,StringLiteral,FOLLOW_StringLiteral_in_ftThesaurusID5389); if (failed) return retval;
+                    match(input,StringLiteral,FOLLOW_StringLiteral_in_ftThesaurusID5399); if (failed) return retval;
                     if ( backtracking==0 ) {
                     StringLiteral461_tree = (XQFTTree)adaptor.create(StringLiteral461);
                     adaptor.addChild(root_0, StringLiteral461_tree);
@@ -16011,13 +16004,13 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:601:70: ftRange LEVELS
                     {
-                    pushFollow(FOLLOW_ftRange_in_ftThesaurusID5394);
+                    pushFollow(FOLLOW_ftRange_in_ftThesaurusID5404);
                     ftRange462=ftRange();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, ftRange462.getTree());
                     LEVELS463=(Token)input.LT(1);
-                    match(input,LEVELS,FOLLOW_LEVELS_in_ftThesaurusID5396); if (failed) return retval;
+                    match(input,LEVELS,FOLLOW_LEVELS_in_ftThesaurusID5406); if (failed) return retval;
                     if ( backtracking==0 ) {
                     LEVELS463_tree = (XQFTTree)adaptor.create(LEVELS463);
                     adaptor.addChild(root_0, LEVELS463_tree);
@@ -16104,18 +16097,18 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     STOP464=(Token)input.LT(1);
-                    match(input,STOP,FOLLOW_STOP_in_ftStopwordOption5419); if (failed) return retval;
+                    match(input,STOP,FOLLOW_STOP_in_ftStopwordOption5429); if (failed) return retval;
                     if ( backtracking==0 ) {
                     STOP464_tree = (XQFTTree)adaptor.create(STOP464);
                     adaptor.addChild(root_0, STOP464_tree);
                     }
                     WORDS465=(Token)input.LT(1);
-                    match(input,WORDS,FOLLOW_WORDS_in_ftStopwordOption5421); if (failed) return retval;
+                    match(input,WORDS,FOLLOW_WORDS_in_ftStopwordOption5431); if (failed) return retval;
                     if ( backtracking==0 ) {
                     WORDS465_tree = (XQFTTree)adaptor.create(WORDS465);
                     adaptor.addChild(root_0, WORDS465_tree);
                     }
-                    pushFollow(FOLLOW_ftRefOrList_in_ftStopwordOption5423);
+                    pushFollow(FOLLOW_ftRefOrList_in_ftStopwordOption5433);
                     ftRefOrList466=ftRefOrList();
                     _fsp--;
                     if (failed) return retval;
@@ -16135,7 +16128,7 @@ public class XQFTParser extends Parser {
                     	case 1 :
                     	    // etc/XQFT.g:604:32: ftInclExclStringLiteral
                     	    {
-                    	    pushFollow(FOLLOW_ftInclExclStringLiteral_in_ftStopwordOption5425);
+                    	    pushFollow(FOLLOW_ftInclExclStringLiteral_in_ftStopwordOption5435);
                     	    ftInclExclStringLiteral467=ftInclExclStringLiteral();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -16158,19 +16151,19 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     DEFAULT468=(Token)input.LT(1);
-                    match(input,DEFAULT,FOLLOW_DEFAULT_in_ftStopwordOption5438); if (failed) return retval;
+                    match(input,DEFAULT,FOLLOW_DEFAULT_in_ftStopwordOption5448); if (failed) return retval;
                     if ( backtracking==0 ) {
                     DEFAULT468_tree = (XQFTTree)adaptor.create(DEFAULT468);
                     adaptor.addChild(root_0, DEFAULT468_tree);
                     }
                     STOP469=(Token)input.LT(1);
-                    match(input,STOP,FOLLOW_STOP_in_ftStopwordOption5440); if (failed) return retval;
+                    match(input,STOP,FOLLOW_STOP_in_ftStopwordOption5450); if (failed) return retval;
                     if ( backtracking==0 ) {
                     STOP469_tree = (XQFTTree)adaptor.create(STOP469);
                     adaptor.addChild(root_0, STOP469_tree);
                     }
                     WORDS470=(Token)input.LT(1);
-                    match(input,WORDS,FOLLOW_WORDS_in_ftStopwordOption5442); if (failed) return retval;
+                    match(input,WORDS,FOLLOW_WORDS_in_ftStopwordOption5452); if (failed) return retval;
                     if ( backtracking==0 ) {
                     WORDS470_tree = (XQFTTree)adaptor.create(WORDS470);
                     adaptor.addChild(root_0, WORDS470_tree);
@@ -16190,7 +16183,7 @@ public class XQFTParser extends Parser {
                     	case 1 :
                     	    // etc/XQFT.g:605:30: ftInclExclStringLiteral
                     	    {
-                    	    pushFollow(FOLLOW_ftInclExclStringLiteral_in_ftStopwordOption5444);
+                    	    pushFollow(FOLLOW_ftInclExclStringLiteral_in_ftStopwordOption5454);
                     	    ftInclExclStringLiteral471=ftInclExclStringLiteral();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -16283,12 +16276,12 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:608:14: AT uriLiteral
                     {
                     AT472=(Token)input.LT(1);
-                    match(input,AT,FOLLOW_AT_in_ftRefOrList5479); if (failed) return retval;
+                    match(input,AT,FOLLOW_AT_in_ftRefOrList5489); if (failed) return retval;
                     if ( backtracking==0 ) {
                     AT472_tree = (XQFTTree)adaptor.create(AT472);
                     adaptor.addChild(root_0, AT472_tree);
                     }
-                    pushFollow(FOLLOW_uriLiteral_in_ftRefOrList5481);
+                    pushFollow(FOLLOW_uriLiteral_in_ftRefOrList5491);
                     uriLiteral473=uriLiteral();
                     _fsp--;
                     if (failed) return retval;
@@ -16305,9 +16298,9 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     LPARSi474=(Token)input.LT(1);
-                    match(input,LPARSi,FOLLOW_LPARSi_in_ftRefOrList5498); if (failed) return retval;
+                    match(input,LPARSi,FOLLOW_LPARSi_in_ftRefOrList5508); if (failed) return retval;
                     StringLiteral475=(Token)input.LT(1);
-                    match(input,StringLiteral,FOLLOW_StringLiteral_in_ftRefOrList5501); if (failed) return retval;
+                    match(input,StringLiteral,FOLLOW_StringLiteral_in_ftRefOrList5511); if (failed) return retval;
                     if ( backtracking==0 ) {
                     StringLiteral475_tree = (XQFTTree)adaptor.create(StringLiteral475);
                     adaptor.addChild(root_0, StringLiteral475_tree);
@@ -16328,13 +16321,13 @@ public class XQFTParser extends Parser {
                     	    // etc/XQFT.g:609:38: COMMASi StringLiteral
                     	    {
                     	    COMMASi476=(Token)input.LT(1);
-                    	    match(input,COMMASi,FOLLOW_COMMASi_in_ftRefOrList5504); if (failed) return retval;
+                    	    match(input,COMMASi,FOLLOW_COMMASi_in_ftRefOrList5514); if (failed) return retval;
                     	    if ( backtracking==0 ) {
                     	    COMMASi476_tree = (XQFTTree)adaptor.create(COMMASi476);
                     	    adaptor.addChild(root_0, COMMASi476_tree);
                     	    }
                     	    StringLiteral477=(Token)input.LT(1);
-                    	    match(input,StringLiteral,FOLLOW_StringLiteral_in_ftRefOrList5506); if (failed) return retval;
+                    	    match(input,StringLiteral,FOLLOW_StringLiteral_in_ftRefOrList5516); if (failed) return retval;
                     	    if ( backtracking==0 ) {
                     	    StringLiteral477_tree = (XQFTTree)adaptor.create(StringLiteral477);
                     	    adaptor.addChild(root_0, StringLiteral477_tree);
@@ -16349,7 +16342,7 @@ public class XQFTParser extends Parser {
                     } while (true);
 
                     RPARSi478=(Token)input.LT(1);
-                    match(input,RPARSi,FOLLOW_RPARSi_in_ftRefOrList5510); if (failed) return retval;
+                    match(input,RPARSi,FOLLOW_RPARSi_in_ftRefOrList5520); if (failed) return retval;
 
                     }
                     break;
@@ -16407,10 +16400,10 @@ public class XQFTParser extends Parser {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftInclExclStringLiteral5535);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_ftInclExclStringLiteral5545);    throw mse;
             }
 
-            pushFollow(FOLLOW_ftRefOrList_in_ftInclExclStringLiteral5543);
+            pushFollow(FOLLOW_ftRefOrList_in_ftInclExclStringLiteral5553);
             ftRefOrList480=ftRefOrList();
             _fsp--;
             if (failed) return retval;
@@ -16658,7 +16651,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_validateExpr_in_valueExpr5565);
+                    pushFollow(FOLLOW_validateExpr_in_valueExpr5575);
                     validateExpr481=validateExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -16671,7 +16664,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_pathExpr_in_valueExpr5569);
+                    pushFollow(FOLLOW_pathExpr_in_valueExpr5579);
                     pathExpr482=pathExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -16684,7 +16677,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_extensionExpr_in_valueExpr5573);
+                    pushFollow(FOLLOW_extensionExpr_in_valueExpr5583);
                     extensionExpr483=extensionExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -16743,7 +16736,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             VALIDATE484=(Token)input.LT(1);
-            match(input,VALIDATE,FOLLOW_VALIDATE_in_validateExpr5584); if (failed) return retval;
+            match(input,VALIDATE,FOLLOW_VALIDATE_in_validateExpr5594); if (failed) return retval;
             if ( backtracking==0 ) {
             VALIDATE484_tree = (XQFTTree)adaptor.create(VALIDATE484);
             adaptor.addChild(root_0, VALIDATE484_tree);
@@ -16759,7 +16752,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:616:29: validationMode
                     {
-                    pushFollow(FOLLOW_validationMode_in_validateExpr5586);
+                    pushFollow(FOLLOW_validationMode_in_validateExpr5596);
                     validationMode485=validationMode();
                     _fsp--;
                     if (failed) return retval;
@@ -16771,14 +16764,14 @@ public class XQFTParser extends Parser {
             }
 
             LBRACESi486=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_validateExpr5589); if (failed) return retval;
-            pushFollow(FOLLOW_thisExprIsEnclosed_in_validateExpr5592);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_validateExpr5599); if (failed) return retval;
+            pushFollow(FOLLOW_thisExprIsEnclosed_in_validateExpr5602);
             thisExprIsEnclosed487=thisExprIsEnclosed();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed487.getTree());
             RBRACSi488=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_validateExpr5594); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_validateExpr5604); if (failed) return retval;
 
             }
 
@@ -18140,10 +18133,10 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:620:10: ( SLASHSi relativePathExpr )=>s= SLASHSi relativePathExpr
                     {
                     s=(Token)input.LT(1);
-                    match(input,SLASHSi,FOLLOW_SLASHSi_in_pathExpr5656); if (failed) return retval;
+                    match(input,SLASHSi,FOLLOW_SLASHSi_in_pathExpr5666); if (failed) return retval;
                     if ( backtracking==0 ) stream_SLASHSi.add(s);
 
-                    pushFollow(FOLLOW_relativePathExpr_in_pathExpr5658);
+                    pushFollow(FOLLOW_relativePathExpr_in_pathExpr5668);
                     relativePathExpr490=relativePathExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -18182,7 +18175,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:621:11: s= SLASHSi
                     {
                     s=(Token)input.LT(1);
-                    match(input,SLASHSi,FOLLOW_SLASHSi_in_pathExpr5680); if (failed) return retval;
+                    match(input,SLASHSi,FOLLOW_SLASHSi_in_pathExpr5690); if (failed) return retval;
                     if ( backtracking==0 ) stream_SLASHSi.add(s);
 
 
@@ -18211,10 +18204,10 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:622:11: d= DBLSLASHSi relativePathExpr
                     {
                     d=(Token)input.LT(1);
-                    match(input,DBLSLASHSi,FOLLOW_DBLSLASHSi_in_pathExpr5698); if (failed) return retval;
+                    match(input,DBLSLASHSi,FOLLOW_DBLSLASHSi_in_pathExpr5708); if (failed) return retval;
                     if ( backtracking==0 ) stream_DBLSLASHSi.add(d);
 
-                    pushFollow(FOLLOW_relativePathExpr_in_pathExpr5700);
+                    pushFollow(FOLLOW_relativePathExpr_in_pathExpr5710);
                     relativePathExpr491=relativePathExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -18254,7 +18247,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_relativePathExpr_in_pathExpr5721);
+                    pushFollow(FOLLOW_relativePathExpr_in_pathExpr5731);
                     relativePathExpr492=relativePathExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -18310,7 +18303,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_stepExpr_in_relativePathExpr5762);
+            pushFollow(FOLLOW_stepExpr_in_relativePathExpr5772);
             stepExpr493=stepExpr();
             _fsp--;
             if (failed) return retval;
@@ -18352,7 +18345,7 @@ public class XQFTParser extends Parser {
             	            // etc/XQFT.g:633:39: SLASHSi
             	            {
             	            SLASHSi494=(Token)input.LT(1);
-            	            match(input,SLASHSi,FOLLOW_SLASHSi_in_relativePathExpr5766); if (failed) return retval;
+            	            match(input,SLASHSi,FOLLOW_SLASHSi_in_relativePathExpr5776); if (failed) return retval;
             	            if ( backtracking==0 ) {
             	            SLASHSi494_tree = (XQFTTree)adaptor.create(SLASHSi494);
             	            root_0 = (XQFTTree)adaptor.becomeRoot(SLASHSi494_tree, root_0);
@@ -18364,7 +18357,7 @@ public class XQFTParser extends Parser {
             	            // etc/XQFT.g:633:50: DBLSLASHSi
             	            {
             	            DBLSLASHSi495=(Token)input.LT(1);
-            	            match(input,DBLSLASHSi,FOLLOW_DBLSLASHSi_in_relativePathExpr5771); if (failed) return retval;
+            	            match(input,DBLSLASHSi,FOLLOW_DBLSLASHSi_in_relativePathExpr5781); if (failed) return retval;
             	            if ( backtracking==0 ) {
             	            DBLSLASHSi495_tree = (XQFTTree)adaptor.create(DBLSLASHSi495);
             	            root_0 = (XQFTTree)adaptor.becomeRoot(DBLSLASHSi495_tree, root_0);
@@ -18375,7 +18368,7 @@ public class XQFTParser extends Parser {
 
             	    }
 
-            	    pushFollow(FOLLOW_stepExpr_in_relativePathExpr5775);
+            	    pushFollow(FOLLOW_stepExpr_in_relativePathExpr5785);
             	    stepExpr496=stepExpr();
             	    _fsp--;
             	    if (failed) return retval;
@@ -24370,7 +24363,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:636:17: ( ( DOCUMENT_NODE | ELEMENT | ATTRIBUTE | SCHEMA_ELEMENT | SCHEMA_ATTRIBUTE | PROCESSING_INSTRUCTION | COMMENT | TEXT | NODE ) LPARSi )=> axisStep
                     {
-                    pushFollow(FOLLOW_axisStep_in_stepExpr5921);
+                    pushFollow(FOLLOW_axisStep_in_stepExpr5931);
                     axisStep497=axisStep();
                     _fsp--;
                     if (failed) return retval;
@@ -24408,7 +24401,7 @@ public class XQFTParser extends Parser {
                 case 2 :
                     // etc/XQFT.g:640:19: axisStep
                     {
-                    pushFollow(FOLLOW_axisStep_in_stepExpr5949);
+                    pushFollow(FOLLOW_axisStep_in_stepExpr5959);
                     axisStep498=axisStep();
                     _fsp--;
                     if (failed) return retval;
@@ -24448,7 +24441,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_filterExpr_in_stepExpr5977);
+                    pushFollow(FOLLOW_filterExpr_in_stepExpr5987);
                     filterExpr499=filterExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -24767,7 +24760,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:644:25: reverseStep
                     {
-                    pushFollow(FOLLOW_reverseStep_in_axisStep6012);
+                    pushFollow(FOLLOW_reverseStep_in_axisStep6022);
                     reverseStep500=reverseStep();
                     _fsp--;
                     if (failed) return retval;
@@ -24778,7 +24771,7 @@ public class XQFTParser extends Parser {
                 case 2 :
                     // etc/XQFT.g:644:39: forwardStep
                     {
-                    pushFollow(FOLLOW_forwardStep_in_axisStep6016);
+                    pushFollow(FOLLOW_forwardStep_in_axisStep6026);
                     forwardStep501=forwardStep();
                     _fsp--;
                     if (failed) return retval;
@@ -24789,7 +24782,7 @@ public class XQFTParser extends Parser {
                 case 3 :
                     // etc/XQFT.g:644:53: contextItemExpr
                     {
-                    pushFollow(FOLLOW_contextItemExpr_in_axisStep6020);
+                    pushFollow(FOLLOW_contextItemExpr_in_axisStep6030);
                     contextItemExpr502=contextItemExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -24800,7 +24793,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_predicateList_in_axisStep6024);
+            pushFollow(FOLLOW_predicateList_in_axisStep6034);
             predicateList503=predicateList();
             _fsp--;
             if (failed) return retval;
@@ -24849,7 +24842,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             DOTSi504=(Token)input.LT(1);
-            match(input,DOTSi,FOLLOW_DOTSi_in_contextItemExpr6047); if (failed) return retval;
+            match(input,DOTSi,FOLLOW_DOTSi_in_contextItemExpr6057); if (failed) return retval;
             if ( backtracking==0 ) {
             DOTSi504_tree = (XQFTTree)adaptor.create(DOTSi504);
             adaptor.addChild(root_0, DOTSi504_tree);
@@ -24919,12 +24912,12 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_reverseAxis_in_reverseStep6070);
+                    pushFollow(FOLLOW_reverseAxis_in_reverseStep6080);
                     reverseAxis505=reverseAxis();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, reverseAxis505.getTree());
-                    pushFollow(FOLLOW_nodeTest_in_reverseStep6072);
+                    pushFollow(FOLLOW_nodeTest_in_reverseStep6082);
                     nodeTest506=nodeTest();
                     _fsp--;
                     if (failed) return retval;
@@ -24937,7 +24930,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_abbrevReverseStep_in_reverseStep6076);
+                    pushFollow(FOLLOW_abbrevReverseStep_in_reverseStep6086);
                     abbrevReverseStep507=abbrevReverseStep();
                     _fsp--;
                     if (failed) return retval;
@@ -24999,11 +24992,11 @@ public class XQFTParser extends Parser {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_reverseAxis6103);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_reverseAxis6113);    throw mse;
             }
 
             DBLCOLONSi509=(Token)input.LT(1);
-            match(input,DBLCOLONSi,FOLLOW_DBLCOLONSi_in_reverseAxis6123); if (failed) return retval;
+            match(input,DBLCOLONSi,FOLLOW_DBLCOLONSi_in_reverseAxis6133); if (failed) return retval;
             if ( backtracking==0 ) {
             DBLCOLONSi509_tree = (XQFTTree)adaptor.create(DBLCOLONSi509);
             adaptor.addChild(root_0, DBLCOLONSi509_tree);
@@ -25374,7 +25367,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_kindTest_in_nodeTest6150);
+                    pushFollow(FOLLOW_kindTest_in_nodeTest6160);
                     kindTest510=kindTest();
                     _fsp--;
                     if (failed) return retval;
@@ -25387,7 +25380,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_nameTest_in_nodeTest6154);
+                    pushFollow(FOLLOW_nameTest_in_nodeTest6164);
                     nameTest511=nameTest();
                     _fsp--;
                     if (failed) return retval;
@@ -27854,7 +27847,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_wildcard_in_nameTest6235);
+                    pushFollow(FOLLOW_wildcard_in_nameTest6245);
                     wildcard512=wildcard();
                     _fsp--;
                     if (failed) return retval;
@@ -27867,7 +27860,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_qName_in_nameTest6267);
+                    pushFollow(FOLLOW_qName_in_nameTest6277);
                     qName513=qName();
                     _fsp--;
                     if (failed) return retval;
@@ -27962,18 +27955,18 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     STARSi514=(Token)input.LT(1);
-                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6369); if (failed) return retval;
+                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6379); if (failed) return retval;
                     if ( backtracking==0 ) {
                     STARSi514_tree = (XQFTTree)adaptor.create(STARSi514);
                     adaptor.addChild(root_0, STARSi514_tree);
                     }
                     COLONSi515=(Token)input.LT(1);
-                    match(input,COLONSi,FOLLOW_COLONSi_in_wildcard6371); if (failed) return retval;
+                    match(input,COLONSi,FOLLOW_COLONSi_in_wildcard6381); if (failed) return retval;
                     if ( backtracking==0 ) {
                     COLONSi515_tree = (XQFTTree)adaptor.create(COLONSi515);
                     adaptor.addChild(root_0, COLONSi515_tree);
                     }
-                    pushFollow(FOLLOW_ncNameorKeyword_in_wildcard6373);
+                    pushFollow(FOLLOW_ncNameorKeyword_in_wildcard6383);
                     ncNameorKeyword516=ncNameorKeyword();
                     _fsp--;
                     if (failed) return retval;
@@ -27987,7 +27980,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     STARSi517=(Token)input.LT(1);
-                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6411); if (failed) return retval;
+                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6421); if (failed) return retval;
                     if ( backtracking==0 ) {
                     STARSi517_tree = (XQFTTree)adaptor.create(STARSi517);
                     adaptor.addChild(root_0, STARSi517_tree);
@@ -28000,19 +27993,19 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_ncNameorKeyword_in_wildcard6447);
+                    pushFollow(FOLLOW_ncNameorKeyword_in_wildcard6457);
                     ncNameorKeyword518=ncNameorKeyword();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, ncNameorKeyword518.getTree());
                     COLONSi519=(Token)input.LT(1);
-                    match(input,COLONSi,FOLLOW_COLONSi_in_wildcard6449); if (failed) return retval;
+                    match(input,COLONSi,FOLLOW_COLONSi_in_wildcard6459); if (failed) return retval;
                     if ( backtracking==0 ) {
                     COLONSi519_tree = (XQFTTree)adaptor.create(COLONSi519);
                     adaptor.addChild(root_0, COLONSi519_tree);
                     }
                     STARSi520=(Token)input.LT(1);
-                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6451); if (failed) return retval;
+                    match(input,STARSi,FOLLOW_STARSi_in_wildcard6461); if (failed) return retval;
                     if ( backtracking==0 ) {
                     STARSi520_tree = (XQFTTree)adaptor.create(STARSi520);
                     adaptor.addChild(root_0, STARSi520_tree);
@@ -28063,7 +28056,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             DOTDOTSi521=(Token)input.LT(1);
-            match(input,DOTDOTSi,FOLLOW_DOTDOTSi_in_abbrevReverseStep6508); if (failed) return retval;
+            match(input,DOTDOTSi,FOLLOW_DOTDOTSi_in_abbrevReverseStep6518); if (failed) return retval;
             if ( backtracking==0 ) {
             DOTDOTSi521_tree = (XQFTTree)adaptor.create(DOTDOTSi521);
             adaptor.addChild(root_0, DOTDOTSi521_tree);
@@ -28401,12 +28394,12 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_forwardAxis_in_forwardStep6552);
+                    pushFollow(FOLLOW_forwardAxis_in_forwardStep6562);
                     forwardAxis522=forwardAxis();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) root_0 = (XQFTTree)adaptor.becomeRoot(forwardAxis522.getTree(), root_0);
-                    pushFollow(FOLLOW_nodeTest_in_forwardStep6555);
+                    pushFollow(FOLLOW_nodeTest_in_forwardStep6565);
                     nodeTest523=nodeTest();
                     _fsp--;
                     if (failed) return retval;
@@ -28419,7 +28412,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_abbrevForwardStep_in_forwardStep6559);
+                    pushFollow(FOLLOW_abbrevForwardStep_in_forwardStep6569);
                     abbrevForwardStep524=abbrevForwardStep();
                     _fsp--;
                     if (failed) return retval;
@@ -28481,11 +28474,11 @@ public class XQFTParser extends Parser {
                 if (backtracking>0) {failed=true; return retval;}
                 MismatchedSetException mse =
                     new MismatchedSetException(null,input);
-                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_forwardAxis6615);    throw mse;
+                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_forwardAxis6625);    throw mse;
             }
 
             DBLCOLONSi526=(Token)input.LT(1);
-            match(input,DBLCOLONSi,FOLLOW_DBLCOLONSi_in_forwardAxis6722); if (failed) return retval;
+            match(input,DBLCOLONSi,FOLLOW_DBLCOLONSi_in_forwardAxis6732); if (failed) return retval;
 
             }
 
@@ -28543,7 +28536,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:667:45: ATSi
                     {
                     ATSi527=(Token)input.LT(1);
-                    match(input,ATSi,FOLLOW_ATSi_in_abbrevForwardStep6771); if (failed) return retval;
+                    match(input,ATSi,FOLLOW_ATSi_in_abbrevForwardStep6781); if (failed) return retval;
                     if ( backtracking==0 ) {
                     ATSi527_tree = (XQFTTree)adaptor.create(ATSi527);
                     root_0 = (XQFTTree)adaptor.becomeRoot(ATSi527_tree, root_0);
@@ -28554,7 +28547,7 @@ public class XQFTParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_nodeTest_in_abbrevForwardStep6775);
+            pushFollow(FOLLOW_nodeTest_in_abbrevForwardStep6785);
             nodeTest528=nodeTest();
             _fsp--;
             if (failed) return retval;
@@ -28617,7 +28610,7 @@ public class XQFTParser extends Parser {
             	case 1 :
             	    // etc/XQFT.g:669:34: p= predicate
             	    {
-            	    pushFollow(FOLLOW_predicate_in_predicateList6837);
+            	    pushFollow(FOLLOW_predicate_in_predicateList6847);
             	    p=predicate();
             	    _fsp--;
             	    if (failed) return retval;
@@ -28679,16 +28672,16 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:670:33: LBRACKSi expr RBRACKSi
             {
             LBRACKSi529=(Token)input.LT(1);
-            match(input,LBRACKSi,FOLLOW_LBRACKSi_in_predicate6865); if (failed) return retval;
+            match(input,LBRACKSi,FOLLOW_LBRACKSi_in_predicate6875); if (failed) return retval;
             if ( backtracking==0 ) stream_LBRACKSi.add(LBRACKSi529);
 
-            pushFollow(FOLLOW_expr_in_predicate6867);
+            pushFollow(FOLLOW_expr_in_predicate6877);
             expr530=expr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_expr.add(expr530.getTree());
             RBRACKSi531=(Token)input.LT(1);
-            match(input,RBRACKSi,FOLLOW_RBRACKSi_in_predicate6869); if (failed) return retval;
+            match(input,RBRACKSi,FOLLOW_RBRACKSi_in_predicate6879); if (failed) return retval;
             if ( backtracking==0 ) stream_RBRACKSi.add(RBRACKSi531);
 
 
@@ -28783,7 +28776,7 @@ public class XQFTParser extends Parser {
             	case 1 :
             	    // etc/XQFT.g:673:21: pragma
             	    {
-            	    pushFollow(FOLLOW_pragma_in_extensionExpr6941);
+            	    pushFollow(FOLLOW_pragma_in_extensionExpr6951);
             	    pragma532=pragma();
             	    _fsp--;
             	    if (failed) return retval;
@@ -28803,7 +28796,7 @@ public class XQFTParser extends Parser {
             } while (true);
 
             LBRACESi533=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_extensionExpr6944); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_extensionExpr6954); if (failed) return retval;
             // etc/XQFT.g:673:39: ( thisExprIsEnclosed )?
             int alt129=2;
             int LA129_0 = input.LA(1);
@@ -28815,7 +28808,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:673:39: thisExprIsEnclosed
                     {
-                    pushFollow(FOLLOW_thisExprIsEnclosed_in_extensionExpr6947);
+                    pushFollow(FOLLOW_thisExprIsEnclosed_in_extensionExpr6957);
                     thisExprIsEnclosed534=thisExprIsEnclosed();
                     _fsp--;
                     if (failed) return retval;
@@ -28827,7 +28820,7 @@ public class XQFTParser extends Parser {
             }
 
             RBRACSi535=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_extensionExpr6950); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_extensionExpr6960); if (failed) return retval;
 
             }
 
@@ -28873,12 +28866,12 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_primaryExpr_in_filterExpr6962);
+            pushFollow(FOLLOW_primaryExpr_in_filterExpr6972);
             primaryExpr536=primaryExpr();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, primaryExpr536.getTree());
-            pushFollow(FOLLOW_predicateList_in_filterExpr6964);
+            pushFollow(FOLLOW_predicateList_in_filterExpr6974);
             predicateList537=predicateList();
             _fsp--;
             if (failed) return retval;
@@ -29265,7 +29258,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_literal_in_primaryExpr6984);
+                    pushFollow(FOLLOW_literal_in_primaryExpr6994);
                     literal538=literal();
                     _fsp--;
                     if (failed) return retval;
@@ -29278,7 +29271,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_varRef_in_primaryExpr6997);
+                    pushFollow(FOLLOW_varRef_in_primaryExpr7007);
                     varRef539=varRef();
                     _fsp--;
                     if (failed) return retval;
@@ -29291,7 +29284,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_parenthesizedExpr_in_primaryExpr7010);
+                    pushFollow(FOLLOW_parenthesizedExpr_in_primaryExpr7020);
                     parenthesizedExpr540=parenthesizedExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -29304,7 +29297,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_functionCall_in_primaryExpr7023);
+                    pushFollow(FOLLOW_functionCall_in_primaryExpr7033);
                     functionCall541=functionCall();
                     _fsp--;
                     if (failed) return retval;
@@ -29317,7 +29310,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_orderedExpr_in_primaryExpr7036);
+                    pushFollow(FOLLOW_orderedExpr_in_primaryExpr7046);
                     orderedExpr542=orderedExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -29330,7 +29323,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_unorderedExpr_in_primaryExpr7049);
+                    pushFollow(FOLLOW_unorderedExpr_in_primaryExpr7059);
                     unorderedExpr543=unorderedExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -29343,7 +29336,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_constructor_in_primaryExpr7062);
+                    pushFollow(FOLLOW_constructor_in_primaryExpr7072);
                     constructor544=constructor();
                     _fsp--;
                     if (failed) return retval;
@@ -29396,12 +29389,12 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             DOLLARSi545=(Token)input.LT(1);
-            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_varRef7082); if (failed) return retval;
+            match(input,DOLLARSi,FOLLOW_DOLLARSi_in_varRef7092); if (failed) return retval;
             if ( backtracking==0 ) {
             DOLLARSi545_tree = (XQFTTree)adaptor.create(DOLLARSi545);
             root_0 = (XQFTTree)adaptor.becomeRoot(DOLLARSi545_tree, root_0);
             }
-            pushFollow(FOLLOW_varName_in_varRef7085);
+            pushFollow(FOLLOW_varName_in_varRef7095);
             varName546=varName();
             _fsp--;
             if (failed) return retval;
@@ -29454,7 +29447,11 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LPARSi547=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_parenthesizedExpr7100); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_parenthesizedExpr7110); if (failed) return retval;
+            if ( backtracking==0 ) {
+            LPARSi547_tree = (XQFTTree)adaptor.create(LPARSi547);
+            root_0 = (XQFTTree)adaptor.becomeRoot(LPARSi547_tree, root_0);
+            }
             // etc/XQFT.g:688:37: ( expr )?
             int alt131=2;
             int LA131_0 = input.LA(1);
@@ -29466,7 +29463,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:688:37: expr
                     {
-                    pushFollow(FOLLOW_expr_in_parenthesizedExpr7103);
+                    pushFollow(FOLLOW_expr_in_parenthesizedExpr7113);
                     expr548=expr();
                     _fsp--;
                     if (failed) return retval;
@@ -29478,7 +29475,7 @@ public class XQFTParser extends Parser {
             }
 
             RPARSi549=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_parenthesizedExpr7106); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_parenthesizedExpr7116); if (failed) return retval;
 
             }
 
@@ -29534,13 +29531,13 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:689:22: ( qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi -> ^( AST_FUNCTIONCALL qName ( exprSingle )* ) )
             // etc/XQFT.g:690:13: qName LPARSi ( exprSingle ( COMMASi exprSingle )* )? RPARSi
             {
-            pushFollow(FOLLOW_qName_in_functionCall7135);
+            pushFollow(FOLLOW_qName_in_functionCall7145);
             qName550=qName();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_qName.add(qName550.getTree());
             LPARSi551=(Token)input.LT(1);
-            match(input,LPARSi,FOLLOW_LPARSi_in_functionCall7137); if (failed) return retval;
+            match(input,LPARSi,FOLLOW_LPARSi_in_functionCall7147); if (failed) return retval;
             if ( backtracking==0 ) stream_LPARSi.add(LPARSi551);
 
             // etc/XQFT.g:691:13: ( exprSingle ( COMMASi exprSingle )* )?
@@ -29554,7 +29551,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:691:14: exprSingle ( COMMASi exprSingle )*
                     {
-                    pushFollow(FOLLOW_exprSingle_in_functionCall7154);
+                    pushFollow(FOLLOW_exprSingle_in_functionCall7164);
                     exprSingle552=exprSingle();
                     _fsp--;
                     if (failed) return retval;
@@ -29575,10 +29572,10 @@ public class XQFTParser extends Parser {
                     	    // etc/XQFT.g:691:26: COMMASi exprSingle
                     	    {
                     	    COMMASi553=(Token)input.LT(1);
-                    	    match(input,COMMASi,FOLLOW_COMMASi_in_functionCall7157); if (failed) return retval;
+                    	    match(input,COMMASi,FOLLOW_COMMASi_in_functionCall7167); if (failed) return retval;
                     	    if ( backtracking==0 ) stream_COMMASi.add(COMMASi553);
 
-                    	    pushFollow(FOLLOW_exprSingle_in_functionCall7159);
+                    	    pushFollow(FOLLOW_exprSingle_in_functionCall7169);
                     	    exprSingle554=exprSingle();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -29599,12 +29596,12 @@ public class XQFTParser extends Parser {
             }
 
             RPARSi555=(Token)input.LT(1);
-            match(input,RPARSi,FOLLOW_RPARSi_in_functionCall7178); if (failed) return retval;
+            match(input,RPARSi,FOLLOW_RPARSi_in_functionCall7188); if (failed) return retval;
             if ( backtracking==0 ) stream_RPARSi.add(RPARSi555);
 
 
             // AST REWRITE
-            // elements: qName, exprSingle
+            // elements: exprSingle, qName
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -29685,20 +29682,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             ORDERED556=(Token)input.LT(1);
-            match(input,ORDERED,FOLLOW_ORDERED_in_orderedExpr7221); if (failed) return retval;
+            match(input,ORDERED,FOLLOW_ORDERED_in_orderedExpr7231); if (failed) return retval;
             if ( backtracking==0 ) {
             ORDERED556_tree = (XQFTTree)adaptor.create(ORDERED556);
             adaptor.addChild(root_0, ORDERED556_tree);
             }
             LBRACESi557=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_orderedExpr7223); if (failed) return retval;
-            pushFollow(FOLLOW_thisExprIsEnclosed_in_orderedExpr7226);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_orderedExpr7233); if (failed) return retval;
+            pushFollow(FOLLOW_thisExprIsEnclosed_in_orderedExpr7236);
             thisExprIsEnclosed558=thisExprIsEnclosed();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed558.getTree());
             RBRACSi559=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_orderedExpr7228); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_orderedExpr7238); if (failed) return retval;
 
             }
 
@@ -29749,20 +29746,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             UNORDERED560=(Token)input.LT(1);
-            match(input,UNORDERED,FOLLOW_UNORDERED_in_unorderedExpr7244); if (failed) return retval;
+            match(input,UNORDERED,FOLLOW_UNORDERED_in_unorderedExpr7254); if (failed) return retval;
             if ( backtracking==0 ) {
             UNORDERED560_tree = (XQFTTree)adaptor.create(UNORDERED560);
             adaptor.addChild(root_0, UNORDERED560_tree);
             }
             LBRACESi561=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_unorderedExpr7246); if (failed) return retval;
-            pushFollow(FOLLOW_thisExprIsEnclosed_in_unorderedExpr7249);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_unorderedExpr7256); if (failed) return retval;
+            pushFollow(FOLLOW_thisExprIsEnclosed_in_unorderedExpr7259);
             thisExprIsEnclosed562=thisExprIsEnclosed();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed562.getTree());
             RBRACSi563=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_unorderedExpr7251); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_unorderedExpr7261); if (failed) return retval;
 
             }
 
@@ -29826,7 +29823,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_directConstructor_in_constructor7271);
+                    pushFollow(FOLLOW_directConstructor_in_constructor7281);
                     directConstructor564=directConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -29839,7 +29836,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_computedConstructor_in_constructor7275);
+                    pushFollow(FOLLOW_computedConstructor_in_constructor7285);
                     computedConstructor565=computedConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -29920,7 +29917,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_dirElemConstructor_in_directConstructor7315);
+                    pushFollow(FOLLOW_dirElemConstructor_in_directConstructor7325);
                     dirElemConstructor566=dirElemConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -29933,7 +29930,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_dirCommentConstructor_in_directConstructor7335);
+                    pushFollow(FOLLOW_dirCommentConstructor_in_directConstructor7345);
                     dirCommentConstructor567=dirCommentConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -29946,7 +29943,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_dirPIConstructor_in_directConstructor7355);
+                    pushFollow(FOLLOW_dirPIConstructor_in_directConstructor7365);
                     dirPIConstructor568=dirPIConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -30017,18 +30014,18 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:705:21: LTSi qn= qName dirAttributeList ( RSELFTERMSi | GTSi ( dirElemContent )* LENDTAGSi qName GTSi )
             {
             LTSi569=(Token)input.LT(1);
-            match(input,LTSi,FOLLOW_LTSi_in_dirElemConstructor7413); if (failed) return retval;
+            match(input,LTSi,FOLLOW_LTSi_in_dirElemConstructor7423); if (failed) return retval;
             if ( backtracking==0 ) stream_LTSi.add(LTSi569);
 
             if ( backtracking==0 ) {
               lexer.stack.pushState(lexer.state); lexer.state=State.IN_TAG;
             }
-            pushFollow(FOLLOW_qName_in_dirElemConstructor7439);
+            pushFollow(FOLLOW_qName_in_dirElemConstructor7449);
             qn=qName();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) stream_qName.add(qn.getTree());
-            pushFollow(FOLLOW_dirAttributeList_in_dirElemConstructor7441);
+            pushFollow(FOLLOW_dirAttributeList_in_dirElemConstructor7451);
             dirAttributeList570=dirAttributeList();
             _fsp--;
             if (failed) return retval;
@@ -30055,7 +30052,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:707:22: RSELFTERMSi
                     {
                     RSELFTERMSi571=(Token)input.LT(1);
-                    match(input,RSELFTERMSi,FOLLOW_RSELFTERMSi_in_dirElemConstructor7464); if (failed) return retval;
+                    match(input,RSELFTERMSi,FOLLOW_RSELFTERMSi_in_dirElemConstructor7474); if (failed) return retval;
                     if ( backtracking==0 ) stream_RSELFTERMSi.add(RSELFTERMSi571);
 
                     if ( backtracking==0 ) {
@@ -30068,7 +30065,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:709:24: GTSi ( dirElemContent )* LENDTAGSi qName GTSi
                     {
                     GTSi572=(Token)input.LT(1);
-                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor7515); if (failed) return retval;
+                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor7525); if (failed) return retval;
                     if ( backtracking==0 ) stream_GTSi.add(GTSi572);
 
                     if ( backtracking==0 ) {
@@ -30089,7 +30086,7 @@ public class XQFTParser extends Parser {
                     	case 1 :
                     	    // etc/XQFT.g:712:25: dirElemContent
                     	    {
-                    	    pushFollow(FOLLOW_dirElemContent_in_dirElemConstructor7569);
+                    	    pushFollow(FOLLOW_dirElemContent_in_dirElemConstructor7579);
                     	    dirElemContent573=dirElemContent();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -30104,19 +30101,19 @@ public class XQFTParser extends Parser {
                     } while (true);
 
                     LENDTAGSi574=(Token)input.LT(1);
-                    match(input,LENDTAGSi,FOLLOW_LENDTAGSi_in_dirElemConstructor7597); if (failed) return retval;
+                    match(input,LENDTAGSi,FOLLOW_LENDTAGSi_in_dirElemConstructor7607); if (failed) return retval;
                     if ( backtracking==0 ) stream_LENDTAGSi.add(LENDTAGSi574);
 
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_TAG;
                     }
-                    pushFollow(FOLLOW_qName_in_dirElemConstructor7629);
+                    pushFollow(FOLLOW_qName_in_dirElemConstructor7639);
                     qName575=qName();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) stream_qName.add(qName575.getTree());
                     GTSi576=(Token)input.LT(1);
-                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor7660); if (failed) return retval;
+                    match(input,GTSi,FOLLOW_GTSi_in_dirElemConstructor7670); if (failed) return retval;
                     if ( backtracking==0 ) stream_GTSi.add(GTSi576);
 
                     if ( backtracking==0 ) {
@@ -30130,7 +30127,7 @@ public class XQFTParser extends Parser {
 
 
             // AST REWRITE
-            // elements: qn, dirAttributeList, dirElemContent
+            // elements: dirAttributeList, dirElemContent, qn
             // token labels: 
             // rule labels: qn, retval
             // token list labels: 
@@ -30225,18 +30222,18 @@ public class XQFTParser extends Parser {
             	case 1 :
             	    // etc/XQFT.g:719:41: qName EQSi dirAttributeValue
             	    {
-            	    pushFollow(FOLLOW_qName_in_dirAttributeList7759);
+            	    pushFollow(FOLLOW_qName_in_dirAttributeList7769);
             	    qName577=qName();
             	    _fsp--;
             	    if (failed) return retval;
             	    if ( backtracking==0 ) adaptor.addChild(root_0, qName577.getTree());
             	    EQSi578=(Token)input.LT(1);
-            	    match(input,EQSi,FOLLOW_EQSi_in_dirAttributeList7761); if (failed) return retval;
+            	    match(input,EQSi,FOLLOW_EQSi_in_dirAttributeList7771); if (failed) return retval;
             	    if ( backtracking==0 ) {
             	    EQSi578_tree = (XQFTTree)adaptor.create(EQSi578);
             	    adaptor.addChild(root_0, EQSi578_tree);
             	    }
-            	    pushFollow(FOLLOW_dirAttributeValue_in_dirAttributeList7763);
+            	    pushFollow(FOLLOW_dirAttributeValue_in_dirAttributeList7773);
             	    dirAttributeValue579=dirAttributeValue();
             	    _fsp--;
             	    if (failed) return retval;
@@ -30326,7 +30323,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     QUOTSi580=(Token)input.LT(1);
-                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue7826); if (failed) return retval;
+                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue7836); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_QUOT_ATTRIBUTE;
                     }
@@ -30349,7 +30346,7 @@ public class XQFTParser extends Parser {
                     	    // etc/XQFT.g:722:30: QuotAttributeContent
                     	    {
                     	    QuotAttributeContent581=(Token)input.LT(1);
-                    	    match(input,QuotAttributeContent,FOLLOW_QuotAttributeContent_in_dirAttributeValue7860); if (failed) return retval;
+                    	    match(input,QuotAttributeContent,FOLLOW_QuotAttributeContent_in_dirAttributeValue7870); if (failed) return retval;
                     	    if ( backtracking==0 ) {
                     	    QuotAttributeContent581_tree = (XQFTTree)adaptor.create(QuotAttributeContent581);
                     	    adaptor.addChild(root_0, QuotAttributeContent581_tree);
@@ -30360,7 +30357,7 @@ public class XQFTParser extends Parser {
                     	case 2 :
                     	    // etc/XQFT.g:722:53: xmlEnclosedExpr
                     	    {
-                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7864);
+                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7874);
                     	    xmlEnclosedExpr582=xmlEnclosedExpr();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -30375,7 +30372,7 @@ public class XQFTParser extends Parser {
                     } while (true);
 
                     QUOTSi583=(Token)input.LT(1);
-                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue7897); if (failed) return retval;
+                    match(input,QUOTSi,FOLLOW_QUOTSi_in_dirAttributeValue7907); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_TAG;
                     }
@@ -30388,7 +30385,7 @@ public class XQFTParser extends Parser {
                     root_0 = (XQFTTree)adaptor.nil();
 
                     APOSSi584=(Token)input.LT(1);
-                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue7932); if (failed) return retval;
+                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue7942); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_APOS_ATTRIBUTE;
                     }
@@ -30411,7 +30408,7 @@ public class XQFTParser extends Parser {
                     	    // etc/XQFT.g:725:30: AposAttributeContent
                     	    {
                     	    AposAttributeContent585=(Token)input.LT(1);
-                    	    match(input,AposAttributeContent,FOLLOW_AposAttributeContent_in_dirAttributeValue7966); if (failed) return retval;
+                    	    match(input,AposAttributeContent,FOLLOW_AposAttributeContent_in_dirAttributeValue7976); if (failed) return retval;
                     	    if ( backtracking==0 ) {
                     	    AposAttributeContent585_tree = (XQFTTree)adaptor.create(AposAttributeContent585);
                     	    adaptor.addChild(root_0, AposAttributeContent585_tree);
@@ -30422,7 +30419,7 @@ public class XQFTParser extends Parser {
                     	case 2 :
                     	    // etc/XQFT.g:725:53: xmlEnclosedExpr
                     	    {
-                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7970);
+                    	    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7980);
                     	    xmlEnclosedExpr586=xmlEnclosedExpr();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -30437,7 +30434,7 @@ public class XQFTParser extends Parser {
                     } while (true);
 
                     APOSSi587=(Token)input.LT(1);
-                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue8003); if (failed) return retval;
+                    match(input,APOSSi,FOLLOW_APOSSi_in_dirAttributeValue8013); if (failed) return retval;
                     if ( backtracking==0 ) {
                       lexer.state=State.IN_TAG;
                     }
@@ -30491,17 +30488,17 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LBRACESi588=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_xmlEnclosedExpr8092); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_xmlEnclosedExpr8102); if (failed) return retval;
             if ( backtracking==0 ) {
               lexer.stack.pushState(lexer.state); lexer.state=State.DEFAULT;
             }
-            pushFollow(FOLLOW_thisExprIsEnclosed_in_xmlEnclosedExpr8130);
+            pushFollow(FOLLOW_thisExprIsEnclosed_in_xmlEnclosedExpr8140);
             thisExprIsEnclosed589=thisExprIsEnclosed();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed589.getTree());
             RBRACSi590=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_xmlEnclosedExpr8161); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_xmlEnclosedExpr8171); if (failed) return retval;
             if ( backtracking==0 ) {
               lexer.state = lexer.stack.pop();
             }
@@ -30589,7 +30586,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:735:25: dc= directConstructor
                     {
-                    pushFollow(FOLLOW_directConstructor_in_dirElemContent8244);
+                    pushFollow(FOLLOW_directConstructor_in_dirElemContent8254);
                     dc=directConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -30628,7 +30625,7 @@ public class XQFTParser extends Parser {
                 case 2 :
                     // etc/XQFT.g:736:27: cd= cDataSection
                     {
-                    pushFollow(FOLLOW_cDataSection_in_dirElemContent8282);
+                    pushFollow(FOLLOW_cDataSection_in_dirElemContent8292);
                     cd=cDataSection();
                     _fsp--;
                     if (failed) return retval;
@@ -30668,7 +30665,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:737:27: ec= ElementContent
                     {
                     ec=(Token)input.LT(1);
-                    match(input,ElementContent,FOLLOW_ElementContent_in_dirElemContent8321); if (failed) return retval;
+                    match(input,ElementContent,FOLLOW_ElementContent_in_dirElemContent8331); if (failed) return retval;
                     if ( backtracking==0 ) stream_ElementContent.add(ec);
 
 
@@ -30705,7 +30702,7 @@ public class XQFTParser extends Parser {
                 case 4 :
                     // etc/XQFT.g:738:27: xe= xmlEnclosedExpr
                     {
-                    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirElemContent8360);
+                    pushFollow(FOLLOW_xmlEnclosedExpr_in_dirElemContent8370);
                     xe=xmlEnclosedExpr();
                     _fsp--;
                     if (failed) return retval;
@@ -30788,19 +30785,19 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LCDATASi591=(Token)input.LT(1);
-            match(input,LCDATASi,FOLLOW_LCDATASi_in_cDataSection8418); if (failed) return retval;
+            match(input,LCDATASi,FOLLOW_LCDATASi_in_cDataSection8428); if (failed) return retval;
             if ( backtracking==0 ) {
             LCDATASi591_tree = (XQFTTree)adaptor.create(LCDATASi591);
             adaptor.addChild(root_0, LCDATASi591_tree);
             }
             CDataContents592=(Token)input.LT(1);
-            match(input,CDataContents,FOLLOW_CDataContents_in_cDataSection8420); if (failed) return retval;
+            match(input,CDataContents,FOLLOW_CDataContents_in_cDataSection8430); if (failed) return retval;
             if ( backtracking==0 ) {
             CDataContents592_tree = (XQFTTree)adaptor.create(CDataContents592);
             adaptor.addChild(root_0, CDataContents592_tree);
             }
             RCDATASi593=(Token)input.LT(1);
-            match(input,RCDATASi,FOLLOW_RCDATASi_in_cDataSection8422); if (failed) return retval;
+            match(input,RCDATASi,FOLLOW_RCDATASi_in_cDataSection8432); if (failed) return retval;
             if ( backtracking==0 ) {
             RCDATASi593_tree = (XQFTTree)adaptor.create(RCDATASi593);
             adaptor.addChild(root_0, RCDATASi593_tree);
@@ -30853,19 +30850,19 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LCOMMENTSi594=(Token)input.LT(1);
-            match(input,LCOMMENTSi,FOLLOW_LCOMMENTSi_in_dirCommentConstructor8446); if (failed) return retval;
+            match(input,LCOMMENTSi,FOLLOW_LCOMMENTSi_in_dirCommentConstructor8456); if (failed) return retval;
             if ( backtracking==0 ) {
             LCOMMENTSi594_tree = (XQFTTree)adaptor.create(LCOMMENTSi594);
             adaptor.addChild(root_0, LCOMMENTSi594_tree);
             }
             DirCommentContent595=(Token)input.LT(1);
-            match(input,DirCommentContent,FOLLOW_DirCommentContent_in_dirCommentConstructor8448); if (failed) return retval;
+            match(input,DirCommentContent,FOLLOW_DirCommentContent_in_dirCommentConstructor8458); if (failed) return retval;
             if ( backtracking==0 ) {
             DirCommentContent595_tree = (XQFTTree)adaptor.create(DirCommentContent595);
             adaptor.addChild(root_0, DirCommentContent595_tree);
             }
             RCOMMENTSi596=(Token)input.LT(1);
-            match(input,RCOMMENTSi,FOLLOW_RCOMMENTSi_in_dirCommentConstructor8450); if (failed) return retval;
+            match(input,RCOMMENTSi,FOLLOW_RCOMMENTSi_in_dirCommentConstructor8460); if (failed) return retval;
             if ( backtracking==0 ) {
             RCOMMENTSi596_tree = (XQFTTree)adaptor.create(RCOMMENTSi596);
             adaptor.addChild(root_0, RCOMMENTSi596_tree);
@@ -30920,13 +30917,13 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             LPISi597=(Token)input.LT(1);
-            match(input,LPISi,FOLLOW_LPISi_in_dirPIConstructor8474); if (failed) return retval;
+            match(input,LPISi,FOLLOW_LPISi_in_dirPIConstructor8484); if (failed) return retval;
             if ( backtracking==0 ) {
             LPISi597_tree = (XQFTTree)adaptor.create(LPISi597);
             adaptor.addChild(root_0, LPISi597_tree);
             }
             PiTarget598=(Token)input.LT(1);
-            match(input,PiTarget,FOLLOW_PiTarget_in_dirPIConstructor8476); if (failed) return retval;
+            match(input,PiTarget,FOLLOW_PiTarget_in_dirPIConstructor8486); if (failed) return retval;
             if ( backtracking==0 ) {
             PiTarget598_tree = (XQFTTree)adaptor.create(PiTarget598);
             adaptor.addChild(root_0, PiTarget598_tree);
@@ -30943,7 +30940,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:745:51: DirPiContents
                     {
                     DirPiContents599=(Token)input.LT(1);
-                    match(input,DirPiContents,FOLLOW_DirPiContents_in_dirPIConstructor8478); if (failed) return retval;
+                    match(input,DirPiContents,FOLLOW_DirPiContents_in_dirPIConstructor8488); if (failed) return retval;
                     if ( backtracking==0 ) {
                     DirPiContents599_tree = (XQFTTree)adaptor.create(DirPiContents599);
                     adaptor.addChild(root_0, DirPiContents599_tree);
@@ -30955,7 +30952,7 @@ public class XQFTParser extends Parser {
             }
 
             RPISi600=(Token)input.LT(1);
-            match(input,RPISi,FOLLOW_RPISi_in_dirPIConstructor8481); if (failed) return retval;
+            match(input,RPISi,FOLLOW_RPISi_in_dirPIConstructor8491); if (failed) return retval;
             if ( backtracking==0 ) {
             RPISi600_tree = (XQFTTree)adaptor.create(RPISi600);
             adaptor.addChild(root_0, RPISi600_tree);
@@ -31055,7 +31052,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compDocConstructor_in_computedConstructor8518);
+                    pushFollow(FOLLOW_compDocConstructor_in_computedConstructor8528);
                     compDocConstructor601=compDocConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -31068,7 +31065,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compElemConstructor_in_computedConstructor8538);
+                    pushFollow(FOLLOW_compElemConstructor_in_computedConstructor8548);
                     compElemConstructor602=compElemConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -31081,7 +31078,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compAttrConstructor_in_computedConstructor8558);
+                    pushFollow(FOLLOW_compAttrConstructor_in_computedConstructor8568);
                     compAttrConstructor603=compAttrConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -31094,7 +31091,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compTextConstructor_in_computedConstructor8578);
+                    pushFollow(FOLLOW_compTextConstructor_in_computedConstructor8588);
                     compTextConstructor604=compTextConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -31107,7 +31104,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compCommentConstructor_in_computedConstructor8598);
+                    pushFollow(FOLLOW_compCommentConstructor_in_computedConstructor8608);
                     compCommentConstructor605=compCommentConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -31120,7 +31117,7 @@ public class XQFTParser extends Parser {
                     {
                     root_0 = (XQFTTree)adaptor.nil();
 
-                    pushFollow(FOLLOW_compPIConstructor_in_computedConstructor8618);
+                    pushFollow(FOLLOW_compPIConstructor_in_computedConstructor8628);
                     compPIConstructor606=compPIConstructor();
                     _fsp--;
                     if (failed) return retval;
@@ -31177,20 +31174,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             DOCUMENT607=(Token)input.LT(1);
-            match(input,DOCUMENT,FOLLOW_DOCUMENT_in_compDocConstructor8656); if (failed) return retval;
+            match(input,DOCUMENT,FOLLOW_DOCUMENT_in_compDocConstructor8666); if (failed) return retval;
             if ( backtracking==0 ) {
             DOCUMENT607_tree = (XQFTTree)adaptor.create(DOCUMENT607);
             adaptor.addChild(root_0, DOCUMENT607_tree);
             }
             LBRACESi608=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compDocConstructor8658); if (failed) return retval;
-            pushFollow(FOLLOW_thisExprIsEnclosed_in_compDocConstructor8661);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compDocConstructor8668); if (failed) return retval;
+            pushFollow(FOLLOW_thisExprIsEnclosed_in_compDocConstructor8671);
             thisExprIsEnclosed609=thisExprIsEnclosed();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed609.getTree());
             RBRACSi610=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compDocConstructor8663); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compDocConstructor8673); if (failed) return retval;
 
             }
 
@@ -31249,7 +31246,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             ELEMENT611=(Token)input.LT(1);
-            match(input,ELEMENT,FOLLOW_ELEMENT_in_compElemConstructor8709); if (failed) return retval;
+            match(input,ELEMENT,FOLLOW_ELEMENT_in_compElemConstructor8719); if (failed) return retval;
             if ( backtracking==0 ) {
             ELEMENT611_tree = (XQFTTree)adaptor.create(ELEMENT611);
             adaptor.addChild(root_0, ELEMENT611_tree);
@@ -31275,7 +31272,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:759:30: qName
                     {
-                    pushFollow(FOLLOW_qName_in_compElemConstructor8712);
+                    pushFollow(FOLLOW_qName_in_compElemConstructor8722);
                     qName612=qName();
                     _fsp--;
                     if (failed) return retval;
@@ -31287,14 +31284,14 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:759:38: LBRACESi thisExprIsEnclosed RBRACSi
                     {
                     LBRACESi613=(Token)input.LT(1);
-                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor8716); if (failed) return retval;
-                    pushFollow(FOLLOW_thisExprIsEnclosed_in_compElemConstructor8719);
+                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor8726); if (failed) return retval;
+                    pushFollow(FOLLOW_thisExprIsEnclosed_in_compElemConstructor8729);
                     thisExprIsEnclosed614=thisExprIsEnclosed();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed614.getTree());
                     RBRACSi615=(Token)input.LT(1);
-                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor8721); if (failed) return retval;
+                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor8731); if (failed) return retval;
 
                     }
                     break;
@@ -31302,7 +31299,7 @@ public class XQFTParser extends Parser {
             }
 
             LBRACESi616=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor8746); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compElemConstructor8756); if (failed) return retval;
             // etc/XQFT.g:760:31: ( thisExprIsEnclosed )?
             int alt146=2;
             int LA146_0 = input.LA(1);
@@ -31314,7 +31311,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:760:31: thisExprIsEnclosed
                     {
-                    pushFollow(FOLLOW_thisExprIsEnclosed_in_compElemConstructor8749);
+                    pushFollow(FOLLOW_thisExprIsEnclosed_in_compElemConstructor8759);
                     thisExprIsEnclosed617=thisExprIsEnclosed();
                     _fsp--;
                     if (failed) return retval;
@@ -31326,7 +31323,7 @@ public class XQFTParser extends Parser {
             }
 
             RBRACSi618=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor8752); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compElemConstructor8762); if (failed) return retval;
 
             }
 
@@ -31370,7 +31367,7 @@ public class XQFTParser extends Parser {
             {
             root_0 = (XQFTTree)adaptor.nil();
 
-            pushFollow(FOLLOW_expr_in_contentExpr8797);
+            pushFollow(FOLLOW_expr_in_contentExpr8807);
             expr619=expr();
             _fsp--;
             if (failed) return retval;
@@ -31433,7 +31430,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             ATTRIBUTE620=(Token)input.LT(1);
-            match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_compAttrConstructor8842); if (failed) return retval;
+            match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_compAttrConstructor8852); if (failed) return retval;
             if ( backtracking==0 ) {
             ATTRIBUTE620_tree = (XQFTTree)adaptor.create(ATTRIBUTE620);
             adaptor.addChild(root_0, ATTRIBUTE620_tree);
@@ -31459,7 +31456,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:765:32: qName
                     {
-                    pushFollow(FOLLOW_qName_in_compAttrConstructor8845);
+                    pushFollow(FOLLOW_qName_in_compAttrConstructor8855);
                     qName621=qName();
                     _fsp--;
                     if (failed) return retval;
@@ -31474,14 +31471,14 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:765:41: LBRACESi thisExprIsEnclosed RBRACSi
                     {
                     LBRACESi622=(Token)input.LT(1);
-                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor8850); if (failed) return retval;
-                    pushFollow(FOLLOW_thisExprIsEnclosed_in_compAttrConstructor8853);
+                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor8860); if (failed) return retval;
+                    pushFollow(FOLLOW_thisExprIsEnclosed_in_compAttrConstructor8863);
                     thisExprIsEnclosed623=thisExprIsEnclosed();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed623.getTree());
                     RBRACSi624=(Token)input.LT(1);
-                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor8855); if (failed) return retval;
+                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor8865); if (failed) return retval;
 
                     }
 
@@ -31492,7 +31489,7 @@ public class XQFTParser extends Parser {
             }
 
             LBRACESi625=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor8881); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compAttrConstructor8891); if (failed) return retval;
             // etc/XQFT.g:766:31: ( expr )?
             int alt148=2;
             int LA148_0 = input.LA(1);
@@ -31504,7 +31501,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:766:31: expr
                     {
-                    pushFollow(FOLLOW_expr_in_compAttrConstructor8884);
+                    pushFollow(FOLLOW_expr_in_compAttrConstructor8894);
                     expr626=expr();
                     _fsp--;
                     if (failed) return retval;
@@ -31516,7 +31513,7 @@ public class XQFTParser extends Parser {
             }
 
             RBRACSi627=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor8887); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compAttrConstructor8897); if (failed) return retval;
 
             }
 
@@ -31567,20 +31564,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             TEXT628=(Token)input.LT(1);
-            match(input,TEXT,FOLLOW_TEXT_in_compTextConstructor8930); if (failed) return retval;
+            match(input,TEXT,FOLLOW_TEXT_in_compTextConstructor8940); if (failed) return retval;
             if ( backtracking==0 ) {
             TEXT628_tree = (XQFTTree)adaptor.create(TEXT628);
             adaptor.addChild(root_0, TEXT628_tree);
             }
             LBRACESi629=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compTextConstructor8932); if (failed) return retval;
-            pushFollow(FOLLOW_thisExprIsEnclosed_in_compTextConstructor8935);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compTextConstructor8942); if (failed) return retval;
+            pushFollow(FOLLOW_thisExprIsEnclosed_in_compTextConstructor8945);
             thisExprIsEnclosed630=thisExprIsEnclosed();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed630.getTree());
             RBRACSi631=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compTextConstructor8937); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compTextConstructor8947); if (failed) return retval;
 
             }
 
@@ -31631,20 +31628,20 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             COMMENT632=(Token)input.LT(1);
-            match(input,COMMENT,FOLLOW_COMMENT_in_compCommentConstructor8962); if (failed) return retval;
+            match(input,COMMENT,FOLLOW_COMMENT_in_compCommentConstructor8972); if (failed) return retval;
             if ( backtracking==0 ) {
             COMMENT632_tree = (XQFTTree)adaptor.create(COMMENT632);
             adaptor.addChild(root_0, COMMENT632_tree);
             }
             LBRACESi633=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compCommentConstructor8964); if (failed) return retval;
-            pushFollow(FOLLOW_thisExprIsEnclosed_in_compCommentConstructor8967);
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compCommentConstructor8974); if (failed) return retval;
+            pushFollow(FOLLOW_thisExprIsEnclosed_in_compCommentConstructor8977);
             thisExprIsEnclosed634=thisExprIsEnclosed();
             _fsp--;
             if (failed) return retval;
             if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed634.getTree());
             RBRACSi635=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compCommentConstructor8969); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compCommentConstructor8979); if (failed) return retval;
 
             }
 
@@ -31703,7 +31700,7 @@ public class XQFTParser extends Parser {
             root_0 = (XQFTTree)adaptor.nil();
 
             PROCESSING_INSTRUCTION636=(Token)input.LT(1);
-            match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor9015); if (failed) return retval;
+            match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor9025); if (failed) return retval;
             if ( backtracking==0 ) {
             PROCESSING_INSTRUCTION636_tree = (XQFTTree)adaptor.create(PROCESSING_INSTRUCTION636);
             adaptor.addChild(root_0, PROCESSING_INSTRUCTION636_tree);
@@ -31729,7 +31726,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:775:26: ncNameorKeyword
                     {
-                    pushFollow(FOLLOW_ncNameorKeyword_in_compPIConstructor9043);
+                    pushFollow(FOLLOW_ncNameorKeyword_in_compPIConstructor9053);
                     ncNameorKeyword637=ncNameorKeyword();
                     _fsp--;
                     if (failed) return retval;
@@ -31744,14 +31741,14 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:775:45: LBRACESi thisExprIsEnclosed RBRACSi
                     {
                     LBRACESi638=(Token)input.LT(1);
-                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor9048); if (failed) return retval;
-                    pushFollow(FOLLOW_thisExprIsEnclosed_in_compPIConstructor9051);
+                    match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor9058); if (failed) return retval;
+                    pushFollow(FOLLOW_thisExprIsEnclosed_in_compPIConstructor9061);
                     thisExprIsEnclosed639=thisExprIsEnclosed();
                     _fsp--;
                     if (failed) return retval;
                     if ( backtracking==0 ) adaptor.addChild(root_0, thisExprIsEnclosed639.getTree());
                     RBRACSi640=(Token)input.LT(1);
-                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor9053); if (failed) return retval;
+                    match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor9063); if (failed) return retval;
 
                     }
 
@@ -31762,7 +31759,7 @@ public class XQFTParser extends Parser {
             }
 
             LBRACESi641=(Token)input.LT(1);
-            match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor9079); if (failed) return retval;
+            match(input,LBRACESi,FOLLOW_LBRACESi_in_compPIConstructor9089); if (failed) return retval;
             // etc/XQFT.g:776:31: ( thisExprIsEnclosed )?
             int alt150=2;
             int LA150_0 = input.LA(1);
@@ -31774,7 +31771,7 @@ public class XQFTParser extends Parser {
                 case 1 :
                     // etc/XQFT.g:776:31: thisExprIsEnclosed
                     {
-                    pushFollow(FOLLOW_thisExprIsEnclosed_in_compPIConstructor9082);
+                    pushFollow(FOLLOW_thisExprIsEnclosed_in_compPIConstructor9092);
                     thisExprIsEnclosed642=thisExprIsEnclosed();
                     _fsp--;
                     if (failed) return retval;
@@ -31786,7 +31783,7 @@ public class XQFTParser extends Parser {
             }
 
             RBRACSi643=(Token)input.LT(1);
-            match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor9085); if (failed) return retval;
+            match(input,RBRACSi,FOLLOW_RBRACSi_in_compPIConstructor9095); if (failed) return retval;
 
             }
 
@@ -31828,7 +31825,7 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:780:19: ( expr -> ^( AST_ENCLOSEDEXPR expr ) )
             // etc/XQFT.g:781:2: expr
             {
-            pushFollow(FOLLOW_expr_in_thisExprIsEnclosed9112);
+            pushFollow(FOLLOW_expr_in_thisExprIsEnclosed9122);
             expr644=expr();
             _fsp--;
             if (failed) return retval;
@@ -31901,7 +31898,7 @@ public class XQFTParser extends Parser {
             // etc/XQFT.g:783:26: ( ftSelection -> ^( AST_ENCLOSEDEXPR ftSelection ) )
             // etc/XQFT.g:784:2: ftSelection
             {
-            pushFollow(FOLLOW_ftSelection_in_thisFTSelectionIsEnclosed9128);
+            pushFollow(FOLLOW_ftSelection_in_thisFTSelectionIsEnclosed9138);
             ftSelection645=ftSelection();
             _fsp--;
             if (failed) return retval;
@@ -32836,7 +32833,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:791:6: a= NCName
                     {
                     a=(Token)input.LT(1);
-                    match(input,NCName,FOLLOW_NCName_in_ncNameorKeyword9157); if (failed) return retval;
+                    match(input,NCName,FOLLOW_NCName_in_ncNameorKeyword9167); if (failed) return retval;
                     if ( backtracking==0 ) stream_NCName.add(a);
 
 
@@ -32846,7 +32843,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:792:7: a= ALL
                     {
                     a=(Token)input.LT(1);
-                    match(input,ALL,FOLLOW_ALL_in_ncNameorKeyword9167); if (failed) return retval;
+                    match(input,ALL,FOLLOW_ALL_in_ncNameorKeyword9177); if (failed) return retval;
                     if ( backtracking==0 ) stream_ALL.add(a);
 
 
@@ -32856,7 +32853,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:793:7: a= ANY
                     {
                     a=(Token)input.LT(1);
-                    match(input,ANY,FOLLOW_ANY_in_ncNameorKeyword9178); if (failed) return retval;
+                    match(input,ANY,FOLLOW_ANY_in_ncNameorKeyword9188); if (failed) return retval;
                     if ( backtracking==0 ) stream_ANY.add(a);
 
 
@@ -32866,7 +32863,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:794:7: a= ANCESTOR
                     {
                     a=(Token)input.LT(1);
-                    match(input,ANCESTOR,FOLLOW_ANCESTOR_in_ncNameorKeyword9188); if (failed) return retval;
+                    match(input,ANCESTOR,FOLLOW_ANCESTOR_in_ncNameorKeyword9198); if (failed) return retval;
                     if ( backtracking==0 ) stream_ANCESTOR.add(a);
 
 
@@ -32876,7 +32873,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:795:7: a= ANCESTOR_OR_SELF
                     {
                     a=(Token)input.LT(1);
-                    match(input,ANCESTOR_OR_SELF,FOLLOW_ANCESTOR_OR_SELF_in_ncNameorKeyword9198); if (failed) return retval;
+                    match(input,ANCESTOR_OR_SELF,FOLLOW_ANCESTOR_OR_SELF_in_ncNameorKeyword9208); if (failed) return retval;
                     if ( backtracking==0 ) stream_ANCESTOR_OR_SELF.add(a);
 
 
@@ -32886,7 +32883,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:796:7: a= AND
                     {
                     a=(Token)input.LT(1);
-                    match(input,AND,FOLLOW_AND_in_ncNameorKeyword9208); if (failed) return retval;
+                    match(input,AND,FOLLOW_AND_in_ncNameorKeyword9218); if (failed) return retval;
                     if ( backtracking==0 ) stream_AND.add(a);
 
 
@@ -32896,7 +32893,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:797:7: a= AS
                     {
                     a=(Token)input.LT(1);
-                    match(input,AS,FOLLOW_AS_in_ncNameorKeyword9218); if (failed) return retval;
+                    match(input,AS,FOLLOW_AS_in_ncNameorKeyword9228); if (failed) return retval;
                     if ( backtracking==0 ) stream_AS.add(a);
 
 
@@ -32906,7 +32903,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:798:7: a= ASCENDING
                     {
                     a=(Token)input.LT(1);
-                    match(input,ASCENDING,FOLLOW_ASCENDING_in_ncNameorKeyword9228); if (failed) return retval;
+                    match(input,ASCENDING,FOLLOW_ASCENDING_in_ncNameorKeyword9238); if (failed) return retval;
                     if ( backtracking==0 ) stream_ASCENDING.add(a);
 
 
@@ -32916,7 +32913,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:799:7: a= AT
                     {
                     a=(Token)input.LT(1);
-                    match(input,AT,FOLLOW_AT_in_ncNameorKeyword9238); if (failed) return retval;
+                    match(input,AT,FOLLOW_AT_in_ncNameorKeyword9248); if (failed) return retval;
                     if ( backtracking==0 ) stream_AT.add(a);
 
 
@@ -32926,7 +32923,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:800:7: a= ATTRIBUTE
                     {
                     a=(Token)input.LT(1);
-                    match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_ncNameorKeyword9248); if (failed) return retval;
+                    match(input,ATTRIBUTE,FOLLOW_ATTRIBUTE_in_ncNameorKeyword9258); if (failed) return retval;
                     if ( backtracking==0 ) stream_ATTRIBUTE.add(a);
 
 
@@ -32936,7 +32933,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:801:7: a= BASE_URI
                     {
                     a=(Token)input.LT(1);
-                    match(input,BASE_URI,FOLLOW_BASE_URI_in_ncNameorKeyword9258); if (failed) return retval;
+                    match(input,BASE_URI,FOLLOW_BASE_URI_in_ncNameorKeyword9268); if (failed) return retval;
                     if ( backtracking==0 ) stream_BASE_URI.add(a);
 
 
@@ -32946,7 +32943,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:802:7: a= BY
                     {
                     a=(Token)input.LT(1);
-                    match(input,BY,FOLLOW_BY_in_ncNameorKeyword9268); if (failed) return retval;
+                    match(input,BY,FOLLOW_BY_in_ncNameorKeyword9278); if (failed) return retval;
                     if ( backtracking==0 ) stream_BY.add(a);
 
 
@@ -32956,7 +32953,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:803:7: a= BOUNDARYSPACE
                     {
                     a=(Token)input.LT(1);
-                    match(input,BOUNDARYSPACE,FOLLOW_BOUNDARYSPACE_in_ncNameorKeyword9278); if (failed) return retval;
+                    match(input,BOUNDARYSPACE,FOLLOW_BOUNDARYSPACE_in_ncNameorKeyword9288); if (failed) return retval;
                     if ( backtracking==0 ) stream_BOUNDARYSPACE.add(a);
 
 
@@ -32966,7 +32963,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:804:7: a= CASE
                     {
                     a=(Token)input.LT(1);
-                    match(input,CASE,FOLLOW_CASE_in_ncNameorKeyword9288); if (failed) return retval;
+                    match(input,CASE,FOLLOW_CASE_in_ncNameorKeyword9298); if (failed) return retval;
                     if ( backtracking==0 ) stream_CASE.add(a);
 
 
@@ -32976,7 +32973,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:805:7: a= CAST
                     {
                     a=(Token)input.LT(1);
-                    match(input,CAST,FOLLOW_CAST_in_ncNameorKeyword9298); if (failed) return retval;
+                    match(input,CAST,FOLLOW_CAST_in_ncNameorKeyword9308); if (failed) return retval;
                     if ( backtracking==0 ) stream_CAST.add(a);
 
 
@@ -32986,7 +32983,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:806:7: a= CASTABLE
                     {
                     a=(Token)input.LT(1);
-                    match(input,CASTABLE,FOLLOW_CASTABLE_in_ncNameorKeyword9308); if (failed) return retval;
+                    match(input,CASTABLE,FOLLOW_CASTABLE_in_ncNameorKeyword9318); if (failed) return retval;
                     if ( backtracking==0 ) stream_CASTABLE.add(a);
 
 
@@ -32996,7 +32993,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:807:7: a= CHILD
                     {
                     a=(Token)input.LT(1);
-                    match(input,CHILD,FOLLOW_CHILD_in_ncNameorKeyword9318); if (failed) return retval;
+                    match(input,CHILD,FOLLOW_CHILD_in_ncNameorKeyword9328); if (failed) return retval;
                     if ( backtracking==0 ) stream_CHILD.add(a);
 
 
@@ -33006,7 +33003,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:808:7: a= COLLATION
                     {
                     a=(Token)input.LT(1);
-                    match(input,COLLATION,FOLLOW_COLLATION_in_ncNameorKeyword9328); if (failed) return retval;
+                    match(input,COLLATION,FOLLOW_COLLATION_in_ncNameorKeyword9338); if (failed) return retval;
                     if ( backtracking==0 ) stream_COLLATION.add(a);
 
 
@@ -33016,7 +33013,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:809:7: a= COMMENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,COMMENT,FOLLOW_COMMENT_in_ncNameorKeyword9338); if (failed) return retval;
+                    match(input,COMMENT,FOLLOW_COMMENT_in_ncNameorKeyword9348); if (failed) return retval;
                     if ( backtracking==0 ) stream_COMMENT.add(a);
 
 
@@ -33026,7 +33023,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:810:7: a= CONSTRUCTION
                     {
                     a=(Token)input.LT(1);
-                    match(input,CONSTRUCTION,FOLLOW_CONSTRUCTION_in_ncNameorKeyword9348); if (failed) return retval;
+                    match(input,CONSTRUCTION,FOLLOW_CONSTRUCTION_in_ncNameorKeyword9358); if (failed) return retval;
                     if ( backtracking==0 ) stream_CONSTRUCTION.add(a);
 
 
@@ -33036,7 +33033,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:811:7: a= CONTENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,CONTENT,FOLLOW_CONTENT_in_ncNameorKeyword9358); if (failed) return retval;
+                    match(input,CONTENT,FOLLOW_CONTENT_in_ncNameorKeyword9368); if (failed) return retval;
                     if ( backtracking==0 ) stream_CONTENT.add(a);
 
 
@@ -33046,7 +33043,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:812:7: a= COPY_NAMESPACES
                     {
                     a=(Token)input.LT(1);
-                    match(input,COPY_NAMESPACES,FOLLOW_COPY_NAMESPACES_in_ncNameorKeyword9368); if (failed) return retval;
+                    match(input,COPY_NAMESPACES,FOLLOW_COPY_NAMESPACES_in_ncNameorKeyword9378); if (failed) return retval;
                     if ( backtracking==0 ) stream_COPY_NAMESPACES.add(a);
 
 
@@ -33056,7 +33053,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:813:7: a= DECLARE
                     {
                     a=(Token)input.LT(1);
-                    match(input,DECLARE,FOLLOW_DECLARE_in_ncNameorKeyword9378); if (failed) return retval;
+                    match(input,DECLARE,FOLLOW_DECLARE_in_ncNameorKeyword9388); if (failed) return retval;
                     if ( backtracking==0 ) stream_DECLARE.add(a);
 
 
@@ -33066,7 +33063,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:814:7: a= DEFAULT
                     {
                     a=(Token)input.LT(1);
-                    match(input,DEFAULT,FOLLOW_DEFAULT_in_ncNameorKeyword9388); if (failed) return retval;
+                    match(input,DEFAULT,FOLLOW_DEFAULT_in_ncNameorKeyword9398); if (failed) return retval;
                     if ( backtracking==0 ) stream_DEFAULT.add(a);
 
 
@@ -33076,7 +33073,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:815:7: a= DESCENDANT
                     {
                     a=(Token)input.LT(1);
-                    match(input,DESCENDANT,FOLLOW_DESCENDANT_in_ncNameorKeyword9398); if (failed) return retval;
+                    match(input,DESCENDANT,FOLLOW_DESCENDANT_in_ncNameorKeyword9408); if (failed) return retval;
                     if ( backtracking==0 ) stream_DESCENDANT.add(a);
 
 
@@ -33086,7 +33083,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:816:7: a= DESCENDANT_OR_SELF
                     {
                     a=(Token)input.LT(1);
-                    match(input,DESCENDANT_OR_SELF,FOLLOW_DESCENDANT_OR_SELF_in_ncNameorKeyword9408); if (failed) return retval;
+                    match(input,DESCENDANT_OR_SELF,FOLLOW_DESCENDANT_OR_SELF_in_ncNameorKeyword9418); if (failed) return retval;
                     if ( backtracking==0 ) stream_DESCENDANT_OR_SELF.add(a);
 
 
@@ -33096,7 +33093,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:817:7: a= DESCENDING
                     {
                     a=(Token)input.LT(1);
-                    match(input,DESCENDING,FOLLOW_DESCENDING_in_ncNameorKeyword9418); if (failed) return retval;
+                    match(input,DESCENDING,FOLLOW_DESCENDING_in_ncNameorKeyword9428); if (failed) return retval;
                     if ( backtracking==0 ) stream_DESCENDING.add(a);
 
 
@@ -33106,7 +33103,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:818:7: a= DIACRITICS
                     {
                     a=(Token)input.LT(1);
-                    match(input,DIACRITICS,FOLLOW_DIACRITICS_in_ncNameorKeyword9428); if (failed) return retval;
+                    match(input,DIACRITICS,FOLLOW_DIACRITICS_in_ncNameorKeyword9438); if (failed) return retval;
                     if ( backtracking==0 ) stream_DIACRITICS.add(a);
 
 
@@ -33116,7 +33113,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:819:7: a= DIFFERENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,DIFFERENT,FOLLOW_DIFFERENT_in_ncNameorKeyword9438); if (failed) return retval;
+                    match(input,DIFFERENT,FOLLOW_DIFFERENT_in_ncNameorKeyword9448); if (failed) return retval;
                     if ( backtracking==0 ) stream_DIFFERENT.add(a);
 
 
@@ -33126,7 +33123,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:820:7: a= DISTANCE
                     {
                     a=(Token)input.LT(1);
-                    match(input,DISTANCE,FOLLOW_DISTANCE_in_ncNameorKeyword9448); if (failed) return retval;
+                    match(input,DISTANCE,FOLLOW_DISTANCE_in_ncNameorKeyword9458); if (failed) return retval;
                     if ( backtracking==0 ) stream_DISTANCE.add(a);
 
 
@@ -33136,7 +33133,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:821:7: a= DIV
                     {
                     a=(Token)input.LT(1);
-                    match(input,DIV,FOLLOW_DIV_in_ncNameorKeyword9458); if (failed) return retval;
+                    match(input,DIV,FOLLOW_DIV_in_ncNameorKeyword9468); if (failed) return retval;
                     if ( backtracking==0 ) stream_DIV.add(a);
 
 
@@ -33146,7 +33143,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:822:7: a= DOCUMENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,DOCUMENT,FOLLOW_DOCUMENT_in_ncNameorKeyword9468); if (failed) return retval;
+                    match(input,DOCUMENT,FOLLOW_DOCUMENT_in_ncNameorKeyword9478); if (failed) return retval;
                     if ( backtracking==0 ) stream_DOCUMENT.add(a);
 
 
@@ -33156,7 +33153,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:823:7: a= DOCUMENT_NODE
                     {
                     a=(Token)input.LT(1);
-                    match(input,DOCUMENT_NODE,FOLLOW_DOCUMENT_NODE_in_ncNameorKeyword9478); if (failed) return retval;
+                    match(input,DOCUMENT_NODE,FOLLOW_DOCUMENT_NODE_in_ncNameorKeyword9488); if (failed) return retval;
                     if ( backtracking==0 ) stream_DOCUMENT_NODE.add(a);
 
 
@@ -33166,7 +33163,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:824:7: a= ELEMENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,ELEMENT,FOLLOW_ELEMENT_in_ncNameorKeyword9488); if (failed) return retval;
+                    match(input,ELEMENT,FOLLOW_ELEMENT_in_ncNameorKeyword9498); if (failed) return retval;
                     if ( backtracking==0 ) stream_ELEMENT.add(a);
 
 
@@ -33176,7 +33173,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:825:7: a= ELSE
                     {
                     a=(Token)input.LT(1);
-                    match(input,ELSE,FOLLOW_ELSE_in_ncNameorKeyword9498); if (failed) return retval;
+                    match(input,ELSE,FOLLOW_ELSE_in_ncNameorKeyword9508); if (failed) return retval;
                     if ( backtracking==0 ) stream_ELSE.add(a);
 
 
@@ -33186,7 +33183,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:826:7: a= ENCODING
                     {
                     a=(Token)input.LT(1);
-                    match(input,ENCODING,FOLLOW_ENCODING_in_ncNameorKeyword9508); if (failed) return retval;
+                    match(input,ENCODING,FOLLOW_ENCODING_in_ncNameorKeyword9518); if (failed) return retval;
                     if ( backtracking==0 ) stream_ENCODING.add(a);
 
 
@@ -33196,7 +33193,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:827:7: a= END
                     {
                     a=(Token)input.LT(1);
-                    match(input,END,FOLLOW_END_in_ncNameorKeyword9518); if (failed) return retval;
+                    match(input,END,FOLLOW_END_in_ncNameorKeyword9528); if (failed) return retval;
                     if ( backtracking==0 ) stream_END.add(a);
 
 
@@ -33206,7 +33203,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:828:7: a= ENTIRE
                     {
                     a=(Token)input.LT(1);
-                    match(input,ENTIRE,FOLLOW_ENTIRE_in_ncNameorKeyword9528); if (failed) return retval;
+                    match(input,ENTIRE,FOLLOW_ENTIRE_in_ncNameorKeyword9538); if (failed) return retval;
                     if ( backtracking==0 ) stream_ENTIRE.add(a);
 
 
@@ -33216,7 +33213,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:829:7: a= EMPTY
                     {
                     a=(Token)input.LT(1);
-                    match(input,EMPTY,FOLLOW_EMPTY_in_ncNameorKeyword9538); if (failed) return retval;
+                    match(input,EMPTY,FOLLOW_EMPTY_in_ncNameorKeyword9548); if (failed) return retval;
                     if ( backtracking==0 ) stream_EMPTY.add(a);
 
 
@@ -33226,7 +33223,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:830:7: a= EMPTY_SEQUENCE
                     {
                     a=(Token)input.LT(1);
-                    match(input,EMPTY_SEQUENCE,FOLLOW_EMPTY_SEQUENCE_in_ncNameorKeyword9548); if (failed) return retval;
+                    match(input,EMPTY_SEQUENCE,FOLLOW_EMPTY_SEQUENCE_in_ncNameorKeyword9558); if (failed) return retval;
                     if ( backtracking==0 ) stream_EMPTY_SEQUENCE.add(a);
 
 
@@ -33236,7 +33233,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:831:7: a= EQ
                     {
                     a=(Token)input.LT(1);
-                    match(input,EQ,FOLLOW_EQ_in_ncNameorKeyword9558); if (failed) return retval;
+                    match(input,EQ,FOLLOW_EQ_in_ncNameorKeyword9568); if (failed) return retval;
                     if ( backtracking==0 ) stream_EQ.add(a);
 
 
@@ -33246,7 +33243,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:832:7: a= EVERY
                     {
                     a=(Token)input.LT(1);
-                    match(input,EVERY,FOLLOW_EVERY_in_ncNameorKeyword9568); if (failed) return retval;
+                    match(input,EVERY,FOLLOW_EVERY_in_ncNameorKeyword9578); if (failed) return retval;
                     if ( backtracking==0 ) stream_EVERY.add(a);
 
 
@@ -33256,7 +33253,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:833:7: a= EXACTLY
                     {
                     a=(Token)input.LT(1);
-                    match(input,EXACTLY,FOLLOW_EXACTLY_in_ncNameorKeyword9578); if (failed) return retval;
+                    match(input,EXACTLY,FOLLOW_EXACTLY_in_ncNameorKeyword9588); if (failed) return retval;
                     if ( backtracking==0 ) stream_EXACTLY.add(a);
 
 
@@ -33266,7 +33263,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:834:7: a= EXCEPT
                     {
                     a=(Token)input.LT(1);
-                    match(input,EXCEPT,FOLLOW_EXCEPT_in_ncNameorKeyword9588); if (failed) return retval;
+                    match(input,EXCEPT,FOLLOW_EXCEPT_in_ncNameorKeyword9598); if (failed) return retval;
                     if ( backtracking==0 ) stream_EXCEPT.add(a);
 
 
@@ -33276,7 +33273,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:835:7: a= EXTERNAL
                     {
                     a=(Token)input.LT(1);
-                    match(input,EXTERNAL,FOLLOW_EXTERNAL_in_ncNameorKeyword9598); if (failed) return retval;
+                    match(input,EXTERNAL,FOLLOW_EXTERNAL_in_ncNameorKeyword9608); if (failed) return retval;
                     if ( backtracking==0 ) stream_EXTERNAL.add(a);
 
 
@@ -33286,7 +33283,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:836:7: a= FOLLOWING
                     {
                     a=(Token)input.LT(1);
-                    match(input,FOLLOWING,FOLLOW_FOLLOWING_in_ncNameorKeyword9608); if (failed) return retval;
+                    match(input,FOLLOWING,FOLLOW_FOLLOWING_in_ncNameorKeyword9618); if (failed) return retval;
                     if ( backtracking==0 ) stream_FOLLOWING.add(a);
 
 
@@ -33296,7 +33293,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:837:7: a= FOLLOWING_SIBLING
                     {
                     a=(Token)input.LT(1);
-                    match(input,FOLLOWING_SIBLING,FOLLOW_FOLLOWING_SIBLING_in_ncNameorKeyword9618); if (failed) return retval;
+                    match(input,FOLLOWING_SIBLING,FOLLOW_FOLLOWING_SIBLING_in_ncNameorKeyword9628); if (failed) return retval;
                     if ( backtracking==0 ) stream_FOLLOWING_SIBLING.add(a);
 
 
@@ -33306,7 +33303,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:838:7: a= FOR
                     {
                     a=(Token)input.LT(1);
-                    match(input,FOR,FOLLOW_FOR_in_ncNameorKeyword9628); if (failed) return retval;
+                    match(input,FOR,FOLLOW_FOR_in_ncNameorKeyword9638); if (failed) return retval;
                     if ( backtracking==0 ) stream_FOR.add(a);
 
 
@@ -33316,7 +33313,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:839:7: a= FROM
                     {
                     a=(Token)input.LT(1);
-                    match(input,FROM,FOLLOW_FROM_in_ncNameorKeyword9638); if (failed) return retval;
+                    match(input,FROM,FOLLOW_FROM_in_ncNameorKeyword9648); if (failed) return retval;
                     if ( backtracking==0 ) stream_FROM.add(a);
 
 
@@ -33326,7 +33323,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:840:7: a= FTAND
                     {
                     a=(Token)input.LT(1);
-                    match(input,FTAND,FOLLOW_FTAND_in_ncNameorKeyword9648); if (failed) return retval;
+                    match(input,FTAND,FOLLOW_FTAND_in_ncNameorKeyword9658); if (failed) return retval;
                     if ( backtracking==0 ) stream_FTAND.add(a);
 
 
@@ -33336,7 +33333,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:841:7: a= FTCONTAINS
                     {
                     a=(Token)input.LT(1);
-                    match(input,FTCONTAINS,FOLLOW_FTCONTAINS_in_ncNameorKeyword9658); if (failed) return retval;
+                    match(input,FTCONTAINS,FOLLOW_FTCONTAINS_in_ncNameorKeyword9668); if (failed) return retval;
                     if ( backtracking==0 ) stream_FTCONTAINS.add(a);
 
 
@@ -33346,7 +33343,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:842:7: a= FTNOT
                     {
                     a=(Token)input.LT(1);
-                    match(input,FTNOT,FOLLOW_FTNOT_in_ncNameorKeyword9668); if (failed) return retval;
+                    match(input,FTNOT,FOLLOW_FTNOT_in_ncNameorKeyword9678); if (failed) return retval;
                     if ( backtracking==0 ) stream_FTNOT.add(a);
 
 
@@ -33356,7 +33353,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:843:7: a= FTOPTION
                     {
                     a=(Token)input.LT(1);
-                    match(input,FTOPTION,FOLLOW_FTOPTION_in_ncNameorKeyword9678); if (failed) return retval;
+                    match(input,FTOPTION,FOLLOW_FTOPTION_in_ncNameorKeyword9688); if (failed) return retval;
                     if ( backtracking==0 ) stream_FTOPTION.add(a);
 
 
@@ -33366,7 +33363,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:844:7: a= FTOR
                     {
                     a=(Token)input.LT(1);
-                    match(input,FTOR,FOLLOW_FTOR_in_ncNameorKeyword9688); if (failed) return retval;
+                    match(input,FTOR,FOLLOW_FTOR_in_ncNameorKeyword9698); if (failed) return retval;
                     if ( backtracking==0 ) stream_FTOR.add(a);
 
 
@@ -33376,7 +33373,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:845:7: a= FUNCTION
                     {
                     a=(Token)input.LT(1);
-                    match(input,FUNCTION,FOLLOW_FUNCTION_in_ncNameorKeyword9698); if (failed) return retval;
+                    match(input,FUNCTION,FOLLOW_FUNCTION_in_ncNameorKeyword9708); if (failed) return retval;
                     if ( backtracking==0 ) stream_FUNCTION.add(a);
 
 
@@ -33386,7 +33383,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:846:7: a= GE
                     {
                     a=(Token)input.LT(1);
-                    match(input,GE,FOLLOW_GE_in_ncNameorKeyword9708); if (failed) return retval;
+                    match(input,GE,FOLLOW_GE_in_ncNameorKeyword9718); if (failed) return retval;
                     if ( backtracking==0 ) stream_GE.add(a);
 
 
@@ -33396,7 +33393,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:847:7: a= GREATEST
                     {
                     a=(Token)input.LT(1);
-                    match(input,GREATEST,FOLLOW_GREATEST_in_ncNameorKeyword9718); if (failed) return retval;
+                    match(input,GREATEST,FOLLOW_GREATEST_in_ncNameorKeyword9728); if (failed) return retval;
                     if ( backtracking==0 ) stream_GREATEST.add(a);
 
 
@@ -33406,7 +33403,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:848:7: a= GT
                     {
                     a=(Token)input.LT(1);
-                    match(input,GT,FOLLOW_GT_in_ncNameorKeyword9728); if (failed) return retval;
+                    match(input,GT,FOLLOW_GT_in_ncNameorKeyword9738); if (failed) return retval;
                     if ( backtracking==0 ) stream_GT.add(a);
 
 
@@ -33416,7 +33413,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:849:7: a= IDIV
                     {
                     a=(Token)input.LT(1);
-                    match(input,IDIV,FOLLOW_IDIV_in_ncNameorKeyword9738); if (failed) return retval;
+                    match(input,IDIV,FOLLOW_IDIV_in_ncNameorKeyword9748); if (failed) return retval;
                     if ( backtracking==0 ) stream_IDIV.add(a);
 
 
@@ -33426,7 +33423,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:850:7: a= IF
                     {
                     a=(Token)input.LT(1);
-                    match(input,IF,FOLLOW_IF_in_ncNameorKeyword9748); if (failed) return retval;
+                    match(input,IF,FOLLOW_IF_in_ncNameorKeyword9758); if (failed) return retval;
                     if ( backtracking==0 ) stream_IF.add(a);
 
 
@@ -33436,7 +33433,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:851:7: a= IMPORT
                     {
                     a=(Token)input.LT(1);
-                    match(input,IMPORT,FOLLOW_IMPORT_in_ncNameorKeyword9758); if (failed) return retval;
+                    match(input,IMPORT,FOLLOW_IMPORT_in_ncNameorKeyword9768); if (failed) return retval;
                     if ( backtracking==0 ) stream_IMPORT.add(a);
 
 
@@ -33446,7 +33443,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:852:7: a= IN
                     {
                     a=(Token)input.LT(1);
-                    match(input,IN,FOLLOW_IN_in_ncNameorKeyword9768); if (failed) return retval;
+                    match(input,IN,FOLLOW_IN_in_ncNameorKeyword9778); if (failed) return retval;
                     if ( backtracking==0 ) stream_IN.add(a);
 
 
@@ -33456,7 +33453,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:853:7: a= INHERIT
                     {
                     a=(Token)input.LT(1);
-                    match(input,INHERIT,FOLLOW_INHERIT_in_ncNameorKeyword9778); if (failed) return retval;
+                    match(input,INHERIT,FOLLOW_INHERIT_in_ncNameorKeyword9788); if (failed) return retval;
                     if ( backtracking==0 ) stream_INHERIT.add(a);
 
 
@@ -33466,7 +33463,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:854:7: a= INSENSITIVE
                     {
                     a=(Token)input.LT(1);
-                    match(input,INSENSITIVE,FOLLOW_INSENSITIVE_in_ncNameorKeyword9788); if (failed) return retval;
+                    match(input,INSENSITIVE,FOLLOW_INSENSITIVE_in_ncNameorKeyword9798); if (failed) return retval;
                     if ( backtracking==0 ) stream_INSENSITIVE.add(a);
 
 
@@ -33476,7 +33473,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:855:7: a= INSTANCE
                     {
                     a=(Token)input.LT(1);
-                    match(input,INSTANCE,FOLLOW_INSTANCE_in_ncNameorKeyword9798); if (failed) return retval;
+                    match(input,INSTANCE,FOLLOW_INSTANCE_in_ncNameorKeyword9808); if (failed) return retval;
                     if ( backtracking==0 ) stream_INSTANCE.add(a);
 
 
@@ -33486,7 +33483,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:856:7: a= INTERSECT
                     {
                     a=(Token)input.LT(1);
-                    match(input,INTERSECT,FOLLOW_INTERSECT_in_ncNameorKeyword9808); if (failed) return retval;
+                    match(input,INTERSECT,FOLLOW_INTERSECT_in_ncNameorKeyword9818); if (failed) return retval;
                     if ( backtracking==0 ) stream_INTERSECT.add(a);
 
 
@@ -33496,7 +33493,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:857:7: a= IS
                     {
                     a=(Token)input.LT(1);
-                    match(input,IS,FOLLOW_IS_in_ncNameorKeyword9818); if (failed) return retval;
+                    match(input,IS,FOLLOW_IS_in_ncNameorKeyword9828); if (failed) return retval;
                     if ( backtracking==0 ) stream_IS.add(a);
 
 
@@ -33506,7 +33503,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:858:7: a= ITEM
                     {
                     a=(Token)input.LT(1);
-                    match(input,ITEM,FOLLOW_ITEM_in_ncNameorKeyword9828); if (failed) return retval;
+                    match(input,ITEM,FOLLOW_ITEM_in_ncNameorKeyword9838); if (failed) return retval;
                     if ( backtracking==0 ) stream_ITEM.add(a);
 
 
@@ -33516,7 +33513,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:859:7: a= LANGUAGE
                     {
                     a=(Token)input.LT(1);
-                    match(input,LANGUAGE,FOLLOW_LANGUAGE_in_ncNameorKeyword9838); if (failed) return retval;
+                    match(input,LANGUAGE,FOLLOW_LANGUAGE_in_ncNameorKeyword9848); if (failed) return retval;
                     if ( backtracking==0 ) stream_LANGUAGE.add(a);
 
 
@@ -33526,7 +33523,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:860:7: a= LAX
                     {
                     a=(Token)input.LT(1);
-                    match(input,LAX,FOLLOW_LAX_in_ncNameorKeyword9848); if (failed) return retval;
+                    match(input,LAX,FOLLOW_LAX_in_ncNameorKeyword9858); if (failed) return retval;
                     if ( backtracking==0 ) stream_LAX.add(a);
 
 
@@ -33536,7 +33533,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:861:7: a= LE
                     {
                     a=(Token)input.LT(1);
-                    match(input,LE,FOLLOW_LE_in_ncNameorKeyword9858); if (failed) return retval;
+                    match(input,LE,FOLLOW_LE_in_ncNameorKeyword9868); if (failed) return retval;
                     if ( backtracking==0 ) stream_LE.add(a);
 
 
@@ -33546,7 +33543,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:862:7: a= LEAST
                     {
                     a=(Token)input.LT(1);
-                    match(input,LEAST,FOLLOW_LEAST_in_ncNameorKeyword9868); if (failed) return retval;
+                    match(input,LEAST,FOLLOW_LEAST_in_ncNameorKeyword9878); if (failed) return retval;
                     if ( backtracking==0 ) stream_LEAST.add(a);
 
 
@@ -33556,7 +33553,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:863:7: a= LET
                     {
                     a=(Token)input.LT(1);
-                    match(input,LET,FOLLOW_LET_in_ncNameorKeyword9878); if (failed) return retval;
+                    match(input,LET,FOLLOW_LET_in_ncNameorKeyword9888); if (failed) return retval;
                     if ( backtracking==0 ) stream_LET.add(a);
 
 
@@ -33566,7 +33563,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:864:7: a= LEVELS
                     {
                     a=(Token)input.LT(1);
-                    match(input,LEVELS,FOLLOW_LEVELS_in_ncNameorKeyword9888); if (failed) return retval;
+                    match(input,LEVELS,FOLLOW_LEVELS_in_ncNameorKeyword9898); if (failed) return retval;
                     if ( backtracking==0 ) stream_LEVELS.add(a);
 
 
@@ -33576,7 +33573,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:865:7: a= LOWERCASE
                     {
                     a=(Token)input.LT(1);
-                    match(input,LOWERCASE,FOLLOW_LOWERCASE_in_ncNameorKeyword9898); if (failed) return retval;
+                    match(input,LOWERCASE,FOLLOW_LOWERCASE_in_ncNameorKeyword9908); if (failed) return retval;
                     if ( backtracking==0 ) stream_LOWERCASE.add(a);
 
 
@@ -33586,7 +33583,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:866:7: a= LT
                     {
                     a=(Token)input.LT(1);
-                    match(input,LT,FOLLOW_LT_in_ncNameorKeyword9908); if (failed) return retval;
+                    match(input,LT,FOLLOW_LT_in_ncNameorKeyword9918); if (failed) return retval;
                     if ( backtracking==0 ) stream_LT.add(a);
 
 
@@ -33596,7 +33593,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:867:7: a= MOD
                     {
                     a=(Token)input.LT(1);
-                    match(input,MOD,FOLLOW_MOD_in_ncNameorKeyword9918); if (failed) return retval;
+                    match(input,MOD,FOLLOW_MOD_in_ncNameorKeyword9928); if (failed) return retval;
                     if ( backtracking==0 ) stream_MOD.add(a);
 
 
@@ -33606,7 +33603,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:868:7: a= MODULE
                     {
                     a=(Token)input.LT(1);
-                    match(input,MODULE,FOLLOW_MODULE_in_ncNameorKeyword9928); if (failed) return retval;
+                    match(input,MODULE,FOLLOW_MODULE_in_ncNameorKeyword9938); if (failed) return retval;
                     if ( backtracking==0 ) stream_MODULE.add(a);
 
 
@@ -33616,7 +33613,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:869:7: a= MOST
                     {
                     a=(Token)input.LT(1);
-                    match(input,MOST,FOLLOW_MOST_in_ncNameorKeyword9938); if (failed) return retval;
+                    match(input,MOST,FOLLOW_MOST_in_ncNameorKeyword9948); if (failed) return retval;
                     if ( backtracking==0 ) stream_MOST.add(a);
 
 
@@ -33626,7 +33623,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:870:7: a= NAMESPACE
                     {
                     a=(Token)input.LT(1);
-                    match(input,NAMESPACE,FOLLOW_NAMESPACE_in_ncNameorKeyword9948); if (failed) return retval;
+                    match(input,NAMESPACE,FOLLOW_NAMESPACE_in_ncNameorKeyword9958); if (failed) return retval;
                     if ( backtracking==0 ) stream_NAMESPACE.add(a);
 
 
@@ -33636,7 +33633,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:871:7: a= NE
                     {
                     a=(Token)input.LT(1);
-                    match(input,NE,FOLLOW_NE_in_ncNameorKeyword9958); if (failed) return retval;
+                    match(input,NE,FOLLOW_NE_in_ncNameorKeyword9968); if (failed) return retval;
                     if ( backtracking==0 ) stream_NE.add(a);
 
 
@@ -33646,7 +33643,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:872:7: a= NODE
                     {
                     a=(Token)input.LT(1);
-                    match(input,NODE,FOLLOW_NODE_in_ncNameorKeyword9968); if (failed) return retval;
+                    match(input,NODE,FOLLOW_NODE_in_ncNameorKeyword9978); if (failed) return retval;
                     if ( backtracking==0 ) stream_NODE.add(a);
 
 
@@ -33656,7 +33653,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:873:7: a= NOINHERIT
                     {
                     a=(Token)input.LT(1);
-                    match(input,NOINHERIT,FOLLOW_NOINHERIT_in_ncNameorKeyword9978); if (failed) return retval;
+                    match(input,NOINHERIT,FOLLOW_NOINHERIT_in_ncNameorKeyword9988); if (failed) return retval;
                     if ( backtracking==0 ) stream_NOINHERIT.add(a);
 
 
@@ -33666,7 +33663,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:874:7: a= NOPRESERVE
                     {
                     a=(Token)input.LT(1);
-                    match(input,NOPRESERVE,FOLLOW_NOPRESERVE_in_ncNameorKeyword9988); if (failed) return retval;
+                    match(input,NOPRESERVE,FOLLOW_NOPRESERVE_in_ncNameorKeyword9998); if (failed) return retval;
                     if ( backtracking==0 ) stream_NOPRESERVE.add(a);
 
 
@@ -33676,7 +33673,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:875:7: a= NOT
                     {
                     a=(Token)input.LT(1);
-                    match(input,NOT,FOLLOW_NOT_in_ncNameorKeyword9998); if (failed) return retval;
+                    match(input,NOT,FOLLOW_NOT_in_ncNameorKeyword10008); if (failed) return retval;
                     if ( backtracking==0 ) stream_NOT.add(a);
 
 
@@ -33686,7 +33683,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:876:7: a= OCCURS
                     {
                     a=(Token)input.LT(1);
-                    match(input,OCCURS,FOLLOW_OCCURS_in_ncNameorKeyword10008); if (failed) return retval;
+                    match(input,OCCURS,FOLLOW_OCCURS_in_ncNameorKeyword10018); if (failed) return retval;
                     if ( backtracking==0 ) stream_OCCURS.add(a);
 
 
@@ -33696,7 +33693,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:877:7: a= OF
                     {
                     a=(Token)input.LT(1);
-                    match(input,OF,FOLLOW_OF_in_ncNameorKeyword10018); if (failed) return retval;
+                    match(input,OF,FOLLOW_OF_in_ncNameorKeyword10028); if (failed) return retval;
                     if ( backtracking==0 ) stream_OF.add(a);
 
 
@@ -33706,7 +33703,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:878:7: a= OPTION
                     {
                     a=(Token)input.LT(1);
-                    match(input,OPTION,FOLLOW_OPTION_in_ncNameorKeyword10028); if (failed) return retval;
+                    match(input,OPTION,FOLLOW_OPTION_in_ncNameorKeyword10038); if (failed) return retval;
                     if ( backtracking==0 ) stream_OPTION.add(a);
 
 
@@ -33716,7 +33713,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:879:7: a= OR
                     {
                     a=(Token)input.LT(1);
-                    match(input,OR,FOLLOW_OR_in_ncNameorKeyword10038); if (failed) return retval;
+                    match(input,OR,FOLLOW_OR_in_ncNameorKeyword10048); if (failed) return retval;
                     if ( backtracking==0 ) stream_OR.add(a);
 
 
@@ -33726,7 +33723,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:880:7: a= ORDER
                     {
                     a=(Token)input.LT(1);
-                    match(input,ORDER,FOLLOW_ORDER_in_ncNameorKeyword10048); if (failed) return retval;
+                    match(input,ORDER,FOLLOW_ORDER_in_ncNameorKeyword10058); if (failed) return retval;
                     if ( backtracking==0 ) stream_ORDER.add(a);
 
 
@@ -33736,7 +33733,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:881:7: a= ORDERED
                     {
                     a=(Token)input.LT(1);
-                    match(input,ORDERED,FOLLOW_ORDERED_in_ncNameorKeyword10058); if (failed) return retval;
+                    match(input,ORDERED,FOLLOW_ORDERED_in_ncNameorKeyword10068); if (failed) return retval;
                     if ( backtracking==0 ) stream_ORDERED.add(a);
 
 
@@ -33746,7 +33743,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:882:7: a= ORDERING
                     {
                     a=(Token)input.LT(1);
-                    match(input,ORDERING,FOLLOW_ORDERING_in_ncNameorKeyword10068); if (failed) return retval;
+                    match(input,ORDERING,FOLLOW_ORDERING_in_ncNameorKeyword10078); if (failed) return retval;
                     if ( backtracking==0 ) stream_ORDERING.add(a);
 
 
@@ -33756,7 +33753,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:883:7: a= PARAGRAPH
                     {
                     a=(Token)input.LT(1);
-                    match(input,PARAGRAPH,FOLLOW_PARAGRAPH_in_ncNameorKeyword10078); if (failed) return retval;
+                    match(input,PARAGRAPH,FOLLOW_PARAGRAPH_in_ncNameorKeyword10088); if (failed) return retval;
                     if ( backtracking==0 ) stream_PARAGRAPH.add(a);
 
 
@@ -33766,7 +33763,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:884:7: a= PARAGRAPHS
                     {
                     a=(Token)input.LT(1);
-                    match(input,PARAGRAPHS,FOLLOW_PARAGRAPHS_in_ncNameorKeyword10088); if (failed) return retval;
+                    match(input,PARAGRAPHS,FOLLOW_PARAGRAPHS_in_ncNameorKeyword10098); if (failed) return retval;
                     if ( backtracking==0 ) stream_PARAGRAPHS.add(a);
 
 
@@ -33776,7 +33773,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:885:7: a= PARENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,PARENT,FOLLOW_PARENT_in_ncNameorKeyword10098); if (failed) return retval;
+                    match(input,PARENT,FOLLOW_PARENT_in_ncNameorKeyword10108); if (failed) return retval;
                     if ( backtracking==0 ) stream_PARENT.add(a);
 
 
@@ -33786,7 +33783,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:886:7: a= PHRASE
                     {
                     a=(Token)input.LT(1);
-                    match(input,PHRASE,FOLLOW_PHRASE_in_ncNameorKeyword10108); if (failed) return retval;
+                    match(input,PHRASE,FOLLOW_PHRASE_in_ncNameorKeyword10118); if (failed) return retval;
                     if ( backtracking==0 ) stream_PHRASE.add(a);
 
 
@@ -33796,7 +33793,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:887:7: a= PRECEDING
                     {
                     a=(Token)input.LT(1);
-                    match(input,PRECEDING,FOLLOW_PRECEDING_in_ncNameorKeyword10118); if (failed) return retval;
+                    match(input,PRECEDING,FOLLOW_PRECEDING_in_ncNameorKeyword10128); if (failed) return retval;
                     if ( backtracking==0 ) stream_PRECEDING.add(a);
 
 
@@ -33806,7 +33803,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:888:7: a= PRECEDING_SIBLING
                     {
                     a=(Token)input.LT(1);
-                    match(input,PRECEDING_SIBLING,FOLLOW_PRECEDING_SIBLING_in_ncNameorKeyword10128); if (failed) return retval;
+                    match(input,PRECEDING_SIBLING,FOLLOW_PRECEDING_SIBLING_in_ncNameorKeyword10138); if (failed) return retval;
                     if ( backtracking==0 ) stream_PRECEDING_SIBLING.add(a);
 
 
@@ -33816,7 +33813,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:889:7: a= PRESERVE
                     {
                     a=(Token)input.LT(1);
-                    match(input,PRESERVE,FOLLOW_PRESERVE_in_ncNameorKeyword10138); if (failed) return retval;
+                    match(input,PRESERVE,FOLLOW_PRESERVE_in_ncNameorKeyword10148); if (failed) return retval;
                     if ( backtracking==0 ) stream_PRESERVE.add(a);
 
 
@@ -33826,7 +33823,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:890:7: a= PROCESSING_INSTRUCTION
                     {
                     a=(Token)input.LT(1);
-                    match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_ncNameorKeyword10148); if (failed) return retval;
+                    match(input,PROCESSING_INSTRUCTION,FOLLOW_PROCESSING_INSTRUCTION_in_ncNameorKeyword10158); if (failed) return retval;
                     if ( backtracking==0 ) stream_PROCESSING_INSTRUCTION.add(a);
 
 
@@ -33836,7 +33833,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:891:7: a= RELATIONSHIP
                     {
                     a=(Token)input.LT(1);
-                    match(input,RELATIONSHIP,FOLLOW_RELATIONSHIP_in_ncNameorKeyword10158); if (failed) return retval;
+                    match(input,RELATIONSHIP,FOLLOW_RELATIONSHIP_in_ncNameorKeyword10168); if (failed) return retval;
                     if ( backtracking==0 ) stream_RELATIONSHIP.add(a);
 
 
@@ -33846,7 +33843,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:892:7: a= RETURN
                     {
                     a=(Token)input.LT(1);
-                    match(input,RETURN,FOLLOW_RETURN_in_ncNameorKeyword10168); if (failed) return retval;
+                    match(input,RETURN,FOLLOW_RETURN_in_ncNameorKeyword10178); if (failed) return retval;
                     if ( backtracking==0 ) stream_RETURN.add(a);
 
 
@@ -33856,7 +33853,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:893:7: a= SAME
                     {
                     a=(Token)input.LT(1);
-                    match(input,SAME,FOLLOW_SAME_in_ncNameorKeyword10178); if (failed) return retval;
+                    match(input,SAME,FOLLOW_SAME_in_ncNameorKeyword10188); if (failed) return retval;
                     if ( backtracking==0 ) stream_SAME.add(a);
 
 
@@ -33866,7 +33863,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:894:7: a= SATISFIES
                     {
                     a=(Token)input.LT(1);
-                    match(input,SATISFIES,FOLLOW_SATISFIES_in_ncNameorKeyword10188); if (failed) return retval;
+                    match(input,SATISFIES,FOLLOW_SATISFIES_in_ncNameorKeyword10198); if (failed) return retval;
                     if ( backtracking==0 ) stream_SATISFIES.add(a);
 
 
@@ -33876,7 +33873,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:895:7: a= SCHEMA
                     {
                     a=(Token)input.LT(1);
-                    match(input,SCHEMA,FOLLOW_SCHEMA_in_ncNameorKeyword10198); if (failed) return retval;
+                    match(input,SCHEMA,FOLLOW_SCHEMA_in_ncNameorKeyword10208); if (failed) return retval;
                     if ( backtracking==0 ) stream_SCHEMA.add(a);
 
 
@@ -33886,7 +33883,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:896:7: a= SCHEMA_ATTRIBUTE
                     {
                     a=(Token)input.LT(1);
-                    match(input,SCHEMA_ATTRIBUTE,FOLLOW_SCHEMA_ATTRIBUTE_in_ncNameorKeyword10208); if (failed) return retval;
+                    match(input,SCHEMA_ATTRIBUTE,FOLLOW_SCHEMA_ATTRIBUTE_in_ncNameorKeyword10218); if (failed) return retval;
                     if ( backtracking==0 ) stream_SCHEMA_ATTRIBUTE.add(a);
 
 
@@ -33896,7 +33893,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:897:7: a= SCHEMA_ELEMENT
                     {
                     a=(Token)input.LT(1);
-                    match(input,SCHEMA_ELEMENT,FOLLOW_SCHEMA_ELEMENT_in_ncNameorKeyword10218); if (failed) return retval;
+                    match(input,SCHEMA_ELEMENT,FOLLOW_SCHEMA_ELEMENT_in_ncNameorKeyword10228); if (failed) return retval;
                     if ( backtracking==0 ) stream_SCHEMA_ELEMENT.add(a);
 
 
@@ -33906,7 +33903,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:898:7: a= SCORE
                     {
                     a=(Token)input.LT(1);
-                    match(input,SCORE,FOLLOW_SCORE_in_ncNameorKeyword10228); if (failed) return retval;
+                    match(input,SCORE,FOLLOW_SCORE_in_ncNameorKeyword10238); if (failed) return retval;
                     if ( backtracking==0 ) stream_SCORE.add(a);
 
 
@@ -33916,7 +33913,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:899:7: a= SELF
                     {
                     a=(Token)input.LT(1);
-                    match(input,SELF,FOLLOW_SELF_in_ncNameorKeyword10238); if (failed) return retval;
+                    match(input,SELF,FOLLOW_SELF_in_ncNameorKeyword10248); if (failed) return retval;
                     if ( backtracking==0 ) stream_SELF.add(a);
 
 
@@ -33926,7 +33923,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:900:7: a= SENSITIVE
                     {
                     a=(Token)input.LT(1);
-                    match(input,SENSITIVE,FOLLOW_SENSITIVE_in_ncNameorKeyword10248); if (failed) return retval;
+                    match(input,SENSITIVE,FOLLOW_SENSITIVE_in_ncNameorKeyword10258); if (failed) return retval;
                     if ( backtracking==0 ) stream_SENSITIVE.add(a);
 
 
@@ -33936,7 +33933,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:901:7: a= SENTENCES
                     {
                     a=(Token)input.LT(1);
-                    match(input,SENTENCES,FOLLOW_SENTENCES_in_ncNameorKeyword10258); if (failed) return retval;
+                    match(input,SENTENCES,FOLLOW_SENTENCES_in_ncNameorKeyword10268); if (failed) return retval;
                     if ( backtracking==0 ) stream_SENTENCES.add(a);
 
 
@@ -33946,7 +33943,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:902:7: a= SENTENCE
                     {
                     a=(Token)input.LT(1);
-                    match(input,SENTENCE,FOLLOW_SENTENCE_in_ncNameorKeyword10268); if (failed) return retval;
+                    match(input,SENTENCE,FOLLOW_SENTENCE_in_ncNameorKeyword10278); if (failed) return retval;
                     if ( backtracking==0 ) stream_SENTENCE.add(a);
 
 
@@ -33956,7 +33953,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:903:7: a= SOME
                     {
                     a=(Token)input.LT(1);
-                    match(input,SOME,FOLLOW_SOME_in_ncNameorKeyword10278); if (failed) return retval;
+                    match(input,SOME,FOLLOW_SOME_in_ncNameorKeyword10288); if (failed) return retval;
                     if ( backtracking==0 ) stream_SOME.add(a);
 
 
@@ -33966,7 +33963,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:904:7: a= STABLE
                     {
                     a=(Token)input.LT(1);
-                    match(input,STABLE,FOLLOW_STABLE_in_ncNameorKeyword10288); if (failed) return retval;
+                    match(input,STABLE,FOLLOW_STABLE_in_ncNameorKeyword10298); if (failed) return retval;
                     if ( backtracking==0 ) stream_STABLE.add(a);
 
 
@@ -33976,7 +33973,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:905:7: a= START
                     {
                     a=(Token)input.LT(1);
-                    match(input,START,FOLLOW_START_in_ncNameorKeyword10298); if (failed) return retval;
+                    match(input,START,FOLLOW_START_in_ncNameorKeyword10308); if (failed) return retval;
                     if ( backtracking==0 ) stream_START.add(a);
 
 
@@ -33986,7 +33983,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:906:7: a= STEMMING
                     {
                     a=(Token)input.LT(1);
-                    match(input,STEMMING,FOLLOW_STEMMING_in_ncNameorKeyword10308); if (failed) return retval;
+                    match(input,STEMMING,FOLLOW_STEMMING_in_ncNameorKeyword10318); if (failed) return retval;
                     if ( backtracking==0 ) stream_STEMMING.add(a);
 
 
@@ -33996,7 +33993,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:907:7: a= STOP
                     {
                     a=(Token)input.LT(1);
-                    match(input,STOP,FOLLOW_STOP_in_ncNameorKeyword10318); if (failed) return retval;
+                    match(input,STOP,FOLLOW_STOP_in_ncNameorKeyword10328); if (failed) return retval;
                     if ( backtracking==0 ) stream_STOP.add(a);
 
 
@@ -34006,7 +34003,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:908:7: a= STRICT
                     {
                     a=(Token)input.LT(1);
-                    match(input,STRICT,FOLLOW_STRICT_in_ncNameorKeyword10328); if (failed) return retval;
+                    match(input,STRICT,FOLLOW_STRICT_in_ncNameorKeyword10338); if (failed) return retval;
                     if ( backtracking==0 ) stream_STRICT.add(a);
 
 
@@ -34016,7 +34013,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:909:7: a= STRIP
                     {
                     a=(Token)input.LT(1);
-                    match(input,STRIP,FOLLOW_STRIP_in_ncNameorKeyword10338); if (failed) return retval;
+                    match(input,STRIP,FOLLOW_STRIP_in_ncNameorKeyword10348); if (failed) return retval;
                     if ( backtracking==0 ) stream_STRIP.add(a);
 
 
@@ -34026,7 +34023,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:910:7: a= TEXT
                     {
                     a=(Token)input.LT(1);
-                    match(input,TEXT,FOLLOW_TEXT_in_ncNameorKeyword10348); if (failed) return retval;
+                    match(input,TEXT,FOLLOW_TEXT_in_ncNameorKeyword10358); if (failed) return retval;
                     if ( backtracking==0 ) stream_TEXT.add(a);
 
 
@@ -34036,7 +34033,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:911:7: a= THESAURUS
                     {
                     a=(Token)input.LT(1);
-                    match(input,THESAURUS,FOLLOW_THESAURUS_in_ncNameorKeyword10358); if (failed) return retval;
+                    match(input,THESAURUS,FOLLOW_THESAURUS_in_ncNameorKeyword10368); if (failed) return retval;
                     if ( backtracking==0 ) stream_THESAURUS.add(a);
 
 
@@ -34046,7 +34043,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:912:7: a= THEN
                     {
                     a=(Token)input.LT(1);
-                    match(input,THEN,FOLLOW_THEN_in_ncNameorKeyword10368); if (failed) return retval;
+                    match(input,THEN,FOLLOW_THEN_in_ncNameorKeyword10378); if (failed) return retval;
                     if ( backtracking==0 ) stream_THEN.add(a);
 
 
@@ -34056,7 +34053,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:913:7: a= TIMES
                     {
                     a=(Token)input.LT(1);
-                    match(input,TIMES,FOLLOW_TIMES_in_ncNameorKeyword10378); if (failed) return retval;
+                    match(input,TIMES,FOLLOW_TIMES_in_ncNameorKeyword10388); if (failed) return retval;
                     if ( backtracking==0 ) stream_TIMES.add(a);
 
 
@@ -34066,7 +34063,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:914:7: a= TO
                     {
                     a=(Token)input.LT(1);
-                    match(input,TO,FOLLOW_TO_in_ncNameorKeyword10388); if (failed) return retval;
+                    match(input,TO,FOLLOW_TO_in_ncNameorKeyword10398); if (failed) return retval;
                     if ( backtracking==0 ) stream_TO.add(a);
 
 
@@ -34076,7 +34073,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:915:7: a= TREAT
                     {
                     a=(Token)input.LT(1);
-                    match(input,TREAT,FOLLOW_TREAT_in_ncNameorKeyword10398); if (failed) return retval;
+                    match(input,TREAT,FOLLOW_TREAT_in_ncNameorKeyword10408); if (failed) return retval;
                     if ( backtracking==0 ) stream_TREAT.add(a);
 
 
@@ -34086,7 +34083,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:916:7: a= TYPESWITCH
                     {
                     a=(Token)input.LT(1);
-                    match(input,TYPESWITCH,FOLLOW_TYPESWITCH_in_ncNameorKeyword10408); if (failed) return retval;
+                    match(input,TYPESWITCH,FOLLOW_TYPESWITCH_in_ncNameorKeyword10418); if (failed) return retval;
                     if ( backtracking==0 ) stream_TYPESWITCH.add(a);
 
 
@@ -34096,7 +34093,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:917:7: a= UNION
                     {
                     a=(Token)input.LT(1);
-                    match(input,UNION,FOLLOW_UNION_in_ncNameorKeyword10418); if (failed) return retval;
+                    match(input,UNION,FOLLOW_UNION_in_ncNameorKeyword10428); if (failed) return retval;
                     if ( backtracking==0 ) stream_UNION.add(a);
 
 
@@ -34106,7 +34103,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:918:7: a= UNORDERED
                     {
                     a=(Token)input.LT(1);
-                    match(input,UNORDERED,FOLLOW_UNORDERED_in_ncNameorKeyword10428); if (failed) return retval;
+                    match(input,UNORDERED,FOLLOW_UNORDERED_in_ncNameorKeyword10438); if (failed) return retval;
                     if ( backtracking==0 ) stream_UNORDERED.add(a);
 
 
@@ -34116,7 +34113,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:919:7: a= UPPERCASE
                     {
                     a=(Token)input.LT(1);
-                    match(input,UPPERCASE,FOLLOW_UPPERCASE_in_ncNameorKeyword10438); if (failed) return retval;
+                    match(input,UPPERCASE,FOLLOW_UPPERCASE_in_ncNameorKeyword10448); if (failed) return retval;
                     if ( backtracking==0 ) stream_UPPERCASE.add(a);
 
 
@@ -34126,7 +34123,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:920:7: a= VALIDATE
                     {
                     a=(Token)input.LT(1);
-                    match(input,VALIDATE,FOLLOW_VALIDATE_in_ncNameorKeyword10448); if (failed) return retval;
+                    match(input,VALIDATE,FOLLOW_VALIDATE_in_ncNameorKeyword10458); if (failed) return retval;
                     if ( backtracking==0 ) stream_VALIDATE.add(a);
 
 
@@ -34136,7 +34133,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:921:7: a= VARIABLE
                     {
                     a=(Token)input.LT(1);
-                    match(input,VARIABLE,FOLLOW_VARIABLE_in_ncNameorKeyword10458); if (failed) return retval;
+                    match(input,VARIABLE,FOLLOW_VARIABLE_in_ncNameorKeyword10468); if (failed) return retval;
                     if ( backtracking==0 ) stream_VARIABLE.add(a);
 
 
@@ -34146,7 +34143,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:922:7: a= VERSION
                     {
                     a=(Token)input.LT(1);
-                    match(input,VERSION,FOLLOW_VERSION_in_ncNameorKeyword10468); if (failed) return retval;
+                    match(input,VERSION,FOLLOW_VERSION_in_ncNameorKeyword10478); if (failed) return retval;
                     if ( backtracking==0 ) stream_VERSION.add(a);
 
 
@@ -34156,7 +34153,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:923:7: a= WEIGHT
                     {
                     a=(Token)input.LT(1);
-                    match(input,WEIGHT,FOLLOW_WEIGHT_in_ncNameorKeyword10478); if (failed) return retval;
+                    match(input,WEIGHT,FOLLOW_WEIGHT_in_ncNameorKeyword10488); if (failed) return retval;
                     if ( backtracking==0 ) stream_WEIGHT.add(a);
 
 
@@ -34166,7 +34163,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:924:7: a= WHERE
                     {
                     a=(Token)input.LT(1);
-                    match(input,WHERE,FOLLOW_WHERE_in_ncNameorKeyword10488); if (failed) return retval;
+                    match(input,WHERE,FOLLOW_WHERE_in_ncNameorKeyword10498); if (failed) return retval;
                     if ( backtracking==0 ) stream_WHERE.add(a);
 
 
@@ -34176,7 +34173,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:925:7: a= WILDCARDS
                     {
                     a=(Token)input.LT(1);
-                    match(input,WILDCARDS,FOLLOW_WILDCARDS_in_ncNameorKeyword10498); if (failed) return retval;
+                    match(input,WILDCARDS,FOLLOW_WILDCARDS_in_ncNameorKeyword10508); if (failed) return retval;
                     if ( backtracking==0 ) stream_WILDCARDS.add(a);
 
 
@@ -34186,7 +34183,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:926:7: a= WINDOW
                     {
                     a=(Token)input.LT(1);
-                    match(input,WINDOW,FOLLOW_WINDOW_in_ncNameorKeyword10508); if (failed) return retval;
+                    match(input,WINDOW,FOLLOW_WINDOW_in_ncNameorKeyword10518); if (failed) return retval;
                     if ( backtracking==0 ) stream_WINDOW.add(a);
 
 
@@ -34196,7 +34193,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:927:7: a= WITH
                     {
                     a=(Token)input.LT(1);
-                    match(input,WITH,FOLLOW_WITH_in_ncNameorKeyword10518); if (failed) return retval;
+                    match(input,WITH,FOLLOW_WITH_in_ncNameorKeyword10528); if (failed) return retval;
                     if ( backtracking==0 ) stream_WITH.add(a);
 
 
@@ -34206,7 +34203,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:928:7: a= WITHOUT
                     {
                     a=(Token)input.LT(1);
-                    match(input,WITHOUT,FOLLOW_WITHOUT_in_ncNameorKeyword10528); if (failed) return retval;
+                    match(input,WITHOUT,FOLLOW_WITHOUT_in_ncNameorKeyword10538); if (failed) return retval;
                     if ( backtracking==0 ) stream_WITHOUT.add(a);
 
 
@@ -34216,7 +34213,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:929:7: a= WORD
                     {
                     a=(Token)input.LT(1);
-                    match(input,WORD,FOLLOW_WORD_in_ncNameorKeyword10538); if (failed) return retval;
+                    match(input,WORD,FOLLOW_WORD_in_ncNameorKeyword10548); if (failed) return retval;
                     if ( backtracking==0 ) stream_WORD.add(a);
 
 
@@ -34226,7 +34223,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:930:7: a= WORDS
                     {
                     a=(Token)input.LT(1);
-                    match(input,WORDS,FOLLOW_WORDS_in_ncNameorKeyword10548); if (failed) return retval;
+                    match(input,WORDS,FOLLOW_WORDS_in_ncNameorKeyword10558); if (failed) return retval;
                     if ( backtracking==0 ) stream_WORDS.add(a);
 
 
@@ -34236,7 +34233,7 @@ public class XQFTParser extends Parser {
                     // etc/XQFT.g:931:7: a= XQUERY
                     {
                     a=(Token)input.LT(1);
-                    match(input,XQUERY,FOLLOW_XQUERY_in_ncNameorKeyword10558); if (failed) return retval;
+                    match(input,XQUERY,FOLLOW_XQUERY_in_ncNameorKeyword10568); if (failed) return retval;
                     if ( backtracking==0 ) stream_XQUERY.add(a);
 
 
@@ -34289,7 +34286,7 @@ public class XQFTParser extends Parser {
         // etc/XQFT.g:334:7: ( IMPORT ( SCHEMA | MODULE ) )
         // etc/XQFT.g:334:8: IMPORT ( SCHEMA | MODULE )
         {
-        match(input,IMPORT,FOLLOW_IMPORT_in_synpred1457); if (failed) return ;
+        match(input,IMPORT,FOLLOW_IMPORT_in_synpred1471); if (failed) return ;
         if ( input.LA(1)==MODULE||input.LA(1)==SCHEMA ) {
             input.consume();
             errorRecovery=false;failed=false;
@@ -34298,7 +34295,7 @@ public class XQFTParser extends Parser {
             if (backtracking>0) {failed=true; return ;}
             MismatchedSetException mse =
                 new MismatchedSetException(null,input);
-            recoverFromMismatchedSet(input,mse,FOLLOW_set_in_synpred1459);    throw mse;
+            recoverFromMismatchedSet(input,mse,FOLLOW_set_in_synpred1473);    throw mse;
         }
 
 
@@ -34311,8 +34308,8 @@ public class XQFTParser extends Parser {
         // etc/XQFT.g:409:6: ( EMPTY_SEQUENCE LPARSi )
         // etc/XQFT.g:409:7: EMPTY_SEQUENCE LPARSi
         {
-        match(input,EMPTY_SEQUENCE,FOLLOW_EMPTY_SEQUENCE_in_synpred21379); if (failed) return ;
-        match(input,LPARSi,FOLLOW_LPARSi_in_synpred21381); if (failed) return ;
+        match(input,EMPTY_SEQUENCE,FOLLOW_EMPTY_SEQUENCE_in_synpred21393); if (failed) return ;
+        match(input,LPARSi,FOLLOW_LPARSi_in_synpred21395); if (failed) return ;
 
         }
     }
@@ -34323,11 +34320,11 @@ public class XQFTParser extends Parser {
         // etc/XQFT.g:410:6: ( itemType occurrenceIndicator )
         // etc/XQFT.g:410:7: itemType occurrenceIndicator
         {
-        pushFollow(FOLLOW_itemType_in_synpred31398);
+        pushFollow(FOLLOW_itemType_in_synpred31412);
         itemType();
         _fsp--;
         if (failed) return ;
-        pushFollow(FOLLOW_occurrenceIndicator_in_synpred31400);
+        pushFollow(FOLLOW_occurrenceIndicator_in_synpred31414);
         occurrenceIndicator();
         _fsp--;
         if (failed) return ;
@@ -34341,8 +34338,8 @@ public class XQFTParser extends Parser {
         // etc/XQFT.g:444:5: ( IF LPARSi )
         // etc/XQFT.g:444:6: IF LPARSi
         {
-        match(input,IF,FOLLOW_IF_in_synpred42108); if (failed) return ;
-        match(input,LPARSi,FOLLOW_LPARSi_in_synpred42110); if (failed) return ;
+        match(input,IF,FOLLOW_IF_in_synpred42122); if (failed) return ;
+        match(input,LPARSi,FOLLOW_LPARSi_in_synpred42124); if (failed) return ;
 
         }
     }
@@ -34353,8 +34350,8 @@ public class XQFTParser extends Parser {
         // etc/XQFT.g:445:7: ( TYPESWITCH LPARSi )
         // etc/XQFT.g:445:8: TYPESWITCH LPARSi
         {
-        match(input,TYPESWITCH,FOLLOW_TYPESWITCH_in_synpred52123); if (failed) return ;
-        match(input,LPARSi,FOLLOW_LPARSi_in_synpred52125); if (failed) return ;
+        match(input,TYPESWITCH,FOLLOW_TYPESWITCH_in_synpred52137); if (failed) return ;
+        match(input,LPARSi,FOLLOW_LPARSi_in_synpred52139); if (failed) return ;
 
         }
     }
@@ -34365,8 +34362,8 @@ public class XQFTParser extends Parser {
         // etc/XQFT.g:620:10: ( SLASHSi relativePathExpr )
         // etc/XQFT.g:620:11: SLASHSi relativePathExpr
         {
-        match(input,SLASHSi,FOLLOW_SLASHSi_in_synpred65648); if (failed) return ;
-        pushFollow(FOLLOW_relativePathExpr_in_synpred65650);
+        match(input,SLASHSi,FOLLOW_SLASHSi_in_synpred65658); if (failed) return ;
+        pushFollow(FOLLOW_relativePathExpr_in_synpred65660);
         relativePathExpr();
         _fsp--;
         if (failed) return ;
@@ -34388,10 +34385,10 @@ public class XQFTParser extends Parser {
             if (backtracking>0) {failed=true; return ;}
             MismatchedSetException mse =
                 new MismatchedSetException(null,input);
-            recoverFromMismatchedSet(input,mse,FOLLOW_set_in_synpred75814);    throw mse;
+            recoverFromMismatchedSet(input,mse,FOLLOW_set_in_synpred75824);    throw mse;
         }
 
-        match(input,LPARSi,FOLLOW_LPARSi_in_synpred75892); if (failed) return ;
+        match(input,LPARSi,FOLLOW_LPARSi_in_synpred75902); if (failed) return ;
 
         }
     }
@@ -34420,19 +34417,19 @@ public class XQFTParser extends Parser {
             case 1 :
                 // etc/XQFT.g:650:30: STARSi
                 {
-                match(input,STARSi,FOLLOW_STARSi_in_synpred86222); if (failed) return ;
+                match(input,STARSi,FOLLOW_STARSi_in_synpred86232); if (failed) return ;
 
                 }
                 break;
             case 2 :
                 // etc/XQFT.g:650:39: ncNameorKeyword COLONSi STARSi
                 {
-                pushFollow(FOLLOW_ncNameorKeyword_in_synpred86226);
+                pushFollow(FOLLOW_ncNameorKeyword_in_synpred86236);
                 ncNameorKeyword();
                 _fsp--;
                 if (failed) return ;
-                match(input,COLONSi,FOLLOW_COLONSi_in_synpred86228); if (failed) return ;
-                match(input,STARSi,FOLLOW_STARSi_in_synpred86230); if (failed) return ;
+                match(input,COLONSi,FOLLOW_COLONSi_in_synpred86238); if (failed) return ;
+                match(input,STARSi,FOLLOW_STARSi_in_synpred86240); if (failed) return ;
 
                 }
                 break;
@@ -34445,8 +34442,8 @@ public class XQFTParser extends Parser {
         // etc/XQFT.g:654:33: ( STARSi COLONSi )
         // etc/XQFT.g:654:34: STARSi COLONSi
         {
-        match(input,STARSi,FOLLOW_STARSi_in_synpred96362); if (failed) return ;
-        match(input,COLONSi,FOLLOW_COLONSi_in_synpred96364); if (failed) return ;
+        match(input,STARSi,FOLLOW_STARSi_in_synpred96372); if (failed) return ;
+        match(input,COLONSi,FOLLOW_COLONSi_in_synpred96374); if (failed) return ;
 
         }
     }
@@ -34606,803 +34603,803 @@ public class XQFTParser extends Parser {
     public static final BitSet FOLLOW_exprSingle_in_expr362 = new BitSet(new long[]{0x0000004000000002L});
     public static final BitSet FOLLOW_COMMASi_in_expr365 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
     public static final BitSet FOLLOW_exprSingle_in_expr367 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_importStmt_in_prolog466 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_DECLARE_in_prolog477 = new BitSet(new long[]{0x8139051000000000L,0x0000000000000600L});
-    public static final BitSet FOLLOW_setter_in_prolog489 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_varDecl_in_prolog502 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_functionDecl_in_prolog515 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_optionDecl_in_prolog528 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_ftOptionDecl_in_prolog541 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_SEMICOLONSi_in_prolog563 = new BitSet(new long[]{0x1000008000000002L});
-    public static final BitSet FOLLOW_DEFAULT_in_setter585 = new BitSet(new long[]{0x00001E0000000002L});
-    public static final BitSet FOLLOW_defaultNamespaceDecl_in_setter603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_defaultCollationDecl_in_setter619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_emptyOrderDecl_in_setter635 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_namespaceDecl_in_setter661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_boundarySpaceDecl_in_setter673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_baseURIDecl_in_setter685 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_constructionDecl_in_setter698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_orderingModeDecl_in_setter711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_copyNamespacesDecl_in_setter724 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_defaultNamespaceDecl733 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_NAMESPACE_in_defaultNamespaceDecl741 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_defaultNamespaceDecl743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COLLATION_in_defaultCollationDecl750 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_defaultCollationDecl752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDER_in_emptyOrderDecl765 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_EMPTY_in_emptyOrderDecl767 = new BitSet(new long[]{0x0000C00000000000L});
-    public static final BitSet FOLLOW_set_in_emptyOrderDecl769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NAMESPACE_in_namespaceDecl790 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E14L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_namespaceDecl792 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_EQSi_in_namespaceDecl794 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_namespaceDecl796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BOUNDARYSPACE_in_boundarySpaceDecl805 = new BitSet(new long[]{0x0006000000000000L});
-    public static final BitSet FOLLOW_set_in_boundarySpaceDecl807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BASE_URI_in_baseURIDecl828 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_baseURIDecl830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CONSTRUCTION_in_constructionDecl840 = new BitSet(new long[]{0x0006000000000000L});
-    public static final BitSet FOLLOW_set_in_constructionDecl842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDERING_in_orderingModeDecl858 = new BitSet(new long[]{0x00C0000000000000L});
-    public static final BitSet FOLLOW_set_in_orderingModeDecl860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COPY_NAMESPACES_in_copyNamespacesDecl874 = new BitSet(new long[]{0x0202000000000000L});
-    public static final BitSet FOLLOW_preserveMode_in_copyNamespacesDecl876 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_COMMASi_in_copyNamespacesDecl878 = new BitSet(new long[]{0x0C00000000000000L});
-    public static final BitSet FOLLOW_inheritMode_in_copyNamespacesDecl880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_importStmt_in_prolog480 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_DECLARE_in_prolog491 = new BitSet(new long[]{0x8139051000000000L,0x0000000000000600L});
+    public static final BitSet FOLLOW_setter_in_prolog503 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_varDecl_in_prolog516 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_functionDecl_in_prolog529 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_optionDecl_in_prolog542 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_ftOptionDecl_in_prolog555 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_SEMICOLONSi_in_prolog577 = new BitSet(new long[]{0x1000008000000002L});
+    public static final BitSet FOLLOW_DEFAULT_in_setter599 = new BitSet(new long[]{0x00001E0000000002L});
+    public static final BitSet FOLLOW_defaultNamespaceDecl_in_setter617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_defaultCollationDecl_in_setter633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_emptyOrderDecl_in_setter649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_namespaceDecl_in_setter675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_boundarySpaceDecl_in_setter687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_baseURIDecl_in_setter699 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_constructionDecl_in_setter712 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_orderingModeDecl_in_setter725 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_copyNamespacesDecl_in_setter738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_defaultNamespaceDecl747 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_NAMESPACE_in_defaultNamespaceDecl755 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_defaultNamespaceDecl757 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COLLATION_in_defaultCollationDecl764 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_defaultCollationDecl766 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDER_in_emptyOrderDecl779 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_EMPTY_in_emptyOrderDecl781 = new BitSet(new long[]{0x0000C00000000000L});
+    public static final BitSet FOLLOW_set_in_emptyOrderDecl783 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NAMESPACE_in_namespaceDecl804 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E14L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_namespaceDecl806 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_EQSi_in_namespaceDecl808 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_namespaceDecl810 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BOUNDARYSPACE_in_boundarySpaceDecl819 = new BitSet(new long[]{0x0006000000000000L});
+    public static final BitSet FOLLOW_set_in_boundarySpaceDecl821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BASE_URI_in_baseURIDecl842 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_baseURIDecl844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CONSTRUCTION_in_constructionDecl854 = new BitSet(new long[]{0x0006000000000000L});
+    public static final BitSet FOLLOW_set_in_constructionDecl856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDERING_in_orderingModeDecl872 = new BitSet(new long[]{0x00C0000000000000L});
+    public static final BitSet FOLLOW_set_in_orderingModeDecl874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COPY_NAMESPACES_in_copyNamespacesDecl888 = new BitSet(new long[]{0x0202000000000000L});
+    public static final BitSet FOLLOW_preserveMode_in_copyNamespacesDecl890 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_COMMASi_in_copyNamespacesDecl892 = new BitSet(new long[]{0x0C00000000000000L});
+    public static final BitSet FOLLOW_inheritMode_in_copyNamespacesDecl894 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_preserveMode0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_inheritMode0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IMPORT_in_importStmt942 = new BitSet(new long[]{0x2000000800000000L});
-    public static final BitSet FOLLOW_schemaImport_in_importStmt945 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_moduleImport_in_importStmt949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCHEMA_in_schemaImport968 = new BitSet(new long[]{0x0000011100000000L});
-    public static final BitSet FOLLOW_schemaPrefix_in_schemaImport970 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_schemaImport973 = new BitSet(new long[]{0x4000000000000002L});
-    public static final BitSet FOLLOW_AT_in_schemaImport976 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_schemaImport978 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_COMMASi_in_schemaImport981 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_schemaImport983 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_NAMESPACE_in_schemaPrefix1006 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E14L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_schemaPrefix1008 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_EQSi_in_schemaPrefix1010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFAULT_in_schemaPrefix1016 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_ELEMENT_in_schemaPrefix1018 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_NAMESPACE_in_schemaPrefix1020 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MODULE_in_moduleImport1039 = new BitSet(new long[]{0x0000001100000000L});
-    public static final BitSet FOLLOW_NAMESPACE_in_moduleImport1042 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E14L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_moduleImport1044 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_EQSi_in_moduleImport1046 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_moduleImport1050 = new BitSet(new long[]{0x4000000000000002L});
-    public static final BitSet FOLLOW_AT_in_moduleImport1053 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_moduleImport1055 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_COMMASi_in_moduleImport1058 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_moduleImport1060 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_VARIABLE_in_varDecl1076 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_DOLLARSi_in_varDecl1078 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_qName_in_varDecl1080 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000016L});
-    public static final BitSet FOLLOW_typeDeclaration_in_varDecl1082 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
-    public static final BitSet FOLLOW_ASSIGNSi_in_varDecl1087 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_varDecl1089 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXTERNAL_in_varDecl1094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_QName_in_qName1119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_qName1134 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AS_in_typeDeclaration1150 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_sequenceType_in_typeDeclaration1152 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FUNCTION_in_functionDecl1169 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_qName_in_functionDecl1171 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_functionDecl1173 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000041L});
-    public static final BitSet FOLLOW_paramList_in_functionDecl1175 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_functionDecl1178 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000094L});
-    public static final BitSet FOLLOW_AS_in_functionDecl1190 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_sequenceType_in_functionDecl1192 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000084L});
-    public static final BitSet FOLLOW_enclosedExpr_in_functionDecl1197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXTERNAL_in_functionDecl1201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_param_in_paramList1242 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_COMMASi_in_paramList1245 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_param_in_paramList1247 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_DOLLARSi_in_param1267 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_qName_in_param1269 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_typeDeclaration_in_param1271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LBRACESi_in_enclosedExpr1292 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_enclosedExpr1303 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_enclosedExpr1314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OPTION_in_optionDecl1328 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_qName_in_optionDecl1330 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_StringLiteral_in_optionDecl1332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FTOPTION_in_ftOptionDecl1340 = new BitSet(new long[]{0x0000000000000000L,0x0800004000000200L,0x0039080000000000L});
-    public static final BitSet FOLLOW_ftMatchOptions_in_ftOptionDecl1342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftMatchOption_in_ftMatchOptions1353 = new BitSet(new long[]{0x0000000000000002L,0x0800004000000200L,0x0039080000000000L});
-    public static final BitSet FOLLOW_EMPTY_SEQUENCE_in_sequenceType1384 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_sequenceType1386 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_sequenceType1389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_itemType_in_sequenceType1405 = new BitSet(new long[]{0x0000000000000000L,0x000000000080C000L});
-    public static final BitSet FOLLOW_occurrenceIndicator_in_sequenceType1407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_itemType_in_sequenceType1415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_kindTest_in_itemType1432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ITEM_in_itemType1437 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_itemType1439 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_itemType1442 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_atomicType_in_itemType1448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_documentTest_in_kindTest1464 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_elementTest_in_kindTest1480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attributeTest_in_kindTest1496 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_schemaElementTest_in_kindTest1512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_schemaAttributeTest_in_kindTest1528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_piTest_in_kindTest1544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_commentTest_in_kindTest1560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_textTest_in_kindTest1576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_anyKindTest_in_kindTest1592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOCUMENT_NODE_in_documentTest1611 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_documentTest1613 = new BitSet(new long[]{0x0000020000000000L,0x0000000000010040L});
-    public static final BitSet FOLLOW_elementTest_in_documentTest1617 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_schemaElementTest_in_documentTest1621 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_documentTest1625 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELEMENT_in_elementTest1649 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_elementTest1651 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7FBE5CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_elementNameOrWildcard_in_elementTest1655 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_COMMASi_in_elementTest1658 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_typeName_in_elementTest1660 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004040L});
-    public static final BitSet FOLLOW_QUESTIONSi_in_elementTest1662 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_elementTest1669 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_elementName_in_elementNameOrWildcard1697 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARSi_in_elementNameOrWildcard1701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_elementName1732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_typeName1759 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCHEMA_ELEMENT_in_schemaElementTest1782 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_schemaElementTest1784 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_elementDeclaration_in_schemaElementTest1787 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_schemaElementTest1789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_elementName_in_elementDeclaration1817 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ATTRIBUTE_in_attributeTest1836 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_attributeTest1838 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7FBE5CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_attribNameOrWildcard_in_attributeTest1842 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_COMMASi_in_attributeTest1845 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_typeName_in_attributeTest1847 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_attributeTest1853 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attributeName_in_attribNameOrWildcard1877 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARSi_in_attribNameOrWildcard1881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_attributeName1908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCHEMA_ATTRIBUTE_in_schemaAttributeTest1927 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_schemaAttributeTest1929 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_attributeDeclaration_in_schemaAttributeTest1932 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_schemaAttributeTest1934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_attributeName_in_attributeDeclaration1958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_piTest1977 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_piTest1979 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7F3E54L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_piTest1983 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_StringLiteral_in_piTest1987 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_piTest1991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMENT_in_commentTest2011 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_commentTest2013 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_commentTest2016 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEXT_in_textTest2036 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_textTest2038 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_textTest2041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NODE_in_anyKindTest2061 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_anyKindTest2063 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_anyKindTest2066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IMPORT_in_importStmt956 = new BitSet(new long[]{0x2000000800000000L});
+    public static final BitSet FOLLOW_schemaImport_in_importStmt959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_moduleImport_in_importStmt963 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCHEMA_in_schemaImport982 = new BitSet(new long[]{0x0000011100000000L});
+    public static final BitSet FOLLOW_schemaPrefix_in_schemaImport984 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_schemaImport987 = new BitSet(new long[]{0x4000000000000002L});
+    public static final BitSet FOLLOW_AT_in_schemaImport990 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_schemaImport992 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_COMMASi_in_schemaImport995 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_schemaImport997 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_NAMESPACE_in_schemaPrefix1020 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E14L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_schemaPrefix1022 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_EQSi_in_schemaPrefix1024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFAULT_in_schemaPrefix1030 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_ELEMENT_in_schemaPrefix1032 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_NAMESPACE_in_schemaPrefix1034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MODULE_in_moduleImport1053 = new BitSet(new long[]{0x0000001100000000L});
+    public static final BitSet FOLLOW_NAMESPACE_in_moduleImport1056 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E14L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_moduleImport1058 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_EQSi_in_moduleImport1060 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_moduleImport1064 = new BitSet(new long[]{0x4000000000000002L});
+    public static final BitSet FOLLOW_AT_in_moduleImport1067 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_moduleImport1069 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_COMMASi_in_moduleImport1072 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_moduleImport1074 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_VARIABLE_in_varDecl1090 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_DOLLARSi_in_varDecl1092 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_qName_in_varDecl1094 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000016L});
+    public static final BitSet FOLLOW_typeDeclaration_in_varDecl1096 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
+    public static final BitSet FOLLOW_ASSIGNSi_in_varDecl1101 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_varDecl1103 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXTERNAL_in_varDecl1108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_QName_in_qName1133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_qName1148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AS_in_typeDeclaration1164 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_sequenceType_in_typeDeclaration1166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FUNCTION_in_functionDecl1183 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_qName_in_functionDecl1185 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_functionDecl1187 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000041L});
+    public static final BitSet FOLLOW_paramList_in_functionDecl1189 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_functionDecl1192 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000094L});
+    public static final BitSet FOLLOW_AS_in_functionDecl1204 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_sequenceType_in_functionDecl1206 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000084L});
+    public static final BitSet FOLLOW_enclosedExpr_in_functionDecl1211 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXTERNAL_in_functionDecl1215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_param_in_paramList1256 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_COMMASi_in_paramList1259 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_param_in_paramList1261 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_DOLLARSi_in_param1281 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_qName_in_param1283 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_typeDeclaration_in_param1285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LBRACESi_in_enclosedExpr1306 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_enclosedExpr1317 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_enclosedExpr1328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OPTION_in_optionDecl1342 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_qName_in_optionDecl1344 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_StringLiteral_in_optionDecl1346 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FTOPTION_in_ftOptionDecl1354 = new BitSet(new long[]{0x0000000000000000L,0x0800004000000200L,0x0039080000000000L});
+    public static final BitSet FOLLOW_ftMatchOptions_in_ftOptionDecl1356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftMatchOption_in_ftMatchOptions1367 = new BitSet(new long[]{0x0000000000000002L,0x0800004000000200L,0x0039080000000000L});
+    public static final BitSet FOLLOW_EMPTY_SEQUENCE_in_sequenceType1398 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_sequenceType1400 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_sequenceType1403 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_itemType_in_sequenceType1419 = new BitSet(new long[]{0x0000000000000000L,0x000000000080C000L});
+    public static final BitSet FOLLOW_occurrenceIndicator_in_sequenceType1421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_itemType_in_sequenceType1429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_kindTest_in_itemType1446 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ITEM_in_itemType1451 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_itemType1453 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_itemType1456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_atomicType_in_itemType1462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_documentTest_in_kindTest1478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_elementTest_in_kindTest1494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attributeTest_in_kindTest1510 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_schemaElementTest_in_kindTest1526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_schemaAttributeTest_in_kindTest1542 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_piTest_in_kindTest1558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_commentTest_in_kindTest1574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_textTest_in_kindTest1590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_anyKindTest_in_kindTest1606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOCUMENT_NODE_in_documentTest1625 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_documentTest1627 = new BitSet(new long[]{0x0000020000000000L,0x0000000000010040L});
+    public static final BitSet FOLLOW_elementTest_in_documentTest1631 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_schemaElementTest_in_documentTest1635 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_documentTest1639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELEMENT_in_elementTest1663 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_elementTest1665 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7FBE5CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_elementNameOrWildcard_in_elementTest1669 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_COMMASi_in_elementTest1672 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_typeName_in_elementTest1674 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004040L});
+    public static final BitSet FOLLOW_QUESTIONSi_in_elementTest1676 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_elementTest1683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_elementName_in_elementNameOrWildcard1711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARSi_in_elementNameOrWildcard1715 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_elementName1746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_typeName1773 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCHEMA_ELEMENT_in_schemaElementTest1796 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_schemaElementTest1798 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_elementDeclaration_in_schemaElementTest1801 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_schemaElementTest1803 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_elementName_in_elementDeclaration1831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ATTRIBUTE_in_attributeTest1850 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_attributeTest1852 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7FBE5CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_attribNameOrWildcard_in_attributeTest1856 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_COMMASi_in_attributeTest1859 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_typeName_in_attributeTest1861 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_attributeTest1867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attributeName_in_attribNameOrWildcard1891 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARSi_in_attribNameOrWildcard1895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_attributeName1922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCHEMA_ATTRIBUTE_in_schemaAttributeTest1941 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_schemaAttributeTest1943 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_attributeDeclaration_in_schemaAttributeTest1946 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_schemaAttributeTest1948 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_attributeName_in_attributeDeclaration1972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_piTest1991 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_piTest1993 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7F3E54L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_piTest1997 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_StringLiteral_in_piTest2001 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_piTest2005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMENT_in_commentTest2025 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_commentTest2027 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_commentTest2030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEXT_in_textTest2050 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_textTest2052 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_textTest2055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NODE_in_anyKindTest2075 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_anyKindTest2077 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_anyKindTest2080 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_occurrenceIndicator0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ifExpr_in_exprSingle2114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_typeswitchExpr_in_exprSingle2130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_fLWORExpr_in_exprSingle2138 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_quantifiedExpr_in_exprSingle2146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_orExpr_in_exprSingle2154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_forClause_in_fLWORExpr2169 = new BitSet(new long[]{0x0000100000000000L,0x00000000B3000000L});
-    public static final BitSet FOLLOW_letClause_in_fLWORExpr2175 = new BitSet(new long[]{0x0000100000000000L,0x00000000B3000000L});
-    public static final BitSet FOLLOW_whereClause_in_fLWORExpr2179 = new BitSet(new long[]{0x0000100000000000L,0x0000000081000000L});
-    public static final BitSet FOLLOW_orderByClause_in_fLWORExpr2182 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_RETURN_in_fLWORExpr2185 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_fLWORExpr2187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOR_in_forClause2237 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_forClauseTupletDef_in_forClause2239 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_COMMASi_in_forClause2242 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_forClauseTupletDef_in_forClause2244 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_DOLLARSi_in_forClauseTupletDef2287 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_varName_in_forClauseTupletDef2289 = new BitSet(new long[]{0x4000000000000000L,0x000000000C000010L});
-    public static final BitSet FOLLOW_typeDeclaration_in_forClauseTupletDef2291 = new BitSet(new long[]{0x4000000000000000L,0x000000000C000000L});
-    public static final BitSet FOLLOW_positionalVar_in_forClauseTupletDef2294 = new BitSet(new long[]{0x0000000000000000L,0x000000000C000000L});
-    public static final BitSet FOLLOW_ftScoreVar_in_forClauseTupletDef2297 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_IN_in_forClauseTupletDef2300 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_forClauseTupletDef2302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_varName2351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AT_in_positionalVar2372 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_DOLLARSi_in_positionalVar2374 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_varName_in_positionalVar2376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCORE_in_ftScoreVar2395 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_DOLLARSi_in_ftScoreVar2397 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_varName_in_ftScoreVar2399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LET_in_letClause2427 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000001L});
-    public static final BitSet FOLLOW_varBinding_in_letClause2429 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_COMMASi_in_letClause2432 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000001L});
-    public static final BitSet FOLLOW_varBinding_in_letClause2434 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_DOLLARSi_in_varBinding2486 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_varName_in_varBinding2490 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000012L});
-    public static final BitSet FOLLOW_typeDeclaration_in_varBinding2492 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_SCORE_in_varBinding2497 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_DOLLARSi_in_varBinding2499 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_varName_in_varBinding2503 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ASSIGNSi_in_varBinding2519 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_varBinding2521 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WHERE_in_whereClause2569 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_whereClause2571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDER_in_orderByClause2620 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_BY_in_orderByClause2622 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_STABLE_in_orderByClause2626 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_ORDER_in_orderByClause2628 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
-    public static final BitSet FOLLOW_BY_in_orderByClause2630 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_orderSpecList_in_orderByClause2633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_orderSpec_in_orderSpecList2676 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_COMMASi_in_orderSpecList2679 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_orderSpec_in_orderSpecList2681 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_exprSingle_in_orderSpec2728 = new BitSet(new long[]{0x0000280000000002L,0x0000000300000000L});
-    public static final BitSet FOLLOW_orderModifier_in_orderSpec2730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_orderModifier2757 = new BitSet(new long[]{0x0000280000000002L});
-    public static final BitSet FOLLOW_EMPTY_in_orderModifier2767 = new BitSet(new long[]{0x0000C00000000000L});
-    public static final BitSet FOLLOW_set_in_orderModifier2769 = new BitSet(new long[]{0x0000080000000002L});
-    public static final BitSet FOLLOW_COLLATION_in_orderModifier2780 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_orderModifier2782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SOME_in_quantifiedExpr2808 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_EVERY_in_quantifiedExpr2814 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_quantifiedExprTupleDef_in_quantifiedExpr2817 = new BitSet(new long[]{0x0000004000000000L,0x0000001000000000L});
-    public static final BitSet FOLLOW_COMMASi_in_quantifiedExpr2828 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_quantifiedExprTupleDef_in_quantifiedExpr2830 = new BitSet(new long[]{0x0000004000000000L,0x0000001000000000L});
-    public static final BitSet FOLLOW_SATISFIES_in_quantifiedExpr2834 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_quantifiedExpr2836 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOLLARSi_in_quantifiedExprTupleDef2892 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_varName_in_quantifiedExprTupleDef2894 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000010L});
-    public static final BitSet FOLLOW_typeDeclaration_in_quantifiedExprTupleDef2896 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_IN_in_quantifiedExprTupleDef2899 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_quantifiedExprTupleDef2901 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TYPESWITCH_in_typeswitchExpr2936 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_typeswitchExpr2938 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_expr_in_typeswitchExpr2940 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_typeswitchExpr2942 = new BitSet(new long[]{0x0000000000000000L,0x0000004000000000L});
-    public static final BitSet FOLLOW_caseClause_in_typeswitchExpr2944 = new BitSet(new long[]{0x0000010000000000L,0x0000004000000000L});
-    public static final BitSet FOLLOW_DEFAULT_in_typeswitchExpr2956 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000001L});
-    public static final BitSet FOLLOW_DOLLARSi_in_typeswitchExpr2959 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_varName_in_typeswitchExpr2961 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_RETURN_in_typeswitchExpr2965 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_typeswitchExpr2967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CASE_in_caseClause3007 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1DL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_DOLLARSi_in_caseClause3010 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_varName_in_caseClause3012 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_AS_in_caseClause3014 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_sequenceType_in_caseClause3018 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_RETURN_in_caseClause3020 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_caseClause3022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IF_in_ifExpr3068 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_ifExpr3070 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_expr_in_ifExpr3072 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_ifExpr3074 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
-    public static final BitSet FOLLOW_THEN_in_ifExpr3076 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_ifExpr3078 = new BitSet(new long[]{0x0000000000000000L,0x0000020000000000L});
-    public static final BitSet FOLLOW_ELSE_in_ifExpr3080 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_ifExpr3082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_andExpr_in_orExpr3122 = new BitSet(new long[]{0x0000000000000002L,0x0000040000000000L});
-    public static final BitSet FOLLOW_OR_in_orExpr3126 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_andExpr_in_orExpr3129 = new BitSet(new long[]{0x0000000000000002L,0x0000040000000000L});
-    public static final BitSet FOLLOW_comparisonExpr_in_andExpr3147 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
-    public static final BitSet FOLLOW_AND_in_andExpr3151 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_comparisonExpr_in_andExpr3154 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
-    public static final BitSet FOLLOW_ftContainsExpr_in_comparisonExpr3167 = new BitSet(new long[]{0x0000002000000002L,0xE000000000000000L,0x00000000000007FFL});
-    public static final BitSet FOLLOW_valueComp_in_comparisonExpr3172 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_generalComp_in_comparisonExpr3177 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_nodeComp_in_comparisonExpr3182 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_ftContainsExpr_in_comparisonExpr3186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rangeExpr_in_ftContainsExpr3200 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
-    public static final BitSet FOLLOW_FTCONTAINS_in_ftContainsExpr3204 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020078000L});
-    public static final BitSet FOLLOW_ftSelection_in_ftContainsExpr3207 = new BitSet(new long[]{0x0000000000000002L,0x0800000000000000L});
-    public static final BitSet FOLLOW_ftIgnoreOption_in_ftContainsExpr3209 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_additiveExpr_in_rangeExpr3232 = new BitSet(new long[]{0x0000000000000002L,0x0000200000000000L});
-    public static final BitSet FOLLOW_TO_in_rangeExpr3236 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_additiveExpr_in_rangeExpr3239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_multiplicativeExpr_in_additiveExpr3261 = new BitSet(new long[]{0x0000000000000002L,0x0000400000800000L});
-    public static final BitSet FOLLOW_set_in_additiveExpr3265 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_multiplicativeExpr_in_additiveExpr3274 = new BitSet(new long[]{0x0000000000000002L,0x0000400000800000L});
-    public static final BitSet FOLLOW_unionExpr_in_multiplicativeExpr3300 = new BitSet(new long[]{0x0000000000000002L,0x0003800000008000L});
-    public static final BitSet FOLLOW_set_in_multiplicativeExpr3304 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_unionExpr_in_multiplicativeExpr3321 = new BitSet(new long[]{0x0000000000000002L,0x0003800000008000L});
-    public static final BitSet FOLLOW_intersectExceptExpr_in_unionExpr3351 = new BitSet(new long[]{0x0000000000000002L,0x000C000000000000L});
-    public static final BitSet FOLLOW_set_in_unionExpr3355 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_intersectExceptExpr_in_unionExpr3364 = new BitSet(new long[]{0x0000000000000002L,0x000C000000000000L});
-    public static final BitSet FOLLOW_instanceofExpr_in_intersectExceptExpr3398 = new BitSet(new long[]{0x0000000000000002L,0x0030000000000000L});
-    public static final BitSet FOLLOW_set_in_intersectExceptExpr3402 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_instanceofExpr_in_intersectExceptExpr3411 = new BitSet(new long[]{0x0000000000000002L,0x0030000000000000L});
-    public static final BitSet FOLLOW_treatExpr_in_instanceofExpr3449 = new BitSet(new long[]{0x0000000000000002L,0x0040000000000000L});
-    public static final BitSet FOLLOW_INSTANCE_in_instanceofExpr3453 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
-    public static final BitSet FOLLOW_OF_in_instanceofExpr3456 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_sequenceType_in_instanceofExpr3459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_castableExpr_in_treatExpr3501 = new BitSet(new long[]{0x0000000000000002L,0x0100000000000000L});
-    public static final BitSet FOLLOW_TREAT_in_treatExpr3505 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_AS_in_treatExpr3508 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_sequenceType_in_treatExpr3511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_castExpr_in_castableExpr3557 = new BitSet(new long[]{0x0000000000000002L,0x0200000000000000L});
-    public static final BitSet FOLLOW_CASTABLE_in_castableExpr3561 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_AS_in_castableExpr3564 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_singleType_in_castableExpr3567 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_unaryExpr_in_castExpr3617 = new BitSet(new long[]{0x0000000000000002L,0x0400000000000000L});
-    public static final BitSet FOLLOW_CAST_in_castExpr3621 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_AS_in_castExpr3624 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_singleType_in_castExpr3627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_unaryExpr3682 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_valueExpr_in_unaryExpr3693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_atomicType_in_singleType3744 = new BitSet(new long[]{0x0000000000000002L,0x0000000000004000L});
-    public static final BitSet FOLLOW_QUESTIONSi_in_singleType3746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_atomicType3802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WITHOUT_in_ftIgnoreOption3834 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
-    public static final BitSet FOLLOW_CONTENT_in_ftIgnoreOption3837 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_unionExpr_in_ftIgnoreOption3839 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ifExpr_in_exprSingle2128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeswitchExpr_in_exprSingle2144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_fLWORExpr_in_exprSingle2152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_quantifiedExpr_in_exprSingle2160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_orExpr_in_exprSingle2168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_forClause_in_fLWORExpr2183 = new BitSet(new long[]{0x0000100000000000L,0x00000000B3000000L});
+    public static final BitSet FOLLOW_letClause_in_fLWORExpr2189 = new BitSet(new long[]{0x0000100000000000L,0x00000000B3000000L});
+    public static final BitSet FOLLOW_whereClause_in_fLWORExpr2193 = new BitSet(new long[]{0x0000100000000000L,0x0000000081000000L});
+    public static final BitSet FOLLOW_orderByClause_in_fLWORExpr2196 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_RETURN_in_fLWORExpr2199 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_fLWORExpr2201 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOR_in_forClause2247 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_forClauseTupletDef_in_forClause2249 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_COMMASi_in_forClause2252 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_forClauseTupletDef_in_forClause2254 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_DOLLARSi_in_forClauseTupletDef2297 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_varName_in_forClauseTupletDef2299 = new BitSet(new long[]{0x4000000000000000L,0x000000000C000010L});
+    public static final BitSet FOLLOW_typeDeclaration_in_forClauseTupletDef2301 = new BitSet(new long[]{0x4000000000000000L,0x000000000C000000L});
+    public static final BitSet FOLLOW_positionalVar_in_forClauseTupletDef2304 = new BitSet(new long[]{0x0000000000000000L,0x000000000C000000L});
+    public static final BitSet FOLLOW_ftScoreVar_in_forClauseTupletDef2307 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_IN_in_forClauseTupletDef2310 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_forClauseTupletDef2312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_varName2361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AT_in_positionalVar2382 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_DOLLARSi_in_positionalVar2384 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_varName_in_positionalVar2386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCORE_in_ftScoreVar2405 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_DOLLARSi_in_ftScoreVar2407 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_varName_in_ftScoreVar2409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LET_in_letClause2437 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000001L});
+    public static final BitSet FOLLOW_varBinding_in_letClause2439 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_COMMASi_in_letClause2442 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000001L});
+    public static final BitSet FOLLOW_varBinding_in_letClause2444 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_DOLLARSi_in_varBinding2496 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_varName_in_varBinding2500 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000012L});
+    public static final BitSet FOLLOW_typeDeclaration_in_varBinding2502 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_SCORE_in_varBinding2507 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_DOLLARSi_in_varBinding2509 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_varName_in_varBinding2513 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ASSIGNSi_in_varBinding2529 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_varBinding2531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WHERE_in_whereClause2579 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_whereClause2581 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDER_in_orderByClause2630 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
+    public static final BitSet FOLLOW_BY_in_orderByClause2632 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_STABLE_in_orderByClause2636 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_ORDER_in_orderByClause2638 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
+    public static final BitSet FOLLOW_BY_in_orderByClause2640 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_orderSpecList_in_orderByClause2643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_orderSpec_in_orderSpecList2686 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_COMMASi_in_orderSpecList2689 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_orderSpec_in_orderSpecList2691 = new BitSet(new long[]{0x0000004000000002L});
+    public static final BitSet FOLLOW_exprSingle_in_orderSpec2738 = new BitSet(new long[]{0x0000280000000002L,0x0000000300000000L});
+    public static final BitSet FOLLOW_orderModifier_in_orderSpec2740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_orderModifier2767 = new BitSet(new long[]{0x0000280000000002L});
+    public static final BitSet FOLLOW_EMPTY_in_orderModifier2777 = new BitSet(new long[]{0x0000C00000000000L});
+    public static final BitSet FOLLOW_set_in_orderModifier2779 = new BitSet(new long[]{0x0000080000000002L});
+    public static final BitSet FOLLOW_COLLATION_in_orderModifier2790 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_orderModifier2792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SOME_in_quantifiedExpr2818 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_EVERY_in_quantifiedExpr2824 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_quantifiedExprTupleDef_in_quantifiedExpr2827 = new BitSet(new long[]{0x0000004000000000L,0x0000001000000000L});
+    public static final BitSet FOLLOW_COMMASi_in_quantifiedExpr2838 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_quantifiedExprTupleDef_in_quantifiedExpr2840 = new BitSet(new long[]{0x0000004000000000L,0x0000001000000000L});
+    public static final BitSet FOLLOW_SATISFIES_in_quantifiedExpr2844 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_quantifiedExpr2846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOLLARSi_in_quantifiedExprTupleDef2902 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_varName_in_quantifiedExprTupleDef2904 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000010L});
+    public static final BitSet FOLLOW_typeDeclaration_in_quantifiedExprTupleDef2906 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_IN_in_quantifiedExprTupleDef2909 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_quantifiedExprTupleDef2911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TYPESWITCH_in_typeswitchExpr2946 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_typeswitchExpr2948 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_expr_in_typeswitchExpr2950 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_typeswitchExpr2952 = new BitSet(new long[]{0x0000000000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_caseClause_in_typeswitchExpr2954 = new BitSet(new long[]{0x0000010000000000L,0x0000004000000000L});
+    public static final BitSet FOLLOW_DEFAULT_in_typeswitchExpr2966 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000001L});
+    public static final BitSet FOLLOW_DOLLARSi_in_typeswitchExpr2969 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_varName_in_typeswitchExpr2971 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_RETURN_in_typeswitchExpr2975 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_typeswitchExpr2977 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CASE_in_caseClause3017 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1DL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_DOLLARSi_in_caseClause3020 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_varName_in_caseClause3022 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_AS_in_caseClause3024 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_sequenceType_in_caseClause3028 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_RETURN_in_caseClause3030 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_caseClause3032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IF_in_ifExpr3078 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_ifExpr3080 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_expr_in_ifExpr3082 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_ifExpr3084 = new BitSet(new long[]{0x0000000000000000L,0x0000010000000000L});
+    public static final BitSet FOLLOW_THEN_in_ifExpr3086 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_ifExpr3088 = new BitSet(new long[]{0x0000000000000000L,0x0000020000000000L});
+    public static final BitSet FOLLOW_ELSE_in_ifExpr3090 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_ifExpr3092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_andExpr_in_orExpr3132 = new BitSet(new long[]{0x0000000000000002L,0x0000040000000000L});
+    public static final BitSet FOLLOW_OR_in_orExpr3136 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_andExpr_in_orExpr3139 = new BitSet(new long[]{0x0000000000000002L,0x0000040000000000L});
+    public static final BitSet FOLLOW_comparisonExpr_in_andExpr3157 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
+    public static final BitSet FOLLOW_AND_in_andExpr3161 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_comparisonExpr_in_andExpr3164 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
+    public static final BitSet FOLLOW_ftContainsExpr_in_comparisonExpr3177 = new BitSet(new long[]{0x0000002000000002L,0xE000000000000000L,0x00000000000007FFL});
+    public static final BitSet FOLLOW_valueComp_in_comparisonExpr3182 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_generalComp_in_comparisonExpr3187 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_nodeComp_in_comparisonExpr3192 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_ftContainsExpr_in_comparisonExpr3196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rangeExpr_in_ftContainsExpr3210 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
+    public static final BitSet FOLLOW_FTCONTAINS_in_ftContainsExpr3214 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020078000L});
+    public static final BitSet FOLLOW_ftSelection_in_ftContainsExpr3217 = new BitSet(new long[]{0x0000000000000002L,0x0800000000000000L});
+    public static final BitSet FOLLOW_ftIgnoreOption_in_ftContainsExpr3219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_additiveExpr_in_rangeExpr3242 = new BitSet(new long[]{0x0000000000000002L,0x0000200000000000L});
+    public static final BitSet FOLLOW_TO_in_rangeExpr3246 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_additiveExpr_in_rangeExpr3249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_multiplicativeExpr_in_additiveExpr3271 = new BitSet(new long[]{0x0000000000000002L,0x0000400000800000L});
+    public static final BitSet FOLLOW_set_in_additiveExpr3275 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_multiplicativeExpr_in_additiveExpr3284 = new BitSet(new long[]{0x0000000000000002L,0x0000400000800000L});
+    public static final BitSet FOLLOW_unionExpr_in_multiplicativeExpr3310 = new BitSet(new long[]{0x0000000000000002L,0x0003800000008000L});
+    public static final BitSet FOLLOW_set_in_multiplicativeExpr3314 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_unionExpr_in_multiplicativeExpr3331 = new BitSet(new long[]{0x0000000000000002L,0x0003800000008000L});
+    public static final BitSet FOLLOW_intersectExceptExpr_in_unionExpr3361 = new BitSet(new long[]{0x0000000000000002L,0x000C000000000000L});
+    public static final BitSet FOLLOW_set_in_unionExpr3365 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_intersectExceptExpr_in_unionExpr3374 = new BitSet(new long[]{0x0000000000000002L,0x000C000000000000L});
+    public static final BitSet FOLLOW_instanceofExpr_in_intersectExceptExpr3408 = new BitSet(new long[]{0x0000000000000002L,0x0030000000000000L});
+    public static final BitSet FOLLOW_set_in_intersectExceptExpr3412 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_instanceofExpr_in_intersectExceptExpr3421 = new BitSet(new long[]{0x0000000000000002L,0x0030000000000000L});
+    public static final BitSet FOLLOW_treatExpr_in_instanceofExpr3459 = new BitSet(new long[]{0x0000000000000002L,0x0040000000000000L});
+    public static final BitSet FOLLOW_INSTANCE_in_instanceofExpr3463 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+    public static final BitSet FOLLOW_OF_in_instanceofExpr3466 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_sequenceType_in_instanceofExpr3469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_castableExpr_in_treatExpr3511 = new BitSet(new long[]{0x0000000000000002L,0x0100000000000000L});
+    public static final BitSet FOLLOW_TREAT_in_treatExpr3515 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_AS_in_treatExpr3518 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_sequenceType_in_treatExpr3521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_castExpr_in_castableExpr3567 = new BitSet(new long[]{0x0000000000000002L,0x0200000000000000L});
+    public static final BitSet FOLLOW_CASTABLE_in_castableExpr3571 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_AS_in_castableExpr3574 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_singleType_in_castableExpr3577 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_unaryExpr_in_castExpr3627 = new BitSet(new long[]{0x0000000000000002L,0x0400000000000000L});
+    public static final BitSet FOLLOW_CAST_in_castExpr3631 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_AS_in_castExpr3634 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_singleType_in_castExpr3637 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_unaryExpr3692 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_valueExpr_in_unaryExpr3703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_atomicType_in_singleType3754 = new BitSet(new long[]{0x0000000000000002L,0x0000000000004000L});
+    public static final BitSet FOLLOW_QUESTIONSi_in_singleType3756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_atomicType3812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WITHOUT_in_ftIgnoreOption3844 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_CONTENT_in_ftIgnoreOption3847 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_unionExpr_in_ftIgnoreOption3849 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_valueComp0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_generalComp0 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_nodeComp0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftOr_in_ftSelection3936 = new BitSet(new long[]{0x4040000000000002L,0x0000000000000000L,0x0000043900000800L});
-    public static final BitSet FOLLOW_ftPosFilter_in_ftSelection3938 = new BitSet(new long[]{0x4040000000000002L,0x0000000000000000L,0x0000043900000800L});
-    public static final BitSet FOLLOW_WEIGHT_in_ftSelection3942 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_rangeExpr_in_ftSelection3944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftAnd_in_ftOr3957 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_FTOR_in_ftOr3961 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020078000L});
-    public static final BitSet FOLLOW_ftAnd_in_ftOr3964 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_ftMildNot_in_ftAnd3982 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_FTAND_in_ftAnd3986 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020078000L});
-    public static final BitSet FOLLOW_ftMildNot_in_ftAnd3989 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_ftUnaryNot_in_ftMildNot4011 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_NOT_in_ftMildNot4015 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_IN_in_ftMildNot4018 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020078000L});
+    public static final BitSet FOLLOW_ftOr_in_ftSelection3946 = new BitSet(new long[]{0x4040000000000002L,0x0000000000000000L,0x0000043900000800L});
+    public static final BitSet FOLLOW_ftPosFilter_in_ftSelection3948 = new BitSet(new long[]{0x4040000000000002L,0x0000000000000000L,0x0000043900000800L});
+    public static final BitSet FOLLOW_WEIGHT_in_ftSelection3952 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_rangeExpr_in_ftSelection3954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftAnd_in_ftOr3967 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_FTOR_in_ftOr3971 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020078000L});
+    public static final BitSet FOLLOW_ftAnd_in_ftOr3974 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_ftMildNot_in_ftAnd3992 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_FTAND_in_ftAnd3996 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020078000L});
+    public static final BitSet FOLLOW_ftMildNot_in_ftAnd3999 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000002000L});
     public static final BitSet FOLLOW_ftUnaryNot_in_ftMildNot4021 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_FTNOT_in_ftUnaryNot4048 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020070000L});
-    public static final BitSet FOLLOW_ftPrimaryWithOptions_in_ftUnaryNot4053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftPrimary_in_ftPrimaryWithOptions4076 = new BitSet(new long[]{0x0000000000000002L,0x0800004000000200L,0x0039080000000000L});
-    public static final BitSet FOLLOW_ftMatchOption_in_ftPrimaryWithOptions4080 = new BitSet(new long[]{0x0000000000000002L,0x0800004000000200L,0x0039080000000000L});
-    public static final BitSet FOLLOW_ftWords_in_ftPrimary4109 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_ftTimes_in_ftPrimary4112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_ftPrimary4150 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020078000L});
-    public static final BitSet FOLLOW_ftSelection_in_ftPrimary4153 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_ftPrimary4155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftExtensionSelection_in_ftPrimary4193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftWordsValue_in_ftWords4253 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000A80000L});
-    public static final BitSet FOLLOW_ftAnyallOption_in_ftWords4256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_literal_in_ftWordsValue4292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LBRACESi_in_ftWordsValue4297 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_ftWordsValue4300 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_ftWordsValue4302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_numericLiteral_in_literal4343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_StringLiteral_in_literal4347 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOT_in_ftMildNot4025 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_IN_in_ftMildNot4028 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020078000L});
+    public static final BitSet FOLLOW_ftUnaryNot_in_ftMildNot4031 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_FTNOT_in_ftUnaryNot4058 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020070000L});
+    public static final BitSet FOLLOW_ftPrimaryWithOptions_in_ftUnaryNot4063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftPrimary_in_ftPrimaryWithOptions4086 = new BitSet(new long[]{0x0000000000000002L,0x0800004000000200L,0x0039080000000000L});
+    public static final BitSet FOLLOW_ftMatchOption_in_ftPrimaryWithOptions4090 = new BitSet(new long[]{0x0000000000000002L,0x0800004000000200L,0x0039080000000000L});
+    public static final BitSet FOLLOW_ftWords_in_ftPrimary4119 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_ftTimes_in_ftPrimary4122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPARSi_in_ftPrimary4160 = new BitSet(new long[]{0x0000000100000000L,0x00000000000000A0L,0x0000000020078000L});
+    public static final BitSet FOLLOW_ftSelection_in_ftPrimary4163 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_ftPrimary4165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftExtensionSelection_in_ftPrimary4203 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftWordsValue_in_ftWords4263 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000A80000L});
+    public static final BitSet FOLLOW_ftAnyallOption_in_ftWords4266 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_literal_in_ftWordsValue4302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LBRACESi_in_ftWordsValue4307 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_ftWordsValue4310 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_ftWordsValue4312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_numericLiteral_in_literal4353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_StringLiteral_in_literal4357 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_numericLiteral0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ANY_in_ftAnyallOption4434 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000100000L});
-    public static final BitSet FOLLOW_WORD_in_ftAnyallOption4436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ALL_in_ftAnyallOption4443 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_WORDS_in_ftAnyallOption4445 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PHRASE_in_ftAnyallOption4451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OCCURS_in_ftTimes4482 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000000L,0x0000000014000000L});
-    public static final BitSet FOLLOW_ftRange_in_ftTimes4485 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_TIMES_in_ftTimes4487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXACTLY_in_ftRange4524 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_additiveExpr_in_ftRange4526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AT_in_ftRange4570 = new BitSet(new long[]{0x0000800000000000L,0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_set_in_ftRange4572 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_additiveExpr_in_ftRange4578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FROM_in_ftRange4622 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_additiveExpr_in_ftRange4624 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
-    public static final BitSet FOLLOW_TO_in_ftRange4626 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_additiveExpr_in_ftRange4628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pragma_in_ftExtensionSelection4660 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000020000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_ftExtensionSelection4663 = new BitSet(new long[]{0x0000000100000000L,0x00000000000001A0L,0x0000000020078000L});
-    public static final BitSet FOLLOW_thisFTSelectionIsEnclosed_in_ftExtensionSelection4666 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_ftExtensionSelection4669 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPRAGSi_in_pragma4705 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_qName_in_pragma4708 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000C0000000L});
-    public static final BitSet FOLLOW_PragmaContents_in_pragma4710 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_RPRAGSi_in_pragma4713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftOrder_in_ftPosFilter4754 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftWindow_in_ftPosFilter4758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftDistance_in_ftPosFilter4762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftScope_in_ftPosFilter4766 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftContent_in_ftPosFilter4770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDERED_in_ftOrder4785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WINDOW_in_ftWindow4800 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_additiveExpr_in_ftWindow4802 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000600400000L});
-    public static final BitSet FOLLOW_ftUnit_in_ftWindow4804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ANY_in_ftAnyallOption4444 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000100000L});
+    public static final BitSet FOLLOW_WORD_in_ftAnyallOption4446 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ALL_in_ftAnyallOption4453 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_WORDS_in_ftAnyallOption4455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PHRASE_in_ftAnyallOption4461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OCCURS_in_ftTimes4492 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000000L,0x0000000014000000L});
+    public static final BitSet FOLLOW_ftRange_in_ftTimes4495 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_TIMES_in_ftTimes4497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXACTLY_in_ftRange4534 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_additiveExpr_in_ftRange4536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AT_in_ftRange4580 = new BitSet(new long[]{0x0000800000000000L,0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_set_in_ftRange4582 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_additiveExpr_in_ftRange4588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FROM_in_ftRange4632 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_additiveExpr_in_ftRange4634 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+    public static final BitSet FOLLOW_TO_in_ftRange4636 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_additiveExpr_in_ftRange4638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pragma_in_ftExtensionSelection4670 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000020000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_ftExtensionSelection4673 = new BitSet(new long[]{0x0000000100000000L,0x00000000000001A0L,0x0000000020078000L});
+    public static final BitSet FOLLOW_thisFTSelectionIsEnclosed_in_ftExtensionSelection4676 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_ftExtensionSelection4679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPRAGSi_in_pragma4715 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_qName_in_pragma4718 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x00000000C0000000L});
+    public static final BitSet FOLLOW_PragmaContents_in_pragma4720 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_RPRAGSi_in_pragma4723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftOrder_in_ftPosFilter4764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftWindow_in_ftPosFilter4768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftDistance_in_ftPosFilter4772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftScope_in_ftPosFilter4776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftContent_in_ftPosFilter4780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDERED_in_ftOrder4795 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WINDOW_in_ftWindow4810 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_additiveExpr_in_ftWindow4812 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000600400000L});
+    public static final BitSet FOLLOW_ftUnit_in_ftWindow4814 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_ftUnit0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DISTANCE_in_ftDistance4850 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000000L,0x0000000014000000L});
-    public static final BitSet FOLLOW_ftRange_in_ftDistance4852 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000600400000L});
-    public static final BitSet FOLLOW_ftUnit_in_ftDistance4854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_ftScope4869 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000C000000000L});
-    public static final BitSet FOLLOW_ftBigUnit_in_ftScope4877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DISTANCE_in_ftDistance4860 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000000L,0x0000000014000000L});
+    public static final BitSet FOLLOW_ftRange_in_ftDistance4862 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000600400000L});
+    public static final BitSet FOLLOW_ftUnit_in_ftDistance4864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_ftScope4879 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x000000C000000000L});
+    public static final BitSet FOLLOW_ftBigUnit_in_ftScope4887 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_ftBigUnit0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AT_in_ftContent4919 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000030000000000L});
-    public static final BitSet FOLLOW_set_in_ftContent4921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ENTIRE_in_ftContent4931 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
-    public static final BitSet FOLLOW_CONTENT_in_ftContent4933 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftLanguageOption_in_ftMatchOption4956 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftCaseOption_in_ftMatchOption4964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftDiacriticsOption_in_ftMatchOption4972 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftExtensionOption_in_ftMatchOption4980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WITH_in_ftMatchOption4988 = new BitSet(new long[]{0x0000010000000000L,0x0000000000000000L,0x0000F00000000000L});
-    public static final BitSet FOLLOW_WILDCARDS_in_ftMatchOption4992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftThesaurusOption_in_ftMatchOption5007 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STEMMING_in_ftMatchOption5022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftStopwordOption_in_ftMatchOption5037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WITHOUT_in_ftMatchOption5059 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000F00000000000L});
-    public static final BitSet FOLLOW_WILDCARDS_in_ftMatchOption5064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THESAURUS_in_ftMatchOption5083 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STEMMING_in_ftMatchOption5102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STOP_in_ftMatchOption5121 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_WORDS_in_ftMatchOption5123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LANGUAGE_in_ftLanguageOption5154 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_StringLiteral_in_ftLanguageOption5157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CASE_in_ftCaseOption5178 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0006000000000000L});
-    public static final BitSet FOLLOW_set_in_ftCaseOption5181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LOWERCASE_in_ftCaseOption5199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UPPERCASE_in_ftCaseOption5212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIACRITICS_in_ftDiacriticsOption5238 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0006000000000000L});
-    public static final BitSet FOLLOW_set_in_ftDiacriticsOption5241 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OPTION_in_ftExtensionOption5259 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_qName_in_ftExtensionOption5262 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_StringLiteral_in_ftExtensionOption5264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THESAURUS_in_ftThesaurusOption5293 = new BitSet(new long[]{0x4000010000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_ftThesaurusID_in_ftThesaurusOption5311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFAULT_in_ftThesaurusOption5315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_ftThesaurusOption5332 = new BitSet(new long[]{0x4000010000000000L});
-    public static final BitSet FOLLOW_ftThesaurusID_in_ftThesaurusOption5336 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_DEFAULT_in_ftThesaurusOption5340 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_COMMASi_in_ftThesaurusOption5344 = new BitSet(new long[]{0x4000000000000000L});
+    public static final BitSet FOLLOW_AT_in_ftContent4929 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000030000000000L});
+    public static final BitSet FOLLOW_set_in_ftContent4931 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ENTIRE_in_ftContent4941 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_CONTENT_in_ftContent4943 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftLanguageOption_in_ftMatchOption4966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftCaseOption_in_ftMatchOption4974 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftDiacriticsOption_in_ftMatchOption4982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftExtensionOption_in_ftMatchOption4990 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WITH_in_ftMatchOption4998 = new BitSet(new long[]{0x0000010000000000L,0x0000000000000000L,0x0000F00000000000L});
+    public static final BitSet FOLLOW_WILDCARDS_in_ftMatchOption5002 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftThesaurusOption_in_ftMatchOption5017 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STEMMING_in_ftMatchOption5032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftStopwordOption_in_ftMatchOption5047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WITHOUT_in_ftMatchOption5069 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000F00000000000L});
+    public static final BitSet FOLLOW_WILDCARDS_in_ftMatchOption5074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THESAURUS_in_ftMatchOption5093 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STEMMING_in_ftMatchOption5112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STOP_in_ftMatchOption5131 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_WORDS_in_ftMatchOption5133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LANGUAGE_in_ftLanguageOption5164 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_StringLiteral_in_ftLanguageOption5167 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CASE_in_ftCaseOption5188 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0006000000000000L});
+    public static final BitSet FOLLOW_set_in_ftCaseOption5191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LOWERCASE_in_ftCaseOption5209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UPPERCASE_in_ftCaseOption5222 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIACRITICS_in_ftDiacriticsOption5248 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0006000000000000L});
+    public static final BitSet FOLLOW_set_in_ftDiacriticsOption5251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OPTION_in_ftExtensionOption5269 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_qName_in_ftExtensionOption5272 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_StringLiteral_in_ftExtensionOption5274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THESAURUS_in_ftThesaurusOption5303 = new BitSet(new long[]{0x4000010000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_ftThesaurusID_in_ftThesaurusOption5321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFAULT_in_ftThesaurusOption5325 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPARSi_in_ftThesaurusOption5342 = new BitSet(new long[]{0x4000010000000000L});
     public static final BitSet FOLLOW_ftThesaurusID_in_ftThesaurusOption5346 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_ftThesaurusOption5350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AT_in_ftThesaurusID5382 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_ftThesaurusID5384 = new BitSet(new long[]{0x4000000000000002L,0x0000000000000000L,0x0040000014000000L});
-    public static final BitSet FOLLOW_RELATIONSHIP_in_ftThesaurusID5387 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_StringLiteral_in_ftThesaurusID5389 = new BitSet(new long[]{0x4000000000000002L,0x0000000000000000L,0x0000000014000000L});
-    public static final BitSet FOLLOW_ftRange_in_ftThesaurusID5394 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0080000000000000L});
-    public static final BitSet FOLLOW_LEVELS_in_ftThesaurusID5396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STOP_in_ftStopwordOption5419 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_WORDS_in_ftStopwordOption5421 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_ftRefOrList_in_ftStopwordOption5423 = new BitSet(new long[]{0x0000000000000002L,0x0024000000000000L});
-    public static final BitSet FOLLOW_ftInclExclStringLiteral_in_ftStopwordOption5425 = new BitSet(new long[]{0x0000000000000002L,0x0024000000000000L});
-    public static final BitSet FOLLOW_DEFAULT_in_ftStopwordOption5438 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000800000000000L});
-    public static final BitSet FOLLOW_STOP_in_ftStopwordOption5440 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
-    public static final BitSet FOLLOW_WORDS_in_ftStopwordOption5442 = new BitSet(new long[]{0x0000000000000002L,0x0024000000000000L});
-    public static final BitSet FOLLOW_ftInclExclStringLiteral_in_ftStopwordOption5444 = new BitSet(new long[]{0x0000000000000002L,0x0024000000000000L});
-    public static final BitSet FOLLOW_AT_in_ftRefOrList5479 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_uriLiteral_in_ftRefOrList5481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_ftRefOrList5498 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_StringLiteral_in_ftRefOrList5501 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_COMMASi_in_ftRefOrList5504 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_StringLiteral_in_ftRefOrList5506 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_ftRefOrList5510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_ftInclExclStringLiteral5535 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_ftRefOrList_in_ftInclExclStringLiteral5543 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_validateExpr_in_valueExpr5565 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pathExpr_in_valueExpr5569 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_extensionExpr_in_valueExpr5573 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VALIDATE_in_validateExpr5584 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0600000000000000L});
-    public static final BitSet FOLLOW_validationMode_in_validateExpr5586 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_validateExpr5589 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_validateExpr5592 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_validateExpr5594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFAULT_in_ftThesaurusOption5350 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_COMMASi_in_ftThesaurusOption5354 = new BitSet(new long[]{0x4000000000000000L});
+    public static final BitSet FOLLOW_ftThesaurusID_in_ftThesaurusOption5356 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_ftThesaurusOption5360 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AT_in_ftThesaurusID5392 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_ftThesaurusID5394 = new BitSet(new long[]{0x4000000000000002L,0x0000000000000000L,0x0040000014000000L});
+    public static final BitSet FOLLOW_RELATIONSHIP_in_ftThesaurusID5397 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_StringLiteral_in_ftThesaurusID5399 = new BitSet(new long[]{0x4000000000000002L,0x0000000000000000L,0x0000000014000000L});
+    public static final BitSet FOLLOW_ftRange_in_ftThesaurusID5404 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0080000000000000L});
+    public static final BitSet FOLLOW_LEVELS_in_ftThesaurusID5406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STOP_in_ftStopwordOption5429 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_WORDS_in_ftStopwordOption5431 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_ftRefOrList_in_ftStopwordOption5433 = new BitSet(new long[]{0x0000000000000002L,0x0024000000000000L});
+    public static final BitSet FOLLOW_ftInclExclStringLiteral_in_ftStopwordOption5435 = new BitSet(new long[]{0x0000000000000002L,0x0024000000000000L});
+    public static final BitSet FOLLOW_DEFAULT_in_ftStopwordOption5448 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000800000000000L});
+    public static final BitSet FOLLOW_STOP_in_ftStopwordOption5450 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000400000L});
+    public static final BitSet FOLLOW_WORDS_in_ftStopwordOption5452 = new BitSet(new long[]{0x0000000000000002L,0x0024000000000000L});
+    public static final BitSet FOLLOW_ftInclExclStringLiteral_in_ftStopwordOption5454 = new BitSet(new long[]{0x0000000000000002L,0x0024000000000000L});
+    public static final BitSet FOLLOW_AT_in_ftRefOrList5489 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_uriLiteral_in_ftRefOrList5491 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPARSi_in_ftRefOrList5508 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_StringLiteral_in_ftRefOrList5511 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_COMMASi_in_ftRefOrList5514 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_StringLiteral_in_ftRefOrList5516 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_ftRefOrList5520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_ftInclExclStringLiteral5545 = new BitSet(new long[]{0x4000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_ftRefOrList_in_ftInclExclStringLiteral5553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_validateExpr_in_valueExpr5575 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pathExpr_in_valueExpr5579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_extensionExpr_in_valueExpr5583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VALIDATE_in_validateExpr5594 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0600000000000000L});
+    public static final BitSet FOLLOW_validationMode_in_validateExpr5596 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_validateExpr5599 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_validateExpr5602 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_validateExpr5604 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_validationMode0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SLASHSi_in_pathExpr5656 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7FBE3DL,0xE7FFFFFF1FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_relativePathExpr_in_pathExpr5658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SLASHSi_in_pathExpr5680 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DBLSLASHSi_in_pathExpr5698 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7FBE3DL,0xE7FFFFFF1FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_relativePathExpr_in_pathExpr5700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_relativePathExpr_in_pathExpr5721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_stepExpr_in_relativePathExpr5762 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x1800000000000000L});
-    public static final BitSet FOLLOW_SLASHSi_in_relativePathExpr5766 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7FBE3DL,0xE7FFFFFF1FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_DBLSLASHSi_in_relativePathExpr5771 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7FBE3DL,0xE7FFFFFF1FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_stepExpr_in_relativePathExpr5775 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x1800000000000000L});
-    public static final BitSet FOLLOW_axisStep_in_stepExpr5921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_axisStep_in_stepExpr5949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_filterExpr_in_stepExpr5977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_reverseStep_in_axisStep6012 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_forwardStep_in_axisStep6016 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_contextItemExpr_in_axisStep6020 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_predicateList_in_axisStep6024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOTSi_in_contextItemExpr6047 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_reverseAxis_in_reverseStep6070 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7FBE1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_nodeTest_in_reverseStep6072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_abbrevReverseStep_in_reverseStep6076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_reverseAxis6103 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_DBLCOLONSi_in_reverseAxis6123 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_kindTest_in_nodeTest6150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nameTest_in_nodeTest6154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_wildcard_in_nameTest6235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_nameTest6267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARSi_in_wildcard6369 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_COLONSi_in_wildcard6371 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E14L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_wildcard6373 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARSi_in_wildcard6411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_wildcard6447 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_COLONSi_in_wildcard6449 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_STARSi_in_wildcard6451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOTDOTSi_in_abbrevReverseStep6508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_forwardAxis_in_forwardStep6552 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7FBE1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_nodeTest_in_forwardStep6555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_abbrevForwardStep_in_forwardStep6559 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_forwardAxis6615 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_DBLCOLONSi_in_forwardAxis6722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ATSi_in_abbrevForwardStep6771 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7FBE1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_nodeTest_in_abbrevForwardStep6775 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_predicate_in_predicateList6837 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_LBRACKSi_in_predicate6865 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_expr_in_predicate6867 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000004000L});
-    public static final BitSet FOLLOW_RBRACKSi_in_predicate6869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pragma_in_extensionExpr6941 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000020000000L});
-    public static final BitSet FOLLOW_LBRACESi_in_extensionExpr6944 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBF3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_extensionExpr6947 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_extensionExpr6950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_primaryExpr_in_filterExpr6962 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_predicateList_in_filterExpr6964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_literal_in_primaryExpr6984 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_varRef_in_primaryExpr6997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parenthesizedExpr_in_primaryExpr7010 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_functionCall_in_primaryExpr7023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_orderedExpr_in_primaryExpr7036 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_unorderedExpr_in_primaryExpr7049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_constructor_in_primaryExpr7062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOLLARSi_in_varRef7082 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_varName_in_varRef7085 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPARSi_in_parenthesizedExpr7100 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE7DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_expr_in_parenthesizedExpr7103 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_parenthesizedExpr7106 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_functionCall7135 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_functionCall7137 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE7DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_functionCall7154 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_COMMASi_in_functionCall7157 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_exprSingle_in_functionCall7159 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_RPARSi_in_functionCall7178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDERED_in_orderedExpr7221 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_orderedExpr7223 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_orderedExpr7226 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_orderedExpr7228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UNORDERED_in_unorderedExpr7244 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_unorderedExpr7246 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_unorderedExpr7249 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_unorderedExpr7251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_directConstructor_in_constructor7271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_computedConstructor_in_constructor7275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_dirElemConstructor_in_directConstructor7315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_dirCommentConstructor_in_directConstructor7335 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_dirPIConstructor_in_directConstructor7355 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LTSi_in_dirElemConstructor7413 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_qName_in_dirElemConstructor7439 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F947L,0x0000000300008FC7L});
-    public static final BitSet FOLLOW_dirAttributeList_in_dirElemConstructor7441 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000040L,0x0000000000008000L});
-    public static final BitSet FOLLOW_RSELFTERMSi_in_dirElemConstructor7464 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor7515 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000010L,0x0000000012610000L});
-    public static final BitSet FOLLOW_dirElemContent_in_dirElemConstructor7569 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000010L,0x0000000012610000L});
-    public static final BitSet FOLLOW_LENDTAGSi_in_dirElemConstructor7597 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_qName_in_dirElemConstructor7629 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
-    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor7660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_qName_in_dirAttributeList7759 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_EQSi_in_dirAttributeList7761 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000000A0000L});
-    public static final BitSet FOLLOW_dirAttributeValue_in_dirAttributeList7763 = new BitSet(new long[]{0xFFFFFF9AC0000002L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue7826 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000060000L});
-    public static final BitSet FOLLOW_QuotAttributeContent_in_dirAttributeValue7860 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000060000L});
-    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7864 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000060000L});
-    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue7897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue7932 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000180000L});
-    public static final BitSet FOLLOW_AposAttributeContent_in_dirAttributeValue7966 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000180000L});
-    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7970 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000180000L});
-    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue8003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LBRACESi_in_xmlEnclosedExpr8092 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_xmlEnclosedExpr8130 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_xmlEnclosedExpr8161 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_directConstructor_in_dirElemContent8244 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_cDataSection_in_dirElemContent8282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ElementContent_in_dirElemContent8321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirElemContent8360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LCDATASi_in_cDataSection8418 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_CDataContents_in_cDataSection8420 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_RCDATASi_in_cDataSection8422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LCOMMENTSi_in_dirCommentConstructor8446 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_DirCommentContent_in_dirCommentConstructor8448 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_RCOMMENTSi_in_dirCommentConstructor8450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LPISi_in_dirPIConstructor8474 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_PiTarget_in_dirPIConstructor8476 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000C0000000L});
-    public static final BitSet FOLLOW_DirPiContents_in_dirPIConstructor8478 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
-    public static final BitSet FOLLOW_RPISi_in_dirPIConstructor8481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compDocConstructor_in_computedConstructor8518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compElemConstructor_in_computedConstructor8538 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compAttrConstructor_in_computedConstructor8558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compTextConstructor_in_computedConstructor8578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compCommentConstructor_in_computedConstructor8598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_compPIConstructor_in_computedConstructor8618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOCUMENT_in_compDocConstructor8656 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_compDocConstructor8658 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compDocConstructor8661 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_compDocConstructor8663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELEMENT_in_compElemConstructor8709 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E9CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_qName_in_compElemConstructor8712 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor8716 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compElemConstructor8719 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor8721 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor8746 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBF3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compElemConstructor8749 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor8752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expr_in_contentExpr8797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ATTRIBUTE_in_compAttrConstructor8842 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E9CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_qName_in_compAttrConstructor8845 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor8850 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compAttrConstructor8853 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor8855 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor8881 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBF3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_expr_in_compAttrConstructor8884 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor8887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEXT_in_compTextConstructor8930 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_compTextConstructor8932 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compTextConstructor8935 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_compTextConstructor8937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMENT_in_compCommentConstructor8962 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_compCommentConstructor8964 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compCommentConstructor8967 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_compCommentConstructor8969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor9015 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E94L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_compPIConstructor9043 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor9048 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compPIConstructor9051 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor9053 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor9079 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBF3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compPIConstructor9082 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor9085 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expr_in_thisExprIsEnclosed9112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ftSelection_in_thisFTSelectionIsEnclosed9128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NCName_in_ncNameorKeyword9157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ALL_in_ncNameorKeyword9167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ANY_in_ncNameorKeyword9178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ANCESTOR_in_ncNameorKeyword9188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ANCESTOR_OR_SELF_in_ncNameorKeyword9198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AND_in_ncNameorKeyword9208 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AS_in_ncNameorKeyword9218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ASCENDING_in_ncNameorKeyword9228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AT_in_ncNameorKeyword9238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ATTRIBUTE_in_ncNameorKeyword9248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BASE_URI_in_ncNameorKeyword9258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BY_in_ncNameorKeyword9268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_BOUNDARYSPACE_in_ncNameorKeyword9278 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CASE_in_ncNameorKeyword9288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CAST_in_ncNameorKeyword9298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CASTABLE_in_ncNameorKeyword9308 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CHILD_in_ncNameorKeyword9318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COLLATION_in_ncNameorKeyword9328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COMMENT_in_ncNameorKeyword9338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CONSTRUCTION_in_ncNameorKeyword9348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CONTENT_in_ncNameorKeyword9358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_COPY_NAMESPACES_in_ncNameorKeyword9368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DECLARE_in_ncNameorKeyword9378 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFAULT_in_ncNameorKeyword9388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DESCENDANT_in_ncNameorKeyword9398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DESCENDANT_OR_SELF_in_ncNameorKeyword9408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DESCENDING_in_ncNameorKeyword9418 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIACRITICS_in_ncNameorKeyword9428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIFFERENT_in_ncNameorKeyword9438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DISTANCE_in_ncNameorKeyword9448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DIV_in_ncNameorKeyword9458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOCUMENT_in_ncNameorKeyword9468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOCUMENT_NODE_in_ncNameorKeyword9478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELEMENT_in_ncNameorKeyword9488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ELSE_in_ncNameorKeyword9498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ENCODING_in_ncNameorKeyword9508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_END_in_ncNameorKeyword9518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ENTIRE_in_ncNameorKeyword9528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EMPTY_in_ncNameorKeyword9538 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EMPTY_SEQUENCE_in_ncNameorKeyword9548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQ_in_ncNameorKeyword9558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EVERY_in_ncNameorKeyword9568 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXACTLY_in_ncNameorKeyword9578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXCEPT_in_ncNameorKeyword9588 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EXTERNAL_in_ncNameorKeyword9598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOLLOWING_in_ncNameorKeyword9608 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOLLOWING_SIBLING_in_ncNameorKeyword9618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOR_in_ncNameorKeyword9628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FROM_in_ncNameorKeyword9638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FTAND_in_ncNameorKeyword9648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FTCONTAINS_in_ncNameorKeyword9658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FTNOT_in_ncNameorKeyword9668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FTOPTION_in_ncNameorKeyword9678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FTOR_in_ncNameorKeyword9688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FUNCTION_in_ncNameorKeyword9698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GE_in_ncNameorKeyword9708 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GREATEST_in_ncNameorKeyword9718 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GT_in_ncNameorKeyword9728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDIV_in_ncNameorKeyword9738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IF_in_ncNameorKeyword9748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IMPORT_in_ncNameorKeyword9758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IN_in_ncNameorKeyword9768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INHERIT_in_ncNameorKeyword9778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INSENSITIVE_in_ncNameorKeyword9788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INSTANCE_in_ncNameorKeyword9798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INTERSECT_in_ncNameorKeyword9808 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IS_in_ncNameorKeyword9818 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ITEM_in_ncNameorKeyword9828 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LANGUAGE_in_ncNameorKeyword9838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LAX_in_ncNameorKeyword9848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LE_in_ncNameorKeyword9858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEAST_in_ncNameorKeyword9868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LET_in_ncNameorKeyword9878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LEVELS_in_ncNameorKeyword9888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LOWERCASE_in_ncNameorKeyword9898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LT_in_ncNameorKeyword9908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOD_in_ncNameorKeyword9918 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MODULE_in_ncNameorKeyword9928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MOST_in_ncNameorKeyword9938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NAMESPACE_in_ncNameorKeyword9948 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NE_in_ncNameorKeyword9958 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NODE_in_ncNameorKeyword9968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOINHERIT_in_ncNameorKeyword9978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOPRESERVE_in_ncNameorKeyword9988 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOT_in_ncNameorKeyword9998 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OCCURS_in_ncNameorKeyword10008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OF_in_ncNameorKeyword10018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OPTION_in_ncNameorKeyword10028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OR_in_ncNameorKeyword10038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDER_in_ncNameorKeyword10048 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDERED_in_ncNameorKeyword10058 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ORDERING_in_ncNameorKeyword10068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PARAGRAPH_in_ncNameorKeyword10078 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PARAGRAPHS_in_ncNameorKeyword10088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PARENT_in_ncNameorKeyword10098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PHRASE_in_ncNameorKeyword10108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PRECEDING_in_ncNameorKeyword10118 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PRECEDING_SIBLING_in_ncNameorKeyword10128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PRESERVE_in_ncNameorKeyword10138 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_ncNameorKeyword10148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RELATIONSHIP_in_ncNameorKeyword10158 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RETURN_in_ncNameorKeyword10168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SAME_in_ncNameorKeyword10178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SATISFIES_in_ncNameorKeyword10188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCHEMA_in_ncNameorKeyword10198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCHEMA_ATTRIBUTE_in_ncNameorKeyword10208 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCHEMA_ELEMENT_in_ncNameorKeyword10218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SCORE_in_ncNameorKeyword10228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SELF_in_ncNameorKeyword10238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SENSITIVE_in_ncNameorKeyword10248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SENTENCES_in_ncNameorKeyword10258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SENTENCE_in_ncNameorKeyword10268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SOME_in_ncNameorKeyword10278 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STABLE_in_ncNameorKeyword10288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_START_in_ncNameorKeyword10298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STEMMING_in_ncNameorKeyword10308 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STOP_in_ncNameorKeyword10318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STRICT_in_ncNameorKeyword10328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STRIP_in_ncNameorKeyword10338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TEXT_in_ncNameorKeyword10348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THESAURUS_in_ncNameorKeyword10358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_THEN_in_ncNameorKeyword10368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TIMES_in_ncNameorKeyword10378 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TO_in_ncNameorKeyword10388 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TREAT_in_ncNameorKeyword10398 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TYPESWITCH_in_ncNameorKeyword10408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UNION_in_ncNameorKeyword10418 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UNORDERED_in_ncNameorKeyword10428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_UPPERCASE_in_ncNameorKeyword10438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VALIDATE_in_ncNameorKeyword10448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VARIABLE_in_ncNameorKeyword10458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_VERSION_in_ncNameorKeyword10468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WEIGHT_in_ncNameorKeyword10478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WHERE_in_ncNameorKeyword10488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WILDCARDS_in_ncNameorKeyword10498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WINDOW_in_ncNameorKeyword10508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WITH_in_ncNameorKeyword10518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WITHOUT_in_ncNameorKeyword10528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WORD_in_ncNameorKeyword10538 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_WORDS_in_ncNameorKeyword10548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_XQUERY_in_ncNameorKeyword10558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IMPORT_in_synpred1457 = new BitSet(new long[]{0x2000000800000000L});
-    public static final BitSet FOLLOW_set_in_synpred1459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EMPTY_SEQUENCE_in_synpred21379 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_synpred21381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_itemType_in_synpred31398 = new BitSet(new long[]{0x0000000000000000L,0x000000000080C000L});
-    public static final BitSet FOLLOW_occurrenceIndicator_in_synpred31400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IF_in_synpred42108 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_synpred42110 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TYPESWITCH_in_synpred52123 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_synpred52125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SLASHSi_in_synpred65648 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7FBE3DL,0xE7FFFFFF1FFFF917L,0x0000000312001FE7L});
-    public static final BitSet FOLLOW_relativePathExpr_in_synpred65650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_set_in_synpred75814 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_LPARSi_in_synpred75892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARSi_in_synpred86222 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ncNameorKeyword_in_synpred86226 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_COLONSi_in_synpred86228 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_STARSi_in_synpred86230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STARSi_in_synpred96362 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_COLONSi_in_synpred96364 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SLASHSi_in_pathExpr5666 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7FBE3DL,0xE7FFFFFF1FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_relativePathExpr_in_pathExpr5668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SLASHSi_in_pathExpr5690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DBLSLASHSi_in_pathExpr5708 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7FBE3DL,0xE7FFFFFF1FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_relativePathExpr_in_pathExpr5710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_relativePathExpr_in_pathExpr5731 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_stepExpr_in_relativePathExpr5772 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x1800000000000000L});
+    public static final BitSet FOLLOW_SLASHSi_in_relativePathExpr5776 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7FBE3DL,0xE7FFFFFF1FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_DBLSLASHSi_in_relativePathExpr5781 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7FBE3DL,0xE7FFFFFF1FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_stepExpr_in_relativePathExpr5785 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x1800000000000000L});
+    public static final BitSet FOLLOW_axisStep_in_stepExpr5931 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_axisStep_in_stepExpr5959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_filterExpr_in_stepExpr5987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_reverseStep_in_axisStep6022 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_forwardStep_in_axisStep6026 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_contextItemExpr_in_axisStep6030 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_predicateList_in_axisStep6034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOTSi_in_contextItemExpr6057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_reverseAxis_in_reverseStep6080 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7FBE1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_nodeTest_in_reverseStep6082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_abbrevReverseStep_in_reverseStep6086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_reverseAxis6113 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_DBLCOLONSi_in_reverseAxis6133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_kindTest_in_nodeTest6160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nameTest_in_nodeTest6164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_wildcard_in_nameTest6245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_nameTest6277 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARSi_in_wildcard6379 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_COLONSi_in_wildcard6381 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E14L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_wildcard6383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARSi_in_wildcard6421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_wildcard6457 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_COLONSi_in_wildcard6459 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_STARSi_in_wildcard6461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOTDOTSi_in_abbrevReverseStep6518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_forwardAxis_in_forwardStep6562 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7FBE1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_nodeTest_in_forwardStep6565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_abbrevForwardStep_in_forwardStep6569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_forwardAxis6625 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_DBLCOLONSi_in_forwardAxis6732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ATSi_in_abbrevForwardStep6781 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7FBE1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_nodeTest_in_abbrevForwardStep6785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_predicate_in_predicateList6847 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_LBRACKSi_in_predicate6875 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_expr_in_predicate6877 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_RBRACKSi_in_predicate6879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pragma_in_extensionExpr6951 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000020000000L});
+    public static final BitSet FOLLOW_LBRACESi_in_extensionExpr6954 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBF3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_extensionExpr6957 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_extensionExpr6960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_primaryExpr_in_filterExpr6972 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_predicateList_in_filterExpr6974 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_literal_in_primaryExpr6994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_varRef_in_primaryExpr7007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parenthesizedExpr_in_primaryExpr7020 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_functionCall_in_primaryExpr7033 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_orderedExpr_in_primaryExpr7046 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_unorderedExpr_in_primaryExpr7059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_constructor_in_primaryExpr7072 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOLLARSi_in_varRef7092 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_varName_in_varRef7095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPARSi_in_parenthesizedExpr7110 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE7DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_expr_in_parenthesizedExpr7113 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_parenthesizedExpr7116 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_functionCall7145 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_functionCall7147 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE7DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_functionCall7164 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_COMMASi_in_functionCall7167 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_exprSingle_in_functionCall7169 = new BitSet(new long[]{0x0000004000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_RPARSi_in_functionCall7188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDERED_in_orderedExpr7231 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_orderedExpr7233 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_orderedExpr7236 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_orderedExpr7238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UNORDERED_in_unorderedExpr7254 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_unorderedExpr7256 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_unorderedExpr7259 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_unorderedExpr7261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_directConstructor_in_constructor7281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_computedConstructor_in_constructor7285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_dirElemConstructor_in_directConstructor7325 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_dirCommentConstructor_in_directConstructor7345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_dirPIConstructor_in_directConstructor7365 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LTSi_in_dirElemConstructor7423 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_qName_in_dirElemConstructor7449 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F947L,0x0000000300008FC7L});
+    public static final BitSet FOLLOW_dirAttributeList_in_dirElemConstructor7451 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000040L,0x0000000000008000L});
+    public static final BitSet FOLLOW_RSELFTERMSi_in_dirElemConstructor7474 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor7525 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000010L,0x0000000012610000L});
+    public static final BitSet FOLLOW_dirElemContent_in_dirElemConstructor7579 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000010L,0x0000000012610000L});
+    public static final BitSet FOLLOW_LENDTAGSi_in_dirElemConstructor7607 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_qName_in_dirElemConstructor7639 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_GTSi_in_dirElemConstructor7670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_qName_in_dirAttributeList7769 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_EQSi_in_dirAttributeList7771 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000000A0000L});
+    public static final BitSet FOLLOW_dirAttributeValue_in_dirAttributeList7773 = new BitSet(new long[]{0xFFFFFF9AC0000002L,0xFFF7BFFFFF7F3E1CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue7836 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000060000L});
+    public static final BitSet FOLLOW_QuotAttributeContent_in_dirAttributeValue7870 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000060000L});
+    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7874 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000060000L});
+    public static final BitSet FOLLOW_QUOTSi_in_dirAttributeValue7907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue7942 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000180000L});
+    public static final BitSet FOLLOW_AposAttributeContent_in_dirAttributeValue7976 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000180000L});
+    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirAttributeValue7980 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L,0x0000000000000000L,0x0000000000180000L});
+    public static final BitSet FOLLOW_APOSSi_in_dirAttributeValue8013 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LBRACESi_in_xmlEnclosedExpr8102 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_xmlEnclosedExpr8140 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_xmlEnclosedExpr8171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_directConstructor_in_dirElemContent8254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_cDataSection_in_dirElemContent8292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ElementContent_in_dirElemContent8331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_xmlEnclosedExpr_in_dirElemContent8370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LCDATASi_in_cDataSection8428 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000800000L});
+    public static final BitSet FOLLOW_CDataContents_in_cDataSection8430 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_RCDATASi_in_cDataSection8432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LCOMMENTSi_in_dirCommentConstructor8456 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_DirCommentContent_in_dirCommentConstructor8458 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
+    public static final BitSet FOLLOW_RCOMMENTSi_in_dirCommentConstructor8460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LPISi_in_dirPIConstructor8484 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_PiTarget_in_dirPIConstructor8486 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000C0000000L});
+    public static final BitSet FOLLOW_DirPiContents_in_dirPIConstructor8488 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_RPISi_in_dirPIConstructor8491 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compDocConstructor_in_computedConstructor8528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compElemConstructor_in_computedConstructor8548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compAttrConstructor_in_computedConstructor8568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compTextConstructor_in_computedConstructor8588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compCommentConstructor_in_computedConstructor8608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_compPIConstructor_in_computedConstructor8628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOCUMENT_in_compDocConstructor8666 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_compDocConstructor8668 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compDocConstructor8671 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_compDocConstructor8673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELEMENT_in_compElemConstructor8719 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E9CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_qName_in_compElemConstructor8722 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor8726 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compElemConstructor8729 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor8731 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_compElemConstructor8756 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBF3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compElemConstructor8759 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_compElemConstructor8762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_contentExpr8807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ATTRIBUTE_in_compAttrConstructor8852 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E9CL,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_qName_in_compAttrConstructor8855 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor8860 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compAttrConstructor8863 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor8865 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_compAttrConstructor8891 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBF3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_expr_in_compAttrConstructor8894 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_compAttrConstructor8897 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEXT_in_compTextConstructor8940 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_compTextConstructor8942 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compTextConstructor8945 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_compTextConstructor8947 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMENT_in_compCommentConstructor8972 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_compCommentConstructor8974 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compCommentConstructor8977 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_compCommentConstructor8979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_compPIConstructor9025 = new BitSet(new long[]{0xFFFFFF9AC0000000L,0xFFF7BFFFFF7F3E94L,0xC7FFFFFF1FF8F907L,0x0000000300000FC7L});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_compPIConstructor9053 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor9058 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBE3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compPIConstructor9061 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor9063 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_LBRACESi_in_compPIConstructor9089 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7FFFFFFFFBF3DL,0xFFFFFFFF3FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_thisExprIsEnclosed_in_compPIConstructor9092 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_RBRACSi_in_compPIConstructor9095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_thisExprIsEnclosed9122 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ftSelection_in_thisFTSelectionIsEnclosed9138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NCName_in_ncNameorKeyword9167 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ALL_in_ncNameorKeyword9177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ANY_in_ncNameorKeyword9188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ANCESTOR_in_ncNameorKeyword9198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ANCESTOR_OR_SELF_in_ncNameorKeyword9208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AND_in_ncNameorKeyword9218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AS_in_ncNameorKeyword9228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ASCENDING_in_ncNameorKeyword9238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AT_in_ncNameorKeyword9248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ATTRIBUTE_in_ncNameorKeyword9258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BASE_URI_in_ncNameorKeyword9268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BY_in_ncNameorKeyword9278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_BOUNDARYSPACE_in_ncNameorKeyword9288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CASE_in_ncNameorKeyword9298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CAST_in_ncNameorKeyword9308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CASTABLE_in_ncNameorKeyword9318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CHILD_in_ncNameorKeyword9328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COLLATION_in_ncNameorKeyword9338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COMMENT_in_ncNameorKeyword9348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CONSTRUCTION_in_ncNameorKeyword9358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CONTENT_in_ncNameorKeyword9368 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_COPY_NAMESPACES_in_ncNameorKeyword9378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DECLARE_in_ncNameorKeyword9388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFAULT_in_ncNameorKeyword9398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DESCENDANT_in_ncNameorKeyword9408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DESCENDANT_OR_SELF_in_ncNameorKeyword9418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DESCENDING_in_ncNameorKeyword9428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIACRITICS_in_ncNameorKeyword9438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIFFERENT_in_ncNameorKeyword9448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DISTANCE_in_ncNameorKeyword9458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DIV_in_ncNameorKeyword9468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOCUMENT_in_ncNameorKeyword9478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOCUMENT_NODE_in_ncNameorKeyword9488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELEMENT_in_ncNameorKeyword9498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ELSE_in_ncNameorKeyword9508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ENCODING_in_ncNameorKeyword9518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_END_in_ncNameorKeyword9528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ENTIRE_in_ncNameorKeyword9538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EMPTY_in_ncNameorKeyword9548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EMPTY_SEQUENCE_in_ncNameorKeyword9558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQ_in_ncNameorKeyword9568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EVERY_in_ncNameorKeyword9578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXACTLY_in_ncNameorKeyword9588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXCEPT_in_ncNameorKeyword9598 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EXTERNAL_in_ncNameorKeyword9608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOLLOWING_in_ncNameorKeyword9618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOLLOWING_SIBLING_in_ncNameorKeyword9628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOR_in_ncNameorKeyword9638 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FROM_in_ncNameorKeyword9648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FTAND_in_ncNameorKeyword9658 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FTCONTAINS_in_ncNameorKeyword9668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FTNOT_in_ncNameorKeyword9678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FTOPTION_in_ncNameorKeyword9688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FTOR_in_ncNameorKeyword9698 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FUNCTION_in_ncNameorKeyword9708 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GE_in_ncNameorKeyword9718 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GREATEST_in_ncNameorKeyword9728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GT_in_ncNameorKeyword9738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDIV_in_ncNameorKeyword9748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IF_in_ncNameorKeyword9758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IMPORT_in_ncNameorKeyword9768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IN_in_ncNameorKeyword9778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INHERIT_in_ncNameorKeyword9788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INSENSITIVE_in_ncNameorKeyword9798 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INSTANCE_in_ncNameorKeyword9808 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INTERSECT_in_ncNameorKeyword9818 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IS_in_ncNameorKeyword9828 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ITEM_in_ncNameorKeyword9838 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LANGUAGE_in_ncNameorKeyword9848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LAX_in_ncNameorKeyword9858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LE_in_ncNameorKeyword9868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LEAST_in_ncNameorKeyword9878 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LET_in_ncNameorKeyword9888 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LEVELS_in_ncNameorKeyword9898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LOWERCASE_in_ncNameorKeyword9908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LT_in_ncNameorKeyword9918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOD_in_ncNameorKeyword9928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MODULE_in_ncNameorKeyword9938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MOST_in_ncNameorKeyword9948 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NAMESPACE_in_ncNameorKeyword9958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NE_in_ncNameorKeyword9968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NODE_in_ncNameorKeyword9978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOINHERIT_in_ncNameorKeyword9988 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOPRESERVE_in_ncNameorKeyword9998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOT_in_ncNameorKeyword10008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OCCURS_in_ncNameorKeyword10018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OF_in_ncNameorKeyword10028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OPTION_in_ncNameorKeyword10038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OR_in_ncNameorKeyword10048 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDER_in_ncNameorKeyword10058 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDERED_in_ncNameorKeyword10068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ORDERING_in_ncNameorKeyword10078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PARAGRAPH_in_ncNameorKeyword10088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PARAGRAPHS_in_ncNameorKeyword10098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PARENT_in_ncNameorKeyword10108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PHRASE_in_ncNameorKeyword10118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PRECEDING_in_ncNameorKeyword10128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PRECEDING_SIBLING_in_ncNameorKeyword10138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PRESERVE_in_ncNameorKeyword10148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PROCESSING_INSTRUCTION_in_ncNameorKeyword10158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RELATIONSHIP_in_ncNameorKeyword10168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RETURN_in_ncNameorKeyword10178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SAME_in_ncNameorKeyword10188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SATISFIES_in_ncNameorKeyword10198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCHEMA_in_ncNameorKeyword10208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCHEMA_ATTRIBUTE_in_ncNameorKeyword10218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCHEMA_ELEMENT_in_ncNameorKeyword10228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SCORE_in_ncNameorKeyword10238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SELF_in_ncNameorKeyword10248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SENSITIVE_in_ncNameorKeyword10258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SENTENCES_in_ncNameorKeyword10268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SENTENCE_in_ncNameorKeyword10278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SOME_in_ncNameorKeyword10288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STABLE_in_ncNameorKeyword10298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_START_in_ncNameorKeyword10308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STEMMING_in_ncNameorKeyword10318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STOP_in_ncNameorKeyword10328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STRICT_in_ncNameorKeyword10338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STRIP_in_ncNameorKeyword10348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TEXT_in_ncNameorKeyword10358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THESAURUS_in_ncNameorKeyword10368 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_THEN_in_ncNameorKeyword10378 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TIMES_in_ncNameorKeyword10388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TO_in_ncNameorKeyword10398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TREAT_in_ncNameorKeyword10408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TYPESWITCH_in_ncNameorKeyword10418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UNION_in_ncNameorKeyword10428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UNORDERED_in_ncNameorKeyword10438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_UPPERCASE_in_ncNameorKeyword10448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VALIDATE_in_ncNameorKeyword10458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VARIABLE_in_ncNameorKeyword10468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_VERSION_in_ncNameorKeyword10478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WEIGHT_in_ncNameorKeyword10488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WHERE_in_ncNameorKeyword10498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WILDCARDS_in_ncNameorKeyword10508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WINDOW_in_ncNameorKeyword10518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WITH_in_ncNameorKeyword10528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WITHOUT_in_ncNameorKeyword10538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WORD_in_ncNameorKeyword10548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_WORDS_in_ncNameorKeyword10558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_XQUERY_in_ncNameorKeyword10568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IMPORT_in_synpred1471 = new BitSet(new long[]{0x2000000800000000L});
+    public static final BitSet FOLLOW_set_in_synpred1473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EMPTY_SEQUENCE_in_synpred21393 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_synpred21395 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_itemType_in_synpred31412 = new BitSet(new long[]{0x0000000000000000L,0x000000000080C000L});
+    public static final BitSet FOLLOW_occurrenceIndicator_in_synpred31414 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IF_in_synpred42122 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_synpred42124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TYPESWITCH_in_synpred52137 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_synpred52139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SLASHSi_in_synpred65658 = new BitSet(new long[]{0xFFFFFF9BC0000000L,0xFFF7BFFFFF7FBE3DL,0xE7FFFFFF1FFFF917L,0x0000000312001FE7L});
+    public static final BitSet FOLLOW_relativePathExpr_in_synpred65660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_synpred75824 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_LPARSi_in_synpred75902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARSi_in_synpred86232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ncNameorKeyword_in_synpred86236 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_COLONSi_in_synpred86238 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_STARSi_in_synpred86240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STARSi_in_synpred96372 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
+    public static final BitSet FOLLOW_COLONSi_in_synpred96374 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -399,4 +399,12 @@ public class RewriteVisitor implements Visitor {
         visitAllChildren(tree);
         return null;
     }
+
+
+    public TraverseReturn visitLPARSi(XQFTTree tree) {
+       
+        visitAllChildren(tree);
+        
+        return null;
+    }
 }

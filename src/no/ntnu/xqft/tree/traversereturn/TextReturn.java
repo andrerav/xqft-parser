@@ -89,6 +89,9 @@ public class TextReturn extends TraverseReturn {
 		
 		return null;
 	}
+
+    public void setTree(Operator tree) {
+    }
 	
 
 

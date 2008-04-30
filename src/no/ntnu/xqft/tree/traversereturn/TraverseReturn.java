@@ -93,6 +93,7 @@ public abstract class TraverseReturn {
 	 * @return The relational algebra tree
 	 */
 	public abstract Operator getTree();
+    public abstract void setTree(Operator tree);
 	
 	public abstract TraverseReturn getRestricted(TraverseReturn restrictBy, boolean returnLogical);
 

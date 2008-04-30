@@ -46,7 +46,9 @@ public abstract class RelalgVisitor implements Visitor {
      */
     protected TraverseReturn acceptThis(org.antlr.runtime.tree.Tree tree) 
     {
-        return ((XQFTTree)tree).accept(this);
+        TraverseReturn result = ((XQFTTree)tree).accept(this);
+        //System.out.println("Recieved from " + tree.getText() + ": " + result);
+        return result;
     }    
     
 
