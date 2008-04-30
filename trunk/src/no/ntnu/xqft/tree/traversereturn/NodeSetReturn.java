@@ -110,10 +110,14 @@ public class NodeSetReturn extends TraverseReturn {
 	}
 	
 
-	public Operator getTree() {
+    public Operator getTree() {
 
-		return tree;
-	}
+        return tree;
+    }
+
+    public void setTree(Operator tree) {
+        this.tree = tree;
+    }
 
 	public TraverseReturn getLogical() {
 		// TODO: sjekke om dette settet er sant

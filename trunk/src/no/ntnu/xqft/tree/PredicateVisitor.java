@@ -21,12 +21,18 @@ public class PredicateVisitor extends PathExprVisitor {
 	{	
 		//relAlgTree = new OperatorTree();
 	}
-	
-	public PredicateVisitor(PathExprVisitor patExprVis)
-	{
-		this();
-		parent = patExprVis;
-	}
+    
+    public PredicateVisitor(PathExprVisitor patExprVis)
+    {
+        this();
+        parent = patExprVis;
+    }
+    
+    public PredicateVisitor(FlworizedPathExprVisitor patExprVis)
+    {
+        this();
+        parent = patExprVis;
+    }
 	
 
 	protected void startRelPathExpr()

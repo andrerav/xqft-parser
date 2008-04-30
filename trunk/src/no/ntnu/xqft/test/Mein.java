@@ -139,7 +139,7 @@ public class Mein {
     		m.skrivTilFil(tree.toDotStringTree(), "tekstNode.txt");
     		m.lagGraf("tekstNode.txt", "graf.pdf");
     		
-            PathExprVisitor visitor = new PathExprVisitor();       
+            FlworizedPathExprVisitor visitor = new FlworizedPathExprVisitor();       
             Operator top = visitor.visit(tree);
             
             System.out.println(top.toPrettyString(0));

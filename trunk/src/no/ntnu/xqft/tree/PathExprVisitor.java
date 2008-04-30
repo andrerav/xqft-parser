@@ -42,7 +42,7 @@ public class PathExprVisitor extends RelalgVisitor {
         
         //relAlgTree.insert(acceptThis(node.getChild(0)).getTree());
     	TraverseReturn result = acceptThis(node.getChild(0));
-        if(result.isLogicalReturn())
+    	if(result.isLogicalReturn())
         	return result.getLogical();
         else 
         	return result;
@@ -57,8 +57,8 @@ public class PathExprVisitor extends RelalgVisitor {
 		inPathExpr = true;
 		pathExpression = new PathExpression();
 	}
-	 
-    
+
+
     public TraverseReturn visitAST_STEPEXPR(XQFTTree node) {
     	
     	boolean thisIsTop = false;
@@ -71,7 +71,7 @@ public class PathExprVisitor extends RelalgVisitor {
         TraverseReturn child = acceptThis(node.getChild(0));
         
 
-        if(child != null) // No axis direction modifier -> defaul is child::
+        if(child != null) // No axis direction modifier -> default is child::
         {
         	switch (child.getType()) {
 			case TEXT:
@@ -305,13 +305,12 @@ public class PathExprVisitor extends RelalgVisitor {
         {
         	//DO ORDERING
         }
-        
+
         return expr;
         
     }
 
     public TraverseReturn visitDOLLARSi(XQFTTree tree) {
-        
         String key = tree.getChild(0).getText(); //TODO: acceptThis() og ta i mot TextReturn -> bedre hvis feil uttrykk ellerno
         
         if (tree.getChildCount() > 1) { 								//Its a variable declaration
@@ -370,5 +369,11 @@ public class PathExprVisitor extends RelalgVisitor {
 
     public TraverseReturn visitAST_LETCLAUSE(XQFTTree tree) {
         return acceptThis(tree.getChild(0));
+    }
+
+
+    public TraverseReturn visitLPARSi(XQFTTree tree) {
+        // TODO Auto-generated method stub
+        return null;
     }
 }
