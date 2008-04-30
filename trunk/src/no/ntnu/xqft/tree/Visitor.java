@@ -35,6 +35,5 @@ public interface Visitor {
     public TraverseReturn visitAST_WHERECLAUSE(XQFTTree tree);
     public TraverseReturn visitAST_LETCLAUSE(XQFTTree tree);
     public TraverseReturn visitLPARSi(XQFTTree tree);
-	public TraverseReturn visitAST_LETCLAUSE(XQFTTree tree);
 	
 }

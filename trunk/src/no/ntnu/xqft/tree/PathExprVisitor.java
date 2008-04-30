@@ -306,7 +306,7 @@ public class PathExprVisitor extends RelalgVisitor {
         	//DO ORDERING
         }
 
-        return expr;
+        return returnClause;
         
     }
 
@@ -363,13 +363,6 @@ public class PathExprVisitor extends RelalgVisitor {
         return null;
     }
 
-
-
-
-
-    public TraverseReturn visitAST_LETCLAUSE(XQFTTree tree) {
-        return acceptThis(tree.getChild(0));
-    }
 
 
     public TraverseReturn visitLPARSi(XQFTTree tree) {
