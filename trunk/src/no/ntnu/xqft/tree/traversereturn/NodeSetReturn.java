@@ -18,7 +18,6 @@ public class NodeSetReturn extends TraverseReturn {
 	
 	
 	private PathExpression pathExpression;
-	private Operator tree;
 	private NodeSetReturnType subType;
 	
 	public NodeSetReturn(PathExpression pathExpr, boolean returnLogical, VarReferences varRefs)
@@ -30,10 +29,11 @@ public class NodeSetReturn extends TraverseReturn {
 		subType = pathExpression.isAbsloute() ? NodeSetReturnType.ABS_PATH_EXPR : NodeSetReturnType.REL_PATH_EXPR;
 	}
 	
-	public NodeSetReturn(PathExpression pathExpr, boolean returnLogical, Operator tree, VarReferences varRefs)
+	public NodeSetReturn(PathExpression pathExpr, boolean returnLogical, Operator tree)
 	{
-		this(pathExpr, returnLogical, varRefs);
-		this.tree = tree;
+	    super(tree);
+	    this.returnLogical = returnLogical;
+	    this.pathExpression = pathExpr;
 	}
 	
 
