@@ -1,0 +1,86 @@
+project(iter = outer, pos=pos1, item
+    project(pos1 = count(outer), etc
+        sort(outer,iter,pos
+            join(iter = inner
+                project( iter, pos=pos1, item       
+                    project(pos1 = count(iter), ord, iter, pos, item
+                        sort(iter,ord, pos)
+                            or
+                                cross(
+                                    make(ord, 1)
+                                        cross(                
+                                            make(pos, 1)
+                                            project(iter=inner, item
+                                                project(inner = count(), iter, pos, item
+                                                    cross(
+                                                        project(pos = count(), item) 
+                                                            make(item, 1,2)
+                                                        make(iter, 1)                                   
+
+
+                                cross
+                                    make(ord, 2)
+                                    project(iter=outer, pos=pos1, item
+                                        project(pos1 = count(outer), etc
+                                            sort(outer, iter, pos
+                                                join( iter=inner
+                                                    project( iter, pos=pos1, item
+                                                        project(pos1 = count(iter), ord, iter, pos, item
+                                                            sort(iter,ord, pos)
+                                                                or
+                                                                    cross(
+                                                                        make(ord, 1)
+                                                                        project(iter=inner, pos, item     
+                                                                            join(iter=outer
+                                                                                cross(                                      
+                                                                                    project(pos = count(), item) 
+                                                                                        make(item, 1,2)
+                                                                                    make(iter, 1)                       
+                                                                                project(outer= iter, inner
+                                                                                    project(inner = count(), iter, pos, item
+                                                                                        cross(                                      
+                                                                                            project(pos=count(), item)
+                                                                                                make(item, 10,20)
+                                                                                            project(iter,
+                                                                                                cross(                                      
+                                                                                                    project(pos = count(), item) 
+                                                                                                        make(item, 1,2)
+                                                                                                    make(iter, 1)                       
+                                                                    cross(
+                                                                        make(ord, 2)
+                                                                        cross(
+                                                                            make(pos, 1)
+                                                                            project(iter=inner, item
+                                                                                project(inner = count(), iter, pos, item
+                                                                                    cross(                                      
+                                                                                        project(pos=count(), item)
+                                                                                            make(item, 10,20)
+                                                                                        project(iter,
+                                                                                            cross(  
+                                                                                                make(pos, 1)
+                                                                                                project(iter=inner, item
+                                                                                                    project(inner = count(), iter, pos, item
+                                                                                                        cross(                                      
+                                                                                                            project(pos = count(), item) 
+                                                                                                                make(item, 1,2)
+                                                                                                            make(iter, 1)                       
+                                                    project(outer= iter, inner
+                                                        project(inner = count(), iter, pos, item
+                                                            cross(
+                                                                project(pos=count(), item)
+                                                                    make(item, 10,20)
+                                                                project(iter,
+                                                                    cross(                 
+                                                                        make(pos, 1)
+                                                                        project(iter=inner, item
+                                                                            project(inner = count(), iter, pos, item
+                                                                                cross(                                      
+                                                                                    project(pos = count(), item) 
+                                                                                        make(item, 1,2)
+                                                                                    make(iter, 1)      
+                project(outer=iter, inner
+                    project(inner=count(), iter ,pos
+                        cross( 
+                            project(pos = count(), item) 
+                                make(item, 1,2)
+                            make(iter, 1)                  
