@@ -1,0 +1,122 @@
+for $x in (1,2) return
+    ($x,
+        for $y in (10,20) return
+        ($x, $y)
+
+
+
+
+
+
+
+
+
+
+
+ {           for $v0 in (1,2) return
+s|      {        ($v0,
+ |    s0|         for $v00 in (10,20) return
+ {      {   s00{  ($v0, $v00)
+
+
+
+//FERDIG
+project(iter = outer, pos=pos1, item
+    project(pos1 = count(outer), etc
+        sort(outer,iter,pos
+            join(iter = inner
+                ##s0hel
+                ##map( ,0)
+
+
+
+
+
+
+project( iter, pos=pos1, item       //##s0hel
+    project(pos1 = count(iter), ord, iter, pos, item
+        sort(iter,ord, pos)
+            or
+                cross(
+                    make(ord, 1)
+                    ##q0($v0)
+                cross
+                    make(ord, 2)
+                    ##s0del
+
+
+
+                                    //##map( ,0)
+project(outer=iter, inner
+    project(inner=count(), iter ,pos
+        ##q($v0)
+
+
+
+
+
+
+                                                        //##s0del
+project(iter=outer, pos=pos1, item
+    project(pos1 = count(outer), etc
+        sort(outer, iter, pos
+            join( iter=inner
+                ##s00
+                ##map(0,00)
+
+                                                                //##s00
+project( iter, pos=pos1, item
+    project(pos1 = count(iter), ord, iter, pos, item
+        sort(iter,ord, pos)
+            or
+                cross(
+                    make(ord, 1)
+                    ##q00($v0)
+                cross
+                    make(ord, 2)
+                    ##q00($v00)
+
+
+
+
+
+
+
+
+project(iter=inner, pos, item                           //##q00($v0)
+    join(iter=outer
+        ##q0($v0)
+        ##map(0,00)
+
+
+cross(                                                  // ##q00($v00)##
+    make(pos, 1)
+    project(iter=inner, item
+        project(inner = count(), iter, pos, item
+            cross(                                      //##q0($v00) loop lift
+                project(pos=count(), item)
+                    make(item, 10,20)
+                project(iter,
+                    ##q0($v0)##
+
+
+
+cross(                                                  // ##q0($v0)##
+    make(pos, 1)
+    project(iter=inner, item
+        project(inner = count(), iter, pos, item
+            cross(                                      // ##q($v0)##
+                    project(pos = count(), item) 
+                        make(item, 1,2)
+                    make(iter, 1)                       //loop
+
+
+
+        
+
+
+
+map(0,00) =
+        project(outer= iter, inner
+            project(inner = count(), iter, pos, item
+              ##q0($v00)
