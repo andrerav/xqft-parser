@@ -16,6 +16,8 @@ import no.ntnu.xqft.tree.operator.Operator;
  */
 public abstract class TraverseReturn {
 
+    protected Operator tree;
+    
 	public enum VarType{
 		FOR_VAR,
 		LET_VAR,
@@ -46,6 +48,10 @@ public abstract class TraverseReturn {
 		this();
 		this.varRefs = varRefs;
 		varType = VarType.NOT_A_VAR;
+	}
+	
+	protected TraverseReturn(Operator tree) {
+	    this.tree = tree;
 	}
 	
 

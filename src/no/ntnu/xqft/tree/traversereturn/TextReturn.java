@@ -17,6 +17,7 @@ public class TextReturn extends TraverseReturn {
 	
 	public TextReturn(String txt, TextReturnType subType)
 	{
+	    super((Operator)null);
 		text = txt;
 		this.subType = subType;
 		type = TraverseReturnType.TEXT;
