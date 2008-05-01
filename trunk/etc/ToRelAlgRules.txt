@@ -1,0 +1,65 @@
+1.
+(expr1, expr2, .. , exprN)  -->
+
+or(
+    expr1
+    expr2
+    ....
+    exprN
+
+
+2.
+/a/b/.../z -->
+
+scope(/a/b....; lookup($z))
+
+
+3.
+expr1/expr2 ->
+
+mergeInScope(
+    expr2
+    expr1
+
+
+4.
+expr1[expr2] ->
+
+select(ifThenElse(isNumber(pred), scopeIndex(scope, pred), isAnyThing(pred)), 
+    cross(
+        expr2
+        expr1
+
+
+
+5.
+## expr € {"hei" | 1 | <a\> }
+
+expr -->
+
+make(name = ["value"], expr)
+
+
+6.
+ref
+$x ->
+
+project([xnumb = count(), documentId, pos, scope, value],
+    scope.get($x)
+
+
+7.
+for $x in expr1 return expr2  -->
+
+scope.put(expr1)
+
+project(~xnumb, ~number
+    select(isNull(xnumb), true, eq(number, xnumb))             //bare hvis xnumb er brukt?
+        cross(
+            project(number= count(), 
+                expr1)
+            expr2
+
+
+
+
