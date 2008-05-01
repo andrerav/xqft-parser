@@ -60,6 +60,11 @@ project(~xnumb, ~number
                 expr1)
             expr2
 
+8.
+expr1 > expr2
 
-
+project(pred = gt(l.val, r.val, [evt #numb kolonner]
+cross(
+    expr1
+    expr2
 
