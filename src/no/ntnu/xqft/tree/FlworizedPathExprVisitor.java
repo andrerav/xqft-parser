@@ -3,17 +3,11 @@
  */
 package no.ntnu.xqft.tree;
 
-
+import java.util.*;
 import no.ntnu.xqft.parse.*;
-import no.ntnu.xqft.tree.operator.MergeJoin;
-import no.ntnu.xqft.tree.operator.Project;
-import no.ntnu.xqft.tree.operator.Select;
-import no.ntnu.xqft.tree.traversereturn.NodeSetReturn;
-import no.ntnu.xqft.tree.traversereturn.TextReturn;
-import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
-import no.ntnu.xqft.tree.traversereturn.TraverseReturnType;
-import no.ntnu.xqft.tree.traversereturn.NodeSetReturn.NodeSetReturnType;
-import no.ntnu.xqft.tree.traversereturn.TextReturn.TextReturnType;
+import no.ntnu.xqft.tree.operator.*;
+import no.ntnu.xqft.tree.traversereturn.*;
+import no.ntnu.xqft.tree.*;
 
 
 /**
@@ -22,22 +16,45 @@ import no.ntnu.xqft.tree.traversereturn.TextReturn.TextReturnType;
  */
 public class FlworizedPathExprVisitor extends PathExprVisitor {
     
+    
+    /*
+     * Note: when opening a new scope for a flwor, the for/let-clauses have to
+     * be visited before starting the new scope. Note however that 
+     * where/orderby-clauses must be visited within the new scope
+     * 
+     * (non-Javadoc)
+     * @see no.ntnu.xqft.tree.PathExprVisitor#visitAST_FLWOR(no.ntnu.xqft.parse.XQFTTree)
+     */
     public TraverseReturn visitAST_FLWOR(XQFTTree tree) {
         
-        Scope.push();
         
         TraverseReturn where = null;
         TraverseReturn orderBy = null;
+        VarBindingReturn varBinding = null;
+//        HashMap<String, TraverseReturn> bindings = new HashMap<String, TraverseReturn>();
+        
         /* Visit all for/let/orderby/where clauses */
         for (int i = 0; i < (tree.getChildCount() - 1); i++) {
             if(tree.getChild(i).getType() == XQFTParser.AST_WHERECLAUSE)
                 where = acceptThis(tree.getChild(i));
             else if(tree.getChild(i).getType() == XQFTParser.AST_ORDERBYCLAUSE)
                 orderBy = acceptThis(tree.getChild(i));
-            else
-                acceptThis(tree.getChild(i));
-        }
+            else {
 
+                // For/let clauses
+                varBinding = (VarBindingReturn)acceptThis(tree.getChild(i));
+//                bindings.put(varBinding.getVarName(), varBinding.getExpr());
+                Scope.set(varBinding.getVarName(), varBinding.getExpr());
+                
+            }
+        }
+        
+        // Dump all the bindings to the scope
+//        for (Map.Entry<String, TraverseReturn> entry : bindings.entrySet()) {
+//            Scope.set(entry.getKey(), entry.getValue());
+//        }
+        
+        
         /* Child count should always be >= 2. This is the return expression */
         TraverseReturn expr = acceptThis(tree.getChild(tree.getChildCount() - 1));
         
@@ -70,21 +87,26 @@ public class FlworizedPathExprVisitor extends PathExprVisitor {
         /* See mother tongue, bound vars */
 
         XQFTTree tupletDef = (XQFTTree)tree.getChild(0);
-
-        String varName = tupletDef.getChild(0).getText();
+        XQFTTree var = (XQFTTree)tupletDef.getChild(0);
         XQFTTree expr = (XQFTTree)tupletDef.getChild(1);
         
+        String varName = var.getText();
+        
         TraverseReturn exprCmpld = acceptThis(expr);
+        
         
         Project project = new Project("[pos=1, iter=count(), etc (for-clause)]", exprCmpld.getTree());
         
         exprCmpld.setTree(project);
+
+        VarBindingReturn result = new VarBindingReturn(varName, exprCmpld);
         
-        Scope.set(varName, exprCmpld);
+        // Push a new scope, the actual binding is done in visitAST_FLWOR
+        Scope.push();
         
         //System.out.println(project.toPrettyString(0));
 
-        return exprCmpld;
+        return result;
     }    
 
 
@@ -96,7 +118,7 @@ public class FlworizedPathExprVisitor extends PathExprVisitor {
             TraverseReturn result = acceptThis(tree.getChild(1));
             if(result.getType() == TraverseReturnType.NODESET)
             {        
-                ((NodeSetReturn)result).setSubType(NodeSetReturnType.VAR_PATH_EXPR);
+                ((NodeSetReturn)result).setSubType(NodeSetReturn.NodeSetReturnType.VAR_PATH_EXPR);
             }           
             Scope.set(key, result);
             return null;

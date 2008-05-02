@@ -26,18 +26,25 @@ public class SymTab<K,V> extends HashMap<K,V> {
 	private static final long serialVersionUID = 1472103699360987648L;
 	
 	/**
-	 * Print a pretty version of this table
+	 * Print a pretty version of this table subtree
 	 * 
 	 */
-	public String toString() {
+	public String toString(int level) {
 	    StringBuffer buffer = new StringBuffer();
-	    
+
+	    char chars[] = new char[level];
+	    Arrays.fill(chars, ' ');
+	    String space = new String(chars);
 	    for(Map.Entry<K,V> entry : this.entrySet()) {
-	        
+	        buffer.append(space);
 	        buffer.append(entry.getKey().toString() + ": ");
 	        buffer.append(entry.getValue() + "\n");
 	    }
 	    
 	    return buffer.toString();
+	}
+	
+	public String toString() {
+	    return this.toString(0);
 	}
 }

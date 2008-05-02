@@ -18,6 +18,7 @@ import no.ntnu.xqft.tree.operator.*;
  */
 public class Scope {
     private static Scope instance = new Scope();
+    private static Scope rootScope = instance;
 
     /* Looks up an entry in the symtab */
     protected static TraverseReturn get(String key) {
@@ -37,10 +38,19 @@ public class Scope {
         parent.addChild(instance);
     }
     
+    protected static void push(boolean isFlworScope) {
+        push();
+        
+        instance.isFlworScope = isFlworScope;
+    }
+    
     /* Jump out to previous scope */
     protected static void pop() {
         instance = instance.getParent();
     }
+    
+    /* FLWOR scope? */
+    protected boolean isFlworScope = false;
     
     /* Parent scope, or null if root */
     protected Scope parent = null;
@@ -160,15 +170,18 @@ public class Scope {
             // map(x,x·y) = πouter :iter ,inner inner : iter ,pos (qx (ex·y ))
 
             NodeSetReturn psym = (NodeSetReturn)this.parent.getSym(key);
+            /*
+            if (parent.isFlworScope) {
 
-            Operator qx = this.parent.getSym(key).getTree();
-            Operator map = new GenericOperator("map-relation");
-            
-            Project p = new Project("[iter=inner, pos, etc]", new MergeJoin("[documentId], [documentId]", qx, map));
-            
-            NodeSetReturn result = new NodeSetReturn(psym.getPathExpression(), false, p);
-            
-            return result;
+                Operator qx = this.parent.getSym(key).getTree();
+                Operator map = new GenericOperator("map-relation");
+                
+                Project p = new Project("[iter=inner, pos, etc]", new MergeJoin("[documentId], [documentId]", qx, map));
+                
+                NodeSetReturn result = new NodeSetReturn(psym.getPathExpression(), false, p);
+            }
+            */
+            return psym;
         }
         
         /* Symbol not found */
@@ -193,5 +206,22 @@ public class Scope {
 
     public static SymTab<String, TraverseReturn> getSymtab() {
         return instance.getSymTab();
+    }
+    
+    public static void printPrettyString() {
+        
+        System.out.println(rootScope.toPrettyString(0));
+
+    }
+    
+    public String toPrettyString(int level) {
+        StringBuffer buffer = new StringBuffer();
+        buffer.append(this.symTab.toString(level));
+
+        for (Scope child : this.children) {
+            buffer.append(child.toPrettyString(++level));
+        }
+        
+        return buffer.toString();
     }
 }
