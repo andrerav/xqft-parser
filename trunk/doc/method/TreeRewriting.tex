@@ -1,12 +1,11 @@
 \section{AST rewriting}
-
 \subsection{Normalizing the syntax tree}
 Motivation: simplification
 Problem: the XQuery AST is difficult to translate directly
-Explain: convert XQuery to XQuery core
+Explain: convert XQuery to something like XQuery core
 
 \subsection{Further simplification}
 Motivation: simplification
 Problem: AST does not correspond to relalg easily
 Explain: rewrite multiple predicates for a step expression to a single 
-         predicate expression with all subexpressions AND'ed together
+         predicate expression with all subexpressions AND'ed together, ++
