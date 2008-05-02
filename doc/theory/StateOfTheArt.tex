@@ -22,8 +22,23 @@ join algorithms\cite{exist_idx_drv_query} for efficient computation of node
 relationships instead of traditional tree traversals. 
 
 \subsection{Pathfinder}
-\subsection{Saxon}
+Pathfinder\cite{pathfinderHome} claims to be a ``purely relational XQuery
+processor'', which theoretically can utilize any off-the-shelf RBDMS as a
+backend for XQuery execution in a relational context.
+
+The technique for transforming XQuery into relational algebra is called ``loop
+lifting''\cite{pathfinder_mothertongue}. Loop lifting is a FLWOR-centric
+approach which essentially transforms iterations into joins. Loop lifting is
+described in detail in section \ref{sect:method:loop_lifting}.
+
+As a relational backend, the XQuery processor uses MonetDB, an integrated
+component in the Pathfinder project. However, recent versions of Pathfinder is
+also capable of producing SQL code for execution on conventional database
+systems. As a proof of concept, they performed the XMark test suite on top of
+the Sun DB2 system.
+
 \subsection{Galatex}
+
 \subsection{Common traits}
 
 
