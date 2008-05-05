@@ -1,15 +1,32 @@
 \section{Evaluated methods for manual tree parsing}
 \label{sect:method:evaluated_methods}
 
-\subsection{Multimethod}
-\label{sect:method:evaluated_methods}
+\subsection{Manual tree walker (non-visitor)}
+\label{sect:method:evaluated_methods:manual_walker}
 Motivation: one of the simplest forms of tree parsing
 Problem: does not scale well with regards to maintainability
+
+One of the simplest forms of tree parsing is the ``manual non-visitor''
+methodology.
+
+This way of parsing a tree structure is particularly suited for trivial trees
+where context is not important. However, for operations that are contextually 
+sensitive -- such as context-sensitive code generation, as is the case for this
+project -- this methodology can be difficult to maintain as the problem domain 
+expands. This particular problem is rooted in that any contextual information
+must be extracted from parent nodes, and is thus not available implicitly.
+
+Another problem with this technique is that the data structure (the tree) and
+the logic to parse it will often be tied together quite closely, creating
+another maintanence problem when/if the tree structure changes to
+accommodate new specifications.
 
 \subsection{Visitor pattern}
 \label{sect:method:evaluated_methods}
 Motivation: clean separation of logic and data structure 
 Problem: overly complex visitors
+
+The visitor pattern is a common design pattern for parsing tree structures. 
 
 \subsection{Context-sensitive visitor pattern}
 \label{sect:method:evaluated_methods}
