@@ -1,4 +1,26 @@
 \chapter{Translation process}
 
-\input{translation/LoopLifting}
+\section{Inference Rules Language Explanation}
+\label{sect:translation:inferenceExplanation}
+In this chapter we will present some inference rules. This is an explanation of
+the various typographical representations:
+
+\begin{tabular}{l|l}
+
+  $\Longrightarrow$  & Translates into \\
+  $\vartheta$ & A set of iteration variable references \\
+  \verb!verbatim! & MQL expressions \\
+  \textit{italic} & XQuery expressions \\
+  $\alpha , \beta, \gamma$ & Generic expressions \\
+  \textbf{bold} & Operations done during the generation of the algebra \\
+  $\Delta$ & The default context \\
+  $\Lambda$ & The logical or boolean context \\
+  
+\end{tabular}
+
+
+
+
+
 \input{translation/HomeMade}
+\input{translation/LoopLifting}
