@@ -1,7 +1,7 @@
 report:
 	pdflatex Main
 	bibtex Main
-	makeindex Main.nlo -s nomencl.ist -o Main.nls
+	#makeindex Main.nlo -s nomencl.ist -o Main.nls
 	pdflatex Main
 	pdflatex Main
 
@@ -13,5 +13,5 @@ conveps:
 
 	
 clean:
-	find . | grep -v \.svn | grep -v \.tex$$ | grep -v \.pdf$$ | xargs rm
+	find . | grep -v Makefile | grep -v \.svn | grep -v \.tex$$ | grep -v \.pdf$$ | xargs rm
 	find . | grep ~$$ | xargs rm
