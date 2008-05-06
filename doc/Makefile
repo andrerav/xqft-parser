@@ -13,5 +13,5 @@ conveps:
 
 	
 clean:
-	find . | grep -v \.svn | grep Main | grep -v \.tex$$ | grep -v \.pdf$$ | xargs rm
+	find . | grep -v \.svn | grep -v \.tex$$ | grep -v \.pdf$$ | xargs rm
 	find . | grep ~$$ | xargs rm
