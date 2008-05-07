@@ -18,7 +18,11 @@ Selection is a unary operator, and is used to obtain a subset of the tuples of a
 \begin{equation*}
 \sigma_{C}(R)
 \end{equation*}
-Where $R$ is a relation and $C$ is the select condition: a truth value or an expression yielding a truth value. The expression can be made up of any combination of the logical operators \begin{math}\{ \wedge, \vee, \neg\}\end{math}. Figure \ref{fig:select} shows an example of a select operation.
+Where $R$ is a relation and $C$ is the select condition: a truth value or an
+expression yielding a truth value. The expression can be made up of any
+combination of the logical operators \begin{math}\{ \wedge, \vee,
+\neg\}\end{math}. Figure \ref{fig:theory:select} shows an example of a select
+operation.
 
 \begin{figure}[h]
 \centering
@@ -41,7 +45,7 @@ Where $R$ is a relation and $C$ is the select condition: a truth value or an exp
 
 \end{tabular}
 \caption{Example showing the selection operator}
-\label{fig:select}
+\label{fig:theory:select}
 \end{figure}
 
 \subsubsection{Projection}
@@ -49,7 +53,8 @@ Projection is also a unary operator, and is used to obtain a subset of the attri
 \begin{equation*}
 \pi _{attr}(R)
 \end{equation*}
-Where $R$ is a relation and $attr$ is the set of attributes to be returned from $R$. Figure \ref{fig:project} shows an example of a projection.
+Where $R$ is a relation and $attr$ is the set of attributes to be returned from
+$R$. Figure \ref{fig:theory:project} shows an example of a projection.
 \begin{figure}[h]
 \centering
 \begin{tabular}{lcr}
@@ -69,7 +74,7 @@ Where $R$ is a relation and $attr$ is the set of attributes to be returned from 
 	\end{tabular}
 \end{tabular}	
 \caption{Exaple showing the projection operator}
-\label{fig:project}
+\label{fig:theory:project}
 \end{figure}
 
 \subsubsection{Union and Difference}
@@ -92,8 +97,8 @@ The cross product operator is sometimes referred to as the cartesian product ope
 \begin{equation*}
 R \times S = S \times R
 \end{equation*}
-Where $R$ and $S$ are relations. Figure \ref{fig:crossproduct} shows an example of a cross product.
-\begin{figure}[h]
+Where $R$ and $S$ are relations. Figure \ref{fig:theory:crossproduct} shows an
+example of a cross product. \begin{figure}[h]
 \begin{tabular}{ccccc}
 	\begin{tabular}{|c|} \hline
 	\textbf{R} \\ \hline
@@ -124,7 +129,7 @@ Where $R$ and $S$ are relations. Figure \ref{fig:crossproduct} shows an example 
 \end{tabular}
 \centering
 \caption{An example of cross product.}
-\label{fig:crossproduct}
+\label{fig:theory:crossproduct}
 \end{figure}
 \subsubsection{Rename}
 Rename is a unary operator used to rename a relation and/or a subset of its attributes. The resulting relation will be equal to the original one in all aspects except maybe some of its name properties. The Greek letter \emph{r}ho is often used to mark the presence of the rename operator:
