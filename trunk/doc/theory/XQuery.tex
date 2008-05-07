@@ -74,10 +74,66 @@ is derived from Quilt\cite{quilt_queryLanguage}.
   \item Normaliseringsprosessen (hva blir til hva)
 \end{itemize}
 
+XQuery Core is a less powerful but semantically equivalent form of expressing
+XQuery queries. XQuery Core as well as the process of normalizing regular
+XQuery to XQuery Core is described in the document ``XQuery 1.0 and XPath 2.0
+Formal Semantics''\cite{xquery_semantics}.
+
+The goal of XQuery Core is to simplify queries and remove syntactic sugar,
+leaving only the essential semantics without loss of expressiveness.
+This is useful for optimization routines and translations into new types of
+queries, for example relational algebra or SQL.
+
+The process of normalization is described through a rich set of mapping
+rules. These are documented in detail throughout ``XQuery 1.0 and XPath 2.0
+Formal Semantics''\cite{xquery_semantics} and will not be reiterated here.
+However we will examine some important examples.
+
+First, however, it is important to take note of the syntax of the mapping
+rules, as described in \cite{xquery_semantics}, section 3.2.2. 
+ 
+\begin{figure}[!h]
+  \centering
+$
+[Object]_{Subscript}, premises == Mapped Object
+$
+  \caption{Mapping rules syntax}
+  \label{figure:xquery:mapping_rules}
+\end{figure}
+
+Consider figure \ref{figure:xquery:mapping_rules}. The left-hand side of the
+equality symbol (==) denotes the original object to be rewritten. The
+subscript indicates the type or kind of the object to be mapped, and/or
+additional information to be passed between mapping rules. The right-hand side
+denotes the rewritten object.
+
+\subsubsection{Rewriting FLWOR expressions}
+The mapping rule for FLWOR expressions can be seen in figure
+\ref{figure:xquery:flwor_mapping_rule}.
+
+\begin{figure}[!h]
+  \centering
+[for \$VarName_1 OptTypeDeclaration_1 OptPositionalVar_1 in Expr_1, \ldots,
+\$VarNamen OptTypeDeclaration_n OptPositionalVar_n in Expr_n
+FormalReturnClause]_{Expr}
+==
+for \$VarName1 OptTypeDeclaration1
+OptPositionalVar_1 in [Expr_1]_{Expr} return \ldots for \$VarName_n
+OptTypeDeclaration_n OptPositionalVar_n in [Expr_n]_{Expr} return
+[FormalReturnClause]_{Expr}
+  \caption{Mapping rules syntax}
+  \label{figure:xquery:flwor_mapping_rule}
+\end{figure}
+
+\subsubsection{Rewriting path expressions}
+
 \subsection{AllMatches}
+\label{sect:theory:xquery:allmatches}
 \begin{itemize}
   \item http://www.w3.org/TR/xpath-full-text-10/\#AllMatchesSec
   \item Hva er AllMatches?
   \item Kobling til fulltekst
   \item Noen eksempler
+  \item Den store forskjellen med AllMatches er at den minste enheten i et 
+        dokument er et ord og ikke en tekstnode
 \end{itemize}
