@@ -33,17 +33,66 @@ moving out of a scope, the symbol table will remove all entries linked to this s
 
 The translator is in the logical context, $\Lambda$, if its current node is a
 successor of a boolean operator or within the predicate part of an
-\textit{if..then..else} expression. In all other cases the tranlator is in the
+\textit{if..then..else} expression. In all other cases the translator is in the
 default context, $\Delta$. If no context is mentioned in the inference rules
 the default context is assumed.
 
-For simplicity all data fields (e.g \verb!dokumentId, scope!) will be refered
+For simplicity all data fields (e.g \verb!dokumentId, scope!) will be referred
 to as \verb!fields!, if one field is not explicitly needed.
 
-\subsection{Simple Path Expressions}
+\subsection{Path Expressions}
 \label{sect:translation:smpPathExpr}
 XQuery implements XPath 2.0 path expressions as described in section
-\ref{sect:theory:xqueryPathExpressions}.
+\ref{sect:theory:xqueryPathExpressions}. The \texttt{scope} operator of
+MQL(section \ref{sect:method:marsOperators}) makes it possible to
+filter results based on the scope. The operator does however only support paths
+equivalent to path expressions with only \textit{child} axis steps. Methods to
+translate expressions with other types of axis steps will be discussed in
+section \ref{sect:discussion:notAxis}.
+
+Figure \ref{fig:translation:pathAST} shows the abstract syntax tree for the
+generic child-axis-only path expression \textit{/a/\ldots/y/z}. The
+corresponding translation into MQL of such expressions can be seen in rule
+\ref{eq:translation:pathExpr}.
+
+
+\begin{figure}[h]
+\centering
+\tikzstyle{astNode}=[circle, draw=blue!70,fill=blue!20,solid,thick, minimum
+size=26pt]
+\begin{tikzpicture}[grow via three points={one child at (0,-1.5) and two
+children at (-1.5,-1.0) and (1.5,-1.0)}]
+
+\node at (0,0) [ellipse,
+draw=blue!70,fill=blue!20]{AST\_PATHEXPR\_SGL} 
+child{node [astNode] {/}
+	child{node [astNode] {/}
+		child{node [astNode] {/} 
+			child{node [astNode] {a} edge from parent [draw, solid]}
+			child{node [astNode] {\ldots} edge from parent [draw, solid]}
+			edge from parent [draw,dotted, thick] 
+			}
+		child{node [astNode] {y}}
+		}
+	child{node [astNode] {z}}
+	};
+\end{tikzpicture}
+\label{fig:translation:pathAST}
+\caption[AST of path expression]{The abstract syntax tree of a simple path
+expression}
+\end{figure}
+
+
+\begin{equation}
+\centering
+\textit{/a/\ldots/y/z}
+\Longrightarrow
+\begin{array}{l}
+	\mbox{\texttt{scope(/a/\ldots/y;}} \\
+	\qquad \mbox{\texttt{index(valloc; lookup(\$z))}}
+\end{array}
+\label{eq:translation:pathExpr}
+\end{equation}
 
 
 \subsection{Variables}
