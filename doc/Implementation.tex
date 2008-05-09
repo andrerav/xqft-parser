@@ -1,12 +1,6 @@
 \chapter{Implementation}
 \label{chapter:implementation}
 
-Ting man g\a r ut i fra eksisterer:
-\begin{itemize}
-\item funksjonen \verb!isInScope(a, b)! if a has an equal but deeper path than b -> true (same element required)
-\item step for step pathexpr er ikke effektivt..... SCHADE ulempe med rene uttrykk: /a/b/c = trengs ingen joins egentlig
-\item et step b\o r kanskje egentlig joines med konteksten sin f\o r predikatet sitt -> /a/b[c] ((a join a/b) join a/b/c) ikke (a join (a/b join /a/b/c)
-\end{itemize}
 
 \input{implementation/TreeParsing.tex}
 \input{implementation/XQuery2Relalg.tex}
