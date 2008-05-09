@@ -32,28 +32,83 @@ will respectively store and fetch algebra trees based on a key \verb!X!. When
 moving out of a scope, the symbol table will remove all entries linked to this scope.
 
 The translator is in the logical context, $\Lambda$, if its current node is a
-successor of a boolean operator or within the predicate part of an
-\textit{if..then..else} expression. In all other cases the translator is in the
-default context, $\Delta$. If no context is mentioned in the inference rules
-the default context is assumed.
+successor of a boolean operator or within the $\alpha$ part of an
+\textit{if($\alpha$) then $\beta$ else $\gamma$} expression. In all other cases
+the translator is in the default context, $\Delta$. If no context is mentioned
+in the inference rules the default context is assumed.
 
 For simplicity all data fields (e.g \texttt{dokumentId, scope}) will be
 referred to as \verb!fields!, if one field is not explicitly needed.
 
 \subsection{Literals and Numbers}
 \label{sect:translation:litAndNumbers}
-make(name = ``value'', 1,2,3,) etc
+To be able to use litterals and numbers in the algebra processing, they need a
+relational representation. A simple way to do this is hold the value in a
+created relation with a single field, ``value'' (rule
+\ref{eq:translation:literalsAndNumbers} ).
 
-\subsection{Sequencing}
+\begin{equation}
+\centering
+\frac{\alpha \in \left\{ Literals, Numbers \right\} }{\alpha}
+\Longrightarrow
+\texttt{make(name := "value",} \alpha \texttt{)}
+\label{eq:translation:literalsAndNumbers}
+\end{equation}
+
+There is however also a need to represent explicitly stated XML-nodes, as well
+as differentiate between the number \textit{1} and the string \textit{"1"}.
+This, and other issues about representing XQuery types will be treated in
+section \ref{sect:discussion:typeSystem}.
+
+Rule \ref{eq:translation:literalsAndNumbers} implies that any sequence of
+explicitly stated items will first have to be made as one-tuple relations and
+then spliced together. As the \texttt{make} operator supports multiple items, a
+better solution would be to collect all items in one MQL operator. Further, if
+the item is part of a singleton sequence, there is no need for a representation
+in form of an relation, as the item could be made part of the parameters of an
+operator (e.g. $\alpha$ \textit{> 1} $\Longrightarrow$
+\texttt{select(gt(value, 1) $\alpha$)}). Both these issues will be discussed
+further in section \ref{sect:discussion:optimisations}.
+
+
+
+\subsection{Sequence Making}
 \label{sect:translation:sequencing}
-\begin{itemize}
-  \item (1,2,3) = 1 union 2 union 3 
-  \item skriver om optimisering i diskusjon
-  \item hva skjer med rekkef\o lge (henger sammen med nummerpredikat)
-  \item noe med schema\ldots virka ikke som thorbj\o rnsen var helt forn\o yd
-  med at v\aa r tenkte \texttt{union} dret i schema og helte p\aa~
-  \texttt{NULL} verdier indiscriminately
-\end{itemize}
+As XQuery sequences can only be one dimensional (section
+\ref{sect:theory:xquery}), the creation of a sequence can be translated into a
+splice of the relations corresponding to the items constituting the sequence.
+This can be seen in rule \ref{eq:translation:sequencing}. 
+
+\begin{equation}
+\centering
+\texttt{(} \alpha , \beta \texttt{)}
+\Longrightarrow
+\begin{array}{l}
+\mbox{\texttt{union(}} 
+\alpha \mbox{\texttt{,}} 
+\beta \mbox{\texttt{)}}
+\end{array}
+\label{eq:translation:sequencing}
+\end{equation}
+
+\marginpar{\underline{\Large TODO} \footnotesize B\o r dette flyttes til
+method:mars:assumedOperatorz i stedet? Det med NULL verdier i radene m\aa~
+ogs\aa~skrives om.. blir mye om det her kanskje ja\ldots}
+This method assumes that the \texttt{union} operator accepts relations with
+different schemas, and does not remove duplicates (but contrary to disjoint
+union, there is no need to differansiate elements by their orgin set in the
+resultset). The schema for the result relation can be described as:
+\begin{equation*}
+schema(\texttt{union(}\alpha, \beta\texttt{)}) = schema(\alpha) \cup
+schema(\beta).
+\end{equation*}
+Where $\cup$ is the ordinary set theory operator. In case this is a
+unreasonable task to implement, it can be done manually by the translator with
+the help of \texttt{project} operators.
+
+As two fields with different types cannot be spliced together, we presume all
+\texttt{value} fields are strings for the time being. This will be further
+discussed in section \ref{sect:discussion:typeSystem}.
 
 \subsection{Path Expressions}
 \label{sect:translation:smpPathExpr}
@@ -168,6 +223,8 @@ nor explicitly makes use of the context item, are translated into MQL.
 Translation of predicates which employs the context item are treated as an
 interation expression (section \ref{sect:translation:iteration}).
 
+\marginpar{\underline{\Large TODO} \footnotesize litt feil bruk av $\vdash$
+her.. kan det tillates?}
 \begin{equation}
 \centering
 %\begin{array}{c}
@@ -179,15 +236,14 @@ interation expression (section \ref{sect:translation:iteration}).
 	\begin{array}{l}
 		\mbox{\texttt{project([fields = l.fields,}} \vartheta \mbox{\texttt{];}} 
 		\\ \qquad \mbox{\texttt{select(}\textbf{check}\textit{;}} \\ \qquad \qquad
-		\mbox{\texttt{cross(}} \\ \qquad \qquad \qquad
-		\alpha \texttt{;}\\ \qquad \qquad \qquad
+		\mbox{\texttt{cross(}} 
+		\alpha \texttt{; }
 		\beta \mbox{\texttt{)))}}
 	\end{array}
 %\end{array}
 \label{eq:translation:predicate}
 \end{equation}
 
-\underline{\Large TODO} litt feil bruk av $\vdash$ her.. kan det tillates?
 
 To be more easily read, in rule \ref{eq:translation:predicate} \textbf{check}
 replaces \texttt{ifThenElse(isNumber(r.value), scopeIndex(scope, r.value),
@@ -242,6 +298,13 @@ then
 
 else
 
+\subsection{Examples}
+\label{sect:translation:markxremoveExamples}
+\begin{itemize}
+\item steg for ste
+\item litt stort eksempel m predikat sammenligning og for
+\item kanskje en liten where
+\end{itemize}
 ----------------------------------------------------------------------------------
 
 \begin{itemize}
