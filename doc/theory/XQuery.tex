@@ -150,27 +150,27 @@ normalized into several nested bindings.
 
 \begin{figure}[!h]
 \centering
-$[where Expr_1 FormalReturnClause]_Expr$ \newline
+$[where Expr_1 FormalReturnClause]_{Expr}$ \newline
 $==$ \newline
-$if ([Expr_1]_Expr ) then [FormalReturnClause]_Expr else ()$
+$if ([Expr_1]_{Expr}) then [FormalReturnClause]_{Expr} else ()$
   \caption{Where-clause mapping rule}
   \label{figure:xquery:where_mapping_rule}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-$[stable? order by OrderSpecList FormalReturnClause]_Expr$ \newline
+$[stable? order by OrderSpecList FormalReturnClause]_{Expr}$ \newline
 $==$ \newline
-$[OrderSpecList]_OrderSpecList return [FormalReturnClause]_Expr$
+$[OrderSpecList]_{OrderSpecList} return [FormalReturnClause]_{Expr}$
   \caption{Order by clause mapping rule}
   \label{figure:xquery:orderby_mapping_rule}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-$[return Expr]_Expr$ \newline
+$[return Expr]_{Expr}$ \newline
 $==$ \newline
-$[Expr]_Expr$
+$[Expr]_{Expr}$
   \caption{Return clause mapping rule}
   \label{figure:xquery:return_mapping_rule}
 \end{figure}
@@ -180,40 +180,70 @@ return-clauses can be seen in figures \ref{figure:xquery:where_mapping_rule},
 \ref{figure:xquery:orderby_mapping_rule},
 and \ref{figure:xquery:return_mapping_rule}.
 
-The W3C formal specification document provides one example of a FLWOR rewrite
-using these mapping rules. Consider the following FLWOR expression:
-\begin{verbatim}
-  for $i as xs:integer in (1, 2),
-      $j in (3, 4)
-  let $k := $i + $j
-  where $k >= 5
-  return
-    <tuple>
-       <i> { $i } </i>
-       <j> { $j } </j>
-    </tuple>
-\end{verbatim}
+For an example of how these rules are applied, consider the following FLWOR
+expression:
+\verbatiminput{graph_queries/flwor_rewrite1.xq}
 
 By applying the mapping rules described,  this expression is typically
 rewritten to:
+\verbatiminput{graph_queries/flwor_rewrite2.xq}
+
+The corresponding AST graphs can be seen in figures
+\ref{tree:ast:flwor_rewrite1} and \ref{tree:ast:flwor_rewrite2}. In particular,
+note that multiple for-clauses in a FLWOR expression is rewritten into several
+nested FLWOR expressions, and that the where-clause is  rewritten into an
+if-then-else expression. 
+
+\begin{figure}[h!]
+\centering
+ \includegraphics[scale=0.50]{img/graphs/flwor_rewrite1}
+\caption{FLWOR AST tree before normalization}
+\label{tree:ast:flwor_rewrite1}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+ \includegraphics[scale=0.50]{img/graphs/flwor_rewrite2}
+\caption{Normalized FLWOR AST tree}
+\label{tree:ast:flwor_rewrite2}
+\end{figure}
+
+\subsubsection{Rewriting composite relative path expressions}
+A composite relative path expression (for example, \verb!a/b!), can be
+rewritten into a for loop using the mapping rule in
+\ref{figure:xquery:relpath_mapping_rule}.
+
+\begin{figure}[!h]
+\centering
+$[RelativePathExpr / StepExpr]_{Expr}$ \newline
+$==$ \newline
+fs:apply-ordering-mode ( \newline
+fs:distinct-doc-order-or-atomic-sequence ( \newline
+    let \$fs:sequence as node()* := $[RelativePathExpr]_{Expr}$ return \newline
+    let \$fs:last := fn:count(\$fs:sequence) return \newline
+    for \$fs:dot at \$fs:position in \$fs:sequence return \newline
+       $[StepExpr]_{Expr}$
+))
+  \caption{Composite relative path expression mapping rule}
+  \label{figure:xquery:relpath_mapping_rule}
+\end{figure}
+
+Given the trivial example \verb!a/b!, this translates into the following block
+of normalized code:
+
 \begin{verbatim}
-  for $i as xs:integer in (1, 2) return
-    for $j in (3, 4) return
-      let $k := $i + $j return
-        if ($k >= 5) then 
-          <tuple>
-            <i> { $i } </i>
-            <j> { $j } </j>
-          </tuple>
-        else
-          ()
+fs:apply-ordering-mode (
+fs:distinct-doc-order-or-atomic-sequence (
+  let $fs:sequence as node()* := a return
+  let $fs:last := fn:count($fs:sequence) return
+  for $fs:dot at $fs:position in $fs:sequence return
+    b))
 \end{verbatim}
 
-In particular, note that multiple for-clauses in a FLWOR expression is
-rewritten into several nested FLWOR expressions, and that the where-clause is
-rewritten into an if-then-else expression.
+Which may seem like a rather verbose representation of such a simple path
+expression. In particular, for complex path expressions this may
+escalate into rather large rewritten expressions.
 
-\subsubsection{Rewriting path expressions}
 \subsection{AllMatches}
 \label{sect:theory:xquery:allmatches}
 \begin{itemize}
