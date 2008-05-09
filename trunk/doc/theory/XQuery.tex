@@ -13,13 +13,13 @@ is derived from Quilt\cite{quilt_queryLanguage}.
 \item historie
 \item bruksomr\aa der
 \item ...
-\item atomic vs sequence
 \end{itemize}
 
 \subsection{Basics}
 \begin{itemize}
   \item sekvenser og ting atomisk, alt je
   \item andre ting som er basisk og ikke surt
+  \item context item '.'
 \end{itemize}
 
 \subsection{Path Expressions}
@@ -27,10 +27,22 @@ is derived from Quilt\cite{quilt_queryLanguage}.
 \begin{itemize}
 \item fra XPath / brukt i mange andre ting (XSLT yeye)
 \item ...
-\item akser
-\item predikat
+\item akser -> [Definition: The following axes are designated as optional axes:
+ancestor, ancestor-or-self, following, following-sibling, preceding, and
+preceding-sibling.] (http://www.w3.org/TR/xquery/\#dt-optional-axis)
 \item semantikk 
 \item eksikveringsorden etc
+\end{itemize}
+
+\subsection{Predicates}
+\label{sect:theory:xqueryPredicates}
+\begin{itemize}
+  \item predikater kan brukes etter b\aa de stepExprz og filterExprz
+  \item de gj\o r egentlig ikke noe annet enn \aa~ begrense hva som er i settet
+  f\o r (og alt er jo sett)
+  \item unntaket er talltingen.. som sikkert er en forkortelse for
+  plzReturnTheNumberInTheSequenceIamInRightNow() ellerno.. har ikke lest
+  tingen: http://www.w3.org/TR/xquery/\#id-predicates
 \end{itemize}
 
 \subsection{FLWOR}

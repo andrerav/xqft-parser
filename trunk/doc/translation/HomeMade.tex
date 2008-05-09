@@ -4,7 +4,7 @@
 One of the greatest challenges in transforming XQuery to relational algebra
 lies in preserving the semantics of the iterative FLWOR construct. One
 course of action for solving this is a method we have called ``MarkXremove'' --
-pronounced ``mark, cross and remove''. The basics of the method is that the
+pronounced ``mark, cross and remove''. The basis of the method is that the
 result from the \textit{return} clause will always be crossed (cartesian product
 see \ref{sect:theory:crossProduct}) with the sequence bound in the
 corresponding \textit{for} clause. Any referal in the \textit{return} clause to a
@@ -37,8 +37,23 @@ successor of a boolean operator or within the predicate part of an
 default context, $\Delta$. If no context is mentioned in the inference rules
 the default context is assumed.
 
-For simplicity all data fields (e.g \verb!dokumentId, scope!) will be referred
-to as \verb!fields!, if one field is not explicitly needed.
+For simplicity all data fields (e.g \texttt{dokumentId, scope}) will be
+referred to as \verb!fields!, if one field is not explicitly needed.
+
+\subsection{Literals and Numbers}
+\label{sect:translation:litAndNumbers}
+make(name = ``value'', 1,2,3,) etc
+
+\subsection{Sequencing}
+\label{sect:translation:sequencing}
+\begin{itemize}
+  \item (1,2,3) = 1 union 2 union 3 
+  \item skriver om optimisering i diskusjon
+  \item hva skjer med rekkef\o lge (henger sammen med nummerpredikat)
+  \item noe med schema\ldots virka ikke som thorbj\o rnsen var helt forn\o yd
+  med at v\aa r tenkte \texttt{union} dret i schema og helte p\aa~
+  \texttt{NULL} verdier indiscriminately
+\end{itemize}
 
 \subsection{Path Expressions}
 \label{sect:translation:smpPathExpr}
@@ -51,9 +66,10 @@ translate expressions with other types of axis steps will be discussed in
 section \ref{sect:discussion:notAxis}.
 
 Figure \ref{fig:translation:pathAST} shows the abstract syntax tree for the
-generic child-axis-only path expression \textit{/a/\ldots/y/z}. The
-corresponding translation into MQL of such expressions can be seen in rule
-\ref{eq:translation:pathExpr}.
+generic child-axis-only path expression \textit{/a/\ldots/y/z}. It should be
+noted that for the sake of simplicitly the AST node \textbf{AST\_STEPEXPR} is
+omitted from the representation. The corresponding translation into MQL of such
+expressions can be seen in rule \ref{eq:translation:pathExpr}.
 
 
 \begin{figure}[h]
@@ -68,8 +84,8 @@ draw=blue!70,fill=blue!20]{AST\_PATHEXPR\_SGL}
 child{node [astNode] {/}
 	child{node [astNode] {/}
 		child{node [astNode] {/} 
-			child{node [astNode] {a} edge from parent [draw, solid]}
-			child{node [astNode] {\ldots} edge from parent [draw, solid]}
+			child{node [astNode] {a} edge from parent [draw, solid, thin]}
+			child{node [astNode] {\ldots} edge from parent [draw, solid, thin]}
 			edge from parent [draw,dotted, thick] 
 			}
 		child{node [astNode] {y}}
@@ -78,8 +94,8 @@ child{node [astNode] {/}
 	};
 \end{tikzpicture}
 \label{fig:translation:pathAST}
-\caption[AST of path expression]{The abstract syntax tree of a simple path
-expression}
+\caption[AST of path expression]{A simplified version of the abstract syntax
+tree of a simple path expression}
 \end{figure}
 
 
@@ -95,8 +111,6 @@ expression}
 \end{equation}
 
 
-
-
 \subsection{Variables}
 \label{sect:translation:variables}
 When a variable is declared, be it in the form of a \textit{for} clause,
@@ -106,11 +120,22 @@ variable being an iterator variable, the $\vartheta$ of this tree will, as well
 as possible references made to other iterator variables, include the variable
 to which this tree will be bound. The tree is then stored in the symbol
 table by means of the previously mentioned \textbf{put(}\textit{X},
-$\alpha$\textbf{)}.
+$\alpha$\textbf{)}. Rule \ref{eq:translation:variableNotIterator} shows the
+translation of the reference of a variable that is not an iterator.
+
+\begin{equation}
+\centering
+\frac{\displaystyle \textit{X} \notin \vartheta}{\displaystyle \textit{\$X}}
+\Longrightarrow
+\begin{array}{l}
+	\mbox{\textbf{get(}\textit{X}\textbf{)}}
+\end{array}
+\label{eq:translation:variableNotIterator}
+\end{equation}
 
 When entering a predicate of a path expression, the algebra corresponding to
 the steps up to the predicate will be stored in the symbol table as the
-iterator variable \textit{``.''} (the context node). The context node may
+iterator variable \textit{``.''} (the context item). The context node may
 implicitly be used with a relative path expression within the predicate. Rule
 \ref{eq:translation:iteratorVariable} shows the translation of using a
 iterator variable. The same principles is behind the inference rule for using
@@ -129,18 +154,96 @@ the context node within a path expression predicate.
 \label{eq:translation:iteratorVariable}
 \end{equation}
 
+
 Rule \ref{eq:translation:iteratorVariable} also shows the introduction of a
 -\verb!numb! field. This field contains information about which iteration the
 instance of the variable in that row belongs to.
+
+\subsection{Predicates}
+As described in section \ref{sect:theory:xqueryPredicates}, predicates are used
+to restrict the items returned from the expression it is assigned to. The
+predicate expression returns either true/false or an integer value. Rule
+\ref{eq:translation:predicate} shows how predicates, which neither implisitly
+nor explicitly makes use of the context item, are translated into MQL.
+Translation of predicates which employs the context item are treated as an
+interation expression (section \ref{sect:translation:iteration}).
+
+\begin{equation}
+\centering
+%\begin{array}{c}
+	\frac{\displaystyle \textbf{put(ctx,}\alpha\textbf{)}\vdash
+	\textbf{ctx}\notin\beta . \vartheta}{\alpha \textit{[}\beta\textit{]}}
+%	\\
+	\Longrightarrow 
+%	\\
+	\begin{array}{l}
+		\mbox{\texttt{project([fields = l.fields,}} \vartheta \mbox{\texttt{];}} 
+		\\ \qquad \mbox{\texttt{select(}\textbf{check}\textit{;}} \\ \qquad \qquad
+		\mbox{\texttt{cross(}} \\ \qquad \qquad \qquad
+		\alpha \texttt{;}\\ \qquad \qquad \qquad
+		\beta \mbox{\texttt{)))}}
+	\end{array}
+%\end{array}
+\label{eq:translation:predicate}
+\end{equation}
+
+\underline{\Large TODO} litt feil bruk av $\vdash$ her.. kan det tillates?
+
+To be more easily read, in rule \ref{eq:translation:predicate} \textbf{check}
+replaces \texttt{ifThenElse(isNumber(r.value), scopeIndex(scope, r.value),
+xqBool(r.value))}. These functions are explained in section
+\ref{sect:method:marsAddedOperators}. The use of \texttt{scopeIndex(scope,
+pred)} may however not be valid in cases where there are multiple predicates,
+or when the predicate is assigned to a path expression which utilises some
+axes, e.g. \textit{decendant-or-self}. This will be discussed in section
+\ref{sect:discussion:predicates}.
 
 
 \subsection{Iteration Expressions}
 \label{sect:translation:iteration}
 
+for \$x in expr1 where expr2 return expr3  -->
 
+scope.put(expr1)
+
+project(~xnumb, ~number
+    select(isNull(xnumb), true, eq(number, xnumb))             
+    //only if \$x is  used in expr3 
+    select(isNull(w.xnumb), true, eq(number, w.xnumb))         
+    // only if \$x is used in expr2 
+        cross(                     
+    // alt fra venstre, varrefs venstre og høyre. (ikke velge value fra h\o yre(
+            cross(                                             
+          //  n\aa r den bare har value) gir enn\aa~ ordentlig kryss?
+                project(number= count(), 
+                    expr1)
+                expr3
+        select(xqueryBoolean(value),                                  
+            expr2
+
+\subsection{Comparison Operators}
+\label{sect:translation:compOps}
+
+\begin{itemize}
+  \item husk at det finnes lambda
+  \item project ikke select
+  \item fordi noe over vil kanskje ha negativen\ldots f.eks ifthenelse og not()
+  \item crazy
+\end{itemize}
+op $\in$ {< | > | = | <= | >= | != | and }        // and ->
+and(xqueryBoolean(l.val), xqueryBoolean(r.val))
+
+\subsection{If then else}
+\label{sect:translation:ifThenElse}
+if
+now
+
+then
+
+else
 
 ----------------------------------------------------------------------------------
-\label{sect:method:madslifting}
+
 \begin{itemize}
 \item merke bruk av variabler
 \item for er alltid = kryss
