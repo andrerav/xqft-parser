@@ -180,4 +180,15 @@ R \rhd S = R - R \ltimes S
 \end{equation*}
 Where $R$ and $S$ are relations.
 \paragraph{Outer Joins.}
-The outer joins works in many ways as the natural join, except the resulting relation will include some extra tuples based on one or both of the input relations. The right outer join $( \times =)$ will return a relation with all the tuples from a natural join between the first (left) and the second (right) relation, but also the tuples from the right relation that did not match any tuples from the left one on their common attributes. These extra tuples will have the value NULL in the result relation for all attributes that were unique to the left one. The left outer join $(= \times)$ is analogous with the right version, the only difference is that the extra tuples will be based on the left input relation. The result relation of a full outer join $(= \times =)$ will have extra tuples based the ones that did not find a match in both input relatio
+The outer joins works in many ways as the natural join, except the resulting
+relation will include some extra tuples based on one or both of the input
+relations. The right outer join $(\times=)$ will return a relation with all
+the tuples from a natural join between the first (left) and the second (right)
+relation, but also the tuples from the right relation that did not match any
+tuples from the left one on their common attributes. These extra tuples will
+have the value NULL in the result relation for all attributes that were unique
+to the left one. The left outer join $(=\times)$ is analogous with the right
+version, the only difference is that the extra tuples will be based on the left
+input relation. The result relation of a full outer join $(=\times=)$ will
+have extra tuples based the ones that did not find a match in both input
+relations.

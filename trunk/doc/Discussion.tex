@@ -16,6 +16,7 @@
 			uttrykk: /a/b/c = trengs ingen joins egentlig
 	\item et step b\o r kanskje egentlig joines med konteksten sin f\o r predikatet
 		sitt -> /a/b[c] ((a join a/b) join a/b/c) ikke (a join (a/b join /a/b/c)
+	\item Hva med \$i = (1,2,3) \$i
 \end{itemize}
 
 
@@ -26,6 +27,8 @@
 \section{Predicates}
 \label{sect:discussion:predicates}
 \begin{itemize}
+  \item saxon sier //ITEM[1] er to items fordi jeg har to BOOKS ? skal det ikke
+  v\ae re 1 uansett?
   \item for stepexprz: 
 
 	\begin{itemize}
@@ -47,6 +50,7 @@
 \end{itemize}
 
 \section{Type System}
+\label{sect:discussion:typeSystem}
 \begin{itemize}
   \item Hvordan f\aa~til noe typesystem?
   \item Mars st\o tter ikke forskjellige typer innenfor samme felt
@@ -54,6 +58,8 @@
   eller noder etc
   \item Et ekstra felt som sier type?
   \item Hva skjer med /a/b/c/text() vs /a/b/c ?
+  \item hva skjer om man lager en <a> hei <b> jeje </b> </a> variabel? Dette
+  m\aa~kunne representeres.
 \end{itemize}
 
 \section{Optimisations}
