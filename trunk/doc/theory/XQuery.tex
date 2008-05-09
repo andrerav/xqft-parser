@@ -52,6 +52,7 @@ preceding-sibling.] (http://www.w3.org/TR/xquery/\#dt-optional-axis)
 \item ...
 \item F L W O R semantikk
 \item \^{} --- eksikveringsorden etc
+\item scoping, hvilke variable er i hvilke scopes (for \$i in \$i..)
 \end{itemize}
 
 \subsection{Binary Operators}
@@ -120,27 +121,92 @@ additional information to be passed between mapping rules. The right-hand side
 denotes the rewritten object.
 
 \subsubsection{Rewriting FLWOR expressions}
-The mapping rule for FLWOR expressions can be seen in figure
-\ref{figure:xquery:flwor_mapping_rule}.
 
-%\begin{figure}[!h]
-%\begin{algorithmic}
-%[for $\$VarName_1$ $OptTypeDeclaration_1$ $OptPositionalVar_1$ in $Expr_1$,
-%\ldots, $\$VarName_n$ $OptTypeDeclaration_n$ $OptPositionalVar_n$ in $Expr_n$
-%FormalReturnClause]_{Expr}
-%==
-%for $\$VarName_1$ $OptTypeDeclaration_1$
-%$OptPositionalVar_1$ in $[Expr_1]_{Expr}$ return \ldots for $\$VarName_n$
-%$OptTypeDeclaration_n$ $OptPositionalVar_n$ in $[Expr_n]_{Expr}$ return
-%[FormalReturnClause]_{Expr}
-%
-%\end{algorithmic}
-%  \caption{Mapping rules syntax}
-%  \label{figure:xquery:flwor_mapping_rule}
-%\end{figure}
+\begin{figure}[!h]
+\centering
+[for $\$VarName_1$ $OptTypeDeclaration_1$ $OptPositionalVar_1$ in $Expr_1$,
+\ldots, $\$VarName_n$ $OptTypeDeclaration_n$ $OptPositionalVar_n$ in $Expr_n$
+$FormalReturnClause]_{Expr}$ \newline
+$==$ \newline
+for $\$VarName_1$ $OptTypeDeclaration_1$
+$OptPositionalVar_1$ in $[Expr_1]_{Expr}$ return \ldots for $\$VarName_n$
+$OptTypeDeclaration_n$ $OptPositionalVar_n$ in $[Expr_n]_{Expr}$ return
+$[FormalReturnClause]_{Expr}$
+  \caption{FLWOR expression mapping rule}
+  \label{figure:xquery:flwor_mapping_rule}
+\end{figure}
+
+The mapping rule for FLWOR forclause-expressions can be seen in figure
+\ref{figure:xquery:flwor_mapping_rule}. The mapping rule for LET expressions is
+similar and omitted from this document for brevity, however they are also
+normalized into several nested bindings.
+
+\begin{figure}[!h]
+\centering
+$[where Expr_1 FormalReturnClause]_Expr$ \newline
+$==$ \newline
+$if ([Expr_1]_Expr ) then [FormalReturnClause]_Expr else ()$
+  \caption{Where-clause mapping rule}
+  \label{figure:xquery:where_mapping_rule}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+$[stable? order by OrderSpecList FormalReturnClause]_Expr$ \newline
+$==$ \newline
+$[OrderSpecList]_OrderSpecList return [FormalReturnClause]_Expr$
+  \caption{Order by clause mapping rule}
+  \label{figure:xquery:orderby_mapping_rule}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+$[return Expr]_Expr$ \newline
+$==$ \newline
+$[Expr]_Expr$
+  \caption{Return clause mapping rule}
+  \label{figure:xquery:return_mapping_rule}
+\end{figure}
+
+Similarly, the mapping rules for where-clauses, orderby-clauses and
+return-clauses can be seen in figures \ref{figure:xquery:where_mapping_rule},
+\ref{figure:xquery:orderby_mapping_rule},
+and \ref{figure:xquery:return_mapping_rule}.
+
+The W3C formal specification document provides one example of a FLWOR rewrite
+using these mapping rules. Consider the following FLWOR expression:
+\begin{verbatim}
+  for $i as xs:integer in (1, 2),
+      $j in (3, 4)
+  let $k := $i + $j
+  where $k >= 5
+  return
+    <tuple>
+       <i> { $i } </i>
+       <j> { $j } </j>
+    </tuple>
+\end{verbatim}
+
+By applying the mapping rules described,  this expression is typically
+rewritten to:
+\begin{verbatim}
+  for $i as xs:integer in (1, 2) return
+    for $j in (3, 4) return
+      let $k := $i + $j return
+        if ($k >= 5) then 
+          <tuple>
+            <i> { $i } </i>
+            <j> { $j } </j>
+          </tuple>
+        else
+          ()
+\end{verbatim}
+
+In particular, note that multiple for-clauses in a FLWOR expression is
+rewritten into several nested FLWOR expressions, and that the where-clause is
+rewritten into an if-then-else expression.
 
 \subsubsection{Rewriting path expressions}
-
 \subsection{AllMatches}
 \label{sect:theory:xquery:allmatches}
 \begin{itemize}
@@ -151,3 +217,6 @@ The mapping rule for FLWOR expressions can be seen in figure
   \item Den store forskjellen med AllMatches er at den minste enheten i et 
         dokument er et ord og ikke en tekstnode
 \end{itemize}
+TODO: Ikke sikkert at dette er noe poeng aa skrive om hvis vi bare ignorerer
+fulltekst uansett. Kunne foreslaatt en tilnarming ala galatex kanskje, som bare
+oversetter greiene til funksjonskall.
