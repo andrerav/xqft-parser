@@ -27,17 +27,51 @@ technologies, however it is important to note that typically a top-down parser
 based on an LL\footnote{LL is a Left-to-right, Leftmost derivation
 parser, using a top-down approach}-grammar with low token lookahead (typically
 one token lookahead, aka LL(1)) will perform better and be subject to a high
-number of optimizations, uot of which a few are described in
+number of well-defined optimizations, out of which a few are described in
 \cite{compiler_tech} and \cite{DBLP:books/cu/Appel1998c}.
 
 \subsection{Parser generators}
-Generelt om parser-generatorer
-\subsubsection{Available implementations}
-\subsubsection{ANTLR}
+For large grammars, writing a parser by hand from the ground up may turn out to
+be a substantial amount of work. To eliminate this, a large number of
+\textit{parser generators} exist. Most of these parser generators have a very
+similar set of functionality. From a formal grammar, often in a notation
+similar to BNF, the parser generator will output the source code for a
+complete parser for the given grammar. Ideally, the maintainability of this
+generated parser could be reduced to simply changing the grammar specification,
+without actually modifying the generated source code.
 
-\subsection{AST construction and imaginary tokens}
-Litt om hvordan AST'en blir konstruert i en LL-parser, og hvordan vi sproyter
-inn imaginary tokens
+\begin{figure}[h]
+  \centering
+    \includegraphics[scale=0.40]{diagrams/parser_generator}
+  \caption{Automatic parser generation workflow}
+  \label{figure:parser:generator}
+\end{figure}
+
+Several parser generators exists, covering several target languages and
+overlapping in terms of functionality and features. As expected, the most
+common parser generators will generate either top-down or bottom-up parsers
+(described earlier in this section). Typical examples of bottom-up parser
+generators are yacc (and derivatives), CUP, GOLD, and SableCC. Some popular
+top-down parsers include JavaCC, ANTLR, Spirit, and Coco/R.
+
+A comparison of some of the most popular parser generators were made in
+\cite{ourselves} for the development of the XQFT Parser (see next subsection 
+\ref{sect:theory:xqftparser}), and out of these the ANTLR parser generator was
+chosen. We will not reiterate the features of ANTLR in this document, however
+it is important to note that ANTLR generates predicated LL(*)-parsers based on
+LL-compliant grammars. This choice was made due to the XQuery BNF specification
+which is claimed to be LL(1) (one token lookahead).
+
+\subsection{The XQFT Parser project}
+\label{sect:theory:xqftparser}
+The XQFT Parser was developed as a part of a academic project at
+\cite{ourselves} throughout the autumn of 2007. 
+
+\subsubsection{AST construction}
+Litt om hvordan AST'en blir konstruert i en LL-parser
+
+\subsubsection{Injection of imaginary tokens}
+hvordan vi sproyter inn imaginary tokens
 
 \subsection{Tree parsing}
 Tree parsing, henvise til metode eller flytte greiene fra metode og hit? Eller
