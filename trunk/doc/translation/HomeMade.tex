@@ -175,8 +175,8 @@ Rule
 \Longrightarrow
 \begin{array}{l}
 	\mbox{\texttt{project([fields,)}} \vartheta \mbox{\texttt{];}} \\ \qquad
- 	\mbox{\texttt{select(isInScope(l.scope, scopePrefix(\textbf{n}, r.scope));}}
- 	\\ \qquad \qquad
+ 	\mbox{\texttt{select(isInScope(scopePrefix(}\textbf{n}\texttt{, r.scope),
+ 	l.scope);}} \\ \qquad \qquad
  	\mbox{\texttt{join([documentId], [documentId], [fields];}} \alpha ; \beta
  	\mbox{\texttt{)))}};
 \end{array}
