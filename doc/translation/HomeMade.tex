@@ -110,6 +110,8 @@ As two fields with different types cannot be spliced together, we presume all
 \texttt{value} fields are strings for the time being. This will be further
 discussed in section \ref{sect:discussion:typeSystem}.
 
+
+
 \subsection{Path Expressions}
 \label{sect:translation:smpPathExpr}
 XQuery implements XPath 2.0 path expressions as described in section
@@ -121,8 +123,8 @@ translate expressions with other types of axis steps will be discussed in
 section \ref{sect:discussion:notAxis}.
 
 Figure \ref{fig:translation:pathAST} shows the abstract syntax tree for the
-generic child-axis-only path expression \textit{/a/\ldots/y/z}. It should be
-noted that for the sake of simplicitly the AST node \textbf{AST\_STEPEXPR} is
+generic child axis and name test only path expression \textit{/a/\ldots/y/z}. It
+should be noted that for the sake of simplicitly the AST node \textbf{AST\_STEPEXPR} is
 omitted from the representation. The corresponding translation into MQL of such
 expressions can be seen in rule \ref{eq:translation:pathExpr}.
 
@@ -165,6 +167,21 @@ tree of a simple path expression}
 \label{eq:translation:pathExpr}
 \end{equation}
 
+Rule
+
+\begin{equation}
+\centering
+\textit{\alpha / \beta}
+\Longrightarrow
+\begin{array}{l}
+	\mbox{\texttt{project([fields,)}} \vartheta \mbox{\texttt{];}} \\ \qquad
+ 	\mbox{\texttt{select(isInScope(l.scope, scopePrefix(\textbf{n}, r.scope));}}
+ 	\\ \qquad \qquad
+ 	\mbox{\texttt{join([documentId], [documentId], [fields];}} \alpha ; \beta
+ 	\mbox{\texttt{)))}};
+\end{array}
+\label{eq:translation:singleStep}
+\end{equation}
 
 \subsection{Variables}
 \label{sect:translation:variables}
