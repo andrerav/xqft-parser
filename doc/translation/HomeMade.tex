@@ -5,13 +5,13 @@ One of the greatest challenges in transforming XQuery to relational algebra
 lies in preserving the semantics of the iterative FLWOR construct. One
 course of action for solving this is a method we have called ``MarkXremove'' --
 pronounced ``mark, cross and remove''. The basis of the method is that the
-result from the \textit{return} clause will always be crossed (cartesian product
+result from the \textsf{return} clause will always be crossed (cartesian product
 see \ref{sect:theory:crossProduct}) with the sequence bound in the
-corresponding \textit{for} clause. Any referal in the \textit{return} clause to a
-variable bound in a \textit{for} clause will have to be marked with a number
+corresponding \textsf{for} clause. Any referal in the \textsf{return} clause to a
+variable bound in a \textsf{for} clause will have to be marked with a number
 corresponding to the iteration number the instance of the variable exists in.
 After the cross product is calculated, rows not conforming to predicates
-calculated in the \textit{return} clause will be removed. One of these is that
+calculated in the \textsf{return} clause will be removed. One of these is that
 the variable instance will have to correspond to the interation number.
 
 In the following sections we will present the MarkXremove method for
@@ -27,13 +27,13 @@ variables. This will be further explained in section
 \ref{sect:translation:variables}.
 
 It is assumed that a symbol table exists which handles scoping. The functions
-\textbf{put(}\textit{X}, $\alpha$\textbf{)} and \textbf{get(}\textit{X}\textbf{)}
+\textbf{put(}\textsf{X}, $\alpha$\textbf{)} and \textbf{get(}\textsf{X}\textbf{)}
 will respectively store and fetch algebra trees based on a key \verb!X!. When
 moving out of a scope, the symbol table will remove all entries linked to this scope.
 
 The translator is in the logical context, $\Lambda$, if its current node is a
 successor of a boolean operator or within the $\alpha$ part of an
-\textit{if($\alpha$) then $\beta$ else $\gamma$} expression. In all other cases
+\textsf{if($\alpha$) then $\beta$ else $\gamma$} expression. In all other cases
 the translator is in the default context, $\Delta$. If no context is mentioned
 in the inference rules the default context is assumed.
 
@@ -56,7 +56,7 @@ created relation with a single field, ``value'' (rule
 \end{equation}
 
 There is however also a need to represent explicitly stated XML-nodes, as well
-as differentiate between the number \textit{1} and the string \textit{"1"}.
+as differentiate between the number \textsf{1} and the string \textsf{"1"}.
 This, and other issues about representing XQuery types will be treated in
 section \ref{sect:discussion:typeSystem}.
 
@@ -66,7 +66,7 @@ then spliced together. As the \texttt{make} operator supports multiple items, a
 better solution would be to collect all items in one MQL operator. Further, if
 the item is part of a singleton sequence, there is no need for a representation
 in form of an relation, as the item could be made part of the parameters of an
-operator (e.g. $\alpha$ \textit{> 1} $\Longrightarrow$
+operator (e.g. $\alpha$ \textsf{> 1} $\Longrightarrow$
 \texttt{select(gt(value, 1) $\alpha$)}). Both these issues will be discussed
 further in section \ref{sect:discussion:optimisations}.
 
@@ -102,7 +102,7 @@ resultset). The schema for the result relation can be described as:
 schema(\texttt{union(}\alpha, \beta\texttt{)}) = schema(\alpha) \cup
 schema(\beta).
 \end{equation*}
-Where $\cup$ is the ordinary set theory operator. In case this is a
+Where $\cup$ is the ordinary set theory operator. Provided this is a
 unreasonable task to implement, it can be done manually by the translator with
 the help of \texttt{project} operators.
 
@@ -118,12 +118,12 @@ XQuery implements XPath 2.0 path expressions as described in section
 \ref{sect:theory:xqueryPathExpressions}. The \texttt{scope} operator of
 MQL(section \ref{sect:method:marsOperators}) makes it possible to
 filter results based on the scope. The operator does however only support paths
-equivalent to path expressions with only \textit{child} axis steps. Methods to
+equivalent to path expressions with only \textsf{child} axis steps. Methods to
 translate expressions with other types of axis steps will be discussed in
 section \ref{sect:discussion:notAxis}.
 
 Figure \ref{fig:translation:pathAST} shows the abstract syntax tree for the
-generic child axis and name test only path expression \textit{/a/\ldots/y/z}. It
+generic child axis and name test only path expression \textsf{/a/\ldots/y/z}. It
 should be noted that for the sake of simplicitly the AST node \textbf{AST\_STEPEXPR} is
 omitted from the representation. The corresponding translation into MQL of such
 expressions can be seen in rule \ref{eq:translation:pathExpr}.
@@ -158,56 +158,59 @@ tree of a simple path expression}
 
 \begin{equation}
 \centering
-\textit{/a/\ldots/y/z}
+\textsf{/a/\ldots/y/z}
 \Longrightarrow
 \begin{array}{l}
 	\mbox{\texttt{scope(/a/\ldots/y;}} \\
-	\qquad \mbox{\texttt{index(valloc; lookup(\$z))}}
+	\quad \mbox{\texttt{index(valloc; lookup(\$z))}}
 \end{array}
 \label{eq:translation:pathExpr}
 \end{equation}
 
-Rule
+Rule \ref{eq:translation:singleStep} shows how a single child axis step can be
+translated.
 
 \begin{equation}
 \centering
 \alpha \texttt{/} \beta
 \Longrightarrow
 \begin{array}{l}
-	\mbox{\texttt{project([fields,)}} \vartheta \mbox{\texttt{];}} \\ \qquad
- 	\mbox{\texttt{select(isInScope(scopePrefix(}\textbf{n}\texttt{, r.scope),
- 	l.scope);}} \\ \qquad \qquad
- 	\mbox{\texttt{join([documentId], [documentId], [fields];}} \alpha ; \beta
- 	\mbox{\texttt{)))}};
+	\mbox{\texttt{project([r.fields,}} \vartheta \mbox{\texttt{];}} \\ \quad
+ 	\mbox{\texttt{select(isInScope(r.scope, l.scope);}} \\ \quad \quad
+ 	\mbox{\texttt{join([documentId], [documentId]; }} 
+ 	\alpha;\, \beta \mbox{\texttt{)))}}; \\
 \end{array}
 \label{eq:translation:singleStep}
 \end{equation}
 
+Where $\vartheta = \alpha.\vartheta \cup \beta.\vartheta$. TODO: r.XNUMB =
+r.XNUMBish thingy
+
 \subsection{Variables}
 \label{sect:translation:variables}
-When a variable is declared, be it in the form of a \textit{for} clause,
-\textit{let} clause or a \textit{declare variable} expression, the right side
-of such an expression is transformed into algebra. In the case of the
+When a variable is declared, be it in the form of a \textsf{for} clause,
+\textsf{let} clause or a \textsf{declare variable} expression, the right side
+of such an expression is transformed into algebra. Provided the
 variable being an iterator variable, the $\vartheta$ of this tree will, as well
 as possible references made to other iterator variables, include the variable
 to which this tree will be bound. The tree is then stored in the symbol
-table by means of the previously mentioned \textbf{put(}\textit{X},
+table by means of the previously mentioned \textbf{put(}\textsf{X},
 $\alpha$\textbf{)}. Rule \ref{eq:translation:variableNotIterator} shows the
 translation of the reference of a variable that is not an iterator.
 
 \begin{equation}
 \centering
-\frac{\displaystyle \textit{X} \notin \vartheta}{\displaystyle \textit{\$X}}
+\frac{\displaystyle \textsf{X} \notin \vartheta}{\displaystyle \textsf{\$X}}
 \Longrightarrow
 \begin{array}{l}
-	\mbox{\textbf{get(}\textit{X}\textbf{)}}
+	\mbox{\textbf{get(}\textsf{X}\textbf{)}}
 \end{array}
 \label{eq:translation:variableNotIterator}
 \end{equation}
 
 When entering a predicate of a path expression, the algebra corresponding to
 the steps up to the predicate will be stored in the symbol table as the
-iterator variable \textit{``.''} (the context item). The context node may
+iterator variable \textsf{``.''} (the context item). The context node may
 implicitly be used with a relative path expression within the predicate. Rule
 \ref{eq:translation:iteratorVariable} shows the translation of using a
 iterator variable. The same principles is behind the inference rule for using
@@ -215,13 +218,13 @@ the context node within a path expression predicate.
 
 \begin{equation}
 \centering
-\frac{\displaystyle \textit{X} \in \vartheta}{\displaystyle \textit{\$X}}
+\frac{\displaystyle \textsf{X} \in \vartheta}{\displaystyle \textsf{\$X}}
 \Longrightarrow
 \begin{array}{l}
 	\mbox{\texttt{project([Xnumb = counter(), fields,}} \vartheta
 	\mbox{\texttt{];}}
-	\\ \qquad
-	\mbox{\textbf{get(}\textit{X}\textbf{)} \texttt{)}}
+	\\ \quad
+	\mbox{\textbf{get(}\textsf{X}\textbf{)} \texttt{)}}
 \end{array}
 \label{eq:translation:iteratorVariable}
 \end{equation}
@@ -244,36 +247,90 @@ interation expression (section \ref{sect:translation:iteration}).
 her.. kan det tillates?}
 \begin{equation}
 \centering
-%\begin{array}{c}
-	\frac{\displaystyle \textbf{put(ctx,}\alpha\textbf{)}\vdash
-	\textbf{ctx}\notin\beta . \vartheta}{\alpha \textit{[}\beta\textit{]}}
-%	\\
+\begin{array}{c}
+	\frac{\displaystyle \textbf{put(ctx,}\alpha\textbf{)}\vdash\textbf{ctx}\notin\beta.\vartheta}
+	{\displaystyle \alpha\textsf{[}\beta\textsf{]}}
+
 	\Longrightarrow 
-%	\\
+	\\
+	\mbox{}
+	\\
 	\begin{array}{l}
 		\mbox{\texttt{project([fields = l.fields,}} \vartheta \mbox{\texttt{];}} 
-		\\ \qquad \mbox{\texttt{select(}\textbf{check}\textit{;}} \\ \qquad \qquad
+		\\ \quad \mbox{\texttt{select(ifThenElse(isNumber(r.value),}} \\ \quad 
+		\qquad\qquad \mbox{\texttt{scopeIndex(scope,r.value),xqBool(r.value));}} \\ \quad\quad
 		\mbox{\texttt{cross(}} 
-		\alpha \texttt{; }
+		\alpha \texttt{;}
 		\beta \mbox{\texttt{)))}}
 	\end{array}
-%\end{array}
+\end{array}
 \label{eq:translation:predicate}
 \end{equation}
 
 
-To be more easily read, in rule \ref{eq:translation:predicate} \textbf{check}
-replaces \texttt{ifThenElse(isNumber(r.value), scopeIndex(scope, r.value),
-xqBool(r.value))}. These functions are explained in section
-\ref{sect:method:marsAddedOperators}. The use of \texttt{scopeIndex(scope,
-pred)} may however not be valid in cases where there are multiple predicates,
-or when the predicate is assigned to a path expression which utilises some
-axes, e.g. \textit{decendant-or-self}. This will be discussed in section
-\ref{sect:discussion:predicates}.
+\texttt{isNumber(r.value), scopeIndex(scope, r.value)} and \texttt{xqBool(r.value))} are explained in section
+\ref{sect:method:marsAddedOperators}. The use of \texttt{scopeIndex(scope,pred)} may however not be valid in cases
+where there are multiple predicates, or when the predicate is assigned to a path expression which utilises some
+axes, e.g. \textsf{decendant-or-self}. This will be discussed in section \ref{sect:discussion:predicates}.
 
 
-\subsection{Iteration Expressions}
+\subsection{Iteration}
 \label{sect:translation:iteration}
+As described in \ref{sect:theory:flwor}, the XQuery FLWOR has an iteration semantics. For each item in the
+sequence in the \textsf{for} clause (the iteration sequence), the item will be bound to a variable (the iteration
+variable) and the expression in the \textsf{return} clause (the iteration body) will be executed.
+
+To represent iteration over a sequence in relational algebra, the MarkXremove method calculates the cartesian
+product between the iteration sequence and the result of the iteration body. As the iteration body is able to use
+the iteration variable, a step have to be taken to ensure that the right item is used in the right iteration. This
+is done by marking each item in the iteration sequence as well as each refferal to the iteration variable with a
+number, and removing tuples where the iteration number for the variable does not match up with the iteration
+number for the sequence. The translation of a simple \textsf{for \$X in} $\alpha$ \textsf{return} $\beta$ is shown
+in rule \ref{eq:translation:simpleIteration}.
+
+\begin{equation}
+\centering
+\begin{array}{c}
+	\frac{\displaystyle \textbf{put(}\textsf{X}\textbf{,}\alpha\textbf{)}\vdash\textsf{X}\in\beta . \vartheta}
+	{\displaystyle \textsf{for \$X in }\alpha	\textsf{ return }\beta}
+	
+	\Longrightarrow 
+	\\
+	\mbox{} \\
+	
+	\begin{array}{l}
+	\mbox{\texttt{project(fields, }} \vartheta \mbox{\texttt{;}} \\ \quad
+	\mbox{\texttt{select(ifThenElse(isNull(Xnumb),true,eq(numb,Xnumb))}} \\ \quad \quad 
+	\mbox{\texttt{cross(}} \\ \quad \quad \quad
+	\mbox{\texttt{project([numb=counter()];}} \\ \quad \quad \quad \quad
+	\alpha \mbox{\texttt{)}} \\ \quad \quad \quad 
+	\beta \mbox{\texttt{)))}}
+	\end{array}
+\end{array}
+\label{eq:translation:simpleIteration}
+\end{equation}
+
+Where $\vartheta = (\alpha.\vartheta \cup \beta.\vartheta)\, -$ \textsf{X}. In the cases where $\beta$ does not
+reffer to the iteration variable (in this case \textsf{X}), the \texttt{select} operator may be omitted.
+
+In the \texttt{select} operator there is a check if the \texttt{-numb} field is \texttt{NULL}. This is becauce a
+tuple where this is true is not dependant on which iteration number it is in, and will therefore never be needed
+to be removed. \underline{\textbf{\Large TODO:}} jom, elsker slike to be to needed to setninger\ldots
+
+Any variable bound in a \textsf{let} clause does not imply iteration. Consequently, the \textsf{let} clause can be
+handled as a simple variable binding (section \ref{sect:translation:variables}). The $\vartheta$ will expose the
+cases where a variable bound in a \textsf{let} clause is rebound to a new item each iteration.
+
+
+
+
+
+The iteration expressions of XQuery comes in the form of FLWORs. But as
+previously mentioned, we handle predicates which utilise the context item as an
+iteration as well. It 
+
+
+letclause -> statisk eller bruker iteration variable\ldots
 
 for \$x in expr1 where expr2 return expr3  -->
 
@@ -299,7 +356,8 @@ project(~xnumb, ~number
 
 \begin{itemize}
   \item husk at det finnes lambda
-  \item project ikke select
+  \item project ikke select men hvis ikke lambda\ldots s\aa~select? funker det? Har vi finni en optimalisering?
+  \item \ldots
   \item fordi noe over vil kanskje ha negativen\ldots f.eks ifthenelse og not()
   \item crazy
 \end{itemize}
@@ -314,6 +372,15 @@ now
 then
 
 else
+
+\subsection{ALTSAMMEN}
+\begin{itemize}
+  \item hvorfor ikke putte alt vi klarer inne her
+  \item er ikkeno poeng i \aa~skille mellom de vi tenkte skikkelig p\aa~ \aa~implementere og de vi tenkte litt
+  p\aa\ldots
+  \item S\aa fremt vi har en l\o sning putter vi den her\ldots kan heller diskutere senere hvorfor den er litt
+  skrinn\ldots har gjort s\aa nn med ting frem til n\aa\ldots
+\end{itemize}
 
 \subsection{Examples}
 \label{sect:translation:markxremoveExamples}
