@@ -12,11 +12,8 @@
   informasjon\ldots. Hvis den er p\aa~denne m\aa ten --> gj\o re det akkurat
   slik, en sp\o rring som skal gi tilsvarende svar er ikke sikkert at man kan
   skrive p\aa~den samme m\aa ten helt uten videre..
-	\item step for step pathexpr er ikke effektivt\ldots SCHADE ulempe med rene
-			uttrykk: /a/b/c = trengs ingen joins egentlig
-	\item et step b\o r kanskje egentlig joines med konteksten sin f\o r predikatet
-		sitt -> /a/b[c] ((a join a/b) join a/b/c) ikke (a join (a/b join /a/b/c)
-	\item Hva med \$i = (1,2,3) \$i
+
+	\item Hva med \$i = (1,2,3) \$i/hatt
 \end{itemize}
 
 
@@ -37,6 +34,8 @@
 	  predikatet er et tall?
 	  \item kan v\ae re un\o dvendig siden man har instans-index i scope forh\aa
 	  pentligvis..
+	  \item flere relative pathexprs i predikater b\o r egentlig kunne mergeInJoines sammen f\o r de blir merginjoina
+	  med det som predikatet st\aa r til\ldots dette er kanskje en optimalisering\ldots
     \end{itemize}
   \item for filterExprz:
   	\begin{itemize}
@@ -47,6 +46,14 @@
 	  \item /a/b/c[1] er egentlig nesten mer unntaket enn reglen? Vanlig med
 	  //c[1] regner jeg med.. og da blir det annerledes med en gang.. SCHADe
     \end{itemize} 
+\end{itemize}
+
+\section{Order}
+\label{sect:discussion:order}
+\begin{itemize}
+  \item hva skjer om noe er sortert.. s\aa~blir det kryssa? M\aa~vi alltid gi ting ordernumber? Herregud s\aa~likt
+  pathfinder i s\aa fall =/
+  \item kanskje denne section og den om type kan sl\aa s sammen til noe om representering av data?
 \end{itemize}
 
 \section{Type System}
@@ -70,4 +77,10 @@
   eget sett og kryss
   \item enkeltverdier etterhverandre b\o r lages i en go, ikke \texttt{union}es
   sammen
+  \item step for step pathexpr er ikke effektivt\ldots SCHADE ulempe med rene uttrykk: /a/b/c = trengs ingen
+  joins egentlig
+  \item et step b\o r kanskje egentlig joines med konteksten sin f\o r predikatet sitt -> /a/b[c] ((a join a/b)
+  join a/b/c) ikke (a join (a/b join /a/b/c)
+  \item vi har ordna, uten \aa~vite om det at man kan selecte i stedet for \aa~projecte n\aa r man er i logisk
+  kontekst.. yeah!
 \end{itemize}
