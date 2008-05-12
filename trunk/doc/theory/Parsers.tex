@@ -94,19 +94,92 @@ have been injected into the tree.
 
 \begin{figure}[h]
   \centering
-    %\includegraphics[scale=0.50]{diagrams/path1} 
-    \underline{\textbf{\Large
-    TODO: dette bildet er ikke i repository}}
+    \includegraphics[scale=0.50]{img/graphs/path1} 
   \caption{Example of injected imaginary tokens}
   \label{figure:parser:imaginary_tokens_path}
 \end{figure}
 
-The details of injection of imaginary tokens is explained in detail in
-\ref{ourselves}, section 
-
 \subsection{Tree parsing}
-Tree parsing, henvise til metode eller flytte greiene fra metode og hit? Eller
-noe.
+Tree parsing (or tree walking) is an integral part of translation from AST to
+new structures and representations. 
+
+\subsubsection{Manual tree walker (non-visitor)}
+\label{sect:theory:manual_walker}
+One of the simplest forms of tree parsing is the ``manual non-visitor''
+methodology. This way of parsing a tree structure is particularly suited for
+trivial trees where context is not important. However, for operations that are
+contextually sensitive -- such as context-sensitive code generation, as is the
+case for this project -- this methodology can be difficult to maintain as the
+problem domain expands. This particular problem is rooted in that any
+contextual information must be extracted from parent nodes, and is thus not
+available implicitly.
+
+Another problem with this technique is that the data structure (the tree) and
+the logic to parse it will often be tied together quite closely, creating
+another maintanence problem when/if the tree structure changes to
+accommodate new specifications.
+
+\subsubsection{Visitor pattern}
+\label{sect:theory:visitorPattern}
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[scale=0.40]{diagrams/visitor_pattern} 
+  \caption{Visitor pattern UML schema}
+  \label{figure:parser:visitor_pattern}
+\end{figure}
+
+The visitor pattern\cite{agile_software} is a common design pattern for parsing
+tree structures. The visitor pattern gives a number of ways to modify the
+behaviour of a hierarchy of classes without having to change those classes.
+Additionally, this allows the benefit of a clean separation of logic/algorithms
+and data structures.
+
+However, the visitor pattern does not scale well with complexity of the problem
+domain. In particular, for context-sensitive parsing of tree structures, the
+visitor pattern will quickly lead to complex visitors, cluttered with
+additional logic for state preservation and determining types.  
+
+\subsubsection{Context-sensitive visitor pattern}
+\label{sect:theory:contextVisitorPattern}
+Here we present a novel pattern based on the visitor pattern which seeks to
+avoid complex state preservation mechanisms and logic for type switching. This idea
+is loosely based on the ``island grammar'' concept\footnote{See
+http://www.program-transformation.org/Transform/IslandGrammars for a brief
+introduction} found in some parser generators (such as ANTLR). 
+
+The semantics of the context-sensitive visitor pattern can be captured in the
+following two rules:
+\begin{itemize}
+  \item For a change of state which affects how a visitor should behave when
+  encountering some node in the subject tree, create a new visitor which
+  incorporates this logic (use inheritance as necessary), and execute this
+  visitor on the subject tree
+  \item For type switching logic which depends on context in the subject tree,
+  create a new visitor which incorporates this logic (use inheritance as
+  necessary), and execute this visitor on the subject tree
+\end{itemize}
+
+Simplifying this idea, it means that visitors are specialized and used
+interchangeably on the subject tree as needed. This leads to the benefit of
+encapsulating state mechanisms and type switching logic in specialized
+visitors, thus avoiding a single large and complex visitor.
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[scale=0.40]{diagrams/context_visitor_pattern} 
+  \caption{Context-sensititive visitor pattern UML schema}
+  \label{figure:parser:context_visitor_pattern}
+\end{figure}
+
+As can be seen in figure \ref{figure:parser:context_visitor_pattern}, the
+class structure is similar to a common visitor pattern (figure
+\ref{figure:parser:visitor_pattern}). The important distinction thus lies in
+the logic and how the visitors are executed and how they interact. The two
+classes \verb!SpecializedVisitor1! and \verb!SpecializedVisitor2! are
+special-purpose visitors that can be executed from any of the others.
+Inheritance is implemented in this example, but is purely optional, as
+previously mentioned.
 
 \begin{itemize}
   \item Kort om forskjellige parser-teknologier
