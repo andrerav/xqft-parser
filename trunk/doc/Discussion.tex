@@ -4,19 +4,32 @@
 \textbf{\underline{\LARGE TODO:}} innledning
 
 \begin{itemize}
-  \item pathfinder way kommer ikke til \aa~dra nytte av den mer ekspressive
-  mars-algebraen\ldots Men er ekspressiv bedre? Synes jeg s\aa~ noe i en av
-  pathfinder artiklene hvor de sa at jo mer restriktiv, jo bedre \aa~
-  optimisere\ldots snakke med thorbj\o rnsen om dette..
-  \item samme ligger litt i det \aa~gj\o re om til Core\ldots man mister jo
-  informasjon\ldots. Hvis den er p\aa~denne m\aa ten --> gj\o re det akkurat
-  slik, en sp\o rring som skal gi tilsvarende svar er ikke sikkert at man kan
-  skrive p\aa~den samme m\aa ten helt uten videre..
-
-	\item Hva med \$i = (1,2,3) \$i/hatt
+	\item Hva med \$i = (1,2,3) \$i/hatt -> typefeil? kj\o re isInScope(scope) p\aa~noe som ikke har scope kolonne?
 \end{itemize}
 
+\section{Loop Lift vs MarkXremove}
+\label{sect:discussion:llvsmXr}
+\begin{itemize}
+  \item fordeler vs ulemper..
+  \item dra frem at markXremove bruker f\ae rre operatorer
+  \item men st\o tter ikke all verden -> fundamental feil? -> ordering iallefall, types ogs\aa~til en viss grad
+  \item hva med en switch if(!all verden) -> markXremove else LoopL
+  \item pathfinder way kommer ikke til \aa~dra nytte av den mer ekspressive mars-algebraen\ldots Men er ekspressiv
+	  bedre? Synes jeg s\aa~ noe i en av pathfinder artiklene hvor de sa at jo mer restriktiv, jo bedre
+	  \aa~optimisere\ldots snakke med thorbj\o rnsen om dette..
+\end{itemize}
 
+\section{Rewriting}
+\label{sect:discussion:rewriting}
+\begin{itemize}
+  \item fordeler vs ulemper med \aa~skrive om til core
+  \item man mister jo informasjon\ldots. Hvis den er p\aa~denne m\aa ten --> gj\o re det akkurat
+	  slik, en sp\o rring som skal gi tilsvarende svar er ikke sikkert at man kan
+	  skrive p\aa~den samme m\aa ten helt uten videre..  
+  \item samme svar = samme utf\o relse = er dette en fordel?
+  \item kan man utnytte kunnskap om translation til \aa~optimisere xquery queries?
+  \item hva med \aa~bare skrive om det man trenger? Ala det vi gjorde med FLWORz?
+\end{itemize}
 
 \input{discussion/ManualTreeParser}
 \input{discussion/NotSupported}
