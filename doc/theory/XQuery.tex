@@ -22,7 +22,7 @@ includes text documents, relational databases, and XML-compliant HTML markup.
 
 
 \subsection{Basic language features}
-\label{sect:theory:basics}
+\label{sect:theory:xquery:basics}
 XQuery is a functional language with a comparatively small syntax. It lacks
 some features known from many functional languages, such as support for higher
 order function declarations. However, it has some of the most important
@@ -44,6 +44,10 @@ for $i in (1,2,3) return for $j in (4,5,6) return $i + $j
 These features are important to consider for later translation, as truth values
 in predicates and return values may need to be coerced and/or inferred into
 their proper types and values.
+
+The XQuery type system is rather complex, and we refer to 
+
+
 
 \begin{itemize}
   \item sekvenser og ting atomisk, alt je sekvenser er endimensjonale\ldots
