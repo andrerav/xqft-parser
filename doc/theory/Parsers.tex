@@ -56,9 +56,10 @@ top-down parsers include JavaCC, ANTLR, Spirit, and Coco/R.
 \marginpar{\underline{\Large TODO} \footnotesize Vi lager vel strengt tatt en LL(2 til 3) parser\ldots. Det med
 LL(*) har noe med \aa~slippe \aa~ left-factor. XQuery sier heller ikke at de er LL(1) lenger\ldots det var noen
 \aa r siden)} 
-A comparison of some of the most popular parser generators were
-made in \cite{ourselves} for the development of the XQFT Parser (see section 
-\ref{sect:theory:xqftparser}), and out of these the ANTLR parser generator was
+\marginpar{\underline{\Large TODO} \footnotesize Er vel ikke saa veldig
+viktig?} 
+A comparison of some of the most popular parser generators were made in
+\cite{ourselves} for the development of the XQFT Parser (see section \ref{sect:theory:xqftparser}), and out of these the ANTLR parser generator was
 chosen. We will not reiterate the features of ANTLR in this document, however
 it is important to note that ANTLR generates predicated LL(*)-parsers based on
 LL-compliant grammars. This choice was made due to the XQuery BNF specification
@@ -101,7 +102,10 @@ have been injected into the tree.
 
 \subsection{Tree parsing}
 Tree parsing (or tree walking) is an integral part of translation from AST to
-new structures and representations. 
+new structures and representations. Several methods exist to accomplish this in
+various manners. Some are restricted by language limitations, while others are
+mostly transparent to programming paradigms and syntax. In this section we will
+present a small selection of common patterns, and describe their various traits.
 
 \subsubsection{Manual tree walker (non-visitor)}
 \label{sect:theory:manual_walker}
