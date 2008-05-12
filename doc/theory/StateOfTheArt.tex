@@ -30,6 +30,7 @@ join algorithms\cite{exist_idx_drv_query} for efficient computation of node
 relationships instead of traditional tree traversals. 
 
 \subsection{Pathfinder}
+\label{sect:theory:pathfinder}
 \begin{figure}[h]
   \centering
     \includegraphics[width=0.6\textwidth]{diagrams/pathfinder_arch}
@@ -42,7 +43,7 @@ backend for XQuery execution in a relational context.
 The technique for transforming XQuery into relational algebra is called ``loop
 lifting''\cite{pathfinder_mothertongue}. Loop lifting is a FLWOR-centric
 approach which essentially transforms iterations into joins. Loop lifting is
-described in detail in section \ref{sect:method:loop_lifting}.
+described in detail in section \ref{sect:translation:loop_lifting}.
 
 As a relational backend, the XQuery processor uses MonetDB, an integrated
 component in the Pathfinder project. However, recent versions of Pathfinder is
@@ -62,7 +63,7 @@ Galatex is claimed to be the first full implementation of the W3C XQuery 1.0
 and XPath 2.0 Full-Text 1.0 specification\cite{w3c01}. As can be seen in figure
 \ref{figure:galatex:arch}, Galatex translates the full-text parts of the query
 into standard normalized XQuery (XQuery Core\cite{xquery_semantics}, also
-described in section \ref{sect:xquery}) in the Galatex parser. The equivalent
+described in section \ref{sect:theory:xqXQcore}) in the Galatex parser. The equivalent
 XQuery query is then executed on the Galax query processor.
 
 The most interesting aspect of Galatex is its full-text capabilities. This is

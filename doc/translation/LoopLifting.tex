@@ -1,9 +1,55 @@
-\section{Loop lifting}
-\label{sect:method:loop_lifting}
+\section{Loop Lifting}
+\label{sect:translation:loop_lifting}
+Loop lifting is a method of translating XQuery iteration expressions into relational algebra. The method was
+developed by Torsten Grust and Jens Teubner and originally presented in \cite{pathfinder_mothertongue}. It is a
+part of the Pathfinder project\cite{pathfinderHome} (see section \ref{sect:theory:pathfinder}).
+
+In this section we will present Loop Lifting mainly based on the two articles \cite{pathfinder_mothertongue} and
+\cite{pathfinder_purelyRelational}.
 
 \begin{itemize}
-  \item hvordan funker loop lifting?
-  \item vise til inferenz regler i v\aa r syntaks
-  \item nevne at det finnes optimaliseriner
   \item forutsetter det \aa~ jobbe p\aa~ DAGz?
 \end{itemize}
+
+\subsection{Operators}
+\label{sect:translation:llOperators}
+\begin{itemize}
+  \item hvordan oversettes looplift operatorer til mars?
+  \item presentere de som ikke er som vanlig
+\end{itemize}
+
+
+\subsection{Basics}
+\label{sect:translation:llBasics}
+\begin{itemize}
+  \item hvordan representeres sekvenser
+  \item det med loop er alltid noe
+\end{itemize}
+
+\subsection{Constant Subexpressions}
+\label{sect:translation:llConstExprs}
+\begin{itemize}
+  \item hvordan l\o fte slike ting?
+\end{itemize}
+
+\subsection{Variables and Iteration}
+\label{sect:translation:llIteration}
+\begin{itemize}
+  \item her er vel hele sullamitten
+\end{itemize}
+
+\subsection{Other Expression Types}
+\label{sect:translation:llOtherExpr}
+\begin{itemize}
+  \item sequence construction
+  \item variable binding/usage
+  \item plus / generic operator plz?
+\end{itemize}
+
+\subsection{Optimisations}
+\label{sect:translation:llOptimisations}
+\begin{itemize}
+  \item peep hole plan simplification
+  \item dette kan fort bli dr\o yt\ldots v\ae re litt forsiktige her tror jeg
+\end{itemize}
+
