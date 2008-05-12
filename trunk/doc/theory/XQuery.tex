@@ -2,10 +2,16 @@
 \label{sect:theory:xquery}
 
 XQuery is a query language developed by the XML Query working group of W3C.
-Version 1.0\cite{w3c00} became a W3C Recommendation January 2007. It was designed as a
-response to an emerging task: to intelligently express queries in the increasing
-amounts of information stored, exchanged and presented using XML. The language
-is derived from Quilt\cite{quilt_queryLanguage}.
+Version 1.0\cite{w3c00} became a W3C Recommendation January 2007. It was
+designed as a response to an emerging task: to intelligently express queries in
+the increasing amounts of information stored, exchanged and presented using
+XML. The language is derived from Quilt\cite{quilt_queryLanguage}. Development
+of XQuery 1.0 was coordinated with the development of XSLT 2.0, and the two
+teams cooperated on development of XPath 2.0.
+
+XQuery can be used to query any kind of data structure that can be represented
+as an XML document, including structured and semi-structured data. This
+includes text documents, relational databases, and XML-compliant HTML markup.
 
 \begin{itemize}
   \item Ortogonal (expressions inni expressions inni path expressions osv)
@@ -14,15 +20,31 @@ is derived from Quilt\cite{quilt_queryLanguage}.
   \item 
 \end{itemize}
 
-\begin{itemize}
-\item itroduksjon
-\item historie
-\item bruksomr\aa der
-\item ...
-\end{itemize}
 
-\subsection{Basics}
+\subsection{Basic language features}
 \label{sect:theory:basics}
+XQuery is a functional language with a comparatively small syntax. It lacks
+some features known from many functional languages, such as support for higher
+order function declarations. However, it has some of the most important
+benefits, such as a lack of side-effects. XQuery is a \textit{declarative}
+language (opposed to \textit{imperative} languages), and is strongly typed.
+Static typing is optional, and may vary between various implementations.
+
+XQuery is an orthogonal language, meaning that expressions often can be
+arbitrarily nested. For example, a path expression predicate can be another
+path expression:
+  \begin{verbatim}
+/a/b[/c/d[e]]
+  \end{verbatim}
+Or, the return-clause in a loop construct can be another loop
+construct:
+  \begin{verbatim}
+for $i in (1,2,3) return for $j in (4,5,6) return $i + $j
+  \end{verbatim}
+These features are important to consider for later translation, as truth values
+in predicates and return values may need to be coerced and/or inferred into
+their proper types and values.
+
 \begin{itemize}
   \item sekvenser og ting atomisk, alt je sekvenser er endimensjonale\ldots
   \item andre ting som er basisk og ikke surt
