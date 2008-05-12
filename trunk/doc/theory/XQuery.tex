@@ -45,26 +45,31 @@ These features are important to consider for later translation, as truth values
 in predicates and return values may need to be coerced and/or inferred into
 their proper types and values.
 
-The XQuery type system is rather complex, and we refer to 
+The XQuery type system is rather complex, and we refer to some of the
+introductory articles\cite{rys_xq_type_intro} by Michael Rys, as well as the
+XQuery formal semantics specification\cite{xquery_semantics}. However, we will
+emphasize some important traits about the type system: 
 
+\textbf{All sequences are one-dimensional}. Any given sequence that is not
+one-dimensional, will be flattened. For example, the two-dimensional sequence
+\verb!((1,2),3)! is to be flatted into \verb!(1,2,3)!.
 
-
-\begin{itemize}
-  \item sekvenser og ting atomisk, alt je sekvenser er endimensjonale\ldots
-  \item andre ting som er basisk og ikke surt
-  \item context item '.'
-\end{itemize}
+\textbf{Anything that is not 0, empty, or false, evaluates to \textit{true}}.
+In a boolean context (such as an predicate or an if-then-else), this means that
+anything that is ``something'' will evaluate to \textit{true}.
 
 \subsection{Path Expressions}
 \label{sect:theory:xqueryPathExpressions}
 \begin{itemize}
+\item intro
 \item fra XPath / brukt i mange andre ting (XSLT yeye)
-\item ...
+\item analogier til filsystem osv
 \item akser -> [Definition: The following axes are designated as optional axes:
 ancestor, ancestor-or-self, following, following-sibling, preceding, and
 preceding-sibling.] (http://www.w3.org/TR/xquery/\#dt-optional-axis)
-\item semantikk 
+\item semantikk
 \item eksikveringsorden etc
+\item context item '.'
 \end{itemize}
 
 \subsection{Predicates}
@@ -122,12 +127,6 @@ preceding-sibling.] (http://www.w3.org/TR/xquery/\#dt-optional-axis)
 
 \subsection{XQuery core}
 \label{sect:theory:xqXQcore}
-\begin{itemize}
-  \item Hva er xquery core?
-  \item Hva er poenget med XQuery core?
-  \item Normaliseringsprosessen (hva blir til hva)
-\end{itemize}
-
 XQuery Core is a less powerful but semantically equivalent form of expressing
 XQuery queries. XQuery Core as well as the process of normalizing regular
 XQuery to XQuery Core is described in the document ``XQuery 1.0 and XPath 2.0
