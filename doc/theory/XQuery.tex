@@ -61,6 +61,47 @@ anything that is ``something'' will evaluate to \textit{true}.
 
 \subsection{Path Expressions}
 \label{sect:theory:xqueryPathExpressions}
+XPath (XML Path Language) is a small language for traversing and selecting
+nodes (both element nodes and text nodes) from XML data. XPath is a subset of
+XQuery, and is also available in XSLT, XML Schemas, XForms, and several other
+technologies related to XML. 
+
+In its abbreviated form, XPath bears a strong resemblance to file path syntax
+known from many modern operating systems. This implies that the XPath syntax
+may be familiar and intuitive for new users.
+
+For example, consider the following XML source:
+\begin{verbatim}
+<a>
+  <b><c>Hello World</c></b>
+</a>
+\end{verbatim}
+If we execute the XPath expression \verb!/a/b/c!, we will recieve the
+\verb!c!-node which is a child of the \verb!b!-node which is a child of the
+\verb!a!-node which is the document root node. Note that we will \textit{not}
+recieve the text ``Hello World'', which is a \textit{text node}, but rather its
+parent node, which is the \verb!c!-node. To retrieve the text, we would rather
+use the path expression \verb!/a/b/c/text()!. The call to \verb!text()! is
+known as a \textit{node test}. The following node tests are available:
+\begin{itemize}
+  \item \verb!text()! - as described above, returns a text node
+  \item \verb!comment()! - returns a comment node, for example \texttt{<!-- Hello
+  world -->}
+  \item \verb!processing-instruction()! - returns processing instructions, which
+  means constructs such as \texttt{<?xml version="1.0"?>}
+  \item \verb!node()! - returns any type of node 
+\end{itemize} 
+
+In it's unabbreviated syntax (or, verbose syntax), the semantics of XPath
+become more clear. For the XML source above, the full syntax for the path
+expression to match the \verb!c!-node would be
+\texttt{/child::a/child::b/child::c}. Here we see a new addition to our path
+expression, the \verb!child::! axis specifier. An \textit{axis specifier} helps
+navigation within the XML document, by allowing the user to specify further
+traits about the nodes to be matched. For example, attribute nodes can be
+matched using \verb!attribute::! (or \verb!@!, with abbreviated syntax). For a
+complete reference to axis specifiers, we refer to \cite{w3c01}.
+
 \begin{itemize}
 \item intro
 \item fra XPath / brukt i mange andre ting (XSLT yeye)
@@ -75,6 +116,39 @@ preceding-sibling.] (http://www.w3.org/TR/xquery/\#dt-optional-axis)
 
 \subsection{Predicates}
 \label{sect:theory:xqueryPredicates}
+Predicates are used in path expressions to filter nodes. Predicates are
+appended to step expressions (and filter expressions, see \cite{w3c01}), and
+are applied from left to right. Predicates to not add anything to the node sets
+returned from the path expressions, they only restrict by filtering. Predicates
+are appended to step expressions within square brackets, as such:
+\verb!/a/b[@id > 1]!. This will return the first \verb!b!-node with an
+attribute \verb!id! whose value is larger than one.
+
+Consider the following XML source:
+\begin{verbatim}
+<a>
+  <b id=1>
+    <c />
+  </b>
+  <b id=2>
+    <c />
+  </b>
+</a>
+\end{verbatim}
+If we apply the path expression mentioned above, we will thus recieve the second
+\verb!b!-node.
+
+There are a few important things to note about predicates. Firstly, the
+predicate expression can be any expression, and as such its return value is
+coerced into a truth value (either \textit{true} or \textit{false}), as
+described previously in section \ref{sect:theory:xquery:basics}.
+
+However, there is one important exception -- if the return value for the
+predicate expression evaluates to a numerical value, then the predicate
+becomes a ``numeric predicate'', and its value is used to identify the
+\textit{n}th node in the path expression. For example, the following path
+expression returns the first \verb!b!-node: \verb!/a/b[1]!.
+
 \begin{itemize}
   \item predikater kan brukes etter b\aa de stepExprz og filterExprz
   \item de gj\o r egentlig ikke noe annet enn \aa~ begrense hva som er i settet
