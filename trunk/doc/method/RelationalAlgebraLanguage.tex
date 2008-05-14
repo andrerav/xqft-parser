@@ -42,13 +42,26 @@ hvilke operatorer/ funksjoner har vi lagt til / forutsatt?
 	\item xqBoolean(pred)
 	\item scopeIndex(scope, pred)
 	\item counter()
+	\item numberate(fieldName, [sortByList], [partiTionByList], operator) 
+		\begin{itemize}
+        	\item hadde v\ae rt flott om kolonnene i sortByList forsvant etterp\aa~.
+        	\item g\aa r ikke det, m\aa~ vi gj\o re slik: project(fieldName = fieldNameAlt, ~sortByList,
+        	numberate(fieldNameAlt, \ldots))
+        \end{itemize}
 	\item union
 		\begin{itemize}
-			  \item (1,2,3) = 1 union 2 union 3 
-			  \item skriver om optimisering i diskusjon
-			  \item hva skjer med rekkef\o lge (henger sammen med nummerpredikat)
 			  \item noe med schema\ldots virka ikke som thorbj\o rnsen var helt forn\o yd
 				  med at v\aa r tenkte \texttt{union} dret i schema og helte p\aa~
 				  \texttt{NULL} verdier indiscriminately
+			\item This method assumes that the \texttt{union} operator accepts relations with
+different schemas, and does not remove duplicates (disjoint union (hva skjer med markering av origin-relation?)).
+The schema for the result relation can be described as:
+\begin{equation*}
+schema(\texttt{union(}\alpha, \beta\texttt{)}) = schema(\alpha) \cup
+schema(\beta).
+\end{equation*}
+Provided this is a
+unreasonable task to implement, it can be done manually by the translator with
+the help of \texttt{project} operators.		
         \end{itemize}	
 \end{itemize}

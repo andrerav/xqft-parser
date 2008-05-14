@@ -19,10 +19,9 @@ relational algebra.
 
 
 \textit{For a definition of iteration expressions, see
-section\ref{sect:theory:xqueryFlwor}} 
+section\ref{sect:theory:xquery:Flwor}} 
 
 \begin{myDefinition}
-<<<<<<< .mine
 An XQuery expression is \textbf{dependent} on an iterator variable \textsf{X} if one of its descendants in the AST
 is a referral to \textsf{X}, but \textsf{X}'s iteration expression is not. Correspondingly, a tuple is
 \textbf{dependent} on \textsf{X} if has a not-\texttt{NULL} \texttt{Xnumb} attribute.
@@ -100,20 +99,8 @@ This can be seen in rule \ref{eq:translation:sequencing}.
 \label{eq:translation:sequencing}
 \end{equation}
 
-\marginpar{\underline{\Large TODO} \footnotesize B\o r dette flyttes til
-method:mars:assumedOperatorz i stedet? Det med NULL verdier i radene m\aa~
-ogs\aa~skrives om.. blir mye om det her kanskje ja\ldots}
-This method assumes that the \texttt{union} operator accepts relations with
-different schemas, and does not remove duplicates (but contrary to disjoint
-union, there is no need to differansiate elements by their orgin set in the
-resultset). The schema for the result relation can be described as:
-\begin{equation*}
-schema(\texttt{union(}\alpha, \beta\texttt{)}) = schema(\alpha) \cup
-schema(\beta).
-\end{equation*}
-Where $\cup$ is the ordinary set theory operator. Provided this is a
-unreasonable task to implement, it can be done manually by the translator with
-the help of \texttt{project} operators.
+
+
 
 As two fields with different types cannot be spliced together, we presume all
 \texttt{value} fields are strings for the time being. This will be further
@@ -170,7 +157,7 @@ is in.
 \subsection{Path Expressions}
 \label{sect:translation:mXr:smpPathExpr}
 XQuery implements XPath 2.0 path expressions as described in section
-\ref{sect:theory:xqueryPathExpressions}. The \texttt{scope} operator of
+\ref{sect:theory:xquery:PathExpressions}. The \texttt{scope} operator of
 MQL(section \ref{sect:method:marsOperators}) makes it possible to
 filter results based on the scope. The operator does however only support paths
 equivalent to path expressions with only \textsf{child} axis steps. Methods to
