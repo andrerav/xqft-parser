@@ -1,0 +1,47 @@
+varRefs = alle referanser i rekkefølge fra ytterste scope til innerst
+
+
+###########################################################################################################################
+###########################################################################################################################
+
+for $b in (expr)
+return expr1(/wo b)
+
+numberate(indx, [bnumb, indx], [varRefs]
+    cross(
+        project(bnumb = counter(); expr)
+        expr1(/wo b)
+
+
+###########################################################################################################################
+###########################################################################################################################
+
+for $b in (expr)
+return expr1(/m b)
+
+numberate(indx, [bnumb, indx], [varRefs-bnumb]
+    expr1(/m b))
+
+
+
+###########################################################################################################################
+###########################################################################################################################
+
+(expr1, expr2)       (husk taint)     
+
+hvis expr er atomisk eller itervariabeldependant ----> project(indx = 0; expr)
+
+(hvis den er en sekvens har den allerede indx)
+
+numberate([sprIdx, indx]; [varRefs]                                     //TODO: SJEKK OM ALLE VARREFS SKAL VÆRE HER
+    union(project(sprIdx = 1; expr1); project(sprIndx = 2; expr2))
+
+Hvis bare atomiske eller iteratorvariabeldependent ---> drop sprIndx = indx
+
+###########################################################################################################################
+###########################################################################################################################
+
+mangler index etter group(fdkjfkdj, max(value)
+
+
+group( [], max(value), expr) bør være lov
