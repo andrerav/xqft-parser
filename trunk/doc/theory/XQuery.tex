@@ -160,7 +160,18 @@ expression returns the first \verb!b!-node: \verb!/a/b[1]!.
 \end{itemize}
 
 \subsection{FLWOR}
-\label{sect:theory:flwor}
+\label{sect:theory:xqueryFlwor}
+
+\begin{myDefinition}
+\label{definition:iteration_expression}
+An \textbf{iteration expression} is an XQuery expression consisting of an
+\textbf{iterator variable} and an \textbf{iterator body}. The \textbf{iterator
+body} is executed multiple times, and for each time the \textbf{iterator
+variable} is bound to the next item in the \textbf{iterator sequence}. As
+XQuery is a functional language(see section \ref{sect:theory:xquery:basics}),
+it is semantically sound to execute iterations in parallel.
+\end{myDefinition}
+
 XQuery is centered around a loop construct known dubbed FLWOR;
 \begin{itemize}
   \item \textbf{F}or - iteration over tuples
@@ -207,6 +218,31 @@ result:
 </videos>
 \end{Verbatim}
 
+It is important to note the distinction of bound and free variables in FLWOR
+constructs -- or, in other words, the scope boundaries. Consider the following
+example:
+\begin{Verbatim}
+for $a in (1,2,3)
+  return for $b in (4,5,$a)
+    return $a + $b
+\end{Verbatim}
+When evaluating the for-clauses in this nested FLWOR expression, the
+\textit{iterator sequence} must be evaluated in the parent scope and not the
+new scope for the current FLWOR expression. We can illustrate this point by
+separating the scopes graphically:
+\begin{Verbatim}
+----------.
+for $a in | (1,2,3)
+          `--------
+  --------------.
+  return for $b | in (4,5,$a)
+                `------------
+    return $a + $b
+\end{Verbatim}
+As can be seen, the iterator sequence for the inner loop is evaluated in the
+scope of the outer loop, and a new scope is not started until this iterator
+sequence has been evaluated. Otherwise one could risk overwriting variables in
+the iterator sequence when binding variables in the new scope.
 
 \begin{itemize}
 \item motiv
@@ -217,7 +253,7 @@ result:
 \end{itemize}
 
 \subsection{Binary Operators}
-
+Droppe dette? -ar
 \begin{itemize}
 \item motiv
 \item ...
@@ -226,6 +262,7 @@ result:
 \end{itemize}
 
 \subsection{Types}
+Skrev om det i basic, vits i \aa~skrive stort mer? -ar
 \begin{itemize}
   \item skrive om dette ogs\aa~selv om vi ikke skal implementere?
   \item har planer om \aa~diskutere det litt i diskusjonskap iallefall..
@@ -239,6 +276,30 @@ result:
 \end{itemize}
 
 \subsection{Full Text Extensions}
+\label{sect:theory:xquery:fulltext_ext}
+XQuery is by nature a structural query language -- that is, queries are based on
+document/data structure and not on content. The full-text extensions to XQuery
+reduces the smallest unit of an XML document to single words instead of nodes.
+Additionally, they add sophisticated tools such as stemming, thesaurus, and
+scoring variables.
+
+Technically, the \verb!FTContains! operator applies a full-text search for the
+given argument, and allows appending full-text match options to the query
+(match options being stemming, thesaurus, and other match options described in
+\cite{w3c01}).
+
+For example, consider the following example:
+\verbatiminput{graph_queries/ftq1.xq}
+This will match any book where the title contains the stem of the word ``dog'' in
+lower case, and the word ``cat'', and return the author of that book. This
+query is parsed into the AST seen in figure \ref{figure:xquery:full_text_ast}.
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[scale=0.50]{img/graphs/ftq1} 
+  \caption{Full-text query syntax tree}
+  \label{figure:xquery:full_text_ast}
+\end{figure}
 
 \begin{itemize}
 \item motiv
