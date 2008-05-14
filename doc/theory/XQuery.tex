@@ -34,14 +34,15 @@ Static typing is optional, and may vary between various implementations.
 XQuery is an orthogonal language, meaning that expressions often can be
 arbitrarily nested. For example, a path expression predicate can be another
 path expression:
-  \begin{verbatim}
+\begin{Verbatim}
 /a/b[/c/d[e]]
-  \end{verbatim}
+\end{Verbatim}
 Or, the return-clause in a loop construct can be another loop
 construct:
-  \begin{verbatim}
+\begin{Verbatim}
 for $i in (1,2,3) return for $j in (4,5,6) return $i + $j
-  \end{verbatim}
+\end{Verbatim}
+
 These features are important to consider for later translation, as truth values
 in predicates and return values may need to be coerced and/or inferred into
 their proper types and values.
@@ -71,11 +72,11 @@ known from many modern operating systems. This implies that the XPath syntax
 may be familiar and intuitive for new users.
 
 For example, consider the following XML source:
-\begin{verbatim}
+\begin{Verbatim}
 <a>
   <b><c>Hello World</c></b>
 </a>
-\end{verbatim}
+\end{Verbatim}
 If we execute the XPath expression \verb!/a/b/c!, we will recieve the
 \verb!c!-node which is a child of the \verb!b!-node which is a child of the
 \verb!a!-node which is the document root node. Note that we will \textit{not}
@@ -125,16 +126,16 @@ are appended to step expressions within square brackets, as such:
 attribute \verb!id! whose value is larger than one.
 
 Consider the following XML source:
-\begin{verbatim}
+\begin{Verbatim}
 <a>
-  <b id=1>
+  <b id="1">
     <c />
   </b>
-  <b id=2>
+  <b id="2">
     <c />
   </b>
 </a>
-\end{verbatim}
+\end{Verbatim}
 If we apply the path expression mentioned above, we will thus recieve the second
 \verb!b!-node.
 
@@ -160,6 +161,52 @@ expression returns the first \verb!b!-node: \verb!/a/b[1]!.
 
 \subsection{FLWOR}
 \label{sect:theory:flwor}
+XQuery is centered around a loop construct known dubbed FLWOR;
+\begin{itemize}
+  \item \textbf{F}or - iteration over tuples
+  \item \textbf{L}et - assignment of tuples
+  \item \textbf{W}here - conditional expression
+  \item \textbf{O}rder by - sorting 
+  \item \textbf{R}eturn - return expressions, similar to yielding in coroutines
+  and not the common return expression known from Java and other imperative
+  languages
+\end{itemize}
+This construct is thought to be roughly equivalent to a
+\texttt{SELECT}-statement in SQL. For example, consider the following SQL
+statement: 
+\begin{Verbatim}
+SELECT v.title FROM video v WHERE v.year = 1999
+\end{Verbatim}
+And then compare it to the following XQuery counterpart:
+\begin{Verbatim}
+for $v in doc("videos.xml")//video
+where $v/year = 1999
+return $v/title
+\end{Verbatim}
+Then construct a file \texttt{videos.xml} with the following contents:
+\begin{Verbatim}
+<videos>
+  <video>
+    <title>Plan 9 from outer space</title>
+    <year>1959</year>
+  </video>
+  <video>
+    <title>Earth vs. the Flying Saucers</title>
+    <year>1956</year>
+  </video>
+</videos>
+\end{Verbatim}
+And finally execute the above query on this file to recieve the following
+result:
+\begin{Verbatim}
+<videos>
+  <video>
+    <title>Plan 9 from outer space</title>
+    <year>1959</year>
+  </video>
+</videos>
+\end{Verbatim}
+
 
 \begin{itemize}
 \item motiv
