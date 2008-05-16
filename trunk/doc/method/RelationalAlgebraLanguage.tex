@@ -1,14 +1,39 @@
 \section{Target Relational Algebra Language}
-The target algebra for this project is a dialect of relational algebra
-developed by FAST Search \& Transfer. This section will describe the operators
-of this language as well as the indices they operate on, and will demonstrate some 
-important traits of this language with a few examples.
+The target algebra for this project is a dialect of relational algebra (see
+section \ref{sect:theory:relAlg}) developed by FAST Search \& Transfer. The
+language is dubbed MQL (Mars Query Language). This section will describe the
+operators of this language as well as the indices they operate on, and will
+demonstrate some important traits of this language with a few examples. 
 
 \subsection{General concepts}
+All queries for MQL are written as strings with a syntax reminiscient of Lisp
+dialects. TODO: kodeeksempel + relalgtre?
+
+Data is stored in \textit{indices} rather than in DOM trees. Naturally, this is
+a prerequisite for efficient execution of relational algebra on the data. There
+are two basic index types: \textit{occurence} indexes and \textit{value}
+indexes. In the case of an occurence index, a lookup for a term will map the
+term to the occurences of this term. In a \textit{value} index, a key (for
+example document id) is associated to one or more \textit{values} in the
+document collection. Lookups in \textit{value} indexes can be combined with
+lookups in \textit{occurence} indexes to add data to the result set for the
+user.
+
+The schema of the indexes determins the fields/columns in the result sets from
+a lookup, but typically these three fields will be included on a lookup of a
+term in the \textit{occurence} index:
+\begin{itemize}
+  \item Document ID: Internal identifier for the document in which the term
+  occurs
+  \item Position: The term position in the document (counted by terms, not
+  characters or nodes)
+  \item Scope: the context of the occurence, e.g \texttt{/a/b}. Note that the
+  scope also contains metadata about the \textit{instance} of the scope
+\end{itemize}
+
 Hvordan skal man egentlig formulere seg her slik at Oystein ikke blir trist og
 lei?
 
-\subsection{Intexes and Resultsets}
 \begin{itemize}
   \item hvilke indexer bruker vi..
   \item hvordan ser resultatsettene ut n\aa r vi sp\o r i disse indexene?
@@ -18,9 +43,94 @@ lei?
   ikke la det feltet hete hva det vil\ldots\ldots\ldots
 \end{itemize}
 
+\subsection{Language syntax}
+The syntax of MQL (Mars Query Language) is, as mentioned above, reminiscent of
+Lisp dialects. Consider the example in figure \ref{figure:mql:op_example}. This
+example will lookup the term ``c'' in the scope \texttt{/a/b} in the index
+\textit{valocc}\footnote{The index \textit{valocc} is a hypothetical index
+which is simply thought to be a combined lookup in an \textit{occurence}
+index and a \textit{value} index}.
 
-\subsection{Operatorz}
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+index(valocc; 
+  scope(/a/b;
+    lookup(c)));
+\end{Verbatim}
+\caption{Simple MQL example}
+\label{figure:mql:op_example}
+\end{figure}
+
+The syntax for MQL can be described in a condensed form using EBNF notation as
+can be seen in figure \ref{figure:mql:ebnf}
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+OPERATORNAME  ::= IDENTIFIER
+OPERATOR      ::= OPERATORNAME "(" PARAMETERLIST? 
+                  (";" OPERATORLIST)? ")"
+OPERATORLIST  ::= OPERATOR ( "," OPERATOR )*
+\end{Verbatim}
+\caption{Simplified MQL EBNF}
+\label{figure:mql:ebnf}
+\end{figure}
+
+Note that \texttt{PARAMETERLIST} has no definition. This production will be
+described for each operator, if applicable.
+
+Also note that parameters and child operators are separated by a semicolon. For
+example, in the MQL expression \texttt{index(valocc;lookup(hairdresser))} the
+\texttt{index()} operator is given one parameter (\textit{valocc}) and one
+child operator (\textit{lookup(hairdresser)}).
+
+\subsection{Operators}
 \label{sect:method:marsOperators}
+
+\subsubsection{Lookup}
+\label{sect:method:marsOperators:lookup}
+The \texttt{lookup()} operator performs a lookup in the default index (if none
+other defined by an \texttt{index()} operator, see
+\ref{sect:method:marsOperators:index}). The result set returned from this
+operator contains all occurences of the given term, if any. This operator will
+use the last index specified by the \texttt{index()} operator, otherwise the
+default index. See figure \ref{figure:mql:op_example} for an example of usage. 
+
+\subsubsection{Scope}
+\label{sect:method:marsOperators:scope}
+The \texttt{scope()} operator accepts one parameter and one child operator. The
+result set from the child operator is filtered to match the first parameter, which is a
+scope given on a form similar to a XPath expression. See figure
+\ref{figure:mql:op_example} for an example of usage. 
+
+\subsubsection{Index}
+\label{sect:method:marsOperators:index}
+This operator modifies the behaviour of the child operator such that any lookup
+will use the specified index. See figure \ref{figure:mql:op_example} for an
+example of usage where the child operators will operate on the index
+\textit{valocc}.
+
+\subsubsection{Project}
+\label{sect:method:marsOperators:project}
+The \texttt{project()} operator lends its name and semantics from the project
+operator known from basic relational algebra (projection is described in
+section \ref{sect:theory:relAlg:projection}). The \texttt{project()} operator
+has a more complex syntax described in EBNF notation in figure
+\ref{figure:mql:ebnf:project_ebnf}.
+
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+RESULTFIELD  ::= IDENTIFIER
+ARGUMENTS    ::= ARGUMENTDEF ( "," ARGUMENTDEF )*
+ARGUMENTDEF  ::= ( RESULTFIELD "=" )? ARGUMENT
+RETAIN_PARAM ::= "retain:=" BOOLEAN
+OPERATOR     ::= "project" "(" (RETAIN_PARAM ",")? 
+                 ARGUMENTS ";" OPERATOR ")"
+\end{Verbatim}
+\caption{Project operator EBNF}
+\label{figure:mql:ebnf:project_ebnf}
+\end{figure}
 
 \begin{itemize}
   \item Lookup
@@ -29,6 +139,7 @@ lei?
   \item Project
   \item Select
   \item Index
+  \item Scan?
   \item Etc..
 \end{itemize}
 
