@@ -79,10 +79,9 @@ s \left\{
 \right.
 \]
 
-More generally, a scope $s_{x \cdot y}$ identifies the $y$th child scope of scope $x$, $x \in \left\{ 0,1,\ldots
-\right\}, y \in \left\{ 0,1,\ldots \right\}$. Expression $e_{x\cdot y}$ evaluates to an iterator sequence and is
-bound to the variable $v_{x \cdot y}$. $e_{x \cdot y}'$ constitutes the coresponding iterator body, and $I_{x
-\cdot y}$ the whole iterator expression.
+More generally, a scope $s_{x \cdot y}$ identifies the $y$th child scope of scope $x$, $x \in \left\{
+\mathbb{N}\right\}, y \in \left\{ \mathbb{N} \right\}$. Expression $e_{x\cdot y}$ evaluates to an iterator sequence
+and is bound to the variable $v_{x \cdot y}$. $e_{x \cdot y}'$ constitutes the coresponding iterator body, and $I_{x \cdot y}$ the whole iterator expression.
 
 $q_{x}(e)$ is used to denote the relational representation of expression $e$ in scope $s_{x}$.
 
@@ -174,15 +173,74 @@ item}(q_{x}\left(\mbox{\texttt{\$}}v_{x})\bowtie_{iter=outer} map_{x, x \cdot y}
 
 \subsection{Mapping Back}
 \label{sect:translation:ll:mappingBack}
-mapper tilbake
+
+All steps and equations so far have been helpful to represent sequences and variables in a lower scope. But the
+result of a query will have to be in form of its representation in the outermost scope $s$. So a way to represent
+an expression $e_{x,y}'$ in its scope's parent scope $s_{x}$ is needed. Once again the $map$ relation may be of
+use, combined with an equi-join:
+\begin{equation}
+q_{x}(e_{x \cdot y}') =
+\begin{array}{l}
+ \pi_{iter:outer, pos:pos1, item}(\\ \qquad\varrho_{pos1:(iter,pos)/outer}(q_{x \cdot
+y}(e_{x \cdot y}')\bowtie_{iter = inner}map_{x, x \cdot y}))
+\end{array}
+\label{eq:ll:qx_exymark}
+\end{equation}
+
 
 \subsection{Other Expression Types}
 \label{sect:translation:ll:OtherExpr}
-\begin{itemize}
-  \item sequence construction
-  \item variable binding/usage
-  \item plus / generic operator plz?
-\end{itemize}
+
+The sequence construction \texttt{(}$e_{1}$\texttt{, }$e_{2}$\texttt{)} is essentially a disjont union of the
+relational representations of the expressions, that is, $q_{x}(e_{1})$ and $q_{x}(e_{2})$. By temporarily adding a
+attribute $ord$ to these relations before a renumbering of the result with $\varrho$, the proper ordering of the
+sequence is aquired. Construction of sequences can therefore be expressed like this:
+\begin{equation}
+q_{x}(\mbox{\texttt{(}}e_{1}\mbox{\texttt{,}}e_{2}\mbox{\texttt{)}})=
+\begin{array}{l}
+
+
+\pi_{iter,pos:pos1,item}
+\left( \right.\\ \qquad
+
+\varrho_{pos1:(ord,pos)/iter}
+	\left( \right. \\ \qquad \qquad
+	\left. \left.
+		\left(
+		\frac{ord}{1} \times q_{x}(e_{1})
+		\right)
+		\dot\cup
+		\left(
+		\frac{ord}{1} \times q_{x}(e_{2})
+		\right)		
+	\right)
+\right)
+\end{array}
+\label{eq:ll:secuence}
+\end{equation}
+
+The $\circledcirc$ operator meets the demand of evaluating comparison and arithmetic operations on atomic values.
+Given two XQuery values $e_{1}$ and $e_{2}$ in multiple iterations, with relational representations as before,
+the expression $e_{1}$ \texttt{ + } $e_{2}$ can be translated by first joining $q_{x}(e_{1})$ and $q_{x}(e_{2})$
+on their iterations $iter$. Then, for each tuple, store the sum of the values of both of the $item$ attributes,
+before cleaning up the resulting relation with a project. Expressed as an equation, the sum expression looks like
+this:
+\begin{equation}
+q_{x}(e_{1} \mbox{\texttt{ + }} e_{2}) =
+\begin{array}{l}
+\pi_{iter,pos,item:res}\left(\right. \\ \qquad
+\oplus_{res:(item,item')}
+\left( \right. \\ \qquad \qquad
+
+	q_{x}(e_{1})
+	\bowtie_{iter = iter'}
+	 \\ \qquad \qquad \qquad
+	\left.\left(\pi_{iter':iter, item':item}(q_{x}(e_{2}))
+	\right)
+\right)
+\end{array}
+\label{eq:ll:sumexpr}
+\end{equation}
 
 \subsection{Example}
 \label{sect:translation:ll:example}
