@@ -1,5 +1,7 @@
 %Relasjonsalgebra
 \section{Relational Algebra}
+\label{sect:theory:relAlg}
+
 The relational model for database management was introduced for the first time by Edgar Frank Coddin 1974
 (\cite{TDT4225}). It was based on relational algebra which is an offshoot of first-order logic. Several terms are
 used when talking about relational algebra (\cite{gordonRussel, newYorkDB, sudarshan}):
@@ -16,12 +18,14 @@ used when talking about relational algebra (\cite{gordonRussel, newYorkDB, sudar
 \end{itemize}
 
 \subsection{Primary Operators}
+\label{sect:theory:relAlg:primOper}
 The primary operators is a set of operators which constitutes the base of an algebra. Other operators can be
 defined in terms of the primary ones. If one of the primary operators is excluded, the algebra will loose some of
 it's expressiveness. The primitive operators of Codd's algebra are: selection, projection, union, difference,
 cross product and rename (later added for the sake of the named relational algebra).
 
 \subsubsection{Selection}
+\label{sect:theory:relAlg:selection}
 Selection is a unary operator, and is used to obtain a subset of the tuples of a relation that satisfy a select
 condition. The resulting relation may have fewer tuples but it will have the same degree as the original relation.
 It is sometimes called restriction to avoid confusion with SELECT in SQL. The operator is often symbolized by
@@ -58,6 +62,7 @@ The expression can be made up of any combination of the logical operators \begin
 \end{figure}
 
 \subsubsection{Projection}
+\label{sect:theory:relAlg:projection}
 Projection is also a unary operator, and is used to obtain a subset of the attributes of a relation. The resulting
 relation will have an equal or lower degree than the original relation. In the case of duplicates being produced
 as a result of omitting some attributes, the resulting relation will have fewer tuples than the original.
@@ -89,6 +94,7 @@ Where $R$ is a relation and $attr$ is the set of attributes to be returned from 
 \end{figure}
 
 \subsubsection{Union and Difference}
+\label{sect:theory:relAlg:unionAndDiff}
 Union and difference are two binary operators analogous with union and difference operators in set theory. The
 relational algebra version of the operators requires that the relations involved are union compatible.
 
@@ -109,7 +115,7 @@ R - S
 \end{equation*}
 
 \subsubsection{Cross Product}
-\label{sect:theory:crossProduct}
+\label{sect:theory:relAlg:crossProduct}
 The cross product operator is sometimes referred to as the cartesian product operator. As with union and
 difference, it also stems from set theory. The operator is used to combine all tuples in one relation with all the
 tuples from another. The returned relation will have a degree equal the sum of the degrees of each of the original
@@ -152,7 +158,9 @@ example of a cross product. \begin{figure}[h]
 \caption{An example of cross product.}
 \label{fig:theory:crossproduct}
 \end{figure}
+
 \subsubsection{Rename}
+\label{sect:theory:relAlg:rename}
 Rename is a unary operator used to rename a relation and/or a subset of its attributes. The resulting relation
 will be equal to the original one in all aspects except maybe some of its name properties. The Greek letter
 \emph{r}ho is often used to mark the presence of the rename operator:
@@ -165,10 +173,12 @@ relation $R$'s attributes from $1$ to $n$. The degree of the scheme must be the 
 being operated on.
 
 \subsection{Derived Operators}
+\label{sect:theory:relAlg:derivedOper}
 None of the six primary operators can be expressed as a combination of any of the others. In contrast, some useful
 operators can be derived using one or more of the primary ones. Most notably among these are intersection and join.
 
 \subsubsection{Intersection}
+\label{sect:theory:relAlg:intersection}
 Intersection is the fourth mentioned operator that stems from set theory. It is a binary operator, and the
 resulting relation will contain the set of tuples that are in both of the relations operated on. It can be
 expressed with the help of the difference operator, and hence require that the input relations are union compatible:
@@ -177,11 +187,13 @@ R \cup S = R-(R-S)
 \end{equation*}
 
 \subsubsection{Joins}
+\label{sect:theory:relAlg:joins}
 Joins are a group of operators that all are derived from the primary operators with the cross product as a base.
 Among the operators in this group is natural join, theta-join, equi-join, anti-join, semi-join, outer joins and
 division. Some of these will be presented in this section.
 
 \paragraph{Natural Join.}
+\label{sect:theory:relAlg:naturalJoin}
 Natural join is a binary operator that returns a relation consisting of all combinations of tuples in input
 relations that are equal on their common attribute names. The result relation will have a degree equal to the sum
 of the degrees of the two original relations subtracted the number of common attributes. It is possible to express
@@ -196,6 +208,7 @@ unique to $R$ and $c_{1},...,c_{k}$ are the attributes unique to $S$. A rename o
 remove the prefix of the common attributes.
 
 \paragraph{Equi-join and Theta-join.}
+\label{sect:theory:relAlg:equiAndThetaJoin}
 Theta-join returns a relation which is a combination of all the tuples in the two input relations that satisfy a
 condition $C$. $C$ is in the form $a \theta b$, where $a$ is a attribute name from one relation, $b$ is an
 attribute from the other and $ \theta $ is a binary operator in the set $ \{ <, \leq , =, \geq , >  \} $. An
@@ -207,6 +220,7 @@ R \bowtie _{a \theta b}S = \sigma _{a \theta b}(R \times S)
 \end{equation*}
 
 \paragraph{Division.}
+\label{sect:theory:relAlg:division}
 Division in relational algebra can be described as the inverse operator of cross product, in the same way division
 and multiplication are inverse in natural numbers calculus -- i.e. they are not inverse if the division gives a
 residue:
@@ -226,6 +240,7 @@ R \div S = \pi _{a_{1},...,a_{n}}(R) - \pi _{a_{1},...,a_{n}}((\pi _{a_{1},...,a
 Where $R$ and $S$ are relations and $a_{1},...,a_{n}$ are the attributes unique to $R$.
 
 \paragraph{Semi-join.}
+\label{sect:theory:relAlg:semiJoin}
 Semi-join is a binary operation which returns a relation with the attributes of the first relation, and all the
 tuples in this same relation for which there is a tuple in the second relation that is equal on their common
 attributes. Semi-join can be described with the projection and natural-join operators:
@@ -237,6 +252,7 @@ R \ltimes S = \pi _{a_{1},...,a_{n}}(R \bowtie S)
 Where $R$ and $S$ are relations, and $a_{1},...,a_{n}$ are the attributes unique to $R$.
 
 \paragraph{Anti-join.}
+\label{sect:theory:relAlg:antiJoin}
 The anti-join operator is very similar to the semi-join operator (and is also sometimes referred to as the
 anti-semi-join), except that it returns all the tuples in the first relation for which there is not a tuple in the
 other relation on their common attributes. It can be described with help of semi-join and difference:
@@ -248,6 +264,7 @@ R \rhd S = R - R \ltimes S
 Where $R$ and $S$ are relations.
 
 \paragraph{Outer Joins.}
+\label{sect:theory:relAlg:outerJoin}
 The outer joins works in many ways as the natural join, except the resulting relation will include some extra
 tuples based on one or both of the input relations. The right outer join $(\times=)$ will return a relation with
 all the tuples from a natural join between the first (left) and the second (right) relation, but also the tuples
