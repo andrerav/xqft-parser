@@ -72,18 +72,27 @@ proposed by W3C (described in section \ref{sect:theory:xquery:allmatches}.
 Additionally, as mentioned above, the full-text fragments of the queries are
 translanted into corresponding functions in regular XQuery. 
 
-\begin{itemize}
-    \item skriver om til Core
-    \item 
-\end{itemize}
-
 \subsection{Trait comparison matrix}
-\begin{tabular}{ | p{3cm} | c | c | c |}
-\hline
-& eXist & Pathfinder & GalaTex \\ \hline
-Normalization to XQuery Core & Yes & Yes & Yes \\ \hline
-Relational backend & No? & Yes & No \\ \hline
-Full-text extensions & No & No & Yes \\ \hline
-Test suite coverage & 99.4\% & 99.4\% & n/a \\
-\hline
-\end{tabular}
+\label{sect:theory:existing_implementations:comparison}
+This section will compare some important traits of the described
+implementations, and will outline their implications.
+\begin{figure}[!h]
+	\centering
+	\begin{tabular}{ | p{3cm} | c | c | c |}
+	\hline
+	& eXist & Pathfinder & GalaTex \\ \hline
+	Normalization to XQuery Core & Yes & Yes & Yes \\ \hline
+	Relational backend & No & Yes & No \\ \hline
+	Full-text extensions & No & No & Yes \\ \hline
+	Test suite coverage & 99.4\% & 99.4\% & n/a \\ \hline
+	Free source code & Yes & Yes & Yes  \\
+	\hline
+	\end{tabular}
+	\caption{Comparison of implementation traits}
+	\label{figure:comparison_matrix}
+\end{figure}
+The traits chosen for the comparison matrix in figure
+\ref{figure:comparison_matrix} are chosen due to their relevance to this
+project. As can be seen, there is a spread in diversity across these
+implementations. In particular, Pathfinder is the only implementation with a
+relational backend.
