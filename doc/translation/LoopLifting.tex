@@ -46,6 +46,9 @@ an added attribute holding the result of the
 numbering. {\scriptsize{\begin{tabular}{c|c}$a$&$b$\\\hline\end{tabular}}}  represents the creation
 of a relation with attributes $a$ and $b$.
 
+Operator $\circledcirc_{b:(a_{1},\ldots,a_{n})}$ will evaluate the arithmetic/comparison expression $a_{1} \circ
+\ldots \circ a_{n}$ and place the result in $b$. Where $\circ \in \left\{ +,- , <, =, \ldots  \right\} $.
+
 
 \subsection{Basics}
 \label{sect:translation:ll:Basics}
@@ -64,7 +67,7 @@ such as \texttt{('a', 'b', 'c')} will be represented relationally like this:
 \end{center}
 
 For the rest of this chapter about Pathfinder's loop lifting, variables, expressions and scopes is denoted like
-this (ref. section \ref{sect:theory:xquery:Flwor}:
+this (ref. section \ref{sect:theory:xquery:Flwor}):
 \[
 s \left\{
 \begin{array}{l}
@@ -77,9 +80,9 @@ s \left\{
 \]
 
 More generally, a scope $s_{x \cdot y}$ identifies the $y$th child scope of scope $x$, $x \in \left\{ 0,1,\ldots
-\right\}, y \in \left\{ 0,1,\ldots \right\}$. Expression $e_{x\cdot y}$ evaluates (in scope $s_{x}$) to an
-iterator sequence and is successively bound to the variable $v_{x \cdot y}$. $e_{x \cdot y}'$ constitutes the
-coresponding iterator body, and $I_{x \cdot y}$ the whole iterator expression.
+\right\}, y \in \left\{ 0,1,\ldots \right\}$. Expression $e_{x\cdot y}$ evaluates to an iterator sequence and is
+bound to the variable $v_{x \cdot y}$. $e_{x \cdot y}'$ constitutes the coresponding iterator body, and $I_{x
+\cdot y}$ the whole iterator expression.
 
 $q_{x}(e)$ is used to denote the relational representation of expression $e$ in scope $s_{x}$.
 
@@ -91,29 +94,87 @@ For a iterator expression $i_{x}$ with $n$ iterations there exists a relation $l
 single column, \textit{iter}, with values 1,2,\ldots,$n$. In the outermost scope, $loop$ has a single tuple with
 value 1.
 
-How a constant value $c$ in scope $s_{x}$ is \textit{lifted} is shown in rule \ref{rule:ll:constant}.
-
+A constant value $c$ in scope $s_{x}$ is \textit{lifted} is lifted like this:
 \begin{equation}
-\frac{}{c \Longrightarrow loop_{x} \times \mbox{\scriptsize \begin{tabular}{c|c} \textit{pos}&\textit{item} \\
+q_{x}(c) =  loop_{x} \times \mbox{\scriptsize \begin{tabular}{c|c} \textit{pos}&\textit{item} \\
 \hline 1 & \textit{c}
-\end{tabular}}}
-\label{rule:ll:constant}
+\end{tabular}}
+\label{eq:ll:constLoopLift}
 \end{equation}
 
-A tuple ($iter,pos,item$) in a loop lifted relation for subexpression $expr$ can be understood as that during the
-$iter$th iteration, the item in position $pos$ in $expr$ has the value $item$.
+A tuple ($iter,pos,item$) in a loop lifted relation for subexpression $e_{x}'$ can be understood as that during the
+$iter$th iteration, the item in position $pos$ in $e_{x}'$ has the value $item$.
 
 \subsection{Bound Variables}
 \label{sect:translation:ll:boundVar}
-\begin{itemize}
-  \item her er vel hele sullamitten
-\end{itemize}
 
-\subsection{Fre Variables}
+A variable is bound
+An iterator sequence expression $e_{x \cdot y}$ is evaulated in scope $s_{x}$. This sequence is then iterated over
+and each item is successively bound to the iterator variable $v_{x \cdot y}$. The evaluation of $e_{x \cdot y}'$
+is in scope $s_{x \cdot y}$ and utilises these bindings. 
+
+Considering this, a representation of $v_{x \cdot y}$ in scope $s_{x \cdot y}$ may therefore be calculated by
+retaining the values of $q_{x}(e_{x \cdot y})$, introducing a $iter$ attribute with consecutive numbers and
+holding the $pos$ attribute to the constant value 1. In terms of algebra, the representation of $v_{x \cdot y}$ is
+computed like this:
+\begin{equation}
+q_{x \cdot y}(\mbox{\texttt{\$}}v_{x \cdot y}) = \mbox{\scriptsize \begin{tabular}{c} $pos$ \\\hline 1
+\end{tabular}} \times \pi_{iter:inner,item}(\varrho_{inner:(iter,pos)}(q_{x}(e_{x \cdot y})))
+\label{eq:ll:qx_vxy}
+\end{equation}
+The introduction of the $inner$ attribute is used to denote evaluation of the loop in scope $s_{x \cdot y}$. The
+$iter$ attribute of $q_{x}(e_{x \cdot y})$ can be viewed as an atttribute $outer$, as it denotes the iterations in
+the outer loop of scope $s_{x}$.
+
+Loop lifting requires maintenance of a $loop$ relation ensuring independent iterations. The iterator body in
+scope $s_{x \cdot y}$ needs to be evaluated once for each binding of the iterator variable $v_{x \cdot y}$.
+Thus, the $loop$ relation needs to be redifined based on $q_{x \cdot y}(v_{x \cdot y})$:
+\begin{equation}
+loop_{x \cdot y} = \pi_{iter}(q_{x \cdot y}(v_{x \cdot y}))
+\label{eq:ll:loopx}
+\end{equation}
+
+
+\subsection{Free Variables}
 \label{sect:translation:ll:freeVar}
-\begin{itemize}
-  \item her er vel hele sullamitten
-\end{itemize}
+
+XQuery expressions may use any iterator variable bound in enclosing scopes. That is, $v_{x}$ bound in
+scope $s_{x}$ may also be referred to within any of its child scopes. When looking at one of these child scopes,
+$s_{x \cdot y}$, by itself, the variable $v_{x \cdot y}$ appears to be a free variable.
+
+Vision a iterator expresion $I_{x \cdot y}$ within another iterator expression $I_{x}$, both with iterator
+sequences of length two. If $v_{x}$ is referred to within scope $s_{x \cdot y}$, from $s_{x \cdot y}$'s point of
+view, $v_{x}$ is free. For each binding of $v_{x}$ in the \textit{outer} iteration expression, two
+evaluations of the \textit{inner} iteration expresion occur. A relation capturing the relationship between number
+of iterations of these two iterator expressions can be defined like this:
+\begin{center}
+\begin{tabular}{|c|c|}\hline
+\textit{outer}	& \textit{inner} 	\\ \hline
+1				& 1		\\ \hline
+1				& 2		\\ \hline
+2				& 3		\\ \hline
+2				& 4		\\ \hline
+\end{tabular}
+\end{center}
+Where a tuple $(outer, inner)$ is read as for the $inner$th iteration of the inner iterator expression, the outer
+iterator expression is in its $outer$th iteration. This relation is called $map_{x, x\cdot y}$ as it maps
+representations between scopes $s_{x}$ and $s_{x \cdot y}$. It can be calculated like this:
+\begin{equation}
+map_{x, x\cdot y} = \pi_{outer:iter,inner}(\varrho_{inner:(iter,pos)}(q_{x}(e_{x \cdot y})))
+\label{eq:ll:mapx_xy}
+\end{equation}
+
+With this relationship defined it is now possible to represent the free variable $v_{x}$ in the scope $s_{x \cdot
+y}$ with the help of an equi-join:
+\begin{equation}
+q_{x \cdot y}(\mbox{\texttt{\$}}v_{x}) = \pi_{iter:inner, pos,
+item}(q_{x}\left(\mbox{\texttt{\$}}v_{x})\bowtie_{iter=outer} map_{x, x \cdot y}\right)
+\label{eq:ll:qxy_vx}
+\end{equation}
+
+\subsection{Mapping Back}
+\label{sect:translation:ll:mappingBack}
+mapper tilbake
 
 \subsection{Other Expression Types}
 \label{sect:translation:ll:OtherExpr}
@@ -122,6 +183,10 @@ $iter$th iteration, the item in position $pos$ in $expr$ has the value $item$.
   \item variable binding/usage
   \item plus / generic operator plz?
 \end{itemize}
+
+\subsection{Example}
+\label{sect:translation:ll:example}
+haha
 
 \subsection{Optimisations}
 \label{sect:translation:ll:Optimisations}
