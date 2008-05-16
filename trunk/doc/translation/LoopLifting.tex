@@ -5,41 +5,118 @@ developed by Torsten Grust and Jens Teubner and originally presented in \cite{pa
 part of the Pathfinder project\cite{pathfinderHome} (see section \ref{sect:theory:pathfinder}).
 
 In this section we will present Loop Lifting mainly based on the two articles \cite{pathfinder_mothertongue} and
-\cite{pathfinder_purelyRelational}.
+\cite{pathfinder_purelyRelational}. The articles present the method for a subset of XQuery Core (Pathfinder
+rewrites queries to Core, see section \ref{sect:theory:pathfinder}), of which we will only present the elements
+relevant in a comparison between Loop Lifting and \underline{\textbf{\Large TODO:}} ``insertName''. Thus, the
+translation of path expressions and XML-element construction will not be handled, as pathfinder's XML-tree
+representation(section \ref{sect:theory:pathfinder}) is incompatible with Mars.
 
 \begin{itemize}
   \item forutsetter det \aa~ jobbe p\aa~ DAGz?
 \end{itemize}
 
 \subsection{Operators}
-\label{sect:translation:llOperators}
-\begin{itemize}
-  \item hvordan oversettes looplift operatorer til mars?
-  \item presentere de som ikke er som vanlig
-\end{itemize}
+\label{sect:translation:ll:Operators}
+Loop-lifting utilises a set of relational algebra operators, out of which the ones used in this chapter is
+presented in table \ref{tab:translation:llOperators}.
+\begin{table}[h]
+\centering
+\begin{tabular}{l|l} 
+$\pi_{a_{1}:b_{1},\ldots,a_{n}:b_{n}}$ 	& projection and renaming	\\ 	\hline
+$\sigma_{a}$					   		& selection             	\\ 	\hline
+$\dot\cup$ 							& disjoint union			\\	\hline
+$\times$								& cartesian product			\\	\hline
+$\bowtie_{a=b}$							& equi-join					\\ 	\hline
+$\varrho_{b:(a_{1},\ldots,a_{n})/p}$	& numbering operator		\\	\hline
+$\circledcirc_{b:(a_{1},\ldots,a_{n})}$	& $n$-ary arithmetic/comparison operator $\circ$ \\ \hline
+\scriptsize \begin{tabular}{c|c} $a$& $b$\\\hline\end{tabular} & literal table
+\end{tabular}
+\caption[of the Pathfinder relational algebra]{Operators of the Pathfinder relational algebra. $a$, $b$ and $p$
+represents attributes}
+\label{tab:translation:llOperators}
+\end{table}
+
+Most of the operators are quite standard, and can easily be understood by comparing with the operators from
+section \ref{sect:theory:relAlg} and \ref{sect:method:marsOperators}.
+
+The selection operator ($\sigma_{a}$) selects tuples where attribute $a \ne 0$. Only a very restricted selection
+is used, written $\sigma_{a}$, which only returns tuples satisfying $a \neq 0$.  Considering the numbering
+operator, $p$ denotes the partitioning attribute, $(a_{1},\ldots,a_{n}$ the attributes to be sorted on and $b$ is
+an added attribute holding the result of the
+numbering. {\scriptsize{\begin{tabular}{c|c}$a$&$b$\\\hline\end{tabular}}}  represents the creation
+of a relation with attributes $a$ and $b$.
 
 
 \subsection{Basics}
-\label{sect:translation:llBasics}
-\begin{itemize}
-  \item hvordan representeres sekvenser
-  \item det med loop er alltid noe
-\end{itemize}
+\label{sect:translation:ll:Basics}
+XQuery expressions evaluate to finite, ordered sequences of items. As a sequences are one-dimensional, it can be
+represented by a single relation where each tuple encodes a sequence item. The order of the sequence is
+maintained by an attribute \textit{pos}. The value of the item is held in an attribute \textit{item}. A sequence
+such as \texttt{('a', 'b', 'c')} will be represented relationally like this:
+
+\begin{center}
+\begin{tabular}{|c|c|}\hline
+\textit{pos}	& \textit{item} 	\\ \hline
+1				& \texttt{'a'}		\\ \hline
+2				& \texttt{'b'}		\\ \hline
+3				& \texttt{'c'}		\\ \hline
+\end{tabular}
+\end{center}
+
+For the rest of this chapter about Pathfinder's loop lifting, variables, expressions and scopes is denoted like
+this (ref. section \ref{sect:theory:xquery:Flwor}:
+\[
+s \left\{
+\begin{array}{l}
+\qquad \qquad \quad \vdots \\
+\mbox{\texttt{for \$}}v_{0}\mbox{\texttt{ in }} e_{0} \mbox{\texttt{ return}} \\
+\quad s_{0} \left\{ e_{0}' \right. \\
+\qquad \qquad \quad \vdots
+\end{array}
+\right.
+\]
+
+More generally, a scope $s_{x \cdot y}$ identifies the $y$th child scope of scope $x$, $x \in \left\{ 0,1,\ldots
+\right\}, y \in \left\{ 0,1,\ldots \right\}$. Expression $e_{x\cdot y}$ evaluates (in scope $s_{x}$) to an
+iterator sequence and is successively bound to the variable $v_{x \cdot y}$. $e_{x \cdot y}'$ constitutes the
+coresponding iterator body, and $I_{x \cdot y}$ the whole iterator expression.
+
+$q_{x}(e)$ is used to denote the relational representation of expression $e$ in scope $s_{x}$.
+
 
 \subsection{Constant Subexpressions}
-\label{sect:translation:llConstExprs}
+\label{sect:translation:ll:ConstExprs}
+
+For a iterator expression $i_{x}$ with $n$ iterations there exists a relation $loop_{x}$, consisting of a
+single column, \textit{iter}, with values 1,2,\ldots,$n$. In the outermost scope, $loop$ has a single tuple with
+value 1.
+
+How a constant value $c$ in scope $s_{x}$ is \textit{lifted} is shown in rule \ref{rule:ll:constant}.
+
+\begin{equation}
+\frac{}{c \Longrightarrow loop_{x} \times \mbox{\scriptsize \begin{tabular}{c|c} \textit{pos}&\textit{item} \\
+\hline 1 & \textit{c}
+\end{tabular}}}
+\label{rule:ll:constant}
+\end{equation}
+
+A tuple ($iter,pos,item$) in a loop lifted relation for subexpression $expr$ can be understood as that during the
+$iter$th iteration, the item in position $pos$ in $expr$ has the value $item$.
+
+\subsection{Bound Variables}
+\label{sect:translation:ll:boundVar}
 \begin{itemize}
-  \item hvordan l\o fte slike ting?
+  \item her er vel hele sullamitten
 \end{itemize}
 
-\subsection{Variables and Iteration}
-\label{sect:translation:llIteration}
+\subsection{Fre Variables}
+\label{sect:translation:ll:freeVar}
 \begin{itemize}
   \item her er vel hele sullamitten
 \end{itemize}
 
 \subsection{Other Expression Types}
-\label{sect:translation:llOtherExpr}
+\label{sect:translation:ll:OtherExpr}
 \begin{itemize}
   \item sequence construction
   \item variable binding/usage
@@ -47,7 +124,7 @@ In this section we will present Loop Lifting mainly based on the two articles \c
 \end{itemize}
 
 \subsection{Optimisations}
-\label{sect:translation:llOptimisations}
+\label{sect:translation:ll:Optimisations}
 \begin{itemize}
   \item peep hole plan simplification
   \item dette kan fort bli dr\o yt\ldots v\ae re litt forsiktige her tror jeg
