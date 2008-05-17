@@ -148,6 +148,7 @@ sequences of length two. If $v_{x}$ is referred to within scope $s_{x \cdot y}$,
 view, $v_{x}$ is free. For each binding of $v_{x}$ in the \textit{outer} iteration expression, two
 evaluations of the \textit{inner} iteration expresion occur. A relation capturing the relationship between number
 of iterations of these two iterator expressions can be defined like this:
+
 \begin{center}
 \begin{tabular}{|c|c|}\hline
 \textit{outer}	& \textit{inner} 	\\ \hline
@@ -157,6 +158,7 @@ of iterations of these two iterator expressions can be defined like this:
 2				& 4		\\ \hline
 \end{tabular}
 \end{center}
+
 Where a tuple $(outer, inner)$ is read as for the $inner$th iteration of the inner iterator expression, the outer
 iterator expression is in its $outer$th iteration. This relation is called $map_{x, x\cdot y}$ as it maps
 representations between scopes $s_{x}$ and $s_{x \cdot y}$. It can be calculated like this:
