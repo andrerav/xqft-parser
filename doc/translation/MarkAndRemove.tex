@@ -50,7 +50,9 @@ The method creates quite simple algebra, as exemplified by the following query:
 for $i in (1,2,3) return 
   ($i, 'yes')
 \end{Verbatim}
- which is translated into this algebra:
+
+which is translated into this algebra:
+
 \begin{Verbatim}
 select(ifThenElse(isNull(value), true, eq(r.inumb,l.inumb))
   cross(
@@ -67,6 +69,63 @@ select(ifThenElse(isNull(value), true, eq(r.inumb,l.inumb))
 The main problem with MarkXRemove is its dependancy on particular ordering of tuples in a relation which is a
 result of a cartesian product. Not only can not the \texttt{cross} operator promise the particular ordering of its
 result, it can not promise any ordering at all. The ordering the method depends on is that for each tuple in the
-left relation one tuple is repeated for all tuples in the right relation.
+left relation the tuple is repeated for all tuples in the right relation. This means that any item may apear
+anywhere in the resulting sequence, which is not acceptable for evaluation of XQuery expressions where all
+sequences are ordered.
 
+Another problem with this method is that any sequence built which includes a reference to an iterator variable is
+not fully calculated until the cartesian product between the corresponding relation and the variables iterator
+sequence is evaluated. This makes it hard to evaluate expressions where such a sequence is a subexpression. The
+iterator \textit{body} of this query:
 
+\begin{Verbatim}
+for $i (5,10) return
+  ($i, 8) > (6,12)
+\end{Verbatim}
+would be translated into something like this relational algebra:
+\begin{Verbatim}
+project(value = gt(l.value, r.value), inumb
+cross(
+  union(
+    project(inumb = counter(), value;
+      make(name:=["value"], [5,10]))
+    make(name:=["value"], [8]))
+  make(name:=["value"], [3,12])))
+\end{Verbatim}
+which again would produce this relation:
+
+\begin{figure*}[!h]
+\centering
+\begin{tabular}{|c|c|} \hline
+$inumb$ & $value$ \\\hline
+1 & \texttt{false} \\\hline
+1 & \texttt{false} \\\hline
+2 & \texttt{true} \\\hline
+2 & \texttt{false} \\\hline
+\texttt{NULL} & \texttt{true} \\\hline
+\texttt{NULL} & \texttt{false} \\\hline
+\end{tabular}
+\end{figure*}
+
+The query should of course be evaluated to $(true, true)$, as the \texttt{>} operator in XQuery yields $true$ if
+\textit{one} item in the sequence on the left side of the operator is larger than \textit{one} item on the right.
+This means that the relation would have to be pruned by a \texttt{select} or \texttt{group}, which can not be done
+genericly in the relations current state. A possibility would be to postpone the pruning until after the relation
+is crossed with the iterator sequence, but there would still not be any not-complex solution. This problem lead to
+the introduction of variable dependancy tainting, as we will see in section \underline{\textbf{\LARGE
+TODO:}}''omtainting''
+
+\underline{\textbf{\LARGE TODO:}} her st\aa r det egentlig noe om numeric predicates, men det er kommentert bort. 
+% Within the \texttt{scope} field of a relation returned from a \texttt{lookup} operator lies information about
+% which child number the scope is relative to its sibling scopes. E.g. if a \texttt{lookup} had been executed on a
+% index holding the following XML-document:
+% \begin{Verbatim}
+% <a>
+%   <b>one</b>
+%   <b>two</b>
+% </a>
+% \end{Verbatim}
+% it would be possible to extract that the element containing ``two'' is the second \verb!<b>!-child of its parent.
+% And its exactly this information MarkXRemove relies on when translating numeric predicate(see section
+% \ref{sect:theory:xquery:Predicates}). But when a numeric predicate is applied to a step expression with a reverse
+% axis, e.g. \texttt{ancestor::}, the numbering is reversed. This means that
