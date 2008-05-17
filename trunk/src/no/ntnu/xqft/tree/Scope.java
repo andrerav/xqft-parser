@@ -4,7 +4,6 @@
 package no.ntnu.xqft.tree;
 
 import java.util.*;
-import no.ntnu.xqft.tree.traversereturn.*;
 import no.ntnu.xqft.tree.*;
 import no.ntnu.xqft.tree.operator.*;
 
@@ -169,7 +168,7 @@ public class Scope {
             // qx·y ($vx ) = πiter :inner ,pos,item(qx ($vx ) (X) iter =outer map(x,x·y))
             // map(x,x·y) = πouter :iter ,inner inner : iter ,pos (qx (ex·y ))
 
-            NodeSetReturn psym = (NodeSetReturn)this.parent.getSym(key);
+            //NodeSetReturn psym = (NodeSetReturn)this.parent.getSym(key);
             /*
             if (parent.isFlworScope) {
 
@@ -181,7 +180,7 @@ public class Scope {
                 NodeSetReturn result = new NodeSetReturn(psym.getPathExpression(), false, p);
             }
             */
-            return psym;
+            return null;
         }
         
         /* Symbol not found */

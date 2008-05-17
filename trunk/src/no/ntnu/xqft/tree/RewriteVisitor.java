@@ -4,7 +4,7 @@
 package no.ntnu.xqft.tree;
 
 import no.ntnu.xqft.tree.operator.Operator;
-import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
+import no.ntnu.xqft.tree.*;
 
 import java.util.*;
 
