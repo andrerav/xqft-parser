@@ -2,7 +2,7 @@
 The target algebra for this project is a dialect of relational algebra (see
 section \ref{sect:theory:relAlg}) developed by FAST Search \& Transfer. The
 language is dubbed MQL (Mars Query Language). This section will describe the
-operators of this language as well as the indices they operate on, and will
+operators of this language as well as the indexes they operate on, and will
 demonstrate some important traits of this language with a few examples. 
 
 \subsection{General concepts}
@@ -10,10 +10,9 @@ All queries for MQL are written as strings with a syntax reminiscient of Lisp
 dialects. TODO: kodeeksempel + relalgtre?
 
 \marginpar{\underline{\Large TODO} \footnotesize Er ikke helt sikker, men tror den heter value occurence index,
-value index er en tredje type, som vi ikke kommer til \aa~bruke?} 
-Data is stored in \textit{indices} rather than in
-DOM trees. Naturally, this is a prerequisite for efficient execution of relational algebra on the data. There
-are two basic index types: \textit{occurence} indexes and \textit{value}
+value index er en tredje type, som vi ikke kommer til \aa~bruke? Valocc er en
+hypotetisk index, kan sikkert presisere det} Data is stored in \textit{indexes}
+rather than in DOM trees. Naturally, this is a prerequisite for efficient execution of relational algebra on the data. There are two basic index types: \textit{occurence} indexes and \textit{value}
 indexes. In the case of an occurence index, a lookup for a term will map the
 term to the occurences of this term. In a \textit{value} index, a key (for
 example document id) is associated to one or more \textit{values} in the
@@ -88,7 +87,6 @@ child operator (\textit{lookup(hairdresser)}).
 
 \subsection{Operators}
 \label{sect:method:marsOperators}
-
 \subsubsection{Lookup}
 \label{sect:method:marsOperators:lookup}
 The \texttt{lookup()} operator performs a lookup in the default index (if none
@@ -134,9 +132,116 @@ OPERATOR     ::= "project" "(" (RETAIN_PARAM ",")?
 \caption{Project operator EBNF}
 \label{figure:mql:ebnf:project_ebnf}
 \end{figure}
+Consider the trivial example in \ref{figure:mql:project_example} which is an
+extension of the example in figure \ref{figure:mql:op_example}. This will
+project the result set on the field \texttt{DocumentID}, and rename it to
+\texttt{id}. 
 
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+project(id=DocumentID;
+  index(valocc; 
+    scope(/a/b;
+      lookup(c))));
+\end{Verbatim}
+\caption{Simple MQL \texttt{project()} example}
+\label{figure:mql:project_example}
+\end{figure}
 
+Note that it is also possible to execute functions and apply constant values to
+the projection. The example in figure \ref{figure:mql:project_example2} may
+produce an output similar to that of figure
+\ref{figure:mql:project_example2_result}.
 
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+project(id=DocumentID, cid=max(100,DocumentID), one="1");
+  index(valocc;
+    scope(/a/b;
+      lookup(c))));
+\end{Verbatim}
+\caption{Simple MQL \texttt{project()} example with inline function call 
+and an applied constant field}
+\label{figure:mql:project_example2}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\begin{tabular}{|c | c | c |}
+\hline
+id & cid & one \\ \hline
+45 & 100 & 1 \\ \hline
+103 & 103 & 1 \\ \hline
+90 & 100 & 1 \\ \hline
+33 & 100 & 1 \\ \hline
+289 & 289 & 1 \\ \hline
+\end{tabular}
+\caption{Hypothetical result of query in figure
+\ref{figure:mql:project_example2}}
+\label{figure:mql:project_example2_result}
+\end{figure}
+
+\subsubsection{Select}
+The \texttt{select()} operator filters tuples from the child operator based on
+boolean function predicates. Consider the example in figure
+\ref{figure:mql:select_example}, where eq() compares the two parameters and
+returns \textit{true} if the parameters are equal. A hypothetical result (based
+on the example for \texttt{project()}) can be seen in figure
+\ref{figure:mql:select_example_result}.
+
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+select(eq(100, cid);
+  project(id=DocumentID, cid=max(100,DocumentID), one="1");
+    index(valocc;
+      scope(/a/b;
+        lookup(c)))));
+\end{Verbatim}
+\caption{Simple MQL \texttt{select()} example}
+\label{figure:mql:select_example}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\begin{tabular}{|c | c | c |}
+\hline
+id & cid & one \\ \hline
+45 & 100 & 1 \\ \hline
+90 & 100 & 1 \\ \hline
+33 & 100 & 1 \\ \hline
+\end{tabular}
+\caption{Hypothetical result of query in figure
+\ref{figure:mql:select_example}}
+\label{figure:mql:select_example_result}
+\end{figure}
+
+\subsubsection{Join}
+A join operator (one of \texttt{hhjoin()}, \texttt{hljoin()}, or
+\texttt{mergejoin()}) performs an equi-join operation as described in section
+\ref{sect:theory:relAlg:equiAndThetaJoin}. In the case of a
+\texttt{mergejoin()}, the input result set must be sorted. The complete syntax
+for any of the join operations can be described with EBNF notation as can be
+seen in figure \ref{figure:mql:ebnf:join}.
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+JOINFIELD    ::= ("left." | "right.")? FIELDNAME
+PROJECTFIELD ::= (FIELDNAME "=")? JOINFIELD
+PROJECTLIST  ::= PROJECTFIELD ("," PROJECTFIELD)*
+JOINNAME     ::= "hhjoin" | "hljoin" | "mergejoin"
+OPERATOR     ::= JOINNAME "(" "[" FIELDLIST "]" "," 
+                 "[" FIELDLIST "]" "," "[" PROJECTLIST "]"
+                  ("," "left" | "right" | "full")? ";"
+                  OPERATOR "," OPERATOR ")"
+\end{Verbatim}
+\caption{Join operator EBNF}
+\label{figure:mql:ebnf:join}
+\end{figure}
+
+\subsubsection{Make}
 
 
 \begin{itemize}
