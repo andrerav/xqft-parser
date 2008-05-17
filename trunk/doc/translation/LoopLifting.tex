@@ -224,8 +224,8 @@ q_{x}(\mbox{\texttt{(}}e_{1}\mbox{\texttt{,}}e_{2}\mbox{\texttt{)}})=
 The $\circledcirc$ operator meets the demand of evaluating comparison and arithmetic operations on atomic values.
 Given two XQuery values $e_{1}$ and $e_{2}$ in multiple iterations, with relational representations as before,
 the expression $e_{1}$ \texttt{ + } $e_{2}$ can be translated by first joining $q_{x}(e_{1})$ and $q_{x}(e_{2})$
-on their iterations $iter$. Then, for each tuple, store the sum of the values of both of the $item$ attributes,
-before cleaning up the resulting relation with a project. Expressed as an equation, the sum expression looks like
+on their iteration number, i.e. $iter$. Then, for each tuple, store the sum of the values of both of the $item$
+attributes, before cleaning up the resulting relation with a project. Expressed as an equation, the sum expression looks like
 this:
 \begin{equation}
 q_{x}(e_{1} \mbox{\texttt{ + }} e_{2}) =
@@ -278,11 +278,12 @@ Firstly a representation of the outermost loop is needed. With the help of equat
 find a representation of \texttt{(10, 20)} in scope $s$, $s(e_{0})$. Then, employing equation \ref{eq:ll:qxy_vxy}
 yields \texttt{\$v0} in scope $s_{0}$, the result of which is shown in figure \ref{fig:translation:ll:q0_v0}.
 $loop_{0}$ and $map_{\, ,0}$ can now be calculated by using equations \ref{eq:ll:loopxy} and \ref{eq:ll:mapx_xy}
-and are shown in figure \ref{fig:translation:ll:loop0} and \ref{fig:translation:ll:map_0} respectevely.
+and are shown in figure \ref{fig:translation:ll:loop0} and \ref{fig:translation:ll:map_0} respectevely (remember
+$loop$ consists of a single tuple with value 1).
 
 \begin{figure}[!h]
 \centering
-\subfigure[$q_{0}($ \texttt{\$v0} $)$]{
+\subfigure[$q_{0}($\texttt{\$v0}$)$]{
 %q0_v0
 \begin{tabular}{|c|c|c|} \hline
 $pos$	& $iter$	& $item$ \\ \hline
@@ -292,8 +293,9 @@ $pos$	& $iter$	& $item$ \\ \hline
 \label{fig:translation:ll:q0_v0}
 %\caption{$q_{0}($ \texttt{\$v0} $)$}
 }
-\qquad
+\qquad \quad
 \subfigure[$loop_{0}$]{
+
 \begin{tabular}{|c|} \hline
 $iter$ \\\hline
 1 \\\hline
@@ -302,7 +304,7 @@ $iter$ \\\hline
 \label{fig:translation:ll:loop0}
 %\caption{$loop_{0}$}
 }
-\qquad
+\qquad \quad
 \subfigure[$map_{\, ,0}$]{
 \begin{tabular}{|c|c|} \hline
 $outer$ & $inner$ \\ \hline
@@ -312,9 +314,160 @@ $outer$ & $inner$ \\ \hline
 \label{fig:translation:ll:map_0}
 %\caption{$map_{\, ,0}$}
 }
-
-
-
 \label{fig:translation:ll:outerIntermediate}
 \caption{Outer loop intermediate results}
 \end{figure}
+
+Before we evaluate the sequence expression in scope $s_0$, we need to evaluate the inner \texttt{for} loop. By the
+same measure as with the outer loop we first calculate $q_{0\cdot 0}($\texttt{\$v00}$)$, $loop_{0 \cdot 0}$ and
+$map_{0, 0 \cdot 0}$. The results are shown in figure \ref{fig:translation:ll:innerIntermediate}.
+
+\begin{figure}[!h]
+\centering
+\subfigure[$q_{0\cdot 0}($\texttt{\$v00}$)$]{
+\begin{tabular}{|c|c|c|} \hline
+$pos$	& $iter$	& $item$ \\ \hline
+1		& 1			& 7 	\\ \hline
+1		& 2			& 8 	\\ \hline
+1		& 3			& 9 	\\ \hline
+1		& 4			& 7 	\\ \hline
+1		& 5			& 8 	\\ \hline
+1		& 6			& 9 	\\ \hline
+\end{tabular}
+\label{fig:translation:ll:q00_v00}
+%\caption{$q_{0}($ \texttt{\$v0} $)$}
+}
+\qquad
+\subfigure[$loop_{0 \cdot 0}$]{
+\quad
+\begin{tabular}{|c|} \hline
+$iter$ \\\hline
+1 \\\hline
+2 \\\hline
+3 \\\hline
+4 \\\hline
+5 \\\hline
+6 \\\hline
+\end{tabular}
+\label{fig:translation:ll:loop00}
+%\caption{$loop_{0}$}
+\quad
+}
+\qquad 
+\subfigure[$map_{0, 0 \cdot 0}$]{
+\begin{tabular}{|c|c|} \hline
+$outer$ & $inner$ \\ \hline
+1 & 1 \\ \hline
+1 & 2 \\ \hline
+1 & 3 \\ \hline
+2 & 4 \\ \hline
+2 & 5 \\ \hline
+2 & 6 \\ \hline
+\end{tabular}
+\label{fig:translation:ll:map0_00}
+%\caption{$map_{\, ,0}$}
+}
+\caption{Inner loop intermediate results \label{fig:translation:ll:innerIntermediate}}
+\end{figure}
+
+To be able to calculate the sum-expression, $e_{0 \cdot 0}'$, we first need a representation of the variable
+\texttt{\$v0} in scope $s_{0 \cdot 0}$. As this variable is a free variable in this scope, this is done by
+applying equation \ref{eq:ll:qxy_vx} on $q_{0}($\texttt{\$v0}$)$ (figure \ref{fig:translation:ll:q0_v0}). This
+result is shown in figure \ref{fig:translation:ll:q00_v0}. Now that we have both \texttt{\$v0} and \texttt{\$v00}
+expressed from scope $s_{0 \cdot 0}$'s viewpoint, we can employ equation \ref{eq:ll:sumexpr} to sum the two variables together. The
+resulting relation can be seen in figure \ref{fig:translation:ll:q00_e00m}.
+
+\begin{figure}[!h]
+\centering
+\subfigure[$q_{0\cdot 0}($\texttt{\$v0}$)$]{
+\qquad 
+\begin{tabular}{|c|c|c|} \hline
+$pos$	& $iter$	& $item$ \\ \hline
+1		& 1			& 10 	\\ \hline
+1		& 2			& 10	\\ \hline
+1		& 3			& 10	\\ \hline
+1		& 4			& 20	\\ \hline
+1		& 5			& 20	\\ \hline
+1		& 6			& 20	\\ \hline
+\end{tabular}
+\label{fig:translation:ll:q00_v0}
+\qquad 
+%\caption{$q_{0}($ \texttt{\$v0} $)$}
+}
+\subfigure[$q_{0\cdot 0}(e_{0\cdot0}')=q_{0\cdot 0}($\texttt{\$v0 + \$v00}$)$]{ 
+\qquad 
+\begin{tabular}{|c|c|c|} \hline
+$pos$	& $iter$	& $item$ \\ \hline
+1		& 1			& 17 	\\ \hline
+1		& 2			& 18 	\\ \hline
+1		& 3			& 19 	\\ \hline
+1		& 4			& 27 	\\ \hline
+1		& 5			& 28 	\\ \hline
+1		& 6			& 29 	\\ \hline
+\end{tabular}
+\label{fig:translation:ll:q00_e00m}
+\qquad
+}
+\caption{Innermost expression intermediate results \label{fig:translation:ll:innerExpr}}
+\end{figure}
+
+The result of the summation, $q_{0\cdot 0}(e_{0\cdot0}')$ is expressed in scope $s_{0 \cdot 0}$ and will have to
+be mapped up to scope $s_{0}$. This is done with help from equation \ref{eq:ll:qx_exymark} and $map_{0, 0\cdot 0}$
+which we calculated earlier, and the result can be seen in figure \ref{fig:translation:ll:q0_e00m}. With
+$q_{0}(e_{0\cdot0}')$ evaluated, and with $q_{0}($\texttt{\$v0}$)$ from earlier, the sequence building can be completed. This operation requires
+equation \ref{eq:ll:secuence}, and yields the relation shown in figure \ref{fig:translation:ll:q0_e0m}.
+
+\begin{figure}[!h]
+\centering
+\subfigure[$q_{0}(e_{0\cdot0}')$]{
+%q0_v0
+\begin{tabular}{|c|c|c|} \hline
+$pos$	& $iter$	& $item$ \\ \hline
+1		& 1			& 17 	\\ \hline
+2		& 1			& 18 	\\ \hline
+3		& 1			& 19 	\\ \hline
+1		& 2			& 27 	\\ \hline
+2		& 2			& 28 	\\ \hline
+3		& 2			& 29 	\\ \hline
+\end{tabular}
+\label{fig:translation:ll:q0_e00m}
+%\caption{$q_{0}($ \texttt{\$v0} $)$}
+}
+\qquad
+\subfigure[$q_{0}(e_{0}')$]{
+\begin{tabular}{|c|c|c|} \hline
+$pos$	& $iter$	& $item$ \\ \hline
+1		& 1			& 10 	\\ \hline
+2		& 1			& 17 	\\ \hline
+3		& 1			& 18 	\\ \hline
+4		& 1			& 19 	\\ \hline
+1		& 2			& 20 	\\ \hline
+2		& 2			& 27 	\\ \hline
+3		& 2			& 28 	\\ \hline
+4		& 2			& 29 	\\ \hline
+\end{tabular}
+\label{fig:translation:ll:q0_e0m}
+%\caption{$loop_{0}$}
+}
+\qquad
+\subfigure[$q(e_{0}')$]{
+\begin{tabular}{|c|c|c|} \hline
+$pos$	& $iter$	& $item$ \\ \hline
+1		& 1			& 10 	\\ \hline
+2		& 1			& 17 	\\ \hline
+3		& 1			& 18 	\\ \hline
+4		& 1			& 19 	\\ \hline
+5		& 1			& 20 	\\ \hline
+6		& 1			& 27 	\\ \hline
+7		& 1			& 28 	\\ \hline
+8		& 1			& 29 	\\ \hline\end{tabular}
+\label{fig:translation:ll:q_e0m}
+%\caption{$map_{\, ,0}$}
+}
+\label{fig:translation:ll:endExample}
+\caption{Intermediate and final result}
+\end{figure}
+
+Finally the built sequence will have to be expressed in terms of scope $s$. Achieving this only requires the use
+of equation \ref{eq:ll:qx_exymark} one last time in combination with $map_{ ,0}$. The complete result of the query
+is shown in figure \ref{fig:translation:ll:q_e0m}.
