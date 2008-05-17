@@ -28,44 +28,12 @@ import org.antlr.runtime.Token;
  */
 public class XQFT {
     
-    public XQFTParser.module_return execQuery(XQFTParser pa)
-    {
-    	
-    	try {
-			return pa.module();
-		} catch (Exception e) {
-			System.out.println(getErrorMessage(e));
-		}
-		return null;
-    }
-    
-    public void dumpToFile(String data, String path)
-    {
-    	try{
-        	FileWriter fout = new FileWriter(path);
-        	BufferedWriter out = new BufferedWriter(fout);
-        	for(int i = 0; i < data.length(); i++)
-        	{
-        		if(data.charAt(i)=='\n')
-        			out.newLine();
-        		else
-        			out.write(data.charAt(i));
-        	}
-        	
-        	out.flush();
-        	fout.flush();
-        	fout.close();
-    	}
-    	catch(Exception e){
-    		e.printStackTrace();
-    	}
-    }
+
     
     
 	public static void main(String[] args) throws Exception
 	{
-        //String input;
-	    System.out.println("This is XQFT Parser v0.999... (http://en.wikipedia.org/wiki/0.999...)\n");
+        System.out.println("This is XQFT Parser v0.999... (http://en.wikipedia.org/wiki/0.999...)\n");
 
         // Initiate the arguments engine.
         ArgsEngine engine = new ArgsEngine();
@@ -184,6 +152,39 @@ public class XQFT {
 		System.out.println("Done");
 
 	}
+	
+    public XQFTParser.module_return execQuery(XQFTParser pa)
+    {
+        try {
+            return pa.module();
+        } catch (Exception e) {
+            System.out.println(getErrorMessage(e));
+        }
+        return null;
+    }
+    
+    public void dumpToFile(String data, String path)
+    {
+        try{
+            FileWriter fout = new FileWriter(path);
+            BufferedWriter out = new BufferedWriter(fout);
+            for(int i = 0; i < data.length(); i++)
+            {
+                if(data.charAt(i)=='\n')
+                    out.newLine();
+                else
+                    out.write(data.charAt(i));
+            }
+            
+            out.flush();
+            fout.flush();
+            fout.close();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }	
+	
 	
 	private void lagGraf(String infile, String outfile) {
         //dot -Tpdf -odoc/img/graphs/$$i.pdf
