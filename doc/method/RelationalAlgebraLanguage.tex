@@ -368,6 +368,16 @@ section \ref{sect:theory:xquery:basics}.
 
 \begin{figure}[!h]
 \centering
+\begin{Verbatim}
+project(truthVal=xqBoolean(B); 
+  make(name:=["A","B","C"], [1,4], [0,5] [3,6]))
+\end{Verbatim}
+\caption{Example of xqBoolean() usage}
+\label{figure:mql:xqboolean_example}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
 \mbox{
 \subfigure[Input for example in figure
 \ref{figure:mql:xqboolean_example}]{
@@ -385,28 +395,109 @@ A & B & C \\ \hline
 \begin{tabular}{| c |}
 \hline
 truthVal \\ \hline
-\textit{true} \\ \hline
 \textit{false} \\ \hline
+\textit{true} \\ \hline
 \end{tabular}
 \label{figure:mql:xqboolean_example_output}
 }
 }
+\caption{Input/output result sets}
+\end{figure}
+
+The semantics of this function is captured in the example in figure
+\ref{figure:mql:xqboolean_example}. For the input result set produced by the
+\textit{make()} operator in figure \ref{figure:mql:xqboolean_example_input},
+the output result in figure \ref{figure:mql:xqboolean_example_output} is
+produced. The example converts the integer 5 to \textit{true} and the integer 0
+to \textit{false}. 
+
+\subsubsection{Numberation/sequence generator}
+This operator should generate a sequence field from the input result set,
+optionally restart the sequence based on field partitioning, and optionally sort
+the output. The operator accepts three parameters and one child operator; the
+three parameters are:
+\begin{itemize}
+  \item A field name for the generated sequence
+  \item An optional list of fields to sort by
+  \item An optional list of fields for partitioning
+\end{itemize}
+The syntax for this operator can be defined in EBNF notation as seen in figure
+\ref{figure:mql:numberate_ebnf}.
+\begin{figure}[!h]
+\begin{center}
+\begin{Verbatim}
+FIELD         ::= IDENTIFIER
+SORTLIST      ::= "[" FIELD ("," FIELD)* "]"
+PARTITIONLIST ::= "[" FIELD ("," FIELD)* "]"
+OPERATOR      ::= "numberate" "(" FIELD ("," SORTLIST)? 
+                  ("," PARTITIONLIST)?  ";" OPERATOR ")"
+\end{Verbatim}
+  \caption{EBNF definition for the \texttt{numberate()} operator}
+  \label{figure:mql:numberate_ebnf}
+\end{center}
+\end{figure}
+
+\begin{figure}[!h]
+\begin{center}
+\begin{Verbatim}
+numberate(Seq, [A,B], [A];
+  make(name:=["A","B"]; [1,1,1,2,2,2], [a,b,c,a,b,c]))
+\end{Verbatim}
+  \caption{Trivial example of \texttt{numberate()} usage}
+  \label{figure:mql:numberate_example}
+\end{center}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-\begin{Verbatim}
-project(truthVal=xqBoolean(B); 
-  make(name:=["A","B","C"], [1,4], [0,5] [3,6]))
-\end{Verbatim}
-\caption{Example of xqBoolean() usage}
-\label{figure:mql:xqboolean_example}
+\mbox{
+\subfigure[Input]{
+\begin{tabular}{| c | c |}
+\hline
+A & B \\ \hline
+1 & a \\ \hline
+1 & b \\ \hline
+1 & c \\ \hline
+2 & a \\ \hline
+2 & b \\ \hline
+2 & c \\ \hline
+\end{tabular}
+\label{figure:mql:numberate_example_input}
+}
+\quad
+\subfigure[Output]{
+\begin{tabular}{| c | c | c |}
+\hline
+Seq & A & B \\ \hline
+1 & 1 & a \\ \hline
+2 & 1 & b \\ \hline
+3 & 1 & c \\ \hline
+1 & 2 & a \\ \hline
+2 & 2 & b \\ \hline
+3 & 2 & c \\ \hline
+\end{tabular}
+\label{figure:mql:numberate_example_output}
+}
+}
+\caption{Input/output result sets}
 \end{figure}
+The example in figure \ref{figure:mql:numberate_example} illustrates the
+behaviour of this operator. In the output result set seen in figure
+\ref{figure:mql:numberate_example_output}, a column \texttt{Seq} has been
+added, with a sequence which is restarted for each new value of \texttt{A}.
 
-
-\subsubsection{numberate/sequence generator}
 \subsubsection{Union/disjoint union}
-
+The \texttt{union()} operator accepts relations with different schemas, and
+does not remove duplicates (disjoint union). The schema for the result relation
+can be described as:
+\begin{equation*}
+schema(\texttt{union(}\alpha, \beta\texttt{)}) = schema(\alpha) \cup
+schema(\beta).
+\end{equation*}
+Alternatively, implementation of these semantics can be done manually by
+the translator with the help of \texttt{project()} operators. Specifically,
+this can be done by adding fields to the two sets to ensure uniqueness and then
+perform a regular union.
 
 hvilke operatorer/ funksjoner har vi lagt til / forutsatt?
 \begin{itemize}
