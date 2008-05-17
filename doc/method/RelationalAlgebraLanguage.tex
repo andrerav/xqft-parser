@@ -257,7 +257,61 @@ mergejoin([DocumentID], [DocumentID], [DocumentID, Position];
 \label{figure:mql:mergejoin_example}
 \end{figure}
 
+
 \subsubsection{Make}
+The \texttt{make()} operator is used to synthesize result sets from the given
+(constant) arguments. Field names can be specified, but are not required. The
+default field names are \textit{field0}, \textit{field1}, \ldots,
+\textit{fieldN}, where \textit{N} is the number of fields. The example in
+figure \ref{figure:mql:make_example1} will produce the output seen in figure
+\ref{figure:mql:make_example1_result}
+
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+make(1,2,3)
+\end{Verbatim}
+\caption{Trivial MQL \texttt{make()} example}
+\label{figure:mql:make_example1}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\begin{tabular}{|c | c | c |}
+\hline
+field0 & field1 & field2 \\ \hline
+1 & 2 & 3 \\ \hline
+\end{tabular}
+\caption{Hypothetical result of query in figure
+\ref{figure:mql:make_example1}}
+\label{figure:mql:make_example1_result}
+\end{figure}
+
+A more complex example can be seen in \ref{figure:mql:make_example2}, where
+field names are specified, and several tuples are synthesized. The
+corresponding result is shown in figure \ref{figure:mql:make_example2_result}.
+
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+make(name:=["A","B","C"], [1,4], [2,5] [3,6])
+\end{Verbatim}
+\caption{MQL \texttt{make()} example}
+\label{figure:mql:make_example2}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\begin{tabular}{|c | c | c |}
+\hline
+A & B & C \\ \hline
+1 & 2 & 3 \\ \hline
+4 & 5 & 6 \\ \hline
+\end{tabular}
+\caption{Hypothetical result of query in figure
+\ref{figure:mql:make_example2}}
+\label{figure:mql:make_example2_result}
+\end{figure}
 
 
 \begin{itemize}
