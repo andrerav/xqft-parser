@@ -51,6 +51,8 @@ public class XQFT {
         		else
         			out.write(data.charAt(i));
         	}
+        	
+        	out.flush();
         	fout.flush();
         	fout.close();
     	}
@@ -63,23 +65,31 @@ public class XQFT {
 	public static void main(String[] args) throws Exception
 	{
         //String input;
+	    System.out.println("This is XQFT Parser v0.999... (http://en.wikipedia.org/wiki/0.999...)\n");
 
         // Initiate the arguments engine.
         ArgsEngine engine = new ArgsEngine();
         
         // Configure options (Use bool true for valued options)
-        engine.add("-t", "--dot");
-        engine.add("-p", "--pdf");
+        engine.add("-d", "--create-dot");
+        engine.add("-p", "--create-pdf");
         engine.add("-o", "--output-folder", true);
         engine.add("-h", "--help");
         
         // Parse arguments
         engine.parse(args);
         
-        boolean createDot = engine.getBoolean("-t");
+        boolean createDot = engine.getBoolean("-d");
         boolean createPdf = engine.getBoolean("-p");
+        
+        // createPdf implies createDot
+        if (createPdf) {
+            createDot = true;
+        }
 
+        // Output folder for dot and pdf
         String outputFolder;
+
         if (engine.getBoolean("-o")) {
            outputFolder = engine.getString("-o");            
         }
@@ -93,6 +103,8 @@ public class XQFT {
         if (inputs.length > 0) {
             
             File file;
+            String basename;
+            int i = 0;
             
             for (String input : inputs) {
                 
@@ -101,26 +113,23 @@ public class XQFT {
                     Scanner scan = new Scanner(file);
                     scan.useDelimiter("\\Z"); // EOF
                     input = scan.next();
+                    
+                    basename = file.getName();
                 }
                 
                 else {
-                    // This input is a string, so just execute it
+                    basename = "str" + i;
                 }
                 
-                executeOnInput(input, createDot, createPdf, outputFolder); // See below
-                
+                executeOnInput(input, createDot, createPdf, outputFolder, basename); // See below
+                i++;
             }
             
         }
 	}
 	
-	public static void executeOnInput(String input, boolean createDot, boolean createPdf, String outputFolder) {
+	public static void executeOnInput(String input, boolean createDot, boolean createPdf, String outputFolder, String basename) {
         
-        // Last resort
-//        else {
-//            input =  "for $x in (1, <a/>) return /A[$x]/TITLE";            
-//        }
-
         XQFT m = new XQFT();
 	    
 	    
@@ -141,15 +150,29 @@ public class XQFT {
 		{
     		XQFTTree tree = (XQFTTree)tre.getTree();
     
-    		System.out.println("\n" + input + "\n");
+    		System.out.println("Parsing the following query:\n" + input + "\n");
+
+    		System.out.println("Generated AST:");
+            System.out.println(tree.toStringTree() + "\n");
     		
-            /* Execute rewrite visitor on tree */
+            // Execute rewrite visitor on tree
             RewriteVisitor rwvisitor = new RewriteVisitor();
             rwvisitor.visit(tree);
+
+
+            System.out.println("Rewritten AST:");
+            System.out.println(tree.toStringTree() + "\n");
     		
-    		System.out.println(tree.toStringTree() + "\n\n");
-    		m.dumpToFile(tree.toDotStringTree(), "tekstNode.txt");
-    		m.lagGraf("tekstNode.txt", "graf.pdf");
+            if (createDot) {
+                String dotpath = outputFolder + "/" + basename + ".dot";
+                m.dumpToFile(tree.toDotStringTree(), dotpath);
+                
+                if (createPdf) {
+                    String pdfpath = outputFolder + "/" + basename + ".pdf";
+                    m.lagGraf(dotpath, pdfpath);                    
+                }
+            }
+            
     		
             //FlworizedPathExprVisitor visitor = new FlworizedPathExprVisitor();       
             //Operator top = visitor.visit(tree);
@@ -158,16 +181,17 @@ public class XQFT {
 		}		
 
 		System.out.println(Scope.getSymtab().toString());
-
-		System.out.println("\ndone");
+		System.out.println("Done");
 
 	}
 	
-	private void lagGraf(String infil, String utfil) {
-		try{//dot -Tpdf -odoc/img/graphs/$$i.pdf
-			Runtime rt = Runtime.getRuntime();
-			rt.exec("dot " + infil + " -Tpdf -o" + utfil);
-		}catch(Exception e){
+	private void lagGraf(String infile, String outfile) {
+        //dot -Tpdf -odoc/img/graphs/$$i.pdf
+	    try{
+            Runtime rt = Runtime.getRuntime();
+            rt.exec("dot " + infile + " -Tpdf -o" + outfile);
+		}
+		catch(Exception e){
 			e.printStackTrace();
 		}
 		
