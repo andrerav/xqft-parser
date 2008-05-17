@@ -18,7 +18,7 @@ import org.antlr.runtime.*;
  *  children of a synthezizer (Axel F theme), which will replace the top of the pathexpr tree. All predicates will
  *  then be joined by ANDs.
  */
-public class RewriteVisitor implements Visitor {
+public class RewriteVisitor extends Visitor {
     
 	private ArrayList<XQFTTree> predicates;
 	private boolean inPathExpr = false;
@@ -54,11 +54,7 @@ public class RewriteVisitor implements Visitor {
 		}
 	}
 
-	public void visitAllChildren(XQFTTree tree) {
-        for(int i = 0;i < tree.getChildCount(); i++) {
-            ((XQFTTree)tree.getChild(i)).accept(this);
-        }
-    }    
+ 
     
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visit(no.ntnu.xqft.parse.XQFTTree)
@@ -77,57 +73,56 @@ public class RewriteVisitor implements Visitor {
     	return null;
     }
 
-    public TraverseReturn visitAST_STEPEXPR(XQFTTree node) {
-
-    	boolean thisIsTop = false;
-    	if(!inPathExpr)
-    	{
-    		thisIsTop = true;
-    		inPathExpr = true;
-    		predLvl = 0;
-    		predicates = new ArrayList<XQFTTree>();
-    	}
-    	
-    	predLvl++;
-    	visitAllChildren(node);
-    	
-    	if(node.getChildCount() > 1)
-    	{
-    		XQFTTree pred = (XQFTTree)node.getChild(1);
-    		pred.predLvl = this.predLvl;
-    		pred.token = new CommonToken(XQFTParser.SYNTH_PR_LVL, "SYNTH_PR_LVL " + this.predLvl);
-
-    		
-    		while(node.getChildCount() > 2)
-    		{
-    			XQFTTree and = new XQFTTree(new CommonToken(XQFTParser.AND, "AND"));
-    			and.addChild(node.getChild(1).getChild(0));
-    			and.addChild(node.getChild(2).getChild(0));
-    			((XQFTTree)node.getChild(1)).deleteChild(0);
-    			node.deleteChild(2);
-    			pred.addChild(and);
-
-    		}
-    		node.deleteChild(1);
-    		predicates.add(pred);
-
-    	}
-    	
-
-    	
-    	if(thisIsTop)
-    	{
-    		inPathExpr = false;
-   			insertPredicatedPathExprNode(node);
-   			predLvl = 0;
-   			predicates = null;
-    	}
-    	
-        /* Check if step expression has more than one child 
-         * (the first child is the node name, e.g a in /a[b])
-         */
-
-    	
+    public TraverseReturn visitAST_STEPEXPR(XQFTTree tree) {
+//
+//    	boolean thisIsTop = false;
+//    	if(!inPathExpr)
+//    	{
+//    		thisIsTop = true;
+//    		inPathExpr = true;
+//    		predLvl = 0;
+//    		predicates = new ArrayList<XQFTTree>();
+//    	}
+//    	
+//    	predLvl++;
+//    	visitAllChildren(node);
+//    	
+//    	if(node.getChildCount() > 1)
+//    	{
+//    		XQFTTree pred = (XQFTTree)node.getChild(1);
+//    		pred.predLvl = this.predLvl;
+//    		pred.token = new CommonToken(XQFTParser.SYNTH_PR_LVL, "SYNTH_PR_LVL " + this.predLvl);
+//
+//    		
+//    		while(node.getChildCount() > 2)
+//    		{
+//    			XQFTTree and = new XQFTTree(new CommonToken(XQFTParser.AND, "AND"));
+//    			and.addChild(node.getChild(1).getChild(0));
+//    			and.addChild(node.getChild(2).getChild(0));
+//    			((XQFTTree)node.getChild(1)).deleteChild(0);
+//    			node.deleteChild(2);
+//    			pred.addChild(and);
+//
+//    		}
+//    		node.deleteChild(1);
+//    		predicates.add(pred);
+//
+//    	}
+//    	
+//
+//    	
+//    	if(thisIsTop)
+//    	{
+//    		inPathExpr = false;
+//   			insertPredicatedPathExprNode(node);
+//   			predLvl = 0;
+//   			predicates = null;
+//    	}
+//    	
+//        // Check if step expression has more than one child 
+//        // (the first child is the node name, e.g a in /a[b])
+//
+//    	
 //        if (node.getChildCount() >= 2) {
 //            
 //            XQFTTree tmp = null;
@@ -169,7 +164,8 @@ public class RewriteVisitor implements Visitor {
 //            node.addChild(root);
 //            
 //        }
-        
+//        
+        this.visitAllChildren(tree);
         return null;
     }    
     
@@ -178,25 +174,26 @@ public class RewriteVisitor implements Visitor {
      * @see no.ntnu.xqft.tree.Visitor#visitSLASHSi(no.ntnu.xqft.parse.XQFTTree)
      */
     public TraverseReturn visitSLASHSi(XQFTTree tree) {
-    	boolean thisIsTop = false;
-    	if(!inPathExpr)
-    	{
-    		thisIsTop = true;
-    		inPathExpr = true;
-    		predLvl = 0;
-    		predicates = new ArrayList<XQFTTree>();
-    	}
-    	
+//    	boolean thisIsTop = false;
+//    	if(!inPathExpr)
+//    	{
+//    		thisIsTop = true;
+//    		inPathExpr = true;
+//    		predLvl = 0;
+//    		predicates = new ArrayList<XQFTTree>();
+//    	}
+//    	
+//        this.visitAllChildren(tree);
+//
+//    	if(thisIsTop)
+//    	{
+//    		inPathExpr = false;
+//   			insertPredicatedPathExprNode(tree);
+//   			predicates = null;
+//   			predLvl = 0;
+//    	}
+//        
         this.visitAllChildren(tree);
-
-    	if(thisIsTop)
-    	{
-    		inPathExpr = false;
-   			insertPredicatedPathExprNode(tree);
-   			predicates = null;
-   			predLvl = 0;
-    	}
-        
         return null;
     }
     
@@ -205,30 +202,32 @@ public class RewriteVisitor implements Visitor {
      * @see no.ntnu.xqft.tree.Visitor#visitAST_PATHEXPR_SGL(no.ntnu.xqft.parse.XQFTTree)
      */
     public TraverseReturn visitAST_PATHEXPR_SGL(XQFTTree tree) {
-		inPathExpr = true;
-		predLvl = 0;
-		predicates = new ArrayList<XQFTTree>();
-    	
+//		inPathExpr = true;
+//		predLvl = 0;
+//		predicates = new ArrayList<XQFTTree>();
+//    	
+//        this.visitAllChildren(tree);
+//
+//        inPathExpr = false;
+//        insertPredicatedPathExprNode(tree);
+//        predicates = null;
+//        predLvl = 0;
         this.visitAllChildren(tree);
-
-        inPathExpr = false;
-        insertPredicatedPathExprNode(tree);
-        predicates = null;
-        predLvl = 0;
         return null;
     }
 
 	public TraverseReturn visitAST_PATHEXPR_DBL(XQFTTree tree) {
-		inPathExpr = true;
-		predLvl = 0;
-		predicates = new ArrayList<XQFTTree>();
-		
-        this.visitAllChildren(tree);
-		
-        inPathExpr = false;
-        insertPredicatedPathExprNode(tree);
-        predLvl = 0;
-        predicates = null;
+//		inPathExpr = true;
+//		predLvl = 0;
+//		predicates = new ArrayList<XQFTTree>();
+//		
+//        this.visitAllChildren(tree);
+//		
+//        inPathExpr = false;
+//        insertPredicatedPathExprNode(tree);
+//        predLvl = 0;
+//        predicates = null;
+	    this.visitAllChildren(tree);
 		return null;
 	}
     
@@ -237,8 +236,9 @@ public class RewriteVisitor implements Visitor {
      */
     public TraverseReturn visitAST_PREDICATE(XQFTTree tree) {
         
-    	RewriteVisitor rw = new RewriteVisitor();
-    	rw.acceptThis(tree.getChild(0));
+//    	RewriteVisitor rw = new RewriteVisitor();
+//    	rw.acceptThis(tree.getChild(0));
+        this.visitAllChildren(tree);
 
         return null;
     }
@@ -353,22 +353,7 @@ public class RewriteVisitor implements Visitor {
         
         return false;
     }
-    
-    /**
-     * Converts several for/let clauses to stand-alone FLWOR expressions
-     * 
-     * @param flwor a FLWOR root node
-     * 
-     * @return an expanded FLWOR tree
-     */
-    public XQFTTree expandForClauses(XQFTTree flwor) {
-        if (flwor.getChild(0).getType() == XQFTParser.AST_FORCLAUSE || flwor.getChild(0).getType() == XQFTParser.AST_LETCLAUSE) {
-            
-        }
-        
-        return null;
-        
-    }
+
 
 
     public TraverseReturn visitDOLLARSi(XQFTTree tree) {

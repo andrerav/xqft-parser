@@ -9,7 +9,7 @@ import no.ntnu.xqft.tree.Visitor;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.tree.*;
 
-import no.ntnu.xqft.tree.traversereturn.TraverseReturn;
+import no.ntnu.xqft.tree.*;
 
 /**
  * @author andreas
