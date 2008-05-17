@@ -2,34 +2,30 @@ package no.ntnu.xqft;
 
 import java.io.*;
 import java.util.*;
-
 import com.adarshr.args.*;
-
 import no.ntnu.xqft.parse.*;
 import no.ntnu.xqft.tree.*;
 import no.ntnu.xqft.tree.operator.Operator;
-
-import org.antlr.runtime.ANTLRStringStream;
-import org.antlr.runtime.CharStream;
-import org.antlr.runtime.EarlyExitException;
-import org.antlr.runtime.FailedPredicateException;
-import org.antlr.runtime.MismatchedNotSetException;
-import org.antlr.runtime.MismatchedSetException;
-import org.antlr.runtime.MismatchedTokenException;
-import org.antlr.runtime.MismatchedTreeNodeException;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.Token;
+import org.antlr.runtime.*;
 
 /**
- * Main class for executing 
- * @author flassmeister 
+ *  Usage:
+ *    XQFT <input file 1> <input file 2> ... <input file N>
+ *    -or-
+ *    XQFT "input string"
+ *    -or-
+ *    XQFT "input string" <input file ..>
+ *  Or any remix of the above.
+ *  Options:
+ *    -d --create-dot : Writes dot files for each input (AST)
+ *    -p --create-pdf : Writes pdf files for each input (AST)
+ *    -o --output-folder : sekrit!! >:D
+ *
  * @author andreas
+ * @author flassmeister 
  *
  */
 public class XQFT {
-    
-
-    
     
 	public static void main(String[] args) throws Exception
 	{
