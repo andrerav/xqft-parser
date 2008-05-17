@@ -1,0 +1,29 @@
+\section{MarkXRemove}
+\label{sect:translation:MarkXRemove}
+
+Our original proposition to a method for translating XQuery ASTs into relational algebra was named MarkXRemove.
+The rationale behind this name will be explained later. Eventhough it has many shortcomings and flaws, we
+will in this section give a quick run through of the method. This is because when we in the next section present
+``INSERTNAMEHERE'', which is an evolution and a refinement of MarkXRemove, the new method may be easier understood
+when seen in the perspective of its origins. Another reason is that in case of further development of the
+``INSERTNAMEHERE'', it may be of help to also know what will \textit{not} work, what will work partially and
+\textit{why} it is flawed.
+
+\subsection{Basics}
+\label{sect:translation:mxr:basics}
+
+The foundation of the method is that an iterator expression is always translated by calculating the cartesian
+product of the iterator sequence and the iterator body, hence the ``X'' in the name. The ``remove'' stems from the
+removing of tuples who ended up in the wrong iteration in the cross product result. The cartesian product and the
+selection of tuples afterwards actually constitutes a kind of natural join (see section
+\ref{sect:theory:relAlg:naturalJoin}) as we will see later.
+
+As the translator comes across an iterator variable declaration, with the variable name $\Beta$, it will augment
+the representation of the iterator sequence belonging to this variable with an attribute $\Beta$\textsf{numb}.
+This new attribute will hold consecutive values from 1 to $n$ for a $n$ item long sequence, which will symbolise the
+iteration number of the iterator expression seen isolated from possible other surrounding iterator expressions. A
+function \texttt{counter()} returning the row number of a relation and a \texttt{project} operator will handle
+the augmentation. The corresponding algebra tree is be stored in the symbol table.
+
+If the translator later comes accross a reference to this variable, it will get the tree from the symbol table and
+return it to the referring node without any further ado.
