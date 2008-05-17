@@ -240,6 +240,22 @@ OPERATOR     ::= JOINNAME "(" "[" FIELDLIST "]" ","
 \caption{Join operator EBNF}
 \label{figure:mql:ebnf:join}
 \end{figure}
+A trivial usage example of the \texttt{mergejoin()} operator can be seen in
+figure \ref{figure:mql:mergejoin_example}, where the result sets from two
+hypothetical child operators \texttt{Query1()} and \texttt{Query2()} is joined
+on their document ids, and the result is projected on the
+fields \textit{DocumentID} and \textit{Position}.
+
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+mergejoin([DocumentID], [DocumentID], [DocumentID, Position]; 
+  Query1(..),
+  Query2(..))
+\end{Verbatim}
+\caption{Simple MQL \texttt{mergejoin()} example}
+\label{figure:mql:mergejoin_example}
+\end{figure}
 
 \subsubsection{Make}
 
