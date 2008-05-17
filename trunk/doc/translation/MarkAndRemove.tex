@@ -18,12 +18,17 @@ removing of tuples who ended up in the wrong iteration in the cross product resu
 selection of tuples afterwards actually constitutes a kind of natural join (see section
 \ref{sect:theory:relAlg:naturalJoin}) as we will see later.
 
-As the translator comes across an iterator variable declaration, with the variable name $\Beta$, it will augment
-the representation of the iterator sequence belonging to this variable with an attribute $\Beta$\textsf{numb}.
+As the translator comes across an iterator variable declaration, with the variable name $\beta$, it will augment
+the representation of the iterator sequence belonging to this variable with an attribute $\beta$\textsf{numb}.
 This new attribute will hold consecutive values from 1 to $n$ for a $n$ item long sequence, which will symbolise the
 iteration number of the iterator expression seen isolated from possible other surrounding iterator expressions. A
 function \texttt{counter()} returning the row number of a relation and a \texttt{project} operator will handle
-the augmentation. The corresponding algebra tree is be stored in the symbol table.
+the augmentation. The corresponding algebra tree is be stored in the symbol table. The ``mark'' of the name of the
+method is because of this augmentation.
 
-If the translator later comes accross a reference to this variable, it will get the tree from the symbol table and
-return it to the referring node without any further ado.
+\subsection{FLWOR}
+\label{sect:translation:mxr:flwor}
+If the translator later comes accross a reference to an iterator variable, it will get the tree from the symbol
+table and return it to the referring node without any further ado. The translator is also required to know which
+subtrees have a child that has referred to which iterator variable. This is because the $\beta$\textsf{numb}
+column could be lost in a \texttt{project} operation without this knowledge.
