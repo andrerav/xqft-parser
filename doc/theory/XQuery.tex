@@ -13,14 +13,6 @@ XQuery can be used to query any kind of data structure that can be represented
 as an XML document, including structured and semi-structured data. This
 includes text documents, relational databases, and XML-compliant HTML markup.
 
-\begin{itemize}
-  \item Ortogonal (expressions inni expressions inni path expressions osv)
-  \item Funksjonell (st\o tter ikke h\o yere ordens-funksjoner)
-  \item Mindre spr\a k enn xslt
-  \item 
-\end{itemize}
-
-
 \subsection{Basic language features}
 \label{sect:theory:xquery:basics}
 XQuery is a functional language with a comparatively small syntax. It lacks
@@ -103,18 +95,6 @@ traits about the nodes to be matched. For example, attribute nodes can be
 matched using \verb!attribute::! (or \verb!@!, with abbreviated syntax). For a
 complete reference to axis specifiers, we refer to \cite{w3c01}.
 
-\begin{itemize}
-\item intro
-\item fra XPath / brukt i mange andre ting (XSLT yeye)
-\item analogier til filsystem osv
-\item akser -> [Definition: The following axes are designated as optional axes:
-ancestor, ancestor-or-self, following, following-sibling, preceding, and
-preceding-sibling.] (http://www.w3.org/TR/xquery/\#dt-optional-axis)
-\item semantikk
-\item eksikveringsorden etc
-\item context item '.'
-\end{itemize}
-
 \subsection{Predicates}
 \label{sect:theory:xquery:Predicates}
 Predicates are used in path expressions to filter nodes. Predicates are
@@ -149,15 +129,6 @@ predicate expression evaluates to a numerical value, then the predicate
 becomes a ``numeric predicate'', and its value is used to identify the
 \textit{n}th node in the path expression. For example, the following path
 expression returns the first \verb!b!-node: \verb!/a/b[1]!.
-
-\begin{itemize}
-  \item predikater kan brukes etter b\aa de stepExprz og filterExprz
-  \item de gj\o r egentlig ikke noe annet enn \aa~ begrense hva som er i settet
-  f\o r (og alt er jo sett)
-  \item unntaket er talltingen.. som sikkert er en forkortelse for
-  plzReturnTheNumberInTheSequenceIamInRightNow() ellerno.. har ikke lest
-  tingen: http://www.w3.org/TR/xquery/\#id-predicates
-\end{itemize}
 
 \subsection{FLWOR}
 \label{sect:theory:xquery:Flwor}
@@ -244,36 +215,6 @@ scope of the outer loop, and a new scope is not started until this iterator
 sequence has been evaluated. Otherwise one could risk overwriting variables in
 the iterator sequence when binding variables in the new scope.
 
-\begin{itemize}
-\item motiv
-\item ...
-\item FLWOR semantikk
-\item \^{} --- eksikveringsorden etc
-\item scoping, hvilke variable er i hvilke scopes (for \$i in \$i..)
-\end{itemize}
-
-\subsection{Binary Operators}
-Droppe dette? -ar
-\begin{itemize}
-\item motiv
-\item ...
-\item semantikk
-\item hva er sant, hva er usant?
-\end{itemize}
-
-\subsection{Types}
-Skrev om det i basic, vits i \aa~skrive stort mer? -ar
-\begin{itemize}
-  \item skrive om dette ogs\aa~selv om vi ikke skal implementere?
-  \item har planer om \aa~diskutere det litt i diskusjonskap iallefall..
-\end{itemize}
-
-\subsection{Evt andre ting fra XQuery vi kommer til \aa~implementere}
-
-\begin{itemize}
-\item if then else
-
-\end{itemize}
 
 \subsection{Full Text Extensions}
 \label{sect:theory:xquery:fulltext_ext}
@@ -300,13 +241,6 @@ query is parsed into the AST seen in figure \ref{figure:xquery:full_text_ast}.
   \caption{Full-text query syntax tree}
   \label{figure:xquery:full_text_ast}
 \end{figure}
-
-\begin{itemize}
-\item motiv
-\item ...
-\item semantikk
-\item hva har man? ftcontains er kilden...
-\end{itemize}
 
 \subsection{XQuery core}
 \label{sect:theory:xquery:XQcore}

@@ -9,8 +9,10 @@ demonstrate some important traits of this language with a few examples.
 All queries for MQL are written as strings with a syntax reminiscient of Lisp
 dialects. TODO: kodeeksempel + relalgtre?
 
-Data is stored in \textit{indices} rather than in DOM trees. Naturally, this is
-a prerequisite for efficient execution of relational algebra on the data. There
+\marginpar{\underline{\Large TODO} \footnotesize Er ikke helt sikker, men tror den heter value occurence index,
+value index er en tredje type, som vi ikke kommer til \aa~bruke?} 
+Data is stored in \textit{indices} rather than in
+DOM trees. Naturally, this is a prerequisite for efficient execution of relational algebra on the data. There
 are two basic index types: \textit{occurence} indexes and \textit{value}
 indexes. In the case of an occurence index, a lookup for a term will map the
 term to the occurences of this term. In a \textit{value} index, a key (for
@@ -112,6 +114,7 @@ example of usage where the child operators will operate on the index
 
 \subsubsection{Project}
 \label{sect:method:marsOperators:project}
+\marginpar{\underline{\Large TODO} \footnotesize rename - project combo egentlig}
 The \texttt{project()} operator lends its name and semantics from the project
 operator known from basic relational algebra (projection is described in
 section \ref{sect:theory:relAlg:projection}). The \texttt{project()} operator
@@ -139,11 +142,11 @@ OPERATOR     ::= "project" "(" (RETAIN_PARAM ",")?
 \begin{itemize}
   \item Lookup
   \item Scope
-  \item Mergejoin
+  \item Join\ldots tror vi m\aa~bruke hhjoin, lurer p\aa~om optimalisatoren velger merge hvis den kan?
   \item Project
   \item Select
   \item Index
-  \item Scan?
+  \item Make
   \item Etc..
 \end{itemize}
 
@@ -153,10 +156,10 @@ hvilke operatorer/ funksjoner har vi lagt til / forutsatt?
 \begin{itemize}
   	\item funksjonen \verb!isInScope(a, b)! if a has an equal but deeper path than
 		b -> true (same element required) 
-	\item isNumber(pred), 
-	\item xqBoolean(pred)
-	\item scopeIndex(scope, pred)
-	\item counter()
+	\item isNumber(pred) -> fordi vi ikke har polymorphic type attributes\ldots typesystem igjen\ldots Skal vi
+	g\aa~ut ifra at vi har polymorphic type attributes? Og si at type m\aa~bli ordna p\aa~en eller annen m\aa te..
+	\item xqBoolean(pred) tom streng, null og teksten ``false''(p\aa~grunn av skrint typesystem) gir \textbf{false}
+	\item scopeIndex(scope, pred)\ldots Trenger kanskje ikke allikevel\ldots Vet ikke enn\aa
 	\item numberate(fieldName, [sortByList], [partiTionByList], operator) 
 		\begin{itemize}
         	\item hadde v\ae rt flott om kolonnene i sortByList forsvant etterp\aa~.

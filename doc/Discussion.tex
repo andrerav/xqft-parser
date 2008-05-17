@@ -11,7 +11,7 @@
 	\item Hva med \$i = (1,2,3) \$i/hatt -> typefeil? kj\o re isInScope(scope) p\aa~noe som ikke har scope kolonne?
 \end{itemize}
 
-\section{Loop Lift vs MarkXremove}
+\section{Loop Lift vs ``insertNameHere''}
 \label{sect:discussion:llvsmXr}
 \begin{itemize}
   \item fordeler vs ulemper..
@@ -38,34 +38,6 @@
 \input{discussion/ManualTreeParser}
 \input{discussion/NotSupported}
 
-\section{Predicates}
-\label{sect:discussion:predicates}
-\begin{itemize}
-  \item saxon sier //ITEM[1] er to items fordi jeg har to BOOKS ? skal det ikke
-  v\ae re 1 uansett?
-  \item Saxon har tydligvis rett\ldots kanskje vi skal skille mellom pathExpr predicates og filterExpr
-  predicates\ldots slik sett kan vi unng\aa~\aa~telle ting i pathExpr predicates?
-  \item for stepexprz: 
-
-	\begin{itemize}
-	  \item de kan ikke sl\aa s sammen allikevel
-	  \item hva med nummerering av rader, slik at man alltid kan bruke den hvis
-	  predikatet er et tall?
-	  \item kan v\ae re un\o dvendig siden man har instans-index i scope forh\aa
-	  pentligvis..
-	  \item flere relative pathexprs i predikater b\o r egentlig kunne mergeInJoines sammen f\o r de blir merginjoina
-	  med det som predikatet st\aa r til\ldots dette er kanskje en optimalisering\ldots
-    \end{itemize}
-  \item for filterExprz:
-  	\begin{itemize}
-	  \item de eksisterer her ogs\aa~ja\ldots
-	  \item hvordan l\o se dette generelt?
-	  \item her m\aa~vi virkelig tenke p\aa~det med index iallefall\ldots 
-	  \item ('a','b','c')[2] er lov
-	  \item /a/b/c[1] er egentlig nesten mer unntaket enn reglen? Vanlig med
-	  //c[1] regner jeg med.. og da blir det annerledes med en gang.. SCHADe
-    \end{itemize} 
-\end{itemize}
 
 \section{Order}
 \label{sect:discussion:order}
@@ -106,4 +78,7 @@
   join a/b/c) ikke (a join (a/b join /a/b/c)
   \item vi har ordna, uten \aa~vite om det at man kan selecte i stedet for \aa~projecte n\aa r man er i logisk
   kontekst.. yeah!
+  \item flere relative pathexprs i predikater b\o r egentlig kunne mergeInJoines sammen f\o r de blir merginjoina
+	med det som predikatet st\aa r til\ldots dette er kanskje en optimalisering\ldots
+  \item 
 \end{itemize}
