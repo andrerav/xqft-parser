@@ -18,8 +18,8 @@ removing of tuples who ended up in the wrong iteration in the cross product resu
 selection of tuples afterwards actually constitutes a kind of natural join (see section
 \ref{sect:theory:relAlg:naturalJoin}) as we will see later.
 
-As the translator comes across an iterator variable declaration, with the variable name $\beta$, it will augment
-the representation of the iterator sequence belonging to this variable with an attribute $\beta$\textsf{numb}.
+As the translator comes across an iterator variable declaration, with the variable name $\chi$, it will augment
+the representation of the iterator sequence belonging to this variable with an attribute $\chi$\textsf{numb}.
 This new attribute will hold consecutive values from 1 to $n$ for a $n$ item long sequence, which will symbolise the
 iteration number of the iterator expression seen isolated from possible other surrounding iterator expressions. A
 function \texttt{counter()} returning the row number of a relation and a \texttt{project} operator will handle
@@ -28,7 +28,45 @@ method is because of this augmentation.
 
 \subsection{FLWOR}
 \label{sect:translation:mxr:flwor}
-If the translator later comes accross a reference to an iterator variable, it will get the tree from the symbol
-table and return it to the referring node without any further ado. The translator is also required to know which
-subtrees have a child that has referred to which iterator variable. This is because the $\beta$\textsf{numb}
+If the translator later comes accross a reference to an iterator variable $\chi$, it will get the tree from the
+symbol table and return it to the referring node without any further ado. The translator is also required to know
+which subtrees have a child that has referred to which iterator variable. This is because the $\chi$\textsf{numb}
 column could be lost in a \texttt{project} operation without this knowledge.
+
+When the translator returns to the iterator expression node for the variable $\chi$ after traversing the iterator
+body, it will, as mentioned before, make sure that the cartesian product between the iterator sequence and body is
+calculated. From the result of this, the tuples where the $\chi$\texttt{numb} stemming from the iterator
+sequence does not line up with the $\chi$\texttt{numb} stemming from the body are removed. Any tuple with a
+$\chi$\texttt{numb} value \texttt{NULL} will be kept.
+
+A \texttt{NULL} value in attribute $\chi$\texttt{numb} for a tuple means that this tuple is not marked, i.e. it is
+not dependant on which iteration the $\chi$ iterator expression is in. Unmarked tuples can e.g. stem
+from the creation of a sequence. MarkXRemove translates sequence building such as \texttt{(}$e_{1}$\texttt{,
+}$e_{1}$\texttt{)} to a simple disjoint union, $r(e_{1})\;\dot\cup\;r(e_{2})$. Where $r()$ symbolises a function
+translating XQuery expressions into relational algebra.
+
+The method creates quite simple algebra, as exemplified by the following query:
+\begin{Verbatim}
+for $i in (1,2,3) return 
+  ($i, 'yes')
+\end{Verbatim}
+ which is translated into this algebra:
+\begin{Verbatim}
+select(ifThenElse(isNull(value), true, eq(r.inumb,l.inumb))
+  cross(
+    project(inumb = counter(), value;
+      make(name:=["value"], [1,2,3]))
+    union(
+      project(inumb = counter(), value;
+        make(name:=["value"], [1,2,3]))
+      make(name:=["value"], ['yes']))))
+\end{Verbatim} 
+
+\subsection{Flaws}
+\label{sect:translation:mxr:flaws}
+The main problem with MarkXRemove is its dependancy on particular ordering of tuples in a relation which is a
+result of a cartesian product. Not only can not the \texttt{cross} operator promise the particular ordering of its
+result, it can not promise any ordering at all. The ordering the method depends on is that for each tuple in the
+left relation one tuple is repeated for all tuples in the right relation.
+
+
