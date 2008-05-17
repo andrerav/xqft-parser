@@ -1,11 +1,18 @@
 \section{Target Relational Algebra Language}
+\label{sect:method:mql}
 The target algebra for this project is a dialect of relational algebra (see
 section \ref{sect:theory:relAlg}) developed by FAST Search \& Transfer. The
 language is dubbed MQL (Mars Query Language). This section will describe the
 operators of this language as well as the indexes they operate on, and will
 demonstrate some important traits of this language with a few examples. 
 
+TODO: kanskje ordne en referanse til FAST p\aa~en eller annen m\aa~te slik at
+sensoren kan ordne seg en kopi av mql-dokumentet. Ogs\aa~nevne at greiene var
+konfidensielle.
+
 \subsection{General concepts}
+\label{sect:method:mql:indexes}
+\label{sect:method:mql:concepts}
 All queries for MQL are written as strings with a syntax reminiscient of Lisp
 dialects. TODO: kodeeksempel + relalgtre?
 
@@ -325,8 +332,82 @@ A & B & C \\ \hline
   \item Etc..
 \end{itemize}
 
-\subsection{Assumed Other Mr functionality plz}
+\subsection{Assumed functionality}
 \label{sect:method:marsAddedOperators}
+
+TODO: skrive en liten innledning her om hvorfor vi assumer ting.
+
+\subsubsection{isInScope (scope comparison)}
+This function (not operator) accepts two arguments which must be scope fields
+from index lookups (as described in section \ref{sect:method:mql:indexes}).
+This boolean function returns \textit{true} if the first argument has an equal
+but deeper path than the second argument, otherwise \textit{false}. This
+function is designed to be used in conjunction with the \texttt{select()}
+operator as a boolean predicate. See figure \ref{figure:mql:isinscope_example}
+for an example of usage.
+
+TODO: eksempelet er kanskje litt jalla.
+
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+select(isInScope(lscope, rscope);
+  mergejoin([DocumentID],[DocumentID], 
+            [DocumentID, lscope = left.Scope, rscope = right.Scope];
+    lookup(engineer),
+    lookup(nurse)))
+\end{Verbatim}
+\caption{Example of assumed isInScope() functionality}
+\label{figure:mql:isinscope_example}
+\end{figure}
+
+\subsubsection{xqBoolean/boolean truth value coercion}
+This function (not operator) accepts one argument and determines its
+\textit{truth value}. XQuery truth values were described in
+section \ref{sect:theory:xquery:basics}.
+
+\begin{figure}[!h]
+\centering
+\mbox{
+\subfigure[Input for example in figure
+\ref{figure:mql:xqboolean_example}]{
+\begin{tabular}{|c | c | c |}
+\hline
+A & B & C \\ \hline
+1 & 0 & 3 \\ \hline
+4 & 5 & 6 \\ \hline
+\end{tabular}
+\label{figure:mql:xqboolean_example_input}
+}
+\quad
+\subfigure[Output from example in figure
+\ref{figure:mql:xqboolean_example}]{
+\begin{tabular}{| c |}
+\hline
+truthVal \\ \hline
+\textit{true} \\ \hline
+\textit{false} \\ \hline
+\end{tabular}
+\label{figure:mql:xqboolean_example_output}
+}
+}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+project(truthVal=xqBoolean(B); 
+  make(name:=["A","B","C"], [1,4], [0,5] [3,6]))
+\end{Verbatim}
+\caption{Example of xqBoolean() usage}
+\label{figure:mql:xqboolean_example}
+\end{figure}
+
+
+\subsubsection{numberate/sequence generator}
+\subsubsection{Union/disjoint union}
+
+
 hvilke operatorer/ funksjoner har vi lagt til / forutsatt?
 \begin{itemize}
   	\item funksjonen \verb!isInScope(a, b)! if a has an equal but deeper path than
