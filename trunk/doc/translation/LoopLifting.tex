@@ -12,7 +12,9 @@ translation of path expressions and XML-element construction will not be handled
 representation(section \ref{sect:theory:pathfinder}) is incompatible with Mars.
 
 \begin{itemize}
-  \item forutsetter det \aa~ jobbe p\aa~ DAGz?
+  \item peep hole plan simplification
+  \item dette kan fort bli dr\o yt\ldots v\ae re litt forsiktige her tror jeg
+  \item   \item forutsetter det \aa~ jobbe p\aa~ DAGz?
 \end{itemize}
 
 \subsection{Operators}
@@ -119,7 +121,7 @@ computed like this:
 \begin{equation}
 q_{x \cdot y}(\mbox{\texttt{\$}}v_{x \cdot y}) = \mbox{\scriptsize \begin{tabular}{c} $pos$ \\\hline 1
 \end{tabular}} \times \pi_{iter:inner,item}(\varrho_{inner:(iter,pos)}(q_{x}(e_{x \cdot y})))
-\label{eq:ll:qx_vxy}
+\label{eq:ll:qxy_vxy}
 \end{equation}
 The introduction of the $inner$ attribute is used to denote evaluation of the loop in scope $s_{x \cdot y}$. The
 $iter$ attribute of $q_{x}(e_{x \cdot y})$ can be viewed as an atttribute $outer$, as it denotes the iterations in
@@ -130,7 +132,7 @@ scope $s_{x \cdot y}$ needs to be evaluated once for each binding of the iterato
 Thus, the $loop$ relation needs to be redifined based on $q_{x \cdot y}(v_{x \cdot y})$:
 \begin{equation}
 loop_{x \cdot y} = \pi_{iter}(q_{x \cdot y}(v_{x \cdot y}))
-\label{eq:ll:loopx}
+\label{eq:ll:loopxy}
 \end{equation}
 
 
@@ -244,12 +246,75 @@ q_{x}(e_{1} \mbox{\texttt{ + }} e_{2}) =
 
 \subsection{Example}
 \label{sect:translation:ll:example}
-haha
 
-\subsection{Optimisations}
-\label{sect:translation:ll:Optimisations}
-\begin{itemize}
-  \item peep hole plan simplification
-  \item dette kan fort bli dr\o yt\ldots v\ae re litt forsiktige her tror jeg
-\end{itemize}
+Only looking at equations may be a bit too abstact to fully understand the concept of loop lifting. To
+concretise we will present a simple example of evaluating a query with the method and show intermediate results.
+The naming of expressions, scopes and variables will, where possible, be the same as earlier in this chapter. This
+query is the basis of this evaluation:
 
+\begin{figure*}[h!]
+\centering
+\begin{math}
+s\left\{
+\begin{array}{l}
+\mbox{\texttt{for \$v0 in (10,20) return}} \\ \;
+s_{0}\left\{
+\begin{array}{l}
+\mbox{\texttt{(\$v0, for \$v00 in (7,8,9) return}} \\ \;
+s_{0,0}\left\{ \mbox{\texttt{\$v0 + \$v00)}}\right.
+\end{array}
+\right.
+\end{array}
+\right.
+\end{math}
+\end{figure*}
+
+The goal of the evaluation is, after all other calculations, to have a representation of $e_{0}'$ in scope $s$,
+that is, $q(e_{0}')$. This is done by nesting inwards until the deepest scope, while calculating needed helping
+relations on the way, before evaluating the subexpressions one by one as one nests outwards until the outermost
+scope.
+
+Firstly a representation of the outermost loop is needed. With the help of equation \ref{eq:ll:constLoopLift} we
+find a representation of \texttt{(10, 20)} in scope $s$, $s(e_{0})$. Then, employing equation \ref{eq:ll:qxy_vxy}
+yields \texttt{\$v0} in scope $s_{0}$, the result of which is shown in figure \ref{fig:translation:ll:q0_v0}.
+$loop_{0}$ and $map_{\, ,0}$ can now be calculated by using equations \ref{eq:ll:loopxy} and \ref{eq:ll:mapx_xy}
+and are shown in figure \ref{fig:translation:ll:loop0} and \ref{fig:translation:ll:map_0} respectevely.
+
+\begin{figure}[!h]
+\centering
+\subfigure[$q_{0}($ \texttt{\$v0} $)$]{
+%q0_v0
+\begin{tabular}{|c|c|c|} \hline
+$pos$	& $iter$	& $item$ \\ \hline
+1		& 1			& 10 	\\ \hline
+1		& 2			& 20 	\\ \hline
+\end{tabular}
+\label{fig:translation:ll:q0_v0}
+%\caption{$q_{0}($ \texttt{\$v0} $)$}
+}
+\qquad
+\subfigure[$loop_{0}$]{
+\begin{tabular}{|c|} \hline
+$iter$ \\\hline
+1 \\\hline
+2 \\\hline
+\end{tabular}
+\label{fig:translation:ll:loop0}
+%\caption{$loop_{0}$}
+}
+\qquad
+\subfigure[$map_{\, ,0}$]{
+\begin{tabular}{|c|c|} \hline
+$outer$ & $inner$ \\ \hline
+1 & 1 \\ \hline
+1 & 2 \\ \hline
+\end{tabular}
+\label{fig:translation:ll:map_0}
+%\caption{$map_{\, ,0}$}
+}
+
+
+
+\label{fig:translation:ll:outerIntermediate}
+\caption{Outer loop intermediate results}
+\end{figure}
