@@ -1,0 +1,109 @@
+\section{Tainting Dependencies}
+\label{sect:trans:taintingDependencies}
+
+\begin{itemize}
+  \item INTRO for teh wind
+  \item har vokst ut av MarkXRemove
+  \item Tainting dependencies (TD)
+  \item og mer text
+\end{itemize}
+
+\subsection{Inference Rule Language Explanation}
+\label{sect:trans:TD:langExpl}
+\begin{itemize}
+  \item hvordan skriver vi regler?
+  \item \texttt{r()} = til algebrafunksjon
+\end{itemize}
+
+The translator is in the logical context, $\Lambda$, if the AST node it is currently visiting is a successor of a
+boolean operator or within the condition part of an \texttt{if..then..else} expression. In all other cases the
+translator is in the default context, $\Delta$. If no context is mentioned in the inference rules the default
+context is assumed.
+
+\subsection{Basics}
+\label{sect:trans:TD:basics}
+\marginpar{\textbf{\LARGE TODO:} referere til contextvisitorz?/context $\Lambda$ etc}
+The method assumes left-to-right traversal of the assymetric syntax tree. In almost all cases the traversal is
+postorder, meaning a subtree can be evaluated independently from its ancestors. In addition to the evaluated
+subtree, a node must be able to inform its parent node about its variable dependencies ($\vartheta$), which we will
+discuss later.
+
+One XQuery sequence is represented as one relation and one XQuery item is represented as one tuple. This is sound,
+as all XQuery items are sequences, and all sequences are one-dimensional (section
+\ref{sect:theory:xquery:basics}). As we mentioned in section \ref{sect:trans:MarkXRemove}, the MarkXRemove method
+did actually not consider the ordering of items in sequences at all. In Tainting Dependencies, however, we have
+introduced an attribute $index$ holding the intra sequence number of the item. Consider the XQuery sequence
+\texttt{('a','b',}$\ldots$\texttt{,'z')}. With this attribute, the relational representation will be as follwing:
+
+\begin{center}
+\begin{tabular}{|c|c|} \hline
+$index$ & $value$ \\\hline
+1		& \texttt{'a'} \\\hline
+2		& \texttt{'b'} \\\hline
+$\ldots$& $\ldots$ \\\hline
+$n$		& \texttt{'z'} \\\hline
+\end{tabular}
+\end{center}
+
+
+As can be seen, the item value is stored in the $value$ attribute. For the course of this chapter we will, for the
+sake of simplicity, treat $value$ as a polymorphic type attribute. This simplification has minimal consequences
+for the method and the way XQuery expressions are translated. XQuery types and relational representation of such
+will is handled in section \ref{sect:disc:typeSystem}. \marginpar{\textbf{\LARGE TODO:} noen andre steder?.}
+
+Tainting Dependencies utilises a symbol table for storing of variables declared. The table has two functions:
+\begin{itemize}
+  \item \textbf{put(}\texttt{\$}$\chi$\textbf{, }\texttt{r(}$e$\texttt{)}\textbf{)} -- will store the
+  algebraic version of the expression bound to the variable \texttt{\$}$\chi$ with \texttt{\$}$\chi$ as the key.  
+  \item \textbf{get(}\texttt{\$}$\chi$\textbf{)} -- will do a lookup in the table based on the name of the variable
+  \texttt{\$}$\chi$ and return the algebraic version of the expression linked to it.
+\end{itemize}
+The table handles scoping according to XQuery semantics (section \ref{sect:theory:xquery:Flwor}), meaning the
+translator will always be able to find the right declared variable based on where it is in the AST.
+
+\subsection{Iterator Variable Dependency}
+\label{sect:trans:TD:dependency}
+\begin{itemize}
+  \item $\chi$numb and the likes
+  \item definisjon
+  \item m\aa~f\o lge settene p\aa~en eller annen m\aa te.. varRefs
+  \item det betyr at den er avhengig av iterasjon
+  \item gi eksempel
+\end{itemize}
+
+\subsection{Tainting Dependencies}
+\label{sect:trans:TD:tainting}
+\begin{itemize}
+  \item hvis \textbf{en} av items er avhengig\ldots
+  \item betyr jo at settet er avhengig av iterasjon-> posisjon og ting, fordi den skal brukes til noe
+  \item definisjon
+  \item vis hvordan tainting foreg\aa r ->
+  \item Forced Dependency Tainting\ldots hvis man kommer til 
+\end{itemize}
+
+\subsection{Sequence Building}
+\label{sect:trans:TD:seqBuild}
+\begin{itemize}
+  \item hvordan bygge sekvenser
+  \item forst enkelt
+  \item s\aa~med tainting
+\end{itemize}
+
+\subsection{Simple FLWORs}
+\label{sect:trans:TD:simpleFLWOR}
+\begin{itemize}
+  \item bare for e1 in e2 return e3
+  \item ta where og order by senere\ldots
+\end{itemize}
+
+\subsection{Optimisations}
+\label{sect:trans:optimisations}
+\begin{itemize}
+  \item skal vi ha det her, eller i discussion?
+  \item kanskje begge deler\ldots. Her kommer en liste som kan bygges p\aa~etterhvert iallefall:
+	  \begin{itemize}
+	    \item suprIndx kan doppes n\aa r bare atomiske (singelton er vel bedre begrep)
+	    \item for kan bli -> project , ved singelton return
+	    \item singeltons trenger ikke index
+	  \end{itemize} 
+\end{itemize}
