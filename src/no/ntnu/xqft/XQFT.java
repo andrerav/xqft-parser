@@ -97,6 +97,8 @@ public class XQFT {
         XQFT m = new XQFT();
 	    
 	    
+        System.out.println("Parsing the following query:\n" + input + "\n");
+
         // Create lexer
 		CharStream cs = new ANTLRStringStream(input);
 		XQFTLexer lexer = new XQFTLexer(cs);
@@ -114,8 +116,6 @@ public class XQFT {
 		{
     		XQFTTree tree = (XQFTTree)tre.getTree();
     
-    		System.out.println("Parsing the following query:\n" + input + "\n");
-
     		System.out.println("Generated AST:");
             System.out.println(tree.toStringTree() + "\n");
     		
