@@ -112,8 +112,8 @@ The query should of course be evaluated to $(true, true)$, as the \texttt{>} ope
 This means that the relation would have to be pruned by a \texttt{select} or \texttt{group}, which can not be done
 genericly in the relations current state. A possibility would be to postpone the pruning until after the relation
 is crossed with the iterator sequence, but there would still not be any not-complex solution. This problem lead to
-the introduction of variable dependancy tainting, as we will see in section \underline{\textbf{\LARGE
-TODO:}}''omtainting''
+the introduction of variable dependancy tainting, as we will see in section
+\ref{sect:translation:taintingDependancies}.
 
 \underline{\textbf{\LARGE TODO:}} her st\aa r det egentlig noe om numeric predicates, men det er kommentert bort. 
 % Within the \texttt{scope} field of a relation returned from a \texttt{lookup} operator lies information about
