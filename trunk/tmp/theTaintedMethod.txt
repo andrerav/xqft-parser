@@ -23,6 +23,8 @@ numberate(indx, [bnumb, indx], [varRefs-bnumb]
     expr1(/m b))
 
 
+(kan bnumb---> index, hvis is enkeltelement?)
+
 
 ###########################################################################################################################
 ###########################################################################################################################
@@ -34,14 +36,16 @@ numberate(indx, [bnumb, indx], [varRefs-bnumb]
 numberate(index,[sprIdx, indx],[varRefs]                                     //TODO: SJEKK OM ALLE VARREFS SKAL VÆRE HER
     union(project(sprIdx = 1; expr1); project(sprIndx = 2; expr2))
 
+
 hvis exprN er atomisk eller itervariabeldependant ----> project(sprIdx = N,indx = 0; exprN);
 
-Hvis bare atomiske eller iteratorvariabeldependent ---> drop sprIndx = indx
+Hvis _bare_ atomiske eller iteratorvariabeldependent (altså ingen har index) ---> dropp suprIndex og numberate, og bruk index som suprIndex over
+
 
 ###########################################################################################################################
 ###########################################################################################################################
 
-mangler index etter group(fdkjfkdj, max(value)
+mangler index etter group(fdkjfkdj, max(value) --> det gir mening.. den er da enten iteratordependant eller atomisk
 
 
-group( [], max(value), expr) bør være lov
+group( [], max(value), expr) bør være lov -> det er det

@@ -5,7 +5,6 @@ package no.ntnu.xqft.tree;
 
 import java.util.*;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 /**
  * Class SymTab

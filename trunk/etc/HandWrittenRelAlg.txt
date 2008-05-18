@@ -1,6 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 for $i in (1, <a\>, 1)
+
 return /BOOKS/ITEM[$i]/TITLE
 
     												// MERK: ingen forløkke
@@ -85,46 +86,7 @@ mergeJoinInscope										// returverdi / join med path etter predikat
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-----------------------------------------------------------------------------------------------------------------------
-DENNE ER UTGANGSPUNKTET YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY!!!!!!!!!!!!!!!!!!!!!!!111------------------
---------------------------------------------------------------------------------------------------------------------------
-
-
-for $i in /BOOKS/ITEM
-return (/BOOKS/ITEM[$i/MAYBE], /BOOKS/ITEM/MAYBE)
-
-
-
-select(ifThenElse(eq(pred, 0), true, ifThenElse(and(eq(pred,1),eq(pred1,1)), true, false))
-cross(
-	project(l.dokId, l.pos, l.scope, l.value, pred1 = ifThenElse(isNull(r.value), 0, 1)
-	outerJoin(
-		scope(/BOOKS, lookup($ITEM))					// $i
-		mergejoinInscope(                               		// predikat / join med path etter variabel  
-			scope(/BOOKS/ITEM, lookup($MAYBE)                   	// etter $i
-			scope(/BOOKS, lookup($ITEM))                        	// $i
-	or(
-		project(dokID, pos, scope, value, pred=1
-			scope(/BOOKS, lookup($ITEM)	
-		project(dokID, pos, scope, value, pred=0
-			scope(/BOOKS/ITEM; lookup($MAYBE))
-	
-
-
-
-
-
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 for $i in /BOOKS/ITEM/
 return /BOOKS/ITEM[$i and MAYBE]
 
