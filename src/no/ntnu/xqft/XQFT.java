@@ -19,7 +19,7 @@ import org.antlr.runtime.*;
  *  Options:
  *    -d --create-dot : Writes dot files for each input (AST)
  *    -p --create-pdf : Writes pdf files for each input (AST)
- *    -o --output-folder : sekrit!! >:D
+ *    -o --output-folder : Where to put the dot/pdf files. Default is ./
  *
  * @author andreas
  * @author flassmeister 
