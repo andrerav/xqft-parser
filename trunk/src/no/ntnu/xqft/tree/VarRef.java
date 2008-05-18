@@ -47,7 +47,13 @@ public class VarRef {
         System.out.println("I'm never printed :(");
         return obj.toString().equals(this.name);
     }
-    
-    
-    
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode() {
+        // TODO Auto-generated method stub
+        return this.name.hashCode();
+    }
 }
