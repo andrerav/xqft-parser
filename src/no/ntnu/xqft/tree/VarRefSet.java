@@ -9,7 +9,7 @@ import java.util.*;
  * @author andreas
  *
  */
-public class VarRefSet extends ArrayList<VarRef> {
+public class VarRefSet extends HashSet<VarRef> {
 
     public String toString() {
         StringBuilder b = new StringBuilder();
