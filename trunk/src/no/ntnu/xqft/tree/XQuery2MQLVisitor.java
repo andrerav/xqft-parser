@@ -3,14 +3,17 @@
  */
 package no.ntnu.xqft.tree;
 
+import java.util.ArrayList;
+
 import no.ntnu.xqft.parse.XQFTTree;
-import no.ntnu.xqft.tree.operator.Operator;
+import no.ntnu.xqft.tree.operator.*;
+import no.ntnu.xqft.tree.param.*;
 
 /**
  * @author andreas
  *
  */
-public class Xquery2MQLVisitor extends Visitor {
+public class XQuery2MQLVisitor extends Visitor {
 
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visit(no.ntnu.xqft.parse.XQFTTree)
@@ -18,7 +21,7 @@ public class Xquery2MQLVisitor extends Visitor {
     @Override
     public Operator visit(XQFTTree node) {
         // TODO Auto-generated method stub
-        return null;
+        return acceptThis(node).getOperatorTree();
     }
 
     /* (non-Javadoc)
@@ -44,7 +47,11 @@ public class Xquery2MQLVisitor extends Visitor {
      */
     @Override
     public TraverseReturn visitAST_FLWOR(XQFTTree tree) {
-        // TODO Auto-generated method stub
+        
+        Scope.push();
+        this.visitAllChildren(tree);
+        Scope.pop();
+        
         return null;
     }
 
@@ -53,7 +60,10 @@ public class Xquery2MQLVisitor extends Visitor {
      */
     @Override
     public TraverseReturn visitAST_FORCLAUSE(XQFTTree tree) {
-        // TODO Auto-generated method stub
+        
+        ((XQFTTree)tree.getChild(0)).setFlworTupleDef(true);
+        acceptThis(tree.getChild(0));
+
         return null;
     }
 
@@ -81,7 +91,7 @@ public class Xquery2MQLVisitor extends Visitor {
     @Override
     public TraverseReturn visitAST_MODULE(XQFTTree tree) {
         // TODO Auto-generated method stub
-        return null;
+        return acceptThis(tree.getChild(0));
     }
 
     /* (non-Javadoc)
@@ -134,17 +144,89 @@ public class Xquery2MQLVisitor extends Visitor {
      */
     @Override
     public TraverseReturn visitDOLLARSi(XQFTTree tree) {
-        // TODO Auto-generated method stub
-        return null;
+        
+        boolean isIterationVar = tree.isFlworTupleDef();
+        
+        // Assignment?
+        if (tree.getChildCount() > 1) {
+            TraverseReturn tr = acceptThis(tree.getChild(1));
+            Scope.set(tree.getChild(0).getText(), tr, isIterationVar);
+            
+            return null;
+        }
+        else {
+            TraverseReturn tr = new TraverseReturn();
+            tr.getVarRefs().add(new VarRef(tree.getChild(0).getText()));
+            
+            return tr;
+        }
     }
 
-    /* (non-Javadoc)
+    /**
+     * Start of a sequence, should be union'd together (disjoint union)
+     *  (expr1, expr2)       (husk taint)     
+     *
+     * hvis expr er atomisk eller itervariabeldependant ----> project(indx = 0; expr)
+     *
+     * (hvis den er en sekvens har den allerede indx)
+     * 
+     * numberate(index,[sprIdx, indx],[varRefs]  //TODO: SJEKK OM ALLE VARREFS SKAL VÆRE HER
+     * union(project(sprIdx = 1; expr1); project(sprIndx = 2; expr2))
+     *
+     * Hvis bare atomiske eller iteratorvariabeldependent ---> drop sprIndx = indx
+     *  
+     * (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitLPARSi(no.ntnu.xqft.parse.XQFTTree)
      */
     @Override
     public TraverseReturn visitLPARSi(XQFTTree tree) {
         // TODO Auto-generated method stub
-        return null;
+        
+        ArrayList<Operator> operators 
+                        = new ArrayList<Operator>(tree.getChildCount());
+        
+        TraverseReturn result = new TraverseReturn();
+        TraverseReturn tmp;
+        Project ptmp;
+        
+        for(int i = 0; i < tree.getChildCount(); i++) {
+            tmp = acceptThis(tree.getChild(i));
+            if (tmp.isAtomic()) { // Or is dependent on itervar
+                ptmp = new Project("idx=0", tmp.getOperatorTree());                
+            }
+            else {
+                ptmp = new Project("sprIdx="+(i+1),tmp.getOperatorTree());
+            }
+            operators.add(ptmp);
+            result.varRefs.addAll(tmp.getVarRefs());
+        }
+
+//        ArrayList<Param> params = new ArrayList<Param>();
+//        params.add(new Name("index"));
+//        Name[] sortBy = {new Name("sprIdx"), new Name("idx")};
+//        params.add(new List());
+        
+        Union union = new Union(operators);
+
+        String[] sortByFields = {"sprIdx", "idx"};        
+        String[] partitionFields = new String[result.getVarRefs().size()];
+        int i = 0;
+        for (VarRef var:result.getVarRefs()) {
+            partitionFields[i] = var.toString();
+            i++;
+        }
+        
+        
+        Numberate numberate = new Numberate("index", sortByFields, partitionFields, union);
+        
+        result.setOperatorTree(numberate);
+        
+        // Er dette rett? Er jo en sekvens det her, men jeg vet ikke
+        result.setAtomic(false);
+        
+        System.out.println(result.toString());
+        
+        return result;
     }
 
     /* (non-Javadoc)
@@ -183,4 +265,18 @@ public class Xquery2MQLVisitor extends Visitor {
         return null;
     }
 
+    @Override
+    public TraverseReturn visitIntegerLiteral(XQFTTree tree) {
+        // TODO Auto-generated method stub
+        
+        TraverseReturn tr = new TraverseReturn();
+        tr.setAtomic(true);
+        
+        Make make = new Make(tree.getText());
+        tr.setOperatorTree(make);
+
+        return tr;
+    }
+    
+    
 }

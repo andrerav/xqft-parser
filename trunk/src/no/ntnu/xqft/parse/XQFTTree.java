@@ -17,6 +17,23 @@ import no.ntnu.xqft.tree.*;
  */
 public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
     
+    protected boolean isFlworTupleDef = false;
+    
+    
+    /**
+     * @return the isFlworTupleDef
+     */
+    public boolean isFlworTupleDef() {
+        return isFlworTupleDef;
+    }
+
+    /**
+     * @param isFlworTupleDef the isFlworTupleDef to set
+     */
+    public void setFlworTupleDef(boolean isFlworTupleDef) {
+        this.isFlworTupleDef = isFlworTupleDef;
+    }
+
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Node#accept(no.ntnu.xqft.tree.Operator)
      */
@@ -576,9 +593,7 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 System.err.println("method not implemented: visitFTNOT()");
                 break;
             case XQFTParser.IntegerLiteral:
-                //return visitor.visitIntegerLiteral(this);
-                System.err.println("method not implemented: visitIntegerLiteral()");
-                break;
+                return visitor.visitIntegerLiteral(this);
             case XQFTParser.DecimalLiteral:
                 //return visitor.visitDecimalLiteral(this);
                 System.err.println("method not implemented: visitDecimalLiteral()");

@@ -24,12 +24,6 @@ public class RewriteVisitor extends Visitor {
 	private boolean inPathExpr = false;
 	private int predLvl = 0;
 	
-    private TraverseReturn acceptThis(org.antlr.runtime.tree.Tree tree) 
-    {
-        return ((XQFTTree)tree).accept(this);
-    }
-	
-	
     private void insertPredicatedPathExprNode(XQFTTree node) {
 		if(predicates.size() > 0)
 		{
@@ -390,6 +384,14 @@ public class RewriteVisitor extends Visitor {
        
         visitAllChildren(tree);
         
+        return null;
+    }
+
+
+
+    @Override
+    public TraverseReturn visitIntegerLiteral(XQFTTree tree) {
+        // TODO Auto-generated method stub
         return null;
     }
 }

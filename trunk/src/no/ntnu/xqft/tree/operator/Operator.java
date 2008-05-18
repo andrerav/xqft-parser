@@ -27,8 +27,8 @@ public abstract class Operator {
     protected Operator(ArrayList<Param> params, ArrayList<Operator> operators) {
 
         super();
-        this.params = new ArrayList<Param>();
-        this.operators = new ArrayList<Operator>();
+        this.params = (params == null ? new ArrayList<Param>() : params);
+        this.operators = (operators == null ? new ArrayList<Operator>() : operators);
     }
 
     public String toString() {
@@ -43,7 +43,7 @@ public abstract class Operator {
         return buffer.toString();
     }
     
-	public Object toPrettyString(int i) {
+	public String toPrettyString(int i) {
 		StringBuffer buffer = new StringBuffer();
      //   if (this.name == null) { 
        //     buffer.append(this.operatorsToString());

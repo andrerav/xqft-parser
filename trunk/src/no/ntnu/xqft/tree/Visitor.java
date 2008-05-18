@@ -35,7 +35,7 @@ public abstract class Visitor {
     public abstract TraverseReturn visitAST_WHERECLAUSE(XQFTTree tree);
     public abstract TraverseReturn visitAST_LETCLAUSE(XQFTTree tree);
     public abstract TraverseReturn visitLPARSi(XQFTTree tree);
-    
+    public abstract TraverseReturn visitIntegerLiteral(XQFTTree tree);
     
     /**
      * Visit all children of tree
@@ -46,5 +46,14 @@ public abstract class Visitor {
         for(int i = 0;i < tree.getChildCount(); i++) {
             ((XQFTTree)tree.getChild(i)).accept(this);
         }
-    }   	
+    }   
+    
+    /**
+     * Shortcut
+     */
+    protected TraverseReturn acceptThis(org.antlr.runtime.tree.Tree tree) 
+    {
+        TraverseReturn result = ((XQFTTree)tree).accept(this);
+        return result;
+    }   
 }

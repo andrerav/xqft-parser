@@ -9,10 +9,12 @@ import java.util.*;
  * @author andreas
  *
  */
-public class VarRefSet<VarRef> extends ArrayList<VarRef> {
+public class VarRefSet extends ArrayList<VarRef> {
 
     public String toString() {
         StringBuilder b = new StringBuilder();
+        
+        b.append('[');
         
         for (VarRef ref: this) {
             
@@ -22,6 +24,7 @@ public class VarRefSet<VarRef> extends ArrayList<VarRef> {
             
             b.append(ref.toString());
         }
+        b.append(']');
         
         return b.toString();
     }

@@ -141,7 +141,10 @@ public class XQFT {
             //FlworizedPathExprVisitor visitor = new FlworizedPathExprVisitor();       
             //Operator top = visitor.visit(tree);
             
-            //System.out.println(top.toPrettyString(0));
+            XQuery2MQLVisitor visitor = new XQuery2MQLVisitor();
+            Operator top = visitor.visit(tree);
+            
+            System.out.println(top.toPrettyString(0));
 		}		
 
 		System.out.println(Scope.getSymtab().toString());
