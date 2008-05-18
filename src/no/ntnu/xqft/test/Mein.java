@@ -109,7 +109,7 @@ public class Mein {
         
         /* Last resort */
         else {
-            input =  "for $x in (1, <a/>) return /A[$x]/TITLE";            
+            input =  "/a/b/c";            
         }
         
         /* Create lexer */
@@ -132,8 +132,8 @@ public class Mein {
     		System.out.println("\n" + input + "\n");
     		
             /* Execute rewrite visitor on tree */
-            RewriteVisitor rwvisitor = new RewriteVisitor();
-            rwvisitor.visit(tree);
+            //RewriteVisitor rwvisitor = new RewriteVisitor();
+            //rwvisitor.visit(tree);
     		
     		System.out.println(tree.toStringTree() + "\n\n");
     		m.skrivTilFil(tree.toDotStringTree(), "tekstNode.txt");

@@ -4,8 +4,7 @@
 package no.ntnu.xqft.tree;
 
 import java.util.*;
-import no.ntnu.xqft.tree.*;
-import no.ntnu.xqft.tree.operator.*;
+
 
 /**
  * Class scope
