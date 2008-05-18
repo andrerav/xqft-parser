@@ -1,5 +1,5 @@
 \section{Loop Lifting}
-\label{sect:translation:loop_lifting}
+\label{sect:trans:loop_lifting}
 Loop lifting is a method of translating XQuery iteration expressions into relational algebra. The method was
 developed by Torsten Grust and Jens Teubner and originally presented in \cite{pathfinder_mothertongue}. It is a
 part of the Pathfinder project\cite{pathfinderHome} (see section \ref{sect:theory:pathfinder}).
@@ -7,7 +7,7 @@ part of the Pathfinder project\cite{pathfinderHome} (see section \ref{sect:theor
 In this section we will present Loop Lifting mainly based on the two articles \cite{pathfinder_mothertongue} and
 \cite{pathfinder_purelyRelational}. The articles present the method for a subset of XQuery Core (Pathfinder
 rewrites queries to Core, see section \ref{sect:theory:pathfinder}), of which we will only present the elements
-relevant in a comparison between Loop Lifting and \underline{\textbf{\Large TODO:}} ``insertName''. Thus, the
+relevant in a comparison between Loop Lifting and the Tainting Dependencies method. Thus, the
 translation of path expressions and XML-element construction will not be handled, as pathfinder's XML-tree
 representation(section \ref{sect:theory:pathfinder}) is incompatible with Mars.
 
@@ -18,9 +18,9 @@ representation(section \ref{sect:theory:pathfinder}) is incompatible with Mars.
 \end{itemize}
 
 \subsection{Operators}
-\label{sect:translation:ll:Operators}
+\label{sect:trans:ll:Operators}
 Loop-lifting utilises a set of relational algebra operators, out of which the ones used in this chapter is
-presented in table \ref{tab:translation:llOperators}.
+presented in table \ref{tab:trans:llOperators}.
 \begin{table}[h]
 \centering
 \begin{tabular}{l|l} 
@@ -35,7 +35,7 @@ $\circledcirc_{b:(a_{1},\ldots,a_{n})}$	& $n$-ary arithmetic/comparison operator
 \end{tabular}
 \caption[of the Pathfinder relational algebra]{Operators of the Pathfinder relational algebra. $a$, $b$ and $p$
 represents attributes}
-\label{tab:translation:llOperators}
+\label{tab:trans:ll:Operators}
 \end{table}
 
 Most of the operators are quite standard, and can easily be understood by comparing with the operators from
@@ -53,20 +53,10 @@ Operator $\circledcirc_{b:(a_{1},\ldots,a_{n})}$ will evaluate the arithmetic/co
 
 
 \subsection{Basics}
-\label{sect:translation:ll:Basics}
+\label{sect:trans:ll:Basics}
 XQuery expressions evaluate to finite, ordered sequences of items. As a sequences are one-dimensional, it can be
 represented by a single relation where each tuple encodes a sequence item. The order of the sequence is
-maintained by an attribute \textit{pos}. The value of the item is held in an attribute \textit{item}. A sequence
-such as \texttt{('a', 'b', 'c')} will be represented relationally like this:
-
-\begin{center}
-\begin{tabular}{|c|c|}\hline
-\textit{pos}	& \textit{item} 	\\ \hline
-1				& \texttt{'a'}		\\ \hline
-2				& \texttt{'b'}		\\ \hline
-3				& \texttt{'c'}		\\ \hline
-\end{tabular}
-\end{center}
+maintained by an attribute \textit{pos}. The value of the item is held in an attribute \textit{item}. 
 
 For the rest of this chapter about Pathfinder's loop lifting, variables, expressions and scopes is denoted like
 this (ref. section \ref{sect:theory:xquery:Flwor}):
@@ -89,7 +79,7 @@ $q_{x}(e)$ is used to denote the relational representation of expression $e$ in 
 
 
 \subsection{Constant Subexpressions}
-\label{sect:translation:ll:ConstExprs}
+\label{sect:trans:ll:ConstExprs}
 
 For a iterator expression $i_{x}$ with $n$ iterations there exists a relation $loop_{x}$, consisting of a
 single column, \textit{iter}, with values 1,2,\ldots,$n$. In the outermost scope, $loop$ has a single tuple with
@@ -107,7 +97,7 @@ A tuple ($iter,pos,item$) in a loop lifted relation for subexpression $e_{x}'$ c
 $iter$th iteration, the item in position $pos$ in $e_{x}'$ has the value $item$.
 
 \subsection{Bound Variables}
-\label{sect:translation:ll:boundVar}
+\label{sect:trans:ll:boundVar}
 
 A variable is bound
 An iterator sequence expression $e_{x \cdot y}$ is evaulated in scope $s_{x}$. This sequence is then iterated over
@@ -137,7 +127,7 @@ loop_{x \cdot y} = \pi_{iter}(q_{x \cdot y}(v_{x \cdot y}))
 
 
 \subsection{Free Variables}
-\label{sect:translation:ll:freeVar}
+\label{sect:trans:ll:freeVar}
 
 XQuery expressions may use any iterator variable bound in enclosing scopes. That is, $v_{x}$ bound in
 scope $s_{x}$ may also be referred to within any of its child scopes. When looking at one of these child scopes,
@@ -176,7 +166,7 @@ item}(q_{x}\left(\mbox{\texttt{\$}}v_{x})\bowtie_{iter=outer} map_{x, x \cdot y}
 \end{equation}
 
 \subsection{Mapping Back}
-\label{sect:translation:ll:mappingBack}
+\label{sect:trans:ll:mappingBack}
 
 All steps and equations so far have been helpful to represent sequences and variables in a lower scope. But the
 result of a query will have to be in form of its representation in the outermost scope $s$. So a way to represent
@@ -193,7 +183,7 @@ y}(e_{x \cdot y}')\bowtie_{iter = inner}map_{x, x \cdot y}))
 
 
 \subsection{Other Expression Types}
-\label{sect:translation:ll:OtherExpr}
+\label{sect:trans:ll:OtherExpr}
 
 The sequence construction \texttt{(}$e_{1}$\texttt{, }$e_{2}$\texttt{)} is essentially a disjont union of the
 relational representations of the expressions, that is, $q_{x}(e_{1})$ and $q_{x}(e_{2})$. By temporarily adding a
@@ -247,7 +237,7 @@ q_{x}(e_{1} \mbox{\texttt{ + }} e_{2}) =
 \end{equation}
 
 \subsection{Example}
-\label{sect:translation:ll:example}
+\label{sect:trans:ll:example}
 
 Only looking at equations may be a bit too abstact to fully understand the concept of loop lifting. To
 concretise we will present a simple example of evaluating a query with the method and show intermediate results.
@@ -278,9 +268,9 @@ scope.
 
 Firstly a representation of the outermost loop is needed. With the help of equation \ref{eq:ll:constLoopLift} we
 find a representation of \texttt{(10, 20)} in scope $s$, $s(e_{0})$. Then, employing equation \ref{eq:ll:qxy_vxy}
-yields \texttt{\$v0} in scope $s_{0}$, the result of which is shown in figure \ref{fig:translation:ll:q0_v0}.
+yields \texttt{\$v0} in scope $s_{0}$, the result of which is shown in figure \ref{fig:trans:ll:q0_v0}.
 $loop_{0}$ and $map_{\, ,0}$ can now be calculated by using equations \ref{eq:ll:loopxy} and \ref{eq:ll:mapx_xy}
-and are shown in figure \ref{fig:translation:ll:loop0} and \ref{fig:translation:ll:map_0} respectevely (remember
+and are shown in figure \ref{fig:trans:ll:loop0} and \ref{fig:trans:ll:map_0} respectevely (remember
 $loop$ consists of a single tuple with value 1).
 
 \begin{figure}[!h]
@@ -292,7 +282,7 @@ $pos$	& $iter$	& $item$ \\ \hline
 1		& 1			& 10 	\\ \hline
 1		& 2			& 20 	\\ \hline
 \end{tabular}
-\label{fig:translation:ll:q0_v0}
+\label{fig:trans:ll:q0_v0}
 %\caption{$q_{0}($ \texttt{\$v0} $)$}
 }
 \qquad \quad
@@ -303,7 +293,7 @@ $iter$ \\\hline
 1 \\\hline
 2 \\\hline
 \end{tabular}
-\label{fig:translation:ll:loop0}
+\label{fig:trans:ll:loop0}
 %\caption{$loop_{0}$}
 }
 \qquad \quad
@@ -313,16 +303,16 @@ $outer$ & $inner$ \\ \hline
 1 & 1 \\ \hline
 1 & 2 \\ \hline
 \end{tabular}
-\label{fig:translation:ll:map_0}
+\label{fig:trans:ll:map_0}
 %\caption{$map_{\, ,0}$}
 }
-\label{fig:translation:ll:outerIntermediate}
+\label{fig:trans:ll:outerIntermediate}
 \caption{Outer loop intermediate results}
 \end{figure}
 
 Before we evaluate the sequence expression in scope $s_0$, we need to evaluate the inner \texttt{for} loop. By the
 same measure as with the outer loop we first calculate $q_{0\cdot 0}($\texttt{\$v00}$)$, $loop_{0 \cdot 0}$ and
-$map_{0, 0 \cdot 0}$. The results are shown in figure \ref{fig:translation:ll:innerIntermediate}.
+$map_{0, 0 \cdot 0}$. The results are shown in figure \ref{fig:trans:ll:innerIntermediate}.
 
 \begin{figure}[!h]
 \centering
@@ -336,7 +326,7 @@ $pos$	& $iter$	& $item$ \\ \hline
 1		& 5			& 8 	\\ \hline
 1		& 6			& 9 	\\ \hline
 \end{tabular}
-\label{fig:translation:ll:q00_v00}
+\label{fig:trans:ll:q00_v00}
 %\caption{$q_{0}($ \texttt{\$v0} $)$}
 }
 \qquad
@@ -351,7 +341,7 @@ $iter$ \\\hline
 5 \\\hline
 6 \\\hline
 \end{tabular}
-\label{fig:translation:ll:loop00}
+\label{fig:trans:ll:loop00}
 %\caption{$loop_{0}$}
 \quad
 }
@@ -366,18 +356,18 @@ $outer$ & $inner$ \\ \hline
 2 & 5 \\ \hline
 2 & 6 \\ \hline
 \end{tabular}
-\label{fig:translation:ll:map0_00}
+\label{fig:trans:ll:map0_00}
 %\caption{$map_{\, ,0}$}
 }
-\caption{Inner loop intermediate results \label{fig:translation:ll:innerIntermediate}}
+\caption{Inner loop intermediate results \label{fig:trans:ll:innerIntermediate}}
 \end{figure}
 
 To be able to calculate the sum-expression, $e_{0 \cdot 0}'$, we first need a representation of the variable
 \texttt{\$v0} in scope $s_{0 \cdot 0}$. As this variable is a free variable in this scope, this is done by
-applying equation \ref{eq:ll:qxy_vx} on $q_{0}($\texttt{\$v0}$)$ (figure \ref{fig:translation:ll:q0_v0}). This
-result is shown in figure \ref{fig:translation:ll:q00_v0}. Now that we have both \texttt{\$v0} and \texttt{\$v00}
+applying equation \ref{eq:ll:qxy_vx} on $q_{0}($\texttt{\$v0}$)$ (figure \ref{fig:trans:ll:q0_v0}). This
+result is shown in figure \ref{fig:trans:ll:q00_v0}. Now that we have both \texttt{\$v0} and \texttt{\$v00}
 expressed from scope $s_{0 \cdot 0}$'s viewpoint, we can employ equation \ref{eq:ll:sumexpr} to sum the two variables together. The
-resulting relation can be seen in figure \ref{fig:translation:ll:q00_e00m}.
+resulting relation can be seen in figure \ref{fig:trans:ll:q00_e00m}.
 
 \begin{figure}[!h]
 \centering
@@ -392,7 +382,7 @@ $pos$	& $iter$	& $item$ \\ \hline
 1		& 5			& 20	\\ \hline
 1		& 6			& 20	\\ \hline
 \end{tabular}
-\label{fig:translation:ll:q00_v0}
+\label{fig:trans:ll:q00_v0}
 \qquad 
 %\caption{$q_{0}($ \texttt{\$v0} $)$}
 }
@@ -407,17 +397,17 @@ $pos$	& $iter$	& $item$ \\ \hline
 1		& 5			& 28 	\\ \hline
 1		& 6			& 29 	\\ \hline
 \end{tabular}
-\label{fig:translation:ll:q00_e00m}
+\label{fig:trans:ll:q00_e00m}
 \qquad
 }
-\caption{Innermost expression intermediate results \label{fig:translation:ll:innerExpr}}
+\caption{Innermost expression intermediate results \label{fig:trans:ll:innerExpr}}
 \end{figure}
 
 The result of the summation, $q_{0\cdot 0}(e_{0\cdot0}')$ is expressed in scope $s_{0 \cdot 0}$ and will have to
 be mapped up to scope $s_{0}$. This is done with help from equation \ref{eq:ll:qx_exymark} and $map_{0, 0\cdot 0}$
-which we calculated earlier, and the result can be seen in figure \ref{fig:translation:ll:q0_e00m}. With
+which we calculated earlier, and the result can be seen in figure \ref{fig:trans:ll:q0_e00m}. With
 $q_{0}(e_{0\cdot0}')$ evaluated, and with $q_{0}($\texttt{\$v0}$)$ from earlier, the sequence building can be completed. This operation requires
-equation \ref{eq:ll:secuence}, and yields the relation shown in figure \ref{fig:translation:ll:q0_e0m}.
+equation \ref{eq:ll:secuence}, and yields the relation shown in figure \ref{fig:trans:ll:q0_e0m}.
 
 \begin{figure}[!h]
 \centering
@@ -432,7 +422,7 @@ $pos$	& $iter$	& $item$ \\ \hline
 2		& 2			& 28 	\\ \hline
 3		& 2			& 29 	\\ \hline
 \end{tabular}
-\label{fig:translation:ll:q0_e00m}
+\label{fig:trans:ll:q0_e00m}
 %\caption{$q_{0}($ \texttt{\$v0} $)$}
 }
 \qquad
@@ -448,7 +438,7 @@ $pos$	& $iter$	& $item$ \\ \hline
 3		& 2			& 28 	\\ \hline
 4		& 2			& 29 	\\ \hline
 \end{tabular}
-\label{fig:translation:ll:q0_e0m}
+\label{fig:trans:ll:q0_e0m}
 %\caption{$loop_{0}$}
 }
 \qquad
@@ -463,15 +453,15 @@ $pos$	& $iter$	& $item$ \\ \hline
 6		& 1			& 27 	\\ \hline
 7		& 1			& 28 	\\ \hline
 8		& 1			& 29 	\\ \hline\end{tabular}
-\label{fig:translation:ll:q_e0m}
+\label{fig:trans:ll:q_e0m}
 %\caption{$map_{\, ,0}$}
 }
-\label{fig:translation:ll:endExample}
+\label{fig:trans:ll:endExample}
 \caption{Intermediate and final result}
 \end{figure}
 
 Finally the built sequence will have to be expressed in terms of scope $s$. Achieving this only requires the use
 of equation \ref{eq:ll:qx_exymark} one last time in combination with $map_{ ,0}$. The complete result of the query
-is shown in figure \ref{fig:translation:ll:q_e0m}.
+is shown in figure \ref{fig:trans:ll:q_e0m}.
 
 \underline{\textbf{\LARGE TODO:}} ser at det trengs DAGz ja\ldots (?)

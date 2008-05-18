@@ -1,3 +1,6 @@
+simple: 
+	pdflatex Main
+
 report:
 	pdflatex Main
 	bibtex Main
