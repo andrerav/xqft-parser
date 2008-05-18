@@ -199,13 +199,15 @@ public class XQuery2MQLVisitor extends Visitor {
         
         for(int i = 0; i < tree.getChildCount(); i++) {
             tmp = acceptThis(tree.getChild(i));
-            if (tmp.isAtomic()) { // Or is dependent on itervar
-                ptmp = new Project("sprIdx="+(i+1)+",idx=0",tmp.getOperatorTree());
+            if (tmp.isAtomic()) {
+                ptmp = new Project("sprIdx="+(i+1)+",idx=0", tmp.getOperatorTree());
             }
             else {
-                ptmp = new Project("sprIdx="+(i+1),tmp.getOperatorTree());
+                ptmp = new Project("sprIdx="+(i+1), tmp.getOperatorTree());
             }
             operators.add(ptmp);
+            //result.varRefs.addAll(tmp.getVarRefs());
+            
             result.varRefs.addAll(tmp.getVarRefs());
         }
 
@@ -218,6 +220,7 @@ public class XQuery2MQLVisitor extends Visitor {
 
         String[] sortByFields = {"sprIdx", "idx"};        
         String[] partitionFields = new String[result.getVarRefs().size()];
+
         int i = 0;
         for (VarRef var:result.getVarRefs()) {
             partitionFields[i] = var.toString();
