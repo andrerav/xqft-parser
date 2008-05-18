@@ -37,9 +37,9 @@ numberate(index,[sprIdx, indx],[varRefs]                                     //T
     union(project(sprIdx = 1; expr1); project(sprIndx = 2; expr2))
 
 
-hvis exprN er atomisk eller itervariabeldependant ----> project(sprIdx = N,indx = 0; exprN);
+hvis exprN er atomisk  ----> project(sprIdx = N,indx = 0; exprN);
 
-Hvis _bare_ atomiske eller iteratorvariabeldependent (altså ingen har index) ---> dropp suprIndex og numberate, og bruk index som suprIndex over
+Hvis _bare_ atomiske (altså ingen har index) ---> dropp suprIndex og numberate, og bruk index som suprIndex over
 
 
 ###########################################################################################################################

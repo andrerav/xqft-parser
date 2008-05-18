@@ -13,7 +13,7 @@ public class SymTabEntry {
     protected TraverseReturn traverseReturn;
     protected boolean isIterationVar;
     protected String name;
-    
+
     /**
      * @param traverseReturn
      * @param isIterationVar
@@ -29,5 +29,47 @@ public class SymTabEntry {
 
     public String toString() {
         return this.traverseReturn.toString();
+    }
+
+    /**
+     * @return the traverseReturn
+     */
+    public TraverseReturn getTraverseReturn() {
+        return traverseReturn;
+    }
+
+    /**
+     * @param traverseReturn the traverseReturn to set
+     */
+    public void setTraverseReturn(TraverseReturn traverseReturn) {
+        this.traverseReturn = traverseReturn;
+    }
+
+    /**
+     * @return the isIterationVar
+     */
+    public boolean isIterationVar() {
+        return isIterationVar;
+    }
+
+    /**
+     * @param isIterationVar the isIterationVar to set
+     */
+    public void setIterationVar(boolean isIterationVar) {
+        this.isIterationVar = isIterationVar;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -181,7 +181,7 @@ public class Scope {
                 NodeSetReturn result = new NodeSetReturn(psym.getPathExpression(), false, p);
             }
             */
-            return null;
+            return this.parent.getSym(key);
         }
         
         /* Symbol not found */
