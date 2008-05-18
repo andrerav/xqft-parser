@@ -1,4 +1,5 @@
-\section{JAJAJA}
+\newpage
+\section{BAREBAJZ}
 \label{sect:translation:mXr}
 
 One of the greatest challenges in transforming XQuery to relational algebra lies in preserving the semantics of
@@ -39,12 +40,8 @@ of the various typographical representations:
 \end{table}
 
 \begin{itemize}
-  \item forklare det med br\o kstrek og $\wedge$ ogs\aa ?
+  \item forklare det med br\o kstrek og $\dashv$ ogs\aa ?
 \end{itemize}
-
-
-
-
 
 
 \subsection{Basics}
@@ -131,8 +128,6 @@ This can be seen in rule \ref{eq:translation:sequencing}.
 \end{array}
 \label{eq:translation:sequencing}
 \end{equation}
-
-
 
 
 As two fields with different types cannot be spliced together, we presume all
@@ -386,33 +381,9 @@ the cases where a variable bound in a \texttt{let} clause is rebound to a new it
 
 
 
-
-
 The iteration expressions of XQuery comes in the form of FLWORs. But as
 previously mentioned, we handle predicates which utilise the context item as an
 iteration as well. It 
-
-
-letclause -> statisk eller bruker iteration variable\ldots
-
-for \$x in expr1 where expr2 return expr3  -->
-
-scope.put(expr1)
-
-project(~xnumb, ~number
-    select(isNull(xnumb), true, eq(number, xnumb))             
-    //only if \$x is  used in expr3 
-    select(isNull(w.xnumb), true, eq(number, w.xnumb))         
-    // only if \$x is used in expr2 
-        cross(                     
-    // alt fra venstre, varrefs venstre og høyre. (ikke velge value fra h\o yre(
-            cross(                                             
-          //  n\aa r den bare har value) gir enn\aa~ ordentlig kryss?
-                project(number= count(), 
-                    expr1)
-                expr3
-        select(xqueryBoolean(value),                                  
-            expr2
 
 \subsection{Comparison Operators}
 \label{sect:translation:mXr:compOps}
@@ -426,29 +397,3 @@ project(~xnumb, ~number
 \end{itemize}
 op $\in$ {< | > | = | <= | >= | != | and }        // and ->
 and(xqueryBoolean(l.val), xqueryBoolean(r.val))
-
-\subsection{If then else}
-\label{sect:translation:ifThenElse}
-if
-now
-
-then
-
-else
-
-\subsection{ALTSAMMEN}
-\begin{itemize}
-  \item hvorfor ikke putte alt vi klarer inne her
-  \item er ikkeno poeng i \aa~skille mellom de vi tenkte skikkelig p\aa~ \aa~implementere og de vi tenkte litt
-  p\aa\ldots
-  \item S\aa fremt vi har en l\o sning putter vi den her\ldots kan heller diskutere senere hvorfor den er litt
-  skrinn\ldots har gjort s\aa nn med ting frem til n\aa\ldots
-\end{itemize}
-
-\subsection{Examples}
-\label{sect:translation:mXr:markxremoveExamples}
-\begin{itemize}
-\item steg for ste
-\item litt stort eksempel m predikat sammenligning og for
-\item kanskje en liten where
-\end{itemize}
