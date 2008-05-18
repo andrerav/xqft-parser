@@ -29,12 +29,12 @@ numberate(indx, [bnumb, indx], [varRefs-bnumb]
 
 (expr1, expr2)       (husk taint)     
 
-hvis expr er atomisk eller itervariabeldependant ----> project(indx = 0; expr)
-
 (hvis den er en sekvens har den allerede indx)
 
 numberate(index,[sprIdx, indx],[varRefs]                                     //TODO: SJEKK OM ALLE VARREFS SKAL VÆRE HER
     union(project(sprIdx = 1; expr1); project(sprIndx = 2; expr2))
+
+hvis exprN er atomisk eller itervariabeldependant ----> project(sprIdx = N,indx = 0; exprN);
 
 Hvis bare atomiske eller iteratorvariabeldependent ---> drop sprIndx = indx
 
