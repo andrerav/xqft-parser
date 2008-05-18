@@ -44,7 +44,7 @@ public class VarRef {
      */
     @Override
     public boolean equals(Object obj) {
-        System.out.println("LOL COMPARISON");
+        System.out.println("I'm never printed :(");
         return obj.toString().equals(this.name);
     }
     
