@@ -54,7 +54,12 @@ public class TraverseReturn {
         
         b.append("Atomic: " + (this.isAtomic ? "yes" : "no") + "\n");
         b.append("Var refs: " + this.varRefs.toString() + "\n");
-        b.append(this.operatorTree.toPrettyString(0) + "\n");
+        if (this.operatorTree != null) {
+            b.append("Operator tree:\n" + this.operatorTree.toPrettyString(0) + "\n");
+        }
+        else {
+            b.append("(No operator tree)\n");
+        }
         
         return b.toString();
     }

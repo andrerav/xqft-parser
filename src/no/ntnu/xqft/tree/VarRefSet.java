@@ -18,14 +18,14 @@ public class VarRefSet extends ArrayList<VarRef> {
         
         for (VarRef ref: this) {
             
-            if (b.length() > 0) {
+            if (b.length() > 1) {
                 b.append(','); // <-- aaww \(',')/
             }
             
             b.append(ref.toString());
         }
         b.append(']');
-        
+
         return b.toString();
     }
 }

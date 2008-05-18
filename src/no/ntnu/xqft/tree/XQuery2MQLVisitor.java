@@ -152,12 +152,20 @@ public class XQuery2MQLVisitor extends Visitor {
             TraverseReturn tr = acceptThis(tree.getChild(1));
             Scope.set(tree.getChild(0).getText(), tr, isIterationVar);
             
-            return null;
+            return tr;
         }
         else {
-            TraverseReturn tr = new TraverseReturn();
-            tr.getVarRefs().add(new VarRef(tree.getChild(0).getText()));
+            Scope.printPrettyString();
             
+            SymTabEntry entry = Scope.get(tree.getChild(0).getText());
+            if (entry == null) {
+                System.err.println("Error: variable " +tree.getChild(0).getText()+ " is undefined");
+                System.exit(1);
+            }
+            
+            TraverseReturn tr = entry.getTraverseReturn();
+            tr.getVarRefs().add(new VarRef(tree.getChild(0).getText()));
+
             return tr;
         }
     }
@@ -192,7 +200,7 @@ public class XQuery2MQLVisitor extends Visitor {
         for(int i = 0; i < tree.getChildCount(); i++) {
             tmp = acceptThis(tree.getChild(i));
             if (tmp.isAtomic()) { // Or is dependent on itervar
-                ptmp = new Project("idx=0", tmp.getOperatorTree());                
+                ptmp = new Project("sprIdx="+(i+1)+",idx=0",tmp.getOperatorTree());
             }
             else {
                 ptmp = new Project("sprIdx="+(i+1),tmp.getOperatorTree());
@@ -215,7 +223,6 @@ public class XQuery2MQLVisitor extends Visitor {
             partitionFields[i] = var.toString();
             i++;
         }
-        
         
         Numberate numberate = new Numberate("index", sortByFields, partitionFields, union);
         
