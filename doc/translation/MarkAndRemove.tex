@@ -1,16 +1,16 @@
 \section{MarkXRemove}
-\label{sect:translation:MarkXRemove}
+\label{sect:trans:MarkXRemove}
 
 Our original proposition to a method for translating XQuery ASTs into relational algebra was named MarkXRemove.
 The rationale behind this name will be explained later. Eventhough it has many shortcomings and flaws, we
-will in this section give a quick run through of the method. This is because when we in the next section present
-``INSERTNAMEHERE'', which is an evolution and a refinement of MarkXRemove, the new method may be easier understood
-when seen in the perspective of its origins. Another reason is that in case of further development of the
-``INSERTNAMEHERE'', it may be of help to also know what will \textit{not} work, what will work partially and
-\textit{why} it is flawed.
+will in this section give a quick run through of the method. This is because when we in section
+\ref{sect:trans:taintingDependencies} present the Tainting Dependancies method, which is an evolution and a
+refinement of MarkXRemove, the new method may be easier understood when seen in the perspective of its origins.
+Another reason is that in case of further development of the the Tainted Dependancies method, it may be of help to
+also know what will \textit{not} work, what will work partially and \textit{why} it is flawed.
 
 \subsection{Basics}
-\label{sect:translation:mxr:basics}
+\label{sect:trans:mxr:basics}
 
 The foundation of the method is that an iterator expression is always translated by calculating the cartesian
 product of the iterator sequence and the iterator body, hence the ``X'' in the name. The ``remove'' stems from the
@@ -27,7 +27,7 @@ the augmentation. The corresponding algebra tree is be stored in the symbol tabl
 method is because of this augmentation.
 
 \subsection{FLWOR}
-\label{sect:translation:mxr:flwor}
+\label{sect:trans:mxr:flwor}
 If the translator later comes accross a reference to an iterator variable $\chi$, it will get the tree from the
 symbol table and return it to the referring node without any further ado. The translator is also required to know
 which subtrees have a child that has referred to which iterator variable. This is because the $\chi$\textsf{numb}
@@ -65,7 +65,7 @@ select(ifThenElse(isNull(value), true, eq(r.inumb,l.inumb))
 \end{Verbatim} 
 
 \subsection{Flaws}
-\label{sect:translation:mxr:flaws}
+\label{sect:trans:mxr:flaws}
 The main problem with MarkXRemove is its dependancy on particular ordering of tuples in a relation which is a
 result of a cartesian product. Not only can not the \texttt{cross} operator promise the particular ordering of its
 result, it can not promise any ordering at all. The ordering the method depends on is that for each tuple in the
@@ -110,10 +110,10 @@ $inumb$ & $value$ \\\hline
 The query should of course be evaluated to $(true, true)$, as the \texttt{>} operator in XQuery yields $true$ if
 \textit{one} item in the sequence on the left side of the operator is larger than \textit{one} item on the right.
 This means that the relation would have to be pruned by a \texttt{select} or \texttt{group}, which can not be done
-genericly in the relations current state. A possibility would be to postpone the pruning until after the relation
+generally in the relations current state. A possibility would be to postpone the pruning until after the relation
 is crossed with the iterator sequence, but there would still not be any not-complex solution. This problem lead to
 the introduction of variable dependancy tainting, as we will see in section
-\ref{sect:translation:taintingDependancies}.
+\ref{sect:trans:taintingDependancies}.
 
 \underline{\textbf{\LARGE TODO:}} her st\aa r det egentlig noe om numeric predicates, men det er kommentert bort. 
 % Within the \texttt{scope} field of a relation returned from a \texttt{lookup} operator lies information about
