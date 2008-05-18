@@ -206,7 +206,6 @@ public class XQuery2MQLVisitor extends Visitor {
                 ptmp = new Project("sprIdx="+(i+1), tmp.getOperatorTree());
             }
             operators.add(ptmp);
-            //result.varRefs.addAll(tmp.getVarRefs());
             
             result.varRefs.addAll(tmp.getVarRefs());
         }
