@@ -5,7 +5,7 @@
 One of the greatest challenges in transforming XQuery to relational algebra lies in preserving the semantics of
 the iterative FLWOR construct. One course of action for solving this is a method we have called ``MarkXremove'' --
 pronounced ``mark, cross and remove''. The basis of the method is that the result from the \texttt{return} clause
-will always be crossed (cartesian product see \ref{sect:theory:crossProduct}) with the sequence bound in the
+will always be crossed (cartesian product see \ref{sect:theory:relAlg:crossProduct}) with the sequence bound in the
 corresponding \texttt{for} clause. Any referal in the \texttt{return} clause to a variable bound in a \texttt{for}
 clause will have to be marked with a number corresponding to the iteration number the instance of the variable
 exists in. After the cross product is calculated, rows not conforming to predicates calculated in the
@@ -96,7 +96,7 @@ created relation with a single field, ``value'' (rule
 There is however also a need to represent explicitly stated XML-nodes, as well
 as differentiate between the number \texttt{1} and the string \texttt{"1"}.
 This, and other issues about representing XQuery types will be treated in
-section \ref{sect:discussion:typeSystem}.
+section \ref{sect:disc:typeSystem}.
 
 Rule \ref{eq:translation:literalsAndNumbers} implies that any sequence of
 explicitly stated items will first have to be made as one-tuple relations and
@@ -106,7 +106,7 @@ the item is part of a singleton sequence, there is no need for a representation
 in form of an relation, as the item could be made part of the parameters of an
 operator (e.g. $\alpha$ \texttt{> 1} $\Longrightarrow$
 \textsf{select(gt(value, 1) $\alpha$)}). Both these issues will be discussed
-further in section \ref{sect:discussion:optimisations}.
+further in section \ref{sect:disc:optimisations}.
 
 
 
