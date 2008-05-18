@@ -10,19 +10,27 @@ import java.util.*;
  *
  */
 public class List extends Param {
+    private ArrayList<Param> items;
     
 	public List()
 	{
 		
 	}
 	
+    
+    public List(ArrayList<Param> params)
+    {
+        items = params;
+    }
+    
+    public List(Param[] params)
+    {
+        items = new ArrayList<Param>();
+        for(Param param:params) {
+            items.add(param);
+        }
+    }
 	
-	public List(ArrayList<Param> params)
-	{
-		items = params;
-	}
-	
-    private ArrayList<Param> items;
 
     /**
      * @return the items

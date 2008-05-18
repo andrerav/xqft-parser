@@ -20,13 +20,13 @@ public class Scope {
     private static Scope rootScope = instance;
 
     /* Looks up an entry in the symtab */
-    protected static TraverseReturn get(String key) {
+    protected static SymTabEntry get(String key) {
         return instance.getSym(key);
     }
     
     /* Sets an entry in the current symtab */
-    protected static void set(String key, TraverseReturn node) {
-        instance.setSym(key, node);
+    protected static void set(String key, TraverseReturn node, boolean isIterationVar) {
+        instance.setSym(key, node, isIterationVar);
     }
     
     /* Enter new scope */
@@ -55,7 +55,7 @@ public class Scope {
     protected Scope parent = null;
 
     /* Symbol table */
-    protected SymTab<String, TraverseReturn> symTab = new SymTab<String, TraverseReturn>();
+    protected SymTab<String, SymTabEntry> symTab = new SymTab<String, SymTabEntry>();
 
     /* Child scopes */
     protected LinkedList<Scope> children = new LinkedList<Scope>();
@@ -112,14 +112,14 @@ public class Scope {
     /**
      * @return the symTab
      */
-    public SymTab<String, TraverseReturn> getSymTab() {
+    public SymTab<String, SymTabEntry> getSymTab() {
         return symTab;
     }
 
     /**
      * @param symTab the symTab to set
      */
-    public void setSymTab(SymTab<String, TraverseReturn> symTab) {
+    public void setSymTab(SymTab<String, SymTabEntry> symTab) {
         this.symTab = symTab;
     }
 
@@ -139,13 +139,15 @@ public class Scope {
      * @param name
      * @param params
      */
-    public void setSym(String key, TraverseReturn node) {
+    public void setSym(String key, TraverseReturn node, boolean isIterationVar) {
 
         if (this.symTab.containsKey(key)) {
             //throw new ParseException("Variable \"" + name + "\" previously defined");
         }
         
-        this.symTab.put(key, node);
+        
+        
+        this.symTab.put(key, new SymTabEntry(node, isIterationVar, key));
     }
     
     /**
@@ -155,7 +157,7 @@ public class Scope {
      * @param key
      * @return A NodeReturn or null if no symbol found
      */
-    public TraverseReturn getSym(String key) {
+    public SymTabEntry getSym(String key) {
 
         /* See if this scope has symbol */
         if (this.symTab.get(key) != null) {
@@ -203,7 +205,7 @@ public class Scope {
         this.children = children;
     }
 
-    public static SymTab<String, TraverseReturn> getSymtab() {
+    public static SymTab<String, SymTabEntry> getSymtab() {
         return instance.getSymTab();
     }
     

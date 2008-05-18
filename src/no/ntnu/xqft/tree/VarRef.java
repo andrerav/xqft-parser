@@ -38,5 +38,15 @@ public class VarRef {
     public String toString() {
         return this.name;
     }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
+    public boolean equals(Object obj) {
+        return obj.toString().equals(this.name);
+    }
+    
+    
     
 }
