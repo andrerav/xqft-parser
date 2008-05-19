@@ -98,9 +98,9 @@ public class XQuery2MQLVisitor extends Visitor {
             result.setVarRefs(returnClauseResult.getVarRefs());
             result.setOperatorTree(numberate);
             
-            System.out.println("Returning and popping scope");
+            result.getVarRefs().remove(Scope.getInstance().getCurrentIterVar());
+            
             Scope.pop();
-
             return result;
         
         }
@@ -322,7 +322,11 @@ public class XQuery2MQLVisitor extends Visitor {
             varRefsDiff.removeAll(tmp);
 
             for (VarRef varRef : varRefsDiff) {
-                Project project = new Project(varRef.getName() + "numb", Scope.get(varRef.getName()).getTraverseReturn().getOperatorTree());
+                System.out.println("Trying to look up " + varRef.getName());
+                System.out.println("And did it: " + Scope.get(varRef.getName()));
+                Project project = new Project(varRef.getName() + "numb", 
+                        Scope.get(varRef.getName()).getTraverseReturn().getOperatorTree());
+                
                 Cross cross = new Cross(project, expr);
                 expr = cross;
             }
