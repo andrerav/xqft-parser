@@ -18,14 +18,16 @@ public class Scope {
     private static Scope instance = new Scope();
     private static Scope rootScope = instance;
 
+    
+    
     /* Looks up an entry in the symtab */
     protected static SymTabEntry get(String key) {
         return instance.getSym(key);
     }
     
     /* Sets an entry in the current symtab */
-    protected static void set(String key, TraverseReturn node, boolean isIterationVar) {
-        instance.setSym(key, node, isIterationVar);
+    protected static SymTabEntry set(String key, TraverseReturn node, boolean isIterationVar) {
+        return instance.setSym(key, node, isIterationVar);
     }
     
     /* Enter new scope */
@@ -38,7 +40,6 @@ public class Scope {
     
     protected static void push(boolean isFlworScope) {
         push();
-        
         instance.isFlworScope = isFlworScope;
     }
     
@@ -58,7 +59,10 @@ public class Scope {
 
     /* Child scopes */
     protected LinkedList<Scope> children = new LinkedList<Scope>();
-
+    
+    /* Current iteration variable for this scope */
+    protected SymTabEntry currentIterVar = null;    
+    
     /**
      * Add a child to this scope 
      * 
@@ -138,7 +142,7 @@ public class Scope {
      * @param name
      * @param params
      */
-    public void setSym(String key, TraverseReturn node, boolean isIterationVar) {
+    public SymTabEntry setSym(String key, TraverseReturn node, boolean isIterationVar) {
 
         if (this.symTab.containsKey(key)) {
             //throw new ParseException("Variable \"" + name + "\" previously defined");
@@ -146,7 +150,7 @@ public class Scope {
         
         
         
-        this.symTab.put(key, new SymTabEntry(node, isIterationVar, key));
+        return this.symTab.put(key, new SymTabEntry(node, isIterationVar, key));
     }
     
     /**
@@ -190,6 +194,20 @@ public class Scope {
         }
     }
     
+    /**
+     * @return the currentIterVar
+     */
+    public SymTabEntry getCurrentIterVar() {
+        return this.currentIterVar;
+    }
+
+    /**
+     * @param currentIterVar the currentIterVar to set
+     */
+    public void setCurrentIterVar(SymTabEntry currentIterVar) {
+        this.currentIterVar = currentIterVar;
+    }
+
     /**
      * @return the children
      */
