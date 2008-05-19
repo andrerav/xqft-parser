@@ -55,7 +55,10 @@ public class XQuery2MQLVisitor extends Visitor {
         XQFTTree returnClause = (XQFTTree)tree.getChild(tree.getChildCount()-1);
         
         acceptThis(forClause); // Place stuff into symtab
+        
+        
         TraverseReturn returnClauseResult = acceptThis(returnClause);
+
         
         System.out.println("Current iter var: " + Scope.getInstance().getCurrentIterVar());
         
@@ -71,15 +74,36 @@ public class XQuery2MQLVisitor extends Visitor {
 //            numberate(indx, [bnumb, indx], [varRefs-bnumb]
 //                expr1(/m b))    
             
-            Numberate numberate = new Numberate("");
             
+            String[] sortBy = {Scope.getInstance().getCurrentIterVar().getName() + "numb", "index"};
+            String[] partitionBy = new String[returnClauseResult.getVarRefs().size() - 1];
+            
+            VarRefSet prevVarRefs = (VarRefSet)returnClauseResult.getVarRefs().clone();
+            prevVarRefs.remove(Scope.getInstance().getCurrentIterVar());
+            
+            int i = 0;
+            for (VarRef ref : prevVarRefs) {
+                partitionBy[i] = ref.getName();
+                i++;
+            }
+            
+            
+            Numberate numberate = new Numberate("index", sortBy, partitionBy, returnClauseResult.getOperatorTree());
+
+            // Result
+            TraverseReturn result = new TraverseReturn();
+            result.setAtomic(false);
+            result.setVarRefs(returnClauseResult.getVarRefs());
+            result.setOperatorTree(numberate);
+            Scope.pop();
+
+            return result;
         
         }
         else {
             // Does not contain iter var
         }
 
-        Scope.pop();
         
         return null;
     }
@@ -233,7 +257,7 @@ public class XQuery2MQLVisitor extends Visitor {
         for(int i = 0; i < tree.getChildCount(); i++) {
             tmp = acceptThis(tree.getChild(i));
             if (tmp.isAtomic()) {
-                ptmp = new Project("sprIdx="+(i+1)+",idx=0", tmp.getOperatorTree());
+                ptmp = new Project("sprIdx="+(i+1)+",index=0", tmp.getOperatorTree());
             }
             else {
                 ptmp = new Project("sprIdx="+(i+1), tmp.getOperatorTree());
@@ -250,7 +274,7 @@ public class XQuery2MQLVisitor extends Visitor {
         
         Union union = new Union(operators);
 
-        String[] sortByFields = {"sprIdx", "idx"};        
+        String[] sortByFields = {"sprIdx", "index"};        
         String[] partitionFields = new String[result.getVarRefs().size()];
 
         int i = 0;
