@@ -55,9 +55,30 @@ public class XQuery2MQLVisitor extends Visitor {
         XQFTTree returnClause = (XQFTTree)tree.getChild(tree.getChildCount()-1);
         
         acceptThis(forClause); // Place stuff into symtab
-        acceptThis(returnClause);
+        TraverseReturn returnClauseResult = acceptThis(returnClause);
         
+        System.out.println("Current iter var: " + Scope.getInstance().getCurrentIterVar());
         
+        if (Scope.getInstance() != null &&
+                Scope.getInstance().getCurrentIterVar() != null && 
+                returnClauseResult.getVarRefs() != null &&
+                returnClauseResult.getVarRefs().contains(Scope.getInstance().getCurrentIterVar())) {
+            // Contains iter var
+
+//            for $b in (expr)
+//            return expr1(/m b)
+//
+//            numberate(indx, [bnumb, indx], [varRefs-bnumb]
+//                expr1(/m b))    
+            
+            Numberate numberate = new Numberate("");
+            
+        
+        }
+        else {
+            // Does not contain iter var
+        }
+
         Scope.pop();
         
         return null;
@@ -161,7 +182,7 @@ public class XQuery2MQLVisitor extends Visitor {
             SymTabEntry tmp = Scope.set(tree.getChild(0).getText(), tr, isIterationVar);
             
             if (isIterationVar) {
-               
+               Scope.getInstance().setCurrentIterVar(new VarRef(tmp.getName()));
             }
             
             return tr;

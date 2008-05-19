@@ -11,7 +11,6 @@ public class TraverseReturn {
         this.varRefs = new VarRefSet();
     }
     
-    
     /**
      * @return the isAtomic
      */

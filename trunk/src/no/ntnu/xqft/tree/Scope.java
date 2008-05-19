@@ -48,6 +48,10 @@ public class Scope {
         instance = instance.getParent();
     }
     
+    protected static Scope getInstance() {
+        return instance;
+    }
+    
     /* FLWOR scope? */
     protected boolean isFlworScope = false;
     
@@ -61,7 +65,7 @@ public class Scope {
     protected LinkedList<Scope> children = new LinkedList<Scope>();
     
     /* Current iteration variable for this scope */
-    protected SymTabEntry currentIterVar = null;    
+    protected VarRef currentIterVar = null;    
     
     /**
      * Add a child to this scope 
@@ -148,9 +152,11 @@ public class Scope {
             //throw new ParseException("Variable \"" + name + "\" previously defined");
         }
         
+        SymTabEntry entry = new SymTabEntry(node, isIterationVar, key);
         
+        this.symTab.put(key, entry);
         
-        return this.symTab.put(key, new SymTabEntry(node, isIterationVar, key));
+        return entry;
     }
     
     /**
@@ -197,14 +203,19 @@ public class Scope {
     /**
      * @return the currentIterVar
      */
-    public SymTabEntry getCurrentIterVar() {
-        return this.currentIterVar;
+    public VarRef getCurrentIterVar() {
+        if (this.currentIterVar == null && this.parent != null) {
+            return parent.getCurrentIterVar();
+        }
+        else {
+            return this.currentIterVar;
+        }
     }
 
     /**
      * @param currentIterVar the currentIterVar to set
      */
-    public void setCurrentIterVar(SymTabEntry currentIterVar) {
+    public void setCurrentIterVar(VarRef currentIterVar) {
         this.currentIterVar = currentIterVar;
     }
 
