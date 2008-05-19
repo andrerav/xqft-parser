@@ -237,9 +237,15 @@ public class XQuery2MQLVisitor extends Visitor {
         
         boolean isIterationVar = tree.isFlworTupleDef();
         
+        String varName = tree.getChild(0).getText();
+        
         // Assignment?
         if (tree.getChildCount() > 1) {
             TraverseReturn tr = acceptThis(tree.getChild(1));
+            Project project = new Project("[" + varName + "numb, value]", tr.getOperatorTree());
+            tr.setOperatorTree(project);
+            tr.setAtomic(true);
+            
             SymTabEntry tmp = Scope.set(tree.getChild(0).getText(), tr, isIterationVar);
             
             if (isIterationVar) {
