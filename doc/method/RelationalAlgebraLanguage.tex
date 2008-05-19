@@ -320,6 +320,8 @@ A & B & C \\ \hline
 \label{figure:mql:make_example2_result}
 \end{figure}
 
+\subsubsection{Group}
+\underline{\LARGE TODO:} innhold
 
 \begin{itemize}
   \item Lookup
@@ -412,9 +414,11 @@ produced. The example converts the integer 5 to \textit{true} and the integer 0
 to \textit{false}. 
 
 \subsubsection{Numberation/sequence generator}
-This operator should generate a sequence field from the input result set,
-optionally restart the sequence based on field partitioning, and optionally sort
-the output. The operator accepts three parameters and one child operator; the
+\marginpar{\underline{\Large TODO} \scriptsize Dette h\o rtes litt s\ae rt ut. Den group'er p\aa~partitionList,
+sorterer p\aa~sortList og s\aa~nummererer. Den er den samme som det st\aa r om i LoopLifttingene, bare at den kan ta flere
+partition felter} 
+This operator should generate a sequence field from the input result set, optionally restart the
+sequence based on field partitioning, and optionally sort the output. The operator accepts three parameters and one child operator; the
 three parameters are:
 \begin{itemize}
   \item A field name for the generated sequence

@@ -1,7 +1,9 @@
+\newpage
 \section{Tainting Dependencies}
 \label{sect:trans:taintingDependencies}
 
 \begin{itemize}
+  \item \textbf{\LARGE TODO:} det er en newpage p\aa~denne siden
   \item INTRO for teh wind
   \item har vokst ut av MarkXRemove
   \item Tainting dependencies (TD)
@@ -10,10 +12,39 @@
 
 \subsection{Inference Rule Language Explanation}
 \label{sect:trans:TD:langExpl}
-\begin{itemize}
-  \item hvordan skriver vi regler?
-  \item \texttt{r()} = til algebrafunksjon
-\end{itemize}
+\underline{\textbf{\LARGE TODO:}} Skal jeg bruke greske bokstaver i stedet for tekstlig marsgreie n\aa r jeg
+skriver regler?
+
+During this chapter we will present some inference rules. In this section we will explain the various
+typographical representations.
+
+\begin{table}[h]
+\begin{tabular}{l|l}
+
+  $\longmapsto$  			& Translates into \\
+  $\vartheta$ 			& A set of iteration variable references \\
+  \textsf{sans serif} 	& MQL expressions \\
+  \texttt{monospaced} 	& XQuery expressions \\
+  $e,\ldots,e_{n}$		  	& Generic expressions \\
+  $\chi, \Upsilon$		& Generic variable names \\
+  $I_{\chi}$			& The iterator expression which declares $\chi$ \\
+  \textbf{bold} 		& Operations done during the generation of the algebra \\
+  \textbf{r(}$e$\textbf{)} & A function transforming the expression $e$ into relational algebra \\
+  $\Delta$ 				& The default context \\
+  $\Lambda$ 			& The logical/boolean context \\
+  
+\end{tabular}
+\caption{Explanation of inference rule symbols}
+\label{tab:trans:td:langExpl}
+\end{table}
+
+Inference rules are generally in this format:
+\begin{equation*}
+\frac{\mbox{\textbf{cxt}}\vdash cond}{e}\longmapsto \mbox{\textbf{r(}}e\mbox{\textbf{)}}
+\end{equation*}
+
+This should be read as: in the context of \textbf{cxt}, if condition $cond$ is satisfied, the XQuery expression
+$e$ will be translated into \textbf{r(}$e$\textbf{)}.
 
 The translator is in the logical context, $\Lambda$, if the AST node it is currently visiting is a successor of a
 boolean operator or within the condition part of an \texttt{if..then..else} expression. In all other cases the
@@ -22,11 +53,10 @@ context is assumed.
 
 \subsection{Basics}
 \label{sect:trans:TD:basics}
-\marginpar{\textbf{\LARGE TODO:} referere til contextvisitorz?/context $\Lambda$ etc}
-The method assumes left-to-right traversal of the assymetric syntax tree. In almost all cases the traversal is
-postorder, meaning a subtree can be evaluated independently from its ancestors. In addition to the evaluated
-subtree, a node must be able to inform its parent node about its variable dependencies ($\vartheta$), which we will
-discuss later.
+The method assumes left-to-right traversal of the assymetric syntax tree. In most cases the traversal is
+postorder, meaning a subtree can be evaluated independently from its ancestors. The exception being the logical
+context set by boolean operators. In addition to the evaluated subtree, a node must be able to inform its parent
+node about its variable dependencies ($\vartheta$), which we will discuss later.
 
 One XQuery sequence is represented as one relation and one XQuery item is represented as one tuple. This is sound,
 as all XQuery items are sequences, and all sequences are one-dimensional (section
@@ -51,18 +81,52 @@ sake of simplicity, treat $value$ as a polymorphic type attribute. This simplifi
 for the method and the way XQuery expressions are translated. XQuery types and relational representation of such
 will is handled in section \ref{sect:disc:typeSystem}. \marginpar{\textbf{\LARGE TODO:} noen andre steder?.}
 
+Also for simplicity, the $documentId$, $pos$ and $scope$ attributes have been left out of the
+fields specified in \textsf{project} operators. If the \textsf{project} operator is applied to the result of a
+join or cartesian product, these fields will follow the $value$ attribute. That is, if $r.value$ is projected,
+then so is $r.documentId$, etc\ldots if applicable.
+
 Tainting Dependencies utilises a symbol table for storing of variables declared. The table has two functions:
 \begin{itemize}
-  \item \textbf{put(}\texttt{\$}$\chi$\textbf{, }\texttt{r(}$e$\texttt{)}\textbf{)} -- will store the
-  algebraic version of the expression bound to the variable \texttt{\$}$\chi$ with \texttt{\$}$\chi$ as the key.  
-  \item \textbf{get(}\texttt{\$}$\chi$\textbf{)} -- will do a lookup in the table based on the name of the variable
+  \item \textbf{put(}$\chi$\textbf{, }\textbf{r(}$e$\textbf{))} -- will store the
+  algebraic version of the expression bound to the variable \texttt{\$}$\chi$ with $\chi$ as the key.  
+  \item \textbf{get(}$\chi$\textbf{)} -- will do a lookup in the table based on the name of the variable
   \texttt{\$}$\chi$ and return the algebraic version of the expression linked to it.
 \end{itemize}
-The table handles scoping according to XQuery semantics (section \ref{sect:theory:xquery:Flwor}), meaning the
-translator will always be able to find the right declared variable based on where it is in the AST.
+The symbol table handles scoping according to XQuery semantics (section \ref{sect:theory:xquery:Flwor}), meaning
+the translator will always be able to find the right declared variable based on which node in the AST the
+translator is visiting.
 
 \subsection{Iterator Variable Dependency}
 \label{sect:trans:TD:dependency}
+
+The concept of iterator variable dependency form the basis of the Tainting Dependency method. Such dependency is
+defined as follows:
+\mbox{} \\
+\begin{myDefinition}
+An XQuery expression $e$ is \textbf{dependant} on an iterator variable \texttt{\$}$\chi$ if is dependant on the
+value of \texttt{\$}$\chi$.
+\end{myDefinition}
+
+Consider the following example where \texttt{\$x} and \texttt{\$y} both are iterator variables:
+\begin{center}
+\begin{equation*}
+\begin{array}{l}
+\qquad \qquad \vdots \\
+\mbox{\texttt{if(\$x = 2) then}} \\ \qquad
+	\mbox{\texttt{\$y}} \\ 
+\mbox{\texttt{else}} \\ \qquad 
+	e_{1} \\
+\qquad \qquad \vdots
+\end{array}
+\end{equation*}
+\end{center}
+
+Here, the expression $e_{1}$ is \textit{not} dependant on the variabe \texttt{\$y}, but \textit{is}, however,
+dependant on \texttt{\$x}.
+
+\underline{\textbf{\Large TODO:}} Hva skjer med it variable dependency vs iterator dependency?
+
 \begin{itemize}
   \item $\chi$numb and the likes
   \item definisjon

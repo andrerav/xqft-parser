@@ -135,12 +135,11 @@ expression returns the first \verb!b!-node: \verb!/a/b[1]!.
 
 \begin{myDefinition}
 \label{definition:iteration_expression}
-An \textbf{iteration expression} is an XQuery expression consisting of an
-\textbf{iterator variable} and an \textbf{iterator body}. The \textbf{iterator
-body} is executed multiple times, and for each time the \textbf{iterator
-variable} is bound to the next item in the \textbf{iterator sequence}. As
-XQuery is a functional language(see section \ref{sect:theory:xquery:basics}),
-it is semantically sound to execute iterations in parallel.
+An \textbf{iteration expression} or \textbf{iterator} is an XQuery expression consisting of an \textbf{iterator
+variable} declaration and an \textbf{iterator body}. The \textbf{iterator body} is executed multiple times, and
+for each time the \textbf{iterator variable} is bound to the next item in the \textbf{iterator sequence}. As
+XQuery is a functional language(see section \ref{sect:theory:xquery:basics}), it is semantically sound to execute
+iterations in parallel.
 \end{myDefinition}
 
 XQuery is centered around a loop construct known dubbed FLWOR;
