@@ -49,7 +49,15 @@ public class XQuery2MQLVisitor extends Visitor {
     public TraverseReturn visitAST_FLWOR(XQFTTree tree) {
         
         Scope.push();
-        this.visitAllChildren(tree);
+        
+        XQFTTree forClause = (XQFTTree)tree.getChild(0);
+        // TODO: everything inbetween
+        XQFTTree returnClause = (XQFTTree)tree.getChild(tree.getChildCount()-1);
+        
+        acceptThis(forClause); // Place stuff into symtab
+        acceptThis(returnClause);
+        
+        
         Scope.pop();
         
         return null;
@@ -150,7 +158,11 @@ public class XQuery2MQLVisitor extends Visitor {
         // Assignment?
         if (tree.getChildCount() > 1) {
             TraverseReturn tr = acceptThis(tree.getChild(1));
-            Scope.set(tree.getChild(0).getText(), tr, isIterationVar);
+            SymTabEntry tmp = Scope.set(tree.getChild(0).getText(), tr, isIterationVar);
+            
+            if (isIterationVar) {
+               
+            }
             
             return tr;
         }
@@ -222,7 +234,7 @@ public class XQuery2MQLVisitor extends Visitor {
 
         int i = 0;
         for (VarRef var:result.getVarRefs()) {
-            partitionFields[i] = var.toString();
+            partitionFields[i] = var.toString() + "numb";
             i++;
         }
         
