@@ -245,6 +245,11 @@ public class Scope {
     
     public String toPrettyString(int level) {
         StringBuffer buffer = new StringBuffer();
+        char chars[] = new char[level*2];
+        Arrays.fill(chars, ' ');
+        String space = new String(chars);
+        
+        buffer.append(space + "Iter var for this scope: " + this.currentIterVar + "\n");
         buffer.append(this.symTab.toString(level));
 
         for (Scope child : this.children) {

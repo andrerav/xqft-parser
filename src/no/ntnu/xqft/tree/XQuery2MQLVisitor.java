@@ -59,8 +59,10 @@ public class XQuery2MQLVisitor extends Visitor {
         
         TraverseReturn returnClauseResult = acceptThis(returnClause);
 
-        
-        System.out.println("Current iter var: " + Scope.getInstance().getCurrentIterVar());
+//        
+//        System.out.println("Current iter var: " + Scope.getInstance().getCurrentIterVar());
+//        System.out.println("Return clause result: " + returnClauseResult);
+//        System.out.println("Return clause: " + returnClause.toStringTree());
         
         if (Scope.getInstance() != null &&
                 Scope.getInstance().getCurrentIterVar() != null && 
@@ -95,17 +97,52 @@ public class XQuery2MQLVisitor extends Visitor {
             result.setAtomic(false);
             result.setVarRefs(returnClauseResult.getVarRefs());
             result.setOperatorTree(numberate);
+            
+            System.out.println("Returning and popping scope");
             Scope.pop();
 
             return result;
         
         }
         else {
+            
+            TraverseReturn result = new TraverseReturn();
             // Does not contain iter var
+
+//            numberate(index, [bnumb, index], [varRefs]
+//                  cross(
+//                      project([bnumb = index]; expr)
+//                      expr1(/wo b)  
+            Project project 
+                = new Project("[" + Scope.getInstance().getCurrentIterVar() + "numb = index]", 
+                        Scope.get(Scope.getInstance()
+                                .getCurrentIterVar().getName())
+                                    .getTraverseReturn().getOperatorTree());
+            
+            Cross cross = new Cross(project, returnClauseResult.getOperatorTree());
+            String[] sortBy = {Scope.getInstance().getCurrentIterVar() + "numb", "index"};
+            String[] partitionBy = new String[returnClauseResult.getVarRefs().size()];
+            
+            int i = 0;
+            for(VarRef varRef : returnClauseResult.getVarRefs()) {
+                partitionBy[i] = varRef.getName();
+                i++;
+            }
+            
+            Numberate numberate = new Numberate("index", sortBy, partitionBy, cross);
+
+            result.setOperatorTree(numberate);
+            result.getVarRefs().addAll(returnClauseResult.getVarRefs());
+            result.setAtomic(false);
+            
+            System.out.println("Does not contain iter var " + Scope.getInstance().getCurrentIterVar());
+            System.out.println(returnClauseResult.getVarRefs().toString());
+            Scope.pop();
+            
+            return result;
         }
 
         
-        return null;
     }
 
     /* (non-Javadoc)
@@ -212,7 +249,6 @@ public class XQuery2MQLVisitor extends Visitor {
             return tr;
         }
         else {
-            Scope.printPrettyString();
             
             SymTabEntry entry = Scope.get(tree.getChild(0).getText());
             if (entry == null) {
@@ -222,6 +258,7 @@ public class XQuery2MQLVisitor extends Visitor {
             
             TraverseReturn tr = entry.getTraverseReturn();
             tr.getVarRefs().add(new VarRef(tree.getChild(0).getText()));
+            //System.out.println("Traverse return in visitDOLLARSi: " + tr.toString());
 
             return tr;
         }
@@ -250,22 +287,52 @@ public class XQuery2MQLVisitor extends Visitor {
         ArrayList<Operator> operators 
                         = new ArrayList<Operator>(tree.getChildCount());
         
-        TraverseReturn result = new TraverseReturn();
-        TraverseReturn tmp;
-        Project ptmp;
+        VarRefSet varRefs = new VarRefSet(); 
+        
+        ArrayList<TraverseReturn> childResults // Used in taint process
+            = new ArrayList<TraverseReturn>(tree.getChildCount());
         
         for(int i = 0; i < tree.getChildCount(); i++) {
-            tmp = acceptThis(tree.getChild(i));
-            if (tmp.isAtomic()) {
-                ptmp = new Project("sprIdx="+(i+1)+",index=0", tmp.getOperatorTree());
+            TraverseReturn tmp = acceptThis(tree.getChild(i));
+            
+            // For tainting, maintain a collection of *all* var references
+            // and also a list of all child results
+            varRefs.addAll((VarRefSet)tmp.getVarRefs());
+            childResults.add(tmp);
+        }
+        
+        
+        // Taintify
+        int c = 0;
+        for (TraverseReturn childResult : childResults) {
+
+            
+
+            VarRefSet varRefsDiff;
+            Operator expr = childResult.getOperatorTree();
+            
+            VarRefSet tmp = childResult.getVarRefs();
+            varRefsDiff = (VarRefSet)varRefs.clone();
+            varRefsDiff.removeAll(tmp);
+
+            for (VarRef varRef : varRefsDiff) {
+                Project project = new Project(varRef.getName() + "numb", Scope.get(varRef.getName()).getTraverseReturn().getOperatorTree());
+                Cross cross = new Cross(project, expr);
+                expr = cross;
+            }
+
+            if (childResult.isAtomic()) {
+                expr = new Project("sprIdx="+(c+1)+",index=0,value", expr);
             }
             else {
-                ptmp = new Project("sprIdx="+(i+1), tmp.getOperatorTree());
+                expr = new Project("sprIdx="+(c+1)+",value", expr);
             }
-            operators.add(ptmp);
-            
-            result.varRefs.addAll(tmp.getVarRefs());
+            operators.add(expr);
+            c++;
         }
+        
+        //
+        
 
 //        ArrayList<Param> params = new ArrayList<Param>();
 //        params.add(new Name("index"));
@@ -273,6 +340,8 @@ public class XQuery2MQLVisitor extends Visitor {
 //        params.add(new List());
         
         Union union = new Union(operators);
+
+        TraverseReturn result = new TraverseReturn();
 
         String[] sortByFields = {"sprIdx", "index"};        
         String[] partitionFields = new String[result.getVarRefs().size()];
@@ -284,16 +353,16 @@ public class XQuery2MQLVisitor extends Visitor {
         }
         
         Numberate numberate = new Numberate("index", sortByFields, partitionFields, union);
-        
-        result.setOperatorTree(numberate);
-        
-        // Er dette rett? Er jo en sekvens det her, men jeg vet ikke
+
+        result.getVarRefs().addAll(varRefs);
+        result.setOperatorTree(numberate);        
         result.setAtomic(false);
         
-        System.out.println(result.toString());
+        //System.out.println(result.toString());
         
         return result;
     }
+ 
 
     /* (non-Javadoc)
      * @see no.ntnu.xqft.tree.Visitor#visitNCName(no.ntnu.xqft.parse.XQFTTree)
@@ -334,11 +403,15 @@ public class XQuery2MQLVisitor extends Visitor {
     @Override
     public TraverseReturn visitIntegerLiteral(XQFTTree tree) {
         // TODO Auto-generated method stub
+
+        StringBuffer b = new StringBuffer();
+        b.append("name:=[value],");
+        b.append(tree.getText());
         
+        Make make = new Make(b.toString());
+
         TraverseReturn tr = new TraverseReturn();
         tr.setAtomic(true);
-        
-        Make make = new Make(tree.getText());
         tr.setOperatorTree(make);
 
         return tr;

@@ -31,7 +31,7 @@ public class SymTab<K,V> extends HashMap<K,V> {
 	public String toString(int level) {
 	    StringBuffer buffer = new StringBuffer();
 
-	    char chars[] = new char[level];
+	    char chars[] = new char[level*2];
 	    Arrays.fill(chars, ' ');
 	    String space = new String(chars);
 	    for(Map.Entry<K,V> entry : this.entrySet()) {
