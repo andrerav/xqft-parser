@@ -2,55 +2,15 @@
 \section{BAREBAJZ}
 \label{sect:translation:mXr}
 
-
-\subsection{Inference Rules Language Explanation}
-\label{sect:translation:inferenceExplanation}
-During this chapter we will present some inference rules. This is an explanation
-of the various typographical representations:
-
-\begin{table}[h]
-
-
-\begin{tabular}{l|l}
-
-  $\Longrightarrow$  & Translates into \\
-  $\vartheta$ & A set of iteration variable references \\
-  \textsf{sans serif} & MQL expressions \\
-  \texttt{monospaced} & XQuery expressions \\
-  $\alpha , \beta, \gamma$ & Generic expressions \\
-  \textbf{bold} & Operations done during the generation of the algebra \\
-  $\Delta$ & The default context \\
-  $\Lambda$ & The logical or boolean context \\
-  
-\end{tabular}
-\caption{Explanation of inference rule symbols}
-\label{tab:translation:inferenceRuleSymbols}
-\end{table}
-
-\begin{itemize}
-  \item forklare det med br\o kstrek og $\dashv$ ogs\aa ?
-\end{itemize}
-
-
 \subsection{Basics}
 \label{sect:translation:mXr:basics}
 
-
-\textit{For a definition of iteration expressions, see
-section\ref{sect:theory:xquery:Flwor}} 
 
 \begin{myDefinition}
 An XQuery expression is \textbf{dependent} on an iterator variable \texttt{X} if one of its descendants in the AST
 is a referral to \texttt{X}, but \texttt{X}'s iteration expression is not. Correspondingly, a tuple is
 \textbf{dependent} on \texttt{X} if has a not-\textsf{NULL} \textsf{Xnumb} attribute.
 \end{myDefinition}
-
-
-The translator is in the logical context, $\Lambda$, if its current node is a
-successor of a boolean operator or within the $\alpha$ part of an
-\texttt{if($\alpha$) then $\beta$ else $\gamma$} expression. In all other cases
-the translator is in the default context, $\Delta$. If no context is mentioned
-in the inference rules the default context is assumed.
 
 For simplicity all data fields (e.g \textsf{dokumentId, scope}) will be
 referred to as \verb!fields!, if one field is not explicitly needed.
