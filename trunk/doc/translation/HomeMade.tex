@@ -2,18 +2,6 @@
 \section{BAREBAJZ}
 \label{sect:translation:mXr}
 
-\subsection{Basics}
-\label{sect:translation:mXr:basics}
-
-
-\begin{myDefinition}
-An XQuery expression is \textbf{dependent} on an iterator variable \texttt{X} if one of its descendants in the AST
-is a referral to \texttt{X}, but \texttt{X}'s iteration expression is not. Correspondingly, a tuple is
-\textbf{dependent} on \texttt{X} if has a not-\textsf{NULL} \textsf{Xnumb} attribute.
-\end{myDefinition}
-
-For simplicity all data fields (e.g \textsf{dokumentId, scope}) will be
-referred to as \verb!fields!, if one field is not explicitly needed.
 
 \subsection{Literals and Numbers}
 \label{sect:translation:mXr:litAndNumbers}
@@ -70,54 +58,6 @@ This can be seen in rule \ref{eq:translation:sequencing}.
 As two fields with different types cannot be spliced together, we presume all
 \textsf{value} fields are strings for the time being. This will be further
 discussed in section \ref{sect:discussion:typeSystem}.
-
-\subsection{Variables}
-
-\marginpar{\underline{\Large TODO} \footnotesize Tainting?}
-\label{sect:translation:mXr:variables}
-When a variable is declared, be it in the form of a \texttt{for} clause, \texttt{let} clause or a \texttt{declare
-variable} expression, the right side of such an expression is transformed into algebra. The tree and its
-$\vartheta$ is then stored in the symbol table by means of the previously mentioned \textbf{put(}\texttt{X},
-$\alpha$\textbf{)}. The translator will have to in some way recognise which variables are iterator variables, e.g.
-by means of a flag. Rule \ref{eq:translation:variableNotIterator} shows the translation of the reference of a
-variable that is not an iterator.
-
-\begin{equation}
-\centering
-\frac{\displaystyle \texttt{X} \notin \vartheta}{\displaystyle \texttt{\$X}}
-\Longrightarrow
-\begin{array}{l}
-	\mbox{\textbf{get(}\texttt{X}\textbf{)}}
-\end{array}
-\label{eq:translation:variableNotIterator}
-\end{equation}
-
-When entering a predicate of a path expression, the algebra corresponding to the steps up to the predicate will be
-stored in the symbol table as the iterator variable \texttt{``.''} (the context item). The context node may
-implicitly be used with a relative path expression within the predicate. Rule
-\ref{eq:translation:iteratorVariable} shows the translation of using a iterator variable. The same principles is
-behind the inference rule for using the context node within a predicate.
-
-\begin{equation}
-\centering
-\frac{\displaystyle \texttt{X} \in \left\{ Iterators \right\}}
-	{\displaystyle \texttt{\$X}}
-\Longrightarrow
-\begin{array}{l}
-	\mbox{\textsf{project([Xnumb=counter(),fields,}} \vartheta
-	\mbox{\textsf{];}}
-	\\ \quad
-	\mbox{\textbf{get(}\texttt{X}\textbf{)} \textsf{)}}
-\end{array}
-\label{eq:translation:iteratorVariable}
-\end{equation}
-
-Where $\vartheta = \vartheta + $ \texttt{X}.
-Rule \ref{eq:translation:iteratorVariable} also shows the introduction of a -\textsf{numb} field. This field
-contains information about which iteration the instance of the variable in that row belongs to. All tuples with a
-not \textsf{NULL} value in a -\textsf{numb} will be dependant on which iteration the loop linked to that variable
-is in.
-
 
 \subsection{Path Expressions}
 \label{sect:translation:mXr:smpPathExpr}
