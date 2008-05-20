@@ -1,3 +1,12 @@
+
+ {           for $v0 in (1,2) return
+s|      {        ($v0,
+ |    s0|         for $v00 in (10,20) return
+ {      {   s00{  ($v0, $v00)
+
+
+
+
 project(iter = outer, pos=pos1, item
     project(pos1 = count(outer), etc
         sort(outer,iter,pos
