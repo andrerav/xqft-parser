@@ -225,33 +225,29 @@ with their dependencies during sequence building. Consider the subexpression $e$
 \end{tabular}
 \end{center}
 Where $e_{1}.\vartheta = \left\{\chi_{1}\right\}$ and $e_{2}.\vartheta = \emptyset$. Here $e_{2}$ will be tainted
-by $e_{1}$'s dependency on $\chi$. The tainting process is carried out by calculating the cartesian product of
-$e_{2}$ and the $\chi$$numb$ column of \texttt{\$}$\chi$ stored in the symbol table. 
+by $e_{1}$'s dependency on $\chi_{1}$, but as $e_{2}$ have no dependencies, $e_{1}$ will not be tainted.. The
+tainting process is carried out by calculating the cartesian product of $e_{2}$ and the $\chi$$numb$ column of
+\texttt{\$}$\chi$ stored in the symbol table.
 
 More generally, for an sequence building expression $e$, \texttt{(}$e_{1}$\texttt{, \ldots, }$e_{n}$\texttt{)},
-tainting can be expressed like this:
+tainting can be expressed like this: \marginpar{\underline{\textbf{\Large TODO:}} \scriptsize noe \aa~utsette
+p\aa~bruken av $\Pi$ ?}
 \begin{center}
 \begin{equation}
 \begin{array}{l}
 e.\vartheta = e_{1}.\vartheta \cup \ldots \cup e_{n}.\vartheta = \left\{\chi_{1},\ldots\chi_{m}\right\} \\
 i \in \left\{1,\ldots,n\right\} \\
 \mbox{\textbf{t(r(}}e_{i}\mbox{\textbf{),}}e.\vartheta\mbox{\textbf{)}} = 
-\displaystyle \varprod_{\chi \in e.\vartheta - e_{i}.\vartheta}
+\mbox{\textbf{r(}}e_{i}\mbox{\textbf{)}} \times {\displaystyle \prod_{\chi_{j} \in e.\vartheta -
+e_{i}.\vartheta}} \mbox{\textsf{project(}}\chi_{j}numb\mbox{\textsf{;
+}\textbf{get(}}\chi_{j}\mbox{\textbf{)}\textsf{)}}
 \end{array}
 \label{eq:trans:TD:taint}
 \end{equation}
 \end{center}
 
-Variabler betyr jo egentlig ikke s\aa~mye.. det er iterator som betyr\ldots pr\o ve
-\aa~unng\aa~\aa~bry seg om det lengst mulig\ldots
-
-\begin{itemize}
-  \item hvis \textbf{en} av items er avhengig\ldots
-  \item betyr jo at settet er avhengig av iterasjon-> posisjon og ting, fordi den skal brukes til noe
-  \item definisjon
-  \item vis hvordan tainting foreg\aa r ->
-  \item Forced Dependency Tainting\ldots hvis man kommer til 
-\end{itemize}
+In addition to be spread by iterator variable dependencies and tainting in sequence building, iterator dependencies
+may be spread by forced tainting as we will see later. 
 
 \subsection{Sequence Building}
 \label{sect:trans:TD:seqBuild}
