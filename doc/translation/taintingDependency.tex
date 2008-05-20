@@ -22,16 +22,18 @@ typographical representations.
 \begin{tabular}{l|l}
 
   $\longmapsto$  			& Translates into \\
-  $\vartheta$ 			& A set of iteration variable references \\
-  \textsf{sans serif} 	& MQL expressions \\
-  \texttt{monospaced} 	& XQuery expressions \\
-  $e,\ldots,e_{n}$		  	& Generic expressions \\
-  $\chi, \Upsilon$		& Generic variable names \\
-  $I_{\chi}$			& The iterator expression which declares $\chi$ \\
-  \textbf{bold} 		& Operations done during the generation of the algebra \\
-  \textbf{r(}$e$\textbf{)} & A function transforming the expression $e$ into relational algebra \\
-  $\Delta$ 				& The default context \\
-  $\Lambda$ 			& The logical/boolean context \\
+  $\vartheta$ 				& A set of iteration variable references \\
+  \textsf{sans serif} 		& MQL expressions \\
+  \texttt{monospaced} 		& XQuery expressions \\
+  $e,\ldots,e_{n}$			& Generic expressions \\
+  $\chi,\ldots,\chi_{n}$	& Generic variable names \\
+  $I_{\chi}$				& The iterator expression which declares $\chi$ \\
+  \textbf{bold} 			& Operations done during the generation of the algebra \\
+  \textbf{r(}$e$\textbf{)} 	& Returns the relational algebraic representation of $e$   \\
+  \textbf{t(}\textbf{r(}$e$\textbf{)}\textbf{,}$\vartheta'$\textbf{)} & Returns \textbf{r(}$e$\textbf{)} tainted
+  with the dependencies $\vartheta'$ \\
+  $\Delta$ 					&  The default context \\ 
+  $\Lambda$ 				& The logical/boolean context \\
   
 \end{tabular}
 \caption{Explanation of inference rule symbols}
@@ -106,8 +108,9 @@ defined as follows:
 
 \noindent
 \begin{myDefinition}
-An XQuery expression $e$ is \textbf{dependant} on an iterator variable \texttt{\$}$\chi$, if in the corresponding
-abstract syntax tree there exists a upwards path from a reference to \texttt{\$}$\chi$ to $I_{\chi}$ via $e$.
+An XQuery expression $e_{1}$ is \textbf{dependant} on an \textbf{iterator variable} \texttt{\$}$\chi$, if in the
+corresponding abstract syntax tree there exists a upwards path from a reference to \texttt{\$}$\chi$ to $I_{\chi}$
+via $e_{1}$.
 \label{def:iterVarDep}
 \end{myDefinition}
 
@@ -170,6 +173,63 @@ interpreted as a comma seperated list of all the attributes linked to the depend
 
 \subsection{Tainting Dependencies}
 \label{sect:trans:TD:tainting}
+
+The iterator body of an iterator with a iterator sequence with length $n$ will have to executed $n$ times. This
+can be done by e.g. evaluating the cartesian product between the body or the sequence, as with the MarkXRemove
+method. To avoid any denormalised intermediate results, an ideal solution would be to always calculate such
+products after all other evaluations of the query is done. Consider the following simple example of the query $e$:
+
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$a in (1, 2) return} \\ \qquad
+\texttt{for \$b in (3, 4) return} \\ \qquad \qquad
+\texttt{5 + 6}
+\end{tabular}
+\end{center}
+
+For this query the result can be calculated like this:
+\noindent
+\begin{center}
+\textbf{r(}$e$\textbf{)}$=$\textbf{r(}\texttt{(1, 2)}\textbf{)}$\times$\textbf{r(}\texttt{(3,
+4)}\textbf{)}$\times$\textbf{r(}\texttt{5 + 6}\textbf{)}.
+\end{center}
+\noindent
+
+But such a simple solution is not adequate if there is a reference to an iterator variable somewhere within the
+iterator body. This was managed by MarkXRemove by implementing iterator variable dependencies, similar to the
+concept discussed in section \ref{sect:trans:TD:dependency}, and replacing the cartesian product operator with
+something like a natural join operator (section \ref{sect:trans:mxr:basics}).
+
+\noindent
+\begin{myDefinition}
+An XQuery expression $e$ is \textbf{dependant} on an \textbf{iterator} $I_{\chi}$ if $e$ occurs within the iterator
+body of $I_{\chi}$.
+\label{def:iteratorDep}
+\end{myDefinition}
+
+MarkXRemove has shorcommings when it comes to evaluating expressions where a sequence building expression
+containing a iterator variable reference is a subexpression. Tainting Dependencies mend for this by expanding the
+notion of dependencies to include an expression's knowledge of a iterator dependency. Iterator dependencies are
+handled exactly like the iterator variable dependencies described in section \ref{sect:trans:TD:dependency} with
+the amendment of tainting. This holds as any expression $e$ dependant on the iterator variable \texttt{\$}$\chi$
+\textit{must} be dependant on the iterator $I_{\chi}$.
+
+Tainting is the concept of sharing the knowledge of which iterators an expression is i dependent on. Expressions
+explicitly taint other expressions with their dependencies during sequence building. Consider the subexpression
+$e$:
+\begin{center}
+\begin{tabular}{l}
+\quad \;\, $\vdots$  \\
+\texttt{(}$e_{1}$\texttt{, }$e_{2}$\texttt{)}\\
+\quad \;\, $\vdots$  
+\end{tabular}
+\end{center}
+Where $e_{1}.\vartheta = \left\{\chi_{1}\right\}$ and $e_{2}.\vartheta = \emptyset$.
+
+
+Variabler betyr jo egentlig ikke s\aa~mye.. det er iterator som betyr\ldots pr\o ve
+\aa~unng\aa~\aa~bry seg om det lengst mulig\ldots
+
 \begin{itemize}
   \item hvis \textbf{en} av items er avhengig\ldots
   \item betyr jo at settet er avhengig av iterasjon-> posisjon og ting, fordi den skal brukes til noe

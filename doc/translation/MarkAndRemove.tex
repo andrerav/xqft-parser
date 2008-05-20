@@ -67,11 +67,11 @@ select(ifThenElse(isNull(value), true, eq(r.inumb,l.inumb))
 \subsection{Flaws}
 \label{sect:trans:mxr:flaws}
 The main problem with MarkXRemove is its dependancy on particular ordering of tuples in a relation which is a
-result of a cartesian product. Not only can not the \texttt{cross} operator promise the particular ordering of its
-result, it can not promise any ordering at all. The ordering the method depends on is that for each tuple in the
-left relation the tuple is repeated for all tuples in the right relation. This means that any item may apear
-anywhere in the resulting sequence, which is not acceptable for evaluation of XQuery expressions where all
-sequences are ordered.
+result of a cartesian product. Not only can the \texttt{cross} operator not promise the particular ordering
+of its result, it can not promise any particular ordering at all. The ordering the method depends on is that for
+each tuple in the left relation the tuple is repeated for all tuples in the right relation. This means that any
+item may apear anywhere in the resulting sequence, which is not acceptable for evaluation of XQuery expressions
+where all sequences are ordered.
 
 Another problem with this method is that any sequence built which includes a reference to an iterator variable is
 not fully calculated until the cartesian product between the corresponding relation and the variables iterator
