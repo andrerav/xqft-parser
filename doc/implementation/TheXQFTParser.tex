@@ -13,7 +13,9 @@ classes are used in conjunction on an input string to produce an abstract syntax
 tree (see next subsection, and also section
 \ref{sect:theory:xqftparser:ast_construction}).
 
-A typical use case to achieve this is shown in figure \ref{}
+A typical use case to achieve this is shown in figure
+\ref{figure:impl:using_xqft}, which is copied almost verbatim from the
+implementation.
 
 \begin{figure}[!htp]
 \begin{center}
@@ -38,6 +40,19 @@ A typical use case to achieve this is shown in figure \ref{}
   \label{figure:impl:using_xqft}
 \end{center}
 \end{figure}
+Note the use of \texttt{ANTLRStringStream},
+\texttt{UnbufferedCommonTokenStream}, and \texttt{XQFTTreeAdaptor}. The latter,
+\texttt{XQFTTreeAdaptor} is a specialized class required to create instances of
+the \texttt{XQFTTree} class to represent nodes in the abstract syntax tree.
 
 \subsection{The XQFTTree class}
+The \texttt{XQFTTree} class represents a node in the produced syntax tree. When
+a syntax tree is returned from the parser, the root node is an instance of this
+class, as well as all children (see figure \ref{figure:impl:using_xqft})
+
 \subsection{Interfacing the XQFT Parser}
+
+
+
+
+
