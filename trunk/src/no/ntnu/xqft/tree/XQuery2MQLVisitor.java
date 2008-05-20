@@ -322,8 +322,6 @@ public class XQuery2MQLVisitor extends Visitor {
             varRefsDiff.removeAll(tmp);
 
             for (VarRef varRef : varRefsDiff) {
-                System.out.println("Trying to look up " + varRef.getName());
-                System.out.println("And did it: " + Scope.get(varRef.getName()));
                 Project project = new Project(varRef.getName() + "numb", 
                         Scope.get(varRef.getName()).getTraverseReturn().getOperatorTree());
                 
