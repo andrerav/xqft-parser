@@ -214,9 +214,9 @@ handled exactly like the iterator variable dependencies described in section \re
 the amendment of tainting. This holds as any expression $e$ dependant on the iterator variable \texttt{\$}$\chi$
 \textit{must} be dependant on the iterator $I_{\chi}$.
 
-Tainting is the concept of sharing the knowledge of which iterators an expression is i dependent on. Expressions
-explicitly taint other expressions with their dependencies during sequence building. Consider the subexpression
-$e$:
+Tainting is the concept of sharing the knowledge of which iterators an expression is i dependent on -- an
+expression is tainted with the dependencies of another expression. Expressions explicitly taint other expressions
+with their dependencies during sequence building. Consider the subexpression $e$:
 \begin{center}
 \begin{tabular}{l}
 \quad \;\, $\vdots$  \\
@@ -224,8 +224,23 @@ $e$:
 \quad \;\, $\vdots$  
 \end{tabular}
 \end{center}
-Where $e_{1}.\vartheta = \left\{\chi_{1}\right\}$ and $e_{2}.\vartheta = \emptyset$.
+Where $e_{1}.\vartheta = \left\{\chi_{1}\right\}$ and $e_{2}.\vartheta = \emptyset$. Here $e_{2}$ will be tainted
+by $e_{1}$'s dependency on $\chi$. The tainting process is carried out by calculating the cartesian product of
+$e_{2}$ and the $\chi$$numb$ column of \texttt{\$}$\chi$ stored in the symbol table. 
 
+More generally, for an sequence building expression $e$, \texttt{(}$e_{1}$\texttt{, \ldots, }$e_{n}$\texttt{)},
+tainting can be expressed like this:
+\begin{center}
+\begin{equation}
+\begin{array}{l}
+e.\vartheta = e_{1}.\vartheta \cup \ldots \cup e_{n}.\vartheta = \left\{\chi_{1},\ldots\chi_{m}\right\} \\
+i \in \left\{1,\ldots,n\right\} \\
+\mbox{\textbf{t(r(}}e_{i}\mbox{\textbf{),}}e.\vartheta\mbox{\textbf{)}} = 
+\displaystyle \varprod_{\chi \in e.\vartheta - e_{i}.\vartheta}
+\end{array}
+\label{eq:trans:TD:taint}
+\end{equation}
+\end{center}
 
 Variabler betyr jo egentlig ikke s\aa~mye.. det er iterator som betyr\ldots pr\o ve
 \aa~unng\aa~\aa~bry seg om det lengst mulig\ldots
