@@ -1,4 +1,15 @@
 \section{Tree parsing}
-\label{sect:method:evaluated_methods}
+\label{sect:method:tree_parsing}
 In section \ref{sect:theory:parser:tree_parsing} some common design patterns
-for tree parsing were described. 
+for tree parsing were described. Based on some important traits of XQuery, such
+as that XQuery is an \textit{orthogonal language} (see section
+\ref{sect:theory:xquery:basics}), it seems natural to employ the
+\textit{context-sensitive visitor pattern}, as described in section
+\ref{sect:theory:contextVisitorPattern}. The benefits of this decision is the
+possibility to create specialised visitors for certain tasks, such as rewrite
+visitors for preprocessing the syntax tree (hinted upon in section
+\ref{definition:normalisation}), or predicate visitors, or any situation where
+propagation of context/state information is required.
+
+The implementation of the context-sensitive visitor pattern is described in
+section \ref{sect:implementation:treeparsing}. 
