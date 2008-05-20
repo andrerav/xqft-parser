@@ -1,27 +1,103 @@
 \section{AST rewriting}
-\subsection{Normalizing the syntax tree}
+\begin{myDefinition}
+\label{definition:normalisation}
+The process of normalisation is defined as the process of translating the
+whole or parts of an XQuery abstract syntax tree into an XQuery Core abstract
+syntax tree, as described in section \ref{sect:theory:xquery:XQcore}.
+\end{myDefinition}
+
+\begin{myDefinition}
+\label{definition:denormalised}
+An abstract syntax tree is said to be \textbf{denormalised} if it has not yet
+been normalised through a process of \textbf{normalisation} (see definition
+\ref{definition:normalisation}).
+\end{myDefinition}
+
 The basic abstract syntax tree produced by the XQFT Parser (see section
-\ref{sect:theory:xqftparser}) is in a denormalized form where semantics and
-syntax.
+\ref{sect:theory:xqftparser}) is in a denormalised form. As explained in
+section \ref{sect:theory:xquery:XQcore}, normalisation has the benefit of
+simplification without loss of expressiveness or semantics, and thus simplifying
+the task of translating the syntax tree.
+
+Normalisation may be attained by executing a specialised \textit{rewrite
+visitor} on the syntax tree, which will be described in chapter
+\ref{chapter:implementation}.
+
+\subsection{Normalising FLWOR expressions}
+A denormalised XQuery syntax tree may contain nodes such as FLWOR expressions
+ with several for- and let-clauses as can be seen in figure \ref{tree:ast:flwor_rewrite1}. Such an
+expression should be normalized to several nested FLWOR expressions, as shown
+in figure \ref{tree:ast:flwor_rewrite2}, as defined by the mapping rules in
+figures \ref{figure:xquery:flwor_mapping_rule},
+\ref{figure:xquery:where_mapping_rule},
+\ref{figure:xquery:orderby_mapping_rule}, and
+\ref{figure:xquery:return_mapping_rule}.
+
+Here, the method in section \ref{sect:theory:xquery:core:rewriting_flwor} has
+been applied to the example tree in figure \ref{figure:ast_rewrite:flwor1},
+and the result can be seen in figure \ref{figure:ast_rewrite:flwor3}. The
+corresponding hypothetical source code for the denormalized and normalized trees
+can be seen in figure \ref{figure:ast_rewrite:flwor_src}.
+
+\begin{figure}[!h]
+	\centering
+	\mbox{
+		\subfigure[Step 1: original denormalised syntax tree]{
+			\includegraphics[scale=0.22]{img/graphs/flwor_rewrite_p1} 
+			\label{figure:ast_rewrite:flwor1}
+		}
+		\quad
+		\subfigure[Step 2: partly normalised tree]{
+			\includegraphics[scale=0.22]{img/graphs/flwor_rewrite_p2} 
+			\label{figure:ast_rewrite:flwor2}
+		}
+		\quad
+		\subfigure[Step 3: fully normalised tree]{
+			\includegraphics[scale=0.22]{img/graphs/flwor_rewrite_p3} 
+			\label{figure:ast_rewrite:flwor3}
+		}
+	}
+	\caption{Normalisation steps of FLWOR expression with multiple for-clauses}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\mbox{
+		\subfigure[]{
+			\mbox {
+				
+				 \begin{minipage}{0.3\textwidth}
+				 	\verbatiminput{graph_queries/flwor_rewrite_p1.xq}
+ 				 \end{minipage}
+			}
+			\label{figure:ast_rewrite:flwor1_src}
+		}
+		\quad
+		\subfigure[]{
+			\mbox{
+				 \begin{minipage}{0.3\textwidth}
+				 	\verbatiminput{graph_queries/flwor_rewrite_p3.xq}
+ 				 \end{minipage}
+			}
+			\label{figure:ast_rewrite:flwor2_src}
+		}
+	}
+	\caption{Hypothetical source code corresponding to the trees in figures
+		\ref{figure:ast_rewrite:flwor1} and \ref{figure:ast_rewrite:flwor3}}
+	\label{figure:ast_rewrite:flwor_src}
+\end{figure}
 
 
-Motivation: simplification
-Problem: the XQuery AST is difficult to translate directly
-Explain: convert XQuery to something like XQuery core
+\subsection{Path predicates}
 
-Forklare hva man skal gjore, ikke hvordan!!
-
-\subsubsection{FLWOR and for-clauses}
-dette er egentlig for enkelhets skyld.. tror ikke vi virkelig trenger det, det bare gj\o r implementeringa litt
-lettere ellerno\ldots
-\subsubsection{Path predicates}
-f\aa r se om vi trenger dette\ldots
-\subsubsection{Andre ting?}
+\subsection{Andre ting?}
  
 Motivation: simplification
 Problem: AST does not correspond to relalg easily
 Explain: rewrite multiple predicates for a step expression to a single 
          predicate expression with all subexpressions AND'ed together, ++
-         
+
 Kan hende vi ikke kan skrive om predikater til en kombo med AND\ldots hva med
 /a/b/c[d = 'cool'][3] ?
+
+Tror vi dropper det med predikater?
