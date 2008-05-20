@@ -8,9 +8,18 @@
   \item Optimalisering: child nodes vet om de er atomiske/singleton eller ikke
 \end{itemize}
 
-
-\input{implementation/TreeParsing.tex}
-\input{implementation/XQuery2Relalg.tex}
+\begin{itemize}
+  \item Bruk av parseren (den som er generert av antlr), XQFTTree-klassen, evt.
+  UML
+  \item interface mot oversetteren (som oversetter til relalg) og UML
+  \item Generering av relasjonsalgebra, UML av operatorklassene
+  \item Implementering av context-sensitive visitor og UML
+  \item scoping og symtab (nok en gang..)
+  \item hvordan metadata som varrefs og singletonindikering blir sendt oppover
+  (treeparsing?)
+  \item Dataflyt (grammatikk -> antlr -> parser, xquery -> parser -> visitor ->
+  relalg)
+\end{itemize}
 
 \section{Summary}
 \label{sect:impl:summary}
