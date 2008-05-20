@@ -19,8 +19,7 @@
   \item hvordan metadata som varrefs og singletonindikering blir sendt oppover
   (Metadata)
   \item Implementering av ``tainting dependencies''
-  \item Dataflyt (grammatikk -> antlr -> parser, xquery -> parser -> visitor ->
-  relalg)
+  \item Dataflyt ()
   \item Visible external API
   \item Interface til systemet p\aa~ kommandolinjen
   \item Optimaliseringer, om noen? 
@@ -38,12 +37,20 @@
 \subsection{Usage}
 
 \section{Context-sensitive visitor}
+Dette blir den lengste seksjonen i dette kapittelet, h\aa per jeg.
 \subsection{Basics}
 \subsection{Modifying the XQFTTree class}
 \subsection{Rewrite visitor}
 \subsection{Translation visitor}
 
 \section{Scoping and symbol tables}
+\begin{itemize}
+  \item Holder styr p\aa~variabler, og om de er iterasjonsvariabler i n\aa v\ae
+  rende scope
+  \item Scope pushes rett f\oe r forclause, og poppes etter at returnclausen har
+  blitt evaluert
+  \item Symbolene er innkapslet i en symtabentry som inneholder metadata
+\end{itemize}
 
 \section{Passing metadata between nodes}
 \subsection{Variable references}
@@ -55,13 +62,26 @@
 \subsection{Sequences}
 
 \section{Data flow}
+\begin{itemize}
+  \item grammatikk -> antlr -> parser
+  \item xquery -> parser -> visitor -> relalg
+\end{itemize}
 
 \section{Visible external API}
+\begin{itemize}
+  \item Vise hvordan oversetteren kan brukes i sin helhet i andre programmer
+\end{itemize}
 
 \section{Command line interface}
+Dette er ikke s\aa~veldig viktig \aa~skrive om, men greit \aa~ha med.
+\begin{itemize}
+  \item Argsengine
+  \item Aksepterer flere strenger og filer
+  \item Outputter til graphviz/dot og pdf, hvis tilgjengelig
+  \item Dependencies (jar-filer og drit)
+\end{itemize}
 
 \section{Optimalisations?}
-
 
 \section{Summary}
 \label{sect:impl:summary}
