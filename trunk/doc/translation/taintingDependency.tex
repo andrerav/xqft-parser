@@ -156,11 +156,11 @@ field of corresponding iterator sequence $\chi$$numb$. Which leads us to the inf
 \begin{equation}
 \frac{}{\mbox{\texttt{for \$}}\chi \mbox{\texttt{ in }} e \mbox{\texttt{\ldots}}}\longmapsto
 \begin{array}{l}
-\mbox{\textbf{put(}}\chi\mbox{\textbf{, }} \\ \qquad
-\mbox{\textsf{project(}}\chi\mbox{\textsf{numb = index, value;}} \\ \qquad \qquad
-\mbox{\textbf{r(}}e\mbox{\textbf{))}}
+\mbox{\textbf{put(}}\chi\mbox{\textbf{, }} \\ \quad
+\mbox{\textsf{project(}}\chi\mbox{\textsf{numb = index, value;}} \\ \quad \quad
+\mbox{\textbf{r(}}e\mbox{\textbf{)}\textsf{)}\textbf{)}}
 \end{array}
-\label{eq:trans:td:forclause}
+\label{rule:trans:td:forclause}
 \end{equation}
 Where the dependancies piggybacking the \textsf{project} operator can be expressed as:
 $\vartheta = e.\vartheta \cup \chi$.
@@ -171,7 +171,7 @@ Because of this, we must be careful not to incidentally remove a $\chi$$numb$ at
 of a \textsf{project} operator. When we in this chapter write $\vartheta$ enclosed in MQL syntax it is to be
 interpreted as a comma seperated list of all the attributes linked to the dependencies in the set $\vartheta$.
 
-\subsection{Tainting Dependencies}
+\subsection{Dependencies Tainting}
 \label{sect:trans:TD:tainting}
 
 The iterator body of an iterator with a iterator sequence with length $n$ will have to executed $n$ times. This
@@ -249,19 +249,87 @@ e_{i}.\vartheta}} \mbox{\textsf{project(}}\chi_{j}numb\mbox{\textsf{;
 In addition to be spread by iterator variable dependencies and tainting in sequence building, iterator dependencies
 may be spread by forced tainting as we will see later. 
 
-\subsection{Sequence Building}
-\label{sect:trans:TD:seqBuild}
-\begin{itemize}
-  \item hvordan bygge sekvenser
-  \item forst enkelt
-  \item s\aa~med tainting
-\end{itemize}
-
 \subsection{Litterals}
 \label{sect:trans:TD:litteral}
-\begin{itemize}
-  \item tall og bokstavting
-\end{itemize}
+
+The XQuery Full Text specification\cite{w3c01} defines a number of literals as seen in figure
+\ref{fig:trans:TD:litEBNF}. A \texttt{StringLiteral} is a text string enclosed in apostrophes or quotation marks,
+and the numeric literals are similar to numeric types from other programming languages. 
+
+\begin{figure}[h]
+\begin{Verbatim}
+[85] Literal        ::= NumericLiteral|StringLiteral
+[86] NumericLiteral ::= IntegerLiteral|DecimalLiteral|DoubleLiteral
+\end{Verbatim}
+\caption[Literals in XQuery]{Definition of literals in XQuery Full Text}
+\label{fig:trans:TD:litEBNF}
+\end{figure}
+
+To be able to include such expressions in evaluation of relational algebra, they need a relational representation.
+As we in this chapter assume $value$ is a polymorphic type attribute, with the help of the \textsf{make} operator
+this makes quite a simple translation:
+
+\begin{equation}
+\frac{e \in \left\{Literals\right\}}{e}\longmapsto
+\mbox{\textsf{make(name:=["index","value"], [1, }}e\mbox{\textsf{])}}
+\label{rule:trans:TD:literal}
+\end{equation}
+
+This is an general way to translate literals, but there exists quite a few simplifications. Most importantly when
+constructing sequences entirely composed of literals, as we will discuss in section
+\ref{sect:trans:TD:optimisations}.
+
+\subsection{Sequence Construction}
+\label{sect:trans:TD:seqBuild}
+
+A sequence in XQuery can be built with the comma operator --\texttt{,}. But this operator is the XQuery operator
+with the lowest precedence, therefore, in most cases a sequence construction expression will be enclosed in
+paratheses. This is to solve parser ambiguities, which can be seen in the exerpt of the W3C XQuery Full Text EBNF
+specification\cite{w3c01} in figure \ref{fig:trans:TD:seqEBNF}. An \texttt{ExprSingle} can solely consist of a
+\texttt{ParenthesizedExpr} via a series of productions omitted from the figure. Also note a \texttt{ExprSingle}
+can be a \texttt{FLWORExpr}.
+
+\begin{figure}[h]
+\begin{Verbatim}
+[33] FLWORExpr         ::= (ForClause | LetClause)+ WhereClause? 
+                               OrderByClause? "return" ExprSingle
+[45] IfExpr            ::= "if" "(" Expr ")" "then" ExprSingle 
+                               "else" ExprSingle
+[31] Expr              ::= ExprSingle ("," ExprSingle)*
+[89] ParenthesizedExpr ::= "(" Expr? ")"
+\end{Verbatim}
+\caption[Exerpt from W3C XQuery EBNF]{Exerpt from W3C XQuery EBNF showing sequence construction}
+\label{fig:trans:TD:seqEBNF}
+\end{figure}
+
+As can be seen from the figure the for clause of a FLWOR expression, as many other expressions, accepts an
+\texttt{ExprSingle}. If a sequence is to be constructed in the for clause, it will have to be parenthesised. 
+
+With the concept of tainting and iterator dependencies explained, we are now ready to introduce the translation of
+an XQuery sequence construction expression:
+
+\begin{equation}
+\frac{}{e_{1}\mbox{\texttt{, \ldots, }}e_{n}}\longmapsto
+\begin{array}{l}
+\mbox{\textsf{numberate(index, [sprIdx, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
+\mbox{\textsf{union(}} \\ \quad \quad
+\mbox{\textsf{project(sprIdx=1, index, value; }} \\ \quad \quad \quad
+\mbox{\textbf{t(r(}}e_{1}\mbox{\textbf{), }}\vartheta\mbox{\textbf{)}\textsf{);}} \\ \quad \quad
+\qquad\vdots\\ \quad \quad
+\mbox{\textsf{project(sprIdx=}\textit{n}\textsf{, index, value; }} \\ \quad \quad \quad
+\mbox{\textbf{t(r(}}e_{n}\mbox{\textbf{), }}\vartheta\mbox{\textbf{)}\textsf{)))}}
+\end{array}
+\label{rule:trans:TD:seqConstr}
+\end{equation}
+Where $\vartheta=e_{1}.\vartheta \cup \ldots \cup e_{n}.\vartheta$.
+
+The basis of a sequence construction is the \textsf{union} operator -- as with MarkXRemove. But because we in
+Tainted Dependencies have introduced the explicit ordering of items with the $index$ attribute, additional
+operations have been added. Each item in the sequences returned from the subexpressions is equipped with a
+temporary field $sprIdx$ (superindex) holding the relative position of each subexpression. Based on the
+positioning defined by $sprIdx$ and $index$ the \textsf{numberate} operator can now renumberate the resulting
+sequence.
+
 
 \subsection{Simple FLWORs}
 \label{sect:trans:TD:simpleFLWOR}
@@ -325,13 +393,26 @@ may be spread by forced tainting as we will see later.
 
 
 \subsection{Optimisations}
-\label{sect:trans:optimisations}
+\label{sect:trans:TD:optimisations}
 \begin{itemize}
-  \item skal vi ha det her, eller i discussion?
-  \item kanskje begge deler\ldots. Her kommer en liste som kan bygges p\aa~etterhvert iallefall:
+  \item sekvenser:
 	  \begin{itemize}
-	    \item suprIndx kan doppes n\aa r bare atomiske (singelton er vel bedre begrep)
-	    \item for kan bli -> project , ved singelton return
+	    \item suprIndx kan doppes n\aa r bare singelton
 	    \item singeltons trenger ikke index
-	  \end{itemize} 
+      \end{itemize} 
+  \item Litterals: 
+		\begin{itemize}
+          \item implies that any sequence of
+				explicitly stated items will first have to be made as one-tuple relations and
+				then spliced together. As the \textsf{make} operator supports multiple items, a
+					better solution would be to collect all items in one MQL operator. Further, if
+					the item is part of a singleton sequence, there is no need for a representation
+					in form of an relation, as the item could be made part of the parameters of an
+					operator (e.g. $\alpha$ \texttt{> 1} $\Longrightarrow$
+					\textsf{select(gt(value, 1) $\alpha$)}).   
+        \end{itemize}
+  \item FLWOR:
+  	\begin{itemize}
+        \item  kan bli -> project , ved singelton return
+      \end{itemize}         
 \end{itemize}
