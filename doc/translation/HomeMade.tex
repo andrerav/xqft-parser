@@ -3,61 +3,6 @@
 \label{sect:translation:mXr}
 
 
-\subsection{Literals and Numbers}
-\label{sect:translation:mXr:litAndNumbers}
-To be able to use litterals and numbers in the algebra processing, they need a
-relational representation. A simple way to do this is hold the value in a
-created relation with a single field, ``value'' (rule
-\ref{eq:translation:literalsAndNumbers} ).
-
-\begin{equation}
-\centering
-\frac{\alpha \in \left\{ Literals, Numbers \right\} }{\alpha}
-\Longrightarrow
-\textsf{make(name := "value",} \alpha \textsf{)}
-\label{eq:translation:literalsAndNumbers}
-\end{equation}
-
-There is however also a need to represent explicitly stated XML-nodes, as well
-as differentiate between the number \texttt{1} and the string \texttt{"1"}.
-This, and other issues about representing XQuery types will be treated in
-section \ref{sect:disc:typeSystem}.
-
-Rule \ref{eq:translation:literalsAndNumbers} implies that any sequence of
-explicitly stated items will first have to be made as one-tuple relations and
-then spliced together. As the \textsf{make} operator supports multiple items, a
-better solution would be to collect all items in one MQL operator. Further, if
-the item is part of a singleton sequence, there is no need for a representation
-in form of an relation, as the item could be made part of the parameters of an
-operator (e.g. $\alpha$ \texttt{> 1} $\Longrightarrow$
-\textsf{select(gt(value, 1) $\alpha$)}). Both these issues will be discussed
-further in section \ref{sect:disc:optimisations}.
-
-
-
-\subsection{Sequence Making}
-\label{sect:translation:mXr:sequencing}
-As XQuery sequences can only be one dimensional (section
-\ref{sect:theory:xquery}), the creation of a sequence can be translated into a
-splice of the relations corresponding to the items constituting the sequence.
-This can be seen in rule \ref{eq:translation:sequencing}. 
-
-\begin{equation}
-\centering
-\textsf{(} \alpha , \beta \textsf{)}
-\Longrightarrow
-\begin{array}{l}
-\mbox{\textsf{union(}} 
-\alpha \mbox{\textsf{,}} 
-\beta \mbox{\textsf{)}}
-\end{array}
-\label{eq:translation:sequencing}
-\end{equation}
-
-
-As two fields with different types cannot be spliced together, we presume all
-\textsf{value} fields are strings for the time being. This will be further
-discussed in section \ref{sect:discussion:typeSystem}.
 
 \subsection{Path Expressions}
 \label{sect:translation:mXr:smpPathExpr}
