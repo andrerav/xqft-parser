@@ -109,7 +109,6 @@ public class XQFT {
 		XQFTParser parser = new XQFTParser(tokens);
         parser.setTreeAdaptor(new XQFTTreeAdaptor());
         parser.setLexer(lexer);
-
         XQFTParser.module_return tre = m.execQuery(parser);
         
 		if(tre != null)

@@ -30,7 +30,16 @@ public abstract class Operator {
         this.params = (params == null ? new ArrayList<Param>() : params);
         this.operators = (operators == null ? new ArrayList<Operator>() : operators);
     }
-
+    
+    private String getIndent(int n)
+    {
+        String retur = "";
+        for(int i = 0; i<n; i++)
+            retur += "   ";
+        
+        return retur;
+    }
+    
     public String toString() {
         StringBuffer buffer = new StringBuffer();
         if (this.name == null) { 
@@ -65,15 +74,7 @@ public abstract class Operator {
         //}
 		return buffer.toString();
 	}
-	
-	private String getIndent(int n)
-	{
-		String retur = "";
-		for(int i = 0; i<n; i++)
-			retur += "   ";
-		
-		return retur;
-	}
+
     
     
     public String paramsToString() {
