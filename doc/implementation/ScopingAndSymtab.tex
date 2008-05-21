@@ -1,0 +1,27 @@
+\section{Scoping and symbol tables}
+Crucial to the implementation of the \textit{tainting dependencies} methodology
+described in section \ref{sect:trans:taintingDependencies} is the ability to
+maintain a contextual environment with scoping and symbol tables. This section
+details the implementation of this, and how it is used to achieve the
+requirements of \textit{tainting dependencies}.
+
+\subsection{Concepts}
+\begin{itemize}
+  \item Scope tree
+  \item Symtab + symtabentry
+  \item Encapsulated in a singleton Scope class, static methods
+\end{itemize}
+
+\subsection{Semantics}
+\begin{itemize}
+  \item Scope is pushed when encountering flwor etc
+  \item Popped after evaluting return clause
+\end{itemize}
+
+\begin{itemize}
+  \item Holder styr p\aa~variabler, og om de er iterasjonsvariabler i n\aa v\ae
+  rende scope
+  \item Scope pushes rett f\oe r forclause, og poppes etter at returnclausen har
+  blitt evaluert
+  \item Symbolene er innkapslet i en symtabentry som inneholder metadata
+\end{itemize}

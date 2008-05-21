@@ -62,6 +62,12 @@ The \textit{Rewrite visitor} is used to perform rewrite operations on the
 abstract syntax tree before performing the actual translation. In particular,
 these rewrite operations consists of normalizing the required subtrees of the
 syntax tree to a subset of XQuery Core (as described in sections
-\ref{sect:theory:xquery:XQcore} and \ref{sect:method:ast_rewrite}.
+\ref{sect:theory:xquery:XQcore} and \ref{sect:method:ast_rewrite}).
 
-\subsection{The Translation visitor}
+\subsection{The XQuery2MQL visitor}
+The \textit{XQuery2MQL visitor} performs the bulk of the work related to
+performing the translation of XQuery to MQL. This visitor is capable of
+re-instantiating itself (or other visitors) when entering new contexts, such as
+path predicates.
+
+TODO: noe om TraverseReturn og hvordan MQL-treet blir bygd bottom-up
