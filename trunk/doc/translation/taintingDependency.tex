@@ -246,9 +246,6 @@ e_{i}.\vartheta}} \mbox{\textsf{project(}}\chi_{j}numb\mbox{\textsf{;
 \end{equation}
 \end{center}
 
-In addition to be spread by iterator variable dependencies and tainting in sequence building, iterator dependencies
-may be spread by forced tainting as we will see later. 
-
 \subsection{Litterals}
 \label{sect:trans:TD:litteral}
 
@@ -328,7 +325,75 @@ Tainted Dependencies have introduced the explicit ordering of items with the $in
 operations have been added. Each item in the sequences returned from the subexpressions is equipped with a
 temporary field $sprIdx$ (superindex) holding the relative position of each subexpression. Based on the
 positioning defined by $sprIdx$ and $index$ the \textsf{numberate} operator can now renumberate the resulting
-sequence.
+sequence. The numbering must partition on the fields corresponding to the dependencies in $\vartheta$, to separate
+the different sequences constructed for all known iterations.
+
+\noindent
+\begin{myExample}
+Consider the simple XQuery query:
+\begin{equation*}
+\begin{array}{l}
+\mbox{\texttt{for \$a in (10,20)}} \\ \quad
+\mbox{\texttt{return }} \underbrace{ \mbox{\texttt{(\$a, "no")}} }_{e_{1}}
+\end{array}
+\end{equation*}
+
+Here \textbf{r(}\texttt{\$a}\textbf{)} will taint \textbf{r(}\texttt{"no"}\textbf{)} with its dependency on the
+iterator $I_{a}$, the result of which is shown in figure \ref{fig:trans:TD:simpl:ryes}. Further, we can see that
+for each iteration of $I_{a}$ the return clause will return a sequence of two items. Having in mind that $anumb$
+($anb$ in figure) holds the iteration number of $I_{a}$, this can be seen in figure \ref{fig:trans:TD:simpl:rall}.
+
+\begin{figure}[!h]
+\centering
+\subfigure[\textbf{r(}\texttt{\$a}\textbf{)}]{
+\begin{tabular}{|c|c|c|} \hline
+$anb$ & $idx$ & $val$ \\ \hline
+1 & 1 & 10 \\ \hline
+2 & 1 & 20 \\ \hline
+\end{tabular}
+\label{fig:trans:TD:simpl:ra}
+}
+\qquad
+\subfigure[\textbf{t(r(}\texttt{"no"}\textbf{),}\textbf{r(}\texttt{\$a}\textbf{)}$.\vartheta$\textbf{)}]{
+\begin{tabular}{|c|c|c|} \hline
+$anb$ & $idx$ & $val$ \\ \hline
+1 & 1 & \texttt{"no"} \\ \hline
+2 & 1 & \texttt{"no"} \\ \hline
+\end{tabular}
+\label{fig:trans:TD:simpl:ryes}
+}
+\qquad
+\subfigure[\textbf{r(}\texttt{(\$a, "no")}\textbf{)}]{
+\begin{tabular}{|c|c|c|} \hline
+$anb$ & $idx$ & $val$ \\ \hline
+1 & 1 & 10 \\ \hline
+2 & 1 & 20 \\ \hline
+1 & 2 & \texttt{"no"} \\ \hline
+2 & 2 & \texttt{"no"} \\ \hline
+\end{tabular}
+\label{fig:trans:TD:simpl:rall}
+}
+
+\caption[Example: constructing a sequence]{Applying translation rule \ref{rule:trans:TD:seqConstr} on (a) and (b)
+yields (c). Attribute names are shortened \label{fig:trans:TD:simpleSeq}}
+\end{figure}
+
+The sequence constructing rule also holds even if the subexpressions of the soon-to-be sequence are unaware of all
+iterators they are dependant on. Expanding the last example query we get:
+\begin{equation*}
+\begin{array}{l}
+\mbox{\texttt{for \$a in (10,20)}} \\ \quad
+\mbox{\texttt{for \$b in (50,75)}} \\ \quad \quad
+\mbox{\texttt{return }} \underbrace{ \mbox{\texttt{(\$a, "no")}} }_{e_{1}}
+\end{array}
+\end{equation*}
+
+Notice the innermost return clause expression, $e_{1}$, is identical to $e_{1}$ in the previous query. Here, the
+result of the sequence construction will still be the relation shown in figure \ref{fig:trans:TD:simpl:rall},
+because $e_{1}.\vartheta=\left\{a\right\}$ -- also as before. $e_{1}$ is not aware of the iterator $I_{b}$ -- and
+does not need to be either, as the result of $e_{1}$ is independent of which iteration number $I_{b}$ is in.
+
+\end{myExample}
 
 
 \subsection{Simple FLWORs}
@@ -347,6 +412,8 @@ sequence.
   \item arithmetic operators (+, -, \%,\ldots)
   \item idiv mod div
   \item unary expr -/+
+  \item project ikke select, men hvis ikke lambda\ldots s\aa~select? funker det? Har vi finni en optimalisering?
+  \item fordi noe over vil kanskje ha negativen\ldots f.eks ifthenelse og not()  \item 
 \end{itemize}
 
 \subsection{Logical Operator Expressions}
