@@ -146,7 +146,7 @@ public class XQFT {
             System.out.println(top.toPrettyString(0));
 		}		
 
-		System.out.println(Scope.getSymtab().toString());
+		Scope.printPrettyString();
 		System.out.println("Done");
 
 	}
