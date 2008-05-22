@@ -30,6 +30,11 @@ public class Scope {
         return instance.setSym(key, node, isIterationVar);
     }
     
+    /* Sets an entry in the current symtab, overloaded for non-iteration vars */
+    protected static SymTabEntry set(String key, TraverseReturn node) {
+        return set(key, node, false);
+    }
+    
     /* Enter new scope */
     protected static void push() {
         Scope parent = instance;
