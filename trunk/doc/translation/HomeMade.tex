@@ -88,8 +88,6 @@ from the expression it is assigned to. The predicate expression returns either t
 \ref{eq:translation:predicate} shows how predicates, which neither implisitly nor explicitly makes use of the
 context item, are translated into MQL. 
 
-\marginpar{\underline{\Large TODO} \footnotesize litt feil bruk av $\vdash$
-her.. kan det tillates?}
 \begin{equation}
 \centering
 \begin{array}{c}
@@ -150,60 +148,4 @@ variable references will have to be synchronised.
 \textbf{\underline{\Large TODO:}} Dette fuker ikke helt\ldots hva skjer om predikatet er et sett? YEYEYE samme
 problem som med operatorer og ifz etc\ldots Det vi m\aa~finne ut er hvordan sekvenser skal representeres\ldots.
 trenger vi order? JEEEEVLER\ldots\ldots\ldots\ldots\ldots\ldots\ldots  BAJZ
-
-
-\subsection{FLWOR}
-\label{sect:translation:mXr:iteration}
-As described in \ref{sect:theory:flwor}, the XQuery FLWOR has an iteration semantics. For each item in the
-sequence in the \texttt{for} clause (the iteration sequence), the item will be bound to a variable (the iteration
-variable) and the expression in the \texttt{return} clause (the iteration body) will be executed.
-
-To represent iteration over a sequence in relational algebra, the MarkXremove method calculates the cartesian
-product between the iteration sequence and the result of the iteration body. As the iteration body is able to use
-the iteration variable, a step have to be taken to ensure that the right item is used in the right iteration. This
-is done by marking each item in the iteration sequence as well as each refferal to the iteration variable with a
-number, and removing tuples where the iteration number for the variable does not match up with the iteration
-number for the sequence. The translation of a simple \texttt{for \$X in} $\alpha$ \texttt{return} $\beta$ is shown
-in rule \ref{eq:translation:simpleIteration}.
-
-\begin{equation}
-\centering
-\begin{array}{c}
-	\frac{\displaystyle \textbf{put(}\texttt{X}\textbf{,}\alpha\textbf{)}\vdash\texttt{X}\in\beta . \vartheta}
-	{\displaystyle \texttt{for \$X in }\alpha	\texttt{ return }\beta}
-	
-	\Longrightarrow 
-	\\
-	\mbox{} \\
-	
-	\begin{array}{l}
-	\mbox{\textsf{project(fields, }} \vartheta \mbox{\textsf{;}} \\ \quad
-	\mbox{\textsf{select(ifThenElse(isNull(Xnumb),true,eq(numb,Xnumb))}} \\ \quad \quad 
-	\mbox{\textsf{cross(}} \\ \quad \quad \quad
-	\mbox{\textsf{project([numb=counter()];}} \\ \quad \quad \quad \quad
-	\alpha \mbox{\textsf{)}} \\ \quad \quad \quad 
-	\beta \mbox{\textsf{)))}}
-	\end{array}
-\end{array}
-\label{eq:translation:simpleIteration}
-\end{equation}
-
-Where $\vartheta = (\alpha.\vartheta \cup \beta.\vartheta)\, -$ \texttt{X}. In the cases where $\beta$ does not
-reffer to the iteration variable (in this case \texttt{X}), the \textsf{select} operator may be omitted.
-
-In the \textsf{select} operator there is a check if the \textsf{-numb} field is \textsf{NULL}. This is becauce a
-tuple where this is true is not dependant on which iteration number it is in, and will therefore never be needed
-to be removed. \underline{\textbf{\Large TODO:}} jom, elsker slike to be to
-needed to setninger\ldots litt norsk-engelskete det ja, hva med ``will never
-need to be removed''? :)
-
-Any variable bound in a \texttt{let} clause does not imply iteration. Consequently, the \texttt{let} clause can be
-handled as a simple variable binding (section \ref{sect:translation:mXr:variables}). The $\vartheta$ will expose
-the cases where a variable bound in a \texttt{let} clause is rebound to a new item each iteration.
-
-
-
-The iteration expressions of XQuery comes in the form of FLWORs. But as
-previously mentioned, we handle predicates which utilise the context item as an
-iteration as well. It 
 
