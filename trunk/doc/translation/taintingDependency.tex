@@ -1,4 +1,3 @@
-\newpage
 \section{Tainting Dependencies}
 \label{sect:trans:taintingDependencies}
 
@@ -144,9 +143,10 @@ an AST node must be able to inform its parent about the node's dependencies as w
 an expression $e$ this can be done by letting $e.\vartheta$ piggyback the \textbf{r(}$e$\textbf{)} returned. The
 variable dependencies for an expression $e$ with the subexpressions $e_{1},\ldots,e_{n}$ can be described as
 following:
-\begin{equation*}
+\begin{equation}
 e.\vartheta = e_{1}.\vartheta\cup\ldots\cup e_{n}.\vartheta
-\end{equation*}
+\label{eq:trans:TD:depInheritance}
+\end{equation}
 
 The dependancy on the iterator $I_{\chi}$ manifest itself relationally by the attribute $\chi$$numb$. The value of
 $\chi$$numb$ is the iteration number of $I_{\chi}$, that is, for a tuple ($\chi$$numb$, $value$) the value $value$
@@ -162,13 +162,13 @@ field of the corresponding iterator sequence $\chi$$numb$. Which leads us to the
 \mbox{\textsf{project(}}\chi\mbox{\textsf{numb = index, index=1, value;}} \\ \quad \quad
 \mbox{\textbf{r(}}e\mbox{\textbf{)}\textsf{)}\textbf{)}}
 \end{array}
-\label{rule:trans:td:forclause}
+\label{rule:trans:TD:forclause}
 \end{equation}
 Where the dependancies piggybacking the \textsf{project} operator can be expressed as:
 $\vartheta = e.\vartheta \cup \chi$.
 
 For a \texttt{for} clause with multiple variable bindings the rule must be applied once per binding as if there
-is one flwor expression per binding, and the $n$th binding is a flwor expression in the $(n-1)$th bindings
+is one FLWOR expression per binding, and the $n$th binding is a FLWOR expression in the $(n-1)$th bindings
 return clause. This is in accordance with the XQuery semantics, and is one of the rewrite rules into XQuery core
 (see section \ref{sect:theory:xquery:XQcore}).
 
@@ -345,16 +345,19 @@ the different sequences constructed for all dependent iterations.
 
 \noindent
 \begin{myExample}
-Consider the simple XQuery query:
+
+\begin{figure}[h]
 \begin{equation*}
 \begin{array}{l}
 \mbox{\texttt{for \$a in (10,20)}} \\ \quad
 \mbox{\texttt{return }} \underbrace{ \mbox{\texttt{(\$a, "no")}} }_{e_{1}}
 \end{array}
 \end{equation*}
-
-Here \textbf{r(}\texttt{\$a}\textbf{)} will taint \textbf{r(}\texttt{"no"}\textbf{)} with its dependency on the
-iterator $I_{a}$, the result of which is shown in figure \ref{fig:trans:TD:simpl:ryes}. Further, we can see that
+\caption{Simple XQuery query}
+\label{fig:trans:TD:simpQuery}
+\end{figure}
+Consider the simple XQuery query of figure \ref{fig:trans:TD:simpQuery}. Here \textbf{r(}\texttt{\$a}\textbf{)}
+will taint \textbf{r(}\texttt{"no"}\textbf{)} with its dependency on the iterator $I_{a}$, the result of which is shown in figure \ref{fig:trans:TD:simpl:ryes}. Further, we can see that
 for each iteration of $I_{a}$ the return clause will return a sequence of two items. Having in mind that $anumb$
 ($anb$ in figure) holds the iteration number of $I_{a}$, this can be seen in figure \ref{fig:trans:TD:simpl:rall}.
 
@@ -394,7 +397,9 @@ yields (c). Attribute names are shortened \label{fig:trans:TD:simpleSeq}}
 \end{figure}
 
 The sequence constructing rule also holds even if the subexpressions of the soon-to-be sequence are within the
-body of an iterator the sequence is not dependant on. Expanding the last example query we get:
+body of an iterator the sequence is not dependant on. Expanding the query of figure \ref{fig:trans:TD:simpQuery}
+we get the query of figure \ref{fig:trans:TD:expandQuery}. 
+\begin{figure}[h]
 \begin{equation*}
 \begin{array}{l}
 \mbox{\texttt{for \$a in (10,20)}} \\ \quad
@@ -402,22 +407,21 @@ body of an iterator the sequence is not dependant on. Expanding the last example
 \mbox{\texttt{return }} \underbrace{ \mbox{\texttt{(\$a, "no")}} }_{e_{1}}
 \end{array}
 \end{equation*}
-
-Notice the innermost return clause expression, $e_{1}$, is identical to $e_{1}$ in the previous query. Here, the
-result of the sequence construction will still be the relation shown in figure \ref{fig:trans:TD:simpl:rall},
-because $e_{1}.\vartheta=\left\{a\right\}$ -- also as before. $e_{1}$ is not aware of the iterator $I_{b}$ -- and
-does not need to be either, as the result of $e_{1}$ is independent of which iteration number $I_{b}$ is in.
+\caption{Query of figure \ref{fig:trans:TD:simpQuery} expanded}
+\label{fig:trans:TD:expandQuery}
+\end{figure}
+In this query, notice the innermost return clause expression, $e_{1}$, is identical to $e_{1}$ in the previous
+query. Here, the result of the sequence construction will still be the relation shown in figure
+\ref{fig:trans:TD:simpl:rall}, because $e_{1}.\vartheta=\left\{a\right\}$ -- also as before. $e_{1}$ is not aware
+of the iterator $I_{b}$ -- and does not need to be either, as the result of $e_{1}$ is independent of which
+iteration number $I_{b}$ is in.
 
 \end{myExample}
 
 
 \subsection{FLWOR Expressions}
 \label{sect:trans:TD:simpleFLWOR}
-From the XQuery specification exerpt of figure \ref{fig:trans:TD:seqEBNF}, we see that a flwor expression may
-appear in many different formats. In this section we will break the expression down in more manageable pieces and
-show the translation of the different aspects.
-
-Described in \ref{sect:theory:xquery:Flwor}, with a \texttt{for} clause the XQuery flwor expression has an
+Described in \ref{sect:theory:xquery:Flwor}, with a \texttt{for} clause the XQuery FLWOR expression has an
 iteration semantics. For each item in the sequence in the \texttt{for} clause (the iteration sequence), the item
 will be bound to a variable (the iteration variable) and the expression in the \texttt{return} clause (the
 iteration body) will be executed. The \texttt{let} clause does however not imply any iteration, only variable
@@ -432,16 +436,116 @@ The iterator dependences $\vartheta$ of $e$ is stored along with \textbf{r(}$e$\
 algebra tree if it later fetched from the symbol table. If there is more than one variable binding in the
 \texttt{let} clause the rule must be applied once per binding as if one binding were one \texttt{let} clause.
 
-Binding of variables in the \texttt{for} clause is shown in rule \ref{rule:trans:td:forclause} in section
-\ref{sect:trans:TD:dependency}.
+As \texttt{let} clauses does not explicitly cause any dependecies or lead to any consequences for the translation
+of FLWOR expressions, they will be left out from the reminder of this section. The only exception is when we
+discuss the peculiar case of \texttt{for}-less FLWORs. 
 
-Because of tainting and iterator dependency inheritance, an iterator body expression dependent on $I_{\chi}$ will
-have a representation for each iteration of the iterator.
+\marginpar{\textbf{\Large TODO:}\scriptsize \\ser for meg at dette avsnittet trenger omskriving}
+From the XQuery specification exerpt of figure \ref{fig:trans:TD:seqEBNF}, we see that a FLWOR expression may
+appear in many different formats. In this section we will for inference rule readability and simplicty treat these
+expressions as if they have exactly \emph{one} \texttt{for} clause containing exactly \emph{one} variable binding.
 
+As previously mentioned (it is also a part of the translation to XQuery core, section
+\ref{sect:theory:xquery:XQcore}), multiple variable bindings within one \texttt{for} clause is semanticly equal to
+nested FLWOR expressions. Here, the innermost FLWOR will contain the last binding as its \texttt{for} clause and
+all other subexpressions of the original FLWOR. Each preceding variable binding correspond to a FLWOR with the
+binding as a \texttt{for} clause and the FLWOR corresponding to the succeding binding as its \texttt{return}
+clause. Multiple \texttt{for} clauses within one FLWOR expression is to be considered in a similar matter.
+Explicit rewriting of these kind of expressions is discussed in section \ref{sect:method:ast_rewrite}.
+
+\subsubsection{Iterator Dependent Return Clause}
+Within the frames set for this section, the simplest FLWOR expression possible contains only a \texttt{for} clause
+and a \texttt{return} clause (\texttt{let} clauses are disregarded). Because of tainting and iterator
+dependency inheritance, an iterator body expression dependent on $I_{\chi}$ will have a representation for each
+iteration of $I_{\chi}$. In such a case a FLWOR expression can be translated to a ordering of the tuples:
+
+\begin{equation}
+\frac{\chi \in e_{2}.\vartheta}{\mbox{\texttt{for \$}}\chi\mbox{\texttt{ in }}e_{1}\mbox{\texttt{ return }}e_{2}}
+\longmapsto
+\begin{array}{l}
+\mbox{\textsf{numberate(index, [}}\chi\mbox{\textsf{numb, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
+\mbox{\textbf{r(}}e_{2}\mbox{\textbf{)}\textsf{)}}
+\end{array}
+\label{rule:trans:TD:forReturn}
+\end{equation}
+
+Where $\vartheta = e_{2}.\vartheta - \chi$, and the variable binding is translated by rule
+\ref{rule:trans:TD:forclause}.
+
+The \textsf{numberate} operator will have to partition on the remaining dependencies in $\vartheta$ to seperate
+the sequences returned from the iterator for all iterators the result is dependent on, as with the sequence
+construction expression.
+
+\noindent
+\begin{myExample}
+In the query of figure \ref{fig:trans:TD:simpQuery} the return clause is dependent on $I_{\mbox{\texttt{a}}}$
+as a consequence of the reference to \texttt{\$a} in the sequence construction expression $e_{1}$. The result of
+the FLWOR expresion, and therefore the query, must be a sequence holding four items. This is because for each of
+the two iterations of $I_{\mbox{\texttt{a}}}$ two items are returned. Figure \ref{fig:trans:TD:simpl:rall} shows
+the relational representation of $e_{1}$. By applying rule \ref{rule:trans:TD:forReturn} on this, we get the
+result of the query, as shown in figure \ref{fig:trans:TD:simpRes}.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{|c|c|} \hline
+$index$ & $value$ \\\hline
+1 & 10 \\\hline
+3 & 20 \\\hline
+2 & \texttt{"no"} \\\hline
+4 & \texttt{"no"} \\\hline
+\end{tabular}
+\caption{The result of the query in figure \ref{fig:trans:TD:simpQuery}}
+\label{fig:trans:TD:simpRes}
+\end{figure}
+
+\end{myExample}
+
+\subsubsection{Iterator Independent Return Clause}
+Unlike the case where the iterator body was dependent on its iterator, an independent iterator body does not have
+a representation for each of the iterators iterations. This makes sense, as the result returned from the body will
+be de same regardless of iteration number. The result of such an expression may therefore be evaluated by
+calculating the cartesian product of the iterator sequence and the iterator body. As with the iterator dependent
+version, the result will have to be renumbered to ensure correct ordering.
+
+\begin{equation}
+\frac{\chi \notin e_{2}.\vartheta}{\mbox{\texttt{for \$}}\chi\mbox{\texttt{ in }}e_{1}\mbox{\texttt{ return
+}}e_{2}}\longmapsto
+\begin{array}{l}
+\mbox{\textsf{numberate(index, [}}\chi\mbox{\textsf{numb, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
+\mbox{\textsf{cross(}} \\ \quad \quad
+\mbox{\textsf{project(}}\chi\mbox{\textsf{numb = index; }} \\ \quad \quad \quad
+\mbox{\textbf{get(}}\chi\mbox{\textbf{)}\textsf{)}} \\ \quad \quad
+\mbox{\textbf{r(}}e_{2}\mbox{\textbf{)}\textsf{))}}
+\end{array}
+\label{rule:trans:TD:indepForRet}
+\end{equation}
+
+Where $\vartheta = e_{2}.\vartheta$, and the variable binding is handled by rule \ref{rule:trans:TD:forclause}. As
+with the iterator dependent return clause expressions and sequence construction expressions, the renumbering is
+partitioned on the dependencies to not mix the sequence returned from this expression for one iteration of
+iterators surrounding this with the result from other iterations.
+
+\noindent
+\begin{myExample}
+ta den med b ogs\aa~da..
+\end{myExample}
+
+\subsubsection{Where Clause}
 \begin{itemize}
-  \item bare for e1 in e2 return e3
-  \item where
-  \item order (enkel) kan v\ae re spr\o
+  \item select
+  \item kan miste -numbz, men det g\aa r greit?
+\end{itemize}
+
+\subsubsection{Order By Clause}
+\begin{itemize}
+  \item vente litt med denne?
+\end{itemize}
+
+
+\subsubsection{Let Only FLWOR}
+\begin{itemize}
+  \item Where er all-or-nothing
+  \item Orderby gir ikke mening
 \end{itemize}
 
 \subsection{Arithmetic Expressions}
