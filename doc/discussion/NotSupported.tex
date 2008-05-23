@@ -1,23 +1,23 @@
 \section{XQuery Features Not Supported}
 \label{sect:discussion:notSupported}
 \begin{itemize}
-  \item Hvis vi har en l\o sning som s\aa~godt som funker kan vi liks\aa godt skrive om den i ``translation''
-  kapitelet\ldots\ldots
-  \item Skrive om alle greier rundt XQuery vi har et forslag til hvordan kan
-  l\o ses
+\item noen av disse tingene er ikke st\o tta pga typesystem, andre, slik som stemming og thesaurus er fordi ikkeno
+slik i mars enn\aa~kan foresl\aa~det med parametere til lookup evt contextting ala \textsf{index()}.
   \item Dette avhenger jo seff av hvor mye vi har l\o st men disse b\o r kunne
   l\o ses:
   	\begin{itemize}
   		\item proximity (kanskje l\o sbar)
+  		\item declare variable er nesten st\o tta\ldots men external og greier..
   		\item typeswitch? kan bli stress.. har ikke s\aa~mye typer enn\aa \ldots skal v\ae re diskusjon om typer i
   		sect \ref{sect:disc:typeSystem}\ldots
-  		\item function declarations
+  		\item function declarations, b\o r g\aa~greit, bare ha en function table ala symbol table.
   		\item schema / schema validation -> typeting? Hvordan l\o ser pathfinder dette\ldots synes \aa~ha sett noe om
   		det\ldots
   		\item namespacezz\ldots.
   		\item node comparisons\ldots\ldots tviler p\aa~at vi f\aa r til dette glatt\ldots
   		\item constructors\ldots element, CDATA, attribute etc etc
   		\item order by med alle ting..
-  		\item ordered and unordered
+  		\item ordered and unordered -> lurer p\aa om (markXremove + tainting = TD uten $index$ og
+  		\textsf{numberate()}) fikser dette ganske bra\ldots
   		\end{itemize}
 	\end{itemize}
