@@ -94,7 +94,7 @@ public class XQuery2MQLVisitor extends Visitor {
 
             // Result
             TraverseReturn result = new TraverseReturn();
-            result.setAtomic(false);
+            result.setSingleton(false);
             result.setVarRefs(returnClauseResult.getVarRefs());
             result.setOperatorTree(numberate);
             
@@ -133,7 +133,7 @@ public class XQuery2MQLVisitor extends Visitor {
 
             result.setOperatorTree(numberate);
             result.getVarRefs().addAll(returnClauseResult.getVarRefs());
-            result.setAtomic(false);
+            result.setSingleton(false);
             
             System.out.println("Does not contain iter var " + Scope.getInstance().getCurrentIterVar());
             System.out.println(returnClauseResult.getVarRefs().toString());
@@ -244,7 +244,7 @@ public class XQuery2MQLVisitor extends Visitor {
             TraverseReturn tr = acceptThis(tree.getChild(1));
             Project project = new Project("[" + varName + "numb, value]", tr.getOperatorTree());
             tr.setOperatorTree(project);
-            tr.setAtomic(true);
+            tr.setSingleton(true);
             
             SymTabEntry tmp = Scope.set(tree.getChild(0).getText(), tr, isIterationVar);
             
@@ -329,7 +329,7 @@ public class XQuery2MQLVisitor extends Visitor {
                 expr = cross;
             }
 
-            if (childResult.isAtomic()) {
+            if (childResult.isSingleton()) {
                 expr = new Project("sprIdx="+(c+1)+",index=0,value", expr);
             }
             else {
@@ -364,7 +364,7 @@ public class XQuery2MQLVisitor extends Visitor {
 
         result.getVarRefs().addAll(varRefs);
         result.setOperatorTree(numberate);        
-        result.setAtomic(false);
+        result.setSingleton(false);
         
         //System.out.println(result.toString());
         
@@ -408,9 +408,7 @@ public class XQuery2MQLVisitor extends Visitor {
         return null;
     }
 
-    @Override
     public TraverseReturn visitIntegerLiteral(XQFTTree tree) {
-        // TODO Auto-generated method stub
 
         StringBuffer b = new StringBuffer();
         b.append("name:=[value],");
@@ -419,7 +417,8 @@ public class XQuery2MQLVisitor extends Visitor {
         Make make = new Make(b.toString());
 
         TraverseReturn tr = new TraverseReturn();
-        tr.setAtomic(true);
+        
+        tr.setSingleton(true);
         tr.setOperatorTree(make);
 
         return tr;

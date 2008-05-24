@@ -3,7 +3,7 @@ package no.ntnu.xqft.tree;
 import no.ntnu.xqft.tree.operator.*;
 
 public class TraverseReturn {
-    protected boolean isAtomic = false;
+    protected boolean isSingleton = false;
     protected Operator operatorTree = null;
     protected VarRefSet varRefs = null;
     
@@ -14,14 +14,14 @@ public class TraverseReturn {
     /**
      * @return the isAtomic
      */
-    public boolean isAtomic() {
-        return isAtomic;
+    public boolean isSingleton() {
+        return isSingleton;
     }
     /**
      * @param isAtomic the isAtomic to set
      */
-    public void setAtomic(boolean isAtomic) {
-        this.isAtomic = isAtomic;
+    public void setSingleton(boolean isSingleton) {
+        this.isSingleton = isSingleton;
     }
     /**
      * @return the operatorTree
@@ -51,7 +51,7 @@ public class TraverseReturn {
     public String toString() {
         StringBuffer b = new StringBuffer();
         
-        b.append("Atomic: " + (this.isAtomic ? "yes" : "no") + "\n");
+        b.append("Atomic: " + (this.isSingleton ? "yes" : "no") + "\n");
         b.append("Var refs: " + this.varRefs.toString() + "\n");
         if (this.operatorTree != null) {
             b.append("Operator tree:\n" + this.operatorTree.toPrettyString(0) + "\n");
