@@ -241,11 +241,18 @@ public class XQuery2MQLVisitor extends Visitor {
         
         // Assignment?
         if (tree.getChildCount() > 1) {
-            TraverseReturn tr = acceptThis(tree.getChild(1));
+            
+        	// Visit children on the right side of the assignment
+        	TraverseReturn tr = acceptThis(tree.getChild(1));
+            
+        	// Required for tainting deps method
             Project project = new Project("[" + varName + "numb, value]", tr.getOperatorTree());
+
+            // Assign metadata
             tr.setOperatorTree(project);
             tr.setSingleton(true);
             
+            // Enter into symbol table
             SymTabEntry tmp = Scope.set(tree.getChild(0).getText(), tr, isIterationVar);
             
             if (isIterationVar) {
@@ -256,16 +263,19 @@ public class XQuery2MQLVisitor extends Visitor {
         }
         else {
             
+        	// Fetch entry from symtab
             SymTabEntry entry = Scope.get(tree.getChild(0).getText());
+
+            // Check if entry exists
             if (entry == null) {
                 System.err.println("Error: variable " +tree.getChild(0).getText()+ " is undefined");
                 System.exit(1);
             }
             
+            // Obtain and append new var ref
             TraverseReturn tr = entry.getTraverseReturn();
             tr.getVarRefs().add(new VarRef(tree.getChild(0).getText()));
-            //System.out.println("Traverse return in visitDOLLARSi: " + tr.toString());
-
+            
             return tr;
         }
     }
