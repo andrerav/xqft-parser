@@ -1,0 +1,218 @@
+\subsection{Basics}
+\label{sect:trans:TD:basics}
+The method assumes left-to-right traversal of the assymetric syntax tree. In most cases the traversal is
+postorder, meaning a subtree can be evaluated independently from its ancestors -- the exception being the logical
+context set by boolean operators. The relational algebra will thus be generated bottom-up. In addition to the
+evaluated subtree, a node must be able to inform its parent node about its variable dependencies ($\vartheta$),
+which we will discuss later.
+
+One XQuery sequence is represented as one relation and one XQuery item is represented as one tuple. This is sound,
+as all XQuery items are sequences, and all sequences are one-dimensional (section
+\ref{sect:theory:xquery:basics}). As we mentioned in section \ref{sect:trans:MarkXRemove}, the MarkXRemove method
+did actually not consider the ordering of items in sequences at all. In Tainting Dependencies, however, we have
+introduced an attribute $index$ holding the intra sequence number of the item. Consider the XQuery sequence
+\texttt{('a','b',}$\ldots$\texttt{,'z')}. With this attribute, the relational representation will be as follwing:
+
+\begin{center}
+\begin{tabular}{|c|c|} \hline
+$index$ & $value$ \\\hline
+1		& \texttt{'a'} \\\hline
+2		& \texttt{'b'} \\\hline
+$\ldots$& $\ldots$ \\\hline
+$n$		& \texttt{'z'} \\\hline
+\end{tabular}
+\end{center}
+
+
+As can be seen, the item value is stored in the $value$ attribute. For the course of this chapter we will, for the
+sake of simplicity, treat $value$ as a polymorphic type attribute. This simplification has minimal consequences
+for the method and the way XQuery expressions are translated. XQuery types and relational representation of such
+will is handled in section \ref{sect:disc:typeSystem}. \marginpar{\textbf{\LARGE TODO:} noen andre steder?.}
+
+Also for simplicity, the $documentId$, $pos$ and $scope$ attributes have been left out of the
+fields specified in \textsf{project} operators. If the \textsf{project} operator is applied to the result of a
+join or cartesian product, these fields will follow the $value$ attribute. That is, if $r.value$ is projected,
+then so is $r.documentId$, etc\ldots if applicable.
+
+Tainting Dependencies utilises a symbol table for storing of variables declared. The table has two functions:
+\begin{itemize}
+  \item \textbf{put(}$\chi$\textbf{, }\textbf{r(}$e$\textbf{))} -- will store the
+  algebraic version of the expression bound to the variable \texttt{\$}$\chi$ with $\chi$ as the key.  
+  \item \textbf{get(}$\chi$\textbf{)} -- will do a lookup in the table based on the name of the variable
+  \texttt{\$}$\chi$ and return the algebraic version of the expression linked to it.
+\end{itemize}
+The symbol table handles scoping according to XQuery semantics (section \ref{sect:theory:xquery:Flwor}), meaning
+the translator will always be able to find the right declared variable based on which node in the AST the
+translator is visiting.
+
+\subsection{Iterator Dependency Inheritance}
+\label{sect:trans:TD:dependency}
+
+The concept of iterator dependency form the basis of the Tainting Dependency method. Such dependency is
+defined as follows:
+
+\noindent
+\begin{myDefinition}
+An XQuery expression $e$ is \textbf{dependant} on an iterator $I_{\chi}$ if $e$ occurs within the iterator body of
+$I_{\chi}$ and if the evaluation of $e$ depends on the iteration number of $I_{\chi}$.
+\label{def:iterVarDep}
+\end{myDefinition}
+
+An variable reference to an iterator variable \texttt{\$}$\chi$ is by this definition dependent on the iterator
+$I_{\chi}$. Intuitively, an expression which subexpression is dependent on an iterator $I_{\chi}$ is also
+dependent on this iterator -- we say the dependency is inherited. Consider the example subexpression of figure
+\ref{fig:trans:td:varDep}, where \texttt{\$x} and \texttt{\$y} both are iterator variables. Here, the expresion
+$e_{1}$ is dependent the two iterators $I_{\mbox{\texttt{x}}}$ and $I_{\mbox{\texttt{y}}}$, while expression
+$e_{2}$ is only dependent on $I_{\mbox{\texttt{x}}}$.
+
+\begin{figure}[h]
+\centering
+\tikzstyle{astNode}=[circle, draw=blue!70,fill=blue!20,solid,thick, minimum
+size=26pt]
+\begin{tikzpicture}[grow via three points={one child at (0,-1.5) and two
+children at (-1.5,-1.0) and (1.5,-1.0)}]
+\draw[loosely dotted, thick] (0,0) -- (0,-1);
+\node at (0,-1) [astNode, label=above left:$e_{1}$ ] {\texttt{and}} 
+child{node [astNode, label=above left:$e_{2}$] {\texttt{+}}
+	child{node [astNode] {\texttt{\$x}}}
+	child{node [astNode] {\texttt{3}}}
+ }
+child{node [astNode] {\texttt{\$y}}}
+ ;
+\end{tikzpicture}
+\label{fig:trans:td:varDep}
+\caption[Iterator variable dependency]{Iterator variable dependency}
+\end{figure}
+
+The iterator dependencies of an expression $e$ are part of the set $e.\vartheta$. As mentioned earlier,
+an AST node must be able to inform its parent about the node's dependencies as well as the algebra generated. For
+an expression $e$ this can be done by letting $e.\vartheta$ piggyback the \textbf{r(}$e$\textbf{)} returned. The
+variable dependencies for an expression $e$ with the subexpressions $e_{1},\ldots,e_{n}$ can be described as
+following:
+\begin{equation}
+e.\vartheta = e_{1}.\vartheta\cup\ldots\cup e_{n}.\vartheta
+\label{eq:trans:TD:depInheritance}
+\end{equation}
+
+The dependancy on the iterator $I_{\chi}$ manifest itself relationally by the attribute $\chi$$numb$. The value of
+$\chi$$numb$ is the iteration number of $I_{\chi}$, that is, for a tuple ($\chi$$numb$, $value$) the value $value$
+will appear in the $\chi$$numb$th iteration of $I_{\chi}$.
+
+When an iterator variable \texttt{\$}$\chi$ is declared it is assigned a $\chi$$numb$ by renaming the $index$
+field of the corresponding iterator sequence $\chi$$numb$. Which leads us to the inference rule for translating the
+(optional) \texttt{for} clause of a FLWOR expression:
+\begin{equation}
+\frac{}{\mbox{\texttt{for \$}}\chi \mbox{\texttt{ in }} e \mbox{\texttt{\ldots}}}\longmapsto
+\begin{array}{l}
+\mbox{\textbf{put(}}\chi\mbox{\textbf{, }} \\ \quad
+\mbox{\textsf{project(}}\chi\mbox{\textsf{numb = index, index=1, value;}} \\ \quad \quad
+\mbox{\textbf{r(}}e\mbox{\textbf{)}\textsf{)}\textbf{)}}
+\end{array}
+\label{rule:trans:TD:forclause}
+\end{equation}
+Where the dependancies piggybacking the \textsf{project} operator can be expressed as:
+$\vartheta = e.\vartheta \cup \chi$.
+
+For a \texttt{for} clause with multiple variable bindings the rule must be applied once per binding as if there
+is one FLWOR expression per binding, and the $n$th binding is a FLWOR expression in the $(n-1)$th bindings
+return clause. This is in accordance with the XQuery semantics, and is one of the rewrite rules into XQuery core
+(see section \ref{sect:theory:xquery:XQcore}).
+
+From definition \ref{def:iterVarDep} it can be seen that $\chi$ is not part of the set of dependancies the iterator
+$I_{\chi}$ returns its parent. This is in fact the only case a variable is removed from a dependency set. Because
+of this, we must be careful not to incidentally remove a $\chi$$numb$ attribute from a relation by means of a
+\textsf{project} operator. 
+
+When we in this chapter write $\vartheta$ enclosed in MQL syntax it is to be interpreted as a comma seperated list
+of all the attributes linked to the dependencies in the set $\vartheta$. As an example, the dependency set
+$\vartheta = \left\{\mbox{\texttt{x}},\mbox{\texttt{y}},\mbox{\texttt{z}}\right\}$, is read as \textsf{xnumb,
+ynumb, znumb} in an MQL environment.
+
+XQuery variable reference expressions, be it iterator, \texttt{let} or \texttt{declare} variables, are translated
+to relational algebra quite simply by fetching the tree linked to the variable name in the symbol table:
+\begin{equation}
+\frac{}{\mbox{\texttt{\$}}\chi}\longmapsto
+\mbox{\textbf{get(}}\chi\mbox{\textbf{)}}
+\end{equation}
+
+
+\subsection{Iterator Dependency Tainting}
+\label{sect:trans:TD:tainting}
+
+The iterator body of an iterator with a iterator sequence with length $n$ will have to executed $n$ times. This
+can be done by e.g. evaluating the cartesian product between the body or the sequence, as with the MarkXRemove
+method. To avoid any denormalised intermediate results, an ideal solution would be to always calculate such
+products after all other evaluations of the query is done. Consider the following simple example of the query $e$:
+
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$a in (1, 2) return} \\ \qquad
+\texttt{for \$b in (3, 4) return} \\ \qquad \qquad
+\texttt{5 + 6}
+\end{tabular}
+\end{center}
+
+For this query the result can be calculated like this:
+\noindent
+\begin{center}
+\textbf{r(}$e$\textbf{)}$=$\textbf{r(}\texttt{(1, 2)}\textbf{)}$\times$\textbf{r(}\texttt{(3,
+4)}\textbf{)}$\times$\textbf{r(}\texttt{5 + 6}\textbf{)}.
+\end{center}
+\noindent
+
+But such a simple solution is not adequate if there is a reference to an iterator variable somewhere within the
+iterator body. This was managed by MarkXRemove by implementing inheritance of iterator dependencies, similar to
+the concept discussed in section \ref{sect:trans:TD:dependency}, and replacing the cartesian product operator with
+something like a natural join operator (section \ref{sect:trans:mxr:basics}).
+
+But MarkXRemove has shorcommings when it comes to evaluating expressions where a sequence constructed with at
+least one iterator dependent expression is a subexpression. Tainting Dependencies mend for this by requiring that
+all items constituting the result of an iterator dependent expression are iterator dependent. To fulfill til
+requirement, dependency tainting is introduced.
+
+\noindent
+\begin{myDefinition}
+Iterator dependency \textbf{Tainting} is to impose a representation of one expression for each iteration of the
+iterators another expression is dependent on.
+\end{myDefinition}
+
+During sequence construction, expressions explicitly taint all other expressions part of the construction with
+their dependencies. Consider this subexpression:
+\begin{center}
+\begin{tabular}{l}
+\quad \;\, $\vdots$  \\
+\texttt{(}$e_{1}$\texttt{, }$e_{2}$\texttt{)}\\
+\quad \;\, $\vdots$  
+\end{tabular}
+\end{center}
+Where $e_{1}.\vartheta = \left\{\chi_{1}\right\}$ and $e_{2}.\vartheta = \emptyset$. Here $e_{2}$ will be tainted
+by $e_{1}$'s dependency on $\chi_{1}$, but as $e_{2}$ have no dependencies, $e_{1}$ will not be tainted. The
+tainting process is carried out by calculating the cartesian product of $e_{2}$ and the $\chi_{1}$$numb$ column of
+\texttt{\$}$\chi_{1}$ stored in the symbol table.
+
+More generally, for an sequence constructing expression $e$, \texttt{(}$e_{1}$\texttt{, \ldots, }$e_{n}$\texttt{)},
+tainting of an subexpression $e_{i}$ can be expressed like this: \marginpar{\underline{\textbf{\Large TODO:}}
+\scriptsize noe \aa~utsette p\aa~bruken av $\Pi$ ?}
+\begin{center}
+\begin{equation}
+\begin{array}{l}
+e.\vartheta = e_{1}.\vartheta \cup \ldots \cup e_{n}.\vartheta = \left\{\chi_{1},\ldots\chi_{m}\right\} \\
+i \in \left\{1,\ldots,n\right\} \\
+\mbox{\textbf{t(r(}}e_{i}\mbox{\textbf{),}}e.\vartheta\mbox{\textbf{)}} = 
+\mbox{\textbf{r(}}e_{i}\mbox{\textbf{)}} \times {\displaystyle \prod_{\chi_{j} \in (e.\vartheta -
+e_{i}.\vartheta)}} \mbox{\textsf{project(}}\chi_{j}numb\mbox{\textsf{;
+}\textbf{get(}}\chi_{j}\mbox{\textbf{)}\textsf{)}}
+\end{array}
+\label{eq:trans:TD:taint}
+\end{equation}
+\end{center}
+
+\subsection{Implications Of Iterator Dependencies}
+\label{sect:trans:TD:implic}
+
+\begin{itemize}
+  \item forklare hva det betyr at et expr har dependencies,
+  \item at man alltid m\aa~skille dem i unike kombinasjoner av -numbs.. for \aa~skille de forskjellige
+  iterasjonene (og iterasjonene av iteratorene)
+  \item hvis man kombinerer flere exprs med like iterator dependencies m\aa~
+\end{itemize}
