@@ -54,21 +54,86 @@ being ``read'' and not altered (i.e set to a value), the variable reference is
 added to the current set of variable references, which is a part of the resulting
 \texttt{TraverseReturn} instance which should be returned from the visitor.
 The example in figure \ref{fig:impl:meta:var_ref_ex} shows the variable \$a
-being ``read'', in which case it is counted as a variable reference.
+being ``read'', in which case it is counted as a variable reference, and
+treated as such.
 
 \begin{figure}[!htp]
 \begin{center}
 \begin{Verbatim}
-for $i in (1,2,3) return $a
+for $i in (1,2,3) return ($a,4,5)
 \end{Verbatim}
-  \caption{Example of the variable \$a being ``read''}
+  \caption{Example of the variable \$a being ``read'' (note that the iterator
+  variable \$i is never ``read'')}
   \label{fig:impl:meta:var_ref_ex}
 \end{center}
 \end{figure}
 
+The source code excerpt in figure \ref{fig:impl:meta:var_ref_impl2} shows how
+variable references are treated in the visitor implementation.
+
+\begin{figure}[!htp]
+\begin{center}
+\begin{Verbatim}
+// Fetch entry from symtab
+SymTabEntry entry = Scope.get(tree.getChild(0).getText());
+            
+// Obtain and append new var ref
+TraverseReturn tr = entry.getTraverseReturn();
+tr.getVarRefs().add(new VarRef(tree.getChild(0).getText()));
+
+return tr;
+\end{Verbatim}
+  \caption{Appending a new variable reference}
+  \label{fig:impl:meta:var_ref_impl2}
+\end{center}
+\end{figure}
+
 \subsection{Singleton nodes}
+Singleton nodes are nodes that return a sequence of exactly one element. In
+the cases where this is known to be true, the result from a translation can be
+tagged with this information and used later to optimise the translation of
+sequence construction (as described in section \ref{sect:impl:td:seq}).
+
+This is the case of integer literal nodes as well as variable lookups in the
+symbol table. The case of integer literal nodes is shown in figure
+\ref{fig:impl:meta:traverse_usage_ex} in the next section. The case of variable
+lookups is somewhat counter-intuitive, since this metainformation is actually
+stored when a variable is first set. That is, the right-hand side of the
+assignment is translated once and annotated with the singleton flag, which is
+then set for all subsequent lookups in the symbol table. The excerpt in figure
+\ref{fig:impl:meta:var_assign_ex} shows how this is done in the implementation.
+
+\begin{figure}[!htp]
+\begin{center}
+\begin{Verbatim}
+// Visit children on the right side of the assignment
+TraverseReturn tr = acceptThis(tree.getChild(1));
+
+// Required for tainting deps method
+Project project = new Project("[" + varName + "numb, value]", 
+                      tr.getOperatorTree());
+
+// Assign metadata
+tr.setOperatorTree(project);
+tr.setSingleton(true);
+
+// Enter into symbol table
+SymTabEntry tmp = Scope.set(tree.getChild(0).getText(), 
+                      tr, isIterationVar);
+\end{Verbatim}
+  \caption{Variable assignment example, annotated with the singleton flag
+  before being entered into the symtab}
+  \label{fig:impl:meta:var_assign_ex}
+\end{center}
+\end{figure}
 
 \subsection{Example of usage}
+In the example in figure \ref{fig:impl:meta:traverse_usage_ex}, an
+integer literal node is visited (a node that simply holds an integer). A
+\texttt{make()} MQL operator as well as a new \texttt{TraverseReturn}
+instance is created. The \texttt{make()} operator is then appended to the 
+\texttt{TraverseReturn} instance, and the \textit{isSingleton} flag is set to 
+\textit{true} since the result of this translation is a single item.
 
 \begin{figure}[!htp]
 \begin{center}
@@ -93,9 +158,3 @@ for $i in (1,2,3) return $a
   \label{fig:impl:meta:traverse_usage_ex}
 \end{center}
 \end{figure}
-
-In this example an integer literal node is visited (a node that simply holds an
-integer). A \texttt{make()} MQL operator as well as a new
-\texttt{TraverseReturn} instance is created. The \texttt{make()} operator is
-then appended to the \texttt{TraverseReturn} instance, and the
-\textit{isSingleton} flag is set to \textit{true}.
