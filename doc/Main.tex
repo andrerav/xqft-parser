@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt, final]{report}
+ \documentclass[11pt, a4paper, twoside]{report}
 \usepackage [T1] {fontenc}
 \usepackage[latin1]{inputenc}
 \usepackage{algorithmic}
@@ -16,8 +16,20 @@
 %\graphicspath{{./img}}
 \usetikzlibrary{trees}
 \usetikzlibrary{shapes}
+\newtheoremstyle{myExStyle}% name
+     {8pt}%      Space above
+     {8pt}%      Space below
+     {\slshape}%         Body font
+     {}%         Indent amount (empty = no indent, \parindent = para indent)
+     {\bfseries\slshape}% Thm head font
+     {:}%        Punctuation after thm head
+     {.5em}%     Space after thm head: " " = normal interword space;
+           %       \newline = linebreak
+     {}%         Thm head spec (can be left empty, meaning `normal')
+
+
 \newtheorem{myDefinition}{Definition}
-\theoremstyle{definition}
+\theoremstyle{myExStyle}
 \newtheorem{myExample}{Example}
 
 
