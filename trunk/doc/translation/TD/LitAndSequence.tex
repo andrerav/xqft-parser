@@ -86,8 +86,8 @@ the different sequences constructed for all dependent iterations.
 \begin{figure}[h]
 \begin{equation*}
 \begin{array}{l}
-\mbox{\texttt{for \$a in (10,20)}} \\ \quad
-\mbox{\texttt{return }} \underbrace{ \mbox{\texttt{(\$a, "no")}} }_{e_{1}}
+\mbox{\texttt{for \$a in (10,20) return}} \\ \quad 
+\underbrace{ \mbox{\texttt{(\$a, "no")}} }_{e_{1}}
 \end{array}
 \end{equation*}
 \caption{Simple XQuery query}
@@ -139,9 +139,9 @@ we get the query of figure \ref{fig:trans:TD:expandQuery}.
 \begin{figure}[h]
 \begin{equation*}
 \begin{array}{l}
-\mbox{\texttt{for \$a in (10,20)}} \\ \quad
-\mbox{\texttt{for \$b in (50,75)}} \\ \quad \quad
-\mbox{\texttt{return }} \underbrace{ \mbox{\texttt{(\$a, "no")}} }_{e_{1}}
+\mbox{\texttt{for \$a in (10,20) return}} \\ \quad
+\mbox{\texttt{for \$b in (50,75) return}} \\ \quad \quad
+\underbrace{ \mbox{\texttt{(\$a, "no")}} }_{e_{1}}
 \end{array}
 \end{equation*}
 \caption{Query of figure \ref{fig:trans:TD:simpQuery} expanded}
