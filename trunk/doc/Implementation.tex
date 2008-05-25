@@ -30,6 +30,7 @@ This proof of concept was implemented in Java 5.0, using regular object
 oriented techniques, and is licensed under a liberal BSD license. Instructions
 for compilation and installation can be found in TODO: appendix.
 
+\input{implementation/SystemDesc.tex}
 \input{implementation/TheXQFTParser.tex}
 \input{implementation/ConstructingMQL.tex}
 \input{implementation/ContextSensVisitor.tex}
@@ -39,27 +40,6 @@ for compilation and installation can be found in TODO: appendix.
 
 
 
-
-\section{Data flow}
-\begin{itemize}
-  \item grammatikk -> antlr -> parser
-  \item xquery -> parser -> visitor -> relalg
-\end{itemize}
-
-\section{Visible external API}
-\begin{itemize}
-  \item Vise hvordan oversetteren kan brukes i sin helhet i andre programmer
-\end{itemize}
-
-\section{Command line interface}
-\marginpar{\underline{\textbf{\Large TODO:}}\scriptsize ha det i appendix ala i fjor?}
-Dette er ikke s\aa~veldig viktig \aa~skrive om, men greit \aa~ha med.
-\begin{itemize}
-  \item Argsengine
-  \item Aksepterer flere strenger og filer
-  \item Outputter til graphviz/dot og pdf, hvis tilgjengelig
-  \item Dependencies (jar-filer og drit)
-\end{itemize}
 
 \section{Optimalisations?}
 

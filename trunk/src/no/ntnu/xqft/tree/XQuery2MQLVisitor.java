@@ -51,36 +51,26 @@ public class XQuery2MQLVisitor extends Visitor {
         Scope.push();
         
         XQFTTree forClause = (XQFTTree)tree.getChild(0);
-        // TODO: everything inbetween
         XQFTTree returnClause = (XQFTTree)tree.getChild(tree.getChildCount()-1);
         
-        acceptThis(forClause); // Place stuff into symtab
-        
+        acceptThis(forClause); // Place stuff into symtab        
         
         TraverseReturn returnClauseResult = acceptThis(returnClause);
-
-//        
-//        System.out.println("Current iter var: " + Scope.getInstance().getCurrentIterVar());
-//        System.out.println("Return clause result: " + returnClauseResult);
-//        System.out.println("Return clause: " + returnClause.toStringTree());
         
         if (Scope.getInstance() != null &&
                 Scope.getInstance().getCurrentIterVar() != null && 
                 returnClauseResult.getVarRefs() != null &&
-                returnClauseResult.getVarRefs().contains(Scope.getInstance().getCurrentIterVar())) {
-            // Contains iter var
-
-//            for $b in (expr)
-//            return expr1(/m b)
-//
-//            numberate(indx, [bnumb, indx], [varRefs-bnumb]
-//                expr1(/m b))    
+                returnClauseResult.getVarRefs().contains(Scope.getInstance().getCurrentIterVar())) {  
             
+        	// Sort and partition fields
+            String[] sortBy = {Scope.getInstance().getCurrentIterVar().getName() 
+            		          + "numb", "index"};
+            String[] partitionBy 
+            	= new String[returnClauseResult.getVarRefs().size() - 1];
             
-            String[] sortBy = {Scope.getInstance().getCurrentIterVar().getName() + "numb", "index"};
-            String[] partitionBy = new String[returnClauseResult.getVarRefs().size() - 1];
-            
-            VarRefSet prevVarRefs = (VarRefSet)returnClauseResult.getVarRefs().clone();
+            // Calculate variable references
+            VarRefSet prevVarRefs 
+            	= (VarRefSet)returnClauseResult.getVarRefs().clone();         
             prevVarRefs.remove(Scope.getInstance().getCurrentIterVar());
             
             int i = 0;
@@ -89,15 +79,16 @@ public class XQuery2MQLVisitor extends Visitor {
                 i++;
             }
             
-            
+            // Construct MQL
             Numberate numberate = new Numberate("index", sortBy, partitionBy, returnClauseResult.getOperatorTree());
 
-            // Result
+            // Construct result
             TraverseReturn result = new TraverseReturn();
             result.setSingleton(false);
             result.setVarRefs(returnClauseResult.getVarRefs());
             result.setOperatorTree(numberate);
             
+            // Remove current iter var from varrefs
             result.getVarRefs().remove(Scope.getInstance().getCurrentIterVar());
             
             Scope.pop();
@@ -107,12 +98,7 @@ public class XQuery2MQLVisitor extends Visitor {
         else {
             
             TraverseReturn result = new TraverseReturn();
-            // Does not contain iter var
 
-//            numberate(index, [bnumb, index], [varRefs]
-//                  cross(
-//                      project([bnumb = index]; expr)
-//                      expr1(/wo b)  
             Project project 
                 = new Project("[" + Scope.getInstance().getCurrentIterVar() + "numb = index]", 
                         Scope.get(Scope.getInstance()
@@ -135,8 +121,6 @@ public class XQuery2MQLVisitor extends Visitor {
             result.getVarRefs().addAll(returnClauseResult.getVarRefs());
             result.setSingleton(false);
             
-            System.out.println("Does not contain iter var " + Scope.getInstance().getCurrentIterVar());
-            System.out.println(returnClauseResult.getVarRefs().toString());
             Scope.pop();
             
             return result;
