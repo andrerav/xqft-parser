@@ -1,10 +1,5 @@
 \subsection{FLWOR Expressions}
 \label{sect:trans:TD:simpleFLWOR}
-\textbf{\Large TODO:} Dette kan skrives om til enda mer generelt. S\aa~lenge for-clause biten blir kj\o rt for
-hver binding, fra den siste og innover, stemmer det. Vi m\aa~definere et sett som holder alle iteratorvariabler
-som blir bundet i denne FLWORen. I return-clausen vil iteratorbodyen bli tainta med dette settet (det skjer ikkeno
-om iteratorbody'en allerede er avhengig av alle variablene\ldots)
-
 The \texttt{let} clause does not cause any dependencies, only variable binding, and can therefore be translated
 into storing the algebraic version of the expression to be bound in the symbol table:
 \begin{equation}
@@ -16,16 +11,22 @@ The iterator dependences $e.\vartheta$ is stored along with \textbf{r(}$e$\textb
 algebra tree if it later fetched from the symbol table. If there is more than one variable binding in the
 \texttt{let} clause the rule must be applied once per binding as if one binding were one \texttt{let} clause.
 
-As previously mentioned, multiple variable bindings within one \texttt{for} clause is semanticly equal to
-nested FLWOR expressions. Here, the innermost FLWOR will contain the last binding as its \texttt{for} clause and
+\textbf{\Large TODO:} \textsc{Dette kan skrives om til enda mer generelt. S\aa~lenge for-clause biten blir kj\o rt
+for hver binding, fra den siste og innover, stemmer det. Vi m\aa~definere et sett som holder alle iteratorvariabler
+som blir bundet i denne FLWORen. I return-clausen vil iteratorbodyen bli tainta med dette settet (det skjer ikkeno
+om iteratorbody'en allerede er avhengig av alle variablene\ldots)}
+
+\textit{As previously mentioned, multiple variable bindings within one \texttt{for} clause is semanticly equal
+to nested FLWOR expressions. Here, the innermost FLWOR will contain the last binding as its \texttt{for} clause and
 all other subexpressions of the original FLWOR. Each preceding variable binding correspond to a FLWOR with the
 binding as a \texttt{for} clause and the FLWOR corresponding to the succeding binding as its \texttt{return}
 clause. Multiple \texttt{for} clauses within one FLWOR expression is to be considered in a similar matter.
-Explicit rewriting of these kind of expressions is discussed in section \ref{sect:method:ast_rewrite}.
+Explicit rewriting of these kind of expressions is discussed in section \ref{sect:method:ast_rewrite}.}
 
+\textit{
 From the XQuery specification exerpt of figure \ref{fig:trans:TD:seqEBNF}, we see that a FLWOR expression may
 appear in many different formats. In this section we will for inference rule readability and simplicty treat these
-expressions as if they no more than \emph{one} \texttt{for} clause containing exactly \emph{one} variable binding.
+expressions as if they no more than \emph{one} \texttt{for} clause containing exactly \emph{one} variable binding.}
 Further, the translation of FLWORs will be described in a clause-by-clause manner, as if executed as a postorder
 traversal of the tree in figure \ref{fig:trans:TD:flworExecute}. The left children (variable bindings) will not
 return anything to their parent and are handled by the rules \ref{rule:trans:TD:forbind} and
@@ -73,7 +74,7 @@ body will have to be tainted with the iterator. The \texttt{return} clause of an
 translated like this:
 \begin{equation}
 \frac{I_{\chi}}{\mbox{\texttt{return }}e_{4}}\longmapsto
-\mbox{\textbf{t(r(}}e_{4}\mbox{\textbf{), }}\chi\mbox{\textbf{)}}
+\mbox{\textbf{t(r(}}e_{4}\mbox{\textbf{), \{}}\chi\mbox{\textbf{\})}}
 \label{rule:trans:TD:returnTaint}
 \end{equation}
 An iterator body dependent on $I_{\chi}$ will allready have a representation for each iteration, and will not be
@@ -102,26 +103,70 @@ the sequences returned from the iterator for all iterators the result is depende
 construction expression.
 
 \begin{myExample}
-L\o se expanded simpQuery i stedet..
 
-In the query of figure \ref{fig:trans:TD:simpQuery} the return clause is dependent on $I_{\mbox{\texttt{a}}}$
-as a consequence of the reference to \texttt{\$a} in the sequence construction expression $e_{1}$. The result of
-the FLWOR expresion, and therefore the query, must be a sequence holding four items. This is because for each of
-the two iterations of $I_{\mbox{\texttt{a}}}$ two items are returned. Figure \ref{fig:trans:TD:simpl:rall} shows
-the relational representation of $e_{1}$. By applying rule \ref{rule:trans:TD:forReturn} on this, we get the
-result of the query, as shown in figure \ref{fig:trans:TD:simpRes}.
+With the rules for translating \texttt{for} and \texttt{return} clauses, the query of figure
+\ref{fig:trans:TD:expandQuery} can be fully evaluated. Expression $e_{1}$ is the \texttt{return} clause expression
+of , but is not depentant on $I_{\mbox{\texttt{b}}}$. By rule \ref{rule:trans:TD:returnTaint} $e_{1}$ is tainted,
+which result is shown in figure \ref{fig:trans:TD:final:taint}. To calculate the result of $I_{\mbox{\texttt{b}}}$,
+renumbering is required, as the iterator will return a sequence of four items (to items for each of the two
+iterations). The rule \ref{rule:trans:TD:forReturn} is applied. This will result in the relation illustrated in
+figure \ref{fig:trans:TD:final:rIb}. $I_{\mbox{\texttt{b}}}$ consitutes the \texttt{return} clause of
+$I_{\mbox{\texttt{a}}}$, and is dependent on $I_{\mbox{\texttt{a}}}$ because one of its subexpressions i a
+referral to \texttt{\$a}. Rule \ref{rule:trans:TD:returnTaint} will therefore not have any effect. A renumbering
+with rule \ref{rule:trans:TD:forReturn} finalises the evalution of the query. The final result is shown in figure
+\ref{fig:trans:TD:final:rIb}.
+
 
 \begin{figure}[h]
 \centering
-\begin{tabular}{|c|c|} \hline
-$index$ & $value$ \\\hline
-1 & 10 \\\hline
-3 & 20 \\\hline
-2 & \texttt{"no"} \\\hline
-4 & \texttt{"no"} \\\hline
+\subfigure[\textbf{t(r(}$e_{1}$\textbf{), \{}\texttt{b}\textbf{\})}]{
+\begin{tabular}{|c|c|c|c|} \hline
+$bnb$ & $anb$ & $idx$ & $val$ \\ \hline
+1 & 1 & 1 & 10 \\ \hline
+1 & 2 & 1 & 20 \\ \hline
+1 & 1 & 2 & \texttt{"no"} \\ \hline
+1 & 2 & 2 & \texttt{"no"} \\ \hline
+2 & 1 & 1 & 10 \\ \hline
+2 & 2 & 1 & 20 \\ \hline
+2 & 1 & 2 & \texttt{"no"} \\ \hline
+2 & 2 & 2 & \texttt{"no"} \\ \hline
 \end{tabular}
-\caption{The result of the query in figure \ref{fig:trans:TD:simpQuery}}
-\label{fig:trans:TD:simpRes}
+\label{fig:trans:TD:final:taint}
+}
+\qquad
+\subfigure[\textbf{r(}$I_{\mbox{\texttt{b}}}$\textbf{)}]{
+\begin{tabular}{|c|c|c|} \hline
+$anb$ & $idx$ & $val$ \\ \hline
+1 & 1 & 10 \\ \hline
+1 & 2 & \texttt{"no"} \\ \hline
+1 & 3 & 10 \\ \hline
+1 & 4 & \texttt{"no"} \\ \hline
+2 & 1 & 20 \\ \hline
+2 & 2 & \texttt{"no"} \\ \hline
+2 & 3 & 20 \\ \hline
+2 & 4 & \texttt{"no"} \\ \hline
+\end{tabular}
+\label{fig:trans:TD:final:rIb}
+}
+\qquad
+\subfigure[\textbf{r(}$I_{\mbox{\texttt{a}}}$\textbf{)}]{
+\begin{tabular}{|c|c|} \hline
+$idx$ & $val$ \\ \hline
+1 & 10 \\ \hline
+2 & \texttt{"no"} \\ \hline
+3 & 10 \\ \hline
+4 & \texttt{"no"} \\ \hline
+5 & 20 \\ \hline
+6 & \texttt{"no"} \\ \hline
+7 & 20 \\ \hline
+8 & \texttt{"no"} \\ \hline
+\end{tabular}
+\label{fig:trans:TD:final:rIa}
+}
+
+\caption[Example: resolving for..return]{Applying rule \ref{rule:trans:TD:forReturn} on (a) yields (b). Applying
+rule \ref{rule:trans:TD:forReturn} on (b) yields (c). Attribute names are shortened
+\label{fig:trans:TD:finalizeExp}}
 \end{figure}
 
 \end{myExample}
