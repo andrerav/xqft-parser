@@ -78,6 +78,21 @@ full-text extensions.
 The output from this parser are carefully crafted abstract syntax trees which
 are well suited for translation into other representations.
 
+% The data flow for the generation of the XQFT Parser is shown in figure
+% \ref{fig:parser:xqft_antlr_gen} where the grammar is input, and the ANTLR
+% parser generator produces the XQFT Parser.
+% 
+% \begin{figure}[!htp]
+% \begin{center}
+%   \includegraphics[scale=0.5]{diagrams/xqft_antlr_dataflow}
+%   \caption{Data flow for generation of the XQFT Parser}
+%   \label{fig:parser:xqft_antlr_gen}
+% \end{center}
+% \end{figure}
+
+The dataflow for actual use of the XQFT parser is shown in figure
+\ref{fig:impl:sys:mql_dataflow} on page \pageref{fig:impl:sys:mql_dataflow}.
+
 \subsubsection{AST construction}
 \label{sect:theory:xqftparser:ast_construction}
 The abstract syntax tree is constructed by specifying tree rewrite rules in the
