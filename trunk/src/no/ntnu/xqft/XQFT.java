@@ -92,7 +92,11 @@ public class XQFT {
         }
 	}
 	
-	public static void executeOnInput(String input, boolean createDot, boolean createPdf, String outputFolder, String basename) {
+	public static Operator executeOnInput(String input, 
+							            boolean createDot, 
+							            boolean createPdf, 
+							            String outputFolder, 
+							            String basename) {
         
         XQFT m = new XQFT();
 	    
@@ -149,6 +153,7 @@ public class XQFT {
 		Scope.printPrettyString();
 		System.out.println("Done");
 
+		return top;
 	}
 	
     public XQFTParser.module_return execQuery(XQFTParser pa)
