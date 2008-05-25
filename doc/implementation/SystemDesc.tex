@@ -52,8 +52,10 @@ typical usage scenario for an external user could be as follows:
 
 \begin{Verbatim}
 XQFT xqft = new XQFT();
-Operator mqlTree = xqft.executeOnInput("for $i in (1,2,3) return $i", 
-                     false, false, null, null);
+Operator mqlTree = xqft.executeOnInput(
+                       "for $i in (1,2,3) return $i", 
+                       false, false, null, null
+                   );
 \end{Verbatim}
 
 The \texttt{mqlTree} would now be a reference to a complete MQL operator tree,
@@ -61,11 +63,26 @@ provided that no errors occured during the parse process or the translation
 process.
 
 \subsection{Command line interface}
-\marginpar{\underline{\textbf{\Large TODO:}}\scriptsize ha det i appendix ala i fjor?}
-Dette er ikke s\aa~veldig viktig \aa~skrive om, men greit \aa~ha med.
+The command line interface is available by executing the
+\texttt{no.ntnu.xqft.XQFT} class as a main class, as mentioned in the previous
+section. The command line interface uses the Args
+Engine\footnote{http://www.adarshr.com/papers/args} for the sake of simplicity
+to parse options/switches on the command line. 
+
+The command line usage is as follows:
+
+\begin{Verbatim}
+java no.ntnu.xqft.XQFT [-p] [-t] [-o <path>] file1 file2 ... fileN
+\end{Verbatim}
+
+It is also possible to specify queries in the form of strings enclosed in
+double quotes, or any mix of strings and filenames. The switches are:
 \begin{itemize}
-  \item Argsengine
-  \item Aksepterer flere strenger og filer
-  \item Outputter til graphviz/dot og pdf, hvis tilgjengelig
-  \item Dependencies (jar-filer og drit)
+  \item -t : output a DOT tree (requires graphviz)
+  \item -p : output a PDF syntax tree (requires graphviz)
+  \item -o <path> : stores generated PDF/DOT files in the given folder, 
+  otherwise in ./
 \end{itemize}
+
+See appendix for more information about installation and dependencies.
+TODO: appendix.
