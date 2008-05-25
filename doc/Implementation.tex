@@ -1,30 +1,5 @@
 \chapter{Implementation}
 \label{chapter:implementation}
-
-\begin{itemize}
-  \item intro
-  \item Vi lager en liten prototype = ``proof of concept'' -> et begrep vi m\aa~bruke =)
-  \item VarRefs m\aa~sendes oppover fra child nodes (ref til tainting deps)
-  \item Optimalisering: child nodes vet om de er atomiske/singleton eller ikke
-\end{itemize}
-
-\begin{itemize}
-  \item Bruk av parseren (den som er generert av antlr osv), XQFTTree-klassen,
-  evt. UML
-  \item Interfacing av parseren mot oversetteren v\aa r (som oversetter til
-  relalg) og UML
-  \item Bygging av relasjonsalgebra-tre, UML av operatorklassene
-  \item Implementering av visitors
-  \item Scoping og symtab (nok en gang..)
-  \item hvordan metadata som varrefs og singletonindikering blir sendt oppover
-  (Metadata)
-  \item Implementering av ``tainting dependencies''
-  \item Dataflyt ()
-  \item Visible external API
-  \item Interface til systemet p\aa~ kommandolinjen
-  \item Optimaliseringer, om noen? 
-\end{itemize}
-
 \section{Prerequisites}
 This proof of concept was implemented in Java 5.0, using regular object
 oriented techniques, and is licensed under a liberal BSD license. Instructions
@@ -37,9 +12,6 @@ for compilation and installation can be found in TODO: appendix.
 \input{implementation/ScopingAndSymtab.tex}
 \input{implementation/PassingMetadata.tex}
 \input{implementation/TaintingDeps.tex}
-
-
-
 
 \section{Optimalisations?}
 
