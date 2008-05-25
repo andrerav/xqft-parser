@@ -11,27 +11,17 @@ The iterator dependences $e.\vartheta$ is stored along with \textbf{r(}$e$\textb
 algebra tree if it later fetched from the symbol table. If there is more than one variable binding in the
 \texttt{let} clause the rule must be applied once per binding as if one binding were one \texttt{let} clause.
 
-\textbf{\Large TODO:} \textsc{Dette kan skrives om til enda mer generelt. S\aa~lenge for-clause biten blir kj\o rt
-for hver binding, fra den siste og innover, stemmer det. Vi m\aa~definere et sett som holder alle iteratorvariabler
-som blir bundet i denne FLWORen. I return-clausen vil iteratorbodyen bli tainta med dette settet (det skjer ikkeno
-om iteratorbody'en allerede er avhengig av alle variablene\ldots)}
+As seen by the exerpt of the W3C XQuery EBNF specification in figure \ref{fig:trans:TD:seqEBNF}, a FLWOR
+expression may be structured in infinitely many ways. For simplicity and readablilty the translation of such
+expressions will be described in a clause-by-clause matter, as if executed as a postorder traversal of the tree in
+figure \ref{fig:trans:TD:flworExecute}. The left children (variable bindings) will not return anything to their
+parent and are handled by the rules \ref{rule:trans:TD:forbind} and \ref{rule:trans:TD:letbind}, and the algebra
+returned from the right children will be referred to as \textbf{r(}$e_{child}$\textbf{)}. 
 
-\textit{As previously mentioned, multiple variable bindings within one \texttt{for} clause is semanticly equal
-to nested FLWOR expressions. Here, the innermost FLWOR will contain the last binding as its \texttt{for} clause and
-all other subexpressions of the original FLWOR. Each preceding variable binding correspond to a FLWOR with the
-binding as a \texttt{for} clause and the FLWOR corresponding to the succeding binding as its \texttt{return}
-clause. Multiple \texttt{for} clauses within one FLWOR expression is to be considered in a similar matter.
-Explicit rewriting of these kind of expressions is discussed in section \ref{sect:method:ast_rewrite}.}
-
-\textit{
-From the XQuery specification exerpt of figure \ref{fig:trans:TD:seqEBNF}, we see that a FLWOR expression may
-appear in many different formats. In this section we will for inference rule readability and simplicty treat these
-expressions as if they no more than \emph{one} \texttt{for} clause containing exactly \emph{one} variable binding.}
-Further, the translation of FLWORs will be described in a clause-by-clause manner, as if executed as a postorder
-traversal of the tree in figure \ref{fig:trans:TD:flworExecute}. The left children (variable bindings) will not
-return anything to their parent and are handled by the rules \ref{rule:trans:TD:forbind} and
-\ref{rule:trans:TD:letbind}, and the algebra returned from the right children will be referred to as
-\textbf{r(}$e_{child}$\textbf{)}.
+A FLWOR expression may have multiple \texttt{for} clauses, and a \texttt{for} clause may have multiple iterator
+variable bindings. This means that one FLWOR may consist of many iterators, the semanics of which is described in
+section \ref{sect:method:ast_rewrite}. The set of all iterator variables bound in one FLWOR will be reffered to as
+$\beta$.
 
 \begin{figure}[h]
 \centering
@@ -40,19 +30,13 @@ return anything to their parent and are handled by the rules \ref{rule:trans:TD:
 
 \begin{tikzpicture}[grow via three points={one child at (1.5,-1.0) and two
 children at (-1.5,-1.0) and (1.5,-1.0)}]
-\node at (0,0) [optional] {[\textbf{let clause}]*}
+\node at (0,0) [optional] {[\textbf{let/for clause}]+}
 child{node [optional] {[\textbf{binding}]+} edge from parent [draw,dotted, thick]}
-child{node [optional] {[\textbf{for clause}]?}
-	child{node [optional] {[\texttt{\$}$\chi$ \texttt{in} $e_{1}$]?} edge from parent [draw,dotted, thick] }
-	child{node [optional] {[\textbf{let clause}]*}
-		child{node [optional] {[\textbf{binding}]+} edge from parent [draw,dotted, thick] }
-		child{node [optional] {[\texttt{order by} $e_{3}$]?}
-			child{node [optional] {[\texttt{where} $e_{2}$]?}
-				child{node [return] {\texttt{return} $e_{4}$}}
+	child{node [optional] {[\texttt{order by} $e_{3}$]?}
+		child{node [optional] {[\texttt{where} $e_{2}$]?}
+			child{node [return] {\texttt{return} $e_{4}$}}
 			}
 		} 
-	}
-}
 ;
 \end{tikzpicture}
 \label{fig:trans:TD:flworExecute}
@@ -66,28 +50,28 @@ translation of FLWOR expresions:
 \label{rule:trans:TD:letclause}
 \end{equation}
 
-If a \texttt{for} clause is part of a FLWOR expresion it an iterator. A \texttt{return} clause which is part of an
-iterator is evaluated once for each item in the iterator sequence. The results of these evaluations are
-concatenated to form the result of the FLWOR expression. If the \texttt{return} expression is not dependent on the
-iterator, its relational form will not vary with the iteration number. In such a case the result of the iterator
-body will have to be tainted with the iterator. The \texttt{return} clause of an iterator $I_{\chi}$ can be
-translated like this:
+The \texttt{return} clause is evaluated once for each combination of iterations of the FLWOR expression. The
+results of these evaluations are concatenated to form the result of the FLWOR expression. If the \texttt{return}
+expression is not dependent on some of the iterators, its relational form will not have a representation for each
+of these iterators iterations. Because of this the result of the \texttt{return} clause will have to be tainted
+with these iterators.
 \begin{equation}
-\frac{I_{\chi}}{\mbox{\texttt{return }}e_{4}}\longmapsto
-\mbox{\textbf{t(r(}}e_{4}\mbox{\textbf{), \{}}\chi\mbox{\textbf{\})}}
+\frac{}{\mbox{\texttt{return }}e_{4}}\longmapsto
+\mbox{\textbf{t(r(}}e_{4}\mbox{\textbf{), }}\beta\mbox{\textbf{)}}
 \label{rule:trans:TD:returnTaint}
 \end{equation}
-An iterator body dependent on $I_{\chi}$ will allready have a representation for each iteration, and will not be
-tainted (ref. equation \ref{eq:trans:TD:taint}).
+Where the dependencies returned is $\vartheta = e_4.\vartheta \cup \beta$.
 
-If the \texttt{return} clause is part of a \texttt{for}-less FLWOR expression no translation is needed.
+From equation \ref{eq:trans:TD:taint} it is clear that a expression allready dependent on $I_{\chi}$ will not be
+tainted by this iterator.
 
-Because a FLWOR iterator creates a new sequence, renumbering is needed to calculate the result. No expression in a
-sibling or parent scope of the iterator $I_{\chi}$ may be dependent on $I_{\chi}$. Thus, $\chi$ is not part of the
+Because each FLWOR iterator creates a new sequence, renumbering is needed to calculate the result. No expression in
+a sibling or parent scope of the iterator $I_{\chi}$ may be dependent on $I_{\chi}$. Thus, $\chi$ is not part of the
 dependencies $I_{\chi}.\vartheta$ returned from the iterator, and the corresponding $\chi{numb}$ attribute must be
-removed.
+removed. For each binding, from right to left, of an iterator variable $\chi$ bound in an \texttt{for} clause,
+the following translation is applied: 
 \begin{equation}
-\frac{I_{\chi}}{\mbox{\textbf{for clause}}}
+\frac{}{\mbox{\textbf{for clause binding }}\chi}
 \longmapsto
 \begin{array}{l}
 \mbox{\textsf{numberate(index, [}}\chi\mbox{\textsf{numb, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
@@ -106,12 +90,12 @@ construction expression.
 
 With the rules for translating \texttt{for} and \texttt{return} clauses, the query of figure
 \ref{fig:trans:TD:expandQuery} can be fully evaluated. Expression $e_{1}$ is the \texttt{return} clause expression
-of , but is not depentant on $I_{\mbox{\texttt{b}}}$. By rule \ref{rule:trans:TD:returnTaint} $e_{1}$ is tainted,
-which result is shown in figure \ref{fig:trans:TD:final:taint}. To calculate the result of $I_{\mbox{\texttt{b}}}$,
+of, but is not depentant on $I_{\mbox{\texttt{b}}}$. By rule \ref{rule:trans:TD:returnTaint} $e_{1}$ is tainted,
+as shown in figure \ref{fig:trans:TD:final:taint}. To calculate the result of $I_{\mbox{\texttt{b}}}$,
 renumbering is required, as the iterator will return a sequence of four items (to items for each of the two
 iterations). The rule \ref{rule:trans:TD:forReturn} is applied. This will result in the relation illustrated in
 figure \ref{fig:trans:TD:final:rIb}. $I_{\mbox{\texttt{b}}}$ consitutes the \texttt{return} clause of
-$I_{\mbox{\texttt{a}}}$, and is dependent on $I_{\mbox{\texttt{a}}}$ because one of its subexpressions i a
+$I_{\mbox{\texttt{a}}}$, and is dependent on $I_{\mbox{\texttt{a}}}$ because one of its subexpressions is a
 referral to \texttt{\$a}. Rule \ref{rule:trans:TD:returnTaint} will therefore not have any effect. A renumbering
 with rule \ref{rule:trans:TD:forReturn} finalises the evalution of the query. The final result is shown in figure
 \ref{fig:trans:TD:final:rIb}.
