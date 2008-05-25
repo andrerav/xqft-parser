@@ -1,5 +1,10 @@
 \subsection{FLWOR Expressions}
 \label{sect:trans:TD:simpleFLWOR}
+\textbf{\Large TODO:} Dette kan skrives om til enda mer generelt. S\aa~lenge for-clause biten blir kj\o rt for
+hver binding, fra den siste og innover, stemmer det. Vi m\aa~definere et sett som holder alle iteratorvariabler
+som blir bundet i denne FLWORen. I return-clausen vil iteratorbodyen bli tainta med dette settet (det skjer ikkeno
+om iteratorbody'en allerede er avhengig av alle variablene\ldots)
+
 The \texttt{let} clause does not cause any dependencies, only variable binding, and can therefore be translated
 into storing the algebraic version of the expression to be bound in the symbol table:
 \begin{equation}
@@ -90,7 +95,7 @@ removed.
 \label{rule:trans:TD:forReturn}
 \end{equation}
 
-Where $\vartheta = e_{2}.\vartheta - \chi$.
+Where $\vartheta = e_{child}.\vartheta - \chi$.
 
 The \textsf{numberate} operator will have to partition on the remaining dependencies in $\vartheta$ to seperate
 the sequences returned from the iterator for all iterators the result is dependent on, as with the sequence
