@@ -247,10 +247,13 @@ like this:
 \mbox{\textbf{r(}}e\mbox{\textbf{)}}=
 \begin{array}{l}
 \mbox{\texttt{\ldots}} \\
-\mbox{\textsf{hhjoin([r.}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [l.}}(e_2.\vartheta\cap e_1.\vartheta)
+\mbox{\textsf{hhjoin([l.}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [r.}}(e_2.\vartheta\cap e_1.\vartheta)
 \mbox{\textsf{]\ldots}} \\ \quad
 \mbox{\textbf{r(}}e_1\mbox{\textbf{)}} \\ \quad
 \mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{)}}
 \end{array}
 \end{equation*}
+
+The dependencies $e.\vartheta$ is described by equation \ref{eq:trans:TD:depInheritance}. If $e_{1}.\vartheta \neq
+e_{2}.\vartheta$ each subexpression will be implicitly tainted by the other's unique dependencies.
 

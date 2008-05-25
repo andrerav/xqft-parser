@@ -16,7 +16,7 @@ expression may be structured in infinitely many ways. For simplicity and readabl
 expressions will be described in a clause-by-clause matter, as if executed as a postorder traversal of the tree in
 figure \ref{fig:trans:TD:flworExecute}. The left children (variable bindings) will not return anything to their
 parent and are handled by the rules \ref{rule:trans:TD:forbind} and \ref{rule:trans:TD:letbind}, and the algebra
-returned from the right children will be referred to as \textbf{r(}$e_{child}$\textbf{)}. 
+returned from the right children will be referred to as \textbf{r(}$e_{C}$\textbf{)}. 
 
 A FLWOR expression may have multiple \texttt{for} clauses, and a \texttt{for} clause may have multiple iterator
 variable bindings. This means that one FLWOR may consist of many iterators, the semanics of which is described in
@@ -43,13 +43,7 @@ child{node [optional] {[\textbf{binding}]+} edge from parent [draw,dotted, thick
 \caption[FLWOR translation order]{Illustration of step-by-step translation of FLWOR.}
 \end{figure}
 
-Because the \texttt{let} clause does not imply any iteration, it does not have any consequences for the
-translation of FLWOR expresions:
-\begin{equation}
-\frac{}{\mbox{\textbf{let clause}}}\longmapsto \mbox{\textbf{r(}}e_{child}\mbox{\textbf{)}}
-\label{rule:trans:TD:letclause}
-\end{equation}
-
+\subsubsection{Return Clause}
 The \texttt{return} clause is evaluated once for each combination of iterations of the FLWOR expression. The
 results of these evaluations are concatenated to form the result of the FLWOR expression. If the \texttt{return}
 expression is not dependent on some of the iterators, its relational form will not have a representation for each
@@ -65,26 +59,35 @@ Where the dependencies returned is $\vartheta = e_4.\vartheta \cup \beta$.
 From equation \ref{eq:trans:TD:taint} it is clear that a expression allready dependent on $I_{\chi}$ will not be
 tainted by this iterator.
 
+\subsubsection{Let Clause}
+Because the \texttt{let} clause does not imply any iteration, it does not have any consequences for the
+translation of FLWOR expresions:
+\begin{equation}
+\frac{}{\mbox{\textbf{let clause}}}\longmapsto \mbox{\textbf{r(}}e_{C}\mbox{\textbf{)}}
+\label{rule:trans:TD:letclause}
+\end{equation}
+
+\subsubsection{For Clause}
 Because each FLWOR iterator creates a new sequence, renumbering is needed to calculate the result. No expression in
 a sibling or parent scope of the iterator $I_{\chi}$ may be dependent on $I_{\chi}$. Thus, $\chi$ is not part of the
 dependencies $I_{\chi}.\vartheta$ returned from the iterator, and the corresponding $\chi{numb}$ attribute must be
 removed. For each binding, from right to left, of an iterator variable $\chi$ bound in an \texttt{for} clause,
 the following translation is applied: 
 \begin{equation}
-\frac{}{\mbox{\textbf{for clause binding }}\chi}
+\frac{}{\chi\mbox{\textbf{ bound in for clause }}}
 \longmapsto
 \begin{array}{l}
 \mbox{\textsf{numberate(index, [}}\chi\mbox{\textsf{numb, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
-\mbox{\textbf{r(}}e_{child}\mbox{\textbf{)}\textsf{)}}
+\mbox{\textbf{r(}}e_{C}\mbox{\textbf{)}\textsf{)}}
 \end{array}
 \label{rule:trans:TD:forReturn}
 \end{equation}
 
-Where $\vartheta = e_{child}.\vartheta - \chi$.
+Where $\vartheta = e_{C}.\vartheta - \chi$.
 
 The \textsf{numberate} operator will have to partition on the remaining dependencies in $\vartheta$ to seperate
-the sequences returned from the iterator for all iterators the result is dependent on, as with the sequence
-construction expression.
+the sequences returned from the iterator for all iterators the result is dependent on, as described in section
+\ref{sect:trans:TD:implic}.
 
 \begin{myExample}
 
@@ -155,14 +158,96 @@ rule \ref{rule:trans:TD:forReturn} on (b) yields (c). Attribute names are shorte
 
 \end{myExample}
 
+\subsubsection{Where Clause}
+The W3C describes the FLWOR expression as generating a tuple stream which contains one tuple for each combination
+of values bound in the expression\cite{w3c00}. In this view, the optional \texttt{where} clause serves a filter for
+these tuples. The expression in the \texttt{where} clause is evaluated once for tuple. If the boolean value of this
+expression is $true$, the tuple is retained, if the boolean value is $false$ the tuple is discarded.
 
-Where
-\begin{itemize}
-  \item select
-  \item kan miste -numbz, men det g\aa r greit?
-\end{itemize}
+The \texttt{where} clause can be evaluated by only selecting the cases where the \texttt{where} expression is true.
+The result of this will be joined with the result of the \texttt{return} clause. If the result from the
+\texttt{return} clause and the \texttt{where} expression has no common iterator dependencies, the equi-join will
+have to be replaced by a cartesian product, as discussed in \ref{sect:trans:TD:implic}.
 
-orderby
+\begin{equation}
+\frac{}{\mbox{\texttt{where }}e_2}\longmapsto
+\begin{array}{l}
+\mbox{\textsf{hhjoin([l.}}(e_{C}.\vartheta \cap e_2.\vartheta)\mbox{\textsf{], [r.}}(e_{2}.\vartheta \cap
+e_{C}.\vartheta)\mbox{\textsf{], [l.value, }} \vartheta\mbox{\textsf{];}} \\ \quad
+\mbox{\textbf{r(}}e_{C}\mbox{\textbf{)}} \\ \quad
+\mbox{\textsf{select(xqBoolean(value)}} \\ \quad \quad
+\mbox{\textbf{r(}}e_{2}\mbox{\textbf{)}\textsf{))}}
+\end{array}
+\label{rule:trans:TD:where}
+\end{equation}
+
+Where $\vartheta = e_{C} \cup e_{2}$.
+
+By employing the \textsf{select} operator before the joining of the two relations the number of tuples needed to
+be read to execute the join will be minimized. Further, as the \textsf{hhjoin} operator allows for declaring which
+attributes to be projected, there is no need for a seperate \textsf{project} operator.
+
+\begin{myExample}
+Consider the XQuery query of figure \ref{fig:trans:TD:whereQuery}. The evaluation of $e_{1}$ is very similar to
+the evaluation of $e_{1}$ of example \ref{ex:trans:TD:simpleSeq}, and the is shown in figure
+\ref{fig:trans:TD:where:re1}. The \texttt{where} clause contains a comparison expression, which will be discussed
+later. Figure \ref{fig:trans:TD:where:whereE} shows the result relation of the \texttt{where} expression.
+
+\begin{figure}[h]
+\centering
+\begin{equation*}
+\begin{array}{l}
+\mbox{\texttt{for \$a in (10,20)}} \\
+\mbox{\texttt{where \$a > 15}} \\
+\mbox{\texttt{return}} \underbrace{\mbox{\texttt{(\$a, 14)}}}_{e_{1}}
+\end{array}
+\end{equation*}
+\caption{A FLWOR expression with a \texttt{where} clause \label{fig:trans:TD:whereQuery}}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\subfigure[\textbf{r(}$e_{1}$\textbf{)}]{
+\begin{tabular}{|c|c|c|} \hline
+$anb$ & $idx$ & $val$ \\ \hline
+1 & 1 & 10 \\ \hline
+1 & 2 & 14  \\ \hline
+2 & 1 & 20 \\ \hline
+2 & 2 & 14  \\ \hline
+\end{tabular}
+\label{fig:trans:TD:where:re1}
+}
+\qquad
+\subfigure[\textbf{r(}\texttt{\$a > 15}\textbf{)}]{
+\begin{tabular}{|c|c|c|} \hline
+$anb$ & $idx$ & $val$ \\ \hline
+1 & 1 & $false$ \\ \hline
+2 & 1 & $true$ \\ \hline
+\end{tabular}
+\label{fig:trans:TD:where:whereE}
+}
+\qquad
+\subfigure[]{
+\begin{tabular}{|c|c|c|} \hline
+$anb$ & $idx$ & $val$ \\ \hline
+2 & 1 & 20 \\ \hline
+2 & 2 & 14  \\ \hline
+\end{tabular}
+\label{fig:trans:TD:where:intr}
+}
+
+\caption[Example: Evaluation of where clause]{Applying rule \ref{rule:trans:TD:where} on (a) and (b)
+yields (c). Attribute names are shortened. \label{fig:trans:TD:whereClause}}
+\end{figure}
+During the evaluation of the FLWOR, the tuples in the \texttt{where} expression relation where $value$ ($val$ in
+figure) is not $true$ will be removed. The result is a relation with a single tuple where $anumb$ holds the value
+$2$. This result is then joined with the $e_1$ relation on $anumb$, as shown in figure
+\ref{fig:trans:TD:where:intr}. Rule \ref{rule:trans:TD:forReturn} will have to be applied to complete the
+evaluation of the query.
+\end{myExample}
+
+
+\subsubsection{Order By Clause}
 \begin{itemize}
   \item vente litt med denne?
 \end{itemize}
