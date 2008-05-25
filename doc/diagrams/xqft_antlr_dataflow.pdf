@@ -49,15 +49,15 @@ endobj
 endobj
 11 0 obj
 <</Type/Metadata
-/Subtype/XML/Length 1449>>stream
+/Subtype/XML/Length 1287>>stream
 <?xpacket begin='﻿' id='W5M0MpCehiHzreSzNTczkc9d'?>
 <?adobe-xap-filters esc="CRLF"?>
 <x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='XMP toolkit 2.9.1-13, framework 1.6'>
 <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:iX='http://ns.adobe.com/iX/1.0/'>
-<rdf:Description rdf:about='f7049059-2cf2-11dd-0000-79a3e1369fa2' xmlns:pdf='http://ns.adobe.com/pdf/1.3/' pdf:Producer='MiKTeX GPL Ghostscript 8.60'/>
-<rdf:Description rdf:about='f7049059-2cf2-11dd-0000-79a3e1369fa2' xmlns:xap='http://ns.adobe.com/xap/1.0/' xap:ModifyDate='2008-05-25T20:16:32Z' xap:CreateDate='2008-05-25T20:16:32Z'><xap:CreatorTool>Dia v0.96.1</xap:CreatorTool></rdf:Description>
-<rdf:Description rdf:about='f7049059-2cf2-11dd-0000-79a3e1369fa2' xmlns:xapMM='http://ns.adobe.com/xap/1.0/mm/' xapMM:DocumentID='f7049059-2cf2-11dd-0000-79a3e1369fa2'/>
-<rdf:Description rdf:about='f7049059-2cf2-11dd-0000-79a3e1369fa2' xmlns:dc='http://purl.org/dc/elements/1.1/' dc:format='application/pdf'><dc:title><rdf:Alt><rdf:li xml:lang='x-default'>C:\\Documents and Settings\\Andreas\\My Documents\\Projects\\xqft-parser\\doc\\diagrams\\xqft_antlr_dataflow.dia</rdf:li></rdf:Alt></dc:title><dc:creator><rdf:Seq><rdf:li>Andreas</rdf:li></rdf:Seq></dc:creator></rdf:Description>
+<rdf:Description rdf:about='100b3f9a-62c3-11e8-0000-79a3e1369fa2' xmlns:pdf='http://ns.adobe.com/pdf/1.3/' pdf:Producer='GPL Ghostscript 8.61'/>
+<rdf:Description rdf:about='100b3f9a-62c3-11e8-0000-79a3e1369fa2' xmlns:xap='http://ns.adobe.com/xap/1.0/' xap:ModifyDate='2008-05-26T00:04:15+02:00' xap:CreateDate='2008-05-26T00:04:15+02:00'><xap:CreatorTool>UnknownApplication</xap:CreatorTool></rdf:Description>
+<rdf:Description rdf:about='100b3f9a-62c3-11e8-0000-79a3e1369fa2' xmlns:xapMM='http://ns.adobe.com/xap/1.0/mm/' xapMM:DocumentID='100b3f9a-62c3-11e8-0000-79a3e1369fa2'/>
+<rdf:Description rdf:about='100b3f9a-62c3-11e8-0000-79a3e1369fa2' xmlns:dc='http://purl.org/dc/elements/1.1/' dc:format='application/pdf'><dc:title><rdf:Alt><rdf:li xml:lang='x-default'>Untitled</rdf:li></rdf:Alt></dc:title></rdf:Description>
 </rdf:RDF>
 </x:xmpmeta>
                                                                         
@@ -66,17 +66,14 @@ endobj
 endstream
 endobj
 2 0 obj
-<</Producer(MiKTeX GPL Ghostscript 8.60)
-/CreationDate(D:20080525201632Z)
-/ModDate(D:20080525201632Z)
-/Title(C:\\Documents and Settings\\Andreas\\My Documents\\Projects\\xqft-parser\\doc\\diagrams\\xqft_antlr_dataflow.dia)
-/Creator(Dia v0.96.1)
-/Author(Andreas)>>endobj
+<</Producer(GPL Ghostscript 8.61)
+/CreationDate(D:20080526000415+02'00')
+/ModDate(D:20080526000415+02'00')>>endobj
 xref
 0 12
 0000000000 65535 f 
 0000000684 00000 n 
-0000002439 00000 n 
+0000002277 00000 n 
 0000000625 00000 n 
 0000000476 00000 n 
 0000000015 00000 n 
@@ -88,8 +85,8 @@ xref
 0000000913 00000 n 
 trailer
 << /Size 12 /Root 1 0 R /Info 2 0 R
-/ID [<30F55D52E11602891BD6793C63659C43><30F55D52E11602891BD6793C63659C43>]
+/ID [<E081DD9D35F40310169DAD2D535CD71D><E081DD9D35F40310169DAD2D535CD71D>]
 >>
 startxref
-2717
+2400
 %%EOF
