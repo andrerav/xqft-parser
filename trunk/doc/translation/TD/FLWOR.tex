@@ -299,7 +299,7 @@ according to the order of the values stemming from the \texttt{order by} express
 \begin{equation}
 \frac{}{\mbox{\texttt{order by }}e_3}\longmapsto
 \begin{array}{l}
-\mbox{\textsf{project(value = l.value, index, }}\vartheta\mbox{\textsf{;}}\\ \quad
+\mbox{\textsf{project(value = l.value, }}\vartheta\mbox{\textsf{;}}\\ \quad
 \mbox{\textsf{numberate(index, [r.value, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad \quad
 \mbox{\textsf{hhjoin([l.}}(e_{C}.\vartheta \cap e_2.\vartheta)\mbox{\textsf{], [r.}}(e_{2}.\vartheta \cap
 e_{C}.\vartheta)\mbox{\textsf{],}} 
@@ -314,3 +314,65 @@ Where $\vartheta = (e_C.\vartheta \cup e_3.\vartheta)-\beta$
 As desired, all iterator dependency attributes ($\chi{numb}, \chi \in \beta$) will be projected away by the
 \textsf{hhjoin} operator. An additional \textsf{project} operator is used to ensure that the $value$ returned from
 the expression is the $value$ attribute of the \texttt{return} expression.
+
+\begin{myExample}
+Figure \ref{fig:trans:TD:ordQu} shows a query consisting of a FLWOR expression containing a \texttt{order by} clause.
+\begin{figure}[h]
+\centering
+\begin{tabular}{l}
+\texttt{for \$a in (4, 6, 8)} \\
+\texttt{order by \$a mod 3}\\
+\texttt{return \$a}\\
+\end{tabular}
+\label{fig:trans:TD:ordQu}
+\caption{Example query with order by clause}
+\end{figure}
+
+The evaluated \texttt{order by} expression is shown in figure \ref{fig:trans:TD:ord:oExp}. How modulus expressions
+are translated will be discussed later. After their evaluation, the relational representation of \texttt{order by}
+expression relation and the \texttt{return} clause is joined on their common iterator dependencies,
+$I_{\mbox{\texttt{a}}}$. The result of the join is shown in figure \ref{fig:trans:TD:ord:join}. Lastly, this
+relation is renumbered sorted on the $r.value$ ($r.val$ in figure) attribute stemming from the \texttt{order by}
+expression, as shown in figure \ref{fig:trans:TD:ord:numb}. An additional projection to rename $l.value$ to $value$
+is needed to finalise the query.
+
+\begin{figure}[h]
+\subfigure[\textbf{r(}\texttt{\$a mod 3}\textbf{)}]{
+\begin{tabular}{|c|c|c|} \hline
+$idx$ & $anb$ & $val$ \\ \hline
+1 & 1 & 1 \\ \hline
+1 & 2 & 0 \\ \hline
+1 & 3 & 2 \\ \hline
+\end{tabular}
+\label{fig:trans:TD:ord:oExp}
+}
+\qquad
+\subfigure[]{
+\begin{tabular}{|c|c|c|c|} \hline
+$l.idx$ & $anb$ & $l.val$ & $r.val$ \\ \hline
+1 & 1 & 4 & 1 \\ \hline
+1 & 2 & 6 & 0 \\ \hline
+1 & 3 & 8 & 2 \\ \hline
+\end{tabular}
+\label{fig:trans:TD:ord:join}
+}
+\qquad
+\subfigure[]{
+\begin{tabular}{|c|c|} \hline
+$l.idx$ & $l.val$ \\ \hline
+1 & 6 \\ \hline
+2 & 4 \\ \hline
+3 & 8 \\ \hline
+\end{tabular}
+\label{fig:trans:TD:ord:numb}
+}
+
+
+\caption{Intermediate results evaluating the query of figure
+\ref{fig:trans:TD:ordQu}. (a) shows the evaluated \texttt{order by} expression. (b) shows the \texttt{order by}
+expression joined with the \texttt{return} expression. (c) shows the relation in (b) renumbered. Attribute names
+are shortened.\label{fig:trans:TD:orderRes}}
+\end{figure}
+
+
+\end{myExample}

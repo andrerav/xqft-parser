@@ -27,9 +27,9 @@ $n$		& \texttt{'z'} \\\hline
 As can be seen, the item value is stored in the $value$ attribute. For the course of this chapter we will, for the
 sake of simplicity, treat $value$ as a polymorphic type attribute. This simplification has minimal consequences
 for the method and the way XQuery expressions are translated. XQuery types and relational representation of such
-will is handled in section \ref{sect:disc:typeSystem}. \marginpar{\textbf{\LARGE TODO:} noen andre steder?.}
+will is handled in section \ref{sect:disc:typeSystem}.
 
-Also for simplicity, the $documentId$, $pos$ and $scope$ attributes have been left out of the
+Also for simplicity, the $index$, $documentId$, $pos$ and $scope$ attributes have been left out of the
 fields specified in \textsf{project} operators. If the \textsf{project} operator is applied to the result of a
 join or cartesian product, these fields will follow the $value$ attribute. That is, if $r.value$ is projected,
 then so is $r.documentId$, etc\ldots if applicable.
