@@ -1,7 +1,7 @@
 \subsection{FLWOR Expressions}
 \label{sect:trans:TD:simpleFLWOR}
-The \texttt{let} clause does not cause any dependencies, only variable binding, and can therefore be translated
-into storing the algebraic version of the expression to be bound in the symbol table:
+The \texttt{let} clause does not explicitly cause any dependencies, only variable binding, and can therefore be
+translated into storing the algebraic version of the expression to be bound in the symbol table:
 \begin{equation}
 \frac{}{\mbox{\texttt{let \$}}\chi \mbox{\texttt{ := }}e \mbox{\texttt{ \ldots}}}\longmapsto
 \mbox{\textbf{put(}}\chi\mbox{\textbf{, r(}}e\mbox{\textbf{))}}
@@ -13,102 +13,125 @@ algebra tree if it later fetched from the symbol table. If there is more than on
 
 As seen by the exerpt of the W3C XQuery EBNF specification in figure \ref{fig:trans:TD:seqEBNF}, a FLWOR
 expression may be structured in infinitely many ways. For simplicity and readablilty the translation of such
-expressions will be described in a clause-by-clause matter, as if executed as a postorder traversal of the tree in
-figure \ref{fig:trans:TD:flworExecute}. The left children (variable bindings) will not return anything to their
-parent and are handled by the rules \ref{rule:trans:TD:forbind} and \ref{rule:trans:TD:letbind}, and the algebra
-returned from the right children will be referred to as \textbf{r(}$e_{C}$\textbf{)}. 
+expressions will be split up in more managable pieces. 
 
 A FLWOR expression may have multiple \texttt{for} clauses, and a \texttt{for} clause may have multiple iterator
 variable bindings. This means that one FLWOR may consist of many iterators, the semanics of which is described in
-section \ref{sect:method:ast_rewrite}. The set of all iterator variables bound in one FLWOR will be reffered to as
-$\beta$.
+section \ref{sect:method:ast_rewrite}. We assume all possible iterator dependencies generated from the FLWOR, that
+is, all iterator variables bound, is stored in a ordered set $\beta$. The dependencies are ordered in the order of
+which the corresponding iterator variables are bound, i.e. top down, left to right while parsing the query. When
+enclosed in MQL syntax $\beta$ is, as $\vartheta$, to be read as a comma seperated list of the attributes
+corresponding to the dependencies.
 
 \begin{figure}[h]
 \centering
-\tikzstyle{optional}= []%[draw=black,dotted,thick, minimum size=26pt]
-\tikzstyle{return}= [] %[ellipse,draw=black,solid,thick, minimum size=26pt]
+\begin{tabular}{l}
+$[$\texttt{for}/\texttt{let \ldots}$]+$ \\ \quad
+$[$\texttt{where }$e_2]?$ \\ \quad
+$[$\texttt{order by }$e_3]?$ \\
+\texttt{return }$e_4$
+\end{tabular}
+\label{fig:trans:TD:flworIll}
+\caption{Illustration of a FLWOR expression}
+\end{figure}
 
-\begin{tikzpicture}[grow via three points={one child at (1.5,-1.0) and two
-children at (-1.5,-1.0) and (1.5,-1.0)}]
-\node at (0,0) [optional] {[\textbf{let/for clause}]+}
-child{node [optional] {[\textbf{binding}]+} edge from parent [draw,dotted, thick]}
-	child{node [optional] {[\texttt{order by} $e_{3}$]?}
-		child{node [optional] {[\texttt{where} $e_{2}$]?}
-			child{node [return] {\texttt{return} $e_{4}$}}
-			}
-		} 
-;
+The translation of a single FLWOR like the one illustrated in figure \ref{fig:trans:TD:flworIll} will be executed
+as shown in figure \ref{fig:trans:TD:flworExecute}. Firstly, all \texttt{for} and \texttt{let} variables will be
+bound as described by the rules \ref{rule:trans:TD:forbind} and \ref{rule:trans:TD:letbind}, respectively.
+Further, the \texttt{return} clause will be evaluated. If there is a \texttt{where} clause present, it is
+evaluated next, based on the \texttt{where} expression and the result of the \texttt{return} clause, referred to as
+\textbf{r(}$e_{C}$\textbf{)}. The order of the items returned from the FLWOR is conditioned by the presens of an
+\texttt{order by} clause in the expression. If there is a \texttt{order by} clause, it will order the intermediate
+result from the \texttt{return} or \texttt{while} clause, and finalise the FLWOR. If there is no \texttt{order by}
+clause, the final evaluation of the FLWOR will be to order the intermediate result according to the iterators.
+
+\begin{figure}[h]
+\centering
+
+\begin{tikzpicture}
+
+\node (bind) at (0,0) {$[$\textbf{var binding}$]+$};
+\node (return) at (3,0) {\texttt{return} $e_{4}$};
+\node (where) at (6,0) {$[$\texttt{where} $e_{2}]?$};
+\node (itord) at (9,1.5) {\textbf{iterator order}};
+\node (ordby) at (9,-1.5) {$[$\texttt{order by} $e_{3}]?$};
+\draw [->,dotted,thick] (bind) to (return);
+\draw [->,thick] (return) to (where) node[below,midway] {\tiny\textbf{r(}$e_{C}$\textbf{)}};
+\draw [->,thick] (where) to (itord) node[below,midway] {\tiny\textbf{r(}$e_{C}$\textbf{)}};
+\draw [->,thick] (where) to (ordby) node[below,midway] {\tiny\textbf{r(}$e_{C}$\textbf{)}};
 \end{tikzpicture}
 \label{fig:trans:TD:flworExecute}
 \caption[FLWOR translation order]{Illustration of step-by-step translation of FLWOR.}
 \end{figure}
 
-\subsubsection{Return Clause}
-The \texttt{return} clause is evaluated once for each combination of iterations of the FLWOR expression. The
-results of these evaluations are concatenated to form the result of the FLWOR expression. If the \texttt{return}
-expression is not dependent on some of the iterators, its relational form will not have a representation for each
-of these iterators iterations. Because of this the result of the \texttt{return} clause will have to be tainted
-with these iterators.
+
+
+Any possible iteration, ordering og filtering will be handled by other clauses than the \texttt{return} clause.
+The \texttt{return} clause will just ship the evaluated version of the \texttt{return} expression forward:
 \begin{equation}
 \frac{}{\mbox{\texttt{return }}e_{4}}\longmapsto
-\mbox{\textbf{t(r(}}e_{4}\mbox{\textbf{), }}\beta\mbox{\textbf{)}}
+\mbox{\textbf{r(}}e_{4}\mbox{\textbf{)}}
 \label{rule:trans:TD:returnTaint}
 \end{equation}
-Where the dependencies returned is $\vartheta = e_4.\vartheta \cup \beta$.
 
-From equation \ref{eq:trans:TD:taint} it is clear that a expression allready dependent on $I_{\chi}$ will not be
-tainted by this iterator.
 
-\subsubsection{Let Clause}
-Because the \texttt{let} clause does not imply any iteration, it does not have any consequences for the
-translation of FLWOR expresions:
+\subsubsection{Iterator Ordering}
+The \texttt{return} clause is evaluated once for iteration for each of the iterators of the FLWOR expression. The
+results of these evaluations are concatenated to form the result of the FLWOR expression. If the \texttt{return}
+expression is not dependent on a iterator, its relational form will not have a representation for each
+of the iterators iterations and will have to be tainted.
+
+Because each FLWOR iterator creates a new sequence, renumbering is needed. No expression in a sibling or parent
+scope of the iterator $I_{\chi}$ may be dependent on $I_{\chi}$. Thus, $\chi$ is not part of the dependencies
+$I_{\chi}.\vartheta$ returned from the iterator, and the corresponding $\chi{numb}$ attribute must be removed. 
+
+For each allready bound iterator variable $\chi$, from right to left, bound in an \texttt{for} clause,
+the following translation is applied:
 \begin{equation}
-\frac{}{\mbox{\textbf{let clause}}}\longmapsto \mbox{\textbf{r(}}e_{C}\mbox{\textbf{)}}
-\label{rule:trans:TD:letclause}
-\end{equation}
-
-\subsubsection{For Clause}
-Because each FLWOR iterator creates a new sequence, renumbering is needed to calculate the result. No expression in
-a sibling or parent scope of the iterator $I_{\chi}$ may be dependent on $I_{\chi}$. Thus, $\chi$ is not part of the
-dependencies $I_{\chi}.\vartheta$ returned from the iterator, and the corresponding $\chi{numb}$ attribute must be
-removed. For each binding, from right to left, of an iterator variable $\chi$ bound in an \texttt{for} clause,
-the following translation is applied: 
-\begin{equation}
-\frac{}{\chi\mbox{\textbf{ bound in for clause }}}
+\frac{}{\mbox{\textbf{iterator order}}}
 \longmapsto
 \begin{array}{l}
-\mbox{\textsf{numberate(index, [}}\chi\mbox{\textsf{numb, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
-\mbox{\textbf{r(}}e_{C}\mbox{\textbf{)}\textsf{)}}
+\mbox{\textsf{numberate(index, [}}\beta\mbox{\textsf{, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
+\mbox{\textbf{t(r(}}e_{C}\mbox{\textbf{), }}\beta\mbox{\textbf{)}}
 \end{array}
-\label{rule:trans:TD:forReturn}
+\label{rule:trans:TD:itOrd}
 \end{equation}
 
 Where $\vartheta = e_{C}.\vartheta - \chi$.
+
+From equation \ref{eq:trans:TD:taint} it is clear that a expression allready dependent on $I_{\chi}$ will not be
+tainted by this iterator.
 
 The \textsf{numberate} operator will have to partition on the remaining dependencies in $\vartheta$ to seperate
 the sequences returned from the iterator for all iterators the result is dependent on, as described in section
 \ref{sect:trans:TD:implic}.
 
 \begin{myExample}
+Consider the query of figure \ref{fig:trans:TD:dblFor}. Notice the expression in the \texttt{return} clause ($e_1$)
+is the same as $e_1$ in example \ref{ex:trans:TD:simpleSeq}.
 
-With the rules for translating \texttt{for} and \texttt{return} clauses, the query of figure
-\ref{fig:trans:TD:expandQuery} can be fully evaluated. Expression $e_{1}$ is the \texttt{return} clause expression
-of, but is not depentant on $I_{\mbox{\texttt{b}}}$. By rule \ref{rule:trans:TD:returnTaint} $e_{1}$ is tainted,
-as shown in figure \ref{fig:trans:TD:final:taint}. To calculate the result of $I_{\mbox{\texttt{b}}}$,
-renumbering is required, as the iterator will return a sequence of four items (to items for each of the two
-iterations). The rule \ref{rule:trans:TD:forReturn} is applied. This will result in the relation illustrated in
-figure \ref{fig:trans:TD:final:rIb}. $I_{\mbox{\texttt{b}}}$ consitutes the \texttt{return} clause of
-$I_{\mbox{\texttt{a}}}$, and is dependent on $I_{\mbox{\texttt{a}}}$ because one of its subexpressions is a
-referral to \texttt{\$a}. Rule \ref{rule:trans:TD:returnTaint} will therefore not have any effect. A renumbering
-with rule \ref{rule:trans:TD:forReturn} finalises the evalution of the query. The final result is shown in figure
-\ref{fig:trans:TD:final:rIb}.
+\begin{figure}[h]
+\begin{equation*}
+\begin{array}{l}
+\mbox{\texttt{for \$a in (10,20),}} \\
+\mbox{\texttt{\phantom{abcd}\$b in (50,75)}} \\ 
+\mbox{\texttt{return }}\underbrace{\mbox{\texttt{(\$a, "no")}} }_{e_{1}}
+\end{array}
+\end{equation*}
+\caption{Example query with two iterators.}
+\label{fig:trans:TD:dblFor}
+\end{figure}
 
+Expression $e_{1}$ is not depentant on $I_{\mbox{\texttt{b}}}$, and by rule \ref{rule:trans:TD:itOrd} will be
+tainted by this iterator. The result of the tainting is shown in figure \ref{fig:trans:TD:final:taint}. The
+expression will however not be tainted by $I_{\mbox{\texttt{a}}}$, as it is allready dependent on this iterator
+(ref. equation \ref{eq:trans:TD:taint}).
 
 \begin{figure}[h]
 \centering
 \subfigure[\textbf{t(r(}$e_{1}$\textbf{), \{}\texttt{b}\textbf{\})}]{
 \begin{tabular}{|c|c|c|c|} \hline
-$bnb$ & $anb$ & $idx$ & $val$ \\ \hline
+$bnumb$ & $anumb$ & $index$ & $value$ \\ \hline
 1 & 1 & 1 & 10 \\ \hline
 1 & 2 & 1 & 20 \\ \hline
 1 & 1 & 2 & \texttt{"no"} \\ \hline
@@ -121,24 +144,9 @@ $bnb$ & $anb$ & $idx$ & $val$ \\ \hline
 \label{fig:trans:TD:final:taint}
 }
 \qquad
-\subfigure[\textbf{r(}$I_{\mbox{\texttt{b}}}$\textbf{)}]{
-\begin{tabular}{|c|c|c|} \hline
-$anb$ & $idx$ & $val$ \\ \hline
-1 & 1 & 10 \\ \hline
-1 & 2 & \texttt{"no"} \\ \hline
-1 & 3 & 10 \\ \hline
-1 & 4 & \texttt{"no"} \\ \hline
-2 & 1 & 20 \\ \hline
-2 & 2 & \texttt{"no"} \\ \hline
-2 & 3 & 20 \\ \hline
-2 & 4 & \texttt{"no"} \\ \hline
-\end{tabular}
-\label{fig:trans:TD:final:rIb}
-}
-\qquad
 \subfigure[\textbf{r(}$I_{\mbox{\texttt{a}}}$\textbf{)}]{
 \begin{tabular}{|c|c|} \hline
-$idx$ & $val$ \\ \hline
+$index$ & $value$ \\ \hline
 1 & 10 \\ \hline
 2 & \texttt{"no"} \\ \hline
 3 & 10 \\ \hline
@@ -150,12 +158,15 @@ $idx$ & $val$ \\ \hline
 \end{tabular}
 \label{fig:trans:TD:final:rIa}
 }
-
-\caption[Example: resolving for..return]{Applying rule \ref{rule:trans:TD:forReturn} on (a) yields (b). Applying
-rule \ref{rule:trans:TD:forReturn} on (b) yields (c). Attribute names are shortened
-\label{fig:trans:TD:finalizeExp}}
+\caption[Example: resolving simple FLWOR]{Evaluating the query in figure \ref{fig:trans:TD:dblFor} yields the
+intermediate result (a) and the final result (b).\label{fig:trans:TD:finalizeExp}}
 \end{figure}
 
+With the expression tainted with all possible iterator dependencies of the FLWOR, renumbering is the last
+operation required to resolve the query. The \textsf{numberate} operator will sort the tuples first on $anumb$,
+then on $bnumb$ and finally $index$ before numbering. As the FLWOR itself does not have any dependencies the
+numeration will not be grouped on any attributes. The result of the query is shown in figure
+\ref{fig:trans:TD:final:rIa}.
 \end{myExample}
 
 \subsubsection{Where Clause}
@@ -164,10 +175,10 @@ of values bound in the expression\cite{w3c00}. In this view, the optional \textt
 these tuples. The expression in the \texttt{where} clause is evaluated once for tuple. If the boolean value of this
 expression is $true$, the tuple is retained, if the boolean value is $false$ the tuple is discarded.
 
-The \texttt{where} clause can be evaluated by only selecting the cases where the \texttt{where} expression is true.
-The result of this will be joined with the result of the \texttt{return} clause. If the result from the
-\texttt{return} clause and the \texttt{where} expression has no common iterator dependencies, the equi-join will
-have to be replaced by a cartesian product, as discussed in \ref{sect:trans:TD:implic}.
+The \texttt{where} clause can be evaluated by only selecting the iteration combinations where the \texttt{where}
+expression is true. The result of this will be joined with the result of the \texttt{return} clause. If the result
+from the \texttt{return} clause and the \texttt{where} expression has no common iterator dependencies, the
+equi-join will have to be replaced by a cartesian product, as discussed in \ref{sect:trans:TD:implic}.
 
 \begin{equation}
 \frac{}{\mbox{\texttt{where }}e_2}\longmapsto
@@ -239,6 +250,7 @@ $anb$ & $idx$ & $val$ \\ \hline
 \caption[Example: Evaluation of where clause]{Applying rule \ref{rule:trans:TD:where} on (a) and (b)
 yields (c). Attribute names are shortened. \label{fig:trans:TD:whereClause}}
 \end{figure}
+
 During the evaluation of the FLWOR, the tuples in the \texttt{where} expression relation where $value$ ($val$ in
 figure) is not $true$ will be removed. The result is a relation with a single tuple where $anumb$ holds the value
 $2$. This result is then joined with the $e_1$ relation on $anumb$, as shown in figure
@@ -248,6 +260,33 @@ evaluation of the query.
 
 
 \subsubsection{Order By Clause}
+
+As can be seen in figure \ref{fig:trans:TD:ordEBNF}, an \texttt{Order by} clause may contain several specifications on
+how to order and what to order by.
+\begin{figure}[h]
+\begin{Verbatim}
+[38] OrderByClause ::= (("order" "by") | ("stable" "order" "by")) 
+                           OrderSpecList
+[39] OrderSpecList ::= OrderSpec ("," OrderSpec)*
+[40] OrderSpec     ::= ExprSingle OrderModifier
+[41] OrderModifier ::= ("ascending" | "descending")? 
+                           ("empty" ("greatest" | "least"))? 
+                           ("collation" URILiteral)?
+\end{Verbatim}
+\label{fig:trans:TD:ordEBNF}
+\caption[W3C EBNF order by clause specification]{W3C EBNF order by clause specification.}
+\end{figure}
+
+At this time, Taiting Dependencies only support a simple form of the clause. Only one \texttt{OrderSpec} is
+allowed, where the expression to be sorted on will be referred to as $e_4$ -- conformant to figure
+\ref{fig:trans:TD:flworExecute}. No \texttt{OrderModifier}s are allowed, and neither is the \texttt{stable}
+option. This will be discussed further in sectin \ref{sect:disc:orderby}.
+
+As with the \texttt{where} clause W3C specify the \texttt{order by} clause as operating on a tuple stream created
+by the variable bindings in the FLWOR. The clause causes the stream to be reordered into a new, value-based order. 
+
+
+
 \begin{itemize}
   \item join, renumbering (numberate fjerner felter ergo: ingen project)
 \end{itemize}
