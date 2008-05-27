@@ -31,8 +31,8 @@ will is handled in section \ref{sect:disc:typeSystem}.
 
 Also for simplicity, the $index$, $documentId$, $pos$ and $scope$ attributes have sometimes been left out of the
 fields specified in \textsf{project} operators. If the \textsf{project} operator is applied to the result of a
-join or cartesian product, these fields will follow the $value$ attribute. That is, if $r.value$ is projected,
-then so is $r.documentId$, etc\ldots if applicable.
+join or cartesian product, these fields will follow the $value$ attribute if nothing else is specified. That is, if
+$r.value$ is projected, then so is $r.documentId$, etc\ldots if applicable.
 
 Tainting Dependencies utilises a symbol table for storing of variables declared. The table has two functions:
 \begin{itemize}
@@ -133,6 +133,7 @@ to relational algebra quite simply by fetching the tree linked to the variable n
 \begin{equation}
 \frac{}{\mbox{\texttt{\$}}\chi}\longmapsto
 \mbox{\textbf{get(}}\chi\mbox{\textbf{)}}
+\label{rule:trans:TD:varRef}
 \end{equation}
 
 

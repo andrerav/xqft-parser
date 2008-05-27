@@ -131,7 +131,7 @@ expression will however not be tainted by $I_{\mbox{\texttt{a}}}$, as it is allr
 \centering
 \subfigure[\textbf{t(r(}$e_{1}$\textbf{), \{}\texttt{b}\textbf{\})}]{
 \begin{tabular}{|c|c|c|c|} \hline
-$bnumb$ & $anumb$ & $index$ & $value$ \\ \hline
+$bnb$ & $anb$ & $idx$ & $val$ \\ \hline
 1 & 1 & 1 & 10 \\ \hline
 1 & 2 & 1 & 20 \\ \hline
 1 & 1 & 2 & \texttt{"no"} \\ \hline
@@ -146,7 +146,7 @@ $bnumb$ & $anumb$ & $index$ & $value$ \\ \hline
 \qquad
 \subfigure[\textbf{r(}$I_{\mbox{\texttt{a}}}$\textbf{)}]{
 \begin{tabular}{|c|c|} \hline
-$index$ & $value$ \\ \hline
+$idx$ & $val$ \\ \hline
 1 & 10 \\ \hline
 2 & \texttt{"no"} \\ \hline
 3 & 10 \\ \hline
@@ -159,7 +159,7 @@ $index$ & $value$ \\ \hline
 \label{fig:trans:TD:final:rIa}
 }
 \caption[Example: resolving simple FLWOR]{Evaluating the query in figure \ref{fig:trans:TD:dblFor} yields the
-intermediate result (a) and the final result (b).\label{fig:trans:TD:finalizeExp}}
+intermediate result (a) and the final result (b). Attribute names are shortened.\label{fig:trans:TD:finalizeExp}}
 \end{figure}
 
 With the expression tainted with all possible iterator dependencies of the FLWOR, renumbering is the last
@@ -334,8 +334,8 @@ Figure \ref{fig:trans:TD:ordQu} shows a query consisting of a FLWOR expression c
 The evaluated \texttt{order by} expression is shown in figure \ref{fig:trans:TD:ord:oExp}. How modulus expressions
 are translated will be discussed later. After their evaluation, the relational representation of \texttt{order by}
 expression relation and the \texttt{return} clause is joined on their common iterator dependencies,
-$I_{\mbox{\texttt{a}}}$. The result of the join is shown in figure \ref{fig:trans:TD:ord:join}. Lastly, this
-relation is renumbered sorted on the $r.value$ ($r.val$ in figure) attribute stemming from the \texttt{order by}
+$I_{\mbox{\texttt{a}}}$ ($anumb$). The result of the join is shown in figure \ref{fig:trans:TD:ord:join}. Lastly,
+this relation is renumbered sorted on the $r.value$ ($r.val$ in figure) attribute stemming from the \texttt{order by}
 expression, as shown in figure \ref{fig:trans:TD:ord:numb}. An additional projection to rename $l.value$ to $value$
 is needed to finalise the query.
 
