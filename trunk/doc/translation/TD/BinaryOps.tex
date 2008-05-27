@@ -1,13 +1,81 @@
 \subsection{Arithmetic Expressions}
 \label{sect:trans:TD:atrith}
-\begin{itemize}
-  \item arithmetic operators (+, -, \%,\ldots)
-  \item idiv mod div
-  \item unary expr -/+
-\end{itemize}
+W3C defines the arithmetic expressions as shown in figure \ref{fig:trans:TD:arithEBNF}\cite{w3c00}. Notice how the
+specified grammar handles operator precedence. \texttt{UnaryExpr} is a decendant production of \texttt{UnionExpr}.
 
-\subsection{Logical Operator Expressions}
+\begin{figure}[h]
+\begin{Verbatim}
+[50] AdditiveExpr       ::= MultiplicativeExpr ( ("+" | "-") 
+                                MultiplicativeExpr )*
+[51] MultiplicativeExpr ::= UnionExpr 
+                                ( ("*" | "div" | "idiv" | "mod")
+                                UnionExpr )*
+[58] UnaryExpr          ::= ("-" | "+")* ValueExpr
+\end{Verbatim}
+\caption{The arithmetic expressions of XQuery}
+\label{fig:trans:TD:arithEBNF}
+\end{figure}
+
+The translation of such expressions will have to be separated in binary and unary operators. For the binary
+operators the two values to be operated on will have to be in the same relation. To ensure the values are from the
+same unique iteration (if there is any iterations at all), the relations corresponding to the two expressions will
+have to be joined on their common iterator dependencies, as described in section \ref{sect:trans:TD:implic}.
+
+\begin{equation}
+\frac{}{e_1 \mbox{\texttt{ binOp }} e_2}\longmapsto
+\begin{array}{l}
+\mbox{\textsf{project(value = binFunc(l.value,r.value),}}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textsf{hhjoin([l.}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [r.}}(e_2.\vartheta\cap e_1.\vartheta)
+\mbox{\textsf{],}} 
+\\ \quad \quad \quad \quad\mbox{\textsf{[r.value, l.value, }}\vartheta\mbox{\textsf{];}} \\ \quad \quad
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)}} \\ \quad \quad
+\mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{))}}
+\end{array}
+\label{rule:trans:TD:arithmetic}
+\end{equation}
+
+Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$, \texttt{binOp} will map to a MQL function replacing
+\textsf{binFunc} as shown in table \ref{tab:trans:TD:binOpMap}. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+\texttt{binOp} & \textsf{binFunc} \\ \hline
+\texttt{+} 	& \textsf{sum} \\
+\texttt{-} 	& \textsf{subtract} \\
+\texttt{*} 	& \textsf{prod} \\
+\texttt{div} 	& \textsf{div} \\
+\texttt{idiv} 	& \textsf{idiv} \\
+\texttt{mod} 	& \textsf{mod} \\
+\end{tabular}
+\label{tab:trans:TD:binOpMap}
+\caption{Mapping XQuery binary operators to MQL functions.}
+\end{table}
+
+Considering the unary operators, the \texttt{+} operator will never have any effect, and can therefore be dropped.
+The unary \texttt{-} operator will change the sign of the value it is assigned to. This is equal to multiplying
+the value with $-1$:
+\begin{equation}
+\frac{}{\mbox{\texttt{-}}e_1}\longmapsto 
+\begin{array}{l}
+\mbox{\textsf{project(value = prod(-1, value);}} \\ \quad
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{)}}
+\end{array}
+\label{rule:trans:TD:unaryMin}
+\end{equation}
+
+Both the unary and the binary XQuery arithmetic operators accept only singleton sequences.
+
+\subsection{Logical Expressions}
 \label{sect:trans:TD:logical}
+An XQuery logical expression is either an \texttt{and} expression or an \texttt{or} expression. If a logical
+expression does not raise an error, its value is always one of the boolean values $true$ or $false$.
+
+A logical expression is translated in a matter very similar to the arithmetic expressions. The XQuery logical
+operators does however accept non-singelton operands, and rather than operating on the direct value of a sequence,
+they use the effective boolean value (see section \ref{sect:theory:xquery:basics}).
+
+
 \begin{itemize}
   \item and
   \item or
