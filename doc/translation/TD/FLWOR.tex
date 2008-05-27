@@ -192,7 +192,8 @@ e_{C}.\vartheta)\mbox{\textsf{], [l.value, }} \vartheta\mbox{\textsf{];}} \\ \qu
 \label{rule:trans:TD:where}
 \end{equation}
 
-Where $\vartheta = e_{C} \cup e_{2}$.
+Where $\vartheta = e_{C} \cup e_{2}$, and \textbf{r(}$e_{C}$\textbf{)} is the result of the translation done in
+the \texttt{return} clause.
 
 \textsf{l.}$(e_{C}.\vartheta \cap e_2.\vartheta)$ is short for
 \textsf{l.}$\chi_1$\textsf{numb,\ldots,l.}$\chi_n$\textsf{numb}, where $e_{C}.\vartheta \cap e_2.\vartheta =
@@ -291,10 +292,11 @@ by the variable bindings in the FLWOR. The clause causes the stream to be reorde
 This means that the iterator dependency attributes ($\chi{numb}$) will no longer decide the composition of the
 sequence returned from the FLWOR.
 
-Firstly, to ensure that the result will have a representation for all the iterations (still valid after filtering)
-of all the expressions iterators, $e_C$ is tainted with $\beta$. The \texttt{order by} expression is evaluated and
-joined with the result of the tainting on their common iterator dependencies. Lastly, this relation is renumbered
-according to the order of the values stemming from the \texttt{order by} expression:
+Firstly, to ensure that the result will have a representation for all the iterations (still valid after possible
+filtering by \texttt{where} clause) of all the expressions iterators, $e_C$ is tainted with $\beta$. The
+\texttt{order by} expression is evaluated and joined with the result of the tainting on their common iterator
+dependencies. Lastly, this relation is renumbered according to the order of the values stemming from the
+\texttt{order by} expression:
 
 \begin{equation}
 \frac{}{\mbox{\texttt{order by }}e_3}\longmapsto
@@ -309,7 +311,8 @@ e_{C}.\vartheta)\mbox{\textsf{],}}
 \end{array}
 \end{equation}
 
-Where $\vartheta = (e_C.\vartheta \cup e_3.\vartheta)-\beta$
+Where $\vartheta = (e_C.\vartheta \cup e_3.\vartheta)-\beta$, and \textbf{r(}$e_{C}$\textbf{)} is the result of
+the translation done in the \texttt{where} clause if present, else the \texttt{return} clause.
 
 As desired, all iterator dependency attributes ($\chi{numb}, \chi \in \beta$) will be projected away by the
 \textsf{hhjoin} operator. An additional \textsf{project} operator is used to ensure that the $value$ returned from

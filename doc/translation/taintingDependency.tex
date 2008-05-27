@@ -19,6 +19,7 @@ During this chapter we will present some inference rules. In this section we wil
 typographical representations.
 
 \begin{table}[h]
+\centering
 \begin{tabular}{l|l}
 
   $\longmapsto$  			& Translates into \\
@@ -57,30 +58,6 @@ context is assumed.
 \input{translation/TD/LitAndSequence.tex}
 \input{translation/TD/FLWOR.tex}
 \input{translation/TD/BinaryOps.tex}
-
-\subsection{Arithmetic Expressions}
-\label{sect:trans:TD:atrith}
-\begin{itemize}
-  \item arithmetic operators (+, -, \%,\ldots)
-  \item idiv mod div
-  \item unary expr -/+
-\end{itemize}
-
-\subsection{Comparative Expressions}
-\label{sect:trans:TD:compArit}
-\begin{itemize}
-  \item value comparators (eq, ne, lt\ldots)
-  \item general comparators (>, <, = \ldots)
-  \item project ikke select, men hvis ikke lambda\ldots s\aa~select? funker det? Har vi finni en optimalisering?
-  \item fordi noe over vil kanskje ha negativen\ldots f.eks ifthenelse og not()  \item 
-\end{itemize}
-
-\subsection{Logical Operator Expressions}
-\label{sect:trans:TD:logical}
-\begin{itemize}
-  \item and
-  \item or
-\end{itemize}
 
 \subsection{Path Expressions}
 \label{sect:trans:TD:pathExprs}
@@ -140,6 +117,11 @@ context is assumed.
   \item FLWOR:
   	\begin{itemize}
         \item  kan bli -> project , ved singelton return
-    	  \item order by kan puttes inn i for-regelen egentlig (kanskje?)
-      \end{itemize}         
+      \end{itemize}   
+  \item Arithmetic /comp / logical
+	\begin{itemize}
+      \item multiple +- kan bli dyttet sammen\ldots oddetall - = -, partal = drit i det.
+      \item singleton inn i and/or -> slippe select
+    \end{itemize}
+  \item             
 \end{itemize}
