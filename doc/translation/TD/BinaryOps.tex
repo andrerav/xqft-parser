@@ -17,14 +17,16 @@ specified grammar handles operator precedence. \texttt{UnaryExpr} is a decendant
 \end{figure}
 
 The translation of such expressions will have to be separated in binary and unary operators. For the binary
-operators the two values to be operated on will have to be in the same relation. To ensure the values are from the
-same unique iteration (if there is any iterations at all), the relations corresponding to the two expressions will
-have to be joined on their common iterator dependencies, as described in section \ref{sect:trans:TD:implic}.
+operators the two values to be operated on will have to be in the same relation. To ensure the values to be
+operated on are from the same unique iteration (if there is any iterations at all), the relations corresponding to
+the two expressions will have to be joined on their common iterator dependencies, as described in section
+\ref{sect:trans:TD:implic}. Both the unary and the binary XQuery arithmetic operators accept only singleton
+sequences.
 
 \begin{equation}
-\frac{}{e_1 \mbox{\texttt{ binOp }} e_2}\longmapsto
+\frac{}{e_1 \mbox{\texttt{ OP }} e_2}\longmapsto
 \begin{array}{l}
-\mbox{\textsf{project(value = binFunc(l.value,r.value),}}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textsf{project(index=1,value=FUNC(l.value,r.value),}}\vartheta\mbox{\textsf{;}} \\ \quad
 \mbox{\textsf{hhjoin([l.}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [r.}}(e_2.\vartheta\cap e_1.\vartheta)
 \mbox{\textsf{],}} 
 \\ \quad \quad \quad \quad\mbox{\textsf{[r.value, l.value, }}\vartheta\mbox{\textsf{];}} \\ \quad \quad
@@ -34,13 +36,15 @@ have to be joined on their common iterator dependencies, as described in section
 \label{rule:trans:TD:arithmetic}
 \end{equation}
 
-Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$, \texttt{binOp} will map to a MQL function replacing
-\textsf{binFunc} as shown in table \ref{tab:trans:TD:binOpMap}. 
+Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$, \texttt{OP} will map to a MQL function replacing
+\textsf{FUNC} as shown in table \ref{tab:trans:TD:binOpMap}. The projecting functionality of the
+\textsf{hhjoin} operator will in this case remove the $index$ attributes and any possible $documentId$, $scope$
+and $pos$ attributes.
 
 \begin{table}[h]
 \centering
 \begin{tabular}{c|c}
-\texttt{binOp} & \textsf{binFunc} \\ \hline
+\texttt{OP} & \textsf{FUNC} \\ \hline
 \texttt{+} 	& \textsf{sum} \\
 \texttt{-} 	& \textsf{subtract} \\
 \texttt{*} 	& \textsf{prod} \\
@@ -49,7 +53,7 @@ Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$, \texttt{binOp} will map to
 \texttt{mod} 	& \textsf{mod} \\
 \end{tabular}
 \label{tab:trans:TD:binOpMap}
-\caption{Mapping XQuery binary operators to MQL functions.}
+\caption{Mapping XQuery arithmetic operators to MQL functions.}
 \end{table}
 
 Considering the unary operators, the \texttt{+} operator will never have any effect, and can therefore be dropped.
@@ -64,7 +68,58 @@ the value with $-1$:
 \label{rule:trans:TD:unaryMin}
 \end{equation}
 
-Both the unary and the binary XQuery arithmetic operators accept only singleton sequences.
+\begin{myExample}
+Consider the XQuery query of figure \ref{fig:trans:TD:arithQuery}. Here $e_1$ is an arithmetic expression.
+
+\begin{figure}[h]
+\centering
+\begin{equation*}
+\begin{array}{l}
+\mbox{\texttt{for \$a in (1,2) return}} \\ \quad
+\mbox{\texttt{for \$b in (3,4) return}} \\ \quad \quad
+\underbrace{\mbox{\texttt{\$a + \$b}}}_{e_1}
+\end{array}
+\end{equation*}
+\caption{Example query containting a arithmetic expression.}
+\label{fig:trans:TD:arithQuery}
+\end{figure}
+
+Both \texttt{\$a} and \texttt{\$b} is translated to simple two-tuple relations by rules
+\ref{rule:trans:TD:forbind} and \ref{rule:trans:TD:varRef}. As the two expressions do not have any iterator
+dependencies the \texttt{hhjoin} operator of rule \ref{rule:trans:TD:arithmetic} will be treated as a cartesian
+product (ref. \ref{sect:trans:TD:implic}). The cross product of the two relations are shown in figure
+\ref{fig:trans:TD:aritJoin}. Lastly, the \texttt{project} operator is employed to calculate the sum for each
+iteration, the result of which is shown in figure \ref{fig:trans:TD:aritEnd}.
+
+\begin{figure}[h]
+\centering
+\subfigure[]{
+\begin{tabular}{|c|c|c|c|}\hline
+$anb$ & $bnb$ & $l.val$ & $r.val$ \\ \hline
+1 & 1 & 1 & 3 \\ \hline
+2 & 1 & 2 & 3 \\ \hline
+1 & 2 & 1 & 4 \\ \hline
+2 & 2 & 2 & 4 \\ \hline
+\end{tabular}
+\label{fig:trans:TD:aritJoin}
+}
+\qquad
+\subfigure[\textbf{r(}$e_1$\textbf{)}]{
+\begin{tabular}{|c|c|c|c|}\hline
+$idx$ & $anb$ & $bnb$ & $val$ \\ \hline
+1 & 1 & 1 & 4 \\ \hline
+1 & 2 & 1 & 5 \\ \hline
+1 & 1 & 2 & 5 \\ \hline
+1 & 2 & 2 & 6 \\ \hline
+\end{tabular}
+\label{fig:trans:TD:aritEnd}
+}
+\caption[Results of evaluating expression $e_1$ of figure \ref{fig:trans:TD:arithQuery}.]{Results of evaluating
+expression $e_1$ of figure \ref{fig:trans:TD:arithQuery}. (a) shows the result of the cross product. (b) is the
+fully evaluated $e_1$. Attribute names are shortened. \label{fig:trans:TD:arithRes}}
+\end{figure}
+
+\end{myExample}
 
 \subsection{Logical Expressions}
 \label{sect:trans:TD:logical}
@@ -72,20 +127,180 @@ An XQuery logical expression is either an \texttt{and} expression or an \texttt{
 expression does not raise an error, its value is always one of the boolean values $true$ or $false$.
 
 A logical expression is translated in a matter very similar to the arithmetic expressions. The XQuery logical
-operators does however accept non-singelton operands, and rather than operating on the direct value of a sequence,
-they use the effective boolean value (see section \ref{sect:theory:xquery:basics}).
+operators does however operate on the effective boolean value (see section \ref{sect:theory:xquery:basics}) rather
+than the direct value. Rule \ref{rule:trans:TD:arithmetic} is valid for logical expressions, and the mapping
+between the XQuery operators and the MQL functions are shown in table JEJEJEJE. As the operators require effective
+boolean values, the $value$ fields will have to be run through the \textsf{xqBoolean()} function. E.g. the
+following will be a part of the parameters of the \textsf{project} operator of a translated \texttt{or} expression:
+\textsf{\ldots value = or(xqBoolean(l.value),xqBoolean(r.value))\ldots}.
 
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+\texttt{OP} & \textsf{FUNC} \\ \hline
+\texttt{or} & \textsf{or} \\
+\texttt{and} & \textsf{and} \\
+\end{tabular}
+\label{tab:trans:TD:logMap}
+\caption{Mapping XQuery boolean operators to MQL functions}
+\end{table}
 
-\begin{itemize}
-  \item and
-  \item or
-\end{itemize}
+For logical expressions, $e_1$\texttt{ logOp }$e_2$, $e_1$ and $e_2$ and their possible subexpressions will have
+to be translated in the logical context $\Lambda$.
 
 \subsection{Comparative Expressions}
 \label{sect:trans:TD:compArit}
-\begin{itemize}
-  \item value comparators (eq, ne, lt\ldots)
-  \item general comparators (>, <, = \ldots)
-  \item project ikke select, men hvis ikke lambda\ldots s\aa~select? funker det? Har vi finni en optimalisering?
-  \item fordi noe over vil kanskje ha negativen\ldots f.eks ifthenelse og not()  \item 
-\end{itemize}
+Comparison expressions allow two values to be compared. XQuery provides three kinds of comparison expressions,
+called value comparisons, general comparisons, and node comparisons. The comparison operators as specified by W3C
+are shown in figure \ref{fig:trans:TD:compEBNF}. The Tainting Dependency method does at this time not support node
+comparison, as will be discussed in section \ref{sect:disc:notSupported}.
+
+\begin{figure}[h]
+\begin{Verbatim}
+[61] ValueComp   ::= "eq" | "ne" | "lt" | "le" | "gt" | "ge"
+[60] GeneralComp ::= "=" | "!=" | "<" | "<=" | ">" | ">="
+[62] NodeComp    ::= "is" | "<<" | ">>"
+\end{Verbatim}
+\caption{The comparison operators of XQuery}
+\label{fig:trans:TD:compEBNF}
+\end{figure}
+
+Value comparisons are used for comparing two single values. With the same premises and restrictions the rule for
+translating arithmetic expressions (rule \ref{rule:trans:TD:arithmetic}) can be used to translate such comparison
+expressions. The mapping between the XQuery value comparators and MQL functions can be seen in table
+\ref{tab:trans:TD:valueComp}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+\texttt{OP} & \textsf{FUNC} \\ \hline
+\texttt{eq} & \textsf{eq} \\
+\texttt{ne} & \textsf{neq} \\
+\texttt{lt} & \textsf{lt} \\
+\texttt{le} & \textsf{leq} \\
+\texttt{gt} & \textsf{gt} \\
+\texttt{ge} & \textsf{geq} \\
+\end{tabular}
+\label{tab:trans:TD:valueComp}
+\caption{Mapping XQuery value comparators to MQL functions}
+\end{table}
+
+General comparisons are existentially quantified comparisons that may be applied to sequences of any length. If
+employing a general comparator on any pair of items consisting of one from each of the sequences yields $true$,
+the comparison expression yields true. As an example, all the comparison expressions of figure
+\ref{fig:trans:TD:genCompEx} evaluates to $true$.
+
+\begin{figure}[h]
+\centering
+\begin{tabular}{l}
+\texttt{(1, 2) = (2, 3)} \\
+\texttt{(1, 2) != (2, 3)} \\
+\texttt{(1, 200) < (10, 20)} \\
+\texttt{(1, 200) > (10, 20)} \\
+\end{tabular}
+\label{fig:trans:TD:genCompEx}
+\caption[Example general comparisons]{Example general comparisons: all expressions evaluate to $true$}
+\end{figure}
+
+The big difference between general and value comparisons is that the first must accomodate for sequences. This is
+solved by grouping expressions' iterator dependencies, meaning that each group will contain the sequence of one
+unique iteration. By defining $true$ as having a larger value than $false$, the \textsf{max()} aggregator will
+identify the groups with \emph{at least} one $true$ value.
+
+As with the arithmetic expressions, the relational representation of the two operands is joined on their common
+dependencies to ensure that both values are from the same iteration.
+
+\begin{equation}
+\frac{}{e_1\mbox{\texttt{ OP }}e_2}\longmapsto
+\begin{array}{l}
+\mbox{\textsf{project(index = 1, value=max, }}\vartheta \\ \quad
+\mbox{\textsf{group((}}\vartheta\mbox{\textsf{), max(value);}} \\ \quad \quad
+\mbox{\textsf{project(value=FUNC(r.value,l.value),}}\vartheta\mbox{\textsf{;}} \\ \quad \quad \quad
+\mbox{\textsf{hhjoin([l.}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [r.}}(e_2.\vartheta\cap e_1.\vartheta)
+\mbox{\textsf{],}} 
+\\ \quad \quad \quad \quad \quad \quad\mbox{\textsf{[r.value, l.value, }}\vartheta\mbox{\textsf{];}} \\ \quad \quad
+\quad \quad \quad \mbox{\textbf{r(}}e_1\mbox{\textbf{)}} \\ \quad \quad \quad \quad \quad
+\mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{))))}}
+\end{array}
+\end{equation}
+
+Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$. \texttt{OP} wil map to a MQL function replacing
+\textsf{FUNC} as shown in table \ref{tab:trans:TD:genCompMap}. 
+
+The result of a general comparison is always a singleton sequence, thus it is safe to project in an $index$
+attribute with the value $1$. The $index$ and possible $documentId$, $scope$ and $pos$ attributes are left out of
+the project list of the \textsf{hhjoin} operator.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+\texttt{OP} & \textsf{FUNC} \\ \hline
+\texttt{=} & \textsf{eq} \\
+\texttt{!=} & \textsf{neq} \\
+\texttt{<} & \textsf{lt} \\
+\texttt{<=} & \textsf{leq} \\
+\texttt{>} & \textsf{gt} \\
+\texttt{>=} & \textsf{geq} \\
+\end{tabular}
+\label{tab:trans:TD:genCompMap}
+\caption{Mapping XQuery general comparators to MQL functions.}
+\end{table}
+
+\begin{myExample}
+Figure \ref{fig:trans:TD:genCompQu} shows a simple XQuery query with a general comparison expression, $e_1$.
+\begin{figure}[h]
+\centering
+\begin{equation*}
+\begin{array}{l}
+\mbox{\texttt{for \$a in (10, 20) return}} \\ \quad
+\underbrace{\mbox{\texttt{\$a > (5, 15)}}}_{e_1}
+\end{array}
+\end{equation*}
+\caption{Example query with a general comparison expression \label{fig:trans:TD:genCompQu}}
+\end{figure}
+ 
+Because the operands of the \texttt{>} operator have no common iterator dependencies, the cartesian product of the
+two relations are calculated, as seen in figure \ref{fig:trans:TD:gen:join}. After the inner \textsf{project}
+operator is employed, the result will be as in figure \ref{fig:trans:TD:gen:projGr}. The double line illustrates
+the grouping on $anumb$ ($anb$ in the figure). The maximum value of $value$ for each group is calculated and the
+attributes are renamed, which gives the relation of figure \ref{fig:trans:TD:gen:end}.
+
+\begin{figure}[h]
+\centering
+\subfigure[]{
+\begin{tabular}{|c|c|c|} \hline
+$anb$ & $l.val$ & $r.val$ \\ \hline
+1 & 10 & 5 \\ \hline
+1 & 10 & 15 \\ \hline
+2 & 20 & 5 \\ \hline
+2 & 20 & 15 \\ \hline
+\end{tabular}
+\label{fig:trans:TD:gen:join}
+}
+\qquad
+\subfigure[]{
+\begin{tabular}{|c|c|} \hline
+$anb$ & $val$ \\ \hline
+1 & $true$ \\ \hline
+1 & $false$ \\ \hline \hline
+2 & $true$ \\ \hline
+2 & $true$ \\ \hline
+\end{tabular}
+\label{fig:trans:TD:gen:projGr}
+}
+\qquad
+\subfigure[\textbf{r(}$e_1$\textbf{)}]{
+\begin{tabular}{|c|c|c|} \hline
+$idx$ & $anb$ & $val$ \\ \hline
+1 & 1 & $true$ \\ \hline
+1 & 2 & $true$ \\ \hline
+\end{tabular}
+\label{fig:trans:TD:gen:end}
+}
+\caption[Results of evaluating $e_1$ in figure \ref{fig:trans:TD:genCompQu}]{Results of evaluating expression $e_1$
+in figure \ref{fig:trans:TD:genCompQu}. (a) The relations of the operands joined. (b) Each combination of the
+sequences evaluated. Double line illustrates grouping. (c) The final result. Attribute names are shortened.
+\label{fig:trans:TD:genCompRes}}
+\end{figure}
+ 
+\end{myExample}
