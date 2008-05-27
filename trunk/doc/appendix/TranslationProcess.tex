@@ -1,0 +1,146 @@
+\chapter{Translation Process Using TD}
+\section{An Extensive FLWOR Expression}
+\label{appendix:transl:ext_flwor}
+The translation process is initiated by entering the FLWOR expression in the
+syntax tree and visiting the for- and let-clauses. Recall from section
+\ref{sect:trans:TD:basics} on page \pageref{sect:trans:TD:basics} that
+\textbf{r}($e$) returns the translation of the XQuery expression $e$ into
+relational algebra. This function is then defined through a set of rules
+described throughout section \ref{sect:trans:taintingDependencies}.
+
+The translation process starts with the for-clause which we translate using
+rule \ref{rule:trans:TD:forbind}. However, to produce \textbf{r}($e$), we must
+translate \texttt{(1,2,3)} using rules \ref{rule:trans:TD:seqConstr} and
+\ref{rule:trans:TD:literal}. 
+
+By applying rule \ref{rule:trans:TD:literal} to each of the elements in the
+sequence, we obtain the following translations:
+\begin{Verbatim}
+make(name:=[value],1)
+\end{Verbatim}
+\begin{Verbatim}
+make(name:=[value],2)
+\end{Verbatim}
+\begin{Verbatim}
+make(name:=[value],3)
+\end{Verbatim}
+
+By applying rule \ref{rule:trans:TD:seqConstr} to this result we obtain the
+following translation of the sequence (1,2,3):
+
+\begin{Verbatim}
+numberate(index,[sprIdx,index],[];
+  union(;
+    project(sprIdx=1,index=0,value;
+      make(name:=[value],1)),
+    project(sprIdx=2,index=0,value;
+      make(name:=[value],2)),
+    project(sprIdx=3,index=0,value;
+      make(name:=[value],3))))
+\end{Verbatim}
+
+We can now continue translating the for-clause, as the above translation
+equates to \textbf{r}($e$). By rule \ref{rule:trans:TD:forbind}, we obtain the
+following translation which is to be entered into the symbol table for this
+scope (for the symbol $\chi$ = a):
+
+\begin{Verbatim}
+project([anumb = index, index = 1, value];
+  numberate(index,[sprIdx,index],[];
+    union(;
+      project(sprIdx=1,index=0,value;
+        make(name:=[value],1)),
+      project(sprIdx=2,index=0,value;
+        make(name:=[value],2)),
+      project(sprIdx=3,index=0,value;
+        make(name:=[value],3))))
+\end{Verbatim}
+
+Any later reference to \texttt{\$a} is now replaced with a lookup in the symbol
+table which will return this algebra expression.
+
+The let clause is translated in a similar manner, however the entry in the
+symbol table will not be tainted by \texttt{\$b}. To translate the let-clause,
+we apply the rule \ref{rule:trans:TD:literal} on the expression and obtain:
+
+\begin{Verbatim}
+make(name:=[value],2)
+\end{Verbatim}
+
+Which is entered into the symbol table as per rule \ref{rule:trans:TD:letbind}.
+
+Before translating the where- and orderby-clauses, it is benefitial to
+translate the return-clause (since the two former requires the translation of
+the latter). The translation is obtained using rule
+\ref{rule:trans:TD:returnTaint} (return-clause) and rule
+\ref{rule:trans:TD:seqConstr} (sequence construction), which is trivial. Recall
+that references to \texttt{\$a} and \texttt{\$b} are replaced by their
+translations in the symbol table:
+
+\begin{Verbatim}
+numberate(index,[sprIdx,index],[];
+  union(;
+    project([anumb = index, index = 1, value];
+      numberate(index,[sprIdx,index],[];
+        union(;
+          project(sprIdx=1,index=0,value;
+            make(name:=[value],1)),
+          project(sprIdx=2,index=0,value;
+            make(name:=[value],2)),
+          project(sprIdx=3,index=0,value;
+            make(name:=[value],3))))),
+    make(name:=[value],2)))
+\end{Verbatim}
+
+This translation is now used to replace \textbf{r}($e_C$) in further
+translations which requires this.
+
+The where-clause is translated using rule \ref{rule:trans:TD:where}. We obtain:
+
+\begin{Verbatim}
+hhjoin([],[], [l.value, anumb];
+  union(;
+    project([anumb = index, index = 1, value];
+      numberate(index,[sprIdx,index],[];
+        union(;
+          project(sprIdx=1,index=0,value;
+            make(name:=[value],1)),
+          project(sprIdx=2,index=0,value;
+            make(name:=[value],2)),
+          project(sprIdx=3,index=0,value;
+            make(name:=[value],3))))),
+    make(name:=[value],2)))
+  select(xqBoolean(value);
+    TODO: oversette $a gt $b
+\end{Verbatim}
+
+The orderby-clause is translated using rule \ref{rule:trans:TD:itOrd}:
+
+\begin{Verbatim}
+project(value=l.value, anumb;
+  numberate(index, [r.value, index], [anumb];
+    hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
+      numberate(index,[sprIdx,index],[];
+        union(;
+          project([anumb = index, index = 1, value];
+            numberate(index,[sprIdx,index],[];
+              union(;
+                project(sprIdx=1,index=0,value;
+                  make(name:=[value],1)),
+                project(sprIdx=2,index=0,value;
+                  make(name:=[value],2)),
+                project(sprIdx=3,index=0,value;
+                  make(name:=[value],3))))),
+          make(name:=[value],2))),
+      project([anumb = index, index = 1, value];
+        numberate(index,[sprIdx,index],[];
+          union(;
+            project(sprIdx=1,index=0,value;
+              make(name:=[value],1)),
+            project(sprIdx=2,index=0,value;
+              make(name:=[value],2)),
+            project(sprIdx=3,index=0,value;
+              make(name:=[value],3))))
+\end{Verbatim}
+
+The translation process is finalized by 
