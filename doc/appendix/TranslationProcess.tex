@@ -328,8 +328,8 @@ Now the translated representations of $e_1$, $e_2$ and $e_3$ (where the latter
 is also tainted) can be entered into rule \ref{rule:trans:TD:conditional}:
 
 \begin{Verbatim}
-project(value=r.value, anumb;
-  select(ifthenelse(xqBoolean(value), eq(alt,1), eq(alt,2));
+project(value=l.value, anumb;
+  select(ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2));
     hhjoin([l.anumb],[r.anumb], [l.value, r.value, anumb];
       union(
         project(alt = 1, value, anumb;
@@ -370,8 +370,8 @@ project(value=r.value, anumb;
 This can be simplified further by replacing make(): TODO: ref optimisering
 
 \begin{Verbatim}
-project(value=r.value, anumb;
-  select(ifthenelse(xqBoolean(value), eq(alt,1), eq(alt,2));
+project(value=l.value, anumb;
+  select(ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2));
     hhjoin([l.anumb],[r.anumb], [l.value, r.value, anumb];
       union(
         project(alt = 1, value, anumb;
@@ -381,19 +381,17 @@ project(value=r.value, anumb;
           project(anumb, index = 1, value = 3;
             project([anumb = index, index = 1, value];
              make(name:=[index, value], [1,2,3], [1,2,3]))))),
-      project(index=1, value=gt(l.value, r.value), anumb;
-        hhjoin([], [], [l.value, r.value, anumb];
-          project([anumb = index, index = 1, value];
-            make(name:=[index, value], [1,2,3], [1,2,3])),
-          make(name:=[index, value],[1], [2]))))))
+      project(index=1, value=gt(value, 2), anumb;
+        project([anumb = index, index = 1, value];
+          make(name:=[index, value], [1,2,3], [1,2,3]))))))
 \end{Verbatim}
 
 The translation is finalized by applying rule \ref{rule:trans:TD:itOrd}:
 
 \begin{Verbatim}
 numberate(index, [anumb, index], [];
-  project(value=r.value, anumb;
-    select(ifthenelse(xqBoolean(value), eq(alt,1), eq(alt,2));
+  project(value=l.value, anumb;
+    select(ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2));
       hhjoin([l.anumb],[r.anumb], [l.value, r.value, anumb];
         union(
           project(alt = 1, value, anumb;
@@ -403,9 +401,7 @@ numberate(index, [anumb, index], [];
             project(anumb, index = 1, value = 3;
               project([anumb = index, index = 1, value];
                make(name:=[index, value], [1,2,3], [1,2,3]))))),
-        project(index=1, value=gt(l.value, r.value), anumb;
-          hhjoin([], [], [l.value, r.value, anumb];
-            project([anumb = index, index = 1, value];
-              make(name:=[index, value], [1,2,3], [1,2,3])),
-            make(name:=[index, value],[1], [2])))))))
+        project(index=1, value=gt(value, 2), anumb;
+          project([anumb = index, index = 1, value];
+            make(name:=[index, value], [1,2,3], [1,2,3])))))))
 \end{Verbatim}

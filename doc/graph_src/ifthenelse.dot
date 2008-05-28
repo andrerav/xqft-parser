@@ -2,20 +2,24 @@ digraph AST {
 edge [color=black, dir=both, weight=1, fontcolor=black, fontname=Helvetica, arrowhead=none,arrowtail=normal]
 node [shape=plaintext]
 
-project123->make123
-make123 [label="make(name:=[index, value], [1,2,3], [1,2,3])"]
-make2 [label="make(name:=[index, value],[1], [2])"]
-project123 [label="project([anumb = index, index = 1, value]; .."]
+project1231->make1231
+project1232->make1232
+project1233->make1233
+make1231 [label="make(name:=[index, value], [1,2,3], [1,2,3])"]
+make1232 [label="make(name:=[index, value], [1,2,3], [1,2,3])"]
+make1233 [label="make(name:=[index, value], [1,2,3], [1,2,3])"]
+project1231 [label="project([anumb = index, index = 1, value]; .."]
+project1232 [label="project([anumb = index, index = 1, value]; .."]
+project1233 [label="project([anumb = index, index = 1, value]; .."]
 
-project1 [label="project(value=r.value; .."]
+project1 [label="project(value=l.value; .."]
 project2 [label="project(alt = 1, value, anumb; .."]
 project3 [label="project(alt = 2, value, anumb; .."]
-project4 [label=" project(index=1, value=gt(r.value, l.value), anumb; .."]
+project4 [label=" project(index=1, value=gt(value, 2), anumb; .."]
 
-select1 [label="select(ifthenelse(xqBoolean(value), eq(alt,1), eq(alt,2)); .."]
+select1 [label="select(ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2)); .."]
 
 hhjoin1 [label="hhjoin([l.anumb],[r.anumb], [l.value, r.value, anumb]; .."]
-hhjoin2 [label="hhjoin([], [], [l.value, r.value, anumb]; .."]
 
 union1 [label="union(; .."]
 
@@ -23,12 +27,9 @@ project1->select1
   select1->hhjoin1
     hhjoin1->union1
       union1->project2
-        project2->project123
+        project2->project1231
       union1->project3
-        project3->project123
+        project3->project1232
     hhjoin1->project4
-      project4->hhjoin2
-        hhjoin2->project123
-        hhjoin2->make2
-
+      project4->project1233
 }
