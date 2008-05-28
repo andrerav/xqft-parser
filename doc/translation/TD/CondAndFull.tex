@@ -61,11 +61,14 @@ The query of figure BEBBEBE contains a conditional expression $e_1$.
 \mbox{\texttt{for \$a in (10, 20) return}} \\ \quad
 \mbox{\texttt{for \$b in (5, 15) return}} \\ \quad \quad
 e_1 \left\{\begin{array}{l}
-           1 + 1 \\
-           2 + 2
+           \mbox{\texttt{if(\$b > \$a) then}} \\ \quad
+           \mbox{\texttt{\$a}} \\ 
+           \mbox{\texttt{else}} \\ \quad
+           \mbox{\texttt{\$b}}
            \end{array}\right.
 \end{array}
 \end{equation*}
+\caption{Example query containing a conditional expression \label{fig:trans:TD:condQue}}
 \end{figure}
 
 
