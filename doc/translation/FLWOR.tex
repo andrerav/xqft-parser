@@ -1,4 +1,4 @@
-\subsection{FLWOR Expressions}
+\section{FLWOR Expressions}
 \label{sect:trans:TD:simpleFLWOR}
 The \texttt{let} clause does not explicitly cause any dependencies, only variable binding, and can therefore be
 translated into storing the algebraic version of the expression to be bound in the symbol table:
@@ -75,7 +75,7 @@ The \texttt{return} clause will just ship the evaluated version of the \texttt{r
 \end{equation}
 
 
-\subsubsection{Iterator Ordering}
+\subsection{Iterator Ordering}
 The \texttt{return} clause is evaluated once for iteration for each of the iterators of the FLWOR expression. The
 results of these evaluations are concatenated to form the result of the FLWOR expression. If the \texttt{return}
 expression is not dependent on a iterator, its relational form will not have a representation for each
@@ -169,7 +169,7 @@ numeration will not be grouped on any attributes. The result of the query is sho
 \ref{fig:trans:TD:final:rIa}.
 \end{myExample}
 
-\subsubsection{Where Clause}
+\subsection{Where Clause}
 The W3C describes the FLWOR expression as generating a tuple stream which contains one tuple for each combination
 of values bound in the expression\cite{w3c00}. In this view, the optional \texttt{where} clause serves a filter for
 these tuples. The expression in the \texttt{where} clause is evaluated once for tuple. If the boolean value of this
@@ -264,7 +264,7 @@ evaluation of the query.
 \end{myExample}
 
 
-\subsubsection{Order By Clause Ordering}
+\subsection{Order By Clause Ordering}
 
 As can be seen in figure \ref{fig:trans:TD:ordEBNF}, an \texttt{Order by} clause may contain several specifications on
 how to order and what to order by.

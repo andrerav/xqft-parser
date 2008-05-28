@@ -1,4 +1,4 @@
-\subsection{Basics}
+\section{Basics}
 \label{sect:trans:TD:basics}
 The method assumes left-to-right traversal of the assymetric syntax tree. In most cases the traversal is
 postorder, meaning a subtree can be evaluated independently from its ancestors -- the exception being the logical
@@ -257,4 +257,34 @@ like this:
 
 The dependencies $e.\vartheta$ is described by equation \ref{eq:trans:TD:depInheritance}. If $e_{1}.\vartheta \neq
 e_{2}.\vartheta$ each subexpression will be implicitly tainted by the other's unique dependencies.
+
+\subsection{Litterals}
+\label{sect:trans:TD:litteral}
+
+The XQuery Full Text specification\cite{w3c01} defines a number of literals as seen in figure
+\ref{fig:trans:TD:litEBNF}. A \texttt{StringLiteral} is a text string enclosed in apostrophes or quotation marks,
+and the numeric literals are similar to numeric types from other programming languages. 
+
+\begin{figure}[h]
+\begin{Verbatim}
+[85] Literal        ::= NumericLiteral|StringLiteral
+[86] NumericLiteral ::= IntegerLiteral|DecimalLiteral|DoubleLiteral
+\end{Verbatim}
+\caption[Literals in XQuery]{Definition of literals in XQuery Full Text}
+\label{fig:trans:TD:litEBNF}
+\end{figure}
+
+To be able to include such expressions in evaluation of relational algebra, they need a relational representation.
+As we in this chapter assume $value$ is a polymorphic type attribute, with the help of the \textsf{make} operator
+translation of literals is done in the following way:
+
+\begin{equation}
+\frac{e \in \left\{Literals\right\}}{e}\longmapsto
+\mbox{\textsf{make(name:=["index","value"], [1, }}e\mbox{\textsf{])}}
+\label{rule:trans:TD:literal}
+\end{equation}
+
+This is an general way to translate literals, but there exists quite a few simplifications. Most importantly when
+constructing sequences entirely composed of literals, as we will discuss in section
+\ref{sect:trans:TD:simplifications}.
 
