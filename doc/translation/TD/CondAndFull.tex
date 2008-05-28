@@ -1,0 +1,80 @@
+\subsection{Conditional Expressions}
+\label{sect:trans:TD:ifThenElse}
+XQuery supports a conditional expression based on the keywords \texttt{if}, \texttt{then}, and \texttt{else}. The
+expression is defined by W3C as seen in figure \ref{fig:trans:TD:condEBNF}.
+
+\begin{figure}[h]
+\begin{Verbatim}
+[45] IfExpr ::= "if" "(" Expr ")" "then" ExprSingle 
+                    "else" ExprSingle
+\end{Verbatim}
+\label{fig:trans:TD:condEBNF}
+\caption{W3C EBNF conditional expression specification.}
+\end{figure}
+
+The expression following the \texttt{if} keyword is called the test expression, and the expressions following the
+\texttt{then} and \texttt{else} keywords are called the \texttt{then}-expression and \texttt{else}-expression,
+respectively. If the effective boolean value of the test expression evaluates to $true$, the
+\texttt{then}-expression is returned, if it evaluates to $false$ the \texttt{else}-expression is returned.
+
+Conditional expressions are translated by adding an attribute $alt$ with the value $1$ the
+\texttt{then}-expression relation and the relational representation of the \texttt{else}-expression with the same
+attribute but with value $2$. These two relations are then spliced together with a \textsf{union} operator. If the
+relations have disjoint dependencies, they will have to be tainted first.
+
+The result of the \textsf{union} operation is then joined with the relational representation of the test
+expression on their common dependencies. Lastly, a \textsf{select} operator is employed on this relation to select
+the tuples where $alt$ is $1$ if the $value$ field from the test expression evaluates to $true$, or $alt$ is $2$
+if it does not.
+
+\begin{equation}
+\begin{array}{c}
+\frac{}{\mbox{\texttt{if }}e_1\mbox{\texttt{ then }}e_2\mbox{\texttt{ else }}e_3} \\
+\longmapsto \\
+\begin{array}{l}
+\mbox{\textsf{project(value = r.value, }}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textsf{select(ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2));}} \\ \quad \quad
+\mbox{\textsf{hhjoin([l.}}((e_2.\vartheta \cup e_3.\vartheta)\cap e_1.\vartheta)\mbox{\textsf{],
+[r.}}(e_1.\vartheta\cap (e_2.\vartheta\cup e_3.\vartheta))
+\mbox{\textsf{],}} 
+\\  \quad \quad \quad \quad \quad\mbox{\textsf{[l.value, r.value, }}\vartheta\mbox{\textsf{];}}\\\quad\quad\quad
+\mbox{\textsf{union(}} \\ \quad\quad\quad\quad
+\mbox{\textsf{project(alt=1, value, }}(e_2.\vartheta \cup e_3.\vartheta)\mbox{\textsf{,}}\\\quad\quad\quad\quad\quad
+\mbox{\textbf{t(r(}}e_2\mbox{\textbf{), }}e_3.\vartheta\mbox{\textbf{)}\textsf{);}} \\ \quad\quad\quad\quad
+\mbox{\textsf{project(alt=2, value, }}(e_3.\vartheta\cup e_2.\vartheta)\mbox{\textsf{,}}\\\quad\quad\quad\quad\quad
+\mbox{\textbf{t(r(}}e_3\mbox{\textbf{), }}e_2.\vartheta\mbox{\textbf{)}\textsf{));}}\\\quad\quad\quad
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{)))}}
+\end{array}
+\end{array}
+\end{equation}
+
+Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta \cup e_3.\vartheta$. The test expression will have to be
+evaluated in the logical context $\Lambda$. $index$ and possible $documentId$, $pos$ and $scope$ attributes will
+follow $value$ as described in \ref{sect:trans:TD:basics}.
+
+\begin{myExample}
+The query of figure BEBBEBE contains a conditional expression $e_1$.
+\begin{figure}[h]
+\centering
+\begin{equation*}
+\begin{array}{l}
+\mbox{\texttt{for \$a in (10, 20) return}} \\ \quad
+\mbox{\texttt{for \$b in (5, 15) return}} \\ \quad \quad
+e_1 \left\{\begin{array}{l}
+           1 + 1 \\
+           2 + 2
+           \end{array}\right.
+\end{array}
+\end{equation*}
+\end{figure}
+
+
+\end{myExample}
+
+
+
+\subsection{Full Text Expressions}
+\label{sect:trans:TD:fulltext}
+\begin{itemize}
+  \item lookup.. passe p\aa~ contextnode
+\end{itemize}
