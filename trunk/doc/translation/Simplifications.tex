@@ -1,0 +1,30 @@
+\section{Simplifications}
+\label{sect:trans:TD:simplifications}
+\begin{itemize}
+  \item sekvenser:
+	  \begin{itemize}
+	    \item suprIndx kan doppes n\aa r bare singelton
+	    \item singeltons trenger ikke index
+      \end{itemize} 
+  \item Litterals: 
+		\begin{itemize}
+          \item implies that any sequence of
+				explicitly stated items will first have to be made as one-tuple relations and
+				then spliced together. As the \textsf{make} operator supports multiple items, a
+					better solution would be to collect all items in one MQL operator. Further, if
+					the item is part of a singleton sequence, there is no need for a representation
+					in form of an relation, as the item could be made part of the parameters of an
+					operator (e.g. $\alpha$ \texttt{> 1} $\Longrightarrow$
+					\textsf{select(gt(value, 1) $\alpha$)}).   
+        \end{itemize}
+  \item FLWOR:
+  	\begin{itemize}
+        \item  kan bli -> project , ved singelton return
+      \end{itemize}   
+  \item Arithmetic /comp / logical
+	\begin{itemize}
+      \item multiple +- kan bli dyttet sammen\ldots oddetall - = -, partal = drit i det.
+      \item singleton inn i and/or -> slippe select
+    \end{itemize}
+  \item             
+\end{itemize}
