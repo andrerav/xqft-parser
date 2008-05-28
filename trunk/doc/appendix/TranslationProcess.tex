@@ -68,7 +68,7 @@ symbol table will not be tainted by \texttt{\$b}. To translate the let-clause,
 we apply the rule \ref{rule:trans:TD:literal} on the expression and obtain:
 
 \begin{Verbatim}
-make(name:=[value],2)
+make(name:=[index, value], [1],[2])
 \end{Verbatim}
 
 Which is entered into the symbol table as per rule \ref{rule:trans:TD:letbind}.
@@ -93,7 +93,8 @@ numberate(index,[sprIdx,index],[];
             make(name:=[value],2)),
           project(sprIdx=3,index=0,value;
             make(name:=[value],3))))),
-    make(name:=[value],2)))
+    project([anumb = index, index = 2, value];
+      make(name:=[index, value],[1], [2]))))
 \end{Verbatim}
 
 This translation is now used to replace \textbf{r}($e_C$) in the translation
@@ -117,7 +118,7 @@ obtain the following translation from \texttt{\$a gt \$b}:
                 make(name:=[value],2)),
               project(sprIdx=3,index=0,value;
                 make(name:=[value],3))))),
-        make(name:=[value],2)))))
+          make(name:=[index, value],[1], [2])))
 \end{Verbatim}
 
 Which is entered together with \textbf{r}($e_C$) into the translation of the
@@ -136,7 +137,8 @@ hhjoin([],[], [l.value, anumb];
               make(name:=[value],2)),
             project(sprIdx=3,index=0,value;
               make(name:=[value],3))))),
-      make(name:=[value],2))),
+      project([anumb = index, index = 2, value];
+        make(name:=[index, value],[1], [2]))),
   select(xqBoolean(value);
     project(index=1, value=gt(r.value, l.value), anumb;
       hhjoin([], [], [l.value, r.value, anumb];
@@ -149,7 +151,7 @@ hhjoin([],[], [l.value, anumb];
                 make(name:=[value],2)),
               project(sprIdx=3,index=0,value;
                 make(name:=[value],3))))),
-        make(name:=[value],2)))))
+          make(name:=[index, value],[1], [2]))))))
 \end{Verbatim}
 
 This result is used to replace \textbf{r}($e_C$) in the translation of the
@@ -173,20 +175,22 @@ project(value=l.value, anumb;
                             make(name:=[value],2)),
                           project(sprIdx=3,index=0,value;
                             make(name:=[value],3))))),
-                    make(name:=[value],2))),
-        select(xqBoolean(value);
-          project(index=1, value=gt(l.value, r.value), anumb;
-            hhjoin([], [], [l.value, r.value, anumb];
-              project([anumb = index, index = 1, value];
-                numberate(index,[sprIdx,index],[];
-                  union(;
-                    project(sprIdx=1,index=0,value;
-                      make(name:=[value],1)),
-                    project(sprIdx=2,index=0,value;
-                      make(name:=[value],2)),
-                    project(sprIdx=3,index=0,value;
-                      make(name:=[value],3))))),
-              make(name:=[value],2))))),
+                    project([anumb = index, index = 2, value];
+                      make(name:=[index, value],[1], [2])))),
+              select(xqBoolean(value);
+                project(index=1, value=gt(l.value, r.value), anumb;
+                  hhjoin([], [], [l.value, r.value, anumb];
+                    project([anumb = index, index = 1, value];
+                      numberate(index,[sprIdx,index],[];
+                        union(;
+                          project(sprIdx=1,index=0,value;
+                            make(name:=[value],1)),
+                          project(sprIdx=2,index=0,value;
+                            make(name:=[value],2)),
+                          project(sprIdx=3,index=0,value;
+                            make(name:=[value],3))))),
+                  project([anumb = index, index = 2, value];
+                    make(name:=[index, value],[1], [2])))))))),
       project([anumb = index, index = 1, value];
         numberate(index,[sprIdx,index],[];
           union(;
@@ -195,7 +199,7 @@ project(value=l.value, anumb;
             project(sprIdx=2,index=0,value;
               make(name:=[value],2)),
             project(sprIdx=3,index=0,value;
-              make(name:=[value],3))))
+              make(name:=[value],3))))))))
 \end{Verbatim}
  
 This can be simplified by replacing the sequence construction nodes with a
@@ -210,13 +214,155 @@ project(value=l.value, anumb;
           union(;
             project([anumb = index, index = 1, value];
               make(name:=[index, value], [1,2,3], [1,2,3])),
-            make(name:=[value],2))),
+            project([anumb = index, index = 2, value];
+              make(name:=[index, value],[1],[2])))),
         select(xqBoolean(value);
           project(index=1, value=gt(r.value, l.value), anumb;
             hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
               project([anumb = index, index = 1, value];
                 make(name:=[index, value], [1,2,3], [1,2,3])),
-              make(name:=[value],2)))),
+              make(name:=[index, value],[1],[2]))))),
       project([anumb = index, index = 1, value];
         make(name:=[index, value], [1,2,3], [1,2,3])))))
+\end{Verbatim}
+
+\section{If-Then-Else}
+\label{appendix:transl:ifthenelse}
+This translation is initiated precisely as the previous ``Extensive FLWOR''
+example, so we will not reiterate the translation of the for-clause here.
+However, note that the following expression is obtain and entered into the
+symbol table to represent \texttt{\$a}:
+
+\begin{Verbatim}
+project([anumb = index, index = 1, value];
+  numberate(index,[sprIdx,index],[];
+    union(;
+      project(sprIdx=1,index=0,value;
+        make(name:=[value],1)),
+      project(sprIdx=2,index=0,value;
+        make(name:=[value],2)),
+      project(sprIdx=3,index=0,value;
+        make(name:=[value],3))))
+\end{Verbatim}
+
+% for $a in (1,2,3) return
+%   if $a gt 2 then $a else 3
+
+The translation of the if-then-else expression follows rule
+\ref{rule:trans:TD:conditional}  on page \pageref{rule:trans:TD:conditional}.
+First, however, the boolean expression \texttt{\$a > 2} (which corresponds to
+$e_1$ in rule \ref{rule:trans:TD:conditional}) must be translated. This can be
+done using rule \ref{rule:trans:TD:comparative}, as for the where-clause in the
+previous FLWOR example:
+
+
+\begin{Verbatim}
+    project(index=1, value=gt(r.value, l.value), anumb;
+      hhjoin([], [], [l.value, r.value, anumb];
+        project([anumb = index, index = 1, value];
+          numberate(index,[sprIdx,index],[];
+            union(;
+              project(sprIdx=1,index=0,value;
+                make(name:=[value],1)),
+              project(sprIdx=2,index=0,value;
+                make(name:=[value],2)),
+              project(sprIdx=3,index=0,value;
+                make(name:=[value],3))))),
+          make(name:=[index, value],[1], [2])))
+\end{Verbatim}
+
+Next we translate $e_2$ (which is simply a lookup in the symbol table for \texttt{\$a}):
+
+\begin{Verbatim}
+project([anumb = index, index = 1, value];
+  numberate(index,[sprIdx,index],[];
+    union(;
+      project(sprIdx=1,index=0,value;
+        make(name:=[value],1)),
+      project(sprIdx=2,index=0,value;
+        make(name:=[value],2)),
+      project(sprIdx=3,index=0,value;
+        make(name:=[value],3)))))
+\end{Verbatim}
+
+The last expression, $e_3$ (which is tainted by \texttt{\$a}), can be translated
+using a simplification where instead of constructing the tuples, an additional
+field with the value 3 is projected onto the result from a lookup of
+\texttt{\$a} in the symbol table:
+
+\begin{Verbatim}
+project(anumb, index = 1, value = 3;
+  project([anumb = index, index = 1, value];
+    numberate(index,[sprIdx,index],[];
+      union(;
+        project(sprIdx=1,index=0,value;
+          make(name:=[value],1)),
+        project(sprIdx=2,index=0,value;
+          make(name:=[value],2)),
+        project(sprIdx=3,index=0,value;
+          make(name:=[value],3))))))
+\end{Verbatim}
+
+Now the translated representations of $e_1$, $e_2$ and $e_3$ (where the latter
+is also tainted) can be entered into rule \ref{rule:trans:TD:conditional}:
+
+\begin{Verbatim}
+project(value=r.value, anumb;
+  select(ifthenelse(xqBoolean(value), eq(alt,1), eq(alt,2));
+    hhjoin([l.anumb],[r.anumb], [l.value, r.value, anumb];
+      union(
+        project(alt = 1, value, anumb;
+          project([anumb = index, index = 1, value];
+            numberate(index,[sprIdx,index],[];
+              union(;
+                project(sprIdx=1,index=0,value;
+                  make(name:=[value],1)),
+                project(sprIdx=2,index=0,value;
+                  make(name:=[value],2)),
+                project(sprIdx=3,index=0,value;
+                  make(name:=[value],3)))))),
+        project(alt = 2, value, anumb;
+          project(anumb, index = 1, value = 3;
+            project([anumb = index, index = 1, value];
+              numberate(index,[sprIdx,index],[];
+                union(;
+                  project(sprIdx=1,index=0,value;
+                    make(name:=[value],1)),
+                  project(sprIdx=2,index=0,value;
+                    make(name:=[value],2)),
+                  project(sprIdx=3,index=0,value;
+                    make(name:=[value],3)))))))),
+      project(index=1, value=gt(r.value, l.value), anumb;
+        hhjoin([], [], [l.value, r.value, anumb];
+          project([anumb = index, index = 1, value];
+            numberate(index,[sprIdx,index],[];
+              union(;
+                project(sprIdx=1,index=0,value;
+                  make(name:=[value],1)),
+                project(sprIdx=2,index=0,value;
+                  make(name:=[value],2)),
+                project(sprIdx=3,index=0,value;
+                  make(name:=[value],3))))),
+            make(name:=[index, value],[1], [2]))))))
+\end{Verbatim}
+
+This can be simplified further:
+
+\begin{Verbatim}
+project(value=r.value, anumb;
+  select(ifthenelse(xqBoolean(value), eq(alt,1), eq(alt,2));
+    hhjoin([l.anumb],[r.anumb], [l.value, r.value, anumb];
+      union(
+        project(alt = 1, value, anumb;
+          project([anumb = index, index = 1, value];
+            make(name:=[index, value], [1,2,3], [1,2,3]))),
+        project(alt = 2, value, anumb;
+          project(anumb, index = 1, value = 3;
+            project([anumb = index, index = 1, value];
+             make(name:=[index, value], [1,2,3], [1,2,3]))))),
+      project(index=1, value=gt(r.value, l.value), anumb;
+        hhjoin([], [], [l.value, r.value, anumb];
+          project([anumb = index, index = 1, value];
+            make(name:=[index, value], [1,2,3], [1,2,3])),
+            make(name:=[index, value],[1], [2]))))))
 \end{Verbatim}

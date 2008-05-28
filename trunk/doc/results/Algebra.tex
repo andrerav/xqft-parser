@@ -40,25 +40,7 @@ The result of the translation is shown in figure
 
 \begin{figure}[htp]
 \begin{center}
-  \begin{Verbatim}
-project(value=l.value, anumb;
-  numberate(index, [r.value, index], [anumb];
-    hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
-      hhjoin([],[], [l.value, anumb];
-        numberate(index,[sprIdx,index],[];
-          union(;
-            project([anumb = index, index = 1, value];
-              make(name:=[index, value], [1,2,3], [1,2,3])),
-            make(name:=[value],2))),
-        select(xqBoolean(value);
-          project(index=1, value=gt(r.value, l.value), anumb;
-            hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
-              project([anumb = index, index = 1, value];
-                make(name:=[index, value], [1,2,3], [1,2,3])),
-              make(name:=[value],2)))),
-      project([anumb = index, index = 1, value];
-        make(name:=[index, value], [1,2,3], [1,2,3])))))
-  \end{Verbatim}
+  \includegraphics[scale=0.4]{img/graphs/ext_flwor}
   \caption{Complete translation of expression in figure
   \ref{fig:results:query_ext_flwor}}
   \label{fig:results:query_ext_flwor_result}
@@ -72,7 +54,7 @@ converted to the DAG seen in figure \ref{fig:results:query_ext_flwor_dag}.
 
 \begin{figure}[!htp]
 %\begin{center}
-  \includegraphics[scale=0.7]{img/graphs/ext_flwor}
+  \includegraphics[scale=0.5]{img/graphs/ext_flwor_dag}
   \caption{DAG representation of operator tree in figure
   \ref{fig:results:query_ext_flwor_result}}
   \label{fig:results:query_ext_flwor_dag}
@@ -89,8 +71,8 @@ converted to the DAG seen in figure \ref{fig:results:query_ext_flwor_dag}.
 \begin{figure}[!htp]
 \begin{center}
 \begin{Verbatim}
-for $a in (1,2,3) return 
-  if $a > 2 then $a else 3
+for $a in (1,2,3) return
+  if $a gt 2 then $a else 3
 \end{Verbatim}
   \caption{If-then-else query premise}
   \label{fig:results:query_ifthenelse}
