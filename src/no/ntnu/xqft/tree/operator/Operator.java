@@ -2,6 +2,8 @@ package no.ntnu.xqft.tree.operator;
 
 import java.util.ArrayList;
 
+import no.ntnu.xqft.parse.XQFTParser;
+import no.ntnu.xqft.parse.XQFTTree;
 import no.ntnu.xqft.tree.param.*;
 
 public abstract class Operator {
@@ -11,6 +13,10 @@ public abstract class Operator {
     protected ArrayList<Param> params;
 
     protected ArrayList<Operator> operators;
+    
+    private static int i_level;
+    
+    protected int my_i;
     
     /**
      * Hidden constructor
@@ -186,5 +192,59 @@ public abstract class Operator {
     	return new List(paraList);
     }
 
+    
+    
+    public String toDotStringTree() {
+        
+        Operator.i_level = 0;
+        
+        StringBuffer buf = new StringBuffer();
+        buf.append("digraph AST {\n" +
+                        "edge [color=black, dir=both, weight=1, " +
+                        "fontcolor=black, arrowhead=none, "+
+                        "arrowtail=normal]\n");
+        
+        buf.append(this.generateNodeRel());
+        
+        buf.append("\n}");
+        
+        return buf.toString();
+    }
+    
+    protected String generateNodeRel() {
+        Operator.i_level++;
+        my_i = Operator.i_level;
+
+        String nodeName = this.name + my_i;
+        
+        /* Token name for this node */
+        //String tokenName = this.printTokenName && this.getToken() != null ? XQFTParser.tokenNames[this.getToken().getType()]  + ": " : "";
+        String nodeText = this.fixStringForDot(this.name);
+        
+        
+        if (this.operators == null || this.operators.size() == 0) {
+            return nodeName + " [label=\"" + nodeName + nodeText + "\"]\n";
+        }
+        StringBuffer buf = new StringBuffer();
+            
+        buf.append(nodeName + " [label=\"" + nodeName + nodeText + "\"]\n");
+            
+        for (Operator op : this.operators) {
+            //XQFTTree t = (XQFTTree) children.get(i);
+            buf.append(' ');
+            buf.append(op.generateNodeRel());
+            buf.append(nodeName + " -> " + op.name + op.my_i + "\n");
+         }
+         return buf.toString();
+    }
+
+
+    protected String fixStringForDot(String str) {
+        str = str.replaceAll("\n", "\\\\n");
+        str = str.replaceAll("\r", "\\\\r");
+        str = str.replaceAll("\"", "\\\\\"");
+        return str;
+    }
+    
 
 }
