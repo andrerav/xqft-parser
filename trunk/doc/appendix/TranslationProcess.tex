@@ -125,18 +125,18 @@ where-clause:
 
 \begin{Verbatim}
 hhjoin([],[], [l.value, anumb];
-    project(index=1, value=gt(r.value, l.value), anumb;
-      hhjoin([], [], [l.value, r.value, anumb];
-        project([anumb = index, index = 1, value];
-          numberate(index,[sprIdx,index],[];
-            union(;
-              project(sprIdx=1,index=0,value;
-                make(name:=[value],1)),
-              project(sprIdx=2,index=0,value;
-                make(name:=[value],2)),
-              project(sprIdx=3,index=0,value;
-                make(name:=[value],3))))),
-        make(name:=[value],2))),
+  numberate(index,[sprIdx,index],[];
+    union(;
+      project([anumb = index, index = 1, value];
+        numberate(index,[sprIdx,index],[];
+          union(;
+            project(sprIdx=1,index=0,value;
+              make(name:=[value],1)),
+            project(sprIdx=2,index=0,value;
+              make(name:=[value],2)),
+            project(sprIdx=3,index=0,value;
+              make(name:=[value],3))))),
+      make(name:=[value],2))),
   select(xqBoolean(value);
     project(index=1, value=gt(r.value, l.value), anumb;
       hhjoin([], [], [l.value, r.value, anumb];
@@ -160,20 +160,22 @@ project(value=l.value, anumb;
   numberate(index, [r.value, index], [anumb];
     hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
       hhjoin([],[], [l.value, anumb];
-          project(index=1, value=gt(r.value, l.value), anumb;
+          project(index=1, value=gt(l.value, r.value), anumb;
             hhjoin([], [], [l.value, r.value, anumb];
-              project([anumb = index, index = 1, value];
-                numberate(index,[sprIdx,index],[];
+              numberate(index,[sprIdx,index],[];
                   union(;
-                    project(sprIdx=1,index=0,value;
-                      make(name:=[value],1)),
-                    project(sprIdx=2,index=0,value;
-                      make(name:=[value],2)),
-                    project(sprIdx=3,index=0,value;
-                      make(name:=[value],3))))),
-              make(name:=[value],2))),
+                    project([anumb = index, index = 1, value];
+                      numberate(index,[sprIdx,index],[];
+                        union(;
+                          project(sprIdx=1,index=0,value;
+                            make(name:=[value],1)),
+                          project(sprIdx=2,index=0,value;
+                            make(name:=[value],2)),
+                          project(sprIdx=3,index=0,value;
+                            make(name:=[value],3))))),
+                    make(name:=[value],2))),
         select(xqBoolean(value);
-          project(index=1, value=gt(r.value, l.value), anumb;
+          project(index=1, value=gt(l.value, r.value), anumb;
             hhjoin([], [], [l.value, r.value, anumb];
               project([anumb = index, index = 1, value];
                 numberate(index,[sprIdx,index],[];
@@ -204,8 +206,8 @@ project(value=l.value, anumb;
   numberate(index, [r.value, index], [anumb];
     hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
       hhjoin([],[], [l.value, anumb];
-        project(index=1,value=gt(r.value, l.value), anumb;
-          hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
+        numberate(index,[sprIdx,index],[];
+          union(;
             project([anumb = index, index = 1, value];
               make(name:=[index, value], [1,2,3], [1,2,3])),
             make(name:=[value],2))),

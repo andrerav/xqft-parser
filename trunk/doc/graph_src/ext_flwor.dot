@@ -13,20 +13,21 @@ project1 [label="project(value=l.value, anumb; ..)"];
 numberate1 [label="numberate(index, [r.value, index], [anumb]; .."];
 hhjoin1 [label="hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb]; .., .."];
 hhjoin2 [label="hhjoin([],[], [l.value, anumb]; .."];
-project3 [label="project(index=1,value=gt(r.value, l.value), anumb; .."];
-hhjoin3 [label="hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb]; .., .."];
 
 select1 [label="select(xqBoolean(value); .."];
-project5 [label="project(index=1,value=gt(r.value, l.value), anumb;"];
-hhjoin4 [label=" hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];"];
+project5 [label="project(index=1,value=gt(l.value, r.value), anumb;, .."];
+hhjoin4 [label=" hhjoin([], [], [l.value, r.value, anumb];, ..,.."];
+
+union1 [label="union(; , ,"]
+numberate2 [label="numberate(index,[sprIdx,index],[]; .."]
 
 project1->numberate1;
   numberate1->hhjoin1;
     hhjoin1->hhjoin2;
-      hhjoin2->project3;
-            project3->hhjoin3;
-               hhjoin3-> project123;
-               hhjoin3->make2;
+      hhjoin2->numberate2;
+        numberate2->union1;
+           union1->project123;
+           union1->make2;
       hhjoin2->select1;
         select1->project5;
               project5->hhjoin4;
