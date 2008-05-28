@@ -2,10 +2,33 @@ digraph AST {
 edge [color=black, dir=both, weight=1, fontcolor=black, fontname=Helvetica, arrowhead=none,arrowtail=normal]
 node [shape=plaintext]
 
+project123->make123
+make123 [label="make(name:=[index, value], [1,2,3], [1,2,3])"]
+make2 [label="make(name:=[index, value],[1], [2])"]
+project123 [label="project([anumb = index, index = 1, value]; .."]
+
+project1 [label="project(value=r.value; .."]
+project2 [label="project(alt = 1, value, anumb; .."]
+project3 [label="project(alt = 2, value, anumb; .."]
+project4 [label=" project(index=1, value=gt(r.value, l.value), anumb; .."]
+
+select1 [label="select(ifthenelse(xqBoolean(value), eq(alt,1), eq(alt,2)); .."]
+
+hhjoin1 [label="hhjoin([l.anumb],[r.anumb], [l.value, r.value, anumb]; .."]
+hhjoin2 [label="hhjoin([], [], [l.value, r.value, anumb]; .."]
+
+union1 [label="union(; .."]
+
 project1->select1
   select1->hhjoin1
     hhjoin1->union1
-      union1->
-    
+      union1->project2
+        project2->project123
+      union1->project3
+        project3->project123
+    hhjoin1->project4
+      project4->hhjoin2
+        hhjoin2->project123
+        hhjoin2->make2
 
 }
