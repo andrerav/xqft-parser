@@ -53,13 +53,12 @@ evaluated in the logical context $\Lambda$. $index$ and possible $documentId$, $
 follow $value$ as described in \ref{sect:trans:TD:basics}.
 
 \begin{myExample}
-The query of figure BEBBEBE contains a conditional expression $e_1$.
 \begin{figure}[h]
 \centering
 \begin{equation*}
 \begin{array}{l}
 \mbox{\texttt{for \$a in (10, 20) return}} \\ \quad
-\mbox{\texttt{for \$b in (5, 15) return}} \\ \quad \quad
+\mbox{\texttt{for \$b in (5, 15) return}} \\ 
 e_1 \left\{\begin{array}{l}
            \mbox{\texttt{if(\$b > \$a) then}} \\ \quad
            \mbox{\texttt{\$a}} \\ 
@@ -71,6 +70,93 @@ e_1 \left\{\begin{array}{l}
 \caption{Example query containing a conditional expression \label{fig:trans:TD:condQue}}
 \end{figure}
 
+The query of figure \ref{fig:trans:TD:condQue} contains a conditional expression $e_1$. First the
+\texttt{then}-expression and the \texttt{else}-expression are tainted with eachothers iterator dependencies. The
+result of the tainting is shown in figure \ref{fig:trans:TD:inter1:taint}. Then the two relations are augmented
+with the $alt$ attribute and spliced together with an \textsf{union} operator to make the relation depicted in
+figure \ref{fig:trans:TD:inter1:union}.
+
+\begin{figure}[h]
+\centering
+\subfigure[]{
+\begin{tabular}{|c|c|c|c|} \hline
+$bnb$ & $anb$ & $val$ \\ \hline
+1 & 1 & 10 \\ \hline
+1 & 2 & 20 \\ \hline
+2 & 1 & 10 \\ \hline
+2 & 2 & 20 \\ \hline
+\end{tabular}
+\label{fig:trans:TD:inter1:taint}
+}
+\phantom{A}
+\subfigure[]{
+\begin{tabular}{|c|c|c|c|} \hline
+$alt$ & $bnb$ & $anb$ & $val$ \\ \hline
+1 & 1 & 1 & 10 \\ \hline
+1 & 1 & 2 & 20 \\ \hline
+1 & 2 & 1 & 10 \\ \hline
+1 & 2 & 2 & 20 \\ \hline
+2 & 1 & 1 & 5 \\ \hline
+2 & 2 & 1 & 15 \\ \hline
+2 & 1 & 2 & 5 \\ \hline
+2 & 2 & 2 & 15 \\ \hline
+\end{tabular}
+\label{fig:trans:TD:inter1:union}
+}
+\phantom{A}
+\subfigure[]{
+\begin{tabular}{|c|c|c|} \hline
+$anb$ & $bnb$ & $val$ \\ \hline
+1 & 1 & $false$ \\ \hline
+2 & 1 & $false$ \\ \hline
+1 & 2 & $true$ \\ \hline
+2 & 2 & $false$ \\ \hline
+\end{tabular}
+\label{fig:trans:TD:inter1:test}
+}
+\caption[Intermediate results of evaluating $e_1$ in figure \ref{fig:trans:TD:condQue}.]{Intermediate results of
+evaluating $e_1$ in figure \ref{fig:trans:TD:condQue}. (a) The \texttt{then}-expresion tainted with $I_{\mbox{\texttt{b}}}$ (b) The \texttt{then}-expression and the
+\texttt{else}-expression augmented with an $alt$ attribute and spliced together. (c) The test expression.
+Attribute names are shortened. $index$ attribute is left out. \label{fig:trans:TD:inter1}}
+\end{figure}
+
+The result of the \textsf{union} operation is then joined with the test expression (figure
+\ref{fig:trans:TD:inter1:test}) on their common dependencies ($anumb$ and $bnumb$) to form the relation in figure
+\ref{fig:trans:TD:condRes:join}. From this relation, only the tuples where $alt$ has the value 1 and $r.val$ is
+$true$ or $alt$ has the value 2 and $r.val$ is $false$ are selected. The result of the selection after the final
+renaming is shown in figure \ref{fig:trans:TD:condRes:res}.
+
+\begin{figure}[h]
+\subfigure[]{
+\begin{tabular}{|c|c|c|c|c|} \hline
+$alt$ & $bnb$ & $anb$ & $l.val$ & $r.val$ \\ \hline
+1 & 1 & 1 & 10 & $false$ \\ \hline
+2 & 1 & 1 & 5 & $false$ \\ \hline
+1 & 2 & 1 & 10 & $true$ \\ \hline
+2 & 2 & 1 & 15 & $true$ \\ \hline
+1 & 1 & 2 & 20 & $false$ \\ \hline
+2 & 1 & 2 & 5 & $false$ \\ \hline
+1 & 2 & 2 & 20 & $false$ \\ \hline
+2 & 2 & 2 & 15 & $false$ \\ \hline
+\end{tabular}
+\label{fig:trans:TD:condRes:join}
+}
+\qquad
+\subfigure[]{
+\begin{tabular}{|c|c|c|} \hline
+$bnb$ & $anb$ & $val$ \\ \hline
+1 & 1 & 5 \\ \hline
+2 & 1 & 10 \\ \hline
+1 & 2 & 5 \\ \hline
+2 & 2 & 15 \\ \hline
+\end{tabular}
+\label{fig:trans:TD:condRes:res}
+}
+\caption[Evaluating $e_1$ in figure \ref{fig:trans:TD:condQue}.]{Evaluating $e_1$ in figure
+\ref{fig:trans:TD:condQue}. (a) The test expression joined with the union of the \texttt{then}- and
+\texttt{else}-expression. (b) $e_1$ fully evaluated. Attribute names are shortened. $index$ attribute is omitted.
+\label{fig:trans:TD:condRes} }
+\end{figure}
 
 \end{myExample}
 
