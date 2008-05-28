@@ -161,11 +161,11 @@ public class XQFT {
                 }
             }            
             
-            System.out.println(top.toPrettyString(0));
-            System.out.println(top.toDotStringTree());
+            //System.out.println(top.toPrettyString(0));
+            //System.out.println(top.toDotStringTree());
 		}		
 
-		Scope.printPrettyString();
+		//Scope.printPrettyString();
 		System.out.println("Done");
 
 		return top;

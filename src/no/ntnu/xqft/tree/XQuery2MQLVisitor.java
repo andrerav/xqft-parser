@@ -434,9 +434,19 @@ public class XQuery2MQLVisitor extends Visitor {
         TraverseReturn r_e1 = acceptThis(e1);
         TraverseReturn r_e2 = acceptThis(e2);
         TraverseReturn r_e3 = acceptThis(e3);
-
-        TraverseReturn result = new TraverseReturn();
         
+        // Varrefs
+        VarRefSet v_e2_u_e3 = (VarRefSet)r_e2.getVarRefs().clone();
+            v_e2_u_e3.addAll(r_e3.getVarRefs());
+        
+        VarRefSet v_e2e3_n_e1 = (VarRefSet)v_e2_u_e3.clone();
+            v_e2e3_n_e1.retainAll(r_e1.getVarRefs());
+        
+            System.out.println(v_e2_u_e3.toString());
+            System.out.println(v_e2e3_n_e1.toString());
+        
+        TraverseReturn result = new TraverseReturn();
+
         result.setSingleton(false);
         
         return result;
