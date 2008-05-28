@@ -396,25 +396,8 @@ public class RewriteVisitor extends Visitor {
     }
 
 
-
     @Override
-    public TraverseReturn visitELSE(XQFTTree tree) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-
-
-    @Override
-    public TraverseReturn visitIF(XQFTTree tree) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-
-
-    @Override
-    public TraverseReturn visitTHEN(XQFTTree tree) {
+    public TraverseReturn visitAST_IFEXPR(XQFTTree tree) {
         // TODO Auto-generated method stub
         return null;
     }
