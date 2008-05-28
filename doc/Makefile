@@ -1,6 +1,12 @@
 simple: 
 	pdflatex Main
 
+
+
+dotgraphs:
+	for i in `ls graph_src|grep \.dot$$|sed -e 's/\.dot$$//'`; do cat graph_src/$$i.dot|dot -Tpdf -oimg/graphs/$$i.pdf; done;
+
+
 report:
 	pdflatex Main
 	bibtex Main
