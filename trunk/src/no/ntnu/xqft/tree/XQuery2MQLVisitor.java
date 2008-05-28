@@ -434,7 +434,7 @@ public class XQuery2MQLVisitor extends Visitor {
         TraverseReturn r_e1 = acceptThis(e1);
         TraverseReturn r_e2 = acceptThis(e2);
         TraverseReturn r_e3 = acceptThis(e3);
-        
+         
         // Varrefs
         VarRefSet v_e2_u_e3 = (VarRefSet)r_e2.getVarRefs().clone();
             v_e2_u_e3.addAll(r_e3.getVarRefs());
