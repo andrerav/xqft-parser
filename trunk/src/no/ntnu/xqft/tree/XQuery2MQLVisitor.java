@@ -435,11 +435,18 @@ public class XQuery2MQLVisitor extends Visitor {
         TraverseReturn r_e2 = acceptThis(e2);
         TraverseReturn r_e3 = acceptThis(e3);
          
-        // Varrefs
+        // VarRefs: e2 u e3
         VarRefSet v_e2_u_e3 = (VarRefSet)r_e2.getVarRefs().clone();
-            v_e2_u_e3.addAll(r_e3.getVarRefs());
+        v_e2_u_e3.addAll(r_e3.getVarRefs());
+        
+        // VarRefs: (e2 u e3) n e1
         VarRefSet v_e2e3_n_e1 = (VarRefSet)v_e2_u_e3.clone();
-            v_e2e3_n_e1.retainAll(r_e1.getVarRefs());
+        v_e2e3_n_e1.retainAll(r_e1.getVarRefs());
+
+        // VarRefs: e1 u  e2 u e3
+        VarRefSet v_e1_u_e2_u_e3 = (VarRefSet)r_e1.getVarRefs().clone();
+        v_e1_u_e2_u_e3.addAll(r_e2.getVarRefs());
+        v_e1_u_e2_u_e3.addAll(r_e3.getVarRefs());
 
         // Alternatives
         Project project_alt1 = new Project("alt=1, value, " + v_e2_u_e3.toStringList(), this.taint(r_e2, r_e3.getVarRefs()).getOperatorTree()); 
@@ -450,8 +457,19 @@ public class XQuery2MQLVisitor extends Visitor {
         union.addOperator(project_alt1);
         union.addOperator(project_alt2);
         
+        // HHjoin
+        HHJoin hhjoin = new HHJoin("[" + v_e2e3_n_e1.toString() + "],[" + v_e2e3_n_e1.toString() + "], [l.value, r.value, " + v_e1_u_e2_u_e3.toStringList() + "]", union, r_e1.getOperatorTree());
+        
+        // Select
+        Select select = new Select("ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2))", hhjoin);
+
+        // Project
+        Project project = new Project("value = r.value, " + v_e1_u_e2_u_e3.toStringList(), select);
+        
         TraverseReturn result = new TraverseReturn();
 
+        result.setOperatorTree(project);
+        result.setVarRefs(v_e1_u_e2_u_e3);
         result.setSingleton(false);
 
         return result;
