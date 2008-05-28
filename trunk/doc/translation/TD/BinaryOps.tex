@@ -213,7 +213,7 @@ dependencies to ensure that both values are from the same iteration.
 \begin{equation}
 \frac{}{e_1\mbox{\texttt{ OP }}e_2}\longmapsto
 \begin{array}{l}
-\mbox{\textsf{project(index = 1, value=max, }}\vartheta \\ \quad
+\mbox{\textsf{project(index = 1, value=max, }}\vartheta \textsf{;} \\ \quad
 \mbox{\textsf{group((}}\vartheta\mbox{\textsf{), max(value);}} \\ \quad \quad
 \mbox{\textsf{project(value=FUNC(r.value,l.value),}}\vartheta\mbox{\textsf{;}} \\ \quad \quad \quad
 \mbox{\textsf{hhjoin([l.}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [r.}}(e_2.\vartheta\cap e_1.\vartheta)
@@ -222,6 +222,7 @@ dependencies to ensure that both values are from the same iteration.
 \quad \quad \quad \mbox{\textbf{r(}}e_1\mbox{\textbf{)}} \\ \quad \quad \quad \quad \quad
 \mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{))))}}
 \end{array}
+\label{rule:trans:TD:comparative}
 \end{equation}
 
 Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$. \texttt{OP} wil map to a MQL function replacing
