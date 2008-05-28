@@ -54,6 +54,23 @@ boolean operator or within the condition part of an \texttt{if..then..else} expr
 translator is in the default context, $\Delta$. If no context is mentioned in the inference rules the default
 context is assumed.
 
+Often MQL operator trees are depicted like this:
+\begin{center}
+\begin{tabular}{l}
+\textsf{operator1(\ldots,l.field, r.field\ldots; } \\ \quad
+\textsf{operator2(\ldots);} \\ \quad
+\textsf{operator3(\ldots))}
+\end{tabular}
+\end{center}
+
+This is to be interpreted as \textsf{operator2} is the left child of \textsf{operator1} and \textsf{operator3} is
+the right child. Mars does not allow attribute names to contain punctuation marks or allow two attributes with the
+same name within one relation. An operator combining two relations will therefore have renaming functionality. A
+typical projection list of such an operator combining two relations which both contain the attribute $field$ would
+look something like: \textsf{\ldots rfield=right.field, lfield=left.field\ldots}. To make the inference rules
+easier to read, this step has been dropped. The rules assume that the equal named fields will automaticly be given
+a prefix \textsf{l.} (left) or \textsf{r.} (right) depending on which child the attribute stems from.
+
 \input{translation/TD/BasicsDepTaint.tex}
 \input{translation/TD/LitAndSequence.tex}
 \input{translation/TD/FLWOR.tex}
