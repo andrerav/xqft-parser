@@ -1,16 +1,5 @@
-\newpage
-\section{Tainting Dependencies}
-\label{sect:trans:taintingDependencies}
 
-\begin{itemize}
-  \item \textbf{\LARGE TODO:} det er en newpage p\aa~denne siden
-  \item INTRO for teh wind
-  \item har vokst ut av MarkXRemove
-  \item Tainting dependencies (TD)
-  \item og mer text
-\end{itemize}
-
-\subsection{Inference Rule Language Explanation}
+\section{Inference Rule Language Explanation}
 \label{sect:trans:TD:langExpl}
 \underline{\textbf{\LARGE TODO:}} Skal jeg bruke greske bokstaver i stedet for tekstlig marsgreie n\aa r jeg
 skriver regler?
@@ -70,42 +59,3 @@ typical projection list of such an operator combining two relations which both c
 look something like: \textsf{\ldots rfield=right.field, lfield=left.field\ldots}. To make the inference rules
 easier to read, this step has been dropped. The rules assume that the equal named fields will automaticly be given
 a prefix \textsf{l.} (left) or \textsf{r.} (right) depending on which child the attribute stems from.
-
-\input{translation/TD/BasicsDepTaint.tex}
-\input{translation/TD/LitAndSequence.tex}
-\input{translation/TD/FLWOR.tex}
-\input{translation/TD/BinaryOps.tex}
-\input{translation/TD/CondAndFull.tex}
-\input{translation/TD/PathPred.tex}
-
-
-\subsection{Simplifications}
-\label{sect:trans:TD:simplifications}
-\begin{itemize}
-  \item sekvenser:
-	  \begin{itemize}
-	    \item suprIndx kan doppes n\aa r bare singelton
-	    \item singeltons trenger ikke index
-      \end{itemize} 
-  \item Litterals: 
-		\begin{itemize}
-          \item implies that any sequence of
-				explicitly stated items will first have to be made as one-tuple relations and
-				then spliced together. As the \textsf{make} operator supports multiple items, a
-					better solution would be to collect all items in one MQL operator. Further, if
-					the item is part of a singleton sequence, there is no need for a representation
-					in form of an relation, as the item could be made part of the parameters of an
-					operator (e.g. $\alpha$ \texttt{> 1} $\Longrightarrow$
-					\textsf{select(gt(value, 1) $\alpha$)}).   
-        \end{itemize}
-  \item FLWOR:
-  	\begin{itemize}
-        \item  kan bli -> project , ved singelton return
-      \end{itemize}   
-  \item Arithmetic /comp / logical
-	\begin{itemize}
-      \item multiple +- kan bli dyttet sammen\ldots oddetall - = -, partal = drit i det.
-      \item singleton inn i and/or -> slippe select
-    \end{itemize}
-  \item             
-\end{itemize}
