@@ -20,7 +20,7 @@ This example will illustrate the translation of a more complex FLWOR expression.
 \begin{center}
 \begin{Verbatim}
 for $a in (1,2,3) let $b := 2
-  where $a gt 2
+  where $a gt $b
   order by $a
   return ($a, $b)
 \end{Verbatim}
@@ -32,7 +32,7 @@ for $a in (1,2,3) let $b := 2
 
 \subsubsection{Translation process}
 The translation process in its entirety is shown step by step in appendix
-\ref{appendix:transl}, page \pageref{appendix:transl}.
+\ref{appendix:transl:ext_flwor}, page \pageref{appendix:transl:ext_flwor}.
 
 \subsubsection{Result}
 The result of the translation is shown in figure
