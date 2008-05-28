@@ -185,12 +185,12 @@ y}(e_{x \cdot y}')\bowtie_{iter = inner}map_{x, x \cdot y}))
 \subsection{Other Expression Types}
 \label{sect:trans:ll:OtherExpr}
 
-The sequence construction \texttt{(}$e_{1}$\texttt{, }$e_{2}$\texttt{)} is essentially a disjont union of the
+The sequence construction $e_{1}$\texttt{, }$e_{2}$ is essentially a disjont union of the
 relational representations of the expressions, that is, $q_{x}(e_{1})$ and $q_{x}(e_{2})$. By temporarily adding a
 attribute $ord$ to these relations before a renumbering of the result with $\varrho$, the proper ordering of the
 sequence is aquired. Construction of sequences can therefore be expressed like this:
 \begin{equation}
-q_{x}(\mbox{\texttt{(}}e_{1}\mbox{\texttt{,}}e_{2}\mbox{\texttt{)}})=
+q_{x}(e_{1}\mbox{\texttt{, }}e_{2})=
 \begin{array}{l}
 
 
@@ -234,6 +234,26 @@ q_{x}(e_{1} \mbox{\texttt{ + }} e_{2}) =
 \right)
 \end{array}
 \label{eq:ll:sumexpr}
+\end{equation}
+
+The \texttt{if(}$e_1$\texttt{ then }$e_2$\texttt{ else }$e_3$, is one of the more complex translations of loop
+lifting. First the boolean expression $e_1$ is compilated. The result is split into two new loop relations,
+$loop1$ and $loop2$, which select al $true$ and $false$ values respectively. $loop2$ is used as current $loop$
+relation for the compilation of $e_2$ and $loop3$ as $loop$ relation for the mapping of $e_3$. A equi-join with
+their corresponding $loop$ relation on $iter$ will filter out all unnnecesary iterations. The result is the union
+of both branches.
+
+\begin{equation}
+\begin{array}{l}
+q_{x}(\mbox{\texttt{if }}e_1\mbox{\texttt{ then }}e_2\mbox{\texttt{ else }}e_3) = \\ \qquad
+\begin{array}{l}
+\pi_{iter,pos,item}(q_{x}(e_2)\bowtie_{iter=iter'}(\pi_iter':iter(loop2))\,\dot\cup \\ \qquad
+\pi_{iter,pos,item}(q_{x}(e_3)\bowtie_{iter=iter'}(\pi_iter':iter(loop3)) \\
+loop2 = \pi_{iter}(\sigma_{item=TRUE}(q_{x}(e_1))) \\
+loop3 = \pi_{iter}(\sigma_{item=FALSE}(q_{x}(e_1))) \\
+\end{array}
+\end{array}
+\label{eq:ll:ifthenelse}
 \end{equation}
 
 \subsection{Example}
