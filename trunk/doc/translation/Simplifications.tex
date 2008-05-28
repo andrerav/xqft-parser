@@ -1,30 +1,142 @@
 \section{Simplifications}
 \label{sect:trans:TD:simplifications}
-\begin{itemize}
-  \item sekvenser:
-	  \begin{itemize}
-	    \item suprIndx kan doppes n\aa r bare singelton
-	    \item singeltons trenger ikke index
-      \end{itemize} 
-  \item Litterals: 
-		\begin{itemize}
-          \item implies that any sequence of
-				explicitly stated items will first have to be made as one-tuple relations and
-				then spliced together. As the \textsf{make} operator supports multiple items, a
-					better solution would be to collect all items in one MQL operator. Further, if
-					the item is part of a singleton sequence, there is no need for a representation
-					in form of an relation, as the item could be made part of the parameters of an
-					operator (e.g. $\alpha$ \texttt{> 1} $\Longrightarrow$
-					\textsf{select(gt(value, 1) $\alpha$)}).   
-        \end{itemize}
-  \item FLWOR:
+
+\textbf{\LARGE TODO:}innledning
+
+In this section we will present some posible simplifications discovered during the develepment of the Tainted
+Dependencies method. The $\Rightarrow$ sign is to be read as ``can be written as''. 
+
+\subsection{Literals}
+\label{sect:trans:TD:simpl:lit}      
+
+Rule \ref{rule:trans:TD:literal} of section \ref{sect:trans:TD:litteral} shows a very general way to translate
+XQuery literals to a relational format. But creating one relation for each litteral is very often unnecessary, and
+often quite a bit more resource consuming than alternative solutions. The parent expression of a litteral should
+in most cases be informed that its subexpression is a litteral instead of being handed a one-tuple relation.
+
+One such case is if the litteral will be used in a join (predicate-less) or cartesian product. A better solution
+will then be to project the litteral into the other relation. Following is an example of how such a expression
+should be written:
+\begin{equation}
+\begin{array}{lcr}
+\begin{array}{l}
+\mbox{\quad\quad\textsf{\vdots}} \\
+\mbox{\textsf{hhjoin([],[],\ldots}} \\ \quad
+\mbox{\textsf{\ldots}\textbf{r(}}e\mbox{\textbf{)\ldots}} \\ \quad
+\mbox{\textbf{r(}}Literal\mbox{\textbf{)}} \\
+\mbox{\quad\quad\textsf{\vdots}}
+\end{array}
+&
+\Rightarrow
+&
+\begin{array}{l}
+\mbox{\quad\quad\textsf{\vdots}} \\
+\mbox{\textsf{project(\ldots, rvalue=}}Literal\mbox{\textsf{\ldots}} \\ \quad
+\mbox{\textsf{\ldots}\textbf{r(}}e\mbox{\textbf{)\ldots}} \\
+\mbox{\quad\quad\textsf{\vdots}}
+\end{array}
+\end{array}
+\label{simpl:trans:TD:joinLit}
+\end{equation}
+
+And if the reason why the literal was joined with the relation was because it was part of a arithmetic, comparison
+or logical expression, the literal may be moved inside the \textsf{project} operator responsible for executing the
+binary operation, shortening the relational algebra even more:
+
+\begin{equation}
+\begin{array}{lcr}
+\begin{array}{l}
+\mbox{\textsf{project(val=OP(l.val, r.val)\ldots}} \\ \quad
+\mbox{\textsf{hhjoin([],[],\ldots}} \\ \quad \quad
+\mbox{\textsf{\ldots}\textbf{r(}}e\mbox{\textbf{)\ldots}} \\ \quad \quad
+\mbox{\textbf{r(}}Literal\mbox{\textbf{)}} \\
+\mbox{\quad\quad\textsf{\vdots}}
+\end{array}
+&
+\Rightarrow
+&
+\begin{array}{l}
+\mbox{\textsf{project(val=OP(val, }}Literal\mbox{\textsf{)\ldots}} \\ \quad
+\mbox{\textsf{\ldots}\textbf{r(}}e\mbox{\textbf{)\ldots}} \\
+\mbox{\quad\quad\textsf{\vdots}}
+\end{array}
+\end{array}
+\label{simpl:trans:TD:binLit}
+\end{equation}
+
+If the cases where a literal will have to be translated to a single-tuple relation, in most cases the $index$
+attribute will not be needed. But this will probably detected by the optimiser, and may be left out anyway.
+
+\subsection{Sequence Construction}
+\label{sect:trans:TD:simpl:seq}
+
+Informing a parent expression if its subexpressions will evaluate to singleton sequences or not can have some
+advantages. One is the posibility of detecting certain type errors, as will be discussed in section
+\ref{sect:disc:singelton}. Another advandage is gained when it comes to sequence construction.
+
+Rule \ref{rule:trans:TD:seqConstr} in section \ref{sect:trans:TD:seqBuild} describes a general way to build
+sequences. But if all the expressions to build a sequence from will evaluate to singleton sequences, there is no
+need for the \textsf{numberate} operator. Further, instead of adding $sprIdx$ fields to specify the order, this
+can be done directly on the $index$ fields. A version of rule \ref{rule:trans:TD:seqConstr} can therefore be put
+like this:
+\begin{equation}
+\frac{\left\{e_{1},\ldots,e_{n}\right\}\subset{Singletons}}{e_{1}\mbox{\texttt{, \ldots, }}e_{n}}\longmapsto
+\begin{array}{l}
+\mbox{\textsf{union(}} \\ \quad 
+\mbox{\textsf{project(index=1, value; }} \\ \quad \quad 
+\mbox{\textbf{t(r(}}e_{1}\mbox{\textbf{), }}\vartheta\mbox{\textbf{)}\textsf{);}} \\ \quad 
+\qquad\vdots\\ \quad 
+\mbox{\textsf{project(index=}\textit{n}\textsf{, value; }} \\ \quad \quad 
+\mbox{\textbf{t(r(}}e_{n}\mbox{\textbf{), }}\vartheta\mbox{\textbf{)}\textsf{))}}
+\end{array}
+\label{rule:trans:TD:seqIfSingl}
+\end{equation}
+Where $\vartheta=e_{1}.\vartheta \cup \ldots \cup e_{n}.\vartheta$.
+
+If a sequence construction expression have only literal subexpressions, the translation may be even more
+simplified. As the rule stands now, the sequence will be built by splicing together single-tule relations with an
+\textsf{union} operator. The \textsf{make} operator does however support multiple items, so a better solution
+would be to collect all items in one MQL operator:
+
+\begin{equation}
+\frac{\left\{e_{1},\ldots,e_{n}\right\}\subset{Literals}}{e_{1}\mbox{\texttt{, \ldots, }}e_{n}}\longmapsto
+\begin{array}{l}
+\mbox{\textsf{make(name:=["index", "value"],}} \\ \quad\quad\quad
+\mbox{\textsf{[1, \ldots, n], [}}e_{1}\mbox{\textsf{, \ldots, }}e_{n}\mbox{\textsf{])}}
+\end{array}
+\label{rule:trans:TD:seqIfLit}
+\end{equation}
+
+These rules may even be combined, as literals are also singleton sequences. If all the items in the soon to 
+be sequence are singletons, all singletons which are literals as well can be inserted into a relation with
+the same \textsf{make} operator. The $index$ value of the items will have to be according to their relative 
+position within the sequence construction expression. Following is an example of a sequence construction with
+only singleton items where not all of them are literals:
+\begin{equation*}
+\mbox{\texttt{('a', 'b', \$b, 'c')}}\longmapsto
+\begin{array}{l}
+\mbox{\texttt{union(}} \\ \quad
+\mbox{\texttt{project(index=3, value, bnumb;}} \\ \quad \quad
+\mbox{\textbf{r(}}\texttt{\$b}\mbox{\textbf{)}\textsf{)}} \\ \quad
+\mbox{\textbf{t(}}
+\mbox{\textsf{make(name:=["index", "value"],}} \\ \quad \quad \quad \quad \quad 
+\mbox{\textsf{[1, 2, 4],['a', 'b', 'c'])}\textbf{,
+}}\{\mbox{\texttt{b}}\}\mbox{\textbf{)}\textsf{)}}
+\end{array}
+\end{equation*}
+      
+
+\subsection{FLWORs}
+\label{sect:trans:TD:simpl:flwor}        
+  FLWOR:
   	\begin{itemize}
         \item  kan bli -> project , ved singelton return
-      \end{itemize}   
-  \item Arithmetic /comp / logical
+      \end{itemize}
+
+\subsection{Arithmetic Expressions}
+\label{sect:trans:TD:simpl:arith}         
+  Arithmetic /comp / logical
 	\begin{itemize}
       \item multiple +- kan bli dyttet sammen\ldots oddetall - = -, partal = drit i det.
-      \item singleton inn i and/or -> slippe select
+      \item singleton inn i and/or -> slippe select (bull?)
     \end{itemize}
-  \item             
-\end{itemize}
