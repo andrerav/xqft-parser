@@ -36,9 +36,7 @@ public abstract class Visitor {
     public abstract TraverseReturn visitAST_LETCLAUSE(XQFTTree tree);
     public abstract TraverseReturn visitLPARSi(XQFTTree tree);
     public abstract TraverseReturn visitIntegerLiteral(XQFTTree tree);
-    public abstract TraverseReturn visitIF(XQFTTree tree);
-    public abstract TraverseReturn visitTHEN(XQFTTree tree);
-    public abstract TraverseReturn visitELSE(XQFTTree tree);
+    public abstract TraverseReturn visitAST_IFEXPR(XQFTTree tree);
     
     /**
      * Visit all children of tree
