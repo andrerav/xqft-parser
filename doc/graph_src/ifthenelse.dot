@@ -1,0 +1,11 @@
+digraph AST {
+edge [color=black, dir=both, weight=1, fontcolor=black, fontname=Helvetica, arrowhead=none,arrowtail=normal]
+node [shape=plaintext]
+
+project1->select1
+  select1->hhjoin1
+    hhjoin1->union1
+      union1->
+    
+
+}
