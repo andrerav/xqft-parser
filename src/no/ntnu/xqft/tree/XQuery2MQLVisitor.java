@@ -441,7 +441,7 @@ public class XQuery2MQLVisitor extends Visitor {
         
         VarRefSet v_e2e3_n_e1 = (VarRefSet)v_e2_u_e3.clone();
             v_e2e3_n_e1.retainAll(r_e1.getVarRefs());
-        
+         
             System.out.println(v_e2_u_e3.toString());
             System.out.println(v_e2e3_n_e1.toString());
         
