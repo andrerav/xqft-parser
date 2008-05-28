@@ -407,8 +407,9 @@ public class XQuery2MQLVisitor extends Visitor {
     public TraverseReturn visitIntegerLiteral(XQFTTree tree) {
 
         StringBuffer b = new StringBuffer();
-        b.append("name:=[value],");
+        b.append("name:=[index, value], [1], [");
         b.append(tree.getText());
+        b.append("]");
         
         Make make = new Make(b.toString());
 
@@ -418,6 +419,41 @@ public class XQuery2MQLVisitor extends Visitor {
         tr.setOperatorTree(make);
 
         return tr;
+    }
+
+
+    @Override
+    public TraverseReturn visitIF(XQFTTree tree) {
+
+        // if (e1) then e2 else e3
+        XQFTTree e1 = (XQFTTree)tree.getChild(0); 
+        XQFTTree e2 = (XQFTTree)tree.getChild(1);
+        XQFTTree e3 = (XQFTTree)tree.getChild(2);
+        
+        // Visit the expressions
+        TraverseReturn r_e1 = acceptThis(e1);
+        TraverseReturn r_e2 = acceptThis(e2);
+        TraverseReturn r_e3 = acceptThis(e3);
+
+        TraverseReturn result = new TraverseReturn();
+        
+        result.setSingleton(false);
+        
+        return result;
+    }
+    
+    
+    
+    @Override
+    public TraverseReturn visitELSE(XQFTTree tree) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public TraverseReturn visitTHEN(XQFTTree tree) {
+        // TODO Auto-generated method stub
+        return null;
     }
     
     

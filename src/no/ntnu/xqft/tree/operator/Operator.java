@@ -202,7 +202,7 @@ public abstract class Operator {
         buf.append("digraph AST {\n" +
                         "edge [color=black, dir=both, weight=1, " +
                         "fontcolor=black, arrowhead=none, "+
-                        "arrowtail=normal]\n");
+                        "arrowtail=normal]\nnode [shape=plaintext]");
         
         buf.append(this.generateNodeRel());
         
@@ -217,17 +217,20 @@ public abstract class Operator {
 
         String nodeName = this.name + my_i;
         
+        String nodeText = this.name + "(" + this.paramsToString() + "; ..";
+        
         /* Token name for this node */
         //String tokenName = this.printTokenName && this.getToken() != null ? XQFTParser.tokenNames[this.getToken().getType()]  + ": " : "";
-        String nodeText = this.fixStringForDot(this.name);
+        //String nodeText = this.fixStringForDot(this.name);
         
         
         if (this.operators == null || this.operators.size() == 0) {
-            return nodeName + " [label=\"" + nodeName + nodeText + "\"]\n";
+            nodeText = this.name + "(" + this.paramsToString() + ")";
+            return nodeName + " [label=\"" + nodeText + "\"]\n";
         }
         StringBuffer buf = new StringBuffer();
             
-        buf.append(nodeName + " [label=\"" + nodeName + nodeText + "\"]\n");
+        buf.append(nodeName + " [label=\"" + nodeText + "\"]\n");
             
         for (Operator op : this.operators) {
             //XQFTTree t = (XQFTTree) children.get(i);

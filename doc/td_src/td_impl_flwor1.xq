@@ -1,0 +1,1 @@
+for $a in (1) return (2, for $b in (3) return ($a, $b, 4))
