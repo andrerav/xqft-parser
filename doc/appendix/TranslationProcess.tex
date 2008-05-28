@@ -194,3 +194,29 @@ hhjoin([],[], [l.value, anumb];
               make(name:=[value],2))))))))
 \end{Verbatim}
  
+This can be simplified by replacing the sequence construction nodes with a
+single operation \texttt{make(name:=[index, value], [1,2,3], [1,2,3]))}:
+
+\begin{Verbatim}
+hhjoin([],[], [l.value, anumb];
+  union(;
+    project(value=l.value, anumb;
+      numberate(index, [r.value, index], [anumb];
+        hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
+          numberate(index,[sprIdx,index],[];
+            union(;
+              project([anumb = index, index = 1, value];
+                make(name:=[index, value], [1,2,3], [1,2,3])),
+              make(name:=[value],2))),
+          project([anumb = index, index = 1, value];
+            make(name:=[index, value], [1,2,3], [1,2,3])))
+        make(name:=[value],2))))
+    select(xqBoolean(value);
+      project(index=1, value=max, anumb;
+        group((anumb), max(value);
+          project(value=gt(r.value, l.value), anumb;
+            hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
+              project([anumb = index, index = 1, value];
+                make(name:=[index, value], [1,2,3], [1,2,3])),
+              make(name:=[value],2)))))))
+\end{Verbatim}
