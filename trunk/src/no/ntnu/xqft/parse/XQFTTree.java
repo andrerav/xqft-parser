@@ -429,17 +429,17 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 System.err.println("method not implemented: visitCASE()");
                 break;
             case XQFTParser.IF:
-                //return visitor.visitIF(this);
-                System.err.println("method not implemented: visitIF()");
-                break;
+                return visitor.visitIF(this);
+                //System.err.println("method not implemented: visitIF()");
+                //break;
             case XQFTParser.THEN:
-                //return visitor.visitTHEN(this);
-                System.err.println("method not implemented: visitTHEN()");
-                break;
+                return visitor.visitTHEN(this);
+                //System.err.println("method not implemented: visitTHEN()");
+                //break;
             case XQFTParser.ELSE:
-                //return visitor.visitELSE(this);
-                System.err.println("method not implemented: visitELSE()");
-                break;
+                return visitor.visitELSE(this);
+                //System.err.println("method not implemented: visitELSE()");
+                //break;
             case XQFTParser.OR:
                 //return visitor.visitOR(this);
                 System.err.println("method not implemented: visitOR()");

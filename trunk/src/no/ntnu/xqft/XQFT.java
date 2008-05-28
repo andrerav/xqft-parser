@@ -135,10 +135,10 @@ public class XQFT {
             if (createDot) {
                 String dotpath = outputFolder + "/" + basename + ".dot";
                 m.dumpToFile(tree.toDotStringTree(), dotpath);
-                
+
                 if (createPdf) {
                     String pdfpath = outputFolder + "/" + basename + ".pdf";
-                    m.lagGraf(dotpath, pdfpath);                    
+                    m.lagGraf(dotpath, pdfpath);
                 }
             }
             
@@ -148,6 +148,18 @@ public class XQFT {
             
             XQuery2MQLVisitor visitor = new XQuery2MQLVisitor();
             top = visitor.visit(tree);
+
+
+            if (createDot) {
+
+                String dotpath_relalg = outputFolder + "/" + basename + "_relalg.dot";
+                m.dumpToFile(top.toDotStringTree(), dotpath_relalg);
+                
+                if (createPdf) {
+                    String pdfpath_relalg = outputFolder + "/" + basename + "_relalg.pdf";
+                    m.lagGraf(dotpath_relalg, pdfpath_relalg);
+                }
+            }            
             
             System.out.println(top.toPrettyString(0));
             System.out.println(top.toDotStringTree());
