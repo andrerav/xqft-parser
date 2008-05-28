@@ -97,35 +97,10 @@ numberate(index,[sprIdx,index],[];
 \end{Verbatim}
 
 This translation is now used to replace \textbf{r}($e_C$) in the translation
-of the orderby-clause, which is translated using rule \ref{rule:trans:TD:itOrd}:
+of the where-clause, which is translated using rules \ref{rule:trans:TD:where}
+and \ref{rule:trans:TD:comparative}:
 
-\begin{Verbatim}
-project(value=l.value, anumb;
-  numberate(index, [r.value, index], [anumb];
-    hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
-      numberate(index,[sprIdx,index],[];
-        union(;
-          project([anumb = index, index = 1, value];
-            numberate(index,[sprIdx,index],[];
-              union(;
-                project(sprIdx=1,index=0,value;
-                  make(name:=[value],1)),
-                project(sprIdx=2,index=0,value;
-                  make(name:=[value],2)),
-                project(sprIdx=3,index=0,value;
-                  make(name:=[value],3))))),
-          make(name:=[value],2))),
-      project([anumb = index, index = 1, value];
-        numberate(index,[sprIdx,index],[];
-          union(;
-            project(sprIdx=1,index=0,value;
-              make(name:=[value],1)),
-            project(sprIdx=2,index=0,value;
-              make(name:=[value],2)),
-            project(sprIdx=3,index=0,value;
-              make(name:=[value],3))))
-\end{Verbatim}
-
+% WHERE
 The translation process is finalized by translating the where-clause using rules
 \ref{rule:trans:TD:where} and \ref{rule:trans:TD:comparative}. First we
 obtain the following translation from \texttt{\$a gt \$b}:
@@ -147,26 +122,15 @@ project(index=1, value=max, anumb;
         make(name:=[value],2)))))
 \end{Verbatim}
 
-And complete the translation of the FLWOR expression by inserting the above:
+Which is entered together with \textbf{r}($e_C$) into the translation of the
+where-clause:
 
 \begin{Verbatim}
 hhjoin([],[], [l.value, anumb];
-  union(;
-    project(value=l.value, anumb;
-      numberate(index, [r.value, index], [anumb];
+  project(index=1, value=max, anumb;
+    group((anumb), max(value);
+      project(value=gt(r.value, l.value), anumb;
         hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
-          numberate(index,[sprIdx,index],[];
-            union(;
-              project([anumb = index, index = 1, value];
-                numberate(index,[sprIdx,index],[];
-                  union(;
-                    project(sprIdx=1,index=0,value;
-                      make(name:=[value],1)),
-                    project(sprIdx=2,index=0,value;
-                      make(name:=[value],2)),
-                    project(sprIdx=3,index=0,value;
-                      make(name:=[value],3))))),
-              make(name:=[value],2))),
           project([anumb = index, index = 1, value];
             numberate(index,[sprIdx,index],[];
               union(;
@@ -175,48 +139,96 @@ hhjoin([],[], [l.value, anumb];
                 project(sprIdx=2,index=0,value;
                   make(name:=[value],2)),
                 project(sprIdx=3,index=0,value;
-                  make(name:=[value],3))))
-        make(name:=[value],2)))))
-    select(xqBoolean(value);
-      project(index=1, value=max, anumb;
-        group((anumb), max(value);
-          project(value=gt(r.value, l.value), anumb;
-            hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
-              project([anumb = index, index = 1, value];
-                numberate(index,[sprIdx,index],[];
-                  union(;
-                    project(sprIdx=1,index=0,value;
-                      make(name:=[value],1)),
-                    project(sprIdx=2,index=0,value;
-                      make(name:=[value],2)),
-                    project(sprIdx=3,index=0,value;
-                      make(name:=[value],3))))),
-              make(name:=[value],2))))))))
+                  make(name:=[value],3))))),
+          make(name:=[value],2))))),
+  select(xqBoolean(value);
+    project(index=1, value=max, anumb;
+      group((anumb), max(value);
+        project(value=gt(r.value, l.value), anumb;
+          hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
+            project([anumb = index, index = 1, value];
+              numberate(index,[sprIdx,index],[];
+                union(;
+                  project(sprIdx=1,index=0,value;
+                    make(name:=[value],1)),
+                  project(sprIdx=2,index=0,value;
+                    make(name:=[value],2)),
+                  project(sprIdx=3,index=0,value;
+                    make(name:=[value],3))))),
+            make(name:=[value],2)))))))
+\end{Verbatim}
+
+This result is used to replace \textbf{r}($e_C$) in the translation of the
+orderby-clause, and we obtain the complete translation:
+
+\begin{Verbatim}
+project(value=l.value, anumb;
+  numberate(index, [r.value, index], [anumb];
+    hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
+      hhjoin([],[], [l.value, anumb];
+        project(index=1, value=max, anumb;
+          group((anumb), max(value);
+            project(value=gt(r.value, l.value), anumb;
+              hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
+                project([anumb = index, index = 1, value];
+                  numberate(index,[sprIdx,index],[];
+                    union(;
+                      project(sprIdx=1,index=0,value;
+                        make(name:=[value],1)),
+                      project(sprIdx=2,index=0,value;
+                        make(name:=[value],2)),
+                      project(sprIdx=3,index=0,value;
+                        make(name:=[value],3))))),
+                make(name:=[value],2))))),
+        select(xqBoolean(value);
+          project(index=1, value=max, anumb;
+            group((anumb), max(value);
+              project(value=gt(r.value, l.value), anumb;
+                hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
+                  project([anumb = index, index = 1, value];
+                    numberate(index,[sprIdx,index],[];
+                      union(;
+                        project(sprIdx=1,index=0,value;
+                          make(name:=[value],1)),
+                        project(sprIdx=2,index=0,value;
+                          make(name:=[value],2)),
+                        project(sprIdx=3,index=0,value;
+                          make(name:=[value],3))))),
+                  make(name:=[value],2))))))),
+      project([anumb = index, index = 1, value];
+        numberate(index,[sprIdx,index],[];
+          union(;
+            project(sprIdx=1,index=0,value;
+              make(name:=[value],1)),
+            project(sprIdx=2,index=0,value;
+              make(name:=[value],2)),
+            project(sprIdx=3,index=0,value;
+              make(name:=[value],3))))
 \end{Verbatim}
  
 This can be simplified by replacing the sequence construction nodes with a
 single operation \texttt{make(name:=[index, value], [1,2,3], [1,2,3]))}:
 
 \begin{Verbatim}
-hhjoin([],[], [l.value, anumb];
-  union(;
-    project(value=l.value, anumb;
-      numberate(index, [r.value, index], [anumb];
-        hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
-          numberate(index,[sprIdx,index],[];
-            union(;
-              project([anumb = index, index = 1, value];
-                make(name:=[index, value], [1,2,3], [1,2,3])),
-              make(name:=[value],2))),
-          project([anumb = index, index = 1, value];
-            make(name:=[index, value], [1,2,3], [1,2,3])))
-        make(name:=[value],2))))
-    select(xqBoolean(value);
-      project(index=1, value=max, anumb;
-        group((anumb), max(value);
-          project(value=gt(r.value, l.value), anumb;
-            hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
-              project([anumb = index, index = 1, value];
-                make(name:=[index, value], [1,2,3], [1,2,3])),
-              make(name:=[value],2)))))))
+project(value=l.value, anumb;
+  numberate(index, [r.value, index], [anumb];
+    hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
+      hhjoin([],[], [l.value, anumb];
+        project(index=1, value=max, anumb;
+          group((anumb), max(value);
+            project(value=gt(r.value, l.value), anumb;
+              hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
+                project([anumb = index, index = 1, value];
+                  make(name:=[index, value], [1,2,3], [1,2,3])),
+                make(name:=[value],2))))),
+        select(xqBoolean(value);
+          project(index=1, value=max, anumb;
+            group((anumb), max(value);
+              project(value=gt(r.value, l.value), anumb;
+                hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];
+                  project([anumb = index, index = 1, value];
+                    make(name:=[index, value], [1,2,3], [1,2,3])),
+                  make(name:=[value],2))))))),
+      project([anumb = index, index = 1, value];
+        make(name:=[index, value], [1,2,3], [1,2,3])))))
 \end{Verbatim}

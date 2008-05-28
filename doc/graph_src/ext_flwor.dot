@@ -4,8 +4,9 @@ node [shape=plaintext]
 
 // DAGifying nodes
 project123->make123;
-make123 [label="make(1,2,3)"];
-make2 [label="make(2)"];
+make123 [label="make(name:=[index, value], [1,2,3], [1,2,3])"];
+make2 [label="make(name:=[value],2)"];
+project123 [label="project([anumb = index, index = 1, value]; .."];
 
 // Ordinary nodes
 project1 [label="project(value=l.value, anumb; ..)"];
@@ -23,7 +24,6 @@ group2 [label="group((anumb), max(value); .."];
 project5 [label="project(value=gt(r.value, l.value), anumb;"];
 hhjoin4 [label=" hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb];"];
 
-
 project1->numberate1;
   numberate1->hhjoin1;
     hhjoin1->hhjoin2;
@@ -40,5 +40,5 @@ project1->numberate1;
               project5->hhjoin4;
                 hhjoin4->project123;
                 hhjoin4->make2;
-    hhjoin1->project123;               
+    hhjoin1->project123;
 }
