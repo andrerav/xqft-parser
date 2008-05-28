@@ -478,6 +478,7 @@ public class XQuery2MQLVisitor extends Visitor {
     
     /*
      * Performs a taint
+     * TODO: fixify this so it actually taints
      */
     protected TraverseReturn taint(TraverseReturn tr, VarRefSet varRefs) {
         
