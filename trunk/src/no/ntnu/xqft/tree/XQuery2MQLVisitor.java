@@ -438,17 +438,43 @@ public class XQuery2MQLVisitor extends Visitor {
         // Varrefs
         VarRefSet v_e2_u_e3 = (VarRefSet)r_e2.getVarRefs().clone();
             v_e2_u_e3.addAll(r_e3.getVarRefs());
-        
         VarRefSet v_e2e3_n_e1 = (VarRefSet)v_e2_u_e3.clone();
             v_e2e3_n_e1.retainAll(r_e1.getVarRefs());
 
-            System.out.println(v_e2_u_e3.toString());
-            System.out.println(v_e2e3_n_e1.toString());
+        // Alternatives
+        Project project_alt1 = new Project("alt=1, value, " + v_e2_u_e3.toStringList(), this.taint(r_e2, r_e3.getVarRefs()).getOperatorTree()); 
+        Project project_alt2 = new Project("alt=2, value, " + v_e2_u_e3.toStringList(), this.taint(r_e3, r_e2.getVarRefs()).getOperatorTree()); 
+        
+        // Union
+        Union union = new Union(null, null);
+        union.addOperator(project_alt1);
+        union.addOperator(project_alt2);
         
         TraverseReturn result = new TraverseReturn();
 
         result.setSingleton(false);
-        
+
         return result;
     }    
+    
+    
+    /*
+     * Performs a taint
+     */
+    protected TraverseReturn taint(TraverseReturn tr, VarRefSet varRefs) {
+        
+        TraverseReturn result = new TraverseReturn();
+        
+        Cross cross = new Cross();
+        
+        for (VarRef varRef : varRefs) {
+            if (tr.getVarRefs().contains(varRef)) {
+                
+            }
+        }
+        
+        //return result;
+        return tr;
+        
+    }
 }
