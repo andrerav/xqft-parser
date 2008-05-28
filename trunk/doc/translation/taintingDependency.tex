@@ -76,33 +76,11 @@ a prefix \textsf{l.} (left) or \textsf{r.} (right) depending on which child the 
 \input{translation/TD/FLWOR.tex}
 \input{translation/TD/BinaryOps.tex}
 \input{translation/TD/CondAndFull.tex}
-
-\subsection{Path Expressions}
-\label{sect:trans:TD:pathExprs}
-\begin{itemize}
-  \item axes
-  \item samling av child axes /a/b/c/d -> ikke e1/e2
-  \item i logical context -> outer join
-\end{itemize}
-
-\subsection{Predicates}
-\label{sect:trans:TD:predicates}
-\begin{itemize}
-  \item isNumber() ifThenElse xqBoolean()
-  \item contextnode p\aa~boks\ldots trengs dette alltid? Strengt tatt.. veldig vanskelig \aa~vite n\aa r man
-  garantert ikke trenger den iallefall\ldots
-\end{itemize}
+\input{translation/TD/PathPred.tex}
 
 
-\subsection{other Th1ngz:}
-\begin{itemize}
-  \item node comparisons\ldots\ldots tviler p\aa~at vi f\aa r til dette glatt\ldots
-  \item constructors\ldots element, CDATA, attribute etc etc
-\end{itemize}
-
-
-\subsection{Optimisations}
-\label{sect:trans:TD:optimisations}
+\subsection{Simplifications}
+\label{sect:trans:TD:simplifications}
 \begin{itemize}
   \item sekvenser:
 	  \begin{itemize}
