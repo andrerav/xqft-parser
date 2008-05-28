@@ -120,10 +120,12 @@ can also be used in a comparison with loop lifting.
 \subsection{FLWOR}
 \subsubsection{Query premise}
 \begin{Verbatim}
-  for ($a in 1,2,3) return ( for $b in (4,5,6) return ($a, $b))
+  for $a in (1,2,3) return ($a,2)
 \end{Verbatim}
 
 \subsubsection{Result}
+
+
 
 \subsection{FLWOR with conditional}
 \subsubsection{Query premise}

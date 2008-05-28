@@ -100,7 +100,9 @@ public class XQFT {
         
         XQFT m = new XQFT();
 	    
-	    
+        // Result
+        Operator top = null;
+        
         System.out.println("Parsing the following query:\n" + input + "\n");
 
         // Create lexer
@@ -145,9 +147,10 @@ public class XQFT {
             //Operator top = visitor.visit(tree);
             
             XQuery2MQLVisitor visitor = new XQuery2MQLVisitor();
-            Operator top = visitor.visit(tree);
+            top = visitor.visit(tree);
             
             System.out.println(top.toPrettyString(0));
+            System.out.println(top.toDotStringTree());
 		}		
 
 		Scope.printPrettyString();

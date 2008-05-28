@@ -57,6 +57,8 @@ public class XQuery2MQLVisitor extends Visitor {
         
         TraverseReturn returnClauseResult = acceptThis(returnClause);
         
+        
+        // HUSK DET MED TAINTFUNKSJONDRIT
         if (Scope.getInstance() != null &&
                 Scope.getInstance().getCurrentIterVar() != null && 
                 returnClauseResult.getVarRefs() != null &&
