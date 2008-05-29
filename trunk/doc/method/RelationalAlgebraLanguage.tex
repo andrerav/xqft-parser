@@ -14,18 +14,15 @@ konfidensielle.
 \label{sect:method:mql:indexes}
 \label{sect:method:mql:concepts}
 All queries for MQL are written as strings with a syntax reminiscient of Lisp
-dialects. TODO: kodeeksempel + relalgtre?
+dialects. An example query can be seen in figure \ref{figure:mql:op_example}.
 
-\marginpar{\underline{\Large TODO} \footnotesize Er ikke helt sikker, men tror den heter value occurence index,
-value index er en tredje type, som vi ikke kommer til \aa~bruke? Valocc er en
-hypotetisk index, kan sikkert presisere det} Data is stored in \textit{indexes}
-rather than in DOM trees. Naturally, this is a prerequisite for efficient execution of relational algebra on the data. There are two basic index types: \textit{occurence} indexes and \textit{value}
-indexes. In the case of an occurence index, a lookup for a term will map the
-term to the occurences of this term. In a \textit{value} index, a key (for
-example document id) is associated to one or more \textit{values} in the
-document collection. Lookups in \textit{value} indexes can be combined with
-lookups in \textit{occurence} indexes to add data to the result set for the
-user.
+\marginpar{\underline{\Large TODO} \footnotesize Valocc er en hypotetisk index, kan sikkert presisere det} 
+Data is stored in \textit{indexes} rather than in DOM trees. Naturally, this is a prerequisite for efficient
+execution of relational algebra on the data. There are two basic index types: \textit{occurence} indexes and
+\textit{value} indexes. In the case of an occurence index, a lookup for a term will map the term to the occurences
+of this term. In a \textit{value} index, a key (for example document id) is associated to one or more
+\textit{values} in the document collection. Lookups in \textit{value} indexes can be combined with lookups in
+\textit{occurence} indexes to add data to the result set for the user.
 
 The schema of the indexes determins the fields/columns in the result sets from
 a lookup, but typically these three fields will be included on a lookup of a
@@ -39,17 +36,6 @@ term in the \textit{occurence} index:
   scope also contains metadata about the \textit{instance} of the scope
 \end{itemize}
 
-Hvordan skal man egentlig formulere seg her slik at Oystein ikke blir trist og
-lei?
-
-\begin{itemize}
-  \item hvilke indexer bruker vi..
-  \item hvordan ser resultatsettene ut n\aa r vi sp\o r i disse indexene?
-  \item Vi regner med at oppslag i valloc gir {documentId, pos, scope, value} (tror ikke den egentlig heter value,
-  men heller navnet p\aa~scopet) og at scope holder inkludert seg selv -> alts\aa~at noe som: <a> hei </a> er
-  lagret som {value = ``hei'', scope = a}. Hvis dette er umulig m\aa~vi forutsette en project for hver gang.. kan
-  ikke la det feltet hete hva det vil\ldots\ldots\ldots
-\end{itemize}
 
 \subsection{Language syntax}
 The syntax of MQL (Mars Query Language) is, as mentioned above, reminiscent of
@@ -89,8 +75,8 @@ described for each operator, if applicable.
 
 Also note that parameters and child operators are separated by a semicolon. For
 example, in the MQL expression \texttt{index(valocc;lookup(hairdresser))} the
-\texttt{index()} operator is given one parameter (\textit{valocc}) and one
-child operator (\textit{lookup(hairdresser)}).
+\texttt{index()} operator is given one parameter (\texttt{valocc}) and one
+child operator (\texttt{lookup(hairdresser)}).
 
 \subsection{Operators}
 \label{sect:method:marsOperators}
@@ -105,7 +91,7 @@ default index. See figure \ref{figure:mql:op_example} for an example of usage.
 
 \subsubsection{Scope}
 \label{sect:method:marsOperators:scope}
-The \texttt{scope()} operator accepts one parameter and one child operator. The
+The \texttt{scope()} operator accepts one parameter and one child operator. Informally, the
 result set from the child operator is filtered to match the first parameter, which is a
 scope given on a form similar to a XPath expression. See figure
 \ref{figure:mql:op_example} for an example of usage. 
@@ -119,12 +105,10 @@ example of usage where the child operators will operate on the index
 
 \subsubsection{Project}
 \label{sect:method:marsOperators:project}
-\marginpar{\underline{\Large TODO} \footnotesize rename - project combo egentlig}
-The \texttt{project()} operator lends its name and semantics from the project
-operator known from basic relational algebra (projection is described in
-section \ref{sect:theory:relAlg:projection}). The \texttt{project()} operator
-has a more complex syntax described in EBNF notation in figure
-\ref{figure:mql:ebnf:project_ebnf}.
+The \texttt{project()} operator lends its name and semantics from the project operator known from basic relational
+algebra (section \ref{sect:theory:relAlg:projection}), as well as the rename operator (section
+\ref{sect:theory:relAlg:rename}). The \texttt{project()} operator has a more complex syntax described in EBNF
+notation in figure \ref{figure:mql:ebnf:project_ebnf}.
 
 \begin{figure}[!h]
 \centering
@@ -178,7 +162,7 @@ and an applied constant field}
 \centering
 \begin{tabular}{|c | c | c |}
 \hline
-id & cid & one \\ \hline
+$id$ & $cid$ & $one$ \\ \hline
 45 & 100 & 1 \\ \hline
 103 & 103 & 1 \\ \hline
 90 & 100 & 1 \\ \hline
@@ -215,7 +199,7 @@ select(eq(100, cid);
 \centering
 \begin{tabular}{|c | c | c |}
 \hline
-id & cid & one \\ \hline
+$id$ & $cid$ & $one$ \\ \hline
 45 & 100 & 1 \\ \hline
 90 & 100 & 1 \\ \hline
 33 & 100 & 1 \\ \hline
@@ -286,7 +270,7 @@ make(1,2,3)
 \centering
 \begin{tabular}{|c | c | c |}
 \hline
-field0 & field1 & field2 \\ \hline
+$field0$ & $field1$ & $field2$ \\ \hline
 1 & 2 & 3 \\ \hline
 \end{tabular}
 \caption{Hypothetical result of query in figure
@@ -311,7 +295,7 @@ make(name:=["A","B","C"], [1,4], [2,5] [3,6])
 \centering
 \begin{tabular}{|c | c | c |}
 \hline
-A & B & C \\ \hline
+$A$ & $B$ & $C$ \\ \hline
 1 & 2 & 3 \\ \hline
 4 & 5 & 6 \\ \hline
 \end{tabular}
@@ -321,14 +305,48 @@ A & B & C \\ \hline
 \end{figure}
 
 \subsubsection{Group}
-\underline{\LARGE TODO:} innhold
 
-\underline{\LARGE TODO:} idiv($e_1$, $e_2$) -> integer division
+\begin{figure}[h]
+\begin{Verbatim}
+OPERATOR ::= "group" "(" GROUPINGFIELDS ["," AGGREGATORS ] ";" OPERATOR ")"
+\end{Verbatim}
+\label{figure:mql:groupEBNF}
+\caption{Group operator EBNF}
+\end{figure}
+
+The notation of the \texttt{group()} operator can be seen in the EBNF sepecification of figure
+\ref{figure:mql:groupEBNF}. The operator will group tuples with the same value for the fields specified in
+\texttt{GROUPINGFIELDS}, and create one tuple per group. Fields not specified in the operator will not be a part
+of the result relation. \texttt{AGGREGATORS} may be used to specify aggregator functions to be run within each
+group. The result of an aggregator will be added as a field for the result tuple corresponding to the group it
+operated on.
+
+\begin{figure}[h]
+\begin{Verbatim}
+group((cid), max(id), count(one); Query1)
+\end{Verbatim}
+\caption{Simple MQL \texttt{group()} example}
+\label{figure:mql:groupEx}
+\end{figure}
+
+If \texttt{Query1} evaluates to the relation shown in figure \ref{figure:mql:project_example2_result}, the query
+of figure \ref{figure:mql:groupEx} will result in the relation of figure HAHAHA.
+
+\begin{figure}[h]
+\begin{tabular}{|c|c|c|} \hline
+$cid$ & $max$ & $count$ \\ \hline
+100 & 90 & 3 \\ \hline
+103 & 103 & 1 \\ \hline
+289 & 289 & 1 \\ \hline
+\end{tabular}
+\end{figure}
+
 
 
 \subsection{Assumed functionality}
 \label{sect:method:marsAddedOperators}
 
+\underline{\LARGE TODO:} idiv($e_1$, $e_2$) -> integer division
 TODO: skrive en liten innledning her om hvorfor vi assumer ting.
 
 \subsubsection{isInScope (scope comparison)}
@@ -504,12 +522,7 @@ hvilke operatorer/ funksjoner har vi lagt til / forutsatt?
 	g\aa~ut ifra at vi har polymorphic type attributes? Og si at type m\aa~bli ordna p\aa~en eller annen m\aa te..
 	\item xqBoolean(pred) tom streng, null og teksten ``false''(p\aa~grunn av skrint typesystem) gir \textbf{false}
 	\item scopeIndex(scope, pred)\ldots Trenger kanskje ikke allikevel\ldots Vet ikke enn\aa
-	\item numberate(fieldName, [sortByList], [partiTionByList], operator) 
-		\begin{itemize}
-        	\item hadde v\ae rt flott om kolonnene i sortByList forsvant etterp\aa~.
-        	\item g\aa r ikke det, m\aa~ vi gj\o re slik: project(fieldName = fieldNameAlt, ~sortByList,
-        	numberate(fieldNameAlt, \ldots))
-        \end{itemize}
+
 	\item union
 		\begin{itemize}
 			  \item noe med schema\ldots virka ikke som thorbj\o rnsen var helt forn\o yd

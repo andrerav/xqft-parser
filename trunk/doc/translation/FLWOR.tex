@@ -82,11 +82,12 @@ expression is not dependent on a iterator, its relational form will not have a r
 of the iterators iterations and will have to be tainted.
 
 Because each FLWOR iterator creates a new sequence, renumbering is needed. No expression in a sibling or parent
-scope of the iterator $I_{\chi}$ may be dependent on $I_{\chi}$. Thus, $\chi$ is not part of the dependencies
-$I_{\chi}.\vartheta$ returned from the iterator, and the corresponding $\chi{numb}$ attribute must be removed. 
+scope of the FLWOR may be dependent on the dependencies in $\beta$. Thus, $\beta$ is not part of the dependencies
+returned from the FLWOR, and the attributes corresponding to $\beta$ must be removed. 
 
-For each allready bound iterator variable $\chi$, from right to left, bound in an \texttt{for} clause,
-the following translation is applied:
+If the FLWOR contains no \texttt{order by}-clause, the ordering of the resulting sequence is determined by the
+iterators of the expression. Remember, the set of iterators $\beta$ is ordered according to the order the
+variables were bound.
 \begin{equation}
 \frac{}{\mbox{\textbf{iterator order}}}
 \longmapsto
@@ -97,7 +98,8 @@ the following translation is applied:
 \label{rule:trans:TD:itOrd}
 \end{equation}
 
-Where $\vartheta = e_{C}.\vartheta - \chi$.
+Where $\vartheta = e_{C}.\vartheta - \beta$, and $e_C$ is the result returned from the \texttt{where}-clause, if
+present, else the \texttt{return}-clause.
 
 From equation \ref{eq:trans:TD:taint} it is clear that a expression allready dependent on any iterator in
 $\beta$ will not be re-tainted by these iterators.
@@ -183,7 +185,7 @@ equi-join will have to be replaced by a cartesian product, as discussed in \ref{
 \begin{equation}
 \frac{}{\mbox{\texttt{where }}e_2}\longmapsto
 \begin{array}{l}
-\mbox{\textsf{hhjoin([l.}}(e_{C}.\vartheta \cap e_2.\vartheta)\mbox{\textsf{], [r.}}(e_{2}.\vartheta \cap
+\mbox{\textsf{hhjoin([}}(e_{C}.\vartheta \cap e_2.\vartheta)\mbox{\textsf{], [}}(e_{2}.\vartheta \cap
 e_{C}.\vartheta)\mbox{\textsf{], [l.value, }} \vartheta\mbox{\textsf{];}} \\ \quad
 \mbox{\textbf{r(}}e_{C}\mbox{\textbf{)\textsf{;}}} \\ \quad
 \mbox{\textsf{select(xqBoolean(value);}} \\ \quad \quad
@@ -192,12 +194,8 @@ e_{C}.\vartheta)\mbox{\textsf{], [l.value, }} \vartheta\mbox{\textsf{];}} \\ \qu
 \label{rule:trans:TD:where}
 \end{equation}
 
-Where $\vartheta = e_{C} \cup e_{2}$, and \textbf{r(}$e_{C}$\textbf{)} is the result of the translation done in
-the \texttt{return} clause.
-
-\textsf{l.}$(e_{C}.\vartheta \cap e_2.\vartheta)$ is short for
-\textsf{l.}$\chi_1$\textsf{numb,\ldots,l.}$\chi_n$\textsf{numb}, where $e_{C}.\vartheta \cap e_2.\vartheta =
-\left\{\chi_1,\ldots,\chi_n\right\}$.
+Where $\vartheta = e_{C}.\vartheta \cup e_{2}.\vartheta$, and \textbf{r(}$e_{C}$\textbf{)} is the result of the
+translation done in the \texttt{return} clause.
 
 By employing the \textsf{select} operator before the joining of the two relations the number of tuples needed to
 be read to execute the join will be minimized. Further, as the \textsf{hhjoin} operator allows for declaring which
@@ -303,7 +301,7 @@ dependencies. Lastly, this relation is renumbered according to the order of the 
 \begin{array}{l}
 \mbox{\textsf{project(value = l.value, }}\vartheta\mbox{\textsf{;}}\\ \quad
 \mbox{\textsf{numberate(index, [r.value, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad \quad
-\mbox{\textsf{hhjoin([l.}}(e_{C}.\vartheta \cap e_2.\vartheta)\mbox{\textsf{], [r.}}(e_{2}.\vartheta \cap
+\mbox{\textsf{hhjoin([}}(e_{C}.\vartheta \cap e_2.\vartheta)\mbox{\textsf{], [}}(e_{2}.\vartheta \cap
 e_{C}.\vartheta)\mbox{\textsf{],}} 
 \\ \quad \quad \quad \quad \quad\mbox{\textsf{[l.value, r.value, }} \vartheta\mbox{\textsf{];}} \\ \quad \quad
 \quad \mbox{\textbf{t(r(}}e_C\mbox{\textbf{), }}\beta\mbox{\textbf{)}\textsf{;}} \\ \quad \quad \quad
