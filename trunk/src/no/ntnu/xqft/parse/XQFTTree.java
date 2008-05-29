@@ -553,9 +553,9 @@ public class XQFTTree extends CommonTree implements no.ntnu.xqft.tree.Node {
                 System.err.println("method not implemented: visitLTOREQSi()");
                 break;
             case XQFTParser.GTSi:
-                //return visitor.visitGTSi(this);
-                System.err.println("method not implemented: visitGTSi()");
-                break;
+                return visitor.visitGTSi(this);
+                //System.err.println("method not implemented: visitGTSi()");
+                //break;
             case XQFTParser.GTOREQSi:
                 //return visitor.visitGTOREQSi(this);
                 System.err.println("method not implemented: visitGTOREQSi()");

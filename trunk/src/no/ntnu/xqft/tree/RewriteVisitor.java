@@ -401,4 +401,12 @@ public class RewriteVisitor extends Visitor {
         // TODO Auto-generated method stub
         return null;
     }
+
+
+
+	@Override
+	public TraverseReturn visitGTSi(XQFTTree tree) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
