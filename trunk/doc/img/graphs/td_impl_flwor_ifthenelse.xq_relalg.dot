@@ -12,11 +12,11 @@ node [shape=plaintext]
                   union9 -> project10
                     project10 -> make11
 make11 [label="make(name:=[index, value], [1], [10])"]
-project10 [label="project(sprIdx=1,index=0,value; .."]
+project10 [label="project(sprIdx=1,index,value; .."]
                     union9 -> project12
                       project12 -> make13
 make13 [label="make(name:=[index, value], [1], [20])"]
-project12 [label="project(sprIdx=2,index=0,value; .."]
+project12 [label="project(sprIdx=2,index,value; .."]
 union9 [label="union(; .."]
 numberate8 [label="numberate(index,[sprIdx,index],[]; .."]
 project7 [label="project([index = 1, anumb = index, value]; .."]
@@ -36,11 +36,11 @@ union5 [label="union(; .."]
                         union22 -> project23
                           project23 -> make24
 make24 [label="make(name:=[index, value], [1], [10])"]
-project23 [label="project(sprIdx=1,index=0,value; .."]
+project23 [label="project(sprIdx=1,index,value; .."]
                           union22 -> project25
                             project25 -> make26
 make26 [label="make(name:=[index, value], [1], [20])"]
-project25 [label="project(sprIdx=2,index=0,value; .."]
+project25 [label="project(sprIdx=2,index,value; .."]
 union22 [label="union(; .."]
 numberate21 [label="numberate(index,[sprIdx,index],[]; .."]
 project20 [label="project([index = 1, anumb = index, value]; .."]

@@ -349,7 +349,7 @@ public class XQuery2MQLVisitor extends Visitor {
             }
 
             if (childResult.isSingleton()) {
-                expr = new Project("sprIdx="+(c+1)+",index=0,value", expr);
+                expr = new Project("sprIdx="+(c+1)+",index,value", expr);
             }
             else {
                 expr = new Project("sprIdx="+(c+1)+",value", expr);
