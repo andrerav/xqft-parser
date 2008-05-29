@@ -117,20 +117,45 @@ algebra using the implemented proof of concept described in chapter
 ``Tainting Dependencies'' method, however the results from these translations
 can also be used in a comparison with loop lifting.
 
-\subsection{FLWOR}
+\subsection{Trivial FLWOR}
 \subsubsection{Query premise}
+\begin{figure}[!htp]
+\begin{center}
 \begin{Verbatim}
-  for $a in (1,2,3) return ($a,2)
+for $a in (1) return $a
 \end{Verbatim}
+  \caption{Trivial FLWOR query premise}
+  \label{fig:results:query_trivial_flwor}
+\end{center}
+\end{figure}
 
 \subsubsection{Result}
 
+\subsection{Complex FLWOR}
+\subsubsection{Query premise}
+\begin{figure}[!htp]
+\begin{center}
+\begin{Verbatim}
+for $a in (1) return (2, for $b in (3) return ($a, $b, 4))
+\end{Verbatim}
+  \caption{Complex FLWOR query premise}
+  \label{fig:results:query_complex_flwor}
+\end{center}
+\end{figure}
 
+\subsubsection{Result}
 
 \subsection{FLWOR with conditional}
 \subsubsection{Query premise}
+\begin{figure}[!htp]
+\begin{center}
+\begin{Verbatim}
+for $a in (10,20) return if $a > 15 then $a else 15
+\end{Verbatim}
+  \caption{Conditional FLWOR query premise}
+  \label{fig:results:query_conditional_flwor}
+\end{center}
+\end{figure}
+
 \subsubsection{Result}
 
-\subsection{Sequence construction}
-\subsubsection{Query premise}
-\subsubsection{Result}
