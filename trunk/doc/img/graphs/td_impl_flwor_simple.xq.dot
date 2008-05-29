@@ -1,25 +1,25 @@
 digraph AST {
 edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=none]
-NODE38 [label="AST_MODULE"]
-NODE39 [label="AST_FLWOR"]
-NODE40 [label="AST_FORCLAUSE"]
-NODE41 [label="$"]
-NODE42 [label="a"]
-NODE41 -> NODE42
- NODE43 [label="("]
-NODE44 [label="1"]
+NODE40 [label="AST_MODULE"]
+NODE41 [label="AST_FLWOR"]
+NODE42 [label="AST_FORCLAUSE"]
+NODE43 [label="$"]
+NODE44 [label="a"]
 NODE43 -> NODE44
- NODE45 [label="2"]
+ NODE45 [label="("]
+NODE46 [label="1"]
+NODE45 -> NODE46
+ NODE47 [label="2"]
+NODE45 -> NODE47
+ NODE48 [label="3"]
+NODE45 -> NODE48
 NODE43 -> NODE45
- NODE46 [label="3"]
-NODE43 -> NODE46
-NODE41 -> NODE43
+NODE42 -> NODE43
+NODE41 -> NODE42
+ NODE49 [label="$"]
+NODE50 [label="a"]
+NODE49 -> NODE50
+NODE41 -> NODE49
 NODE40 -> NODE41
-NODE39 -> NODE40
- NODE47 [label="$"]
-NODE48 [label="a"]
-NODE47 -> NODE48
-NODE39 -> NODE47
-NODE38 -> NODE39
 
 }

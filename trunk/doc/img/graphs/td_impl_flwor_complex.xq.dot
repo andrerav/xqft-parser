@@ -9,37 +9,41 @@ NODE4 -> NODE5
  NODE6 [label="("]
 NODE7 [label="1"]
 NODE6 -> NODE7
+ NODE8 [label="2"]
+NODE6 -> NODE8
 NODE4 -> NODE6
 NODE3 -> NODE4
 NODE2 -> NODE3
- NODE8 [label="("]
-NODE9 [label="2"]
-NODE8 -> NODE9
- NODE10 [label="AST_FLWOR"]
-NODE11 [label="AST_FORCLAUSE"]
-NODE12 [label="$"]
-NODE13 [label="b"]
+ NODE9 [label="("]
+NODE10 [label="3"]
+NODE9 -> NODE10
+ NODE11 [label="AST_FLWOR"]
+NODE12 [label="AST_FORCLAUSE"]
+NODE13 [label="$"]
+NODE14 [label="b"]
+NODE13 -> NODE14
+ NODE15 [label="("]
+NODE16 [label="4"]
+NODE15 -> NODE16
+ NODE17 [label="5"]
+NODE15 -> NODE17
+NODE13 -> NODE15
 NODE12 -> NODE13
- NODE14 [label="("]
-NODE15 [label="3"]
-NODE14 -> NODE15
-NODE12 -> NODE14
 NODE11 -> NODE12
-NODE10 -> NODE11
- NODE16 [label="("]
-NODE17 [label="$"]
-NODE18 [label="a"]
-NODE17 -> NODE18
-NODE16 -> NODE17
- NODE19 [label="$"]
-NODE20 [label="b"]
+ NODE18 [label="("]
+NODE19 [label="$"]
+NODE20 [label="a"]
 NODE19 -> NODE20
-NODE16 -> NODE19
- NODE21 [label="4"]
-NODE16 -> NODE21
-NODE10 -> NODE16
-NODE8 -> NODE10
-NODE2 -> NODE8
+NODE18 -> NODE19
+ NODE21 [label="$"]
+NODE22 [label="b"]
+NODE21 -> NODE22
+NODE18 -> NODE21
+ NODE23 [label="6"]
+NODE18 -> NODE23
+NODE11 -> NODE18
+NODE9 -> NODE11
+NODE2 -> NODE9
 NODE1 -> NODE2
 
 }
