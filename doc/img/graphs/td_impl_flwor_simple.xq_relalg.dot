@@ -18,7 +18,7 @@ make10 [label="make(name:=[index, value], [1], [3])"]
 project9 [label="project(sprIdx=3,index=0,value; .."]
 union4 [label="union(; .."]
 numberate3 [label="numberate(index,[sprIdx,index],[]; .."]
-project2 [label="project([anumb, value]; .."]
+project2 [label="project([index = 1, anumb = index, value]; .."]
 numberate1 [label="numberate(index,[anumb,index],[]; .."]
 
 }

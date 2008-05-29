@@ -19,7 +19,7 @@ make13 [label="make(name:=[index, value], [1], [20])"]
 project12 [label="project(sprIdx=2,index=0,value; .."]
 union9 [label="union(; .."]
 numberate8 [label="numberate(index,[sprIdx,index],[]; .."]
-project7 [label="project([anumb, value]; .."]
+project7 [label="project([index = 1, anumb = index, value]; .."]
 project6 [label="project(alt=1, value, anumb; .."]
             union5 -> project14
               project14 -> make15
@@ -43,7 +43,7 @@ make26 [label="make(name:=[index, value], [1], [20])"]
 project25 [label="project(sprIdx=2,index=0,value; .."]
 union22 [label="union(; .."]
 numberate21 [label="numberate(index,[sprIdx,index],[]; .."]
-project20 [label="project([anumb, value]; .."]
+project20 [label="project([index = 1, anumb = index, value]; .."]
                     hhjoin19 -> make27
 make27 [label="make(name:=[index, value], [1], [15])"]
 hhjoin19 [label="hhjoin([],[],[l.value, r.value, ]; .."]
