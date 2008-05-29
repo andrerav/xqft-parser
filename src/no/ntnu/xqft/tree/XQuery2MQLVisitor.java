@@ -487,7 +487,7 @@ public class XQuery2MQLVisitor extends Visitor {
         Select select = new Select("ifthenelse(xqBoolean(rvalue), eq(alt,1), eq(alt,2))", hhjoin);
 
         // Project
-        Project project = new Project("value = lvalue, " + v_e1_u_e2_u_e3.toStringList(), select);
+        Project project = new Project("index, value = lvalue, " + v_e1_u_e2_u_e3.toStringList(), select);
         
         TraverseReturn result = new TraverseReturn();
 

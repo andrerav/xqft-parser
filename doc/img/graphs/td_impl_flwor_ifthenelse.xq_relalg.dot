@@ -52,7 +52,7 @@ group17 [label="group((anumb), max(value); .."]
 project16 [label="project(index=1, value=max, anumb; .."]
 hhjoin4 [label="hhjoin([anumb],[anumb], [index = l.index, lvalue = l.value, rvalue = r.value, anumb]; .."]
 select3 [label="select(ifthenelse(xqBoolean(rvalue), eq(alt,1), eq(alt,2)); .."]
-project2 [label="project(value = lvalue, anumb; .."]
+project2 [label="project(index, value = lvalue, anumb; .."]
 numberate1 [label="numberate(index,[anumb,index],[anumb]; .."]
 
 }
