@@ -19,6 +19,6 @@ project9 [label="project(sprIdx=3,index=0,value; .."]
 union4 [label="union(; .."]
 numberate3 [label="numberate(index,[sprIdx,index],[]; .."]
 project2 [label="project([index = 1, anumb = index, value]; .."]
-numberate1 [label="numberate(index,[anumb,index],[]; .."]
+numberate1 [label="numberate(index,[anumb,index],[anumb]; .."]
 
 }
