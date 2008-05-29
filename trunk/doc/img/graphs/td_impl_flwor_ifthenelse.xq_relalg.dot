@@ -1,6 +1,7 @@
 digraph AST {
 edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=normal]
-node [shape=plaintext]numberate1 [label="numberate(index,[anumb,index],[]; .."]
+node [shape=plaintext]
+numberate1 [label="numberate(index,[anumb,index],[]; .."]
  project2 [label="project(value = r.value, anumb; .."]
  select3 [label="select(ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2)); .."]
  hhjoin4 [label="hhjoin([[a]],[[a]], [l.value, r.value, anumb]; .."]
