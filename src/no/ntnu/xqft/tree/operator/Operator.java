@@ -1,6 +1,7 @@
 package no.ntnu.xqft.tree.operator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import no.ntnu.xqft.parse.XQFTParser;
 import no.ntnu.xqft.parse.XQFTTree;
@@ -8,6 +9,9 @@ import no.ntnu.xqft.tree.param.*;
 
 public abstract class Operator {
 
+	protected String node_id;
+	protected String node_label;
+	
     protected String name;
 
     protected ArrayList<Param> params;
@@ -202,45 +206,81 @@ public abstract class Operator {
         buf.append("digraph AST {\n" +
                         "edge [color=black, dir=both, weight=1, " +
                         "fontcolor=black, arrowhead=none, "+
-                        "arrowtail=normal]\nnode [shape=plaintext]");
+                        "arrowtail=normal]\nnode [shape=plaintext]\n");
         
-        buf.append(this.generateNodeRel());
+        buf.append(this.generateNodeRel(null, 0));
         
         buf.append("\n}");
         
         return buf.toString();
     }
     
-    protected String generateNodeRel() {
-        Operator.i_level++;
-        my_i = Operator.i_level;
+//    protected String generateNodeRel(int indent_level) {
+//        Operator.i_level++;
+//        my_i = Operator.i_level;
+//
+//        char chars[] = new char[indent_level*2];
+//        Arrays.fill(chars, ' ');
+//        String indent = new String(chars);
+//        
+//        String nodeName = this.name + my_i;
+//        
+//        String nodeText = this.name + "(" + this.paramsToString() + "; ..";
+//        
+//        if (this.operators == null || this.operators.size() == 0) {
+//            nodeText = this.name + "(" + this.paramsToString() + ")";
+//            return nodeName + " [label=\"" + nodeText + "\"]\n";
+//        }
+//        
+//        StringBuffer buf = new StringBuffer();
+//            
+//        buf.append(indent + nodeName + " [label=\"" + nodeText + "\"]\n");
+//            
+//        for (Operator op : this.operators) {
+//
+//        	buf.append(indent + op.generateNodeRel(++indent_level));
+//            buf.append(indent + nodeName + " -> " + op.name + op.my_i + "\n");
+//         }
+//         return buf.toString();
+//    }
+    
+    protected String generateNodeRel(Operator parent, int level) {
 
-        String nodeName = this.name + my_i;
-        
-        String nodeText = this.name + "(" + this.paramsToString() + "; ..";
-        
-        /* Token name for this node */
-        //String tokenName = this.printTokenName && this.getToken() != null ? XQFTParser.tokenNames[this.getToken().getType()]  + ": " : "";
-        //String nodeText = this.fixStringForDot(this.name);
-        
-        
-        if (this.operators == null || this.operators.size() == 0) {
-            nodeText = this.name + "(" + this.paramsToString() + ")";
-            return nodeName + " [label=\"" + nodeText + "\"]\n";
-        }
-        StringBuffer buf = new StringBuffer();
-            
-        buf.append(nodeName + " [label=\"" + nodeText + "\"]\n");
-            
-        for (Operator op : this.operators) {
-            //XQFTTree t = (XQFTTree) children.get(i);
-            buf.append(' ');
-            buf.append(op.generateNodeRel());
-            buf.append(nodeName + " -> " + op.name + op.my_i + "\n");
-         }
-         return buf.toString();
+        char chars[] = new char[level * 2];
+        Arrays.fill(chars, ' ');
+        String indent = new String(chars);    	
+    	
+    	Operator.i_level++;
+    	
+    	// Set id for this node (project1 or whatever)
+    	this.node_id = this.name + Operator.i_level;
+    	
+    	// Set label for this node
+    	if (this.operators.size() == 0) {
+    		this.node_label = this.name + "(" + this.paramsToString() + ")";    		
+    	}
+    	else {
+        	this.node_label = this.name + "(" + this.paramsToString() + "; ..";    		
+    	}
+    	
+    	StringBuffer buffer = new StringBuffer();
+    	
+    	// Write relation, if any
+    	if (parent != null) {
+    		buffer.append(indent + parent.node_id + " -> " + this.node_id + "\n");
+    	}
+    	
+    	// Recurse over children
+    	for (Operator child : this.operators) {
+    		buffer.append(child.generateNodeRel(this, ++level));
+    	}
+    	
+    	// Dump myself
+    	buffer.append(this.node_id + " [label=\""+ this.node_label +"\"]\n");
+    	
+    	// 
+        return buffer.toString();
     }
-
 
     protected String fixStringForDot(String str) {
         str = str.replaceAll("\n", "\\\\n");
