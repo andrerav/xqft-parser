@@ -9,13 +9,17 @@ NODE41 -> NODE42
  NODE43 [label="("]
 NODE44 [label="1"]
 NODE43 -> NODE44
+ NODE45 [label="2"]
+NODE43 -> NODE45
+ NODE46 [label="3"]
+NODE43 -> NODE46
 NODE41 -> NODE43
 NODE40 -> NODE41
 NODE39 -> NODE40
- NODE45 [label="$"]
-NODE46 [label="a"]
-NODE45 -> NODE46
-NODE39 -> NODE45
+ NODE47 [label="$"]
+NODE48 [label="a"]
+NODE47 -> NODE48
+NODE39 -> NODE47
 NODE38 -> NODE39
 
 }
