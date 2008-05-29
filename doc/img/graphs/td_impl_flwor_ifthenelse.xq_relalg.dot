@@ -20,11 +20,11 @@ project12 [label="project(sprIdx=2,index,value; .."]
 union9 [label="union(; .."]
 numberate8 [label="numberate(index,[sprIdx,index],[]; .."]
 project7 [label="project([index = 1, anumb = index, value]; .."]
-project6 [label="project(alt=1, value, anumb; .."]
+project6 [label="project(index, alt=1, value, anumb; .."]
             union5 -> project14
               project14 -> make15
 make15 [label="make(name:=[index, value], [1], [15])"]
-project14 [label="project(alt=2, value, anumb; .."]
+project14 [label="project(index, alt=2, value, anumb; .."]
 union5 [label="union(; .."]
           hhjoin4 -> project16
             project16 -> group17
@@ -50,9 +50,9 @@ hhjoin19 [label="hhjoin([],[],[l.value, r.value, anumb]; .."]
 project18 [label="project(value=gt(l.value, r.value),anumb; .."]
 group17 [label="group((anumb), max(value); .."]
 project16 [label="project(index=1, value=max, anumb; .."]
-hhjoin4 [label="hhjoin([anumb],[anumb], [l.value, r.value, anumb]; .."]
-select3 [label="select(ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2)); .."]
-project2 [label="project(value = r.value, anumb; .."]
+hhjoin4 [label="hhjoin([anumb],[anumb], [index = l.index, lvalue = l.value, rvalue = r.value, anumb]; .."]
+select3 [label="select(ifthenelse(xqBoolean(rvalue), eq(alt,1), eq(alt,2)); .."]
+project2 [label="project(value = lvalue, anumb; .."]
 numberate1 [label="numberate(index,[anumb,index],[anumb]; .."]
 
 }
