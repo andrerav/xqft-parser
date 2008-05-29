@@ -1,1 +1,1 @@
-for $a in (1) return $a
+for $a in (1,2,3) return $a
