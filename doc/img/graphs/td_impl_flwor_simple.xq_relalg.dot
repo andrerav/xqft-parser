@@ -8,6 +8,14 @@ node [shape=plaintext]numberate1 [label="numberate(index,[anumb,index],[]; .."]
  make6 [label="make(name:=[index, value], [1], [1])"]
 project5 -> make6
 union4 -> project5
+ project7 [label="project(sprIdx=2,index=0,value; .."]
+ make8 [label="make(name:=[index, value], [1], [2])"]
+project7 -> make8
+union4 -> project7
+ project9 [label="project(sprIdx=3,index=0,value; .."]
+ make10 [label="make(name:=[index, value], [1], [3])"]
+project9 -> make10
+union4 -> project9
 numberate3 -> union4
 project2 -> numberate3
 numberate1 -> project2
