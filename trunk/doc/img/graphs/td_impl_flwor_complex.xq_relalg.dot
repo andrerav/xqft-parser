@@ -1,0 +1,119 @@
+digraph AST {
+edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=normal]
+node [shape=plaintext]numberate1 [label="numberate(index,[anumb,index],[]; .."]
+ numberate2 [label="numberate(index,[sprIdx,index],[]; .."]
+ union3 [label="union(; .."]
+ project4 [label="project(sprIdx=1,index=0,value; .."]
+ cross5 [label="cross(; .."]
+ project6 [label="project(anumb; .."]
+ project7 [label="project([anumb, value]; .."]
+ numberate8 [label="numberate(index,[sprIdx,index],[]; .."]
+ union9 [label="union(; .."]
+ project10 [label="project(sprIdx=1,index=0,value; .."]
+ make11 [label="make(name:=[index, value], [1], [1])"]
+project10 -> make11
+union9 -> project10
+numberate8 -> union9
+project7 -> numberate8
+project6 -> project7
+cross5 -> project6
+ make12 [label="make(name:=[index, value], [1], [2])"]
+cross5 -> make12
+project4 -> cross5
+union3 -> project4
+ project13 [label="project(sprIdx=2,value; .."]
+ numberate14 [label="numberate(index,[bnumb,index],[a]; .."]
+ numberate15 [label="numberate(index,[sprIdx,index],[]; .."]
+ union16 [label="union(; .."]
+ project17 [label="project(sprIdx=1,index=0,value; .."]
+ cross18 [label="cross(; .."]
+ project19 [label="project(bnumb; .."]
+ project20 [label="project([bnumb, value]; .."]
+ numberate21 [label="numberate(index,[sprIdx,index],[]; .."]
+ union22 [label="union(; .."]
+ project23 [label="project(sprIdx=1,index=0,value; .."]
+ make24 [label="make(name:=[index, value], [1], [3])"]
+project23 -> make24
+union22 -> project23
+numberate21 -> union22
+project20 -> numberate21
+project19 -> project20
+cross18 -> project19
+ project25 [label="project([anumb, value]; .."]
+ numberate26 [label="numberate(index,[sprIdx,index],[]; .."]
+ union27 [label="union(; .."]
+ project28 [label="project(sprIdx=1,index=0,value; .."]
+ make29 [label="make(name:=[index, value], [1], [1])"]
+project28 -> make29
+union27 -> project28
+numberate26 -> union27
+project25 -> numberate26
+cross18 -> project25
+project17 -> cross18
+union16 -> project17
+ project30 [label="project(sprIdx=2,index=0,value; .."]
+ cross31 [label="cross(; .."]
+ project32 [label="project(anumb; .."]
+ project33 [label="project([anumb, value]; .."]
+ numberate34 [label="numberate(index,[sprIdx,index],[]; .."]
+ union35 [label="union(; .."]
+ project36 [label="project(sprIdx=1,index=0,value; .."]
+ make37 [label="make(name:=[index, value], [1], [1])"]
+project36 -> make37
+union35 -> project36
+numberate34 -> union35
+project33 -> numberate34
+project32 -> project33
+cross31 -> project32
+ project38 [label="project([bnumb, value]; .."]
+ numberate39 [label="numberate(index,[sprIdx,index],[]; .."]
+ union40 [label="union(; .."]
+ project41 [label="project(sprIdx=1,index=0,value; .."]
+ make42 [label="make(name:=[index, value], [1], [3])"]
+project41 -> make42
+union40 -> project41
+numberate39 -> union40
+project38 -> numberate39
+cross31 -> project38
+project30 -> cross31
+union16 -> project30
+ project43 [label="project(sprIdx=3,index=0,value; .."]
+ cross44 [label="cross(; .."]
+ project45 [label="project(bnumb; .."]
+ project46 [label="project([bnumb, value]; .."]
+ numberate47 [label="numberate(index,[sprIdx,index],[]; .."]
+ union48 [label="union(; .."]
+ project49 [label="project(sprIdx=1,index=0,value; .."]
+ make50 [label="make(name:=[index, value], [1], [3])"]
+project49 -> make50
+union48 -> project49
+numberate47 -> union48
+project46 -> numberate47
+project45 -> project46
+cross44 -> project45
+ cross51 [label="cross(; .."]
+ project52 [label="project(anumb; .."]
+ project53 [label="project([anumb, value]; .."]
+ numberate54 [label="numberate(index,[sprIdx,index],[]; .."]
+ union55 [label="union(; .."]
+ project56 [label="project(sprIdx=1,index=0,value; .."]
+ make57 [label="make(name:=[index, value], [1], [1])"]
+project56 -> make57
+union55 -> project56
+numberate54 -> union55
+project53 -> numberate54
+project52 -> project53
+cross51 -> project52
+ make58 [label="make(name:=[index, value], [1], [4])"]
+cross51 -> make58
+cross44 -> cross51
+project43 -> cross44
+union16 -> project43
+numberate15 -> union16
+numberate14 -> numberate15
+project13 -> numberate14
+union3 -> project13
+numberate2 -> union3
+numberate1 -> numberate2
+
+}

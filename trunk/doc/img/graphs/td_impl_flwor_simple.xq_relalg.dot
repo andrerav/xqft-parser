@@ -1,0 +1,15 @@
+digraph AST {
+edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=normal]
+node [shape=plaintext]numberate1 [label="numberate(index,[anumb,index],[]; .."]
+ project2 [label="project([anumb, value]; .."]
+ numberate3 [label="numberate(index,[sprIdx,index],[]; .."]
+ union4 [label="union(; .."]
+ project5 [label="project(sprIdx=1,index=0,value; .."]
+ make6 [label="make(name:=[index, value], [1], [1])"]
+project5 -> make6
+union4 -> project5
+numberate3 -> union4
+project2 -> numberate3
+numberate1 -> project2
+
+}
