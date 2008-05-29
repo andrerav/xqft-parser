@@ -308,7 +308,8 @@ $A$ & $B$ & $C$ \\ \hline
 
 \begin{figure}[h]
 \begin{Verbatim}
-OPERATOR ::= "group" "(" GROUPINGFIELDS ["," AGGREGATORS ] ";" OPERATOR ")"
+OPERATOR ::= "group" "(" GROUPINGFIELDS ["," AGGREGATORS ] 
+                 ";" OPERATOR ")"
 \end{Verbatim}
 \label{figure:mql:groupEBNF}
 \caption{Group operator EBNF}
@@ -330,15 +331,18 @@ group((cid), max(id), count(one); Query1)
 \end{figure}
 
 If \texttt{Query1} evaluates to the relation shown in figure \ref{figure:mql:project_example2_result}, the query
-of figure \ref{figure:mql:groupEx} will result in the relation of figure HAHAHA.
+of figure \ref{figure:mql:groupEx} will result in the relation of figure \ref{figure:mql:groupres}.
 
-\begin{figure}[h]
+\begin{figure}[!h]
+\centering
 \begin{tabular}{|c|c|c|} \hline
 $cid$ & $max$ & $count$ \\ \hline
 100 & 90 & 3 \\ \hline
 103 & 103 & 1 \\ \hline
 289 & 289 & 1 \\ \hline
 \end{tabular}
+\caption{Result of the query in figure \ref{figure:mql:groupEx}}
+\label{figure:mql:groupres}
 \end{figure}
 
 
@@ -346,97 +350,16 @@ $cid$ & $max$ & $count$ \\ \hline
 \subsection{Assumed functionality}
 \label{sect:method:marsAddedOperators}
 
-\underline{\LARGE TODO:} idiv($e_1$, $e_2$) -> integer division
-TODO: skrive en liten innledning her om hvorfor vi assumer ting.
-
-\subsubsection{isInScope (scope comparison)}
-This function (not operator) accepts two arguments which must be scope fields
-from index lookups (as described in section \ref{sect:method:mql:indexes}).
-This boolean function returns \textit{true} if the first argument has an equal
-but deeper path than the second argument, otherwise \textit{false}. This
-function is designed to be used in conjunction with the \texttt{select()}
-operator as a boolean predicate. See figure \ref{figure:mql:isinscope_example}
-for an example of usage.
-
-TODO: eksempelet er kanskje litt jalla
-
-\begin{figure}[!h]
-\centering
-\begin{Verbatim}
-select(isInScope(lscope, rscope);
-  mergejoin([DocumentID],[DocumentID], 
-            [DocumentID, lscope = left.Scope, rscope = right.Scope];
-    lookup(engineer),
-    lookup(nurse)))
-\end{Verbatim}
-\caption{Example of assumed isInScope() functionality}
-\label{figure:mql:isinscope_example}
-\end{figure}
-
-\subsubsection{xqBoolean/boolean truth value coercion}
-This function (not operator) accepts one argument and determines its
-\textit{truth value}. XQuery truth values were described in
-section \ref{sect:theory:xquery:basics}.
-
-\begin{figure}[!h]
-\centering
-\begin{Verbatim}
-project(truthVal=xqBoolean(B); 
-  make(name:=["A","B","C"], [1,4], [0,5] [3,6]))
-\end{Verbatim}
-\caption{Example of xqBoolean() usage}
-\label{figure:mql:xqboolean_example}
-\end{figure}
-
-\begin{figure}[!h]
-\centering
-\mbox{
-\subfigure[Input for example in figure
-\ref{figure:mql:xqboolean_example}]{
-\begin{tabular}{|c | c | c |}
-\hline
-A & B & C \\ \hline
-1 & 0 & 3 \\ \hline
-4 & 5 & 6 \\ \hline
-\end{tabular}
-\label{figure:mql:xqboolean_example_input}
-}
-\quad
-\subfigure[Output from example in figure
-\ref{figure:mql:xqboolean_example}]{
-\begin{tabular}{| c |}
-\hline
-truthVal \\ \hline
-\textit{false} \\ \hline
-\textit{true} \\ \hline
-\end{tabular}
-\label{figure:mql:xqboolean_example_output}
-}
-}
-\caption{Input/output result sets}
-\end{figure}
-
-The semantics of this function is captured in the example in figure
-\ref{figure:mql:xqboolean_example}. For the input result set produced by the
-\textit{make()} operator in figure \ref{figure:mql:xqboolean_example_input},
-the output result in figure \ref{figure:mql:xqboolean_example_output} is
-produced. The example converts the integer 5 to \textit{true} and the integer 0
-to \textit{false}. 
+\underline{\LARGE TODO:} skrive en liten innledning her om hvorfor vi assumer ting.
 
 \subsubsection{Numberation/sequence generator}
-\marginpar{\underline{\Large TODO} \scriptsize Dette h\o rtes litt s\ae rt ut. Den group'er p\aa~partitionList,
-sorterer p\aa~sortList og s\aa~nummererer. Den er den samme som det st\aa r om i LoopLifttingene, bare at den kan ta flere
-partition felter} 
-This operator should generate a sequence field from the input result set, optionally restart the
-sequence based on field partitioning, and optionally sort the output. The operator accepts three parameters and one child operator; the
-three parameters are:
-\begin{itemize}
-  \item A field name for the generated sequence
-  \item An optional list of fields to sort by
-  \item An optional list of fields for partitioning
-\end{itemize}
-The syntax for this operator can be defined in EBNF notation as seen in figure
-\ref{figure:mql:numberate_ebnf}.
+Order is an inherent concept of the XQuery data model, to accomodate for this a numbering operator such as
+\texttt{numberate} is needed. The syntax for this operator can be defined in EBNF notation as seen in figure
+\ref{figure:mql:numberate_ebnf}. Given a sort order defined by the fields in \texttt{SORTLIST}, the operator
+numbers consequtive tuples of the relation returned from \texttt{OPERATOR}, recording the rown number in the new
+field \texttt{FIELD}. Row numbers start from 1 in each partition defined by the fields in \texttt{PARTITIONLIST}.
+The operator is quite similar to the \texttt{DENSE_RANK} operator defined by SQL:1999\cite{sqlbook}.
+
 \begin{figure}[!h]
 \begin{center}
 \begin{Verbatim}
@@ -468,7 +391,7 @@ numberate(Seq, [A,B], [A];
 \subfigure[Input]{
 \begin{tabular}{| c | c |}
 \hline
-A & B \\ \hline
+$A$ & $B$ \\ \hline
 1 & a \\ \hline
 1 & b \\ \hline
 1 & c \\ \hline
@@ -482,7 +405,7 @@ A & B \\ \hline
 \subfigure[Output]{
 \begin{tabular}{| c | c | c |}
 \hline
-Seq & A & B \\ \hline
+$Seq$ & $A$ & $B$ \\ \hline
 1 & 1 & a \\ \hline
 2 & 1 & b \\ \hline
 3 & 1 & c \\ \hline
@@ -501,42 +424,85 @@ behaviour of this operator. In the output result set seen in figure
 added, with a sequence which is restarted for each new value of \texttt{A}.
 Also note that the input result set is sorted on A then B.
 
+\subsubsection{isInScope (scope comparison)}
+\textbf{\LARGE TODO:}kan v\ae re bull
+
+This function (not operator) accepts two arguments which must be scope fields
+from index lookups (as described in section \ref{sect:method:mql:indexes}).
+This boolean function returns \textit{true} if the first argument has an equal
+but deeper path than the second argument, otherwise \textit{false}. This
+function is designed to be used in conjunction with the \texttt{select()}
+operator as a boolean predicate. See figure \ref{figure:mql:isinscope_example}
+for an example of usage.
+
+TODO: eksempelet er kanskje litt jalla
+
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+select(isInScope(lscope, rscope);
+  mergejoin([DocumentID],[DocumentID], 
+            [DocumentID, lscope = left.Scope, rscope = right.Scope];
+    lookup(engineer),
+    lookup(nurse)))
+\end{Verbatim}
+\caption{Example of assumed isInScope() functionality}
+\label{figure:mql:isinscope_example}
+\end{figure}
+
+\subsubsection{xqBoolean/boolean truth value coercion}
+\textbf{\LARGE TODO:}kan v\ae re bull
+
+This function (not operator) accepts one argument and determines its
+\textit{truth value}. XQuery truth values were described in
+section \ref{sect:theory:xquery:basics}.
+
+\begin{figure}[!h]
+\centering
+\begin{Verbatim}
+project(truthVal=xqBoolean(B); 
+  make(name:=["A","B","C"], [1,4], [0,5] [3,6]))
+\end{Verbatim}
+\caption{Example of xqBoolean() usage}
+\label{figure:mql:xqboolean_example}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\mbox{
+\subfigure[Input for example in figure
+\ref{figure:mql:xqboolean_example}]{
+\begin{tabular}{|c | c | c |}
+\hline
+$A$ & $B$ & $C$ \\ \hline
+1 & 0 & 3 \\ \hline
+4 & 5 & 6 \\ \hline
+\end{tabular}
+\label{figure:mql:xqboolean_example_input}
+}
+\quad
+\subfigure[Output from example in figure
+\ref{figure:mql:xqboolean_example}]{
+\begin{tabular}{| c |}
+\hline
+$truthVal$ \\ \hline
+\textit{false} \\ \hline
+\textit{true} \\ \hline
+\end{tabular}
+\label{figure:mql:xqboolean_example_output}
+}
+}
+\caption{Input/output result sets}
+\end{figure}
+
+The semantics of this function is captured in the example in figure
+\ref{figure:mql:xqboolean_example}. For the input result set produced by the
+\textit{make()} operator in figure \ref{figure:mql:xqboolean_example_input},
+the output result in figure \ref{figure:mql:xqboolean_example_output} is
+produced. The example converts the integer 5 to \textit{true} and the integer 0
+to \textit{false}. 
+
 \subsubsection{Union/disjoint union}
-The \texttt{union()} operator accepts relations with different schemas, and
-does not remove duplicates (disjoint union). The schema for the result relation
-can be described as:
-\begin{equation*}
-schema(\texttt{union(}\alpha, \beta\texttt{)}) = schema(\alpha) \cup
-schema(\beta).
-\end{equation*}
-Alternatively, implementation of these semantics can be done manually by
-the translator with the help of \texttt{project()} operators. Specifically,
-this can be done by adding fields to the two sets to ensure uniqueness and then
-perform a regular union.
-
-hvilke operatorer/ funksjoner har vi lagt til / forutsatt?
-\begin{itemize}
-  	\item funksjonen \verb!isInScope(a, b)! if a has an equal but deeper path than
-		b -> true (same element required) 
-	\item isNumber(pred) -> fordi vi ikke har polymorphic type attributes\ldots typesystem igjen\ldots Skal vi
-	g\aa~ut ifra at vi har polymorphic type attributes? Og si at type m\aa~bli ordna p\aa~en eller annen m\aa te..
-	\item xqBoolean(pred) tom streng, null og teksten ``false''(p\aa~grunn av skrint typesystem) gir \textbf{false}
-	\item scopeIndex(scope, pred)\ldots Trenger kanskje ikke allikevel\ldots Vet ikke enn\aa
-
-	\item union
-		\begin{itemize}
-			  \item noe med schema\ldots virka ikke som thorbj\o rnsen var helt forn\o yd
-				  med at v\aa r tenkte \texttt{union} dret i schema og helte p\aa~
-				  \texttt{NULL} verdier indiscriminately
-			\item This method assumes that the \texttt{union} operator accepts relations with
-different schemas, and does not remove duplicates (disjoint union (hva skjer med markering av origin-relation?)).
-The schema for the result relation can be described as:
-\begin{equation*}
-schema(\texttt{union(}\alpha, \beta\texttt{)}) = schema(\alpha) \cup
-schema(\beta).
-\end{equation*}
-Provided this is a
-unreasonable task to implement, it can be done manually by the translator with
-the help of \texttt{project} operators.		
-        \end{itemize}	
-\end{itemize}
+The \texttt{union()} operator accepts multiple operators, and will behave as the standard relational algebra
+operator (section \ref{sect:theory:relAlg:unionAndDiff}), except it does not remove duplicates (as disjoint
+union). The function of the operator is to concatenate the relations returned from its child-operators.
