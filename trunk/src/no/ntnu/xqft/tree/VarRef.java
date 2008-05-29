@@ -44,7 +44,6 @@ public class VarRef {
      */
     @Override
     public boolean equals(Object obj) {
-        System.out.println("I'm never printed :(");
         return obj.toString().equals(this.name);
     }
 
@@ -53,7 +52,6 @@ public class VarRef {
      */
     @Override
     public int hashCode() {
-        // TODO Auto-generated method stub
         return this.name.hashCode();
     }
 }

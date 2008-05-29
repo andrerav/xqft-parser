@@ -68,7 +68,7 @@ public class XQuery2MQLVisitor extends Visitor {
                 Scope.getInstance().getCurrentIterVar() != null && 
                 returnClauseResult.getVarRefs() != null &&
                 returnClauseResult.getVarRefs().contains(Scope.getInstance().getCurrentIterVar())) {  
-            
+            /*
         	// Sort and partition fields
             String[] sortBy = {Scope.getInstance().getCurrentIterVar().getName() 
             		          + "numb", "index"};
@@ -82,17 +82,17 @@ public class XQuery2MQLVisitor extends Visitor {
             
             int i = 0;
             for (VarRef ref : prevVarRefs) {
-                partitionBy[i] = ref.getName();
+                partitionBy[i] = ref.getName() + "numb";
                 i++;
             }
             
             // Construct MQL
             Numberate numberate = new Numberate("index", sortBy, partitionBy, returnClauseResult.getOperatorTree());
-
+			*/
             // Construct result
             result.setSingleton(false);
             result.setVarRefs(returnClauseResult.getVarRefs());
-            result.setOperatorTree(numberate);
+            result.setOperatorTree(/*numberate*/returnClauseResult.getOperatorTree());
             
             // Remove current iter var from varrefs
             //result.getVarRefs().remove(Scope.getInstance().getCurrentIterVar());
@@ -113,7 +113,7 @@ public class XQuery2MQLVisitor extends Visitor {
             Cross cross = new Cross(project, returnClauseResult.getOperatorTree());
             String[] sortBy = {Scope.getInstance().getCurrentIterVar() + "numb", "index"};
             String[] partitionBy = new String[returnClauseResult.getVarRefs().size()];
-            
+/*            
             int i = 0;
             for(VarRef varRef : returnClauseResult.getVarRefs()) {
                 partitionBy[i] = varRef.getName();
@@ -121,8 +121,8 @@ public class XQuery2MQLVisitor extends Visitor {
             }
             
             Numberate numberate = new Numberate("index", sortBy, partitionBy, cross);
-
-            result.setOperatorTree(numberate);
+*/
+            result.setOperatorTree(/*numberate*/ cross);
             result.getVarRefs().addAll(returnClauseResult.getVarRefs());
             result.setSingleton(false);
             
@@ -147,7 +147,7 @@ public class XQuery2MQLVisitor extends Visitor {
 
         result.setOperatorTree(iterord);
         
-        result.getVarRefs().remove(Scope.getInstance().getCurrentIterVar());
+        result.getVarRefs().remove(prevVar);
                 
         return result;
         
@@ -308,6 +308,7 @@ public class XQuery2MQLVisitor extends Visitor {
     public TraverseReturn visitLPARSi(XQFTTree tree) {
         // TODO Auto-generated method stub
         
+    	
         ArrayList<Operator> operators 
                         = new ArrayList<Operator>(tree.getChildCount());
         
