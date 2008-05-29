@@ -1,23 +1,24 @@
 digraph AST {
 edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=normal]
-node [shape=plaintext]numberate1 [label="numberate(index,[anumb,index],[]; .."]
- project2 [label="project([anumb, value]; .."]
- numberate3 [label="numberate(index,[sprIdx,index],[]; .."]
- union4 [label="union(; .."]
- project5 [label="project(sprIdx=1,index=0,value; .."]
- make6 [label="make(name:=[index, value], [1], [1])"]
-project5 -> make6
-union4 -> project5
- project7 [label="project(sprIdx=2,index=0,value; .."]
- make8 [label="make(name:=[index, value], [1], [2])"]
-project7 -> make8
-union4 -> project7
- project9 [label="project(sprIdx=3,index=0,value; .."]
- make10 [label="make(name:=[index, value], [1], [3])"]
-project9 -> make10
-union4 -> project9
-numberate3 -> union4
-project2 -> numberate3
-numberate1 -> project2
+node [shape=plaintext]
+  numberate1 -> project2
+    project2 -> numberate3
+      numberate3 -> union4
+        union4 -> project5
+          project5 -> make6
+make6 [label="make(name:=[index, value], [1], [1])"]
+project5 [label="project(sprIdx=1,index=0,value; .."]
+          union4 -> project7
+            project7 -> make8
+make8 [label="make(name:=[index, value], [1], [2])"]
+project7 [label="project(sprIdx=2,index=0,value; .."]
+            union4 -> project9
+              project9 -> make10
+make10 [label="make(name:=[index, value], [1], [3])"]
+project9 [label="project(sprIdx=3,index=0,value; .."]
+union4 [label="union(; .."]
+numberate3 [label="numberate(index,[sprIdx,index],[]; .."]
+project2 [label="project([anumb, value]; .."]
+numberate1 [label="numberate(index,[anumb,index],[]; .."]
 
 }
