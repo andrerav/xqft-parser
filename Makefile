@@ -61,7 +61,7 @@ xqft:
 	java -Xmx1024M -cp bin:lib/args.jar:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.XQFT
 
 tdgraphs:
-	find doc/td_src|grep \.xq$$|xargs java -Xmx1024M -cp bin:lib/args.jar:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.XQFT -d -p -o doc/img/graphs doc/td_src/td_impl_flwor1.xq
+	find doc/td_src|grep \.xq$$|xargs java -Xmx1024M -cp bin:lib/args.jar:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.XQFT -d -p -o doc/img/graphs
 
 
 clean:
