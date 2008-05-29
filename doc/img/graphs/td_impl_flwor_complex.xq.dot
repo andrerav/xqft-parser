@@ -1,0 +1,45 @@
+digraph AST {
+edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=none]
+NODE1 [label="AST_MODULE"]
+NODE2 [label="AST_FLWOR"]
+NODE3 [label="AST_FORCLAUSE"]
+NODE4 [label="$"]
+NODE5 [label="a"]
+NODE4 -> NODE5
+ NODE6 [label="("]
+NODE7 [label="1"]
+NODE6 -> NODE7
+NODE4 -> NODE6
+NODE3 -> NODE4
+NODE2 -> NODE3
+ NODE8 [label="("]
+NODE9 [label="2"]
+NODE8 -> NODE9
+ NODE10 [label="AST_FLWOR"]
+NODE11 [label="AST_FORCLAUSE"]
+NODE12 [label="$"]
+NODE13 [label="b"]
+NODE12 -> NODE13
+ NODE14 [label="("]
+NODE15 [label="3"]
+NODE14 -> NODE15
+NODE12 -> NODE14
+NODE11 -> NODE12
+NODE10 -> NODE11
+ NODE16 [label="("]
+NODE17 [label="$"]
+NODE18 [label="a"]
+NODE17 -> NODE18
+NODE16 -> NODE17
+ NODE19 [label="$"]
+NODE20 [label="b"]
+NODE19 -> NODE20
+NODE16 -> NODE19
+ NODE21 [label="4"]
+NODE16 -> NODE21
+NODE10 -> NODE16
+NODE8 -> NODE10
+NODE2 -> NODE8
+NODE1 -> NODE2
+
+}

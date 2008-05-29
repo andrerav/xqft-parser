@@ -1,0 +1,35 @@
+digraph AST {
+edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=none]
+NODE22 [label="AST_MODULE"]
+NODE23 [label="AST_FLWOR"]
+NODE24 [label="AST_FORCLAUSE"]
+NODE25 [label="$"]
+NODE26 [label="a"]
+NODE25 -> NODE26
+ NODE27 [label="("]
+NODE28 [label="10"]
+NODE27 -> NODE28
+ NODE29 [label="20"]
+NODE27 -> NODE29
+NODE25 -> NODE27
+NODE24 -> NODE25
+NODE23 -> NODE24
+ NODE30 [label="AST_IFEXPR"]
+NODE31 [label=">"]
+NODE32 [label="$"]
+NODE33 [label="a"]
+NODE32 -> NODE33
+NODE31 -> NODE32
+ NODE34 [label="15"]
+NODE31 -> NODE34
+NODE30 -> NODE31
+ NODE35 [label="$"]
+NODE36 [label="a"]
+NODE35 -> NODE36
+NODE30 -> NODE35
+ NODE37 [label="15"]
+NODE30 -> NODE37
+NODE23 -> NODE30
+NODE22 -> NODE23
+
+}

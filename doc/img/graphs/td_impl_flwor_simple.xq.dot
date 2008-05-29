@@ -1,0 +1,21 @@
+digraph AST {
+edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=none]
+NODE38 [label="AST_MODULE"]
+NODE39 [label="AST_FLWOR"]
+NODE40 [label="AST_FORCLAUSE"]
+NODE41 [label="$"]
+NODE42 [label="a"]
+NODE41 -> NODE42
+ NODE43 [label="("]
+NODE44 [label="1"]
+NODE43 -> NODE44
+NODE41 -> NODE43
+NODE40 -> NODE41
+NODE39 -> NODE40
+ NODE45 [label="$"]
+NODE46 [label="a"]
+NODE45 -> NODE46
+NODE39 -> NODE45
+NODE38 -> NODE39
+
+}
