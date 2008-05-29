@@ -496,4 +496,37 @@ public class XQuery2MQLVisitor extends Visitor {
         return tr;
         
     }
+
+	@Override
+	public TraverseReturn visitGTSi(XQFTTree tree) {
+		
+		String func = "gt";
+		
+		TraverseReturn result = new TraverseReturn();
+		
+		TraverseReturn r_e1 = acceptThis(tree.getChild(0));
+		TraverseReturn r_e2 = acceptThis(tree.getChild(1));
+		
+		// Var refs: e1 n e2
+		VarRefSet v_e1_n_e2 = r_e1.getVarRefs();
+		v_e1_n_e2.retainAll(r_e2.getVarRefs());
+
+		// Var refs: e1 u e2
+		VarRefSet v_e1_u_e2 = r_e1.getVarRefs();
+		v_e1_u_e2.addAll(r_e2.getVarRefs());
+
+		
+		// See rule 4.14
+		HHJoin hhjoin = new HHJoin("["+v_e1_n_e2.toStringList()+"],["+v_e1_n_e2.toStringList()+"],[l.value, r.value, " + v_e1_u_e2.toStringList() + "]", r_e1.getOperatorTree(), r_e2.getOperatorTree());		
+		Project project_func = new Project("value="+func+"(l.value, r.value),"+v_e1_u_e2.toStringList(), hhjoin);
+		Group group = new Group("("+v_e1_u_e2.toStringList()+"), max(value)", project_func);
+		Project project = new Project("index=1, value=max, " + v_e1_u_e2.toStringList(), group);
+		
+		
+		result.setOperatorTree(project);
+		result.setSingleton(false);
+		result.setVarRefs(v_e1_u_e2);
+		
+		return result;
+	}
 }
