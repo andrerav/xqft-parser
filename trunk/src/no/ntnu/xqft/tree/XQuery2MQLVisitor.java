@@ -540,8 +540,8 @@ public class XQuery2MQLVisitor extends Visitor {
 		v_e1_u_e2.addAll(r_e2.getVarRefs());
 		
 		// See rule 4.14
-		HHJoin hhjoin = new HHJoin("["+v_e1_n_e2.toStringList()+"],["+v_e1_n_e2.toStringList()+"],[l.value, r.value, " + v_e1_u_e2.toStringList() + "]", r_e1.getOperatorTree(), r_e2.getOperatorTree());		
-		Project project_func = new Project("value="+func+"(l.value, r.value),"+v_e1_u_e2.toStringList(), hhjoin);
+		HHJoin hhjoin = new HHJoin("["+v_e1_n_e2.toStringList()+"],["+v_e1_n_e2.toStringList()+"],[lvalue = l.value, rvalue = r.value, " + v_e1_u_e2.toStringList() + "]", r_e1.getOperatorTree(), r_e2.getOperatorTree());		
+		Project project_func = new Project("value="+func+"(lvalue, rvalue),"+v_e1_u_e2.toStringList(), hhjoin);
 		Group group = new Group("("+v_e1_u_e2.toStringList()+"), max(value)", project_func);
 		Project project = new Project("index=1, value=max, " + v_e1_u_e2.toStringList(), group);
 		
