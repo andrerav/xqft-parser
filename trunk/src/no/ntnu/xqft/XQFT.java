@@ -161,7 +161,7 @@ public class XQFT {
                 }
             }            
             
-            //System.out.println(top.toPrettyString(0));
+            System.out.println(top.toPrettyString(0));
             //System.out.println(top.toDotStringTree());
 		}		
 
