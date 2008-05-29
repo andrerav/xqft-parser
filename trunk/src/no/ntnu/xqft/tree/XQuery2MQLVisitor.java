@@ -472,8 +472,8 @@ public class XQuery2MQLVisitor extends Visitor {
         v_e1_u_e2_u_e3.addAll(r_e3.getVarRefs());
 
         // Alternatives
-        Project project_alt1 = new Project("alt=1, value, " + v_e2_u_e3.toStringList(), this.taint(r_e2, r_e3.getVarRefs()).getOperatorTree()); 
-        Project project_alt2 = new Project("alt=2, value, " + v_e2_u_e3.toStringList(), this.taint(r_e3, r_e2.getVarRefs()).getOperatorTree()); 
+        Project project_alt1 = new Project("index, alt=1, value, " + v_e2_u_e3.toStringList(), this.taint(r_e2, r_e3.getVarRefs()).getOperatorTree()); 
+        Project project_alt2 = new Project("index, alt=2, value, " + v_e2_u_e3.toStringList(), this.taint(r_e3, r_e2.getVarRefs()).getOperatorTree()); 
         
         // Union
         Union union = new Union(null, null);
@@ -481,13 +481,13 @@ public class XQuery2MQLVisitor extends Visitor {
         union.addOperator(project_alt2);
         
         // HHjoin
-        HHJoin hhjoin = new HHJoin("[" + v_e2e3_n_e1.toStringList() + "],[" + v_e2e3_n_e1.toStringList() + "], [l.value, r.value, " + v_e1_u_e2_u_e3.toStringList() + "]", union, r_e1.getOperatorTree());
-        
+        HHJoin hhjoin = new HHJoin("[" + v_e2e3_n_e1.toStringList() + "],[" + v_e2e3_n_e1.toStringList() + "], [index = l.index, lvalue = l.value, rvalue = r.value, " + v_e1_u_e2_u_e3.toStringList() + "]", union, r_e1.getOperatorTree());
+
         // Select
-        Select select = new Select("ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2))", hhjoin);
+        Select select = new Select("ifthenelse(xqBoolean(rvalue), eq(alt,1), eq(alt,2))", hhjoin);
 
         // Project
-        Project project = new Project("value = r.value, " + v_e1_u_e2_u_e3.toStringList(), select);
+        Project project = new Project("value = lvalue, " + v_e1_u_e2_u_e3.toStringList(), select);
         
         TraverseReturn result = new TraverseReturn();
 
