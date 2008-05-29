@@ -41,7 +41,7 @@ public class VarRefSet extends HashSet<VarRef> {
                 b.append(','); // <-- aaww \(',')/
             }
             
-            b.append(ref.toString());
+            b.append(ref.toString() + "numb");
         }
 
         return b.toString();
