@@ -58,7 +58,7 @@ public class XQuery2MQLVisitor extends Visitor {
         TraverseReturn returnClauseResult = acceptThis(returnClause);
         
         
-        // HUSK DET MED TAINTFUNKSJONDRIT
+        // HUSK DET MED TAINTFUNKSJONDRIT <-- wtf?
         if (Scope.getInstance() != null &&
                 Scope.getInstance().getCurrentIterVar() != null && 
                 returnClauseResult.getVarRefs() != null &&
@@ -231,8 +231,8 @@ public class XQuery2MQLVisitor extends Visitor {
         	// Visit children on the right side of the assignment
         	TraverseReturn tr = acceptThis(tree.getChild(1));
             
-        	// Required for tainting deps method
-            Project project = new Project("[" + varName + "numb, value]", tr.getOperatorTree());
+        	// Required for tainting deps method (rule 4.2)
+            Project project = new Project("[index = 1, " + varName + "numb = index, value]", tr.getOperatorTree());
 
             // Assign metadata
             tr.setOperatorTree(project);
