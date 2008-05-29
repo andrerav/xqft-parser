@@ -1,58 +1,58 @@
 digraph AST {
 edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=normal]
 node [shape=plaintext]
+  numberate1 -> project2
+    project2 -> select3
+      select3 -> hhjoin4
+        hhjoin4 -> union5
+          union5 -> project6
+            project6 -> project7
+              project7 -> numberate8
+                numberate8 -> union9
+                  union9 -> project10
+                    project10 -> make11
+make11 [label="make(name:=[index, value], [1], [10])"]
+project10 [label="project(sprIdx=1,index=0,value; .."]
+                    union9 -> project12
+                      project12 -> make13
+make13 [label="make(name:=[index, value], [1], [20])"]
+project12 [label="project(sprIdx=2,index=0,value; .."]
+union9 [label="union(; .."]
+numberate8 [label="numberate(index,[sprIdx,index],[]; .."]
+project7 [label="project([anumb, value]; .."]
+project6 [label="project(alt=1, value, anumb; .."]
+            union5 -> project14
+              project14 -> make15
+make15 [label="make(name:=[index, value], [1], [15])"]
+project14 [label="project(alt=2, value, anumb; .."]
+union5 [label="union(; .."]
+          hhjoin4 -> project16
+            project16 -> group17
+              group17 -> project18
+                project18 -> hhjoin19
+                  hhjoin19 -> project20
+                    project20 -> numberate21
+                      numberate21 -> union22
+                        union22 -> project23
+                          project23 -> make24
+make24 [label="make(name:=[index, value], [1], [10])"]
+project23 [label="project(sprIdx=1,index=0,value; .."]
+                          union22 -> project25
+                            project25 -> make26
+make26 [label="make(name:=[index, value], [1], [20])"]
+project25 [label="project(sprIdx=2,index=0,value; .."]
+union22 [label="union(; .."]
+numberate21 [label="numberate(index,[sprIdx,index],[]; .."]
+project20 [label="project([anumb, value]; .."]
+                    hhjoin19 -> make27
+make27 [label="make(name:=[index, value], [1], [15])"]
+hhjoin19 [label="hhjoin([],[],[l.value, r.value, ]; .."]
+project18 [label="project(value=gt(l.value, r.value),; .."]
+group17 [label="group((), max(value); .."]
+project16 [label="project(index=1, value=max, ; .."]
+hhjoin4 [label="hhjoin([[a]],[[a]], [l.value, r.value, anumb]; .."]
+select3 [label="select(ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2)); .."]
+project2 [label="project(value = r.value, anumb; .."]
 numberate1 [label="numberate(index,[anumb,index],[]; .."]
- project2 [label="project(value = r.value, anumb; .."]
- select3 [label="select(ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2)); .."]
- hhjoin4 [label="hhjoin([[a]],[[a]], [l.value, r.value, anumb]; .."]
- union5 [label="union(; .."]
- project6 [label="project(alt=1, value, anumb; .."]
- project7 [label="project([anumb, value]; .."]
- numberate8 [label="numberate(index,[sprIdx,index],[]; .."]
- union9 [label="union(; .."]
- project10 [label="project(sprIdx=1,index=0,value; .."]
- make11 [label="make(name:=[index, value], [1], [10])"]
-project10 -> make11
-union9 -> project10
- project12 [label="project(sprIdx=2,index=0,value; .."]
- make13 [label="make(name:=[index, value], [1], [20])"]
-project12 -> make13
-union9 -> project12
-numberate8 -> union9
-project7 -> numberate8
-project6 -> project7
-union5 -> project6
- project14 [label="project(alt=2, value, anumb; .."]
- make15 [label="make(name:=[index, value], [1], [15])"]
-project14 -> make15
-union5 -> project14
-hhjoin4 -> union5
- project16 [label="project(index=1, value=max, ; .."]
- group17 [label="group((), max(value); .."]
- project18 [label="project(value=gt(l.value, r.value),; .."]
- hhjoin19 [label="hhjoin([],[],[l.value, r.value, ]; .."]
- project20 [label="project([anumb, value]; .."]
- numberate21 [label="numberate(index,[sprIdx,index],[]; .."]
- union22 [label="union(; .."]
- project23 [label="project(sprIdx=1,index=0,value; .."]
- make24 [label="make(name:=[index, value], [1], [10])"]
-project23 -> make24
-union22 -> project23
- project25 [label="project(sprIdx=2,index=0,value; .."]
- make26 [label="make(name:=[index, value], [1], [20])"]
-project25 -> make26
-union22 -> project25
-numberate21 -> union22
-project20 -> numberate21
-hhjoin19 -> project20
- make27 [label="make(name:=[index, value], [1], [15])"]
-hhjoin19 -> make27
-project18 -> hhjoin19
-group17 -> project18
-project16 -> group17
-hhjoin4 -> project16
-select3 -> hhjoin4
-project2 -> select3
-numberate1 -> project2
 
 }
