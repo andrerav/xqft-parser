@@ -156,7 +156,7 @@ public class XQFT {
                 m.dumpToFile(top.toDotStringTree(), dotpath_relalg);
                 
                 if (createPdf) {
-                    String pdfpath_relalg = outputFolder + "/" + basename + "_relalg.pdf";
+                    String pdfpath_relalg = outputFolder + "/" + basename.replace('.', '_') + "_relalg.pdf";
                     m.lagGraf(dotpath_relalg, pdfpath_relalg);
                 }
             }            
