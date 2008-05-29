@@ -1,11 +1,11 @@
 digraph AST {
 edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=normal]
 node [shape=plaintext]numberate1 [label="numberate(index,[anumb,index],[]; .."]
- project2 [label="project(value = r.value, a; .."]
+ project2 [label="project(value = r.value, anumb; .."]
  select3 [label="select(ifthenelse(xqBoolean(r.value), eq(alt,1), eq(alt,2)); .."]
- hhjoin4 [label="hhjoin([[a]],[[a]], [l.value, r.value, a]; .."]
+ hhjoin4 [label="hhjoin([[a]],[[a]], [l.value, r.value, anumb]; .."]
  union5 [label="union(; .."]
- project6 [label="project(alt=1, value, a; .."]
+ project6 [label="project(alt=1, value, anumb; .."]
  project7 [label="project([anumb, value]; .."]
  numberate8 [label="numberate(index,[sprIdx,index],[]; .."]
  union9 [label="union(; .."]
@@ -21,7 +21,7 @@ numberate8 -> union9
 project7 -> numberate8
 project6 -> project7
 union5 -> project6
- project14 [label="project(alt=2, value, a; .."]
+ project14 [label="project(alt=2, value, anumb; .."]
  make15 [label="make(name:=[index, value], [1], [15])"]
 project14 -> make15
 union5 -> project14

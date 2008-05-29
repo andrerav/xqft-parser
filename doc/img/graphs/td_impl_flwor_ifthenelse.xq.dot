@@ -1,35 +1,35 @@
 digraph AST {
 edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=none]
-NODE22 [label="AST_MODULE"]
-NODE23 [label="AST_FLWOR"]
-NODE24 [label="AST_FORCLAUSE"]
-NODE25 [label="$"]
-NODE26 [label="a"]
-NODE25 -> NODE26
- NODE27 [label="("]
-NODE28 [label="10"]
+NODE24 [label="AST_MODULE"]
+NODE25 [label="AST_FLWOR"]
+NODE26 [label="AST_FORCLAUSE"]
+NODE27 [label="$"]
+NODE28 [label="a"]
 NODE27 -> NODE28
- NODE29 [label="20"]
+ NODE29 [label="("]
+NODE30 [label="10"]
+NODE29 -> NODE30
+ NODE31 [label="20"]
+NODE29 -> NODE31
 NODE27 -> NODE29
-NODE25 -> NODE27
-NODE24 -> NODE25
-NODE23 -> NODE24
- NODE30 [label="AST_IFEXPR"]
-NODE31 [label=">"]
-NODE32 [label="$"]
-NODE33 [label="a"]
+NODE26 -> NODE27
+NODE25 -> NODE26
+ NODE32 [label="AST_IFEXPR"]
+NODE33 [label=">"]
+NODE34 [label="$"]
+NODE35 [label="a"]
+NODE34 -> NODE35
+NODE33 -> NODE34
+ NODE36 [label="15"]
+NODE33 -> NODE36
 NODE32 -> NODE33
-NODE31 -> NODE32
- NODE34 [label="15"]
-NODE31 -> NODE34
-NODE30 -> NODE31
- NODE35 [label="$"]
-NODE36 [label="a"]
-NODE35 -> NODE36
-NODE30 -> NODE35
- NODE37 [label="15"]
-NODE30 -> NODE37
-NODE23 -> NODE30
-NODE22 -> NODE23
+ NODE37 [label="$"]
+NODE38 [label="a"]
+NODE37 -> NODE38
+NODE32 -> NODE37
+ NODE39 [label="15"]
+NODE32 -> NODE39
+NODE25 -> NODE32
+NODE24 -> NODE25
 
 }
