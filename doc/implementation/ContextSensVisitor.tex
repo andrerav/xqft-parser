@@ -19,8 +19,6 @@ in section \ref{sect:theory:contextVisitorPattern}.
 \end{center}
 \end{figure}
 
-TODO: herregud, dette diagrammet er litt feil.
-
 The class diagram for the actual implementation of the context-sensitive
 visitor pattern can be seen in figure \ref{fig:impl:context_sens_visitor_impl}.
 Compare this to the generalized class diagram in figure
@@ -71,6 +69,4 @@ syntax tree to a subset of XQuery Core (as described in sections
 The \textit{XQuery2MQL visitor} performs the bulk of the work related to
 performing the translation of XQuery to MQL. This visitor is capable of
 re-instantiating itself (or other visitors) when entering new contexts, such as
-path predicates.
-
-TODO: noe om TraverseReturn og hvordan MQL-treet blir bygd bottom-up
+path predicates. 
