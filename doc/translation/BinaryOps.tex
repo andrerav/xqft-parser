@@ -132,10 +132,10 @@ expression does not raise an error, its value is always one of the boolean value
 A logical expression is translated in a matter very similar to the arithmetic expressions. The XQuery logical
 operators does however operate on the effective boolean value (see section \ref{sect:theory:xquery:basics}) rather
 than the direct value. Rule \ref{rule:trans:TD:arithmetic} is valid for logical expressions, and the mapping
-between the XQuery operators and the MQL functions are shown in table JEJEJEJE. As the operators require effective
-boolean values, the $value$ fields will have to be run through the \textsf{xqBoolean()} function. E.g. the
-following will be a part of the parameters of the \textsf{project} operator of a translated \texttt{or} expression:
-\textsf{\ldots value = or(xqBoolean(l.value),xqBoolean(r.value))\ldots}.
+between the XQuery operators and the MQL functions are shown in table \ref{tab:trans:TD:logMap}. As the operators
+require effective boolean values, the $value$ fields will have to be run through the \textsf{xqBoolean()}
+function. E.g. the following will be a part of the parameters of the \textsf{project} operator of a translated
+\texttt{or} expression: \textsf{\ldots value = or(xqBoolean(l.value),xqBoolean(r.value))\ldots}.
 
 \begin{table}[h]
 \centering
@@ -147,9 +147,6 @@ following will be a part of the parameters of the \textsf{project} operator of a
 \label{tab:trans:TD:logMap}
 \caption{Mapping XQuery boolean operators to MQL functions}
 \end{table}
-
-For logical expressions, $e_1$\texttt{ logOp }$e_2$, $e_1$ and $e_2$ and their possible subexpressions will have
-to be translated in the logical context $\Lambda$.
 
 \subsection{Comparative Expressions}
 \label{sect:trans:TD:compArit}

@@ -7,6 +7,12 @@
   
   \item kan sette context node til noe n\aa r man starter\ldots Tenke en virtuell /collection/doc struktur\ldots
   ellerno
+  \item XQuery has a set of functions that provide access to input data. These functions are of particular
+  importance because they provide a way in which an expression can reference a document or a collection of
+  documents. The input functions are described informally here; they are defined in [XQuery 1.0 and XPath 2.0
+  Functions and Operators]. An expression can access input data either by calling one of the input functions or by
+  referencing some part of the dynamic context that is initialized by the external environment, such as a variable
+  or context item. -> Appendix C.2 Dynamic Context Components
 	\item Hva med \$i = (1,2,3) \$i/hatt -> typefeil? kj\o re isInScope(scope) p\aa~noe som ikke har scope kolonne?
 	\item MarkXRemove funker bra i unordered m0de tror jeg\ldots. Den er ogs\a~normalisert ref purely relational
 	flwors, som sier LL er denormalisert. (bare normalisert innenfor en flwor.. den unormaliserer seg n\aa r den g\aa
@@ -21,12 +27,26 @@
    \item order by (1,2) kan ogs\aa~oppdages. 
 \end{itemize}
 
-
-\section{Effective Boolean Value / ATOMIZATION}
+\section{Effective Boolean Value}
 \begin{itemize}
 \item VI M\AA~SJEKKE ATOMIZATION.
-\item noe er feil
+\item Effective Boolean Value
+\item Kommer til \aa~bli feil n\aa r en sekvens blir brukt som boolean value n\aa~s\aa fremt vi ikke kan groupe\ldots
+\item En evt groupingoperator m\aa~slippe igjennom tall\ldots. Evt select index=1, m\aa~se om (1,2,3) er bogus
+\item The translator is in the logical context, $\Lambda$, if the AST node it is currently visiting is a successor
+of a boolean operator or within the condition part of an \texttt{if..then..else} expression. In all other cases the
+translator is in the default context, $\Delta$. If no context is mentioned in the inference rules the default
+context is assumed. 
+\item test expr i if
+\item barna til and og or
 \end{itemize}
+
+\section{Context Item}
+\begin{itemize}
+  \item m\aa~nesten dytte den til symtab hele tiden, koster ikke mye, s\aa~lenge den ikke blir brukt.
+  \item Man skal vel ha tilgang til den hele tiden omtrent.
+\end{itemize}
+
 
 \section{Loop Lift vs Tainting Dependencies}
 \label{sect:disc:llvsmXr}

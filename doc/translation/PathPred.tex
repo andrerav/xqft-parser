@@ -1,12 +1,100 @@
 \section{Path Expressions and Predicates}
 \label{sect:trans:TD:pathNpred}
 
+XQuery implement XPath 2.0 path expressions and predicates as described in section
+\ref{sect:theory:xquery:PathExpressions} and \ref{sect:theory:xquery:Predicates}. In this section we will present
+a method for translating some of these expressions into MQL relational algebra.
+
+For the translations in this section to be correct, we have a few assumptions. A scope defined as a parameter to
+the \textsf{scope}-operator starting with a slash (\textsf{/}) is an absolute scope. That means if the parameter
+is e.g. \textsf{/a/b}, the operator will remove any tuples in the input relation where the $scope$ attribute does
+not define the tuple to stem from a \texttt{b} scope within the root-scope \texttt{a}. Without a slash first in
+the parameter, the scope is relative. E.g. \texttt{a/b} as a parameter will lead to removal of all tuples where
+the $scope$ attribute does not define the tuple to stem from a \texttt{b} scope within an \texttt{a} scope.
+
+We also assume that the tuples returned from a scope lookup in the \textsf{valloc}-index will have information of
+the scope it self in the $scope$ attribute, and the contents of the scope in an $value$ attribute. E.g. a lookup of
+\textsf{\$c} (the \textsf{\$}-sign indicates it is a scope) in this index may return a tuple with
+\textsf{a[1].b[2].c[1]} as its $scope$ value.
+
+The tuples returned from a lookup in the value occurence index will have to be ordered according to document
+order. This order will have to hold even after the result is run through a \textsf{scope}
+
 
 \subsection{Path Expressions}
 \label{sect:trans:TD:pathExprs}
+A path expression consists of a series of one or more steps, separated by ``/'' or ``//'', and optionally beginning
+with ``/'' or ``//''.  Each step is either a axis step or a filter expression, and a axis step consist of a axis
+and a node test. This can be seen from the exerpt of the W3C XQuery specification in figure \ref{fig:trans:TD:pathEBNF}.
+A node test can be either a kind test or a name test, we will focus on the latter. Filter expressions will not
+explicitly be handled.
+
+\begin{figure}[h]
+\begin{Verbatim}
+[68] PathExpr        ::= ("/" RelativePathExpr?)
+                       | ("//" RelativePathExpr)
+                       | RelativePathExpr
+[69] RelativePathExpr::= StepExpr (("/" | "//") StepExpr)*
+[70] StepExpr        ::= FilterExpr | AxisStep
+[71] AxisStep        ::= (ReverseStep | ForwardStep) PredicateList
+[72] ForwardStep     ::= (ForwardAxis NodeTest) | AbbrevForwardStep
+[75] ReverseStep     ::= (ReverseAxis NodeTest) | AbbrevReverseStep
+\end{Verbatim}
+\label{fig:trans:TD:pathEBNF}
+\caption{Path expressions as specified by W3C}
+\end{figure}
+The semantics of such expressions reading from left to right, the result of one step expression is used as input
+for the next. Within one step expression, the result from the preceding step will first be used as input for the
+axis expression. The result of this will be filtered by a name or kind test, before this again is filtered by
+possible predicates.
+
+The effect of a ``/'' at the beginning of a path expression is to begin the path at the root node of the tree that
+contains the context node. A ``//'' at the beginning of a path expression will establish an initial node sequence
+that contains the root of the tree in which the context node is found, plus all nodes descended from this root.
+Together with a name test these expressions can be translated as follows:
+
+\begin{equation}
+\frac{}{\mbox{\texttt{/}}QName_{1}}\longmapsto
+\begin{array}{l}
+\mbox{\textsf{numberate(index,[] ,[] ;}} \\ \quad
+\mbox{\textsf{index(valloc;}} \\ \quad \quad
+\mbox{\textsf{scope(/}}QName_{1}\mbox{\textsf{;}} \\ \quad\quad\quad
+\mbox{\textsf{lookup(\$}}QName_{1}\mbox{\textsf{))))}}
+\end{array}
+\label{rule:trans:TD:sglSlash}
+\end{equation}
+
+\begin{equation}
+\frac{}{\mbox{\texttt{//}}QName_{1}}\longmapsto
+\begin{array}{l}
+\mbox{\textsf{numberate(index, [], [];}} \\ \quad
+\mbox{\textsf{index(valloc;}} \\ \quad \quad
+\mbox{\textsf{lookup(\$}}QName_1\mbox{\textsf{)))}}
+\end{array}
+\label{rule:trans:TD:dblSlash}
+\end{equation}
+
+Where $QName_1$ is any XML-qualified name, and the dependencies returned are $\vartheta = \emptyset$. To ensure
+correct ordering, the order of the tuples returned from the \textsf{lookup} operator must be the same as the order
+of the tuples recieved by the \textsf{numberate} operator. 
+
+W3C specifies these axes as non-optional: \texttt{child}, \texttt{decendant}, \texttt{attribute},
+\texttt{self}, \texttt{decendant-or-self} and \texttt{parent}. Step expressions can be abbreviated. If the axis
+name is omitted from an axis step, the default axis is \texttt{child}. \texttt{decendant-or-self} can be replaced
+by using ``\texttt{//}'' istead of ``\texttt{/}'' between the steps. \texttt{@} is an abbreviation of
+\texttt{attribute::}.
+
+A general axis - name test step expression can be translated like this:
+\begin{equation}
+\frac{}{e_{1}\texttt{/}}
+\end{equation}
+
+
+
+
 \begin{itemize}
   \item axes
-  \item samling av child axes /a/b/c/d -> ikke e1/e2
+  
   \item i logical context -> outer join
 \end{itemize}
 
