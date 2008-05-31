@@ -10,37 +10,41 @@ make1231 [label="make(name:=[index, value], [1,2,3], [1,2,3])"];
 make1232 [label="make(name:=[index, value], [1,2,3], [1,2,3])"];
 make1233 [label="make(name:=[index, value], [1,2,3], [1,2,3])"];
 make2 [label="make(name:=[index, value],[1],[2])"];
-make22 [label="make(name:=[index, value],[1],[2])"];
+//make22 [label="make(name:=[index, value],[1],[2])"];
 project1231 [label="project([anumb = index, index = 1, value]; .."];
 project1232 [label="project([anumb = index, index = 1, value]; .."];
 project1233 [label="project([anumb = index, index = 1, value]; .."];
-project2 [label="project([anumb = index, index = 2, value]; .."];
+project12311 [label="project([anumb = index, index = 1, value]; .."];
+project2 [label="project([anumb = index, index = 2, value = 2]; .."];
 project2->make2;
 
 // Ordinary nodes
-project1 [label="project(value=l.value, anumb; ..)"];
-numberate1 [label="numberate(index, [r.value, index], [anumb]; .."];
+project1 [label="project(value=l.value, anumb, index; ..)"];
+numberate1 [label="numberate(index, [r.value, index], []; .."];
 hhjoin1 [label="hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb]; .., .."];
-hhjoin2 [label="hhjoin([],[], [l.value, anumb]; .."];
+hhjoin2 [label="hhjoin([anumb],[anumb], [l.value, anumb]; .."];
 
 select1 [label="select(xqBoolean(value); .."];
-project5 [label="project(index=1,value=gt(l.value, r.value), anumb; .."];
-hhjoin4 [label=" hhjoin([], [], [l.value, r.value, anumb]; ..,.."];
+project5 [label="project(index=1,value=gt(value, 2), anumb; .."];
+//hhjoin4 [label=" hhjoin([], [], [l.value, r.value, anumb]; ..,.."];
 
 union1 [label="union(; , ,"]
-numberate2 [label="numberate(index,[sprIdx,index],[]; .."]
+//numberate2 [label="numberate(index,[sprIdx,index],[]; .."]
 
 project1->numberate1;
   numberate1->hhjoin1;
     hhjoin1->hhjoin2;
-      hhjoin2->numberate2;
-        numberate2->union1;
+      //hhjoin2->numberate2;
+        //numberate2->union1;
+        hhjoin2->union1;
            union1->project1231;
            union1->project2;
+             project2->project12311;
       hhjoin2->select1;
         select1->project5;
-              project5->hhjoin4;
-                hhjoin4->project1232;
-                hhjoin4->make22;
+          project5->project1232
+              //project5->hhjoin4;
+              //  hhjoin4->project1232;
+              //  hhjoin4->make22;
     hhjoin1->project1233;
 }
