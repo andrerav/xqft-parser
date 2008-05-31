@@ -161,6 +161,56 @@ translation is done as usual per rule
 
 \subsection{Sequences}
 \label{sect:impl:td:seq}
+The translation process for sequence construction is described in section
+\ref{sect:trans:TD:seqBuild}. This rule is somewhat complex, and requires
+collecting all variable references from all children before performing the
+actual translation. Furthermore, for any variable reference in a left-most
+child, this variable reference must taint all right-most children. This process
+is shown in figure \ref{fig:impl:td:seq_constr_tainting_siblings}.
+
+\begin{figure}[!htp]
+\begin{center}
+\lstset{language=Java,numbers=left}
+\begin{lstlisting}
+for (TraverseReturn childResult : childResults) {
+    VarRefSet varRefsDiff;
+    Operator expr = childResult.getOperatorTree();
+    
+    VarRefSet tmp = childResult.getVarRefs();
+    varRefsDiff = (VarRefSet)varRefs.clone();
+    varRefsDiff.removeAll(tmp);
+
+    for (VarRef varRef : varRefsDiff) {
+        Project project = new Project(varRef.getName() + "numb", 
+                Scope.get(varRef.getName()).getTraverseReturn().getOperatorTree());
+        
+        Cross cross = new Cross(project, expr);
+        expr = cross;
+    }
+
+    if (childResult.isSingleton()) {
+        expr = new Project("sprIdx="+(c+1)+",index,value", expr);
+    }
+    else {
+        expr = new Project("sprIdx="+(c+1)+",value", expr);
+    }
+    operators.add(expr);
+    c++;
+}
+\end{lstlisting}
+  \caption{Tainting siblings in a sequence construction}
+  \label{fig:impl:td:seq_constr_tainting_siblings}
+\end{center}
+\end{figure}
+
+This will propagate tainting throughout the siblings as required. When this
+procedure is complete, the operator tree in the \texttt{operators} variable is
+wrapped in a \textsf{union()} operator. Etc.
+
 \begin{itemize}
   \item behandler parantes istf. komma for sekvenser (ref spec) 
 \end{itemize}
+
+\subsection{If-then-else}
+TODO: Skrive om if-then-else? comparisons??
+

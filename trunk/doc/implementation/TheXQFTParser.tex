@@ -44,9 +44,9 @@ Note the use of \texttt{ANTLRStringStream},
 \texttt{XQFTTreeAdaptor} is a specialized class required to create instances of
 the \texttt{XQFTTree} class to represent nodes in the abstract syntax tree.
 
-The actual parsing is done in the call to \texttt{module()}, which is the
-top-level production rule in the grammar for the XQFT parser (TODO: appendix?
-Ref til spec?).
+The actual parsing is performed by calling the method \texttt{module()}, which
+is the top-level production rule in the grammar for the XQFT parser (see
+appendix \ref{appendix:xquery_ebnf}).
 
 The \texttt{XQFTTree} class represents a node in the produced syntax tree. When
 a syntax tree is returned from the parser, the root node is an instance of this

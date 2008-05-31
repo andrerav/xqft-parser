@@ -16,13 +16,14 @@ konfidensielle.
 All queries for MQL are written as strings with a syntax reminiscient of Lisp
 dialects. An example query can be seen in figure \ref{figure:mql:op_example}.
 
-\marginpar{\underline{\Large TODO} \footnotesize Valocc er en hypotetisk index, kan sikkert presisere det} 
 Data is stored in \textit{indexes} rather than in DOM trees. Naturally, this is a prerequisite for efficient
 execution of relational algebra on the data. There are two basic index types: \textit{occurence} indexes and
 \textit{value} indexes. In the case of an occurence index, a lookup for a term will map the term to the occurences
 of this term. In a \textit{value} index, a key (for example document id) is associated to one or more
 \textit{values} in the document collection. Lookups in \textit{value} indexes can be combined with lookups in
 \textit{occurence} indexes to add data to the result set for the user.
+Throughout this chapter and later chapters, any reference to a \textit{valocc}
+implies exactly such a hypothetical combination of occurence and value indexes.
 
 The schema of the indexes determins the fields/columns in the result sets from
 a lookup, but typically these three fields will be included on a lookup of a
@@ -435,8 +436,6 @@ but deeper path than the second argument, otherwise \textit{false}. This
 function is designed to be used in conjunction with the \texttt{select()}
 operator as a boolean predicate. See figure \ref{figure:mql:isinscope_example}
 for an example of usage.
-
-TODO: eksempelet er kanskje litt jalla
 
 \begin{figure}[!h]
 \centering

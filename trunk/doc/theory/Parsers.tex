@@ -53,17 +53,14 @@ common parser generators will generate either top-down or bottom-up parsers
 generators are yacc (and derivatives), CUP, GOLD, and SableCC. Some popular
 top-down parsers include JavaCC, ANTLR, Spirit, and Coco/R.
 
-\marginpar{\underline{\Large TODO} \footnotesize Vi lager vel strengt tatt en LL(2 til 3) parser\ldots. Det med
-LL(*) har noe med \aa~slippe \aa~ left-factor. XQuery sier heller ikke at de er LL(1) lenger\ldots det var noen
-\aa r siden)} 
-\marginpar{\underline{\Large TODO} \footnotesize Er vel ikke saa veldig
-viktig?} 
 A comparison of some of the most popular parser generators were made in
 \cite{ourselves} for the development of the XQFT Parser (see section \ref{sect:theory:xqftparser}), and out of these the ANTLR parser generator was
 chosen. We will not reiterate the features of ANTLR in this document, however
 it is important to note that ANTLR generates predicated LL(*)-parsers based on
 LL-compliant grammars. This choice was made due to the XQuery BNF specification
-which is claimed to be LL(1) (one token lookahead).
+which is claimed to be LL(1) (one token lookahead) -- however, as shown in
+\cite{ourselves}, a complete implementation of the XQuery 1.0/XPath 2.0 grammar
+requires more than one token look-ahead.
 
 \subsection{The XQFT Parser project}
 \label{sect:theory:xqftparser}
