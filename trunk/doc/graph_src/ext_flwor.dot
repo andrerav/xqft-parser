@@ -6,20 +6,21 @@ node [shape=plaintext]
 project1231->make1231;
 project1232->make1232;
 project1233->make1233;
+project12311->make12311;
 make1231 [label="make(name:=[index, value], [1,2,3], [1,2,3])"];
 make1232 [label="make(name:=[index, value], [1,2,3], [1,2,3])"];
 make1233 [label="make(name:=[index, value], [1,2,3], [1,2,3])"];
-make2 [label="make(name:=[index, value],[1],[2])"];
+make12311 [label="make(name:=[index, value], [1,2,3], [1,2,3])"];
+//make2 [label="make(name:=[index, value],[1],[2])"];
 //make22 [label="make(name:=[index, value],[1],[2])"];
 project1231 [label="project([anumb = index, index = 1, value]; .."];
 project1232 [label="project([anumb = index, index = 1, value]; .."];
 project1233 [label="project([anumb = index, index = 1, value]; .."];
 project12311 [label="project([anumb = index, index = 1, value]; .."];
 project2 [label="project([anumb = index, index = 2, value = 2]; .."];
-project2->make2;
 
 // Ordinary nodes
-project1 [label="project(value=l.value, anumb, index; ..)"];
+project1 [label="project(value=l.value, index; ..)"];
 numberate1 [label="numberate(index, [r.value, index], []; .."];
 hhjoin1 [label="hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb]; .., .."];
 hhjoin2 [label="hhjoin([anumb],[anumb], [l.value, anumb]; .."];

@@ -4,7 +4,7 @@ node [shape=plaintext]
 
 project123->make123
 make123 [label="make(name:=[index, value], [1,2,3], [1,2,3])"]
-make2 [label="make(name:=[index, value],[1], [2])"]
+//make2 [label="make(name:=[index, value],[1], [2])"]
 project123 [label="project([anumb = index, index = 1, value]; .."]
 
 project1 [label="project(value=l.value, index; .."]
