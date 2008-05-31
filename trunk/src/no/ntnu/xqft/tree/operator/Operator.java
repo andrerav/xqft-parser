@@ -265,18 +265,19 @@ public abstract class Operator {
     	
     	StringBuffer buffer = new StringBuffer();
     	
-    	// Write relation, if any
+
+        // Write relation, if any
     	if (parent != null) {
     		buffer.append(indent + parent.node_id + " -> " + this.node_id + "\n");
     	}
+        
+        // Dump myself
+        buffer.append(this.node_id + " [label=\""+ this.node_label +"\"]\n");
     	
     	// Recurse over children
     	for (Operator child : this.operators) {
     		buffer.append(child.generateNodeRel(this, ++level));
     	}
-    	
-    	// Dump myself
-    	buffer.append(this.node_id + " [label=\""+ this.node_label +"\"]\n");
     	
     	// 
         return buffer.toString();
