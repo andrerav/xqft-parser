@@ -1,0 +1,51 @@
+digraph AST {
+edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=normal]
+node [shape=plaintext]
+numberate1 [label="numberate(index,[anumb,index],[anumb]; .."]
+  numberate1 -> project2
+project2 [label="project(index, anumb, value = lvalue; .."]
+    project2 -> select3
+select3 [label="select(ifthenelse(xqBoolean(rvalue), eq(alt,1), eq(alt,2)); .."]
+      select3 -> hhjoin4
+hhjoin4 [label="hhjoin([anumb],[anumb], [index = l.index, anumb, lvalue = l.value, rvalue = r.value]; .."]
+        hhjoin4 -> union5
+union5 [label="union(; .."]
+          union5 -> project6
+project6 [label="project(index, alt=1, anumb, value; .."]
+            project6 -> projectx121
+
+
+
+
+projectx121 [label="project([index = 1, anumb = index, value]; .."]
+              projectx121 -> numberatex121
+numberatex121 [label="numberate(index,[sprIdx,index],[]; .."]
+                numberatex121 -> unionx121
+unionx121 [label="union(; .."]
+                  unionx121 -> projectx122
+projectx122 [label="project(sprIdx=1,index,value; .."]
+                    projectx122 -> makex121
+makex121 [label="make(name:=[index, value], [1], [10])"]
+                    unionx121 -> projectx123
+projectx123 [label="project(sprIdx=2,index,value; .."]
+                      projectx123 -> makex122
+makex122 [label="make(name:=[index, value], [1], [20])"]
+
+            union5 -> project14
+project14 [label="project(index, alt=2, anumb, value; .."]
+              project14 -> make15
+make15 [label="make(name:=[index, value], [1], [15])"]
+          hhjoin4 -> project16
+project16 [label="project(index=1, anumb, value=max; .."]
+            project16 -> group17
+group17 [label="group((anumb), max(value); .."]
+              group17 -> project18
+project18 [label="project(anumb, value=gt(lvalue, rvalue); .."]
+                project18 -> hhjoin19
+hhjoin19 [label="hhjoin([],[],[anumb, lvalue = l.value, rvalue = r.value]; .."]
+                  hhjoin19 -> projectx121
+
+
+                    hhjoin19 -> make15
+
+}
