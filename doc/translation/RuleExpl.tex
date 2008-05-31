@@ -28,11 +28,11 @@ typographical representations.
 
 Inference rules are generally in this format:
 \begin{equation*}
-\frac{\mbox{\textbf{cxt}}\vdash cond}{e}\longmapsto \mbox{\textbf{r(}}e\mbox{\textbf{)}}
+\frac{\mbox{\textbf{context}}\vdash condition}{e}\longmapsto \mbox{\textbf{r(}}e\mbox{\textbf{)}}
 \end{equation*}
 
-This should be read as: in the context of \textbf{cxt}, if condition $cond$ is satisfied, the XQuery expression
-$e$ will be translated into \textbf{r(}$e$\textbf{)}.
+This should be read as: in the context of \textbf{context}, if condition $condition$ is satisfied, the XQuery
+expression $e$ will be translated into \textbf{r(}$e$\textbf{)}.
 
 The translator is in the logical context, $\Lambda$, if the AST node it is currently visiting is a successor of a
 boolean operator or within the condition part of an \texttt{if..then..else} expression. In all other cases the
