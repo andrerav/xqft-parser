@@ -18,8 +18,6 @@ typographical representations.
   \textbf{r(}$e$\textbf{)} 	& Returns the relational algebraic representation of $e$   \\
   \textbf{t(}\textbf{r(}$e$\textbf{)}\textbf{,}$\vartheta'$\textbf{)} & Returns \textbf{r(}$e$\textbf{)} tainted
   with the dependencies $\vartheta'$ \\
-  $\Delta$ 					&  The default context \\ 
-  $\Lambda$ 				& The logical/boolean context \\
   
 \end{tabular}
 \caption{Explanation of inference rule symbols}
@@ -33,11 +31,6 @@ Inference rules are generally in this format:
 
 This should be read as: in the context of \textbf{context}, if condition $condition$ is satisfied, the XQuery
 expression $e$ will be translated into \textbf{r(}$e$\textbf{)}.
-
-The translator is in the logical context, $\Lambda$, if the AST node it is currently visiting is a successor of a
-boolean operator or within the condition part of an \texttt{if..then..else} expression. In all other cases the
-translator is in the default context, $\Delta$. If no context is mentioned in the inference rules the default
-context is assumed.
 
 Often MQL operator trees are depicted like this:
 \begin{center}
