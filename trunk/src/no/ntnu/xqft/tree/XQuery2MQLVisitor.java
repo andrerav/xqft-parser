@@ -472,8 +472,8 @@ public class XQuery2MQLVisitor extends Visitor {
         v_e1_u_e2_u_e3.addAll(r_e3.getVarRefs());
 
         // Alternatives
-        Project project_alt1 = new Project("index, alt=1, value, " + v_e2_u_e3.toStringList(), this.taint(r_e2, r_e3.getVarRefs()).getOperatorTree()); 
-        Project project_alt2 = new Project("index, alt=2, value, " + v_e2_u_e3.toStringList(), this.taint(r_e3, r_e2.getVarRefs()).getOperatorTree()); 
+        Project project_alt1 = new Project("index, alt=1, " + v_e2_u_e3.toStringList() + ", value", this.taint(r_e2, r_e3.getVarRefs()).getOperatorTree()); 
+        Project project_alt2 = new Project("index, alt=2, " + v_e2_u_e3.toStringList() + ", value", this.taint(r_e3, r_e2.getVarRefs()).getOperatorTree()); 
         
         // Union
         Union union = new Union(null, null);
@@ -481,13 +481,13 @@ public class XQuery2MQLVisitor extends Visitor {
         union.addOperator(project_alt2);
         
         // HHjoin
-        HHJoin hhjoin = new HHJoin("[" + v_e2e3_n_e1.toStringList() + "],[" + v_e2e3_n_e1.toStringList() + "], [index = l.index, lvalue = l.value, rvalue = r.value, " + v_e1_u_e2_u_e3.toStringList() + "]", union, r_e1.getOperatorTree());
+        HHJoin hhjoin = new HHJoin("[" + v_e2e3_n_e1.toStringList() + "],[" + v_e2e3_n_e1.toStringList() + "], [index = l.index, " + v_e1_u_e2_u_e3.toStringList() +", lvalue = l.value, rvalue = r.value]", union, r_e1.getOperatorTree());
 
         // Select
         Select select = new Select("ifthenelse(xqBoolean(rvalue), eq(alt,1), eq(alt,2))", hhjoin);
 
         // Project
-        Project project = new Project("index, value = lvalue, " + v_e1_u_e2_u_e3.toStringList(), select);
+        Project project = new Project("index, " + v_e1_u_e2_u_e3.toStringList() + ", value = lvalue" , select);
         
         TraverseReturn result = new TraverseReturn();
 
@@ -540,10 +540,10 @@ public class XQuery2MQLVisitor extends Visitor {
 		v_e1_u_e2.addAll(r_e2.getVarRefs());
 		
 		// See rule 4.14
-		HHJoin hhjoin = new HHJoin("["+v_e1_n_e2.toStringList()+"],["+v_e1_n_e2.toStringList()+"],[lvalue = l.value, rvalue = r.value, " + v_e1_u_e2.toStringList() + "]", r_e1.getOperatorTree(), r_e2.getOperatorTree());		
-		Project project_func = new Project("value="+func+"(lvalue, rvalue),"+v_e1_u_e2.toStringList(), hhjoin);
+		HHJoin hhjoin = new HHJoin("["+v_e1_n_e2.toStringList()+"],["+v_e1_n_e2.toStringList()+"],["+v_e1_u_e2.toStringList()+", lvalue = l.value, rvalue = r.value]", r_e1.getOperatorTree(), r_e2.getOperatorTree());		
+		Project project_func = new Project(v_e1_u_e2.toStringList() + ", value="+func+"(lvalue, rvalue)", hhjoin);
 		Group group = new Group("("+v_e1_u_e2.toStringList()+"), max(value)", project_func);
-		Project project = new Project("index=1, value=max, " + v_e1_u_e2.toStringList(), group);
+		Project project = new Project("index=1, " + v_e1_u_e2.toStringList() + ", value=max", group);
 		
 		result.setOperatorTree(project);
 		result.setSingleton(false);

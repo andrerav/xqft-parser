@@ -14,7 +14,7 @@ project123 [label="project([index = 1, anumb = index, value]; .."];
 // Ordinary nodes
 project1 [label="project(index, anumb, value=l.value; .."];
 numberate1 [label="numberate(index, [r.value, index], [anumb]; .."];
-hhjoin1 [label="hhjoin([l.anumb], [r.anumb], [l.value, r.value, anumb]; .., .."];
+hhjoin1 [label="hhjoin([l.anumb], [r.anumb], [anumb, l.value, r.value]; .., .."];
 //hhjoin2 [label="hhjoin([],[], [l.value, anumb]; .."];
 
 select1 [label="select(xqBoolean(value); .."];
