@@ -8,7 +8,7 @@ method of calculation defines complexity as creation of new objects in run-time.
 
 This definition of complexity does \textit{not} account
 for disk I/O, nor is it a direct measurement of performance. However, given
-two algebra trees which are to be executed on the same host implementation, it
+an algebra tree which is to be executed on some known host implementation, it
 may give an indication of spending of time and computational resources.
 
 \subsection{Definitions}
@@ -26,7 +26,7 @@ contains a value for some given attribute in the relation
 \end{myDefinition}
 
 \begin{myDefinition}
-Measurement of \textbf{complexity} defined as that for some given operator
+Measurement of \textbf{complexity} is defined as that for some given operator
 $\alpha$, counting the following operations performed by the operator:
 \begin{itemize}
   \item Creation of new \textbf{tuples} (definition
@@ -34,6 +34,17 @@ $\alpha$, counting the following operations performed by the operator:
   \item Creation of new \textbf{posts} (definition \ref{definition:relalg_post})
 \end{itemize}
 The integer sum of counting these operations (from and including 1 and up)
-defines the \textbf{complexity} for that given operator.
+defines the \textbf{complexity} for that given operator. Further, the sum of
+all the complexity sums in some given relational algebra tree defines the
+\textbf{complexity sum} for that given tree.
 \label{definition:relalg_complexity}
 \end{myDefinition}
+
+%\usepackage{graphics} is needed for \includegraphics
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{diagrams/tuple_post}
+  \caption[Tuple/Post]{The structure of a \textit{tuple} with \textit{posts}}
+  \label{fig:method:tuple_post}
+\end{center}
+\end{figure}
