@@ -12,7 +12,7 @@ not define the tuple to stem from a \texttt{b} scope within the root-scope \text
 the parameter, the scope is relative. E.g. \texttt{a/b} as a parameter will lead to removal of all tuples where
 the $scope$ attribute does not define the tuple to stem from a \texttt{b} scope within an \texttt{a} scope.
 
-We also assume that the tuples returned from a scope lookup in the \textsf{valloc}-index will have information of
+We also assume that the tuples returned from a scope lookup in the \textsf{valocc}-index will have information of
 the scope it self in the $scope$ attribute, and the contents of the scope in an $value$ attribute. E.g. a lookup of
 \textsf{\$c} (the \textsf{\$}-sign indicates it is a scope) in this index may return a tuple with
 \textsf{a[1].b[2].c[1]} as its $scope$ value.
@@ -57,7 +57,7 @@ Together with a name test these expressions can be translated as follows:
 \frac{}{\mbox{\texttt{/}}QName_{1}}\longmapsto
 \begin{array}{l}
 \mbox{\textsf{numberate(index,[] ,[] ;}} \\ \quad
-\mbox{\textsf{index(valloc;}} \\ \quad \quad
+\mbox{\textsf{index(valocc;}} \\ \quad \quad
 \mbox{\textsf{scope(/}}QName_{1}\mbox{\textsf{;}} \\ \quad\quad\quad
 \mbox{\textsf{lookup(\$}}QName_{1}\mbox{\textsf{))))}}
 \end{array}
@@ -68,7 +68,7 @@ Together with a name test these expressions can be translated as follows:
 \frac{}{\mbox{\texttt{//}}QName_{1}}\longmapsto
 \begin{array}{l}
 \mbox{\textsf{numberate(index, [], [];}} \\ \quad
-\mbox{\textsf{index(valloc;}} \\ \quad \quad
+\mbox{\textsf{index(valocc;}} \\ \quad \quad
 \mbox{\textsf{lookup(\$}}QName_1\mbox{\textsf{)))}}
 \end{array}
 \label{rule:trans:TD:dblSlash}
@@ -78,25 +78,60 @@ Where $QName_1$ is any XML-qualified name, and the dependencies returned are $\v
 correct ordering, the order of the tuples returned from the \textsf{lookup} operator must be the same as the order
 of the tuples recieved by the \textsf{numberate} operator. 
 
-W3C specifies these axes as non-optional: \texttt{child}, \texttt{decendant}, \texttt{attribute},
-\texttt{self}, \texttt{decendant-or-self} and \texttt{parent}. Step expressions can be abbreviated. If the axis
-name is omitted from an axis step, the default axis is \texttt{child}. \texttt{decendant-or-self} can be replaced
-by using ``\texttt{//}'' istead of ``\texttt{/}'' between the steps. \texttt{@} is an abbreviation of
-\texttt{attribute::}.
+Step expressions can be abbreviated. If the axis name is omitted from an axis step, the default axis is
+\texttt{child}. \texttt{decendant-or-self} can be replaced by using ``\texttt{//}'' istead of ``\texttt{/}''
+between the steps. \texttt{@} is an abbreviation of \texttt{attribute::}. Here we will present translation of
+unabbreviated syntax.
 
-A general axis - name test step expression can be translated like this:
+A general step expression, axis + name test, can be translated like this:
 \begin{equation}
-\frac{}{e_{1}\texttt{/}}
+\begin{array}{c}
+\frac{}{\displaystyle e_{1}\texttt{/AXIS::}QName_1} \\ 
+\longmapsto \begin{array}{c}\mbox{\tiny } \\ \mbox{\tiny } \end{array} \\
+\begin{array}{l}
+\mbox{\textsf{numberate(index, [sprIdx, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
+\mbox{\textsf{select(isFUNC(scope, lsc);}} \\ \quad \quad
+\mbox{\textsf{hhjoin([documentId],[documentId],[spridx=l.index,lsc=l.scope,r.value,}}\vartheta\mbox{\textsf{];}}\\ \quad \quad \quad 
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{;}} \\ \quad \quad\quad
+\mbox{\textsf{numberate(index, [], [];}}\\ \quad \quad\quad\quad
+\mbox{\textsf{index(valocc;}} \\ \quad\quad\quad\quad\quad
+\mbox{\textsf{lookup(\$}}QName_1\mbox{\textsf{))))))}}
+\end{array}
+\end{array}
+\label{rule:trans:TD:pathStep}
 \end{equation}
 
+Where $\vartheta = e.1.\vartheta$. \textsf{r.value} is short for \textsf{value = right.value, index = right.index,
+\ldots etc}. \texttt{AXIS} will map to an MQL funciton \textsf{isFUNK} as described in table \ref{tab:trans:TD:axisMap}. 
 
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c}
+\texttt{AXIS} & \textsf{isFUNC} \\ \hline
+\texttt{child} & \textsf{isChild} \\
+\texttt{descendant} & \textsf{isDescendant} \\
+\texttt{attribute} & \textsf{isChild} $^{*}$ \\
+\texttt{self} & \textsf{isSelf} \\
+\texttt{descendant-or-self} & \textsf{isDescendantOrSelf} \\
+\texttt{following} & \textsf{isFollowing} \\
+\texttt{following-sibling} & \textsf{isFollowingSibling} \\
+\texttt{parent} & \textsf{isParent} \\
+\texttt{ancestor} & \textsf{isAncestor} \\
+\texttt{ancestor-or-self} & \textsf{isAncestorOrSelf} \\
+\texttt{preceding} & \textsf{isPreceding} \\
+\texttt{preceding-sibling} & \textsf{isPrecedingSibling} 
+\end{tabular}
+\caption{Mapping between XQuery axes and MQL functions. \label{tab:trans:TD:axisMap}}
+\end{table}
 
+$^{*}$For the \texttt{attribute} axis the parameter to \textsf{lookup} will have a \textsf{\$@}-prefix
+instead of the \textsf{\$}-prefix described in the rule.
 
-\begin{itemize}
-  \item axes
-  
-  \item i logical context -> outer join
-\end{itemize}
+\begin{myExample}
+JEJEJEJEJE
+denne sp\o rringa gir dette rel.alg treet:
+
+\end{myExample}
 
 \subsection{Predicates}
 \label{sect:trans:TD:predicates}

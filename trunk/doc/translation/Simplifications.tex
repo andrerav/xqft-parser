@@ -126,12 +126,43 @@ only singleton items where not all of them are literals:
 \end{equation*}
       
 
+\subsection{Path Expressions}
+\label{sect:trans:TD:simpl:pathExpr}
+The \textsf{scope} operator of MQL can be used to filter tuples based on the value of their $scope$-field. The
+operator allows only complete scope descriptions, that is, no wildcards are allowed. \textsf{/} separates the
+scopes, and can be read as ``encompasses'' or ``is the parent scope of''. E.g. \textsf{a/b} is read as the scope
+where \textsf{a} is the parent scope of \textsf{b}. This can be exploited when translating path expressions with
+subsequent \texttt{child} axis or \texttt{parent} axis steps. Multiple subsequent \texttt{child} axis + name test
+steps can be translated like this:
+
+\begin{equation}
+\begin{array}{c}
+\frac{}{\displaystyle e_{1}\texttt{/child::}QName_1\texttt{/child::\ldots/child::}QName_n} \\ 
+\longmapsto \begin{array}{c}\mbox{\tiny } \\ \mbox{\tiny } \end{array} \\
+\begin{array}{l}
+\mbox{\textsf{numberate(index, [sprIdx, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
+\mbox{\textsf{select(isFUNC(scope, lsc);}} \\ \quad \quad
+\mbox{\textsf{hhjoin([documentId],[documentId],[spridx=l.index,lsc=l.scope,r.value,}}\vartheta\mbox{\textsf{];}}\\ \quad \quad \quad 
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{;}} \\ \quad \quad\quad
+\mbox{\textsf{numberate(index, [], [];}}\\ \quad \quad\quad\quad
+\mbox{\textsf{index(valocc;}} \\ \quad\quad\quad\quad\quad
+\mbox{\textsf{scope(}}QName_1\mbox{\textsf{/\ldots/}}QName_n\\ \quad\quad\quad\quad\quad\quad
+\mbox{\textsf{lookup(\$}}QName_n\mbox{\textsf{)))))))}}
+\end{array}
+\end{array}
+\label{rule:trans:TD:pathChild}
+\end{equation}
+
+Multiple \texttt{parent} axis steps can recieve corresponding treatment, except the path defined to the
+\textsf{scope} operator will have to be reversed. The same can also be done to the rules
+\ref{rule:trans:TD:sglSlash} and \ref{rule:trans:TD:dblSlash}. Only clean axis + name test steps can be translated
+like this, without any interruption by e.g. a predicate or kind test.
+
 \subsection{FLWORs}
 \label{sect:trans:TD:simpl:flwor}        
   FLWOR:
   	\begin{itemize}
         \item  kan bli -> project , ved singelton return
-		\item samling av child axes /a/b/c/d -> ikke e1/e2
       \end{itemize}
 
 \subsection{Arithmetic Expressions}
