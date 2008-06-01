@@ -63,6 +63,9 @@ xqft:
 tdgraphs:
 	find doc/td_src|grep \.xq$$|xargs java -Xmx1024M -cp bin:lib/args.jar:lib/antlr.jar:lib/stringtemplate.jar no.ntnu.xqft.XQFT -d -p -o doc/img/graphs
 
+pfgraphs:
+	for i in `ls doc/td_src|grep \.xq$$|sed -e 's/\.xq$$//'`; do echo $$i && pf -A -D -l -s16 doc/td_src/$$i.xq|dot -Tpdf -odoc/img/graphs/$${i}_pathfinder.pdf; done;   
+
 
 clean:
 	find .|grep ~$$|xargs rm -v
