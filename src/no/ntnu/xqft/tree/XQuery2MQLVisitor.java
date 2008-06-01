@@ -463,8 +463,8 @@ public class XQuery2MQLVisitor extends Visitor {
         v_e2_u_e3.addAll(r_e3.getVarRefs());
         
         // VarRefs: (e2 u e3) n e1
-        VarRefSet v_e2e3_n_e1 = (VarRefSet)v_e2_u_e3.clone();
-        v_e2e3_n_e1.retainAll(r_e1.getVarRefs());
+        VarRefSet v_e2_u_e3_n_e1 = (VarRefSet)v_e2_u_e3.clone();
+        v_e2_u_e3_n_e1.retainAll(r_e1.getVarRefs());
 
         // VarRefs: e1 u  e2 u e3
         VarRefSet v_e1_u_e2_u_e3 = (VarRefSet)r_e1.getVarRefs().clone();
@@ -481,7 +481,7 @@ public class XQuery2MQLVisitor extends Visitor {
         union.addOperator(project_alt2);
         
         // HHjoin
-        HHJoin hhjoin = new HHJoin("[" + v_e2e3_n_e1.toStringList() + "],[" + v_e2e3_n_e1.toStringList() + "], [index = l.index, " + v_e1_u_e2_u_e3.toStringList() +", lvalue = l.value, rvalue = r.value]", union, r_e1.getOperatorTree());
+        HHJoin hhjoin = new HHJoin("[" + v_e2_u_e3_n_e1.toStringList() + "],[" + v_e2_u_e3_n_e1.toStringList() + "], [index = l.index, " + v_e1_u_e2_u_e3.toStringList() +", lvalue = l.value, rvalue = r.value]", union, r_e1.getOperatorTree());
 
         // Select
         Select select = new Select("ifthenelse(xqBoolean(rvalue), eq(alt,1), eq(alt,2))", hhjoin);
