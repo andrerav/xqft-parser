@@ -33,6 +33,7 @@ the \textit{AST\_FORCLAUSE} node will be visited by the
 node (the dollar sign) will be visited by the \textit{visitDOLLARSi()} method,
 and the translation of the for clause is completed.
 
+\newpage
 \begin{figure}[!htp]
 \begin{center}
 \lstset{language=Java,numbers=left}
@@ -107,6 +108,7 @@ translation which applies tainting given by the rule in figure
 particular, the rule in figure \ref{rule:trans:TD:returnTaint} shown on page
 \pageref{rule:trans:TD:returnTaint} must be applied (which implies the former).
 
+\newpage
 \begin{figure}[!htp]
 \begin{center}
 \lstset{language=Java,numbers=left}
@@ -168,6 +170,7 @@ actual translation. Furthermore, for any variable reference in a left-most
 child, this variable reference must taint all right-most children. This process
 is shown in figure \ref{fig:impl:td:seq_constr_tainting_siblings}.
 
+\newpage
 \begin{figure}[!htp]
 \begin{center}
 \lstset{language=Java,numbers=left}
@@ -204,13 +207,105 @@ for (TraverseReturn childResult : childResults) {
 \end{figure}
 
 This will propagate tainting throughout the siblings as required. When this
-procedure is complete, the operator tree in the \texttt{operators} variable is
-wrapped in a \textsf{union()} operator. Etc.
+procedure is complete, the operators (in the \texttt{operators} list) are
+added as children to a \textsf{union()} operator, and then a
+\textsf{numberate()} operator. This completes the translation of a sequence
+constructor.
 
-\begin{itemize}
-  \item behandler parantes istf. komma for sekvenser (ref spec) 
-\end{itemize}
+Note that the parantheses in sequence expressions are not required, and
+according to specification, sequence expressions are recognized by the comma
+symbols and not parantheses. However, the XQFT Parser rewrites sequence
+expressions into including a paranthesis as start token for sequence subtrees
+within the AST.
 
 \subsection{If-then-else}
-TODO: Skrive om if-then-else? comparisons??
+The translation process for conditional expressions is explained in section
+\ref{sect:trans:TD:ifThenElse}. In particular, rule
+\ref{rule:trans:TD:conditional} describes this translation. 
 
+First the child expressions are visited:
+
+\begin{Verbatim}
+// if (e1) then e2 else e3
+XQFTTree e1 = (XQFTTree)tree.getChild(0); 
+XQFTTree e2 = (XQFTTree)tree.getChild(1);
+XQFTTree e3 = (XQFTTree)tree.getChild(2);
+        
+// Visit the expressions
+TraverseReturn r_e1 = acceptThis(e1);
+TraverseReturn r_e2 = acceptThis(e2);
+TraverseReturn r_e3 = acceptThis(e3);
+\end{Verbatim}
+
+The variables \texttt{e1},\texttt{e2}, and \texttt{e2} correspond to the
+expressions $e_1$,$e_2$, and $e_3$ in rule \ref{rule:trans:TD:conditional},
+while \texttt{r\_e1},\texttt{r\_e3}, and \texttt{r\_e3} correspond to
+\textbf{r}($e_1$), \textbf{r}($e_2$), and \textbf{r}($e_3$).
+
+Continuing, sets of variable references (iterator dependencies) are obtained:
+         
+\begin{Verbatim}
+// VarRefs: e2 u e3
+VarRefSet v_e2_u_e3 = (VarRefSet)r_e2.getVarRefs().clone();
+v_e2_u_e3.addAll(r_e3.getVarRefs());
+
+// VarRefs: (e2 u e3) n e1
+VarRefSet v_e2_u_e3_n_e1 = (VarRefSet)v_e2_u_e3.clone();
+v_e2_u_e3_n_e1.retainAll(r_e1.getVarRefs());
+
+// VarRefs: e1 u e2 u e3
+VarRefSet v_e1_u_e2_u_e3 = (VarRefSet)r_e1.getVarRefs().clone();
+v_e1_u_e2_u_e3.addAll(r_e2.getVarRefs());
+v_e1_u_e2_u_e3.addAll(r_e3.getVarRefs());
+\end{Verbatim}
+
+If not completely clear, the variable \texttt{v\_e2\_u\_e3} corresponds to
+$e_2 \cup e_3$, \texttt{v\_e2\_u\_e3\_n\_e1} corresponds to $(e_2 \cup e_3) \cap
+e_1$, and \texttt{v\_e1\_u\_e2\_u\_e3} corresponds to $e_2 \cup e_3 \cup
+e_1$.
+
+This result is used to create the to \textsf{project()} operators and union
+them together:
+
+\begin{Verbatim}
+// Alternatives
+Project project_alt1 = new Project("index, alt=1, " + 
+                       v_e2_u_e3.toStringList() + 
+                       ", value", 
+                       this.taint(r_e2, r_e3.getVarRefs())
+                           .getOperatorTree()); 
+
+Project project_alt2 = new Project("index, alt=2, " +
+                        v_e2_u_e3.toStringList() + 
+                        ", value", 
+                        this.taint(r_e3, r_e2.getVarRefs())
+                            .getOperatorTree()); 
+
+// Union
+Union union = new Union(null, null);
+union.addOperator(project_alt1);
+union.addOperator(project_alt2);
+\end{Verbatim}
+
+The translation is finalized by using this result to construct a join and apply
+the \textsf{select()} operator:
+
+\begin{Verbatim}
+// HHjoin
+HHJoin hhjoin = new HHJoin("[" + 
+                v_e2_u_e3_n_e1.toStringList() + "],
+                [" + v_e2_u_e3_n_e1.toStringList() + "], 
+                [index = l.index, " + 
+                v_e1_u_e2_u_e3.toStringList() +
+                ", lvalue = l.value, rvalue = r.value]", 
+                union, r_e1.getOperatorTree());
+
+// Select
+Select select = new Select("ifthenelse(xqBoolean(rvalue), 
+                    eq(alt,1), eq(alt,2))", hhjoin);
+
+// Project
+Project project = new Project("index, " + 
+                  v_e1_u_e2_u_e3.toStringList() +
+                  ", value = lvalue" , select);
+\end{Verbatim}
