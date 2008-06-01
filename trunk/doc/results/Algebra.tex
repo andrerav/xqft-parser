@@ -122,6 +122,7 @@ algebra using the implemented proof of concept described in chapter
 can also be used in a comparison with loop lifting.
 
 \subsection{Trivial FLWOR}
+\label{sect:results:algebra:generated:trivial_flwor}
 \subsubsection{Query premise}
 \begin{figure}[!htp]
 \begin{center}
@@ -142,9 +143,8 @@ for $a in (1,2,3) return $a
 \end{center}
 \end{figure}
 
-\newpage
-
 \subsection{Complex FLWOR}
+\label{sect:results:algebra:generated:complex_flwor}
 \subsubsection{Query premise}
 \begin{figure}[!htp]
 \begin{center}
@@ -157,7 +157,6 @@ for $a in (1,2) return (3, for $b in (4,5) return ($a, $b, 6))
 \end{figure}
 
 \subsubsection{Result}
-
 \begin{figure}[!htp]
 \begin{center}
   \includegraphics[width=1.0\textwidth]{img/graphs/td_impl_flwor_complex_xq_relalg} \caption{Complete translation of expression in figure
@@ -182,6 +181,7 @@ be converted to the DAG in figure
 \newpage
 
 \subsection{FLWOR with conditional}
+\label{sect:results:algebra:generated:conditional_flwor}
 \subsubsection{Query premise}
 \begin{figure}[!htp]
 \begin{center}
@@ -207,6 +207,7 @@ The algebra tree in figure \ref{fig:results:query_conditional_flwor_result} can
 be converted to the DAG in figure
 \ref{fig:results:query_conditional_flwor_result_dag}
 
+\newpage
 \begin{figure}[!htp]
 \begin{center} 
   \includegraphics[width=1.0\textwidth]{img/graphs/td_impl_flwor_ifthenelse_xq_relalg_dag}
