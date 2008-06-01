@@ -426,36 +426,55 @@ behaviour of this operator. In the output result set seen in figure
 added, with a sequence which is restarted for each new value of \texttt{A}.
 Also note that the input result set is sorted on A then B.
 
-\subsubsection{isInScope (scope comparison)}
-\textbf{\LARGE TODO:}kan v\ae re bull
+\subsubsection{Scope Comparison Functions}
 
-This function (not operator) accepts two arguments which must be scope fields
-from index lookups (as described in section \ref{sect:method:mql:indexes}).
-This boolean function returns \textit{true} if the first argument has an equal
-but deeper path than the second argument, otherwise \textit{false}. This
-function is designed to be used in conjunction with the \texttt{select()}
-operator as a boolean predicate. See figure \ref{figure:mql:isinscope_example}
-for an example of usage.
+These boolean functions (not operators) accepts two arguments which must be $scope$ fields from index lookups (as
+described in section \ref{sect:method:mql:indexes}). They each correspond to one of the axes of XQuery/XPath.
+Informally, for one tuple, the $scope$ field has a value on this format:
+\textsf{a}$_1$\textsf{[m].}\textsf{a}$_2$\textsf{[n]\ldots}\textsf{a}$_j$\textsf{[o]}. In this format
+\textsf{a}$_x$ are scope names and \textsf{m}, \textsf{n} and \textsf{o} are integers. Further, \textsf{a}$_2$ is
+the \textsf{n}th scope with the name \textsf{a}$_2$ which resides within the \textsf{a}$_1$ scope. \textsf{a}$_1$
+is the \textsf{m}th scope with that name of the document. In the following description of the functions
+\textsf{a}$_1$\textsf{[m]} is called a \emph{step} and \textsf{[m]} is called the \emph{instance}. $scope_n$ is to
+be read as the value in the $scope$ attribute for one tuple. The length of $scope_n$ is equal to the number of
+steps it contains.
 
-\begin{figure}[!h]
-\centering
-\begin{Verbatim}
-select(isInScope(lscope, rscope);
-  mergejoin([DocumentID],[DocumentID], 
-            [DocumentID, lscope = left.Scope, rscope = right.Scope];
-    lookup(engineer),
-    lookup(nurse)))
-\end{Verbatim}
-\caption{Example of assumed isInScope() functionality}
-\label{figure:mql:isinscope_example}
-\end{figure}
+\begin{tabular}{l|p{6.3cm}}
+\textsf{isChild(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
+& Returns $true$ if $scope_2$ is exactly on step longer than and a prefix of $scope_1$. Else $false$. 
+\\ \textsf{isDescendant(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
+& Returns $true$ if $scope_2$ is longer than and a prefix of $scope_1$. Else $false$. 
+\\ \textsf{isSelf(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
+& Returns $true$ if $scope_2$ is equal to $scope_1$. Else $false$.
+\\ \textsf{isDescendantOrSelf(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
+& Returns $true$ if $scope_2$ is equal to or a prefix of $scope_1$. Else $false$.
+\\ \textsf{isFollowing(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
+& Returns $true$ if $scope_2$ has a higher instance for a step corresponding to a step in $scope_1$. Else $false$. 
+\\
+\textsf{isFollowingSibling(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
+& Returns $true$ if $scope_2$ is equal to $scope_1$ except having a higher instance of the last step. Else $false$.
+\\
+\textsf{isParent(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
+& Returns $true$ if $scope_1$ is exaclty one step shorter than and a prefix of $scope_2$. Else $false$. \\
+\textsf{isAncestor(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
+& Returns $true$ if $scope_1$ is shorter than and a prefix of $scope_2$. Else $false$.\\
+\textsf{isAncestorOrSelf(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
+& Returns $true$ if $scope_1$ is equal to or a prefix of $scope_2$. Else $false$. \\
+\textsf{isPreceding(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
+& Returns $true$ if $scope_2$ has a lower instance for a step corresponding to a step in $scope_1$. Else $false$. 
+\\
+\textsf{isPrecedingSibling(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
+& Returns $true$ if $scope_2$ is equal to $scope_1$ except having a lower instance of the last step. Else
+$false$.
+\end{tabular}
+
+As can be seen, many of these functions can be defined by some of the other functions. But for readability we
+assume one function per axis.
 
 \subsubsection{xqBoolean/boolean truth value coercion}
-\textbf{\LARGE TODO:}kan v\ae re bull
 
-This function (not operator) accepts one argument and determines its
-\textit{truth value}. XQuery truth values were described in
-section \ref{sect:theory:xquery:basics}.
+This function (not operator) accepts one argument and determines its \textit{truth value}. XQuery truth values
+were described in section \ref{sect:theory:xquery:basics}.
 
 \begin{figure}[!h]
 \centering

@@ -130,19 +130,12 @@ context is assumed.
 \label{sect:disc:optimisations}
 \begin{itemize}
   \item legg merke til bruk av Uk-skrivem\aa te (s vs z)
-  \item \textbf{\Large TODO:} dette blir flyttet inn i Tainting Dependencies kap\ldots Vet ikke om det blir igjen
-  noe \aa~si her..
-  \item enkeltverdier i sammenligning b\o r bli putta inn i selecten.. ikke lag
-  eget sett og kryss
-  \item enkeltverdier etterhverandre b\o r lages i en go, ikke \texttt{union}es
-  sammen
   \item step for step pathexpr er ikke effektivt\ldots SCHADE ulempe med rene uttrykk: /a/b/c = trengs ingen
   joins egentlig
   \item et step b\o r kanskje egentlig joines med konteksten sin f\o r predikatet sitt -> /a/b[c] ((a join a/b)
   join a/b/c) ikke (a join (a/b join /a/b/c)
-  \item vi har ordna, uten \aa~vite om det at man kan selecte i stedet for \aa~projecte n\aa r man er i logisk
+  \item vi har ordna, uten \aa~vite om det at man kan selecte i stedet for \aa~projecte n\aa r man er i default
   kontekst.. yeah!
   \item flere relative pathexprs i predikater b\o r egentlig kunne inJoines sammen f\o r de blir inJoina
-	med det som predikatet st\aa r til\ldots dette er kanskje en optimalisering\ldots
-  \item tainting er strengt tatt bare n\o dvendig om sekvensen skal brukes til noe\ldots 
+	med det som predikatet st\aa r til\ldots dette er kanskje en optimalisering\ldots 
 \end{itemize}
