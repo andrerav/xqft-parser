@@ -89,20 +89,21 @@ A general step expression, axis + name test, can be translated like this:
 \frac{}{\displaystyle e_{1}\texttt{/AXIS::}QName_1} \\ 
 \longmapsto \begin{array}{c}\mbox{\tiny } \\ \mbox{\tiny } \end{array} \\
 \begin{array}{l}
-\mbox{\textsf{numberate(index, [sprIdx, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
-\mbox{\textsf{select(isFUNC(scope, lsc);}} \\ \quad \quad
-\mbox{\textsf{hhjoin([documentId],[documentId],[spridx=l.index,lsc=l.scope,r.value,}}\vartheta\mbox{\textsf{];}}\\ \quad \quad \quad 
-\mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{;}} \\ \quad \quad\quad
-\mbox{\textsf{numberate(index, [], [];}}\\ \quad \quad\quad\quad
-\mbox{\textsf{index(valocc;}} \\ \quad\quad\quad\quad\quad
-\mbox{\textsf{lookup(\$}}QName_1\mbox{\textsf{))))))}}
+\mbox{\textsf{project(docId, index, value, pos, scope, }}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textsf{numberate(index, [sprIdx, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad\quad
+\mbox{\textsf{select(isFUNC(scope, lsc);}} \\ \quad \quad\quad
+\mbox{\textsf{hhjoin([docId],[docId],[spridx=l.index,lsc=l.scope,r.value,}}\vartheta\mbox{\textsf{];}}\\
+\quad\quad\quad\quad \mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{;}} \\ \quad \quad\quad \mbox{\textsf{numberate(index, [], [];}}\\ \quad\quad\quad\quad\quad
+\mbox{\textsf{index(valocc;}} \\ \quad\quad\quad\quad\quad\quad
+\mbox{\textsf{lookup(\$}}QName_1\mbox{\textsf{)))))))}}
 \end{array}
 \end{array}
 \label{rule:trans:TD:pathStep}
 \end{equation}
 
 Where $\vartheta = e.1.\vartheta$. \textsf{r.value} is short for \textsf{value = right.value, index = right.index,
-\ldots etc}. \texttt{AXIS} will map to an MQL funciton \textsf{isFUNK} as described in table \ref{tab:trans:TD:axisMap}. 
+\ldots etc}, and \textsf{docId} is short for \textsf{documentId}. \texttt{AXIS} will map to an MQL funciton
+\textsf{isFUNK} as described in table \ref{tab:trans:TD:axisMap}.
 
 \begin{table}[h]
 \centering
@@ -128,8 +129,118 @@ $^{*}$For the \texttt{attribute} axis the parameter to \textsf{lookup} will have
 instead of the \textsf{\$}-prefix described in the rule.
 
 \begin{myExample}
-JEJEJEJEJE
-denne sp\o rringa gir dette rel.alg treet:
+Consider the exerpt of a XML-document of figure \ref{fig:trans:TD:pathExXml}. The subscript numbers are used to
+differentiate the different elements with same names, and are not a part of the names. Further, let a non-iterator
+variable \texttt{\$a} be bound to a sequence of the \texttt{A} elements of the figure, but \emph{not} in document order.
+An illustration of the relational representation of \texttt{\$a} is shown in figure
+\ref{fig:trans:TD:pathEx:varA}. The $val$-attribute indicates which XML-element is represented and the
+$scope$-attribute indicates the scope of this element.
+
+\begin{figure}[h]
+\centering
+\begin{equation*}
+\begin{array}{l}
+\qquad \qquad \vdots \\
+\mbox{\texttt{<A}}_{1}\mbox{\texttt{>}} \\ \quad
+\mbox{\texttt{<B}}_{1}\mbox{\texttt{/>}}\mbox{\texttt{<B}}_{2}\mbox{\texttt{/>}} \\
+\mbox{\texttt{</A}}_{1}\mbox{\texttt{>}} \\
+\mbox{\texttt{<A}}_{2}\mbox{\texttt{>}} \\ 
+\mbox{\texttt{</A}}_{2}\mbox{\texttt{>}} \\
+\mbox{\texttt{<A}}_{3}\mbox{\texttt{>}} \\ \quad
+\mbox{\texttt{<B}}_{3}\mbox{\texttt{/>}}\mbox{\texttt{<B}}_{4}\mbox{\texttt{/>}}\mbox{\texttt{<B}}_{5}\mbox{\texttt{/>}}
+\\ \mbox{\texttt{</A}}_{3}\mbox{\texttt{>}} \\
+\qquad \qquad \vdots
+\end{array}
+\end{equation*}
+\caption[Exerpt of example XML-document.]{Exerpt of example XML-document. The subscript numbers indicate the
+instance of the elements, and are not part of the QName \label{fig:trans:TD:pathExXml}}
+\end{figure}
+
+Figure \ref{fig:trans:TD:pathQu} shows an exerpt of a query referring to the variable \texttt{\$a}.
+\begin{figure}[!h]
+\centering
+\texttt{\$a/child::B}
+\caption{Example XQuery path expression \label{fig:trans:TD:pathQu}}
+\end{figure} 
+
+First, a lookup of \texttt{\$B} (where \texttt{\$} indicates to find a element, not a word) is done in the value
+occurence index. The result of this is numerated by a \textsf{numberate}-operator, as illustrated in figure
+\ref{fig:trans:TD:pathEx:luB}. The $index$-attribute ($idx$ in the figure) now holds the document-order of the
+\texttt{B} elements. As there may be more \texttt{B} elements in the document, the $index$ attribute may not start
+at the value 1 for the tuples relevant to the query.
+
+\begin{figure}[h]
+\centering
+\subfigure[\textbf{r(}\texttt{\$a}\textbf{)}]{
+\begin{tabular}{|c|c|c|}  \hline
+$idx$ & $val$ & $scope$ \\ \hline
+1 & \texttt{A}$_{2}$ & \textsf{\ldots{A}[2]} \\ \hline
+2 & \texttt{A}$_{3}$ & \textsf{\ldots{A}[3]} \\ \hline 
+3 & \texttt{A}$_{1}$ & \textsf{\ldots{A}[1]} \\ \hline
+\end{tabular}
+\label{fig:trans:TD:pathEx:varA}
+}
+\qquad
+\subfigure[]{
+\begin{tabular}{|c|c|c|}  \hline
+$idx$ & $val$ & $scope$ \\ \hline
+$\ldots$ & \texttt{\ldots} & \textsf{\ldots} \\ \hline
+5 & \texttt{B}$_{1}$ & \textsf{\ldots{A}[1].B[1]} \\ \hline
+6 & \texttt{B}$_{2}$ & \textsf{\ldots{A}[1].B[2]} \\ \hline
+7 & \texttt{B}$_{3}$ & \textsf{\ldots{A}[3].B[1]} \\ \hline
+8 & \texttt{B}$_{4}$ & \textsf{\ldots{A}[3].B[2]} \\ \hline
+9 & \texttt{B}$_{5}$ & \textsf{\ldots{A}[3].B[3]} \\ \hline
+$\ldots$ & \texttt{\ldots} & \textsf{\ldots} \\ \hline  
+\end{tabular}
+\label{fig:trans:TD:pathEx:luB}
+}
+\caption[Evaluating the expression of figure \ref{fig:trans:TD:pathQu}]{Illustration of results evaluating the
+expression in figure \ref{fig:trans:TD:pathQu}. (a) The variable \texttt{\$a}. (b) Experpt of a lookup on the term
+\textsf{\$B}, and the following numbering. Some attribute names are shortened. $val$ attribute indicates which
+XML-element is represented in the tuple.
+\label{fig:trans:TD:pathEx}}
+\end{figure}
+
+The result of the lookup will be joined with the \texttt{\$a} relation on their $documentId$-attribute. As we
+assume only one XML-document this attribute is omitted from our example. A \textsf{select} operator is applied to
+the result of the join to prune the relation. Only the tuples where the $scope$ attribute stemming from the lookup
+defines a scope which is the child scope (as defined by the MQL function \textsf{isChild() in section
+\ref{sect:method:marsAddedOperators}}) of the scope defined by the $scope$-attribute stemming from the
+\texttt{\$a} relation (called $lsc$). After the selection the result will be as illustrated in figure
+\ref{fig:trans:TD:pathEx:joinSel}.
+
+\begin{figure}[h]
+\subfigure[]{
+\begin{tabular}{|c|c|c|c|c|} \hline
+$sIdx$ & $idx$ & $val$ & $scope$ & $lsc$ \\ \hline
+2 & 9 & \texttt{B}$_{5}$ & \textsf{\ldots{A}[3].B[3]} & \textsf{\ldots{A}[3]} \\ \hline
+2 & 8 & \texttt{B}$_{4}$ & \textsf{\ldots{A}[3].B[2]}& \textsf{\ldots{A}[3]} \\ \hline
+2 & 7 & \texttt{B}$_{3}$ & \textsf{\ldots{A}[3].B[1]}& \textsf{\ldots{A}[3]} \\ \hline 
+3 & 5 & \texttt{B}$_{1}$ & \textsf{\ldots{A}[1].B[1]} & \textsf{\ldots{A}[1]} \\ \hline
+3 & 6 & \texttt{B}$_{2}$ & \textsf{\ldots{A}[1].B[2]} & \textsf{\ldots{A}[1]} \\ \hline
+\end{tabular}
+\label{fig:trans:TD:pathEx:joinSel}
+}
+\qquad
+\subfigure[]{
+\begin{tabular}{|c|c|c|} \hline
+$idx$ & $val$ & $scope$ \\ \hline
+1 & \texttt{B}$_{3}$ & \textsf{\ldots{A}[3].B[1]}\\ \hline 
+2 & \texttt{B}$_{4}$ & \textsf{\ldots{A}[3].B[2]}\\ \hline
+3 & \texttt{B}$_{5}$ & \textsf{\ldots{A}[3].B[3]}\\ \hline
+4 & \texttt{B}$_{1}$ & \textsf{\ldots{A}[1].B[1]}\\ \hline
+5 & \texttt{B}$_{2}$ & \textsf{\ldots{A}[1].B[2]}\\ \hline
+\end{tabular}
+\label{fig:trans:TD:pathEx:done}
+}
+\caption[Further evaluation of the path expression]{Further evaluation of the path expression in figure
+\ref{fig:trans:TD:pathQu}. (a) The result of the selection of the joining of \textbf{r(}\texttt{\$a}\textbf{)} and
+the numerated result of the lookup of \textsf{\$B}. (b) Renumbering an projection on the relation of (a). Some
+attribute names are shortened.}
+\end{figure}
+
+Finally, renumbering is employed, followed by a projection removing the last attributes stemming from the
+\texttt{\$a} relation. The result of the expression is illustrated in figure \ref{fig:tans:TD:pathEx:done}.
 
 \end{myExample}
 
