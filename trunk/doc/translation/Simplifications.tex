@@ -1,8 +1,6 @@
 \section{Simplifications}
 \label{sect:trans:TD:simplifications}
 
-\textbf{\LARGE TODO:}innledning
-
 In this section we will present some posible simplifications discovered during the develepment of the Tainted
 Dependencies method. The $\Rightarrow$ sign is to be read as ``can be written as''. 
 
@@ -137,29 +135,44 @@ steps can be translated like this:
 
 \begin{equation}
 \begin{array}{c}
-\frac{}{\displaystyle e_{1}\texttt{/child::}QName_1\texttt{/child::\ldots/child::}QName_n} \\ 
+\frac{}{\displaystyle \mbox{\texttt{child::}}QName_1\mbox{\texttt{/child::\ldots/child::}}QName_n} \\ 
 \longmapsto \begin{array}{c}\mbox{\tiny } \\ \mbox{\tiny } \end{array} \\
 \begin{array}{l}
-\mbox{\textsf{numberate(index, [sprIdx, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
-\mbox{\textsf{select(isFUNC(scope, lsc);}} \\ \quad \quad
-\mbox{\textsf{hhjoin([documentId],[documentId],[spridx=l.index,lsc=l.scope,r.value,}}\vartheta\mbox{\textsf{];}}\\ \quad \quad \quad 
-\mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{;}} \\ \quad \quad\quad
-\mbox{\textsf{numberate(index, [], [];}}\\ \quad \quad\quad\quad
-\mbox{\textsf{index(valocc;}} \\ \quad\quad\quad\quad\quad
-\mbox{\textsf{scope(}}QName_1\mbox{\textsf{/\ldots/}}QName_n\\ \quad\quad\quad\quad\quad\quad
-\mbox{\textsf{lookup(\$}}QName_n\mbox{\textsf{)))))))}}
+\mbox{\textsf{project(docId, index, value, pos, scope, }}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textsf{numberate(dotNumb, [dotNumb, subIdx], [}}(\vartheta-\mbox{\textbf{dot}})\mbox{\textsf{];}} \\
+\quad\quad 
+\mbox{\textsf{numberate(index, [index], [}}\vartheta\mbox{\textsf{];}} \\ \quad\quad\quad
+\mbox{\textsf{select(isChild(scope, lsc);}} \\ \quad \quad\quad\quad
+\mbox{\textsf{hhjoin([docId],[docId],}} \\ \quad\quad\quad\quad\quad\quad\quad
+\mbox{\textsf{[lsc=l.scope,subIdx=r.index,r.value,}}\vartheta\mbox{\textsf{];}}\\
+\quad\quad\quad\quad\quad \mbox{\textbf{get(dot)}\textsf{;}} \\ \quad \quad\quad \quad\quad
+\mbox{\textsf{numberate(index, [], [];}}\\ \quad\quad\quad\quad\quad\quad
+\mbox{\textsf{index(valocc;}} \\ \quad\quad\quad\quad\quad\quad\quad
+\mbox{\textsf{scope(}}QName_1\mbox{\textsf{/\ldots/}}QName_n\mbox{\textsf{;}}\\
+\quad\quad\quad\quad\quad\quad\quad\quad
+\mbox{\textsf{lookup(\$}}QName_n\mbox{\textsf{)))))))))}}
 \end{array}
 \end{array}
 \label{rule:trans:TD:pathChild}
 \end{equation}
+Where $\vartheta$ is the $\vartheta$ returned from \textbf{get(dot)}, $QName_1$ is any XML-qualified name.
+\textsf{r.value} is short for \textsf{value = right.value, index = right.index, \ldots etc}, and \textsf{docId} is
+short for \textsf{documentId}.
 
 Multiple \texttt{parent} axis steps can recieve corresponding treatment, except the path defined to the
 \textsf{scope} operator will have to be reversed. Only clean axis + name test steps can be translated
 like this, without any interruption by e.g. a predicate or kind test.
 
-In rule \ref{rule:trans:TD:pathExpr}, the last step is renumbered by a \textsf{numberate} operator. If the last
-step does not include some kind of filtering, e.g. in form of a predicate, the operator can be exchanged with a
-\textsf{project} operator like this: \textsf{project(index = dotNumb, value, }$\vartheta$\textsf{;\ldots}.
+Rule \ref{rule:trans:TD:pathExpr} shows how whole path expressions are translated. Here, the last step is
+renumbered by a \textsf{numberate} operator. If the last step does not include some kind of filtering, e.g. in
+form of a predicate, the operator can be exchanged with a \textsf{project} operator like this:
+\textsf{project(index = dotNumb, value, }$\vartheta$\textsf{;\ldots}.
+
+The next to last \textsf{numberate} operator in the rules for translating axis + nametest expressions (rules
+\ref{rule:trans:TD:pathChild} and \ref{rule:trans:TD:pathStep}) is employed to ensure that numeric predicates
+always can be evaluated. If the translator with the help of a type system can make sure that the predicate
+expression does not evaluate to a numeric type, or if the step expression does not contain a predicate, this
+operator may be dropped.
 
 \subsection{Arithmetic Expressions}
 \label{sect:trans:TD:simpl:arith}

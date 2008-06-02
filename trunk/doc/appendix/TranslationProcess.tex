@@ -367,7 +367,7 @@ project(value=l.value, anumb;
             make(name:=[index, value],[1], [2]))))))
 \end{Verbatim}
 
-This can be simplified further by replacing make(): TODO: ref optimisering
+This can be simplified further by replacing \texttt{make()} as described in rule \ref{rule:trans:TD:seqIfLit}: 
 
 \begin{Verbatim}
 project(value=l.value, anumb;
@@ -404,4 +404,142 @@ numberate(index, [anumb, index], [];
         project(index=1, value=gt(value, 2), anumb;
           project([anumb = index, index = 1, value];
             make(name:=[index, value], [1,2,3], [1,2,3])))))))
+\end{Verbatim}
+
+\section{Path Expression with a Predicate}
+\label{appendix:transl:pathPred}
+
+It should be noted that the query is not a valid query unless the context item is set before execution. We assume
+the context item is stored in the symbol table, and have no dependencies. First the axis steps consisting of the
+name tests \texttt{a} and \texttt{b} is translated. As these are consecutive child-axis steps (no axis specifier
+is read as \texttt{child::}), rule \ref{rule:trans:TD:pathChild} may be used once for both steps, instead of using
+the more general rule (rule \ref{rule:trans:TD:pathStep}) twice:
+\begin{Verbatim}
+project(dotNumb, docId, index, value, pos, scope;
+  numberate(dotNumb, [dotNumb, subIdx], [];
+    select(isChild(scope, lsc);
+      hhjoin([docId], [docId], [dotNumb,lsc=l.scope,subIdx=r.index,
+            value=r.value,pos=r.pos,scope=r.scope];
+        symtab.get(dot);
+        numberate(index, [], [];
+          index(valocc;
+            scope(a/b;
+              lookup($b))))))))
+\end{Verbatim}
+Also note that the next to last \textsf{numberate} operator from the rule is dropped, as the predicate expression
+must evaluate to a boolean type. This is described in section \ref{sect:trans:TD:simpl:pathExpr}.
+
+Then the predicate will have to be taken into account. The result of \texttt{/a/b} is stored in the symbol table
+as \textbf{sprDot}, where $dotNumb$ is copied to $sprDotNumb$ and the $index$ fields will be set to the
+value 1. When this is done, the comparison expression in the predicate will be evaluated. First \textsf{@id} is
+evaluated. This contains a implicit reference to the context node, and in its verbose form is formed like this:
+\texttt{./attribute::id}. This expression is evaluated by rule \ref{rule:trans:TD:pathStep}. As this path
+expression (within the predicate) does not contain any predicate, the next to last \textsf{numberate} operator
+will be dropped. As it is the complete path expression it will be finalised by rule \ref{rule:trans:TD:pathExpr}.
+The last step of the path expression (still the one within the predicate) does not contain some kind of filtering,
+thus the final \textsf{numberate} operator will be exchanged with a \textsf{project} operator:
+
+\begin{Verbatim}
+project(index=dotNumb, docId, value, pos, scope, sprDotNumb
+  project(docId, index, value, pos, scope, dotNumb, sprDotNumb;
+    numberate(dotNumb, [dotNumb, subIdx], [sprDotNumb];
+      select(isChild(scope,lsc);
+        hhjoin([docId],[docId],[dotNumb,lsc=l.scope,subIdx=r.index,
+              value=r.value,pos=r.pos,scope=r.scope,sprDotNumb]
+          project(sprDotNumb=dotNumb, dotNumb, index=1, value, pos,
+                docId, scope;
+            project(dotNumb, docId, index, value, pos, scope;
+              numberate(dotNumb, [dotNumb, subIdx], [];
+                select(isChild(scope, lsc);
+                  hhjoin([docId], [docId], [dotNumb,lsc=l.scope,
+                        subIdx=r.index,value=r.value,pos=r.pos,
+                        scope=r.scope];
+                    symtab.get(dot);
+                    numberate(index, [], [];
+                      index(valocc;
+                        scope(a/b;
+                          lookup($b)))))))))
+          numberate(index, [], []
+            index(valocc;
+              lookup($@id))))))))
+\end{Verbatim}
+
+The comparison expression will then be evaluated. By the simplifications described in section
+\ref{sect:trans:TD:simpl:lit}, the whole expression will be evaluated by adding a single \textsf{project} operator:
+
+\begin{Verbatim}
+project(index=1, value=eq(value, 2), sprDotNumb;
+  project(index=dotNumb, docId, value, pos, scope, sprDotNumb
+    project(docId, index, value, pos, scope, dotNumb, sprDotNumb;
+      numberate(dotNumb, [dotNumb, subIdx], [sprDotNumb];
+        select(isChild(scope,lsc);
+          hhjoin([docId],[docId],[dotNumb,lsc=l.scope,
+                subIdx=r.index,value=r.value,pos=r.pos,
+                scope=r.scope,sprDotNumb]
+            project(sprDotNumb=dotNumb, dotNumb, index=1, value,
+                  pos, docId, scope;
+              project(dotNumb, docId, index, value, pos, scope;
+                numberate(dotNumb, [dotNumb, subIdx], [];
+                  select(isChild(scope, lsc);
+                    hhjoin([docId], [docId], [dotNumb,lsc=l.scope,
+                          subIdx=r.index,value=r.value,pos=r.pos,
+                          scope=r.scope];
+                      symtab.get(dot);
+                      numberate(index, [], [];
+                        index(valocc;
+                          scope(a/b;
+                            lookup($b))))))))
+            numberate(index, [], []
+              index(valocc;
+                lookup($@id)))))))))
+\end{Verbatim}
+
+Then the rule for translating predicates (rule \ref{rule:trans:TD:predicate}) are employed. The predicate
+expression and the predicated expression will have to be joined on their $sprDotNumb$ and $dotNumb$ attributes
+respectively, as they have no other common dependencies. Finally the whole path expression is finalised by a
+renumbering, as described by rule \ref{rule:trans:TD:pathExpr}.
+
+\begin{Verbatim}
+numberate(index, [dotNumb, index], [];
+  project(index,docId,scope,pos,value,dotNumb;
+    select(ifthenelse(isNumber(pred),
+          eq(index,pred),xqBoolean(pred));
+      hhjoin([dotNumb],[sprDotNumb], [value=l.value,scope=l.scope,
+            pos=l.pos,docId=l.docId,pred=r.value];
+        project(dotNumb, docId, index, value, pos, scope;
+          numberate(dotNumb, [dotNumb, subIdx], [];
+            select(isChild(scope, lsc);
+              hhjoin([docId], [docId], [dotNumb,lsc=l.scope,
+                    subIdx=r.index,value=r.value,pos=r.pos,
+                    scope=r.scope];
+                symtab.get(dot);
+                numberate(index, [], [];
+                  index(valocc;
+                    scope(a/b;
+                      lookup($b))))))))
+        project(index=1, value=eq(value, 2), sprDotNumb;
+          project(index=dotNumb,docId,value,pos,scope,sprDotNumb;
+            project(docId,index,value,pos,scope,dotNumb,sprDotNumb;
+              numberate(dotNumb, [dotNumb, subIdx], [sprDotNumb];
+                select(isChild(scope,lsc);
+                  hhjoin([docId],[docId],[dotNumb,lsc=l.scope,
+                        subIdx=r.index,value=r.value,pos=r.pos,
+                        scope=r.scope,sprDotNumb]
+                    project(sprDotNumb=dotNumb,dotNumb,index=1,
+                          value,pos,docId,scope;
+                      project(dotNumb,docId,index,value,pos,scope;
+                        numberate(dotNumb, [dotNumb, subIdx], [];
+                          select(isChild(scope, lsc);
+                            hhjoin([docId], [docId], [dotNumb,
+                                  lsc=l.scope,subIdx=r.index,
+                                  value=r.value,pos=r.pos,
+                                  scope=r.scope];
+                              symtab.get(dot);
+                              numberate(index, [], [];
+                                index(valocc;
+                                  scope(a/b;
+                                    lookup($b))))))))
+                    numberate(index, [], []
+                      index(valocc;
+                        lookup($@id)))))))))))))
 \end{Verbatim}

@@ -130,13 +130,8 @@ context is assumed.
 \section{Optimisations}
 \label{sect:disc:optimisations}
 \begin{itemize}
-  \item legg merke til bruk av Uk-skrivem\aa te (s vs z)
-  \item step for step pathexpr er ikke effektivt\ldots SCHADE ulempe med rene uttrykk: /a/b/c = trengs ingen
-  joins egentlig
-  \item et step b\o r kanskje egentlig joines med konteksten sin f\o r predikatet sitt -> /a/b[c] ((a join a/b)
-  join a/b/c) ikke (a join (a/b join /a/b/c)
-  \item vi har ordna, uten \aa~vite om det at man kan selecte i stedet for \aa~projecte n\aa r man er i default
-  kontekst.. yeah!
-  \item flere relative pathexprs i predikater b\o r egentlig kunne inJoines sammen f\o r de blir inJoina
-	med det som predikatet st\aa r til\ldots dette er kanskje en optimalisering\ldots 
+  \item Med bare \emph{EN} referanse til context item i predikat i path expressions kan hele symtab bajabajaz
+  droppes, og bare prune p\aa~scope\ldots
+  \item holde styr p\aa~scopes, bruke scope operatoren mer flittig = smaller relasjoner \aa~joine.
+  \item kanskje bruke den alt-fremover omskrivinga av pathexprs
 \end{itemize}
