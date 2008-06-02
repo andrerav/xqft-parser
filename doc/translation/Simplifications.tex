@@ -157,9 +157,23 @@ Multiple \texttt{parent} axis steps can recieve corresponding treatment, except 
 \textsf{scope} operator will have to be reversed. Only clean axis + name test steps can be translated
 like this, without any interruption by e.g. a predicate or kind test.
 
-\begin{itemize}
-  \item numberate(index, [dotNumb, index] kan bli til project hvis siste steg er et rent stepExpr uten predikat.
-\end{itemize}
+In rule \ref{rule:trans:TD:pathExpr}, the last step is renumbered by a \textsf{numberate} operator. If the last
+step does not include some kind of filtering, e.g. in form of a predicate, the operator can be exchanged with a
+\textsf{project} operator like this: \textsf{project(index = dotNumb, value, }$\vartheta$\textsf{;\ldots}.
+
+\subsection{Arithmetic Expressions}
+\label{sect:trans:TD:simpl:arith}
+
+Rule \ref{rule:trans:TD:unaryMin} describes a translation of the unary \texttt{-} operator. If there is multiple
+consecutive unary operators, there is no need to apply the translation rule the same amount of times. The
+translator can count the number of unary \texttt{-} operators assigned to one expression. If the number of
+operators is odd, the rule is applied, if it is even, no translation is needed.
+
+	\begin{itemize}
+      \item singleton inn i and/or -> slippe select (bull?)
+    \end{itemize}
+
+
 
 \subsection{FLWORs}
 \label{sect:trans:TD:simpl:flwor}        
@@ -168,10 +182,3 @@ like this, without any interruption by e.g. a predicate or kind test.
         \item  kan bli -> project , ved singelton return
       \end{itemize}
 
-\subsection{Arithmetic Expressions}
-\label{sect:trans:TD:simpl:arith}         
-  Arithmetic /comp / logical
-	\begin{itemize}
-      \item multiple +- kan bli dyttet sammen\ldots oddetall - = -, partal = drit i det.
-      \item singleton inn i and/or -> slippe select (bull?)
-    \end{itemize}
