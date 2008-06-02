@@ -1,0 +1,68 @@
+digraph AST {
+edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=normal]
+node [shape=plaintext]
+
+je1 [label="numberate(index, [dotNumb, index], [];"]
+je1->je2
+  je2 [label="project(index, docId, scope, pos, value, dotNumb;"]
+  je2->je3
+    je3 [label="select(ifthenelse(isNumber(pred), eq(index,pred), xqBoolean(pred));"]
+    je3->je4
+      je4 [label="hhjoin([dotNumb],[sprDotNumb], [value=l.value,scope=l.scope,pos=l.pos,docId=l.docId,pred=r.value];"]
+      je4->je5
+      je4->jf5
+        je5 [label="project(dotNumb, docId, index, value, pos, scope;"]
+        je5->je6
+          je6 [label="numberate(dotNumb, [dotNumb, subIdx], [];"]
+          je6->je7
+            je7 [label="select(isChild(scope, lsc);"]
+            je7->je8
+              je8 [label="hhjoin([docId], [docId], [dotNumb,lsc=l.scope,subIdx=r.index,value=r.value,pos=r.pos,scope=r.scope];"]
+              je8->je9
+              je8->jf1
+                je9 [label="symtab.get(dot);"]
+                jf1 [label="numberate(index, [], [];"]
+                jf1->jf2
+                  jf2 [label="index(valocc;"]
+                  jf2->jf3
+                    jf3 [label="scope(a/b;"]
+                    jf3->jf4
+                      jf4 [label="lookup($b)"]
+        jf5 [label="project(index=1, value=eq(value, 2), sprDotNumb;"]
+        jf5->jf6
+          jf6 [label="project(index=dotNumb, docId, value, pos, scope, sprDotNumb"]
+          jf6->jf7
+            jf7 [label="project(docId, index, value, pos, scope, dotNumb, sprDotNumb;"]
+            jf7->jf8
+              jf8 [label="numberate(dotNumb, [dotNumb, subIdx], [sprDotNumb];"]
+              jf8->jf9
+                jf9 [label="select(isChild(scope,lsc);"]
+                jf9->jg1
+                  jg1 [label="hhjoin([docId],[docId],[dotNumb,lsc=l.scope,subIdx=r.index,value=r.value,pos=r.pos,scope=r.scope,sprDotNumb]"]
+                  jg1->jg2
+                  jg1->jh4
+                    jg2 [label="project(sprDotNumb=dotNumb, dotNumb, index=1, value, pos, docId, scope;"]
+                    jg2->jg3
+                      jg3 [label="project(dotNumb, docId, index, value, pos, scope;"]
+                      jg3->jg4
+                        jg4 [label="numberate(dotNumb, [dotNumb, subIdx], [];"]
+                        jg4->jg5
+                          jg5 [label="select(isChild(scope, lsc);"]
+                          jg5->jg6
+                            jg6 [label="hhjoin([docId], [docId], [dotNumb,lsc=l.scope,subIdx=r.index,value=r.value,pos=r.pos,scope=r.scope];"]
+                            jg6->jg7
+                            jg6->jg8
+                              jg7 [label="symtab.get(dot);"]
+                              jg8 [label="numberate(index, [], [];"]
+                              jg8->jh1
+                                jh1 [label="index(valocc;"]
+                                jh1->jh2
+                                  jh2 [label="scope(a/b;"]
+                                  jh2->jh3
+                                    jh3 [label="lookup($b)"]
+                    jh4 [label="numberate(index, [], []"]
+                    jh4->jh5
+                      jh5 [label="index(valocc;"]
+                      jh5->jh6
+                        jh6 [label="lookup($@id)"]
+}
