@@ -359,8 +359,9 @@ Order is an inherent concept of the XQuery data model, to accomodate for this a 
 \ref{figure:mql:numberate_ebnf}. Given a sort order defined by the fields in \texttt{SORTLIST}, the operator
 numbers consequtive tuples of the relation returned from \texttt{OPERATOR}, recording the rown number in the new
 field \texttt{FIELD}. Row numbers start from 1 in each partition defined by the fields in \texttt{PARTITIONLIST}.
-If no \texttt{SORTLIST} is defined, the original sort of the input relation is used. The operator is comparable to
-the \texttt{DENSE\_RANK} operator defined by SQL:1999 \cite{sqlbook}.
+If no \texttt{SORTLIST} is defined, the original sort of the input relation is used. The fields specified in
+\texttt{SORTLIST} is not a part of the result relation. The operator is comparable to the \texttt{DENSE\_RANK}
+operator defined by SQL:1999 \cite{sqlbook}.
 
 \begin{figure}[!h]
 \begin{center}

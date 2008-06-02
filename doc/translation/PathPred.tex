@@ -20,14 +20,20 @@ the scope it self in the $scope$ attribute, and the contents of the scope in an 
 The tuples returned from a lookup in the value occurence index will have to be ordered according to document
 order. This order will have to hold even after the result is run through a \textsf{scope}
 
+The concept of the context item is important in this section, and is by the W3C defined as follows\cite{w3c00}:
+\begin{quote}
+[Definition: The \textbf{context item} is the item currently being processed. An item is either an atomic value or
+a node.][\ldots] The context item is returned by an expression consisting of a single dot (\texttt{.}). When an
+expression $e_1$\texttt{/}$e_2$ or $e_1$\texttt{[}$e_2$\texttt{]} is evaluated, each item in the sequence obtained
+by evaluating $e_1$ becomes the context item in the inner focus for an evaluation of $e_2$.
+\end{quote}
 
 \subsection{Path Expressions}
 \label{sect:trans:TD:pathExprs}
 A path expression consists of a series of one or more steps, separated by ``/'' or ``//'', and optionally beginning
 with ``/'' or ``//''.  Each step is either a axis step or a filter expression, and a axis step consist of a axis
 and a node test. This can be seen from the exerpt of the W3C XQuery specification in figure \ref{fig:trans:TD:pathEBNF}.
-A node test can be either a kind test or a name test, we will focus on the latter. Filter expressions will not
-explicitly be handled.
+A node test can be either a kind test or a name test, we will focus on the latter. 
 
 \begin{figure}[h]
 \begin{Verbatim}
@@ -48,62 +54,61 @@ for the next. Within one step expression, the result from the preceding step wil
 axis expression. The result of this will be filtered by a name or kind test, before this again is filtered by
 possible predicates.
 
-The effect of a ``/'' at the beginning of a path expression is to begin the path at the root node of the tree that
-contains the context node. A ``//'' at the beginning of a path expression will establish an initial node sequence
-that contains the root of the tree in which the context node is found, plus all nodes descended from this root.
-Together with a name test these expressions can be translated as follows:
-
-\begin{equation}
-\frac{}{\mbox{\texttt{/}}QName_{1}}\longmapsto
-\begin{array}{l}
-\mbox{\textsf{numberate(index,[] ,[] ;}} \\ \quad
-\mbox{\textsf{index(valocc;}} \\ \quad \quad
-\mbox{\textsf{scope(/}}QName_{1}\mbox{\textsf{;}} \\ \quad\quad\quad
-\mbox{\textsf{lookup(\$}}QName_{1}\mbox{\textsf{))))}}
-\end{array}
-\label{rule:trans:TD:sglSlash}
-\end{equation}
-
-\begin{equation}
-\frac{}{\mbox{\texttt{//}}QName_{1}}\longmapsto
-\begin{array}{l}
-\mbox{\textsf{numberate(index, [], [];}} \\ \quad
-\mbox{\textsf{index(valocc;}} \\ \quad \quad
-\mbox{\textsf{lookup(\$}}QName_1\mbox{\textsf{)))}}
-\end{array}
-\label{rule:trans:TD:dblSlash}
-\end{equation}
-
-Where $QName_1$ is any XML-qualified name, and the dependencies returned are $\vartheta = \emptyset$. To ensure
-correct ordering, the order of the tuples returned from the \textsf{lookup} operator must be the same as the order
-of the tuples recieved by the \textsf{numberate} operator. 
-
 Step expressions can be abbreviated. If the axis name is omitted from an axis step, the default axis is
 \texttt{child}. \texttt{decendant-or-self} can be replaced by using ``\texttt{//}'' istead of ``\texttt{/}''
-between the steps. \texttt{@} is an abbreviation of \texttt{attribute::}. Here we will present translation of
+between the steps. \texttt{@} is an abbreviation of \texttt{attribute::}. We will only present translation of
 unabbreviated syntax.
+
+To accomodate for the context item, the result of each step of a path expression will be stored on the symbol
+table as \textbf{dot} -- each time replacing the the last entry. The context item, and references to it will be
+treated as iterator dependencies. The attribute corresponding to a dependency on \textbf{dot} is $dotNumb$. No
+expression not within the path expression can be dependant on \textbf{dot}, which is why \textbf{dot} will not be
+part of the dependencies $\vartheta$ returned. A general path expression is translated in the following manner:
+
+\begin{equation}
+\frac{}{[\mbox{\texttt{/}}]e_1\mbox{\texttt{/}}\ldots\mbox{\texttt{/}}e_n} \longmapsto
+\begin{array}{l}
+\mbox{\textbf{put(dot, t(r(}}e_1\mbox{\textbf{), \{dot\}))}} \\
+\qquad \qquad \vdots \\
+\mbox{\textbf{put(dot, t(r(}}e_n\mbox{\textbf{), \{dot\}))}} \\
+\mbox{\textsf{numberate(index, [dotNumb, index], value, }}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textbf{get(dot)}\textsf{)}}
+\end{array}
+\label{rule:trans:TD:pathExpr}
+\end{equation} 
+
+Where $\vartheta = (e_n.\vartheta-$\textbf{dot}$)$. Axis step expressions are all dependent on the context item and
+will take no effect of the tainting. Tainting is used in this context to ensure filter expressions to be evaluated
+correctly. The $\vartheta$ piggybacking the tree in the symbol table will contain \textbf{dot}, as with
+the iterator variables.
 
 A general step expression, axis + name test, can be translated like this:
 \begin{equation}
 \begin{array}{c}
-\frac{}{\displaystyle e_{1}\texttt{/AXIS::}QName_1} \\ 
+\frac{}{\displaystyle \texttt{AXIS::}QName_1} \\ 
 \longmapsto \begin{array}{c}\mbox{\tiny } \\ \mbox{\tiny } \end{array} \\
 \begin{array}{l}
-\mbox{\textsf{project(docId, index, value, pos, scope, }}\vartheta\mbox{\textsf{;}} \\ \quad
-\mbox{\textsf{numberate(index, [sprIdx, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad\quad
-\mbox{\textsf{select(isFUNC(scope, lsc);}} \\ \quad \quad\quad
-\mbox{\textsf{hhjoin([docId],[docId],[spridx=l.index,lsc=l.scope,r.value,}}\vartheta\mbox{\textsf{];}}\\
-\quad\quad\quad\quad \mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{;}} \\ \quad \quad\quad \mbox{\textsf{numberate(index, [], [];}}\\ \quad\quad\quad\quad\quad
-\mbox{\textsf{index(valocc;}} \\ \quad\quad\quad\quad\quad\quad
-\mbox{\textsf{lookup(\$}}QName_1\mbox{\textsf{)))))))}}
+\mbox{\textsf{project(dotNumb, docId, index, value, pos, scope, }}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textsf{numberate(dotNumb, [dotNumb, subIdx], [}}(\vartheta-\mbox{\textbf{dot}})\mbox{\textsf{];}} \\
+\quad\quad 
+\mbox{\textsf{numberate(index, [index], [}}\vartheta\mbox{\textsf{];}} \\ \quad\quad\quad
+\mbox{\textsf{select(isFUNC(scope, lsc);}} \\ \quad \quad\quad\quad
+\mbox{\textsf{hhjoin([docId],[docId],}} \\ \quad\quad\quad\quad\quad\quad\quad
+\mbox{\textsf{[dotNumb,lsc=l.scope,subIdx=r.index,r.value,}}\vartheta\mbox{\textsf{];}}\\
+\quad\quad\quad\quad\quad \mbox{\textbf{get(dot)}\textsf{;}} \\ \quad \quad\quad \quad\quad
+\mbox{\textsf{numberate(index, [], [];}}\\ \quad\quad\quad\quad\quad\quad
+\mbox{\textsf{index(valocc;}} \\ \quad\quad\quad\quad\quad\quad\quad
+\mbox{\textsf{lookup(\$}}QName_1\mbox{\textsf{))))))))}}
 \end{array}
 \end{array}
 \label{rule:trans:TD:pathStep}
 \end{equation}
 
-Where $\vartheta = e.1.\vartheta$. \textsf{r.value} is short for \textsf{value = right.value, index = right.index,
-\ldots etc}, and \textsf{docId} is short for \textsf{documentId}. \texttt{AXIS} will map to an MQL funciton
-\textsf{isFUNK} as described in table \ref{tab:trans:TD:axisMap}.
+Where $\vartheta$ is the $\vartheta$ returned from \textbf{get(dot)}, $QName_1$ is any XML-qualified name.
+\textsf{r.value} is short for \textsf{value = right.value, index = right.index, \ldots etc}, and \textsf{docId} is
+short for \textsf{documentId}. \texttt{AXIS} will map to an MQL funciton \textsf{isFUNK} as described in table
+\ref{tab:trans:TD:axisMap}. To ensure correct ordering, the order of the tuples returned from the \textsf{lookup}
+operator must be the same as the order of the tuples recieved by the \textsf{numberate} operator. 
 
 \begin{table}[h]
 \centering
@@ -128,13 +133,25 @@ Where $\vartheta = e.1.\vartheta$. \textsf{r.value} is short for \textsf{value =
 $^{*}$For the \texttt{attribute} axis the parameter to \textsf{lookup} will have a \textsf{\$@}-prefix
 instead of the \textsf{\$}-prefix described in the rule.
 
+The relation after the join will contain to copies of the $index$ attribute stemming from the lookup, $index$ and
+$subIdx$. This is because the \textsf{numberate} operator will remove the attributes specified in the sort list.
+The next to last \textsf{numberate} operator will number the tuples according to the document order, but among
+others partition on its dependency of the context item. This numbering is necessary to solve e.g. numeric predicates. The
+last \textsf{numberate} operator will update the $dotNumb$ field as it is possible that the axis step do not
+match the items from the last step in a 1:1 ratio.
+
 \begin{myExample}
 Consider the exerpt of a XML-document of figure \ref{fig:trans:TD:pathExXml}. The subscript numbers are used to
 differentiate the different elements with same names, and are not a part of the names. Further, let a non-iterator
 variable \texttt{\$a} be bound to a sequence of the \texttt{A} elements of the figure, but \emph{not} in document order.
-An illustration of the relational representation of \texttt{\$a} is shown in figure
-\ref{fig:trans:TD:pathEx:varA}. The $val$-attribute indicates which XML-element is represented and the
-$scope$-attribute indicates the scope of this element.
+An illustration of the relational representation of \texttt{\$a} as it is stored as the context item in the symbol
+table is shown in figure \ref{fig:trans:TD:pathEx:varA}. The $val$-attribute indicates which XML-element is
+represented and the $scope$-attribute indicates the scope of this element. Figure \ref{fig:trans:TD:pathQu} shows
+an exerpt of a query referring to the variable \texttt{\$a}. \begin{figure}[h!]
+\centering
+\texttt{\ldots\$a/child::B/\ldots}
+\caption{Example XQuery path expression \label{fig:trans:TD:pathQu}}
+\end{figure} 
 
 \begin{figure}[h]
 \centering
@@ -156,13 +173,6 @@ $scope$-attribute indicates the scope of this element.
 instance of the elements, and are not part of the QName \label{fig:trans:TD:pathExXml}}
 \end{figure}
 
-Figure \ref{fig:trans:TD:pathQu} shows an exerpt of a query referring to the variable \texttt{\$a}.
-\begin{figure}[!h]
-\centering
-\texttt{\$a/child::B}
-\caption{Example XQuery path expression \label{fig:trans:TD:pathQu}}
-\end{figure} 
-
 First, a lookup of \texttt{\$B} (where \texttt{\$} indicates to find a element, not a word) is done in the value
 occurence index. The result of this is numerated by a \textsf{numberate}-operator, as illustrated in figure
 \ref{fig:trans:TD:pathEx:luB}. The $index$-attribute ($idx$ in the figure) now holds the document-order of the
@@ -173,10 +183,10 @@ at the value 1 for the tuples relevant to the query.
 \centering
 \subfigure[\textbf{r(}\texttt{\$a}\textbf{)}]{
 \begin{tabular}{|c|c|c|}  \hline
-$idx$ & $val$ & $scope$ \\ \hline
-1 & \texttt{A}$_{2}$ & \textsf{\ldots{A}[2]} \\ \hline
-2 & \texttt{A}$_{3}$ & \textsf{\ldots{A}[3]} \\ \hline 
-3 & \texttt{A}$_{1}$ & \textsf{\ldots{A}[1]} \\ \hline
+$dNb$ & $val$ & $scope$ \\ \hline
+1 & \texttt{A}$_{2}$ & \textsf{..{A}[2]} \\ \hline
+2 & \texttt{A}$_{3}$ & \textsf{..{A}[3]} \\ \hline 
+3 & \texttt{A}$_{1}$ & \textsf{..{A}[1]} \\ \hline
 \end{tabular}
 \label{fig:trans:TD:pathEx:varA}
 }
@@ -185,11 +195,11 @@ $idx$ & $val$ & $scope$ \\ \hline
 \begin{tabular}{|c|c|c|}  \hline
 $idx$ & $val$ & $scope$ \\ \hline
 $\ldots$ & \texttt{\ldots} & \textsf{\ldots} \\ \hline
-5 & \texttt{B}$_{1}$ & \textsf{\ldots{A}[1].B[1]} \\ \hline
-6 & \texttt{B}$_{2}$ & \textsf{\ldots{A}[1].B[2]} \\ \hline
-7 & \texttt{B}$_{3}$ & \textsf{\ldots{A}[3].B[1]} \\ \hline
-8 & \texttt{B}$_{4}$ & \textsf{\ldots{A}[3].B[2]} \\ \hline
-9 & \texttt{B}$_{5}$ & \textsf{\ldots{A}[3].B[3]} \\ \hline
+5 & \texttt{B}$_{1}$ & \textsf{..{A}[1].B[1]} \\ \hline
+6 & \texttt{B}$_{2}$ & \textsf{..{A}[1].B[2]} \\ \hline
+7 & \texttt{B}$_{3}$ & \textsf{..{A}[3].B[1]} \\ \hline
+8 & \texttt{B}$_{4}$ & \textsf{..{A}[3].B[2]} \\ \hline
+9 & \texttt{B}$_{5}$ & \textsf{..{A}[3].B[3]} \\ \hline
 $\ldots$ & \texttt{\ldots} & \textsf{\ldots} \\ \hline  
 \end{tabular}
 \label{fig:trans:TD:pathEx:luB}
@@ -201,35 +211,35 @@ XML-element is represented in the tuple.
 \label{fig:trans:TD:pathEx}}
 \end{figure}
 
-The result of the lookup will be joined with the \texttt{\$a} relation on their $documentId$-attribute. As we
+The result of the lookup will be joined with the context item relation on their $documentId$-attribute. As we
 assume only one XML-document this attribute is omitted from our example. A \textsf{select} operator is applied to
 the result of the join to prune the relation. Only the tuples where the $scope$ attribute stemming from the lookup
 defines a scope which is the child scope (as defined by the MQL function \textsf{isChild() in section
 \ref{sect:method:marsAddedOperators}}) of the scope defined by the $scope$-attribute stemming from the
 \texttt{\$a} relation (called $lsc$). After the selection the result will be as illustrated in figure
-\ref{fig:trans:TD:pathEx:joinSel}.
+\ref{fig:trans:TD:pathEx:joinSel}. The copy of the $index$ column is not shown.
 
 \begin{figure}[h]
 \subfigure[]{
 \begin{tabular}{|c|c|c|c|c|} \hline
-$sIdx$ & $idx$ & $val$ & $scope$ & $lsc$ \\ \hline
-2 & 9 & \texttt{B}$_{5}$ & \textsf{\ldots{A}[3].B[3]} & \textsf{\ldots{A}[3]} \\ \hline
-2 & 8 & \texttt{B}$_{4}$ & \textsf{\ldots{A}[3].B[2]}& \textsf{\ldots{A}[3]} \\ \hline
-2 & 7 & \texttt{B}$_{3}$ & \textsf{\ldots{A}[3].B[1]}& \textsf{\ldots{A}[3]} \\ \hline 
-3 & 5 & \texttt{B}$_{1}$ & \textsf{\ldots{A}[1].B[1]} & \textsf{\ldots{A}[1]} \\ \hline
-3 & 6 & \texttt{B}$_{2}$ & \textsf{\ldots{A}[1].B[2]} & \textsf{\ldots{A}[1]} \\ \hline
+$dNb$ & $idx$ & $val$ & $scope$ & $lsc$ \\ \hline
+2 & 9 & \texttt{B}$_{5}$ & \textsf{..{A}[3].B[3]} & \textsf{..{A}[3]} \\ \hline
+2 & 8 & \texttt{B}$_{4}$ & \textsf{..{A}[3].B[2]}& \textsf{..{A}[3]} \\ \hline
+2 & 7 & \texttt{B}$_{3}$ & \textsf{..{A}[3].B[1]}& \textsf{..{A}[3]} \\ \hline 
+3 & 5 & \texttt{B}$_{1}$ & \textsf{..{A}[1].B[1]} & \textsf{..{A}[1]} \\ \hline
+3 & 6 & \texttt{B}$_{2}$ & \textsf{..{A}[1].B[2]} & \textsf{..{A}[1]} \\ \hline
 \end{tabular}
 \label{fig:trans:TD:pathEx:joinSel}
 }
-\qquad
+\quad
 \subfigure[]{
-\begin{tabular}{|c|c|c|} \hline
-$idx$ & $val$ & $scope$ \\ \hline
-1 & \texttt{B}$_{3}$ & \textsf{\ldots{A}[3].B[1]}\\ \hline 
-2 & \texttt{B}$_{4}$ & \textsf{\ldots{A}[3].B[2]}\\ \hline
-3 & \texttt{B}$_{5}$ & \textsf{\ldots{A}[3].B[3]}\\ \hline
-4 & \texttt{B}$_{1}$ & \textsf{\ldots{A}[1].B[1]}\\ \hline
-5 & \texttt{B}$_{2}$ & \textsf{\ldots{A}[1].B[2]}\\ \hline
+\begin{tabular}{|c|c|c|c|} \hline
+$dNb$ & $idx$ & $val$ & $scope$ \\ \hline
+1 & 1 & \texttt{B}$_{3}$ & \textsf{..{A}[3].B[1]}\\ \hline 
+2 & 2 & \texttt{B}$_{4}$ & \textsf{..{A}[3].B[2]}\\ \hline
+3 & 3 & \texttt{B}$_{5}$ & \textsf{..{A}[3].B[3]}\\ \hline
+4 & 1 & \texttt{B}$_{1}$ & \textsf{..{A}[1].B[1]}\\ \hline
+5 & 2 & \texttt{B}$_{2}$ & \textsf{..{A}[1].B[2]}\\ \hline
 \end{tabular}
 \label{fig:trans:TD:pathEx:done}
 }
@@ -239,15 +249,70 @@ the numerated result of the lookup of \textsf{\$B}. (b) Renumbering an projectio
 attribute names are shortened.}
 \end{figure}
 
-Finally, renumbering is employed, followed by a projection removing the last attributes stemming from the
-\texttt{\$a} relation. The result of the expression is illustrated in figure \ref{fig:tans:TD:pathEx:done}.
+Finally, numbering is employed two times, followed by a projection removing the last attributes stemming from the
+context item relation. The result of the expression is illustrated in figure \ref{fig:trans:TD:pathEx:done}.
 
 \end{myExample}
 
 \subsection{Predicates}
 \label{sect:trans:TD:predicates}
-\begin{itemize}
-  \item isNumber() ifThenElse xqBoolean()
-  \item contextnode p\aa~boks\ldots trengs dette alltid? Strengt tatt.. veldig vanskelig \aa~vite n\aa r man
-  garantert ikke trenger den iallefall\ldots
-\end{itemize}
+A predicate consists of an expression, called a predicate expression which evaluates to a boolean value. A
+predicate serves to filter a sequence, retaining the items where the expression evaluates to $true$ and discarding
+all other. In the case of multiple adjacent predicates, the predicates are applied from left to right, and the
+result of applying each predicate serves as the input sequence for the following predicate. If the value of the
+predicate expression is a singleton atomic value of a numeric type, the predicate truth value is $true$ if the
+value of the predicate expression is equal to the position of the context item within the input sequence.
+
+When entering a predicate a new scope is pushed to the symbol table, and the relational algebra tree corresponding
+to the expression assigned the predicate is stored as \textbf{dot}. The predicate expression is then evaluated,
+and then joined with the relational representation of the expression it is assigned to on their common
+dependencies. If the context item is referred to within the predicate, $dotNumb$ is one of the attributes the
+relations are joined on. The context item may be reffered to explicitly with the dot-operator (.), or implicitly
+through a relative path expression. When evaluating path expressions it is important to note that predicates have
+higher precedence than the / (step expression separator). As the predicate may remove items, renumbering is
+needed. 
+
+\begin{equation}
+\frac{}{e_1\mbox{\texttt{[}}e_2\mbox{\texttt{]}}}\longmapsto
+\begin{array}{l}
+\mbox{\textsf{project(index, value = l.value, }}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textsf{numberate(index, [l.index], [}}\vartheta\mbox{\textsf{];}} \\ \quad\quad
+\mbox{\textsf{select(ifthenelse(isNumber(pred),}} \\\quad\quad\quad\quad\quad
+\mbox{\textsf{eq(index,pred), xqBoolean(pred));}} \\\quad\quad\quad
+\mbox{\textsf{hhjoin([}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [}}(e_2.\vartheta\cap e_1.\vartheta)\mbox{\textsf{],}} 
+\\ \quad\quad\quad \quad \quad \quad\mbox{\textsf{[l.value, pred=r.value, }}\vartheta\mbox{\textsf{];}}
+\\\quad\quad\quad\quad
+ \mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{;}} \\\quad\quad\quad\quad
+\mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{))))}} \\
+\end{array}
+\label{rule:trans:TD:predicate}
+\end{equation}
+
+Where $\vartheta=e_1.\vartheta-(e_2.\vartheta-$\textbf{dot}$)$. As the expression may be a part of a path
+expression, a possible dependency to \textbf{dot} in $e_1.\vartheta$ will not be removed. The fields of the left
+relation in the join will follow \textsf{l.value} as described in section \ref{sect:trans:TD:basics}. The final
+\textsf{project} operator will restore the names of these attributes.
+
+As described earlier, before translation of the expression, a new scope will be pushed to the symbol table,
+followed by:
+\begin{equation*} 
+\begin{array}{l}
+\mbox{\textbf{put(dot,}} \\ \quad
+\mbox{\textbf{r(}}e_1 \mbox{\textbf{)}}.
+\end{array}
+\end{equation*}
+
+If $e_1$ is allready dependent on the context item (as it will be if it is part of a path expression), the
+\textsf{project} operator is dropped.
+
+\begin{myExample}
+Consider the XQuery query of figure \ref{fig:trans:TD:predQu}. In this query the predicate expression is dependent
+on the context item.
+\begin{figure}[h]
+\centering
+\texttt{(2,3,4,5)[. mod 2 = 0]}
+\caption{Example query with a predicate. \label{fig:trans:TD:predQu}}
+\end{figure}
+
+
+\end{myExample}
