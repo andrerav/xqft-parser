@@ -277,7 +277,7 @@ how to order and what to order by.
                            ("collation" URILiteral)?
 \end{Verbatim}
 \label{fig:trans:TD:ordEBNF}
-\caption[W3C EBNF order by clause specification]{W3C EBNF order by clause specification.}
+\caption[W3C EBNF order by clause specification]{W3C EBNF order by clause specification\cite{w3c00}.}
 \end{figure}
 
 At this time, Taiting Dependencies only support a simple form of the clause. Only one \texttt{OrderSpec} is
@@ -286,9 +286,9 @@ allowed, where the expression to be sorted on will be referred to as $e_4$ -- co
 option. This will be discussed further in sectin \ref{sect:disc:orderby}.
 
 As with the \texttt{where} clause W3C specify the \texttt{order by} clause as operating on a tuple stream created
-by the variable bindings in the FLWOR. The clause causes the stream to be reordered into a new, value-based order.
-This means that the iterator dependency attributes ($\chi{numb}$) will no longer decide the composition of the
-sequence returned from the FLWOR.
+by the variable bindings in the FLWOR\cite{w3c00}. The clause causes the stream to be reordered into a new,
+value-based order. This means that the iterator dependency attributes ($\chi{numb}$) will no longer decide the
+composition of the sequence returned from the FLWOR.
 
 Firstly, to ensure that the result will have a representation for all the iterations (still valid after possible
 filtering by \texttt{where} clause) of all the expressions iterators, $e_C$ is tainted with $\beta$. The
