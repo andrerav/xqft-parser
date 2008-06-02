@@ -71,7 +71,7 @@ part of the dependencies $\vartheta$ returned. A general path expression is tran
 \mbox{\textbf{put(dot, t(r(}}e_1\mbox{\textbf{), \{dot\}))}} \\
 \qquad \qquad \vdots \\
 \mbox{\textbf{put(dot, t(r(}}e_n\mbox{\textbf{), \{dot\}))}} \\
-\mbox{\textsf{numberate(index, [dotNumb, index], value, }}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textsf{numberate(index, [dotNumb, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad
 \mbox{\textbf{get(dot)}\textsf{)}}
 \end{array}
 \label{rule:trans:TD:pathExpr}
@@ -88,13 +88,13 @@ A general step expression, axis + name test, can be translated like this:
 \frac{}{\displaystyle \texttt{AXIS::}QName_1} \\ 
 \longmapsto \begin{array}{c}\mbox{\tiny } \\ \mbox{\tiny } \end{array} \\
 \begin{array}{l}
-\mbox{\textsf{project(dotNumb, docId, index, value, pos, scope, }}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textsf{project(docId, index, value, pos, scope, }}\vartheta\mbox{\textsf{;}} \\ \quad
 \mbox{\textsf{numberate(dotNumb, [dotNumb, subIdx], [}}(\vartheta-\mbox{\textbf{dot}})\mbox{\textsf{];}} \\
 \quad\quad 
 \mbox{\textsf{numberate(index, [index], [}}\vartheta\mbox{\textsf{];}} \\ \quad\quad\quad
 \mbox{\textsf{select(isFUNC(scope, lsc);}} \\ \quad \quad\quad\quad
 \mbox{\textsf{hhjoin([docId],[docId],}} \\ \quad\quad\quad\quad\quad\quad\quad
-\mbox{\textsf{[dotNumb,lsc=l.scope,subIdx=r.index,r.value,}}\vartheta\mbox{\textsf{];}}\\
+\mbox{\textsf{[lsc=l.scope,subIdx=r.index,r.value,}}\vartheta\mbox{\textsf{];}}\\
 \quad\quad\quad\quad\quad \mbox{\textbf{get(dot)}\textsf{;}} \\ \quad \quad\quad \quad\quad
 \mbox{\textsf{numberate(index, [], [];}}\\ \quad\quad\quad\quad\quad\quad
 \mbox{\textsf{index(valocc;}} \\ \quad\quad\quad\quad\quad\quad\quad
@@ -256,49 +256,70 @@ context item relation. The result of the expression is illustrated in figure \re
 
 \subsection{Predicates}
 \label{sect:trans:TD:predicates}
-A predicate consists of an expression, called a predicate expression which evaluates to a boolean value. A
-predicate serves to filter a sequence, retaining the items where the expression evaluates to $true$ and discarding
-all other. In the case of multiple adjacent predicates, the predicates are applied from left to right, and the
-result of applying each predicate serves as the input sequence for the following predicate. If the value of the
-predicate expression is a singleton atomic value of a numeric type, the predicate truth value is $true$ if the
-value of the predicate expression is equal to the position of the context item within the input sequence.
+A predicate consists of an expression, called a predicate expression, which evaluates to a boolean value. The
+expression assigned the predicate is called a predicated expression. A predicate serves to filter a sequence,
+retaining the items where the expression evaluates to $true$ and discarding all other. In the case of multiple
+adjacent predicates, the predicates are applied from left to right, and the result of applying each predicate
+serves as the input sequence for the following predicate. If the value of the predicate expression is a singleton
+atomic value of a numeric type, the predicate truth value is $true$ if the value of the predicate expression is
+equal to the position of the context item within the input sequence.
 
 When entering a predicate a new scope is pushed to the symbol table, and the relational algebra tree corresponding
-to the expression assigned the predicate is stored as \textbf{dot}. The predicate expression is then evaluated,
-and then joined with the relational representation of the expression it is assigned to on their common
-dependencies. If the context item is referred to within the predicate, $dotNumb$ is one of the attributes the
-relations are joined on. The context item may be reffered to explicitly with the dot-operator (.), or implicitly
-through a relative path expression. When evaluating path expressions it is important to note that predicates have
-higher precedence than the / (step expression separator). As the predicate may remove items, renumbering is
-needed. 
+to the expression assigned the predicate is stored as \textbf{dot}. With a copy of $dotNumb$ called $sprDotNumb$.
+The reason for this is to ensure that the predicate is applied to the right context item of the predicated
+expression as we will see. If the predicate expression contains a path expression, it may update the $dotNumb$
+fields, but $sprDotNumb$ will always correspond to the right context item outside the predicate. The predicate
+expression is then evaluated, and then joined with the relational representation of predicated expression to on
+their common dependencies. If the context item is referred to within the predicate, the relations will have to be
+joined on $sprDotNumb$ from the predicate expression and $index$ from the predicated expression aswell. The
+context item may be reffered to explicitly with the dot-operator (.), or implicitly through a relative path
+expression. When evaluating path expressions it is important to note that predicates have higher precedence than
+the / (step expression separator). As the predicate may remove items, renumbering is needed.
 
 \begin{equation}
 \frac{}{e_1\mbox{\texttt{[}}e_2\mbox{\texttt{]}}}\longmapsto
 \begin{array}{l}
 \mbox{\textsf{project(index, value = l.value, }}\vartheta\mbox{\textsf{;}} \\ \quad
-\mbox{\textsf{numberate(index, [l.index], [}}\vartheta\mbox{\textsf{];}} \\ \quad\quad
+\mbox{\textsf{numberate(index, [index], [}}\vartheta\mbox{\textsf{];}} \\ \quad\quad
 \mbox{\textsf{select(ifthenelse(isNumber(pred),}} \\\quad\quad\quad\quad\quad
 \mbox{\textsf{eq(index,pred), xqBoolean(pred));}} \\\quad\quad\quad
 \mbox{\textsf{hhjoin([}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [}}(e_2.\vartheta\cap e_1.\vartheta)\mbox{\textsf{],}} 
 \\ \quad\quad\quad \quad \quad \quad\mbox{\textsf{[l.value, pred=r.value, }}\vartheta\mbox{\textsf{];}}
 \\\quad\quad\quad\quad
  \mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{;}} \\\quad\quad\quad\quad
-\mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{))))}} \\
+\mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{)))}} \\
 \end{array}
 \label{rule:trans:TD:predicate}
 \end{equation}
 
-Where $\vartheta=e_1.\vartheta \cup (e_2.\vartheta-$\textbf{dot}$)$. As the expression may be a part of a path
-expression, a possible dependency to \textbf{dot} in $e_1.\vartheta$ will not be removed. The fields of the left
-relation in the join will follow \textsf{l.value} as described in section \ref{sect:trans:TD:basics}. The final
-\textsf{project} operator will restore the names of these attributes.
+Where $\vartheta=(e_1.\vartheta \cup e_2.\vartheta)-$\textbf{sprDot}. The fields of the left relation in the join
+will follow \textsf{l.value} as described in section \ref{sect:trans:TD:basics}. The final \textsf{project}
+operator will restore the names of these attributes.
 
 As described earlier, before translation of the expression, a new scope will be pushed to the symbol table,
-followed by \textbf{put(dot, r(}$e_1$\textbf{)}. If $e_1$ is not allready dependent on the context item,
-\textbf{r(}$e_1$\textbf{)} will have to be run through a \textsf{project} operator with \textsf{dotNumb=index,
-index=1, value} as parameters both in rule \ref{rule:trans:TD:predicate} and before being stored in the symbol
-table. The sorting attribute of the \textsf{numberate} operator will also have to be \textsf{dotNumb} not
-\textsf{l.index}, and $\vartheta=(e_1.\vartheta \cup e_2.\vartheta)-$\textbf{dot}.
+followed by:
+\begin{equation*}
+\begin{array}{l}
+\mbox{\textbf{put(dot,}} \\ \quad
+\mbox{\textsf{project(sprDotNumb=index, dotNumb=index, index=1, value, }}\vartheta\mbox{\textsf{;}} \\ \quad\quad
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{)}\textbf{)}}.
+\end{array} 
+\end{equation*}
+However, if \textbf{dot} $\in e_1.\vartheta$, it will have to be stored in the following way:
+\begin{equation*}
+\begin{array}{l}
+\mbox{\textbf{put(dot,}} \\ \quad
+\mbox{\textsf{project(sprDotNumb=dotNumb, dotNumb, index=1, value, }}\vartheta\mbox{\textsf{;}} \\ \quad\quad
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{)}\textbf{)}}.
+\end{array} 
+\end{equation*}
+If $e_2$ is dependent on \textbf{sprDot}, the relations will be joined on \textbf{r(}$e_1$\textbf{).}$dotNumb$
+\textsf{=} \textbf{r(}$e_2$\textbf{).}$sprDotNumb$ (as opposed to \textbf{r(}$e_1$\textbf{).}$index$ \textsf{=}
+\textbf{r(}$e_2$\textbf{).}$sprDotNumb$ if it is not), as well as their common dependencies. In both cases,
+attributes not explicitly mentioned will follow $value$ and the $\vartheta$ piggybacking the tree stored in the
+symbol table will at least contain \textbf{dot} and \textbf{sprDot}. The reason why there is both a $sprDotNumb$
+and $dotNumb$ in the same relation is because $dotNumb$ may be updated if the predicate is a path expression (ref
+section \ref{sect:trans:TD:pathExprs}).
 
 \begin{myExample}
 Consider the XQuery query of figure \ref{fig:trans:TD:predQu}. In this query the predicate expression is dependent
@@ -309,28 +330,30 @@ on the context item.
 \caption{Example query with a predicate. \label{fig:trans:TD:predQu}}
 \end{figure}
 
-The sequence assigned a predicate is not dependent on the context item and will have its $index$ attribute renamed
-to $dotNumb$ ($dNb$ in the figure) as shown in figure \ref{fig:trans:TD:pred:seq}. A reference to the context item
-is like a reference to a variable, and the predicate expression evaluates to the relation illustrated in figure
-\ref{fig:trans:TD:pred:predEx}. The two relations are joined together on their common dependencies, the context
-item ($dotNumb$). Further, as the predicate expression does not evaluate to a numeric type, only the tuples where
+The predicated sequence is illustrated in \ref{fig:trans:TD:pred:seq}. As it is not dependent on \textbf{dot} its
+$index$ attribute will be renamed to $sprDotNumb$ ($sdNb$ in the figure) before it is stored in the symbol table. A
+reference to the context item is like a reference to a variable, and the predicate expression evaluates to the
+relation illustrated in figure \ref{fig:trans:TD:pred:predEx}. The two relations only joined together on $index$
+from the predicated expression and $sprDotNumb$ from the predicate expression, as they do not have any other
+dependencies. Further, as the predicate expression does not evaluate to a numeric type, only the tuples where
 $pred$ is $true$ are selected. This is shown in figure \ref{fig:trans:TD:pred:prune}.
 
 \begin{figure}[h]
+\centering
 \subfigure[]{
-\begin{tabular}{|c|c|c|} \hline
-$dNb$ & $idx$ & $val$ \\ \hline
-1 & 1 & 2 \\ \hline
-2 & 1 & 3 \\ \hline
-3 & 1 & 4 \\ \hline
-4 & 1 & 5 \\ \hline
+\begin{tabular}{|c|c|} \hline
+$idx$ & $val$ \\ \hline
+1 & 2 \\ \hline
+2 & 3 \\ \hline
+3 & 4 \\ \hline
+4 & 5 \\ \hline
 \end{tabular}
 \label{fig:trans:TD:pred:seq}
 }
 \quad
 \subfigure[]{
 \begin{tabular}{|c|c|c|} \hline
-$dNb$ & $idx$ & $val$ \\ \hline
+$sdNb$ & $idx$ & $val$ \\ \hline
 1 & 1 & $true$ \\ \hline
 2 & 1 & $false$ \\ \hline
 3 & 1 & $true$ \\ \hline
@@ -341,9 +364,9 @@ $dNb$ & $idx$ & $val$ \\ \hline
 \quad
 \subfigure[]{
 \begin{tabular}{|c|c|c|c|} \hline
-$dNb$ & $idx$ & $val$ & $pred$ \\ \hline
-1 & 1 & 2 & $true$ \\ \hline
-3 & 1 & 4 & $true$ \\ \hline
+$idx$ & $val$ & $pred$ \\ \hline
+1 & 2 & $true$ \\ \hline
+3 & 4 & $true$ \\ \hline
 \end{tabular}
 \label{fig:trans:TD:pred:prune}
 }
