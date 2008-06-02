@@ -63,9 +63,49 @@ converted to the DAG seen in figure \ref{fig:results:query_ext_flwor_dag}.
 \end{figure}
 
 \subsection{Path expression with predicate}
+This example will illustrate the translation of a path expression with a predicate.
+
+\subsubsection{Query premise}
+\begin{figure}[!htp]
+\begin{center}
 \begin{Verbatim}
-/a/b[@id = 2] ?
+/a/b[@id eq 2] 
 \end{Verbatim}
+  \caption{Path expression with a predicate query premise}
+  \label{fig:results:query_pathPred}
+\end{center}
+\end{figure}
+
+\subsubsection{Translation process}
+The translation process in its entirety is shown step by step in appendix
+\ref{appendix:transl:pathPred}, page \pageref{appendix:transl:pathPred}.
+
+\subsubsection{Result}
+The result of the translation is shown in figure
+\ref{fig:results:query_pathpred_result}.
+
+\begin{figure}[!htp]
+\begin{center}
+  \includegraphics[width=1.0\textwidth]{img/graphs/TD_patExprPred}
+  \caption{Complete translation of expression in figure
+  \ref{fig:results:query_pathPred}}
+  \label{fig:results:query_pathpred_result}
+\end{center}
+\end{figure}
+
+The operator tree in figure \ref{fig:results:query_pathpred_result} can be
+converted to the DAG seen in figure \ref{fig:results:query_pathpred_result_dag}.
+
+\newpage
+
+\begin{figure}[!htp]
+\begin{center}
+  \includegraphics[width=1.0\textwidth]{img/graphs/TD_patExprPred_dag}
+  \caption{DAG representation of operator tree in figure
+  \ref{fig:results:query_pathpred_result}}
+  \label{fig:results:query_pathpred_result_dag}
+\end{center}
+\end{figure}
 
 \subsection{If-then-else}
 \subsubsection{Query premise}
