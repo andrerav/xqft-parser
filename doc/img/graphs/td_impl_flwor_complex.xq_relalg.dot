@@ -2,147 +2,147 @@ digraph AST {
 edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=normal]
 node [shape=plaintext]
 numberate1 [label="numberate(index,[anumb,index],[]; .."]
-  numberate1 -> cross2
-cross2 [label="cross(; .."]
-    cross2 -> project3
-project3 [label="project([anumb = index]; .."]
-      project3 -> project4
-project4 [label="project([index = 1, anumb = index, value]; .."]
-        project4 -> numberate5
-numberate5 [label="numberate(index,[sprIdx,index],[]; .."]
-          numberate5 -> union6
-union6 [label="union(; .."]
-            union6 -> project7
-project7 [label="project(sprIdx=1, index, value; .."]
-              project7 -> make8
-make8 [label="make(name:=[index, value], [1], [1])"]
-              union6 -> project9
-project9 [label="project(sprIdx=2, index, value; .."]
-                project9 -> make10
-make10 [label="make(name:=[index, value], [1], [2])"]
-      cross2 -> numberate11
-numberate11 [label="numberate(index,[sprIdx,index],[]; .."]
-        numberate11 -> union12
-union12 [label="union(; .."]
-          union12 -> project13
-project13 [label="project(sprIdx=1, index, value; .."]
-            project13 -> make14
+  numberate1 -> numberate2
+numberate2 [label="numberate(index,[sprIdx,index],[]; .."]
+    numberate2 -> union3
+union3 [label="union(; .."]
+      union3 -> project4
+project4 [label="project(sprIdx=1, index, value; .."]
+        project4 -> cross5
+cross5 [label="cross(; .."]
+          cross5 -> project6
+project6 [label="project(anumb; .."]
+            project6 -> project7
+project7 [label="project([index = 1, anumb = index, value]; .."]
+              project7 -> numberate8
+numberate8 [label="numberate(index,[sprIdx,index],[]; .."]
+                numberate8 -> union9
+union9 [label="union(; .."]
+                  union9 -> project10
+project10 [label="project(sprIdx=1, index, value; .."]
+                    project10 -> make11
+make11 [label="make(name:=[index, value], [1], [1])"]
+                    union9 -> project12
+project12 [label="project(sprIdx=2, index, value; .."]
+                      project12 -> make13
+make13 [label="make(name:=[index, value], [1], [2])"]
+            cross5 -> make14
 make14 [label="make(name:=[index, value], [1], [3])"]
-            union12 -> project15
+        union3 -> project15
 project15 [label="project(sprIdx=2, index, value; .."]
-              project15 -> numberate16
-numberate16 [label="numberate(index,[bnumb,index],[bnumb]; .."]
-                numberate16 -> numberate17
+          project15 -> numberate16
+numberate16 [label="numberate(index,[bnumb,index],[anumb]; .."]
+            numberate16 -> numberate17
 numberate17 [label="numberate(index,[sprIdx,index],[]; .."]
-                  numberate17 -> union18
+              numberate17 -> union18
 union18 [label="union(; .."]
-                    union18 -> project19
+                union18 -> project19
 project19 [label="project(sprIdx=1, index, value; .."]
-                      project19 -> cross20
+                  project19 -> cross20
 cross20 [label="cross(; .."]
-                        cross20 -> project21
+                    cross20 -> project21
 project21 [label="project(bnumb; .."]
-                          project21 -> project22
+                      project21 -> project22
 project22 [label="project([index = 1, bnumb = index, value]; .."]
-                            project22 -> numberate23
+                        project22 -> numberate23
 numberate23 [label="numberate(index,[sprIdx,index],[]; .."]
-                              numberate23 -> union24
+                          numberate23 -> union24
 union24 [label="union(; .."]
-                                union24 -> project25
+                            union24 -> project25
 project25 [label="project(sprIdx=1, index, value; .."]
-                                  project25 -> make26
+                              project25 -> make26
 make26 [label="make(name:=[index, value], [1], [4])"]
-                                  union24 -> project27
+                              union24 -> project27
 project27 [label="project(sprIdx=2, index, value; .."]
-                                    project27 -> make28
+                                project27 -> make28
 make28 [label="make(name:=[index, value], [1], [5])"]
-                          cross20 -> project29
+                      cross20 -> project29
 project29 [label="project([index = 1, anumb = index, value]; .."]
-                            project29 -> numberate30
+                        project29 -> numberate30
 numberate30 [label="numberate(index,[sprIdx,index],[]; .."]
-                              numberate30 -> union31
+                          numberate30 -> union31
 union31 [label="union(; .."]
-                                union31 -> project32
+                            union31 -> project32
 project32 [label="project(sprIdx=1, index, value; .."]
-                                  project32 -> make33
+                              project32 -> make33
 make33 [label="make(name:=[index, value], [1], [1])"]
-                                  union31 -> project34
+                              union31 -> project34
 project34 [label="project(sprIdx=2, index, value; .."]
-                                    project34 -> make35
+                                project34 -> make35
 make35 [label="make(name:=[index, value], [1], [2])"]
-                      union18 -> project36
+                  union18 -> project36
 project36 [label="project(sprIdx=2, index, value; .."]
-                        project36 -> cross37
+                    project36 -> cross37
 cross37 [label="cross(; .."]
-                          cross37 -> project38
+                      cross37 -> project38
 project38 [label="project(anumb; .."]
-                            project38 -> project39
+                        project38 -> project39
 project39 [label="project([index = 1, anumb = index, value]; .."]
-                              project39 -> numberate40
+                          project39 -> numberate40
 numberate40 [label="numberate(index,[sprIdx,index],[]; .."]
-                                numberate40 -> union41
+                            numberate40 -> union41
 union41 [label="union(; .."]
-                                  union41 -> project42
+                              union41 -> project42
 project42 [label="project(sprIdx=1, index, value; .."]
-                                    project42 -> make43
+                                project42 -> make43
 make43 [label="make(name:=[index, value], [1], [1])"]
-                                    union41 -> project44
+                                union41 -> project44
 project44 [label="project(sprIdx=2, index, value; .."]
-                                      project44 -> make45
+                                  project44 -> make45
 make45 [label="make(name:=[index, value], [1], [2])"]
-                            cross37 -> project46
+                        cross37 -> project46
 project46 [label="project([index = 1, bnumb = index, value]; .."]
-                              project46 -> numberate47
+                          project46 -> numberate47
 numberate47 [label="numberate(index,[sprIdx,index],[]; .."]
-                                numberate47 -> union48
+                            numberate47 -> union48
 union48 [label="union(; .."]
-                                  union48 -> project49
+                              union48 -> project49
 project49 [label="project(sprIdx=1, index, value; .."]
-                                    project49 -> make50
+                                project49 -> make50
 make50 [label="make(name:=[index, value], [1], [4])"]
-                                    union48 -> project51
+                                union48 -> project51
 project51 [label="project(sprIdx=2, index, value; .."]
-                                      project51 -> make52
+                                  project51 -> make52
 make52 [label="make(name:=[index, value], [1], [5])"]
-                        union18 -> project53
+                    union18 -> project53
 project53 [label="project(sprIdx=3, index, value; .."]
-                          project53 -> cross54
+                      project53 -> cross54
 cross54 [label="cross(; .."]
-                            cross54 -> project55
+                        cross54 -> project55
 project55 [label="project(bnumb; .."]
-                              project55 -> project56
+                          project55 -> project56
 project56 [label="project([index = 1, bnumb = index, value]; .."]
-                                project56 -> numberate57
+                            project56 -> numberate57
 numberate57 [label="numberate(index,[sprIdx,index],[]; .."]
-                                  numberate57 -> union58
+                              numberate57 -> union58
 union58 [label="union(; .."]
-                                    union58 -> project59
+                                union58 -> project59
 project59 [label="project(sprIdx=1, index, value; .."]
-                                      project59 -> make60
+                                  project59 -> make60
 make60 [label="make(name:=[index, value], [1], [4])"]
-                                      union58 -> project61
+                                  union58 -> project61
 project61 [label="project(sprIdx=2, index, value; .."]
-                                        project61 -> make62
+                                    project61 -> make62
 make62 [label="make(name:=[index, value], [1], [5])"]
-                              cross54 -> cross63
+                          cross54 -> cross63
 cross63 [label="cross(; .."]
-                                cross63 -> project64
+                            cross63 -> project64
 project64 [label="project(anumb; .."]
-                                  project64 -> project65
+                              project64 -> project65
 project65 [label="project([index = 1, anumb = index, value]; .."]
-                                    project65 -> numberate66
+                                project65 -> numberate66
 numberate66 [label="numberate(index,[sprIdx,index],[]; .."]
-                                      numberate66 -> union67
+                                  numberate66 -> union67
 union67 [label="union(; .."]
-                                        union67 -> project68
+                                    union67 -> project68
 project68 [label="project(sprIdx=1, index, value; .."]
-                                          project68 -> make69
+                                      project68 -> make69
 make69 [label="make(name:=[index, value], [1], [1])"]
-                                          union67 -> project70
+                                      union67 -> project70
 project70 [label="project(sprIdx=2, index, value; .."]
-                                            project70 -> make71
+                                        project70 -> make71
 make71 [label="make(name:=[index, value], [1], [2])"]
-                                  cross63 -> make72
+                              cross63 -> make72
 make72 [label="make(name:=[index, value], [1], [6])"]
 
 }

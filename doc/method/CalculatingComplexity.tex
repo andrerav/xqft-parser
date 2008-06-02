@@ -1,4 +1,5 @@
 \section{Calculating complexity in relational algebra}
+\label{sect:method:complexity}
 \subsection{Basics}
 A method for calculating complexity of relational algebra trees was suggested
 by \O ystein Torbj\o rnsen at FAST. This method is based on the assumption
@@ -65,3 +66,15 @@ is naturally capable of reusing old fields.
 Any kind of tuple construction (e.g using the \textsf{make()} operator)
 for $n$ tuples and $m$ fields generates $n$ new tuples and $n \times m$ new
 fields.
+
+\subsection{Assumptions}
+TODO
+\begin{itemize}
+  \item Joins produserer n*m felter, for n tupler og m felter ut (iflg. T\O
+  rbj\o rnsen)
+  \item Diff aner vi ikke noe om
+  \item Distinct aner vi ikke noe om
+  \item Not inverterer
+  \item Cast 
+  \item Attach
+\end{itemize}

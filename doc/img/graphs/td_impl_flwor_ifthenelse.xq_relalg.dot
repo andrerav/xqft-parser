@@ -1,7 +1,7 @@
 digraph AST {
 edge [color=black, dir=both, weight=1, fontcolor=black, arrowhead=none, arrowtail=normal]
 node [shape=plaintext]
-numberate1 [label="numberate(index,[anumb,index],[anumb]; .."]
+numberate1 [label="numberate(index,[anumb,index],[]; .."]
   numberate1 -> project2
 project2 [label="project(index, anumb, value = lvalue; .."]
     project2 -> select3
