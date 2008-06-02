@@ -1,4 +1,5 @@
 \section{Calculating complexity in relational algebra}
+\subsection{Basics}
 A method for calculating complexity of relational algebra trees was suggested
 by \O ystein Torbj\o rnsen at FAST. This method is based on the assumption
 that the algebra will be executed on an implementation written in Java or a
@@ -13,14 +14,14 @@ may give an indication of spending of time and computational resources.
 
 \subsection{Definitions}
 \begin{myDefinition}
-A \textbf{post} is an in-memory object which contains a value and a mapping to
+A \textbf{field} is an in-memory object which contains a value and a mapping to
 an attribute name in a relation
-\label{definition:relalg_post}
+\label{definition:relalg_field}
 \end{myDefinition}
 
 \begin{myDefinition}
 A \textbf{tuple} is defined as an in-memory object which contains a set of
-\textit{posts} (definition \ref{definition:relalg_post}), where each post
+\textit{fields} (definition \ref{definition:relalg_field}), where each field
 contains a value for some given attribute in the relation
 \label{definition:relalg_tuple}
 \end{myDefinition}
@@ -31,7 +32,8 @@ $\alpha$, counting the following operations performed by the operator:
 \begin{itemize}
   \item Creation of new \textbf{tuples} (definition
   \ref{definition:relalg_tuple})
-  \item Creation of new \textbf{posts} (definition \ref{definition:relalg_post})
+  \item Creation of new \textbf{fields} (definition
+  \ref{definition:relalg_field})
 \end{itemize}
 The integer sum of counting these operations (from and including 1 and up)
 defines the \textbf{complexity} for that given operator. Further, the sum of
@@ -40,11 +42,26 @@ all the complexity sums in some given relational algebra tree defines the
 \label{definition:relalg_complexity}
 \end{myDefinition}
 
-%\usepackage{graphics} is needed for \includegraphics
 \begin{figure}[htp]
 \begin{center}
   \includegraphics[width=0.7\textwidth]{diagrams/tuple_post}
-  \caption[Tuple/Post]{The structure of a \textit{tuple} with \textit{posts}}
-  \label{fig:method:tuple_post}
+  \caption[Tuple/Field structure]{The structure of a \textit{tuple} with
+  \textit{fields}}
+  \label{fig:method:tuple_field}
 \end{center}
 \end{figure}
+
+\subsection{Semantics}
+A new tuple is assumed to be created every time an old tuple needs to add or
+remove one or more fields. A new field is assumed to be created for every new
+value for any attribute for any tuple.
+
+\subsection{Implications of semantics}
+Any kind of projection of $x$ tuples over $n$ ``new'' attributes and $o$
+``old'' attributes generates $x$ new tuples and $n$ new fields (note that
+duplicates are not removed). Old fields are reused, and attribute renaming
+is naturally capable of reusing old fields.
+
+Any kind of tuple construction (e.g using the \textsf{make()} operator)
+for $n$ tuples and $m$ fields generates $n$ new tuples and $n \times m$ new
+fields.

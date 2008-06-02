@@ -9,15 +9,15 @@ numberate3 [label="numberate(index,[sprIdx,index],[]; .."]
       numberate3 -> union4
 union4 [label="union(; .."]
         union4 -> project5
-project5 [label="project(sprIdx=1,index,value; .."]
+project5 [label="project(sprIdx=1, index, value; .."]
           project5 -> make6
 make6 [label="make(name:=[index, value], [1], [1])"]
           union4 -> project7
-project7 [label="project(sprIdx=2,index,value; .."]
+project7 [label="project(sprIdx=2, index, value; .."]
             project7 -> make8
 make8 [label="make(name:=[index, value], [1], [2])"]
             union4 -> project9
-project9 [label="project(sprIdx=3,index,value; .."]
+project9 [label="project(sprIdx=3, index, value; .."]
               project9 -> make10
 make10 [label="make(name:=[index, value], [1], [3])"]
 

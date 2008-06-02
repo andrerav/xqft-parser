@@ -348,12 +348,7 @@ public class XQuery2MQLVisitor extends Visitor {
                 expr = cross;
             }
 
-            if (childResult.isSingleton()) {
-                expr = new Project("sprIdx="+(c+1)+",index,value", expr);
-            }
-            else {
-                expr = new Project("sprIdx="+(c+1)+",value", expr);
-            }
+            expr = new Project("sprIdx="+(c+1)+", index, value", expr);
             operators.add(expr);
             c++;
         }
@@ -501,23 +496,21 @@ public class XQuery2MQLVisitor extends Visitor {
     
     /*
      * Performs a taint
-     * TODO: fixify this so it actually taints
      */
     protected TraverseReturn taint(TraverseReturn tr, VarRefSet varRefs) {
         
-        TraverseReturn result = new TraverseReturn();
-        
-        Cross cross = new Cross();
-        
         for (VarRef varRef : varRefs) {
-            if (tr.getVarRefs().contains(varRef)) {
-                
+            if (!tr.getVarRefs().contains(varRef)) {
+                Cross cross = new Cross();
+                Project project = new Project("["+varRef.getName()+"numb]", Scope.get(varRef.getName()).getTraverseReturn().getOperatorTree());
+                cross.addOperator(tr.getOperatorTree());
+                cross.addOperator(project);
+                tr.setOperatorTree(cross);
             }
         }
         
         //return result;
         return tr;
-        
     }
 
 	@Override

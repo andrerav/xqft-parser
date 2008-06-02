@@ -33,9 +33,15 @@ makex122 [label="make(name:=[index, value], [1], [20])"]
 
             union5 -> project14
 project14 [label="project(index, alt=2, anumb, value; .."]
-              project14 -> make15
-make15 [label="make(name:=[index, value], [1], [15])"]
-          hhjoin4 -> project16
+              project14 -> cross15
+cross15 [label="cross(; .."]
+                cross15 -> make16
+make16 [label="make(name:=[index, value], [1], [15])"]
+                  cross15 -> project17
+project17 [label="project([anumb]; .."]
+                    project17 -> projectx121
+                    
+                    hhjoin4 -> project16
 project16 [label="project(index=1, anumb, value=max; .."]
             project16 -> group17
 group17 [label="group((anumb), max(value); .."]
@@ -46,6 +52,6 @@ hhjoin19 [label="hhjoin([],[],[anumb, lvalue = l.value, rvalue = r.value]; .."]
                   hhjoin19 -> projectx121
 
 
-                    hhjoin19 -> make15
+                    hhjoin19 -> make16
 
 }
