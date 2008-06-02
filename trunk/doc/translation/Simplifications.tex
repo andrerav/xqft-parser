@@ -94,7 +94,7 @@ like this:
 Where $\vartheta=e_{1}.\vartheta \cup \ldots \cup e_{n}.\vartheta$.
 
 If a sequence construction expression have only literal subexpressions, the translation may be even more
-simplified. As the rule stands now, the sequence will be built by splicing together single-tule relations with an
+simplified. As the rule stands now, the sequence will be built by splicing together single-tuple relations with an
 \textsf{union} operator. The \textsf{make} operator does however support multiple items, so a better solution
 would be to collect all items in one MQL operator:
 
@@ -154,9 +154,12 @@ steps can be translated like this:
 \end{equation}
 
 Multiple \texttt{parent} axis steps can recieve corresponding treatment, except the path defined to the
-\textsf{scope} operator will have to be reversed. The same can also be done to the rules
-\ref{rule:trans:TD:sglSlash} and \ref{rule:trans:TD:dblSlash}. Only clean axis + name test steps can be translated
+\textsf{scope} operator will have to be reversed. Only clean axis + name test steps can be translated
 like this, without any interruption by e.g. a predicate or kind test.
+
+\begin{itemize}
+  \item numberate(index, [dotNumb, index] kan bli til project hvis siste steg er et rent stepExpr uten predikat.
+\end{itemize}
 
 \subsection{FLWORs}
 \label{sect:trans:TD:simpl:flwor}        
