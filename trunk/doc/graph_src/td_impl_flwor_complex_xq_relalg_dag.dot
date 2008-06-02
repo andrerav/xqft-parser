@@ -20,7 +20,7 @@ project13 [label="project(sprIdx=1,index,value; .."]
             project13 -> make14
 make14 [label="make(name:=[index, value], [1], [3])"]
             union12 -> project15
-project15 [label="project(sprIdx=2,value; .."]
+project15 [label="project(sprIdx=2,index,value; .."]
               project15 -> numberate16
 numberate16 [label="numberate(index,[bnumb,index],[bnumb]; .."]
                 numberate16 -> numberate17
