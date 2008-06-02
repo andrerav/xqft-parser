@@ -2,9 +2,9 @@
 \section{Relational Algebra}
 \label{sect:theory:relAlg}
 
-The relational model for database management was introduced for the first time by Edgar Frank Coddin 1974
-(\cite{TDT4225}). It was based on relational algebra which is an offshoot of first-order logic. Several terms are
-used when talking about relational algebra (\cite{gordonRussel, newYorkDB, sudarshan}):
+The relational model for database management was introduced for the first time by Edgar Frank Coddin
+1974\cite{TDT4225}. It was based on relational algebra which is an offshoot of first-order logic. Several terms
+are used when talking about relational algebra (\cite{gordonRussel, newYorkDB, sudarshan}):
 \begin{itemize}
 \item Set: A mathematical definition for a collection of objects which contains no duplicates
 \item Domain: A \textit{set} of atomic values
@@ -16,6 +16,10 @@ used when talking about relational algebra (\cite{gordonRussel, newYorkDB, sudar
 \item Union compatible: Two relations R and S are union compatible if and only if they have the same
 	\textit{degree} and the \textit{domains} of the corresponding \textit{attributes} are the same.
 \end{itemize}
+
+It should be noted that often relational algebra is based on ``bag'' semantics rather than set semantics. A
+``bag'' may contain duplicates unlike sets. Removal of duplicates can be a very costly operation in terms of
+computer resources.
 
 \subsection{Primary Operators}
 \label{sect:theory:relAlg:primOper}

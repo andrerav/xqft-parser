@@ -3,11 +3,10 @@
 
 Our original proposition to a method for translating XQuery ASTs into relational algebra was named MarkXRemove.
 The rationale behind this name will be explained later. Eventhough it has many shortcomings and flaws, we
-will in this section give a quick run through of the method. This is because when we in section
-\ref{sect:trans:taintingDependencies} present the Tainting Dependancies (TD) method, which is an evolution and a
-refinement of MarkXRemove, the new method may be easier understood when seen in the perspective of its origins.
-Another reason is that in case of further development of TD, it may be of help to also know what will \textit{not}
-work, what will work partially and \textit{why} it is flawed.
+will in this section give a quick run through of the method. This is because the Tainting Dependancies (TD) method
+is an evolution and a refinement of MarkXRemove, and may be easier understood when seen in the perspective of its
+origins. Another reason is that in case of further development of TD, it may be of help to also know what will
+\textit{not} work, what will work partially and \textit{why} it is flawed.
 
 \subsection{Basics}
 \label{sect:trans:mxr:basics}
@@ -112,20 +111,4 @@ The query should of course be evaluated to $(true, true)$, as the \texttt{>} ope
 This means that the relation would have to be pruned by a \texttt{select} or \texttt{group}, which can not be done
 generally in the relations current state. A possibility would be to postpone the pruning until after the relation
 is crossed with the iterator sequence, but there would still not be any not-complex solution. This problem lead to
-the introduction of variable dependancy tainting, as we will see in section
-\ref{sect:trans:taintingDependencies}.
-
-\underline{\textbf{\LARGE TODO:}} her st\aa r det egentlig noe om numeric predicates, men det er kommentert bort. 
-% Within the \texttt{scope} field of a relation returned from a \texttt{lookup} operator lies information about
-% which child number the scope is relative to its sibling scopes. E.g. if a \texttt{lookup} had been executed on a
-% index holding the following XML-document:
-% \begin{Verbatim}
-% <a>
-%   <b>one</b>
-%   <b>two</b>
-% </a>
-% \end{Verbatim}
-% it would be possible to extract that the element containing ``two'' is the second \verb!<b>!-child of its parent.
-% And its exactly this information MarkXRemove relies on when translating numeric predicate(see section
-% \ref{sect:theory:xquery:Predicates}). But when a numeric predicate is applied to a step expression with a reverse
-% axis, e.g. \texttt{ancestor::}, the numbering is reversed. This means that
+the introduction of variable dependancy tainting, as we will see in section \ref{sect:trans:TD:tainting}.
