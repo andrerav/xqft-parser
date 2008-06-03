@@ -115,7 +115,7 @@ only singleton items where not all of them are literals:
 \begin{array}{l}
 \mbox{\texttt{union(}} \\ \quad
 \mbox{\texttt{project(index=3, value, bnumb;}} \\ \quad \quad
-\mbox{\textbf{r(}}\texttt{\$b}\mbox{\textbf{)}\textsf{)}} \\ \quad
+\mbox{\textbf{r(}}\texttt{\$b}\mbox{\textbf{)}\textsf{);}} \\ \quad
 \mbox{\textbf{t(}}
 \mbox{\textsf{make(name:=["index", "value"],}} \\ \quad \quad \quad \quad \quad 
 \mbox{\textsf{[1, 2, 4],['a', 'b', 'c'])}\textbf{,
@@ -181,12 +181,3 @@ Rule \ref{rule:trans:TD:unaryMin} describes a translation of the unary \texttt{-
 consecutive unary operators, there is no need to apply the translation rule the same amount of times. The
 translator can count the number of unary \texttt{-} operators assigned to one expression. If the number of
 operators is odd, the rule is applied, if it is even, no translation is needed.
-
-
-\subsection{FLWORs}
-\label{sect:trans:TD:simpl:flwor}        
-  FLWOR:
-  	\begin{itemize}
-        \item  kan bli -> project , ved singelton return (bull?)
-      \end{itemize}
-
