@@ -48,23 +48,9 @@ emphasize some important traits about the type system:
 one-dimensional, will be flattened. For example, the two-dimensional sequence
 \verb!((1,2),3)! is to be flatted into \verb!(1,2,3)!.
 
-The effective boolean value of a sequence is defined as the result returned from the XQuery function
-\texttt{fn:boolean} executed with the sequence as a operand:
-\begin{itemize}
-  \item If its operand is an empty sequence, \texttt{fn:boolean} returns $false$.
-  \item If its operand is a sequence whose first item is a node, \texttt{fn:boolean} returns $true$.
-  \item If its operand is a singleton value of type \texttt{xs:boolean} or derived from \texttt{xs:boolean},
-  \texttt{fn:boolean} returns the value of its operand unchanged.
-  \item If its operand is a singleton value of type \texttt{xs:string}, \texttt{xs:anyURI},
-  \texttt{xs:untypedAtomic}, or a type derived from one of these, \texttt{fn:boolean} returns $false$ if the
-  operand value has zero length; otherwise it returns $true$.
-  \item If its operand is a singleton value of any numeric type or derived from a numeric type,
-  \texttt{fn:boolean} returns $false$ if the operand value is \texttt{NaN} or is numerically equal to zero;
-  otherwise it returns $true$.
-\end{itemize}
-Informally, this can be interpreted as: \textbf{Anything that is not 0, empty, or false, evaluates to
-\textit{true}}. In a boolean context (such as an predicate or an if-then-else), this means that
-anything that is ``something'' will evaluate to \textit{true}.
+Sequences can evaluate to an effective boolean value. Informally, this value is defined as follows:
+\textbf{Anything that is not 0, empty, or false, evaluates to \textit{true}}. In a boolean context (such as an
+predicate or an if-then-else), this means that anything that is ``something'' will evaluate to \textit{true}.
 
 
 \subsection{Path Expressions}
