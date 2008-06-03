@@ -471,7 +471,8 @@ is the \textsf{m}th scope with that name of the document. In the following descr
 be read as the value in the $scope$ attribute for one tuple. The length of $scope_n$ is equal to the number of
 steps it contains.
 
-\begin{tabular}{l|p{6.3cm}}
+\begin{center}
+\begin{tabular}{l|p{9cm}}
 \textsf{isChild(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
 & Returns $true$ if $scope_2$ is exactly on step longer than and a prefix of $scope_1$. Else $false$. 
 \\ \textsf{isDescendant(}$scope_1$\textsf{, }$scope_2$\textsf{)} 
@@ -499,6 +500,7 @@ steps it contains.
 & Returns $true$ if $scope_2$ is equal to $scope_1$ except having a lower instance of the last step. Else
 $false$.
 \end{tabular}
+\end{center}
 
 As can be seen, many of these functions can be defined by some of the other functions. But for readability we
 assume one function per axis.
