@@ -1,0 +1,26 @@
+\section{Type System - {ANDREAS}}
+\label{sect:disc:typeSystem}
+\textbf{\LARGE TODO: {ANDREAS}}
+\begin{itemize}
+  \item Hvordan f\aa~til noe typesystem?
+  \item lagre false som ``false'' enn s\aa~lenge.. kjipt med /a/b[/a/b/c] hvis c er slik: <c>false</c>
+  \item Mars st\o tter ikke forskjellige typer innenfor samme felt
+  \item En sekvens er en sekvens i XQuery\ldots ikke en sekvens av booleans
+  eller noder etc
+  \item Et ekstra felt som sier type?
+  \item Hva skjer med /a/b/c/text() vs /a/b/c ?
+  \item hva skjer om man lager en <a> hei <b> jeje </b> </a> variabel? Dette
+  m\aa~kunne representeres.
+  \item Hvis vi hadde hatt statisk og sterk typing s\aa~ hadde mye v\ae rt
+  ordna, f.eks \verb!for $i as xs:int in (1,2,3) return /a[$i]! s\aa vet man
+  med en gang at \verb![$i]! er en ``numeric predicate''.
+  \item typeswitch / instance of / cast / castable / treat as
+  \item There is however also a need to represent explicitly stated XML-nodes, as well
+	as differentiate between the number \texttt{1} and the string \texttt{"1"}.
+	This, and other issues about representing XQuery types will be treated in
+	section \ref{sect:disc:typeSystem}.  
+\item Hva med \$i = (1,2,3) \$i/hatt -> typefeil? kj\o re isInScope(scope) p\aa~noe som ikke har scope kolonne?
+  		\item constructors\ldots element, CDATA, attribute etc etc
+  		\item typeswitch? kan bli stress.. har ikke s\aa~mye typer enn\aa \ldots skal v\ae re diskusjon om typer i
+  		sect \ref{sect:disc:typeSystem}\ldots
+	\end{itemize}

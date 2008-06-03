@@ -4,155 +4,17 @@
 \textbf{\underline{\LARGE TODO:}} innledning
 
 
-Hva med disse punktene?:
-\begin{itemize}
-	\item MarkXRemove funker bra i unordered m0de tror jeg\ldots. Den er ogs\a~normalisert ref purely relational
-	flwors, som sier LL er denormalisert. (bare normalisert innenfor en flwor.. den unormaliserer seg n\aa r den g\aa
-	r ut av l\o kka (cross /m const))
-	\item Order/unorder kan dra nytte av kontekstsensitive visitors\ldots\ldots
-\end{itemize}
-
-\section{REsulTAt diskusjon - {{ANDREAS}}}
-\label{sect:disc:res}
-\textbf{\LARGE TODO: {{ANDREAS}}}
-\begin{itemize}
-  \item usikkerhetsgreier, forenklinger / er det forenklinger? LL folger ikke helt slik diskutert i teori tror jeg,
-  \item paralellisering? jeje..
-\end{itemize}
-
-\section{SingelT0n vs sequence Ye = finn p\aa~overskrift etter innhold - {MADS}}
-\label{sect:disc:singelton}
-\textbf{\LARGE TODO: {MADS}}
-\begin{itemize}
-   \item (1,2) + 3 kan oppdages som feil ved at man merker iteratorvariable, atomiske og sekvenser + 
-   \item at man synes det er flott for optimalisering av sequencebygging 
-   \item order by (1,2) kan ogs\aa~oppdages. 
-\end{itemize}
-
-\section{Effective Boolean Value - {MADS}}
-\label{sect:disc:effBool}
-\textbf{\LARGE TODO: {MADS}}
-\begin{itemize}
-\item VI M\AA~SJEKKE ATOMIZATION.
-\item Effective Boolean Value
-\item Kommer til \aa~bli feil n\aa r en sekvens blir brukt som boolean value n\aa~s\aa fremt vi ikke kan groupe\ldots
-\item En evt groupingoperator m\aa~slippe igjennom tall\ldots. Evt select index=1, m\aa~se om (1,2,3) er bogus
-\item The translator is in the logical context, $\Lambda$, if the AST node it is currently visiting is a successor
-of a boolean operator or within the condition part of an \texttt{if..then..else} expression. In all other cases the
-translator is in the default context, $\Delta$. If no context is mentioned in the inference rules the default
-context is assumed. 
-\item test expr i if
-\item barna til and og or
-\end{itemize}
-
-\section{Context Item - {MADS}}
-\label{sect:disc:ctxItem}
-\textbf{\LARGE TODO: {MADS}}
-\begin{itemize}
-  \item m\aa~nesten dytte den til symtab hele tiden, koster ikke mye, s\aa~lenge den ikke blir brukt.
-  \item Man skal vel ha tilgang til den hele tiden omtrent.
-  \item kan sette context node til noe n\aa r man starter\ldots Tenke en virtuell /collection/doc struktur\ldots
-  ellerno
-  \item XQuery has a set of functions that provide access to input data. These functions are of particular
-  importance because they provide a way in which an expression can reference a document or a collection of
-  documents. The input functions are described informally here; they are defined in [XQuery 1.0 and XPath 2.0
-  Functions and Operators]. An expression can access input data either by calling one of the input functions or by
-  referencing some part of the dynamic context that is initialized by the external environment, such as a variable
-  or context item. -> Appendix C.2 Dynamic Context Components
-\end{itemize}
-
-
-\section{Loop Lift vs Tainting Dependencies - {{ANDREAS}}}
-\textbf{\LARGE TODO: {ANDREAS}}
-\label{sect:disc:llvsTD}
-\begin{itemize}
-  \item vise til ll eksemplet sect \ref{sect:trans:ll:example} og f\aa~frem at ll krever DAGz ganske hardt,
-  mye som blir brukt om igjen. Og fra begynnelsen til slutten for den saks skyld.
-  \item fordeler vs ulemper..
-  \item dra frem at TD bruker f\ae rre operatorer
-  \item pathfinder way kommer ikke til \aa~dra nytte av den mer ekspressive mars-algebraen\ldots Men er ekspressiv
-	  bedre? Synes jeg s\aa~ noe i en av pathfinder artiklene hvor de sa at jo mer restriktiv, jo bedre
-	  \aa~optimisere\ldots snakke med thorbj\o rnsen om dette..
-\end{itemize}
-
-\section{Rewriting - {ANDREAS}}
-\label{sect:disc:rewriting}
-\begin{itemize}
-  \item fordeler vs ulemper med \aa~skrive om til core
-  \item man mister jo informasjon\ldots. Hvis den er p\aa~denne m\aa ten --> gj\o re det akkurat
-	  slik, en sp\o rring som skal gi tilsvarende svar er ikke sikkert at man kan
-	  skrive p\aa~den samme m\aa ten helt uten videre..  
-  \item samme svar = samme utf\o relse = er dette en fordel?
-  \item kan man utnytte kunnskap om translation til \aa~optimisere xquery queries?
-  \item hva med \aa~bare skrive om det man trenger? Hva trenger man \aa~skriveom?
-  \item sl\aa~sammen scopes blir frem og tilbake og frem igjen om man tenker core\ldots /a/b/c-> for..for..for ->
-  /a/b/c
-  \item se om det er mer tungvinne ting Core har\ldots har ikke satt meg helt inn i alle detaljene der.. hva skjer
-  med predikater? blir de if.then.else? kan det hende at vi f\aa r un\o dvendige kryssprodukt?
-  \item sluppet where-regel hvis man skriver om til if-then-else (dagens where er mer effektiv enn en if() then no
- e else tomt -> den VET at det som er usant blir kasta bort- jfr regel og select-operator)
- \item TD forutsetter ikke fullversjon XQuery (anti core), da core er subset av fullversjon
-\end{itemize}
-
+\input{discussion/ContextItem}
+\input{discussion/Functions}
+\input{discussion/LLvsTainting}
 \input{discussion/ManualTreeParser}
 \input{discussion/NotSupported}
+\input{discussion/Optimisations}
+\input{discussion/Prototype}
+\input{discussion/ResDisc}
+\input{discussion/Rewrite}
+\input{discussion/Sequences}
+\input{discussion/Typesystem}
 
 
-\section{Implementasjonen - {ANDREAS}}
-\label{sect:disc:contextSens}
-\textbf{\LARGE TODO: {ANDREAS}}
-\begin{itemize}
-  \item innhold
-  
-\end{itemize}
 
-
-\section{Order By - {MADS}}
-\label{sect:disc:orderby}
-\textbf{\LARGE TODO: {MADS}}
-\begin{itemize}
-  \item st\o tte alle de sorteringsspesifiseringene.. st\o tte sortering over flere exprz.
-\end{itemize}
-
-\section{Type System - {ANDREAS}}
-\label{sect:disc:typeSystem}
-\textbf{\LARGE TODO: {ANDREAS}}
-\begin{itemize}
-  \item Hvordan f\aa~til noe typesystem?
-  \item lagre false som ``false'' enn s\aa~lenge.. kjipt med /a/b[/a/b/c] hvis c er slik: <c>false</c>
-  \item Mars st\o tter ikke forskjellige typer innenfor samme felt
-  \item En sekvens er en sekvens i XQuery\ldots ikke en sekvens av booleans
-  eller noder etc
-  \item Et ekstra felt som sier type?
-  \item Hva skjer med /a/b/c/text() vs /a/b/c ?
-  \item hva skjer om man lager en <a> hei <b> jeje </b> </a> variabel? Dette
-  m\aa~kunne representeres.
-  \item Hvis vi hadde hatt statisk og sterk typing s\aa~ hadde mye v\ae rt
-  ordna, f.eks \verb!for $i as xs:int in (1,2,3) return /a[$i]! s\aa vet man
-  med en gang at \verb![$i]! er en ``numeric predicate''.
-  \item typeswitch / instance of / cast / castable / treat as
-  \item There is however also a need to represent explicitly stated XML-nodes, as well
-	as differentiate between the number \texttt{1} and the string \texttt{"1"}.
-	This, and other issues about representing XQuery types will be treated in
-	section \ref{sect:disc:typeSystem}.  
-\item Hva med \$i = (1,2,3) \$i/hatt -> typefeil? kj\o re isInScope(scope) p\aa~noe som ikke har scope kolonne?
-	\end{itemize}
-
-\section{XQuery Functions - {MADS}}
-\label{sect:disc:functions}
-\textbf{\LARGE TODO: {MADS}}
-\begin{itemize}
-  \item hvordan ordne XQuery funksjoner?
-  \item Tror det skal v\ae re lagt til rette for \aa~ha en \textsf{function(FUNCTIONNAME; operator(list?)} operator
-  \item 
-\end{itemize}
-
-\section{Optimisations - {MADS}}
-\label{sect:disc:optimisations}
-\textbf{\LARGE TODO: {MADS}}
-\begin{itemize}
-  \item Med bare \emph{EN} referanse til context item i predikat i path expressions kan hele symtab bajabajaz
-  droppes, og bare prune p\aa~scope\ldots
-  \item holde styr p\aa~scopes, bruke scope operatoren mer flittig = smaller relasjoner \aa~joine.
-  \item kanskje bruke den alt-fremover omskrivinga av pathexprs
-\end{itemize}
