@@ -34,9 +34,40 @@ term in the \textit{occurence} index:
   \item Position: The term position in the document (counted by terms, not
   characters or nodes)
   \item Scope: the context of the occurence, e.g \texttt{/a/b}. Note that the
-  scope also contains metadata about the \textit{instance} of the scope
+  scope also contains metadata about the \textit{instance} of the scope (this
+  is visualized such as this: \texttt{a[1].b[2]}, which reads as ``the first
+  instance of \texttt{a} and the second instance of \texttt{b}'')
 \end{itemize}
+Additionally, a \textit{Value} field can be added by combining the result set
+from an \textit{occurence} index with the equivalent result set from a \textit{value}
+index. Table \ref{table:method:mql:example_resultset} shows an example result
+set from a lookup in a hypothetical \textit{valocc} index.
 
+\begin{table}[!htp]
+\begin{center}
+
+\begin{tabular}{| c | c | c | c |}
+\hline
+\textit{DocumentID} & \textit{Position} & \textit{Scope} & \textit{Value} \\
+\hline
+1 & 7 & a[1].b[2] & \emph{c} \\ 
+\hline
+1 & 8 & a[1].b[2] & \emph{c} \\
+\hline
+1 & 10 & a[1].b[3] & \emph{c} \\ 
+\hline
+1 & 11 & a[1].b[3] & \emph{c} \\
+\hline
+\end{tabular}
+\caption{Example result set from a lookup in \textit{valocc}}
+\label{table:method:mql:example_resultset}
+\end{center}
+\end{table}
+
+The input for operators are result sets from child operators. The output from
+operators is a single result set. Note however that some operators, such as
+\texttt{index()} will modify the context for child operators. This feature is
+not documented, however it may be natural to assume that
 
 \subsection{Language syntax}
 The syntax of MQL (Mars Query Language) is, as mentioned above, reminiscent of
