@@ -18,6 +18,7 @@ typographical representations.
   \textbf{r(}$e$\textbf{)} 	& Returns the relational algebraic representation of $e$   \\
   \textbf{t(}\textbf{r(}$e$\textbf{)}\textbf{,}$\vartheta'$\textbf{)} & Returns \textbf{r(}$e$\textbf{)} tainted
   with the dependencies $\vartheta'$ \\
+  \textbf{B(r(}$e$\textbf{))} & Returns the effective boolean value of \textbf{r(}$e$\textbf{)}.
   
 \end{tabular}
 \caption{Explanation of inference rule symbols}
@@ -26,11 +27,11 @@ typographical representations.
 
 Inference rules are generally in this format:
 \begin{equation*}
-\frac{\mbox{\textbf{context}}\vdash condition}{e}\longmapsto \mbox{\textbf{r(}}e\mbox{\textbf{)}}
+\frac{condition}{e}\longmapsto \mbox{\textbf{r(}}e\mbox{\textbf{)}}
 \end{equation*}
 
-This should be read as: in the context of \textbf{context}, if condition $condition$ is satisfied, the XQuery
-expression $e$ will be translated into \textbf{r(}$e$\textbf{)}.
+This should be read as: if condition $condition$ is satisfied, the XQuery expression $e$ will be translated into
+\textbf{r(}$e$\textbf{)}.
 
 Often MQL operator trees are depicted like this:
 \begin{center}

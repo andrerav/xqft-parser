@@ -93,7 +93,7 @@ A general step expression, axis + name test, can be translated like this:
 \quad\quad 
 \mbox{\textsf{numberate(index, [index], [}}\vartheta\mbox{\textsf{];}} \\ \quad\quad\quad
 \mbox{\textsf{select(isFUNC(scope, lsc);}} \\ \quad \quad\quad\quad
-\mbox{\textsf{hhjoin([docId],[docId],}} \\ \quad\quad\quad\quad\quad\quad\quad
+\mbox{\textsf{hhjoin([docId],[docId],}}
 \mbox{\textsf{[lsc=l.scope,subIdx=r.index,r.value,}}\vartheta\mbox{\textsf{];}}\\
 \quad\quad\quad\quad\quad \mbox{\textbf{get(dot)}\textsf{;}} \\ \quad \quad\quad \quad\quad
 \mbox{\textsf{numberate(index, [], [];}}\\ \quad\quad\quad\quad\quad\quad
@@ -220,6 +220,7 @@ defines a scope which is the child scope (as defined by the MQL function \textsf
 \ref{fig:trans:TD:pathEx:joinSel}. The copy of the $index$ column is not shown.
 
 \begin{figure}[h]
+\centering
 \subfigure[]{
 \begin{tabular}{|c|c|c|c|c|} \hline
 $dNb$ & $idx$ & $val$ & $scope$ & $lsc$ \\ \hline
@@ -281,13 +282,13 @@ the / (step expression separator). As the predicate may remove items, renumberin
 \begin{array}{l}
 \mbox{\textsf{project(index, value = l.value, }}\vartheta\mbox{\textsf{;}} \\ \quad
 \mbox{\textsf{numberate(index, [index], [}}\vartheta\mbox{\textsf{];}} \\ \quad\quad
-\mbox{\textsf{select(ifthenelse(isNumber(pred),}} \\\quad\quad\quad\quad\quad
+\mbox{\textsf{select(ifthenelse(isNumber(pred),}}
 \mbox{\textsf{eq(index,pred), xqBoolean(pred));}} \\\quad\quad\quad
 \mbox{\textsf{hhjoin([}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [}}(e_2.\vartheta\cap e_1.\vartheta)\mbox{\textsf{],}} 
-\\ \quad\quad\quad \quad \quad \quad\mbox{\textsf{[l.value, pred=r.value, }}\vartheta\mbox{\textsf{];}}
+\mbox{\textsf{[l.value,pred,}}\vartheta\mbox{\textsf{];}}
 \\\quad\quad\quad\quad
  \mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{;}} \\\quad\quad\quad\quad
-\mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{)))}} \\
+\mbox{\textbf{B(r(}}e_2\mbox{\textbf{)}\textsf{))))}} \\
 \end{array}
 \label{rule:trans:TD:predicate}
 \end{equation}
@@ -313,13 +314,15 @@ However, if \textbf{dot} $\in e_1.\vartheta$, it will have to be stored in the f
 \mbox{\textbf{r(}}e_1\mbox{\textbf{)}\textsf{)}\textbf{)}}.
 \end{array} 
 \end{equation*}
-If $e_2$ is dependent on \textbf{sprDot}, the relations will be joined on \textbf{r(}$e_1$\textbf{).}$dotNumb$
-\textsf{=} \textbf{r(}$e_2$\textbf{).}$sprDotNumb$ (as opposed to \textbf{r(}$e_1$\textbf{).}$index$ \textsf{=}
-\textbf{r(}$e_2$\textbf{).}$sprDotNumb$ if it is not), as well as their common dependencies. In both cases,
-attributes not explicitly mentioned will follow $value$ and the $\vartheta$ piggybacking the tree stored in the
-symbol table will at least contain \textbf{dot} and \textbf{sprDot}. The reason why there is both a $sprDotNumb$
-and $dotNumb$ in the same relation is because $dotNumb$ may be updated if the predicate is a path expression (ref
-section \ref{sect:trans:TD:pathExprs}).
+In both cases, attributes not explicitly mentioned will follow $value$ and the $\vartheta$ piggybacking the tree
+stored in the symbol table will be $($\textbf{dot} $\cup$ \textbf{sprDot} $\cup$ $e_1.\vartheta)$. The reason why
+there is both a $sprDotNumb$ and $dotNumb$ in the same relation is because $dotNumb$ may be updated if the predicate is
+a path expression (ref section \ref{sect:trans:TD:pathExprs}).
+
+If $e_2$ is dependent on \textbf{sprDot} -- meaning the predicate utilises the context item -- the relations will
+be joined on \textbf{r(}$e_1$\textbf{).}$dotNumb$ \textsf{=} \textbf{r(}$e_2$\textbf{).}$sprDotNumb$ (as opposed
+to \textbf{r(}$e_1$\textbf{).}$index$ \textsf{=} \textbf{r(}$e_2$\textbf{).}$sprDotNumb$ if it is not), as well as
+their common dependencies.
 
 \begin{myExample}
 Consider the XQuery query of figure \ref{fig:trans:TD:predQu}. In this query the predicate expression is dependent
