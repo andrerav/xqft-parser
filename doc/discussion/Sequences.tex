@@ -71,14 +71,14 @@ follows\cite{w3cfuncOps}:
 The effective boolean value of a sequence is defined as the
 result returned from the XQuery function \texttt{fn:boolean} executed with the sequence as a operand:
 \begin{itemize}
-  \item If \$arg is the empty sequence, \texttt{fn:boolean} returns \textit{false}.
-  \item If \$arg is a sequence whose first item is a node, \texttt{fn:boolean} returns \textit{true}.
-  \item If \$arg is a singleton value of type \texttt{xs:boolean} or a derived from \texttt{xs:boolean},
+  \item If \texttt{\$arg} is the empty sequence, \texttt{fn:boolean} returns \textit{false}.
+  \item If \texttt{\$arg} is a sequence whose first item is a node, \texttt{fn:boolean} returns \textit{true}.
+  \item If \texttt{\$arg} is a singleton value of type \texttt{xs:boolean} or a derived from \texttt{xs:boolean},
   \texttt{fn:boolean} returns \$arg.
-  \item If \$arg is a singleton value of type \texttt{xs:string} or a type derived from \texttt{xs:string},
+  \item If \texttt{\$arg} is a singleton value of type \texttt{xs:string} or a type derived from \texttt{xs:string},
   \texttt{xs:anyURI} or a type derived from \texttt{xs:anyURI} or \texttt{xs:untypedAtomic}, \texttt{fn:boolean}
   returns \textit{false} if the operand value has zero length; otherwise it returns \textit{true}.
-  \item If \$arg is a singleton value of any numeric type or a type derived from a numeric type,
+  \item If \texttt{\$arg} is a singleton value of any numeric type or a type derived from a numeric type,
   \texttt{fn:boolean} returns \textit{false} if the operand value is \texttt{NaN} or is numerically equal to zero;
   otherwise it returns \textit{true}.
   \item In all other cases, \texttt{fn:boolean} raises a type error.
@@ -88,8 +88,7 @@ result returned from the XQuery function \texttt{fn:boolean} executed with the s
 
 \textbf{\LARGE TODO: {MADS}}
 \begin{itemize}
-\item VI M\AA~SJEKKE ATOMIZATION.
-\item Effective Boolean Value
+
 \item Kommer til \aa~bli feil n\aa r en sekvens blir brukt som boolean value n\aa~s\aa fremt vi ikke kan groupe\ldots
 \item En evt groupingoperator m\aa~slippe igjennom tall\ldots. Evt select index=1, m\aa~se om (1,2,3) er bogus
 \item The translator is in the logical context, $\Lambda$, if the AST node it is currently visiting is a successor
@@ -101,7 +100,6 @@ context is assumed.
 \item hva med path expressions med ikketreff?
 \end{itemize}
 
-\textbf{\LARGE TODO: {MADS}}
 \begin{itemize} 
    \item In some cases, a processor can determine the result of an expression without accessing all the data that
    would be implied by the formal expression semantics. For example, the formal description of filter expressions
