@@ -5,18 +5,18 @@ node [shape=plaintext]
 project123->make123
 make123 [label="make(name:=[index, value], [1,2,3], [1,2,3])"]
 //make2 [label="make(name:=[index, value],[1], [2])"]
-project123 [label="project([index = 1, anumb = index, value]; .."]
+project123 [label="project([index = 1, anumb = index, value];"]
 
-project1 [label="project(index, value=lvalue; .."]
-project2 [label="project(anumb, alt = 1, value; .."]
-project3 [label="project(anumb, alt = 2, value=3; .."]
-project4 [label="project(index=1, anumb, value=gt(value, 2); .."]
+project1 [label="project(index, value=lvalue;"]
+project2 [label="project(anumb, alt = 1, value;"]
+project3 [label="project(anumb, alt = 2, value=3;"]
+project4 [label="project(index=1, anumb, value=gt(value, 2);"]
 
-select1 [label="select(ifthenelse(xqBoolean(lvalue), eq(alt,1), eq(alt,2)); .."]
+select1 [label="select(ifthenelse(xqBoolean(lvalue), eq(alt,1), eq(alt,2));"]
 
-hhjoin1 [label="hhjoin([l.anumb],[r.anumb], [anumb, lvalue = l.value, rvalue = r.value]; .."]
+hhjoin1 [label="hhjoin([l.anumb],[r.anumb], [anumb, lvalue = l.value, rvalue = r.value];"]
 
-union1 [label="union(; .."]
+union1 [label="union(;"]
 
 project1->select1
   select1->hhjoin1

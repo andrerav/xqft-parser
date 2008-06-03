@@ -188,8 +188,8 @@ equi-join will have to be replaced by a cartesian product, as discussed in \ref{
 \mbox{\textsf{hhjoin([}}(e_{C}.\vartheta \cap e_2.\vartheta)\mbox{\textsf{], [}}(e_{2}.\vartheta \cap
 e_{C}.\vartheta)\mbox{\textsf{], [l.value, }} \vartheta\mbox{\textsf{];}} \\ \quad
 \mbox{\textbf{r(}}e_{C}\mbox{\textbf{)\textsf{;}}} \\ \quad
-\mbox{\textsf{select(xqBoolean(value);}} \\ \quad \quad
-\mbox{\textbf{r(}}e_{2}\mbox{\textbf{)}\textsf{))}}
+\mbox{\textsf{select(xqBoolean(pred);}} \\ \quad \quad
+\mbox{\textbf{B(r(}}e_{2}\mbox{\textbf{)}\textsf{)))}}
 \end{array}
 \label{rule:trans:TD:where}
 \end{equation}
@@ -303,7 +303,7 @@ dependencies. Lastly, this relation is renumbered according to the order of the 
 \mbox{\textsf{numberate(index, [r.value, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad \quad
 \mbox{\textsf{hhjoin([}}(e_{C}.\vartheta \cap e_2.\vartheta)\mbox{\textsf{], [}}(e_{2}.\vartheta \cap
 e_{C}.\vartheta)\mbox{\textsf{],}} 
-\\ \quad \quad \quad \quad \quad\mbox{\textsf{[l.value, r.value, }} \vartheta\mbox{\textsf{];}} \\ \quad \quad
+\mbox{\textsf{[l.value, r.value, }} \vartheta\mbox{\textsf{];}} \\ \quad \quad
 \quad \mbox{\textbf{t(r(}}e_C\mbox{\textbf{), }}\beta\mbox{\textbf{)}\textsf{;}} \\ \quad \quad \quad
 \mbox{\textbf{r(}}e_3\mbox{\textbf{)}\textsf{)))}}
 \end{array}
@@ -338,6 +338,7 @@ expression, as shown in figure \ref{fig:trans:TD:ord:numb}. An additional projec
 is needed to finalise the query.
 
 \begin{figure}[h]
+\centering
 \subfigure[\textbf{r(}\texttt{\$a mod 3}\textbf{)}]{
 \begin{tabular}{|c|c|c|} \hline
 $idx$ & $anb$ & $val$ \\ \hline

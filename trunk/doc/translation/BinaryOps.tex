@@ -32,7 +32,7 @@ sequences.
 \mbox{\textsf{project(index=1,value=FUNC(l.value,r.value),}}\vartheta\mbox{\textsf{;}} \\ \quad
 \mbox{\textsf{hhjoin([}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [}}(e_2.\vartheta\cap e_1.\vartheta)
 \mbox{\textsf{],}} 
-\\ \quad \quad \quad \quad\mbox{\textsf{[r.value, l.value, }}\vartheta\mbox{\textsf{];}} \\ \quad \quad
+\mbox{\textsf{[r.value, l.value, }}\vartheta\mbox{\textsf{];}} \\ \quad \quad
 \mbox{\textbf{r(}}e_1\mbox{\textbf{)}} \\ \quad \quad
 \mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{))}}
 \end{array}
@@ -131,11 +131,24 @@ expression does not raise an error, its value is always one of the boolean value
 
 A logical expression is translated in a matter very similar to the arithmetic expressions. The XQuery logical
 operators does however operate on the effective boolean value (see section \ref{sect:theory:xquery:basics}) rather
-than the direct value. Rule \ref{rule:trans:TD:arithmetic} is valid for logical expressions, and the mapping
-between the XQuery operators and the MQL functions are shown in table \ref{tab:trans:TD:logMap}. As the operators
-require effective boolean values, the $value$ fields will have to be run through the \textsf{xqBoolean()}
-function. E.g. the following will be a part of the parameters of the \textsf{project} operator of a translated
-\texttt{or} expression: \textsf{\ldots value = or(xqBoolean(l.value),xqBoolean(r.value))\ldots}.
+than the direct value. As the operators require boolean values, and the effective boolean function \textbf{B()}
+may return a number, the $pred$ fields will have to be run through the \textsf{xqBoolean()} function.
+
+\begin{equation}
+\frac{}{e_1 \mbox{\texttt{ OP }} e_2}\longmapsto
+\begin{array}{l}
+\mbox{\textsf{project(index=1,value=FUNC(xqBoolean(l.pred),xqBoolean(r.pred)),}}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textsf{hhjoin([}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [}}(e_2.\vartheta\cap e_1.\vartheta)
+\mbox{\textsf{],}} 
+\\ \quad \quad \quad \quad\mbox{\textsf{[r.pred, l.pred, }}\vartheta\mbox{\textsf{];}} \\ \quad \quad
+\mbox{\textbf{B(r(}}e_1\mbox{\textbf{))}} \\ \quad \quad
+\mbox{\textbf{B(r(}}e_2\mbox{\textbf{)}\textsf{)))}}
+\end{array}
+\label{rule:trans:TD:andOr}
+\end{equation}
+
+Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$, \texttt{OP} will map to a MQL function replacing
+\textsf{FUNC} as shown in table \ref{tab:trans:TD:logMap}. 
 
 \begin{table}[h]
 \centering
@@ -218,7 +231,7 @@ dependencies to ensure that both values are from the same iteration.
 \mbox{\textsf{project(value=FUNC(l.value,r.value),}}\vartheta\mbox{\textsf{;}} \\ \quad \quad \quad
 \mbox{\textsf{hhjoin([}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [}}(e_2.\vartheta\cap e_1.\vartheta)
 \mbox{\textsf{],}} 
-\\ \quad \quad \quad \quad \quad \quad\mbox{\textsf{[l.value, r.value, }}\vartheta\mbox{\textsf{];}} \\ \quad \quad
+\mbox{\textsf{[l.value, r.value, }}\vartheta\mbox{\textsf{];}} \\ \quad \quad
 \quad \quad \quad \mbox{\textbf{r(}}e_1\mbox{\textbf{)}} \\ \quad \quad \quad \quad \quad
 \mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{))))}}
 \end{array}

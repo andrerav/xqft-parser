@@ -192,8 +192,7 @@ tainting process is carried out by calculating the cartesian product of $e_{2}$ 
 \texttt{\$}$\chi_{1}$ stored in the symbol table.
 
 More generally, for an sequence constructing expression $e$, \texttt{(}$e_{1}$\texttt{, \ldots, }$e_{n}$\texttt{)},
-tainting of an subexpression $e_{i}$ can be expressed like this: \marginpar{\underline{\textbf{\Large TODO:}}
-\scriptsize noe \aa~utsette p\aa~bruken av $\Pi$ ?}
+tainting of an subexpression $e_{i}$ can be expressed like this: 
 \begin{center}
 \begin{equation}
 \begin{array}{l}
@@ -214,9 +213,12 @@ Consider an XQuery expression consisting of nested iterators $I_{\chi_1},\ldots,
 ($1<j<n$) occurs within the iterator body of $I_{\chi_{j-1}}$. As per XQuery semantics, the iterator body of a
 iterator $I_{\chi_j}$ is evaluated once for each of the items in the iterator sequence of $I_{\chi_j}$. And because
 of the nesting, $I_{\chi_j}$ will have to be evaluated once per item in the iterator sequence of $I_{\chi_{j-1}}$.
-The consequence of this is that the body of $I_{\chi_j}$ is actually evaluated in $card(I_{\chi_j}) \times
-card(I_{\chi_{j-1}})$ unique iterations. Where $card(I_{\chi})$ is a function returning the cardinality of the
-iterator sequence of $I_{\chi}$.
+The consequence of this is that the number of unique iterations the body of $I_{\chi_j}$ is actually evaluated can
+be expressed like this: 
+\begin{equation*}
+\mbox{\textit{unique iterations evaluated for body of}}I_{\chi_j}=\displaystyle \prod_{i=1}^{j}card(I_{\chi_i})
+\end{equation*}  
+Where $card(I_{\chi})$ is a function returning the cardinality of the iterator sequence of $I_{\chi}$.
 
 Of these nested iterators, a subexpression $e$ is dependent on the subset
 $\left\{I_{\chi_k},I_{\chi_l}\right\}$. Because of dependency tainting and inheritance, the relational
@@ -257,6 +259,15 @@ like this:
 
 The dependencies $e.\vartheta$ is described by equation \ref{eq:trans:TD:depInheritance}. If $e_{1}.\vartheta \neq
 e_{2}.\vartheta$ each subexpression will be implicitly tainted by the other's unique dependencies.
+
+How the effective boolean function \textbf{B(r(}$e$\textbf{))} works will be discussed in section
+\ref{sect:disc:effBool}. In this chapter is sufficient to consider it as a grouping operator, grouping on the
+attributes specified by $e.\vartheta$ (i.e. all known unique iterations). For each group it will produce a field
+$pred$ representing the effective boolean value of $e$ in that unique iteration. If $e$ holds a singleton numeric
+value in one group $pred$ will hold this value, in all other cases it will hold a boolean value. The result
+relation of the function will in addition to the $pred$-attribute contain all the attributes implied by
+$e.\vartheta$. The main reason this function is introduced at all is that it ensures that a incomming relation
+will have \emph{exactly one} tuple per unique iteration.
 
 \subsection{Litterals}
 \label{sect:trans:TD:litteral}

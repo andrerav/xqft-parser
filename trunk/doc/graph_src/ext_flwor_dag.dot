@@ -6,25 +6,25 @@ node [shape=plaintext]
 project123->make123;
 make123 [label="make(name:=[index, value], [1,2,3], [1,2,3])"];
 //make2 [label="make(name:=[index, value],[1],[2])"];
-project123 [label="project([index = 1, anumb = index, value]; .."];
-//project2 [label="project([index = 2, anumb = index, value]; .."];
+project123 [label="project([index = 1, anumb = index, value];"];
+//project2 [label="project([index = 2, anumb = index, value];"];
 //project2->make2;
 
 
 // Ordinary nodes
-project1 [label="project(index, anumb, value=l.value; .."];
-numberate1 [label="numberate(index, [r.value, index], [anumb]; .."];
-hhjoin1 [label="hhjoin([l.anumb], [r.anumb], [anumb, l.value, r.value]; .., .."];
-//hhjoin2 [label="hhjoin([],[], [l.value, anumb]; .."];
+project1 [label="project(index, anumb, value=l.value;"];
+numberate1 [label="numberate(index, [r.value, index], [anumb];"];
+hhjoin1 [label="hhjoin([l.anumb], [r.anumb], [anumb, l.value, r.value];"];
+//hhjoin2 [label="hhjoin([],[], [l.value, anumb];"];
 
-select1 [label="select(xqBoolean(value); .."];
-project5 [label="project(index=1,value=gt(l.value, r.value), anumb; .."];
-//hhjoin4 [label=" hhjoin([], [], [l.value, r.value, anumb]; ..,.."];
+select1 [label="select(xqBoolean(value);"];
+project5 [label="project(index=1,value=gt(l.value, r.value), anumb;"];
+//hhjoin4 [label=" hhjoin([], [], [l.value, r.value, anumb];"];
 
-project_compact [label="project([index = 2, anumb, value = 2]; .."]
+project_compact [label="project([index = 2, anumb, value = 2];"]
 
 //union1 [label="union(; , ,"]
-//numberate2 [label="numberate(index,[sprIdx,index],[]; .."]
+//numberate2 [label="numberate(index,[sprIdx,index],[];"]
 
 project1->numberate1
   numberate1->hhjoin1
