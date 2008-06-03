@@ -1,0 +1,29 @@
+\section{SingelT0n vs sequence Ye - {MADS}}
+\label{sect:disc:singelton}
+\textbf{\LARGE TODO: {MADS}}
+\begin{itemize}
+   \item (1,2) + 3 kan oppdages som feil ved at man merker iteratorvariable, atomiske og sekvenser + 
+   \item at man synes det er flott for optimalisering av sequencebygging 
+   \item order by (1,2) kan ogs\aa~oppdages. 
+   \item In some cases, a processor can determine the result of an expression without accessing all the data that
+   would be implied by the formal expression semantics. For example, the formal description of filter expressions
+   suggests that \$s[1] should be evaluated by examining all the items in sequence \$s, and selecting all those
+   that satisfy the predicate position()=1.
+\end{itemize}
+
+
+\subsection{Effective Boolean Value - {MADS}}
+\label{sect:disc:effBool}
+\textbf{\LARGE TODO: {MADS}}
+\begin{itemize}
+\item VI M\AA~SJEKKE ATOMIZATION.
+\item Effective Boolean Value
+\item Kommer til \aa~bli feil n\aa r en sekvens blir brukt som boolean value n\aa~s\aa fremt vi ikke kan groupe\ldots
+\item En evt groupingoperator m\aa~slippe igjennom tall\ldots. Evt select index=1, m\aa~se om (1,2,3) er bogus
+\item The translator is in the logical context, $\Lambda$, if the AST node it is currently visiting is a successor
+of a boolean operator or within the condition part of an \texttt{if..then..else} expression. In all other cases the
+translator is in the default context, $\Delta$. If no context is mentioned in the inference rules the default
+context is assumed. 
+\item test expr i if
+\item barna til and og or
+\end{itemize}

@@ -9,22 +9,32 @@ slik i mars enn\aa~kan foresl\aa~det med parametere til lookup evt contextting a
   	\begin{itemize}
   		\item proximity (kanskje l\o sbar)
   		\item declare variable er nesten st\o tta\ldots men external og greier..
-  		\item typeswitch? kan bli stress.. har ikke s\aa~mye typer enn\aa \ldots skal v\ae re diskusjon om typer i
-  		sect \ref{sect:disc:typeSystem}\ldots
   		\item function declarations, b\o r g\aa~greit, bare ha en function table ala symbol table.
   		\item schema / schema validation -> typeting? Hvordan l\o ser pathfinder dette\ldots synes \aa~ha sett noe om
   		det\ldots
   		\item namespacezz\ldots.
   		\item node comparisons\ldots\ldots tviler p\aa~at vi f\aa r til dette glatt\ldots
-  		\item constructors\ldots element, CDATA, attribute etc etc
   		\item order by med alle ting..
   		\item ordered and unordered -> lurer p\aa om (markXremove + tainting = TD uten $index$ og
   		\textsf{numberate()}) fikser dette ganske bra\ldots
+  		\begin{itemize}
+			\item MarkXRemove funker bra i unordered m0de tror jeg\ldots. Den er ogs\a~normalisert ref purely relational
+			flwors, som sier LL er denormalisert. (bare normalisert innenfor en flwor.. den unormaliserer seg n\aa r den
+			g\aa r ut av l\o kka (cross /m const))
+			\item Order/unorder kan dra nytte av kontekstsensitive visitors\ldots\ldots
+		\end{itemize}
   		\item \textbar, \texttt{union}, \texttt{intersect, except}
   		\item Range expressions $e_1$ \texttt{to} $e_2$ (begge m\aa~v\ae re integer tror jeg -> skrive om det i type?)
   		\item sequencetype\ldots
   		\item Prologs and modules
   		\item Quantified Expression: (some | every) \$b in $e_1$ satisfies $e_2$
-  		\item noder i sekvenser i and/or expressions.. N\aa~takler den ikke sekvenser i det heletatt.
   		\end{itemize}
 	\end{itemize}
+
+\section{Order By - {MADS}}
+\label{sect:disc:orderby}
+\textbf{\LARGE TODO: {MADS}}
+\begin{itemize}
+  \item st\o tte alle de sorteringsspesifiseringene.. st\o tte sortering over flere exprz.
+\end{itemize}
+	
