@@ -1,7 +1,8 @@
 \section{FLWOR Expressions}
 \label{sect:trans:TD:simpleFLWOR}
 The \texttt{let} clause does not explicitly cause any dependencies, only variable binding, and can therefore be
-translated into storing the algebraic version of the expression to be bound in the symbol table:
+translated into storing the algebraic version of the expression to be bound in
+the symbol table (see section \ref{sect:trans:TD:basics}):
 \begin{equation}
 \frac{}{\mbox{\texttt{let \$}}\chi \mbox{\texttt{ := }}e \mbox{\texttt{ \ldots}}}\longmapsto
 \mbox{\textbf{put(}}\chi\mbox{\textbf{, r(}}e\mbox{\textbf{))}}
