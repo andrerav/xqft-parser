@@ -11,7 +11,8 @@ previous scope, if any, is set as parent of the new scope, and the previous
 scope maintains a list of child scopes. A reference to the root scope node is
 maintained. Considering the example XQuery query in figure
 \ref{fig:impl:scope_tree_ex_code}, the scope tree in figure
-\ref{fig:impl:scope_tree_ex} is generated.
+\ref{fig:impl:scope_tree_ex} is generated. The scope itself contains \emph{one}
+symbol table for the current scope.
 
 \begin{figure}[!htp]
 \begin{center}
@@ -27,9 +28,9 @@ for $i in (1,2,3) return
 
 \begin{figure}[!htp]
 \begin{center}
-  \includegraphics[scale=0.5]{diagrams/scope_tree_ex}
+  \includegraphics[width=0.2\textwidth]{diagrams/scope_tree_ex}
   \caption{Scope tree for source code in figure
-  \ref{fig:impl:scope_tree_ex_code}}
+  \ref{fig:impl:scope_tree_ex_code}} 
   \label{fig:impl:scope_tree_ex}
 \end{center}
 \end{figure}
@@ -49,7 +50,7 @@ user of the scope system is shown in figure \ref{fig:impl:scope_uml}.
 
 \begin{figure}[!htp]
 \begin{center}
-  \includegraphics[scale=0.5]{diagrams/scope_uml}
+  \includegraphics[width=0.7\textwidth]{diagrams/scope_uml}
   \caption{Scope API}
   \label{fig:impl:scope_uml}
 \end{center}
