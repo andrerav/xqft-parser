@@ -6,4 +6,26 @@
   droppes, og bare prune p\aa~scope\ldots
   \item holde styr p\aa~scopes, bruke scope operatoren mer flittig = smaller relasjoner \aa~joine.
   \item kanskje bruke den alt-fremover omskrivinga av pathexprs
+  \item pushe projects sammen ex: pathgreia i resultatkap. (sikkert allerede gjort i Mars) Fjerne attributter som
+  aldri blir lest, og ikke er en del av resultatet\ldots
 \end{itemize}
+
+fra 2.3.4 snakk om tilstrekkelig kunnskap til \aa~ evaluere expr:
+\begin{quote}
+These rules apply to all the operands of an expression considered in combination: thus if an expression has two
+operands E1 and E2, it may be evaluated using any samples of the respective sequences that satisfy the above rules.
+
+The rules cascade: if A is an operand of B and B is an operand of C, then the processor needs to evaluate only a
+sufficient sample of B to determine the value of C, and needs to evaluate only a sufficient sample of A to
+determine this sample of B.
+
+The effect of these rules is that the processor is free to stop examining further items in a sequence as soon as
+it can establish that further items would not affect the result except possibly by causing an error. For example,
+the processor may return true as the result of the expression S1 = S2 as soon as it finds a pair of equal values
+from the two sequences.
+
+Another consequence of these rules is that where none of the items in a sequence contributes to the result of an
+expression, the processor is not obliged to evaluate any part of the sequence. Again, however, the processor
+cannot dispense with a required cardinality check: if an empty sequence is not permitted in the relevant context,
+then the processor must ensure that the operand is not an empty sequence.
+\end{quote}
