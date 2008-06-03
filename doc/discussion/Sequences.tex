@@ -58,20 +58,30 @@ singleton.
 
 \subsection{Effective Boolean Value - {MADS}}
 \label{sect:disc:effBool}
+Under certain circumstances it is necessary to find the effective boolean value of a sequence. The effective
+boolean value is by W3C defined as follows\cite{w3c00}: 
+\begin{quote}
+The effective boolean value of a value is defined as the result of applying the \texttt{fn:boolean} function to
+the value.
+\end{quote}
 
-The effective boolean value of a sequence is defined as the result returned from the XQuery function
-\texttt{fn:boolean} executed with the sequence as a operand:
+Where the dynamic semantics of \texttt{fn:boolean(\$arg as item()*) as xs:boolean} are defined as
+follows\cite{w3cfuncOps}:
+
+The effective boolean value of a sequence is defined as the
+result returned from the XQuery function \texttt{fn:boolean} executed with the sequence as a operand:
 \begin{itemize}
-  \item If its operand is an empty sequence, \texttt{fn:boolean} returns $false$.
-  \item If its operand is a sequence whose first item is a node, \texttt{fn:boolean} returns $true$.
-  \item If its operand is a singleton value of type \texttt{xs:boolean} or derived from \texttt{xs:boolean},
-  \texttt{fn:boolean} returns the value of its operand unchanged.
-  \item If its operand is a singleton value of type \texttt{xs:string}, \texttt{xs:anyURI},
-  \texttt{xs:untypedAtomic}, or a type derived from one of these, \texttt{fn:boolean} returns $false$ if the
-  operand value has zero length; otherwise it returns $true$.
-  \item If its operand is a singleton value of any numeric type or derived from a numeric type,
-  \texttt{fn:boolean} returns $false$ if the operand value is \texttt{NaN} or is numerically equal to zero;
-  otherwise it returns $true$.
+  \item If \$arg is the empty sequence, \texttt{fn:boolean} returns \textit{false}.
+  \item If \$arg is a sequence whose first item is a node, \texttt{fn:boolean} returns \textit{true}.
+  \item If \$arg is a singleton value of type \texttt{xs:boolean} or a derived from \texttt{xs:boolean},
+  \texttt{fn:boolean} returns \$arg.
+  \item If \$arg is a singleton value of type \texttt{xs:string} or a type derived from \texttt{xs:string},
+  \texttt{xs:anyURI} or a type derived from \texttt{xs:anyURI} or \texttt{xs:untypedAtomic}, \texttt{fn:boolean}
+  returns \textit{false} if the operand value has zero length; otherwise it returns \textit{true}.
+  \item If \$arg is a singleton value of any numeric type or a type derived from a numeric type,
+  \texttt{fn:boolean} returns \textit{false} if the operand value is \texttt{NaN} or is numerically equal to zero;
+  otherwise it returns \textit{true}.
+  \item In all other cases, \texttt{fn:boolean} raises a type error.
 \end{itemize}
 
 
@@ -88,6 +98,7 @@ translator is in the default context, $\Delta$. If no context is mentioned in th
 context is assumed. 
 \item test expr i if
 \item barna til and og or
+\item hva med path expressions med ikketreff?
 \end{itemize}
 
 \textbf{\LARGE TODO: {MADS}}
