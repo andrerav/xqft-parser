@@ -1,5 +1,42 @@
 \section{XQuery Sequences - {MADS}}
 \label{sect:disc:singelton}
+
+There is no distinction between an item, that is, a node or an atomic value, and a singleton sequence containing
+that item in XQuery. An item is equivalent to a singleton sequence containing that item and vice versa. A sequence
+may contain nodes, atomic values, or any mixture of nodes and atomic values. But it may be advantageous for a
+translator to differentiate singleton sequences from other sequences. 
+
+As we saw in section \ref{sect:trans:TD:simplifications}, by knowing that all subexpressions return singleton
+sequences, the translation of the sequence construction expression may be simplified. If the \texttt{return}
+clause expression is a singleton sequence the translation of iterator ordered FLWOR expressions may also be
+simplified. If the FLWOR only contains only one iterator and no \texttt{where}-clause the renumbering can be
+replaced by a renaming of the $-numb$ field corresponding to the iterator to $index$. Understanding that this
+works can be done by considering the rule for translation of iterator ordering (rule \ref{rule:trans:TD:itOrd}).
+As the \texttt{return}-clause is a singleton, the $index$ fields will have the constant value 1. $\beta$ will
+contain only one $-numb$ attribute, holding information of which iteration the value in $value$ occurs. The
+iteration number will then become the $index$ field of the sequence created by the FLWOR.
+
+Some expressions, such as arithmetic expressions, \texttt{order by} expressions and value comparisons, require
+their subexpressions or operands to be singleton sequences. This means that a query such as \texttt{(1, 2) + 3}
+will raise a type error. By having the knowledge of the cardinality of the sequence returned to such an
+expression, the translator may raise the error, and avoid a faulty query being run on the MQL processor.
+Evaluating the cardinality of seqences returned from expressions is in many cases a simple task. Some expressions
+will always return singletons, such as logical, comparison and aritmetic expressions, iterator variable references
+and litterals. The cardinality of sequences constructed of such expressions may also be calculated in the
+translator. A proplem arises, however, when dynamic content (not from the query itself) is included. Consider the
+following query:
+
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$a in doc("persons.xml")//person/} \\
+\texttt{order by \$a/surname} \\
+\texttt{return \$a}
+\end{tabular}
+\end{center}
+
+As previously stated, the \texttt{order by} expression only accepts singletons. If the document contains a
+\texttt{person} element containing two \texttt{surename} elements the query should fail. The translator does
+however not have the ability to evaluate if a type error should be raised or not.
 \textbf{\LARGE TODO: {MADS}}
 \begin{itemize}
    \item (1,2) + 3 kan oppdages som feil ved at man merker iteratorvariable, atomiske og sekvenser + 
@@ -28,6 +65,16 @@ is not allowed to decide, after evaluating the first item in the value of \$e an
 only possible outcomes are the value true or a type error caused by the cardinality violation. It must establish
 that the value of \$e contains no more than one item.
 \end{quote}
+
+\begin{quotation}
+An important characteristic of the data model is that there is no distinction between an item (a node or an atomic
+value) and a singleton sequence containing that item. An item is equivalent to a singleton sequence containing
+that item and vice versa.
+
+A sequence may contain nodes, atomic values, or any mixture of nodes and atomic values. When a node is added to a
+sequence its identity remains the same. Consequently a node may occur in more than one sequence and a sequence may
+contain duplicate items.
+\end{quotation}
 
 \subsection{Effective Boolean Value - {MADS}}
 \label{sect:disc:effBool}
