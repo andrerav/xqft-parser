@@ -1,4 +1,4 @@
-\section{XQuery Sequences - {MADS}}
+\section{XQuery Sequences}
 \label{sect:disc:singelton}
 
 There is no distinction between an item, that is, a node or an atomic value, and a singleton sequence containing
@@ -36,12 +36,62 @@ following query:
 
 As previously stated, the \texttt{order by} expression only accepts singletons. If the document contains a
 \texttt{person} element containing two \texttt{surename} elements the query should fail. The translator does
-however not have the ability to evaluate if a type error should be raised or not.
+however not have the ability to evaluate if a type error should be raised or not. The query stated will, without a
+check for multiple \texttt{surname} elements per \texttt{person}, result in a sequence where the \texttt{person}
+elements containing more than one \texttt{surname} element will occur more than one time. 
+
+The promblem lies in the fact that the query is not a erroneous MQL query, but a erroneous XQuery query. One
+solution would be to implement a check in MQL, which would inform the MQL processor of any potential error. This
+can be done e.g. by a MQL function \textsf{raiseError()}, which would abort the evaluation of the query and e.g.
+throw an exception. As all items in the relational representation of sequences in Tainted Dependencies are marked
+with their position within the sequence with the $index$ field. One way to check if an expression $e$ does not
+return a singleton sequence can be the following:
+\begin{center}
+\begin{tabular}{l}
+\textsf{select(ifthenelse(eq(index, 1), true, raiseError());} \\ \quad
+\textbf{r(}$e$\textbf{)}\textsf{)}
+\end{tabular}
+\end{center}
+
+The check may of course be omitted if the translator is sure, by the means discussed earlier, $e$ will return a
+singleton.
+
+\subsection{Effective Boolean Value - {MADS}}
+\label{sect:disc:effBool}
+
+The effective boolean value of a sequence is defined as the result returned from the XQuery function
+\texttt{fn:boolean} executed with the sequence as a operand:
+\begin{itemize}
+  \item If its operand is an empty sequence, \texttt{fn:boolean} returns $false$.
+  \item If its operand is a sequence whose first item is a node, \texttt{fn:boolean} returns $true$.
+  \item If its operand is a singleton value of type \texttt{xs:boolean} or derived from \texttt{xs:boolean},
+  \texttt{fn:boolean} returns the value of its operand unchanged.
+  \item If its operand is a singleton value of type \texttt{xs:string}, \texttt{xs:anyURI},
+  \texttt{xs:untypedAtomic}, or a type derived from one of these, \texttt{fn:boolean} returns $false$ if the
+  operand value has zero length; otherwise it returns $true$.
+  \item If its operand is a singleton value of any numeric type or derived from a numeric type,
+  \texttt{fn:boolean} returns $false$ if the operand value is \texttt{NaN} or is numerically equal to zero;
+  otherwise it returns $true$.
+\end{itemize}
+
+
+
 \textbf{\LARGE TODO: {MADS}}
 \begin{itemize}
-   \item (1,2) + 3 kan oppdages som feil ved at man merker iteratorvariable, atomiske og sekvenser + 
-   \item at man synes det er flott for optimalisering av sequencebygging 
-   \item order by (1,2) kan ogs\aa~oppdages. 
+\item VI M\AA~SJEKKE ATOMIZATION.
+\item Effective Boolean Value
+\item Kommer til \aa~bli feil n\aa r en sekvens blir brukt som boolean value n\aa~s\aa fremt vi ikke kan groupe\ldots
+\item En evt groupingoperator m\aa~slippe igjennom tall\ldots. Evt select index=1, m\aa~se om (1,2,3) er bogus
+\item The translator is in the logical context, $\Lambda$, if the AST node it is currently visiting is a successor
+of a boolean operator or within the condition part of an \texttt{if..then..else} expression. In all other cases the
+translator is in the default context, $\Delta$. If no context is mentioned in the inference rules the default
+context is assumed. 
+\item test expr i if
+\item barna til and og or
+\end{itemize}
+
+\textbf{\LARGE TODO: {MADS}}
+\begin{itemize} 
    \item In some cases, a processor can determine the result of an expression without accessing all the data that
    would be implied by the formal expression semantics. For example, the formal description of filter expressions
    suggests that \$s[1] should be evaluated by examining all the items in sequence \$s, and selecting all those
@@ -65,29 +115,3 @@ is not allowed to decide, after evaluating the first item in the value of \$e an
 only possible outcomes are the value true or a type error caused by the cardinality violation. It must establish
 that the value of \$e contains no more than one item.
 \end{quote}
-
-\begin{quotation}
-An important characteristic of the data model is that there is no distinction between an item (a node or an atomic
-value) and a singleton sequence containing that item. An item is equivalent to a singleton sequence containing
-that item and vice versa.
-
-A sequence may contain nodes, atomic values, or any mixture of nodes and atomic values. When a node is added to a
-sequence its identity remains the same. Consequently a node may occur in more than one sequence and a sequence may
-contain duplicate items.
-\end{quotation}
-
-\subsection{Effective Boolean Value - {MADS}}
-\label{sect:disc:effBool}
-\textbf{\LARGE TODO: {MADS}}
-\begin{itemize}
-\item VI M\AA~SJEKKE ATOMIZATION.
-\item Effective Boolean Value
-\item Kommer til \aa~bli feil n\aa r en sekvens blir brukt som boolean value n\aa~s\aa fremt vi ikke kan groupe\ldots
-\item En evt groupingoperator m\aa~slippe igjennom tall\ldots. Evt select index=1, m\aa~se om (1,2,3) er bogus
-\item The translator is in the logical context, $\Lambda$, if the AST node it is currently visiting is a successor
-of a boolean operator or within the condition part of an \texttt{if..then..else} expression. In all other cases the
-translator is in the default context, $\Delta$. If no context is mentioned in the inference rules the default
-context is assumed. 
-\item test expr i if
-\item barna til and og or
-\end{itemize}
