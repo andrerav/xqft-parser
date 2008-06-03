@@ -260,7 +260,7 @@ public abstract class Operator {
     		this.node_label = this.name + "(" + this.paramsToString() + ")";    		
     	}
     	else {
-        	this.node_label = this.name + "(" + this.paramsToString() + "; ..";    		
+        	this.node_label = this.name + "(" + this.paramsToString() + ";";    		
     	}
     	
     	StringBuffer buffer = new StringBuffer();

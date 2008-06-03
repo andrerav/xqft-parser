@@ -121,12 +121,23 @@ operator contains all occurences of the given term, if any. This operator will
 use the last index specified by the \texttt{index()} operator, otherwise the
 default index. See figure \ref{figure:mql:op_example} for an example of usage. 
 
+\begin{description}
+  \item[Input] none (parameters only)
+  \item[Output] result set with occurences and/or values, depending on index
+(see section \ref{sect:method:mql:indexes} above)
+\end{description}
+
 \subsubsection{Scope}
 \label{sect:method:marsOperators:scope}
 The \texttt{scope()} operator accepts one parameter and one child operator. Informally, the
-result set from the child operator is filtered to match the first parameter, which is a
-scope given on a form similar to a XPath expression. See figure
-\ref{figure:mql:op_example} for an example of usage.
+result set from the child operator is filtered to match the given scope. See
+figure \ref{figure:mql:op_example} for an example of usage.
+
+\begin{description}
+  \item[Input] a scope string (i.e \texttt{/a/b}), and a result set from the
+child operator which will be filtered for the given scope string
+  \item[Output] a filtered result set with matches only within the given scope
+\end{description}
 
 \subsubsection{Index}
 \label{sect:method:marsOperators:index}
@@ -134,6 +145,11 @@ This operator modifies the behaviour of the child operator such that any lookup
 will use the specified index. See figure \ref{figure:mql:op_example} for an
 example of usage where the child operators will operate on the index
 \textit{valocc}.
+
+\begin{description}
+  \item[Input] result set from child operator
+  \item[Output] result set from child operator
+\end{description}
 
 \subsubsection{Project}
 \label{sect:method:marsOperators:project}
@@ -206,6 +222,11 @@ $id$ & $cid$ & $one$ \\ \hline
 \label{figure:mql:project_example2_result}
 \end{figure}
 
+\begin{description}
+  \item[Input] projection parameters, and a result set from child operator
+  \item[Output] projection of result set on the given parameters
+\end{description}
+
 \subsubsection{Select}
 The \texttt{select()} operator filters tuples from the child operator based on
 boolean function predicates. Consider the example in figure
@@ -240,6 +261,12 @@ $id$ & $cid$ & $one$ \\ \hline
 \ref{figure:mql:select_example}}
 \label{figure:mql:select_example_result}
 \end{figure}
+
+\begin{description}
+  \item[Input] predicate expression parameter, and a result set from a child
+operator
+  \item[Output] filtered result set from child operator 
+\end{description}
 
 \subsubsection{Join}
 A join operator (one of \texttt{hhjoin()}, \texttt{hljoin()}, or
@@ -280,6 +307,11 @@ mergejoin([DocumentID], [DocumentID], [DocumentID, Position];
 \label{figure:mql:mergejoin_example}
 \end{figure}
 
+\begin{description}
+  \item[Input] join specification parameters, and result sets from child
+operators
+  \item[Output] joined result set based on join specifications
+\end{description}
 
 \subsubsection{Make}
 The \texttt{make()} operator is used to synthesize result sets from the given
@@ -336,6 +368,11 @@ $A$ & $B$ & $C$ \\ \hline
 \label{figure:mql:make_example2_result}
 \end{figure}
 
+\begin{description}
+  \item[Input]
+  \item[Output]
+\end{description}
+
 \subsubsection{Group}
 
 \begin{figure}[h]
@@ -377,6 +414,10 @@ $cid$ & $max$ & $count$ \\ \hline
 \label{figure:mql:groupres}
 \end{figure}
 
+\begin{description}
+  \item[Input]
+  \item[Output]
+\end{description}
 
 
 \subsection{Assumed functionality}

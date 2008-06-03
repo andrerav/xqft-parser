@@ -133,7 +133,8 @@ public class XQuery2MQLVisitor extends Visitor {
         String[] sortBy = {prevVar + "numb", "index"};
         
         VarRefSet r_ec_minus_B = returnClauseResult.getVarRefs();
-        r_ec_minus_B.remove(Scope.getInstance().getCurrentIterVar());
+//        r_ec_minus_B.remove(Scope.getInstance().getCurrentIterVar());
+        r_ec_minus_B.remove(prevVar);
         
         String[] partitionBy = new String[r_ec_minus_B.size()];
         
