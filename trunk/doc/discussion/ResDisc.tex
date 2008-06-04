@@ -111,14 +111,16 @@ substantially smaller intermediate results. This comparison does not consider
 simplifications, however. In some situations, especially for trivial queries,
 optimised loop lifting \emph{may} perform better than TD. 
 
-\begin{itemize}
-  \item vise til ll eksemplet sect \ref{sect:trans:ll:example} og f\aa~frem at
-  ll krever DAGz ganske hardt, mye som blir brukt om igjen. Og fra
-  begynnelsen til slutten for den saks skyld.
-  \item fordeler vs ulemper..
-  \item dra frem at TD bruker f\ae rre operatorer
-  \item pathfinder way kommer ikke til \aa~dra nytte av den mer ekspressive
-  mars-algebraen\ldots Men er ekspressiv  bedre? Synes jeg s\aa~ noe i en av
-  pathfinder artiklene hvor de sa at jo mer restriktiv, jo bedre
-  \aa~optimisere\ldots snakke med thorbj\o rnsen om dette.. 
-\end{itemize}
+\subsection{Considerations for executing MQL}
+The ``Tainting Dependencies'' method produces relatively simplistic algebra
+when compared to the full feature set of MQL. In section \ref{sect:method:mql},
+only the operators used throughout this project was described. However, this is
+only a subset of the features in MQL. This was done with the intent of creating
+algebra which can be optimised using common techniques already available.
+Introducing new and exotic operators complicates this process, and so this was
+avoided. However, in the light of the expressiveness available in MQL, it may
+be benefitial to employ a wider array of operators available when constructing
+MQL algebra. In any case, this requires further documentation and concrete
+performance measurements.
+
+TODO: noe mer her? synes det blir litt svadalollete etterhvert.. 
