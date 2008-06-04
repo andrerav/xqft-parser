@@ -1,7 +1,35 @@
-\section{Implementasjonen - {ANDREAS}}
+\section{Implementasjonen}
 \label{sect:disc:contextSens}
-\textbf{\LARGE TODO: {ANDREAS}}
+Chapter \ref{chapter:implementation} describes how a prototype was implemented
+to demonstrate the ``Tainted Dependencies'' (TD) method. This implementation
+was dependent on a number of constraints:
 \begin{itemize}
-  \item innhold
-  
+  \item The availability of a free\footnote{By ``free'' is meant a liberal
+  licensing and availability of source code} pre-made XQuery parser capable of
+  producing abstract syntax trees
+  \item The ability to manipulate syntax trees and re-write them into new
+  structures (in particular to support normalisation to XQuery Core)
+  \item The ability to translate syntax trees into MQL (relational algebra)
 \end{itemize}
+
+In section chapter \ref{chapter:method}, methods to achieve the goals
+of the implementation were presented. The method chosen for parsing of the
+abstract syntax tree (see section \ref{sect:method:tree_parsing}) was the
+\emph{context sensitive visitor pattern}. This pattern laid the foundation for
+a clean and simplistic implementation. The semantics of the tree parsing process
+itself did not interfer unecessarily with the rest of the implementation.
+
+The process of rewriting the abstract syntax tree was implemented as a
+stand-alone visitor (the \texttt{RewriteVisitor} class). This implementation
+exploited the visitor pattern extensively, resulting in a clear separation of
+concerns. In particular, it seems to hold true that the visitor pattern
+typically will cleanly separate a data structure from an algorithm.
+
+As explain in section \ref{sect:impl:construct_mql} on page
+\pageref{sect:impl:construct_mql}, the MQL is constructed as an in-memory tree
+structure. This was done by instantiating a new \texttt{Operator} subclass
+(the exact class depending on context) for every node in the tree. It is
+important to note that even though this could become a performance bottleneck
+for very large and complex queries, it is still an important trade-off. In
+exchange for a theoretical performance problem, the implementation achieves a
+higher level of maintainability.
