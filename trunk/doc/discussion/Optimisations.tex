@@ -8,6 +8,8 @@
   \item kanskje bruke den alt-fremover omskrivinga av pathexprs
   \item pushe projects sammen ex: pathgreia i resultatkap. (sikkert allerede gjort i Mars) Fjerne attributter som
   aldri blir lest, og ikke er en del av resultatet\ldots
+  \item if(e1) then e2 else e3 -> e1 inneholder samme dependencies som e2 og e3, b\o r disse iterasjonene fjernes
+  fra e2 og e3 hvis mulig\ldots -> mindre utregninger.
 \end{itemize}
 
 fra 2.3.4 snakk om tilstrekkelig kunnskap til \aa~ evaluere expr:

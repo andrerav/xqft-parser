@@ -65,12 +65,10 @@ The effective boolean value of a value is defined as the result of applying the 
 the value.
 \end{quote}
 
-Where the dynamic semantics of \texttt{fn:boolean(\$arg as item()*) as xs:boolean} are defined as
-follows\cite{w3cfuncOps}:
+Where the function is declared as \texttt{fn:boolean(\$arg as item()*) as xs:boolean} and the dynamic semantics are
+defined as follows\cite{w3cfuncOps}:
 
-The effective boolean value of a sequence is defined as the
-result returned from the XQuery function \texttt{fn:boolean} executed with the sequence as a operand:
-\begin{itemize}
+\begin{enumerate}
   \item If \texttt{\$arg} is the empty sequence, \texttt{fn:boolean} returns \textit{false}.
   \item If \texttt{\$arg} is a sequence whose first item is a node, \texttt{fn:boolean} returns \textit{true}.
   \item If \texttt{\$arg} is a singleton value of type \texttt{xs:boolean} or a derived from \texttt{xs:boolean},
@@ -79,12 +77,56 @@ result returned from the XQuery function \texttt{fn:boolean} executed with the s
   \texttt{xs:anyURI} or a type derived from \texttt{xs:anyURI} or \texttt{xs:untypedAtomic}, \texttt{fn:boolean}
   returns \textit{false} if the operand value has zero length; otherwise it returns \textit{true}.
   \item If \texttt{\$arg} is a singleton value of any numeric type or a type derived from a numeric type,
-  \texttt{fn:boolean} returns \textit{false} if the operand value is \texttt{NaN} or is numerically equal to zero;
+  \texttt{fn:boolean} returns \textit{false} if the operand value is \textit{NaN} or is numerically equal to zero;
   otherwise it returns \textit{true}.
   \item In all other cases, \texttt{fn:boolean} raises a type error.
-\end{itemize}
+\end{enumerate}
 
+In the chapter presenting Tainting Dependencies, chapter \ref{sect:translation}, we solved resolving the effective
+boolean value of sequences with the help of an assumed MQL function \textsf{xqBoolean()} and an undefined abstract
+function \textbf{B()}. In that chapter we said it was enough to consider it as a grouping function returning one
+tuple per unique iteration (as implied by the iterator dependencies). The points 3-5 of the definition of the
+effective boolean value are all handled by \textsf{xqBoolean()} without promblems, as they all concern singleton
+sequences. Points 2 and 6 togheter, however, creates a interesting situation. They imply that when finding the
+effective boolean value of all possible XQuery sequences, all should cause an error, except the sequences where a
+node is the first element, regardless of the other items in the sequence.
 
+This means that a simple check as proposed for evaluating the cardinality of operands for e.g. arithmetic
+expressions earlier in this section will not do. A possible solution for the \textbf{B()} function would be to run
+a \textsf{group}-operator on the relation, grouping on the unique iterations, and run a \textsf{count} and some
+aggregator functions selecting the value and type of the first item of each group. Further, the result will then
+have to be checked similar to the check proposed earlier.
+\begin{center}
+\begin{tabular}{l}
+\textsf{select(or(eq(type, node), ifthenelse(eq(count,1), true, raiseError());} \\\quad
+\textsf{group((}$e.\vartheta$\textsf{), count(), selProj(eq(index,1), value), selProj(eq(index,1), type);}
+\\\quad\quad
+\textbf{r(}$e$\textbf{)}\textsf{))}
+\end{tabular}
+\end{center}
+Where \textsf{selProj(}$pred$, $field$\textsf{)} is a kind of selection and projection hybrid, selecting field
+$field$ if predicate $pred$ is \textit{true}. Such a aggregator function may however seem strange, and there is
+nothing similar implemented in the MQL processor.
+
+An alternative can be to utilise the \textsf{groupby} operator. The semantics of this operator is the same as for
+the \textsf{group}-operator, except that the input relation is unchanged and returned as the output. Further, the
+result of the grouping is returned as a separate, named relation (``result set'' in MQL lingo). The
+\textsf{resultset} operator with the name as its parameter will fetch this named result:
+
+\begin{center}
+\begin{tabular}{l}
+\textsf{select(and(eq(index,1), or(eq(type,node), ifthenelse(eq(count,1), true, raiseError())))} \\ \quad 
+\textsf{hhjoin([}$e.\vartheta$\textsf{], [}$e.\vartheta$\textsf{], [l.value, r.count];} \\ \quad\quad
+\textsf{groupby(countrelation, (}$e.\vartheta$\textsf{), count();} \\ \quad\quad\quad
+\textbf{r(}$e$\textbf{)}\textsf{);} \\ \quad\quad
+\textsf{resultset(countrelation)))}
+\end{tabular}
+\end{center}
+
+Both solutions assume a typesystem where a field $type$ holds the type of the item represented in the tuple. The
+last proposal of a implementation of the \textbf{B()} function only uses operators and functions allready
+implemented in the MQL processor. A disadvantage with this solution, however, is that it will probably be more
+resource-demanding as it consists of both a grouping and a join.
 
 \textbf{\LARGE TODO: {MADS}}
 \begin{itemize}
@@ -97,7 +139,8 @@ translator is in the default context, $\Delta$. If no context is mentioned in th
 context is assumed. 
 \item test expr i if
 \item barna til and og or
-\item hva med path expressions med ikketreff?
+\item hva med path expressions med ikketreff? 
+\item og andre ting -> slik som or: \$i/maybe or \$i/always, denne vil forsvinne\ldots =/=/ 
 \end{itemize}
 
 \begin{itemize} 
