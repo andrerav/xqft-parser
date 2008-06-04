@@ -31,3 +31,28 @@ expression, the processor is not obliged to evaluate any part of the sequence. A
 cannot dispense with a required cardinality check: if an empty sequence is not permitted in the relevant context,
 then the processor must ensure that the operand is not an empty sequence.
 \end{quote}
+
+\begin{itemize} 
+   \item In some cases, a processor can determine the result of an expression without accessing all the data that
+   would be implied by the formal expression semantics. For example, the formal description of filter expressions
+   suggests that \$s[1] should be evaluated by examining all the items in sequence \$s, and selecting all those
+   that satisfy the predicate position()=1.
+\end{itemize}
+
+fra 2.3.4 \cite{w3c00}
+\begin{quote}
+Consider an expression Q that has an operand (sub-expression) E. In general the value of E is a sequence. At an
+intermediate stage during evaluation of the sequence, some of its items will be known and others will be unknown.
+If, at such an intermediate stage of evaluation, a processor is able to establish that there are only two possible
+outcomes of evaluating Q, namely the value V or an error, then the processor may deliver the result V without
+evaluating further items in the operand E. For this purpose, two values are considered to represent the same
+outcome if their items are pairwise the same, where nodes are the same if they have the same identity, and values
+are the same if they are equal and have exactly the same type.
+
+There is an exception to this rule: If a processor evaluates an operand E (wholly or in part), then it is required
+to establish that the actual value of the operand E does not violate any constraints on its cardinality. For
+example, the expression \$e eq 0 results in a type error if the value of \$e contains two or more items. A processor
+is not allowed to decide, after evaluating the first item in the value of \$e and finding it equal to zero, that the
+only possible outcomes are the value true or a type error caused by the cardinality violation. It must establish
+that the value of \$e contains no more than one item.
+\end{quote}
