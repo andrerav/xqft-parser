@@ -56,7 +56,7 @@ return a singleton sequence can be the following:
 The check may of course be omitted if the translator is sure, by the means discussed earlier, $e$ will return a
 singleton.
 
-\subsection{Effective Boolean Value - {MADS}}
+\subsection{Effective Boolean Value}
 \label{sect:disc:effBool}
 Under certain circumstances it is necessary to find the effective boolean value of a sequence. The effective
 boolean value is by W3C defined as follows\cite{w3c00}: 
@@ -128,17 +128,42 @@ last proposal of a implementation of the \textbf{B()} function only uses operato
 implemented in the MQL processor. A disadvantage with this solution, however, is that it will probably be more
 resource-demanding as it consists of both a grouping and a join.
 
-\textbf{\LARGE TODO: {MADS}}
-\begin{itemize}
+Point \#1 in the definition of evaluation of effectvie boolean value is also a bit problematic. This is because
+Tainting Dependecies, as it is presented in chapter \ref{sect:translation}, does not handle empty expressions
+explicitly. And in most cases this is sufficient, as non-empty sequences containing empty items should be
+normalised. In the following query it is clear that the result must be all the \texttt{maybe} elements of the
+document which is a child of a \texttt{elem} element:
 
+\begin{center}
+\begin{tabular}{l}
+\texttt{fn:doc("nodes.xml")//elem/maybe}
+\end{tabular}
+\end{center}
 
-\item The translator is in the logical context, $\Lambda$, if the AST node it is currently visiting is a successor
-of a boolean operator or within the condition part of an \texttt{if..then..else} expression. In all other cases the
-translator is in the default context, $\Delta$. If no context is mentioned in the inference rules the default
-context is assumed. 
-\item test expr i if
-\item barna til and og or
-\item hva med path expressions med ikketreff? 
-\item og andre ting -> slik som or: \$i/maybe or \$i/always, denne vil forsvinne\ldots =/=/ 
-\end{itemize}
+The \texttt{elem} elements which does \emph{not} contain a \texttt{maybe} element (making \texttt{../elem/maybe}
+an empty sequence) are irrelevant to the evaluation of this query. The only time the need for knowledge of a
+possible empty sequence arises is when evaluating the effective boolean value. Consider the following XQuery
+expression:
 
+\begin{center}
+\begin{tabular}{l}
+\texttt{if(\$a/maybe)} \\ \quad
+\texttt{then "exists"} \\ \quad
+\texttt{else "empty"}
+\end{tabular}
+\end{center}
+
+Further, let \texttt{\$a} be an iterator variable consecutively bound to one and one \texttt{elem} element. If
+some of the \texttt{elem} elements does not contain a \texttt{maybe} element, some items of the resulting sequence
+should be the string literal \texttt{"empty"}.
+
+A possible solution to this would be to differantiate between the times the empty sequences are needed, and the
+times they are not. This can be done by evaluating all the descendant expressions of a expression which is to be
+calculated into a effective boolean value, in its own context. To evaluate some expressions in another matter
+according to the context is made simple by implementing a context sensitive visitor pattern (section
+\ref{sect:theory:contextVisitorPattern}). The difference in translating in the logical context as opposed to the
+default context will only be that all joins on common dependencies will have to be made into full outer joins. In
+addition joins such as in the axis+name test translation (rule \ref{rule:trans:TD:pathStep}) where only the left
+operand may have dependencies, will have to be turned into a left-outer join. Always employing outer joins will
+ensure that no $-numb$ field corresponding to one unique iteration will be removed from the relation. Using this
+solution \textsf{xqBoolean()} must return $false$ if it is run with \textsf{NULL} as a parameter.
