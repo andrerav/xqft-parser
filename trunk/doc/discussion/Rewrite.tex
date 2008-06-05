@@ -1,5 +1,23 @@
 \section{Rewriting - {ANDREAS}}
 \label{sect:disc:rewriting}
+In section \ref{sect:method:ast_rewrite} on page
+\pageref{sect:method:ast_rewrite}, some methods for rewriting (normalising)
+certain expressions to XQuery Core were described. In the prototype implementation,
+these rewrites are made using the \texttt{RewriteVisitor} class. The advantage
+of normalising to XQuery core is simplification of the syntax tree while
+maintaining full semantics. That is -- the final syntax tree may be bigger and
+appear morre complex. However, expressions such as FLWOR and path expressions
+are split into smaller subexpressions that are easier to parse by themselves. 
+
+This project has taken an pragmatic approach to normalisation. The rules
+defined in chapter \ref{chapter:translation} do not rely on normalisations.
+However, for the sake of simplicity in the prototype, a rewrite visitor was 
+applied to simplify FLWOR expressions. This must be seen in the light of the
+fact that XQuery Core is a very extensive specification, and so strict
+adherence to this specification would imply a substantially larger amount of
+effort into normalisation.
+
+
 \begin{itemize}
   \item fordeler vs ulemper med \aa~skrive om til core
   \item man mister jo informasjon\ldots. Hvis den er p\aa~denne m\aa ten --> gj\o re det akkurat
