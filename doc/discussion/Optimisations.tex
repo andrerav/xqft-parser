@@ -1,4 +1,4 @@
-\section{Optimisation - {MADS}}
+\section{Optimisation}
 \label{sect:disc:optimisations}
 
 In section \ref{sect:trans:TD:simplifications} we presented some situations where the translation from XQuery into
@@ -18,7 +18,9 @@ not a DAG, and the number of operations should be minimised. In this translation
 and the \texttt{else}-expression will be evaluated and their results spliced together. From this relation the
 tuples stemming from the right expression according to the result of the test expression is selected. If the MQL
 processor labours DAGs it may be a better solution to evaluate the two expressions only for the cases where they
-are to be returned. This may be done in a matter very similar to the Loop Lift solution (equation
+are to be returned. 
+
+This may be done in a matter very similar to the Loop Lift solution (equation
 \ref{eq:ll:ifthenelse} on page \pageref{eq:ll:ifthenelse}). In this solution different $loop$ relations are made
 depending on the outcome of the test-expression. One of the relations are used to evaluate the
 \texttt{then}-expression, another the \texttt{else}-expression. As Tainting Dependencies does not utilise $loop$
