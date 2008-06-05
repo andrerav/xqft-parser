@@ -1,7 +1,16 @@
 %Relasjonsalgebra
 \chapter{Method}
 \label{chapter:method}
-Forklare hva man skal gjore, ikke hvordan!!
+This chapter describes the most important decisions and constraints for this
+project. Essentially, this chapter describes \emph{what will be done}, however
+implementation-specific details are left to chapter
+\ref{chapter:implementation}. This chapter is initiated by section
+\ref{sect:method:tree_parsing}, where a method for tree parsing is chosen.
+Further the method for rewriting the syntax tree is explained in section
+\ref{sect:method:ast_rewrite}. Finally we present the target algebra language
+(MQL), and the chapter ends with a description of a method for calculating
+algebra complexity which will used in chapter \ref{chapter:results} for
+comparisons.
 
 \textbf{\underline{\LARGE TODO:}} innledning
 
@@ -13,6 +22,7 @@ Forklare hva man skal gjore, ikke hvordan!!
 
 \section{Summary}
 \label{sect:method:summary}
-\begin{itemize}
-  \item sammendrag av dette kap
-\end{itemize}
+In this chapter the most significant decisions for this project have been
+presented and explained in detail. In the next chapter, we will present our
+novel methodology for translating XQuery queries to relational algebra, dubbed
+``Tainting Dependencies''.
