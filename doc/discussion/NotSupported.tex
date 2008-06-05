@@ -1,26 +1,113 @@
 \section{XQuery Features Not Supported}
 \label{sect:disc:notSupported}
-noen av disse tingene er ikke st\o tta pga typesystem, 
 
-\subsection{Full Text Extensions  - {MADS}}
+In this section we will present some of the features of XQuery at the time not supported by Tainting Dependencies,
+and some ideas around how a possible solution may be. Some of the features are not supported because they involve
+types, which is discussed in section \ref{sect:disc:typeSystem}. %As the MQL processor is still in development,
+%there may be some uncertainty of what will and what will not be a function of the finished implementation. 
+ 
+
+\subsection{Full Text Extensions}
+XQuery Full Text\cite{w3c01} (XQFT) is an superset of XQuery. A quick runthrough of the extensions made to XQuery
+can be found in section \ref{sect:theory:xquery:fulltext_ext}. Tainting Dependencies does however at this time
+support any of these features. One of the most important expressions of the extention is the \texttt{ftcontains}
+expression. An exerpt of the EBNF specification of this expression and some of its subexpressions can be seen in
+figure \ref{fig:disc:xqftEBNF}. \texttt{FTPrimaryWithOptions} is a straight descendant of \texttt{FTMildNot}, and
+\texttt{FTWordsValue} is a straight descendant of \texttt{FTPrimary}. The complete EBNF specification can be found
+in appendix \ref{appendix:xquery_ebnf}.
+\begin{figure}[h]
+\begin{Verbatim}
+ [51] FTContainsExpr ::= RangeExpr ( "ftcontains" FTSelection FTIgnoreOption? )?
+[144] FTSelection    ::= FTOr FTPosFilter* ("weight" RangeExpr)?
+[145] FTOr           ::= FTAnd ( "ftor" FTAnd )*
+[146] FTAnd          ::= FTMildNot ( "ftand" FTMildNot )*
+...
+[149] FTPrimaryWithOptions ::= FTPrimary FTMatchOptions?
+[166] FTMatchOption  ::= FTLanguageOption
+                       | FTWildCardOption
+                       | FTThesaurusOption
+                       ...
+[152] FTWordsValue   ::= Literal | ("{" Expr "}")
+\end{Verbatim}
+
+\caption{Exerpt of W3C EBNF full text specification\cite{w3c01} \label{fig:disc:xqftEBNF}}
+\end{figure}
+
+A simple \texttt{ftcontains} expression checking if an node contains a literal may be quite simple to translate.
+This can be done by looking up the literal and joining it the node on their scope. Something like this:
+\begin{equation*}
+\frac{}{e \mbox{\texttt{ ftcontains }}literal}\leadsto
+\begin{array}{l}
+\mbox{\textsf{join([l.scope],[r.scope],\ldots;}} \\ \quad
+\mbox{\textbf{r(}}e\mbox{\textbf{)}\textsf{;}} \\ \quad
+\mbox{\textsf{\ldots}} \\ \quad\quad
+\mbox{\textsf{lookup(}}literal\textsf{))}
+\end{array}
+\end{equation*}
+
+\texttt{ftand} and \texttt{ftor} expressions may extend upon this solution. These operators makes it possible to
+check for more than one term per node. If the translator keeps track of which scope is the current scope according
+to a path expression, as discussed in section \ref{sect:disc:optim:path}, this can be translated quite nicely into
+MQL. MQL supports two operators \textsf{and} and \textsf{or} which when surrounded by a \textsf{scope} operator
+will require the results from the two operands to stem from the same scope. A simple \texttt{ftand} expression may
+therefore be translated something like this:
+
+\begin{equation*}
+\frac{}{e \mbox{\texttt{ ftcontains }}literal_1 \mbox{\texttt{ ftand} }literal_2}\leadsto
+\begin{array}{l}
+\mbox{\textsf{join([l.scope],[r.scope],\ldots;}} \\ \quad
+\mbox{\textbf{r(}}e\mbox{\textbf{)}\textsf{;}} \\ \quad
+\mbox{\textsf{\ldots}} \\ \quad\quad
+\mbox{\textsf{scope(}}e.scope\mbox{\textsf{;}} \\ \quad\quad\quad
+\mbox{\textsf{and(}} \\ \quad\quad\quad\quad
+\mbox{\textsf{lookup(}}literal_1\textsf{);}\\ \quad\quad\quad\quad
+\mbox{\textsf{lookup(}}literal_2\textsf{)}
+\end{array}
+\end{equation*}
+
+A problem do however arise when operands of \texttt{ftcontains} are not a node and a literal. As can be seen from
+the specification in figure \ref{fig:disc:xqftEBNF}, a general expression may also be an operand. This is no
+simple task to accomodate for. One possible solution would be to let the \textsf{lookup} operator take a relation
+as input. There will also be problems if the first operand is not a node. If this is the case, there is no $scope$
+attribute to join on. An example of such a query might be: 
+\begin{center}
+\texttt{"a man and his dog" ftcontains "dog"}
+\end{center}
+Here, the MQL processor would have to search through the first operand for any matches with the second. 
+
+\texttt{FTMatchOption} contains a great deal of options which modify in the way two terms or phrases are matched.
+The options are specified like e.g. ``\texttt{with stemming}'' and ``\texttt{with thesaurus}''. One possible
+solution for accomodating for such options would be a context operator comparable to the \textsf{index} operator
+(section \ref{sect:method:marsOperators:index}). The operator would take the match options as parameters, and set
+the context for possible \textsf{lookup} operators within its subtree. Another possibility would be to use the
+options as parameters directly to the \textsf{lookup} operator.
+
+
 \begin{itemize}
-	\item stemming og thesaurus er fordi ikkeno slik i mars enn\aa~kan foresl\aa~det med parametere til lookup evt
-	contextting ala \textsf{index()}.
   	\item proximity (kanskje l\o sbar)
 \end{itemize}
 
 
-\subsection{Ordering Mode - {MADS}}
-\begin{itemize}
-  		\item ordered and unordered -> lurer p\aa om (markXremove + tainting = TD uten $index$ og
-  		\textsf{numberate()}) fikser dette ganske bra\ldots
-			\item MarkXRemove funker bra i unordered m0de tror jeg\ldots. Den er ogs\a~normalisert ref purely relational
-			flwors, som sier LL er denormalisert. (bare normalisert innenfor en flwor.. den unormaliserer seg n\aa r den
-			g\aa r ut av l\o kka (cross /m const))
-			\item Order/unorder kan dra nytte av kontekstsensitive visitors\ldots\ldots 
-\end{itemize}
+\subsection{Ordering Mode}
 
-\subsection{Binary Operators - {MADS}}
+XQuery contains \texttt{ordered} and \texttt{unordered} expressions. The purpose of these expressions is to set
+the ordering mode in to \texttt{ordered} or \texttt{unordered} for a certain region in a query. The expressions
+sets up an environment enclosed by curly braces where the specific ordering mode applies. The default ordering
+mode is ordered. A performance advantage may be realised by setting the ordering mode to \texttt{unordered} for
+expressions where the ordering of the result is not significant. The system will then be granted the flexibility
+to return the result in the order it finds most efficient.
+
+The $index$ attribute and the \textsf{numberate} operator are responsible for ensuring correct order in Tainting
+Dependencies. One of the problems with MarkXRemove was that it did not consider the ordering of items, while one
+of its advantages was its simplicity. By introducing the concept of tainting to MarkXRemove, this would probably
+be a good start for finding a method of translating in \texttt{unordered} mode. But as TD is a evolution and a
+more complete method, a better solution might be to simplify this method by removing \textsf{numberate} operators
+and all operators whose only intent is to manipulate $index$ fields. Utilising context sensitive visitor patterns
+(section \ref{sect:theory:contextVisitorPattern}), differentiating translation of \texttt{ordered} and
+\texttt{unordered} mode expressions will be made easy.
+
+
+\subsection{Binary Expressions - {MADS}}
 \begin{itemize}
   		\item node comparisons\ldots\ldots tviler p\aa~at vi f\aa r til dette glatt\ldots
 
