@@ -5,21 +5,26 @@ In section \ref{sect:trans:TD:simplifications} we presented some situations wher
 MQL can be specialised and simplified. In this section we will outline some ideas for further simplification and
 optimisation.
 
-As can be seen of the tree in figure \ref{fig:results:query_ifthenelse_result}, Tainting Dependecies can produce
-relational algebra trees with consecutive \textsf{project} operators. This is of cource unnecessary, and such
-operators can be merged into one single \textsf{project}. Attributes which is not part of the result or part of
-evaluation of the result can be pruned. This may however not be anything the translator would need to consider, as
-the Mars optimiser allready implements methods for detecting and simplifying such trees.
+As can be seen of the tree in figure \ref{fig:results:query_ifthenelse_result} on page
+\pageref{fig:results:query_ifthenelse_result}, Tainting Dependecies can produce relational algebra trees with
+consecutive \textsf{project} operators. This is of cource unnecessary, and such operators can be merged into one
+single \textsf{project}. Attributes which is not part of the result or part of evaluation of the result can be
+pruned. This may however not be anything the translator would need to consider, as the Mars optimiser allready
+implements methods for detecting and simplifying such trees.
 
-
-
-
-\textbf{\LARGE TODO: {MADS}}
-\begin{itemize}
-  \item if(e1) then e2 else e3 -> e1 inneholder samme dependencies som e2 og e3, b\o r disse iterasjonene fjernes
-  fra e2 og e3 hvis mulig\ldots -> mindre utregninger.
-\end{itemize}
-
+Rule \ref{rule:trans:TD:conditional} on page \pageref{rule:trans:TD:conditional} describes the translation of
+XQuery \texttt{if..then..else} expressions. It was implemented considering the result would be a operator tree and
+not a DAG, and the number of operations should be minimised. In this translation both the \texttt{then}-expression
+and the \texttt{else}-expression will be evaluated and their results spliced together. From this relation the
+tuples stemming from the right expression according to the result of the test expression is selected. If the MQL
+processor labours DAGs it may be a better solution to evaluate the two expressions only for the cases where they
+are to be returned. This may be done in a matter very similar to the Loop Lift solution (equation
+\ref{eq:ll:ifthenelse} on page \pageref{eq:ll:ifthenelse}). In this solution different $loop$ relations are made
+depending on the outcome of the test-expression. One of the relations are used to evaluate the
+\texttt{then}-expression, another the \texttt{else}-expression. As Tainting Dependencies does not utilise $loop$
+relations, some changes would have to be made. Evaluation of the test-expression will reveal which unique
+iterations which expression is to be evaluated in. Based on this information iterations can be pruned from the two
+expressions before they are evaluated.
 
 \subsection{XQuery Semantics}
 
@@ -77,8 +82,9 @@ expressions with possible predicates. This may be helpful as the MQL \textsf{sco
 equivalent to the \texttt{child} axis.
 
 By letting the translator keep track over valid consecutive \texttt{child} axis steps, the \textsf{scope} operator
-may be employed to filter the results from the lookup (ref rule \ref{rule:trans:TD:pathStep}), most likely
-reducing the tuples involved in the subsequent join. Consider the following path expression:
+may be employed to filter the results from the lookup (ref rule \ref{rule:trans:TD:pathStep}, page
+\pageref{rule:trans:TD:pathStep}), most likely reducing the tuples involved in the subsequent join. Consider the
+following path expression:
 
 \begin{center}
 \texttt{/a/b[g]/c//d[h]/e}
@@ -98,11 +104,12 @@ the path expression up until \texttt{d} would have to be evaluated, filtered wit
 finally joined with the evaluation of the path expression without the last predicate on their \texttt{d} step in
 the $scope$ fields.
 
-The rule for translating predicates, rule \ref{rule:trans:TD:predicate}, is a general one. Here, a reference to
-the context item from the outside of the predicate is ``copied'' inside the predicate (containting $sprDotNumb$).
-This copy is then operated on, and when the predicate expression is evaluated, the predicated expression and the
-predicate expression is joined on the reference to the context item. An example of this process is seen in figure
-\ref{fig:results:query_ifthenelse_result_dag}. Here, the copying is in form of a upwards split, and the If the
+The rule for translating predicates, rule \ref{rule:trans:TD:predicate} on page \pageref{rule:trans:TD:predicate},
+is a general rule. Here, a reference to the context item from the outside of the predicate is ``copied'' inside the
+predicate (containting $sprDotNumb$). This copy is then operated on, and when the predicate expression is
+evaluated, the predicated expression and the predicate expression is joined on the reference to the context item.
+An example of this process is seen in figure \ref{fig:results:query_ifthenelse_result_dag} on page
+\pageref{fig:results:query_ifthenelse_result_dag}. Here, the copying is in form of a upwards split, and the If the
 context item is only referred to once within the predicate this translation may however be simplified.
 
 Consider the following XQuery query:
