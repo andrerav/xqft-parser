@@ -1,4 +1,4 @@
-\section{Rewriting - {ANDREAS}}
+\section{Normalisation and rewriting}
 \label{sect:disc:rewriting}
 In section \ref{sect:method:ast_rewrite} on page
 \pageref{sect:method:ast_rewrite}, some methods for rewriting (normalising)
@@ -13,10 +13,33 @@ This project has taken an pragmatic approach to normalisation. The rules
 defined in chapter \ref{chapter:translation} do not rely on normalisations.
 However, for the sake of simplicity in the prototype, a rewrite visitor was 
 applied to simplify FLWOR expressions. This must be seen in the light of the
-fact that XQuery Core is a very extensive specification, and so strict
-adherence to this specification would imply a substantially larger amount of
-effort into normalisation.
+fact that XQuery Core is a very extensive specification\cite{xquery_semantics},
+and so strict adherence to this specification would imply a substantially
+larger amount of effort into normalisation.
 
+Consider the normalisation of $RelativePathExpr/StepExpr$ which is normalised
+into a FLWOR expression\footnote{See
+http://www.w3.org/TR/xquery-semantics/#id-axis-steps for details}. This may be
+counter-productive as the usage of the \textsf{scope()} operator in MQL will
+imply that this normalisation will somehow have to be reversed.
+
+Furthermore, the normalisation of FLWOR expressions themselves require that
+where-clauses are rewritten to if-then-else expressions. The rules for this
+normalisation process is shown in section
+\ref{sect:theory:xquery:core:rewriting_flwor} and figure
+\ref{figure:xquery:where_mapping_rule} on page 
+\ref{figure:xquery:where_mapping_rule}. However, in ``Tainting Dependencies''
+(TD) the translation of a where-clause (rule \ref{rule:trans:TD:where} on page
+\pageref{rule:trans:TD:where}) is optimised and shown to be more efficient than
+the translation of an equivalent if-then-else expression (rule
+\ref{rule:trans:TD:conditional} on page \pageref{rule:trans:TD:conditional}).
+This is a paradoxical situation, and raises the question of whether other
+normalisation rules may also affect the efficiency of the resulting
+translation.
+
+On a final note, the TD method in its current state does not rely on
+denormalised XQuery -- however it is compatible with XQuery Core since XQuery
+Core is a subset of XQuery.
 
 \begin{itemize}
   \item fordeler vs ulemper med \aa~skrive om til core
