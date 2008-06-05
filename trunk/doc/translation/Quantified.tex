@@ -1,0 +1,51 @@
+\section{Quantified Expressions}
+\label{sect:disc:not:quantified}
+
+Figure \ref{fig:disc:not:quantified} shows the EBNF specification of the XQuery quantified expression. These
+expressions support existential and universal quantification, and will always result in a $true$ or $false$ value.
+
+\begin{figure}[h]
+\begin{Verbatim}
+[42] QuantifiedExpr ::= ("some" | "every") "\$" VarName "in" ExprSingle 
+                        ("," "\$" VarName "in" ExprSingle)* "satisfies" ExprSingle
+\end{Verbatim}
+\caption{W3C specification of quantified expressions \cite{w3c00} \label{fig:disc:not:quantified}}
+\end{figure}
+
+If the quantifier is \texttt{some}, the expression only returns $true$ if at least one evaluation of the
+\texttt{satisfies} expression yields $true$. For the \texttt{every} quantifier, the expression will only return
+$true$ if every evaluation of the \texttt{satisfies} expression yields $true$.
+
+It can be suitable to treat such expressions as iterators with the \texttt{satisfies} expression as the iterator
+body. The result of the iterator is then checked if every or some of its items have the effective boolean value
+$true$. This can be done with a \textsf{group} operator similarily to the general comparator expressions. If we
+assume $true$ has a bigger value than $false$, a \textsf{max} aggregator will reveal if there exists a tuple with
+the value $true$ and a \textsf{min} operator will reveal if there exist a tuple with the value $false$. All
+variables bound in quantified expressions will be treated by the iterator binding translation of rule
+\ref{rule:trans:TD:forbind}. $\beta$ will refer to the set of all variables bound in one such expression
+
+\begin{equation}
+\frac{}{\mbox{\texttt{QUANT \$\ldots  satisfies }}e_1} \longmapsto
+\begin{array}{l}
+\mbox{\textsf{project(index = 1, value, }}\vartheta\mbox{\textsf{;}} \\ \quad
+\mbox{\textsf{group((}}\vartheta\mbox{\textsf{), AGG(value);}} \\ \quad\quad
+\mbox{\textsf{project(xqBoolean(value), }}\vartheta\mbox{\textsf{;}} \\ \quad\quad\quad
+\mbox{\textbf{B(r(}}e_1\mbox{\textbf{))}\textsf{)))}}
+\end{array}
+\label{rule:trans:TD:quantified}
+\end{equation}
+Where $\vartheta=e_1.\vartheta-\beta$, and a quantifier specification \texttt{QUANT} maps to an aggregator
+function as seen in table \ref{tab:disc:quant}. The \textsf{xqBoolean()} funcion will have to be run on the
+$value$ fields of the \texttt{satisfies} expression, as there is no requirement that it is a boolean expression.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c} 
+\texttt{QUANT} & \textsf{AGG} \\ \hline
+\texttt{some} & \textsf{max} \\
+\texttt{every} & \textsf{min}
+\end{tabular}
+\caption{Mapping XQuery quantifiers to MQL aggregators \label{tab:disc:quant}}
+\end{table}
+
+\textbf{\LARGE TODO: MADS} eksempel?

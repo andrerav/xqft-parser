@@ -1,49 +1,46 @@
-\section{XQuery Features Not Supported - {MADS}}
+\section{XQuery Features Not Supported}
 \label{sect:disc:notSupported}
-\textbf{\LARGE TODO: Mads}
+noen av disse tingene er ikke st\o tta pga typesystem, 
+
+\subsection{Full Text Extensions  - {MADS}}
 \begin{itemize}
-\item noen av disse tingene er ikke st\o tta pga typesystem, andre, slik som stemming og thesaurus er fordi ikkeno
-slik i mars enn\aa~kan foresl\aa~det med parametere til lookup evt contextting ala \textsf{index()}.
-  \item Dette avhenger jo seff av hvor mye vi har l\o st men disse b\o r kunne
-  l\o ses:
-  	\begin{itemize}
-  		\item proximity (kanskje l\o sbar)
-  		\item declare variable er nesten st\o tta\ldots men external og greier..
-  		\item function declarations, b\o r g\aa~greit, bare ha en function table ala symbol table.
-  		\item schema / schema validation -> typeting? Hvordan l\o ser pathfinder dette\ldots synes \aa~ha sett noe om
-  		det\ldots
-  		\item namespacezz\ldots.
-  		\item node comparisons\ldots\ldots tviler p\aa~at vi f\aa r til dette glatt\ldots
-  		\item order by med alle ting..
+	\item stemming og thesaurus er fordi ikkeno slik i mars enn\aa~kan foresl\aa~det med parametere til lookup evt
+	contextting ala \textsf{index()}.
+  	\item proximity (kanskje l\o sbar)
+\end{itemize}
+
+
+\subsection{Ordering Mode - {MADS}}
+\begin{itemize}
   		\item ordered and unordered -> lurer p\aa om (markXremove + tainting = TD uten $index$ og
   		\textsf{numberate()}) fikser dette ganske bra\ldots
-  		\begin{itemize}
 			\item MarkXRemove funker bra i unordered m0de tror jeg\ldots. Den er ogs\a~normalisert ref purely relational
 			flwors, som sier LL er denormalisert. (bare normalisert innenfor en flwor.. den unormaliserer seg n\aa r den
 			g\aa r ut av l\o kka (cross /m const))
-			\item Order/unorder kan dra nytte av kontekstsensitive visitors\ldots\ldots
-		\end{itemize}
+			\item Order/unorder kan dra nytte av kontekstsensitive visitors\ldots\ldots 
+\end{itemize}
+
+\subsection{Binary Operators - {MADS}}
+\begin{itemize}
+  		\item node comparisons\ldots\ldots tviler p\aa~at vi f\aa r til dette glatt\ldots
+
   		\item \textbar, \texttt{union}, \texttt{intersect, except}
-  		\item Range expressions $e_1$ \texttt{to} $e_2$ (begge m\aa~v\ae re integer tror jeg -> skrive om det i type?)
-  		\item Prologs and modules
-  		\item Quantified Expression: (some | every) \$b in $e_1$ satisfies $e_2$
-  		\end{itemize}
-	\end{itemize}
+  		\item Range expressions $e_1$ \texttt{to} $e_2$ (begge m\aa~v\ae re integer tror jeg -> skrive om det i type?) 
+\end{itemize}
+
 
 \subsection{Order By - {MADS}}
 \label{sect:disc:orderby}
-\textbf{\LARGE TODO: {MADS}}
 \begin{itemize}
   \item st\o tte alle de sorteringsspesifiseringene.. st\o tte sortering over flere exprz.
 \end{itemize}
 	
-	
-	
-	\subsection{XQuery Functions - {MADS}}
+		
+\subsection{XQuery Functions - {MADS}}
 \label{sect:disc:functions}
-\textbf{\LARGE TODO: {MADS}}
 \begin{itemize}
   \item hvordan ordne XQuery funksjoner?
+  \item function declarations, b\o r g\aa~greit, bare ha en function table ala symbol table.
   \item Tror det skal v\ae re lagt til rette for \aa~ha en \textsf{function(FUNCTIONNAME; operator(list?)} operator
   \end{itemize}
   
@@ -52,3 +49,13 @@ fra 3.1.5:
   Additional functions may be declared in a Prolog, imported from a library module, or provided by the external
   environment as part of the static context.
   \end{quote}
+
+
+\subsection{Hva med disse?: - {MADS}}
+
+  	\begin{itemize}
+  		\item schema / schema validation -> typeting? Hvordan l\o ser pathfinder dette\ldots synes \aa~ha sett noe om
+  		det\ldots
+  		\item Prologs and modules
+  		\end{itemize}
+
