@@ -1,58 +1,124 @@
-\section{Optimisations - {MADS}}
+\section{Optimisation - {MADS}}
 \label{sect:disc:optimisations}
+
+In section \ref{sect:trans:TD:simplifications} we presented some situations where the translation from XQuery into
+MQL can be specialised and simplified. In this section we will outline some ideas for further simplification and
+optimisation.
+
+As can be seen of the tree in figure \ref{fig:results:query_ifthenelse_result}, Tainting Dependecies can produce
+relational algebra trees with consecutive \textsf{project} operators. This is of cource unnecessary, and such
+operators can be merged into one single \textsf{project}. Attributes which is not part of the result or part of
+evaluation of the result can be pruned. This may however not be anything the translator would need to consider, as
+the Mars optimiser allready implements methods for detecting and simplifying such trees.
+
+
+
+
 \textbf{\LARGE TODO: {MADS}}
 \begin{itemize}
-  \item Med bare \emph{EN} referanse til context item i predikat i path expressions kan hele symtab bajabajaz
-  droppes, og bare prune p\aa~scope\ldots
-  \item holde styr p\aa~scopes, bruke scope operatoren mer flittig = smaller relasjoner \aa~joine.
-  \item kanskje bruke den alt-fremover omskrivinga av pathexprs
-  \item pushe projects sammen ex: pathgreia i resultatkap. (sikkert allerede gjort i Mars) Fjerne attributter som
-  aldri blir lest, og ikke er en del av resultatet\ldots
   \item if(e1) then e2 else e3 -> e1 inneholder samme dependencies som e2 og e3, b\o r disse iterasjonene fjernes
   fra e2 og e3 hvis mulig\ldots -> mindre utregninger.
 \end{itemize}
 
-fra 2.3.4 snakk om tilstrekkelig kunnskap til \aa~ evaluere expr:
-\begin{quote}
-These rules apply to all the operands of an expression considered in combination: thus if an expression has two
-operands E1 and E2, it may be evaluated using any samples of the respective sequences that satisfy the above rules.
 
-The rules cascade: if A is an operand of B and B is an operand of C, then the processor needs to evaluate only a
-sufficient sample of B to determine the value of C, and needs to evaluate only a sufficient sample of A to
-determine this sample of B.
+\subsection{XQuery Semantics}
 
-The effect of these rules is that the processor is free to stop examining further items in a sequence as soon as
-it can establish that further items would not affect the result except possibly by causing an error. For example,
-the processor may return true as the result of the expression S1 = S2 as soon as it finds a pair of equal values
-from the two sequences.
+As XQuery is a purely functional language an implementation is always free to evaluate the operands of an operator
+in any order\cite{w3c00}. This means that a MQL optimiser is able to rearrange operators as it sees fit, with the
+possible outcome of a less expensive query execution. One such case would be in a path expression such as this:
+\begin{center}
+\texttt{\$i/child::elem/descendant::maybe}
+\end{center}
+If the optimiser has some notion of the frequency of occurence of the \texttt{maybe} and \texttt{elem} elements,
+as well as the cardinality of the relational representation of \texttt{\$i}, it may not be evaluated from left to
+right. If there exists only a few \texttt{maybe} elements and the \texttt{\$i} relation is relatively large, the
+most effective execution plan for this path expression would most likely be from right to left.
 
-Another consequence of these rules is that where none of the items in a sequence contributes to the result of an
-expression, the processor is not obliged to evaluate any part of the sequence. Again, however, the processor
-cannot dispense with a required cardinality check: if an empty sequence is not permitted in the relevant context,
-then the processor must ensure that the operand is not an empty sequence.
-\end{quote}
+In some cases, a XQuery implementation can determine the result of an expression without accessing all the data
+that is implied by the formal expression semantics. A consequence of this is that some errors goes undetected. W3C
+specify to which extent an implementation may optimise its access to data at the cost of not detecting errors
+like this \cite{w3c00}:
 
-\begin{itemize} 
-   \item In some cases, a processor can determine the result of an expression without accessing all the data that
-   would be implied by the formal expression semantics. For example, the formal description of filter expressions
-   suggests that \$s[1] should be evaluated by examining all the items in sequence \$s, and selecting all those
-   that satisfy the predicate position()=1.
-\end{itemize}
-
-fra 2.3.4 \cite{w3c00}
 \begin{quote}
 Consider an expression Q that has an operand (sub-expression) E. In general the value of E is a sequence. At an
 intermediate stage during evaluation of the sequence, some of its items will be known and others will be unknown.
 If, at such an intermediate stage of evaluation, a processor is able to establish that there are only two possible
 outcomes of evaluating Q, namely the value V or an error, then the processor may deliver the result V without
-evaluating further items in the operand E. For this purpose, two values are considered to represent the same
-outcome if their items are pairwise the same, where nodes are the same if they have the same identity, and values
-are the same if they are equal and have exactly the same type.
+evaluating further items in the operand E. [\ldots]
 
 There is an exception to this rule: If a processor evaluates an operand E (wholly or in part), then it is required
-to establish that the actual value of the operand E does not violate any constraints on its cardinality. For
-example, the expression \$e eq 0 results in a type error if the value of \$e contains two or more items. A processor
-is not allowed to decide, after evaluating the first item in the value of \$e and finding it equal to zero, that the
-only possible outcomes are the value true or a type error caused by the cardinality violation. It must establish
-that the value of \$e contains no more than one item.
+to establish that the actual value of the operand E does not violate any constraints on its cardinality. [\ldots] 
 \end{quote}
+
+This feature could be utilised in situations where path expressions is to be evaluated to effective boolean values
+(as described in section \ref{sect:disc:effBool}). If the path expression is to return either nodes or an empty
+sequence, it is sufficient to find \emph{one} node per unique iteration. This might prove difficult to implement
+on an MQL processor however, as it is hard to know which unique iteration a element belongs to before the element
+relation and a relation with representations in all unique iterations are joined together.
+
+Another situation where not accessing all data is required is with numeric predicates. The formal description of
+filter expressions\cite{xquery_semantics} says that a expression such as \texttt{\$s[1]} should be evaluated by
+consecutively examining the items of the sequence \texttt{\$s}, and selecting all items where
+\texttt{position()=1}. A better solution would be to only pick the first item of the sequence. But as Tainting
+Dependencies stores sequences from many iterations in the same relation, and no ordering can be assumed, this can
+not be done easily. The MQL processor has no way of knowing where the tuples holding the items which are the
+first item of their respected sequences unless there is some kind of indexing of the relation on the $index$
+fields. In such a case the processor could lookup the tuples where $index$ has the value 1, the alternative is a
+sequencial scan of the relation, checking each tuple.
+
+\subsection{Path Expressions}
+Quite a lot of research has been done on optimising XPath (Path expressions in XQuery stem from XPath) since it
+became a W3C Recommendation in 1999. Of the documents produced by this research we would recommend
+\cite{optimize_logic}, \cite{optimize_michiels} and \cite{optimize_xsltPath}. As this is outside the scope of this
+report the contents of these will not be resited here. However, \cite{optimize_forward} presents a reverse axis
+removal algorithm which may be interesting in a MQL and Taiting Dependencies specific setting. The algorith
+recognises path expressions containting reverse axis steps, and rewrites them into pure forward axis step
+expressions with possible predicates. This may be helpful as the MQL \textsf{scope} operator only accepts steps
+equivalent to the \texttt{child} axis.
+
+By letting the translator keep track over valid consecutive \texttt{child} axis steps, the \textsf{scope} operator
+may be employed to filter the results from the lookup (ref rule \ref{rule:trans:TD:pathStep}), most likely
+reducing the tuples involved in the subsequent join. Consider the following path expression:
+
+\begin{center}
+\texttt{/a/b[g]/c//d[h]/e}
+\end{center}
+
+Here, the result of looking up \texttt{g} may be filtered by a \textsf{scope} operator with \textsf{/a/b/g} as its
+parameter. Similarly, the lookup of \texttt{c} may be filtered on \textsf{/a/b/c}. Because the name test \texttt{d}
+is not part of a \texttt{child} axis step (rather a \texttt{descendant-or-self} axis step), no filtering can be
+done. \texttt{e}, however, may be filtered by \textsf{scope} with the parameter \textsf{d/e}. Some consideration
+will still have to be done concerning how much cheaper the join will become with the filtering compared to the cost
+of filtering one of its operands.
+
+One idea would be to move all predicates out of the path expression, and apply them as post filters. This would
+probably reduce the number of needed joins -- at least in some cases. In other cases it may be to costly to build
+a filter fitted to the whole path expression. If e.g. \texttt{h} from the last example query was a number instead,
+the path expression up until \texttt{d} would have to be evaluated, filtered with the \texttt{g} predicate, and
+finally joined with the evaluation of the path expression without the last predicate on their \texttt{d} step in
+the $scope$ fields.
+
+The rule for translating predicates, rule \ref{rule:trans:TD:predicate}, is a general one. Here, a reference to
+the context item from the outside of the predicate is ``copied'' inside the predicate (containting $sprDotNumb$).
+This copy is then operated on, and when the predicate expression is evaluated, the predicated expression and the
+predicate expression is joined on the reference to the context item. An example of this process is seen in figure
+\ref{fig:results:query_ifthenelse_result_dag}. Here, the copying is in form of a upwards split, and the If the
+context item is only referred to once within the predicate this translation may however be simplified.
+
+Consider the following XQuery query:
+\begin{center}
+\texttt{//person[name eq "Robert"]}
+\end{center}
+
+This can be solved by joining the \texttt{name} relation with the \texttt{person} relation, and keeping all the
+attributes from both relations. The attributes stemming from the \texttt{name} relation would have to be marked in
+some way, as these are not a part of the result of the query. This relation will have to be filtered with a
+selection removing the tuples where the $scope$ stemming from the \texttt{name} is not a child scope of the
+$scope$ stemming from the \texttt{person} relation. Further, only the tuples where the $value$ stemming from the
+\texttt{name} relation is \texttt{"Robert"} is retained. Finally the attributes stemming from the \texttt{name}
+relation are projected away.
+
+A similar solution may be considered for other types of predicates as well, but if there is more than one
+reference to the context item within the predicate things get more cumbersome. In such a case the method would
+have to be sure that no reference to the context item is removed from the relation at any time before the
+finalisation of the evaluation.
