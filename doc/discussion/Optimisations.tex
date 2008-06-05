@@ -5,8 +5,8 @@ In section \ref{sect:trans:TD:simplifications} we presented some situations wher
 MQL can be specialised and simplified. In this section we will outline some ideas for further simplification and
 optimisation.
 
-As can be seen of the tree in figure \ref{fig:results:query_ifthenelse_result} on page
-\pageref{fig:results:query_ifthenelse_result}, Tainting Dependecies can produce relational algebra trees with
+As can be seen of the tree in figure \ref{fig:results:query_pathpred_result} on page
+\pageref{fig:results:query_pathpred_result}, Tainting Dependecies can produce relational algebra trees with
 consecutive \textsf{project} operators. This is of cource unnecessary, and such operators can be merged into one
 single \textsf{project}. Attributes which is not part of the result or part of evaluation of the result can be
 pruned. This may however not be anything the translator would need to consider, as the Mars optimiser allready
@@ -110,8 +110,8 @@ The rule for translating predicates, rule \ref{rule:trans:TD:predicate} on page 
 is a general rule. Here, a reference to the context item from the outside of the predicate is ``copied'' inside the
 predicate (containting $sprDotNumb$). This copy is then operated on, and when the predicate expression is
 evaluated, the predicated expression and the predicate expression is joined on the reference to the context item.
-An example of this process is seen in figure \ref{fig:results:query_ifthenelse_result_dag} on page
-\pageref{fig:results:query_ifthenelse_result_dag}. Here, the copying is in form of a upwards split, and the If the
+An example of this process is seen in figure \ref{fig:results:query_pathpred_result_dag} on page
+\pageref{fig:results:query_pathpred_result_dag}. Here, the copying is in form of a upwards split, and the If the
 context item is only referred to once within the predicate this translation may however be simplified.
 
 Consider the following XQuery query:
