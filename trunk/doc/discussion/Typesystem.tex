@@ -1,29 +1,95 @@
-\section{Type Considerations}
+\section{Type System Considerations}
 \label{sect:disc:typeSystem}
-\textbf{\LARGE TODO: {ANDREAS}}
-herregud her var det mye ass..
-\begin{itemize}
-  \item Hvordan f\aa~til noe typesystem?
-  \item Hvordan ordner Pathfinder typer? Kan vi gj\o re det samme? Finnes det noen andre vi kan dra kunnskap fra?
-  \item lagre false som ``false'' enn s\aa~lenge.. kjipt med /a/b[/a/b/c] hvis c er slik: <c>false</c>
-  \item Mars st\o tter ikke forskjellige typer innenfor samme felt
-  \item En sekvens er en sekvens i XQuery\ldots ikke en sekvens av booleans
-  eller noder etc
-  \item Et ekstra felt som sier type?
-  \item Hva skjer med /a/b/c/text() vs /a/b/c ?
-  \item hva skjer om man lager en <a> hei <b> jeje </b> </a> variabel? Dette
-  m\aa~kunne representeres.
-  \item Hvis vi hadde hatt statisk og sterk typing s\aa~ hadde mye v\ae rt
-  ordna, f.eks \verb!for $i as xs:int in (1,2,3) return /a[$i]! s\aa vet man
-  med en gang at \verb![$i]! er en ``numeric predicate''.
-  \item typeswitch / instance of / cast / castable / treat as
-  \item There is however also a need to represent explicitly stated XML-nodes, as well
-	as differentiate between the number \texttt{1} and the string \texttt{"1"}.
-	This, and other issues about representing XQuery types will be treated in
-	section \ref{sect:disc:typeSystem}.
-	\item sequencetype\ldots  
-\item Hva med \$i = (1,2,3) \$i/hatt -> typefeil? kj\o re isInScope(scope) p\aa~noe som ikke har scope kolonne?
-  		\item constructors\ldots element, CDATA, attribute etc etc
-  		\item typeswitch? kan bli stress.. har ikke s\aa~mye typer enn\aa \ldots skal v\ae re diskusjon om typer i
-  		sect \ref{sect:disc:typeSystem}\ldots
-	\end{itemize}
+Currently, neither ``Tainted Dependencies'' (TD) nor the prototype
+implementation assumes any form of availability of a type system. However
+according to the formal semantics specification\cite{xquery_semantics} (and
+also noted in \cite{pathfinder_compiling_xquery}, XQuery Core is inherently
+fully statically typed. This suggests that full normalisation of queries to
+XQuery Core would imply the availability of this. Static typing could help
+solve some problems, such as distinguishing numeric predicates. However, XQuery
+Core has semantics for solving this exact problem -- the predicate normalisation
+mapping applies a typeswitch construct which contains the necessary logic to
+differentiate between numeric predicates and other predicates. And regardless,
+numeric predicates were solved in TD as per rule \ref{rule:trans:TD:predicate}.
+
+Another related challenge is the lack of explicit typing in the MQL language.
+The only concrete specification given by FAST is the fact that if a column is
+typed, then if can only contain fields of that type. MQL has typed columns,
+however it is not possible to specify type. For example, the \textsf{make()}
+operator has no parameters for type specification. This is complicated further
+by the fact that a XQuery sequence is simply just a sequence. The individual
+items themselves can have vastly different types.
+
+The intricate challenges related to typing are numerous. For example, consider
+the sequence \texttt{(1, <a><b>2</b></a>, "3")}. This sequence can not be
+represented in a relation without resorting to a BLOB\footnote{Binary
+Large Object}-like data type for the value column. However, that implies that
+the semantics of the second item as an XML element is lost unless it is somehow
+serialized in a common format with which MQL is compatible. That again implies
+that metainformation about fields may be required to indicate the type of the
+contents.
+
+Furthermore, the \texttt{isInScope()} function proposed in section
+\ref{sect:method:marsAddedOperators} on page
+\pageref{sect:method:marsAddedOperators} requires a scope column in the tuple
+being tested. Consider this non-sensical example:
+
+\begin{Verbatim}
+for $i in (1,2,3) return $i/a
+\end{Verbatim}
+
+Somehow, this error must be discovered and prevented. Likewise, the following
+example must be allowed without errors:
+
+\begin{Verbatim}
+for $i in (<a><b>1</b></a>, <a><b>2</b></a>, <a><b>3</b></a>) return $i/b
+\end{Verbatim}
+
+On a final note, non-heterogeneous sequences are seldom of practical use, and
+can appear irrational. Path expressions always return nodes, string operations
+always return strings, and so on. Non-heterogeneous sequences are, as far as
+known to the authors, only specifiable by an end-user of XQuery, for example by
+attempting to execute a query such as this:
+
+\begin{Verbatim}
+for $i in (1, <a><b>2</b></a>, "3") return $i * 2;
+\end{Verbatim}
+
+This particular example appears non-sensical, and will likely not execute. For
+example, the Saxon parser returns this run-time error message when attempting
+to execute the above query:
+
+\begin{Verbatim}
+XPTY0004: Unsuitable types for * operation
+Query processing failed: Run-time errors were reported
+\end{Verbatim}
+
+Naturally, it appears that typing is an important but complex aspect of XQuery,
+and several issues such as the ones described here needs to be solved for a
+proper implementation to take place.
+
+% \begin{itemize}
+%   \item Hvordan f\aa~til noe typesystem?
+%   \item Hvordan ordner Pathfinder typer? Kan vi gj\o re det samme? Finnes det noen andre vi kan dra kunnskap fra?
+%   \item lagre false som ``false'' enn s\aa~lenge.. kjipt med /a/b[/a/b/c] hvis c er slik: <c>false</c>
+%   \item Mars st\o tter ikke forskjellige typer innenfor samme felt
+%   \item En sekvens er en sekvens i XQuery\ldots ikke en sekvens av booleans
+%   eller noder etc
+%   \item Et ekstra felt som sier type?
+%   \item Hva skjer med /a/b/c/text() vs /a/b/c ?
+%   \item hva skjer om man lager en <a> hei <b> jeje </b> </a> variabel? Dette
+%   m\aa~kunne representeres.
+%   \item Hvis vi hadde hatt statisk og sterk typing s\aa~ hadde mye v\ae rt
+%   ordna, f.eks \verb!for $i as xs:int in (1,2,3) return /a[$i]! s\aa vet man
+%   med en gang at \verb![$i]! er en ``numeric predicate''.
+%   \item typeswitch / instance of / cast / castable / treat as
+%   \item There is however also a need to represent explicitly stated XML-nodes, as well
+% 	as differentiate between the number \texttt{1} and the string \texttt{"1"}.
+% 	This, and other issues about representing XQuery types will be treated in
+% 	section \ref{sect:disc:typeSystem}.
+% 	\item sequencetype\ldots  
+% \item Hva med \$i = (1,2,3) \$i/hatt -> typefeil? kj\o re isInScope(scope) p\aa~noe som ikke har scope kolonne?
+%   		\item constructors\ldots element, CDATA, attribute etc etc
+%   		\item typeswitch? kan bli stress.. har ikke s\aa~mye typer enn\aa \ldots skal v\ae re diskusjon om typer i
+%   		sect \ref{sect:disc:typeSystem}\ldots
+% 	\end{itemize}
