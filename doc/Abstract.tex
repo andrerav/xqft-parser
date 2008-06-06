@@ -14,15 +14,7 @@ The result is a method of translation which produces algebra significantly less
 complex than that produced by an existing method dubbed ``loop lifting''. These
 methods are then compared and evaluated through discussion.
 
-
-Ting n\aa r vi g\aa r igjennom rapporten igjen:
-\begin{itemize}
-  \item count tar ingen /trenger ikke ta noen parametere
-  \item hhjoin([] []\ldots = cross(), trenger ikke ekplisitt si det
-  \item skrive inprocedings greier for pathfinderartikler
-\end{itemize}
-
-til torbj\o rnsen:
+\textbf{\LARGE til torbj\o rnsen:}
 \begin{verbatim}
 let $needed := fn:doc("needed.xml")/needed/product
 let $products := fn:doc("products.xml")/products/item
@@ -31,4 +23,21 @@ for $i in fn:distinct-values($products/maker)
     where every $need in $needed satisfies $need = $products[maker eq $i]/product
 return $i
 
+\end{verbatim}
+
+products.xml:
+\begin{verbatim}
+<products>
+<item> <product>A</product> <maker> 1 </maker> </item>
+<item> <product>B</product> <maker> 1 </maker> </item>
+<item> <product>B</product> <maker> 4 </maker> </item>
+</products>
+\end{verbatim}
+
+needed.xml:
+\begin{verbatim}
+<needed>
+<product>A</product>
+<product>B</product>
+</needed>
 \end{verbatim}
