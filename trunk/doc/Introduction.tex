@@ -1,10 +1,41 @@
 \chapter{Introduction}
 \label{chapter:introduction}
-\begin{itemize}
-  \item \textbf{\LARGE TODO:} Acknowledgements i kap f\o r?
-  \item motiv for oppgave
-  \item vi har funnet opp ``Tainting Dependencies'' -- en metode for \aa~oversette XQuery til MQL
-  \item vi har sammenlignet mot Loop Lifting (Pathfinder) og det viser seg \aa~v\ae re god stemning
-  \item \ldots
-  \item \ldots 
-\end{itemize}
+% \begin{itemize}
+%   \item \textbf{\LARGE TODO:} Acknowledgements i kap f\o r?
+%   \item motiv for oppgave
+%   \item vi har funnet opp ``Tainting Dependencies'' -- en metode for \aa~oversette XQuery til MQL
+%   \item vi har sammenlignet mot Loop Lifting (Pathfinder) og det viser seg \aa~v\ae re god stemning
+%   \item \ldots
+%   \item \ldots 
+% 
+% \end{itemize}
+
+
+The search engines of today are capable of finding relevant documents based
+on simple search terms as well as weighting and ranking schemes of varying
+complexity. However, few are capable of joining several query results,
+performing structural queries, and filtering by complex full-text expressions
+in a single unified query operation. 
+
+XQuery is an XML query language capable of performing complex nested
+queries, extendable with full-text extensions, including linguistics such as
+stemming and thesaurus. In theory, XQuery queries can be translated into
+relational algebra for execution on a suitable algebra processor engine.
+
+iAd \cite{iadcentre} (Information Access Disruptions) is an ongoing research
+effort in ``next generation information access solutions'', in which this
+project partake. Our specific goal is thus to develop a method of
+translating XQuery queries into relational algebra, and furthermore implement a
+proof of concept and compare this to existing technology. 
+
+In chapter \ref{chapter:theory} we will examine XQuery itself in further detail
+and investigate the current state of XQuery translator implementations and
+research. In chapter \ref{chapter:method} we will detail the tools and methods
+used. In chapter \ref{chapter:translation} we will describe our novel
+translation method dubbed ``Tainting Dependencies''. Continuing to chapter
+\ref{chapter:implementation} we expound on the implementation of a prototype
+which serves as a proof of concept. Eventually the results will be
+presented and discussed in chapters \ref{chapter:results} and
+\ref{chapter:discussion}. Our work is concluded in chapter
+\ref{chapter:conclusion}, and we propose future work and improvements in
+chapter \ref{chapter:future}.
