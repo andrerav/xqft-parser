@@ -48,4 +48,69 @@ $value$ fields of the \texttt{satisfies} expression, as there is no requirement 
 \caption{Mapping XQuery quantifiers to MQL aggregators \label{tab:disc:quant}}
 \end{table}
 
-\textbf{\LARGE TODO: MADS} eksempel?
+\begin{myExample}
+Consider the XQuery query of figure \ref{fig:trans:TD:quantQu}. In this query the iterator body of the FLWOR is a
+quantified expression.
+\begin{figure}[h]
+\begin{equation*}
+\begin{array}{l}
+\mbox{\texttt{for \$a in ("a","b") return}} \\ \quad
+\mbox{\texttt{every \$e in (\$a, "b") satisfies \$e eq "b"}}
+\end{array}
+\end{equation*}
+\caption{Example query with quantified expression \label{fig:trans:TD:quantQu}}
+\end{figure}
+
+The sequence sequentially bound to the quantifier variable is treated as explained in section
+\ref{sect:trans:TD:seqBuild}: where \texttt{\$a} taints \texttt{"b"} and the relations are spliced together. As
+quantifier variables are to be handled as iterator variables, the $index$ attribute of this relation will be
+renamed $enumb$, as illustrated in figure \ref{fig:trans:TD:quant:seq}. This relation is stored in the symbol table
+(or rather the algebra leading to this relation), and is fetched during the evaluation of the \texttt{satisfies}
+expression. The result of this comparison expression is shown in figure \ref{fig:trans:TD:quant:satEx}. Here, the
+double line illustrates grouping. 
+
+\begin{figure}[h]
+\centering
+\subfigure[]{
+\begin{tabular}{|c|c|c|c|} \hline
+$idx$ & $anb$ & $enb$ & $val$ \\ \hline
+1 & 1 & 1 & \texttt{"a"} \\ \hline
+1 & 1 & 2 & \texttt{"b"} \\ \hline
+1 & 2 & 1 & \texttt{"b"} \\ \hline
+1 & 2 & 2 & \texttt{"b"} \\ \hline
+\end{tabular}
+\label{fig:trans:TD:quant:seq}
+}
+\qquad
+\subfigure[]{
+\begin{tabular}{|c|c|c|c|} \hline
+$idx$ & $anb$ & $enb$ & $val$ \\ \hline
+1 & 1 & 1 & $false$ \\ \hline
+1 & 1 & 2 & $true$ \\ \hline\hline
+1 & 2 & 1 & $true$ \\ \hline
+1 & 2 & 2 & $true$ \\ \hline
+\end{tabular}
+\label{fig:trans:TD:quant:satEx}
+}
+\qquad
+\subfigure[]{
+\begin{tabular}{|c|c|c|} \hline
+$idx$ & $anb$ & $val$ \\ \hline
+1 & 1 & $false$ \\ \hline
+1 & 2 & $true$ \\ \hline
+\end{tabular}
+\label{fig:trans:TD:quant:quant}
+}
+
+\caption[Evaluating the quantified expression]{Evaluating the quantified expression of figure
+\ref{fig:trans:TD:quantQu}. (a) The quantifier variable fetched from the symbol table. (b) The result of the
+\texttt{satisfies} expression. The double line illustrates the groups. (c) The result of the quantified
+expression. Attribute names are shortened. \label{fig:trans:TD:quantInter} }
+\end{figure}
+
+Except for the quantifier variable, this expression is dependent on $I_{\mbox{\texttt{a}}}$, which the result of
+the \texttt{satisfies} expression is grouped on. Each group will be run through the \texttt{min} aggregator,
+because the quantifier is \texttt{every}. As $false$ has a lower value than $true$, the aggregator will reveal if
+the group contains a $false$. The result of the grouping is shown in figure \ref{fig:trans:TD:quant:quant}. This
+result will have to be renumbered to finalise the evaluation of the query.
+\end{myExample}

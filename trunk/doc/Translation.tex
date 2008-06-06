@@ -22,6 +22,7 @@ generated with TD.
 \input{translation/FLWOR.tex}
 \input{translation/BinaryOps.tex}
 \input{translation/CondAndFull.tex}
+\input{translation/Quantified.tex}
 \input{translation/PathPred.tex}
 \input{translation/Simplifications.tex}
 
@@ -34,10 +35,5 @@ such. An expression dependent on an iterator will have a representation for each
 dependency can taint another expression, if that expression is a subexpression of a expression whose evaluation
 requires representation for all iterations. We have presented methods for translating features of XQuery complying
 to the implications of tainting and dependencies. Finally, we presented some possible simplifications of trees
-generated with TD.
-
-
-
-\begin{itemize}
-  \item sammendrag av dette kap
-\end{itemize}
+generated with TD. In section \ref{sect:disc:notSupported} we will discuss translation of XQuery features not
+presented in this chapter.
