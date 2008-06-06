@@ -332,7 +332,7 @@ specification in figure \ref{fig:disc:not:funcEBNF}.
 \end{figure}
 
 The \texttt{external} keyword means that the function is implemented outside the query environment. This is
-discussed in section \ref{sect:disc:ctxItem}. An implementation for supporting the built-in and query declared
+discussed in section \ref{sect:disc:ctxItem}. An implementation supporting the built-in and query declared
 functions, may be in the form of a function table. By querying this table with the name of the function, a
 operator tree is returned with pointers to possible references of the parameters within the tree. When the
 translator comes upon a function call, it fetches this tree and follows the pointers to the parameter references
