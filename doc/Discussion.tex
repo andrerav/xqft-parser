@@ -15,24 +15,6 @@ accounted for. This chapter is finalized by discussion of syntax tree rewriting
 and normalisation, a discussion of problems related to sequences, and a
 discussion of the XQuery type system and related problems.
 
-Ting n\aa r vi g\aa r igjennom rapporten igjen:
-\begin{itemize}
-  \item count tar ingen /trenger ikke ta noen parametere
-  \item hhjoin([] []\ldots = cross(), trenger ikke ekplisitt si det
-  \item skrive inprocedings greier for pathfinderartikler
-\end{itemize}
-
-til torbj\o rnsen:
-\begin{verbatim}
-let $needed := fn:doc("needed.xml")/needed/product
-let $products := fn:doc("products.xml")/products/item
-
-for $i in fn:distinct-values($products/maker) 
-    where every $need in $needed satisfies $need = $products[maker eq $i]/product
-return $i
-
-\end{verbatim}
-
 \input{discussion/ContextItem}
 \input{discussion/NotSupported}
 \input{discussion/Optimisations}
