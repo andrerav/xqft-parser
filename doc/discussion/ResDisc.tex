@@ -84,9 +84,18 @@ page \pageref{sect:method:complexity} for an detailed account of this method.
 This project has studied two approaches for translating XQuery to relational
 algebra; loop lifting as implemented by Pathfinder, and ``Tainting
 Dependecies'' (TD), which is a novel method developed in this project which
-still shares a few common traits with loop lifting. TODO: skrive om likheter
+still shares a few common traits with loop lifting. However, the motivation for
+the development of TD was the fact that the more expressive MQL algebra allowed
+more flexibility in the translation. Furthermore, loop lifting has the
+disadvantage of full denormalisation, as noted in
+\cite{pathfinder_purelyRelational}: 
 
-A common trait of loop lifting, which is also noted in
+\begin{quote}
+loop lifting consequently leads to a fully denormalized representation for $e$
+and thus to -- at least potentially -- significant data redundancy
+\end{quote}
+
+Another common trait of loop lifting, which is also noted in
 \cite{pathfinder_mothertongue} and \cite{pathfinder_purelyRelational}, is that
 the algebra trees will quickly grow very large. Consider the example in section 
 \ref{sect:trans:ll:example} on page \pageref{sect:trans:ll:example}; here, the
@@ -101,8 +110,6 @@ parts of the tree, for example as seen in figure
 \ref{fig:result:comparison:conditional_pathfinder_dag} on page
 \pageref{fig:result:comparison:conditional_pathfinder_dag}. If this particular
 DAG was converted to a tree, it would indeed be substantially larger.
-
-TODO: blande inn parallellisering her ogsaa? Mmm parallellisering. Deilig!
 
 Further, when comparing the rules in loop lifting (described in
 \cite{pathfinder_mothertongue}) and TD, it appears that TD will in most cases
@@ -122,5 +129,3 @@ avoided. However, in the light of the expressiveness available in MQL, it may
 be benefitial to employ a wider array of operators available when constructing
 MQL algebra. In any case, this requires further documentation and concrete
 performance measurements.
-
-TODO: noe mer her? synes det blir litt svadalollete etterhvert.. 
