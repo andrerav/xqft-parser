@@ -269,11 +269,47 @@ The \textsf{rangeExpr} operator would be a very specialised operator, and probab
 If no better translation option is found, a better solution would be to require range expressions to have literals
 as operands.
 
-\subsection{Order By - {MADS}}
+\subsection{Order By}
 \label{sect:disc:orderby}
-\begin{itemize}
-  \item st\o tte alle de sorteringsspesifiseringene.. st\o tte sortering over flere exprz.
-\end{itemize}
+
+As can be seen from the \texttt{order by} clause specification of figure \ref{fig:trans:TD:ordEBNF} on page
+\pageref{fig:trans:TD:ordEBNF}, the ordering of tuples returned from a FLWOR expression is very flexible as it may
+be set by one or more ordering specifications. Options may also be set for each order specification, called order
+modifiers. Currently, Tainting Dependencies only accomodates for a single order specification and no order
+modifiers. Expanding the translation rule for \texttt{order by} ordering (rule \ref{rule:trans:TD:orderbyOrd}) to
+allow multiple ordering specification may be done by sequentially joining the specifiers on their common
+dependencies before joining the result of this with the relation stemming from the \texttt{where} or
+\texttt{return} clause, and finally renumbering while sorting on the values from the orderspecifier in the correct
+order:
+
+\begin{equation*}
+% dette maa staa her ellers kompilerer det ikke
+\frac{}{\mbox{\texttt{order by }}e_{3 \cdot 1}\mbox{\texttt{,\ldots,}}e_{3 \cdot n}} \leadsto
+\begin{array}{l}
+\mbox{\textsf{project(value = l.value, }}\vartheta\mbox{\textsf{;}}\\ \quad
+\mbox{\textsf{numberate(index, [value1,\ldots,value}}n\mbox{\textsf{], [}}\vartheta\mbox{\textsf{];}} \\ \quad
+\quad \mbox{\textsf{hhjoin(\ldots [l.value,r.value1,\ldots,r.value}}n\mbox{\textsf{,\ldots];}} \\ \quad
+\quad \quad \mbox{\textbf{t(r(}}e_C\mbox{\textbf{), }}\beta\mbox{\textbf{)}\textsf{;}} \\ \quad \quad \quad
+\quad \mbox{\textsf{hhjoin(\ldots [value1= l.value,\ldots,r.value}}n\mbox{\textsf{,\ldots];}}
+\\\quad\quad\quad\quad\quad
+\mbox{\textbf{r(}}e_{3 \cdot 1}\mbox{\textbf{)}\textsf{)))}}\\\quad\quad\quad\quad\quad
+\mbox{\textsf{hhjoin(\ldots}}\\\quad\quad\quad\quad\quad
+\mbox{\textsf{\ldots}}\\\quad\quad\quad\quad\quad\quad
+\mbox{\textsf{hhjoin(\ldots,value}}n\mbox{\textsf{=r.value\ldots;}}\\\quad\quad\quad\quad\quad\quad\quad
+\mbox{\textsf{\ldots}}\\\quad\quad\quad\quad\quad\quad\quad
+\mbox{\textbf{r(}}e_{3 \cdot n}\mbox{\textbf{)}\textsf{)))}}
+\end{array}
+\end{equation*}
+Where $\vartheta=(e_C.\vartheta \cup e_{3 \cdot 1}.\vartheta \cup \ldots \cup e_{3 \cdot n}.\vartheta) - \beta$.
+If the \texttt{order by} clause is defined as \texttt{stable}, $l.index$ will have to be added as a last attribute
+to sort on in the \textsf{numberate} operator.
+
+The best way to implement the order modifiers would probably be to allow some corresponding parameters to be
+specified in the \textsf{numberate} operator. It may be cumbersome to implement such an operator allowing
+modifiers to be specified for each of the attributes to sort on. In such a case, each of the order specifier
+relations may have their $value$ fields sorted and updated by their own \textsf{numberate} operator.
+
+
 	
 		
 \subsection{XQuery Functions - {MADS}}

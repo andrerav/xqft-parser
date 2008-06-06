@@ -301,17 +301,21 @@ dependencies. Lastly, this relation is renumbered according to the order of the 
 \frac{}{\mbox{\texttt{order by }}e_3}\longmapsto
 \begin{array}{l}
 \mbox{\textsf{project(value = l.value, }}\vartheta\mbox{\textsf{;}}\\ \quad
-\mbox{\textsf{numberate(index, [r.value, index], [}}\vartheta\mbox{\textsf{];}} \\ \quad \quad
+\mbox{\textsf{numberate(index, [r.value], [}}\vartheta\mbox{\textsf{];}} \\ \quad \quad
 \mbox{\textsf{hhjoin([}}(e_{C}.\vartheta \cap e_2.\vartheta)\mbox{\textsf{], [}}(e_{2}.\vartheta \cap
 e_{C}.\vartheta)\mbox{\textsf{],}} 
 \mbox{\textsf{[l.value, r.value, }} \vartheta\mbox{\textsf{];}} \\ \quad \quad
 \quad \mbox{\textbf{t(r(}}e_C\mbox{\textbf{), }}\beta\mbox{\textbf{)}\textsf{;}} \\ \quad \quad \quad
 \mbox{\textbf{r(}}e_3\mbox{\textbf{)}\textsf{)))}}
 \end{array}
+\label{rule:trans:TD:orderbyOrd}
 \end{equation}
 
 Where $\vartheta = (e_C.\vartheta \cup e_3.\vartheta)-\beta$, and \textbf{r(}$e_{C}$\textbf{)} is the result of
-the translation done in the \texttt{where} clause if present, else the \texttt{return} clause.
+the translation done in the \texttt{where} clause if present, else the \texttt{return} clause. Field such as as
+$index$ and if applicable $documentId$, $pos$ and $scope$ will follow $l.value$. $r.value$ is only the $value$
+column from the right relation. To accommodate for the \texttt{stable} keyword, the \textsf{numberate} operator
+will have to sort on $l.index$ aswell, after sorting on $r.value$.
 
 As desired, all iterator dependency attributes ($\chi{numb}, \chi \in \beta$) will be projected away by the
 \textsf{hhjoin} operator. An additional \textsf{project} operator is used to ensure that the $value$ returned from
