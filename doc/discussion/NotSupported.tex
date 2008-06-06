@@ -89,6 +89,7 @@ options as parameters directly to the \textsf{lookup} operator.
 
 
 \subsection{Ordering Mode}
+\label{sect:disc:not:ord}
 
 XQuery contains \texttt{ordered} and \texttt{unordered} expressions. The purpose of these expressions is to set
 the ordering mode in to \texttt{ordered} or \texttt{unordered} for a certain region in a query. The expressions
@@ -107,14 +108,165 @@ and all operators whose only intent is to manipulate $index$ fields. Utilising c
 \texttt{unordered} mode expressions will be made easy.
 
 
-\subsection{Binary Expressions - {MADS}}
-\begin{itemize}
-  		\item node comparisons\ldots\ldots tviler p\aa~at vi f\aa r til dette glatt\ldots
+\subsection{Binary Expressions}
 
-  		\item \textbar, \texttt{union}, \texttt{intersect, except}
-  		\item Range expressions $e_1$ \texttt{to} $e_2$ (begge m\aa~v\ae re integer tror jeg -> skrive om det i type?) 
+In this section we will present some of the XQuery binary operator expressions not handled in section
+\ref{sect:trans:TD:binary}, and some ideas for possible translations of them.
+
+\subsubsection{Node Comparators}
+
+The node comparators of XQuery are \texttt{is}, \texttt{<<} and \texttt{>>}, and are currently not handled by
+Tainting Dependencies. A comparison with the \texttt{is} operator yields $true$ if the two operand nodes have the
+same node identity. Where node identity is defined by W3C like this \cite{w3c04}:
+\begin{quote}
+Each node has a unique identity. Every node in an instance of the data model is unique: identical to itself, and
+not identical to any other node.
+\end{quote}
+
+One solution would be to translate such expressions into a check if the two nodes have the same value in their
+respective $scope$ and $documentId$ fields:
+\begin{equation*}
+\frac{}{e_1 \mbox{\texttt{ is }} e_2} \leadsto
+\begin{array}{l}
+\mbox{\textsf{\ldots}} \\ \quad
+\mbox{\textsf{project(value = and(eq(l.docId,r.docId), eq(l.scope, r.scope))\ldots;}} \\ \quad\quad
+\mbox{\textsf{hhjoin([}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [}}(e_2.\vartheta\cap e_1.\vartheta)
+\mbox{\textsf{],\ldots;}} \\ \quad\quad \quad
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)}} \\ \quad\quad \quad
+\mbox{\textbf{r(}}e_2\mbox{\textbf{)}}
+\end{array}
+\end{equation*}
+This holds true as $documentId$ is unique per document, and no two elements may be in the same position within one
+document.
+
+A comparison with the \texttt{<<} and \texttt{>>} operators returns $true$ if, in document order, the left operand
+node precedes the right operand node and the left operand node follows the right operand node, respectively.
+Otherwise it returns $false$. These operators have a semantics comparable with the \texttt{preceding} and
+\texttt{following} axes in path expressions, and may therefore be translated by utilising the \textsf{isPreceding}
+and \textsf{isFollowing} functions (section \ref{sect:method:marsAddedOperators}, page
+\pageref{sect:method:marsAddedOperators}):
+
+\begin{equation*}
+\frac{}{e_1 \mbox{\texttt{ COMP }} e_2} \leadsto
+\begin{array}{l}
+\mbox{\textsf{\ldots}} \\ \quad
+\mbox{\textsf{project(value = isFUNK(l.scope, r.scope),\ldots;}} \\ \quad\quad
+\mbox{\textsf{hhjoin([}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{], [}}(e_2.\vartheta\cap e_1.\vartheta)
+\mbox{\textsf{],\ldots;}} \\ \quad\quad \quad
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)}} \\ \quad\quad \quad
+\mbox{\textbf{r(}}e_2\mbox{\textbf{)}}
+\end{array}
+\end{equation*}
+
+Where when the comparison operator \texttt{COMP} is \texttt{<<} the MQL function must be \textsf{isPreceding}, and
+when the operator is \texttt{>>} the function must be \textsf{isFollowing}.
+
+\subsubsection{Combining node Sequences}
+
+XQuery provides the following operators for combining sequences of nodes:
+\begin{itemize}
+  \item \texttt{union} and \textbar which are equivalent. They take two node sequences as operands and return a
+  sequence containing all the nodes that occur in either of the operands.
+  \item \texttt{intersect} takes two node sequences as operands and returns a sequence containing all the
+  nodes that occur in both operands.
+  \item \texttt{except} takes two node sequences as operands and returns a sequence containing all the nodes
+  that occur in the first operand but not in the second operand.
 \end{itemize}
 
+As all these operators eliminate duplicate nodes from their result sequences (based on node identity), the
+operators are the XQuery equivalent to the relational algebra operators union, intersect and difference discussed
+in section \ref{sect:theory:relAlg} on page \pageref{sect:theory:relAlg}. The result is also required to be in
+document order.
+
+Mars does currently not implement a pure \textsf{distinct} operator, but if it did it would need partition
+functionality similar to that of the \textsf{numberate} operator, and a translation of \texttt{union} and \textbar
+may have looked something like this:
+\begin{equation*}
+\frac{}{e_1 \mbox{\texttt{ union }} e_2} \leadsto
+\begin{array}{l}
+\mbox{\textsf{numberate(index, [documentId, scope], [}}e_1.\vartheta\cup e_2.\vartheta\mbox{\textsf{];}} \\ \quad
+\mbox{\textsf{distinct([documentId, scope], [}}e_1.\vartheta\cup e_2.\vartheta\mbox{\textsf{];}} \\ \quad\quad
+\mbox{\textsf{union(}} \\ \quad\quad\quad
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)};} \\ \quad\quad \quad
+\mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{)))}}
+\end{array}
+\end{equation*}
+
+Where the first parameter list of \textsf{distinct} is the fields which need to be distinct, and the second list
+is the attributes to partition on. This solution also requires the possibility sort on $scope$ fields.
+
+The \texttt{intersect} operator may be implemented as a join on their node identity, that is, $documentId$ and
+$scope$. The result will have to be run through a \textsf{distinct} operator like in the case of the
+\texttt{union} expression, in case any of the operand sequences contains duplicates. A solution might look
+something like:
+
+\begin{equation*}
+\frac{}{e_1 \mbox{\texttt{ intersect }} e_2} \leadsto
+\begin{array}{l}
+\mbox{\textsf{numberate(index, [documentId, scope], [}}e_1.\vartheta\cup e_2.\vartheta\mbox{\textsf{];}} \\ \quad
+\mbox{\textsf{distinct([documentId, scope], [}}e_1.\vartheta\cup e_2.\vartheta\mbox{\textsf{];}} \\ \quad\quad
+\mbox{\textsf{hhjoin([docId,scope,}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{],
+[docId,scope,}}(e_2.\vartheta\cap e_1.\vartheta) \mbox{\textsf{],\ldots;}} \\ \quad\quad \quad 
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)};} \\ \quad\quad \quad
+\mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{)))}}
+\end{array}
+\end{equation*}
+
+
+The translation of the \texttt{except} operator may have been solved with the help of a anti-join (section
+\ref{sect:theory:relAlg:antiJoin} on page \pageref{sect:theory:relAlg:antiJoin}). But as Mars does not implement a
+anti-join operator, the same effect may be achieved by using a outer-join followed by a selection. A
+\textsf{distinct} operator is needed here aswell, as the left operand may contain duplicates:
+
+\begin{equation*}
+\frac{}{e_1 \mbox{\texttt{ intersect }} e_2} \leadsto
+\begin{array}{l}
+\mbox{\textsf{numberate(index, [documentId, scope], [}}e_1.\vartheta\cup e_2.\vartheta\mbox{\textsf{];}} \\ \quad
+\mbox{\textsf{\ldots}} \\ \quad
+\mbox{\textsf{distinct([documentId, scope], [}}e_1.\vartheta\cup e_2.\vartheta\mbox{\textsf{];}} \\ \quad\quad
+\mbox{\textsf{select(eq(r.value, NULL);}} \\\quad\quad\quad
+\mbox{\textsf{hhjoin([docId,scope,}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{],
+[docId,scope,}}(e_2.\vartheta\cap e_1.\vartheta)\mbox{\textsf{],}}\\\quad\quad\quad\quad\quad\quad
+\mbox{\textsf{\ldots, left;}} \\ \quad\quad \quad\quad 
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)};} \\ \quad\quad \quad\quad
+\mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{))))}}
+\end{array}
+\end{equation*}
+
+As can be seen, all these proposals invole multiple resource expensive operators such as \textsf{numberate} and
+\textsf{distinct}. So a better solution would be prefered, or at least to minimise the use of the sequence
+combination operators when forming XQuery queries.
+
+
+\subsubsection{Range Expressions}
+Range expressions are in the format $e_1$ \texttt{to} $e_2$ and can be used to construct a sequence of consecutive
+integers. Both operands has to be integers or castable to \texttt{xs:integer}. If a operand is an empty
+sequence, or the integer value of first operand is greater than the integer value of the second, the
+result is an empty sequence. Otherwise, the result is a sequence containing the two integers and every
+integer between the two operands, in increasing order.
+
+If the operands are literals, the translator can turn the expression into a sequence construction expression
+containing the needed literals. However, if the value of the operands is not known before runtime, such
+expressions will have to be handled by the MQL processor. The least unnatural solution to this would be to
+implement a MQL operator taking one relation as input, two attribute names to create a sequence from and to, and a
+list of attrbutes names for fields that must be a part of the result. The operator would then create tuples based
+on the value of the fields specified as the from and to attributes, and augment each produced tuple with a copy of
+the value of the fields specified to be part of the result. This would look something like:
+
+\begin{equation*}
+\frac{}{e_1 \mbox{\texttt{ to }} e_2} \leadsto
+\begin{array}{l}
+\mbox{\textsf{\ldots}}\\
+\mbox{\textsf{rangeExpr([l.value, r.value], [}}e_1.\vartheta\cup e_2.\vartheta\mbox{\textsf{];}} \\ \quad\quad
+\mbox{\textsf{hhjoin([}}(e_1.\vartheta\cap e_2.\vartheta)\mbox{\textsf{],
+[}}(e_2.\vartheta\cap e_1.\vartheta) \mbox{\textsf{],\ldots;}} \\ \quad\quad \quad 
+\mbox{\textbf{r(}}e_1\mbox{\textbf{)};} \\ \quad\quad \quad
+\mbox{\textbf{r(}}e_2\mbox{\textbf{)}\textsf{)))}}
+\end{array}
+\end{equation*}
+
+But this is a very specialised operator, and probably quite complex to implement. If no better translation option
+is found, a better solution would be to require range expressions to have literals as operands.
 
 \subsection{Order By - {MADS}}
 \label{sect:disc:orderby}
