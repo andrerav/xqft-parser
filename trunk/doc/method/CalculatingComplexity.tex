@@ -1,14 +1,12 @@
 \section{Calculating complexity in relational algebra}
 \label{sect:method:complexity}
-TODO: hvorfor ikke I/O? Er den lik for begge metodene? Er det umulig \a regne
-ut? Sp\o rre \O ystein om dette
-
 A method for calculating complexity of relational algebra trees was suggested
 by \O ystein Torbj\o rnsen at FAST. This method is based on the assumption
 that the algebra will be executed on an implementation written in Java or a
-similar object oriented language. Not withstanding the benefits of compile-level
-optimisations and other ways to increase performance such as caching, this
-method of calculation defines complexity as creation of new objects in run-time. 
+similar object oriented language. Not withstanding the
+benefits of compile-level optimisations and other ways to increase performance
+such as caching, this method of calculation defines complexity as creation of
+new objects in run-time.
 
 This definition of complexity does \textit{not} account
 for disk I/O, nor is it a direct measurement of performance. However, given
@@ -47,7 +45,7 @@ all the complexity sums in some given relational algebra tree defines the
 
 \begin{figure}[htp]
 \begin{center}
-  \includegraphics[width=0.7\textwidth]{diagrams/tuple_post}
+  \includegraphics[width=0.65\textwidth]{diagrams/tuple_post}
   \caption[Tuple/Field structure]{The structure of a \textit{tuple} with
   \textit{fields}}
   \label{fig:method:tuple_field}
