@@ -13,4 +13,17 @@
   referencing some part of the dynamic context that is initialized by the external environment, such as a variable
   or context item. -> Appendix C.2 Dynamic Context Components
 \item declare variable er nesten st\o tta\ldots men external og greier..
+\item function external
+\item An XQuery implementation may provide a facility whereby external functions can be implemented using a host
+programming language, but it is not required to do so. If such a facility is provided, the protocols by which
+parameters are passed to an external function, and the result of the function is returned to the invoking query,
+are implementation-defined.
+
 \end{itemize}
+
+fra 3.1.5:
+\begin{quote}
+  Additional functions may be declared in a Prolog, imported from a library module, or provided by the external
+  environment as part of the static context.
+  \end{quote}
+

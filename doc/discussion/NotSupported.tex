@@ -312,20 +312,32 @@ relations may have their $value$ fields sorted and updated by their own \textsf{
 
 	
 		
-\subsection{XQuery Functions - {MADS}}
+\subsection{XQuery Functions}
 \label{sect:disc:functions}
-\begin{itemize}
-  \item hvordan ordne XQuery funksjoner?
-  \item function declarations, b\o r g\aa~greit, bare ha en function table ala symbol table.
-  \item Tror det skal v\ae re lagt til rette for \aa~ha en \textsf{function(FUNCTIONNAME; operator(list?)} operator
-  \end{itemize}
-  
-fra 3.1.5:
-\begin{quote}
-  Additional functions may be declared in a Prolog, imported from a library module, or provided by the external
-  environment as part of the static context.
-  \end{quote}
 
+XQuery supports numerous built-in functions, such as \texttt{fn:not} and \texttt{fn:count}, all
+specified in \cite{w3cfuncOps}. These functions are identified by being a member of the \texttt{fn}-namespace. In
+addition, XQuery allows users to declare functions of their own. A function declaration specifies the name of the
+function, the names and datatypes of the parameters, and the datatype of the result, as can be seen from the
+specification in figure \ref{fig:disc:not:funcEBNF}.
+
+\begin{figure}[h]
+\begin{Verbatim}
+[26] FunctionDecl ::= "declare" "function" QName "(" ParamList? ")" 
+                       ("as" SequenceType)? (EnclosedExpr | "external")
+[27] ParamList    ::= Param ("," Param)*
+[28] Param        ::= "$" QName TypeDeclaration?
+\end{Verbatim}
+\caption{W3C XQuery function declaration specification\cite{w3c00}\label{fig:disc:not:funcEBNF}}
+\end{figure}
+
+The \texttt{external} keyword means that the function is implemented outside the query environment. This is
+discussed in section \ref{sect:disc:ctxItem}. An implementation for supporting the built-in and query declared
+functions, may be in the form of a function table. By querying this table with the name of the function, a
+operator tree is returned with pointers to possible references of the parameters within the tree. When the
+translator comes upon a function call, it fetches this tree and follows the pointers to the parameter references
+and inserts the corresponding algebra tree. The built-in functions will have to be hard-coded and reside within
+the function table at startup.
 
 \subsection{Hva med disse?: - {MADS}}
 
