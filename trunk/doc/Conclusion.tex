@@ -1,11 +1,42 @@
 \chapter{Conclusion}
 \label{chapter:conclusion}
-\begin{itemize}
-  \item Vi har beskrevet XQuery, klassisk relasjonell algebra, og loop lifting
-  \item Vi har 
-  \item Vi har funnet opp metode
-  \item Vi har implementert metoden
-  \item vi har sammenlignet metoden
-  \item vi har funnet ut at det kan hende vi er inne p\aa~noe
-  \item \ldots
-\end{itemize}
+Throughout this project, we have explored the nature of XQuery and relational
+algebra. We have studied one well-researched method of translation dubbed ``loop
+lifting'', and found points of improvement as well as untapped potential in the
+fact that the target language MQL is a more expressive form of algebra
+which may allow more creative and efficient translations.
+
+We then proceeded to develop a novel method of translation dubbed ``Tainting
+Dependencies'' (TD) which seeks to avoid unecessary denormalisation of
+intermediate results, and which is also designed specifically for translation
+to MQL. Our method supports a substantially large subset of the XQuery language
+-- however lacking functionality has been accounted for, and suggestions for
+solutions have been proposed.
+
+Further, we developed a prototype as a proof of concept, which is capable of
+translating XQuery queries containing basic constructs such as FLWOR
+expressions, sequence constructions, and conditional expressions (if-then-else).
+
+Finally, based on a method of measurement for complexity defined by Oystein
+Torbj\o rnsen at FAST, we staged a comparison of our prototype TD implementation
+and an implementation of loop lifting dubbed Pathfinder developed by Teubner
+et. al at the University of Konstanz. Not withstanding the weaknesses of this
+method of comparison, we then empirically suggested that our method may
+produce less complex and more efficient relational algebra.
+
+Further research may be required, however the outcome of this project is a
+fairly complete, novel and well-documented method for translation of XQuery to
+MQL -- a method which is designed to perform equally or better than existing
+implementations.
+
+% 
+% \begin{itemize}
+%   \item Vi har beskrevet XQuery, klassisk relasjonell algebra, og loop lifting
+%   \item Vi fant visse deficiencies ved loop lifting, samt at MQL er mer
+%   expressiv
+%   \item Vi har funnet opp metode (TD)
+%   \item Vi har implementert metoden (proof of concept)
+%   \item vi har sammenlignet metoden (complexity comparison)
+%   \item vi har funnet ut at det kan hende vi er inne p\aa~noe
+%   \item \ldots
+% \end{itemize}

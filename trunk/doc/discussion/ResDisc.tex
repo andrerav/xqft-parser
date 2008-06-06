@@ -86,7 +86,7 @@ algebra; loop lifting as implemented by Pathfinder, and ``Tainting
 Dependecies'' (TD), which is a novel method developed in this project which
 still shares a few common traits with loop lifting. However, the motivation for
 the development of TD was the fact that the more expressive MQL algebra allowed
-more flexibility in the translation. Furthermore, loop lifting has the
+more flexibility in the translation. Furthermore, loop lifting had the
 disadvantage of full denormalisation, as noted in
 \cite{pathfinder_purelyRelational}: 
 
@@ -94,6 +94,9 @@ disadvantage of full denormalisation, as noted in
 [..] loop lifting consequently leads to a fully denormalized representation for
 $e$ and thus to -- at least potentially -- significant data redundancy
 \end{quote}
+
+And so a major motivation for the development of TD was avoiding this level of
+denormalisation.
 
 Another common trait of loop lifting, which is also noted in
 \cite{pathfinder_mothertongue} and \cite{pathfinder_purelyRelational}, is that
