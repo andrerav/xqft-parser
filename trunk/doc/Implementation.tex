@@ -17,6 +17,21 @@ oriented techniques, and is licensed under a liberal BSD license.
 This was requested by FAST. Instructions for compilation and installation can
 be found in appendix \ref{appendix:installation}.
 
+\section{Supported Features}
+This implementation supports the translation of the XQuery following features:
+\begin{itemize}
+  \item FLWOR constructs (section \ref{sect:trans:TD:simpleFLWOR}, page
+  \pageref{sect:trans:TD:simpleFLWOR})
+  \item Sequence construction (section \ref{sect:trans:TD:seqBuild}, page
+  \pageref{sect:trans:TD:seqBuild})
+  \item Integer literals (section \ref{sect:trans:TD:litteral}, page
+  \pageref{sect:trans:TD:litteral})
+  \item If-then-else constructs (section \ref{sect:trans:TD:ifThenElse}, page
+  \pageref{sect:trans:TD:ifThenElse})
+  \item Binary comparison (section \ref{sect:trans:TD:logical}, page
+  \pageref{sect:trans:TD:logical})
+\end{itemize}
+
 \input{implementation/SystemDesc.tex}
 \input{implementation/TheXQFTParser.tex}
 \input{implementation/ConstructingMQL.tex}
