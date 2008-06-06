@@ -1,14 +1,18 @@
 \chapter{Tainting Dependencies}
 \label{sect:translation}
 \label{chapter:translation}
-\textbf{\underline{\LARGE TODO:}} innledning
-\begin{itemize}
-  \item INTRO for teh wind
-  \item presenterer Tainted Dependencies
-  \item har vokst ut av MarkXRemove, da denne var forl\o peren.
-  \item bruk start p\aa~sect 3.1 i  PathFinder/MonetDB a relational s\aa passellers (inkl formel)
-  \item bygger tr\ae r, ikke DAgs, kan bli mekka om til det..
-\end{itemize}
+
+One of the greatest challenges in translating XQuery to relational algebra, is translating the semantics of
+iterators. The iterative nature of expressions such as \texttt{for} expressions and the bulk oriented relational
+processing may seem contradictory. But because XQuery is a purely functional language, and thus side effect free,
+it is semanticly sound to evaluate all iterations of the iterator body in parallel.
+
+In this chapter we will first present MarkXRemove. This was the first iterator translation proposal of this
+project. As it had some flaws, the method was reinvented and evolved into Tainting Dependencies (TD), accomodating
+for the deficiencies of MarkXRemove. The rest of the chapter is dedicated to this method. First some concepts will
+be discussed, followed by methods for translating various features of XQuery into MQL relational algebra trees,
+including the translation of iterators. Finally, the chapter will discuss some possible simplifications of trees
+generated with TD.
 
 \input{translation/MarkAndRemove}
 
@@ -21,10 +25,19 @@
 \input{translation/PathPred.tex}
 \input{translation/Simplifications.tex}
 
-
-
 \section{Summary}
 \label{sect:trans:summary}
+
+In this chapter we have presented Tainting Dependencies -- a method for translating XQuery expressions into MQL
+relational algebra trees. Some of the base concepts behind the method is iterator depencencies and tainting of
+such. An expression dependent on an iterator will have a representation for each iteration of that iterator. This
+dependency can taint another expression, if that expression is a subexpression of a expression whose evaluation
+requires representation for all iterations. We have presented methods for translating features of XQuery complying
+to the implications of tainting and dependencies. Finally, we presented some possible simplifications of trees
+generated with TD.
+
+
+
 \begin{itemize}
   \item sammendrag av dette kap
 \end{itemize}
