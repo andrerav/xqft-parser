@@ -1,2 +1,59 @@
 \chapter{Installation and usage}
 \label{appendix:installation}
+Note: visit the project website at
+htmladdnormallink{http://code.google.com/p/xqft-parser/}{http://code.google.com/p/xqft-parser/}
+for the latest updates and installation instructions.
+
+\section*{Project Directory Contents}
+The project directory contains a multitude of files and folders. Here is a list
+of the most important ones with a short explanation:
+\begin{itemize}
+  \item bin - contains the compiled binaries
+  \item doc - documentation (this report)
+  \item etc - contains the source grammar file, XQFT.g
+  \item lib - necessary runtime dependencies
+  \item Makefile - Makefile for GNU Make
+  \item src - all source code, the generated parser/lexer is moved to this
+  directory after generation
+  \item test - contains files related to testing and debugging
+  \item tmp - temporary files generated during parser generation
+\end{itemize}
+
+\section*{Prerequisites}
+A computer with a Unix-based operating system is recommended however not
+required. Note that the makefiles provided are not immediately suitable for
+win32-based operating systems. However the 
+
+\subsection*{Software}
+This software should be available for download from the internet if not already
+installed on the system.
+
+\begin{itemize}
+  \item GNU Make
+  \item Subversion
+  \item Java JDK 1.5.0 or newer
+\end{itemize}
+
+Optional software for generating AST and algebra graphs:
+\begin{itemize}
+  \item Graphviz
+  \item GNU Sed
+\end{itemize}
+
+\section*{Getting the Source}
+To download the source code using Subversion, execute the following in a
+command line interface:
+
+\verb!svn checkout https://xqft-parser.googlecode.com/svn/trunk/ xqft-parser!
+
+To download the source code as a tarball, please visit the project website at
+http://code.google.com/p/xqft-parser/.
+
+\section*{Compiling the Source}
+Move to the root directory of the source code, and enter the following command:
+\verb!make!. This will generate a new parser/lexer pair, compile them together
+with supporting classes, and generate a convenient \verb!ntnu-xqft.jar!-file.
+
+\section*{Command line interface}
+Refer to section \ref{sect:impl:system:cli} on page
+\pageref{sect:impl:system:cli} for a description of the command line interface.
