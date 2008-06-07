@@ -68,13 +68,21 @@ for $n$ tuples and $m$ fields generates $n$ new tuples and $n \times m$ new
 fields.
 
 \subsection{Assumptions}
-TODO
+Pathfinder generates relational algebra which contains some operators for which
+the behaviour is unknown. Some assumptions have made about these operators:
 \begin{itemize}
-  \item Joins produserer n*m felter, for n tupler og m felter ut (iflg. T\O
-  rbj\o rnsen)
-  \item Diff aner vi ikke noe om
-  \item Distinct aner vi ikke noe om
-  \item Not inverterer
-  \item Cast 
-  \item Attach
+  \item The \texttt{Join} operator is assumed to produce $n*m$ fields for an
+  input of $n$ tuples and $m$ fields
+  \item The behaviour of the \texttt{Diff} operator is unknown, it is assumed
+  to produce 0 tuples and 0 fields
+  \item The behaviour of the \texttt{Distinct} operator is unknown, in favour
+  of Pathfinder it is then assumed to produce 0 tuples and 0 fields
+  \item The \texttt{Not} operator is assumed to perform an inversion of boolean
+  values and thus produces $n$ tuples and $m$ fields for an input of $n$ tuples
+  and $m$ fields (where $m$ is always 1 in the comparisons made in this dissertation)
+  \item The \texttt{Cast} operator is assumed to produce $n$ tuples and 1
+  field for an input of $n$ tuples and $m$ fields
+  \item The \texttt{Attach} operator is assumed to produce $n$ tuples and $m$
+  fields, where $m$ is the number of fields constructed by the \texttt{Attach}
+  operator and $n$ is the number of input tuples
 \end{itemize}
