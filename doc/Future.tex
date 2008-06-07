@@ -9,17 +9,29 @@ We propose the following research related to performance benchmarking:
 \begin{itemize}
   \item Given that FAST develops a working implementation of an MQL processor
   some time in the future, it could be interesting to extend or rewrite the
-  prototype developed here, and execute the XMark benchmark suite and compare
-  to other existing implementations
+  prototype developed here, and execute the
+  XMark\footnote{\htmladdnormallink{http://www.xml-benchmark.org/}{http://www.xml-benchmark.org/}} 
+  benchmark suite and compare to other existing implementations
   \item If a working MQL processor can not or will not be developed in the
-  foreseeable future, then the prototype and the rules of TD may be modified
-  and interfaced with MonetDB
+  foreseeable future, then the prototype and the rules of ``Tainting
+  Dependencies'' (TD) may be modified and interfaced with MonetDB, and a
+  benchmark could be performed on this combined system\footnote{Note that this may prove challenging in the case of
+  the MQL \texttt{scope()} operator for which MonetDB does not have a known
+  counterpart}
+  \item Further research on optimisation and simplification of the TD
+  methodology
+  \item Investigate applicability of parallell execution of subtrees in the
+  algebra tree
 \end{itemize}
 
-
-\begin{itemize}	
-  \item Sammenligne ytelse med Pathfinder n\aa r Fast har f\aa tt p\aa~plass en impl.
-  \item Sammenligne ytelse med Pathfinder paa MonetDB (det kunne funket) 
-  \item Finne et typesystem (hvis ikke dette er gjort i l\o pet av Discussion)
-  \item Finne mer simplifications og optimisations
+Furthermore, we propose the following:
+\begin{itemize}
+  \item Improved support for interfacing with the external environment (as
+  described in section \ref{sect:disc:ctxItem})
+  \item Improved support of XQuery functionality, including: full-text
+  operations, ordered/unordered mode, binary operators not currently supported,
+  multiple order specifications for the orderby-clause, user-defined functions
+  as well as built-in XQuery functions (within the \texttt{fn} namespace)
+  \item Full consideration of the XQuery type system into TD, which may be
+  exploited for optimisations
 \end{itemize}
