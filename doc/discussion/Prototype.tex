@@ -1,11 +1,11 @@
-\section{Implementasjonen}
+\section{Implementation}
 \label{sect:disc:contextSens}
 Chapter \ref{chapter:implementation} describes how a prototype was implemented
 to demonstrate the ``Tainted Dependencies'' (TD) method. This implementation
 was dependent on a number of constraints:
 \begin{itemize}
   \item The availability of a free\footnote{By ``free'' is meant a liberal
-  licensing and availability of source code} pre-made XQuery parser capable of
+  license and availability of source code} pre-made XQuery parser capable of
   producing abstract syntax trees
   \item The ability to parse and manipulate syntax trees and re-write them into
   new structures (in particular to support normalisation to XQuery Core)
@@ -57,8 +57,8 @@ interest to this project:
 \end{itemize}
 
 In particular, the last point holds a strong indication that a tree grammar
-may not be suited for this project, as this tree parser will transform the AST
-into a relational algebra tree.
+may not be suited for this project, as the goal of this tree parser would be to
+transform the AST into a relational algebra tree.
 
 \subsection{AST rewriting and the visitor pattern}
 In section chapter \ref{chapter:method}, methods to achieve the goals
@@ -72,7 +72,8 @@ The process of rewriting the abstract syntax tree was implemented as a
 stand-alone visitor (the \texttt{RewriteVisitor} class). This implementation
 exploited the visitor pattern extensively, resulting in a clear separation of
 concerns. In particular, it seems to hold true that the visitor pattern
-typically will cleanly separate a data structure from an algorithm.
+typically will cleanly separate a data structure from an algorithm which is
+operating on that structure.
 
 \subsection{Constructed algebra trees and performance}
 As explain in section \ref{sect:impl:construct_mql} on page
