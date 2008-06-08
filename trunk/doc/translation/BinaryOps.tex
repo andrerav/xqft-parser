@@ -12,11 +12,8 @@ specified grammar handles operator precedence. \texttt{UnaryExpr} is a decendant
 
 \begin{figure}[h]
 \begin{Verbatim}
-[50] AdditiveExpr       ::= MultiplicativeExpr ( ("+" | "-") 
-                                MultiplicativeExpr )*
-[51] MultiplicativeExpr ::= UnionExpr 
-                                ( ("*" | "div" | "idiv" | "mod")
-                                UnionExpr )*
+[50] AdditiveExpr       ::= MultiplicativeExpr ( ("+" | "-") MultiplicativeExpr )*
+[51] MultiplicativeExpr ::= UnionExpr ( ("*" | "div" | "idiv" | "mod") UnionExpr )*
 [58] UnaryExpr          ::= ("-" | "+")* ValueExpr
 \end{Verbatim}
 \caption{The arithmetic expressions of XQuery}
@@ -28,7 +25,7 @@ operators the two values to be operated on will have to be in the same relation.
 operated on are from the same unique iteration (if there is any iterations at all), the relations corresponding to
 the two expressions will have to be joined on their common iterator dependencies, as described in section
 \ref{sect:trans:TD:implic}. Both the unary and the binary XQuery arithmetic operators accept only singleton
-sequences.
+sequences. This is discussed in section \ref{sect:disc:singelton}.
 
 \begin{equation}
 \frac{}{e_1 \mbox{\texttt{ OP }} e_2}\longmapsto
@@ -58,9 +55,8 @@ and $pos$ attributes.
 \texttt{div} 	& \textsf{div} \\
 \texttt{idiv} 	& \textsf{idiv} \\
 \texttt{mod} 	& \textsf{mod} \\
-\end{tabular}
-\label{tab:trans:TD:binOpMap}
-\caption{Mapping XQuery arithmetic operators to MQL functions.}
+\end{tabular}s
+\caption{Mapping XQuery arithmetic operators to MQL functions. \label{tab:trans:TD:binOpMap}}
 \end{table}
 
 Considering the unary operators, the \texttt{+} operator will never have any effect, and can therefore be dropped.
@@ -131,7 +127,8 @@ fully evaluated $e_1$. Attribute names are shortened. \label{fig:trans:TD:arithR
 \subsection{Logical Expressions}
 \label{sect:trans:TD:logical}
 An XQuery logical expression is either an \texttt{and} expression or an \texttt{or} expression. If a logical
-expression does not raise an error, its value is always one of the boolean values $true$ or $false$.
+expression does not raise an error(see section \ref{sect:disc:effBool}), its value is always one of the boolean
+values $true$ or $false$.
 
 A logical expression is translated in a matter very similar to the arithmetic expressions. The XQuery logical
 operators does however operate on the effective boolean value (see section \ref{sect:theory:xquery:basics}) rather
@@ -161,8 +158,7 @@ Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$, \texttt{OP} will map to a 
 \texttt{or} & \textsf{or} \\
 \texttt{and} & \textsf{and} \\
 \end{tabular}
-\label{tab:trans:TD:logMap}
-\caption{Mapping XQuery boolean operators to MQL functions}
+\caption{Mapping XQuery boolean operators to MQL functions \label{tab:trans:TD:logMap}}
 \end{table}
 
 \subsection{Comparative Expressions}
@@ -170,7 +166,7 @@ Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$, \texttt{OP} will map to a 
 Comparison expressions allow two values to be compared. XQuery provides three kinds of comparison expressions,
 called value comparisons, general comparisons, and node comparisons. The comparison operators as specified by W3C
 are shown in figure \ref{fig:trans:TD:compEBNF}. The Tainting Dependency method does at this time not support node
-comparison, as will be discussed in section \ref{sect:disc:notSupported}.
+comparisons, but possible solutions are discussed in section \ref{sect:disc:not:binary}.
 
 \begin{figure}[h]
 \begin{Verbatim}
@@ -182,7 +178,7 @@ comparison, as will be discussed in section \ref{sect:disc:notSupported}.
 \label{fig:trans:TD:compEBNF}
 \end{figure}
 
-Value comparisons are used for comparing two single values. With the same premises and restrictions the rule for
+Value comparisons are used for comparing two single values. With the same premises and restrictions, the rule for
 translating arithmetic expressions (rule \ref{rule:trans:TD:arithmetic}) can be used to translate such comparison
 expressions. The mapping between the XQuery value comparison operators and MQL
 functions can be seen in table \ref{tab:trans:TD:valueComp}.
@@ -198,13 +194,12 @@ functions can be seen in table \ref{tab:trans:TD:valueComp}.
 \texttt{gt} & \textsf{gt} \\
 \texttt{ge} & \textsf{geq} \\
 \end{tabular}
-\label{tab:trans:TD:valueComp}
-\caption{Mapping XQuery value comparison operators to MQL functions}
+\caption{Mapping XQuery value comparison operators to MQL functions \label{tab:trans:TD:valueComp}}
 \end{table}
 
 General comparisons are existentially quantified comparisons that may be applied to sequences of any length. If
-employing a general comparison operator on any pair of items consisting of one
-from each of the sequences yields $true$, the comparison expression yields true. As an example, all the comparison expressions of figure
+employing a general comparison operator on any pair of items consisting of one from each of the sequences yields
+$true$, the comparison expression yields $true$. As an example, all the comparison expressions of figure
 \ref{fig:trans:TD:genCompEx} evaluates to $true$.
 
 \begin{figure}[h]
@@ -260,8 +255,7 @@ the project list of the \textsf{hhjoin} operator.
 \texttt{>} & \textsf{gt} \\
 \texttt{>=} & \textsf{geq} \\
 \end{tabular}
-\label{tab:trans:TD:genCompMap}
-\caption{Mapping XQuery general comparison operators to MQL functions.}
+\caption{Mapping XQuery general comparison operators to MQL functions. \label{tab:trans:TD:genCompMap}}
 \end{table}
 
 \begin{myExample}

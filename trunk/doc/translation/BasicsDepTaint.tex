@@ -1,15 +1,14 @@
 \section{Basics}
 \label{sect:trans:TD:basics}
-The method assumes left-to-right traversal of the assymetric syntax tree. In most cases the traversal is
-postorder, meaning a subtree can be evaluated independently from its ancestors -- the exception being the logical
-context set by boolean operators. The relational algebra will thus be generated bottom-up. In addition to the
-evaluated subtree, a node must be able to inform its parent node about its variable dependencies ($\vartheta$),
-which we will discuss later.
+The method assumes left-to-right traversal of the assymetric syntax tree. The traversal is
+postorder, meaning a subtree can be evaluated independently from its ancestors. The relational algebra will thus
+be generated bottom-up. In addition to the evaluated subtree, a node must be able to inform its parent node about
+its iterator dependencies ($\vartheta$), which we will discuss later.
 
 One XQuery sequence is represented as one relation and one XQuery item is represented as one tuple. This is sound,
 as all XQuery items are sequences, and all sequences are one-dimensional (section
 \ref{sect:theory:xquery:basics}). As we mentioned in section \ref{sect:trans:MarkXRemove}, the MarkXRemove method
-did actually not consider the ordering of items in sequences at all. In Tainting Dependencies, however, we have
+did not actually consider the ordering of items in sequences at all. In Tainting Dependencies, however, we have
 introduced an attribute $index$ holding the intra sequence number of the item. Consider the XQuery sequence
 \texttt{('a','b',}$\ldots$\texttt{,'z')}. With this attribute, the relational representation will be as follwing:
 
@@ -27,10 +26,10 @@ $n$		& \texttt{'z'} \\\hline
 As can be seen, the item value is stored in the $value$ attribute. For the course of this chapter we will, for the
 sake of simplicity, treat $value$ as a polymorphic type attribute. This simplification has minimal consequences
 for the method and the way XQuery expressions are translated. XQuery types and relational representation of such
-will is handled in section \ref{sect:disc:typeSystem}.
+will is discussed in section \ref{sect:disc:typeSystem}.
 
 Also for simplicity, the $index$, $documentId$, $pos$ and $scope$ attributes have sometimes been left out of the
-fields specified in \textsf{project} operators. If the \textsf{project} operator is applied to the result of a
+attributes specified in \textsf{project} operators. If the \textsf{project} operator is applied to the result of a
 join or cartesian product, these fields will follow the $value$ attribute if nothing else is specified. That is, if
 $r.value$ is projected, then so is $r.documentId$, etc\ldots if applicable.
 
@@ -99,8 +98,8 @@ attribute $\chi$$numb$. The value of $\chi$$numb$ is the iteration number of $I_
 will appear in the $\chi$$numb$th iteration of $I_{\chi}$.
 
 When an iterator variable \texttt{\$}$\chi$ is declared it is assigned a $\chi$$numb$ by renaming the $index$
-field of the corresponding iterator sequence $\chi$$numb$. Which leads us to the inference rule for translating the
-(optional) \texttt{for} clause of a FLWOR expression:
+attribute of the corresponding iterator sequence. Which leads us to the inference rule for translating
+the (optional) \texttt{for}-clause of a FLWOR expression:
 \begin{equation}
 \frac{}{\mbox{\texttt{for \$}}\chi \mbox{\texttt{ in }} e \mbox{\texttt{\ldots}}}\longmapsto
 \begin{array}{l}
@@ -111,23 +110,19 @@ field of the corresponding iterator sequence $\chi$$numb$. Which leads us to the
 \label{rule:trans:TD:forbind}
 \end{equation}
 Where the dependencies piggybacking the \textsf{project} operator can be
-expressed as: $\vartheta = e.\vartheta \cup \chi$.
-
-For a \texttt{for} clause with multiple variable bindings the rule must be applied once per binding as if there
-is one FLWOR expression per binding, and the $n$th binding is a FLWOR expression in the $(n-1)$th bindings
-return clause. This is in accordance with the XQuery semantics, and is one of
-the rewrite rules into XQuery Core (see section \ref{sect:theory:xquery:XQcore}).
+expressed as: $\vartheta = e.\vartheta \cup I_{\chi}$. For a \texttt{for} clause with multiple variable bindings
+the rule must be applied once per binding.
 
 From definition \ref{def:iterVarDep} it can be seen that $\chi$ is not part of
 the set of dependencies the iterator $I_{\chi}$ returns its parent. This is in
-fact the only case where a variable is removed from a dependency set. Because of
-this, we must be careful not to incidentally remove a $\chi$$numb$ attribute
-from a relation by means of a \textsf{project} operator.
+fact the only case where a iterator is removed from a dependency set. Because of this, we must be careful not to
+incidentally remove a $\chi$$numb$ attribute from a relation by means of a \textsf{project} operator.
 
 When we in this chapter write $\vartheta$ enclosed in MQL syntax it is to be
 interpreted as a comma separated list of all the attributes linked to the
 dependencies in the set $\vartheta$. As an example, the dependency set
-$\vartheta = \left\{\mbox{\texttt{x}},\mbox{\texttt{y}},\mbox{\texttt{z}}\right\}$, is read as \textsf{xnumb, ynumb, znumb} in an MQL environment.
+$\vartheta = \left\{I_{\mbox{\texttt{x}}},I_{\mbox{\texttt{y}}},I_{\mbox{\texttt{z}}}\right\}$, is read as
+\textsf{xnumb, ynumb, znumb} in an MQL environment.
 
 XQuery variable reference expressions, be it iterator, \texttt{let} or \texttt{declare} variables, are translated
 to relational algebra quite simply by fetching the tree linked to the variable name in the symbol table:
@@ -142,9 +137,8 @@ to relational algebra quite simply by fetching the tree linked to the variable n
 \label{sect:trans:TD:tainting}
 
 The iterator body of an iterator with a iterator sequence with length $n$ will
-have to be executed $n$ times. This can be done by e.g. evaluating the cartesian
-product between the body or the sequence, as with the MarkXRemove method. To
-avoid any denormalised intermediate results, an ideal solution would be to
+have to be executed $n$ times. This can be done by e.g.\ evaluating the cartesian product between the body and the
+sequence, as with the MarkXRemove method. To avoid any denormalised intermediate results, an ideal solution would be to
 always calculate such products after all other evaluations of the query is
 done. Consider the following simple example of the query $e$:
 
@@ -156,7 +150,7 @@ done. Consider the following simple example of the query $e$:
 \end{tabular}
 \end{center}
 
-For this query the result can be calculated like this:
+Conceptually, the result of this query can be calculated like this:
 \noindent
 \begin{center}
 \textbf{r(}$e$\textbf{)}$=$\textbf{r(}\texttt{(1, 2)}\textbf{)}$\times$\textbf{r(}\texttt{(3,
@@ -170,10 +164,9 @@ the concept discussed in section \ref{sect:trans:TD:dependency}, and replacing t
 something like a natural join operator (section \ref{sect:trans:mxr:basics}).
 
 MarkXRemove has shortcomings when it comes to evaluating expressions where a
-sequence constructed with at least one iterator dependent expression is a subexpression. Tainting Dependencies mend for this by requiring that
-all items constituting the result of an iterator dependent expression are
-iterator dependent. To meet this requirement, dependency tainting is
-introduced.
+sequence constructed with at least one iterator dependent expression is a subexpression. Tainting Dependencies
+mend for this by requiring that all items involved in the evaluation of the result of an iterator dependent
+expression are iterator dependent. To meet this requirement, dependency tainting is introduced.
 
 \noindent
 \begin{myDefinition}
@@ -190,20 +183,19 @@ their dependencies. Consider this subexpression:
 \quad \;\, $\vdots$  
 \end{tabular}
 \end{center}
-Where $e_{1}.\vartheta = \left\{\chi_{1}\right\}$ and $e_{2}.\vartheta = \emptyset$. Here $e_{2}$ will be tainted
-by $e_{1}$'s dependency on $\chi_{1}$, but as $e_{2}$ have no dependencies, $e_{1}$ will not be tainted. The
+Where $e_{1}.\vartheta = \left\{I_{\chi_{1}}\right\}$ and $e_{2}.\vartheta = \emptyset$. Here $e_{2}$ will be
+tainted by $e_{1}$'s dependency on $\chi_{1}$, but as $e_{2}$ have no dependencies, $e_{1}$ will not be tainted. The
 tainting process is carried out by calculating the cartesian product of $e_{2}$ and the $\chi_{1}$$numb$ column of
-\texttt{\$}$\chi_{1}$ stored in the symbol table.
+\textbf{r(}\texttt{\$}$\chi_{1}$\textbf{)} stored in the symbol table.
 
-More generally, for a sequence constructing expression $e$, \texttt{(}$e_{1}$\texttt{, \ldots, }$e_{n}$\texttt{)},
-tainting of an subexpression $e_{i}$ can be expressed like this: 
+The tainting of the relational representation of expression $e$ with the depdendencies $\vartheta$ is expressed
+like this:
 \begin{center}
 \begin{equation}
 \begin{array}{l}
-e.\vartheta = e_{1}.\vartheta \cup \ldots \cup e_{n}.\vartheta = \left\{\chi_{1},\ldots\chi_{m}\right\} \\
-i \in \left\{1,\ldots,n\right\} \\
-\mbox{\textbf{t(r(}}e_{i}\mbox{\textbf{),}}e.\vartheta\mbox{\textbf{)}} = 
-\mbox{\textbf{r(}}e_{i}\mbox{\textbf{)}} \times {\displaystyle \prod_{\chi_{j} \in (e.\vartheta -
+\vartheta = \left\{I_{\chi_{1}},\ldots I_{\chi_{m}}\right\} \\
+\mbox{\textbf{t(r(}}e\mbox{\textbf{),}}\vartheta\mbox{\textbf{)}} = 
+\mbox{\textbf{r(}}e\mbox{\textbf{)}} \times {\displaystyle \prod_{I_{\chi_{j}} \in (e.\vartheta -
 e_{i}.\vartheta)}} \mbox{\textsf{project(}}\chi_{j}numb\mbox{\textsf{;
 }\textbf{get(}}\chi_{j}\mbox{\textbf{)}\textsf{)}}
 \end{array}
@@ -232,21 +224,21 @@ iterations. When $I_{\chi_k}$ is in its $\chi_k{numb}$th iteration and $I_{\chi_
 iteration, the item in position $index$ of the sequence returned from $e$ will be $value$. Let $I_{\chi_m}$ also
 be one of the nested iterators, but one which $e$ is not dependent on. $e$ will evaluate to the same result
 regardless of which iteration $I_{\chi_m}$ is in given the iteration number of
-$I_{\chi_k}$ and $I_{\chi_l}$ is the same.
+$I_{\chi_k}$ and $I_{\chi_l}$ is constant.
 
 When an subexpression such as $e$ is used in further evaluation, it is important to seperate these iterations from
-each other. This is done by grouping the relation on all unique combinations of its iterator dependency attributes.
-Grouping can be done either by the \textsf{group} operator or by specifying the attributes to group by in the
-partition list of the \textsf{numberate} operator.
+each other. This is done by partitioning the relation on all unique combinations of its iterator dependency
+attributes. Partitioning can be done either by the \textsf{group} operator or by specifying the attributes to
+partition on in the partition list of the \textsf{numberate} operator.
 
-Often the evaluation of an expression use the values of each of its
-subexpressions. E.g. an addition expression is evaluated by adding the value of its first subexpression with the value of the second. To be able to calculate
-such expressions, the values of the subexpressions will have to be in the same relation. This can be achieved by
-evaluating the cartesian product of the subexpressions. Assumed that the subexpressions are independent of
-iterators or are not dependent on the same iterators this is sufficient. But if they are depentent on one or more
-iterators in common, the result of the cartesian product will have to be synchronised on the common iterators
-iterations. This allows evaluation in each unique iteration, and is solved by turning the cartesian product into
-an equi-join.
+Often the evaluation of an expression use the $value$ fields of each of its subexpressions. E.g.\ an addition
+expression is evaluated by adding the value of its first subexpression with the value of the second. To be able to
+calculate such expressions, the values of the subexpressions will have to be in the same relation. This can be
+achieved by evaluating the cartesian product of the subexpressions. Assumed that the subexpressions are
+independent of iterators or are not dependent on the same iterators this is sufficient. But if they are depentent
+on one or more iterators in common, the result of the cartesian product will have to be synchronised on the common
+iterators iterations. This allows evaluation in each unique iteration, and is solved by turning the cartesian
+product into an equi-join.
 
 Generally, for such an expression $e$, with the subexpressions $e_1$ and $e_2$ this can be written
 like this:
@@ -262,7 +254,9 @@ like this:
 \end{equation*}
 
 The dependencies $e.\vartheta$ is described by equation \ref{eq:trans:TD:depInheritance}. If $e_{1}.\vartheta \neq
-e_{2}.\vartheta$ each subexpression will be implicitly tainted by the other's unique dependencies.
+e_{2}.\vartheta$ each subexpression will be implicitly tainted by the other's unique dependencies. If the
+\textsf{hhjoin} operator is used without specifying the join attributes, we assume it will behave as a
+\textsf{cross} operator.
 
 How the effective boolean function \textbf{B(r(}$e$\textbf{))} works will be discussed in section
 \ref{sect:disc:effBool}. In this chapter is sufficient to consider it as a grouping operator, grouping on the
@@ -282,8 +276,8 @@ and the numeric literals are similar to numeric types from other programming lan
 
 \begin{figure}[h]
 \begin{Verbatim}
-[85] Literal        ::= NumericLiteral|StringLiteral
-[86] NumericLiteral ::= IntegerLiteral|DecimalLiteral|DoubleLiteral
+[85] Literal        ::= NumericLiteral | StringLiteral
+[86] NumericLiteral ::= IntegerLiteral | DecimalLiteral | DoubleLiteral
 \end{Verbatim}
 \caption[Literals in XQuery]{Definition of literals in XQuery Full Text}
 \label{fig:trans:TD:litEBNF}

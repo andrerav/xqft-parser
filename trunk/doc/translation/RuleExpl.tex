@@ -1,7 +1,7 @@
 \section{Inference Rule Language Explanation}
 \label{sect:trans:TD:langExpl}
-During this chapter we will present some inference rules. In this section we will explain the various
-typographical representations.
+During this chapter we will present some inference rules. Table \ref{tab:trans:td:langExpl} explains some of the
+the various typographical representations.
 
 \begin{table}[h]
 \centering
@@ -36,28 +36,28 @@ This should be read as: if condition $condition$ is satisfied, the XQuery expres
 Often MQL operator trees are depicted like this:
 \begin{center}
 \begin{tabular}{l}
-\textsf{operator1(\ldots,l.field, r.field\ldots; } \\ \quad
+\textsf{operator1(\ldots,l.attr, r.attr\ldots; } \\ \quad
 \textsf{operator2(\ldots);} \\ \quad
 \textsf{operator3(\ldots))}
 \end{tabular}
 \end{center}
 
 This is to be interpreted as \textsf{operator2} is the left child of \textsf{operator1} and \textsf{operator3} is
-the right child. Mars does not allow attribute names to contain punctuation marks or allow two attributes with the
+the right child. MARS does not allow attribute names to contain punctuation marks or allow two attributes with the
 same name within one relation. An operator combining two relations will therefore have renaming functionality. A
-typical projection list of such an operator combining two relations which both contain the attribute $field$ would
-look something like: \textsf{\ldots rfield=right.field, lfield=left.field\ldots}. To make the inference rules
+typical projection list of such an operator combining two relations which both contain the attribute $attr$ would
+look something like: \textsf{\ldots rattr=right.attr, lattr=left.attr\ldots}. To make the inference rules
 easier to read, this step has been dropped. The rules assume that the equal
 named fields will automatically be given a prefix \textsf{l.} (left) or
 \textsf{r.} (right) depending on which child the attribute stems from.
 
-We assume the \texttt{union}-operator accepts relations with different schemas. The schema for the result
+We assume the \textsf{union}-operator accepts relations with different schemas. The schema for the result
 relation can be described as:
 \begin{equation*}
-schema(\texttt{union(}\alpha, \beta\texttt{)}) = schema(\alpha) \cup schema(\beta).
+schema(\textsf{union(}\alpha, \beta\texttt{)}) = schema(\alpha) \cup schema(\beta).
 \end{equation*}
 
-The tuples which have more attributes in the result relation than they did in the relation they stem from will
-have a \texttt{NULL} value for the introduced attributes. It may be not be
+The tuples which have more fields in the result relation than they did in the relation they stem from will
+have a \textit{NULL} value for the introduced attributes. It may be not be
 desirable to implement the operator in such a way. In that case each
-child-relation will have to be augmented with the attributes needed with an \texttt{project} operator.
+child-relation will have to be augmented with the attributes needed with an \textsf{project} operator.

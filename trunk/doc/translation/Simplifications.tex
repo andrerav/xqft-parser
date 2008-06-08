@@ -73,7 +73,7 @@ optimiser, and may be left out anyway.
 Informing a parent expression about whether or not its subexpressions will
 evaluate to singleton sequences can have some advantages. One is the possibility of detecting certain type errors, as will be
 discussed in section \ref{sect:disc:singelton}. Another advantage is gained
-when it comes to sequence construction. TODO: hvilken fordel?
+when it comes to sequence construction:
 
 Rule \ref{rule:trans:TD:seqConstr} in section \ref{sect:trans:TD:seqBuild} describes a general way to build
 sequences. But if all the expressions to build a sequence from will evaluate to singleton sequences, there is no
@@ -129,7 +129,7 @@ only singleton items where not all of them are literals:
 
 \subsection{Path Expressions}
 \label{sect:trans:TD:simpl:pathExpr}
-The \textsf{scope} operator of MQL can be used to filter tuples based on the value of their $scope$-field. The
+The \textsf{scope} operator of MQL can be used to filter tuples based on the value of their $scope$ field. The
 operator allows only complete scope descriptions, that is, no wildcards are allowed. \textsf{/} separates the
 scopes, and can be read as ``encompasses'' or ``is the parent scope of''. E.g. \textsf{a/b} is read as the scope
 where \textsf{a} is the parent scope of \textsf{b}. This can be exploited when translating path expressions with
@@ -158,7 +158,7 @@ steps can be translated like this:
 \end{array}
 \label{rule:trans:TD:pathChild}
 \end{equation}
-Where $\vartheta$ is the $\vartheta$ returned from \textbf{get(dot)}, $QName_1$ is any XML-qualified name.
+Where $\vartheta$ is the $\vartheta$ returned from \textbf{get(dot)}, $QName_x$ is any XML-qualified name.
 \textsf{r.value} is short for \textsf{value = right.value, index = right.index, \ldots etc}, and \textsf{docId} is
 short for \textsf{documentId}.
 
@@ -173,7 +173,7 @@ form of a predicate, the operator can be exchanged with a \textsf{project} opera
 
 The next to last \textsf{numberate} operator in the rules for translating axis + nametest expressions (rules
 \ref{rule:trans:TD:pathChild} and \ref{rule:trans:TD:pathStep}) is employed to ensure that numeric predicates
-always can be evaluated. If the translator with the help of a type system can make sure that the predicate
+always can be evaluated. If the translator with the help of a type system be make sure that the predicate
 expression does not evaluate to a numeric type, or if the step expression does not contain a predicate, this
 operator may be dropped.
 

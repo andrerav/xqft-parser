@@ -2,7 +2,8 @@
 \label{sect:disc:not:quantified}
 
 Figure \ref{fig:disc:not:quantified} shows the EBNF specification of the XQuery quantified expression. These
-expressions support existential and universal quantification, and will always result in a $true$ or $false$ value.
+expressions support existential and universal quantification, and will always result in a single $true$ or $false$
+value.
 
 \begin{figure}[h]
 \begin{Verbatim}
@@ -13,14 +14,14 @@ expressions support existential and universal quantification, and will always re
 \end{figure}
 
 If the quantifier is \texttt{some}, the expression only returns $true$ if at least one evaluation of the
-\texttt{satisfies} expression yields $true$. For the \texttt{every} quantifier, the expression will only return
-$true$ if every evaluation of the \texttt{satisfies} expression yields $true$.
+\texttt{satisfies}-expression yields $true$. For the \texttt{every} quantifier, the expression will only return
+$true$ if every evaluation of the \texttt{satisfies}-expression yields $true$.
 
-It can be suitable to treat such expressions as iterators with the \texttt{satisfies} expression as the iterator
+It can be suitable to treat such expressions as iterators with the \texttt{satisfies}-expression as the iterator
 body. The result of the iterator is then checked if every or some of its items have the effective boolean value
-$true$. This can be done with a \textsf{group} operator similarily to the
-general comparison operator expressions. If we assume $true$ has a bigger value
-than $false$, a \textsf{max} aggregator will reveal if there exists a tuple with the value $true$ and a \textsf{min} operator will reveal if there exist a tuple with the value $false$. All
+$true$. This can be done with a \textsf{group} operator similarily to the general comparison operator expressions.
+If we assume $true$ has a bigger value than $false$, a \textsf{max} aggregator will reveal if there exists a tuple
+with the value $true$ and a \textsf{min} operator will reveal if there exist a tuple with the value $false$. All
 variables bound in quantified expressions will be treated by the iterator binding translation of rule
 \ref{rule:trans:TD:forbind}. $\beta$ will refer to the set of all variables bound in one such expression
 
@@ -34,6 +35,7 @@ variables bound in quantified expressions will be treated by the iterator bindin
 \end{array}
 \label{rule:trans:TD:quantified}
 \end{equation}
+
 Where $\vartheta=e_1.\vartheta-\beta$, and a quantifier specification \texttt{QUANT} maps to an aggregator
 function as seen in table \ref{tab:disc:quant}. The \textsf{xqBoolean()} funcion will have to be run on the
 $value$ fields of the \texttt{satisfies} expression, as there is no requirement that it is a boolean expression.
@@ -64,10 +66,10 @@ quantified expression.
 The sequence sequentially bound to the quantifier variable is treated as explained in section
 \ref{sect:trans:TD:seqBuild}: where \texttt{\$a} taints \texttt{"b"} and the relations are spliced together. As
 quantifier variables are to be handled as iterator variables, the $index$ attribute of this relation will be
-renamed $enumb$, as illustrated in figure \ref{fig:trans:TD:quant:seq}. This relation is stored in the symbol table
-(or rather the algebra leading to this relation), and is fetched during the evaluation of the \texttt{satisfies}
-expression. The result of this comparison expression is shown in figure \ref{fig:trans:TD:quant:satEx}. Here, the
-double line illustrates grouping. 
+renamed $enumb$, as illustrated in figure \ref{fig:trans:TD:quant:seq}. This relation (or rather the algebra
+evaluating to it) is stored in the symbol table, and is fetched during the evaluation of the
+\texttt{satisfies}-expression. The result of this comparison expression is shown in figure
+\ref{fig:trans:TD:quant:satEx}. Here, the double line illustrates grouping.
 
 \begin{figure}[h]
 \centering
@@ -104,12 +106,12 @@ $idx$ & $anb$ & $val$ \\ \hline
 
 \caption[Evaluating the quantified expression]{Evaluating the quantified expression of figure
 \ref{fig:trans:TD:quantQu}. (a) The quantifier variable fetched from the symbol table. (b) The result of the
-\texttt{satisfies} expression. The double line illustrates the groups. (c) The result of the quantified
+\texttt{satisfies}-expression. The double line illustrates the groups. (c) The result of the quantified
 expression. Attribute names are shortened. \label{fig:trans:TD:quantInter} }
 \end{figure}
 
 Except for the quantifier variable, this expression is dependent on $I_{\mbox{\texttt{a}}}$, which the result of
-the \texttt{satisfies} expression is grouped on. Each group will be run through the \texttt{min} aggregator,
+the \texttt{satisfies}-expression is grouped on. Each group will be run through the \texttt{min} aggregator,
 because the quantifier is \texttt{every}. As $false$ has a lower value than $true$, the aggregator will reveal if
 the group contains a $false$. The result of the grouping is shown in figure \ref{fig:trans:TD:quant:quant}. This
 result will have to be renumbered to finalise the evaluation of the query.
