@@ -61,9 +61,9 @@ occurs within the iterator body of $I_{\chi}$ and if the evaluation of $e$ depen
 An variable reference to an iterator variable \texttt{\$}$\chi$ is by this definition dependent on the iterator
 $I_{\chi}$. Intuitively, an expression which subexpression is dependent on an iterator $I_{\chi}$ is also
 dependent on this iterator -- we say the dependency is inherited. Consider the example subexpression of figure
-\ref{fig:trans:td:varDep}, where \texttt{\$x} and \texttt{\$y} both are iterator variables. Here, the expresion
-$e_{1}$ is dependent the two iterators $I_{\mbox{\texttt{x}}}$ and $I_{\mbox{\texttt{y}}}$, while expression
-$e_{2}$ is only dependent on $I_{\mbox{\texttt{x}}}$.
+\ref{fig:trans:td:varDep}, where \texttt{\$x} and \texttt{\$y} both are
+iterator variables. Here, the expression $e_{1}$ is dependent on the two
+iterators $I_{\mbox{\texttt{x}}}$ and $I_{\mbox{\texttt{y}}}$, while expression $e_{2}$ is only dependent on $I_{\mbox{\texttt{x}}}$.
 
 \begin{figure}[h]
 \centering
@@ -115,18 +115,19 @@ expressed as: $\vartheta = e.\vartheta \cup \chi$.
 
 For a \texttt{for} clause with multiple variable bindings the rule must be applied once per binding as if there
 is one FLWOR expression per binding, and the $n$th binding is a FLWOR expression in the $(n-1)$th bindings
-return clause. This is in accordance with the XQuery semantics, and is one of the rewrite rules into XQuery core
-(see section \ref{sect:theory:xquery:XQcore}).
+return clause. This is in accordance with the XQuery semantics, and is one of
+the rewrite rules into XQuery Core (see section \ref{sect:theory:xquery:XQcore}).
 
 From definition \ref{def:iterVarDep} it can be seen that $\chi$ is not part of
-the set of dependencies the iterator $I_{\chi}$ returns its parent. This is in fact the only case a variable is removed from a dependency set. Because
-of this, we must be careful not to incidentally remove a $\chi$$numb$ attribute from a relation by means of a
-\textsf{project} operator. 
+the set of dependencies the iterator $I_{\chi}$ returns its parent. This is in
+fact the only case where a variable is removed from a dependency set. Because of
+this, we must be careful not to incidentally remove a $\chi$$numb$ attribute
+from a relation by means of a \textsf{project} operator.
 
-When we in this chapter write $\vartheta$ enclosed in MQL syntax it is to be interpreted as a comma seperated list
-of all the attributes linked to the dependencies in the set $\vartheta$. As an example, the dependency set
-$\vartheta = \left\{\mbox{\texttt{x}},\mbox{\texttt{y}},\mbox{\texttt{z}}\right\}$, is read as \textsf{xnumb,
-ynumb, znumb} in an MQL environment.
+When we in this chapter write $\vartheta$ enclosed in MQL syntax it is to be
+interpreted as a comma separated list of all the attributes linked to the
+dependencies in the set $\vartheta$. As an example, the dependency set
+$\vartheta = \left\{\mbox{\texttt{x}},\mbox{\texttt{y}},\mbox{\texttt{z}}\right\}$, is read as \textsf{xnumb, ynumb, znumb} in an MQL environment.
 
 XQuery variable reference expressions, be it iterator, \texttt{let} or \texttt{declare} variables, are translated
 to relational algebra quite simply by fetching the tree linked to the variable name in the symbol table:
@@ -140,10 +141,12 @@ to relational algebra quite simply by fetching the tree linked to the variable n
 \subsection{Iterator Dependency Tainting}
 \label{sect:trans:TD:tainting}
 
-The iterator body of an iterator with a iterator sequence with length $n$ will have to executed $n$ times. This
-can be done by e.g. evaluating the cartesian product between the body or the sequence, as with the MarkXRemove
-method. To avoid any denormalised intermediate results, an ideal solution would be to always calculate such
-products after all other evaluations of the query is done. Consider the following simple example of the query $e$:
+The iterator body of an iterator with a iterator sequence with length $n$ will
+have to be executed $n$ times. This can be done by e.g. evaluating the cartesian
+product between the body or the sequence, as with the MarkXRemove method. To
+avoid any denormalised intermediate results, an ideal solution would be to
+always calculate such products after all other evaluations of the query is
+done. Consider the following simple example of the query $e$:
 
 \begin{center}
 \begin{tabular}{l}
@@ -166,10 +169,11 @@ iterator body. This was managed by MarkXRemove by implementing inheritance of it
 the concept discussed in section \ref{sect:trans:TD:dependency}, and replacing the cartesian product operator with
 something like a natural join operator (section \ref{sect:trans:mxr:basics}).
 
-But MarkXRemove has shorcommings when it comes to evaluating expressions where a sequence constructed with at
-least one iterator dependent expression is a subexpression. Tainting Dependencies mend for this by requiring that
-all items constituting the result of an iterator dependent expression are iterator dependent. To fulfill til
-requirement, dependency tainting is introduced.
+MarkXRemove has shortcomings when it comes to evaluating expressions where a
+sequence constructed with at least one iterator dependent expression is a subexpression. Tainting Dependencies mend for this by requiring that
+all items constituting the result of an iterator dependent expression are
+iterator dependent. To meet this requirement, dependency tainting is
+introduced.
 
 \noindent
 \begin{myDefinition}
@@ -191,7 +195,7 @@ by $e_{1}$'s dependency on $\chi_{1}$, but as $e_{2}$ have no dependencies, $e_{
 tainting process is carried out by calculating the cartesian product of $e_{2}$ and the $\chi_{1}$$numb$ column of
 \texttt{\$}$\chi_{1}$ stored in the symbol table.
 
-More generally, for an sequence constructing expression $e$, \texttt{(}$e_{1}$\texttt{, \ldots, }$e_{n}$\texttt{)},
+More generally, for a sequence constructing expression $e$, \texttt{(}$e_{1}$\texttt{, \ldots, }$e_{n}$\texttt{)},
 tainting of an subexpression $e_{i}$ can be expressed like this: 
 \begin{center}
 \begin{equation}
@@ -227,8 +231,8 @@ combinations of $I_{\chi_k}$ and $I_{\chi_l}$. A tuple in $e$, ($index, \chi_k{n
 iterations. When $I_{\chi_k}$ is in its $\chi_k{numb}$th iteration and $I_{\chi_l}$ is in its $\chi_l{numb}$th
 iteration, the item in position $index$ of the sequence returned from $e$ will be $value$. Let $I_{\chi_m}$ also
 be one of the nested iterators, but one which $e$ is not dependent on. $e$ will evaluate to the same result
-regardles of which iteration $I_{\chi_m}$ is in given the iteration number of $I_{\chi_k}$ and $I_{\chi_l}$ is the
-same.
+regardless of which iteration $I_{\chi_m}$ is in given the iteration number of
+$I_{\chi_k}$ and $I_{\chi_l}$ is the same.
 
 When an subexpression such as $e$ is used in further evaluation, it is important to seperate these iterations from
 each other. This is done by grouping the relation on all unique combinations of its iterator dependency attributes.
@@ -266,7 +270,7 @@ attributes specified by $e.\vartheta$ (i.e. all known unique iterations). For ea
 $pred$ representing the effective boolean value of $e$ in that unique iteration. If $e$ holds a singleton numeric
 value in one group $pred$ will hold this value, in all other cases it will hold a boolean value. The result
 relation of the function will in addition to the $pred$-attribute contain all the attributes implied by
-$e.\vartheta$. The main reason this function is introduced at all is that it ensures that a incomming relation
+$e.\vartheta$. The main reason this function is introduced at all is that it ensures that a incoming relation
 will have \emph{exactly one} tuple per unique iteration.
 
 \subsection{Literals}
@@ -295,7 +299,7 @@ translation of literals is done in the following way:
 \label{rule:trans:TD:literal}
 \end{equation}
 
-This is an general way to translate literals, but there exists quite a few simplifications. Most importantly when
+This is a general way to translate literals, but there exists quite a few simplifications. Most importantly when
 constructing sequences entirely composed of literals, as we will discuss in section
 \ref{sect:trans:TD:simplifications}.
 
