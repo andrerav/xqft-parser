@@ -22,7 +22,7 @@ will raise a type error. By having the knowledge of the cardinality of the seque
 expression, the translator may raise the error, and avoid a faulty query being run on the MQL processor.
 Evaluating the cardinality of seqences returned from expressions is in many cases a simple task. Some expressions
 will always return singletons, such as logical, comparison and aritmetic expressions, iterator variable references
-and litterals. The cardinality of sequences constructed of such expressions may also be calculated in the
+and literals. The cardinality of sequences constructed of such expressions may also be calculated in the
 translator. A proplem arises, however, when dynamic content (not from the query itself) is included. Consider the
 following query:
 
@@ -124,7 +124,7 @@ result of the grouping is returned as a separate, named relation (``result set''
 \end{center}
 
 Both solutions assume a typesystem where a field $type$ holds the type of the item represented in the tuple. The
-last proposal of a implementation of the \textbf{B()} function only uses operators and functions allready
+last proposal of a implementation of the \textbf{B()} function only uses operators and functions already
 implemented in the MQL processor. A disadvantage with this solution, however, is that it will probably be more
 resource-demanding as it consists of both a grouping and a join.
 
@@ -158,8 +158,8 @@ some of the \texttt{elem} elements does not contain a \texttt{maybe} element, so
 should be the string literal \texttt{"empty"}.
 
 A possible solution to this would be to differantiate between the times the empty sequences are needed, and the
-times they are not. This can be done by evaluating all the descendant expressions of a expression which is to be
-calculated into a effective boolean value, in its own context. To evaluate some expressions in another matter
+times they are not. This can be done by evaluating all the descendant
+expressions of an expression which is to be calculated into a effective boolean value, in its own context. To evaluate some expressions in another matter
 according to the context is made simple by implementing a context sensitive visitor pattern (section
 \ref{sect:theory:contextVisitorPattern}). The difference in translating in the logical context as opposed to the
 default context will only be that all joins on common dependencies will have to be made into full outer joins. In

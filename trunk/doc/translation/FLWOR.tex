@@ -12,13 +12,14 @@ The iterator dependences $e.\vartheta$ is stored along with \textbf{r(}$e$\textb
 algebra tree if it later fetched from the symbol table. If there is more than one variable binding in the
 \texttt{let} clause the rule must be applied once per binding as if one binding were one \texttt{let} clause.
 
-As seen by the exerpt of the W3C XQuery EBNF specification in figure \ref{fig:trans:TD:seqEBNF}, a FLWOR
-expression may be structured in infinitely many ways. For simplicity and readablilty the translation of such
-expressions will be split up in more managable pieces. 
+As seen by the excerpt of the W3C XQuery EBNF specification in figure
+\ref{fig:trans:TD:seqEBNF}, a FLWOR expression may be structured in many
+different ways. For simplicity and readablilty the translation of such
+expressions will be split up in more managable pieces.
 
 A FLWOR expression may have multiple \texttt{for} clauses, and a \texttt{for} clause may have multiple iterator
-variable bindings. This means that one FLWOR may consist of many iterators, the semanics of which is described in
-section \ref{sect:method:ast_rewrite}. We assume all possible iterator dependencies generated from the FLWOR, that
+variable bindings. This means that one FLWOR may consist of many iterators, the
+semantics of which is described in section \ref{sect:method:ast_rewrite}. We assume all possible iterator dependencies generated from the FLWOR, that
 is, all iterator variables bound, is stored in a ordered set $\beta$. The dependencies are ordered in the order of
 which the corresponding iterator variables are bound, i.e. top down, left to right while parsing the query. When
 enclosed in MQL syntax $\beta$ is, as $\vartheta$, to be read as a comma seperated list of the attributes
@@ -41,9 +42,9 @@ as shown in figure \ref{fig:trans:TD:flworExecute}. Firstly, all \texttt{for} an
 bound as described by the rules \ref{rule:trans:TD:forbind} and \ref{rule:trans:TD:letbind}, respectively.
 Further, the \texttt{return} clause will be evaluated. If there is a \texttt{where} clause present, it is
 evaluated next, based on the \texttt{where} expression and the result of the \texttt{return} clause, referred to as
-\textbf{r(}$e_{C}$\textbf{)}. The order of the items returned from the FLWOR is conditioned by the presens of an
-\texttt{order by} clause in the expression. If there is a \texttt{order by} clause, it will order the intermediate
-result from the \texttt{return} or \texttt{while} clause, and finalise the FLWOR. If there is no \texttt{order by}
+\textbf{r(}$e_{C}$\textbf{)}. The order of the items returned from the FLWOR is
+conditioned by the presence of an \texttt{order by} clause in the expression. If
+there is a \texttt{order by} clause, it will order the intermediate result from the \texttt{return} or \texttt{while} clause, and finalise the FLWOR. If there is no \texttt{order by}
 clause, the final evaluation of the FLWOR will be to order the intermediate result according to the iterators.
 
 \begin{figure}[h]
@@ -102,8 +103,8 @@ variables were bound.
 Where $\vartheta = e_{C}.\vartheta - \beta$, and $e_C$ is the result returned from the \texttt{where}-clause, if
 present, else the \texttt{return}-clause.
 
-From equation \ref{eq:trans:TD:taint} it is clear that a expression allready dependent on any iterator in
-$\beta$ will not be re-tainted by these iterators.
+From equation \ref{eq:trans:TD:taint} it is clear that an expression already
+dependent on any iterator in $\beta$ will not be re-tainted by these iterators.
 
 The \textsf{numberate} operator will have to partition on the remaining dependencies in $\vartheta$ to seperate
 the sequences returned from the iterator for all iterators the result is dependent on, as described in section
@@ -127,7 +128,7 @@ is the same as $e_1$ in example \ref{ex:trans:TD:simpleSeq}.
 
 Expression $e_{1}$ is not depentant on $I_{\mbox{\texttt{b}}}$, and by rule \ref{rule:trans:TD:itOrd} will be
 tainted by this iterator. The result of the tainting is shown in figure \ref{fig:trans:TD:final:taint}. The
-expression will however not be tainted by $I_{\mbox{\texttt{a}}}$, as it is allready dependent on this iterator
+expression will however not be tainted by $I_{\mbox{\texttt{a}}}$, as it is already dependent on this iterator
 (ref. equation \ref{eq:trans:TD:taint}).
 
 \begin{figure}[h]
@@ -166,8 +167,8 @@ intermediate result (a) and the final result (b). Attribute names are shortened.
 \end{figure}
 
 With the expression tainted with all possible iterator dependencies of the FLWOR, renumbering is the last
-operation required to resolve the query. The \textsf{numberate} operator will sort the tuples first on $anumb$,
-then on $bnumb$ and finally $index$ before numbering. As the FLWOR itself does not have any dependencies the
+operation required to translate the query. The \textsf{numberate} operator will
+sort the tuples first on $anumb$, then on $bnumb$ and finally $index$ before numbering. As the FLWOR itself does not have any dependencies the
 numeration will not be grouped on any attributes. The result of the query is shown in figure
 \ref{fig:trans:TD:final:rIa}.
 \end{myExample}
@@ -204,9 +205,9 @@ attributes to be projected, there is no need for a seperate \textsf{project} ope
 
 \begin{myExample}
 Consider the XQuery query of figure \ref{fig:trans:TD:whereQuery}. The evaluation of $e_{1}$ is very similar to
-the evaluation of $e_{1}$ of example \ref{ex:trans:TD:simpleSeq}, and the is shown in figure
-\ref{fig:trans:TD:where:re1}. The \texttt{where} clause contains a comparison expression, which will be discussed
-later. Figure \ref{fig:trans:TD:where:whereE} shows the result relation of the \texttt{where} expression.
+the evaluation of $e_{1}$ of example \ref{ex:trans:TD:simpleSeq}, and the
+result is shown in figure \ref{fig:trans:TD:where:re1}. The \texttt{where}
+clause contains a comparison expression, which will be discussed later. Figure \ref{fig:trans:TD:where:whereE} shows the result relation of the \texttt{where} expression.
 
 \begin{figure}[h]
 \centering
@@ -312,8 +313,8 @@ e_{C}.\vartheta)\mbox{\textsf{],}}
 \end{equation}
 
 Where $\vartheta = (e_C.\vartheta \cup e_3.\vartheta)-\beta$, and \textbf{r(}$e_{C}$\textbf{)} is the result of
-the translation done in the \texttt{where} clause if present, else the \texttt{return} clause. Field such as as
-$index$ and if applicable $documentId$, $pos$ and $scope$ will follow $l.value$. $r.value$ is only the $value$
+the translation done in the \texttt{where} clause if present, else the
+\texttt{return} clause. Fields such as $index$ and if applicable $documentId$, $pos$ and $scope$ will follow $l.value$. $r.value$ is only the $value$
 column from the right relation. To accommodate for the \texttt{stable} keyword, the \textsf{numberate} operator
 will have to sort on $l.index$ aswell, after sorting on $r.value$.
 
@@ -338,8 +339,8 @@ The evaluated \texttt{order by} expression is shown in figure \ref{fig:trans:TD:
 are translated will be discussed later. After their evaluation, the relational representation of \texttt{order by}
 expression relation and the \texttt{return} clause is joined on their common iterator dependencies,
 $I_{\mbox{\texttt{a}}}$ ($anumb$). The result of the join is shown in figure \ref{fig:trans:TD:ord:join}. Lastly,
-this relation is renumbered sorted on the $r.value$ ($r.val$ in figure) attribute stemming from the \texttt{order by}
-expression, as shown in figure \ref{fig:trans:TD:ord:numb}. An additional projection to rename $l.value$ to $value$
+this relation is renumbered and sorted on the $r.value$ ($r.val$ in figure)
+attribute stemming from the \texttt{order by} expression, as shown in figure \ref{fig:trans:TD:ord:numb}. An additional projection to rename $l.value$ to $value$
 is needed to finalise the query.
 
 \begin{figure}[h]

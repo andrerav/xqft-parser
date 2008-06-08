@@ -11,8 +11,8 @@ types, which is discussed in section \ref{sect:disc:typeSystem}. %As the MQL pro
 XQuery Full Text\cite{w3c01} (XQFT) is an superset of XQuery. A quick runthrough of the extensions made to XQuery
 can be found in section \ref{sect:theory:xquery:fulltext_ext}. Tainting Dependencies does however at this time
 support any of these features. One of the most important expressions of the extention is the \texttt{ftcontains}
-expression. An exerpt of the EBNF specification of this expression and some of its subexpressions can be seen in
-figure \ref{fig:disc:xqftEBNF}. \texttt{FTPrimaryWithOptions} is a straight descendant of \texttt{FTMildNot}, and
+expression. An excerpt of the EBNF specification of this expression and some of
+its subexpressions can be seen in figure \ref{fig:disc:xqftEBNF}. \texttt{FTPrimaryWithOptions} is a straight descendant of \texttt{FTMildNot}, and
 \texttt{FTWordsValue} is a straight descendant of \texttt{FTPrimary}. The complete EBNF specification can be found
 in appendix \ref{appendix:xquery_ebnf}.
 \begin{figure}[h]
@@ -30,7 +30,8 @@ in appendix \ref{appendix:xquery_ebnf}.
 [152] FTWordsValue   ::= Literal | ("{" Expr "}")
 \end{Verbatim}
 
-\caption{Exerpt of W3C EBNF full text specification\cite{w3c01} \label{fig:disc:xqftEBNF}}
+\caption{Excerpt of W3C EBNF full text specification\cite{w3c01}
+\label{fig:disc:xqftEBNF}}
 \end{figure}
 
 A simple \texttt{ftcontains} expression checking if an node contains a literal may be quite simple to translate.
@@ -113,10 +114,10 @@ and all operators whose only intent is to manipulate $index$ fields. Utilising c
 In this section we will present some of the XQuery binary operator expressions not handled in section
 \ref{sect:trans:TD:binary}, and some ideas for possible translations of them.
 
-\subsubsection{Node Comparators}
+\subsubsection{Node Comparison Operators}
 
-The node comparators of XQuery are \texttt{is}, \texttt{<<} and \texttt{>>}, and are currently not handled by
-Tainting Dependencies. A comparison with the \texttt{is} operator yields $true$ if the two operand nodes have the
+The node comparison operators of XQuery are \texttt{is}, \texttt{<<} and
+\texttt{>>}, and are currently not handled by Tainting Dependencies. A comparison with the \texttt{is} operator yields $true$ if the two operand nodes have the
 same node identity. Where node identity is defined by W3C like this \cite{w3c04}:
 \begin{quote}
 Each node has a unique identity. Every node in an instance of the data model is unique: identical to itself, and
