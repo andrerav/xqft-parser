@@ -53,8 +53,8 @@ defined as follows:
 
 \noindent
 \begin{myDefinition}
-An XQuery expression $e$ is \textbf{dependant} on an iterator $I_{\chi}$ if $e$ occurs within the iterator body of
-$I_{\chi}$ and if the evaluation of $e$ depends on the iteration number of $I_{\chi}$.
+An XQuery expression $e$ is \textbf{dependent} on an iterator $I_{\chi}$ if $e$
+occurs within the iterator body of $I_{\chi}$ and if the evaluation of $e$ depends on the iteration number of $I_{\chi}$.
 \label{def:iterVarDep}
 \end{myDefinition}
 
@@ -94,8 +94,8 @@ e.\vartheta = e_{1}.\vartheta\cup\ldots\cup e_{n}.\vartheta
 \label{eq:trans:TD:depInheritance}
 \end{equation}
 
-The dependancy on the iterator $I_{\chi}$ manifest itself relationally by the attribute $\chi$$numb$. The value of
-$\chi$$numb$ is the iteration number of $I_{\chi}$, that is, for a tuple ($\chi$$numb$, $value$) the value $value$
+The dependency on the iterator $I_{\chi}$ manifest itself relationally by the
+attribute $\chi$$numb$. The value of $\chi$$numb$ is the iteration number of $I_{\chi}$, that is, for a tuple ($\chi$$numb$, $value$) the value $value$
 will appear in the $\chi$$numb$th iteration of $I_{\chi}$.
 
 When an iterator variable \texttt{\$}$\chi$ is declared it is assigned a $\chi$$numb$ by renaming the $index$
@@ -110,16 +110,16 @@ field of the corresponding iterator sequence $\chi$$numb$. Which leads us to the
 \end{array}
 \label{rule:trans:TD:forbind}
 \end{equation}
-Where the dependancies piggybacking the \textsf{project} operator can be expressed as:
-$\vartheta = e.\vartheta \cup \chi$.
+Where the dependencies piggybacking the \textsf{project} operator can be
+expressed as: $\vartheta = e.\vartheta \cup \chi$.
 
 For a \texttt{for} clause with multiple variable bindings the rule must be applied once per binding as if there
 is one FLWOR expression per binding, and the $n$th binding is a FLWOR expression in the $(n-1)$th bindings
 return clause. This is in accordance with the XQuery semantics, and is one of the rewrite rules into XQuery core
 (see section \ref{sect:theory:xquery:XQcore}).
 
-From definition \ref{def:iterVarDep} it can be seen that $\chi$ is not part of the set of dependancies the iterator
-$I_{\chi}$ returns its parent. This is in fact the only case a variable is removed from a dependency set. Because
+From definition \ref{def:iterVarDep} it can be seen that $\chi$ is not part of
+the set of dependencies the iterator $I_{\chi}$ returns its parent. This is in fact the only case a variable is removed from a dependency set. Because
 of this, we must be careful not to incidentally remove a $\chi$$numb$ attribute from a relation by means of a
 \textsf{project} operator. 
 
