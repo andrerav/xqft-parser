@@ -5,17 +5,11 @@ XQuery implement XPath 2.0 path expressions and predicates as described in secti
 \ref{sect:theory:xquery:PathExpressions} and \ref{sect:theory:xquery:Predicates}. In this section we will present
 a method for translating some of these expressions into MQL relational algebra.
 
-For the translations in this section to be correct, we have a few assumptions. A scope defined as a parameter to
-the \textsf{scope}-operator starting with a slash (\textsf{/}) is an absolute scope. That means if the parameter
-is e.g. \textsf{/a/b}, the operator will remove any tuples in the input relation where the $scope$ attribute does
-not define the tuple to stem from a \texttt{b} scope within the root-scope \texttt{a}. Without a slash first in
-the parameter, the scope is relative. E.g. \texttt{a/b} as a parameter will lead to removal of all tuples where
-the $scope$ attribute does not define the tuple to stem from a \texttt{b} scope within an \texttt{a} scope.
-
-We also assume that the tuples returned from a scope lookup in the
-hypothetical \textsf{valocc}-index (see section \ref{sect:method:mql} on page
-\pageref{sect:method:mql}) will have information of the scope it self in the
-$scope$ attribute, and the contents of the scope in an $value$ attribute. E.g. a lookup of \textsf{\$c} (the \textsf{\$}-sign indicates it is a scope) in this index may return a tuple with \textsf{a[1].b[2].c[1]} as its $scope$ value.
+For the translations in this section to be correct we assume the tuples returned from a scope lookup in the
+hypothetical \textsf{valocc}-index (see section \ref{sect:method:mql} on page \pageref{sect:method:mql}) will have
+information of the scope it self in the $scope$ attribute, and the contents of the scope in an $value$ attribute.
+E.g.\ a lookup of \textsf{\$c} (the \textsf{\$}-sign indicates it is a scope) in this index may return a tuple
+with \textsf{a[1].b[2].c[1]} as its $scope$ value.
 
 The tuples returned from a lookup in the value occurence index will have to be ordered according to document
 order. This order will have to hold even after the result is run through a \textsf{scope}
@@ -49,8 +43,8 @@ specification in figure \ref{fig:trans:TD:pathEBNF}. A node test can be either a
 \label{fig:trans:TD:pathEBNF}
 \caption{Path expressions as specified by W3C\cite{w3c00}}
 \end{figure}
-The semantics of such expressions reading from left to right, the result of one step expression is used as input
-for the next. Within one step expression, the result from the preceding step will first be used as input for the
+The semantics of such expressions reading from left to right, is that the result of one step expression is used as
+input for the next. Within one step expression, the result from the preceding step will first be used as input for the
 axis expression. The result of this will be filtered by a name or kind test, before this again is filtered by
 possible predicates.
 
@@ -137,16 +131,16 @@ the rule.}
 The relation after the join will contain to copies of the $index$ attribute stemming from the lookup, $index$ and
 $subIdx$. This is because the \textsf{numberate} operator will remove the attributes specified in the sort list.
 The next to last \textsf{numberate} operator will number the tuples according to the document order, but among
-others partition on its dependency of the context item. This numbering is necessary to solve e.g. numeric predicates. The
-last \textsf{numberate} operator will update the $dotNumb$ field as it is possible that the axis step do not
-match the items from the last step in a 1:1 ratio.
+others partition on its dependency of the context item. This numbering is necessary to solve e.g.\ numeric
+predicates. The last \textsf{numberate} operator will update the $dotNumb$ field as it is possible that the axis
+step do not match the items from the last step in a 1:1 ratio.
 
 \begin{myExample}
 Consider the excerpt of a XML-document of figure \ref{fig:trans:TD:pathExXml}.
 The subscript numbers are used to differentiate the different elements with same names, and are not a part of the names. Further, let a non-iterator
-variable \texttt{\$a} be bound to a sequence of the \texttt{A} elements of the figure, but \emph{not} in document order.
-An illustration of the relational representation of \texttt{\$a} as it is stored as the context item in the symbol
-table is shown in figure \ref{fig:trans:TD:pathEx:varA}. The $val$-attribute indicates which XML-element is
+variable \texttt{\$a} be bound to a sequence of the \texttt{A}-nodes of the figure, but \emph{not} in document
+order. An illustration of the relational representation of \texttt{\$a} as it is stored as the context item in the
+symbol table is shown in figure \ref{fig:trans:TD:pathEx:varA}. The $val$ attribute indicates which XML-node is
 represented and the $scope$-attribute indicates the scope of this element. Figure \ref{fig:trans:TD:pathQu} shows
 an excerpt of a query referring to the variable \texttt{\$a}. \begin{figure}[h!]
 \centering
@@ -174,10 +168,10 @@ an excerpt of a query referring to the variable \texttt{\$a}. \begin{figure}[h!]
 subscript numbers indicate the instance of the elements, and are not part of the QName \label{fig:trans:TD:pathExXml}}
 \end{figure}
 
-First, a lookup of \texttt{\$B} (where \texttt{\$} indicates to find an
-element, not a word) is done in the value occurence index. The result of this is numerated by a \textsf{numberate}-operator, as illustrated in figure
+First, a lookup of \texttt{\$B} (where \texttt{\$} indicates to find a scope/node, not a word) is done in the
+value occurence index. The result of this is numerated by a \textsf{numberate}-operator, as illustrated in figure
 \ref{fig:trans:TD:pathEx:luB}. The $index$-attribute ($idx$ in the figure) now holds the document-order of the
-\texttt{B} elements. As there may be more \texttt{B} elements in the document, the $index$ attribute may not start
+\texttt{B}-nodes. As there may be more \texttt{B}-nodes in the document, the $index$ attribute may not start
 at the value 1 for the tuples relevant to the query.
 
 \begin{figure}[h]
@@ -213,7 +207,7 @@ XML-element is represented in the tuple.
 \end{figure}
 
 The result of the lookup will be joined with the context item relation on their $documentId$-attribute. As we
-assume only one XML-document this attribute is omitted from our example. A \textsf{select} operator is applied to
+assume only one XML-document, this attribute is omitted from our example. A \textsf{select} operator is applied to
 the result of the join to prune the relation. Only the tuples where the $scope$ attribute stemming from the lookup
 defines a scope which is the child scope (as defined by the MQL function \textsf{isChild() in section
 \ref{sect:method:marsAddedOperators}}) of the scope defined by the $scope$-attribute stemming from the
@@ -266,16 +260,16 @@ serves as the input sequence for the following predicate. If the value of the pr
 atomic value of a numeric type, the predicate truth value is $true$ if the value of the predicate expression is
 equal to the position of the context item within the input sequence.
 
-When entering a predicate a new scope is pushed and creates a new child symbol
-table, and the relational algebra tree corresponding to the expression assigned to the predicate is stored as \textbf{dot}. With a copy of $dotNumb$ called $sprDotNumb$. The reason for this is to ensure that the predicate is applied to the right context item of the predicated
-expression as we will see. If the predicate expression contains a path expression, it may update the $dotNumb$
-fields, but $sprDotNumb$ will always correspond to the right context item outside the predicate. The predicate
-expression is then evaluated, and then joined with the relational representation of predicated expression to on
-their common dependencies. If the context item is referred to within the predicate, the relations will have to be
-joined on $sprDotNumb$ from the predicate expression and $index$ from the predicated expression aswell. The
-context item may be referred to explicitly with the dot-operator (.), or
-implicitly through a relative path expression. When evaluating path expressions it is important to note that predicates have higher precedence than
-the / (step expression separator). As the predicate may remove items, renumbering is needed.
+When entering a predicate the relational algebra tree corresponding to the expression assigned to the predicate is
+stored as \textbf{dot}, containing a copy of $dotNumb$ called $sprDotNumb$. The reason for the copy is to ensure
+that the predicate is applied to the right context item of the predicated expression. If the predicate
+expression contains a path expression, it may update the $dotNumb$ fields, but $sprDotNumb$ will always correspond
+to the right context item outside the predicate. The predicate expression is then evaluated, and joined with
+the relational representation of predicated expression on their common dependencies. If the context item is
+referred to within the predicate, the relations will have to be joined on $sprDotNumb$ from the predicate
+expression and $index$ from the predicated expression aswell. The context item may be referred to explicitly with
+the dot-operator (.), or implicitly through a relative path expression. When evaluating path expressions it is
+important to note that predicates have higher precedence than the / (step expression separator). As the predicate may remove items, renumbering is needed.
 
 \begin{equation}
 \frac{}{e_1\mbox{\texttt{[}}e_2\mbox{\texttt{]}}}\longmapsto
@@ -297,8 +291,7 @@ Where $\vartheta=(e_1.\vartheta \cup e_2.\vartheta)-$\textbf{sprDot}. The fields
 will follow \textsf{l.value} as described in section \ref{sect:trans:TD:basics}. The final \textsf{project}
 operator will restore the names of these attributes.
 
-As described earlier, before translation of the expression, a new scope will be pushed to the symbol table,
-followed by:
+As described earlier, before translation of the expression the context item will be store in the symbol table:
 \begin{equation*}
 \begin{array}{l}
 \mbox{\textbf{put(dot,}} \\ \quad
@@ -375,7 +368,8 @@ $idx$ & $val$ & $pred$ \\ \hline
 }
 \caption[Evaluating the query in figure \ref{fig:trans:TD:predQu}]{Evaluating the query in figure
 \ref{fig:trans:TD:predQu}. (a) The sequence assigned the predicate. (b) The predicate expression. (c) The
-relations (a) and (b) joined together and pruned with a selection. Attribute names are shortened.}
+relations (a) and (b) joined together and pruned with a selection. $dotNumb$ is omitted for simplicity. Attribute
+names are shortened.}
 \end{figure}
 
 To finish the evaluation of the query, after the selection, the relation will have to be renumbered and the $pred$

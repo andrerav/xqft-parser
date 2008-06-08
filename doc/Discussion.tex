@@ -15,6 +15,16 @@ accounted for. This chapter is finalised by discussion of syntax tree rewriting
 and normalisation, a discussion of problems related to sequences, and a
 discussion of the XQuery type system and related problems.
 
+\textbf{\LARGE TODO:} skal dette inn igjen?
+, we have a few assumptions. A scope defined as a parameter to
+the \textsf{scope}-operator starting with a slash (\textsf{/}) is an absolute scope. That means if the parameter
+is e.g. \textsf{/a/b}, the operator will remove any tuples in the input relation where the $scope$ attribute does
+not define the tuple to stem from a \texttt{b} scope within the root-scope \texttt{a}. Without a slash first in
+the parameter, the scope is relative. E.g. \texttt{a/b} as a parameter will lead to removal of all tuples where
+the $scope$ attribute does not define the tuple to stem from a \texttt{b} scope within an \texttt{a} scope.
+
+
+
 \input{discussion/ContextItem}
 \input{discussion/NotSupported}
 \input{discussion/Optimisations}

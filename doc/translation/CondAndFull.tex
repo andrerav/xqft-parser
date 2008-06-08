@@ -1,7 +1,7 @@
 \section{Conditional Expressions}
 \label{sect:trans:TD:ifThenElse}
 XQuery supports a conditional expression based on the keywords \texttt{if}, \texttt{then}, and \texttt{else}. The
-expression is defined by W3C as seen in figure \ref{fig:trans:TD:condEBNF}.
+expression is specified by W3C as seen in figure \ref{fig:trans:TD:condEBNF}.
 
 \begin{figure}[h]
 \begin{Verbatim}
@@ -17,10 +17,10 @@ The expression following the \texttt{if} keyword is called the test expression, 
 respectively. If the effective boolean value of the test expression evaluates to $true$, the
 \texttt{then}-expression is returned, if it evaluates to $false$ the \texttt{else}-expression is returned.
 
-Conditional expressions are translated by adding an attribute $alt$ with the value $1$ the
+Conditional expressions are translated by adding an attribute $alt$ with the value $1$ to the
 \texttt{then}-expression relation and the relational representation of the \texttt{else}-expression with the same
-attribute but with value $2$. These two relations are then spliced together with a \textsf{union} operator. If the
-relations have disjoint dependencies, they will have to be tainted first.
+attribute but with the value $2$. These two relations are then spliced together with a \textsf{union} operator. If
+the relations have disjoint dependencies, they will have to taint each other first.
 
 The result of the \textsf{union} operation is then joined with the relational representation of the test
 expression on their common dependencies. Lastly, a \textsf{select} operator is employed on this relation to select
@@ -49,7 +49,7 @@ alt];}}\\\quad\quad\quad \mbox{\textsf{union(}} \\ \quad\quad\quad\quad \mbox{\t
 \end{equation}
 
 Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta \cup e_3.\vartheta$. $index$ and possible $documentId$, $pos$
-and $scope$ attributes will follow $value$ as described in \ref{sect:trans:TD:basics}.
+and $scope$ attributes will follow $value$ as described in section \ref{sect:trans:TD:basics}.
 
 \begin{myExample}
 \begin{figure}[h]

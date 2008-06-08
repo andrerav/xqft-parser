@@ -2,9 +2,9 @@
 \label{sect:trans:MarkXRemove}
 
 Our original proposition to a method for translating XQuery ASTs into relational algebra was named MarkXRemove.
-The rationale behind this name will be explained later. Even though it has many
+Even though it has many
 shortcomings and flaws, we will in this section give a quick overview of the
-method. This is because the Tainting Dependencies (TD) method is an evolution
+method. This is because the Tainting Dependencies method is an evolution
 and a refinement of MarkXRemove, and may be easier understood when seen in the perspective of its origins. Another reason is that in case of further development of TD, it may be of help to also know what will
 \textit{not} work, what will work partially and \textit{why} it is flawed.
 
@@ -12,36 +12,37 @@ and a refinement of MarkXRemove, and may be easier understood when seen in the p
 \label{sect:trans:mxr:basics}
 
 The foundation of the method is that an iterator expression is always translated by calculating the cartesian
-product of the iterator sequence and the iterator body, hence the ``X'' in the name. The ``remove'' stems from the
-removing of tuples which ended up in the wrong iteration in the cross product
-result. The cartesian product and the selection of tuples afterwards actually constitutes a kind of natural join (see section
+product of the iterator sequence and the iterator body, hence the ``X'' in the name. ``Remove'' stems from the
+removing of tuples who ends up in the wrong iteration in the cross product
+result. The cartesian product and the selection of tuples afterwards actually constitutes a kind of natural join (section
 \ref{sect:theory:relAlg:naturalJoin}) as we will see later.
 
-As the translator comes across an iterator variable declaration, with the variable name $\chi$, it will augment
-the representation of the iterator sequence belonging to this variable with an attribute $\chi$\textsf{numb}.
-This new attribute will hold consecutive values from 1 to $n$ for a $n$ item long sequence, which will symbolise the
-iteration number of the iterator expression seen isolated from possible other surrounding iterator expressions. A
-function \texttt{counter()} returning the row number of a relation and a \texttt{project} operator will handle
-the augmentation. The corresponding algebra tree is stored in the symbol table. The ``mark'' of the name of the
-method is because of this augmentation.
+As the translator comes across an iterator variable declaration with the variable name $\chi$, it will augment
+the relational representation of the iterator sequence belonging to this variable with an attribute
+$\chi$\textit{numb}. This new attribute will hold consecutive values from 1 to $n$ for a $n$ item long sequence.
+These values symbolise the iteration number of the iterator expression seen isolated from possible other
+surrounding iterator expressions. A function \textsf{counter()} returning the row number of a relation and a
+\textsf{project} operator will handle the augmentation. The corresponding algebra tree is stored in the symbol
+table. The ``mark'' of the name of the method is because of this augmentation.
 
 \subsection{FLWOR}
 \label{sect:trans:mxr:flwor}
 If the translator later comes across a reference to an iterator variable $\chi$,
-it will get the tree from the symbol table and return it to the referring node without any further ado. The translator is also required to know
-which subtrees have a child that has referred to which iterator variable. This is because the $\chi$\textsf{numb}
-column could be lost in a \texttt{project} operation without this knowledge.
+it will get the tree from the symbol table and return it to the referring AST node without any further ado. The
+translator is also required to know which subtrees have a child that has referred to which iterator variable. This
+is because the $\chi$\textit{numb} attribute could be lost in a \textsf{project} operation without this knowledge.
 
 When the translator returns to the iterator expression node for the variable $\chi$ after traversing the iterator
 body, it will, as mentioned before, make sure that the cartesian product between the iterator sequence and body is
-calculated. From the result of this, the tuples where the $\chi$\texttt{numb} stemming from the iterator
-sequence does not line up with the $\chi$\texttt{numb} stemming from the body are removed. Any tuple with a
-$\chi$\texttt{numb} value \texttt{NULL} will be kept.
+calculated. From the result of this, the tuples where the $\chi$\textit{numb} stemming from the iterator
+sequence does not line up with the $\chi$\textit{numb} stemming from the body are removed. Any tuple with a
+$\chi$\textit{numb} value $NULL$ will be kept.
 
-A \texttt{NULL} value in attribute $\chi$\texttt{numb} for a tuple means that this tuple is not marked, i.e. it is
+A $NULL$ value in the $\chi$\textit{numb} field of a tuple means that this tuple is not marked, i.e.\ it is
 not dependent on which iteration the $\chi$ iterator expression is in. Unmarked
-tuples can e.g. stem from the creation of a sequence. MarkXRemove translates sequence building such as \texttt{(}$e_{1}$\texttt{,
-}$e_{1}$\texttt{)} to a simple disjoint union, $r(e_{1})\;\dot\cup\;r(e_{2})$. Where $r()$ symbolises a function
+tuples can e.g.\ stem from the creation of a sequence. MarkXRemove translates sequence construction expressions,
+e.g.\ \texttt{(}$e_{1}$\texttt{, }$e_{1}$\texttt{)}, to a simple disjoint union,
+\textbf{r(}$e_{1}$\textbf{)}$\;\dot\cup\;$\textbf{r(}$e_{2}$\textbf{)}. Where \textbf{r()} symbolises a function
 translating XQuery expressions into relational algebra.
 
 The method creates quite simple algebra, as exemplified by the following query:
@@ -54,51 +55,53 @@ The method creates quite simple algebra, as exemplified by the following query:
 \end{center}
 
 which is translated into this algebra:
-
-\begin{Verbatim}
-select(ifThenElse(isNull(value), true, eq(r.inumb,l.inumb))
-  cross(
-    project(inumb = counter(), value;
-      make(name:=["value"], [1,2,3]))
-    union(
-      project(inumb = counter(), value;
-        make(name:=["value"], [1,2,3]))
-      make(name:=["value"], ['yes']))))
-\end{Verbatim} 
+\begin{center}
+\begin{tabular}{l}
+\textsf{select(ifThenElse(isNull(value), true, eq(r.inumb,l.inumb))} \\ \quad
+\textsf{cross(} \\\quad\quad
+\textsf{project(inumb = counter(), value;}\\\quad\quad\quad
+\textsf{make(name:=["value"], [1,2,3]))} \\\quad\quad
+\textsf{union(} \\\quad\quad\quad
+\textsf{project(inumb = counter(), value;} \\\quad\quad\quad\quad
+\textsf{make(name:=["value"], [1,2,3]))} \\\quad\quad\quad
+\textsf{make(name:=["value"], ['yes']))))}
+\end{tabular}
+\end{center}
 
 \subsection{Flaws}
 \label{sect:trans:mxr:flaws}
-The main problem with MarkXRemove is its dependency on particular ordering of
-tuples in a relation which is a result of a cartesian product. Not only can the \texttt{cross} operator not promise the particular ordering
-of its result, it can not promise any particular ordering at all. The ordering the method depends on is that for
-each tuple in the left relation the tuple is repeated for all tuples in the right relation. This means that any
-item may appear anywhere in the resulting sequence, which is not acceptable for
-evaluation of XQuery expressions where all sequences are ordered.
+The main problem with MarkXRemove that it requires a particular ordering of
+tuples in a relation which is a result of a cartesian product. Not only can the MQL \textsf{cross} operator not
+promise the particular ordering of its result, it can not promise any particular ordering at all. The ordering the
+method requires is that for each tuple in the left relation the tuple is repeated for all tuples in the right
+relation. If this requirement is not met any item may appear anywhere in the resulting sequence, which is not
+acceptable for evaluation of XQuery expressions where all sequences are ordered.
 
 Another problem with this method is that any sequence built which includes a reference to an iterator variable is
 not fully calculated until the cartesian product between the corresponding relation and the variables iterator
 sequence is evaluated. This makes it hard to evaluate expressions where such a sequence is a subexpression. The
-iterator \textit{body} of this query:
-
+\textit{iterator body} of this query:
 
 \begin{center}
 \begin{tabular}{l}
-\texttt{for \$i in (50,10) return } \\ \qquad
+\texttt{for \$i in (5,10) return } \\ \qquad
 \texttt{(\$i, 8) > (6,12)}
 \end{tabular}
 \end{center}
 
-would be translated into something like this relational algebra:
+would be translated into this relational algebra:
 
-\begin{Verbatim}
-project(value = gt(l.value, r.value), inumb
-cross(
-  union(
-    project(inumb = counter(), value;
-      make(name:=["value"], [5,10]))
-    make(name:=["value"], [8]))
-  make(name:=["value"], [3,12])))
-\end{Verbatim}
+\begin{center}
+\begin{tabular}{l}
+\textsf{project(value = gt(l.value, r.value), inumb} \\ \quad
+\textsf{cross(} \\ \quad\quad
+\textsf{union(} \\ \quad\quad\quad
+\textsf{project(inumb = counter(), value;} \\\quad\quad\quad\quad
+\textsf{make(name:=["value"], [5,10]))} \\ \quad\quad\quad
+\textsf{make(name:=["value"], [8]))} \\ \quad\quad
+\textsf{make(name:=["value"], [3,12])))}
+\end{tabular}
+\end{center}
 
 which again would produce this relation:
 
@@ -106,19 +109,19 @@ which again would produce this relation:
 \centering
 \begin{tabular}{|c|c|} \hline
 $inumb$ & $value$ \\\hline
-1 & \texttt{false} \\\hline
-1 & \texttt{false} \\\hline
-2 & \texttt{true} \\\hline
-2 & \texttt{false} \\\hline
-\texttt{NULL} & \texttt{true} \\\hline
-\texttt{NULL} & \texttt{false} \\\hline
+1 & \textit{false} \\\hline
+1 & \textit{false} \\\hline
+2 & \textit{true} \\\hline
+2 & \textit{false} \\\hline
+\textit{NULL} & \textit{true} \\\hline
+\textit{NULL} & \textit{false} \\\hline
 \end{tabular}
 \end{figure*}
 
 The query should of course be evaluated to $(true, true)$, as the \texttt{>} operator in XQuery yields $true$ if
-\textit{one} item in the sequence on the left side of the operator is larger than \textit{one} item on the right.
-This means that the relation would have to be pruned by a \texttt{select} or \texttt{group}, which can not be done
+\textit{one} item in the left operand is larger than \textit{one} item in the right.
+This means that the relation would have to be pruned by a \textsf{select} or \textsf{group}, which can not be done
 generally in the relations current state. A possibility would be to postpone the pruning until after the relation
 is crossed with the iterator sequence, but there would still not be any trivial
-solution. This problem leads to the introduction of variable dependency
+solution. This problem leads to the introduction of iterator dependency
 tainting, as we will see in section \ref{sect:trans:TD:tainting}.

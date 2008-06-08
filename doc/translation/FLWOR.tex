@@ -17,13 +17,13 @@ As seen by the excerpt of the W3C XQuery EBNF specification in figure
 different ways. For simplicity and readablilty the translation of such
 expressions will be split up in more managable pieces.
 
-A FLWOR expression may have multiple \texttt{for} clauses, and a \texttt{for} clause may have multiple iterator
-variable bindings. This means that one FLWOR may consist of many iterators, the
-semantics of which is described in section \ref{sect:method:ast_rewrite}. We assume all possible iterator dependencies generated from the FLWOR, that
+A FLWOR expression may have multiple \texttt{for}-clauses, and a \texttt{for}-clause may have multiple iterator
+variable bindings. This means that one FLWOR may consist of many iterators, the semantics of which is described in
+section \ref{sect:method:ast_rewrite}. We assume all possible iterator dependencies generated from the FLWOR, that
 is, all iterator variables bound, is stored in a ordered set $\beta$. The dependencies are ordered in the order of
 which the corresponding iterator variables are bound, i.e. top down, left to right while parsing the query. When
-enclosed in MQL syntax $\beta$ is, as $\vartheta$, to be read as a comma
-separated list of the attributes corresponding to the dependencies.
+enclosed in MQL syntax $\beta$ is, as $\vartheta$, to be read as a comma separated list of the attributes
+corresponding to the dependencies.
 
 \begin{figure}[h]
 \centering
@@ -40,12 +40,13 @@ $[$\texttt{order by }$e_3]?$ \\
 The translation of a single FLWOR like the one illustrated in figure \ref{fig:trans:TD:flworIll} will be executed
 as shown in figure \ref{fig:trans:TD:flworExecute}. Firstly, all \texttt{for} and \texttt{let} variables will be
 bound as described by the rules \ref{rule:trans:TD:forbind} and \ref{rule:trans:TD:letbind}, respectively.
-Further, the \texttt{return} clause will be evaluated. If there is a \texttt{where} clause present, it is
-evaluated next, based on the \texttt{where} expression and the result of the \texttt{return} clause, referred to as
-\textbf{r(}$e_{C}$\textbf{)}. The order of the items returned from the FLWOR is
-conditioned by the presence of an \texttt{order by} clause in the expression. If
-there is a \texttt{order by} clause, it will order the intermediate result from the \texttt{return} or \texttt{while} clause, and finalise the FLWOR. If there is no \texttt{order by}
-clause, the final evaluation of the FLWOR will be to order the intermediate result according to the iterators.
+Further, the \texttt{return}-clause will be evaluated. If there is a \texttt{where}-clause present, it is
+evaluated next, based on the \texttt{where}-expression and the result of the \texttt{return}-clause, referred to
+as \textbf{r(}$e_{C}$\textbf{)}. The order of the items returned from the FLWOR is conditioned by the presence of
+an \texttt{order by}-clause in the expression. If there is a \texttt{order by}-clause, it will order the
+intermediate result from the \texttt{return} or \texttt{while}-clause, and finalise the FLWOR. If there is no
+\texttt{order by}-clause, the final evaluation of the FLWOR will be to order the intermediate result according to
+the iterators.
 
 \begin{figure}[h]
 \centering
@@ -68,8 +69,8 @@ clause, the final evaluation of the FLWOR will be to order the intermediate resu
 
 
 
-Any possible iteration, ordering og filtering will be handled by other clauses than the \texttt{return} clause.
-The \texttt{return} clause will just ship the evaluated version of the \texttt{return} expression forward:
+Any possible iteration, ordering og filtering will be handled by other clauses than the \texttt{return}-clause.
+The \texttt{return}-clause will just ship the evaluated version of the \texttt{return}-expression forward:
 \begin{equation}
 \frac{}{\mbox{\texttt{return }}e_{4}}\longmapsto
 \mbox{\textbf{r(}}e_{4}\mbox{\textbf{)}}
@@ -78,10 +79,10 @@ The \texttt{return} clause will just ship the evaluated version of the \texttt{r
 
 
 \subsection{Iterator Ordering}
-The \texttt{return} clause is evaluated once for iteration for each of the iterators of the FLWOR expression. The
-results of these evaluations are concatenated to form the result of the FLWOR expression. If the \texttt{return}
-expression is not dependent on a iterator, its relational form will not have a representation for each
-of the iterators iterations and will have to be tainted.
+Acording to XQuery semantics, the \texttt{return} clause is evaluated once for iteration for each of the iterators
+of the FLWOR expression. The results of these evaluations are concatenated to form the result of the FLWOR
+expression. As TD evaluate iterations in parallel, if the \texttt{return}-expression is not dependent on a
+iterator, its relational form will not have a representation for each of the iterators iterations and will have to be tainted.
 
 Because each FLWOR iterator creates a new sequence, renumbering is needed. No expression in a sibling or parent
 scope of the FLWOR may be dependent on the dependencies in $\beta$. Thus, $\beta$ is not part of the dependencies
@@ -101,10 +102,10 @@ variables were bound.
 \end{equation}
 
 Where $\vartheta = e_{C}.\vartheta - \beta$, and $e_C$ is the result returned from the \texttt{where}-clause, if
-present, else the \texttt{return}-clause.
+present, otherwise it is the result of the \texttt{return}-clause.
 
-From equation \ref{eq:trans:TD:taint} it is clear that an expression already
-dependent on any iterator in $\beta$ will not be re-tainted by these iterators.
+From equation \ref{eq:trans:TD:taint} it is clear that an expression already dependent on any iterator in $\beta$
+will not be tainted by these iterators.
 
 The \textsf{numberate} operator will have to partition on the remaining dependencies in $\vartheta$ to seperate
 the sequences returned from the iterator for all iterators the result is dependent on, as described in section
@@ -168,23 +169,24 @@ shortened.
 \label{fig:trans:TD:finaliseExp}}
 \end{figure}
 
-With the expression tainted with all possible iterator dependencies of the FLWOR, renumbering is the last
-operation required to translate the query. The \textsf{numberate} operator will
-sort the tuples first on $anumb$, then on $bnumb$ and finally $index$ before numbering. As the FLWOR itself does not have any dependencies the
-numeration will not be grouped on any attributes. The result of the query is shown in figure
+With the expression tainted the dependencies of all the iterators of the FLWOR, renumbering is the last operation
+required to translate the query. The \textsf{numberate} operator will sort the tuples first on $anumb$, then on
+$bnumb$ and finally $index$ before numbering. As the FLWOR itself does not have any dependencies the numeration
+will not be partitioned over any attributes. The result of the query is shown in figure
 \ref{fig:trans:TD:final:rIa}.
 \end{myExample}
 
-\subsection{Where Clause}
+\subsection{Where-Clause}
 The W3C describes the FLWOR expression as generating a tuple stream which contains one tuple for each combination
-of values bound in the expression\cite{w3c00}. In this view, the optional \texttt{where} clause serves a filter for
-these tuples. The expression in the \texttt{where} clause is evaluated once for tuple. If the boolean value of this
-expression is $true$, the tuple is retained, if the boolean value is $false$ the tuple is discarded.
+of values bound in the expression\cite{w3c00}. In this view, the optional \texttt{where}-clause serves a filter
+for these tuples. The expression in the \texttt{where}-clause is evaluated once for each tuple. If the boolean
+value of this expression is $true$, the tuple is retained, if the boolean value is $false$ the tuple is discarded.
 
-The \texttt{where} clause can be evaluated by only selecting the iteration combinations where the \texttt{where}
-expression is true. The result of this will be joined with the result of the \texttt{return} clause. If the result
-from the \texttt{return} clause and the \texttt{where} expression has no common iterator dependencies, the
-equi-join will have to be replaced by a cartesian product, as discussed in \ref{sect:trans:TD:implic}.
+The \texttt{where}-clause can be evaluated by only selecting the iteration combinations where the
+\texttt{where}-expression is $true$. The result of this will be joined with the result of the \texttt{return}
+clause. If the result from the \texttt{return}-clause and the \texttt{where}-expression has no common iterator
+dependencies, the equi-join will have to be replaced by a cartesian product, as discussed in
+\ref{sect:trans:TD:implic}.
 
 \begin{equation}
 \frac{}{\mbox{\texttt{where }}e_2}\longmapsto
@@ -199,17 +201,18 @@ e_{C}.\vartheta)\mbox{\textsf{], [l.value, }} \vartheta\mbox{\textsf{];}} \\ \qu
 \end{equation}
 
 Where $\vartheta = e_{C}.\vartheta \cup e_{2}.\vartheta$, and \textbf{r(}$e_{C}$\textbf{)} is the result of the
-translation done in the \texttt{return} clause.
+translation done in the \texttt{return}-clause.
 
-By employing the \textsf{select} operator before the joining of the two relations the number of tuples needed to
-be read to execute the join will be minimized. Further, as the \textsf{hhjoin} operator allows for declaring which
+By employing the \textsf{select} operator before the joining of the two relations the number of tuples needed
+involved in the join will be minimised. Further, as the \textsf{hhjoin} operator allows for declaring which
 attributes to be projected, there is no need for a seperate \textsf{project} operator.
 
 \begin{myExample}
 Consider the XQuery query of figure \ref{fig:trans:TD:whereQuery}. The evaluation of $e_{1}$ is very similar to
 the evaluation of $e_{1}$ of example \ref{ex:trans:TD:simpleSeq}, and the
-result is shown in figure \ref{fig:trans:TD:where:re1}. The \texttt{where}
-clause contains a comparison expression, which will be discussed later. Figure \ref{fig:trans:TD:where:whereE} shows the result relation of the \texttt{where} expression.
+result is shown in figure \ref{fig:trans:TD:where:re1}. The \texttt{where}-clause contains a comparison
+expression, which will be discussed later. Figure \ref{fig:trans:TD:where:whereE} shows the result relation of the
+\texttt{where}-expression.
 
 \begin{figure}[h]
 \centering
@@ -220,7 +223,7 @@ clause contains a comparison expression, which will be discussed later. Figure \
 \mbox{\texttt{return}} \underbrace{\mbox{\texttt{(\$a, 14)}}}_{e_{1}}
 \end{array}
 \end{equation*}
-\caption{A FLWOR expression with a \texttt{where} clause \label{fig:trans:TD:whereQuery}}
+\caption{A FLWOR expression with a \texttt{where}-clause \label{fig:trans:TD:whereQuery}}
 \end{figure}
 
 \begin{figure}[h]
@@ -258,7 +261,7 @@ $anb$ & $idx$ & $val$ \\ \hline
 yields (c). Attribute names are shortened. \label{fig:trans:TD:whereClause}}
 \end{figure}
 
-During the evaluation of the FLWOR, the tuples in the \texttt{where} expression relation where $value$ ($val$ in
+During the evaluation of the FLWOR, the tuples in the \texttt{where}-expression relation where $value$ ($val$ in
 figure) is not $true$ will be removed. The result is a relation with a single tuple where $anumb$ holds the value
 $2$. This result is then joined with the $e_1$ relation on $anumb$, as shown in figure
 \ref{fig:trans:TD:where:intr}. Rule \ref{rule:trans:TD:itOrd} will have to be applied to complete the
@@ -266,10 +269,10 @@ evaluation of the query.
 \end{myExample}
 
 
-\subsection{Order By Clause Ordering}
+\subsection{Order By-Clause Ordering}
 
-As can be seen in figure \ref{fig:trans:TD:ordEBNF}, an \texttt{Order by} clause may contain several specifications on
-how to order and what to order by.
+As can be seen in figure \ref{fig:trans:TD:ordEBNF}, an \texttt{Order by}-clause may contain several
+specifications on how to order and what to order by.
 \begin{figure}[h]
 \begin{Verbatim}
 [38] OrderByClause ::= (("order" "by") | ("stable" "order" "by")) 
@@ -286,19 +289,19 @@ how to order and what to order by.
 
 At this time, Taiting Dependencies only support a simple form of the clause. Only one \texttt{OrderSpec} is
 allowed, where the expression to be sorted on will be referred to as $e_4$ -- conformant to figure
-\ref{fig:trans:TD:flworExecute}. No \texttt{OrderModifier}s are allowed, and neither is the \texttt{stable}
-option. This will be discussed further in sectin \ref{sect:disc:orderby}.
+\ref{fig:trans:TD:flworExecute}. Nor is any \texttt{OrderModifier}s allowed. A complete translation of the
+\texttt{order by}-clause is discussed in section \ref{sect:disc:orderby}.
 
-As with the \texttt{where} clause W3C specify the \texttt{order by} clause as operating on a tuple stream created
+As with the \texttt{where}-clause W3C specify the \texttt{order by}-clause as operating on a tuple stream created
 by the variable bindings in the FLWOR\cite{w3c00}. The clause causes the stream to be reordered into a new,
 value-based order. This means that the iterator dependency attributes ($\chi{numb}$) will no longer decide the
 composition of the sequence returned from the FLWOR.
 
 Firstly, to ensure that the result will have a representation for all the iterations (still valid after possible
-filtering by \texttt{where} clause) of all the expressions iterators, $e_C$ is tainted with $\beta$. The
-\texttt{order by} expression is evaluated and joined with the result of the tainting on their common iterator
+filtering by \texttt{where}-clause) of all the expressions iterators, $e_C$ is tainted with $\beta$. The
+\texttt{order by}-expression is evaluated and joined with the result of the tainting on their common iterator
 dependencies. Lastly, this relation is renumbered according to the order of the values stemming from the
-\texttt{order by} expression:
+\texttt{order by}-expression:
 
 \begin{equation}
 \frac{}{\mbox{\texttt{order by }}e_3}\longmapsto
@@ -315,14 +318,14 @@ e_{C}.\vartheta)\mbox{\textsf{],}}
 \end{equation}
 
 Where $\vartheta = (e_C.\vartheta \cup e_3.\vartheta)-\beta$, and \textbf{r(}$e_{C}$\textbf{)} is the result of
-the translation done in the \texttt{where} clause if present, else the
-\texttt{return} clause. Fields such as $index$ and if applicable $documentId$, $pos$ and $scope$ will follow $l.value$. $r.value$ is only the $value$
-column from the right relation. To accommodate for the \texttt{stable} keyword, the \textsf{numberate} operator
-will have to sort on $l.index$ aswell, after sorting on $r.value$.
+the translation done in the \texttt{where}-clause if present, else the
+\texttt{return}-clause. Fields such as $index$ and if applicable $documentId$, $pos$ and $scope$ will follow
+$l.value$. $r.value$ is only the $value$ column from the right relation. To accommodate for the \texttt{stable}
+keyword, the \textsf{numberate} operator will have to sort on $l.index$ aswell, after sorting on $r.value$.
 
 As desired, all iterator dependency attributes ($\chi{numb}, \chi \in \beta$) will be projected away by the
 \textsf{hhjoin} operator. An additional \textsf{project} operator is used to ensure that the $value$ returned from
-the expression is the $value$ attribute of the \texttt{return} expression.
+the expression is the $value$ attribute of the \texttt{return}-expression.
 
 \begin{myExample}
 Figure \ref{fig:trans:TD:ordQu} shows a query consisting of a FLWOR expression containing a \texttt{order by} clause.
@@ -337,13 +340,13 @@ Figure \ref{fig:trans:TD:ordQu} shows a query consisting of a FLWOR expression c
 \caption{Example query with order by clause}
 \end{figure}
 
-The evaluated \texttt{order by} expression is shown in figure \ref{fig:trans:TD:ord:oExp}. How modulus expressions
-are translated will be discussed later. After their evaluation, the relational representation of \texttt{order by}
-expression relation and the \texttt{return} clause is joined on their common iterator dependencies,
+The evaluated \texttt{order by}-expression is shown in figure \ref{fig:trans:TD:ord:oExp}. How modulus expressions
+are translated will be discussed later. After their evaluation, the relational representation of \texttt{order
+by}-expression relation and the \texttt{return}-clause is joined on their common iterator dependencies,
 $I_{\mbox{\texttt{a}}}$ ($anumb$). The result of the join is shown in figure \ref{fig:trans:TD:ord:join}. Lastly,
-this relation is renumbered and sorted on the $r.value$ ($r.val$ in figure)
-attribute stemming from the \texttt{order by} expression, as shown in figure \ref{fig:trans:TD:ord:numb}. An additional projection to rename $l.value$ to $value$
-is needed to finalise the query.
+this relation is renumbered and sorted on the $r.value$ ($r.val$ in figure) attribute stemming from the
+\texttt{order by}-expression, as shown in figure \ref{fig:trans:TD:ord:numb}. An additional projection to rename
+$l.value$ to $value$ is needed to finalise the query.
 
 \begin{figure}[h]
 \centering
@@ -369,7 +372,7 @@ $l.idx$ & $anb$ & $l.val$ & $r.val$ \\ \hline
 \qquad
 \subfigure[]{
 \begin{tabular}{|c|c|} \hline
-$l.idx$ & $l.val$ \\ \hline
+$idx$ & $l.val$ \\ \hline
 1 & 6 \\ \hline
 2 & 4 \\ \hline
 3 & 8 \\ \hline
@@ -379,9 +382,9 @@ $l.idx$ & $l.val$ \\ \hline
 
 
 \caption{Intermediate results evaluating the query of figure
-\ref{fig:trans:TD:ordQu}. (a) shows the evaluated \texttt{order by} expression. (b) shows the \texttt{order by}
-expression joined with the \texttt{return} expression. (c) shows the relation in (b) renumbered. Attribute names
-are shortened.\label{fig:trans:TD:orderRes}}
+\ref{fig:trans:TD:ordQu}. (a) shows the evaluated \texttt{order by} expression. (b) shows the \texttt{order
+by}-expression joined with the \texttt{return}-expression. (c) shows the relation in (b) renumbered. Attribute
+names are shortened.\label{fig:trans:TD:orderRes}}
 \end{figure}
 
 
