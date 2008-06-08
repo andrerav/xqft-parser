@@ -45,10 +45,13 @@ tuples can e.g. stem from the creation of a sequence. MarkXRemove translates seq
 translating XQuery expressions into relational algebra.
 
 The method creates quite simple algebra, as exemplified by the following query:
-\begin{Verbatim}
-for $i in (1,2,3) return 
-  ($i, 'yes')
-\end{Verbatim}
+
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$i in (1,2,3) return } \\ \qquad
+\texttt{(\$i, 'yes')}
+\end{tabular}
+\end{center}
 
 which is translated into this algebra:
 
@@ -77,11 +80,16 @@ not fully calculated until the cartesian product between the corresponding relat
 sequence is evaluated. This makes it hard to evaluate expressions where such a sequence is a subexpression. The
 iterator \textit{body} of this query:
 
-\begin{Verbatim}
-for $i (5,10) return
-  ($i, 8) > (6,12)
-\end{Verbatim}
+
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$i in (50,10) return } \\ \qquad
+\texttt{(\$i, 8) > (6,12)}
+\end{tabular}
+\end{center}
+
 would be translated into something like this relational algebra:
+
 \begin{Verbatim}
 project(value = gt(l.value, r.value), inumb
 cross(
