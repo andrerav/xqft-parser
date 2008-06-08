@@ -62,8 +62,8 @@ unabbreviated syntax.
 To accomodate for the context item, the result of each step of a path expression will be stored on the symbol
 table as \textbf{dot} -- each time replacing the the last entry. The context item, and references to it will be
 treated as iterator dependencies. The attribute corresponding to a dependency on \textbf{dot} is $dotNumb$. No
-expression not within the path expression can be dependant on \textbf{dot}, which is why \textbf{dot} will not be
-part of the dependencies $\vartheta$ returned. A general path expression is translated in the following manner:
+expression not within the path expression can be dependent on \textbf{dot},
+which is why \textbf{dot} will not be part of the dependencies $\vartheta$ returned. A general path expression is translated in the following manner:
 
 \begin{equation}
 \frac{}{[\mbox{\texttt{/}}]e_1\mbox{\texttt{/}}\ldots\mbox{\texttt{/}}e_n} \longmapsto
