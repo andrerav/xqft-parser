@@ -30,11 +30,15 @@ generated with TD.
 \section{Summary}
 \label{sect:trans:summary}
 
-In this chapter we have presented Tainting Dependencies -- a method for translating XQuery expressions into MQL
-relational algebra trees. Some of the base concepts behind the method is iterator depencencies and tainting of
-such. An expression dependent on an iterator will have a representation for each iteration of that iterator. This
-dependency can taint another expression, if that expression is a subexpression of a expression whose evaluation
-requires representation for all iterations. We have presented methods for translating features of XQuery complying
-to the implications of tainting and dependencies. Finally, we presented some possible simplifications of trees
-generated with TD. In section \ref{sect:disc:notSupported} we will discuss translation of XQuery features not
-presented in this chapter.
+In this chapter we have presented Tainting Dependencies -- a method for
+translating XQuery expressions into MQL relational algebra trees. Some of the
+base concepts behind the method is iterator dependencies and the implications
+of how they may taint subexpressions. An expression dependent on an iterator
+will have a representation for each iteration of that iterator. This
+dependency can taint another expression, if that expression is a subexpression
+of an expression whose evaluation requires representation for all iterations.
+We have presented methods for translating features of XQuery complying to the
+implications of tainting and dependencies. Finally, we presented some possible
+simplifications of trees generated with TD. In section
+\ref{sect:disc:notSupported} we will discuss translation of XQuery features
+not presented in this chapter.

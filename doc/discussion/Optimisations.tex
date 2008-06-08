@@ -9,7 +9,7 @@ As can be seen of the tree in figure \ref{fig:results:query_pathpred_result} on 
 \pageref{fig:results:query_pathpred_result}, Tainting Dependecies can produce relational algebra trees with
 consecutive \textsf{project} operators. This is of cource unnecessary, and such operators can be merged into one
 single \textsf{project}. Attributes which is not part of the result or part of evaluation of the result can be
-pruned. This may however not be anything the translator would need to consider, as the Mars optimiser allready
+pruned. This may however not be anything the translator would need to consider, as the Mars optimiser already
 implements methods for detecting and simplifying such trees.
 
 Rule \ref{rule:trans:TD:conditional} on page \pageref{rule:trans:TD:conditional} describes the translation of
@@ -64,8 +64,8 @@ on an MQL processor however, as it is hard to know which unique iteration a elem
 relation and a relation with representations in all unique iterations are joined together.
 
 Another situation where not accessing all data is required is with numeric predicates. The formal description of
-filter expressions\cite{xquery_semantics} says that a expression such as \texttt{\$s[1]} should be evaluated by
-consecutively examining the items of the sequence \texttt{\$s}, and selecting all items where
+filter expressions\cite{xquery_semantics} says that an expression such as
+\texttt{\$s[1]} should be evaluated by consecutively examining the items of the sequence \texttt{\$s}, and selecting all items where
 \texttt{position()=1}. A better solution would be to only pick the first item of the sequence. But as Tainting
 Dependencies stores sequences from many iterations in the same relation, and no ordering can be assumed, this can
 not be done easily. The MQL processor has no way of knowing where the tuples holding the items which are the

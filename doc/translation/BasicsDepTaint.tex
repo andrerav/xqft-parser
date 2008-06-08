@@ -222,8 +222,8 @@ Where $card(I_{\chi})$ is a function returning the cardinality of the iterator s
 
 Of these nested iterators, a subexpression $e$ is dependent on the subset
 $\left\{I_{\chi_k},I_{\chi_l}\right\}$. Because of dependency tainting and inheritance, the relational
-depiction of $e$ will have a representation in all posible iteration combinations of $I_{\chi_k}$ and
-$I_{\chi_l}$. A tuple in $e$, ($index, \chi_k{numb},\chi_l{numb}, value$), represents one of these unique
+depiction of $e$ will have a representation in all possible iteration
+combinations of $I_{\chi_k}$ and $I_{\chi_l}$. A tuple in $e$, ($index, \chi_k{numb},\chi_l{numb}, value$), represents one of these unique
 iterations. When $I_{\chi_k}$ is in its $\chi_k{numb}$th iteration and $I_{\chi_l}$ is in its $\chi_l{numb}$th
 iteration, the item in position $index$ of the sequence returned from $e$ will be $value$. Let $I_{\chi_m}$ also
 be one of the nested iterators, but one which $e$ is not dependent on. $e$ will evaluate to the same result
@@ -235,8 +235,8 @@ each other. This is done by grouping the relation on all unique combinations of 
 Grouping can be done either by the \textsf{group} operator or by specifying the attributes to group by in the
 partition list of the \textsf{numberate} operator.
 
-Often the evaluation of a expression use the values of each of its subexpressions. E.g. an addition expression is
-evaluated by adding the value of its first subexpression with the value of the second. To be able to calculate
+Often the evaluation of an expression use the values of each of its
+subexpressions. E.g. an addition expression is evaluated by adding the value of its first subexpression with the value of the second. To be able to calculate
 such expressions, the values of the subexpressions will have to be in the same relation. This can be achieved by
 evaluating the cartesian product of the subexpressions. Assumed that the subexpressions are independent of
 iterators or are not dependent on the same iterators this is sufficient. But if they are depentent on one or more
@@ -269,8 +269,8 @@ relation of the function will in addition to the $pred$-attribute contain all th
 $e.\vartheta$. The main reason this function is introduced at all is that it ensures that a incomming relation
 will have \emph{exactly one} tuple per unique iteration.
 
-\subsection{Litterals}
-\label{sect:trans:TD:litteral}
+\subsection{Literals}
+\label{sect:trans:TD:literal}
 
 The XQuery Full Text specification\cite{w3c01} defines a number of literals as seen in figure
 \ref{fig:trans:TD:litEBNF}. A \texttt{StringLiteral} is a text string enclosed in apostrophes or quotation marks,

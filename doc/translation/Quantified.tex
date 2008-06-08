@@ -18,9 +18,9 @@ $true$ if every evaluation of the \texttt{satisfies} expression yields $true$.
 
 It can be suitable to treat such expressions as iterators with the \texttt{satisfies} expression as the iterator
 body. The result of the iterator is then checked if every or some of its items have the effective boolean value
-$true$. This can be done with a \textsf{group} operator similarily to the general comparator expressions. If we
-assume $true$ has a bigger value than $false$, a \textsf{max} aggregator will reveal if there exists a tuple with
-the value $true$ and a \textsf{min} operator will reveal if there exist a tuple with the value $false$. All
+$true$. This can be done with a \textsf{group} operator similarily to the
+general comparison operator expressions. If we assume $true$ has a bigger value
+than $false$, a \textsf{max} aggregator will reveal if there exists a tuple with the value $true$ and a \textsf{min} operator will reveal if there exist a tuple with the value $false$. All
 variables bound in quantified expressions will be treated by the iterator binding translation of rule
 \ref{rule:trans:TD:forbind}. $\beta$ will refer to the set of all variables bound in one such expression
 

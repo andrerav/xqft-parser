@@ -1,8 +1,8 @@
 \section{Simple Binary Operator Expressions}
 \label{sect:trans:TD:binary}
 
-In this section we will present methods for tranlating simple XQuery binary operator expressions, namely
-arithmetic, logic and comparison operator expressions. XQuery binary operators not covered here will be discussed
+In this section we will present methods for translating simple XQuery binary
+operator expressions, namely arithmetic, logic and comparison operator expressions. XQuery binary operators not covered here will be discussed
 in section \ref{sect:disc:not:binary} on page \pageref{sect:disc:not:binary}.
 
 \subsection{Arithmetic Expressions}
@@ -184,8 +184,8 @@ comparison, as will be discussed in section \ref{sect:disc:notSupported}.
 
 Value comparisons are used for comparing two single values. With the same premises and restrictions the rule for
 translating arithmetic expressions (rule \ref{rule:trans:TD:arithmetic}) can be used to translate such comparison
-expressions. The mapping between the XQuery value comparators and MQL functions can be seen in table
-\ref{tab:trans:TD:valueComp}.
+expressions. The mapping between the XQuery value comparison operators and MQL
+functions can be seen in table \ref{tab:trans:TD:valueComp}.
 
 \begin{table}[h]
 \centering
@@ -199,12 +199,12 @@ expressions. The mapping between the XQuery value comparators and MQL functions 
 \texttt{ge} & \textsf{geq} \\
 \end{tabular}
 \label{tab:trans:TD:valueComp}
-\caption{Mapping XQuery value comparators to MQL functions}
+\caption{Mapping XQuery value comparison operators to MQL functions}
 \end{table}
 
 General comparisons are existentially quantified comparisons that may be applied to sequences of any length. If
-employing a general comparator on any pair of items consisting of one from each of the sequences yields $true$,
-the comparison expression yields true. As an example, all the comparison expressions of figure
+employing a general comparison operator on any pair of items consisting of one
+from each of the sequences yields $true$, the comparison expression yields true. As an example, all the comparison expressions of figure
 \ref{fig:trans:TD:genCompEx} evaluates to $true$.
 
 \begin{figure}[h]
@@ -261,7 +261,7 @@ the project list of the \textsf{hhjoin} operator.
 \texttt{>=} & \textsf{geq} \\
 \end{tabular}
 \label{tab:trans:TD:genCompMap}
-\caption{Mapping XQuery general comparators to MQL functions.}
+\caption{Mapping XQuery general comparison operators to MQL functions.}
 \end{table}
 
 \begin{myExample}
@@ -278,8 +278,8 @@ Figure \ref{fig:trans:TD:genCompQu} shows a simple XQuery query with a general c
 \end{figure}
  
 Because the operands of the \texttt{>} operator have no common iterator dependencies, the cartesian product of the
-two relations are calculated, as seen in figure \ref{fig:trans:TD:gen:join}. After the inner \textsf{project}
-operator is employed, the result will be as in figure \ref{fig:trans:TD:gen:projGr}. The double line illustrates
+two relations is calculated, as seen in figure \ref{fig:trans:TD:gen:join}.
+After the inner \textsf{project} operator is employed, the result will be as in figure \ref{fig:trans:TD:gen:projGr}. The double line illustrates
 the grouping on $anumb$ ($anb$ in the figure). The maximum value of $value$ for each group is calculated and the
 attributes are renamed, which gives the relation of figure \ref{fig:trans:TD:gen:end}.
 

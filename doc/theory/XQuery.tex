@@ -78,10 +78,10 @@ For example, consider the following XML source:
 \end{verbatim}
 \end{minipage}
 \end{center}
-If we execute the XPath expression \verb!/a/b/c!, we will recieve the
+If we execute the XPath expression \verb!/a/b/c!, we will receive the
 \verb!c!-node which is a child of the \verb!b!-node which is a child of the
 \verb!a!-node which is the document root node. Note that we will \textit{not}
-recieve the text \texttt{Hello World}, which is a \textbf{text node}, but rather its
+receive the text \texttt{Hello World}, which is a \textbf{text node}, but rather its
 parent node, which is the \verb!c!-node. To retrieve the text, we would rather
 use the path expression \verb!/a/b/c/text()!. The  \verb!text()! expression is
 known as a \textbf{kind test}. The following kind tests are available:
@@ -132,7 +132,7 @@ Consider the following XML source:
 \end{verbatim}
 \end{minipage}
 \end{center}
-If we apply the path expression mentioned above, we will thus recieve the second
+If we apply the path expression mentioned above, we will thus receive the second
 \verb!b!-node.
 
 There are a few important things to note about predicates. Firstly, the
@@ -199,7 +199,7 @@ Then construct a file \texttt{videos.xml} with the following contents:
 \end{verbatim}
 \end{minipage}
 \end{center}
-And finally execute the above query on this file to recieve the following
+And finally execute the above query on this file to receive the following
 result:
 \begin{center}
 \begin{minipage}[h]{7.5cm}
