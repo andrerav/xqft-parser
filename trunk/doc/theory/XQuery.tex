@@ -10,30 +10,33 @@ of XQuery 1.0 was coordinated with the development of XSLT 2.0, and the two
 teams cooperated on development of XPath 2.0.
 
 XQuery can be used to query any kind of data structure that can be represented
-as an XML document, including structured and semi-structured data. This
-includes text documents, relational databases, and XML-compliant HTML markup.
+as an XML document. This includes text documents, relational databases and XML-compliant HTML markup.
 
 \subsection{Basic language features}
 \label{sect:theory:xquery:basics}
 XQuery is a functional language with a comparatively small syntax. It lacks
 some features known from many functional languages, such as support for higher
-order function declarations. However, it has some of the most important
-benefits, such as a lack of side-effects. XQuery is a \textit{declarative}
-language (opposed to \textit{imperative} languages), and is strongly typed.
+order function declarations.\marginpar{vet ikke hva higher order function declarations er jeg, hva skjer med
+external?} However, it has some of the most important benefits, such as a lack of side-effects. XQuery is a
+\textit{declarative} language (opposed to \textit{imperative} languages), and is strongly typed.
 Static typing is optional, and may vary between various implementations.
 
 
 XQuery is an orthogonal language, meaning that expressions often can be
 arbitrarily nested. For example, a path expression predicate can be another
 path expression:
-\begin{Verbatim}
-/a/b[/c/d[e]]
-\end{Verbatim}
+\begin{center}
+\texttt{/a/b[/c/d[e]]}
+\end{center}
 Or, the return-clause in a loop construct can be another loop
 construct:
-\begin{Verbatim}
-for $i in (1,2,3) return for $j in (4,5,6) return $i + $j
-\end{Verbatim}
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$i in (1,2,3) } \\ \quad 
+\texttt{return for \$j in (4,5,6)} \\ \quad\quad 
+\texttt{return \$i + \$j}
+\end{tabular}
+\end{center}
 
 These features are important to consider for later translation, as truth values
 in predicates and return values may need to be coerced and/or inferred into
@@ -49,8 +52,9 @@ one-dimensional, will be flattened. For example, the two-dimensional sequence
 \verb!((1,2),3)! is to be flatted into \verb!(1,2,3)!.
 
 Sequences can evaluate to an effective boolean value. Informally, this value is defined as follows:
-\textbf{Anything that is not 0, empty, or false, evaluates to \textit{true}}. In a boolean context (such as an
-predicate or an if-then-else), this means that anything that is ``something'' will evaluate to \textit{true}.
+\textbf{Anything that is not 0, empty, or \textit{false}, evaluates to \textit{true}}. In a boolean context (such
+as an predicate or an \texttt{if..then..else}), this means that anything that is ``something'' will evaluate to
+\textit{true}.
 
 
 \subsection{Path Expressions}
@@ -65,18 +69,22 @@ known from many modern operating systems. This implies that the XPath syntax
 may be familiar and intuitive for new users.
 
 For example, consider the following XML source:
-\begin{Verbatim}
+\begin{center}
+\begin{minipage}[h]{5.2cm}
+\begin{verbatim}
 <a>
   <b><c>Hello World</c></b>
 </a>
-\end{Verbatim}
+\end{verbatim}
+\end{minipage}
+\end{center}
 If we execute the XPath expression \verb!/a/b/c!, we will recieve the
 \verb!c!-node which is a child of the \verb!b!-node which is a child of the
 \verb!a!-node which is the document root node. Note that we will \textit{not}
-recieve the text ``Hello World'', which is a \textit{text node}, but rather its
+recieve the text \texttt{Hello World}, which is a \textbf{text node}, but rather its
 parent node, which is the \verb!c!-node. To retrieve the text, we would rather
-use the path expression \verb!/a/b/c/text()!. The call to \verb!text()! is
-known as a \textit{node test}. The following node tests are available:
+use the path expression \verb!/a/b/c/text()!. The  \verb!text()! expression is
+known as a \textbf{kind test}. The following kind tests are available:
 \begin{itemize}
   \item \verb!text()! - as described above, returns a text node
   \item \verb!comment()! - returns a comment node, for example \texttt{<!-- Hello
@@ -90,7 +98,7 @@ In its unabbreviated syntax (or, verbose syntax), the semantics of XPath
 become more clear. For the XML source above, the full syntax for the path
 expression to match the \verb!c!-node would be
 \texttt{/child::a/child::b/child::c}. Here we see a new addition to our path
-expression, the \verb!child::! axis specifier. An \textit{axis specifier} helps
+expression, the \verb!child::! axis specifier. An \textbf{axis specifier} helps
 navigation within the XML document, by allowing the user to specify further
 traits about the nodes to be matched. For example, attribute nodes can be
 matched using \verb!attribute::! (or \verb!@!, with abbreviated syntax). For a
@@ -99,15 +107,20 @@ complete reference to axis specifiers, we refer to \cite{w3c01}.
 \subsection{Predicates}
 \label{sect:theory:xquery:Predicates}
 Predicates are used in path expressions to filter nodes. Predicates are
-appended to step expressions (and filter expressions, see \cite{w3c01}), and
-are applied from left to right. Predicates to not add anything to the node sets
-returned from the path expressions, they only restrict by filtering. Predicates
-are appended to step expressions within square brackets, as such:
-\verb!/a/b[@id > 1]!. This will return the first \verb!b!-node with an
-attribute \verb!id! whose value is larger than one.
+appended to step expressions (and filter expressions, see \cite{w3c01}), and multiple predicates
+are applied from left to right. Predicates never add to the node sets returned from the path expressions, they
+only restrict by filtering. Predicate expressions are appended to step expressions within square brackets, like
+this:
+\begin{center}
+\verb!/a/b[@id > 1]!
+\end{center} 
+This expression will return all \verb!b!-nodes within a \verb!a!-node and with an attribute \verb!id! whose value
+is larger than one.
 
 Consider the following XML source:
-\begin{Verbatim}
+\begin{center}
+\begin{minipage}[h]{3.2cm}
+\begin{verbatim}
 <a>
   <b id="1">
     <c />
@@ -116,20 +129,24 @@ Consider the following XML source:
     <c />
   </b>
 </a>
-\end{Verbatim}
+\end{verbatim}
+\end{minipage}
+\end{center}
 If we apply the path expression mentioned above, we will thus recieve the second
 \verb!b!-node.
 
 There are a few important things to note about predicates. Firstly, the
 predicate expression can be any expression, and as such its return value is
-coerced into a truth value (either \textit{true} or \textit{false}), as
+coerced into a effective boolean value (either \textit{true} or \textit{false}), as
 described previously in section \ref{sect:theory:xquery:basics}.
 
 However, there is one important exception -- if the return value for the
 predicate expression evaluates to a numerical value, then the predicate
-becomes a ``numeric predicate'', and its value is used to identify the
-\textit{n}th node in the path expression. For example, the following path
-expression returns the first \verb!b!-node: \verb!/a/b[1]!.
+becomes a \textbf{numeric predicate}, and its value is used to identify the
+\textit{n}th node in the step expression. For example, the following path
+expression returns the first \verb!b!-node: \verb!/a/b[1]!. As it is the first \verb!b!-node within the only
+\verb!a!-node. \texttt{/a/b/c[1]} will select both \verb!c!-nodes of the document as they both are the first
+\texttt{c}-node within their respected \texttt{b}-nodes.
 
 \subsection{FLWOR}
 \label{sect:theory:xquery:Flwor}
@@ -138,9 +155,7 @@ expression returns the first \verb!b!-node: \verb!/a/b[1]!.
 \label{definition:iteration_expression}
 An \textbf{iteration expression} or \textbf{iterator} is an XQuery expression consisting of an \textbf{iterator
 variable} declaration and an \textbf{iterator body}. The \textbf{iterator body} is executed multiple times, and
-for each time the \textbf{iterator variable} is bound to the next item in the \textbf{iterator sequence}. As
-XQuery is a functional language(see section \ref{sect:theory:xquery:basics}), it is semantically sound to execute
-iterations in parallel.
+for each time the \textbf{iterator variable} is bound to the next item in the \textbf{iterator sequence}.
 \end{myDefinition}
 
 XQuery is centered around a loop construct known dubbed FLWOR;
@@ -156,17 +171,21 @@ XQuery is centered around a loop construct known dubbed FLWOR;
 This construct is thought to be roughly equivalent to a
 \texttt{SELECT}-statement in SQL. For example, consider the following SQL
 statement: 
-\begin{Verbatim}
-SELECT v.title FROM video v WHERE v.year = 1999
-\end{Verbatim}
+\begin{center}
+\verb!SELECT v.title FROM video v WHERE v.year = 1999!
+\end{center}
 And then compare it to the following XQuery counterpart:
-\begin{Verbatim}
-for $v in doc("videos.xml")//video
-where $v/year = 1999
-return $v/title
-\end{Verbatim}
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$v in doc("videos.xml")//video} \\
+\texttt{where \$v/year = 1999}\\
+\texttt{return \$v/title}\\
+\end{tabular}
+\end{center}
 Then construct a file \texttt{videos.xml} with the following contents:
-\begin{Verbatim}
+\begin{center}
+\begin{minipage}[h]{9.5cm}
+\begin{verbatim}
 <videos>
   <video>
     <title>Plan 9 from outer space</title>
@@ -177,39 +196,48 @@ Then construct a file \texttt{videos.xml} with the following contents:
     <year>1956</year>
   </video>
 </videos>
-\end{Verbatim}
+\end{verbatim}
+\end{minipage}
+\end{center}
 And finally execute the above query on this file to recieve the following
 result:
-\begin{Verbatim}
-<videos>
-  <video>
-    <title>Plan 9 from outer space</title>
-    <year>1959</year>
-  </video>
-</videos>
-\end{Verbatim}
-
+\begin{center}
+\begin{minipage}[h]{7.5cm}
+\begin{verbatim}
+<title>Plan 9 from outer space</title>
+\end{verbatim}
+\end{minipage}
+\end{center}
 It is important to note the distinction of bound and free variables in FLWOR
 constructs -- or, in other words, the scope boundaries. Consider the following
 example:
-\begin{Verbatim}
-for $a in (1,2,3)
-  return for $b in (4,5,$a)
-    return $a + $b
-\end{Verbatim}
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$a in (1,2,3)} \\ \quad
+  \texttt{return for \$b in (4,5,\$a)}\\ \quad\quad
+    \texttt{return \$a + \$b}
+\end{tabular}
+\end{center}
+
 When evaluating the for-clauses in this nested FLWOR expression, the
-\textit{iterator sequence} must be evaluated in the parent scope and not the
+\textit{iterator sequence} is evaluated in the parent scope and not the
 new scope for the current FLWOR expression. We can illustrate this point by
 separating the scopes graphically:
-\begin{Verbatim}
-----------.
-for $a in | (1,2,3)
-          `--------
-  --------------.
-  return for $b | in (4,5,$a)
-                `------------
-    return $a + $b
-\end{Verbatim}
+\begin{figure*}
+\centering
+\begin{tikzpicture}
+\node at (0,0) [label=right:\texttt{for \$a in}]{};
+\node at (2,0) [label=right:\texttt{(1,2,3)}]{};
+\node at (0.5,-0.75) [label=right:\texttt{return for \$b in}]{};
+\node at (3.9,-0.75) [label=right:\texttt{(4,5,\$a)}]{};
+\node at (1.5,-1.5) [label=right:\texttt{return \$a + \$b}]{};
+\draw[thick,dotted,rounded corners=8pt]
+(0,0.25) -- (2.15,0.25) -- (2.15,-0.3) -- (3.8,-0.3) -- (3.8,0.25) ;
+\draw[thick,dotted,rounded corners=8pt]
+(0.5,-0.5) -- (4.05,-0.5) -- (4.05,-1.05) -- (6,-1.05);
+\end{tikzpicture}
+\end{figure*}
+
 As can be seen, the iterator sequence for the inner loop is evaluated in the
 scope of the outer loop, and a new scope is not started until this iterator
 sequence has been evaluated. Otherwise one could risk overwriting variables in
@@ -224,39 +252,45 @@ reduces the smallest unit of an XML document to single words instead of nodes.
 Additionally, they add sophisticated tools such as stemming, thesaurus, and
 scoring variables.
 
-Technically, the \verb!FTContains! operator applies a full-text search for the
-given argument, and allows appending full-text match options to the query
-(match options being stemming, thesaurus, and other match options described in
-\cite{w3c01}).
+Technically, the \verb!ftcontains! operator applies tokenisation of the first operand, and search for a match with
+the second operand among the tokens. It allows specifying match options like stemming, thesaurus, etc to second
+operand modifying the criteria for finding a match. A full list of match options are described in \cite{w3c01}.
 
 For example, consider the following example:
-\verbatiminput{graph_queries/ftq1.xq}
-This will match any book where the title contains the stem of the word ``dog'' in
-lower case, and the word ``cat'', and return the author of that book. This
-query is parsed into the AST seen in figure \ref{figure:xquery:full_text_ast}.
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$b in /books/book} \\
+\texttt{where \$b/title ftcontains ("dog" with stemming case sensitive)} \\ \quad\quad\quad
+\texttt{ftand "cat"} \\
+\texttt{return \$b/author}
+\end{tabular}
+\end{center}
+This will match any \texttt{book}-node where the \texttt{title}-node contains a word with the stem ``dog''.
+Further, the word must be in lower case, and the word ``cat'' must reside inside the same node. The query will
+return the \texttt{author}-node of these \texttt{book}-nodes. This query is parsed into the AST seen in
+figure \ref{figure:xquery:full_text_ast} (\textbf{\Large TODO:} Droppes?).
 
 \begin{figure}[h]
   \centering
     \includegraphics[scale=0.50]{img/graphs/ftq1} 
-  \caption{Full-text query syntax tree}
+  \caption{Full-text query syntax tree \textbf{\LARGE TODO:} un\o dvendig?}
   \label{figure:xquery:full_text_ast}
 \end{figure}
 
-\subsection{XQuery core}
+\subsection{XQuery Core}
 \label{sect:theory:xquery:XQcore}
-XQuery Core is a less powerful but semantically equivalent form of expressing
-XQuery queries. XQuery Core as well as the process of normalizing regular
+XQuery Core is a less powerful but semantically equivalent language for expressing
+XQuery queries. XQuery Core as well as the process of normalising regular
 XQuery to XQuery Core is described in the document ``XQuery 1.0 and XPath 2.0
 Formal Semantics''\cite{xquery_semantics}.
 
-The goal of XQuery Core is to simplify queries and remove syntactic sugar,
+The goal of this subset language is to simplify queries and remove syntactic sugar,
 leaving only the essential semantics without loss of expressiveness.
 This is useful for optimization routines and translations into new types of
 queries, for example relational algebra or SQL.
 
-The process of normalization is described through a rich set of mapping
-rules. These are documented in detail throughout ``XQuery 1.0 and XPath 2.0
-Formal Semantics''\cite{xquery_semantics} and will not be reiterated here.
+The process of normalisation is described through a rich set of mapping
+rules. These are documented in detail in \cite{xquery_semantics} and will not be reiterated here.
 However we will examine some important examples.
 
 First, however, it is important to take note of the syntax of the mapping
@@ -271,7 +305,7 @@ $
   \label{figure:xquery:mapping_rules}
 \end{figure}
 
-Consider figure \ref{figure:xquery:mapping_rules}. The left-hand side of the
+Consider figure \ref{figure:xquery:mapping_rules}. Here, the left-hand side of the
 equality symbol (==) denotes the original object to be rewritten. The
 subscript indicates the type or kind of the object to be mapped, and/or
 additional information to be passed between mapping rules. The right-hand side
@@ -281,106 +315,124 @@ denotes the rewritten object.
 \label{sect:theory:xquery:core:rewriting_flwor}
 \begin{figure}[!h]
 \centering
-[for $\$VarName_1$ $OptTypeDeclaration_1$ $OptPositionalVar_1$ in $Expr_1$,
-\ldots, $\$VarName_n$ $OptTypeDeclaration_n$ $OptPositionalVar_n$ in $Expr_n$
+[\texttt{for \$}$VarName_1$ $OptTypeDeclaration_1$ $OptPositionalVar_1$ \texttt{in} $Expr_1$\texttt{,}
+\ldots, \texttt{\$}$VarName_n$ $OptTypeDeclaration_n$ $OptPositionalVar_n$ \texttt{in} $Expr_n$
 $FormalReturnClause]_{Expr}$ \newline
 $==$ \newline
-for $\$VarName_1$ $OptTypeDeclaration_1$
-$OptPositionalVar_1$ in $[Expr_1]_{Expr}$ return \ldots for $\$VarName_n$
-$OptTypeDeclaration_n$ $OptPositionalVar_n$ in $[Expr_n]_{Expr}$ return
+\texttt{for \$}$VarName_1$ $OptTypeDeclaration_1$
+$OptPositionalVar_1$ \texttt{in} $[Expr_1]_{Expr}$ \texttt{return} \texttt{\ldots for \$}$VarName_n$
+$OptTypeDeclaration_n$ $OptPositionalVar_n$ \texttt{in} $[Expr_n]_{Expr}$ \texttt{return}
 $[FormalReturnClause]_{Expr}$
-  \caption{FLWOR expression mapping rule}
+  \caption{XQuery FLWOR expression to XQuery Core mapping rule}
   \label{figure:xquery:flwor_mapping_rule}
 \end{figure}
 
-The mapping rule for FLWOR forclause-expressions can be seen in figure
-\ref{figure:xquery:flwor_mapping_rule}. The mapping rule for LET expressions is
-similar and omitted from this document for brevity, however they are also
-normalized into several nested bindings.
+The mapping rule for FLWOR \texttt{for}-clause expressions can be seen in figure
+\ref{figure:xquery:flwor_mapping_rule}. The mapping rule for \texttt{let}-expressions is
+similar and omitted for brevity, however they are also normalised into several nested bindings.
 
 \begin{figure}[!h]
 \centering
-$[where Expr_1 FormalReturnClause]_{Expr}$ \newline
+$[$\texttt{where} $Expr_1 FormalReturnClause]_{Expr}$ \newline
 $==$ \newline
-$if ([Expr_1]_{Expr}) then [FormalReturnClause]_{Expr} else ()$
-  \caption{Where-clause mapping rule}
+\texttt{if(}$[Expr_1]_{Expr}$\texttt{) then }$[FormalReturnClause]_{Expr}$ \texttt{else ()}
+  \caption{XQuery \texttt{Where}-clause to XQuery Core mapping rule}
   \label{figure:xquery:where_mapping_rule}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-$[stable? order by OrderSpecList FormalReturnClause]_{Expr}$ \newline
+$[$\texttt{stable}$?$ \texttt{order by} $OrderSpecList FormalReturnClause]_{Expr}$ \newline
 $==$ \newline
-$[OrderSpecList]_{OrderSpecList} return [FormalReturnClause]_{Expr}$
-  \caption{Order by clause mapping rule}
+$[OrderSpecList]_{OrderSpecList}$\texttt{ return }$[FormalReturnClause]_{Expr}$
+  \caption{XQuery \texttt{order by}-clause to XQuery Core mapping rule}
   \label{figure:xquery:orderby_mapping_rule}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-$[return Expr]_{Expr}$ \newline
+$[$\texttt{return }$Expr]_{Expr}$ \newline
 $==$ \newline
 $[Expr]_{Expr}$
-  \caption{Return clause mapping rule}
+  \caption{XQuery \texttt{return} clause to XQuery Core mapping rule}
   \label{figure:xquery:return_mapping_rule}
 \end{figure}
 
-Similarly, the mapping rules for where-clauses, orderby-clauses and
-return-clauses can be seen in figures \ref{figure:xquery:where_mapping_rule},
+Similarly, the mapping rules for \texttt{where}-clauses, \texttt{order by}-clauses and
+\texttt{return}-clauses can be seen in figures \ref{figure:xquery:where_mapping_rule},
 \ref{figure:xquery:orderby_mapping_rule},
 and \ref{figure:xquery:return_mapping_rule}.
 
 For an example of how these rules are applied, consider the following FLWOR
 expression:
-\verbatiminput{graph_queries/flwor_rewrite1.xq}
+%\verbatiminput{graph_queries/flwor_rewrite1.xq}
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$i in (1, 2), \$j in (3, 4)} \\
+  \texttt{let \$k := \$i + \$j} \\
+  \texttt{where \$k >= 5} \\
+   \texttt{return (\$i, \$j)} \\
+\end{tabular}
+\end{center}
 
 By applying the mapping rules described,  this expression is typically
 rewritten to:
-\verbatiminput{graph_queries/flwor_rewrite2.xq}
-
+%\verbatiminput{graph_queries/flwor_rewrite2.xq}
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$i in (1, 2) return} \\ \quad
+  \texttt{for \$j in (3, 4) return} \\ \quad
+    \texttt{let \$k := \$i + \$j return} \\ \quad \quad
+      \texttt{if (\$k >= 5) then} \\ \quad \quad \quad
+        \texttt{(\$i, \$j)}\\ \quad \quad
+      \texttt{else} \\ \quad \quad \quad
+        \texttt{()}
+\end{tabular}
+\end{center}
 The corresponding AST graphs can be seen in figures
 \ref{tree:ast:flwor_rewrite1} and \ref{tree:ast:flwor_rewrite2}. In particular,
-note that multiple for-clauses in a FLWOR expression is rewritten into several
-nested FLWOR expressions, and that the where-clause is  rewritten into an
-if-then-else expression. 
-
-\begin{figure}[h!]
+note that multiple \texttt{for}-clauses in a FLWOR expression is rewritten into several
+nested FLWOR expressions, and that the \texttt{where}-clause is  rewritten into an
+\texttt{if..then..else} expression. 
+\newpage
+\begin{figure}
 \centering
- \includegraphics[scale=0.50]{img/graphs/flwor_rewrite1}
-\caption{FLWOR AST tree before normalization}
+\subfigure[FLWOR AST tree before normalization]{
+ \includegraphics[scale=0.4]{img/graphs/flwor_rewrite1}
 \label{tree:ast:flwor_rewrite1}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
- \includegraphics[scale=0.50]{img/graphs/flwor_rewrite2}
-\caption{Normalized FLWOR AST tree}
+}
+\subfigure[Normalised FLWOR AST tree]{
+ \includegraphics[scale=0.4]{img/graphs/flwor_rewrite2}
 \label{tree:ast:flwor_rewrite2}
+}
+\caption{A FLWOR expression before and after normalisation.}
 \end{figure}
 
 \subsubsection{Rewriting composite relative path expressions}
 A composite relative path expression (for example, \verb!a/b!), can be
-rewritten into a for loop using the mapping rule in
+rewritten into a \texttt{for}-loop using the mapping rule in
 \ref{figure:xquery:relpath_mapping_rule}.
 
 \begin{figure}[!h]
 \centering
 $[RelativePathExpr / StepExpr]_{Expr}$ \newline
 $==$ \newline
-fs:apply-ordering-mode ( \newline
-fs:distinct-doc-order-or-atomic-sequence ( \newline
-    let \$fs:sequence as node()* := $[RelativePathExpr]_{Expr}$ return \newline
-    let \$fs:last := fn:count(\$fs:sequence) return \newline
-    for \$fs:dot at \$fs:position in \$fs:sequence return \newline
-       $[StepExpr]_{Expr}$
-))
+\begin{tabular}{l}
+\texttt{fs:apply-ordering-mode(} \\ \quad
+\texttt{fs:distinct-doc-order-or-atomic-sequence(} \\ \quad\quad
+    \texttt{let} \texttt{\$fs:sequence as node()* :=} $[RelativePathExpr]_{Expr}$ \texttt{return} \\\quad\quad
+    \texttt{let \$fs:last := fn:count(\$fs:sequence) return} \\\quad\quad
+    \texttt{for \$fs:dot at \$fs:position in \$fs:sequence return} \\\quad\quad\quad\quad\quad
+       $[StepExpr]_{Expr}$ \texttt{))}
+       \end{tabular}
   \caption{Composite relative path expression mapping rule}
   \label{figure:xquery:relpath_mapping_rule}
 \end{figure}
 
 Given the trivial example \verb!a/b!, this translates into the following block
 of normalized code:
-
+\begin{center}
+\begin{minipage}[h]{10cm}
 \begin{verbatim}
 fs:apply-ordering-mode (
 fs:distinct-doc-order-or-atomic-sequence (
@@ -389,13 +441,15 @@ fs:distinct-doc-order-or-atomic-sequence (
   for $fs:dot at $fs:position in $fs:sequence return
     b))
 \end{verbatim}
+\end{minipage}
+\end{center}
+
 
 Which may seem like a rather verbose representation of such a simple path
 expression. In particular, for complex path expressions this may
 escalate into rather large rewritten expressions. However, this is a trade-off
 to be made for normalization of such path expressions.
 
-TODO: kan kanskje droppe denne biten om pathexprs?
 
 % \subsection{AllMatches}
 % \label{sect:theory:xquery:allmatches}

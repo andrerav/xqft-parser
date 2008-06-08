@@ -1,17 +1,18 @@
 \section{Existing implementations}
 \label{sect:existing_implementations}
 
+\textbf{\underline{\LARGE TODO:}}
 Poengtere at disse implementasjonene er fundamentalt annerledes siden vi jobber
-mot sm\aa spro indekser og ikke mot XML-traer o.l som er mer vanlig
-
-\textbf{\underline{\LARGE TODO:}} skrive en del mer om tingene, hvordan de jobber p\aa~ ASTen, om de har relasjonell algebra i det heletatt (exist har vel ikke det?)
+mot sm\aa spro indekser og ikke mot XML-traer o.l som er mer vanlig skrive en 
+del mer om tingene, hvordan de jobber p\aa~ ASTen, om de har relasjonell algebra 
+i det heletatt (exist har vel ikke det?)
 
 \subsection{eXist}
 \begin{figure}[h]
   \centering
     \includegraphics[width=0.9\textwidth]{diagrams/exist_arch}
   \caption[eXist architecture]{eXist architecture, based on architecture sketch
-  from \cite{exist_indexdriven}}
+  from \cite{exist_indexdriven} \textbf{\Large TODO: droppe?}}
 \end{figure}
 eXist\cite{exist_doc} is an open source native XML database with an XQuery
 query processor. The eXist system is written in Java. This system stores native
@@ -37,12 +38,12 @@ relationships instead of traditional tree traversals.
   \caption{Pathfinder architecture / development stack}
 \end{figure}
 Pathfinder\cite{pathfinderHome} claims to be a ``purely relational XQuery
-processor'', which theoretically can utilize any off-the-shelf RBDMS as a
+processor'', which theoretically can utilise any off-the-shelf RBDMS as a
 backend for XQuery execution in a relational context.
 
-The technique for transforming XQuery into relational algebra is called ``loop
-lifting''\cite{pathfinder_mothertongue}. Loop lifting is a FLWOR-centric
-approach which essentially transforms iterations into joins. Loop lifting is
+The technique for transforming XQuery into relational algebra is called ``Loop
+Lifting''\cite{pathfinder_mothertongue}. Loop Lifting is a FLWOR-centric
+approach which essentially transforms iterations into joins. The technique is
 described in detail in section \ref{sect:trans:loop_lifting}.
 
 As a relational backend, the XQuery processor uses MonetDB, an integrated
@@ -50,6 +51,13 @@ component in the Pathfinder project. However, recent versions of Pathfinder is
 also capable of producing SQL code for execution on conventional database
 systems. As a proof of concept, they performed the XMark test suite on top of
 the IBM DB2 system\cite{pathfinder_sql}.
+
+\textbf{\Large TODO:}
+\begin{itemize}
+  \item nevne staircase join
+  \item hvordan de lagrer data
+  \item forklare figuren
+\end{itemize}
 
 \subsection{Galatex}
 \begin{figure}[h]
@@ -62,8 +70,7 @@ the IBM DB2 system\cite{pathfinder_sql}.
 Galatex is claimed to be the first full implementation of the W3C XQuery 1.0 
 and XPath 2.0 Full-Text 1.0 specification\cite{w3c01}. As can be seen in figure
 \ref{figure:galatex:arch}, Galatex translates the full-text parts of the query
-into standard normalized XQuery (XQuery Core\cite{xquery_semantics}, also
-described in section \ref{sect:theory:xquery:XQcore}) in the Galatex parser. The equivalent
+into XQuery Core\cite{xquery_semantics} in the Galatex parser. The equivalent
 XQuery query is then executed on the Galax query processor.
 
 The most interesting aspect of Galatex is its full-text capabilities. This is
@@ -75,7 +82,7 @@ translanted into corresponding functions in regular XQuery.
 \label{sect:theory:existing_implementations:comparison}
 This section will compare some important traits of the described
 implementations, and will outline their implications.
-\begin{figure}[!h]
+\begin{table}[!h]
 	\centering
 	\begin{tabular}{ | p{3cm} | c | c | c |}
 	\hline
@@ -89,8 +96,8 @@ implementations, and will outline their implications.
 	\end{tabular}
 	\caption{Comparison of implementation traits}
 	\label{figure:comparison_matrix}
-\end{figure}
-The traits chosen for the comparison matrix in figure
+\end{table}
+The traits chosen for the comparison matrix in table
 \ref{figure:comparison_matrix} are chosen due to their relevance to this
 project. As can be seen, there is a spread in diversity across these
 implementations. In particular, Pathfinder is the only implementation with a
