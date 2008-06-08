@@ -1,19 +1,17 @@
 \section{Theoretical Algebra}
 \label{sect:result:theoretical_algebra}
 In this section, a collection of XQuery query examples and their translation to
-relational algebra is presented. The translation is done manually using the
-``Tainting Dependencies'' method described in chapter \ref{sect:translation}. For the sake of
-brevity, only the rules used throughout the translation will be noted. Intermediate results will
-not be included.
-
-Generell struktur:
-- Sp\oe rring
-- Semantikk (resultat)
-- Translasjon
-- Mellomregninger? (naaii..)
+relational algebra are presented. The translation is done manually using the
+``Tainting Dependencies'' method described in chapter \ref{sect:translation}.
+For the sake of brevity, only the rules used throughout the translation will
+be noted. Intermediate translations are not shown here, however they are
+all shown in their entirety in appendix \ref{appendix:transl}.
 
 \subsection{Extensive FLWOR}
-This example will illustrate the translation of a more complex FLWOR expression.
+This example will illustrate the translation of a more complete FLWOR
+expression.
+
+TODO: disse grafene er ikke riktige -- hva har skjedd her?
 
 \subsubsection{Query premise}
 \begin{figure}[!htp]
@@ -83,9 +81,10 @@ The translation process in its entirety is shown step by step in appendix
 The result of the translation is shown in figure
 \ref{fig:results:query_pathpred_result}.
 
+\newpage
 \begin{figure}[!htp]
 \begin{center}
-  \includegraphics[width=1.0\textwidth]{img/graphs/TD_patExprPred}
+  \includegraphics[width=0.9\textwidth]{img/graphs/TD_patExprPred}
   \caption{Complete translation of expression in figure
   \ref{fig:results:query_pathPred}}
   \label{fig:results:query_pathpred_result}
@@ -96,10 +95,9 @@ The operator tree in figure \ref{fig:results:query_pathpred_result} can be
 converted to the DAG seen in figure \ref{fig:results:query_pathpred_result_dag}.
 
 \newpage
-
 \begin{figure}[!htp]
 \begin{center}
-  \includegraphics[width=1.0\textwidth]{img/graphs/TD_patExprPred_dag}
+  \includegraphics[width=0.9\textwidth]{img/graphs/TD_patExprPred_dag}
   \caption{DAG representation of operator tree in figure
   \ref{fig:results:query_pathpred_result}}
   \label{fig:results:query_pathpred_result_dag}
@@ -158,7 +156,7 @@ In this section, a collection of trivial queries are translated to relational
 algebra using the implemented proof of concept described in chapter
 \ref{chapter:implementation}. Naturally, this implementation also uses the
 ``Tainting Dependencies'' method, however the results from these translations
-will be used in a comparison with MonetDB/Pathfinder in the next section.
+will be used in a comparison with Pathfinder in the next section.
 
 \subsection{Trivial FLWOR}
 \label{sect:results:algebra:generated:trivial_flwor}

@@ -3,9 +3,9 @@
 
 XQuery provides some different ways to communicate with the external environment, that is, the world outside the
 query. One of these features is that variables and functions may be declared with the \texttt{external} keyword. A
-query containting such expressions will have to be translated by the translator, leaving space where the
-expressions are refered to. These spaces will have to be filled by another part of the system. If the contents of
-the variables and functions are known before runtime, a better solution would be to insert them into the symbol
+query containing such expressions will have to be translated by the translator, leaving space where the
+expressions are referred to. These spaces will have to be filled by another
+part of the system. If the contents of the variables and functions are known before runtime, a better solution would be to insert them into the symbol
 and function tables of the translator before translation commences.
 
 The functions \texttt{fn:doc} and \texttt{fn:collection} also provide access to external data. The \texttt{fn:doc}
@@ -24,5 +24,5 @@ The final way for XQuery to access the external environment is through initial v
 \cite{w3c00}). Most important of these is the context item and the default collection. The default collection is
 referred to with a function call with \texttt{fn:collection} without an URI as parameter. The initial context item
 is referred to explicitly with the \verb!.! (dot) operator, or implicitly at the start of a path expression. These
-features may be suported in Tainting Dependencies by inserting the values in the function and symbol table,
-respectively.
+features may be supported in Tainting Dependencies by inserting the values in
+the function and symbol table, respectively.
