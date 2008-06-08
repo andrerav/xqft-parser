@@ -76,11 +76,11 @@ typically will cleanly separate a data structure from an algorithm which is
 operating on that structure.
 
 \subsection{Constructed algebra trees and performance}
-As explain in section \ref{sect:impl:construct_mql} on page
+As explained in section \ref{sect:impl:construct_mql} on page
 \pageref{sect:impl:construct_mql}, the MQL is constructed as an in-memory tree
 structure. This was done by instantiating a new \texttt{Operator} subclass
 (the exact class depending on context) for every node in the tree. It is
 important to note that even though this could become a performance bottleneck
 for very large and complex queries, it is still an important trade-off. In
-exchange for a theoretical performance problem, the implementation achieves a
+exchange for a theoretical performance bottleneck, the implementation achieves a
 higher level of maintainability.

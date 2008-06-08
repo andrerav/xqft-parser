@@ -23,8 +23,8 @@ expression, the translator may raise the error, and avoid a faulty query being r
 Evaluating the cardinality of seqences returned from expressions is in many cases a simple task. Some expressions
 will always return singletons, such as logical, comparison and aritmetic expressions, iterator variable references
 and literals. The cardinality of sequences constructed of such expressions may also be calculated in the
-translator. A proplem arises, however, when dynamic content (not from the query itself) is included. Consider the
-following query:
+translator. A problem arises, however, when dynamic content (not from the query
+itself) is included. Consider the following query:
 
 \begin{center}
 \begin{tabular}{l}
@@ -40,10 +40,10 @@ however not have the ability to evaluate if a type error should be raised or not
 check for multiple \texttt{surname} elements per \texttt{person}, result in a sequence where the \texttt{person}
 elements containing more than one \texttt{surname} element will occur more than one time. 
 
-The promblem lies in the fact that the query is not a erroneous MQL query, but a erroneous XQuery query. One
+The problem lies in the fact that the query is not a erroneous MQL query, but a erroneous XQuery query. One
 solution would be to implement a check in MQL, which would inform the MQL processor of any potential error. This
 can be done e.g. by a MQL function \textsf{raiseError()}, which would abort the evaluation of the query and e.g.
-throw an exception. As all items in the relational representation of sequences in Tainted Dependencies are marked
+throw an exception. All items in the relational representation of sequences in Tainted Dependencies are marked
 with their position within the sequence with the $index$ field. One way to check if an expression $e$ does not
 return a singleton sequence can be the following:
 \begin{center}
@@ -58,8 +58,8 @@ singleton.
 
 \subsection{Effective Boolean Value}
 \label{sect:disc:effBool}
-Under certain circumstances it is necessary to find the effective boolean value of a sequence. The effective
-boolean value is by W3C defined as follows\cite{w3c00}: 
+Within certain circumstances it is necessary to find the effective boolean value
+of a sequence. The effective boolean value is by W3C defined as follows\cite{w3c00}: 
 \begin{quote}
 The effective boolean value of a value is defined as the result of applying the \texttt{fn:boolean} function to
 the value.
@@ -86,9 +86,9 @@ In the chapter presenting Tainting Dependencies, chapter \ref{sect:translation},
 boolean value of sequences with the help of an assumed MQL function \textsf{xqBoolean()} and an undefined abstract
 function \textbf{B()}. In that chapter we said it was enough to consider it as a grouping function returning one
 tuple per unique iteration (as implied by the iterator dependencies). The points 3-5 of the definition of the
-effective boolean value are all handled by \textsf{xqBoolean()} without promblems, as they all concern singleton
-sequences. Points 2 and 6 togheter, however, creates a interesting situation. They imply that when finding the
-effective boolean value of all possible XQuery sequences, all should cause an error, except the sequences where a
+effective boolean value are all handled by \textsf{xqBoolean()} without problems, as they all concern singleton
+sequences. Points 2 and 6 together, however, creates a interesting situation.
+They imply that when finding the effective boolean value of all possible XQuery sequences, all should cause an error, except the sequences where a
 node is the first element, regardless of the other items in the sequence.
 
 This means that a simple check as proposed for evaluating the cardinality of operands for e.g. arithmetic
@@ -123,14 +123,14 @@ result of the grouping is returned as a separate, named relation (``result set''
 \end{tabular}
 \end{center}
 
-Both solutions assume a typesystem where a field $type$ holds the type of the item represented in the tuple. The
-last proposal of a implementation of the \textbf{B()} function only uses operators and functions already
+Both solutions assume a type system where a field $type$ holds the type of the
+item represented in the tuple. The last proposal of a implementation of the \textbf{B()} function only uses operators and functions already
 implemented in the MQL processor. A disadvantage with this solution, however, is that it will probably be more
 resource-demanding as it consists of both a grouping and a join.
 
-Point \#1 in the definition of evaluation of effectvie boolean value is also a bit problematic. This is because
-Tainting Dependecies, as it is presented in chapter \ref{sect:translation}, does not handle empty expressions
-explicitly. And in most cases this is sufficient, as non-empty sequences containing empty items should be
+Point \#1 in the definition of evaluation of effective boolean value is also a
+bit problematic. This is because Tainting Dependencies, as it is presented in chapter \ref{sect:translation},
+does not handle empty expressions explicitly. And in most cases this is sufficient, as non-empty sequences containing empty items should be
 normalised. In the following query it is clear that the result must be all the \texttt{maybe} elements of the
 document which is a child of a \texttt{elem} element:
 
