@@ -5,19 +5,19 @@ Loop lifting is a method of translating XQuery iteration expressions into relati
 developed by Torsten Grust and Jens Teubner and originally presented in \cite{pathfinder_mothertongue}. It is a
 part of the Pathfinder project\cite{pathfinderHome} (see section \ref{sect:theory:pathfinder}).
 
-In this section we will present Loop Lifting mainly based on the two articles \cite{pathfinder_mothertongue} and
-\cite{pathfinder_purelyRelational}. The articles present the method for a subset of XQuery Core (Pathfinder
+In this section we will present Loop Lifting mainly based on the two articles \cite{pathfinder_purelyRelational}
+and \cite{pathfinder_mothertongue}. The articles present the method for a subset of XQuery Core (Pathfinder
 rewrites queries to Core, see section \ref{sect:theory:pathfinder}), of which we will only present the elements
-relevant in a comparison between Loop Lifting and the Tainting Dependencies method. Thus, the
-translation of path expressions and XML-element construction will not be handled, as pathfinder's XML-tree
-representation(section \ref{sect:theory:pathfinder}) is incompatible with Mars.
+relevant in a comparison between Loop Lifting and the Tainting Dependencies method. Thus, the translation of path
+expressions and XML-element construction will not be handled, as pathfinder's XML-tree representation(section
+\ref{sect:theory:pathfinder}) is incompatible with MARS.
 
 Pathfinder generates relational operator directed asyclic graphs (DAGs) rather than operator trees. The Loop
 Lifting method does not require such a structure, but as we will see, it will gain advantage by it, as much
 evaluation relies on earlier evaluations. 
 
 Accompanying the translation method is also methods for analysis, simplification and optimisation of the generated
-relational algebra, such as the Peep-Hole plan simplification.
+relational algebra, such as the Peep-Hole plan simplification\cite{pathfinder_purelyRelational}.
 
 
 \subsection{Operators}
@@ -42,14 +42,15 @@ represents attributes}
 \end{table}
 
 Most of the operators are quite standard, and can easily be understood by comparing with the operators from
-section \ref{sect:theory:relAlg} and \ref{sect:method:marsOperators}.
+general relational algebra (section \ref{sect:theory:relAlg}) and MQL (section \ref{sect:method:marsOperators}).
 
-The selection operator ($\sigma_{a}$) selects tuples where attribute $a \ne 0$. Only a very restricted selection
-is used, written $\sigma_{a}$, which only returns tuples satisfying $a \neq 0$.  Considering the numbering
+Only a very restricted selection
+is utilised, written $\sigma_{a}$, which only returns tuples satisfying $a \neq 0$.  Considering the numbering
 operator, $p$ denotes the partitioning attribute, $(a_{1},\ldots,a_{n}$ the attributes to be sorted on and $b$ is
 an added attribute holding the result of the
-numbering. {\scriptsize{\begin{tabular}{c|c}$a$&$b$\\\hline\end{tabular}}}  represents the creation
-of a relation with attributes $a$ and $b$.
+numbering (equal to the proposed \textsf{numberate}-operator of MQL, section \ref{sect:method:marsAddedOperators}).
+{\scriptsize{\begin{tabular}{c|c}$a$&$b$\\\hline\end{tabular}}} represents the creation of a relation with
+attributes $a$ and $b$.
 
 Operator $\circledcirc_{b:(a_{1},\ldots,a_{n})}$ will evaluate the arithmetic/comparison expression $a_{1} \circ
 \ldots \circ a_{n}$ and place the result in $b$. Where $\circ \in \left\{ +,- , <, =, \ldots  \right\} $.
@@ -61,8 +62,8 @@ XQuery expressions evaluate to finite, ordered sequences of items. As a sequence
 represented by a single relation where each tuple encodes a sequence item. The order of the sequence is
 maintained by an attribute \textit{pos}. The value of the item is held in an attribute \textit{item}. 
 
-For the rest of this chapter about Pathfinder's loop lifting, variables, expressions and scopes is denoted like
-this (ref. section \ref{sect:theory:xquery:Flwor}):
+During this section concerning Loop Lifing, variables, expressions and scopes is denoted like this (ref. section
+\ref{sect:theory:xquery:Flwor}):
 \[
 s \left\{
 \begin{array}{l}
@@ -74,7 +75,7 @@ s \left\{
 \right.
 \]
 
-More generally, a scope $s_{x \cdot y}$ identifies the $y$th child scope of scope $x$, $x \in \left\{
+Generally, a scope $s_{x \cdot y}$ identifies the $y$th child scope of scope $x$, $x \in \left\{
 \mathbb{N}\right\}, y \in \left\{ \mathbb{N} \right\}$. Expression $e_{x\cdot y}$ evaluates to an iterator sequence
 and is bound to the variable $v_{x \cdot y}$. $e_{x \cdot y}'$ constitutes the coresponding iterator body, and $I_{x \cdot y}$ the whole iterator expression.
 
@@ -86,9 +87,9 @@ $q_{x}(e)$ is used to denote the relational representation of expression $e$ in 
 
 For a iterator expression $i_{x}$ with $n$ iterations there exists a relation $loop_{x}$, consisting of a
 single column, \textit{iter}, with values 1,2,\ldots,$n$. In the outermost scope, $loop$ has a single tuple with
-value 1.
+the value 1.
 
-A constant value $c$ in scope $s_{x}$ is \textit{lifted} is lifted like this:
+A constant value $c$ in scope $s_{x}$ is \textit{lifted} like this:
 \begin{equation}
 q_{x}(c) =  loop_{x} \times \mbox{\scriptsize \begin{tabular}{c|c} \textit{pos}&\textit{item} \\
 \hline 1 & \textit{c}
@@ -96,16 +97,15 @@ q_{x}(c) =  loop_{x} \times \mbox{\scriptsize \begin{tabular}{c|c} \textit{pos}&
 \label{eq:ll:constLoopLift}
 \end{equation}
 
-A tuple ($iter,pos,item$) in a loop lifted relation for subexpression $e_{x}'$ can be understood as that during the
+A tuple ($iter,pos,item$) in a loop lifted relation for subexpression $e_{x}'$ can be understood as during the
 $iter$th iteration, the item in position $pos$ in $e_{x}'$ has the value $item$.
 
 \subsection{Bound Variables}
 \label{sect:trans:ll:boundVar}
 
-A variable is bound
 An iterator sequence expression $e_{x \cdot y}$ is evaulated in scope $s_{x}$. This sequence is then iterated over
 and each item is successively bound to the iterator variable $v_{x \cdot y}$. The evaluation of $e_{x \cdot y}'$
-is in scope $s_{x \cdot y}$ and utilises these bindings. 
+is in scope $s_{x \cdot y}$ and may utilise these bindings. 
 
 Considering this, a representation of $v_{x \cdot y}$ in scope $s_{x \cdot y}$ may therefore be calculated by
 retaining the values of $q_{x}(e_{x \cdot y})$, introducing a $iter$ attribute with consecutive numbers and
@@ -120,7 +120,7 @@ The introduction of the $inner$ attribute is used to denote evaluation of the lo
 $iter$ attribute of $q_{x}(e_{x \cdot y})$ can be viewed as an atttribute $outer$, as it denotes the iterations in
 the outer loop of scope $s_{x}$.
 
-Loop lifting requires maintenance of a $loop$ relation ensuring independent iterations. The iterator body in
+Loop lifting requires maintenance of a $loop$ relation to ensure independent iterations. The iterator body in
 scope $s_{x \cdot y}$ needs to be evaluated once for each binding of the iterator variable $v_{x \cdot y}$.
 Thus, the $loop$ relation needs to be redifined based on $q_{x \cdot y}(v_{x \cdot y})$:
 \begin{equation}
@@ -136,7 +136,7 @@ XQuery expressions may use any iterator variable bound in enclosing scopes. That
 scope $s_{x}$ may also be referred to within any of its child scopes. When looking at one of these child scopes,
 $s_{x \cdot y}$, by itself, the variable $v_{x \cdot y}$ appears to be a free variable.
 
-Vision a iterator expresion $I_{x \cdot y}$ within another iterator expression $I_{x}$, both with iterator
+Consider a iterator expresion $I_{x \cdot y}$ within another iterator expression $I_{x}$, both with iterator
 sequences of length two. If $v_{x}$ is referred to within scope $s_{x \cdot y}$, from $s_{x \cdot y}$'s point of
 view, $v_{x}$ is free. For each binding of $v_{x}$ in the \textit{outer} iteration expression, two
 evaluations of the \textit{inner} iteration expresion occur. A relation capturing the relationship between number
@@ -171,10 +171,10 @@ item}(q_{x}\left(\mbox{\texttt{\$}}v_{x})\bowtie_{iter=outer} map_{x, x \cdot y}
 \subsection{Mapping Back}
 \label{sect:trans:ll:mappingBack}
 
-All steps and equations so far have been helpful to represent sequences and variables in a lower scope. But the
-result of a query will have to be in form of its representation in the outermost scope $s$. So a way to represent
-an expression $e_{x,y}'$ in its scope's parent scope $s_{x}$ is needed. Once again the $map$ relation may be of
-use, combined with an equi-join:
+All steps and equations this far have been helpful to represent sequences and variables in a lower scope level. But
+the result of a query will have to be in form of its representation in the outermost scope $s$. So a way to
+represent an expression $e_{x,y}'$ in its scope's parent scope $s_{x}$ is needed. Once again the $map$ relation
+may be of use, combined with an equi-join:
 \begin{equation}
 q_{x}(e_{x \cdot y}') =
 \begin{array}{l}
@@ -216,12 +216,12 @@ q_{x}(e_{1}\mbox{\texttt{, }}e_{2})=
 \label{eq:ll:secuence}
 \end{equation}
 
-The $\circledcirc$ operator meets the demand of evaluating comparison and arithmetic operations on atomic values.
-Given two XQuery values $e_{1}$ and $e_{2}$ in multiple iterations, with relational representations as before,
+The $\circledcirc$ operator meets the requirement of evaluating comparison and arithmetic operations on atomic
+values. Given two XQuery values $e_{1}$ and $e_{2}$ in multiple iterations, with relational representations as before,
 the expression $e_{1}$ \texttt{ + } $e_{2}$ can be translated by first joining $q_{x}(e_{1})$ and $q_{x}(e_{2})$
 on their iteration number, i.e. $iter$. Then, for each tuple, store the sum of the values of both of the $item$
-attributes, before cleaning up the resulting relation with a project. Expressed as an equation, the sum expression looks like
-this:
+attributes, before cleaning up the resulting relation with a project. Expressed as an equation, the translation of
+sum expressions looks like this:
 \begin{equation}
 q_{x}(e_{1} \mbox{\texttt{ + }} e_{2}) =
 \begin{array}{l}
@@ -239,10 +239,10 @@ q_{x}(e_{1} \mbox{\texttt{ + }} e_{2}) =
 \label{eq:ll:sumexpr}
 \end{equation}
 
-The \texttt{if(}$e_1$\texttt{ then }$e_2$\texttt{ else }$e_3$, is one of the more complex translations of loop
+The \texttt{if(}$e_1$\texttt{) then }$e_2$\texttt{ else }$e_3$, is one of the more complex translations of loop
 lifting. First the boolean expression $e_1$ is compilated. The result is split into two new loop relations,
-$loop1$ and $loop2$, which select al $true$ and $false$ values respectively. $loop2$ is used as current $loop$
-relation for the compilation of $e_2$ and $loop3$ as $loop$ relation for the mapping of $e_3$. A equi-join with
+$loop1$ and $loop2$, which uses selection on all $true$ and $false$ values respectively. $loop2$ is used as current
+$loop$ relation for the compilation of $e_2$ and $loop3$ as $loop$ relation for the mapping of $e_3$. A equi-join with
 their corresponding $loop$ relation on $iter$ will filter out all unnnecesary iterations. The result is the union
 of both branches.
 
@@ -262,10 +262,10 @@ loop3 = \pi_{iter}(\sigma_{item=FALSE}(q_{x}(e_1))) \\
 \subsection{Example}
 \label{sect:trans:ll:example}
 
-Only looking at equations may be a bit too abstact to fully understand the concept of loop lifting. To
-concretise we will present a simple example of evaluating a query with the method and show intermediate results.
-The naming of expressions, scopes and variables will, where possible, be the same as earlier in this chapter. This
-query is the basis of this evaluation:
+Only looking at equations may be a bit too abstact to fully understand Loop Lifting. To concretise we will present
+a simple example of evaluating a query with the method and show intermediate results. The naming of expressions,
+scopes and variables will, where possible, be the same as earlier in this section. This query is the basis of this
+evaluation:
 
 \begin{figure*}[h!]
 \centering
@@ -389,8 +389,8 @@ To be able to calculate the sum-expression, $e_{0 \cdot 0}'$, we first need a re
 \texttt{\$v0} in scope $s_{0 \cdot 0}$. As this variable is a free variable in this scope, this is done by
 applying equation \ref{eq:ll:qxy_vx} on $q_{0}($\texttt{\$v0}$)$ (figure \ref{fig:trans:ll:q0_v0}). This
 result is shown in figure \ref{fig:trans:ll:q00_v0}. Now that we have both \texttt{\$v0} and \texttt{\$v00}
-expressed from scope $s_{0 \cdot 0}$'s viewpoint, we can employ equation \ref{eq:ll:sumexpr} to sum the two variables together. The
-resulting relation can be seen in figure \ref{fig:trans:ll:q00_e00m}.
+expressed in scope $s_{0 \cdot 0}$, we can employ equation \ref{eq:ll:sumexpr} to sum the two
+variables together. The resulting relation can be seen in figure \ref{fig:trans:ll:q00_e00m}.
 
 \begin{figure}[!h]
 \centering
@@ -486,5 +486,3 @@ $pos$	& $iter$	& $item$ \\ \hline
 Finally the built sequence will have to be expressed in terms of scope $s$. Achieving this only requires the use
 of equation \ref{eq:ll:qx_exymark} one last time in combination with $map_{ ,0}$. The complete result of the query
 is shown in figure \ref{fig:trans:ll:q_e0m}.
-
-\subsection{Skal vi vaere spydige og paapeke svakheter ved loop lifting?}

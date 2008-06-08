@@ -4,9 +4,8 @@
 % Innledning
 XML is designed for encapsulation of structured and semistructured data,
 relational data, and object repositories. The XQuery query language is designed
-to perform flexible queries in such documents. A translation of such a
-language to relational algebra requires detailed knowledge about XQuery for a
-proper translation to be made. In this chapter, section
+to perform flexible queries in such documents. A translation of the language into relational algebra requires
+detailed knowledge about XQuery for a proper translation to be made. In this chapter, section
 \ref{sect:theory:xquery} describes important details about the XQuery
 language that are essential to this task. Further, existing implementations of
 such translators are documented and compared.
@@ -20,8 +19,7 @@ parsing and construction of parser are outlined, as well as techniques for
 parsing syntax trees.
 
 Finally, a thoroughly researched method for translating XQuery to relational
-algebra dubbed ``loop lifting'' is described in section
-\ref{sect:theory:loop_lifting}.
+algebra dubbed ``Loop Lifting'' is described in section \ref{sect:theory:loop_lifting}.
 
 \input{theory/XQuery.tex}
 \input{theory/StateOfTheArt.tex}
@@ -36,7 +34,7 @@ This chapter has described XQuery and its semantics, including FLWOR
 expressions, paths and predicates, and the XQuery Core subset language and its
 normalisation rules. Further, existing implementations have been examined and
 compared, and we have shown that Pathfinder is one particularly interesting
-implementation.
+implementation because of its dependance on a relational back end and thus relational algebra.
 
 Relational algebra and its semantics were described to set the stage for a
 description of the target language which will be presented in the next chapter.

@@ -4,16 +4,16 @@
 
 The relational model for database management was introduced for the first time by Edgar Frank Coddin
 1974\cite{TDT4225}. It was based on relational algebra which is an offshoot of first-order logic. Several terms
-are used when talking about relational algebra (\cite{gordonRussel, newYorkDB, sudarshan}):
+are used when talking about relational algebra \cite{gordonRussel}\cite{newYorkDB}\cite{sudarshan}:
 \begin{itemize}
-\item Set: A mathematical definition for a collection of objects which contains no duplicates
-\item Domain: A \textit{set} of atomic values
-\item Attribute: A real world role played by a named \textit{domain}
-\item Tuple: A collection of \textit{attributes} which describe some real world entity
-\item Relation: A \textit{set} of \textit{tuples}
-\item Degree: The number of \textit{attributes} a \textit{relation} contains. Sometimes called arity.
-\item Cardinality: The number of \textit{tuples} in a \textit{relation}
-\item Union compatible: Two relations R and S are union compatible if and only if they have the same
+\item \textbf{Set}: A mathematical definition for a collection of objects which contains no duplicates
+\item \textbf{Domain}: A \textit{set} of atomic values
+\item \textbf{Attribute}: A real world role played by a named \textit{domain}
+\item \textbf{Tuple}: A collection of \textit{attributes} which describe some real world entity
+\item \textbf{Relation}: A \textit{set} of \textit{tuples}
+\item \textbf{Degree}: The number of \textit{attributes} of a \textit{relation}. Sometimes called arity.
+\item \textbf{Cardinality}: The number of \textit{tuples} in a \textit{relation}
+\item \textbf{Union compatible}: Two relations $R$ and $S$ are union compatible if and only if they have the same
 	\textit{degree} and the \textit{domains} of the corresponding \textit{attributes} are the same.
 \end{itemize}
 
@@ -121,10 +121,10 @@ R - S
 \subsubsection{Cross Product}
 \label{sect:theory:relAlg:crossProduct}
 The cross product operator is sometimes referred to as the cartesian product operator. As with union and
-difference, it also stems from set theory. The operator is used to combine all tuples in one relation with all the
-tuples from another. The returned relation will have a degree equal the sum of the degrees of each of the original
-relations, and a cardinality equal the product of the cardinalities. The operator is commutative and written as a
-cross:
+difference, this operator also stems from set theory. The operator is used to combine all tuples in one relation
+with all the tuples from another. The returned relation will have a degree equal the sum of the degrees of each of
+the original relations, and a cardinality equal the product of the cardinalities. The operator is commutative and
+written as a cross:
 \begin{equation*}
 R \times S = S \times R
 \end{equation*}
@@ -200,8 +200,8 @@ division. Some of these will be presented in this section.
 \label{sect:theory:relAlg:naturalJoin}
 Natural join is a binary operator that returns a relation consisting of all combinations of tuples in input
 relations that are equal on their common attribute names. The result relation will have a degree equal to the sum
-of the degrees of the two original relations subtracted the number of common attributes. It is possible to express
-natural join as a combination of cross product, projection and selection:
+of the degrees of the two original relations subtracted the number of common attributes. Natural join can be
+expressed as a combination of cross product, projection and selection:
 
 \begin{equation*}
 R \bowtie S = \pi_{a_{1},..., a_{n},R.b_{1},...,R.b_{n},c_{1},...,c_{n}}( \sigma _{R.b_{1}=S.b_{1} \wedge ... \wedge R.b_{n}=S.b_{n}}(R \times S))
@@ -217,7 +217,7 @@ Theta-join returns a relation which is a combination of all the tuples in the tw
 condition $C$. $C$ is in the form $a \theta b$, where $a$ is a attribute name from one relation, $b$ is an
 attribute from the other and $ \theta $ is a binary operator in the set $ \{ <, \leq , =, \geq , >  \} $. An
 equi-join is a theta-join where the binary operator in the condition is the equality operator. Theta-join can be
-expressed as a combination of select and cross product:
+expressed as a combination of selection and a cross product:
 
 \begin{equation*}
 R \bowtie _{a \theta b}S = \sigma _{a \theta b}(R \times S)
@@ -234,7 +234,7 @@ residue:
 \end{equation*}
 
 The resulting relation after a division contains the attribute values of the divisor relation that are associated
-with every member of the dividend relation (\cite{makeDiv}). The operation may be better explained as a
+with every member of the dividend relation\cite{makeDiv}. The operation may be better explained as a
 combination of cross product, projection and difference:
 
 \begin{equation*}
@@ -247,7 +247,7 @@ Where $R$ and $S$ are relations and $a_{1},...,a_{n}$ are the attributes unique 
 \label{sect:theory:relAlg:semiJoin}
 Semi-join is a binary operation which returns a relation with the attributes of the first relation, and all the
 tuples in this same relation for which there is a tuple in the second relation that is equal on their common
-attributes. Semi-join can be described with the projection and natural-join operators:
+attributes. Semi-join can be described with the project and natural-join operators:
 
 \begin{equation*}
 R \ltimes S = \pi _{a_{1},...,a_{n}}(R \bowtie S)
@@ -258,7 +258,7 @@ Where $R$ and $S$ are relations, and $a_{1},...,a_{n}$ are the attributes unique
 \paragraph{Anti-join.}
 \label{sect:theory:relAlg:antiJoin}
 The anti-join operator is very similar to the semi-join operator (and is also sometimes referred to as the
-anti-semi-join), except that it returns all the tuples in the first relation for which there is not a tuple in the
+anti-semi-join), except that it returns all the tuples in the first relation for which there is no tuple in the
 other relation on their common attributes. It can be described with help of semi-join and difference:
 
 \begin{equation*}
@@ -269,11 +269,11 @@ Where $R$ and $S$ are relations.
 
 \paragraph{Outer Joins.}
 \label{sect:theory:relAlg:outerJoin}
-The outer joins works in many ways as the natural join, except the resulting relation will include some extra
+The outer joins is in many ways as the natural join, except the resulting relation will include some extra
 tuples based on one or both of the input relations. The right outer join $(\times=)$ will return a relation with
-all the tuples from a natural join between the first (left) and the second (right) relation, but also the tuples
+all the tuples from a natural join between the first (left) and the second (right) relation, as well as the tuples
 from the right relation that did not match any tuples from the left one on their common attributes. These extra
-tuples will have the value NULL in the result relation for all attributes that were unique to the left one. The
-left outer join $(=\times)$ is analogous with the right version, the only difference is that the extra tuples will
-be based on the left input relation. The result relation of a full outer join $(=\times=)$ will have extra tuples
-based the ones that did not find a match in both input relations.
+tuples will have the value NULL in the result relation for all attributes that were unique to the left relation.
+The left outer join $(=\times)$ is analogous with the right version, the only difference is that the extra tuples
+will be based on the left input relation. The result relation of a full outer join $(=\times=)$ will have extra
+tuples based the ones that did not find a match in both input relations.
