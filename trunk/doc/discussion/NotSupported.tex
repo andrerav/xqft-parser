@@ -2,16 +2,16 @@
 \label{sect:disc:notSupported}
 
 In this section we will present some of the features of XQuery at the time not supported by Tainting Dependencies,
-and some ideas around how a possible solution may be. Some of the features are not supported because they involve
-types, which is discussed in section \ref{sect:disc:typeSystem}. %As the MQL processor is still in development,
+and some ideas around how a possible solution may be realised. Some of the
+features are not supported because they involve types, which is discussed in section \ref{sect:disc:typeSystem}. %As the MQL processor is still in development,
 %there may be some uncertainty of what will and what will not be a function of the finished implementation. 
  
 
 \subsection{Full Text Extensions}
-XQuery Full Text\cite{w3c01} (XQFT) is an superset of XQuery. A quick runthrough of the extensions made to XQuery
-can be found in section \ref{sect:theory:xquery:fulltext_ext}. Tainting Dependencies does however at this time
-support any of these features. One of the most important expressions of the extention is the \texttt{ftcontains}
-expression. An excerpt of the EBNF specification of this expression and some of
+XQuery Full Text\cite{w3c01} (XQFT) is an superset of XQuery. A quick overview
+of the extensions made to XQuery can be found in section \ref{sect:theory:xquery:fulltext_ext}. Tainting Dependencies does however at this time
+support any of these features. One of the most important expressions of the
+extension is the \texttt{ftcontains} expression. An excerpt of the EBNF specification of this expression and some of
 its subexpressions can be seen in figure \ref{fig:disc:xqftEBNF}. \texttt{FTPrimaryWithOptions} is a straight descendant of \texttt{FTMildNot}, and
 \texttt{FTWordsValue} is a straight descendant of \texttt{FTPrimary}. The complete EBNF specification can be found
 in appendix \ref{appendix:xquery_ebnf}.
@@ -34,8 +34,8 @@ in appendix \ref{appendix:xquery_ebnf}.
 \label{fig:disc:xqftEBNF}}
 \end{figure}
 
-A simple \texttt{ftcontains} expression checking if an node contains a literal may be quite simple to translate.
-This can be done by looking up the literal and joining it the node on their scope. Something like this:
+A simple \texttt{ftcontains} expression checking if a node contains a literal may be quite simple to translate.
+This can be done by looking up the literal and joining the node on their scope. Something like this:
 \begin{equation*}
 \frac{}{e \mbox{\texttt{ ftcontains }}literal}\leadsto
 \begin{array}{l}
@@ -83,15 +83,8 @@ solution for accomodating for such options would be a context operator comparabl
 the context for possible \textsf{lookup} operators within its subtree. Another possibility would be to use the
 options as parameters directly to the \textsf{lookup} operator.
 
-
-\begin{itemize}
-  	\item proximity (kanskje l\o sbar)
-\end{itemize}
-
-
 \subsection{Ordering Mode}
 \label{sect:disc:not:ord}
-
 XQuery contains \texttt{ordered} and \texttt{unordered} expressions. The purpose of these expressions is to set
 the ordering mode in to \texttt{ordered} or \texttt{unordered} for a certain region in a query. The expressions
 sets up an environment enclosed by curly braces where the specific ordering mode applies. The default ordering
@@ -102,9 +95,9 @@ to return the result in the order it finds most efficient.
 The $index$ attribute and the \textsf{numberate} operator are responsible for ensuring correct order in Tainting
 Dependencies. One of the problems with MarkXRemove was that it did not consider the ordering of items, while one
 of its advantages was its simplicity. By introducing the concept of tainting to MarkXRemove, this would probably
-be a good start for finding a method of translating in \texttt{unordered} mode. But as TD is a evolution and a
-more complete method, a better solution might be to simplify this method by removing \textsf{numberate} operators
-and all operators whose only intent is to manipulate $index$ fields. Utilising context sensitive visitor patterns
+be a good start for finding a method of translating in \texttt{unordered} mode.
+But as TD is an evolution of MarkXRemove and a more complete method, a better
+solution might be to simplify this method by removing \textsf{numberate} operators and all operators whose only intent is to manipulate $index$ fields. Utilising context sensitive visitor patterns
 (section \ref{sect:theory:contextVisitorPattern}), differentiating translation of \texttt{ordered} and
 \texttt{unordered} mode expressions will be made easy.
 
@@ -124,8 +117,8 @@ Each node has a unique identity. Every node in an instance of the data model is 
 not identical to any other node.
 \end{quote}
 
-One solution would be to translate such expressions into a check if the two nodes have the same value in their
-respective $scope$ and $documentId$ fields:
+One solution would be to translate such expressions into checking if the two
+nodes have the same value in their respective $scope$ and $documentId$ fields:
 \begin{equation*}
 \frac{}{e_1 \mbox{\texttt{ is }} e_2} \leadsto
 \begin{array}{l}
@@ -142,7 +135,7 @@ document.
 
 A comparison with the \texttt{<<} and \texttt{>>} operators returns $true$ if, in document order, the left operand
 node precedes the right operand node and the left operand node follows the right operand node, respectively.
-Otherwise it returns $false$. These operators have a semantics comparable with the \texttt{preceding} and
+Otherwise it returns $false$. These operators have semantics comparable with the \texttt{preceding} and
 \texttt{following} axes in path expressions, and may therefore be translated by utilising the \textsf{isPreceding}
 and \textsf{isFollowing} functions (section \ref{sect:method:marsAddedOperators}, page
 \pageref{sect:method:marsAddedOperators}):
@@ -159,15 +152,14 @@ and \textsf{isFollowing} functions (section \ref{sect:method:marsAddedOperators}
 \end{array}
 \end{equation*}
 
-Where when the comparison operator \texttt{COMP} is \texttt{<<} the MQL function must be \textsf{isPreceding}, and
+When the comparison operator \texttt{COMP} is \texttt{<<} the MQL function must be \textsf{isPreceding}, and
 when the operator is \texttt{>>} the function must be \textsf{isFollowing}.
 
 \subsubsection{Combining node Sequences}
-
 XQuery provides the following operators for combining sequences of nodes:
 \begin{itemize}
-  \item \texttt{union} and \textbar which are equivalent. They take two node sequences as operands and return a
-  sequence containing all the nodes that occur in either of the operands.
+  \item \texttt{union} and the symbol \textbar~ which are equivalent. They take
+  two node sequences as operands and return a sequence containing all the nodes that occur in either of the operands.
   \item \texttt{intersect} takes two node sequences as operands and returns a sequence containing all the
   nodes that occur in both operands.
   \item \texttt{except} takes two node sequences as operands and returns a sequence containing all the nodes
@@ -179,8 +171,8 @@ operators are the XQuery equivalent to the relational algebra operators union, i
 in section \ref{sect:theory:relAlg} on page \pageref{sect:theory:relAlg}. The result is also required to be in
 document order.
 
-Mars does currently not implement a pure \textsf{distinct} operator, but if it did it would need partition
-functionality similar to that of the \textsf{numberate} operator, and a translation of \texttt{union} and \textbar
+MQL does currently not implement a pure \textsf{distinct} operator, but if it
+did it would need partition functionality similar to that of the \textsf{numberate} operator, and a translation of \texttt{union} and \textbar
 may have looked something like this:
 \begin{equation*}
 \frac{}{e_1 \mbox{\texttt{ union }} e_2} \leadsto
@@ -215,9 +207,9 @@ something like:
 
 
 The translation of the \texttt{except} operator may have been solved with the help of a anti-join (section
-\ref{sect:theory:relAlg:antiJoin} on page \pageref{sect:theory:relAlg:antiJoin}). But as Mars does not implement a
-anti-join operator, the same effect may be achieved by using a outer-join followed by a selection. A
-\textsf{distinct} operator is needed here aswell, as the left operand may contain duplicates:
+\ref{sect:theory:relAlg:antiJoin} on page
+\pageref{sect:theory:relAlg:antiJoin}). But as MQL does not implement a
+anti-join operator, the same effect may be achieved by using a outer-join followed by a selection. A \textsf{distinct} operator is needed here aswell, as the left operand may contain duplicates:
 
 \begin{equation*}
 \frac{}{e_1 \mbox{\texttt{ intersect }} e_2} \leadsto
@@ -234,10 +226,9 @@ anti-join operator, the same effect may be achieved by using a outer-join follow
 \end{array}
 \end{equation*}
 
-As can be seen, all these proposals invole multiple resource expensive operators such as \textsf{numberate} and
-\textsf{distinct}. So a better solution would be prefered, or at least to minimise the use of the sequence
-combination operators when forming XQuery queries.
-
+As can be seen, all these proposals involve multiple resource-expensive
+operators such as \textsf{numberate} and \textsf{distinct}. So a better solution would be preferred, or at least to
+minimise the use of the sequence combination operators when forming XQuery queries.
 
 \subsubsection{Range Expressions}
 Range expressions are in the format $e_1$ \texttt{to} $e_2$ and can be used to construct a sequence of consecutive
@@ -248,10 +239,10 @@ integer between the two operands, in increasing order.
 
 If the operands are literals, the translator can turn the expression into a sequence construction expression
 containing the needed literals. However, if the value of the operands is not known before runtime, such
-expressions will have to be handled by the MQL processor. The least unnatural solution to this would be to
-implement a MQL operator taking one relation as input, two attribute names to create a sequence from and to, and a
-list of attrbutes names for fields that must be a part of the result. The operator would then create tuples based
-on the value of the fields specified as the from and to attributes, and augment each produced tuple with a copy of
+expressions will have to be handled by the MQL processor. The most natural
+solution to this would be to implement a MQL operator taking one relation as input, two attribute names to create a sequence from and to, and a
+list of attributes names for fields that must be a part of the result. The
+operator would then create tuples based on the value of the fields specified as the from and to attributes, and augment each produced tuple with a copy of
 the value of the fields specified to be part of the result. This would look something like:
 
 \begin{equation*}

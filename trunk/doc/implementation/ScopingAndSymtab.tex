@@ -8,7 +8,10 @@ requirements of \textit{tainting dependencies}.
 \subsection{Concepts}
 The scoping system in the implementation is based on building a scope tree. The
 previous scope, if any, is set as parent of the new scope, and the previous
-scope maintains a list of child scopes. A reference to the root scope node is
+scope maintains a list of child scopes -- this is referred to as
+\textit{pushing a scope}. When exiting a scoped subexpression in the AST, the
+previous scope is again set as the current scope. This is referred to as
+\textit{popping a scope}. A reference to the root scope node is always
 maintained. Considering the example XQuery query in figure
 \ref{fig:impl:scope_tree_ex_code}, the scope tree in figure
 \ref{fig:impl:scope_tree_ex} is generated. The scope itself contains \emph{one}
@@ -43,7 +46,7 @@ evaluated expression). The symbol table is realised as a subclass of the
 storing instances of \texttt{SymTabEntry}, with the symbol name as key.
 
 \subsection{Semantics}
-The scoping semantics is encapsulated in a singleton manner in the class
+The scoping semantics are encapsulated in a singleton manner in the class
 \texttt{Scope}, with static methods available for pushing and popping scopes,
 and storing and retrieving symbols. The external (static) API as available to a
 user of the scope system is shown in figure \ref{fig:impl:scope_uml}.
@@ -63,7 +66,7 @@ evaluating a return clause -- both of which occur within a FLWOR expression.
 The scoping system also tracks iteration variables. That is, for any scope,
 there is \textit{one and only one} iteration variable, except in the top scope
 where there is no iteration variable. The concept of an iteration variable is
-explain in definition \ref{} TODO: definisjon av iteratorvars. Tracking these
+explained in definition \ref{def:iterVarDep}. Tracking these
 variables are necessary to implement the \textit{tainting dependencies}
 methodology (explained later in section \ref{sect:impl:tainting_deps} on page
 \pageref{sect:impl:tainting_deps}).
