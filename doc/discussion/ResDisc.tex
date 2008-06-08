@@ -54,8 +54,13 @@ implementations on equal footing.
 It is also known that Pathfinder does \emph{not}:
 \begin{itemize}
   \item generate algebra using pure loop lifting as would be expected from
-  \cite{pathfinder_mothertongue} and \cite{pathfinder_purelyRelational}
+  \cite{pathfinder_mothertongue} and \cite{pathfinder_purelyRelational} -- this
+  is deduced by comparing the output from Pathfinder with the output
+  from the rules defined in \cite{pathfinder_mothertongue} and
+  \cite{pathfinder_purelyRelational}
   \item apply all simplifications described in
+  \cite{pathfinder_purelyRelational} -- again, this is deduced by comparing the
+  output from Pathfinder with the supposed output from the simplifications in
   \cite{pathfinder_purelyRelational}
 \end{itemize}
 
@@ -71,15 +76,15 @@ actual performance of loop lifting vs. TD on this database system. This notion
 is further detailed in section \ref{chapter:future}.
 
 Finally, it is important to note that the complexity comparison performed did
-not in anyway account for I/O or CPU usage, and the results must not be
-interpreted as such. Again, see section \ref{sect:method:complexity} on
+not in any way account for disk I/O or CPU and memory usage, and the results
+must not be interpreted as such. Again, see section \ref{sect:method:complexity} on
 page \pageref{sect:method:complexity} for an detailed account of this method.
 
 \subsection{Loop Lift vs Tainting Dependencies}
 \label{sect:disc:llvsTD}
 This project has studied two approaches for translating XQuery to relational
 algebra; loop lifting as implemented by Pathfinder, and ``Tainting
-Dependecies'' (TD), which is a novel method developed in this project which
+Dependencies'' (TD), which is a novel method developed in this project which
 still shares a few common traits with loop lifting. However, the motivation for
 the development of TD was the fact that the more expressive MQL algebra allowed
 more flexibility in the translation. Furthermore, loop lifting had the
@@ -115,7 +120,7 @@ Further, when comparing the rules in loop lifting (described in
 produce less operators and less complex trees than loop lifting, as well as
 substantially smaller intermediate results. This comparison does not consider
 simplifications, however. In some situations, especially for trivial queries,
-optimised loop lifting \emph{may} perform better than TD. 
+optimised loop lifting trees \emph{may} perform better than unoptimised TD. 
 
 \subsection{Considerations for executing MQL}
 The ``Tainting Dependencies'' method produces relatively simplistic algebra
