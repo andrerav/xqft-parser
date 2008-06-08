@@ -64,13 +64,14 @@ binary operation, shortening the relational algebra even more:
 \end{equation}
 
 If the cases where a literal will have to be translated to a single-tuple relation, in most cases the $index$
-attribute will not be needed. But this will probably detected by the optimiser, and may be left out anyway.
+attribute will not be needed. But this will probably be detected by the
+optimiser, and may be left out anyway.
 
 \subsection{Sequence Construction}
 \label{sect:trans:TD:simpl:seq}
 
-Informing a parent expression if its subexpressions will evaluate to singleton sequences or not can have some
-advantages. One is the possibility of detecting certain type errors, as will be
+Informing a parent expression about whether or not its subexpressions will
+evaluate to singleton sequences can have some advantages. One is the possibility of detecting certain type errors, as will be
 discussed in section \ref{sect:disc:singelton}. Another advantage is gained
 when it comes to sequence construction. TODO: hvilken fordel?
 
