@@ -47,8 +47,9 @@ the right child. Mars does not allow attribute names to contain punctuation mark
 same name within one relation. An operator combining two relations will therefore have renaming functionality. A
 typical projection list of such an operator combining two relations which both contain the attribute $field$ would
 look something like: \textsf{\ldots rfield=right.field, lfield=left.field\ldots}. To make the inference rules
-easier to read, this step has been dropped. The rules assume that the equal named fields will automaticly be given
-a prefix \textsf{l.} (left) or \textsf{r.} (right) depending on which child the attribute stems from.
+easier to read, this step has been dropped. The rules assume that the equal
+named fields will automatically be given a prefix \textsf{l.} (left) or
+\textsf{r.} (right) depending on which child the attribute stems from.
 
 We assume the \texttt{union}-operator accepts relations with different schemas. The schema for the result
 relation can be described as:
@@ -57,6 +58,6 @@ schema(\texttt{union(}\alpha, \beta\texttt{)}) = schema(\alpha) \cup schema(\bet
 \end{equation*}
 
 The tuples which have more attributes in the result relation than they did in the relation they stem from will
-have a \texttt{NULL} value for the introduced attributes. It may be unfavourable to implement the operator in such
-a way. In that case each child-relation will have to be augmented with the attributes needed with an
-\texttt{project} operator.
+have a \texttt{NULL} value for the introduced attributes. It may be not be
+desirable to implement the operator in such a way. In that case each
+child-relation will have to be augmented with the attributes needed with an \texttt{project} operator.

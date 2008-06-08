@@ -72,8 +72,8 @@ The main problem with MarkXRemove is its dependency on particular ordering of
 tuples in a relation which is a result of a cartesian product. Not only can the \texttt{cross} operator not promise the particular ordering
 of its result, it can not promise any particular ordering at all. The ordering the method depends on is that for
 each tuple in the left relation the tuple is repeated for all tuples in the right relation. This means that any
-item may apear anywhere in the resulting sequence, which is not acceptable for evaluation of XQuery expressions
-where all sequences are ordered.
+item may appear anywhere in the resulting sequence, which is not acceptable for
+evaluation of XQuery expressions where all sequences are ordered.
 
 Another problem with this method is that any sequence built which includes a reference to an iterator variable is
 not fully calculated until the cartesian product between the corresponding relation and the variables iterator
@@ -119,5 +119,6 @@ The query should of course be evaluated to $(true, true)$, as the \texttt{>} ope
 \textit{one} item in the sequence on the left side of the operator is larger than \textit{one} item on the right.
 This means that the relation would have to be pruned by a \texttt{select} or \texttt{group}, which can not be done
 generally in the relations current state. A possibility would be to postpone the pruning until after the relation
-is crossed with the iterator sequence, but there would still not be any not-complex solution. This problem lead to
-the introduction of variable dependency tainting, as we will see in section \ref{sect:trans:TD:tainting}.
+is crossed with the iterator sequence, but there would still not be any trivial
+solution. This problem leads to the introduction of variable dependency
+tainting, as we will see in section \ref{sect:trans:TD:tainting}.

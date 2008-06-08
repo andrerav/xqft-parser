@@ -22,8 +22,9 @@ sequence construction}
 \label{fig:trans:TD:seqEBNF}
 \end{figure}
 
-As also can be seen from the figure the for clause of a FLWOR expression, as many other expressions, accepts an
-\texttt{ExprSingle}. If a sequence is to be constructed in the for clause, it will have to be parenthesised. 
+As also can be seen from the figure the for-clause of a FLWOR expression, as
+many other expressions, accepts an \texttt{ExprSingle}. If a sequence is to be
+constructed in the for-clause, it will have to be parenthesised.
 
 With the concept of tainting and iterator dependencies explained, we are now ready to introduce the translation of
 an XQuery sequence construction expression:
@@ -103,10 +104,10 @@ $anb$ & $idx$ & $val$ \\ \hline
 yields (c). Attribute names are shortened \label{fig:trans:TD:simpleSeq}}
 \end{figure}
 
-The sequence constructing rule also holds even if the subexpressions of the soon-to-be sequence are within the
-body of an iterator the sequence is not dependent on. Expanding the query of
-figure \ref{fig:trans:TD:simpQuery} we get the query of figure \ref{fig:trans:TD:expandQuery}. 
-\begin{figure}[h]
+The sequence construction rule also holds even if the subexpressions of the
+soon-to-be sequence are within the body of an iterator the sequence is not
+dependent on. Expanding the query of figure \ref{fig:trans:TD:simpQuery} we get
+the query of figure \ref{fig:trans:TD:expandQuery}. \begin{figure}[h]
 \begin{equation*}
 \begin{array}{l}
 \mbox{\texttt{for \$a in (10,20) return}} \\ \quad
