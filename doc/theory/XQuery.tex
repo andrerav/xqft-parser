@@ -243,6 +243,36 @@ scope of the outer loop, and a new scope is not started until this iterator
 sequence has been evaluated. Otherwise one could risk overwriting variables in
 the iterator sequence when binding variables in the new scope.
 
+Furthermore, a FLWOR construct may consist of several \texttt{for}- and
+\texttt{let}-clauses in any order -- and each of these clauses may contain
+several variable bindings. For example, the following is a valid XQuery
+FLWOR expression:
+
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$a in (1,2), \$b in (3,4) let \$c := 5, \$d := 6} \\ \quad
+  \texttt{return \$a + \$b + \$c + \$d} \\
+\end{tabular}
+\end{center}
+
+However note that semantically this expression is equivalent to:
+
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$a in (1,2) return} \\ \quad
+  \texttt{for \$b in (3,4) return} \\ \quad \quad
+    \texttt{let \$c := 5 return} \\ \quad \quad \quad 
+      \texttt{let \$d := 6 return} \\ \quad \quad \quad \quad 
+        \texttt{\$a + \$b + \$c + \$d} \\
+\end{tabular}
+\end{center}
+
+The latter seems significantly less complex to parse, since this query embodies
+no less than \emph{four} individual FLWOR expressions, each with one and only
+one \texttt{for}- or \texttt{let}-clause. This raises the question, could it be
+benefitial to rewrite complex FLWOR expressions into a simpler form? This
+question is addressed in section \ref{sect:method:ast_rewrite} on page
+\pageref{sect:method:ast_rewrite}.
 
 \subsection{Full Text Extensions}
 \label{sect:theory:xquery:fulltext_ext}

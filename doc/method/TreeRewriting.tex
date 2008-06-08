@@ -16,13 +16,16 @@ been normalised through a process of \textbf{normalisation} (see definition
 
 The basic abstract syntax tree produced by the XQFT Parser (see section
 \ref{sect:theory:xqftparser}) is in a denormalised form. As explained in
-section \ref{sect:theory:xquery:XQcore}, normalisation has the benefit of
-simplification without loss of expressiveness or semantics, and thus simplifying
-the task of translating the syntax tree.
+section \ref{sect:theory:xquery:XQcore} on page
+\pageref{sect:theory:xquery:XQcore}, normalisation has the benefit of
+simplification without loss of expressiveness or semantics, and thus
+simplifying the task of translating the syntax tree.
 
-Normalisation may be attained by executing a specialised \textit{rewrite
-visitor} on the syntax tree, which will be described in chapter
-\ref{chapter:implementation}.
+Based on findings in section \ref{sect:theory:xquery:Flwor} regarding the
+structure of FLWOR expressions, it was briefly mentioned that complex FLWOR
+expressions could be transformed into semantically equivalent and simpler
+representations. A question was also posed --\emph{ could it be
+benefitial to rewrite complex FLWOR expressions into a simpler form}?
 
 \subsection{Normalising FLWOR expressions}
 A denormalised XQuery syntax tree may contain nodes such as FLWOR expressions
@@ -88,17 +91,7 @@ can be seen in figure \ref{figure:ast_rewrite:flwor_src}.
 	\label{figure:ast_rewrite:flwor_src}
 \end{figure}
 
-
-\subsection{Path predicates}
-
-\subsection{Andre ting?}
- 
-Motivation: simplification
-Problem: AST does not correspond to relalg easily
-Explain: rewrite multiple predicates for a step expression to a single 
-         predicate expression with all subexpressions AND'ed together, ++
-
-Kan hende vi ikke kan skrive om predikater til en kombo med AND\ldots hva med
-/a/b/c[d = 'cool'][3] ?
-
-Tror vi dropper det med predikater?
+Based on these findings, it is natural to conclude that normalisation of FLWOR
+expressions is benefitial for the sake of simplicity. Normalisation may be
+attained by executing a specialised \textit{rewrite visitor} on the syntax
+tree, which will be described in chapter \ref{chapter:implementation}.
