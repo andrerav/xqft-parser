@@ -18,11 +18,12 @@ XQuery is a functional language with a comparatively small syntax. It lacks
 some features known from many functional languages, such as support for higher
 order function declarations.\marginpar{vet ikke hva higher order function declarations er jeg, hva skjer med
 external?} However, it has some of the most important benefits, such as a lack of side-effects. XQuery is a
-\textit{declarative} language (opposed to \textit{imperative} languages), and is strongly typed.
-Static typing is optional, and may vary between various implementations.
+\textit{declarative} language (as opposed to \textit{imperative} languages), and
+is strongly typed. Static typing is optional, and may vary between various
+implementations.
 
 
-XQuery is an orthogonal language, meaning that expressions often can be
+XQuery is an orthogonal language, meaning that most expressions can be
 arbitrarily nested. For example, a path expression predicate can be another
 path expression:
 \begin{center}
@@ -158,17 +159,17 @@ variable} declaration and an \textbf{iterator body}. The \textbf{iterator body} 
 for each time the \textbf{iterator variable} is bound to the next item in the \textbf{iterator sequence}.
 \end{myDefinition}
 
-XQuery is centered around a loop construct known dubbed FLWOR;
+XQuery is centered around a loop construct known as FLWOR, which is an acronym:
 \begin{itemize}
   \item \textbf{F}or - iteration over tuples
   \item \textbf{L}et - assignment of tuples
   \item \textbf{W}here - conditional expression
   \item \textbf{O}rder by - sorting 
-  \item \textbf{R}eturn - return expressions, similar to yielding in coroutines
-  and not the common return expression known from Java and other imperative
-  languages
+  \item \textbf{R}eturn - return expressions (similar to yielding in coroutines
+  known from functional languages, not to be confused with a return statement
+  in languages such as Java)
 \end{itemize}
-This construct is thought to be roughly equivalent to a
+The FLWOR construct is thought to be roughly equivalent to a
 \texttt{SELECT}-statement in SQL. For example, consider the following SQL
 statement: 
 \begin{center}
@@ -282,9 +283,11 @@ reduces the smallest unit of an XML document to single words instead of nodes.
 Additionally, they add sophisticated tools such as stemming, thesaurus, and
 scoring variables.
 
-Technically, the \verb!ftcontains! operator applies tokenisation of the first operand, and search for a match with
-the second operand among the tokens. It allows specifying match options like stemming, thesaurus, etc to second
-operand modifying the criteria for finding a match. A full list of match options are described in \cite{w3c01}.
+Technically, the \verb!ftcontains! operator applies tokenisation of the first
+operand, and searches for a match with the second operand among the tokens. It
+allows specifying match options like stemming, thesaurus, etc to a second
+operand modifying the criteria for finding a match. A full list of match
+options are described in \cite{w3c01}.
 
 For example, consider the following example:
 \begin{center}
