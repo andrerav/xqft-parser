@@ -89,6 +89,7 @@ Complexity estimation is performed as detailed in section
 comparison matrix is shown in table \ref{table:result:complexity_matrix}.
 
 \begin{table}[!htp]
+ \begin{center} 
  \begin{tabular}{| c | c | c || c | c |}
   \hline
    & \multicolumn{2}{|c||}{\textbf{Pathfinder/MonetDB}}
@@ -105,7 +106,11 @@ comparison matrix is shown in table \ref{table:result:complexity_matrix}.
  \end{tabular}
 \caption{Complexity comparison matrix}
 \label{table:result:complexity_matrix}
+ \end{center}
 \end{table}
+
+
+
 
 \begin{figure}[!htp]
 \begin{center}
@@ -122,3 +127,29 @@ comparison matrix is shown in table \ref{table:result:complexity_matrix}.
   \label{fig:results:comparison:chart2}
 \end{center}
 \end{figure}
+
+
+\begin{table}[!htp]
+ \begin{center}
+ \begin{tabular}{| c | c | c | c | c | c | c | c || c | c | c | c | c | c | c |}
+  \hline
+   & \multicolumn{7}{|c||}{\textbf{Pathfinder}}
+   & \multicolumn{7}{|c|}{\textbf{Prototype}} \\
+   \hline
+   & \# & \multicolumn{3}{|c|}{\textbf{In}} &
+   \multicolumn{3}{|c||}{\textbf{Out}} 
+   & \# & \multicolumn{3}{|c|}{\textbf{In}} & 
+   \multicolumn{3}{|c|}{\textbf{Out}}
+   \\
+   \hline
+   Trivial & 1 & 1 & 2 & 3 & 1 & 2 & 3 & 1 & 1 & 2 & 3 & 1 & 2 & 3  \\
+   \hline
+   Complex & 1 & 1 & 2 & 3 & 1 & 2 & 3 & 1 & 1 & 2 & 3 & 1 & 2 & 3  \\
+   \hline
+   Conditional & 1 & 1 & 2 & 3 & 1 & 2 & 3 & 1 & 1 & 2 & 3 & 1 & 2 & 3  \\
+   \hline
+ \end{tabular}
+\caption{Tuple input/output in join operators}
+\label{table:result:complexity_matrix}
+ \end{center}
+\end{table}
