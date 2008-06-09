@@ -1,7 +1,8 @@
 \section{Constructing the MQL algebra tree}
 \label{sect:impl:construct_mql}
-The MQL queries are constructed as a tree of operators bottom-up while parsing
-the abstract syntax tree (for the corresponding XQuery query). 
+MQL queries are constructed as trees, where each node represents an operator. Each node is an instance of an
+operator class, and may contain a list of child operators and a list of parameters. The trees are constructed
+bottom-up while parsing the abstract syntax tree corresponding to a XQuery query.
 
 \subsection{Operators and parameters}
 \begin{figure}[!htp]
@@ -13,16 +14,18 @@ the abstract syntax tree (for the corresponding XQuery query).
 \end{figure}
 The operators modeled in the implementation correspond to the operators
 described in section \ref{sect:method:marsOperators}. A simplified class
-diagram is shown in figure \ref{fig:impl:mql_op_uml}. Note that the
-responsibility with regards to converting an operator to a string
-representation is largely left to the various subclasses. However, the default
-fallback for the \texttt{Operator} class is to return a string of the form
+diagram is shown in figure \ref{fig:impl:mql_op_uml}. Converting an operator to a string is in most cases
+handled by the default fallback in the \texttt{Operator} class, where the string generated will be on the form:
 \begin{Verbatim}
 operator_name(param1, param2, ..., paramN; 
-              operator1, operator2, ..., operatorM)
+    operator1;
+    operator2; 
+    ...; 
+    operatorM)
 \end{Verbatim}
-This is sufficient in some cases, such as for the model of the \texttt{cross()}
-operator.
+
+Constructing such a string for the complete query tree is achieved by calling \texttt{toPrettyString(0)} on the
+root node. The parameter to the method specifies the initial indentation.
 
 \begin{figure}[!htp]
 \begin{center}
@@ -36,18 +39,10 @@ MQL parameters (as described in \ref{sect:method:mql:concepts}) are modeled as
 seen in figure \ref{fig:impl:mql_param_uml}. Parameters require no complex
 structure, and are only created and added to operators as needed.
 
-\subsection{Concepts}
-As mentioned, MQL queries are represented as trees, where each node represents
-an operator. Each node is an instance of an operator class (as described
-above), and contains a list of child operators and a list of parameters. To
-convert the operator tree to a MQL query string, simply call the method
-\texttt{toPrettyString(0)} on the root node of the operator tree.
-
 \subsection{Usage}
 The operator classes are designed to be intuitive and simple to use. Figure
 \ref{fig:impl:mql_op_ex1_java} shows one example where a simple operator tree
-is built and converted to an MQL query string (the result of which can be seen
-in figure \ref{fig:impl:mql_op_ex1_mql}).
+is built and converted to an MQL query string. The result can be seen in figure \ref{fig:impl:mql_op_ex1_mql}).
 
 %\usepackage{graphics} is needed for \includegraphics
 \begin{figure}[htp]
@@ -66,7 +61,7 @@ System.out.println(project.toPrettyString(0));
 \begin{figure}[htp]
 \begin{center}
   \begin{Verbatim}
-project([author];
+project(author;
   scope(/books/book/title;
     lookup("Death in the clouds")))
   \end{Verbatim}

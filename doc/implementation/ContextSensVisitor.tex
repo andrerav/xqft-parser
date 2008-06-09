@@ -1,12 +1,10 @@
-\section{Context-sensitive visitor}
+\section{Context-sensitive Visitor}
 \label{sect:impl:context_sens_visitor}
 In section \ref{sect:theory:parser:tree_parsing} a number of techniques for
 tree parsing were presented. In section \ref{sect:method:tree_parsing} the
 \textit{context-sensitive visitor pattern} was chosen as the technique for this
-implementation. This section will detail the implementation of this design
-pattern, and how it is used to performed an assortment of tasks.
+implementation. 
 
-\subsection{Basics}
 The context-sensitive pattern is designed to be flexible and to generate code
 with a higher level of maintainability, for which the rationale was presented
 in section \ref{sect:theory:contextVisitorPattern}. 
@@ -29,7 +27,7 @@ Note that the use of \texttt{XQFTTree} as the element class implies that the
 \texttt{XQFTTree} be supplemented with an \texttt{accept()} method to
 accommodate this pattern. This method is essentially a static dispatcher which
 will call the appropriate method on the visitor based on the token type of the
-node currently being visited. Figure \ref{} shows an excerpt of this method and
+node currently being visited. Figure \ref{fig:impl:accept} shows an excerpt of this method and
 how it acts on the visitor class.
 
 %\usepackage{graphics} is needed for \includegraphics
@@ -37,7 +35,8 @@ how it acts on the visitor class.
 \begin{center}
   \begin{Verbatim}	
 public TraverseReturn accept(Visitor visitor) {
-     case XQFTParser.AST_MODULE:
+    switch(this.getType()) {
+        case XQFTParser.AST_MODULE:
             return visitor.visitAST_MODULE(this);
         case XQFTParser.AST_FLWOR:
             return visitor.visitAST_FLWOR(this);
@@ -49,23 +48,20 @@ public TraverseReturn accept(Visitor visitor) {
             return visitor.visitAST_ORDERBYCLAUSE(this);
         case XQFTParser.AST_WHERECLAUSE:
             return visitor.visitAST_WHERECLAUSE(this);
-                          .
-                          .
-                          .
+                          ...
   \end{Verbatim}
   \caption{Excerpt from the accept() method in the XQFT class}
-  \label{figureLabel}
+  \label{fig:impl:accept}
 \end{center}
 \end{figure}
 
-\subsection{The Rewrite visitor}
-The \textit{Rewrite visitor} is used to perform rewrite operations on the
+The prototype utilises two different visitors, namely the \textit{Rewrite visitor} and the \textit{XQuery2MQL
+visitor}. The \textit{Rewrite visitor} is used to perform rewrite operations on the
 abstract syntax tree before performing the actual translation. In particular,
 these rewrite operations consists of normalising the required subtrees of the
 syntax tree to a subset of XQuery Core (as described in sections
 \ref{sect:theory:xquery:XQcore} and \ref{sect:method:ast_rewrite}).
 
-\subsection{The XQuery2MQL visitor}
 The \textit{XQuery2MQL visitor} performs the bulk of the work related to
 performing the translation of XQuery to MQL. This visitor is capable of
 re-instantiating itself (or other visitors) when entering new contexts, such as

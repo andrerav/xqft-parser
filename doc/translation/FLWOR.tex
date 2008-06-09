@@ -79,6 +79,7 @@ The \texttt{return}-clause will just ship the evaluated version of the \texttt{r
 
 
 \subsection{Iterator Ordering}
+\label{sect:trans:TD:flwor:itOrd}
 Acording to XQuery semantics, the \texttt{return} clause is evaluated once for iteration for each of the iterators
 of the FLWOR expression. The results of these evaluations are concatenated to form the result of the FLWOR
 expression. As TD evaluate iterations in parallel, if the \texttt{return}-expression is not dependent on a
