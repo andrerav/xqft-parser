@@ -17,22 +17,23 @@ There are two common types of parser technologies, \textit{top-down} and
 \textit{bottom-up} parsers. As their names imply, these technologies differ in
 the sense that top-down parsers will attempt to match production rules with the
 input top-down, while bottom-up parsers will start with the terminal symbols and combine them into production
-rules. Often this is implemented as a process of shift and reduce operations utilising stacks to hold
-production rules and terminal symbols.\marginpar{\textbf{\Large TODO}\scriptsize Holder de production rules eller
-noe som er matcha?}
+rules. Often this is implemented as a process of shift and reduce operations,
+where a symbol is shifted onto the stack after consulting a parse table, and a
+reduction is made when a sequence of symbols are recognised as a non-terminal
+production rule.
 
 We refer to \cite{compiler_tech} for further in-depth information about parser
 technologies. However, it is important to note that typically a top-down parser
 based on an LL\footnote{LL is a Left-to-right, Leftmost derivation
 parser, using a top-down approach}-grammar with low token lookahead (typically
-one token lookahead, aka LL(1)) will perform better and be subject to a high
-number of well-defined optimisations, out of which a few are described in
-\cite{compiler_tech} and \cite{DBLP:books/cu/Appel1998c}.\marginpar{\textbf{\Large TODO}\scriptsize skjonte ikke
-helt, er LL bedre enn LALR? eller LL(1) bedre enn LL(2)?}
+one token lookahead, aka LL(1)) will perform better than a \textit{bottom-up}
+parser and be subject to a higher number of well-researched optimisations, out
+of which a few are described in \cite{compiler_tech} and
+\cite{DBLP:books/cu/Appel1998c}.
 
 \subsection{Parser generators}
 For large grammars, writing a parser by hand from the ground up may turn out to
-be a substantial amount of work. To eliminate this, a large number of
+be a substantial amount of work. As a natural consequence, a large number of
 parser generators exist. Most of these parser generators have a very
 similar set of functionality. From a formal grammar, often in a notation
 similar to BNF, the parser generator will output the source code for a
@@ -93,8 +94,8 @@ The dataflow for actual use of the XQFT parser is shown in figure
 \subsubsection{AST construction}
 \label{sect:theory:xqftparser:ast_construction}
 The abstract syntax tree is constructed by specifying tree rewrite rules in the
-grammar file (the tree rewrite rules is extensively covered in \cite{ourselves}, section
-4.5). The tree consists of nodes instantiated from the
+grammar file (the tree rewrite rules are extensively covered in
+\cite{ourselves}, section 4.5). The tree consists of nodes instantiated from the
 \verb!no.ntnu.xqft.parse.XQFTTree! class. To compensate for missing tokens to
 determine tree context, the XQFT Parser employs the use of imaginary tokens.
 These are simply tokens that do not exist in the input stream, they only have

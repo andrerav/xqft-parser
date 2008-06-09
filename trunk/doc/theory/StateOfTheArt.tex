@@ -4,7 +4,7 @@
 This section describes some of the most interesting existing implementations of
 XQuery parsers and translators. Note that some of these are fundamentally
 different in some aspects (for example, eXist operates on DOM trees), but may
-implement certain features of interest.
+implement certain features of interest, and are therefore included here.
 
 \subsection{eXist}
 eXist\cite{exist_doc} is an open source native XML database with an XQuery
@@ -94,4 +94,8 @@ The traits chosen for the comparison matrix in table
 \ref{figure:comparison_matrix} are chosen due to their relevance to this
 project. As can be seen, there is a spread in diversity across these
 implementations. In particular, Pathfinder is the only implementation with a
-relational backend.
+relational backend. This implies that Pathfinder will be a natural focal point
+of interest for studying existing methods of translation. As will be shown in
+chapters \ref{chapter:method} and \ref{chapter:translation}, Pathfinder and
+its loop lifting technique will serve as a basis for development of an
+improved and novel translation method.

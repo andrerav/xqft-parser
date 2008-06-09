@@ -46,7 +46,7 @@ general relational algebra (section \ref{sect:theory:relAlg}) and MQL (section \
 
 Only a very restricted selection
 is utilised, written $\sigma_{a}$, which only returns tuples satisfying $a \neq 0$.  Considering the numbering
-operator, $p$ denotes the partitioning attribute, $(a_{1},\ldots,a_{n}$ the attributes to be sorted on and $b$ is
+operator, $p$ denotes the partitioning attribute, $a_{1},\ldots,a_{n}$ the attributes to be sorted on and $b$ is
 an added attribute holding the result of the
 numbering (equal to the proposed \textsf{numberate}-operator of MQL, section \ref{sect:method:marsAddedOperators}).
 {\scriptsize{\begin{tabular}{c|c}$a$&$b$\\\hline\end{tabular}}} represents the creation of a relation with
@@ -171,8 +171,8 @@ item}(q_{x}\left(\mbox{\texttt{\$}}v_{x})\bowtie_{iter=outer} map_{x, x \cdot y}
 \subsection{Mapping Back}
 \label{sect:trans:ll:mappingBack}
 
-All steps and equations this far have been helpful to represent sequences and variables in a lower scope level. But
-the result of a query will have to be in form of its representation in the outermost scope $s$. So a way to
+All steps and equations presented so far have been helpful to represent
+sequences and variables in a lower scope level. But the result of a query will have to be in form of its representation in the outermost scope $s$. So a way to
 represent an expression $e_{x,y}'$ in its scope's parent scope $s_{x}$ is needed. Once again the $map$ relation
 may be of use, combined with an equi-join:
 \begin{equation}
@@ -188,10 +188,11 @@ y}(e_{x \cdot y}')\bowtie_{iter = inner}map_{x, x \cdot y}))
 \subsection{Other Expression Types}
 \label{sect:trans:ll:OtherExpr}
 
-The sequence construction $e_{1}$\texttt{, }$e_{2}$ is essentially a disjont union of the
-relational representations of the expressions, that is, $q_{x}(e_{1})$ and $q_{x}(e_{2})$. By temporarily adding a
-attribute $ord$ to these relations before a renumbering of the result with $\varrho$, the proper ordering of the
-sequence is aquired. Construction of sequences can therefore be expressed like this:
+The sequence construction $e_{1}$\texttt{, }$e_{2}$ is essentially a disjoint
+union of the relational representations of the expressions, that is,
+$q_{x}(e_{1})$ and $q_{x}(e_{2})$. By temporarily adding an attribute $ord$ to
+these relations before a renumbering of the result with $\varrho$, the proper
+ordering of the sequence is acquired. Construction of sequences can therefore be expressed like this:
 \begin{equation}
 q_{x}(e_{1}\mbox{\texttt{, }}e_{2})=
 \begin{array}{l}
@@ -239,12 +240,14 @@ q_{x}(e_{1} \mbox{\texttt{ + }} e_{2}) =
 \label{eq:ll:sumexpr}
 \end{equation}
 
-The \texttt{if(}$e_1$\texttt{) then }$e_2$\texttt{ else }$e_3$, is one of the more complex translations of loop
-lifting. First the boolean expression $e_1$ is compilated. The result is split into two new loop relations,
-$loop1$ and $loop2$, which uses selection on all $true$ and $false$ values respectively. $loop2$ is used as current
-$loop$ relation for the compilation of $e_2$ and $loop3$ as $loop$ relation for the mapping of $e_3$. A equi-join with
-their corresponding $loop$ relation on $iter$ will filter out all unnnecesary iterations. The result is the union
-of both branches.
+The \texttt{if(}$e_1$\texttt{) then }$e_2$\texttt{ else }$e_3$, is one of the
+more complex translations of loop lifting. First the boolean expression $e_1$
+is compiled. The result is split into two new loop relations, $loop1$ and
+$loop2$, which uses selection on all $true$ and $false$ values respectively.
+$loop2$ is used as current $loop$ relation for the compilation of $e_2$ and
+$loop3$ as $loop$ relation for the mapping of $e_3$. A equi-join with their
+corresponding $loop$ relation on $iter$ will filter out all unnnecesary 
+iterations. The result is the union of both branches.
 
 \begin{equation}
 \begin{array}{l}
@@ -262,8 +265,8 @@ loop3 = \pi_{iter}(\sigma_{item=FALSE}(q_{x}(e_1))) \\
 \subsection{Example}
 \label{sect:trans:ll:example}
 
-Only looking at equations may be a bit too abstact to fully understand Loop Lifting. To concretise we will present
-a simple example of evaluating a query with the method and show intermediate results. The naming of expressions,
+Only looking at equations may be a bit too abstract to fully understand Loop
+Lifting. To concretise we will present a simple example of evaluating a query with the method and show intermediate results. The naming of expressions,
 scopes and variables will, where possible, be the same as earlier in this section. This query is the basis of this
 evaluation:
 
