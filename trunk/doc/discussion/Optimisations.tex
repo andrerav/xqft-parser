@@ -7,10 +7,10 @@ optimisation.
 
 As can be seen of the tree in figure \ref{fig:results:query_pathpred_result} on page
 \pageref{fig:results:query_pathpred_result}, Tainting Dependencies can produce
-relational algebra trees with consecutive \textsf{project} operators. This is of course unnecessary, and such operators can be merged into one
-single \textsf{project}. Attributes which is not part of the result or part of evaluation of the result can be
-pruned. This may however not be anything the translator would need to consider, as the Mars optimiser already
-implements methods for detecting and simplifying such trees.
+relational algebra trees with consecutive \textsf{project} operators. This is of course unnecessary, and such
+operators can be merged into one single \textsf{project}. Additionally, attributes which is not part of the result
+or part of evaluation of the result can be pruned. This may however not be anything the translator would need to
+consider, as the MARS optimiser already implements methods for detecting and simplifying such trees.
 
 Rule \ref{rule:trans:TD:conditional} on page \pageref{rule:trans:TD:conditional} describes the translation of
 XQuery \texttt{if..then..else} expressions. It was implemented considering the result would be a operator tree and
@@ -28,7 +28,7 @@ relations, some changes would have to be made. Evaluation of the test-expression
 iterations which expression is to be evaluated in. Based on this information iterations can be pruned from the two
 expressions before they are evaluated.
 
-\subsection{XQuery Semantics}
+\subsection{XQuery semantics}
 
 As XQuery is a purely functional language, an implementation is always free to
 evaluate the operands of an operator in any order\cite{w3c00}. This means that a MQL optimiser is able to rearrange operators as it sees fit, with the
@@ -36,7 +36,7 @@ possible outcome of a less expensive query execution. One such case would be in 
 \begin{center}
 \texttt{\$i/child::elem/descendant::maybe}
 \end{center}
-If the optimiser has some notion of the frequency of occurence of the \texttt{maybe} and \texttt{elem} elements,
+If the optimiser has some notion of the frequency of occurence of the \texttt{maybe} and \texttt{elem} nodes,
 as well as the cardinality of the relational representation of \texttt{\$i}, it may not be evaluated from left to
 right. If there exists only a few \texttt{maybe} elements and the \texttt{\$i} relation is relatively large, the
 most effective execution plan for this path expression would most likely be from right to left.
@@ -58,22 +58,22 @@ to establish that the actual value of the operand E does not violate any constra
 \end{quote}
 
 This feature could be utilised in situations where path expressions are to be
-evaluated to effective boolean values (as described in section \ref{sect:disc:effBool}). If the path expression is to return either nodes or an empty
-sequence, it is sufficient to find \emph{one} node per unique iteration. This might prove difficult to implement
-on an MQL processor however, as it is hard to know which unique iteration an
-element belongs to before the element relation and a relation with representations in all unique iterations are joined together.
+evaluated to effective boolean values (as described in section \ref{sect:disc:effBool}). If the path expression is
+to return either nodes or an empty sequence, it is sufficient to find \emph{one} node per unique iteration. This
+might prove difficult to implement on an MQL processor however, as it is hard to know which unique iteration an
+node belongs to before the node relation and a relation with representations in all unique iterations are
+joined together.
 
 Another situation where not accessing all data is required is with numeric predicates. The formal description of
 filter expressions\cite{xquery_semantics} says that an expression such as
 \texttt{\$s[1]} should be evaluated by consecutively examining the items of the sequence \texttt{\$s}, and selecting all items where
 \texttt{position()=1}. A better solution would be to only pick the first item of the sequence. But as Tainting
 Dependencies stores sequences from many iterations in the same relation, and no ordering can be assumed, this can
-not be done easily. TODO - hva st\a r her egentlig?: \textbf{The MQL processor
-has no way of knowing where the tuples holding the items which are the first item of their respected sequences unless there is some kind of indexing of the relation on the $index$
-fields}. In such a case the processor could lookup the tuples where $index$ has the value 1, the alternative is a
-sequencial scan of the relation, checking each tuple.
+not be done easily. The MQL processor will have to sequentially scan the relation to find the tuples holding the
+items which are the first item of their respected sequences, unless there is som kind of indexing of the relation
+on the $index$ fields. In such a case the processor could simply lookup the tuples where $index$ has the value 1.
 
-\subsection{Path Expressions}
+\subsection{Path expressions}
 \label{sect:disc:optim:path}
 Quite a lot of research has been done on optimising XPath (Path expressions in XQuery stem from XPath) since it
 became a W3C Recommendation in 1999. Of the documents produced by this research we would recommend
@@ -98,32 +98,32 @@ parameter. Similarly, the lookup of \texttt{c} may be filtered on \textsf{/a/b/c
 is not part of a \texttt{child} axis step (rather a \texttt{descendant-or-self} axis step), no filtering can be
 done. However \texttt{e} may be filtered by \textsf{scope} with the parameter
 \textsf{d/e}. Some consideration will still have to be done concerning how much cheaper the join will become with the filtering compared to the cost
-of filtering one of its operands.
+of filtering one of its operands. Additionally, if a leading slash (\textsf{/}) in the parameter to the
+\textsf{scope} operator would indicate an absolute path, the operator could in many cases perform a more strict
+and accurate filtering. Without this leading slash, the filtering would be on a relative path -- as before.
 
 One idea would be to move all predicates out of the path expression, and apply them as post filters. This would
-probably reduce the number of needed joins -- at least in some cases. In other cases it may be to costly to build
-a filter fitted to the whole path expression. If e.g. \texttt{h} from the last example query was a number instead,
+probably reduce the number of required joins -- at least in some cases. In other cases it may be to costly to build
+a filter fitted to the whole path expression. If e.g.\ \texttt{h} from the last example query was a number instead,
 the path expression up until \texttt{d} would have to be evaluated, filtered with the \texttt{g} predicate, and
-finally joined with the evaluation of the path expression without the last predicate on their \texttt{d} step in
-the $scope$ fields.
+finally joined with the evaluation of the path expression without the last predicate on the $scope$ fields of their
+\texttt{d} step.
 
 The rule for translating predicates, rule \ref{rule:trans:TD:predicate} on page \pageref{rule:trans:TD:predicate},
 is a general rule. Here, a reference to the context item from the outside of the predicate is ``copied'' inside the
-predicate (containing $sprDotNumb$). This copy is then operated on, and when the predicate expression is
-evaluated, the predicated expression and the predicate expression is joined on the reference to the context item.
-An example of this process is seen in figure \ref{fig:results:query_pathpred_result_dag} on page
-\pageref{fig:results:query_pathpred_result_dag}. Here, the copying is in form
-of a upwards split, and if the context item is only referred to once within the
-predicate this translation may however be simplified.
+predicate (containing $sprDotNumb$). This copy is then operated on, and the evaluated predicate expression and the
+predicated expression is joined on the reference to the context item. An example of this process is seen in figure
+\ref{fig:results:query_pathpred_result_dag} on page \pageref{fig:results:query_pathpred_result_dag}. Here, the
+copying is seen in the form of a upwards split. However, if the context item is only referred to once within
+the predicate this translation may however be simplified.Consider the following XQuery query:
 
-Consider the following XQuery query:
 \begin{center}
 \texttt{//person[name eq "Robert"]}
 \end{center}
 
 This can be solved by joining the \texttt{name} relation with the \texttt{person} relation, and keeping all the
 attributes from both relations. The attributes stemming from the \texttt{name} relation would have to be marked in
-some way, as these are not a part of the result of the query. This relation will have to be filtered with a
+some way, as these are not a part of the result of the query. The relation will have to be filtered with a
 selection removing the tuples where the $scope$ stemming from the \texttt{name} is not a child scope of the
 $scope$ stemming from the \texttt{person} relation. Further, only the tuples where the $value$ stemming from the
 \texttt{name} relation is \texttt{"Robert"} is retained. Finally the attributes stemming from the \texttt{name}

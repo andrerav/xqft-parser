@@ -1,15 +1,16 @@
 \section{Implementation}
 \label{sect:disc:contextSens}
 Chapter \ref{chapter:implementation} describes how a prototype was implemented
-to demonstrate the ``Tainted Dependencies'' (TD) method. This implementation
+to demonstrate the ``Tainted Dependencies'' method. This implementation
 was dependent on a number of constraints:
 \begin{itemize}
   \item The availability of a free\footnote{By ``free'' is meant a liberal
   license and availability of source code} pre-made XQuery parser capable of
-  producing abstract syntax trees
+  producing abstract syntax trees.
   \item The ability to parse and manipulate syntax trees and re-write them into
-  new structures (in particular to support normalisation to XQuery Core)
-  \item The ability to translate syntax trees into MQL (relational algebra)
+  new structures. (in particular to support normalisation to XQuery Core) \marginpar{\textbf{\LARGE TODO:}\\ 
+  \scriptsize er dette en\\ constraint?}
+  \item The ability to translate syntax trees into MQL (MARS relational algebra).
 \end{itemize}
 
 In this section, the methods chosen to achieve the goals of the implementation
@@ -17,16 +18,16 @@ are discussed and elaborated upon.
 
 \subsection{Manual vs. automated tree parser construction}
 ANTLR provides a utility for automated construction of AST parsers. This
-utility requires the specification of a separate ``tree grammar''. This tree
+utility requires the specification of a separate tree grammar. The tree
 grammar is almost identical to the original parser grammar. Practically, the
 parser grammar can be copied verbatime, renamed, modified slightly and used as
 a tree  grammar. This process is described in detail in \cite{definitiveAntlr},
 section 8.1.
 
-This introduces a high level of redundancy. The two grammar specifications are
-required to be somewhat identical with regards to their grammar structure; that
+This introduces a high level of redundancy.\marginpar{\textbf{\LARGE TODO:}\\?} \textbf{The two grammar
+specifications are required to be somewhat identical with regards to their grammar structure; that
 is,  redundant tokens can be removed. However, the rewrite rules are required to
-be identical.
+be identical.}
 
 This creates a problem with maintainability. As the parser grammar and rewrite
 rules are not freezed at this point but rather highly subject to change, any
@@ -35,25 +36,24 @@ grammar, and vice versa.
 
 In \cite{translators_should_use_tree_grammars}, Terence Parr argues that the
 traditional visitor
-pattern\footnote{http://en.wikipedia.org/wiki/Visitor\_pattern} only provides a
+pattern (section \ref{sect:theory:visitorPattern}) only provides a
 simplistic facility for triggering events on the AST, that no tree structure
 validation is implicitly available, and that context information has to be
 passed down through the tree during the parse or by setting global variables.
 
 In another point of view strongly polar to that of Terence Parr, Andy Tripp
-argues\cite{manual_tree_walking_is_better} that manual tree parsing is
-better. He establishes the following points of argument which are of particular
-interest to this project:
+argues that manual tree parsing is better\cite{manual_tree_walking_is_better}. He establishes the following points
+of argument which are of particular interest to this project:
 \begin{itemize}
-  \item Duplication of code and effort -- the concept of "what is a valid AST"
+  \item Duplication of code and effort -- the concept of ``what is a valid AST''
   would have to be implemented in both the parser and the AST transformer phase
-  [as a rebuttal to validation of AST]
+  (as a rebuttal to validation of AST).
   \item With regards to contextual information, There seems to be nothing wrong
-  with depending on the physical structure of the AST 
+  with depending on the physical structure of the AST.
   \item Defining a traditional parser in grammar is practical because the grammar
   usually resembles the ouput AST. In the case of a tree parser proposed by Parr
   where the grammar actually resembles the input AST, this mapping may break
-  down completely if the output is another tree structure
+  down completely if the output is another tree structure.
 \end{itemize}
 
 In particular, the last point holds a strong indication that a tree grammar
@@ -61,7 +61,7 @@ may not be suited for this project, as the goal of this tree parser would be to
 transform the AST into a relational algebra tree.
 
 \subsection{AST rewriting and the visitor pattern}
-In section chapter \ref{chapter:method}, methods to achieve the goals
+In chapter \ref{chapter:method}, methods to achieve the goals
 of the implementation were presented. The method chosen for parsing of the
 abstract syntax tree (see section \ref{sect:method:tree_parsing}) was the
 \emph{context sensitive visitor pattern}. This pattern laid the foundation for
