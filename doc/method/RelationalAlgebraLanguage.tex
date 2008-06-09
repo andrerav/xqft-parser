@@ -68,7 +68,8 @@ set from a lookup in a hypothetical \textit{valocc} index.
 The input for operators are result sets from child operators. The output from
 operators is a single result set. Note however that some operators, such as
 \texttt{index()} will modify the context for child operators. This feature is
-not documented, however it may be natural to assume that
+not documented, and the exact mechanics are not known. However their respective
+behaviours are described here where applicable.
 
 \subsection{Language syntax}
 The syntax of MQL (Mars Query Language) is, as mentioned above, reminiscent of
@@ -315,7 +316,7 @@ operators
 \end{description}
 
 \subsubsection{Make}
-The \texttt{make()} operator is used to synthesize result sets from the given
+The \texttt{make()} operator is used to synthesise result sets from the given
 (constant) arguments. Field names can be specified, but are not required. The
 default field names are \textit{field0}, \textit{field1}, \ldots,
 \textit{fieldN}, where \textit{N} is the number of fields. The example in
@@ -344,7 +345,7 @@ $field0$ & $field1$ & $field2$ \\ \hline
 \end{figure}
 
 A more complex example can be seen in \ref{figure:mql:make_example2}, where
-field names are specified, and several tuples are synthesized. The
+field names are specified, and several tuples are synthesised. The
 corresponding result is shown in figure \ref{figure:mql:make_example2_result}.
 
 \begin{figure}[!h]

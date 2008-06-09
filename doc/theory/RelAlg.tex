@@ -25,7 +25,7 @@ computer resources.
 \label{sect:theory:relAlg:primOper}
 The primary operators is a set of operators which constitutes the base of an algebra. Other operators can be
 defined in terms of the primary ones. If one of the primary operators is excluded, the algebra will loose some of
-it's expressiveness. The primitive operators of Codd's algebra are: selection, projection, union, difference,
+its expressiveness. The primitive operators of Codd's algebra are: selection, projection, union, difference,
 cross product and rename (later added for the sake of the named relational algebra).
 
 \subsubsection{Selection}
@@ -105,15 +105,15 @@ relational algebra version of the operators requires that the relations involved
 The union of two relations returns a relation which includes all the tuples that are in either or both of the
 original relations. As the result is also a relation, any potential duplicates will be removed. The operation is
 commutative, and the returned relation will have the same degree as the two relations involved. A union between
-two relations are often symbolised thus:
+two relations are often symbolised as:
 \begin{equation*}
 R \cup S
 \end{equation*}
 Where $R$ and $S$ are relations.
 
 The difference of two relations R and S is a relation that contains all the tuples that are in R but not in S. The
-returned relation will, as was the case with union, have the same degree as the two relations involved. A
-difference between relations $R$ and $S$ is written like this:
+returned relation will, as is the case with union, have the same degree as the
+two relations involved. A difference between relations $R$ and $S$ is written like this:
 \begin{equation*}
 R - S 
 \end{equation*}
@@ -122,9 +122,10 @@ R - S
 \label{sect:theory:relAlg:crossProduct}
 The cross product operator is sometimes referred to as the cartesian product operator. As with union and
 difference, this operator also stems from set theory. The operator is used to combine all tuples in one relation
-with all the tuples from another. The returned relation will have a degree equal the sum of the degrees of each of
-the original relations, and a cardinality equal the product of the cardinalities. The operator is commutative and
-written as a cross:
+with all the tuples from another. The returned relation will have a degree
+equal to the sum of the degrees of each of the original relations, and a
+cardinality equal to the product of the cardinalities. The operator is
+commutative and written as a cross:
 \begin{equation*}
 R \times S = S \times R
 \end{equation*}
