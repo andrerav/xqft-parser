@@ -2,7 +2,7 @@
 \label{sect:method:ast_rewrite}
 \begin{myDefinition}
 \label{definition:normalisation}
-The process of normalisation is defined as the process of translating the
+The process of \textbf{normalisation} is defined as the process of translating the
 whole or parts of an XQuery abstract syntax tree into an XQuery Core abstract
 syntax tree, as described in section \ref{sect:theory:xquery:XQcore}.
 \end{myDefinition}
@@ -10,8 +10,7 @@ syntax tree, as described in section \ref{sect:theory:xquery:XQcore}.
 \begin{myDefinition}
 \label{definition:denormalised}
 An abstract syntax tree is said to be \textbf{denormalised} if it has not yet
-been normalised through a process of \textbf{normalisation} (see definition
-\ref{definition:normalisation}).
+been normalised through a process of normalisation.
 \end{myDefinition}
 
 The basic abstract syntax tree produced by the XQFT Parser (see section
@@ -25,14 +24,13 @@ Based on findings in section \ref{sect:theory:xquery:Flwor} regarding the
 structure of FLWOR expressions, it was briefly mentioned that complex FLWOR
 expressions could be transformed into semantically equivalent and simpler
 representations. A question was also posed --\emph{ could it be
-benefitial to rewrite complex FLWOR expressions into a simpler form}?
+benefitial to rewrite complex FLWOR expressions into a simpler form}? \textbf{\LARGE TODO:} er det?
 
 \subsection{Normalising FLWOR expressions}
-A denormalised XQuery syntax tree may contain nodes such as FLWOR expressions
- with several for- and let-clauses as can be seen in figure \ref{tree:ast:flwor_rewrite1}. Such an
-expression should be normalised to several nested FLWOR expressions, as shown
-in figure \ref{tree:ast:flwor_rewrite2}, as defined by the mapping rules in
-figures \ref{figure:xquery:flwor_mapping_rule},
+A denormalised XQuery syntax tree may contain nodes such \texttt{for}-clause expressions with several variable
+declarations and assignments as can be seen in figure \ref{tree:ast:flwor_rewrite1}. Such an expression should be
+normalised to several nested FLWOR expressions, as shown in figure \ref{tree:ast:flwor_rewrite2}, as defined by
+the mapping rules in figures \ref{figure:xquery:flwor_mapping_rule},
 \ref{figure:xquery:where_mapping_rule},
 \ref{figure:xquery:orderby_mapping_rule}, and
 \ref{figure:xquery:return_mapping_rule}.

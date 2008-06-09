@@ -12,8 +12,18 @@ Further the method for rewriting the syntax tree is explained in section
 algebra complexity which will used in chapter \ref{chapter:results} for
 comparisons.
 
-\section{TODO: Hvorfor TD og ikke loop lifting?}
-Se seksjon 7.5.3
+\section{Development of a novel translation method}
+\textbf{\LARGE TODO:} les over /glimrendeifiser plz.
+
+In section \ref{sect:theory:loop_lifting}, ``Loop Lifting'', the Pathfinder project's method for translating XQuery
+queries to relational algebra is presented. As the goal of this Master's thesis is to find a way to translate
+queries in this language to MQL, the MARS query language, one possibility would be to modify the Loop Lifting
+methodology to produce MQL trees instead. But this modified method would most probably not utilise the full
+expressiveness and power of MQL. This lead to the development of a MARS specific method of translation, ``Tainting
+Dependencies'', which will be reviewed in full in chapter \ref{chapter:translation}. Another incentive for not
+modifying Loop Lifting is that it produces large quite complex operator trees, which lead to unnecessarily
+denormalised intermediate results. This will be further discussed in section \ref{sect:disc:res}.
+
 
 \input{method/TreeParsing.tex}
 \input{method/TreeRewriting.tex}
