@@ -1,10 +1,10 @@
-\section{Target Relational Algebra Language}
+\section{Target relational algebra language}
 \label{sect:method:mql}
 Given as premise for this project was the target algebra language. This
 algebra is a dialect of classic relational algebra (see section
 \ref{sect:theory:relAlg}) developed by FAST Search \& Transfer. The language
-is dubbed MQL (Mars Query Language). This section will describe the operators
-of this language as well as the indexes they operate on, and will demonstrate
+is dubbed MQL (MARS Query Language). This section will briefly describe some of the operators
+of this language as well as the indexes they operate on. Further, it will demonstrate
 the usage as well as some important traits of this language with a few
 examples.
 
@@ -23,7 +23,7 @@ execution of relational algebra on the data. There are two basic index types: \t
 of this term. In a \textit{value} index, a key (for example document id) is associated to one or more
 \textit{values} in the document collection. Lookups in \textit{value} indexes can be combined with lookups in
 \textit{occurence} indexes to add data to the result set for the user.
-Throughout this chapter and later chapters, any reference to a \textit{valocc}
+Throughout this chapter and later chapters, any reference to a value occurence index (\textit{valocc})
 implies exactly such a hypothetical combination of occurence and value indexes.
 
 The schema of the indexes determins the fields/columns in the result sets from
@@ -36,8 +36,8 @@ term in the \textit{occurence} index:
   characters or nodes)
   \item Scope: the context of the occurence, e.g \texttt{/a/b}. Note that the
   scope also contains metadata about the \textit{instance} of the scope (this
-  is visualised such as this: \texttt{a[1].b[2]}, which reads as ``the first
-  instance of \texttt{a} and the second instance of \texttt{b}'')
+  is visualised like this: \texttt{a[1].b[2]}, which reads as ``the first
+  instance of \texttt{a} and the second instance of \texttt{b} within this \texttt{a}'')
 \end{itemize}
 Additionally, a \textit{Value} field can be added by combining the result set
 from an \textit{occurence} index with the equivalent result set from a \textit{value}
@@ -51,13 +51,13 @@ set from a lookup in a hypothetical \textit{valocc} index.
 \hline
 \textit{DocumentID} & \textit{Position} & \textit{Scope} & \textit{Value} \\
 \hline
-1 & 7 & a[1].b[2] & \emph{c} \\ 
+1 & 7 & \textsf{a[1].b[2]} & \emph{c} \\ 
 \hline
-1 & 8 & a[1].b[2] & \emph{c} \\
+1 & 8 & \textsf{a[1].b[2]} & \emph{c} \\
 \hline
-1 & 10 & a[1].b[3] & \emph{c} \\ 
+1 & 10 & \textsf{a[1].b[3]} & \emph{c} \\ 
 \hline
-1 & 11 & a[1].b[3] & \emph{c} \\
+1 & 11 & \textsf{a[1].b[3]} & \emph{c} \\
 \hline
 \end{tabular}
 \caption{Example result set from a lookup in \textit{valocc}}
@@ -75,9 +75,7 @@ behaviours are described here where applicable.
 The syntax of MQL (Mars Query Language) is, as mentioned above, reminiscent of
 Lisp dialects. Consider the example in figure \ref{figure:mql:op_example}. This
 example will lookup the term ``c'' in the scope \texttt{/a/b} in the index
-\textit{valocc}\footnote{The index \textit{valocc} is a hypothetical index
-which is simply thought to be a combined lookup in an \textit{occurence}
-index and a \textit{value} index}.
+\textit{valocc}.
 
 \begin{figure}[!h]
 \centering
@@ -155,9 +153,9 @@ example of usage where the child operators will operate on the index
 
 \subsubsection{Project}
 \label{sect:method:marsOperators:project}
-The \texttt{project()} operator lends its name and semantics from the project operator known from basic relational
-algebra (section \ref{sect:theory:relAlg:projection}), as well as the rename operator (section
-\ref{sect:theory:relAlg:rename}). The \texttt{project()} operator has a more complex syntax described in EBNF
+The \texttt{project()} operator lends its name and semantics from the project (section
+\ref{sect:theory:relAlg:projection}) and the rename operator (section \ref{sect:theory:relAlg:rename}) operator
+known from basic relational algebra. The \texttt{project()} operator has a more complex syntax described in EBNF
 notation in figure \ref{figure:mql:ebnf:project_ebnf}.
 
 \begin{figure}[!h]
@@ -232,7 +230,7 @@ $id$ & $cid$ & $one$ \\ \hline
 \subsubsection{Select}
 The \texttt{select()} operator filters tuples from the child operator based on
 boolean function predicates. Consider the example in figure
-\ref{figure:mql:select_example}, where eq() compares the two parameters and
+\ref{figure:mql:select_example}, where \texttt{eq()} compares the two parameters and
 returns \textit{true} if the parameters are equal. A hypothetical result (based
 on the example for \texttt{project()}) can be seen in figure
 \ref{figure:mql:select_example_result}.
@@ -321,7 +319,7 @@ The \texttt{make()} operator is used to synthesise result sets from the given
 default field names are \textit{field0}, \textit{field1}, \ldots,
 \textit{fieldN}, where \textit{N} is the number of fields. The example in
 figure \ref{figure:mql:make_example1} will produce the output seen in figure
-\ref{figure:mql:make_example1_result}
+\ref{figure:mql:make_example1_result}. Notice how values are specified column-wise.
 
 \begin{figure}[!h]
 \centering
@@ -378,7 +376,7 @@ $A$ & $B$ & $C$ \\ \hline
 
 \subsubsection{Group}
 
-\begin{figure}[h]
+\begin{figure}[!h]
 \begin{Verbatim}
 OPERATOR ::= "group" "(" GROUPINGFIELDS ["," AGGREGATORS ] 
                  ";" OPERATOR ")"
@@ -394,7 +392,7 @@ of the result relation. \texttt{AGGREGATORS} may be used to specify aggregator f
 group. The result of an aggregator will be added as a field for the result tuple corresponding to the group it
 operated on.
 
-\begin{figure}[h]
+\begin{figure}[!h]
 \begin{Verbatim}
 group((cid), max(id), count(one); Query1)
 \end{Verbatim}
@@ -434,11 +432,11 @@ explained.
 Order is an inherent concept of the XQuery data model, to accomodate for this a numbering operator such as
 \texttt{numberate} is needed. The syntax for this operator can be defined in EBNF notation as seen in figure
 \ref{figure:mql:numberate_ebnf}. Given a sort order defined by the fields in \texttt{SORTLIST}, the operator
-numbers consequtive tuples of the relation returned from \texttt{OPERATOR}, recording the rown number in the new
+numbers consequtive tuples of the relation returned from \texttt{OPERATOR}, recording the row number in the new
 field \texttt{FIELD}. Row numbers start from 1 in each partition defined by the fields in \texttt{PARTITIONLIST}.
 If no \texttt{SORTLIST} is defined, the original sort of the input relation is used. The fields specified in
 \texttt{SORTLIST} is not a part of the result relation. The operator is comparable to the \texttt{DENSE\_RANK}
-operator defined by SQL:1999 \cite{sqlbook}.
+operator defined by SQL:1999 \cite{sqlbook}. No particular order is required in the result relation.
 
 \begin{figure}[!h]
 \begin{center}
@@ -457,8 +455,8 @@ OPERATOR      ::= "numberate" "(" FIELD ("," SORTLIST)?
 \begin{figure}[!h]
 \begin{center}
 \begin{Verbatim}
-numberate(Seq, [A,B], [A];
-  make(name:=["A","B"]; [1,1,1,2,2,2], [a,b,c,a,b,c]))
+numberate(Seq, [C], [A];
+  make(name:=["A","B","C"]; [1,1,1,2,2,2], [a,b,c,a,b,c],[6,5,4,6,5,4]))
 \end{Verbatim}
   \caption{Trivial example of \texttt{numberate()} usage}
   \label{figure:mql:numberate_example}
@@ -469,15 +467,15 @@ numberate(Seq, [A,B], [A];
 \centering
 \mbox{
 \subfigure[Input:]{
-\begin{tabular}{| c | c |}
+\begin{tabular}{| c | c | c |}
 \hline
-$A$ & $B$ \\ \hline
-1 & a \\ \hline
-1 & b \\ \hline
-1 & c \\ \hline
-2 & a \\ \hline
-2 & b \\ \hline
-2 & c \\ \hline
+$A$ & $B$ & $C$ \\ \hline
+1 & a & 6 \\ \hline
+1 & b & 5 \\ \hline
+1 & c & 4 \\ \hline
+2 & a & 6 \\ \hline
+2 & b & 5 \\ \hline
+2 & c & 4 \\ \hline
 \end{tabular}
 \label{figure:mql:numberate_example_input}
 }
@@ -486,12 +484,12 @@ $A$ & $B$ \\ \hline
 \begin{tabular}{| c | c | c |}
 \hline
 $Seq$ & $A$ & $B$ \\ \hline
-1 & 1 & a \\ \hline
+1 & 1 & c \\ \hline
 2 & 1 & b \\ \hline
-3 & 1 & c \\ \hline
-1 & 2 & a \\ \hline
+3 & 1 & a \\ \hline
+1 & 2 & c \\ \hline
 2 & 2 & b \\ \hline
-3 & 2 & c \\ \hline
+3 & 2 & a \\ \hline
 \end{tabular}
 \label{figure:mql:numberate_example_output}
 }
@@ -501,10 +499,10 @@ $Seq$ & $A$ & $B$ \\ \hline
 The example in figure \ref{figure:mql:numberate_example} illustrates the
 behaviour of this operator. In the output result set seen in figure
 \ref{figure:mql:numberate_example_output}, a column \texttt{Seq} has been
-added, with a sequence which is restarted for each new value of \texttt{A}.
-Also note that the input result set is sorted on A then B.
+added, with a number sequence which follows a sort order of $C$ and restarted for each new value of $A$.
+Also note the $C$ attribute is not part of the result relation.
 
-\subsubsection{Scope Comparison Functions}
+\subsubsection{Scope comparison functions}
 
 These boolean functions (not operators) accepts two arguments which must be $scope$ fields from index lookups (as
 described in section \ref{sect:method:mql:indexes}). They each correspond to one of the axes of XQuery/XPath.
@@ -554,7 +552,7 @@ assume one function per axis.
 \subsubsection{xqBoolean/boolean truth value coercion}
 
 This function (not operator) accepts one argument and determines its \textit{truth value}. XQuery truth values
-were described in section \ref{sect:theory:xquery:basics}.
+(effective boolean values) were described in section \ref{sect:theory:xquery:basics}.
 
 \begin{figure}[!h]
 \centering
@@ -596,7 +594,7 @@ $truthVal$ \\ \hline
 
 The semantics of this function is captured in the example in figure
 \ref{figure:mql:xqboolean_example}. For the input result set produced by the
-\textit{make()} operator in figure \ref{figure:mql:xqboolean_example_input},
+\texttt{make()} operator in figure \ref{figure:mql:xqboolean_example_input},
 the output result in figure \ref{figure:mql:xqboolean_example_output} is
 produced. The example converts the integer 5 to \textit{true} and the integer 0
 to \textit{false}. 
@@ -604,4 +602,5 @@ to \textit{false}.
 \subsubsection{Union/disjoint union}
 The \texttt{union()} operator accepts multiple operators, and will behave as the standard relational algebra
 operator (section \ref{sect:theory:relAlg:unionAndDiff}), except it does not remove duplicates (as disjoint
-union). The function of the operator is to concatenate the relations returned from its child-operators.
+union). The function of the operator is to concatenate the relations returned from its child-operators. No
+particular ordering of tuples in the result relation is required.
