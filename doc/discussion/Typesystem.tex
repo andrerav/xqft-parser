@@ -1,6 +1,6 @@
-\section{Type System Considerations}
+\section{Type system considerations}
 \label{sect:disc:typeSystem}
-Currently, neither ``Tainted Dependencies'' (TD) nor the prototype
+Currently, neither Tainted Dependencies (TD) nor the prototype
 implementation assumes any form of availability of a type system. However
 according to the formal semantics specification\cite{xquery_semantics} (and
 also noted in \cite{pathfinder_compiling_xquery}), XQuery Core is inherently
@@ -8,14 +8,14 @@ fully statically typed. This suggests that full normalisation of queries to
 XQuery Core would imply the availability of this. Static typing could help
 solve some problems, such as distinguishing numeric predicates. However, XQuery
 Core has semantics for solving this exact problem -- the predicate normalisation
-mapping applies a typeswitch construct which contains the necessary logic to
+mapping applies a \texttt{typeswitch} construct which contains the necessary logic to
 differentiate between numeric predicates and other predicates. And regardless,
 numeric predicates were solved in TD as per rule \ref{rule:trans:TD:predicate}.
 
 Another related challenge is the lack of explicit typing in the MQL language.
 The only concrete specification given by FAST is the fact that if a column is
 typed, then if can only contain fields of that type. MQL has typed columns,
-however it is not possible to specify type. For example, the \textsf{make()}
+however it is not possible to specify type. For example, the \textsf{make}
 operator has no parameters for type specification. This is complicated further
 by the fact that a XQuery sequence is simply just a sequence. The individual
 items themselves can have vastly different types.
@@ -29,21 +29,27 @@ serialised in a common format with which MQL is compatible. That again implies
 that metainformation about fields may be required to indicate the type of the
 contents.
 
-Furthermore, the \texttt{isInScope()} function proposed in section
+Furthermore, the \textsf{is\ldots{()}} functions proposed in section
 \ref{sect:method:marsAddedOperators} on page
-\pageref{sect:method:marsAddedOperators} requires a scope column in the tuple
+\pageref{sect:method:marsAddedOperators} requires a $scope$ field in the tuple
 being tested. Consider this non-sensical example:
 
-\begin{Verbatim}
-for $i in (1,2,3) return $i/a
-\end{Verbatim}
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$i in (1,2,3) return} \\ \quad
+\texttt{\$i/a}
+\end{tabular}
+\end{center}
 
 Somehow, this error must be discovered and prevented. Likewise, the following
 example must be allowed without errors:
 
-\begin{Verbatim}
-for $i in (<a><b>1</b></a>, <a><b>2</b></a>, <a><b>3</b></a>) return $i/b
-\end{Verbatim}
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$i in (<a><b>1</b></a>, <a><b>2</b></a>, <a><b>3</b></a>) return} \\ \quad
+\texttt{\$i/b}
+\end{tabular}
+\end{center}
 
 On a final note, non-heterogeneous sequences are seldom of practical use, and
 can appear irrational. Path expressions always return nodes, string operations
@@ -51,12 +57,15 @@ always return strings, and so on. Non-heterogeneous sequences are, as far as
 known to the authors, only specifiable by an end-user of XQuery, for example by
 attempting to execute a query such as this:
 
-\begin{Verbatim}
-for $i in (1, <a><b>2</b></a>, "3") return $i * 2;
-\end{Verbatim}
+\begin{center}
+\begin{tabular}{l}
+\texttt{for \$i in (1, <a><b>2</b></a>, "3") return} \\ \quad
+\texttt{\$i * 2}
+\end{tabular}
+\end{center}
 
 This particular example appears non-sensical, and will likely not execute. For
-example, the Saxon parser returns this run-time error message when attempting
+example, the Saxon parser\cite{saxproject} returns this run-time error message when attempting
 to execute the above query:
 
 \begin{Verbatim}

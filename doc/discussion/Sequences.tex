@@ -1,4 +1,4 @@
-\section{XQuery Sequences}
+\section{XQuery sequences}
 \label{sect:disc:singelton}
 
 There is no distinction between an item, that is, a node or an atomic value, and a singleton sequence containing
@@ -7,16 +7,16 @@ may contain nodes, atomic values, or any mixture of nodes and atomic values. But
 translator to differentiate singleton sequences from other sequences. 
 
 As we saw in section \ref{sect:trans:TD:simplifications}, by knowing that all subexpressions return singleton
-sequences, the translation of the sequence construction expression may be simplified. If the \texttt{return}
-clause expression is a singleton sequence the translation of iterator ordered FLWOR expressions may also be
-simplified. If the FLWOR only contains only one iterator and no \texttt{where}-clause the renumbering can be
-replaced by a renaming of the $-numb$ field corresponding to the iterator to $index$. Understanding that this
-works can be done by considering the rule for translation of iterator ordering (rule \ref{rule:trans:TD:itOrd}).
-As the \texttt{return}-clause is a singleton, the $index$ fields will have the constant value 1. $\beta$ will
-contain only one $-numb$ attribute, holding information of which iteration the value in $value$ occurs. The
-iteration number will then become the $index$ field of the sequence created by the FLWOR.
+sequences, the translation of the sequence construction expression may be simplified. If the
+\texttt{return}-clause expression is a singleton sequence the translation of iterator ordered FLWOR expressions
+may also be simplified. If the FLWOR only contains only one iterator and no \texttt{where}-clause the renumbering
+can be replaced by a renaming of the $-numb$ field corresponding to the iterator to $index$. Understanding that
+this works can be done by considering the rule for translation of iterator ordering (rule
+\ref{rule:trans:TD:itOrd}). As the \texttt{return}-clause is a singleton, the $index$ fields will have the
+constant value 1. $\beta$ will contain only one $-numb$ attribute, holding information of which iteration the
+value in $value$ occurs. The iteration number will then become the $index$ field of the sequence created by the FLWOR.
 
-Some expressions, such as arithmetic expressions, \texttt{order by} expressions and value comparisons, require
+Some expressions, such as arithmetic expressions, \texttt{order by}-expressions and value comparisons, require
 their subexpressions or operands to be singleton sequences. This means that a query such as \texttt{(1, 2) + 3}
 will raise a type error. By having the knowledge of the cardinality of the sequence returned to such an
 expression, the translator may raise the error, and avoid a faulty query being run on the MQL processor.
@@ -28,21 +28,21 @@ itself) is included. Consider the following query:
 
 \begin{center}
 \begin{tabular}{l}
-\texttt{for \$a in doc("people.xml")//person/} \\
+\texttt{for \$a in doc("people.xml")//person} \\
 \texttt{order by \$a/surname} \\
 \texttt{return \$a}
 \end{tabular}
 \end{center}
 
-As previously stated, the \texttt{order by} expression only accepts singletons. If the document contains a
-\texttt{person} element containing two \texttt{surename} elements the query should fail. The translator does
+As previously stated, the \texttt{order by}-expression only accepts singletons. If the document contains a
+\texttt{person} node containing two \texttt{surename} node the query should fail. The translator does
 however not have the ability to evaluate if a type error should be raised or not. The query stated will, without a
-check for multiple \texttt{surname} elements per \texttt{person}, result in a sequence where the \texttt{person}
-elements containing more than one \texttt{surname} element will occur more than one time. 
+check for multiple \texttt{surname} node per \texttt{person}, result in a sequence where the \texttt{person}
+nodes containing more than one \texttt{surname} node will occur more than one time. 
 
 The problem lies in the fact that the query is not a erroneous MQL query, but a erroneous XQuery query. One
 solution would be to implement a check in MQL, which would inform the MQL processor of any potential error. This
-can be done e.g. by a MQL function \textsf{raiseError()}, which would abort the evaluation of the query and e.g.
+can be done e.g.\ by a MQL function \textsf{raiseError()}, which would abort the evaluation of the query and e.g.\
 throw an exception. All items in the relational representation of sequences in Tainted Dependencies are marked
 with their position within the sequence with the $index$ field. One way to check if an expression $e$ does not
 return a singleton sequence can be the following:
@@ -56,7 +56,7 @@ return a singleton sequence can be the following:
 The check may of course be omitted if the translator is sure, by the means discussed earlier, $e$ will return a
 singleton.
 
-\subsection{Effective Boolean Value}
+\subsection{Effective boolean value}
 \label{sect:disc:effBool}
 Within certain circumstances it is necessary to find the effective boolean value
 of a sequence. The effective boolean value is by W3C defined as follows\cite{w3c00}: 
@@ -91,9 +91,9 @@ sequences. Points 2 and 6 together, however, creates a interesting situation.
 They imply that when finding the effective boolean value of all possible XQuery sequences, all should cause an error, except the sequences where a
 node is the first element, regardless of the other items in the sequence.
 
-This means that a simple check as proposed for evaluating the cardinality of operands for e.g. arithmetic
+This means that a simple check as proposed for evaluating the cardinality of operands for e.g.\ arithmetic
 expressions earlier in this section will not do. A possible solution for the \textbf{B()} function would be to run
-a \textsf{group}-operator on the relation, grouping on the unique iterations, and run a \textsf{count} and some
+a \textsf{group} operator on the relation, grouping on the unique iterations, and run a \textsf{count} and some
 aggregator functions selecting the value and type of the first item of each group. Further, the result will then
 have to be checked similar to the check proposed earlier.
 \begin{center}
@@ -109,13 +109,13 @@ $field$ if predicate $pred$ is \textit{true}. Such a aggregator function may how
 nothing similar implemented in the MQL processor.
 
 An alternative can be to utilise the \textsf{groupby} operator. The semantics of this operator is the same as for
-the \textsf{group}-operator, except that the input relation is unchanged and returned as the output. Further, the
+the \textsf{group} operator, except that the input relation is unchanged and returned as the output. Further, the
 result of the grouping is returned as a separate, named relation (``result set'' in MQL lingo). The
 \textsf{resultset} operator with the name as its parameter will fetch this named result:
 
 \begin{center}
 \begin{tabular}{l}
-\textsf{select(and(eq(index,1), or(eq(type,node), ifthenelse(eq(count,1), true, raiseError())))} \\ \quad 
+\textsf{select(and(eq(index,1), or(eq(type,node), ifthenelse(eq(count,1), true, raiseError())));} \\ \quad 
 \textsf{hhjoin([}$e.\vartheta$\textsf{], [}$e.\vartheta$\textsf{], [l.value, r.count];} \\ \quad\quad
 \textsf{groupby(countrelation, (}$e.\vartheta$\textsf{), count();} \\ \quad\quad\quad
 \textbf{r(}$e$\textbf{)}\textsf{);} \\ \quad\quad
@@ -123,16 +123,16 @@ result of the grouping is returned as a separate, named relation (``result set''
 \end{tabular}
 \end{center}
 
-Both solutions assume a type system where a field $type$ holds the type of the
-item represented in the tuple. The last proposal of a implementation of the \textbf{B()} function only uses operators and functions already
+Both solutions assume a type system where a field $type$ holds the type of the item represented in the tuple. The
+last proposal of a implementation of the \textbf{B()} function only uses operators and functions already
 implemented in the MQL processor. A disadvantage with this solution, however, is that it will probably be more
 resource-demanding as it consists of both a grouping and a join.
 
 Point \#1 in the definition of evaluation of effective boolean value is also a
 bit problematic. This is because Tainting Dependencies, as it is presented in chapter \ref{sect:translation},
-does not handle empty expressions explicitly. And in most cases this is sufficient, as non-empty sequences containing empty items should be
-normalised. In the following query it is clear that the result must be all the \texttt{maybe} elements of the
-document which is a child of a \texttt{elem} element:
+does not handle empty sequences explicitly. And in most cases this is sufficient, as non-empty sequences containing
+empty items should be normalised. In the following query it is clear that the result must be all the
+\texttt{maybe} nodes of the document which is a child of a \texttt{elem} node:
 
 \begin{center}
 \begin{tabular}{l}
@@ -140,21 +140,22 @@ document which is a child of a \texttt{elem} element:
 \end{tabular}
 \end{center}
 
-The \texttt{elem} elements which does \emph{not} contain a \texttt{maybe} element (making \texttt{../elem/maybe}
+The \texttt{elem} nodes which does \emph{not} contain a \texttt{maybe} node (making \texttt{../elem/maybe}
 an empty sequence) are irrelevant to the evaluation of this query. The only time the need for knowledge of a
 possible empty sequence arises is when evaluating the effective boolean value. Consider the following XQuery
 expression:
 
 \begin{center}
 \begin{tabular}{l}
-\texttt{if(\$a/maybe)} \\ \quad
-\texttt{then "exists"} \\ \quad
-\texttt{else "empty"}
+\texttt{if(\$a/maybe) then} \\ \quad
+\texttt{"exists"} \\ 
+\texttt{else} \\ \quad
+\texttt{"empty"}
 \end{tabular}
 \end{center}
 
-Further, let \texttt{\$a} be an iterator variable consecutively bound to one and one \texttt{elem} element. If
-some of the \texttt{elem} elements does not contain a \texttt{maybe} element, some items of the resulting sequence
+Further, let \texttt{\$a} be an iterator variable consecutively bound to one and one \texttt{elem} node. If
+some of the \texttt{elem} nodes does not contain a \texttt{maybe} node, some items of the resulting sequence
 should be the string literal \texttt{"empty"}.
 
 A possible solution to this would be to differantiate between the times the empty sequences are needed, and the
@@ -166,4 +167,4 @@ default context will only be that all joins on common dependencies will have to 
 addition joins such as in the axis+name test translation (rule \ref{rule:trans:TD:pathStep}) where only the left
 operand may have dependencies, will have to be turned into a left-outer join. Always employing outer joins will
 ensure that no $-numb$ field corresponding to one unique iteration will be removed from the relation. Using this
-solution \textsf{xqBoolean()} must return $false$ if it is run with \textsf{NULL} as input.
+solution \textsf{xqBoolean()} must return $false$ if it is run with \textit{NULL} as input.
