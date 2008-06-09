@@ -5,14 +5,12 @@ detail in the following sections of this chapter. In this section, the overall
 system, flow of data, and external API is described.
 
 It is important to note that, as mentioned, this implementation is a ``proof of
-concept'' and only implements a subset of the ``Tainting Dependencies''
-method developed and explained in section \ref{chapter:translation}. 
-
-\newpage
+concept'' and only implements a subset of Tainting Dependencies described in chapter
+\ref{chapter:translation}.
 
 \begin{figure}[!htp]
 \begin{center}
-\includegraphics[scale=0.45]{diagrams/complete_uml}
+\includegraphics[scale=0.40]{diagrams/complete_uml}
   \caption{Simplified UML for complete implementation}
   \label{fig:impl:sys:uml_complete}
 \end{center}
@@ -72,17 +70,17 @@ to parse options/switches on the command line.
 
 The command line usage is as follows:
 
-\begin{Verbatim}
+\begin{verbatim}
 java no.ntnu.xqft.XQFT [-p] [-t] [-o <path>] file1 file2 ... fileN
-\end{Verbatim}
+\end{verbatim}
 
 It is also possible to specify queries in the form of strings enclosed in
 double quotes, or any mix of strings and filenames. The switches are:
 \begin{itemize}
-  \item -t : output a DOT tree (requires graphviz)
-  \item -p : output a PDF syntax tree (requires graphviz)
-  \item -o <path> : stores generated PDF/DOT files in the given folder, 
-  otherwise in the current folder (simply ./)
+  \item \texttt{-t} : output a DOT tree (requires graphviz)
+  \item \texttt{-p} : output a PDF syntax tree (requires graphviz)
+  \item \texttt{-o} \texttt{<path>} : stores generated PDF/DOT files in the given folder, 
+  otherwise in the current folder (simply \texttt{./})
 \end{itemize}
 
 See appendix \ref{appendix:installation} for more information about installation and

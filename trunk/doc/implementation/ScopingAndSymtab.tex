@@ -1,9 +1,9 @@
-\section{Scoping and symbol tables}
-Crucial to the implementation of the \textit{tainting dependencies} methodology
-described in section \ref{sect:trans:taintingDependencies} is the ability to
+\section{Scoping and Symbol Tables}
+Crucial to the implementation of the ``Tainting Dependencies'' methodology
+described in chapter \ref{chapter:translation} is the ability to
 maintain a contextual environment with scoping and symbol tables. This section
-details the implementation of this, and how it is used to achieve the
-requirements of \textit{tainting dependencies}.
+details the implementation of this, and how it is used to meet the
+requirements of Tainting Dependencies.
 
 \subsection{Concepts}
 The scoping system in the implementation is based on building a scope tree. The
@@ -19,13 +19,15 @@ symbol table for the current scope.
 
 \begin{figure}[!htp]
 \begin{center}
-\begin{Verbatim}
+\begin{minipage}[h]{9cm}
+\begin{verbatim}
 for $i in (1,2,3) return 
   for $a in (4,5,for $b in (6,7,8) return $b) 
     return ($i,$a)
-\end{Verbatim}
+\end{verbatim}
   \caption{Scope tree example code}
   \label{fig:impl:scope_tree_ex_code}
+  \end{minipage}
 \end{center}
 \end{figure}
 
@@ -59,14 +61,12 @@ user of the scope system is shown in figure \ref{fig:impl:scope_uml}.
 \end{center}
 \end{figure}
 
-A new scope is \textit{pushed} whenever a for-clause is encountered while
-parsing the abstract syntax tree, and the current scope is \textit{popped} while
-evaluating a return clause -- both of which occur within a FLWOR expression.
+A new scope is \textit{pushed} whenever a \texttt{for}-clause is encountered while
+parsing the abstract syntax tree, and the current scope is \textit{popped} after
+evaluating a \texttt{return}-clause -- both of which occur within a FLWOR expression.
 
 The scoping system also tracks iteration variables. That is, for any scope,
 there is \textit{one and only one} iteration variable, except in the top scope
 where there is no iteration variable. The concept of an iteration variable is
-explained in definition \ref{def:iterVarDep}. Tracking these
-variables are necessary to implement the \textit{tainting dependencies}
-methodology (explained later in section \ref{sect:impl:tainting_deps} on page
-\pageref{sect:impl:tainting_deps}).
+explained in definition \ref{def:iterVarDep}. Tracking of these
+variables are reviewed in section \ref{sect:impl:tainting_deps}.
