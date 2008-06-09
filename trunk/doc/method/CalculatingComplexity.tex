@@ -1,12 +1,12 @@
 \section{Calculating complexity in relational algebra}
 \label{sect:method:complexity}
-A method for calculating complexity of relational algebra trees was suggested
+A method for indicating complexity of relational algebra trees was suggested
 by \O ystein Torbj\o rnsen at FAST. This method is based on the assumption
 that the algebra will be executed on an implementation written in Java or a
 similar object oriented language. Not withstanding the
 benefits of compile-level optimisations and other ways to increase performance
-such as caching, this method of calculation defines complexity as creation of
-new objects in run-time.
+such as caching, this method of complexity indication defines complexity as
+creation of new objects in run-time, and the cost of sort and join operations.
 
 This definition of complexity does \textit{not} account
 for disk I/O, nor is it a direct measurement of performance. However, given
@@ -28,7 +28,7 @@ contains a value for some given attribute in the relation
 \label{definition:relalg_tuple}
 \end{myDefinition}
 
-\begin{figure}[htp]
+\begin{figure}[!htp]
 \begin{center}
   \includegraphics[width=0.65\textwidth]{diagrams/tuple_post}
   \caption[Tuple/Field structure]{The structure of a \textit{tuple} with
@@ -53,6 +53,7 @@ for $n$ tuples and $m$ fields generates $n$ new tuples and $n \times m$ new
 fields.
 
 \subsubsection{Assumptions}
+\label{sect:method:complexity:assumptions}
 Pathfinder generates relational algebra which contains some operators for which
 the behaviour is unknown. Some assumptions have made about these operators:
 \begin{itemize}
