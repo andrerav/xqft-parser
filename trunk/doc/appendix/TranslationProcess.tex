@@ -1,7 +1,7 @@
 \chapter{Translation process Using TD}
 \label{appendix:transl}
 This appendix contains step-by-step translations of some XQuery expressions
-using the ``Tainted Dependencies'' method.
+using the ``Tainting Dependencies'' method.
 
 \section{An extensive FLWOR expression}
 \label{appendix:transl:ext_flwor}
@@ -15,7 +15,7 @@ syntax tree and visiting the for- and let-clauses. Recall from section
 relational algebra. This function is then defined through a set of rules
 described throughout section \ref{sect:translation}.
 
-The translation process starts with the for-clause which we translate using
+The translation process starts with the \texttt{for}-clause which we translate using
 rule \ref{rule:trans:TD:forbind}. However, to produce \textbf{r}($e$), we must
 translate \texttt{(1,2,3)} using rules \ref{rule:trans:TD:seqConstr} and
 \ref{rule:trans:TD:literal}. 
@@ -47,7 +47,7 @@ numberate(index,[sprIdx,index],[];
     make(name:=[index, value], [3], [3])))
 \end{Verbatim}
 
-We can now continue translating the for-clause, as the above translation
+We can now continue translating the \texttt{for}-clause, as the above translation
 equates to \textbf{r}($e$). By rule \ref{rule:trans:TD:forbind}, we obtain the
 following translation which is to be entered into the symbol table for this
 scope (for the symbol $\chi$ = a):
@@ -256,7 +256,7 @@ project(value=l.value, index;
 \label{appendix:transl:ifthenelse}
 This translation is initiated precisely as the previous ``Extensive FLWOR''
 example, so we will not reiterate the translation of the for-clause here.
-However, note that the following expression is obtain and entered into the
+However, note that the following expression is obtained and entered into the
 symbol table to represent \texttt{\$a}:
 
 \begin{Verbatim}

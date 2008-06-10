@@ -16,8 +16,8 @@ as an XML document. This includes text documents, relational databases and XML-c
 \label{sect:theory:xquery:basics}
 XQuery is a functional language with a comparatively small syntax. It lacks
 some features known from many functional languages, such as support for higher
-order function declarations. However, it has some of the most important benefits, such as a lack of side-effects.
-XQuery is a \textit{declarative} language (as opposed to \textit{imperative} languages), and
+order function declarati1ons. However, it has some of the most important
+benefits, such as a lack of side-effects. XQuery is a \textit{declarative} language (as opposed to \textit{imperative} languages), and
 is strongly typed. Static typing is optional, and may vary between various
 implementations.
 
@@ -58,7 +58,7 @@ as an predicate or an \texttt{if..then..else}), this means that anything that is
 \textit{true}.
 
 
-\subsection{Path Expressions}
+\subsection{Path expressions}
 \label{sect:theory:xquery:PathExpressions}
 XPath (XML Path Language) is a small language for traversing and selecting
 nodes (both element nodes and text nodes) from XML data. XPath is a subset of
@@ -145,8 +145,8 @@ However, there is one important exception -- if the return value for the
 predicate expression evaluates to a numerical value, then the predicate
 becomes a \textbf{numeric predicate}, and its value is used to identify the
 \textit{n}th node in the step expression. For example, the following path
-expression returns the first \verb!b!-node: \verb!/a/b[1]!. As it is the first \verb!b!-node within the only
-\verb!a!-node. \texttt{/a/b/c[1]} will select both \verb!c!-nodes of the document as they both are the first
+expression returns the first \verb!b!-node: \verb!/a/b[1]!, as it is the first
+\verb!b!-node within the only \verb!a!-node. \texttt{/a/b/c[1]} will select both \verb!c!-nodes of the document as they both are the first
 \texttt{c}-node within their respected \texttt{b}-nodes.
 
 \subsection{FLWOR}
@@ -173,13 +173,13 @@ The FLWOR construct is thought to be roughly equivalent to a
 \texttt{SELECT}-statement in SQL. For example, consider the following SQL
 statement: 
 \begin{center}
-\verb!SELECT v.title FROM video v WHERE v.year = 1999!
+\verb!SELECT v.title FROM video v WHERE v.year = 1959!
 \end{center}
 And then compare it to the following XQuery counterpart:
 \begin{center}
 \begin{tabular}{l}
 \texttt{for \$v in doc("videos.xml")//video} \\
-\texttt{where \$v/year = 1999}\\
+\texttt{where \$v/year = 1959}\\
 \texttt{return \$v/title}\\
 \end{tabular}
 \end{center}
@@ -220,7 +220,7 @@ example:
 \end{tabular}
 \end{center}
 
-When evaluating the for-clauses in this nested FLWOR expression, the
+When evaluating the \texttt{for}-clauses in this nested FLWOR expression, the
 \textit{iterator sequence} is evaluated in the parent scope and not the
 new scope for the current FLWOR expression. We can illustrate this point by
 separating the scopes graphically:
@@ -251,7 +251,8 @@ FLWOR expression:
 
 \begin{center}
 \begin{tabular}{l}
-\texttt{for \$a in (1,2), \$b in (3,4) let \$c := 5, \$d := 6} \\ \quad
+\texttt{for \$a in (1,2), \$b in (3,4)} \\
+  \texttt{let \$c := 5, \$d := 6} \\ \quad 
   \texttt{return \$a + \$b + \$c + \$d} \\
 \end{tabular}
 \end{center}
@@ -275,7 +276,7 @@ benefitial to rewrite complex FLWOR expressions into a simpler form? This
 question is addressed in section \ref{sect:method:ast_rewrite} on page
 \pageref{sect:method:ast_rewrite}.
 
-\subsection{Full Text Extensions}
+\subsection{Full text extensions}
 \label{sect:theory:xquery:fulltext_ext}
 XQuery is by nature a structural query language -- that is, queries are based on
 document/data structure and not on content. The full-text extensions to XQuery
@@ -435,7 +436,7 @@ nested FLWOR expressions, and that the \texttt{where}-clause is  rewritten into 
 
 \subsubsection{Rewriting composite relative path expressions}
 A composite relative path expression (for example, \verb!a/b!), can be
-rewritten into a \texttt{for}-loop using the mapping rule in
+rewritten into a \texttt{for}-loop using the mapping rule in figure
 \ref{figure:xquery:relpath_mapping_rule}.
 
 \begin{figure}[!h]
