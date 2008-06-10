@@ -19,8 +19,8 @@ We propose the following research related to performance benchmarking:
   processor can not or will not be developed in the foreseeable future, then
   the prototype and the rules of Tainting Dependencies (TD) may be modified
   and interfaced with MonetDB, and a benchmark could be performed on this
-  combined system\footnote{Note that this may prove challenging in the case of
-  the MQL \texttt{scope()} operator for which MonetDB does not have a known counterpart}
+  combined system\footnote{However, the translation of path expressions may
+  prove difficult since TD does not support staircase join}
   \item \textbf{Further research on optimisation and simplification of the TD
   methodology}. This thesis suggests some simplifications (section
   \ref{sect:trans:TD:simplifications}), however we suspect there are still
@@ -41,4 +41,7 @@ Furthermore, we propose the following improvements:
   functions as well as built-in XQuery functions (within the \texttt{fn} namespace)
   \item Implementation of the full XQuery type system into TD, which may also
   possibly be exploited for optimisations
+  \item Translation of \texttt{if..then..else} expressions can be optimised
+  further by assuming execution of DAGs and not trees, as described in section
+  \ref{sect:disc:optimisations}
 \end{itemize}
