@@ -84,8 +84,18 @@ however, links to large-scale versions of these diagrams are noted in appendix
 \newpage
 \subsection{Complexity estimation and comparison}
 Complexity estimation is performed as detailed in section
-\ref{sect:method:complexity}. The complexity
-comparison matrix is shown in table \ref{table:result:complexity_matrix}.
+\ref{sect:method:complexity}. The comparison matrix shown in table
+\ref{table:result:complexity_matrix} details the differences in
+\textit{complexity}. This result is also charted in figures
+\ref{fig:results:comparison:chart1} and \ref{fig:results:comparison:chart2}.
+Additionally, the \textit{tuple I/O complexity} differences for \textsf{join}
+and \textsf{sort} operators are shown in figures
+\ref{table:result:complexity_matrix_tio_1} and
+\ref{table:result:complexity_matrix_tio_1}.
+
+Refer to section \ref{sect:method:complexity} on page
+\pageref{sect:method:complexity} for a detailed account of these complexity
+estimations.
 
 \begin{table}[!htp]
  \begin{center} 
@@ -107,9 +117,6 @@ comparison matrix is shown in table \ref{table:result:complexity_matrix}.
 \label{table:result:complexity_matrix}
  \end{center}
 \end{table}
-
-
-
 
 \begin{figure}[!htp]
 \begin{center}
@@ -161,10 +168,9 @@ comparison matrix is shown in table \ref{table:result:complexity_matrix}.
    \hline
  \end{tabular}
 \caption{Tuple input/output in join operators}
-\label{table:result:complexity_matrix}
+\label{table:result:complexity_matrix_tio_1}
  \end{center}
 \end{table}
-
 
 % Sorts
 \begin{table}[!htp]
@@ -199,7 +205,7 @@ comparison matrix is shown in table \ref{table:result:complexity_matrix}.
    Conditional & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
    \hline
  \end{tabular}
-\caption{Tuple input/output in join operators}
-\label{table:result:complexity_matrix}
+\caption{Tuple input/output in sort operators}
+\label{table:result:complexity_matrix_tio_2}
  \end{center}
 \end{table}
