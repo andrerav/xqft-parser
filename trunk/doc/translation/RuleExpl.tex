@@ -42,8 +42,8 @@ Often MQL operator trees are depicted like this:
 \end{tabular}
 \end{center}
 
-This is to be interpreted as \textsf{operator2} is the left child of \textsf{operator1} and \textsf{operator3} is
-the right child. MARS does not allow attribute names to contain punctuation marks or allow two attributes with the
+This is to be interpreted as ``\textsf{operator2} is the left child of \textsf{operator1} and \textsf{operator3} is
+the right child''. MARS does not allow attribute names to contain punctuation marks or allow two attributes with the
 same name within one relation. An operator combining two relations will therefore have renaming functionality. A
 typical projection list of such an operator combining two relations which both contain the attribute $attr$ would
 look something like: \textsf{\ldots rattr=right.attr, lattr=left.attr\ldots}. To make the inference rules

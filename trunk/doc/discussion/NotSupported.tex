@@ -8,7 +8,7 @@ features are not supported because they involve types, which is discussed in sec
  
 
 \subsection{Full-text extensions}
-XQuery Full Text\cite{w3c01} is an superset of XQuery. A quick overview
+XQuery Full Text\cite{w3c01} is a superset of XQuery. A quick overview
 of the extensions made to XQuery can be found in section \ref{sect:theory:xquery:fulltext_ext}. Tainting Dependencies does however at this time
 support any of these features. One of the most important expressions of the
 extension is the \texttt{ftcontains} expression. An excerpt of the EBNF specification of this expression and some of
@@ -156,8 +156,8 @@ and \textsf{isFollowing} functions (section \ref{sect:method:marsAddedOperators}
 \end{array}
 \end{equation*}
 
-Where when the comparison operator \texttt{COMP} is \texttt{<<} the MQL function \textsf{isFUNK} must be
-\textsf{isPreceding}, and when the operator is \texttt{>>} the function must be \textsf{isFollowing}.
+When the comparison operator \texttt{COMP} is \texttt{<<} the MQL function
+\textsf{isFUNK} must be \textsf{isPreceding}, and when the operator is \texttt{>>} the function must be \textsf{isFollowing}.
 
 \subsubsection{Combining node sequences}
 XQuery provides the following operators for combining sequences of nodes:
@@ -213,8 +213,8 @@ something like:
 The translation of the \texttt{except} operator may have been solved with the help of a anti-join (section
 \ref{sect:theory:relAlg:antiJoin} on page
 \pageref{sect:theory:relAlg:antiJoin}). But as MQL does not implement a
-anti-join operator, the same effect may be achieved by using a lef-outer-join followed by a selection. A
-\textsf{distinct} operator is needed here aswell, as the left operand may contain duplicates:
+anti-join operator, the same effect may be achieved by using a left-outer-join
+followed by a selection. A \textsf{distinct} operator is needed here aswell, as the left operand may contain duplicates:
 
 \begin{equation*}
 \frac{}{e_1 \mbox{\texttt{ intersect }} e_2} \leadsto

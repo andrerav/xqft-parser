@@ -3,7 +3,8 @@
 The act of parsing is the process of analyzing a series of tokens and construct
 a grammatical structure (syntax tree) based on a formally specified grammar. In
 figure \ref{figure:parser:overview}, the parser component of a generic
-compiler/interpreter is shown. 
+compiler/interpreter is shown in the context of a generic compiler
+architecture.
 
 \begin{figure}[h]
   \centering
@@ -37,8 +38,8 @@ be a substantial amount of work. As a natural consequence, a large number of
 parser generators exist. Most of these parser generators have a very
 similar set of functionality. From a formal grammar, often in a notation
 similar to BNF, the parser generator will output the source code for a
-complete parser for the given grammar. Ideally, the maintainability of this
-generated parser could be reduced to simply changing the grammar specification,
+complete parser for the given grammar -- this process is shown in figure
+\ref{figure:parser:generator}. Ideally, the maintainability of this generated parser could be reduced to simply changing the grammar specification,
 without actually modifying the generated source code.
 
 \begin{figure}[h]
@@ -143,7 +144,7 @@ accommodate new specifications.
 \begin{figure}[h]
   \centering
     \includegraphics[scale=0.40]{diagrams/visitor_pattern} 
-  \caption{Visitor pattern UML schema}
+  \caption{Visitor pattern}
   \label{figure:parser:visitor_pattern}
 \end{figure}
 
@@ -186,7 +187,7 @@ visitors, thus avoiding a single large and complex visitor.
 \begin{figure}[h]
   \centering
     \includegraphics[scale=0.40]{diagrams/context_visitor_pattern} 
-  \caption{Context-sensititive visitor pattern UML schema}
+  \caption{Context-sensititive visitor pattern}
   \label{figure:parser:context_visitor_pattern}
 \end{figure}
 

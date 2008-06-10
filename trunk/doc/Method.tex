@@ -9,7 +9,7 @@ implementation-specific details are left to chapter
 Further the method for rewriting the syntax tree is explained in section
 \ref{sect:method:ast_rewrite}. Finally we present the target algebra language
 (MQL), and the chapter ends with a description of a method for calculating
-algebra complexity which will used in chapter \ref{chapter:results} for
+algebra complexity which will be used in chapter \ref{chapter:results} for
 comparisons.
 
 \section{Development of a novel translation method}
@@ -21,8 +21,9 @@ find a way to translate queries in this language to MQL, the MARS query language
 methodology to produce MQL trees instead. But this modified method would most probably not utilise the full
 expressiveness and power of MQL. This lead to the development of a MARS specific method of translation, ``Tainting
 Dependencies'', which will be reviewed in full in chapter \ref{chapter:translation}. Another incentive for not
-modifying Loop Lifting is that it produces large quite complex operator trees, which lead to unnecessarily
-denormalised intermediate results. This will be further discussed in section \ref{sect:disc:res}.
+modifying Loop Lifting is that it produces large and quite complex operator
+trees, which lead to unnecessarily denormalised intermediate results. This
+will be further discussed in section \ref{sect:disc:res}.
 
 
 \input{method/TreeParsing.tex}
