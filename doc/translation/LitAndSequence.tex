@@ -47,8 +47,8 @@ Where $\vartheta=e_{1}.\vartheta \cup \ldots \cup e_{n}.\vartheta$. Notice how a
 the iterator dependencies of all the others.
 
 The basis of a sequence construction is the \textsf{union} operator -- as with MarkXRemove. But because we in
-Tainted Dependencies have introduced the explicit ordering of items with the $index$ attribute, additional
-operators have been added. Each item in the sequences returned from the subexpressions is equipped with a
+Tainting Dependencies have introduced the explicit ordering of items with the
+$index$ attribute, additional operators have been added. Each item in the sequences returned from the subexpressions is equipped with a
 temporary field $sprIdx$ (superindex) holding the relative position of each subexpression. Based on the
 positioning defined by $sprIdx$ and $index$ the \textsf{numberate} operator can renumberate the resulting
 sequence. The numbering must partition on the fields corresponding to the dependencies in $\vartheta$, to separate

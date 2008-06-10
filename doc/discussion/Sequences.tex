@@ -43,9 +43,9 @@ nodes containing more than one \texttt{surname} node will occur more than one ti
 The problem lies in the fact that the query is not a erroneous MQL query, but a erroneous XQuery query. One
 solution would be to implement a check in MQL, which would inform the MQL processor of any potential error. This
 can be done e.g.\ by a MQL function \textsf{raiseError()}, which would abort the evaluation of the query and e.g.\
-throw an exception. All items in the relational representation of sequences in Tainted Dependencies are marked
-with their position within the sequence with the $index$ field. One way to check if an expression $e$ does not
-return a singleton sequence can be the following:
+throw an exception. All items in the relational representation of sequences in
+Tainting Dependencies are marked with their position within the sequence with
+the $index$ field. One way to check if an expression $e$ does not return a singleton sequence can be the following:
 \begin{center}
 \begin{tabular}{l}
 \textsf{select(ifthenelse(eq(index, 1), true, raiseError());} \\ \quad

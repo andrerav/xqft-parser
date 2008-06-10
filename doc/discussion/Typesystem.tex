@@ -1,6 +1,6 @@
 \section{Type system considerations}
 \label{sect:disc:typeSystem}
-Currently, neither Tainted Dependencies (TD) nor the prototype
+Currently, neither Tainting Dependencies (TD) nor the prototype
 implementation assumes any form of availability of a type system. However
 according to the formal semantics specification\cite{xquery_semantics} (and
 also noted in \cite{pathfinder_compiling_xquery}), XQuery Core is inherently
@@ -13,7 +13,7 @@ differentiate between numeric predicates and other predicates. And regardless,
 numeric predicates were solved in TD as per rule \ref{rule:trans:TD:predicate}.
 
 Another related challenge is the lack of explicit typing in the MQL language.
-The only concrete specification given by FAST is the fact that if a column is
+The only concrete specification given by Fast Search \& Transfer is the fact that if a column is
 typed, then if can only contain fields of that type. MQL has typed columns,
 however it is not possible to specify type. For example, the \textsf{make}
 operator has no parameters for type specification. This is complicated further
