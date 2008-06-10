@@ -6,24 +6,24 @@ lifting'', and found points of improvement as well as untapped potential in the
 fact that the target language MQL is a more expressive form of algebra
 which may allow more creative and efficient translations.
 
-We then proceeded to develop a novel method of translation dubbed ``Tainting
-Dependencies'' (TD) which seeks to avoid unecessary denormalisation of
+\textbf{We have developed a novel method of translation dubbed ``Tainting
+Dependencies''} (TD) which seeks to avoid unecessary denormalisation of
 intermediate results, and which is also designed specifically for translation
 to MQL. Our method currently supports a substantially large subset of the XQuery
 language -- however lacking functionality has been accounted for, and suggestions for
 solutions have been proposed.
 
-Further, we developed a prototype as a proof of concept, which is capable of
-translating XQuery queries containing basic constructs such as FLWOR
+Furthermore, \textbf{we developed a prototype as a proof of concept}, which is
+capable of translating XQuery queries containing basic constructs such as FLWOR
 expressions, sequence constructions, and conditional expressions
 (\texttt{if..then..else}).
 
 Finally, based on a method of measurement for complexity defined by \O ystein
-Torbj\o rnsen at FAST, we staged a comparison of our prototype TD implementation
-and an implementation of loop lifting dubbed Pathfinder developed by Teubner
-et. al at the University of Konstanz. Not withstanding the weaknesses of this
-method of comparison, we then empirically suggested that our method may
-produce less complex and more efficient relational algebra.
+Torbj\o rnsen at FAST, \textbf{we staged a comparison of our prototype TD
+implementation and an implementation of loop lifting dubbed Pathfinder}
+developed by Teubner et. al at the University of Konstanz. Not withstanding the
+weaknesses of this method of comparison, we then empirically suggested that
+our method may produce less complex and more efficient relational algebra.
 
 Further research may be required, however the outcome of this project is a
 fairly complete, novel and well-documented method for translation of XQuery to
