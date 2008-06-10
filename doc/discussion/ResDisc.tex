@@ -44,12 +44,19 @@ the prototype implementation as well as Pathfinder. Then the described
 method of calculating complexity was applied to these trees, and the result was
 used to compare the prototype and Pathfinder.
 
+We found that in terms of counting tuple and field creations, TD seems to excel
+in large and complex queries. In the case of more trivial queries, loop lifting
+and TD seem to perform similarly. Furthermore, in the case of tuple
+input/output in join and sort operators, we saw that for the ``complex'' query
+example, TD did not produce any joins at all, while loop lifting produced 3
+joins for the same expression.
+
 Though an interesting comparison, this is a sparse source of data -- it
 is difficult to be conclusive based this data alone. However, with the
 exception of the most trivial query, it seems that ``Tanting Dependencies'' (TD)
 generates substantially less complex algebra than Pathfinder. As one
-may consider TD more specialised method than the general loop lifting technique, this should
-emerge as a natural consequence.
+may consider TD more specialised method than the general loop lifting
+technique, this should emerge as a natural consequence.
 
 However, there are some sources of uncertainty for this comparison. It is not
 known exactly to which degree simplifications and optimalisations have been
