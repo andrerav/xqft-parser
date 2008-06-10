@@ -72,9 +72,15 @@ It is also known that Pathfinder does \emph{not}:
 
 Additionally, in section \ref{sect:method:complexity:assumptions} on page
 \pageref{sect:method:complexity:assumptions} it was assumed that
-the \texttt{Diff} and \texttt{Distinct} operators both creates 0 tuples and 0
-fields, only relaying the input to output. These are known to be costly
-operators (todo:cite).
+the \texttt{Diff} and \texttt{Distinct} operators utilised by Pathfinder both
+creates 0 tuples and 0 fields, only relaying the input to output. It is
+natural to assume that both of these are in fact costly operators in some
+aspects. However, given that \texttt{Diff} computes a difference between
+result sets, this does not imply that it creates new tuples and/or fields.
+Furthermore, the \texttt{Distinct} operator only removes duplicates, and as
+such it should be safe to assume that it does not generate new tuples and/or
+fields. This implies that these assumptions may favour Pathfinder, but likely
+not in the context of the method for calculation of complexity used here.
 
 Furthermore, it is natural to assume that Pathfinder generates algebra
 which is tailored for execution on the MonetDB database system (as indicated
