@@ -2,32 +2,33 @@
 \chapter{Method}
 \label{chapter:method}
 This chapter describes the most important decisions and constraints for this
-project. Essentially, this chapter describes \emph{what will be done}, however
-implementation-specific details are left to chapter
-\ref{chapter:implementation}. This chapter is initiated by section
-\ref{sect:method:tree_parsing}, where a method for tree parsing is chosen.
-Further the method for rewriting the syntax tree is explained in section
-\ref{sect:method:ast_rewrite}. Finally we present the target algebra language
-(MQL), and the chapter ends with a description of a method for calculating
-algebra complexity which will be used in chapter \ref{chapter:results} for
-comparisons.
+project. Essentially, this chapter describes \emph{what will be done} along
+with rationales for decisions that have been made. Implementation-specific
+details are left to chapter \ref{chapter:implementation}. This chapter is
+initiated by section \ref{sect:method:tree_parsing}, where a method for tree
+parsing is chosen. Further the method for rewriting the syntax tree is
+explained in section \ref{sect:method:ast_rewrite}. Finally we present the
+target algebra language (MQL), and the chapter ends with a description of a
+method for calculating algebra complexity which will be used in chapter
+\ref{chapter:results} for comparisons.
 
 \section{Development of a novel translation method}
 \textbf{\LARGE TODO:} les over /glimrendeifiser plz.
 
-In section \ref{sect:theory:loop_lifting}, ``Loop Lifting'', the Pathfinder
-project's method for translating XQuery queries to relational algebra is
-presented. As the goal of this thesis is to find a way to translate queries in
-this language to MQL, the MARS Query Language, one possibility would be to
-modify the Loop Lifting methodology to produce MQL trees instead of algebra for
-MonetDB. However, this modified method would most likely not utilise the full
-expressiveness and power of MQL. This lead to the development of a MARS
-specific method of translation, ``Tainting Dependencies'', which will be
-reviewed in full in chapter \ref{chapter:translation}. Another incentive for
-not modifying Loop Lifting is that it produces large and quite complex
-operator trees, which lead to unnecessarily denormalised intermediate results.
-This is discussed further in section \ref{sect:disc:llvsTD} on page
-\pageref{sect:disc:llvsTD}.
+In section \ref{sect:theory:loop_lifting}, ``Loop Lifting'' was presented. This
+is a translation method used by Pathfinder (section
+\ref{sect:theory:existing_implementations:comparison}) to translate XQuery to
+relational algebra for execution on MonetDB. As the goal of this thesis is to
+find a way to translate queries in this language to MQL, the MARS Query
+Language, one possibility would be to modify the Loop Lifting methodology to
+produce MQL trees instead of algebra for MonetDB. However, this modified
+method would most likely not utilise the full expressiveness and power of MQL.
+This lead to the development of a MARS specific method of translation,
+``Tainting Dependencies'', which will be reviewed in full in chapter
+\ref{chapter:translation}. Another incentive for not modifying Loop Lifting is
+that it produces large and quite complex operator trees, which lead to
+unnecessarily denormalised intermediate results. This is discussed further in
+section \ref{sect:disc:llvsTD} on page \pageref{sect:disc:llvsTD}.
 
 \input{method/TreeParsing.tex}
 \input{method/TreeRewriting.tex}
