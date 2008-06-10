@@ -191,26 +191,23 @@ within the AST.
 The translation process for conditional expressions is explained in section
 \ref{sect:trans:TD:ifThenElse}. In particular, rule
 \ref{rule:trans:TD:conditional} describes this translation. 
+% \begin{Verbatim}
+% // if (e1) then e2 else e3
+% XQFTTree e1 = (XQFTTree)tree.getChild(0); 
+% XQFTTree e2 = (XQFTTree)tree.getChild(1);
+% XQFTTree e3 = (XQFTTree)tree.getChild(2);
+%         
+% // Visit the expressions
+% TraverseReturn r_e1 = acceptThis(e1);
+% TraverseReturn r_e2 = acceptThis(e2);
+% TraverseReturn r_e3 = acceptThis(e3);
+% \end{Verbatim}
 
-First the child expressions are visited: \marginpar{\textbf{\LARGE TODO:} \scriptsize \\ unodvendig?\\ staar
-forklart\\ rett under AR: Hm, det er selvsagt for oss, men hva med leseren?}
-
-\begin{Verbatim}
-// if (e1) then e2 else e3
-XQFTTree e1 = (XQFTTree)tree.getChild(0); 
-XQFTTree e2 = (XQFTTree)tree.getChild(1);
-XQFTTree e3 = (XQFTTree)tree.getChild(2);
-        
-// Visit the expressions
-TraverseReturn r_e1 = acceptThis(e1);
-TraverseReturn r_e2 = acceptThis(e2);
-TraverseReturn r_e3 = acceptThis(e3);
-\end{Verbatim}
-
-The variables \texttt{e1}, \texttt{e2}, and \texttt{e3} correspond to the
-expressions $e_1$, $e_2$, and $e_3$ in rule \ref{rule:trans:TD:conditional},
-while \texttt{r\_e1}, \texttt{r\_e3}, and \texttt{r\_e3} correspond to
-\textbf{r}($e_1$), \textbf{r}($e_2$), and \textbf{r}($e_3$).
+First the child expressions are visited, and the variables \texttt{e1},
+\texttt{e2}, and \texttt{e3} correspond to the expressions $e_1$, $e_2$, and
+$e_3$ in rule \ref{rule:trans:TD:conditional},  while \texttt{r\_e1},
+\texttt{r\_e3}, and \texttt{r\_e3} correspond to \textbf{r}($e_1$),
+\textbf{r}($e_2$), and \textbf{r}($e_3$).
 
 Continuing, sets of iterator dependencies are obtained:
          
