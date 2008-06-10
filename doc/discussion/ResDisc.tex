@@ -48,13 +48,13 @@ We found that in terms of counting tuple and field creations, TD seems to excel
 in large and complex queries. In the case of more trivial queries, Loop Lifting
 and TD seem to perform similarly. Furthermore, in the case of tuple
 input/output in join and sort operators, we saw that for the ``complex'' query
-example, TD did not produce any joins at all, while Loop Lifting produced 3
-joins for the same expression.
+example, TD did not produce any equi-joins at all, while Loop Lifting produces 3
+equi-joins for the same expression.
 
 Though an interesting comparison, this is a sparse source of data -- it
 is difficult to be conclusive based this data alone. However, with the
-exception of the most trivial query, it seems that ``Tanting Dependencies'' (TD)
-generates substantially less complex algebra than Pathfinder. As one
+exception of the most trivial query, it seems that the ``Tanting Dependencies''
+(TD) method generates substantially less complex algebra than Pathfinder. As one
 may consider TD more specialised method than the general Loop Lifting
 technique, this should emerge as a natural consequence.
 

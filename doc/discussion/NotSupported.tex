@@ -244,7 +244,7 @@ integer between the two operands, in increasing order.
 
 If the operands are literals, the translator can turn the expression into a sequence construction expression
 containing the needed literals. However, if the value of the operands is not known before runtime, such
-expressions will have to be handled by the MQL processor. The most natural
+expressions will have to be handled by the MQL processor. The least unnatural
 solution to this would be to implement a MQL operator taking one relation as input, two attribute names to create a sequence from and to, and a
 list of attributes names for fields that must be a part of the result. The
 operator would then create tuples based on the value of the fields specified as the from and to attributes, and augment each produced tuple with a copy of
@@ -276,8 +276,8 @@ modifiers. Currently, Tainting Dependencies only accomodates for a single order 
 modifiers. Expanding the translation rule for \texttt{order by} ordering (rule \ref{rule:trans:TD:orderbyOrd}) to
 allow multiple ordering specification may be done by sequentially joining the specifiers on their common
 dependencies before joining the result of this with the relation stemming from the \texttt{where} or
-\texttt{return}-clause, and finally renumbering while sorting on the values from the orderspecifier in the correct
-order:
+\texttt{return}-clause, and finally renumbering while sorting on the values
+from the order specifier in the correct order:
 
 \begin{equation*}
 % dette maa staa her ellers kompilerer det ikke

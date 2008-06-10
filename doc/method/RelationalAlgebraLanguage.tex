@@ -3,8 +3,8 @@
 Given as premise for this project was the target algebra language. This
 algebra is a dialect of classic relational algebra (see section
 \ref{sect:theory:relAlg}) developed by Fast Search \& Transfer. The language
-is dubbed MQL (MARS Query Language). This section will briefly describe some of the operators
-of this language as well as the indexes they operate on. Further, it will demonstrate
+is called MQL (MARS Query Language). This section will briefly describe some of
+the operators of this language as well as the indexes they operate on. Further, it will demonstrate
 the usage as well as some important traits of this language with a few
 examples.
 
@@ -53,11 +53,9 @@ set from a lookup in a hypothetical \textit{valocc} index.
 \hline
 1 & 7 & \textsf{a[1].b[2]} & \emph{c} \\ 
 \hline
-1 & 8 & \textsf{a[1].b[2]} & \emph{c} \\
+1 & 8 & \textsf{a[1].b[3]} & \emph{c} \\
 \hline
-1 & 10 & \textsf{a[1].b[3]} & \emph{c} \\ 
-\hline
-1 & 11 & \textsf{a[1].b[3]} & \emph{c} \\
+1 & 11 & \textsf{a[1].b[4]} & \emph{c} \\
 \hline
 \end{tabular}
 \caption{Example result set from a lookup in \textit{valocc}}
@@ -72,7 +70,7 @@ not documented, and the exact mechanics are not known. However their respective
 behaviours are described here where applicable.
 
 \subsection{Language syntax}
-The syntax of MQL (Mars Query Language) is, as mentioned above, reminiscent of
+The syntax of MQL (MARS Query Language) is, as mentioned above, reminiscent of
 Lisp dialects. Consider the example in figure \ref{figure:mql:op_example}. This
 example will lookup the term ``c'' in the scope \texttt{/a/b} in the index
 \textit{valocc}.
@@ -147,16 +145,16 @@ example of usage where the child operators will operate on the index
 \textit{valocc}.
 
 \begin{description}
-  \item[Input:] result set from child operator
-  \item[Output:] result set from child operator
+  \item[Input:] result set from the child operator
+  \item[Output:] result set from the child operator
 \end{description}
 
 \subsubsection{Project}
 \label{sect:method:marsOperators:project}
-The \texttt{project()} operator lends its name and semantics from the project (section
-\ref{sect:theory:relAlg:projection}) and the rename operator (section \ref{sect:theory:relAlg:rename}) operator
-known from basic relational algebra. The \texttt{project()} operator has a more complex syntax described in EBNF
-notation in figure \ref{figure:mql:ebnf:project_ebnf}.
+The \textsf{project()} operator lends its name and semantics from the project
+(section \ref{sect:theory:relAlg:projection}) and the rename operator (section \ref{sect:theory:relAlg:rename}) operator
+known from basic relational algebra. The \textsf{project()} operator has a more
+complex syntax described in EBNF notation in figure \ref{figure:mql:ebnf:project_ebnf}.
 
 \begin{figure}[!h]
 \centering
@@ -184,7 +182,7 @@ project(id=DocumentID;
     scope(/a/b;
       lookup(c))));
 \end{Verbatim}
-\caption{Simple MQL \texttt{project()} example}
+\caption{Simple MQL \textsf{project()} example}
 \label{figure:mql:project_example}
 \end{figure}
 
@@ -201,7 +199,7 @@ project(id=DocumentID, cid=max(100,DocumentID), one="1");
     scope(/a/b;
       lookup(c))));
 \end{Verbatim}
-\caption{Simple MQL \texttt{project()} example with inline function call 
+\caption{Simple MQL \textsf{project()} example with inline function call 
 and an applied constant field}
 \label{figure:mql:project_example2}
 \end{figure}
@@ -223,7 +221,7 @@ $id$ & $cid$ & $one$ \\ \hline
 \end{figure}
 
 \begin{description}
-  \item[Input:] projection parameters, and a result set from child operator
+  \item[Input:] projection parameters, and a result set from the child operator
   \item[Output:] projection of result set on the given parameters
 \end{description}
 
@@ -232,7 +230,7 @@ The \texttt{select()} operator filters tuples from the child operator based on
 boolean function predicates. Consider the example in figure
 \ref{figure:mql:select_example}, where \texttt{eq()} compares the two parameters and
 returns \textit{true} if the parameters are equal. A hypothetical result (based
-on the example for \texttt{project()}) can be seen in figure
+on the example for \textsf{project()}) can be seen in figure
 \ref{figure:mql:select_example_result}.
 
 \begin{figure}[!h]
@@ -265,14 +263,14 @@ $id$ & $cid$ & $one$ \\ \hline
 \begin{description}
   \item[Input:] predicate expression parameter, and a result set from a child
 operator
-  \item[Output:] filtered result set from child operator 
+  \item[Output:] filtered result set from the child operator 
 \end{description}
 
 \subsubsection{Join}
-A join operator (one of \texttt{hhjoin()}, \texttt{hljoin()}, or
+A join operator (one of \textsf{hhjoin()}, \textsf{hljoin()}, or
 \texttt{mergejoin()}) performs an equi-join operation as described in section
 \ref{sect:theory:relAlg:equiAndThetaJoin}. In the case of a
-\texttt{mergejoin()}, the input result set must be sorted. The complete syntax
+\texttt{mergejoin()}, the input result sets must be sorted. The complete syntax
 for any of the join operations can be described with EBNF notation as can be
 seen in figure \ref{figure:mql:ebnf:join}.
 \begin{figure}[!h]
@@ -319,7 +317,7 @@ The \texttt{make()} operator is used to synthesise result sets from the given
 default field names are \textit{field0}, \textit{field1}, \ldots,
 \textit{fieldN}, where \textit{N} is the number of fields. The example in
 figure \ref{figure:mql:make_example1} will produce the output seen in figure
-\ref{figure:mql:make_example1_result}. Notice how values are specified column-wise.
+\ref{figure:mql:make_example1_result}.
 
 \begin{figure}[!h]
 \centering
@@ -345,6 +343,7 @@ $field0$ & $field1$ & $field2$ \\ \hline
 A more complex example can be seen in \ref{figure:mql:make_example2}, where
 field names are specified, and several tuples are synthesised. The
 corresponding result is shown in figure \ref{figure:mql:make_example2_result}.
+Notice how values are specified column-wise.
 
 \begin{figure}[!h]
 \centering
@@ -394,7 +393,7 @@ operated on.
 
 \begin{figure}[!h]
 \begin{Verbatim}
-group((cid), max(id), count(one); Query1)
+group((cid), max(id), count(); Query1)
 \end{Verbatim}
 \caption{Simple MQL \texttt{group()} example}
 \label{figure:mql:groupEx}
@@ -420,6 +419,14 @@ $cid$ & $max$ & $count$ \\ \hline
   \item[Output:] grouped result set based on grouping specification
 \end{description}
 
+\subsection{Cross}
+This operator computes a cross product between its two child operators. This
+operator does not take any parameters.
+
+\begin{description}
+  \item[Input:] result sets from two child operators
+  \item[Output:] the cross product between the two input result sets
+\end{description}
 
 \subsection{Assumed functionality}
 \label{sect:method:marsAddedOperators}

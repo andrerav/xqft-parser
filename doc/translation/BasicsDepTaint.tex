@@ -110,8 +110,9 @@ the (optional) \texttt{for}-clause of a FLWOR expression:
 \label{rule:trans:TD:forbind}
 \end{equation}
 Where the dependencies piggybacking the \textsf{project} operator can be
-expressed as: $\vartheta = e.\vartheta \cup I_{\chi}$. For a \texttt{for} clause with multiple variable bindings
-the rule must be applied once per binding.
+expressed as: $\vartheta = e.\vartheta \cup I_{\chi}$. For a
+\texttt{for}-clause with multiple variable bindings the rule must be applied
+once per binding.
 
 From definition \ref{def:iterVarDep} it can be seen that $\chi$ is not part of
 the set of dependencies the iterator $I_{\chi}$ returns its parent. This is in
@@ -134,7 +135,7 @@ to relational algebra quite simply by fetching the tree linked to the variable n
 \end{equation}
 
 
-\subsection{Iterator Dependency Tainting}
+\subsection{Iterator dependency tainting}
 \label{sect:trans:TD:tainting}
 
 The iterator body of an iterator with a iterator sequence with length $n$ will
@@ -204,7 +205,7 @@ e_{i}.\vartheta)}} \mbox{\textsf{project(}}\chi_{j}numb\mbox{\textsf{;
 \end{equation}
 \end{center}
 
-\subsection{Unique Iterations}
+\subsection{Unique iterations}
 \label{sect:trans:TD:implic}
 Consider an XQuery expression consisting of nested iterators $I_{\chi_1},\ldots,I_{\chi_n}$, where $I_{\chi_j}$
 ($1<j<n$) occurs within the iterator body of $I_{\chi_{j-1}}$. As per XQuery semantics, the iterator body of a
@@ -217,7 +218,7 @@ be expressed like this:
 \end{equation*}  
 Where $card(I_{\chi})$ is a function returning the cardinality of the iterator sequence of $I_{\chi}$.
 
-Of these nested iterators, a subexpression $e$ is dependent on the subset
+Of these nested iterators, let a subexpression $e$ be dependent on the subset
 $\left\{I_{\chi_k},I_{\chi_l}\right\}$. Because of dependency tainting and inheritance, the relational
 depiction of $e$ will have a representation in all possible iteration
 combinations of $I_{\chi_k}$ and $I_{\chi_l}$. A tuple in $e$, ($index, \chi_k{numb},\chi_l{numb}, value$), represents one of these unique
@@ -261,8 +262,8 @@ e_{2}.\vartheta$ each subexpression will be implicitly tainted by the other's un
 
 How the effective boolean function \textbf{B(r(}$e$\textbf{))} works will be discussed in section
 \ref{sect:disc:effBool}. In this chapter is sufficient to consider it as a grouping operator, grouping on the
-attributes specified by $e.\vartheta$ (i.e. all known unique iterations). For each group it will produce a field
-$pred$ representing the effective boolean value of $e$ in that unique iteration. If $e$ holds a singleton numeric
+attributes specified by $e.\vartheta$ (i.e.\ all known unique iterations). For
+each group it will produce a field $pred$ representing the effective boolean value of $e$ in that unique iteration. If $e$ holds a singleton numeric
 value in one group $pred$ will hold this value, in all other cases it will hold a boolean value. The result
 relation of the function will in addition to the $pred$-attribute contain all the attributes implied by
 $e.\vartheta$. The main reason this function is introduced at all is that it ensures that a incoming relation

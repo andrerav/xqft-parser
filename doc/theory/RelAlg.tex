@@ -97,7 +97,7 @@ Where $R$ is a relation and $attr$ is the set of attributes to be returned from 
 \label{fig:theory:project}
 \end{figure}
 
-\subsubsection{Union and Difference}
+\subsubsection{Union and difference}
 \label{sect:theory:relAlg:unionAndDiff}
 Union and difference are two binary operators analogous with union and difference operators in set theory. The
 relational algebra version of the operators requires that the relations involved are union compatible.
@@ -118,7 +118,7 @@ two relations involved. A difference between relations $R$ and $S$ is written li
 R - S 
 \end{equation*}
 
-\subsubsection{Cross Product}
+\subsubsection{Cross product}
 \label{sect:theory:relAlg:crossProduct}
 The cross product operator is sometimes referred to as the cartesian product operator. As with union and
 difference, this operator also stems from set theory. The operator is used to combine all tuples in one relation
@@ -177,7 +177,7 @@ _{n})}$ for a n-degree relation, where $T$ is the new relation name and $a _{1},
 relation $R$'s attributes from $1$ to $n$. The degree of the scheme must be the same as the degree of the relation
 being operated on.
 
-\subsection{Derived Operators}
+\subsection{Derived operators}
 \label{sect:theory:relAlg:derivedOper}
 None of the six primary operators can be expressed as a combination of any of the others. In contrast, some useful
 operators can be derived using one or more of the primary ones. Most notably among these are intersection and join.
@@ -197,7 +197,7 @@ Joins are a group of operators that all are derived from the primary operators w
 Among the operators in this group is natural join, theta-join, equi-join, anti-join, semi-join, outer joins and
 division. Some of these will be presented in this section.
 
-\paragraph{Natural Join.}
+\paragraph{Natural join.}
 \label{sect:theory:relAlg:naturalJoin}
 Natural join is a binary operator that returns a relation consisting of all combinations of tuples in input
 relations that are equal on their common attribute names. The result relation will have a degree equal to the sum
@@ -212,7 +212,7 @@ Where $R$ and $S$ are relations, $b_{1},..,b_{n}$ are the common attributes, $a_
 unique to $R$ and $c_{1},...,c_{k}$ are the attributes unique to $S$. A rename operator can lastly be used to
 remove the prefix of the common attributes.
 
-\paragraph{Equi-join and Theta-join.}
+\paragraph{Equi-join and theta-join.}
 \label{sect:theory:relAlg:equiAndThetaJoin}
 Theta-join returns a relation which is a combination of all the tuples in the two input relations that satisfy a
 condition $C$. $C$ is in the form $a \theta b$, where $a$ is a attribute name from one relation, $b$ is an
@@ -268,7 +268,7 @@ R \rhd S = R - R \ltimes S
 
 Where $R$ and $S$ are relations.
 
-\paragraph{Outer Joins.}
+\paragraph{Outer joins.}
 \label{sect:theory:relAlg:outerJoin}
 The outer joins is in many ways as the natural join, except the resulting relation will include some extra
 tuples based on one or both of the input relations. The right outer join $(\times=)$ will return a relation with

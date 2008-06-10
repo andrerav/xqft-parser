@@ -10,9 +10,9 @@ sequences, and variables.
 \subsection{Tainting}
 \label{sect:impl:taint:taint}
 The concept of tainting one expression with the iterator dependencies of another is described in section
-\ref{sect:trans:TD:tainting} on page \pageref{sect:trans:TD:tainting}. A method \texttt{taint()} is introduces to
-cover the semantics of this concept. Residing in the \textit{XQuery2MQL visitor} class it is reachable from all
-nodes of the tree. The method is implemented like this:
+\ref{sect:trans:TD:tainting} on page \pageref{sect:trans:TD:tainting}. A method
+\texttt{taint()} is introduced to cover the semantics of this concept.
+Residing in the \textit{XQuery2MQL visitor} class it is reachable from all nodes of the tree. The method is implemented like this:
 
 \begin{Verbatim}
 protected TraverseReturn taint(TraverseReturn tr, VarRefSet varRefs) {
@@ -44,9 +44,10 @@ The translation process for FLWOR expressions was outlined in section
 \ref{sect:trans:TD:simpleFLWOR}. Consider inference rule
 \ref{rule:trans:TD:forbind} on page \pageref{rule:trans:TD:forbind}. This
 inference rule states how to translate and bind an iterator variable in a
-\texttt{for}-clause in a FLWOR expressions. Consider the abstract syntax tree example in figure
-\ref{fig:impl:td:flwor2}. First a \texttt{for}-clause is visited, and the
-child is flagged as a FLWOR tuplet definition.
+\texttt{for}-clause in a FLWOR expressions. Furthermore, consider the abstract
+syntax tree example in figure \ref{fig:impl:td:flwor2}. First a
+\texttt{for}-clause is visited, and the  child is flagged as a FLWOR tuplet
+definition.
 % \begin{Verbatim}
 % public TraverseReturn visitAST_FORCLAUSE(XQFTTree tree) {
 % 
@@ -69,7 +70,7 @@ abstract syntax tree). If the child count is more than one, it is an
 assignment. Note that the \texttt{isIterationVar} flag is \textit{true} if
 this assignment is a tuple definition as flagged earlier. Then, if this is an
 assignment and a tuple definition, the right-hand side of the assignment is
-translated, and the symbol is entered into a symbol table. Note that the
+translated, and the symbol is entered into a symbol table. The
 creation of the project operator is required by inference rule
 \ref{rule:trans:TD:forbind}:
 
@@ -98,8 +99,8 @@ creation of the project operator is required by inference rule
 
 
 
-Following the translation of the \texttt{for}-clause, the \texttt{return} clause and its subexpressions are
-translated. When the visitor returns to the AST\_FLWOR node, as there is no \texttt{where} or \texttt{order
+Following the translation of the \texttt{for}-clause, the
+\texttt{return}-clause and its subexpressions are translated. When the visitor returns to the AST\_FLWOR node, as there is no \texttt{where} or \texttt{order
 by}-clauses iterator ordering (section \ref{sect:trans:TD:flwor:itOrd}, page \pageref{sect:trans:TD:flwor:itOrd})
 is applied:
 
@@ -242,7 +243,7 @@ Project alt2 = new Project("index, alt=2, " + v_e2_u_e3.toStringList() + ", valu
                       this.taint(r_e3, r_e2.getVarRefs()).getOperatorTree()); 
 
 // Union
-Union union = new Union(project_alt1, project_alt2);
+Union union = new Union(alt1, alt2);
 \end{Verbatim}
 
 The translation is finalised by using this result to construct a join and apply
