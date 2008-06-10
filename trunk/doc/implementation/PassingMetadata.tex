@@ -96,10 +96,10 @@ sequence construction (as described in section \ref{sect:impl:td:seq}).
 This is the case of integer literal nodes as well as iterator variable lookups in the
 symbol table. The case of integer literal nodes is shown in figure
 \ref{fig:impl:meta:traverse_usage_ex} in the next section. The case of variable
-lookups is somewhat counter-intuitive, since this metainformation is actually\marginpar{\textbf{\LARGE
-TODO:}\scriptsize \\skj\o nner ikke \\dette \\avsnittet} stored when a variable is first set. That is, the
-right-hand side of the assignment is translated once and annotated with the singleton flag, which is
-then set for all subsequent lookups in the symbol table. The excerpt in figure
+lookups is somewhat counter-intuitive, since the singleton flag is actually
+stored when a variable is first set. That is, the right-hand side of the
+assignment is translated once and annotated with the singleton flag, which is
+then set for all subsequent lookups in the symbol table. The excerpt in figure 
 \ref{fig:impl:meta:var_assign_ex} shows how this is done in the implementation.
 
 \begin{figure}[!htp]
@@ -120,8 +120,8 @@ tr.setSingleton(true);
 SymTabEntry tmp = Scope.set(tree.getChild(0).getText(), 
                       tr, isIterationVar);
 \end{Verbatim}
-  \caption{Iterator variable assignment example, annotated with the singleton flag
-  before being entered into the symtab}
+  \caption[Iterator variable annontion with singleton flag]{Iterator variable
+  assignment example, annotated with the singleton flag before being entered into the symtab}
   \label{fig:impl:meta:var_assign_ex}
 \end{center}
 \end{figure}

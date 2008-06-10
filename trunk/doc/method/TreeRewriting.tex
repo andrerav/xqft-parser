@@ -23,12 +23,13 @@ simplifying the task of translating the syntax tree.
 Based on findings in section \ref{sect:theory:xquery:Flwor} regarding the
 structure of FLWOR expressions, it was briefly mentioned that complex FLWOR
 expressions could be transformed into semantically equivalent and simpler
-representations. A question was also posed --\emph{ could it be
-benefitial to rewrite complex FLWOR expressions into a simpler form}? \textbf{\LARGE TODO:} ja, gj\o r det?
+representations. A question was also posed -- \emph{could it be
+benefitial to rewrite complex FLWOR expressions into a simpler form}? We will
+now attempt to answer this question.
 
 \subsection{Normalising FLWOR expressions}
 A denormalised XQuery syntax tree may contain nodes such \texttt{for}-clause expressions with several variable
-declarations and assignments as can be seen in figure \ref{tree:ast:flwor_rewrite1}. Such an expression should be
+declarations and assignments as can be seen in figure \ref{tree:ast:flwor_rewrite1}. Such an expression could be
 normalised to several nested FLWOR expressions, as shown in figure \ref{tree:ast:flwor_rewrite2}, as defined by
 the mapping rules in figures \ref{figure:xquery:flwor_mapping_rule},
 \ref{figure:xquery:where_mapping_rule},
@@ -89,7 +90,20 @@ can be seen in figure \ref{figure:ast_rewrite:flwor_src}.
 	\label{figure:ast_rewrite:flwor_src}
 \end{figure}
 
+Considering these trees, we can assert the following:
+\begin{enumerate}
+  \item Multiple nested FLWOR constructs with a single \texttt{for/let}-clause
+  and a single variable binding maintains the semantics of a single FLWOR with
+  multiple \texttt{for/let}-clauses and variable bindings
+  \item A FLWOR construct with a single \texttt{for/let}-clause and a single
+  variable binding is easier to parse than a FLWOR construct with multiple
+  \texttt{for/let}-clauses and bindings because it is known that there is only
+  one \texttt{for/let}-clause with a variable binding, and there is no need to
+  look for others within the same FLWOR construct
+\end{enumerate}
+
 Based on these findings, it is natural to conclude that normalisation of FLWOR
-expressions is benefitial for the sake of simplicity. Normalisation may be
-attained by executing a specialised \textit{rewrite visitor} on the syntax
-tree, which will be described in chapter \ref{chapter:implementation}.
+expressions is benefitial for the sake of simplicity in the tree parsing
+process. Normalisation may be attained by executing a specialised
+\textit{rewrite visitor} on the syntax tree, which will be described in
+chapter \ref{chapter:implementation}.
