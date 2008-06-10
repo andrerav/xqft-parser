@@ -7,8 +7,8 @@ in section \ref{sect:disc:not:binary} on page \pageref{sect:disc:not:binary}.
 
 \subsection{Arithmetic Expressions}
 \label{sect:trans:TD:atrith}
-W3C defines the arithmetic expressions as shown in figure \ref{fig:trans:TD:arithEBNF}\cite{w3c00}. Notice how the
-specified grammar handles operator precedence. \texttt{UnaryExpr} is a decendant production of \texttt{UnionExpr}.
+W3C defines the XQuery arithmetic expressions as shown in figure
+\ref{fig:trans:TD:arithEBNF}\cite{w3c00}. Notice how the specified grammar handles operator precedence. \texttt{UnaryExpr} is a decendant production of \texttt{UnionExpr}.
 
 \begin{figure}[h]
 \begin{Verbatim}
@@ -89,10 +89,10 @@ Consider the XQuery query of figure \ref{fig:trans:TD:arithQuery}. Here $e_1$ is
 
 Both \texttt{\$a} and \texttt{\$b} is translated to simple two-tuple relations by rules
 \ref{rule:trans:TD:forbind} and \ref{rule:trans:TD:varRef}. As the two expressions do not have any iterator
-dependencies the \texttt{hhjoin} operator of rule \ref{rule:trans:TD:arithmetic} will be treated as a cartesian
-product (ref. \ref{sect:trans:TD:implic}). The cross product of the two relations are shown in figure
-\ref{fig:trans:TD:aritJoin}. Lastly, the \texttt{project} operator is employed to calculate the sum for each
-iteration, the result of which is shown in figure \ref{fig:trans:TD:aritEnd}.
+dependencies the \textsf{hhjoin} operator of rule \ref{rule:trans:TD:arithmetic}
+will be treated as a cartesian product (ref. \ref{sect:trans:TD:implic}). The cross product of the two relations are shown in figure
+\ref{fig:trans:TD:aritJoin}. Lastly, the \textsf{project} operator is employed
+to calculate the sum for each iteration, the result of which is shown in figure \ref{fig:trans:TD:aritEnd}.
 
 \begin{figure}[h]
 \centering
@@ -210,8 +210,8 @@ $true$, the comparison expression yields $true$. As an example, all the comparis
 \texttt{(1, 200) < (10, 20)} \\
 \texttt{(1, 200) > (10, 20)} \\
 \end{tabular}
-\label{fig:trans:TD:genCompEx}
-\caption[Example general comparisons]{Example general comparisons: all expressions evaluate to $true$}
+\caption[Example general comparisons]{\label{fig:trans:TD:genCompEx}Example
+general comparisons: all expressions evaluate to $true$}
 \end{figure}
 
 The big difference between general and value comparisons is that the first must accomodate for sequences. This is

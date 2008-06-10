@@ -1,7 +1,7 @@
 \section{FLWOR Expressions}
 \label{sect:trans:TD:simpleFLWOR}
-The \texttt{let} clause does not explicitly cause any dependencies, only variable binding, and can therefore be
-translated into storing the algebraic version of the expression to be bound in
+The \texttt{let}-clause does not explicitly cause any dependencies, only
+variable binding, and can therefore be translated into storing the algebraic version of the expression to be bound in
 the symbol table (see section \ref{sect:trans:TD:basics}):
 \begin{equation}
 \frac{}{\mbox{\texttt{let \$}}\chi \mbox{\texttt{ := }}e \mbox{\texttt{ \ldots}}}\longmapsto
@@ -10,7 +10,8 @@ the symbol table (see section \ref{sect:trans:TD:basics}):
 \end{equation}
 The iterator dependences $e.\vartheta$ is stored along with \textbf{r(}$e$\textbf{)} and will piggyback this
 algebra tree if it later fetched from the symbol table. If there is more than one variable binding in the
-\texttt{let} clause the rule must be applied once per binding as if one binding were one \texttt{let} clause.
+\texttt{let}-clause the rule must be applied once per binding as if one binding
+were one \texttt{let}-clause.
 
 As seen by the excerpt of the W3C XQuery EBNF specification in figure
 \ref{fig:trans:TD:seqEBNF}, a FLWOR expression may be structured in many
@@ -78,10 +79,10 @@ The \texttt{return}-clause will just ship the evaluated version of the \texttt{r
 \end{equation}
 
 
-\subsection{Iterator Ordering}
+\subsection{Iterator ordering}
 \label{sect:trans:TD:flwor:itOrd}
-Acording to XQuery semantics, the \texttt{return} clause is evaluated once for iteration for each of the iterators
-of the FLWOR expression. The results of these evaluations are concatenated to form the result of the FLWOR
+Acording to XQuery semantics, the \texttt{return}-clause is evaluated once for
+iteration for each of the iterators of the FLWOR expression. The results of these evaluations are concatenated to form the result of the FLWOR
 expression. As TD evaluate iterations in parallel, if the \texttt{return}-expression is not dependent on a
 iterator, its relational form will not have a representation for each of the iterators iterations and will have to be tainted.
 
@@ -113,8 +114,8 @@ the sequences returned from the iterator for all iterators the result is depende
 \ref{sect:trans:TD:implic}.
 
 \begin{myExample}
-Consider the query of figure \ref{fig:trans:TD:dblFor}. Notice the expression in the \texttt{return} clause ($e_1$)
-is the same as $e_1$ in example \ref{ex:trans:TD:simpleSeq}.
+Consider the query of figure \ref{fig:trans:TD:dblFor}. Notice the expression
+in the \texttt{return}-clause ($e_1$) is the same as $e_1$ in example \ref{ex:trans:TD:simpleSeq}.
 
 \begin{figure}[h]
 \begin{equation*}
@@ -177,7 +178,7 @@ will not be partitioned over any attributes. The result of the query is shown in
 \ref{fig:trans:TD:final:rIa}.
 \end{myExample}
 
-\subsection{Where-Clause}
+\subsection{Where-clause}
 The W3C describes the FLWOR expression as generating a tuple stream which contains one tuple for each combination
 of values bound in the expression\cite{w3c00}. In this view, the optional \texttt{where}-clause serves a filter
 for these tuples. The expression in the \texttt{where}-clause is evaluated once for each tuple. If the boolean
@@ -270,7 +271,7 @@ evaluation of the query.
 \end{myExample}
 
 
-\subsection{Order By-Clause Ordering}
+\subsection{Order by-clause ordering}
 
 As can be seen in figure \ref{fig:trans:TD:ordEBNF}, an \texttt{Order by}-clause may contain several
 specifications on how to order and what to order by.

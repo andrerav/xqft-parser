@@ -209,8 +209,8 @@ XML-element is represented in the tuple.
 The result of the lookup will be joined with the context item relation on their $documentId$-attribute. As we
 assume only one XML-document, this attribute is omitted from our example. A \textsf{select} operator is applied to
 the result of the join to prune the relation. Only the tuples where the $scope$ attribute stemming from the lookup
-defines a scope which is the child scope (as defined by the MQL function \textsf{isChild() in section
-\ref{sect:method:marsAddedOperators}}) of the scope defined by the $scope$-attribute stemming from the
+defines a scope which is the child scope (as defined by the MQL function
+\textsf{isChild()} in section \ref{sect:method:marsAddedOperators}) of the scope defined by the $scope$-attribute stemming from the
 \texttt{\$a} relation (called $lsc$). After the selection the result will be as illustrated in figure
 \ref{fig:trans:TD:pathEx:joinSel}. The copy of the $index$ column is not shown.
 

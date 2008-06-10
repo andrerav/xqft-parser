@@ -67,7 +67,7 @@ If the cases where a literal will have to be translated to a single-tuple relati
 attribute will not be needed. But this will probably be detected by the
 optimiser, and may be left out anyway.
 
-\subsection{Sequence Construction}
+\subsection{Sequence construction}
 \label{sect:trans:TD:simpl:seq}
 
 Informing a parent expression about whether or not its subexpressions will
@@ -127,7 +127,7 @@ only singleton items where not all of them are literals:
 \end{equation*}
       
 
-\subsection{Path Expressions}
+\subsection{Path expressions}
 \label{sect:trans:TD:simpl:pathExpr}
 The \textsf{scope} operator of MQL can be used to filter tuples based on the value of their $scope$ field. The
 operator allows only complete scope descriptions, that is, no wildcards are allowed. \textsf{/} separates the
@@ -177,7 +177,7 @@ always can be evaluated. If the translator with the help of a type system be mak
 expression does not evaluate to a numeric type, or if the step expression does not contain a predicate, this
 operator may be dropped.
 
-\subsection{Arithmetic Expressions}
+\subsection{Arithmetic expressions}
 \label{sect:trans:TD:simpl:arith}
 
 Rule \ref{rule:trans:TD:unaryMin} describes a translation of the unary \texttt{-} operator. If there is multiple

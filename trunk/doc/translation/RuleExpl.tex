@@ -1,4 +1,4 @@
-\section{Inference Rule Language Explanation}
+\section{Inference rule language explanation}
 \label{sect:trans:TD:langExpl}
 During this chapter we will present some inference rules. Table \ref{tab:trans:td:langExpl} explains some of the
 the various typographical representations.
@@ -60,4 +60,6 @@ schema(\textsf{union(}\alpha, \beta\texttt{)}) = schema(\alpha) \cup schema(\bet
 The tuples which have more fields in the result relation than they did in the relation they stem from will
 have a \textit{NULL} value for the introduced attributes. It may be not be
 desirable to implement the operator in such a way. In that case each
-child-relation will have to be augmented with the attributes needed with an \textsf{project} operator.
+child-relation will have to be augmented with the attributes needed with an
+\textsf{project} operator. The effective boolean value of \textbf{B}$()$ is
+described in Section \ref{sect:trans:TD:implic}. 

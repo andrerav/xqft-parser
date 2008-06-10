@@ -82,7 +82,7 @@ and is bound to the variable $v_{x \cdot y}$. $e_{x \cdot y}'$ constitutes the c
 $q_{x}(e)$ is used to denote the relational representation of expression $e$ in scope $s_{x}$.
 
 
-\subsection{Constant Subexpressions}
+\subsection{Constant subexpressions}
 \label{sect:trans:ll:ConstExprs}
 
 For a iterator expression $i_{x}$ with $n$ iterations there exists a relation $loop_{x}$, consisting of a
@@ -100,7 +100,7 @@ q_{x}(c) =  loop_{x} \times \mbox{\scriptsize \begin{tabular}{c|c} \textit{pos}&
 A tuple ($iter,pos,item$) in a loop lifted relation for subexpression $e_{x}'$ can be understood as during the
 $iter$th iteration, the item in position $pos$ in $e_{x}'$ has the value $item$.
 
-\subsection{Bound Variables}
+\subsection{Bound variables}
 \label{sect:trans:ll:boundVar}
 
 An iterator sequence expression $e_{x \cdot y}$ is evaulated in scope $s_{x}$. This sequence is then iterated over
@@ -129,7 +129,7 @@ loop_{x \cdot y} = \pi_{iter}(q_{x \cdot y}(v_{x \cdot y}))
 \end{equation}
 
 
-\subsection{Free Variables}
+\subsection{Free variables}
 \label{sect:trans:ll:freeVar}
 
 XQuery expressions may use any iterator variable bound in enclosing scopes. That is, $v_{x}$ bound in
@@ -168,7 +168,7 @@ item}(q_{x}\left(\mbox{\texttt{\$}}v_{x})\bowtie_{iter=outer} map_{x, x \cdot y}
 \label{eq:ll:qxy_vx}
 \end{equation}
 
-\subsection{Mapping Back}
+\subsection{Mapping back}
 \label{sect:trans:ll:mappingBack}
 
 All steps and equations presented so far have been helpful to represent
@@ -185,7 +185,7 @@ y}(e_{x \cdot y}')\bowtie_{iter = inner}map_{x, x \cdot y}))
 \end{equation}
 
 
-\subsection{Other Expression Types}
+\subsection{Other expression types}
 \label{sect:trans:ll:OtherExpr}
 
 The sequence construction $e_{1}$\texttt{, }$e_{2}$ is essentially a disjoint

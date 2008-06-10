@@ -50,8 +50,8 @@ As described in section \ref{sect:trans:TD:dependency}, an iterator variable ref
 its corresponding iterator. Thus, when a iterator variable is encountered during the parse process, and the
 variable is being ``read'' and not assigned or declared, the corresponding iterator is added to the current set of
 iterator dependencies. The example in figure \ref{fig:impl:meta:var_ref_ex} shows the variable \texttt{\$a}
-being read, in which case the iterator is added to the \texttt{TraverseReturn} to be returned's set of
-dependencies.
+being read, in which case the iterator is added to the \texttt{TraverseReturn}
+to-be-returned's set of dependencies.
 
 \begin{figure}[!htp]
 \begin{center}
@@ -96,7 +96,7 @@ sequence construction (as described in section \ref{sect:impl:td:seq}).
 This is the case of integer literal nodes as well as iterator variable lookups in the
 symbol table. The case of integer literal nodes is shown in figure
 \ref{fig:impl:meta:traverse_usage_ex} in the next section. The case of variable
-lookups is somewhat counter-intuitive, since the singleton flag is actually
+lookups is somewhat less intuitive, since the singleton flag is actually
 stored when a variable is first set. That is, the right-hand side of the
 assignment is translated once and annotated with the singleton flag, which is
 then set for all subsequent lookups in the symbol table. The excerpt in figure 

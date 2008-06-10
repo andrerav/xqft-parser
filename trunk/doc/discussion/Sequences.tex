@@ -35,8 +35,8 @@ itself) is included. Consider the following query:
 \end{center}
 
 As previously stated, the \texttt{order by}-expression only accepts singletons. If the document contains a
-\texttt{person} node containing two \texttt{surename} node the query should fail. The translator does
-however not have the ability to evaluate if a type error should be raised or not. The query stated will, without a
+\texttt{person} node containing two \texttt{surename} nodes the query should
+fail. The translator does however not have the ability to evaluate if a type error should be raised or not. The query stated will, without a
 check for multiple \texttt{surname} node per \texttt{person}, result in a sequence where the \texttt{person}
 nodes containing more than one \texttt{surname} node will occur more than one time. 
 
