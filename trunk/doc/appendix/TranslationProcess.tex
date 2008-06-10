@@ -1,9 +1,9 @@
-\chapter{Translation Process Using TD}
+\chapter{Translation process Using TD}
 \label{appendix:transl}
 This appendix contains step-by-step translations of some XQuery expressions
 using the ``Tainted Dependencies'' method.
 
-\section{An Extensive FLWOR Expression}
+\section{An extensive FLWOR expression}
 \label{appendix:transl:ext_flwor}
 This example shows the translation process for the expression in figure
 \ref{fig:results:query_ext_flwor} on page \pageref{fig:results:query_ext_flwor}.
@@ -252,7 +252,7 @@ project(value=l.value, index;
 \end{Verbatim}
 
 
-\section{If-Then-Else}
+\section{If-then-else}
 \label{appendix:transl:ifthenelse}
 This translation is initiated precisely as the previous ``Extensive FLWOR''
 example, so we will not reiterate the translation of the for-clause here.
@@ -411,7 +411,7 @@ numberate(index, [anumb, index], [];
             make(name:=[index, value], [1,2,3], [1,2,3])))))))
 \end{Verbatim}
 
-\section{Path Expression with a Predicate}
+\section{Path expression with a predicate}
 \label{appendix:transl:pathPred}
 
 It should be noted that the query is not a valid query unless the context item is set before execution. We assume
