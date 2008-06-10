@@ -5,24 +5,21 @@ of them are concrete problems or challenges, others are of a more predictive
 nature and may serve as a basis for further research. Also, possible
 solutions or ideas are proposed where applicable. 
 
-\textbf{\LARGE TODO:} Pass p\aa~dette om det blir omrokkeringer
-Most importantly, XQuery features not
-currently supported by Tainting Dependencies are discussed, as well as
-possible optimisations. The proof of concept whose implementation was
-described in chapter \ref{chapter:implementation} is discussed, and in
-particular implementation-specific details. Further, the results presented in
-the previous chapter are discussed, and insecurities and sources of errors are
-accounted for. This chapter is finalised by a discussion of syntax tree
-rewriting and normalisation, a discussion of problems related to sequences,
-and a discussion of the XQuery type system and related problems.
+Most importantly, XQuery features not currently supported by Tainting
+Dependencies (TD) are discussed. Challenges related to XQuery sequences are
+discussed, and some possible solutions are proposed. The external environment
+and communication with it poses some problems which are discussed, and the
+lack of support for a type system in TD is elaborated upon as well.
+Furthermore, we discuss some optimisations and how they may be implemented.
+The prototype implementation and the usage of syntax tree normalisation is
+discussed. Finally, we discuss the results presented in the previous chapter,
+and insecurities and sources of errors are accounted for.
 
-
-
-\input{discussion/ContextItem}
 \input{discussion/NotSupported}
+\input{discussion/Sequences}
+\input{discussion/ContextItem}
+\input{discussion/Typesystem}
 \input{discussion/Optimisations}
 \input{discussion/Prototype}
-\input{discussion/ResDisc}
 \input{discussion/Rewrite}
-\input{discussion/Sequences}
-\input{discussion/Typesystem}
+\input{discussion/ResDisc}
