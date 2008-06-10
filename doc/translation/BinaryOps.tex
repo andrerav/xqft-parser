@@ -1,9 +1,9 @@
-\section{Simple Binary Operator Expressions}
+\section{Simple binary operator expressions}
 \label{sect:trans:TD:binary}
 
 In this section we will present methods for translating simple XQuery binary
 operator expressions, namely arithmetic, logic and comparison operator expressions. XQuery binary operators not covered here will be discussed
-in section \ref{sect:disc:not:binary} on page \pageref{sect:disc:not:binary}.
+in Section \ref{sect:disc:not:binary} on page \pageref{sect:disc:not:binary}.
 
 \subsection{Arithmetic Expressions}
 \label{sect:trans:TD:atrith}
@@ -25,7 +25,7 @@ operators the two values to be operated on will have to be in the same relation.
 operated on are from the same unique iteration (if there is any iterations at all), the relations corresponding to
 the two expressions will have to be joined on their common iterator dependencies, as described in section
 \ref{sect:trans:TD:implic}. Both the unary and the binary XQuery arithmetic operators accept only singleton
-sequences. This is discussed in section \ref{sect:disc:singelton}.
+sequences. This is discussed in Section \ref{sect:disc:singelton}.
 
 \begin{equation}
 \frac{}{e_1 \mbox{\texttt{ OP }} e_2}\longmapsto
@@ -41,7 +41,7 @@ sequences. This is discussed in section \ref{sect:disc:singelton}.
 \end{equation}
 
 Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$, \texttt{OP} will map to a MQL function replacing
-\textsf{FUNC} as shown in table \ref{tab:trans:TD:binOpMap}. The projecting functionality of the
+\textsf{FUNC} as shown in Table \ref{tab:trans:TD:binOpMap}. The projecting functionality of the
 \textsf{hhjoin} operator will in this case remove the $index$ attributes and any possible $documentId$, $scope$
 and $pos$ attributes.
 
@@ -72,7 +72,7 @@ the value with $-1$:
 \end{equation}
 
 \begin{myExample}
-Consider the XQuery query of figure \ref{fig:trans:TD:arithQuery}. Here $e_1$ is an arithmetic expression.
+Consider the XQuery query of Figure \ref{fig:trans:TD:arithQuery}. Here $e_1$ is an arithmetic expression.
 
 \begin{figure}[h]
 \centering
@@ -89,10 +89,10 @@ Consider the XQuery query of figure \ref{fig:trans:TD:arithQuery}. Here $e_1$ is
 
 Both \texttt{\$a} and \texttt{\$b} is translated to simple two-tuple relations by rules
 \ref{rule:trans:TD:forbind} and \ref{rule:trans:TD:varRef}. As the two expressions do not have any iterator
-dependencies the \textsf{hhjoin} operator of rule \ref{rule:trans:TD:arithmetic}
+dependencies the \textsf{hhjoin} operator of Rule \ref{rule:trans:TD:arithmetic}
 will be treated as a cartesian product (ref. \ref{sect:trans:TD:implic}). The cross product of the two relations are shown in figure
 \ref{fig:trans:TD:aritJoin}. Lastly, the \textsf{project} operator is employed
-to calculate the sum for each iteration, the result of which is shown in figure \ref{fig:trans:TD:aritEnd}.
+to calculate the sum for each iteration, the result of which is shown in Figure \ref{fig:trans:TD:aritEnd}.
 
 \begin{figure}[h]
 \centering
@@ -117,8 +117,8 @@ $idx$ & $anb$ & $bnb$ & $val$ \\ \hline
 \end{tabular}
 \label{fig:trans:TD:aritEnd}
 }
-\caption[Results of evaluating expression $e_1$ of figure \ref{fig:trans:TD:arithQuery}.]{Results of evaluating
-expression $e_1$ of figure \ref{fig:trans:TD:arithQuery}. (a) shows the result of the cross product. (b) is the
+\caption[Results of evaluating expression $e_1$ of Figure \ref{fig:trans:TD:arithQuery}.]{Results of evaluating
+expression $e_1$ of Figure \ref{fig:trans:TD:arithQuery}. (a) shows the result of the cross product. (b) is the
 fully evaluated $e_1$. Attribute names are shortened. \label{fig:trans:TD:arithRes}}
 \end{figure}
 
@@ -127,11 +127,11 @@ fully evaluated $e_1$. Attribute names are shortened. \label{fig:trans:TD:arithR
 \subsection{Logical Expressions}
 \label{sect:trans:TD:logical}
 An XQuery logical expression is either an \texttt{and} expression or an \texttt{or} expression. If a logical
-expression does not raise an error(see section \ref{sect:disc:effBool}), its value is always one of the boolean
+expression does not raise an error(see Section \ref{sect:disc:effBool}), its value is always one of the boolean
 values $true$ or $false$.
 
 A logical expression is translated in a matter very similar to the arithmetic expressions. The XQuery logical
-operators does however operate on the effective boolean value (see section \ref{sect:theory:xquery:basics}) rather
+operators does however operate on the effective boolean value (see Section \ref{sect:theory:xquery:basics}) rather
 than the direct value. As the operators require boolean values, and the effective boolean function \textbf{B()}
 may return a number, the $pred$ fields will have to be run through the \textsf{xqBoolean()} function.
 
@@ -149,7 +149,7 @@ may return a number, the $pred$ fields will have to be run through the \textsf{x
 \end{equation}
 
 Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$, \texttt{OP} will map to a MQL function replacing
-\textsf{FUNC} as shown in table \ref{tab:trans:TD:logMap}. 
+\textsf{FUNC} as shown in Table \ref{tab:trans:TD:logMap}. 
 
 \begin{table}[h]
 \centering
@@ -165,8 +165,8 @@ Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$, \texttt{OP} will map to a 
 \label{sect:trans:TD:compArit}
 Comparison expressions allow two values to be compared. XQuery provides three kinds of comparison expressions,
 called value comparisons, general comparisons, and node comparisons. The comparison operators as specified by W3C
-are shown in figure \ref{fig:trans:TD:compEBNF}. The Tainting Dependency method does at this time not support node
-comparisons, but possible solutions are discussed in section \ref{sect:disc:not:binary}.
+are shown in Figure \ref{fig:trans:TD:compEBNF}. The Tainting Dependency method does at this time not support node
+comparisons, but possible solutions are discussed in Section \ref{sect:disc:not:binary}.
 
 \begin{figure}[h]
 \begin{Verbatim}
@@ -179,9 +179,9 @@ comparisons, but possible solutions are discussed in section \ref{sect:disc:not:
 \end{figure}
 
 Value comparisons are used for comparing two single values. With the same premises and restrictions, the rule for
-translating arithmetic expressions (rule \ref{rule:trans:TD:arithmetic}) can be used to translate such comparison
+translating arithmetic expressions (Rule \ref{rule:trans:TD:arithmetic}) can be used to translate such comparison
 expressions. The mapping between the XQuery value comparison operators and MQL
-functions can be seen in table \ref{tab:trans:TD:valueComp}.
+functions can be seen in Table \ref{tab:trans:TD:valueComp}.
 
 \begin{table}[h]
 \centering
@@ -238,7 +238,7 @@ dependencies to ensure that both values are from the same iteration.
 \end{equation}
 
 Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta$. \texttt{OP} wil map to a MQL function replacing
-\textsf{FUNC} as shown in table \ref{tab:trans:TD:genCompMap}. 
+\textsf{FUNC} as shown in Table \ref{tab:trans:TD:genCompMap}. 
 
 The result of a general comparison is always a singleton sequence, thus it is safe to project in an $index$
 attribute with the value $1$. The $index$ and possible $documentId$, $scope$ and $pos$ attributes are left out of
@@ -272,10 +272,10 @@ Figure \ref{fig:trans:TD:genCompQu} shows a simple XQuery query with a general c
 \end{figure}
  
 Because the operands of the \texttt{>} operator have no common iterator dependencies, the cartesian product of the
-two relations is calculated, as seen in figure \ref{fig:trans:TD:gen:join}.
-After the inner \textsf{project} operator is employed, the result will be as in figure \ref{fig:trans:TD:gen:projGr}. The double line illustrates
+two relations is calculated, as seen in Figure \ref{fig:trans:TD:gen:join}.
+After the inner \textsf{project} operator is employed, the result will be as in Figure \ref{fig:trans:TD:gen:projGr}. The double line illustrates
 the grouping on $anumb$ ($anb$ in the figure). The maximum value of $value$ for each group is calculated and the
-attributes are renamed, which gives the relation of figure \ref{fig:trans:TD:gen:end}.
+attributes are renamed, which gives the relation of Figure \ref{fig:trans:TD:gen:end}.
 
 \begin{figure}[h]
 \centering
@@ -309,8 +309,8 @@ $idx$ & $anb$ & $val$ \\ \hline
 \end{tabular}
 \label{fig:trans:TD:gen:end}
 }
-\caption[Results of evaluating $e_1$ in figure \ref{fig:trans:TD:genCompQu}]{Results of evaluating expression $e_1$
-in figure \ref{fig:trans:TD:genCompQu}. (a) The relations of the operands joined. (b) Each combination of the
+\caption[Results of evaluating $e_1$ in Figure \ref{fig:trans:TD:genCompQu}]{Results of evaluating expression $e_1$
+in Figure \ref{fig:trans:TD:genCompQu}. (a) The relations of the operands joined. (b) Each combination of the
 sequences evaluated. Double line illustrates grouping. (c) The final result. Attribute names are shortened.
 \label{fig:trans:TD:genCompRes}}
 \end{figure}

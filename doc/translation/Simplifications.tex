@@ -8,7 +8,7 @@ to be read as ``can be written as''.
 \subsection{Literals}
 \label{sect:trans:TD:simpl:lit}      
 
-Rule \ref{rule:trans:TD:literal} of section \ref{sect:trans:TD:literal} shows a very general way to translate
+Rule \ref{rule:trans:TD:literal} of Section \ref{sect:trans:TD:literal} shows a very general way to translate
 XQuery literals to a relational format. But creating one relation for each literal is very often unnecessary, and
 often quite a bit more resource consuming than alternative solutions. The parent expression of a litteral should
 in most cases be informed that its subexpression is a literal instead of being handed a one-tuple relation.
@@ -72,13 +72,13 @@ optimiser, and may be left out anyway.
 
 Informing a parent expression about whether or not its subexpressions will
 evaluate to singleton sequences can have some advantages. One is the possibility of detecting certain type errors, as will be
-discussed in section \ref{sect:disc:singelton}. Another advantage is gained
+discussed in Section \ref{sect:disc:singelton}. Another advantage is gained
 when it comes to sequence construction:
 
-Rule \ref{rule:trans:TD:seqConstr} in section \ref{sect:trans:TD:seqBuild} describes a general way to build
+Rule \ref{rule:trans:TD:seqConstr} in Section \ref{sect:trans:TD:seqBuild} describes a general way to build
 sequences. But if all the expressions to build a sequence from will evaluate to singleton sequences, there is no
 need for the \textsf{numberate} operator. Further, instead of adding $sprIdx$ fields to specify the order, this
-can be done directly on the $index$ fields. A version of rule \ref{rule:trans:TD:seqConstr} can therefore be put
+can be done directly on the $index$ fields. A version of Rule \ref{rule:trans:TD:seqConstr} can therefore be put
 like this:
 \begin{equation}
 \frac{\left\{e_{1},\ldots,e_{n}\right\}\subset{Singletons}}{e_{1}\mbox{\texttt{, \ldots, }}e_{n}}\longmapsto
@@ -158,6 +158,8 @@ steps can be translated like this:
 \end{array}
 \label{rule:trans:TD:pathChild}
 \end{equation}
+
+
 Where $\vartheta$ is the $\vartheta$ returned from \textbf{get(dot)}, $QName_x$ is any XML-qualified name.
 \textsf{r.value} is short for \textsf{value = right.value, index = right.index, \ldots etc}, and \textsf{docId} is
 short for \textsf{documentId}.

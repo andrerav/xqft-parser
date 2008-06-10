@@ -1,15 +1,15 @@
 \section{Conditional Expressions}
 \label{sect:trans:TD:ifThenElse}
 XQuery supports a conditional expression based on the keywords \texttt{if}, \texttt{then}, and \texttt{else}. The
-expression is specified by W3C as seen in figure \ref{fig:trans:TD:condEBNF}.
+expression is specified by W3C as seen in Figure \ref{fig:trans:TD:condEBNF}.
 
 \begin{figure}[h]
 \begin{Verbatim}
 [45] IfExpr ::= "if" "(" Expr ")" "then" ExprSingle 
                     "else" ExprSingle
 \end{Verbatim}
-\label{fig:trans:TD:condEBNF}
-\caption{W3C EBNF conditional expression specification\cite{w3c00}.}
+
+\caption{W3C EBNF conditional expression specification\cite{w3c00}. \label{fig:trans:TD:condEBNF}}
 \end{figure}
 
 The expression following the \texttt{if} keyword is called the test expression, and the expressions following the
@@ -25,7 +25,7 @@ the relations have disjoint dependencies, they will have to taint each other fir
 The result of the \textsf{union} operation is then joined with the relational representation of the test
 expression on their common dependencies. Lastly, a \textsf{select} operator is employed on this relation to select
 the tuples where $alt$ is $1$ if the $value$ field from the test expression evaluates to $true$, or $alt$ is $2$
-if it does not.
+if it does not:
 
 \begin{equation}
 \begin{array}{c}
@@ -49,7 +49,7 @@ alt];}}\\\quad\quad\quad \mbox{\textsf{union(}} \\ \quad\quad\quad\quad \mbox{\t
 \end{equation}
 
 Where $\vartheta = e_1.\vartheta \cup e_2.\vartheta \cup e_3.\vartheta$. $index$ and possible $documentId$, $pos$
-and $scope$ attributes will follow $value$ as described in section \ref{sect:trans:TD:basics}.
+and $scope$ attributes will follow $value$ as described in Section \ref{sect:trans:TD:basics}.
 
 \begin{myExample}
 \begin{figure}[h]
@@ -69,11 +69,11 @@ e_1 \left\{\begin{array}{l}
 \caption{Example query containing a conditional expression \label{fig:trans:TD:condQue}}
 \end{figure}
 
-The query of figure \ref{fig:trans:TD:condQue} contains a conditional expression $e_1$. First the
+The query of Figure \ref{fig:trans:TD:condQue} contains a conditional expression $e_1$. First the
 \texttt{then}-expression and the \texttt{else}-expression are tainted with each
-others iterator dependencies. The result of the tainting is shown in figure \ref{fig:trans:TD:inter1:taint}. Then the two relations are augmented
+others iterator dependencies. The result of the tainting is shown in Figure \ref{fig:trans:TD:inter1:taint}. Then the two relations are augmented
 with the $alt$ attribute and spliced together with an \textsf{union} operator to make the relation depicted in
-figure \ref{fig:trans:TD:inter1:union}.
+Figure \ref{fig:trans:TD:inter1:union}.
 
 \begin{figure}[h]
 \centering
@@ -113,8 +113,8 @@ $anb$ & $bnb$ & $pred$ \\ \hline
 \end{tabular}
 \label{fig:trans:TD:inter1:test}
 }
-\caption[Intermediate results of evaluating $e_1$ in figure \ref{fig:trans:TD:condQue}.]{Intermediate results of
-evaluating $e_1$ in figure \ref{fig:trans:TD:condQue}. (a) The
+\caption[Intermediate results of evaluating $e_1$ in Figure \ref{fig:trans:TD:condQue}.]{Intermediate results of
+evaluating $e_1$ in Figure \ref{fig:trans:TD:condQue}. (a) The
 \texttt{then}-expression tainted with $I_{\mbox{\texttt{b}}}$ (b) The \texttt{then}-expression and the \texttt{else}-expression augmented with an $alt$ attribute and spliced together. (c) The test expression.
 Attribute names are shortened. $index$ attribute is left out. \label{fig:trans:TD:inter1}}
 \end{figure}
@@ -123,7 +123,7 @@ The result of the \textsf{union} operation is then joined with the test expressi
 \ref{fig:trans:TD:inter1:test}) on their common dependencies ($anumb$ and $bnumb$) to form the relation in figure
 \ref{fig:trans:TD:condRes:join}. From this relation, only the tuples where $alt$ has the value 1 and $r.val$ is
 $true$ or $alt$ has the value 2 and $r.val$ is $false$ are selected. The result of the selection after the final
-renaming is shown in figure \ref{fig:trans:TD:condRes:res}.
+renaming is shown in Figure \ref{fig:trans:TD:condRes:res}.
 
 \begin{figure}[h]
 \centering
@@ -152,7 +152,7 @@ $bnb$ & $anb$ & $val$ \\ \hline
 \end{tabular}
 \label{fig:trans:TD:condRes:res}
 }
-\caption[Evaluating $e_1$ in figure \ref{fig:trans:TD:condQue}.]{Evaluating $e_1$ in figure
+\caption[Evaluating $e_1$ in Figure \ref{fig:trans:TD:condQue}.]{Evaluating $e_1$ in figure
 \ref{fig:trans:TD:condQue}. (a) The test expression joined with the union of the \texttt{then}- and
 \texttt{else}-expression. (b) $e_1$ fully evaluated. Attribute names are shortened. $index$ attribute is omitted.
 \label{fig:trans:TD:condRes} }

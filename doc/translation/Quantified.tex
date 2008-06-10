@@ -37,7 +37,7 @@ variables bound in quantified expressions will be treated by the iterator bindin
 \end{equation}
 
 Where $\vartheta=e_1.\vartheta-\beta$, and a quantifier specification \texttt{QUANT} maps to an aggregator
-function as seen in table \ref{tab:disc:quant}. The \textsf{xqBoolean()} funcion will have to be run on the
+function as seen in Table \ref{tab:disc:quant}. The \textsf{xqBoolean()} funcion will have to be run on the
 $value$ fields of the \texttt{satisfies} expression, as there is no requirement that it is a boolean expression.
 
 \begin{table}[h]
@@ -51,7 +51,7 @@ $value$ fields of the \texttt{satisfies} expression, as there is no requirement 
 \end{table}
 
 \begin{myExample}
-Consider the XQuery query of figure \ref{fig:trans:TD:quantQu}. In this query the iterator body of the FLWOR is a
+Consider the XQuery query of Figure \ref{fig:trans:TD:quantQu}. In this query the iterator body of the FLWOR is a
 quantified expression.
 \begin{figure}[h]
 \begin{equation*}
@@ -66,7 +66,7 @@ quantified expression.
 The sequence sequentially bound to the quantifier variable is treated as explained in section
 \ref{sect:trans:TD:seqBuild}: where \texttt{\$a} taints \texttt{"b"} and the relations are spliced together. As
 quantifier variables are to be handled as iterator variables, the $index$ attribute of this relation will be
-renamed $enumb$, as illustrated in figure \ref{fig:trans:TD:quant:seq}. This relation (or rather the algebra
+renamed $enumb$, as illustrated in Figure \ref{fig:trans:TD:quant:seq}. This relation (or rather the algebra
 evaluating to it) is stored in the symbol table, and is fetched during the evaluation of the
 \texttt{satisfies}-expression. The result of this comparison expression is shown in figure
 \ref{fig:trans:TD:quant:satEx}. Here, the double line illustrates grouping.
@@ -113,6 +113,6 @@ expression. Attribute names are shortened. \label{fig:trans:TD:quantInter} }
 Except for the quantifier variable, this expression is dependent on $I_{\mbox{\texttt{a}}}$, which the result of
 the \texttt{satisfies}-expression is grouped on. Each group will be run through the \texttt{min} aggregator,
 because the quantifier is \texttt{every}. As $false$ has a lower value than $true$, the aggregator will reveal if
-the group contains a $false$. The result of the grouping is shown in figure \ref{fig:trans:TD:quant:quant}. This
+the group contains a $false$. The result of the grouping is shown in Figure \ref{fig:trans:TD:quant:quant}. This
 result will have to be renumbered to finalise the evaluation of the query.
 \end{myExample}

@@ -33,10 +33,10 @@ visiting nodes in the abstract syntax tree (see section
 implementation.
 
 \subsection{Iterator Dependencies}
-Iterator dependencies, described in section \ref{sect:trans:TD:basics}, are
+Iterator dependencies, described in Section \ref{sect:trans:TD:basics}, are
 passed upwards together with the MQL operator tree being built during the syntax
 tree parsing process. These sets of dependencies are handled by th \texttt{VarRef} and \texttt{VarRefSet} classes.
-A class diagram for these classes is shown in figure \ref{fig:impl:meta:varrefset_uml}.
+A class diagram for these classes is shown in Figure \ref{fig:impl:meta:varrefset_uml}.
 
 \begin{figure}[!htp]
 \begin{center}
@@ -46,10 +46,10 @@ A class diagram for these classes is shown in figure \ref{fig:impl:meta:varrefse
 \end{center}
 \end{figure}
 
-As described in section \ref{sect:trans:TD:dependency}, an iterator variable reference is always dependent on
+As described in Section \ref{sect:trans:TD:dependency}, an iterator variable reference is always dependent on
 its corresponding iterator. Thus, when a iterator variable is encountered during the parse process, and the
 variable is being ``read'' and not assigned or declared, the corresponding iterator is added to the current set of
-iterator dependencies. The example in figure \ref{fig:impl:meta:var_ref_ex} shows the variable \texttt{\$a}
+iterator dependencies. The example in Figure \ref{fig:impl:meta:var_ref_ex} shows the variable \texttt{\$a}
 being read, in which case the iterator is added to the \texttt{TraverseReturn}
 to-be-returned's set of dependencies.
 
@@ -67,7 +67,7 @@ for $i in (1,2,3) return
 \end{center}
 \end{figure}
 
-The source code excerpt in figure \ref{fig:impl:meta:var_ref_impl2} shows how
+The source code excerpt in Figure \ref{fig:impl:meta:var_ref_impl2} shows how
 iterator dependencies are treated in the visitor implementation.
 
 \begin{figure}[!htp]
@@ -91,7 +91,7 @@ return tr;
 Singleton nodes are nodes corresponding to expressions that return a sequence of exactly one item. In
 the cases where this is known to be true, the result from a translation can be
 tagged with this information and used later to simplify the translation of
-sequence construction (as described in section \ref{sect:impl:td:seq}).
+sequence construction (as described in Section \ref{sect:impl:td:seq}).
 
 This is the case of integer literal nodes as well as iterator variable lookups in the
 symbol table. The case of integer literal nodes is shown in figure
@@ -127,7 +127,7 @@ SymTabEntry tmp = Scope.set(tree.getChild(0).getText(),
 \end{figure}
 
 \subsection{Example of usage}
-In the example in figure \ref{fig:impl:meta:traverse_usage_ex}, an
+In the example in Figure \ref{fig:impl:meta:traverse_usage_ex}, an
 integer literal node is visited (a node that simply holds an integer). A
 \texttt{make()} MQL operator as well as a new \texttt{TraverseReturn}
 instance is created. The \texttt{make()} operator is then appended to the 

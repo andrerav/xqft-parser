@@ -46,13 +46,13 @@ the \texttt{XQFTTree} class to represent nodes in the abstract syntax tree.
 
 The actual parsing is performed by calling the method \texttt{module()}, which
 is the top-level production rule in the grammar for the XQFT parser (see
-appendix \ref{appendix:xquery_ebnf}).
+Appendix \ref{appendix:xquery_ebnf}).
 
 The \texttt{XQFTTree} class represents a node in the produced syntax tree. When
 a syntax tree is returned from the parser, the root node is an instance of this
-class, as well as all children (see figure \ref{figure:impl:using_xqft})
+class, as well as all children (see Figure \ref{figure:impl:using_xqft})
 
 To make practical use of the XQFT Parser, what remains is nothing more than to
 translate the abstract syntax tree acquired from the call to
 \texttt{getTree()}, which is the object \texttt{ast} on the last line of code
-in figure \ref{figure:impl:using_xqft}.
+in Figure \ref{figure:impl:using_xqft}.

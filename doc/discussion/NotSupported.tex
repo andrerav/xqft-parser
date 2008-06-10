@@ -3,18 +3,18 @@
 
 In this section we will present some of the features of XQuery at the time not supported by Tainting Dependencies,
 and some ideas around how a possible solution may be realised. Some of the
-features are not supported because they involve types, which is discussed in section \ref{sect:disc:typeSystem}. %As the MQL processor is still in development,
+features are not supported because they involve types, which is discussed in Section \ref{sect:disc:typeSystem}. %As the MQL processor is still in development,
 %there may be some uncertainty of what will and what will not be a function of the finished implementation. 
  
 
 \subsection{Full-text extensions}
 XQuery Full Text\cite{w3c01} is a superset of XQuery. A quick overview
-of the extensions made to XQuery can be found in section \ref{sect:theory:xquery:fulltext_ext}. Tainting Dependencies does however at this time
+of the extensions made to XQuery can be found in Section \ref{sect:theory:xquery:fulltext_ext}. Tainting Dependencies does however at this time
 support any of these features. One of the most important expressions of the
 extension is the \texttt{ftcontains} expression. An excerpt of the EBNF specification of this expression and some of
-its subexpressions can be seen in figure \ref{fig:disc:xqftEBNF}. The \texttt{FTPrimaryWithOptions} production is a
+its subexpressions can be seen in Figure \ref{fig:disc:xqftEBNF}. The \texttt{FTPrimaryWithOptions} production is a
 straight descendant of \texttt{FTMildNot}, and \texttt{FTWordsValue} is a straight descendant of
-\texttt{FTPrimary}. The complete EBNF specification can be found in appendix \ref{appendix:xquery_ebnf}.
+\texttt{FTPrimary}. The complete EBNF specification can be found in Appendix \ref{appendix:xquery_ebnf}.
 \begin{figure}[h]
 \begin{Verbatim}
  [51] FTContainsExpr ::= RangeExpr ( "ftcontains" FTSelection FTIgnoreOption? )?
@@ -50,7 +50,7 @@ Something like this:
 
 \texttt{ftand} and \texttt{ftor} expressions may extend upon this solution. These operators makes it possible to
 check for more than one term per node. If the translator keeps track of which scope is the current scope according
-to a path expression, as discussed in section \ref{sect:disc:optim:path}, this can be translated quite nicely into
+to a path expression, as discussed in Section \ref{sect:disc:optim:path}, this can be translated quite nicely into
 MQL. MQL supports two operators \textsf{and} and \textsf{or} which when surrounded by a \textsf{scope} operator
 will require the results from the two operands to stem from the same scope. A simple \texttt{ftand} expression may
 therefore be translated something like this:
@@ -70,7 +70,7 @@ therefore be translated something like this:
 \end{equation*}
 
 A problem do however arise when the operands of \texttt{ftcontains} are not a node and a literal. As can be seen
-from the specification in figure \ref{fig:disc:xqftEBNF}, a general expression may also be an operand. This is no
+from the specification in Figure \ref{fig:disc:xqftEBNF}, a general expression may also be an operand. This is no
 simple task to accomodate for. One possible solution would be to let the \textsf{lookup} operator take a relation
 as input. There will also be problems if the first operand is not a node. If this is the case, there is no $scope$
 attribute to join on. An example of such a query might be: 
@@ -83,7 +83,7 @@ second.
 \texttt{FTMatchOption} contains a great deal of options which modify in the way two terms or phrases are matched.
 The options are specified like e.g.\ \texttt{with stemming} and \texttt{with thesaurus}. One possible
 solution for accomodating for such options would be a context operator comparable to the \textsf{index} operator
-(section \ref{sect:method:marsOperators:index}). The operator would take the match options as parameters, and set
+(Section \ref{sect:method:marsOperators:index}). The operator would take the match options as parameters, and set
 the context for possible \textsf{lookup} operators within its subtree. Another possibility would be to use the
 options as parameters directly to the \textsf{lookup} operator.
 
@@ -102,7 +102,7 @@ of its advantages was its simplicity. By introducing the concept of tainting to 
 be a good start for finding a method of translating in \texttt{unordered} mode.
 But as TD is an evolution of MarkXRemove and a more complete method, a better
 solution might be to simplify this method by removing \textsf{numberate} operators and all operators whose only intent is to manipulate $index$ fields. Utilising context sensitive visitor patterns
-(section \ref{sect:theory:contextVisitorPattern}), differentiating translation of \texttt{ordered} and
+(Section \ref{sect:theory:contextVisitorPattern}), differentiating translation of \texttt{ordered} and
 \texttt{unordered} mode expressions will be made easy.
 
 
@@ -141,7 +141,7 @@ A comparison with the \texttt{<<} and \texttt{>>} operators returns $true$ if, i
 node precedes the right operand node and if the left operand node follows the right operand node, respectively.
 Otherwise it returns $false$. These operators have semantics comparable with the \texttt{preceding} and
 \texttt{following} axes in path expressions, and may therefore be translated by utilising the \textsf{isPreceding}
-and \textsf{isFollowing} functions (section \ref{sect:method:marsAddedOperators}, page
+and \textsf{isFollowing} functions (Section \ref{sect:method:marsAddedOperators}, page
 \pageref{sect:method:marsAddedOperators}):
 
 \begin{equation*}
@@ -172,7 +172,7 @@ XQuery provides the following operators for combining sequences of nodes:
 
 As all these operators eliminate duplicate nodes from their result sequences (based on node identity), the
 operators are the XQuery equivalent to the relational algebra operators union, intersect and difference discussed
-in section \ref{sect:theory:relAlg} on page \pageref{sect:theory:relAlg}. The result is also required to be in
+in Section \ref{sect:theory:relAlg} on page \pageref{sect:theory:relAlg}. The result is also required to be in
 document order.
 
 MQL does currently not implement a pure \textsf{distinct} operator, but if it
@@ -269,11 +269,11 @@ as operands.
 \subsection{Order by}
 \label{sect:disc:orderby}
 
-As can be seen from the \texttt{order by}-clause specification of figure \ref{fig:trans:TD:ordEBNF} on page
+As can be seen from the \texttt{order by}-clause specification of Figure \ref{fig:trans:TD:ordEBNF} on page
 \pageref{fig:trans:TD:ordEBNF}, the ordering of tuples returned from a FLWOR expression is very flexible as it may
 be set by one or more ordering specifications. Options may also be set for each order specification, called order
 modifiers. Currently, Tainting Dependencies only accomodates for a single order specification and no order
-modifiers. Expanding the translation rule for \texttt{order by} ordering (rule \ref{rule:trans:TD:orderbyOrd}) to
+modifiers. Expanding the translation rule for \texttt{order by} ordering (Rule \ref{rule:trans:TD:orderbyOrd}) to
 allow multiple ordering specification may be done by sequentially joining the specifiers on their common
 dependencies before joining the result of this with the relation stemming from the \texttt{where} or
 \texttt{return}-clause, and finally renumbering while sorting on the values
@@ -316,7 +316,7 @@ XQuery supports numerous built-in functions, such as \texttt{fn:not} and \texttt
 specified in \cite{w3cfuncOps}. These functions are identified by being a member of the \texttt{fn}-namespace. In
 addition, XQuery allows users to declare functions of their own. A function declaration specifies the name of the
 function, the names and datatypes of the parameters, and the datatype of the result, as can be seen from the
-specification in figure \ref{fig:disc:not:funcEBNF}.
+specification in Figure \ref{fig:disc:not:funcEBNF}.
 
 \begin{figure}[h]
 \begin{Verbatim}
@@ -329,7 +329,7 @@ specification in figure \ref{fig:disc:not:funcEBNF}.
 \end{figure}
 
 The \texttt{external} keyword means that the function is implemented outside the query environment. This is
-discussed in section \ref{sect:disc:ctxItem}. To support built-in and query declared functions with TD, a
+discussed in Section \ref{sect:disc:ctxItem}. To support built-in and query declared functions with TD, a
 function table may be introduced. By querying this table with the name of the function, a operator tree is
 returned with pointers to possible references of the parameters within the tree. When the translator comes upon a
 function call, it fetches this tree and follows the pointers to the parameter references and inserts the

@@ -6,7 +6,7 @@ that item in XQuery. An item is equivalent to a singleton sequence containing th
 may contain nodes, atomic values, or any mixture of nodes and atomic values. But it may be advantageous for a
 translator to differentiate singleton sequences from other sequences. 
 
-As we saw in section \ref{sect:trans:TD:simplifications}, by knowing that all subexpressions return singleton
+As we saw in Section \ref{sect:trans:TD:simplifications}, by knowing that all subexpressions return singleton
 sequences, the translation of the sequence construction expression may be simplified. If the
 \texttt{return}-clause expression is a singleton sequence the translation of iterator ordered FLWOR expressions
 may also be simplified. If the FLWOR only contains only one iterator and no \texttt{where}-clause the renumbering
@@ -82,7 +82,7 @@ defined as follows\cite{w3cfuncOps}:
   \item In all other cases, \texttt{fn:boolean} raises a type error.
 \end{enumerate}
 
-In the chapter presenting Tainting Dependencies, chapter \ref{sect:translation}, we solved resolving the effective
+In the chapter presenting Tainting Dependencies, Chapter \ref{sect:translation}, we solved resolving the effective
 boolean value of sequences with the help of an assumed MQL function \textsf{xqBoolean()} and an undefined abstract
 function \textbf{B()}. In that chapter we said it was enough to consider it as a grouping function returning one
 tuple per unique iteration (as implied by the iterator dependencies). The points 3-5 of the definition of the
@@ -129,7 +129,7 @@ implemented in the MQL processor. A disadvantage with this solution, however, is
 resource-demanding as it consists of both a grouping and a join.
 
 Point \#1 in the definition of evaluation of effective boolean value is also a
-bit problematic. This is because Tainting Dependencies, as it is presented in chapter \ref{sect:translation},
+bit problematic. This is because Tainting Dependencies, as it is presented in Chapter \ref{sect:translation},
 does not handle empty sequences explicitly. And in most cases this is sufficient, as non-empty sequences containing
 empty items should be normalised. In the following query it is clear that the result must be all the
 \texttt{maybe} nodes of the document which is a child of a \texttt{elem} node:
@@ -164,7 +164,7 @@ expressions of an expression which is to be calculated into a effective boolean 
 according to the context is made simple by implementing a context sensitive visitor pattern (section
 \ref{sect:theory:contextVisitorPattern}). The difference in translating in the logical context as opposed to the
 default context will only be that all joins on common dependencies will have to be made into full outer joins. In
-addition joins such as in the axis+name test translation (rule \ref{rule:trans:TD:pathStep}) where only the left
+addition joins such as in the axis+name test translation (Rule \ref{rule:trans:TD:pathStep}) where only the left
 operand may have dependencies, will have to be turned into a left-outer join. Always employing outer joins will
 ensure that no $-numb$ field corresponding to one unique iteration will be removed from the relation. Using this
 solution \textsf{xqBoolean()} must return $false$ if it is run with \textit{NULL} as input.

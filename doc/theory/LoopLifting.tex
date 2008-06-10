@@ -3,11 +3,11 @@
 \label{sect:theory:loop_lifting}
 Loop lifting is a method of translating XQuery iteration expressions into relational algebra. The method was
 developed by Torsten Grust and Jens Teubner and originally presented in \cite{pathfinder_mothertongue}. It is a
-part of the Pathfinder project\cite{pathfinderHome} (see section \ref{sect:theory:pathfinder}).
+part of the Pathfinder project\cite{pathfinderHome} (see Section \ref{sect:theory:pathfinder}).
 
 In this section we will present Loop Lifting mainly based on the two articles \cite{pathfinder_purelyRelational}
 and \cite{pathfinder_mothertongue}. The articles present the method for a subset of XQuery Core (Pathfinder
-rewrites queries to Core, see section \ref{sect:theory:pathfinder}), of which we will only present the elements
+rewrites queries to Core, see Section \ref{sect:theory:pathfinder}), of which we will only present the elements
 relevant in a comparison between Loop Lifting and the Tainting Dependencies method. Thus, the translation of path
 expressions and XML-element construction will not be handled, as pathfinder's XML-tree representation(section
 \ref{sect:theory:pathfinder}) is incompatible with MARS.
@@ -23,7 +23,7 @@ relational algebra, such as the Peep-Hole plan simplification\cite{pathfinder_pu
 \subsection{Operators}
 \label{sect:trans:ll:Operators}
 Loop-lifting utilises a set of relational algebra operators, out of which the ones used in this chapter is
-presented in table \ref{tab:trans:ll:Operators}.
+presented in Table \ref{tab:trans:ll:Operators}.
 \begin{table}[h]
 \centering
 \begin{tabular}{l|l} 
@@ -42,13 +42,13 @@ represents attributes}
 \end{table}
 
 Most of the operators are quite standard, and can easily be understood by comparing with the operators from
-general relational algebra (section \ref{sect:theory:relAlg}) and MQL (section \ref{sect:method:marsOperators}).
+general relational algebra (Section \ref{sect:theory:relAlg}) and MQL (Section \ref{sect:method:marsOperators}).
 
 Only a very restricted selection
 is utilised, written $\sigma_{a}$, which only returns tuples satisfying $a \neq 0$.  Considering the numbering
 operator, $p$ denotes the partitioning attribute, $a_{1},\ldots,a_{n}$ the attributes to be sorted on and $b$ is
 an added attribute holding the result of the
-numbering (equal to the proposed \textsf{numberate}-operator of MQL, section \ref{sect:method:marsAddedOperators}).
+numbering (equal to the proposed \textsf{numberate}-operator of MQL, Section \ref{sect:method:marsAddedOperators}).
 {\scriptsize{\begin{tabular}{c|c}$a$&$b$\\\hline\end{tabular}}} represents the creation of a relation with
 attributes $a$ and $b$.
 
@@ -294,9 +294,9 @@ scope.
 
 Firstly a representation of the outermost loop is needed. With the help of equation \ref{eq:ll:constLoopLift} we
 find a representation of \texttt{(10, 20)} in scope $s$, $s(e_{0})$. Then, employing equation \ref{eq:ll:qxy_vxy}
-yields \texttt{\$v0} in scope $s_{0}$, the result of which is shown in figure \ref{fig:trans:ll:q0_v0}.
+yields \texttt{\$v0} in scope $s_{0}$, the result of which is shown in Figure \ref{fig:trans:ll:q0_v0}.
 $loop_{0}$ and $map_{\, ,0}$ can now be calculated by using equations \ref{eq:ll:loopxy} and \ref{eq:ll:mapx_xy}
-and are shown in figure \ref{fig:trans:ll:loop0} and \ref{fig:trans:ll:map_0} respectevely (remember
+and are shown in Figure \ref{fig:trans:ll:loop0} and \ref{fig:trans:ll:map_0} respectevely (remember
 $loop$ consists of a single tuple with value 1).
 
 \begin{figure}[!h]
@@ -338,7 +338,7 @@ $outer$ & $inner$ \\ \hline
 
 Before we evaluate the sequence expression in scope $s_0$, we need to evaluate the inner \texttt{for} loop. By the
 same measure as with the outer loop we first calculate $q_{0\cdot 0}($\texttt{\$v00}$)$, $loop_{0 \cdot 0}$ and
-$map_{0, 0 \cdot 0}$. The results are shown in figure \ref{fig:trans:ll:innerIntermediate}.
+$map_{0, 0 \cdot 0}$. The results are shown in Figure \ref{fig:trans:ll:innerIntermediate}.
 
 \begin{figure}[!h]
 \centering
@@ -390,10 +390,10 @@ $outer$ & $inner$ \\ \hline
 
 To be able to calculate the sum-expression, $e_{0 \cdot 0}'$, we first need a representation of the variable
 \texttt{\$v0} in scope $s_{0 \cdot 0}$. As this variable is a free variable in this scope, this is done by
-applying equation \ref{eq:ll:qxy_vx} on $q_{0}($\texttt{\$v0}$)$ (figure \ref{fig:trans:ll:q0_v0}). This
-result is shown in figure \ref{fig:trans:ll:q00_v0}. Now that we have both \texttt{\$v0} and \texttt{\$v00}
+applying equation \ref{eq:ll:qxy_vx} on $q_{0}($\texttt{\$v0}$)$ (Figure \ref{fig:trans:ll:q0_v0}). This
+result is shown in Figure \ref{fig:trans:ll:q00_v0}. Now that we have both \texttt{\$v0} and \texttt{\$v00}
 expressed in scope $s_{0 \cdot 0}$, we can employ equation \ref{eq:ll:sumexpr} to sum the two
-variables together. The resulting relation can be seen in figure \ref{fig:trans:ll:q00_e00m}.
+variables together. The resulting relation can be seen in Figure \ref{fig:trans:ll:q00_e00m}.
 
 \begin{figure}[!h]
 \centering
@@ -431,9 +431,9 @@ $pos$	& $iter$	& $item$ \\ \hline
 
 The result of the summation, $q_{0\cdot 0}(e_{0\cdot0}')$ is expressed in scope $s_{0 \cdot 0}$ and will have to
 be mapped up to scope $s_{0}$. This is done with help from equation \ref{eq:ll:qx_exymark} and $map_{0, 0\cdot 0}$
-which we calculated earlier, and the result can be seen in figure \ref{fig:trans:ll:q0_e00m}. With
+which we calculated earlier, and the result can be seen in Figure \ref{fig:trans:ll:q0_e00m}. With
 $q_{0}(e_{0\cdot0}')$ evaluated, and with $q_{0}($\texttt{\$v0}$)$ from earlier, the sequence building can be completed. This operation requires
-equation \ref{eq:ll:secuence}, and yields the relation shown in figure \ref{fig:trans:ll:q0_e0m}.
+equation \ref{eq:ll:secuence}, and yields the relation shown in Figure \ref{fig:trans:ll:q0_e0m}.
 
 \begin{figure}[!h]
 \centering
@@ -488,4 +488,4 @@ $pos$	& $iter$	& $item$ \\ \hline
 
 Finally the built sequence will have to be expressed in terms of scope $s$. Achieving this only requires the use
 of equation \ref{eq:ll:qx_exymark} one last time in combination with $map_{ ,0}$. The complete result of the query
-is shown in figure \ref{fig:trans:ll:q_e0m}.
+is shown in Figure \ref{fig:trans:ll:q_e0m}.

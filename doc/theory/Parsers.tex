@@ -2,7 +2,7 @@
 \label{sect:parser_and_syntaxtrees}
 The act of parsing is the process of analysing a series of tokens and construct
 a grammatical structure (syntax tree) based on a formally specified grammar. In
-figure \ref{figure:parser:overview}, the parser component of a generic
+Figure \ref{figure:parser:overview}, the parser component of a generic
 compiler/interpreter is shown in the context of a generic compiler
 architecture.
 
@@ -56,7 +56,7 @@ generators are yacc (and derivatives), CUP, GOLD, and SableCC. Some popular
 top-down parser generators include JavaCC, ANTLR, Spirit, and Coco/R.
 
 A comparison of some of the most popular parser generators were made in
-\cite{ourselves} for the development of the XQFT Parser (see section \ref{sect:theory:xqftparser}), and out of
+\cite{ourselves} for the development of the XQFT Parser (see Section \ref{sect:theory:xqftparser}), and out of
 these the ANTLR parser generator was chosen. We will not reiterate the features of ANTLR in this document, however
 it is important to note that ANTLR can generate predicated LL(*)-parsers\cite{definitiveAntlr} based on
 LL-compliant grammars. This choice was made due to the XQuery BNF specification
@@ -104,12 +104,12 @@ an associated name and no specific token. These imaginary tokens are typically
 used where there are no ``real'' tokens available to represent the proper
 semantic or contextual meaning.
 
-One example can be seen in figure \ref{figure:parser:imaginary_tokens_path},
+One example can be seen in Figure \ref{figure:parser:imaginary_tokens_path},
 where imaginary tokens, identified by a AST\_-prefix, have been injected into the tree.
 
-\begin{figure}[h]
+\begin{figure}[!h]
   \centering
-    \includegraphics[scale=0.50]{img/graphs/path1} 
+    \includegraphics[scale=0.45]{img/graphs/path1} 
   \caption{Example of injected imaginary tokens}
   \label{figure:parser:imaginary_tokens_path}
 \end{figure}
@@ -148,7 +148,7 @@ accommodate new specifications.
   \label{figure:parser:visitor_pattern}
 \end{figure}
 
-The visitor pattern\cite{agile_software} is a common design pattern for parsing
+The visitor pattern\cite{agile_software} (Figure \ref{figure:parser:visitor_pattern}) is a common design pattern for parsing
 tree structures. The visitor pattern gives a number of ways to modify the
 behaviour of a hierarchy of classes without having to change those classes.
 Additionally, this allows the benefit of a clean separation of logic/algorithms
@@ -191,7 +191,7 @@ visitors, thus avoiding a single large and complex visitor.
   \label{figure:parser:context_visitor_pattern}
 \end{figure}
 
-As can be seen in figure \ref{figure:parser:context_visitor_pattern}, the
+As can be seen in Figure \ref{figure:parser:context_visitor_pattern}, the
 class structure is similar to a common visitor pattern (figure
 \ref{figure:parser:visitor_pattern}). The important distinction thus lies in
 the logic and how the visitors are executed and how they interact. The two

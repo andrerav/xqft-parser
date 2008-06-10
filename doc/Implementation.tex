@@ -2,7 +2,7 @@
 \label{chapter:implementation}
 This chapter describes the steps made to implement a proof of concept (dubbed
 ``the prototype'') which utilises some of the most important translation
-rules developed in chapter \ref{chapter:translation}. This includes an overall system
+rules developed in Chapter \ref{chapter:translation}. This includes an overall system
 description, as well as details about usage of the XQFT Parser. Furthermore, we
 describe the process of building a MQL algebra tree, and how the context
 sensitive visitor pattern is used. The scoping and symbol table implementation
@@ -15,22 +15,22 @@ implemented and how they can be made to work in a real-life situation.
 As requested specifically by Fast Search \& Transfer, this proof of concept was implemented
 in Java 5.0, using regular object oriented techniques, and is licensed under a
 liberal BSD license. Instructions for compilation and installation can be
-found in appendix \ref{appendix:installation}.
+found in Appendix \ref{appendix:installation}.
 
 \section{List Of Supported Features}
 This implementation supports the translation of the following XQuery features,
 here annotated with references to the descriptions of their respective
 translation:
 \begin{itemize}
-  \item FLWOR constructs (section \ref{sect:trans:TD:simpleFLWOR}, page
+  \item FLWOR constructs (Section \ref{sect:trans:TD:simpleFLWOR}, page
   \pageref{sect:trans:TD:simpleFLWOR})
-  \item Sequence construction (section \ref{sect:trans:TD:seqBuild}, page
+  \item Sequence construction (Section \ref{sect:trans:TD:seqBuild}, page
   \pageref{sect:trans:TD:seqBuild})
-  \item Integer literals (section \ref{sect:trans:TD:literal}, page
+  \item Integer literals (Section \ref{sect:trans:TD:literal}, page
   \pageref{sect:trans:TD:literal})
-  \item Conditional expressions (section \ref{sect:trans:TD:ifThenElse}, page
+  \item Conditional expressions (Section \ref{sect:trans:TD:ifThenElse}, page
   \pageref{sect:trans:TD:ifThenElse})
-  \item Binary comparison (section \ref{sect:trans:TD:logical}, page
+  \item Binary comparison (Section \ref{sect:trans:TD:logical}, page
   \pageref{sect:trans:TD:logical})
 \end{itemize}
 

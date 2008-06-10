@@ -11,7 +11,7 @@
 \usepackage{verbatim} 
 \usepackage{listings} 
 \usepackage{fancyvrb} \fvset{frame=single, fontsize=\small}
-%\usepackage{nomencl}
+\usepackage{nomencl}
 \usepackage[pdftex, bookmarks=true, linkbordercolor={0.8 0.8 0.8}]{hyperref}
 %\graphicspath{{./img}}
 \usetikzlibrary{trees}
@@ -40,7 +40,7 @@
 \addtolength{\footskip}{0.25in}
 %\pdfpagewidth 8.26in
 %\pdfpageheight 11.7in
-%\makenomenclature
+\makenomenclature
 % Different font in captions
 \newcommand{\captionfonts}{\small\itshape}
 \makeatletter  % Allow the use of @ in command names
@@ -56,7 +56,7 @@
 \makeatother   % Cancel the effect of \makeatletter
 \begin{document}
 
-%\input{Nomenclature}
+\input{Nomenclature}
 
 
 %\begin{titlepage}
@@ -68,34 +68,41 @@
 %\newpage
 
 %\mbox{}
-%\pagenumbering{roman}
+\pagenumbering{roman}
 \input{Abstract}
-%\newpage
+\newpage
 
-%\mbox{}
+\mbox{}
 
 \input{Preface}
-%\newpage
+\newpage
 
-%\mbox{}
+\mbox{}
 
 \tableofcontents
 
 %\listoffigures
 
-%\printnomenclature
-
+\printnomenclature
+\newpage
+\mbox{}
 
 \input{Introduction}
+\newpage
+\mbox{}
 
 \input{Theory}
 %\newpage
 %\mbox{}
 
 \input{Method}
-% 
+%
+\newpage
+\mbox{} 
  \input{Translation}
-% 
+
+\newpage
+\mbox{} 
  \input{Implementation}
 %\newpage
 %\mbox{}

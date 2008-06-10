@@ -2,7 +2,7 @@
 \label{sect:result:theoretical_algebra}
 In this section, a collection of XQuery query examples and their translation to
 relational algebra are presented. The translation is done manually using the
-``Tainting Dependencies'' method described in chapter \ref{sect:translation},
+``Tainting Dependencies'' method described in Chapter \ref{sect:translation},
 and includes the simplifications specified in section
 \ref{sect:trans:TD:simplifications}. For the sake of brevity, only the rules
 used throughout the translation will be noted. Intermediate translations are
@@ -10,142 +10,92 @@ not shown here, however they are all shown in their entirety in appendix
 \ref{appendix:transl}.
 
 \subsection{Extensive FLWOR}
-This example will illustrate the translation of a more complete FLWOR
-expression.
+This example will illustrate the translation of the following FLWOR expression:
 
-\subsubsection{Query premise}
-\begin{figure}[!htp]
-\begin{center}
 \begin{Verbatim}
 for $a in (1,2,3) let $b := 2
   where $a gt $b
   order by $a
   return ($a, $b)
 \end{Verbatim}
-  \caption{Extensive FLWOR expression, including for-, let-, where-, orderby-,
-  and return-clauses}
-  \label{fig:results:query_ext_flwor}
-\end{center}
-\end{figure}
 
-\subsubsection{Translation process}
-The translation process in its entirety is shown step by step in appendix
-\ref{appendix:transl:ext_flwor}, page \pageref{appendix:transl:ext_flwor}.
-
-\subsubsection{Result}
-The result of the translation is shown in figure
-\ref{fig:results:query_ext_flwor_result}.
+The translation process in its entirety is shown step by step in Appendix \ref{appendix:transl:ext_flwor}, page
+\pageref{appendix:transl:ext_flwor}. And the result of the translation is shown in figure
+\ref{fig:results:query_ext_flwor_result}. The operator tree can be converted to the DAG seen in Figure
+\ref{fig:results:query_ext_flwor_dag}.
 
 \begin{figure}[!htp]
 \begin{center}
   \includegraphics[width=1.0\textwidth]{img/graphs/ext_flwor}
-  \caption{Complete translation of expression in figure
-  \ref{fig:results:query_ext_flwor}}
+  \caption{Complete translation of expression extensive FLWOR expression}
   \label{fig:results:query_ext_flwor_result}
 \end{center}
 \end{figure}
 
-The operator tree in figure \ref{fig:results:query_ext_flwor_result} can be
-converted to the DAG seen in figure \ref{fig:results:query_ext_flwor_dag}.
-
-\newpage
-
 \begin{figure}[!htp]
 \begin{center}
-  \includegraphics[width=1.0\textwidth]{img/graphs/ext_flwor_dag}
-  \caption{DAG representation of operator tree in figure
-  \ref{fig:results:query_ext_flwor_result}}
+  \includegraphics[width=0.8\textwidth]{img/graphs/ext_flwor_dag}
+  \caption{DAG representation of the translated extensive FLWOR expression}
   \label{fig:results:query_ext_flwor_dag}
 \end{center}
 \end{figure}
 
+\newpage
 \subsection{Path expression with predicate}
-This example will illustrate the translation of a path expression with a predicate.
+This example will illustrate the translation of a path expression with a predicate:
 
-\subsubsection{Query premise}
-\begin{figure}[!htp]
-\begin{center}
 \begin{Verbatim}
 /a/b[@id eq 2] 
 \end{Verbatim}
-  \caption{Path expression with a predicate query premise}
-  \label{fig:results:query_pathPred}
-\end{center}
-\end{figure}
 
-\subsubsection{Translation process}
-The translation process in its entirety is shown step by step in appendix
-\ref{appendix:transl:pathPred}, page \pageref{appendix:transl:pathPred}.
+The translation process in its entirety is shown step by step in Appendix \ref{appendix:transl:pathPred}, page
+\pageref{appendix:transl:pathPred}, and the result of the translation is shown in figure
+\ref{fig:results:query_pathpred_result}. The operator can be converted to the DAG seen in Figure
+\ref{fig:results:query_pathpred_result_dag}.
 
-\subsubsection{Result}
-The result of the translation is shown in figure
-\ref{fig:results:query_pathpred_result}.
-
-\newpage
 \begin{figure}[!htp]
 \begin{center}
-  \includegraphics[width=0.9\textwidth]{img/graphs/TD_patExprPred}
-  \caption{Complete translation of expression in figure
-  \ref{fig:results:query_pathPred}}
+  \includegraphics[width=0.85\textwidth]{img/graphs/TD_patExprPred}
+  \caption{Complete translation of the path expression.}
   \label{fig:results:query_pathpred_result}
 \end{center}
 \end{figure}
-
-The operator tree in figure \ref{fig:results:query_pathpred_result} can be
-converted to the DAG seen in figure \ref{fig:results:query_pathpred_result_dag}.
 
 \newpage
 \begin{figure}[!htp]
 \begin{center}
   \includegraphics[width=0.9\textwidth]{img/graphs/TD_patExprPred_dag}
-  \caption{DAG representation of operator tree in figure
-  \ref{fig:results:query_pathpred_result}}
+  \caption{DAG representation of the translated path expression.}
   \label{fig:results:query_pathpred_result_dag}
 \end{center}
 \end{figure}
 
+\newpage
+
 \subsection{If-then-else}
-\subsubsection{Query premise}
-\begin{figure}[!htp]
-\begin{center}
+This example will illustrate the translation of a conditional expression:
 \begin{Verbatim}
 for $a in (1,2,3) return
   if $a gt 2 then $a else 3
 \end{Verbatim}
-  \caption{If-then-else query premise}
-  \label{fig:results:query_ifthenelse}
-\end{center}
-\end{figure}
-
-\subsubsection{Translation process}
-The translation process in its entirety is shown step by step in appendix
-\ref{appendix:transl:ifthenelse}, page \pageref{appendix:transl:ifthenelse}.
-
-\subsubsection{Result}
-The result of the translation is shown in figure
-\ref{fig:results:query_ifthenelse_result}.
+The translation process in its entirety is shown step by step in Appendix \ref{appendix:transl:ifthenelse}, page
+\pageref{appendix:transl:ifthenelse}, and the result of the translation is shown in figure
+\ref{fig:results:query_ifthenelse_result}. The operator tree can be converted to the DAG seen in Figure
+\ref{fig:results:query_ifthenelse_result_dag}.
 
 \begin{figure}[!htp]
-\begin{center}
-  \includegraphics[width=1.0\textwidth]{img/graphs/ifthenelse}
-  \caption{Complete translation of expression in figure
-  \ref{fig:results:query_ifthenelse}}
+\centering
+  \includegraphics[width=0.8\textwidth]{img/graphs/ifthenelse}
+  \caption{Complete translation of the conditional expression }
   \label{fig:results:query_ifthenelse_result}
-\end{center}
 \end{figure}
 
-The operator tree in figure \ref{fig:results:query_ifthenelse_result} can be
-converted to the DAG seen in figure \ref{fig:results:query_ifthenelse_result_dag}.
-
-\newpage
 
 \begin{figure}[!htp]
-\begin{center}
-  \includegraphics[width=1.0\textwidth]{img/graphs/ifthenelse_dag}
-  \caption{DAG representation of operator tree in figure
-  \ref{fig:results:query_ifthenelse_result}}
+\centering
+  \includegraphics[width=0.6\textwidth]{img/graphs/ifthenelse_dag}
+  \caption{DAG representation of the translated conditional expression}
   \label{fig:results:query_ifthenelse_result_dag}
-\end{center}
 \end{figure}
 
 \newpage
@@ -204,7 +154,7 @@ for $a in (1,2) return (3, for $b in (4,5) return ($a, $b, 6))
 \end{figure}
 
 
-The algebra tree in figure \ref{fig:results:query_complex_flwor_result} can
+The algebra tree in Figure \ref{fig:results:query_complex_flwor_result} can
 be converted to the DAG in figure
 \ref{fig:results:query_complex_flwor_result_dag}
 
@@ -241,7 +191,7 @@ for $a in (10,20) return if ($a > 15) then $a else 15
 \end{center}
 \end{figure}
 
-The algebra tree in figure \ref{fig:results:query_conditional_flwor_result} can
+The algebra tree in Figure \ref{fig:results:query_conditional_flwor_result} can
 be converted to the DAG in figure
 \ref{fig:results:query_conditional_flwor_result_dag}
 

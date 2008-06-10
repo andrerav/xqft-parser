@@ -7,7 +7,7 @@ its iterator dependencies ($\vartheta$), which we will discuss later.
 
 One XQuery sequence is represented as one relation and one XQuery item is represented as one tuple. This is sound,
 as all XQuery items are sequences, and all sequences are one-dimensional (section
-\ref{sect:theory:xquery:basics}). As we mentioned in section \ref{sect:trans:MarkXRemove}, the MarkXRemove method
+\ref{sect:theory:xquery:basics}). As we mentioned in Section \ref{sect:trans:MarkXRemove}, the MarkXRemove method
 did not actually consider the ordering of items in sequences at all. In Tainting Dependencies, however, we have
 introduced an attribute $index$ holding the intra sequence number of the item. Consider the XQuery sequence
 \texttt{('a','b',}$\ldots$\texttt{,'z')}. With this attribute, the relational representation will be as follwing:
@@ -26,7 +26,7 @@ $n$		& \texttt{'z'} \\\hline
 As can be seen, the item value is stored in the $value$ attribute. For the course of this chapter we will, for the
 sake of simplicity, treat $value$ as a polymorphic type attribute. This simplification has minimal consequences
 for the method and the way XQuery expressions are translated. XQuery types and relational representation of such
-will is discussed in section \ref{sect:disc:typeSystem}.
+will is discussed in Section \ref{sect:disc:typeSystem}.
 
 Also for simplicity, the $index$, $documentId$, $pos$ and $scope$ attributes have sometimes been left out of the
 attributes specified in \textsf{project} operators. If the \textsf{project} operator is applied to the result of a
@@ -40,7 +40,7 @@ Tainting Dependencies utilises a symbol table for storing of variables declared.
   \item \textbf{get(}$\chi$\textbf{)} -- will do a lookup in the table based on the name of the variable
   \texttt{\$}$\chi$ and return the algebraic version of the expression linked to it.
 \end{itemize}
-The symbol table handles scoping according to XQuery semantics (section \ref{sect:theory:xquery:Flwor}), meaning
+The symbol table handles scoping according to XQuery semantics (Section \ref{sect:theory:xquery:Flwor}), meaning
 the translator will always be able to find the right declared variable based on which node in the AST the
 translator is visiting.
 
@@ -79,8 +79,8 @@ child{node [astNode, label=above left:$e_{2}$] {\texttt{+}}
 child{node [astNode] {\texttt{\$y}}}
  ;
 \end{tikzpicture}
-\label{fig:trans:td:varDep}
-\caption[Iterator variable dependency]{Iterator variable dependency}
+
+\caption[Iterator variable dependency]{Iterator variable dependency \label{fig:trans:td:varDep}}
 \end{figure}
 
 The iterator dependencies of an expression $e$ are part of the set $e.\vartheta$. As mentioned earlier,
@@ -114,7 +114,7 @@ expressed as: $\vartheta = e.\vartheta \cup I_{\chi}$. For a
 \texttt{for}-clause with multiple variable bindings the rule must be applied
 once per binding.
 
-From definition \ref{def:iterVarDep} it can be seen that $\chi$ is not part of
+From Definition \ref{def:iterVarDep} it can be seen that $\chi$ is not part of
 the set of dependencies the iterator $I_{\chi}$ returns its parent. This is in
 fact the only case where a iterator is removed from a dependency set. Because of this, we must be careful not to
 incidentally remove an $\chi$$numb$ attribute from a relation by means of a
@@ -162,8 +162,8 @@ Conceptually, the result of this query can be calculated like this:
 
 But such a simple solution is not adequate if there is a reference to an iterator variable somewhere within the
 iterator body. This was managed by MarkXRemove by implementing inheritance of iterator dependencies, similar to
-the concept discussed in section \ref{sect:trans:TD:dependency}, and replacing the cartesian product operator with
-something like a natural join operator (section \ref{sect:trans:mxr:basics}).
+the concept discussed in Section \ref{sect:trans:TD:dependency}, and replacing the cartesian product operator with
+something like a natural join operator (Section \ref{sect:trans:mxr:basics}).
 
 MarkXRemove has shortcomings when it comes to evaluating expressions where a
 sequence constructed with at least one iterator dependent expression is a subexpression. Tainting Dependencies
