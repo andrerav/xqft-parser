@@ -1,6 +1,6 @@
 \section{Scoping and Symbol Tables}
 Crucial to the implementation of the Tainting Dependencies methodology
-described in chapter \ref{chapter:translation} is the ability to
+described in Chapter \ref{chapter:translation} is the ability to
 maintain a contextual environment with scoping and symbol tables. This section
 details the implementation of this, and how it is used to meet the
 requirements of TD.
@@ -51,7 +51,7 @@ storing instances of \texttt{SymTabEntry}, with the symbol name as key.
 The scoping semantics are encapsulated in a singleton manner in the class
 \texttt{Scope}, with static methods available for pushing and popping scopes,
 and storing and retrieving symbols. The external (static) API as available to a
-user of the scope system is shown in figure \ref{fig:impl:scope_uml}.
+user of the scope system is shown in Figure \ref{fig:impl:scope_uml}.
 
 \begin{figure}[!htp]
 \begin{center}
@@ -68,5 +68,5 @@ evaluating a \texttt{return}-clause -- both of which occur within a FLWOR expres
 The scoping system also tracks iteration variables. That is, for any scope,
 there is \textit{one and only one} iteration variable, except in the top scope
 where there is no iteration variable. The concept of an iteration variable is
-explained in definition \ref{def:iterVarDep}. Tracking of these
-variables are reviewed in section \ref{sect:impl:tainting_deps}.
+explained in Definition \ref{def:iterVarDep}. Tracking of these
+variables are reviewed in Section \ref{sect:impl:tainting_deps}.

@@ -15,7 +15,7 @@ has been deemed company confidential. }
 \label{sect:method:mql:indexes}
 \label{sect:method:mql:concepts}
 All queries for MQL are written as strings with a syntax reminiscient of Lisp
-dialects. An example query can be seen in figure \ref{figure:mql:op_example}.
+dialects. An example query can be seen in Figure \ref{figure:mql:op_example}.
 
 Data is stored in \textit{indexes} rather than in DOM trees. Naturally, this is a prerequisite for efficient
 execution of relational algebra on the data. There are two basic index types: \textit{occurence} indexes and
@@ -41,10 +41,10 @@ term in the \textit{occurence} index:
 \end{itemize}
 Additionally, a \textit{Value} field can be added by combining the result set
 from an \textit{occurence} index with the equivalent result set from a \textit{value}
-index. Table \ref{table:method:mql:example_resultset} shows an example result
+index. Figure \ref{table:method:mql:example_resultset} shows an example result
 set from a lookup in a hypothetical \textit{valocc} index.
 
-\begin{table}[!htp]
+\begin{figure}[!htp]
 \begin{center}
 
 \begin{tabular}{| c | c | c | c |}
@@ -61,7 +61,7 @@ set from a lookup in a hypothetical \textit{valocc} index.
 \caption{Example result set from a lookup in \textit{valocc}}
 \label{table:method:mql:example_resultset}
 \end{center}
-\end{table}
+\end{figure}
 
 The input for operators are result sets from child operators. The output from
 operators is a single result set. Note however that some operators, such as
@@ -71,7 +71,7 @@ behaviours are described here where applicable.
 
 \subsection{Language syntax}
 The syntax of MQL (MARS Query Language) is, as mentioned above, reminiscent of
-Lisp dialects. Consider the example in figure \ref{figure:mql:op_example}. This
+Lisp dialects. Consider the example in Figure \ref{figure:mql:op_example}. This
 example will lookup the term ``c'' in the scope \texttt{/a/b} in the index
 \textit{valocc}.
 
@@ -87,7 +87,7 @@ index(valocc;
 \end{figure}
 
 The syntax for MQL can be described in a condensed form using EBNF notation as
-can be seen in figure \ref{figure:mql:ebnf}
+can be seen in Figure \ref{figure:mql:ebnf}
 \begin{figure}[!h]
 \centering
 \begin{Verbatim}
@@ -117,19 +117,19 @@ other defined by an \texttt{index()} operator, see
 \ref{sect:method:marsOperators:index}). The result set returned from this
 operator contains all occurences of the given term, if any. This operator will
 use the last index specified by the \texttt{index()} operator, otherwise the
-default index. See figure \ref{figure:mql:op_example} for an example of usage. 
+default index. See Figure \ref{figure:mql:op_example} for an example of usage. 
 
 \begin{description}
   \item[Input:] none (parameters only)
   \item[Output:] result set with occurences and/or values, depending on index
-(see section \ref{sect:method:mql:indexes} above)
+(see Section \ref{sect:method:mql:indexes})
 \end{description}
 
 \subsubsection{Scope}
 \label{sect:method:marsOperators:scope}
 The \texttt{scope()} operator accepts one parameter and one child operator. Informally, the
 result set from the child operator is filtered to match the given scope. See
-figure \ref{figure:mql:op_example} for an example of usage.
+Figure \ref{figure:mql:op_example} for an example of usage.
 
 \begin{description}
   \item[Input:] a scope string (i.e \texttt{/a/b}), and a result set from the
@@ -140,7 +140,7 @@ child operator which will be filtered for the given scope string
 \subsubsection{Index}
 \label{sect:method:marsOperators:index}
 This operator modifies the behaviour of the child operator such that any lookup
-will use the specified index. See figure \ref{figure:mql:op_example} for an
+will use the specified index. See Figure \ref{figure:mql:op_example} for an
 example of usage where the child operators will operate on the index
 \textit{valocc}.
 
@@ -151,45 +151,47 @@ example of usage where the child operators will operate on the index
 
 \subsubsection{Project}
 \label{sect:method:marsOperators:project}
-The \textsf{project()} operator lends its name and semantics from the project
-(section \ref{sect:theory:relAlg:projection}) and the rename operator (section \ref{sect:theory:relAlg:rename}) operator
-known from basic relational algebra. The \textsf{project()} operator has a more
-complex syntax described in EBNF notation in figure \ref{figure:mql:ebnf:project_ebnf}.
+The \textsf{project()} operator lends its name and semantics from the project and the rename operator known from
+basic relational algebra (Section \ref{sect:theory:relAlg:rename}). Note that it is also possible to execute
+functions and apply constant values to the projection. The example in Figure \ref{figure:mql:project_example2} may
+produce an output similar to that of Figure \ref{figure:mql:project_example}.
+ %The \textsf{project()} operator has
+% a more complex syntax described in EBNF notation in Figure \ref{figure:mql:ebnf:project_ebnf}.
 
-\begin{figure}[!h]
-\centering
-\begin{Verbatim}
-RESULTFIELD  ::= IDENTIFIER
-ARGUMENTS    ::= ARGUMENTDEF ( "," ARGUMENTDEF )*
-ARGUMENTDEF  ::= ( RESULTFIELD "=" )? ARGUMENT
-RETAIN_PARAM ::= "retain:=" BOOLEAN
-OPERATOR     ::= "project" "(" (RETAIN_PARAM ",")? 
-                 ARGUMENTS ";" OPERATOR ")"
-\end{Verbatim}
-\caption{Project operator EBNF}
-\label{figure:mql:ebnf:project_ebnf}
-\end{figure}
-Consider the trivial example in \ref{figure:mql:project_example} which is an
-extension of the example in figure \ref{figure:mql:op_example}. This will
-project the result set on the field \texttt{DocumentID}, and rename it to
-\texttt{id}. 
+% \begin{figure}[!h]
+% \centering
+% \begin{Verbatim}
+% RESULTFIELD  ::= IDENTIFIER
+% ARGUMENTS    ::= ARGUMENTDEF ( "," ARGUMENTDEF )*
+% ARGUMENTDEF  ::= ( RESULTFIELD "=" )? ARGUMENT
+% RETAIN_PARAM ::= "retain:=" BOOLEAN
+% OPERATOR     ::= "project" "(" (RETAIN_PARAM ",")? 
+%                  ARGUMENTS ";" OPERATOR ")"
+% \end{Verbatim}
+% \caption{Project operator EBNF}
+% \label{figure:mql:ebnf:project_ebnf}
+% \end{figure}
+% Consider the trivial example in \ref{figure:mql:project_example} which is an
+% extension of the example in Figure \ref{figure:mql:op_example}. This will
+% project the result set on the field \texttt{DocumentID}, and rename it to
+% \texttt{id}. 
 
-\begin{figure}[!h]
-\centering
-\begin{Verbatim}
-project(id=DocumentID;
-  index(valocc; 
-    scope(/a/b;
-      lookup(c))));
-\end{Verbatim}
-\caption{Simple MQL \textsf{project()} example}
-\label{figure:mql:project_example}
-\end{figure}
+% \begin{figure}[!h]
+% \centering
+% \begin{Verbatim}
+% project(id=DocumentID;
+%   index(valocc; 
+%     scope(/a/b;
+%       lookup(c))));
+% \end{Verbatim}
+% \caption{Simple MQL \textsf{project()} example}
+% \label{figure:mql:project_example}
+% \end{figure}
 
-Note that it is also possible to execute functions and apply constant values to
-the projection. The example in figure \ref{figure:mql:project_example2} may
-produce an output similar to that of figure
-\ref{figure:mql:project_example2_result}.
+\begin{description}
+  \item[Input:] projection parameters, and a result set from the child operator
+  \item[Output:] projection of result set on the given parameters
+\end{description}
 
 \begin{figure}[!h]
 \centering
@@ -220,10 +222,6 @@ $id$ & $cid$ & $one$ \\ \hline
 \label{figure:mql:project_example2_result}
 \end{figure}
 
-\begin{description}
-  \item[Input:] projection parameters, and a result set from the child operator
-  \item[Output:] projection of result set on the given parameters
-\end{description}
 
 \subsubsection{Select}
 The \texttt{select()} operator filters tuples from the child operator based on
@@ -272,7 +270,7 @@ A join operator (one of \textsf{hhjoin()}, \textsf{hljoin()}, or
 \ref{sect:theory:relAlg:equiAndThetaJoin}. In the case of a
 \texttt{mergejoin()}, the input result sets must be sorted. The complete syntax
 for any of the join operations can be described with EBNF notation as can be
-seen in figure \ref{figure:mql:ebnf:join}.
+seen in Figure \ref{figure:mql:ebnf:join}.
 \begin{figure}[!h]
 \centering
 \begin{Verbatim}
@@ -289,8 +287,8 @@ OPERATOR     ::= JOINNAME "(" "[" FIELDLIST "]" ","
 \label{figure:mql:ebnf:join}
 \end{figure}
 A trivial usage example of the \texttt{mergejoin()} operator can be seen in
-figure \ref{figure:mql:mergejoin_example}, where the result sets from two
-hypothetical child operators \texttt{Query1()} and \texttt{Query2()} is joined
+Figure \ref{figure:mql:mergejoin_example}, where the result sets from two
+hypothetical child operators \texttt{Query1()} and \texttt{Query2()} are joined
 on their document ids, and the result is projected on the
 fields \textit{DocumentID} and \textit{Position}.
 
@@ -316,7 +314,7 @@ The \texttt{make()} operator is used to synthesise result sets from the given
 (constant) arguments. Field names can be specified, but are not required. The
 default field names are \textit{field0}, \textit{field1}, \ldots,
 \textit{fieldN}, where \textit{N} is the number of fields. The example in
-figure \ref{figure:mql:make_example1} will produce the output seen in figure
+Figure \ref{figure:mql:make_example1} will produce the output seen in figure
 \ref{figure:mql:make_example1_result}.
 
 \begin{figure}[!h]
@@ -342,7 +340,7 @@ $field0$ & $field1$ & $field2$ \\ \hline
 
 A more complex example can be seen in \ref{figure:mql:make_example2}, where
 field names are specified, and several tuples are synthesised. The
-corresponding result is shown in figure \ref{figure:mql:make_example2_result}.
+corresponding result is shown in Figure \ref{figure:mql:make_example2_result}.
 Notice how values are specified column-wise.
 
 \begin{figure}[!h]
@@ -399,8 +397,8 @@ group((cid), max(id), count(); Query1)
 \label{figure:mql:groupEx}
 \end{figure}
 
-If \texttt{Query1} evaluates to the relation shown in figure \ref{figure:mql:project_example2_result}, the query
-of figure \ref{figure:mql:groupEx} will result in the relation of figure \ref{figure:mql:groupres}.
+If \texttt{Query1} evaluates to the relation shown in Figure \ref{figure:mql:project_example2_result}, the query
+of Figure \ref{figure:mql:groupEx} will result in the relation of Figure \ref{figure:mql:groupres}.
 
 \begin{figure}[!h]
 \centering
@@ -410,7 +408,7 @@ $cid$ & $max$ & $count$ \\ \hline
 103 & 103 & 1 \\ \hline
 289 & 289 & 1 \\ \hline
 \end{tabular}
-\caption{Result of the query in figure \ref{figure:mql:groupEx}}
+\caption{Result of the query in Figure \ref{figure:mql:groupEx}}
 \label{figure:mql:groupres}
 \end{figure}
 
@@ -419,7 +417,7 @@ $cid$ & $max$ & $count$ \\ \hline
   \item[Output:] grouped result set based on grouping specification
 \end{description}
 
-\subsection{Cross}
+\subsubsection{Cross}
 This operator computes a cross product between its two child operators. This
 operator does not take any parameters.
 
@@ -503,7 +501,7 @@ $Seq$ & $A$ & $B$ \\ \hline
 }
 \caption{Input/output result sets}
 \end{figure}
-The example in figure \ref{figure:mql:numberate_example} illustrates the
+The example in Figure \ref{figure:mql:numberate_example} illustrates the
 behaviour of this operator. In the output result set seen in figure
 \ref{figure:mql:numberate_example_output}, a column \texttt{Seq} has been
 added, with a number sequence which follows a sort order of $C$ and restarted for each new value of $A$.
@@ -512,7 +510,7 @@ Also note the $C$ attribute is not part of the result relation.
 \subsubsection{Scope comparison functions}
 
 These boolean functions (not operators) accepts two arguments which must be $scope$ fields from index lookups (as
-described in section \ref{sect:method:mql:indexes}). They each correspond to one of the axes of XQuery/XPath.
+described in Section \ref{sect:method:mql:indexes}). They each correspond to one of the axes of XQuery/XPath.
 Informally, for one tuple, the $scope$ field has a value on this format:
 \textsf{a}$_1$\textsf{[m].}\textsf{a}$_2$\textsf{[n]\ldots}\textsf{a}$_j$\textsf{[o]}. In this format
 \textsf{a}$_x$ are scope names and \textsf{m}, \textsf{n} and \textsf{o} are integers. Further, \textsf{a}$_2$ is
@@ -559,7 +557,7 @@ assume one function per axis.
 \subsubsection{xqBoolean/boolean truth value coercion}
 
 This function (not operator) accepts one argument and determines its \textit{truth value}. XQuery truth values
-(effective boolean values) were described in section \ref{sect:theory:xquery:basics}.
+(effective boolean values) were described in Section \ref{sect:theory:xquery:basics}.
 
 \begin{figure}[!h]
 \centering
@@ -601,13 +599,13 @@ $truthVal$ \\ \hline
 
 The semantics of this function is captured in the example in figure
 \ref{figure:mql:xqboolean_example}. For the input result set produced by the
-\texttt{make()} operator in figure \ref{figure:mql:xqboolean_example_input},
-the output result in figure \ref{figure:mql:xqboolean_example_output} is
+\texttt{make()} operator in Figure \ref{figure:mql:xqboolean_example_input},
+the output result in Figure \ref{figure:mql:xqboolean_example_output} is
 produced. The example converts the integer 5 to \textit{true} and the integer 0
 to \textit{false}. 
 
 \subsubsection{Union/disjoint union}
 The \texttt{union()} operator accepts multiple operators, and will behave as the standard relational algebra
-operator (section \ref{sect:theory:relAlg:unionAndDiff}), except it does not remove duplicates (as disjoint
+operator (Section \ref{sect:theory:relAlg:unionAndDiff}), except it does not remove duplicates (as disjoint
 union). The function of the operator is to concatenate the relations returned from its child-operators. No
 particular ordering of tuples in the result relation is required.

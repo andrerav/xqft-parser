@@ -10,7 +10,7 @@ dotgraphs:
 report:
 	pdflatex Main
 	bibtex Main
-	#makeindex Main.nlo -s nomencl.ist -o Main.nls
+	makeindex Main.nlo -s nomencl.ist -o Main.nls
 	pdflatex Main
 	pdflatex Main
 

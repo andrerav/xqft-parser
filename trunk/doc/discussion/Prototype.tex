@@ -35,7 +35,7 @@ change, any changes made in the parser grammar will need to be transferred to
 the tree grammar, and vice versa.
 
 In \cite{translators_should_use_tree_grammars}, Terence Parr argues that the
-traditional visitor pattern (section \ref{sect:theory:visitorPattern}) only
+traditional visitor pattern (Section \ref{sect:theory:visitorPattern}) only
 provides a simplistic facility for triggering events on the AST, that no tree
 structure validation is implicitly available, and that context information has to be
 passed down through the tree during the parse or by setting global variables.
@@ -60,9 +60,9 @@ may not be suited for this project, as the goal of this tree parser would be to
 transform the AST into a relational algebra tree.
 
 \subsection{AST rewriting and the visitor pattern}
-In chapter \ref{chapter:method}, methods to achieve the goals
+In Chapter \ref{chapter:method}, methods to achieve the goals
 of the implementation were presented. The method chosen for parsing of the
-abstract syntax tree (see section \ref{sect:method:tree_parsing}) was the
+abstract syntax tree (see Section \ref{sect:method:tree_parsing}) was the
 \emph{context sensitive visitor pattern}. This pattern laid the foundation for
 a clean and simplistic implementation. The semantics of the tree parsing process
 itself did not interfer unecessarily with the rest of the implementation.
@@ -75,7 +75,7 @@ typically will cleanly separate a data structure from an algorithm which is
 operating on that structure.
 
 \subsection{Constructed algebra trees and performance}
-As explained in section \ref{sect:impl:construct_mql} on page
+As explained in Section \ref{sect:impl:construct_mql} on page
 \pageref{sect:impl:construct_mql}, the MQL is constructed as an in-memory tree
 structure. This was done by instantiating a new \texttt{Operator} subclass
 (the exact class depending on context) for every node in the tree. It is

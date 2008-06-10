@@ -139,7 +139,7 @@ If we apply the path expression mentioned above, we will thus receive the second
 There are a few important things to note about predicates. Firstly, the
 predicate expression can be any expression, and as such its return value is
 coerced into a effective boolean value (either \textit{true} or \textit{false}), as
-described previously in section \ref{sect:theory:xquery:basics}.
+described previously in Section \ref{sect:theory:xquery:basics}.
 
 However, there is one important exception -- if the return value for the
 predicate expression evaluates to a numerical value, then the predicate
@@ -224,8 +224,8 @@ When evaluating the \texttt{for}-clauses in this nested FLWOR expression, the
 \textit{iterator sequence} is evaluated in the parent scope and not the
 new scope for the current FLWOR expression. We can illustrate this point by
 separating the scopes graphically:
-\begin{figure*}
-\centering
+
+\begin{center}
 \begin{tikzpicture}
 \node at (0,0) [label=right:\texttt{for \$a in}]{};
 \node at (2,0) [label=right:\texttt{(1,2,3)}]{};
@@ -237,7 +237,7 @@ separating the scopes graphically:
 \draw[thick,dotted,rounded corners=8pt]
 (0.5,-0.5) -- (4.05,-0.5) -- (4.05,-1.05) -- (6,-1.05);
 \end{tikzpicture}
-\end{figure*}
+\end{center}
 
 As can be seen, the iterator sequence for the inner loop is evaluated in the
 scope of the outer loop, and a new scope is not started until this iterator
@@ -273,7 +273,7 @@ The latter seems significantly less complex to parse, since this query embodies
 no less than \emph{four} individual FLWOR expressions, each with one and only
 one \texttt{for}- or \texttt{let}-clause. This raises the question, could it be
 benefitial to rewrite complex FLWOR expressions into a simpler form? This
-question is addressed in section \ref{sect:method:ast_rewrite} on page
+question is addressed in Section \ref{sect:method:ast_rewrite} on page
 \pageref{sect:method:ast_rewrite}.
 
 \subsection{Full text extensions}
@@ -290,6 +290,7 @@ allows specifying match options like stemming, thesaurus, etc to a second
 operand modifying the criteria for finding a match. A full list of match
 options are described in \cite{w3c01}.
 
+\newpage
 For example, consider the following example:
 \begin{center}
 \begin{tabular}{l}
@@ -331,7 +332,7 @@ $
   \label{figure:xquery:mapping_rules}
 \end{figure}
 
-Consider figure \ref{figure:xquery:mapping_rules}. Here, the left-hand side of the
+Consider Figure \ref{figure:xquery:mapping_rules}. Here, the left-hand side of the
 equality symbol (==) denotes the original object to be rewritten. The
 subscript indicates the type or kind of the object to be mapped, and/or
 additional information to be passed between mapping rules. The right-hand side
@@ -356,6 +357,11 @@ $[FormalReturnClause]_{Expr}$
 The mapping rule for FLWOR \texttt{for}-clause expressions can be seen in figure
 \ref{figure:xquery:flwor_mapping_rule}. The mapping rule for \texttt{let}-expressions is
 similar and omitted for brevity, however they are also normalised into several nested bindings.
+
+Similarly, the mapping rules for \texttt{where}-clauses, \texttt{order by}-clauses and
+\texttt{return}-clauses can be seen in figures \ref{figure:xquery:where_mapping_rule},
+\ref{figure:xquery:orderby_mapping_rule},
+and \ref{figure:xquery:return_mapping_rule}.
 
 \begin{figure}[!h]
 \centering
@@ -384,10 +390,6 @@ $[Expr]_{Expr}$
   \label{figure:xquery:return_mapping_rule}
 \end{figure}
 
-Similarly, the mapping rules for \texttt{where}-clauses, \texttt{order by}-clauses and
-\texttt{return}-clauses can be seen in figures \ref{figure:xquery:where_mapping_rule},
-\ref{figure:xquery:orderby_mapping_rule},
-and \ref{figure:xquery:return_mapping_rule}.
 
 For an example of how these rules are applied, consider the following FLWOR
 expression:
@@ -409,10 +411,8 @@ rewritten to:
 \texttt{for \$i in (1, 2) return} \\ \quad
   \texttt{for \$j in (3, 4) return} \\ \quad
     \texttt{let \$k := \$i + \$j return} \\ \quad \quad
-      \texttt{if (\$k >= 5) then} \\ \quad \quad \quad
-        \texttt{(\$i, \$j)}\\ \quad \quad
-      \texttt{else} \\ \quad \quad \quad
-        \texttt{()}
+      \texttt{if (\$k >= 5) then (\$i, \$j)} \\ \quad \quad 
+      \texttt{else ()} 
 \end{tabular}
 \end{center}
 The corresponding AST graphs can be seen in figures
@@ -420,7 +420,7 @@ The corresponding AST graphs can be seen in figures
 note that multiple \texttt{for}-clauses in a FLWOR expression is rewritten into several
 nested FLWOR expressions, and that the \texttt{where}-clause is  rewritten into an
 \texttt{if..then..else} expression. 
-\newpage
+
 \begin{figure}
 \centering
 \subfigure[FLWOR AST tree before normalisation]{
@@ -435,9 +435,28 @@ nested FLWOR expressions, and that the \texttt{where}-clause is  rewritten into 
 \end{figure}
 
 \subsubsection{Rewriting composite relative path expressions}
+
 A composite relative path expression (for example, \verb!a/b!), can be
 rewritten into a \texttt{for}-loop using the mapping rule in figure
-\ref{figure:xquery:relpath_mapping_rule}.
+\ref{figure:xquery:relpath_mapping_rule}. Given the trivial example \verb!a/b!, this translates into the following
+block of normalised code:
+\begin{center}
+\begin{minipage}[h]{10cm}
+\begin{verbatim}
+fs:apply-ordering-mode (
+fs:distinct-doc-order-or-atomic-sequence (
+  let $fs:sequence as node()* := a return
+  let $fs:last := fn:count($fs:sequence) return
+  for $fs:dot at $fs:position in $fs:sequence return
+    b))
+\end{verbatim}
+\end{minipage}
+\end{center}
+
+Which may seem like a rather verbose representation of such a simple path
+expression. In particular, for complex path expressions this may
+escalate into rather large rewritten expressions. However, this is a trade-off
+to be made for normalisation of such path expressions.
 
 \begin{figure}[!h]
 \centering
@@ -454,28 +473,6 @@ $==$ \newline
   \caption{Composite relative path expression mapping rule}
   \label{figure:xquery:relpath_mapping_rule}
 \end{figure}
-
-Given the trivial example \verb!a/b!, this translates into the following block
-of normalised code:
-\begin{center}
-\begin{minipage}[h]{10cm}
-\begin{verbatim}
-fs:apply-ordering-mode (
-fs:distinct-doc-order-or-atomic-sequence (
-  let $fs:sequence as node()* := a return
-  let $fs:last := fn:count($fs:sequence) return
-  for $fs:dot at $fs:position in $fs:sequence return
-    b))
-\end{verbatim}
-\end{minipage}
-\end{center}
-
-
-Which may seem like a rather verbose representation of such a simple path
-expression. In particular, for complex path expressions this may
-escalate into rather large rewritten expressions. However, this is a trade-off
-to be made for normalisation of such path expressions.
-
 
 % \subsection{AllMatches}
 % \label{sect:theory:xquery:allmatches}

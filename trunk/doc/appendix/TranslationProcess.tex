@@ -13,14 +13,14 @@ syntax tree and visiting the for- and let-clauses. Recall from section
 \ref{sect:trans:TD:basics} on page \pageref{sect:trans:TD:basics} that
 \textbf{r}($e$) returns the translation of the XQuery expression $e$ into
 relational algebra. This function is then defined through a set of rules
-described throughout section \ref{sect:translation}.
+described throughout Section \ref{sect:translation}.
 
 The translation process starts with the \texttt{for}-clause which we translate using
-rule \ref{rule:trans:TD:forbind}. However, to produce \textbf{r}($e$), we must
+Rule \ref{rule:trans:TD:forbind}. However, to produce \textbf{r}($e$), we must
 translate \texttt{(1,2,3)} using rules \ref{rule:trans:TD:seqConstr} and
 \ref{rule:trans:TD:literal}. 
 
-By applying rule \ref{rule:trans:TD:literal} to each of the elements in the
+By applying Rule \ref{rule:trans:TD:literal} to each of the elements in the
 sequence, we obtain the following translations:
 \begin{Verbatim}
 make(name:=[index, value], [1], [1])
@@ -32,7 +32,7 @@ make(name:=[index, value], [1], [2])
 make(name:=[index, value], [3], [3])
 \end{Verbatim}
 
-By applying rule \ref{rule:trans:TD:seqConstr} to this result we obtain the
+By applying Rule \ref{rule:trans:TD:seqConstr} to this result we obtain the
 following translation of the sequence (1,2,3):
 
 \begin{Verbatim}
@@ -48,7 +48,7 @@ numberate(index,[sprIdx,index],[];
 \end{Verbatim}
 
 We can now continue translating the \texttt{for}-clause, as the above translation
-equates to \textbf{r}($e$). By rule \ref{rule:trans:TD:forbind}, we obtain the
+equates to \textbf{r}($e$). By Rule \ref{rule:trans:TD:forbind}, we obtain the
 following translation which is to be entered into the symbol table for this
 scope (for the symbol $\chi$ = a):
 
@@ -70,13 +70,13 @@ table which will return this algebra expression.
 
 The let clause is translated in a similar manner, however the entry in the
 symbol table will not be tainted by \texttt{\$b}. To translate the let-clause,
-we apply the rule \ref{rule:trans:TD:literal} on the expression and obtain:
+we apply the Rule \ref{rule:trans:TD:literal} on the expression and obtain:
 
 \begin{Verbatim}
 make(name:=[index, value], [1],[2])
 \end{Verbatim}
 
-Which is entered into the symbol table as per rule \ref{rule:trans:TD:letbind}.
+Which is entered into the symbol table as per Rule \ref{rule:trans:TD:letbind}.
 
 Before translating the where- and orderby-clauses, it is benefitial to
 translate the return-clause (since the two former requires the translation of
@@ -277,8 +277,8 @@ project([anumb = index, index = 1, value];
 The translation of the if-then-else expression follows rule
 \ref{rule:trans:TD:conditional}  on page \pageref{rule:trans:TD:conditional}.
 First, however, the boolean expression \texttt{\$a > 2} (which corresponds to
-$e_1$ in rule \ref{rule:trans:TD:conditional}) must be translated. This can be
-done using rule \ref{rule:trans:TD:comparative}, as for the where-clause in the
+$e_1$ in Rule \ref{rule:trans:TD:conditional}) must be translated. This can be
+done using Rule \ref{rule:trans:TD:comparative}, as for the where-clause in the
 previous FLWOR example:
 
 
@@ -330,7 +330,7 @@ project(anumb, index = 1, value = 3;
 \end{Verbatim}
 
 Now the translated representations of $e_1$, $e_2$ and $e_3$ (where the latter
-is also tainted) can be entered into rule \ref{rule:trans:TD:conditional}:
+is also tainted) can be entered into Rule \ref{rule:trans:TD:conditional}:
 
 \begin{Verbatim}
 project(value=lvalue, anumb;
@@ -372,7 +372,7 @@ project(value=lvalue, anumb;
             make(name:=[index, value],[1], [2]))))))
 \end{Verbatim}
 
-This can be simplified further by replacing \texttt{make()} as described in rule \ref{rule:trans:TD:seqIfLit}: 
+This can be simplified further by replacing \texttt{make()} as described in Rule \ref{rule:trans:TD:seqIfLit}: 
 
 \begin{Verbatim}
 project(value=lvalue, anumb;
@@ -391,7 +391,7 @@ project(value=lvalue, anumb;
           make(name:=[index, value], [1,2,3], [1,2,3]))))))
 \end{Verbatim}
 
-The translation is finalised by applying rule \ref{rule:trans:TD:itOrd}:
+The translation is finalised by applying Rule \ref{rule:trans:TD:itOrd}:
 
 \begin{Verbatim}
 numberate(index, [anumb, index], [];
@@ -417,8 +417,8 @@ numberate(index, [anumb, index], [];
 It should be noted that the query is not a valid query unless the context item is set before execution. We assume
 the context item is stored in the symbol table, and have no dependencies. First the axis steps consisting of the
 name tests \texttt{a} and \texttt{b} is translated. As these are consecutive child-axis steps (no axis specifier
-is read as \texttt{child::}), rule \ref{rule:trans:TD:pathChild} may be used once for both steps, instead of using
-the more general rule (rule \ref{rule:trans:TD:pathStep}) twice:
+is read as \texttt{child::}), Rule \ref{rule:trans:TD:pathChild} may be used once for both steps, instead of using
+the more general rule (Rule \ref{rule:trans:TD:pathStep}) twice:
 \begin{Verbatim}
 project(dotNumb, docId, index, value, pos, scope;
   numberate(dotNumb, [dotNumb, subIdx], [];
@@ -432,15 +432,15 @@ project(dotNumb, docId, index, value, pos, scope;
               lookup($b))))))))
 \end{Verbatim}
 Also note that the next to last \textsf{numberate} operator from the rule is dropped, as the predicate expression
-must evaluate to a boolean type. This is described in section \ref{sect:trans:TD:simpl:pathExpr}.
+must evaluate to a boolean type. This is described in Section \ref{sect:trans:TD:simpl:pathExpr}.
 
 Then the predicate will have to be taken into account. The result of \texttt{/a/b} is stored in the symbol table
 as \textbf{sprDot}, where $dotNumb$ is copied to $sprDotNumb$ and the $index$ fields will be set to the
 value 1. When this is done, the comparison expression in the predicate will be evaluated. First \textsf{@id} is
 evaluated. This contains a implicit reference to the context node, and in its verbose form is formed like this:
-\texttt{./attribute::id}. This expression is evaluated by rule \ref{rule:trans:TD:pathStep}. As this path
+\texttt{./attribute::id}. This expression is evaluated by Rule \ref{rule:trans:TD:pathStep}. As this path
 expression (within the predicate) does not contain any predicate, the next to last \textsf{numberate} operator
-will be dropped. As it is the complete path expression it will be finalised by rule \ref{rule:trans:TD:pathExpr}.
+will be dropped. As it is the complete path expression it will be finalised by Rule \ref{rule:trans:TD:pathExpr}.
 The last step of the path expression (still the one within the predicate) does not contain some kind of filtering,
 thus the final \textsf{numberate} operator will be exchanged with a \textsf{project} operator:
 
@@ -499,10 +499,10 @@ project(index=1, value=eq(value, 2), sprDotNumb;
                 lookup($@id)))))))))
 \end{Verbatim}
 
-Then the rule for translating predicates (rule \ref{rule:trans:TD:predicate}) are employed. The predicate
+Then the rule for translating predicates (Rule \ref{rule:trans:TD:predicate}) are employed. The predicate
 expression and the predicated expression will have to be joined on their $sprDotNumb$ and $dotNumb$ attributes
 respectively, as they have no other common dependencies. Finally the whole path expression is finalised by a
-renumbering, as described by rule \ref{rule:trans:TD:pathExpr}.
+renumbering, as described by Rule \ref{rule:trans:TD:pathExpr}.
 
 \begin{Verbatim}
 numberate(index, [dotNumb, index], [];

@@ -1,13 +1,6 @@
 \section{Sequence construction}
 \label{sect:trans:TD:seqBuild}
 
-A sequence in XQuery can be built with the comma operator(\texttt{,}). But this operator is the XQuery operator
-with the lowest precedence, therefore, in most cases a sequence construction expression will be enclosed in
-paratheses. This is to solve parser ambiguities, which can be seen in the excerpt of the W3C XQuery EBNF
-specification\cite{w3c00} in figure \ref{fig:trans:TD:seqEBNF}. An \texttt{ExprSingle} can solely consist of a
-\texttt{ParenthesizedExpr} via a series of productions omitted from the figure. Also note a \texttt{ExprSingle}
-can be a \texttt{FLWORExpr}.
-
 \begin{figure}[h]
 \begin{Verbatim}
 [33] FLWORExpr         ::= (ForClause | LetClause)+ WhereClause? 
@@ -22,13 +15,19 @@ sequence construction}
 \label{fig:trans:TD:seqEBNF}
 \end{figure}
 
+A sequence in XQuery can be built with the comma operator(\texttt{,}). But this operator is the XQuery operator
+with the lowest precedence, therefore, in most cases a sequence construction expression will be enclosed in
+paratheses. This is to solve parser ambiguities, which can be seen in the excerpt of the W3C XQuery EBNF
+specification\cite{w3c00} in Figure \ref{fig:trans:TD:seqEBNF}. An \texttt{ExprSingle} can solely consist of a
+\texttt{ParenthesizedExpr} via a series of productions omitted from the figure. Also note a \texttt{ExprSingle}
+can be a \texttt{FLWORExpr}.
+
 As also can be seen from the figure the \texttt{return}-clause of a FLWOR expression, as many other expressions,
 accepts an \texttt{ExprSingle}. If a sequence is to be constructed in the \texttt{return}-clause, it will have to
 be parenthesised.
 
 With the concept of tainting and iterator dependencies explained, we are now ready to introduce the translation of
 an XQuery sequence construction expression:
-
 \begin{equation}
 \frac{}{e_{1}\mbox{\texttt{, \ldots, }}e_{n}}\longmapsto
 \begin{array}{l}
@@ -54,21 +53,24 @@ positioning defined by $sprIdx$ and $index$ the \textsf{numberate} operator can 
 sequence. The numbering must partition on the fields corresponding to the dependencies in $\vartheta$, to separate
 the different sequences constructed for all known unique iterations.
 
-\begin{myExample}
-\label{ex:trans:TD:simpleSeq}
 \begin{figure}[h]
-\begin{equation*}
+\centering
+\begin{math}
 \begin{array}{l}
 \mbox{\texttt{for \$a in (10,20) return}} \\ \quad 
 \underbrace{ \mbox{\texttt{(\$a, "no")}} }_{e_{1}}
 \end{array}
-\end{equation*}
+\end{math}
 \caption{Simple XQuery query}
 \label{fig:trans:TD:simpQuery}
 \end{figure}
-Consider the simple XQuery query of figure \ref{fig:trans:TD:simpQuery}. Here \textbf{r(}\texttt{\$a}\textbf{)}
+
+\begin{myExample}
+\label{ex:trans:TD:simpleSeq}
+
+Consider the simple XQuery query of Figure \ref{fig:trans:TD:simpQuery}. Here \textbf{r(}\texttt{\$a}\textbf{)}
 will taint \textbf{r(}\texttt{"no"}\textbf{)} with its dependency on the iterator $I_{\mbox{\texttt{a}}}$, the
-result of which is shown in figure \ref{fig:trans:TD:simpl:ryes}. Further, we can see that for each iteration of
+result of which is shown in Figure \ref{fig:trans:TD:simpl:ryes}. Further, we can see that for each iteration of
 $I_{\mbox{\texttt{a}}}$ the \texttt{return}-clause will return a sequence of two items. Having in mind that
 $anumb$ ($anb$ in figure) holds the iteration number of $I_{\mbox{\texttt{a}}}$, this can be seen in figure
 \ref{fig:trans:TD:simpl:rall}.
@@ -104,14 +106,14 @@ $anb$ & $idx$ & $val$ \\ \hline
 \label{fig:trans:TD:simpl:rall}
 }
 
-\caption[Example: constructing a sequence]{Applying translation rule \ref{rule:trans:TD:seqConstr} on (a) and (b)
+\caption[Example: constructing a sequence]{Applying translation Rule \ref{rule:trans:TD:seqConstr} on (a) and (b)
 yields (c). Attribute names are shortened \label{fig:trans:TD:simpleSeq}}
 \end{figure}
 
 The sequence construction rule also holds even if the subexpressions of the
 soon-to-be sequence are within the body of an iterator the sequence is not
-dependent on. Expanding the query of figure \ref{fig:trans:TD:simpQuery} we get
-the query of figure \ref{fig:trans:TD:expandQuery}. 
+dependent on. Expanding the query of Figure \ref{fig:trans:TD:simpQuery} we get
+the query of Figure \ref{fig:trans:TD:expandQuery}. 
 
 \begin{figure}[h]
 \begin{equation*}
@@ -121,7 +123,7 @@ the query of figure \ref{fig:trans:TD:expandQuery}.
 \underbrace{ \mbox{\texttt{(\$a, "no")}} }_{e_{1}}
 \end{array}
 \end{equation*}
-\caption{Query of figure \ref{fig:trans:TD:simpQuery} expanded}
+\caption{Query of Figure \ref{fig:trans:TD:simpQuery} expanded}
 \label{fig:trans:TD:expandQuery}
 \end{figure}
 

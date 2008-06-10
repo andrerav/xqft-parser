@@ -4,7 +4,7 @@
 \label{definition:normalisation}
 The process of \textbf{normalisation} of XQuery is defined as the process of
 translating the whole or parts of an XQuery abstract syntax tree into an XQuery Core abstract
-syntax tree, as described in section \ref{sect:theory:xquery:XQcore}.
+syntax tree, as described in Section \ref{sect:theory:xquery:XQcore}.
 \end{myDefinition}
 
 \begin{myDefinition}
@@ -15,12 +15,12 @@ been normalised through a process of normalisation.
 
 The basic abstract syntax tree produced by the XQFT Parser (see section
 \ref{sect:theory:xqftparser}) is in a denormalised form. As explained in
-section \ref{sect:theory:xquery:XQcore} on page
+Section \ref{sect:theory:xquery:XQcore} on page
 \pageref{sect:theory:xquery:XQcore}, normalisation has the benefit of
 simplification without loss of expressiveness or semantics, and thus
 simplifying the task of translating the syntax tree.
 
-Based on findings in section \ref{sect:theory:xquery:Flwor} regarding the
+Based on findings in Section \ref{sect:theory:xquery:Flwor} regarding the
 structure of FLWOR expressions, it was briefly mentioned that complex FLWOR
 expressions could be transformed into semantically equivalent and simpler
 representations. A question was also posed -- \emph{could it be
@@ -29,43 +29,42 @@ now attempt to answer this question.
 
 \subsection{Normalising FLWOR expressions}
 A denormalised XQuery syntax tree may contain nodes such \texttt{for}-clause expressions with several variable
-declarations and assignments as can be seen in figure \ref{tree:ast:flwor_rewrite1}. Such an expression could be
-normalised to several nested FLWOR expressions, as shown in figure \ref{tree:ast:flwor_rewrite2}, as defined by
+declarations and assignments as can be seen in Figure \ref{tree:ast:flwor_rewrite1}. Such an expression could be
+normalised to several nested FLWOR expressions, as shown in Figure \ref{tree:ast:flwor_rewrite2}, as defined by
 the mapping rules in figures \ref{figure:xquery:flwor_mapping_rule},
 \ref{figure:xquery:where_mapping_rule},
 \ref{figure:xquery:orderby_mapping_rule}, and
 \ref{figure:xquery:return_mapping_rule}.
 
-Here, the method in section \ref{sect:theory:xquery:core:rewriting_flwor} has
-been applied to the example tree in figure \ref{figure:ast_rewrite:flwor1},
-and the result can be seen in figure \ref{figure:ast_rewrite:flwor3}. The
+Here, the method in Section \ref{sect:theory:xquery:core:rewriting_flwor} has
+been applied to the example tree in Figure \ref{figure:ast_rewrite:flwor1},
+and the result can be seen in Figure \ref{figure:ast_rewrite:flwor3}. The
 corresponding hypothetical source code for the denormalised and normalised trees
-can be seen in figure \ref{figure:ast_rewrite:flwor_src}.
-
+can be seen in Figure \ref{figure:ast_rewrite:flwor_src}.
 \begin{figure}[!h]
 	\centering
-	\mbox{
+	%\mbox{
 		\subfigure[Step 1: original denormalised syntax tree]{
-			\includegraphics[scale=0.22]{img/graphs/flwor_rewrite_p1} 
+			\includegraphics[scale=0.25]{img/graphs/flwor_rewrite_p1} 
 			\label{figure:ast_rewrite:flwor1}
 		}
 		\quad
 		\subfigure[Step 2: partly normalised tree]{
-			\includegraphics[scale=0.22]{img/graphs/flwor_rewrite_p2} 
+			\includegraphics[scale=0.25]{img/graphs/flwor_rewrite_p2} 
 			\label{figure:ast_rewrite:flwor2}
 		}
 		\quad
 		\subfigure[Step 3: fully normalised tree]{
-			\includegraphics[scale=0.22]{img/graphs/flwor_rewrite_p3} 
+			\includegraphics[scale=0.25]{img/graphs/flwor_rewrite_p3} 
 			\label{figure:ast_rewrite:flwor3}
 		}
-	}
+	%}
 	\caption{Normalisation steps of FLWOR expression with multiple \texttt{for}-clauses}
 \end{figure}
 
 \begin{figure}[!h]
 	\centering
-	\mbox{
+	%\mbox{
 		\subfigure[]{
 			\mbox {
 				
@@ -84,12 +83,12 @@ can be seen in figure \ref{figure:ast_rewrite:flwor_src}.
 			}
 			\label{figure:ast_rewrite:flwor2_src}
 		}
-	}
+	%}
 	\caption{Hypothetical source code corresponding to the trees in figures
 		\ref{figure:ast_rewrite:flwor1} and \ref{figure:ast_rewrite:flwor3}}
 	\label{figure:ast_rewrite:flwor_src}
 \end{figure}
-
+\newpage
 Considering these trees, we can assert the following:
 \begin{enumerate}
   \item Multiple nested FLWOR constructs with a single \texttt{for/let}-clause
@@ -106,4 +105,4 @@ Based on these findings, it is natural to conclude that normalisation of FLWOR
 expressions is benefitial for the sake of simplicity in the tree parsing
 process. Normalisation may be attained by executing a specialised
 \textit{rewrite visitor} on the syntax tree, which will be described in
-chapter \ref{chapter:implementation}.
+Chapter \ref{chapter:implementation}.

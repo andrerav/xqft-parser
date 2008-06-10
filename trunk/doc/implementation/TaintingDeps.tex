@@ -2,7 +2,7 @@
 \label{sect:impl:tainting_deps}
 Tainting Dependencies is a method of translating XQuery queries to
 relational algebra. The semantics of this method is described in detail
-throughout chapter \ref{sect:translation}. This section
+throughout Chapter \ref{sect:translation}. This section
 describes an implementation of a subset of the rules in this method -- an
 implementation which is capable of translating simple FLWOR expressions,
 sequences, and variables.
@@ -45,7 +45,7 @@ The translation process for FLWOR expressions was outlined in section
 \ref{rule:trans:TD:forbind} on page \pageref{rule:trans:TD:forbind}. This
 inference rule states how to translate and bind an iterator variable in a
 \texttt{for}-clause in a FLWOR expressions. Furthermore, consider the abstract
-syntax tree example in figure \ref{fig:impl:td:flwor2}. First a
+syntax tree example in Figure \ref{fig:impl:td:flwor2}. First a
 \texttt{for}-clause is visited, and the  child is flagged as a FLWOR tuplet
 definition.
 % \begin{Verbatim}
@@ -74,8 +74,7 @@ translated, and the symbol is entered into a symbol table. The
 creation of the project operator is required by inference rule
 \ref{rule:trans:TD:forbind}:
 
-\begin{Verbatim}
-    ...      
+\begin{Verbatim}     
     // Visit children on the right side of the assignment
     TraverseReturn tr = acceptThis(tree.getChild(1));
         
@@ -94,14 +93,13 @@ creation of the project operator is required by inference rule
     if (tree.isFlworTupleDef()) {
        Scope.setCurrentIterVar(new VarRef(tmp.getName()));
     }
-    ...    
 \end{Verbatim}
 
 
 
 Following the translation of the \texttt{for}-clause, the
 \texttt{return}-clause and its subexpressions are translated. When the visitor returns to the AST\_FLWOR node, as there is no \texttt{where} or \texttt{order
-by}-clauses iterator ordering (section \ref{sect:trans:TD:flwor:itOrd}, page \pageref{sect:trans:TD:flwor:itOrd})
+by}-clauses iterator ordering (Section \ref{sect:trans:TD:flwor:itOrd}, page \pageref{sect:trans:TD:flwor:itOrd})
 is applied:
 
 \begin{Verbatim}
@@ -141,7 +139,6 @@ is applied:
     Scope.pop();
     return result;
 \end{Verbatim}
-
 
 \subsection{Sequences}
 \label{sect:impl:td:seq}
@@ -206,7 +203,7 @@ The translation process for conditional expressions is explained in section
 
 First the child expressions are visited, and the variables \texttt{e1},
 \texttt{e2}, and \texttt{e3} correspond to the expressions $e_1$, $e_2$, and
-$e_3$ in rule \ref{rule:trans:TD:conditional},  while \texttt{r\_e1},
+$e_3$ in Rule \ref{rule:trans:TD:conditional},  while \texttt{r\_e1},
 \texttt{r\_e3}, and \texttt{r\_e3} correspond to \textbf{r}($e_1$),
 \textbf{r}($e_2$), and \textbf{r}($e_3$).
 

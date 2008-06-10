@@ -1,11 +1,11 @@
 \section{Optimisation}
 \label{sect:disc:optimisations}
 
-In section \ref{sect:trans:TD:simplifications} we presented some situations where the translation from XQuery into
+In Section \ref{sect:trans:TD:simplifications} we presented some situations where the translation from XQuery into
 MQL can be specialised and simplified. In this section we will outline some ideas for further simplification and
 optimisation.
 
-As can be seen of the tree in figure \ref{fig:results:query_pathpred_result} on page
+As can be seen of the tree in Figure \ref{fig:results:query_pathpred_result} on page
 \pageref{fig:results:query_pathpred_result}, Tainting Dependencies can produce
 relational algebra trees with consecutive \textsf{project} operators. This is of course unnecessary, and such
 operators can be merged into one single \textsf{project}. Additionally, attributes which is not part of the result
@@ -58,7 +58,7 @@ to establish that the actual value of the operand E does not violate any constra
 \end{quote}
 
 This feature could be utilised in situations where path expressions are to be
-evaluated to effective boolean values (as described in section \ref{sect:disc:effBool}). If the path expression is
+evaluated to effective boolean values (as described in Section \ref{sect:disc:effBool}). If the path expression is
 to return either nodes or an empty sequence, it is sufficient to find \emph{one} node per unique iteration. This
 might prove difficult to implement on an MQL processor however, as it is hard to know which unique iteration an
 node belongs to before the node relation and a relation with representations in all unique iterations are
@@ -85,7 +85,7 @@ expressions with possible predicates. This may be helpful as the MQL \textsf{sco
 equivalent to the \texttt{child} axis.
 
 By letting the translator keep track over valid consecutive \texttt{child} axis steps, the \textsf{scope} operator
-may be employed to filter the results from the lookup (ref rule \ref{rule:trans:TD:pathStep}, page
+may be employed to filter the results from the lookup (ref Rule \ref{rule:trans:TD:pathStep}, page
 \pageref{rule:trans:TD:pathStep}), most likely reducing the tuples involved in the subsequent join. Consider the
 following path expression:
 
@@ -109,7 +109,7 @@ the path expression up until \texttt{d} would have to be evaluated, filtered wit
 finally joined with the evaluation of the path expression without the last predicate on the $scope$ fields of their
 \texttt{d} step.
 
-The rule for translating predicates, rule \ref{rule:trans:TD:predicate} on page \pageref{rule:trans:TD:predicate},
+The rule for translating predicates, Rule \ref{rule:trans:TD:predicate} on page \pageref{rule:trans:TD:predicate},
 is a general rule. Here, a reference to the context item from the outside of the predicate is ``copied'' inside the
 predicate (containing $sprDotNumb$). This copy is then operated on, and the evaluated predicate expression and the
 predicated expression is joined on the reference to the context item. An example of this process is seen in figure
