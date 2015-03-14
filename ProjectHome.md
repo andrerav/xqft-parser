@@ -1,0 +1,3 @@
+Search engines has shown a growing interest in applying full text XQuery as a query representation. The task of this project is to develop an experimental XQuery parser which produces an intermediate representation and if possible, transform this IR into an algebrae tree.
+
+This project is directed by the Department of Computer Science at the Norwegian University of Science and Technology (NTNU) in Trondheim, Norway.
